@@ -177,7 +177,6 @@ class OlympiadGameTask implements Runnable
 				runGame();
 			}
 			
-			_terminated = true;
 			_game.validateWinner();
 			_game.PlayersStatusBack();
 			_game.cleanEffects();
@@ -209,6 +208,7 @@ class OlympiadGameTask implements Runnable
 			_game.clearPlayers();
 			OlympiadManager.getInstance().removeGame(_game);
 			_game = null;
+			_terminated = true;
 		}
 	}
 	
