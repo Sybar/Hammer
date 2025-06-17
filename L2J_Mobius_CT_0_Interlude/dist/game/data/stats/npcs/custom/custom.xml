@@ -28,4 +28,16 @@
 			<height normal="8.5" />
 		</collision>
 	</npc>
+	<npc id="900103" displayId="30425" name="Start" usingServerSideName="true" title="Race Manager" usingServerSideTitle="true" type="Folk">
+		<collision>
+			<radius normal="8" />
+			<height normal="21.5" />
+		</collision>
+	</npc>
+	<npc id="900104" displayId="30425" name="Finish" usingServerSideName="true" title="Race Manager" usingServerSideTitle="true" type="Folk">
+		<collision>
+			<radius normal="8" />
+			<height normal="21.5" />
+		</collision>
+	</npc>
 </list>
