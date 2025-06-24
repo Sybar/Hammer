@@ -10026,17 +10026,16 @@ public class Player extends Playable
 	 */
 	public boolean modifySubClass(int classIndex, int newClassId, boolean isDualClass)
 	{
-		// Notify to scripts before class is removed.
-		if (!getSubClasses().isEmpty() && EventDispatcher.getInstance().hasListener(EventType.ON_PLAYER_PROFESSION_CANCEL, this))
-		{
-			final int classId = getSubClasses().get(classIndex).getId();
-			EventDispatcher.getInstance().notifyEventAsync(new OnPlayerProfessionCancel(this, classId), this);
-		}
-		
 		final SubClassHolder subClass = getSubClasses().get(classIndex);
 		if (subClass == null)
 		{
 			return false;
+		}
+		
+		// Notify to scripts before class is removed.
+		if (EventDispatcher.getInstance().hasListener(EventType.ON_PLAYER_PROFESSION_CANCEL, this))
+		{
+			EventDispatcher.getInstance().notifyEventAsync(new OnPlayerProfessionCancel(this, subClass.getId()), this);
 		}
 		
 		if (subClass.isDualClass())
