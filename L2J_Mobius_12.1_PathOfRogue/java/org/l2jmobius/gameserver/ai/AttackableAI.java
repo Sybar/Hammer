@@ -407,7 +407,7 @@ public class AttackableAI extends CreatureAI
 								}
 							}
 						}
-						else if (t.isPlayable())
+						else if (t.isPlayable() || (t.isMonster() && Config.GUARD_ATTACK_AGGRO_MOB && t.isAutoAttackable(npc)))
 						{
 							if (EventDispatcher.getInstance().hasListener(EventType.ON_NPC_HATE, getActiveChar()))
 							{
