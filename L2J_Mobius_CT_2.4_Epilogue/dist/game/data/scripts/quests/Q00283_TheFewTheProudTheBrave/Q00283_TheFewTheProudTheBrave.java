@@ -100,6 +100,7 @@ public class Q00283_TheFewTheProudTheBrave extends Quest
 							setNRMemoState(newbieGuideQs, GUIDE_MISSION, getNRMemoState(newbieGuideQs, GUIDE_MISSION) + 10000000);
 							showOnScreenMsg(player, "Last duty complete. \\n Go find the Newbie Guide.", 2, 5000);
 						}
+						newbieGuideQs.setState(State.COMPLETED);
 					}
 					
 					htmltext = event;
