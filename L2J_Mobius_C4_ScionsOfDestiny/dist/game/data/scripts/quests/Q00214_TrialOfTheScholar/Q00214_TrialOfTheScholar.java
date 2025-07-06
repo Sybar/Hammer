@@ -808,6 +808,7 @@ public class Q00214_TrialOfTheScholar extends Quest
 					if (getQuestItemsCount(player, BROWN_SCROLL_SCRAP) >= 5)
 					{
 						st.setCond(12, true);
+						playSound(player, QuestSound.ITEMSOUND_QUEST_MIDDLE);
 					}
 					else
 					{
@@ -825,6 +826,7 @@ public class Q00214_TrialOfTheScholar extends Quest
 					if ((getQuestItemsCount(player, SHACKLE_SCALP) >= 2) && (getQuestItemsCount(player, MONSTER_EYE_DESTROYER_SKIN) == 5) && (getQuestItemsCount(player, SHAMAN_NECKLACE) == 5))
 					{
 						st.setCond(17, true);
+						playSound(player, QuestSound.ITEMSOUND_QUEST_MIDDLE);
 					}
 					else
 					{
@@ -841,6 +843,7 @@ public class Q00214_TrialOfTheScholar extends Quest
 					if ((getQuestItemsCount(player, MONSTER_EYE_DESTROYER_SKIN) >= 5) && (getQuestItemsCount(player, SHACKLE_SCALP) == 2) && (getQuestItemsCount(player, SHAMAN_NECKLACE) == 5))
 					{
 						st.setCond(17, true);
+						playSound(player, QuestSound.ITEMSOUND_QUEST_MIDDLE);
 					}
 					else
 					{
@@ -857,6 +860,7 @@ public class Q00214_TrialOfTheScholar extends Quest
 					if ((getQuestItemsCount(player, SHAMAN_NECKLACE) >= 5) && (getQuestItemsCount(player, SHACKLE_SCALP) == 2) && (getQuestItemsCount(player, MONSTER_EYE_DESTROYER_SKIN) == 5))
 					{
 						st.setCond(17, true);
+						playSound(player, QuestSound.ITEMSOUND_QUEST_MIDDLE);
 					}
 					else
 					{
@@ -870,18 +874,19 @@ public class Q00214_TrialOfTheScholar extends Quest
 				if (hasQuestItems(player, TRIFF_RING) && !hasQuestItems(player, SCRIPTURE_CHAPTER_3) && (getRandom(100) < 30))
 				{
 					giveItems(player, SCRIPTURE_CHAPTER_3, 1);
-					playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					playSound(player, QuestSound.ITEMSOUND_QUEST_MIDDLE);
 				}
 				break;
 			}
-			case MEDUSA:
+			case GHOUL:
 			{
-				if (st.isCond(28) && !hasQuestItems(player, MEDUSA_BLOOD))
+				if (st.isCond(28) && (getQuestItemsCount(player, GHOUL_SKIN) < 10))
 				{
-					giveItems(player, MEDUSA_BLOOD, 1);
-					if ((getQuestItemsCount(player, MEDUSA_BLOOD) >= 12) && (getQuestItemsCount(player, GHOUL_SKIN) == 10) && (getQuestItemsCount(player, FETTERED_SOUL_ICHOR) == 5) && (getQuestItemsCount(player, ENCHANTED_GARGOYLE_NAIL) == 5))
+					giveItems(player, GHOUL_SKIN, 1);
+					if ((getQuestItemsCount(player, GHOUL_SKIN) >= 10) && (getQuestItemsCount(player, MEDUSA_BLOOD) == 12) && (getQuestItemsCount(player, FETTERED_SOUL_ICHOR) == 5) && (getQuestItemsCount(player, ENCHANTED_GARGOYLE_NAIL) == 5))
 					{
 						st.setCond(29, true);
+						playSound(player, QuestSound.ITEMSOUND_QUEST_MIDDLE);
 					}
 					else
 					{
@@ -890,14 +895,15 @@ public class Q00214_TrialOfTheScholar extends Quest
 				}
 				break;
 			}
-			case GHOUL:
+			case MEDUSA:
 			{
-				if (st.isCond(28) && !hasQuestItems(player, GHOUL_SKIN))
+				if (st.isCond(28) && (getQuestItemsCount(player, MEDUSA_BLOOD) < 12))
 				{
-					giveItems(player, GHOUL_SKIN, 1);
-					if ((getQuestItemsCount(player, GHOUL_SKIN) >= 10) && (getQuestItemsCount(player, MEDUSA_BLOOD) == 12) && (getQuestItemsCount(player, FETTERED_SOUL_ICHOR) == 5) && (getQuestItemsCount(player, ENCHANTED_GARGOYLE_NAIL) == 5))
+					giveItems(player, MEDUSA_BLOOD, 1);
+					if ((getQuestItemsCount(player, MEDUSA_BLOOD) >= 12) && (getQuestItemsCount(player, GHOUL_SKIN) == 10) && (getQuestItemsCount(player, FETTERED_SOUL_ICHOR) == 5) && (getQuestItemsCount(player, ENCHANTED_GARGOYLE_NAIL) == 5))
 					{
 						st.setCond(29, true);
+						playSound(player, QuestSound.ITEMSOUND_QUEST_MIDDLE);
 					}
 					else
 					{
@@ -908,12 +914,13 @@ public class Q00214_TrialOfTheScholar extends Quest
 			}
 			case FETTERED_SOUL:
 			{
-				if (st.isCond(28) && !hasQuestItems(player, FETTERED_SOUL_ICHOR))
+				if (st.isCond(28) && (getQuestItemsCount(player, FETTERED_SOUL_ICHOR) < 5))
 				{
 					giveItems(player, FETTERED_SOUL_ICHOR, 1);
 					if ((getQuestItemsCount(player, FETTERED_SOUL_ICHOR) >= 5) && (getQuestItemsCount(player, MEDUSA_BLOOD) == 12) && (getQuestItemsCount(player, GHOUL_SKIN) == 10) && (getQuestItemsCount(player, ENCHANTED_GARGOYLE_NAIL) == 5))
 					{
 						st.setCond(29, true);
+						playSound(player, QuestSound.ITEMSOUND_QUEST_MIDDLE);
 					}
 					else
 					{
@@ -924,12 +931,13 @@ public class Q00214_TrialOfTheScholar extends Quest
 			}
 			case ENCHANTED_GARGOYLE:
 			{
-				if (st.isCond(28) && !hasQuestItems(player, ENCHANTED_GARGOYLE_NAIL))
+				if (st.isCond(28) && (getQuestItemsCount(player, ENCHANTED_GARGOYLE_NAIL) < 5))
 				{
 					giveItems(player, ENCHANTED_GARGOYLE_NAIL, 1);
 					if ((getQuestItemsCount(player, ENCHANTED_GARGOYLE_NAIL) >= 5) && (getQuestItemsCount(player, MEDUSA_BLOOD) == 12) && (getQuestItemsCount(player, GHOUL_SKIN) == 10) && (getQuestItemsCount(player, FETTERED_SOUL_ICHOR) == 5))
 					{
 						st.setCond(29, true);
+						playSound(player, QuestSound.ITEMSOUND_QUEST_MIDDLE);
 					}
 					else
 					{
