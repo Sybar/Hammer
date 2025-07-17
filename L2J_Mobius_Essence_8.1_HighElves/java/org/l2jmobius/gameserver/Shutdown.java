@@ -125,6 +125,7 @@ public class Shutdown extends Thread
 	{
 		if (this == getInstance())
 		{
+			startShutdownActions();
 			return;
 		}
 		
