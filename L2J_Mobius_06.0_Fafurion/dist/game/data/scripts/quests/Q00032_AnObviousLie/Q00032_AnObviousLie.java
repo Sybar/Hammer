@@ -45,8 +45,8 @@ public class Q00032_AnObviousLie extends Quest
 	private static final int MAP_OF_GENTLER = 7165;
 	private static final ItemHolder MEDICINAL_HERB = new ItemHolder(7166, 20);
 	private static final ItemHolder SPIRIT_ORE = new ItemHolder(3031, 500);
-	private static final ItemHolder THREAD = new ItemHolder(1868, 1000);
-	private static final ItemHolder SUEDE = new ItemHolder(1866, 500);
+	private static final ItemHolder ARMOR_FRAGMENTS = new ItemHolder(36551, 70);
+	private static final ItemHolder GEMS = new ItemHolder(36556, 145);
 	// Misc
 	private static final int MIN_LEVEL = 45;
 	// Reward
@@ -155,7 +155,7 @@ public class Q00032_AnObviousLie extends Quest
 			case "raccoon":
 			case "rabbit":
 			{
-				if (qs.isCond(8) && takeAllItems(player, THREAD, SUEDE))
+				if (qs.isCond(8) && takeAllItems(player, ARMOR_FRAGMENTS, GEMS))
 				{
 					giveItems(player, EARS.get(event), 1);
 					qs.exitQuest(false, true);
@@ -243,7 +243,7 @@ public class Q00032_AnObviousLie extends Quest
 					}
 					case 8:
 					{
-						if (hasAllItems(player, true, THREAD, SUEDE))
+						if (hasAllItems(player, true, ARMOR_FRAGMENTS, GEMS))
 						{
 							htmltext = "30094-13.html";
 						}
