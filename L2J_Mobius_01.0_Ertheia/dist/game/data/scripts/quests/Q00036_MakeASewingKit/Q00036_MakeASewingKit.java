@@ -34,14 +34,14 @@ public class Q00036_MakeASewingKit extends Quest
 	// Monster
 	private static final int ENCHANTED_IRON_GOLEM = 20566;
 	// Items
-	private static final int ARTISANS_FRAME = 1891;
-	private static final int ORIHARUKON = 1893;
+	private static final int IRON_ORE = 36521;
+	private static final int COKES = 36561;
 	private static final int SEWING_KIT = 7078;
 	private static final int ENCHANTED_IRON = 7163;
 	// Misc
 	private static final int MIN_LEVEL = 60;
-	private static final int IRON_COUNT = 5;
-	private static final int COUNT = 10;
+	private static final int IRON_COUNT = 180;
+	private static final int COKES_COUNT = 360;
 	
 	public Q00036_MakeASewingKit()
 	{
@@ -81,10 +81,10 @@ public class Q00036_MakeASewingKit extends Quest
 			}
 			case "30847-09.html":
 			{
-				if ((getQuestItemsCount(player, ARTISANS_FRAME) >= COUNT) && (getQuestItemsCount(player, ORIHARUKON) >= COUNT))
+				if ((getQuestItemsCount(player, IRON_ORE) >= IRON_COUNT) && (getQuestItemsCount(player, COKES) >= COKES_COUNT))
 				{
-					takeItems(player, ARTISANS_FRAME, 10);
-					takeItems(player, ORIHARUKON, 10);
+					takeItems(player, IRON_ORE, IRON_COUNT);
+					takeItems(player, COKES, COKES_COUNT);
 					giveItems(player, SEWING_KIT, 1);
 					qs.exitQuest(false, true);
 				}
@@ -150,7 +150,7 @@ public class Q00036_MakeASewingKit extends Quest
 					}
 					case 3:
 					{
-						htmltext = ((getQuestItemsCount(player, ARTISANS_FRAME) >= COUNT) && (getQuestItemsCount(player, ORIHARUKON) >= COUNT)) ? "30847-07.html" : "30847-08.html";
+						htmltext = ((getQuestItemsCount(player, IRON_ORE) >= IRON_COUNT) && (getQuestItemsCount(player, COKES) >= COKES_COUNT)) ? "30847-07.html" : "30847-08.html";
 						break;
 					}
 				}
