@@ -38,11 +38,14 @@ public class Q00758_TheFallenKingsMen extends Quest
 {
 	// Npc
 	private static final int INTENDANT = 33407;
+	
 	// Items
 	private static final int TRAVIS_MARK = 36392;
 	private static final int REPATRIAT_SOUL = 36393;
+	
 	// Rewards
 	private static final int ESCORT_BOX = 36394;
+	
 	// Mobs
 	private static final int[] MOBS =
 	{
@@ -82,6 +85,7 @@ public class Q00758_TheFallenKingsMen extends Quest
 		{
 			return getNoQuestMsg(player);
 		}
+		
 		switch (event)
 		{
 			case "33407-02.htm":
@@ -136,6 +140,7 @@ public class Q00758_TheFallenKingsMen extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -155,6 +160,7 @@ public class Q00758_TheFallenKingsMen extends Quest
 						htmltext = "33407-08.htm";
 						break;
 					}
+					
 					qs.setState(State.CREATED);
 					// fallthrough
 				}
@@ -177,6 +183,7 @@ public class Q00758_TheFallenKingsMen extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -193,11 +200,13 @@ public class Q00758_TheFallenKingsMen extends Quest
 					giveItems(killer, TRAVIS_MARK, 1);
 					playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 				}
+				
 				if (getQuestItemsCount(killer, TRAVIS_MARK) >= MARK_COUNT)
 				{
 					qs.setCond(2, true);
 				}
 			}
+			
 			if (qs.getCond() > 0)
 			{
 				if ((ArrayUtil.contains(MOBS, npc.getId())) && (getQuestItemsCount(killer, REPATRIAT_SOUL) < SOUL_COUNT) && (getRandom(100) < 50))
@@ -205,6 +214,7 @@ public class Q00758_TheFallenKingsMen extends Quest
 					giveItems(killer, REPATRIAT_SOUL, 1);
 					playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 				}
+				
 				if (getQuestItemsCount(killer, REPATRIAT_SOUL) >= SOUL_COUNT)
 				{
 					qs.setCond(2, true);

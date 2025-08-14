@@ -63,7 +63,6 @@ import handlers.actionshifthandlers.SummonActionShift;
 import handlers.admincommandhandlers.AdminAdmin;
 import handlers.admincommandhandlers.AdminAnnouncements;
 import handlers.admincommandhandlers.AdminAugment;
-import handlers.admincommandhandlers.AdminBBS;
 import handlers.admincommandhandlers.AdminBuffs;
 import handlers.admincommandhandlers.AdminCamera;
 import handlers.admincommandhandlers.AdminCastle;
@@ -93,6 +92,7 @@ import handlers.admincommandhandlers.AdminGmChat;
 import handlers.admincommandhandlers.AdminGmSpeed;
 import handlers.admincommandhandlers.AdminGrandBoss;
 import handlers.admincommandhandlers.AdminHeal;
+import handlers.admincommandhandlers.AdminHelp;
 import handlers.admincommandhandlers.AdminHide;
 import handlers.admincommandhandlers.AdminHtml;
 import handlers.admincommandhandlers.AdminHwid;
@@ -113,7 +113,6 @@ import handlers.admincommandhandlers.AdminOnline;
 import handlers.admincommandhandlers.AdminPForge;
 import handlers.admincommandhandlers.AdminPathNode;
 import handlers.admincommandhandlers.AdminPcCafePoints;
-import handlers.admincommandhandlers.AdminPcCondOverride;
 import handlers.admincommandhandlers.AdminPetition;
 import handlers.admincommandhandlers.AdminPledge;
 import handlers.admincommandhandlers.AdminPremium;
@@ -140,7 +139,7 @@ import handlers.admincommandhandlers.AdminTest;
 import handlers.admincommandhandlers.AdminTransform;
 import handlers.admincommandhandlers.AdminVitality;
 import handlers.admincommandhandlers.AdminZone;
-import handlers.admincommandhandlers.AdminZones;
+import handlers.admincommandhandlers.AdminZoneBuild;
 import handlers.bypasshandlers.Augment;
 import handlers.bypasshandlers.Buy;
 import handlers.bypasshandlers.ChatLink;
@@ -322,6 +321,7 @@ import handlers.voicedcommandhandlers.Offline;
 import handlers.voicedcommandhandlers.OfflinePlay;
 import handlers.voicedcommandhandlers.Online;
 import handlers.voicedcommandhandlers.Premium;
+import handlers.voicedcommandhandlers.Wedding;
 
 /**
  * Master handler.
@@ -378,14 +378,12 @@ public class MasterHandler
 			AdminAdmin.class,
 			AdminAnnouncements.class,
 			AdminAugment.class,
-			AdminBBS.class,
 			AdminBuffs.class,
 			AdminCamera.class,
 			AdminChangeAccessLevel.class,
 			AdminClan.class,
 			AdminClanHall.class,
 			AdminCastle.class,
-			AdminPcCondOverride.class,
 			AdminCreateItem.class,
 			AdminCursedWeapons.class,
 			AdminDebug.class,
@@ -409,6 +407,7 @@ public class MasterHandler
 			AdminGmSpeed.class,
 			AdminGrandBoss.class,
 			AdminHeal.class,
+			AdminHelp.class,
 			AdminHide.class,
 			AdminHtml.class,
 			AdminHwid.class,
@@ -431,7 +430,6 @@ public class MasterHandler
 			AdminPetition.class,
 			AdminPForge.class,
 			AdminPledge.class,
-			AdminZones.class,
 			AdminPremium.class,
 			AdminPrimePoints.class,
 			AdminPunishment.class,
@@ -456,6 +454,7 @@ public class MasterHandler
 			AdminTransform.class,
 			AdminVitality.class,
 			AdminZone.class,
+			AdminZoneBuild.class,
 		},
 		{
 			// Bypass Handlers
@@ -575,6 +574,7 @@ public class MasterHandler
 			// TODO: Add configuration options for this voiced commands.
 			// CastleHandler.class,
 			// ClanHandler.class,
+			Config.ALLOW_WEDDING ? Wedding.class : null,
 			Config.ENABLE_AUTO_PLAY ? AutoPlay.class : null,
 			Config.BANKING_SYSTEM_ENABLED ? Banking.class : null,
 			Config.CHAT_ADMIN ? ChatAdmin.class : null,

@@ -44,6 +44,7 @@ public class DwarfWarehouseChange2 extends AbstractNpcAI
 	private static final int MARK_OF_SEARCHER = 2809; // proof11z
 	private static final int MARK_OF_GUILDSMAN = 3119; // proof11x
 	private static final int MARK_OF_PROSPERITY = 3238; // proof11y
+	
 	// Class
 	private static final int BOUNTY_HUNTER = 55;
 	
@@ -72,6 +73,7 @@ public class DwarfWarehouseChange2 extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -100,6 +102,7 @@ public class DwarfWarehouseChange2 extends AbstractNpcAI
 				takeItems(player, -1, MARK_OF_GUILDSMAN, MARK_OF_PROSPERITY, MARK_OF_SEARCHER);
 				player.setPlayerClass(BOUNTY_HUNTER);
 				player.setBaseClass(BOUNTY_HUNTER);
+				
 				// SystemMessage and cast skill is done by setClassId
 				player.broadcastUserInfo();
 				giveItems(player, SHADOW_ITEM_EXCHANGE_COUPON_C_GRADE, 15);
@@ -110,6 +113,7 @@ public class DwarfWarehouseChange2 extends AbstractNpcAI
 				htmltext = "30511-12.htm"; // fnNoProof11
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -137,6 +141,7 @@ public class DwarfWarehouseChange2 extends AbstractNpcAI
 		{
 			htmltext = "30511-07.htm"; // fnClassMismatch
 		}
+		
 		return htmltext;
 	}
 	

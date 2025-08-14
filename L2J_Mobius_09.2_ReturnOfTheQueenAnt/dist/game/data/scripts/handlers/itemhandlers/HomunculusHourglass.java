@@ -32,7 +32,7 @@ import org.l2jmobius.gameserver.network.serverpackets.homunculus.ExShowHomunculu
 public class HomunculusHourglass implements IItemHandler
 {
 	@Override
-	public boolean useItem(Playable playable, Item item, boolean forceUse)
+	public boolean onItemUse(Playable playable, Item item, boolean forceUse)
 	{
 		if (!playable.isPlayer())
 		{

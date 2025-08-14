@@ -77,6 +77,7 @@ public class ValakasTempleTeleport extends AbstractInstance
 				PLAYER_TO_LOGIN.remove(player.getObjectId());
 			}
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	
@@ -115,6 +116,7 @@ public class ValakasTempleTeleport extends AbstractInstance
 			PLAYER_TO_LOGIN.put(requestor.getObjectId(), new HashSet<>());
 			PLAYER_TO_LOGIN.get(requestor.getObjectId()).addAll(currentChannel.getMembers());
 		}
+		
 		return false;
 	}
 	
@@ -124,15 +126,18 @@ public class ValakasTempleTeleport extends AbstractInstance
 		{
 			return new SystemMessage(SystemMessageId.C1_S_LEVEL_DOES_NOT_CORRESPOND_TO_THE_REQUIREMENTS_FOR_ENTRY).addString(player.getName());
 		}
+		
 		final long currentTime = System.currentTimeMillis();
 		if (currentTime < InstanceManager.getInstance().getInstanceTime(player, ValakasTemple.VALAKAS_TEMPLE_INSTANCE_ID))
 		{
 			return new SystemMessage(SystemMessageId.C1_CANNOT_ENTER_YET).addString(player.getName());
 		}
+		
 		if (InstanceManager.getInstance().getPlayerInstance(player, true) != null)
 		{
 			return new SystemMessage(SystemMessageId.SINCE_C1_ENTERED_ANOTHER_INSTANCE_ZONE_THEREFORE_YOU_CANNOT_ENTER_THIS_DUNGEON).addString(player.getName());
 		}
+		
 		return null;
 	}
 	

@@ -76,6 +76,7 @@ public class NoblesseDailyMissionHandler extends AbstractDailyMissionHandler
 				}
 			}
 		}
+		
 		return false;
 	}
 	
@@ -103,6 +104,7 @@ public class NoblesseDailyMissionHandler extends AbstractDailyMissionHandler
 			{
 				entry.setStatus(DailyMissionStatus.AVAILABLE);
 			}
+			
 			storePlayerEntry(entry);
 		}
 	}

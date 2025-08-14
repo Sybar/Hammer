@@ -40,6 +40,7 @@ public class ResidenceOfKingPetram extends AbstractNpcAI
 	private static final int PETRAM = 29108;
 	private static final int PETRAM_PIECE = 29116;
 	private static final int PETRAM_FRAGMENT = 29117;
+	
 	// Skills
 	private static final SkillHolder EARTH_ENERGY = new SkillHolder(50066, 1);
 	private static final SkillHolder EARTH_FURY = new SkillHolder(50059, 1);
@@ -92,6 +93,7 @@ public class ResidenceOfKingPetram extends AbstractNpcAI
 						world.getParameters().getObject("minion" + minionIndex, Npc.class).setTarget(world.getNpc(PETRAM));
 						world.getParameters().getObject("minion" + minionIndex, Npc.class).doCast(TEST.getSkill());
 					}
+					
 					startQuestTimer("SUPPORT_PETRAM", 10100, npc, null);
 				}
 				break;
@@ -216,7 +218,7 @@ public class ResidenceOfKingPetram extends AbstractNpcAI
 	
 	private static class StageData
 	{
-		private static final int[] _hpPercents = new int[]
+		private static final int[] _hpPercents =
 		{
 			75,
 			50,

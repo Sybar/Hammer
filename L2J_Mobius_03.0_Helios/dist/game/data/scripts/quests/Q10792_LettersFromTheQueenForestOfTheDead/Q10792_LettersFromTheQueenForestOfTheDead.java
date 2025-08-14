@@ -34,12 +34,15 @@ public class Q10792_LettersFromTheQueenForestOfTheDead extends LetterQuest
 	// NPCs
 	private static final int INNOCENTIN = 31328;
 	private static final int HATUBA = 33849;
+	
 	// Items
 	private static final int SOE_RUNE = 39582;
 	private static final int SOE_FOREST_OF_DEAD = 39583;
 	private static final int ENCHANT_WEAPON_A = 26350;
+	
 	// Location
 	private static final Location TELEPORT_LOC = new Location(36563, -49178, -1128);
+	
 	// Misc
 	private static final int MIN_LEVEL = 65;
 	private static final int MAX_LEVEL = 69;
@@ -98,6 +101,7 @@ public class Q10792_LettersFromTheQueenForestOfTheDead extends LetterQuest
 				htmltext = null;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -122,6 +126,7 @@ public class Q10792_LettersFromTheQueenForestOfTheDead extends LetterQuest
 				htmltext = "33849-01.html";
 			}
 		}
+		
 		return htmltext;
 	}
 	

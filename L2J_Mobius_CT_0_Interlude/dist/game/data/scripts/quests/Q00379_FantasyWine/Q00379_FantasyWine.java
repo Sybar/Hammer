@@ -31,9 +31,11 @@ public class Q00379_FantasyWine extends Quest
 {
 	// NPCs
 	private static final int HARLAN = 30074;
+	
 	// Monsters
 	private static final int ENKU_CHAMPION = 20291;
 	private static final int ENKU_SHAMAN = 20292;
+	
 	// Items
 	private static final int LEAF = 5893;
 	private static final int STONE = 5894;
@@ -84,6 +86,7 @@ public class Q00379_FantasyWine extends Quest
 					htmltext = "30074-8.htm";
 					giveItems(player, 5958, 1);
 				}
+				
 				st.exitQuest(true, true);
 				break;
 			}

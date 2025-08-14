@@ -24,6 +24,8 @@ import org.l2jmobius.commons.threads.ThreadPool;
 import org.l2jmobius.gameserver.model.StatSet;
 import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.model.actor.transform.Transform;
+import org.l2jmobius.gameserver.model.actor.transform.TransformType;
 import org.l2jmobius.gameserver.model.effects.AbstractEffect;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
@@ -47,7 +49,8 @@ public class AddSkillBySkill extends AbstractEffect
 	@Override
 	public boolean canPump(Creature effector, Creature effected, Skill skill)
 	{
-		return effected.isPlayer() && !effected.isTransformed() && (effected.getSkillLevel(_existingSkillId) == _existingSkillLevel);
+		final Transform transform = effected.getTransformation();
+		return effected.isPlayer() && ((transform == null) || (transform.getType() == TransformType.MODE_CHANGE)) && (effected.getSkillLevel(_existingSkillId) == _existingSkillLevel);
 	}
 	
 	@Override

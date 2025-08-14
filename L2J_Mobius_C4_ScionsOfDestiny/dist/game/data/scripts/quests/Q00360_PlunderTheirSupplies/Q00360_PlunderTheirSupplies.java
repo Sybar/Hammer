@@ -38,6 +38,7 @@ public class Q00360_PlunderTheirSupplies extends Quest
 	private static final int SUPPLY_ITEM = 5872;
 	private static final int SUSPICIOUS_DOCUMENT = 5871;
 	private static final int RECIPE_OF_SUPPLY = 5870;
+	
 	// Drops
 	private static final Map<Integer, Integer> MONSTER_DROP_CHANCES = new HashMap<>();
 	static
@@ -141,6 +142,7 @@ public class Q00360_PlunderTheirSupplies extends Quest
 				giveItems(killer, RECIPE_OF_SUPPLY, 1);
 				takeItems(killer, SUSPICIOUS_DOCUMENT, -1);
 			}
+			
 			playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 		}
 	}

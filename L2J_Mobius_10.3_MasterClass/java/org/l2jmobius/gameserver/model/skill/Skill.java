@@ -22,6 +22,7 @@ package org.l2jmobius.gameserver.model.skill;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.EnumMap;
 import java.util.HashSet;
@@ -47,7 +48,6 @@ import org.l2jmobius.gameserver.model.StatSet;
 import org.l2jmobius.gameserver.model.WorldObject;
 import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.enums.creature.AttributeType;
-import org.l2jmobius.gameserver.model.actor.enums.player.PlayerCondOverride;
 import org.l2jmobius.gameserver.model.effects.AbstractEffect;
 import org.l2jmobius.gameserver.model.effects.EffectFlag;
 import org.l2jmobius.gameserver.model.effects.EffectType;
@@ -125,6 +125,7 @@ public class Skill
 	private final boolean _isRecoveryHerb;
 	
 	private final int _refId;
+	
 	// all times in milliseconds
 	private final int _hitTime;
 	private final double _hitCancelTime;
@@ -252,6 +253,7 @@ public class Skill
 				abnormalTime += Config.SKILL_DURATION_LIST.get(_id);
 			}
 		}
+		
 		_abnormalTime = abnormalTime;
 		_isAbnormalInstant = set.getBoolean("abnormalInstant", false);
 		parseAbnormalVisualEffect(set.getString("abnormalVisualEffect", null));
@@ -437,6 +439,7 @@ public class Skill
 				return true;
 			}
 		}
+		
 		return false;
 	}
 	
@@ -889,6 +892,7 @@ public class Skill
 		{
 			return (_affectLimit[0] + Rnd.get(_affectLimit[1]));
 		}
+		
 		return 0;
 	}
 	
@@ -1040,19 +1044,19 @@ public class Skill
 		return _stayAfterDeath || _irreplaceableBuff || _isNecessaryToggle;
 	}
 	
-	public boolean isBad()
+	public boolean hasNegativeEffect()
 	{
 		return _effectPoint < 0;
 	}
 	
 	public boolean checkCondition(Creature creature, WorldObject object, boolean sendMessage)
 	{
-		if (creature.isFakePlayer() || (creature.canOverrideCond(PlayerCondOverride.SKILL_CONDITIONS) && !Config.GM_SKILL_RESTRICTION))
+		if (creature.isFakePlayer() || (creature.isGM() && !Config.GM_SKILL_RESTRICTION))
 		{
 			return true;
 		}
 		
-		if (creature.isPlayer() && creature.asPlayer().isMounted() && isBad() && !MountEnabledSkillList.contains(_id))
+		if (creature.isPlayer() && creature.asPlayer().isMounted() && hasNegativeEffect() && !MountEnabledSkillList.contains(_id))
 		{
 			final SystemMessage sm = new SystemMessage(SystemMessageId.S1_THE_FUNCTION_CANNOT_BE_USED_AS_CERTAIN_REQUIREMENTS_ARE_NOT_MET);
 			sm.addSkillName(_id);
@@ -1062,12 +1066,13 @@ public class Skill
 		
 		if (!checkConditions(SkillConditionScope.GENERAL, creature, object) || !checkConditions(SkillConditionScope.TARGET, creature, object))
 		{
-			if (sendMessage && !((creature == object) && isBad())) // Self targeted bad skills should not send a message.
+			if (sendMessage && !((creature == object) && hasNegativeEffect())) // Self targeted negative effect skills should not send a message.
 			{
 				final SystemMessage sm = new SystemMessage(SystemMessageId.S1_THE_FUNCTION_CANNOT_BE_USED_AS_CERTAIN_REQUIREMENTS_ARE_NOT_MET);
 				sm.addSkillName(_id);
 				creature.sendPacket(sm);
 			}
+			
 			return false;
 		}
 		
@@ -1132,6 +1137,13 @@ public class Skill
 			{
 				final List<WorldObject> result = new LinkedList<>();
 				handler.forEachAffected(creature, target, this, result::add);
+				
+				// Prevent monsters buffing playables.
+				if ((creature != null) && creature.isMonster() && !hasNegativeEffect())
+				{
+					result.removeIf(wo -> wo.isPlayable());
+				}
+				
 				return result;
 			}
 			catch (Exception e)
@@ -1140,7 +1152,11 @@ public class Skill
 			}
 		}
 		
-		creature.sendMessage("Target affect scope of skill " + this + " is not currently handled.");
+		if (creature != null)
+		{
+			creature.sendMessage("Target affect scope of skill " + this + " is not currently handled.");
+		}
+		
 		return null;
 	}
 	
@@ -1239,7 +1255,7 @@ public class Skill
 					
 					// tempfix for hp/mp regeneration
 					// TODO: Find where regen stops and make a proper fix
-					if (info.getEffected().isPlayer() && !isBad())
+					if (info.getEffected().isPlayer() && !hasNegativeEffect())
 					{
 						info.getEffected().asPlayer().getStatus().startHpMpRegeneration();
 					}
@@ -1307,10 +1323,20 @@ public class Skill
 			return;
 		}
 		
+		final int skillId = effector.isPlayer() ? effector.asPlayer().getReplacementSkill(_id) : _id;
 		boolean addContinuousEffects = !passive && (_operateType.isToggle() || (_operateType.isContinuous() && Formulas.calcEffectSuccess(effector, effected, this)));
 		if (!self && !passive)
 		{
-			final BuffInfo info = new BuffInfo(effector, effected, this, !instant, item, null);
+			final BuffInfo info;
+			if (skillId != _id)
+			{
+				info = new BuffInfo(effector, effected, SkillData.getInstance().getSkill(skillId, getLevel(), getSubLevel()), !instant, item, null);
+			}
+			else
+			{
+				info = new BuffInfo(effector, effected, this, !instant, item, null);
+			}
+			
 			if (addContinuousEffects && (abnormalTime > 0))
 			{
 				info.setAbnormalTime(abnormalTime);
@@ -1323,7 +1349,7 @@ public class Skill
 			if (addContinuousEffects)
 			{
 				// Aura skills reset the abnormal time.
-				final BuffInfo existingInfo = _operateType.isAura() ? effected.getEffectList().getBuffInfoBySkillId(_id) : null;
+				final BuffInfo existingInfo = _operateType.isAura() ? effected.getEffectList().getBuffInfoBySkillId(skillId) : null;
 				if (existingInfo != null)
 				{
 					existingInfo.resetAbnormalTime(info.getAbnormalTime());
@@ -1352,7 +1378,16 @@ public class Skill
 		{
 			addContinuousEffects = !passive && (_operateType.isToggle() || (_operateType.isSelfContinuous() && Formulas.calcEffectSuccess(effector, effector, this)));
 			
-			final BuffInfo info = new BuffInfo(effector, effector, this, !instant, item, null);
+			final BuffInfo info;
+			if (skillId != _id)
+			{
+				info = new BuffInfo(effector, effected, SkillData.getInstance().getSkill(skillId, getLevel(), getSubLevel()), !instant, item, null);
+			}
+			else
+			{
+				info = new BuffInfo(effector, effector, this, !instant, item, null);
+			}
+			
 			if (addContinuousEffects && (abnormalTime > 0))
 			{
 				info.setAbnormalTime(abnormalTime);
@@ -1362,7 +1397,7 @@ public class Skill
 			if (addContinuousEffects)
 			{
 				// Aura skills reset the abnormal time.
-				final BuffInfo existingInfo = _operateType.isAura() ? effector.getEffectList().getBuffInfoBySkillId(_id) : null;
+				final BuffInfo existingInfo = _operateType.isAura() ? effector.getEffectList().getBuffInfoBySkillId(skillId) : null;
 				if (existingInfo != null)
 				{
 					existingInfo.resetAbnormalTime(info.getAbnormalTime());
@@ -1383,7 +1418,16 @@ public class Skill
 		
 		if (passive)
 		{
-			final BuffInfo info = new BuffInfo(effector, effector, this, true, item, null);
+			final BuffInfo info;
+			if (skillId != _id)
+			{
+				info = new BuffInfo(effector, effected, SkillData.getInstance().getSkill(skillId, getLevel(), getSubLevel()), true, item, null);
+			}
+			else
+			{
+				info = new BuffInfo(effector, effector, this, true, item, null);
+			}
+			
 			applyEffectScope(EffectScope.GENERAL, info, false, true);
 			effector.getEffectList().add(info);
 		}
@@ -1411,7 +1455,7 @@ public class Skill
 	 * @param caster the caster
 	 * @param targets the targets
 	 */
-	public void activateSkill(Creature caster, WorldObject... targets)
+	public void activateSkill(Creature caster, Collection<WorldObject> targets)
 	{
 		activateSkill(caster, null, targets);
 	}
@@ -1422,47 +1466,98 @@ public class Skill
 	 * @param item
 	 * @param targets the targets
 	 */
-	public void activateSkill(Creature caster, Item item, WorldObject... targets)
+	public void activateSkill(Creature caster, Item item, Collection<WorldObject> targets)
 	{
-		for (WorldObject targetObject : targets)
+		for (WorldObject target : targets)
 		{
-			if (!targetObject.isCreature())
+			if (!target.isCreature() || (target.isSummon() && !isSharedWithSummon()))
 			{
 				continue;
 			}
 			
-			if (targetObject.isSummon() && !isSharedWithSummon())
+			final Creature skillTarget = target.asCreature();
+			if (Formulas.calcBuffDebuffReflection(skillTarget, this))
 			{
-				continue;
-			}
-			
-			final Creature target = targetObject.asCreature();
-			if (Formulas.calcBuffDebuffReflection(target, this))
-			{
-				// if skill is reflected instant effects should be casted on target
-				// and continuous effects on caster
-				applyEffects(target, caster, false, 0);
+				// If skill is reflected instant effects should be casted on target and continuous effects on caster.
+				applyEffects(skillTarget, caster, false, 0);
 				
-				final BuffInfo info = new BuffInfo(caster, target, this, false, item, null);
+				final BuffInfo info = new BuffInfo(caster, skillTarget, this, false, item, null);
 				applyEffectScope(EffectScope.GENERAL, info, true, false);
 				
-				final EffectScope pvpOrPveEffectScope = caster.isPlayable() && target.isAttackable() ? EffectScope.PVE : caster.isPlayable() && target.isPlayable() ? EffectScope.PVP : null;
+				final EffectScope pvpOrPveEffectScope = caster.isPlayable() && skillTarget.isAttackable() ? EffectScope.PVE : caster.isPlayable() && skillTarget.isPlayable() ? EffectScope.PVP : null;
 				applyEffectScope(pvpOrPveEffectScope, info, true, false);
 			}
 			else
 			{
-				applyEffects(caster, target, item);
+				applyEffects(caster, skillTarget, item);
 			}
 		}
 		
-		// Self Effect
+		// Self Effect.
 		if (hasEffects(EffectScope.SELF))
 		{
 			if (caster.isAffectedBySkill(_id))
 			{
 				caster.stopSkillEffects(SkillFinishType.REMOVED, _id);
 			}
+			
 			applyEffects(caster, caster, true, false, true, 0, item);
+		}
+		
+		if (!caster.isCubic())
+		{
+			if (useSpiritShot())
+			{
+				caster.unchargeShot(caster.isChargedShot(ShotType.BLESSED_SPIRITSHOTS) ? ShotType.BLESSED_SPIRITSHOTS : ShotType.SPIRITSHOTS);
+			}
+			else if (useSoulShot())
+			{
+				caster.unchargeShot(caster.isChargedShot(ShotType.BLESSED_SOULSHOTS) ? ShotType.BLESSED_SOULSHOTS : ShotType.SOULSHOTS);
+			}
+		}
+		
+		if (_isSuicideAttack)
+		{
+			caster.doDie(caster);
+		}
+	}
+	
+	/**
+	 * Activates the skill to the target.
+	 * @param caster the caster
+	 * @param target the target WorldObject
+	 */
+	public void activateSkill(Creature caster, WorldObject target)
+	{
+		if (target.isCreature() && (!target.isSummon() || isSharedWithSummon()))
+		{
+			final Creature skillTarget = target.asCreature();
+			if (Formulas.calcBuffDebuffReflection(skillTarget, this))
+			{
+				// If skill is reflected instant effects should be casted on target and continuous effects on caster.
+				applyEffects(skillTarget, caster, false, 0);
+				
+				final BuffInfo info = new BuffInfo(caster, skillTarget, this, false, null, null);
+				applyEffectScope(EffectScope.GENERAL, info, true, false);
+				
+				final EffectScope pvpOrPveEffectScope = caster.isPlayable() && skillTarget.isAttackable() ? EffectScope.PVE : caster.isPlayable() && skillTarget.isPlayable() ? EffectScope.PVP : null;
+				applyEffectScope(pvpOrPveEffectScope, info, true, false);
+			}
+			else
+			{
+				applyEffects(caster, skillTarget, null);
+			}
+		}
+		
+		// Self Effect.
+		if (hasEffects(EffectScope.SELF))
+		{
+			if (caster.isAffectedBySkill(_id))
+			{
+				caster.stopSkillEffects(SkillFinishType.REMOVED, _id);
+			}
+			
+			applyEffects(caster, caster, true, false, true, 0, null);
 		}
 		
 		if (!caster.isCubic())
@@ -1637,6 +1732,7 @@ public class Skill
 				return true;
 			}
 		}
+		
 		return false;
 	}
 	

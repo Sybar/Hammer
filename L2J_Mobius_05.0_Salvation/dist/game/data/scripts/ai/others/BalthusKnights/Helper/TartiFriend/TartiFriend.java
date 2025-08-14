@@ -48,11 +48,13 @@ public final class TartiFriend extends AbstractNpcAI
 {
 	// NPCs
 	private static final int TARTI_FRIEND = 34365;
+	
 	// Monster
 	// private static final int HATCHLING = 24089;
 	private static final int GEM_DRAGON_ANTHARAS = 24091;
 	private static final int ANTHARAS = 24087;
 	private static final int ANTHARAS_TRANSFORM = 24088;
+	
 	// Skills
 	private static final SkillHolder HydroAttackSkill = new SkillHolder(32131, 1);
 	// private static final SkillHolder AirRushSkill = new SkillHolder(32132, 1);
@@ -158,6 +160,7 @@ public final class TartiFriend extends AbstractNpcAI
 							{
 								npc.setRunning();
 							}
+							
 							addMoveToDesire(npc, randLoc, 23);
 						}
 					}
@@ -252,6 +255,7 @@ public final class TartiFriend extends AbstractNpcAI
 						npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.I_DIDN_T_KNOW_THAT_ANTHARAS_COULD_POLYMORPH);
 						_firstAntharasTalk = false;
 					}
+					
 					final Npc antharas_trans = instance.getNpc(ANTHARAS_TRANSFORM);
 					if (antharas_trans != null)
 					{
@@ -298,6 +302,7 @@ public final class TartiFriend extends AbstractNpcAI
 						{
 							addMoveToDesire(tarti, tarti.getTarget().getLocation(), 23);
 						}
+						
 						addSkillCastDesire(tarti, npc, HydroAttackSkill, 10000);
 						if (_firstAttacked)
 						{

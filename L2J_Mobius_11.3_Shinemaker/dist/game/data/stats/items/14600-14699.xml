@@ -34,15 +34,15 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<cond msgId="2453">
+		<conditions msgId="2453">
 			<and>
 				<player races="KAMAEL" />
 				<player cloakStatus="true" />
 			</and>
-		</cond>
-		<cond>
+		</conditions>
+		<conditions>
 			<player level="80" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">20</stat>
 		</stats>
@@ -59,15 +59,15 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<cond msgId="2453">
+		<conditions msgId="2453">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 				<player cloakStatus="true" />
 			</and>
-		</cond>
-		<cond>
+		</conditions>
+		<conditions>
 			<player level="80" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">20</stat>
 		</stats>
@@ -169,16 +169,16 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<cond msgId="2453">
+		<conditions msgId="2453">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 				<player categoryType="ROGUE_CLOACK" />
 				<player cloakStatus="true" />
 			</and>
-		</cond>
-		<cond>
+		</conditions>
+		<conditions>
 			<player level="80" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">20</stat>
 		</stats>
@@ -195,12 +195,12 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<cond msgId="2453">
+		<conditions msgId="2453">
 			<player cloakStatus="true" />
-		</cond>
-		<cond>
+		</conditions>
+		<conditions>
 			<player level="80" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">20</stat>
 		</stats>
@@ -217,16 +217,16 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<cond msgId="2453">
+		<conditions msgId="2453">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 				<player categoryType="MAGE_CLOACK" />
 				<player cloakStatus="true" />
 			</and>
-		</cond>
-		<cond>
+		</conditions>
+		<conditions>
 			<player level="80" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">20</stat>
 		</stats>
@@ -766,9 +766,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="time" val="180" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">46</stat>
 			<stat type="mAtk">38</stat>
@@ -805,9 +805,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="time" val="180" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">56</stat>
 			<stat type="mAtk">38</stat>
@@ -842,9 +842,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="time" val="180" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">65</stat>
 			<stat type="mAtk">38</stat>
@@ -1694,9 +1694,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="Elixir" />
 		<set name="commissionItemType" val="POTION" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2860" level="1" /> <!-- Superior No-grade Elixir of Life -->
 		</skills>
@@ -1716,9 +1716,9 @@
 		<set name="handler" val="Elixir" />
 		<set name="crystal_type" val="D" />
 		<set name="commissionItemType" val="POTION" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2860" level="2" /> <!-- Superior D-grade Elixir of Life -->
 		</skills>
@@ -1738,9 +1738,9 @@
 		<set name="handler" val="Elixir" />
 		<set name="crystal_type" val="C" />
 		<set name="commissionItemType" val="POTION" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2860" level="3" /> <!-- Superior C-grade Elixir of Life -->
 		</skills>
@@ -1760,9 +1760,9 @@
 		<set name="handler" val="Elixir" />
 		<set name="crystal_type" val="B" />
 		<set name="commissionItemType" val="POTION" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2860" level="4" /> <!-- Superior B-grade Elixir of Life -->
 		</skills>
@@ -1782,9 +1782,9 @@
 		<set name="handler" val="Elixir" />
 		<set name="crystal_type" val="A" />
 		<set name="commissionItemType" val="POTION" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2860" level="5" /> <!-- Superior A-grade Elixir of Life -->
 		</skills>
@@ -1805,9 +1805,9 @@
 		<set name="crystal_type" val="S" />
 		<set name="is_event_restricted" val="true" />
 		<set name="commissionItemType" val="POTION" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2860" level="6" /> <!-- Superior S-grade Elixir of Life -->
 		</skills>
@@ -1826,9 +1826,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="Elixir" />
 		<set name="commissionItemType" val="POTION" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2861" level="1" /> <!-- Superior No-grade Elixir of Mind -->
 		</skills>
@@ -1848,9 +1848,9 @@
 		<set name="handler" val="Elixir" />
 		<set name="crystal_type" val="D" />
 		<set name="commissionItemType" val="POTION" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2861" level="2" /> <!-- Superior D-grade Elixir of Mind -->
 		</skills>
@@ -1870,9 +1870,9 @@
 		<set name="handler" val="Elixir" />
 		<set name="crystal_type" val="C" />
 		<set name="commissionItemType" val="POTION" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2861" level="3" /> <!-- Superior C-grade Elixir of Mind -->
 		</skills>
@@ -1892,9 +1892,9 @@
 		<set name="handler" val="Elixir" />
 		<set name="crystal_type" val="B" />
 		<set name="commissionItemType" val="POTION" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2861" level="4" /> <!-- Superior B-grade Elixir of Mind -->
 		</skills>
@@ -1914,9 +1914,9 @@
 		<set name="handler" val="Elixir" />
 		<set name="crystal_type" val="A" />
 		<set name="commissionItemType" val="POTION" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2861" level="5" /> <!-- Superior A-grade Elixir of Mind -->
 		</skills>
@@ -1937,9 +1937,9 @@
 		<set name="crystal_type" val="S" />
 		<set name="commissionItemType" val="POTION" />
 		<set name="is_event_restricted" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2861" level="6" /> <!-- Superior S-grade Elixir of Mind -->
 		</skills>

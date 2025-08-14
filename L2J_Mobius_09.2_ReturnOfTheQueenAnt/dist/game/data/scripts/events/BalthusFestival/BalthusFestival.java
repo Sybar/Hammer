@@ -59,6 +59,7 @@ public class BalthusFestival extends LongTimeEvent implements IXmlReader
 {
 	// NPC
 	private static final int FESTIVAL_FAIRY = 34330;
+	
 	// Item
 	private static final ItemHolder GOOD_LUCK_BAG = new ItemHolder(60011, 1); // Festival Fairy's Good Luck Bag
 	// Skills
@@ -74,6 +75,7 @@ public class BalthusFestival extends LongTimeEvent implements IXmlReader
 		SKILLS.add(new SkillHolder(27859, 1)); // Balthus_Coupon_2_Hour
 		SKILLS.add(new SkillHolder(48853, 1)); // Balthus_Coupon_2_Hour
 	}
+	
 	// Misc
 	private static final String BALTHUS_BAG_VAR = "BALTHUS_BAG";
 	
@@ -189,6 +191,7 @@ public class BalthusFestival extends LongTimeEvent implements IXmlReader
 					{
 						return "34330-5.htm";
 					}
+					
 					player.addItem(ItemProcessType.REWARD, 81711, 1, null, true);
 					return "34330-6.htm";
 				}
@@ -198,6 +201,7 @@ public class BalthusFestival extends LongTimeEvent implements IXmlReader
 					{
 						return "34330-5.htm";
 					}
+					
 					player.addItem(ItemProcessType.REWARD, 81710, 1, null, true);
 					return "34330-6.htm";
 				}
@@ -207,11 +211,13 @@ public class BalthusFestival extends LongTimeEvent implements IXmlReader
 					{
 						return "34330-5.htm";
 					}
+					
 					player.addItem(ItemProcessType.REWARD, 81709, 1, null, true);
 					return "34330-6.htm";
 				}
 			}
 		}
+		
 		return null;
 	}
 	
@@ -278,6 +284,7 @@ public class BalthusFestival extends LongTimeEvent implements IXmlReader
 				BalthusEventManager.getInstance().addPlayer(player);
 			}
 		}
+		
 		player.sendPacket(new ExBalthusEvent(player));
 	}
 	

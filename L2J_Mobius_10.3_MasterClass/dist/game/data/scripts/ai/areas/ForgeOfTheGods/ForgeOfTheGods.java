@@ -109,6 +109,7 @@ public class ForgeOfTheGods extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return null;
 	}
 	
@@ -167,6 +168,7 @@ public class ForgeOfTheGods extends AbstractNpcAI
 				mob = addSpawn(LAVASAURUSES[0], npc, true);
 			}
 		}
+		
 		if (mob != null)
 		{
 			mob.asAttackable().addDamageHate(killer, 0, 9999);
@@ -196,6 +198,7 @@ public class ForgeOfTheGods extends AbstractNpcAI
 		{
 			mob = addSpawn(mobs[1], npc, true);
 		}
+		
 		return mob;
 	}
 	

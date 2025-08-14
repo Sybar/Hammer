@@ -37,6 +37,7 @@ public class Q00127_KamaelAWindowToTheFuture extends Quest
 	private static final int OLTLIN = 30862;
 	private static final int JURIS = 30113;
 	private static final int RODEMAI = 30756;
+	
 	// Items
 	private static final int MARK_DOMINIC = 8939;
 	private static final int MARK_HUMAN = 8940;

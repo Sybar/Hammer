@@ -54,6 +54,7 @@ public class VipData implements IXmlReader
 		{
 			return;
 		}
+		
 		_vipTiers.clear();
 		parseDatapackFile("data/Vip.xml");
 		LOGGER.info(getClass().getSimpleName() + ": Loaded " + _vipTiers.size() + " vips.");
@@ -82,6 +83,7 @@ public class VipData implements IXmlReader
 							LOGGER.severe(getClass().getSimpleName() + ": Missing tier for vip, skipping");
 							continue;
 						}
+						
 						tier = Byte.parseByte(att.getNodeValue());
 						
 						att = attrs.getNamedItem("points-required");
@@ -90,6 +92,7 @@ public class VipData implements IXmlReader
 							LOGGER.severe(getClass().getSimpleName() + ": Missing points-required for vip: " + tier + ", skipping");
 							continue;
 						}
+						
 						required = Integer.parseInt(att.getNodeValue());
 						
 						att = attrs.getNamedItem("points-lose");
@@ -98,6 +101,7 @@ public class VipData implements IXmlReader
 							LOGGER.severe(getClass().getSimpleName() + ": Missing points-lose for vip: " + tier + ", skipping");
 							continue;
 						}
+						
 						lose = Integer.parseInt(att.getNodeValue());
 						
 						final VipInfo vipInfo = new VipInfo(tier, required, lose);
@@ -117,6 +121,7 @@ public class VipData implements IXmlReader
 								}
 							}
 						}
+						
 						_vipTiers.put(tier, vipInfo);
 					}
 				}

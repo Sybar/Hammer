@@ -55,6 +55,7 @@ public class ShuttleEngine implements Runnable
 			{
 				return;
 			}
+			
 			switch (_cycle)
 			{
 				case 0:

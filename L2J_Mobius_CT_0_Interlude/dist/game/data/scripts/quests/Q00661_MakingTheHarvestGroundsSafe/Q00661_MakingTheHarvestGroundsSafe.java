@@ -31,14 +31,17 @@ public class Q00661_MakingTheHarvestGroundsSafe extends Quest
 {
 	// NPC
 	private static final int NORMAN = 30210;
+	
 	// Monsters
 	private static final int GIANT_POISON_BEE = 21095;
 	private static final int CLOUDY_BEAST = 21096;
 	private static final int YOUNG_ARANEID = 21097;
+	
 	// Items
 	private static final int STING_OF_GIANT_POISON_BEE = 8283;
 	private static final int CLOUDY_GEM = 8284;
 	private static final int TALON_OF_YOUNG_ARANEID = 8285;
+	
 	// Reward
 	private static final int ADENA = 57;
 	
@@ -79,6 +82,7 @@ public class Q00661_MakingTheHarvestGroundsSafe extends Quest
 				{
 					sum += 2871;
 				}
+				
 				takeItems(player, STING_OF_GIANT_POISON_BEE, item1);
 				takeItems(player, CLOUDY_GEM, item2);
 				takeItems(player, TALON_OF_YOUNG_ARANEID, item3);

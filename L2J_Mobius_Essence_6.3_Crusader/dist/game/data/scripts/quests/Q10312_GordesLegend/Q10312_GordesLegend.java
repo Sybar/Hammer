@@ -40,6 +40,7 @@ public class Q10312_GordesLegend extends Quest
 {
 	// NPC
 	private static final int CRIGON = 34321;
+	
 	// Monsters
 	private static final int GORDE_ANTILOPE = 22434;
 	private static final int GORDE_BUFFALO = 22436;
@@ -49,10 +50,12 @@ public class Q10312_GordesLegend extends Quest
 	private static final int GORDE_HUNTER = 22441;
 	private static final int GORDE_WIZARD = 22442;
 	private static final int EYE_WACHMAN = 22443;
+	
 	// Items
 	private static final ItemHolder SAYHA_COOKIE = new ItemHolder(93274, 20);
 	private static final ItemHolder SAYHA_STORM = new ItemHolder(91712, 12);
 	private static final ItemHolder MAGIC_LAMP_CHARGING_POTION = new ItemHolder(91757, 2);
+	
 	// Misc
 	private static final int MIN_LEVEL = 87;
 	private static final String KILL_COUNT_VAR = "KillCount";
@@ -103,6 +106,7 @@ public class Q10312_GordesLegend extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -116,6 +120,7 @@ public class Q10312_GordesLegend extends Quest
 			htmltext = "noreq.htm";
 			return htmltext;
 		}
+		
 		if (qs.isCreated())
 		{
 			htmltext = "34321-01.htm";
@@ -135,6 +140,7 @@ public class Q10312_GordesLegend extends Quest
 		{
 			htmltext = getAlreadyCompletedMsg(player);
 		}
+		
 		return htmltext;
 	}
 	
@@ -179,6 +185,7 @@ public class Q10312_GordesLegend extends Quest
 				return holder;
 			}
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

@@ -47,6 +47,7 @@ public class LogisticOfficer extends AbstractNpcAI
 		{
 			return "noclan.html";
 		}
+		
 		return super.onFirstTalk(npc, player);
 	}
 	

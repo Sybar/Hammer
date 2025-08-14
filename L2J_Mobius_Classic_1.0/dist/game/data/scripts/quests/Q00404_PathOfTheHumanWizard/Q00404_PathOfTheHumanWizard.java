@@ -39,6 +39,7 @@ public class Q00404_PathOfTheHumanWizard extends Quest
 	private static final int FLAME_SALAMANDER = 30411;
 	private static final int WIND_SYLPH = 30412;
 	private static final int WATER_UNDINE = 30413;
+	
 	// Items
 	private static final int MAP_OF_LUSTER = 1280;
 	private static final int KEY_OF_FLAME = 1281;
@@ -52,13 +53,17 @@ public class Q00404_PathOfTheHumanWizard extends Quest
 	private static final int RUSTY_COIN = 1289;
 	private static final int RED_SOIL = 1290;
 	private static final int EARTH_RING = 1291;
+	
 	// Reward
 	private static final int BEAD_OF_SEASON = 1292;
+	
 	// Monster
 	private static final int RED_BEAR = 20021;
 	private static final int RATMAN_WARRIOR = 20359;
+	
 	// Quest Monster
 	private static final int WATER_SEER = 27030;
+	
 	// Misc
 	private static final int MIN_LEVEL = 19;
 	
@@ -127,6 +132,7 @@ public class Q00404_PathOfTheHumanWizard extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -188,6 +194,7 @@ public class Q00404_PathOfTheHumanWizard extends Quest
 				htmltext = "30391-04.htm";
 			}
 		}
+		
 		if (qs.isCompleted())
 		{
 			if (npc.getId() == PARINA)
@@ -215,6 +222,7 @@ public class Q00404_PathOfTheHumanWizard extends Quest
 						{
 							giveItems(player, BEAD_OF_SEASON, 1);
 						}
+						
 						final int level = player.getLevel();
 						if (level >= 20)
 						{
@@ -228,6 +236,7 @@ public class Q00404_PathOfTheHumanWizard extends Quest
 						{
 							addExpAndSp(player, 80314, 5087);
 						}
+						
 						qs.exitQuest(false, true);
 						player.sendPacket(new SocialAction(player.getObjectId(), 3));
 						htmltext = "30391-06.html";
@@ -242,6 +251,7 @@ public class Q00404_PathOfTheHumanWizard extends Quest
 						{
 							giveItems(player, RUSTY_COIN, 1);
 						}
+						
 						qs.setCond(11, true);
 						htmltext = "30409-01.html";
 					}
@@ -259,6 +269,7 @@ public class Q00404_PathOfTheHumanWizard extends Quest
 							{
 								giveItems(player, EARTH_RING, 1);
 							}
+							
 							qs.setCond(13, true);
 							htmltext = "30409-03.html";
 						}
@@ -292,6 +303,7 @@ public class Q00404_PathOfTheHumanWizard extends Quest
 						{
 							giveItems(player, MAP_OF_LUSTER, 1);
 						}
+						
 						qs.setCond(2, true);
 						htmltext = "30411-01.html";
 					}
@@ -309,6 +321,7 @@ public class Q00404_PathOfTheHumanWizard extends Quest
 							{
 								giveItems(player, FLAME_EARING, 1);
 							}
+							
 							qs.setCond(4, true);
 							htmltext = "30411-03.html";
 						}
@@ -327,6 +340,7 @@ public class Q00404_PathOfTheHumanWizard extends Quest
 						{
 							giveItems(player, BROKEN_BRONZE_MIRROR, 1);
 						}
+						
 						qs.setCond(5, true);
 						htmltext = "30412-01.html";
 					}
@@ -344,6 +358,7 @@ public class Q00404_PathOfTheHumanWizard extends Quest
 							{
 								giveItems(player, WIND_BANGLE, 1);
 							}
+							
 							qs.setCond(7, true);
 							htmltext = "30412-03.html";
 						}
@@ -362,6 +377,7 @@ public class Q00404_PathOfTheHumanWizard extends Quest
 						{
 							giveItems(player, RAMAS_DIARY, 1);
 						}
+						
 						qs.setCond(8, true);
 						htmltext = "30413-01.html";
 					}
@@ -379,6 +395,7 @@ public class Q00404_PathOfTheHumanWizard extends Quest
 							{
 								giveItems(player, WATER_NECKLACE, 1);
 							}
+							
 							qs.setCond(10, true);
 							htmltext = "30413-03.html";
 						}
@@ -391,6 +408,7 @@ public class Q00404_PathOfTheHumanWizard extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 }

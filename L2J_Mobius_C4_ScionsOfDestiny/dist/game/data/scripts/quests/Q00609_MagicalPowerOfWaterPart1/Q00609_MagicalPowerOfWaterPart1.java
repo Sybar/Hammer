@@ -36,6 +36,7 @@ public class Q00609_MagicalPowerOfWaterPart1 extends Quest
 	private static final int ASEFA = 31372;
 	private static final int UDANS_BOX = 31561;
 	private static final int UDANS_EYE = 31684;
+	
 	// Monsters
 	private static final int[] VARKA_MOBS =
 	{
@@ -61,6 +62,7 @@ public class Q00609_MagicalPowerOfWaterPart1 extends Quest
 		21374, // Prophet's Guard
 		21375, // Disciple of Prophet
 	};
+	
 	// Items
 	private static final int KEY = 1661;
 	private static final int STOLEN_GREEN_TOTEM = 7237;
@@ -74,6 +76,7 @@ public class Q00609_MagicalPowerOfWaterPart1 extends Quest
 		7214, // Mark of Ketra's Alliance - Level 4
 		7215, // Mark of Ketra's Alliance - Level 5
 	};
+	
 	// Skills
 	private static final SkillHolder GOW = new SkillHolder(4547, 1); // Gaze of Watcher
 	private static final SkillHolder DISPEL_GOW = new SkillHolder(4548, 1); // Quest - Dispel Watcher Gaze
@@ -97,6 +100,7 @@ public class Q00609_MagicalPowerOfWaterPart1 extends Quest
 		{
 			return null;
 		}
+		
 		String htmltext = null;
 		switch (event)
 		{
@@ -136,6 +140,7 @@ public class Q00609_MagicalPowerOfWaterPart1 extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -229,6 +234,7 @@ public class Q00609_MagicalPowerOfWaterPart1 extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

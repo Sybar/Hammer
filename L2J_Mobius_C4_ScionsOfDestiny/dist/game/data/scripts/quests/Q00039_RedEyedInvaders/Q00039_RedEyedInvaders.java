@@ -34,11 +34,13 @@ public class Q00039_RedEyedInvaders extends Quest
 	// NPCs
 	private static final int BABENCO = 30334;
 	private static final int BATHIS = 30332;
+	
 	// Monsters
 	private static final int MAILLE_LIZARDMAN = 20919;
 	private static final int MAILLE_LIZARDMAN_SCOUT = 20920;
 	private static final int MAILLE_LIZARDMAN_GUARD = 20921;
 	private static final int ARANEID = 20925;
+	
 	// Items
 	private static final int BLACK_BONE_NECKLACE = 7178;
 	private static final int RED_BONE_NECKLACE = 7179;
@@ -49,10 +51,11 @@ public class Q00039_RedEyedInvaders extends Quest
 	private static final Map<Integer, int[]> FIRST_DP = new HashMap<>();
 	static
 	{
-		FIRST_DP.put(MAILLE_LIZARDMAN_GUARD, new int[]{RED_BONE_NECKLACE, BLACK_BONE_NECKLACE});
-		FIRST_DP.put(MAILLE_LIZARDMAN, new int[]{BLACK_BONE_NECKLACE, RED_BONE_NECKLACE});
-		FIRST_DP.put(MAILLE_LIZARDMAN_SCOUT, new int[]{BLACK_BONE_NECKLACE, RED_BONE_NECKLACE});
+		FIRST_DP.put(MAILLE_LIZARDMAN_GUARD, new int[]{RED_BONE_NECKLACE, BLACK_BONE_NECKLACE, 1000000});
+		FIRST_DP.put(MAILLE_LIZARDMAN, new int[]{BLACK_BONE_NECKLACE, RED_BONE_NECKLACE, 1000000});
+		FIRST_DP.put(MAILLE_LIZARDMAN_SCOUT, new int[]{BLACK_BONE_NECKLACE, RED_BONE_NECKLACE, 1000000});
 	}
+	
 	// Second droplist
 	private static final Map<Integer, int[]> SECOND_DP = new HashMap<>();
 	static
@@ -62,6 +65,7 @@ public class Q00039_RedEyedInvaders extends Quest
 		SECOND_DP.put(MAILLE_LIZARDMAN_SCOUT, new int[]{INCENSE_POUCH, GEM_OF_MAILLE, 250000});
 	}
 	// @formatter:on
+	
 	// Rewards
 	private static final int GREEN_COLORED_LURE_HG = 6521;
 	private static final int BABY_DUCK_RODE = 6529;

@@ -31,6 +31,7 @@ public class Gagabu extends AbstractNpcAI
 {
 	// NPCs
 	private static final int GAGABU = 33284;
+	
 	// Misc
 	private static final NpcStringId[] GAGABU_SHOUT =
 	{
@@ -50,6 +51,7 @@ public class Gagabu extends AbstractNpcAI
 		{
 			npc.broadcastSay(ChatType.NPC_GENERAL, GAGABU_SHOUT[getRandom(2)], 1000);
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	

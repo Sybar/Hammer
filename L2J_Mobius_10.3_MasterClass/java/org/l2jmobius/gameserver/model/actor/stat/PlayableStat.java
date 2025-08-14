@@ -84,6 +84,7 @@ public class PlayableStat extends CreatureStat
 			{
 				continue;
 			}
+			
 			level = --tmp;
 			break;
 		}
@@ -126,6 +127,7 @@ public class PlayableStat extends CreatureStat
 			// get minimum level from NpcTemplate
 			minimumLevel = PetDataTable.getInstance().getPetMinLevel(playable.asPet().getTemplate().getId());
 		}
+		
 		int level = minimumLevel;
 		for (int tmp = level; tmp <= getMaxLevel(); tmp++)
 		{
@@ -133,13 +135,16 @@ public class PlayableStat extends CreatureStat
 			{
 				continue;
 			}
+			
 			level = --tmp;
 			break;
 		}
+		
 		if ((level != getLevel()) && (level >= minimumLevel))
 		{
 			addLevel(level - getLevel());
 		}
+		
 		return true;
 	}
 	
@@ -151,10 +156,12 @@ public class PlayableStat extends CreatureStat
 		{
 			expRemoved = removeExp(removeExp);
 		}
+		
 		if (removeSp > 0)
 		{
 			spRemoved = removeSp(removeSp);
 		}
+		
 		return expRemoved || spRemoved;
 	}
 	
@@ -232,6 +239,7 @@ public class PlayableStat extends CreatureStat
 			setSp(getSp() - currentSp);
 			return true;
 		}
+		
 		setSp(getSp() - amount);
 		return true;
 	}

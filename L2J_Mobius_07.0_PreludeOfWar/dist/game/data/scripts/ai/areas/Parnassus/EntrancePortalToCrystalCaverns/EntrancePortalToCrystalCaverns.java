@@ -40,6 +40,7 @@ public class EntrancePortalToCrystalCaverns extends AbstractNpcAI
 {
 	// NPCs
 	private static final int CAVERNS_ENTRACE = 33522;
+	
 	// Misc
 	private static final int EMERALD_SQUARE_TEMPLATE_ID = 163;
 	private static final int STEAM_CORRIDOR_TEMPLATE_ID = 164;
@@ -90,6 +91,7 @@ public class EntrancePortalToCrystalCaverns extends AbstractNpcAI
 				instanceScript.notifyEvent(event, npc, player);
 			}
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	
@@ -201,6 +203,7 @@ public class EntrancePortalToCrystalCaverns extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return templateId;
 	}
 	

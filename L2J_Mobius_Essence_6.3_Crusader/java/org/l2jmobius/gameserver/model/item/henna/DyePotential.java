@@ -44,6 +44,7 @@ public class DyePotential
 		{
 			_skills[i - 1] = SkillData.getInstance().getSkill(skillId, i);
 		}
+		
 		_maxSkillLevel = maxSkillLevel;
 	}
 	

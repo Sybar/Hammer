@@ -33,8 +33,10 @@ public class Q00653_WildMaiden extends Quest
 	// NPCs
 	private static final int SUKI = 32013;
 	private static final int GALIBREDO = 30181;
+	
 	// Item
 	private static final int SCROLL_OF_ESCAPE = 736;
+	
 	// Table of possible spawns
 	private static final Location[] SPAWNS =
 	{
@@ -43,6 +45,7 @@ public class Q00653_WildMaiden extends Quest
 		new Location(71809, 67377, -3675, 29130),
 		new Location(69166, 88825, -3447, 43886)
 	};
+	
 	// Current position
 	private int _currentPosition = 0;
 	

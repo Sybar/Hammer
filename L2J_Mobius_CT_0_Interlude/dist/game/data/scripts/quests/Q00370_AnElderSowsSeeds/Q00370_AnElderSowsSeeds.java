@@ -33,12 +33,14 @@ public class Q00370_AnElderSowsSeeds extends Quest
 {
 	// NPC
 	private static final int CASIAN = 30612;
+	
 	// Items
 	private static final int SPELLBOOK_PAGE = 5916;
 	private static final int CHAPTER_OF_FIRE = 5917;
 	private static final int CHAPTER_OF_WATER = 5918;
 	private static final int CHAPTER_OF_WIND = 5919;
 	private static final int CHAPTER_OF_EARTH = 5920;
+	
 	// Drop chances
 	private static final Map<Integer, Integer> MOBS1 = new HashMap<>();
 	private static final Map<Integer, Double> MOBS2 = new HashMap<>();

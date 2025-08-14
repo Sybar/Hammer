@@ -57,15 +57,19 @@ public class Q10590_ReawakenedFate extends Quest
 		24459, // Marsh Vampire Wizard
 		24460 // Marsh Vampire Shooter
 	};
+	
 	// Items
 	private static final int VAMPIRE_ICHOR = 80854; // Vampire Ichor - monster drop
+	
 	// Rewards
 	private static final int ACHIEVEMENT_BOX = 80909;
 	private static final int RUBIN_LV2 = 38856;
 	private static final int SAPPHIRE_LV2 = 38928;
+	
 	// Misc
 	private static final int MIN_LEVEL = 95;
 	private static final int REACH_LV_99 = NpcStringId.REACH_LV_99.getId();
+	
 	// Location
 	private static final Location BLOODY_SWAMPLAND = new Location(-14467, 44242, -3673);
 	
@@ -182,6 +186,7 @@ public class Q10590_ReawakenedFate extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -282,6 +287,7 @@ public class Q10590_ReawakenedFate extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -296,10 +302,12 @@ public class Q10590_ReawakenedFate extends Quest
 				giveItems(player, VAMPIRE_ICHOR, 1);
 				playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 			}
+			
 			if ((getQuestItemsCount(player, VAMPIRE_ICHOR) >= 500) && (player.getLevel() >= 99))
 			{
 				qs.setCond(3, true);
 			}
+			
 			sendNpcLogList(player);
 		}
 	}
@@ -321,8 +329,10 @@ public class Q10590_ReawakenedFate extends Quest
 			{
 				holder.add(new NpcLogListHolder(REACH_LV_99, true, 1));
 			}
+			
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

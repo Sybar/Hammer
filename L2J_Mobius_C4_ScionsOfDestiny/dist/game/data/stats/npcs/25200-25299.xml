@@ -2918,8 +2918,8 @@
 			</drop>
 		</dropLists>
 		<collision>
-			<radius normal="14" />
-			<height normal="31" />
+			<radius normal="28" />
+			<height normal="62" />
 		</collision>
 	</npc>
 	<npc id="25267" level="74" type="Monster" name="Decarbia's Royal Guard" title="Raid Fighter">

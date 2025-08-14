@@ -40,7 +40,7 @@ import org.l2jmobius.gameserver.network.SystemMessageId;
 public class ServitorAttack implements IPlayerActionHandler
 {
 	@Override
-	public void useAction(Player player, ActionDataHolder data, boolean ctrlPressed, boolean shiftPressed)
+	public void onAction(Player player, ActionDataHolder data, boolean ctrlPressed, boolean shiftPressed)
 	{
 		if (!player.hasServitors())
 		{

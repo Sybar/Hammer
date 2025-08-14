@@ -40,6 +40,7 @@ public class Q10739_SupplyAndDemand extends Quest
 	private static final int PELU = 33936;
 	private static final int CERI = 33937;
 	private static final int SIVANTHE = 33951;
+	
 	// Items
 	private static final ItemHolder WEAPON_SUPPLY_BOX = new ItemHolder(39522, 1);
 	private static final ItemHolder ARMOR_SUPPLY_BOX = new ItemHolder(39523, 1);
@@ -49,6 +50,7 @@ public class Q10739_SupplyAndDemand extends Quest
 	private static final ItemHolder LEATHER_PANTS = new ItemHolder(29, 1);
 	private static final ItemHolder APPRENTICE_EARRING = new ItemHolder(112, 2);
 	private static final ItemHolder NECKLACE_OF_KNOWNLEDGE = new ItemHolder(906, 1);
+	
 	// Misc
 	private static final int MIN_LEVEL = 6;
 	private static final int MAX_LEVEL = 20;
@@ -216,6 +218,7 @@ public class Q10739_SupplyAndDemand extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

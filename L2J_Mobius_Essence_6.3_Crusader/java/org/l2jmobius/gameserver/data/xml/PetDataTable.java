@@ -74,6 +74,7 @@ public class PetDataTable implements IXmlReader
 				{
 					name = "No name";
 				}
+				
 				_petNames.put(rs.getInt("item_obj_id"), name);
 			}
 		}
@@ -104,14 +105,17 @@ public class PetDataTable implements IXmlReader
 				{
 					defaultPetType = 0;
 				}
+				
 				if (index == null)
 				{
 					index = 0;
 				}
+				
 				if (petType == null)
 				{
 					petType = 0;
 				}
+				
 				// index ignored for now
 				final PetData data = new PetData(npcId, itemId, defaultPetType, evolveLevel, index, petType);
 				for (Node p = d.getFirstChild(); p != null; p = p.getNextSibling())
@@ -139,6 +143,7 @@ public class PetDataTable implements IXmlReader
 						{
 							data.setSyncLevel(parseInteger(attrs, "val") == 1);
 						}
+						
 						// evolve ignored
 					}
 					else if (p.getNodeName().equals("skills"))
@@ -175,6 +180,7 @@ public class PetDataTable implements IXmlReader
 											{
 												set.set("slowFlySpeedOnRide", attrs.getNamedItem("slowFly").getNodeValue());
 											}
+											
 											if (attrs.getNamedItem("fastFly") != null)
 											{
 												set.set("fastFlySpeedOnRide", attrs.getNamedItem("fastFly").getNodeValue());
@@ -186,11 +192,13 @@ public class PetDataTable implements IXmlReader
 										}
 									}
 								}
+								
 								data.addNewStat(level, new PetLevelData(set));
 							}
 						}
 					}
 				}
+				
 				_pets.put(npcId, data);
 			}
 		}
@@ -210,6 +218,7 @@ public class PetDataTable implements IXmlReader
 				return data;
 			}
 		}
+		
 		return null;
 	}
 	
@@ -228,8 +237,10 @@ public class PetDataTable implements IXmlReader
 			{
 				return pd.getPetLevelData(pd.getMaxLevel());
 			}
+			
 			return pd.getPetLevelData(petLevel);
 		}
+		
 		return null;
 	}
 	
@@ -244,6 +255,7 @@ public class PetDataTable implements IXmlReader
 		{
 			LOGGER.info(getClass().getSimpleName() + ": Missing pet data for npcid: " + petId);
 		}
+		
 		return _pets.get(petId);
 	}
 	
@@ -318,6 +330,7 @@ public class PetDataTable implements IXmlReader
 		{
 			return "";
 		}
+		
 		return type.getSkillId() + ";" + type.getSkillLevel() + ";" + PetTypeData.getInstance().getIdByName(name);
 	}
 	

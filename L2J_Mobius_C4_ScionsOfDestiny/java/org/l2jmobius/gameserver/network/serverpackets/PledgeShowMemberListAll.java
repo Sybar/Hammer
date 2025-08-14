@@ -20,6 +20,8 @@
  */
 package org.l2jmobius.gameserver.network.serverpackets;
 
+import java.util.Collection;
+
 import org.l2jmobius.commons.network.WritableBuffer;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.clan.Clan;
@@ -57,19 +59,21 @@ public class PledgeShowMemberListAll extends ServerPacket
 		buffer.writeString(_clan.getAllyName());
 		buffer.writeInt(_clan.getAllyCrestId());
 		buffer.writeInt(_clan.isAtWar()); // new c3
-		buffer.writeInt(_clan.getMembers().length - 1);
-		for (ClanMember m : _clan.getMembers())
+		
+		final Collection<ClanMember> members = _clan.getMembers();
+		buffer.writeInt(members.size() - 1);
+		for (ClanMember member : members)
 		{
 			// On C4 player is not shown.
-			if (m.getObjectId() == _player.getObjectId())
+			if (member.getObjectId() == _player.getObjectId())
 			{
 				continue;
 			}
 			
-			buffer.writeString(m.getName());
-			buffer.writeInt(m.getLevel());
-			buffer.writeInt(m.getClassId());
-			final Player player = m.getPlayer();
+			buffer.writeString(member.getName());
+			buffer.writeInt(member.getLevel());
+			buffer.writeInt(member.getClassId());
+			final Player player = member.getPlayer();
 			if (player != null)
 			{
 				buffer.writeInt(player.getAppearance().isFemale()); // no visible effect
@@ -80,7 +84,8 @@ public class PledgeShowMemberListAll extends ServerPacket
 				buffer.writeInt(1); // no visible effect
 				buffer.writeInt(1); // buffer.writeInt(1);
 			}
-			buffer.writeInt(m.isOnline() ? m.getObjectId() : 0); // objectId = online 0 = offline
+			
+			buffer.writeInt(member.isOnline() ? member.getObjectId() : 0); // objectId = online 0 = offline
 		}
 	}
 }

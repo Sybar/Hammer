@@ -33,6 +33,7 @@ public class Q00274_SkirmishWithTheWerewolves extends Quest
 	// Needed items
 	private static final int NECKLACE_OF_VALOR = 1507;
 	private static final int NECKLACE_OF_COURAGE = 1506;
+	
 	// Items
 	private static final int MARAKU_WEREWOLF_HEAD = 1477;
 	private static final int MARAKU_WOLFMEN_TOTEM = 1501;

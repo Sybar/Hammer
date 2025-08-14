@@ -70,6 +70,7 @@ public class EnlargeSlot extends AbstractEffect
 				break;
 			}
 		}
+		
 		effected.getStat().mergeAdd(stat, _amount);
 		if (effected.isPlayer())
 		{

@@ -51,14 +51,17 @@ public class Q10575_LetsGoFishing extends Quest
 {
 	// NPCs
 	private static final int SANTIAGO = 34138;
+	
 	// Items
 	private static final int PRACTICE_BAIT = 46737;
 	private static final int PRACTICE_FISH = 46736;
 	private static final int PRACTICE_FISHING_ROD = 46738;
+	
 	// Misc
 	private static final int MIN_LEVEL = 95;
 	private static final String COUNT_VAR = "FishWinCount";
 	private static final int NPCSTRING_ID = NpcStringId.CATCH_PRACTICE_FISH.getId();
+	
 	// Rewards
 	private static final int XP = 59769;
 	private static final int SP = 54;
@@ -85,6 +88,7 @@ public class Q10575_LetsGoFishing extends Quest
 		{
 			return null;
 		}
+		
 		String htmltext = null;
 		switch (event)
 		{
@@ -126,6 +130,7 @@ public class Q10575_LetsGoFishing extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -152,6 +157,7 @@ public class Q10575_LetsGoFishing extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -191,6 +197,7 @@ public class Q10575_LetsGoFishing extends Quest
 			holder.add(new NpcLogListHolder(NPCSTRING_ID, true, qs.getInt(COUNT_VAR)));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

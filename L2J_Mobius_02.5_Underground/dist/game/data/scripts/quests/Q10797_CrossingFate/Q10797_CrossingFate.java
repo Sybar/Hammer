@@ -39,8 +39,10 @@ public class Q10797_CrossingFate extends Quest
 	// NPCs
 	private static final int EYE_OF_ARGOS = 31683;
 	private static final int DAIMON_THE_WHITE_EYED = 27499;
+	
 	// Items
 	private static final int EAA = 730;
+	
 	// Misc
 	private static final int MIN_LEVEL = 70;
 	private static final int MAX_LEVEL = 75;
@@ -93,6 +95,7 @@ public class Q10797_CrossingFate extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -117,6 +120,7 @@ public class Q10797_CrossingFate extends Quest
 		{
 			htmltext = getAlreadyCompletedMsg(player);
 		}
+		
 		return htmltext;
 	}
 	

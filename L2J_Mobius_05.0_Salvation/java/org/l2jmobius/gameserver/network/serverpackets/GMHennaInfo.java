@@ -70,6 +70,7 @@ public class GMHennaInfo extends ServerPacket
 			buffer.writeInt(henna.getDyeId());
 			buffer.writeInt(1);
 		}
+		
 		if (_player.getHenna(4) != null)
 		{
 			buffer.writeInt(_player.getHenna(4).getDyeId());

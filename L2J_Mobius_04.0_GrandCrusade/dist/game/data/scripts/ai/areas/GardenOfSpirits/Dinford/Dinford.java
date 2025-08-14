@@ -66,6 +66,7 @@ public class Dinford extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -102,6 +103,7 @@ public class Dinford extends AbstractNpcAI
 		{
 			player.sendPacket(new PlaySound(3, "Npcdialog1.dinfod_faction_2", 0, 0, 0, 0, 0));
 		}
+		
 		return "34236.html";
 	}
 	

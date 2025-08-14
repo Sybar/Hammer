@@ -36,6 +36,7 @@ public class Q00585_CantGoAgainstTheTime extends Quest
 {
 	// NPC
 	private static final int FAIRY_CITIZEN = 32921;
+	
 	// Monsters
 	private static final int[] MONSTERS =
 	{
@@ -59,8 +60,10 @@ public class Q00585_CantGoAgainstTheTime extends Quest
 		22904, // Satyr Witch (Wicked)
 		19400 // Cocoon Destroyer
 	};
+	
 	// Items
 	private static final int TRACES_OF_MUTATION = 48381;
+	
 	// Misc
 	private static final int MIN_LEVEL = 88;
 	private static final int MAX_LEVEL = 98;
@@ -84,6 +87,7 @@ public class Q00585_CantGoAgainstTheTime extends Quest
 		{
 			return htmltext;
 		}
+		
 		switch (event)
 		{
 			case "32921-02.htm":
@@ -107,6 +111,7 @@ public class Q00585_CantGoAgainstTheTime extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -148,6 +153,7 @@ public class Q00585_CantGoAgainstTheTime extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

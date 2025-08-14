@@ -75,6 +75,7 @@ public class Disarmor extends AbstractEffect
 			{
 				iu.addModifiedItem(itm);
 			}
+			
 			player.sendInventoryUpdate(iu);
 			player.broadcastUserInfo();
 			
@@ -91,6 +92,7 @@ public class Disarmor extends AbstractEffect
 				sm = new SystemMessage(SystemMessageId.S1_HAS_BEEN_UNEQUIPPED);
 				sm.addItemName(unequippedItem);
 			}
+			
 			player.sendPacket(sm);
 			effected.getInventory().blockItemSlot(_slot);
 			_unequippedItems.put(effected.getObjectId(), unequippedItem.getObjectId());
@@ -132,6 +134,7 @@ public class Disarmor extends AbstractEffect
 						sm = new SystemMessage(SystemMessageId.YOU_HAVE_EQUIPPED_YOUR_S1);
 						sm.addItemName(item);
 					}
+					
 					player.sendPacket(sm);
 				}
 			}

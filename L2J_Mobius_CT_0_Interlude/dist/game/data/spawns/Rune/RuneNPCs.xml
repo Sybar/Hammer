@@ -47,6 +47,7 @@
 		<npc id="30767" x="42989" y="-47791" z="-798" heading="1103" respawnDelay="60" /> <!-- Auctioneer -->
 		<npc id="31833" x="42912" y="-47648" z="-800" heading="500" respawnDelay="60" /> <!-- Adventure guildsman -->
 		<npc id="31320" x="43824" y="-47664" z="-800" heading="50000" respawnDelay="60" /> <!-- Ilyana -->
+		<npc id="30990" x="43664" y="-47664" z="-800" heading="50000" respawnDelay="60" /> <!-- Lottery Ticket Seller -->
 		<npc id="31300" x="44692" y="-47312" z="-800" heading="0" respawnDelay="60" /> <!-- Drumond -->
 		<npc id="31301" x="44700" y="-47396" z="-800" heading="0" respawnDelay="60" /> <!-- Nils -->
 		<npc id="31302" x="44704" y="-47472" z="-800" heading="0" respawnDelay="60" /> <!-- Vladimir -->

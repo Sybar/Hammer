@@ -77,6 +77,7 @@ public class RequestAnswerJoinPledge extends ClientPacket
 			
 			final RequestJoinPledge requestPacket = (RequestJoinPledge) requestor.getRequest().getRequestPacket();
 			final Clan clan = requestor.getClan();
+			
 			// we must double check this cause during response time conditions can be changed, i.e. another player could join clan
 			if (clan.checkClanJoinCondition(requestor, player, requestPacket.getPledgeType()))
 			{
@@ -108,6 +109,7 @@ public class RequestAnswerJoinPledge extends ClientPacket
 						castle.giveResidentialSkills(player);
 					}
 				}
+				
 				player.sendSkillList();
 				
 				clan.broadcastToOtherOnlineMembers(new PledgeShowMemberListAdd(player), player);

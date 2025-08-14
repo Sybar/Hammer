@@ -51,6 +51,7 @@ public class BlockSkill extends AbstractEffect
 				_magicTypes.add(id);
 			}
 		}
+		
 		if (params.contains("skillIds"))
 		{
 			for (int id : params.getIntArray("skillIds", ";"))

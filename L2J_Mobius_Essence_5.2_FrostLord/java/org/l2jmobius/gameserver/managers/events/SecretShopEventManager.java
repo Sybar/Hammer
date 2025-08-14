@@ -122,6 +122,7 @@ public class SecretShopEventManager
 			_updateTask.cancel(true);
 			_updateTask = null;
 		}
+		
 		_updateTask = ThreadPool.scheduleAtFixedRate(this::updateInfo, 500, UPDATE_INTERVAL);
 		
 		if (_endTask != null)
@@ -150,11 +151,13 @@ public class SecretShopEventManager
 			_updateTask.cancel(true);
 			_updateTask = null;
 		}
+		
 		if (_endTask != null)
 		{
 			_endTask.cancel(false);
 			_endTask = null;
 		}
+		
 		updateInfo();
 		LIST_TO_UPDATE.clear();
 		broadcastInfo();
@@ -177,16 +180,19 @@ public class SecretShopEventManager
 			_startTask.cancel(false);
 			_startTask = null;
 		}
+		
 		if (_endTask != null)
 		{
 			_endTask.cancel(false);
 			_endTask = null;
 		}
+		
 		if (_updateTask != null)
 		{
 			_updateTask.cancel(true);
 			_updateTask = null;
 		}
+		
 		LIST_TO_UPDATE.clear();
 		
 		if (isExchangePeriod())
@@ -227,8 +233,10 @@ public class SecretShopEventManager
 			{
 				continue;
 			}
+			
 			totalPossibleChance += reward._chance;
 		}
+		
 		final double chance = Rnd.get(0, totalPossibleChance);
 		for (SecretShopRewardHolder reward : _activeRewards)
 		{
@@ -236,6 +244,7 @@ public class SecretShopEventManager
 			{
 				continue;
 			}
+			
 			totalChance += reward._chance;
 			if (totalChance >= chance)
 			{
@@ -258,11 +267,13 @@ public class SecretShopEventManager
 						stop();
 						return;
 					}
+					
 					broadcastInfo();
 				}
 				break;
 			}
 		}
+		
 		show(player, true);
 	}
 	
@@ -279,6 +290,7 @@ public class SecretShopEventManager
 			{
 				LIST_TO_UPDATE.add(player);
 			}
+			
 			final int ticketAmount = (int) player.getInventory().getInventoryItemCount(_ticketId, -1);
 			player.sendPacket(new ExFestivalBmInfo(_ticketId, ticketAmount, TICKET_AMOUNT_PER_GAME));
 			player.sendPacket(new ExFestivalBmAllItemInfo(getSortedRewards()));
@@ -343,6 +355,7 @@ public class SecretShopEventManager
 				}
 			}
 		}
+		
 		_activeRewards.clear();
 		Collections.shuffle(topRewards);
 		_activeRewards.addAll(topRewards.stream().limit(3).collect(Collectors.toList()));
@@ -408,6 +421,7 @@ public class SecretShopEventManager
 			// Schedule for the next day.
 			calendar.add(Calendar.DAY_OF_MONTH, 1);
 		}
+		
 		return Math.max(0, calendar.getTimeInMillis() - System.currentTimeMillis());
 	}
 	
@@ -454,6 +468,7 @@ public class SecretShopEventManager
 				return false;
 			}
 		}
+		
 		return true;
 	}
 	
@@ -491,6 +506,7 @@ public class SecretShopEventManager
 						task.getPlayer().sendPacket(SystemMessageId.YOUR_INVENTORY_IS_FULL);
 						continue;
 					}
+					
 					exchange(task.getPlayer());
 				}
 				

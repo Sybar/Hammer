@@ -38,6 +38,7 @@ public class Q00599_DemonsAndDimensionalEnergy extends Quest
 {
 	// NPCs
 	private static final int LEONA_BLACKBIRD = 34425;
+	
 	// Monsters
 	private static final int[] MONSTERS =
 	{
@@ -54,12 +55,15 @@ public class Q00599_DemonsAndDimensionalEnergy extends Quest
 		24156, // Demonic Archer
 		24157 // Demonic Keras
 	};
+	
 	// Item
 	private static final int DEMON_SLAYERS_PROOF = 48578;
+	
 	// Rewards
 	private static final int BASIC_SUPPLY_BOX = 48579; // Blackbird Clan Basic Box Atelia Refinery
 	private static final int INTERMEDIATE_SUPPLY_BOX = 48580; // Blackbird Clan Intermediate Box Atelia Refinery
 	private static final int ADVANCED_SUPPLY_BOX = 48581; // Blackbird Clan Advanced Box Atelia Refinery
+	
 	// Misc
 	private static final int MIN_LEVEL = 103;
 	
@@ -110,6 +114,7 @@ public class Q00599_DemonsAndDimensionalEnergy extends Quest
 					htmltext = "34425-04b.htm";
 					break;
 				}
+				
 				htmltext = "34425-04.htm";
 				break;
 			}
@@ -125,6 +130,7 @@ public class Q00599_DemonsAndDimensionalEnergy extends Quest
 					htmltext = "34425-04b.htm";
 					break;
 				}
+				
 				htmltext = "34425-04.htm";
 				break;
 			}
@@ -167,6 +173,7 @@ public class Q00599_DemonsAndDimensionalEnergy extends Quest
 							{
 								giveItems(player, BASIC_SUPPLY_BOX, 1);
 							}
+							
 							addExpAndSp(player, 27191624760L, 27191610);
 							addFactionPoints(player, Faction.BLACKBIRD_CLAN, 100);
 							qs.exitQuest(QuestType.DAILY, true);
@@ -194,6 +201,7 @@ public class Q00599_DemonsAndDimensionalEnergy extends Quest
 							{
 								giveItems(player, INTERMEDIATE_SUPPLY_BOX, 1);
 							}
+							
 							addExpAndSp(player, 54383249520L, 54383220);
 							addFactionPoints(player, Faction.BLACKBIRD_CLAN, 200);
 							qs.exitQuest(QuestType.DAILY, true);
@@ -221,6 +229,7 @@ public class Q00599_DemonsAndDimensionalEnergy extends Quest
 							{
 								giveItems(player, ADVANCED_SUPPLY_BOX, 1);
 							}
+							
 							addExpAndSp(player, 81574874280L, 81574830);
 							addFactionPoints(player, Faction.BLACKBIRD_CLAN, 300);
 							qs.exitQuest(QuestType.DAILY, true);
@@ -236,6 +245,7 @@ public class Q00599_DemonsAndDimensionalEnergy extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -268,6 +278,7 @@ public class Q00599_DemonsAndDimensionalEnergy extends Quest
 							htmltext = "34425-04b.htm";
 							break;
 						}
+						
 						htmltext = "34425-04.htm";
 						break;
 					}
@@ -310,6 +321,7 @@ public class Q00599_DemonsAndDimensionalEnergy extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

@@ -32,11 +32,13 @@ public class Q10464_BePreparedForAnything extends Quest
 	// NPCs
 	private static final int PATERSON = 33864;
 	private static final int OLF_KANORE = 32610;
+	
 	// Items
 	private static final int BELT = 13894; // Cloth Belt
 	private static final int MAGIC_PIN = 36725; // Practice Magic Pin (C-grade)
 	private static final int LEATHER_BELT = 36724; // Practice Leather Belt
 	private static final int LEATHER_BELT_FINISHED = 36726; // Flutter's Magic Pin Leather Belt (Low-grade)
+	
 	// Misc
 	private static final int MIN_LEVEL = 58;
 	private static final int MAX_LEVEL = 65;
@@ -83,6 +85,7 @@ public class Q10464_BePreparedForAnything extends Quest
 					{
 						giveItems(player, LEATHER_BELT, 1);
 					}
+					
 					htmltext = event;
 				}
 				break;
@@ -123,12 +126,14 @@ public class Q10464_BePreparedForAnything extends Quest
 					{
 						addExpAndSp(player, 781_410, 187);
 					}
+					
 					giveItems(player, BELT, 1);
 					htmltext = event;
 				}
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -173,6 +178,7 @@ public class Q10464_BePreparedForAnything extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

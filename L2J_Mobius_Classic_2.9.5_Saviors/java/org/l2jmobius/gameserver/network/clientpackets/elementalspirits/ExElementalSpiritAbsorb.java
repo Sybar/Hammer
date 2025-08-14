@@ -81,6 +81,7 @@ public class ExElementalSpiritAbsorb extends ClientPacket
 			userInfo.addComponentType(UserInfoType.ATT_SPIRITS);
 			player.sendPacket(userInfo);
 		}
+		
 		player.sendPacket(new ElementalSpiritAbsorb(player, _type, canAbsorb));
 	}
 	
@@ -91,21 +92,25 @@ public class ExElementalSpiritAbsorb extends ClientPacket
 			player.sendPacket(SystemMessageId.CANNOT_EVOLVE_ABSORB_EXTRACT_WHILE_USING_THE_PRIVATE_STORE_WORKSHOP);
 			return false;
 		}
+		
 		if (player.isInBattle())
 		{
 			player.sendPacket(SystemMessageId.CANNOT_DRAIN_DURING_BATTLE);
 			return false;
 		}
+		
 		if ((spirit.getLevel() == spirit.getMaxLevel()) && (spirit.getExperience() == spirit.getExperienceToNextLevel()))
 		{
 			player.sendPacket(SystemMessageId.YOU_HAVE_REACHED_THE_HIGHEST_LEVEL_AND_CANNOT_ABSORB_ANY_FURTHER);
 			return false;
 		}
+		
 		if ((_amount < 1) || !player.destroyItemByItemId(ItemProcessType.FEE, _itemId, _amount, player, true))
 		{
 			player.sendPacket(SystemMessageId.YOU_DO_NOT_HAVE_THE_MATERIALS_REQUIRED_TO_ABSORB);
 			return false;
 		}
+		
 		return true;
 	}
 }

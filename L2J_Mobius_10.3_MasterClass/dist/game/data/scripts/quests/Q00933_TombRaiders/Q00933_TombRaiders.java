@@ -48,16 +48,20 @@ public class Q00933_TombRaiders extends Quest
 	// NPCs
 	private static final int SEARCH_TEAM_TELEPORTER = 34552;
 	private static final int LEOPARD = 32594;
+	
 	// Monsters
 	private static final int TOMB_GUARDIAN = 24580;
 	private static final int TOMB_RAIDER = 24581;
 	private static final int TOMB_WATCHER = 24584;
 	private static final int TOMB_SOULTAKER = 24583;
 	private static final int TOMB_PATROL = 24582;
+	
 	// Item
 	private static final int BENUSTA_REWARD_BOX = 81151;
+	
 	// Misc
 	private static final String KILL_COUNT_VAR = "KillCount";
+	
 	// Zone
 	private static final ScriptZone QUEST_ZONE = ZoneManager.getInstance().getZoneById(93300, ScriptZone.class); // Session Zone - Imperial Tomb
 	
@@ -79,6 +83,7 @@ public class Q00933_TombRaiders extends Quest
 		{
 			return null;
 		}
+		
 		switch (event)
 		{
 			case "34552-02.htm":
@@ -100,6 +105,7 @@ public class Q00933_TombRaiders extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -150,6 +156,7 @@ public class Q00933_TombRaiders extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -207,10 +214,12 @@ public class Q00933_TombRaiders extends Quest
 				qs.set(KILL_COUNT_VAR, killCount + 1);
 				playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 			}
+			
 			if (killCount >= 150)
 			{
 				qs.setCond(2, true);
 			}
+			
 			sendNpcLogList(player);
 		}
 	}
@@ -225,6 +234,7 @@ public class Q00933_TombRaiders extends Quest
 			holder.add(new NpcLogListHolder(NpcStringId.DEFEAT_MONSTERS_IN_THE_IMPERIAL_TOMB.getId(), true, qs.getInt(KILL_COUNT_VAR)));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

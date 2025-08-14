@@ -61,8 +61,10 @@ public class ShuttleData implements IXmlReader
 			{
 				shuttle.deleteMe();
 			}
+			
 			_shuttleInstances.clear();
 		}
+		
 		parseDatapackFile("data/ShuttleData.xml");
 		init();
 		LOGGER.info(getClass().getSimpleName() + ": Loaded " + _shuttles.size() + " shuttles.");
@@ -90,6 +92,7 @@ public class ShuttleData implements IXmlReader
 							att = attrs.item(i);
 							set.set(att.getNodeName(), att.getNodeValue());
 						}
+						
 						data = new ShuttleDataHolder(set);
 						for (Node b = d.getFirstChild(); b != null; b = b.getNextSibling())
 						{
@@ -120,6 +123,7 @@ public class ShuttleData implements IXmlReader
 												stop.addDimension(new Location(parseInteger(attrs, "x"), parseInteger(attrs, "y"), parseInteger(attrs, "z")));
 											}
 										}
+										
 										data.addStop(stop);
 									}
 								}
@@ -147,11 +151,13 @@ public class ShuttleData implements IXmlReader
 										{
 											route[i++] = new VehiclePathPoint(loc);
 										}
+										
 										data.addRoute(route);
 									}
 								}
 							}
 						}
+						
 						_shuttles.put(data.getId(), data);
 					}
 				}
@@ -194,6 +200,7 @@ public class ShuttleData implements IXmlReader
 				return shuttle;
 			}
 		}
+		
 		return null;
 	}
 	

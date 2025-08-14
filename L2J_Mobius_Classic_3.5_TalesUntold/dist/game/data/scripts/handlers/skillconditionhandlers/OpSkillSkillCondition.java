@@ -46,6 +46,7 @@ public class OpSkillSkillCondition implements ISkillCondition
 		{
 			return (requestedSkill != null) && (requestedSkill.getLevel() == _skillLevel);
 		}
+		
 		return (requestedSkill == null) || (requestedSkill.getLevel() != _skillLevel);
 	}
 }

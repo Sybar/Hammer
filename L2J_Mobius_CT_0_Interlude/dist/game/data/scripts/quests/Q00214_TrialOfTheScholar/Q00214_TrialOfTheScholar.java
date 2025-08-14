@@ -46,6 +46,7 @@ public class Q00214_TrialOfTheScholar extends Quest
 	private static final int CRONOS = 30610;
 	private static final int TRIFF = 30611;
 	private static final int CASIAN = 30612;
+	
 	// Monsters
 	private static final int MONSTER_EYE_DESTROYER = 20068;
 	private static final int MEDUSA = 20158;
@@ -57,6 +58,7 @@ public class Q00214_TrialOfTheScholar extends Quest
 	private static final int GRANDIS = 20554;
 	private static final int ENCHANTED_GARGOYLE = 20567;
 	private static final int LETO_LIZARDMAN_WARRIOR = 20580;
+	
 	// Items
 	private static final int MIRIEN_SIGIL_1 = 2675;
 	private static final int MIRIEN_SIGIL_2 = 2676;
@@ -103,6 +105,7 @@ public class Q00214_TrialOfTheScholar extends Quest
 	private static final int FETTERED_SOUL_ICHOR = 2718;
 	private static final int ENCHANTED_GARGOYLE_NAIL = 2719;
 	private static final int SYMBOL_OF_CRONOS = 2720;
+	
 	// Rewards
 	private static final int MARK_OF_SCHOLAR = 2674;
 	private static final int DIMENSIONAL_DIAMOND = 7562;

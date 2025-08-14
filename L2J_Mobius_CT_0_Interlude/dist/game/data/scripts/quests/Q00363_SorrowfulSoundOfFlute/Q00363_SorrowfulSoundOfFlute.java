@@ -37,10 +37,12 @@ public class Q00363_SorrowfulSoundOfFlute extends Quest
 	private static final int HOLVAS = 30058;
 	private static final int BARBADO = 30959;
 	private static final int POITAN = 30458;
+	
 	// Items
 	private static final int NANARIN_FLUTE = 4319;
 	private static final int BLACK_BEER = 4320;
 	private static final int CLOTHES = 4318;
+	
 	// Reward
 	private static final int THEME_OF_SOLITUDE = 4420;
 	
@@ -137,6 +139,7 @@ public class Q00363_SorrowfulSoundOfFlute extends Quest
 								htmltext = "30956-10.htm";
 								playSound(player, QuestSound.ITEMSOUND_QUEST_GIVEUP);
 							}
+							
 							st.exitQuest(true);
 						}
 						break;

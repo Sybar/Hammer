@@ -47,16 +47,19 @@ public class RequestWithdrawalPledge extends ClientPacket
 		{
 			return;
 		}
+		
 		if (player.getClan() == null)
 		{
 			player.sendPacket(SystemMessageId.YOU_ARE_NOT_A_CLAN_MEMBER);
 			return;
 		}
+		
 		if (player.isClanLeader())
 		{
 			player.sendPacket(SystemMessageId.THE_CLAN_LEADER_CANNOT_WITHDRAW);
 			return;
 		}
+		
 		if (player.isInCombat())
 		{
 			player.sendPacket(SystemMessageId.ONE_CANNOT_LEAVE_ONE_S_CLAN_DURING_COMBAT);

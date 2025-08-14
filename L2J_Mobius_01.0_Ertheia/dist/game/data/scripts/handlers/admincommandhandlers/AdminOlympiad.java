@@ -46,7 +46,7 @@ public class AdminOlympiad implements IAdminCommandHandler
 	};
 	
 	@Override
-	public boolean useAdminCommand(String command, Player activeChar)
+	public boolean onCommand(String command, Player activeChar)
 	{
 		final StringTokenizer st = new StringTokenizer(command);
 		final String cmd = st.nextToken();
@@ -222,6 +222,7 @@ public class AdminOlympiad implements IAdminCommandHandler
 				break;
 			}
 		}
+		
 		return false;
 	}
 	
@@ -232,6 +233,7 @@ public class AdminOlympiad implements IAdminCommandHandler
 		{
 			return -1;
 		}
+		
 		return Integer.decode(token);
 	}
 	
@@ -255,6 +257,7 @@ public class AdminOlympiad implements IAdminCommandHandler
 			statDat.set("to_save", true);
 			Olympiad.addNobleStats(player.getObjectId(), statDat);
 		}
+		
 		return statDat;
 	}
 	
@@ -280,11 +283,12 @@ public class AdminOlympiad implements IAdminCommandHandler
 			activeChar.sendSysMessage("Player " + player + " registered to oly.");
 			return false;
 		}
+		
 		return true;
 	}
 	
 	@Override
-	public String[] getAdminCommandList()
+	public String[] getCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}

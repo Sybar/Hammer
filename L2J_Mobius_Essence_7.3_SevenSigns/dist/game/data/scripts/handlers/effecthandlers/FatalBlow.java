@@ -63,6 +63,7 @@ public class FatalBlow extends AbstractEffect
 		{
 			_abnormals = Collections.<AbnormalType> emptySet();
 		}
+		
 		_abnormalPower = params.getDouble("abnormalPower", 1);
 		
 		if (params.contains("amount"))

@@ -113,6 +113,7 @@ public class EnergyDamage extends AbstractEffect
 		{
 			ignoredPDef = Math.max(0, ignoredPDef - defenceIgnoreRemovalAdd);
 		}
+		
 		double defence = effected.getPDef() - ignoredPDef;
 		
 		final double shieldDefenceIgnoreRemoval = effected.getStat().getValue(Stat.SHIELD_DEFENCE_IGNORE_REMOVAL, 1);
@@ -133,6 +134,7 @@ public class EnergyDamage extends AbstractEffect
 						{
 							ignoredShieldDef = Math.max(0, ignoredShieldDef - shieldDefenceIgnoreRemovalAdd);
 						}
+						
 						defence += shieldDef - ignoredShieldDef;
 					}
 					else
@@ -189,6 +191,7 @@ public class EnergyDamage extends AbstractEffect
 		{
 			balanceMod = effected.isPlayable() ? Config.PVP_ENERGY_SKILL_DAMAGE_MULTIPLIERS[attacker.asPlayer().getPlayerClass().getId()] : Config.PVE_ENERGY_SKILL_DAMAGE_MULTIPLIERS[attacker.asPlayer().getPlayerClass().getId()];
 		}
+		
 		if (effected.isPlayable())
 		{
 			defence *= attacker.isPlayable() ? Config.PVP_ENERGY_SKILL_DEFENCE_MULTIPLIERS[effected.asPlayer().getPlayerClass().getId()] : Config.PVE_ENERGY_SKILL_DEFENCE_MULTIPLIERS[effected.asPlayer().getPlayerClass().getId()];

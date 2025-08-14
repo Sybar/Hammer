@@ -1667,7 +1667,18 @@
 		</magicLevel>
 		<effects>
 			<effect name="HealEffect">
-				<amount>1</amount>
+				<amount>
+					<value level="1">3</value>
+					<value level="2">3</value>
+					<value level="3">3</value>
+					<value level="4">3</value>
+					<value level="5">4</value>
+					<value level="6">4</value>
+					<value level="7">4</value>
+					<value level="8">4</value>
+					<value level="9">5</value>
+					<value level="10">5</value>
+				</amount>
 				<mode>PER</mode>
 			</effect>
 		</effects>
@@ -1696,7 +1707,23 @@
 		</magicLevel>
 		<effects>
 			<effect name="ManaCharge">
-				<amount>1</amount>
+				<amount>
+					<value level="1">4</value>
+					<value level="2">4</value>
+					<value level="3">5</value>
+					<value level="4">5</value>
+					<value level="5">6</value>
+					<value level="6">6</value>
+					<value level="7">7</value>
+					<value level="8">7</value>
+					<value level="9">8</value>
+					<value level="10">8</value>
+					<value level="11">10</value>
+					<value level="12">10</value>
+					<value level="13">1</value>
+					<value level="14">1</value>
+					<value level="15">1</value>
+				</amount>
 				<mode>DIFF</mode>
 			</effect>
 		</effects>
@@ -1726,21 +1753,21 @@
 		<effects>
 			<effect name="PhysicalAttack">
 				<amount>
-					<value level="1">10.26</value>
-					<value level="2">11.22</value>
-					<value level="3">11.94</value>
-					<value level="4">12.94</value>
-					<value level="5">13.55</value>
-					<value level="6">14.44</value>
-					<value level="7">14.85</value>
-					<value level="8">15.92</value>
-					<value level="9">16.68</value>
-					<value level="10">17.84</value>
-					<value level="11">17.84</value>
-					<value level="12">17.84</value>
-					<value level="13">17.84</value>
-					<value level="14">17.84</value>
-					<value level="15">17.84</value>
+					<value level="1">16.54</value>
+					<value level="2">19.57</value>
+					<value level="3">22.93</value>
+					<value level="4">26.58</value>
+					<value level="5">30.53</value>
+					<value level="6">34.73</value>
+					<value level="7">39.1</value>
+					<value level="8">43.59</value>
+					<value level="9">48.21</value>
+					<value level="10">55.81</value>
+					<value level="11">57.68</value>
+					<value level="12">76.04</value>
+					<value level="13">25.65</value>
+					<value level="14">26.61</value>
+					<value level="15">27.57</value>
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
@@ -1770,7 +1797,23 @@
 		</magicLevel>
 		<effects>
 			<effect name="MagicalAttack">
-				<amount>55</amount>
+				<amount>
+					<value level="1">11.13</value>
+					<value level="2">13.05</value>
+					<value level="3">15.12</value>
+					<value level="4">17.43</value>
+					<value level="5">19.88</value>
+					<value level="6">22.5</value>
+					<value level="7">25.23</value>
+					<value level="8">28.07</value>
+					<value level="9">30.94</value>
+					<value level="10">35.66</value>
+					<value level="11">38.09</value>
+					<value level="12">44.79</value>
+					<value level="13">55</value>
+					<value level="14">55</value>
+					<value level="15">55</value>
+				</amount>
 				<mode>DIFF</mode>
 			</effect>
 		</effects>
@@ -1794,11 +1837,11 @@
 		</magicLevel>
 		<effects>
 			<effect name="PvpPhysicalAttackDamageBonus">
-				<amount>5</amount>
+				<amount>3</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="PvpPhysicalSkillDamageBonus">
-				<amount>5</amount>
+				<amount>3</amount>
 				<mode>PER</mode>
 			</effect>
 		</effects>
@@ -1838,11 +1881,11 @@
 					<value level="8">18.63</value>
 					<value level="9">19.77</value>
 					<value level="10">20.3</value>
-					<value level="11">20.3</value>
-					<value level="12">20.3</value>
-					<value level="13">20.3</value>
-					<value level="14">20.3</value>
-					<value level="15">20.3</value>
+					<value level="11">21.2</value>
+					<value level="12">24.1</value>
+					<value level="13">25.3</value>
+					<value level="14">26.6</value>
+					<value level="15">27.9</value>
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
@@ -1883,11 +1926,11 @@
 					<value level="8">14.99</value>
 					<value level="9">15.88</value>
 					<value level="10">16.32</value>
-					<value level="11">16.32</value>
-					<value level="12">16.32</value>
-					<value level="13">16.32</value>
-					<value level="14">16.32</value>
-					<value level="15">16.32</value>
+					<value level="11">17.06</value>
+					<value level="12">22.73</value>
+					<value level="13">23.39</value>
+					<value level="14">24.05</value>
+					<value level="15">24.72</value>
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
@@ -1913,16 +1956,16 @@
 		<effects>
 			<effect name="HealEffect">
 				<amount>
-					<value level="1">10</value>
-					<value level="2">11</value>
-					<value level="3">12</value>
-					<value level="4">13</value>
-					<value level="5">14</value>
-					<value level="6">16</value>
-					<value level="7">17</value>
-					<value level="8">18</value>
-					<value level="9">19</value>
-					<value level="10">20</value>
+					<value level="1">17.6</value>
+					<value level="2">19.6</value>
+					<value level="3">21.2</value>
+					<value level="4">22.8</value>
+					<value level="5">24.4</value>
+					<value level="6">25.6</value>
+					<value level="7">27.2</value>
+					<value level="8">28.8</value>
+					<value level="9">30</value>
+					<value level="10">31.6</value>
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
@@ -2005,7 +2048,18 @@
 		</magicLevel>
 		<effects>
 			<effect name="CriticalRate">
-				<amount>20</amount>
+				<amount>
+					<value level="1">10</value>
+					<value level="2">10</value>
+					<value level="3">10</value>
+					<value level="4">10</value>
+					<value level="5">10</value>
+					<value level="6">10</value>
+					<value level="7">15</value>
+					<value level="8">15</value>
+					<value level="9">15</value>
+					<value level="10">15</value>
+				</amount>
 				<mode>PER</mode>
 			</effect>
 		</effects>
@@ -2029,7 +2083,18 @@
 		</magicLevel>
 		<effects>
 			<effect name="MagicCriticalRate">
-				<amount>4</amount>
+				<amount>
+					<value level="1">2</value>
+					<value level="2">2</value>
+					<value level="3">2</value>
+					<value level="4">2</value>
+					<value level="5">2</value>
+					<value level="6">2</value>
+					<value level="7">3</value>
+					<value level="8">3</value>
+					<value level="9">3</value>
+					<value level="10">3</value>
+				</amount>
 				<mode>DIFF</mode>
 			</effect>
 		</effects>
@@ -2077,7 +2142,7 @@
 		</magicLevel>
 		<effects>
 			<effect name="Breath">
-				<amount>500</amount>
+				<amount>600</amount>
 				<mode>PER</mode>
 			</effect>
 		</effects>
@@ -2153,11 +2218,11 @@
 		<effects>
 			<effect name="MagicMpCost">
 				<amount>
-					<value level="1">-4</value>
-					<value level="2">-7</value>
-					<value level="3">-10</value>
-					<value level="4">-10</value>
-					<value level="5">-10</value>
+					<value level="1">-3</value>
+					<value level="2">-6</value>
+					<value level="3">-9</value>
+					<value level="4">-12</value>
+					<value level="5">-15</value>
 					<value level="6">-10</value>
 					<value level="7">-10</value>
 					<value level="8">-10</value>
@@ -2185,11 +2250,11 @@
 		<effects>
 			<effect name="MagicMpCost">
 				<amount>
-					<value level="1">-10</value>
-					<value level="2">-15</value>
-					<value level="3">-20</value>
-					<value level="4">-20</value>
-					<value level="5">-20</value>
+					<value level="1">-3</value>
+					<value level="2">-6</value>
+					<value level="3">-9</value>
+					<value level="4">-12</value>
+					<value level="5">-15</value>
 					<value level="6">-20</value>
 					<value level="7">-20</value>
 					<value level="8">-20</value>
@@ -2212,9 +2277,9 @@
 		<effects>
 			<effect name="MagicMpCost">
 				<amount>
-					<value level="1">-4</value>
-					<value level="2">-7</value>
-					<value level="3">-10</value>
+					<value level="1">-3</value>
+					<value level="2">-6</value>
+					<value level="3">-9</value>
 				</amount>
 				<mode>PER</mode>
 				<magicType>3</magicType>
@@ -2234,24 +2299,28 @@
 		<effects>
 			<effect name="MagicMpCost">
 				<amount>
-					<value level="1">-4</value>
-					<value level="2">-7</value>
-					<value level="3">-10</value>
+					<value level="1">-5</value>
+					<value level="2">-10</value>
+					<value level="3">-15</value>
+				</amount>
+				<mode>PER</mode>
+				<magicType>0</magicType>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>
+					<value level="1">-2</value>
+					<value level="2">-3</value>
+					<value level="3">-5</value>
 				</amount>
 				<mode>PER</mode>
 				<magicType>1</magicType>
 			</effect>
 			<effect name="MagicMpCost">
 				<amount>
-					<value level="1">-10</value>
-					<value level="2">-15</value>
-					<value level="3">-20</value>
+					<value level="1">-5</value>
+					<value level="2">-5</value>
+					<value level="3">-10</value>
 				</amount>
-				<mode>PER</mode>
-				<magicType>0</magicType>
-			</effect>
-			<effect name="MagicMpCost">
-				<amount>-10</amount>
 				<mode>PER</mode>
 				<magicType>3</magicType>
 			</effect>
@@ -2270,9 +2339,9 @@
 		<effects>
 			<effect name="DamageShield">
 				<amount>
-					<value level="1">10</value>
-					<value level="2">15</value>
-					<value level="3">20</value>
+					<value level="1">4</value>
+					<value level="2">8</value>
+					<value level="3">12</value>
 				</amount>
 			</effect>
 		</effects>

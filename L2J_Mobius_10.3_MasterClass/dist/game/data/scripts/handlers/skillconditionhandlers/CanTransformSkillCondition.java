@@ -58,6 +58,7 @@ public class CanTransformSkillCondition implements ISkillCondition
 			{
 				player.sendPacket(SystemMessageId.YOU_ALREADY_POLYMORPHED_AND_CANNOT_POLYMORPH_AGAIN);
 			}
+			
 			canTransform = false;
 		}
 		else if (player.isInWater())
@@ -70,6 +71,7 @@ public class CanTransformSkillCondition implements ISkillCondition
 			player.sendPacket(SystemMessageId.YOU_CANNOT_TRANSFORM_WHILE_RIDING_A_PET);
 			canTransform = false;
 		}
+		
 		return canTransform;
 	}
 }

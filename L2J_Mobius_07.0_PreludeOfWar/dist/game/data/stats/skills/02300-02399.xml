@@ -1793,12 +1793,12 @@
 		<itemConsumeId>9713</itemConsumeId>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>85</magicLevel>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<and>
 				<player instanceId="11" />
 				<player insideZoneId="2353" />
 			</and>
-		</cond>
+		</conditions>
 		<effects>
 			<effect name="DetectHiddenObjects" />
 		</effects>
@@ -2007,9 +2007,9 @@
 				</doorIds>
 			</condition>
 		</conditions>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player instanceId="167" />
-		</cond>
+		</conditions>
 		<effects>
 			<effect name="OpenDoor">
 				<chance>100</chance>

@@ -158,9 +158,9 @@
 		<set name="commissionItemType" val="PET_EQUIPMENT" />
 		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
-		<cond msgId="600">
+		<conditions msgId="600">
 			<player categoryType="ALL_WOLF_GROUP" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">4</stat>
 			<stat type="mAtk">5</stat>
@@ -183,9 +183,9 @@
 		<set name="commissionItemType" val="PET_EQUIPMENT" />
 		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
-		<cond msgId="600">
+		<conditions msgId="600">
 			<player categoryType="ALL_WOLF_GROUP" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="mDef">14</stat>
 			<stat type="pDef">9</stat>
@@ -346,9 +346,9 @@
 		<set name="handler" val="PetFood" />
 		<set name="commissionItemType" val="PET_SUPPLIES" />
 		<set name="for_npc" val="true" />
-		<cond msgId="600">
+		<conditions msgId="600">
 			<player categoryType="ALL_WOLF_GROUP,SIN_EATER_GROUP,DEINONYCHUS_PET_GROUP" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2048" level="1" /> <!-- Wolf Food -->
 		</skills>

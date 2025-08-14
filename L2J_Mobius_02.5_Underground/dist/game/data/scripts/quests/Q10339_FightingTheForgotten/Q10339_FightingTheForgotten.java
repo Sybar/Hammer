@@ -50,8 +50,10 @@ public class Q10339_FightingTheForgotten extends Quest
 		22938, // Seknus
 		22932, // Krakia Carcass
 	};
+	
 	// Location
 	private static final Location TELEPORT_LOC = new Location(-114857, 147877, -7720);
+	
 	// Misc
 	private static final int MIN_LV = 85;
 	
@@ -160,6 +162,7 @@ public class Q10339_FightingTheForgotten extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -192,6 +195,7 @@ public class Q10339_FightingTheForgotten extends Quest
 			npcLogList.add(new NpcLogListHolder(NpcStringId.ELIMINATING_THE_ANCIENT_GHOSTS, qs.getMemoState()));
 			return npcLogList;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

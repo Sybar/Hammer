@@ -71,6 +71,7 @@ public class DoubleCast extends AbstractEffect
 				}
 			}
 		}
+		
 		super.onStart(effector, effected, skill, item);
 	}
 	

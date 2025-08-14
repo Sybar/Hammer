@@ -16,6 +16,8 @@
  */
 package quests.Q10369_NoblesseSoulTesting;
 
+import java.util.Collection;
+
 import org.l2jmobius.Config;
 import org.l2jmobius.commons.threads.ThreadPool;
 import org.l2jmobius.gameserver.managers.QuestManager;
@@ -53,6 +55,7 @@ public class Q10369_NoblesseSoulTesting extends Quest
 	private static final int INVISIBLE_NPC_NOBLE = 27484;
 	private static final int INVISIBLE_NPC_NOBLE_2 = 27487;
 	private static final int FLAME_FLOWER = 33735;
+	
 	// Items
 	private static final int SUMMONING_STONE = 34912;
 	private static final int NOVELLA_PROPHECY = 34886;
@@ -74,16 +77,20 @@ public class Q10369_NoblesseSoulTesting extends Quest
 	private static final int SOE_ISLE_OF_PRAYER = 34980;
 	private static final int SOE_FORGE_OF_GODS = 34979;
 	private static final int SOE_SECRET_ROOM = 39517;
+	
 	// Skills
 	private static final SkillHolder EMPTY_WATER_SKILL = new SkillHolder(9443, 1);
 	private static final SkillHolder TROWEL_SKILL = new SkillHolder(9442, 1);
 	private static final SkillHolder HELPING_SEED_SKILL = new SkillHolder(9444, 1);
+	
 	// TODO: Casting this skill on HELPING_TREE_SUMMON_DEVICE?? Or its AOE??
 	// private static final SkillHolder HELPING_TREE_CP_RECOVERY_RANGE = new SkillHolder(7103, 1);
 	private static final SkillHolder NOBLESSE_PRESENTATION = new SkillHolder(18176, 1);
+	
 	// Locations
 	private static final Location HELPING_TREE_LOC_1 = new Location(148223, 14869, -1368, 23);
 	private static final Location HELPING_TREE_LOC_2 = new Location(22036, -49785, -1296, 23);
+	
 	// Monsters
 	private static final int[] HOT_SPRINGS =
 	{
@@ -101,6 +108,7 @@ public class Q10369_NoblesseSoulTesting extends Quest
 		22265, // Chrysocolla
 		22266, // Pythia
 	};
+	
 	// Misc
 	private static final int MIN_LEVEL = 75;
 	
@@ -262,6 +270,7 @@ public class Q10369_NoblesseSoulTesting extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -323,6 +332,7 @@ public class Q10369_NoblesseSoulTesting extends Quest
 									{
 										instance.onEvent("enterInstance", npc, player);
 									}
+									
 									htmltext = null;
 									break;
 								}
@@ -435,6 +445,7 @@ public class Q10369_NoblesseSoulTesting extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -573,7 +584,7 @@ public class Q10369_NoblesseSoulTesting extends Quest
 	}
 	
 	@Override
-	public void onSkillSee(Npc npc, Player player, Skill skill, WorldObject[] targets, boolean isSummon)
+	public void onSkillSee(Npc npc, Player player, Skill skill, Collection<WorldObject> targets, boolean isSummon)
 	{
 		if (player != null)
 		{
@@ -594,7 +605,7 @@ public class Q10369_NoblesseSoulTesting extends Quest
 				}
 				case FLAME_FLOWER:
 				{
-					if ((skill == TROWEL_SKILL.getSkill()) && (ArrayUtil.contains(targets, npc)))
+					if ((skill == TROWEL_SKILL.getSkill()) && targets.contains(npc))
 					{
 						final QuestState qs = getQuestState(player, false);
 						if ((qs != null) && qs.isStarted() && qs.isCond(10))
@@ -609,6 +620,7 @@ public class Q10369_NoblesseSoulTesting extends Quest
 							{
 								playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 							}
+							
 							npc.doDie(player);
 						}
 					}
@@ -616,7 +628,7 @@ public class Q10369_NoblesseSoulTesting extends Quest
 				}
 				case HELPING_TREE_SUMMON_DEVICE:
 				{
-					if ((skill == HELPING_SEED_SKILL.getSkill()) && (ArrayUtil.contains(targets, npc)))
+					if ((skill == HELPING_SEED_SKILL.getSkill()) && targets.contains(npc))
 					{
 						final QuestState qs = getQuestState(player, false);
 						if ((qs != null) && qs.isStarted() && qs.isCond(16))
@@ -647,6 +659,7 @@ public class Q10369_NoblesseSoulTesting extends Quest
 		{
 			showOnScreenMsg(player, NpcStringId.CLICK_THE_FLAME_FLOWER_THEN_DOUBLE_CLICK_THE_TROWEL, ExShowScreenMessage.TOP_CENTER, 5000);
 		}
+		
 		return super.onFirstTalk(npc, player);
 	}
 	

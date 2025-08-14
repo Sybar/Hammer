@@ -53,6 +53,7 @@ public class RequestCmdLogin extends LoginClientPacket
 			readBytes(_raw);
 			return true;
 		}
+		
 		return false;
 	}
 	

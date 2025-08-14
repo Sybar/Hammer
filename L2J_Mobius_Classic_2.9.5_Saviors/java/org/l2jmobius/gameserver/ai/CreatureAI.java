@@ -29,6 +29,7 @@ import org.l2jmobius.gameserver.model.WorldRegion;
 import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.templates.NpcTemplate;
+import org.l2jmobius.gameserver.model.actor.transform.Transform;
 import org.l2jmobius.gameserver.model.effects.EffectType;
 import org.l2jmobius.gameserver.model.events.EventDispatcher;
 import org.l2jmobius.gameserver.model.events.EventType;
@@ -105,6 +106,7 @@ public class CreatureAI extends AbstractAI
 			{
 				_creature.abortAttack();
 			}
+			
 			_creature.getAI().changeIntentionToCast(_skill, _target, _item, _forceUse, _dontMove);
 		}
 	}
@@ -703,6 +705,7 @@ public class CreatureAI extends AbstractAI
 				{
 					_onNpcMoveFinished = new OnNpcMoveFinished(npc);
 				}
+				
 				EventDispatcher.getInstance().notifyEventAsync(_onNpcMoveFinished, npc);
 			}
 		}
@@ -785,6 +788,7 @@ public class CreatureAI extends AbstractAI
 				// Stop an AI Follow Task
 				stopFollow();
 			}
+			
 			// Stop any intention that has target we want to forget.
 			if (getIntention() != Intention.MOVE_TO)
 			{
@@ -976,6 +980,7 @@ public class CreatureAI extends AbstractAI
 			// LOGGER.warning("maybeMoveToPawn: target == NULL!");
 			return false;
 		}
+		
 		if (offsetValue < 0)
 		{
 			return false; // skill radius -1
@@ -997,6 +1002,7 @@ public class CreatureAI extends AbstractAI
 				{
 					return true;
 				}
+				
 				stopFollow();
 				return false;
 			}
@@ -1009,15 +1015,20 @@ public class CreatureAI extends AbstractAI
 				{
 					_actor.getAI().setIntention(Intention.IDLE);
 				}
+				
 				return true;
 			}
 			
-			// while flying there is no move to cast
-			if ((_actor.getAI().getIntention() == Intention.CAST) && _actor.isPlayer() && _actor.checkTransformed(transform -> !transform.isCombat()))
+			// While flying there is no move to cast.
+			if (_actor.isPlayer() && (_actor.getAI().getIntention() == Intention.CAST))
 			{
-				_actor.sendPacket(SystemMessageId.THE_DISTANCE_IS_TOO_FAR_AND_SO_THE_CASTING_HAS_BEEN_CANCELLED);
-				_actor.sendPacket(ActionFailed.STATIC_PACKET);
-				return true;
+				final Transform transform = _actor.getTransformation();
+				if ((transform != null) && !transform.canUseWeaponStats())
+				{
+					_actor.sendPacket(SystemMessageId.THE_DISTANCE_IS_TOO_FAR_AND_SO_THE_CASTING_HAS_BEEN_CANCELLED);
+					_actor.sendPacket(ActionFailed.STATIC_PACKET);
+					return true;
+				}
 			}
 			
 			// If not running, set the Creature movement type to run and send Server->Client packet ChangeMoveType to all others Player
@@ -1034,10 +1045,12 @@ public class CreatureAI extends AbstractAI
 				{
 					offset -= 100;
 				}
+				
 				if (offset < 5)
 				{
 					offset = 5;
 				}
+				
 				startFollow(target.asCreature(), offset);
 			}
 			else
@@ -1045,6 +1058,7 @@ public class CreatureAI extends AbstractAI
 				// Move the actor to Pawn server side AND client side by sending Server->Client packet MoveToPawn (broadcast)
 				moveToPawn(target, offset);
 			}
+			
 			return true;
 		}
 		
@@ -1113,7 +1127,7 @@ public class CreatureAI extends AbstractAI
 		
 		if (_actor != null)
 		{
-			if ((_skill != null) && _skill.isBad() && (_skill.getAffectRange() > 0))
+			if ((_skill != null) && _skill.hasNegativeEffect() && (_skill.getAffectRange() > 0))
 			{
 				if (_actor.isPlayer() && _actor.isMoving())
 				{
@@ -1213,6 +1227,7 @@ public class CreatureAI extends AbstractAI
 					break;
 				}
 			}
+			
 			// water movement analysis
 			if (_actor.isNpc())
 			{
@@ -1231,6 +1246,7 @@ public class CreatureAI extends AbstractAI
 					}
 				}
 			}
+			
 			// skill analysis
 			for (Skill sk : _actor.getAllSkills())
 			{
@@ -1238,6 +1254,7 @@ public class CreatureAI extends AbstractAI
 				{
 					continue;
 				}
+				
 				final int castRange = sk.getCastRange();
 				boolean hasLongRangeDamageSkill = false;
 				if (sk.isContinuous())
@@ -1320,11 +1337,13 @@ public class CreatureAI extends AbstractAI
 						hasLongRangeDamageSkills = true;
 					}
 				}
+				
 				if (castRange > maxCastRange)
 				{
 					maxCastRange = castRange;
 				}
 			}
+			
 			// Because of missing skills, some mages/balanced cannot play like mages
 			if (!hasLongRangeDamageSkills && isMage)
 			{
@@ -1332,12 +1351,14 @@ public class CreatureAI extends AbstractAI
 				isMage = false;
 				isFighter = false;
 			}
+			
 			if (!hasLongRangeSkills && (isMage || isBalanced))
 			{
 				isBalanced = false;
 				isMage = false;
 				isFighter = true;
 			}
+			
 			if (generalSkills.isEmpty() && isMage)
 			{
 				isBalanced = true;

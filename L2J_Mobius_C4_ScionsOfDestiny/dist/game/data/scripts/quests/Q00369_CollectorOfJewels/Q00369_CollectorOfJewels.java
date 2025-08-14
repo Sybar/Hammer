@@ -35,11 +35,14 @@ public class Q00369_CollectorOfJewels extends Quest
 {
 	// NPC
 	private static final int NELL = 30376;
+	
 	// Items
 	private static final int FLARE_SHARD = 5882;
 	private static final int FREEZING_SHARD = 5883;
+	
 	// Reward
 	private static final int ADENA = 57;
+	
 	// Droplist
 	private static final Map<Integer, ItemChanceHolder> MOBS_DROP_CHANCES = new HashMap<>();
 	static

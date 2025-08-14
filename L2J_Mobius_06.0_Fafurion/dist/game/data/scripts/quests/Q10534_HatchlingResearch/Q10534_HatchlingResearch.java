@@ -39,8 +39,10 @@ public class Q10534_HatchlingResearch extends Quest
 	private static final int STENA = 34221;
 	private static final int DRAGON_HATCHING = 23434;
 	private static final int LEOPARD_DRAGON = 23435;
+	
 	// Item
 	private static final int HATCHLING_FLASH = 46735;
+	
 	// Misc
 	private static final int MIN_LEVEL = 81;
 	private static final int MAX_LEVEL = 84;
@@ -97,6 +99,7 @@ public class Q10534_HatchlingResearch extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -131,6 +134,7 @@ public class Q10534_HatchlingResearch extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

@@ -34,7 +34,7 @@ import org.l2jmobius.gameserver.network.serverpackets.SystemMessage;
 public class ItemSkillsTemplate implements IItemHandler
 {
 	@Override
-	public boolean useItem(Playable playable, Item item, boolean forceUse)
+	public boolean onItemUse(Playable playable, Item item, boolean forceUse)
 	{
 		if (!playable.isPlayer() && !playable.isPet())
 		{
@@ -159,6 +159,7 @@ public class ItemSkillsTemplate implements IItemHandler
 				}
 			}
 		}
+		
 		return false;
 	}
 	
@@ -211,8 +212,10 @@ public class ItemSkillsTemplate implements IItemHandler
 					sm = "There are " + seconds + " second(s) remaining in " + skill.getName() + "'s re-use time.";
 				}
 			}
+			
 			playable.sendMessage(sm);
 		}
+		
 		return isAvailable;
 	}
 }

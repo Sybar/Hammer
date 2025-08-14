@@ -125,6 +125,7 @@ public class SiegeDefenderList extends ServerPacket
 			{
 				buffer.writeInt(SiegeClanType.DEFENDER_PENDING.ordinal() + 1);
 			}
+			
 			buffer.writeInt(clan.getAllyId());
 			if (clan.getAllyId() != 0)
 			{

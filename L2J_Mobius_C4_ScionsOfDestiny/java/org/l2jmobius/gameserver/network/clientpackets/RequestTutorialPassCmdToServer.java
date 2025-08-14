@@ -43,10 +43,11 @@ public class RequestTutorialPassCmdToServer extends ClientPacket
 		{
 			return;
 		}
+		
 		final IBypassHandler handler = BypassHandler.getInstance().getHandler(_bypass);
 		if (handler != null)
 		{
-			handler.useBypass(_bypass, player, null);
+			handler.onCommand(_bypass, player, null);
 		}
 		else
 		{

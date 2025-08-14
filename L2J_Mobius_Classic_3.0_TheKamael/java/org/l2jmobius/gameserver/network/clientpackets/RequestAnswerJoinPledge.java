@@ -89,6 +89,7 @@ public class RequestAnswerJoinPledge extends ClientPacket
 			}
 			
 			final Clan clan = requestor.getClan();
+			
 			// we must double check this cause during response time conditions can be changed, i.e. another player could join clan
 			if (clan.checkClanJoinCondition(requestor, player, pledgeType))
 			{
@@ -125,6 +126,7 @@ public class RequestAnswerJoinPledge extends ClientPacket
 						castle.giveResidentialSkills(player);
 					}
 				}
+				
 				if (clan.getFortId() > 0)
 				{
 					final Fort fort = FortManager.getInstance().getFortByOwner(clan);
@@ -133,6 +135,7 @@ public class RequestAnswerJoinPledge extends ClientPacket
 						fort.giveResidentialSkills(player);
 					}
 				}
+				
 				player.sendSkillList();
 				
 				clan.broadcastToOtherOnlineMembers(new PledgeShowMemberListAdd(player), player);

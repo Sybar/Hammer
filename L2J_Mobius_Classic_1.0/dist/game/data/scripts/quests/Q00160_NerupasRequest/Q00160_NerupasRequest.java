@@ -34,13 +34,16 @@ public class Q00160_NerupasRequest extends Quest
 	private static final int UNOREN = 30147;
 	private static final int CREAMEES = 30149;
 	private static final int JULIA = 30152;
+	
 	// Items
 	private static final int SILVERY_SPIDERSILK = 1026;
 	private static final int UNOS_RECEIPT = 1027;
 	private static final int CELS_TICKET = 1028;
 	private static final int NIGHTSHADE_LEAF = 1029;
+	
 	// Reward
 	private static final int LESSER_HEALING_POTION = 1060;
+	
 	// Misc
 	private static final int MIN_LEVEL = 3;
 	
@@ -63,8 +66,10 @@ public class Q00160_NerupasRequest extends Quest
 			{
 				giveItems(player, SILVERY_SPIDERSILK, 1);
 			}
+			
 			return event;
 		}
+		
 		return null;
 	}
 	
@@ -126,6 +131,7 @@ public class Q00160_NerupasRequest extends Quest
 							{
 								giveItems(player, UNOS_RECEIPT, 1);
 							}
+							
 							qs.setCond(2, true);
 							htmltext = "30147-01.html";
 						}
@@ -148,6 +154,7 @@ public class Q00160_NerupasRequest extends Quest
 							{
 								giveItems(player, CELS_TICKET, 1);
 							}
+							
 							qs.setCond(3, true);
 							htmltext = "30149-01.html";
 						}
@@ -170,6 +177,7 @@ public class Q00160_NerupasRequest extends Quest
 							{
 								giveItems(player, NIGHTSHADE_LEAF, 1);
 							}
+							
 							qs.setCond(4, true);
 							htmltext = "30152-01.html";
 						}
@@ -183,6 +191,7 @@ public class Q00160_NerupasRequest extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

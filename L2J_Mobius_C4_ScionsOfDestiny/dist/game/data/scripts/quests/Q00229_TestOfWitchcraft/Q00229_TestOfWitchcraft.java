@@ -45,6 +45,7 @@ public class Q00229_TestOfWitchcraft extends Quest
 	private static final int RODERIK = 30631;
 	private static final int ENDRIGO = 30632;
 	private static final int EVERT = 30633;
+	
 	// Monsters
 	private static final int DIRE_WYRM = 20557;
 	private static final int ENCHANTED_STONE_GOLEM = 20565;
@@ -59,6 +60,7 @@ public class Q00229_TestOfWitchcraft extends Quest
 	private static final int NAMELESS_REVENANT = 27099;
 	private static final int SKELETAL_MERCENARY = 27100;
 	private static final int DREVANUL_PRINCE_ZERUEL = 27101;
+	
 	// Items
 	private static final int ORIM_DIAGRAM = 3308;
 	private static final int ALEXANDRIA_BOOK = 3309;
@@ -89,9 +91,11 @@ public class Q00229_TestOfWitchcraft extends Quest
 	private static final int ZERUEL_BIND_CRYSTAL = 3334;
 	private static final int BRIMSTONE_2 = 3335;
 	private static final int SWORD_OF_BINDING = 3029;
+	
 	// Rewards
 	private static final int MARK_OF_WITCHCRAFT = 3307;
 	private static final int DIMENSIONAL_DIAMOND = 7562;
+	
 	// Misc
 	private static boolean _drevanulPrinceZeruel = false;
 	private static boolean _swordOfBinding = false;
@@ -782,6 +786,7 @@ public class Q00229_TestOfWitchcraft extends Quest
 						giveItems(player, ZERUEL_BIND_CRYSTAL, 1);
 						npc.broadcastSay(ChatType.GENERAL, "No! I haven't completely finished the command for destruction and slaughter yet!!!");
 					}
+					
 					cancelQuestTimer("zeruel_cleanup", null, player);
 					_drevanulPrinceZeruel = false;
 				}

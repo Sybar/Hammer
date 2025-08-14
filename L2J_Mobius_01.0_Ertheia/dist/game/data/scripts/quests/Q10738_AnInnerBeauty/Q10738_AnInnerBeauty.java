@@ -33,8 +33,10 @@ public class Q10738_AnInnerBeauty extends Quest
 	// NPCs
 	private static final int GRAKON = 33947;
 	private static final int EVNA = 33935;
+	
 	// Items
 	private static final int GRAKON_S_NOTE = 39521;
+	
 	// Misc
 	private static final int MIN_LEVEL = 5;
 	private static final int MAX_LEVEL = 20;
@@ -91,6 +93,7 @@ public class Q10738_AnInnerBeauty extends Quest
 				htmltext = null;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -122,6 +125,7 @@ public class Q10738_AnInnerBeauty extends Quest
 				htmltext = "33935-01.html";
 			}
 		}
+		
 		return htmltext;
 	}
 }

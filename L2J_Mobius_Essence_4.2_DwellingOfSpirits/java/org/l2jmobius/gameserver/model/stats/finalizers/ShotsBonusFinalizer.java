@@ -80,6 +80,7 @@ public class ShotsBonusFinalizer implements IStatFunction
 				baseValue += player.getActiveRubyJewel().getBonus();
 			}
 		}
+		
 		return Stat.defaultValue(creature, stat, baseValue);
 	}
 	

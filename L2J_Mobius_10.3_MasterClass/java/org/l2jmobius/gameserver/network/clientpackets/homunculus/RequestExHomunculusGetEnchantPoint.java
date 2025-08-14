@@ -57,6 +57,7 @@ public class RequestExHomunculusGetEnchantPoint extends ClientPacket
 			{
 				return;
 			}
+			
 			int usedKillConverts = player.getVariables().getInt(PlayerVariables.HOMUNCULUS_USED_KILL_CONVERT, 0);
 			if (usedKillConverts >= 5)
 			{
@@ -75,6 +76,7 @@ public class RequestExHomunculusGetEnchantPoint extends ClientPacket
 			{
 				return;
 			}
+			
 			int usedVpConverts = player.getVariables().getInt(PlayerVariables.HOMUNCULUS_USED_VP_CONVERT, 0);
 			if (usedVpConverts >= 5)
 			{
@@ -105,6 +107,7 @@ public class RequestExHomunculusGetEnchantPoint extends ClientPacket
 		{
 			player.sendPacket(new ExHomunculusHPSPVP(player));
 		}
+		
 		player.sendPacket(new ExHomunculusPointInfo(player));
 		player.sendPacket(new ExHomunculusGetEnchantPointResult(_type));
 	}

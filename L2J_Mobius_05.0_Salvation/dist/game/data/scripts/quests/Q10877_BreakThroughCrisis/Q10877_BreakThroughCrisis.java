@@ -45,10 +45,13 @@ public class Q10877_BreakThroughCrisis extends Quest
 {
 	// NPC
 	private static final int ARCTURUS = 34267;
+	
 	// Items
 	private static final ItemHolder LIONEL_HUNTERS_LIST_PART_4 = new ItemHolder(47829, 1);
+	
 	// Rewards
 	private static final int ARCTURUS_CERTIFICATE = 47833;
+	
 	// Misc
 	private static final int MIN_LEVEL = 103;
 	private static final int BESTIARY_PAGES_NEEDED = 10;
@@ -71,6 +74,7 @@ public class Q10877_BreakThroughCrisis extends Quest
 		{
 			return htmltext;
 		}
+		
 		switch (event)
 		{
 			case "34267-02.htm":
@@ -105,6 +109,7 @@ public class Q10877_BreakThroughCrisis extends Quest
 						killedMobs.add(card.getId());
 					}
 				}
+				
 				if (killedMobs.size() >= BESTIARY_PAGES_NEEDED)
 				{
 					addExpAndSp(player, 34471245000L, 634471244);
@@ -116,6 +121,7 @@ public class Q10877_BreakThroughCrisis extends Quest
 					{
 						mainQ.notifyEvent("SUBQUEST_FINISHED_NOTIFY", npc, player);
 					}
+					
 					htmltext = event;
 				}
 				else
@@ -125,6 +131,7 @@ public class Q10877_BreakThroughCrisis extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -160,6 +167,7 @@ public class Q10877_BreakThroughCrisis extends Quest
 							killedMobs.add(card.getId());
 						}
 					}
+					
 					if (killedMobs.size() >= BESTIARY_PAGES_NEEDED)
 					{
 						htmltext = "34267-06.html";
@@ -177,6 +185,7 @@ public class Q10877_BreakThroughCrisis extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

@@ -23,15 +23,16 @@ package org.l2jmobius.gameserver.network.clientpackets.attendance;
 import java.util.List;
 
 import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.data.holders.AttendanceItemHolder;
 import org.l2jmobius.gameserver.data.xml.AttendanceRewardData;
+import org.l2jmobius.gameserver.model.World;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.holders.player.AttendanceInfoHolder;
 import org.l2jmobius.gameserver.model.item.enums.ItemProcessType;
-import org.l2jmobius.gameserver.model.item.holders.ItemHolder;
-import org.l2jmobius.gameserver.network.PacketLogger;
 import org.l2jmobius.gameserver.network.SystemMessageId;
 import org.l2jmobius.gameserver.network.clientpackets.ClientPacket;
 import org.l2jmobius.gameserver.network.serverpackets.SystemMessage;
+import org.l2jmobius.gameserver.network.serverpackets.attendance.ExVipAttendanceList;
 import org.l2jmobius.gameserver.network.serverpackets.attendance.ExVipAttendanceReward;
 
 /**
@@ -70,20 +71,20 @@ public class RequestVipAttendanceItemReward extends ClientPacket
 		
 		final AttendanceInfoHolder attendanceInfo = player.getAttendanceInfo();
 		final int rewardIndex = attendanceInfo.getRewardIndex();
-		final List<ItemHolder> rewards = AttendanceRewardData.getInstance().getRewards();
+		final List<AttendanceItemHolder> rewards = AttendanceRewardData.getInstance().getRewards();
 		
 		if ((_day > 0) && (_day <= rewards.size()))
 		{
-			// Claim all unreclaimed rewards before the current day.
+			// Claim all unclaimed rewards before the current day.
 			for (int i = rewardIndex; i < (_day - 1); i++)
 			{
-				final ItemHolder unreclaimedReward = rewards.get(i);
-				player.addItem(ItemProcessType.REWARD, unreclaimedReward, player, true);
+				final AttendanceItemHolder unreclaimedReward = rewards.get(i);
+				player.addItem(ItemProcessType.REWARD, unreclaimedReward.getItemId(), unreclaimedReward.getItemCount(), player, true);
 			}
 			
 			// Claim the current day's reward
-			final ItemHolder reward = rewards.get(_day - 1); // Subtract 1 because the index is 0-based.
-			player.addItem(ItemProcessType.REWARD, reward, player, true);
+			final AttendanceItemHolder reward = rewards.get(_day - 1); // Subtract 1 because the index is 0-based.
+			player.addItem(ItemProcessType.REWARD, reward.getItemId(), reward.getItemCount(), player, true);
 			player.setAttendanceInfo(_day); // Update reward index.
 			
 			// Send message.
@@ -93,10 +94,19 @@ public class RequestVipAttendanceItemReward extends ClientPacket
 			
 			// Send confirm packet.
 			player.sendPacket(new ExVipAttendanceReward());
-		}
-		else
-		{
-			PacketLogger.warning(getClass().getSimpleName() + player + ": Invalid attendance day: " + _day);
+			
+			// Update other players.
+			if (Config.ATTENDANCE_REWARDS_SHARE_ACCOUNT && (!Config.OFFLINE_DISCONNECT_SAME_ACCOUNT || !Config.OFFLINE_PLAY_DISCONNECT_SAME_ACCOUNT))
+			{
+				for (Player worldPlayer : World.getInstance().getPlayers())
+				{
+					if (worldPlayer.getAccountName().equals(player.getAccountName()))
+					{
+						worldPlayer.setAttendanceInfo(_day); // Update reward index.
+						worldPlayer.sendPacket(new ExVipAttendanceList(worldPlayer));
+					}
+				}
+			}
 		}
 	}
 }

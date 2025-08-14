@@ -37,16 +37,19 @@ public class Q00374_WhisperOfDreamsPart1 extends Quest
 	private static final int GALMAN = 31044;
 	private static final int CAVE_BEAST = 20620;
 	private static final int DEATH_WAVE = 20621;
+	
 	// Items
 	private static final ItemHolder CAVE_BEAST_TOOTH = new ItemHolder(5884, 360);
 	private static final ItemHolder DEATH_WAVE_LIGHT = new ItemHolder(5885, 360);
 	private static final ItemHolder SEALED_MYSTERIOUS_STONE = new ItemHolder(5886, 1);
 	private static final int MYSTERIOUS_STONE = 5887;
+	
 	// Rewards
 	private static final int SCROLL_PART_EA = 49475;
 	private static final int REFINED_SCROLL_PART_EA = 49478;
 	private static final int ENCHANT_ARMOR_B = 948;
 	private static final int IMPROVED_ENCHANT_ARMOR_B = 29743;
+	
 	// Misc
 	private static final int MIN_LEVEL = 56;
 	private static final int MAX_LEVEL = 66;
@@ -182,6 +185,7 @@ public class Q00374_WhisperOfDreamsPart1 extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -239,6 +243,7 @@ public class Q00374_WhisperOfDreamsPart1 extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -275,10 +280,12 @@ public class Q00374_WhisperOfDreamsPart1 extends Quest
 					break;
 				}
 			}
+			
 			if (qs.isCond(1) && (hasAllItems(qs.getPlayer(), true, DEATH_WAVE_LIGHT, CAVE_BEAST_TOOTH)))
 			{
 				qs.setCond(2, true);
 			}
+			
 			if (qs.isCond(3) && (hasAllItems(qs.getPlayer(), true, SEALED_MYSTERIOUS_STONE)))
 			{
 				qs.setCond(4, true);

@@ -78,6 +78,7 @@ public class Balok extends AbstractNpcAI
 		NORMAL_MOBS.add(22414);
 		NORMAL_MOBS.add(22416);
 	}
+	
 	// Intermid bosses
 	private static final int KESMA = 25956;
 	private static final int PRAIS = 25957;
@@ -93,6 +94,7 @@ public class Balok extends AbstractNpcAI
 		INTERMID_BOSSES.add(HEEDER);
 		INTERMID_BOSSES.add(HEARAK);
 	}
+	
 	// Final boss
 	private static final int BALOK1 = 29157; // Balok red normal
 	private static final int BALOK2 = 29161; // Balok aqua
@@ -106,6 +108,7 @@ public class Balok extends AbstractNpcAI
 		FINAL_BOSSES.add(BALOK3);
 		FINAL_BOSSES.add(LORD_BALOK);
 	}
+	
 	// Locations
 	private static final Location KESMA_LOC = new Location(-17370, 184479, -3991, 49942);
 	private static final Location PRAIS_LOC = new Location(-21765, 178790, -4077, 7662);
@@ -113,8 +116,10 @@ public class Balok extends AbstractNpcAI
 	private static final Location HEEDER_LOC = new Location(-15210, 178553, -4277, 25134);
 	private static final Location HEARAK_LOC = new Location(-13947, 181909, -4348, 32883);
 	private static final Location BALOK_LOC = new Location(-18392, 181079, -3845, 48678);
+	
 	// Zone
 	private static final ZoneType BALOK_BATTLE_ZONE = ZoneManager.getInstance().getZoneByName("balok_area");
+	
 	// Misc
 	private static final AtomicReference<SpawnTemplate> NORMAL_BATTLE_MOBS = new AtomicReference<>();
 	private static final Set<Npc> BOSS_SPAWNED = ConcurrentHashMap.newKeySet();
@@ -159,6 +164,7 @@ public class Balok extends AbstractNpcAI
 		{
 			startTime.add(Calendar.DAY_OF_YEAR, 1);
 		}
+		
 		ThreadPool.scheduleAtFixedRate(this::startEvent, startTime.getTimeInMillis() - currentTime, 86400000); // 86400000 = 1 day
 	}
 	
@@ -244,6 +250,7 @@ public class Balok extends AbstractNpcAI
 			finalBoss();
 			_stage = 4;
 		}
+		
 		BOSS_SPAWNED.clear();
 		setSecondWaveKilled(true);
 		BattleWithBalokManager.getInstance().setGlobalStage(_stage);
@@ -257,10 +264,12 @@ public class Balok extends AbstractNpcAI
 		{
 			setFirstWaveKilled(true);
 		}
+		
 		if (_midbossDefeatCount == 5)
 		{
 			setFirstWaveKilled(true);
 		}
+		
 		if (_stage < 4)
 		{
 			Broadcast.toAllOnlinePlayers(new BalrogWarBossInfo(_finalBalokType, _finalBalokStatus, _kesmaStatus, _praisStatus, _viraStatus, _hearakStatus, _heederStatus));
@@ -323,18 +332,22 @@ public class Balok extends AbstractNpcAI
 		{
 			rewardId = 91641; // Sayha's Blessing, consolation item reward.
 		}
+		
 		if ((_stage <= 5) && !_balokKilled)
 		{
 			rewardId = 91641; // Sayha's Blessing, consolation item reward
 		}
+		
 		if ((_stage == 5) && _balokKilled)
 		{
 			rewardId = 97087; // Lord Balok's Treasure Chest
 		}
+		
 		if ((_stage == 4) && _balokKilled)
 		{
 			rewardId = (Rnd.get(97075, 97086)); // Balok's Treasure Chest
 		}
+		
 		BattleWithBalokManager.getInstance().setReward(rewardId);
 	}
 	
@@ -357,6 +370,7 @@ public class Balok extends AbstractNpcAI
 			reward = 730; // Scroll: Enchant A-grade Armor
 			BALOK_BATTLE_ZONE.broadcastPacket(new ExShowScreenMessage(NpcStringId.S1_RECEIVES_SCROLL_ENCHANT_ARMOR, ExShowScreenMessage.BOTTOM_RIGHT, 10000, false, player.getName()));
 		}
+		
 		player.addItem(ItemProcessType.REWARD, reward, 1, player, true);
 	}
 	
@@ -367,10 +381,12 @@ public class Balok extends AbstractNpcAI
 		{
 			reward = 33809; // Improved Scroll: Enchant A-grade Weapon
 		}
+		
 		if (reward > 0)
 		{
 			player.addItem(ItemProcessType.REWARD, reward, 1, player, true);
 		}
+		
 		BALOK_BATTLE_ZONE.broadcastPacket(new ExShowScreenMessage(NpcStringId.S1_RECEIVES_SCROLL_ENCHANT_WEAPON, ExShowScreenMessage.BOTTOM_RIGHT, 10000, false, player.getName()));
 	}
 	
@@ -454,10 +470,12 @@ public class Balok extends AbstractNpcAI
 			addGlobalPoints(npc.getId() == SCORPION ? Config.BALOK_POINTS_PER_MONSTER * 10 : Config.BALOK_POINTS_PER_MONSTER);
 			BattleWithBalokManager.getInstance().setGlobalPoints(_globalPoints);
 		}
+		
 		if (INTERMID_BOSSES.contains(npc.getId()) && (_firstKillBalokId == 0)) // to lord balok plus
 		{
 			_firstKillBalokId = npc.getId();
 		}
+		
 		if (FINAL_BOSSES.contains(npc.getId()))
 		{
 			if (_stage == 5)
@@ -468,11 +486,13 @@ public class Balok extends AbstractNpcAI
 			{
 				Broadcast.toAllOnlinePlayers(new SystemMessage(SystemMessageId.YOU_VE_WON_THE_BATTLE_WITH_BALOK));
 			}
+			
 			setFinalBalokStatus(2);
 			setBalokKilled(true);
 			lastHitRewardBalok(npc, player);
 			finishAndReward();
 		}
+		
 		if (npc.getId() == KESMA)
 		{
 			addMidbossDefeatCount(1);
@@ -480,6 +500,7 @@ public class Balok extends AbstractNpcAI
 			interBossesStatus();
 			lastHitRewardMonsters(player);
 		}
+		
 		if (npc.getId() == PRAIS)
 		{
 			addMidbossDefeatCount(1);
@@ -487,6 +508,7 @@ public class Balok extends AbstractNpcAI
 			interBossesStatus();
 			lastHitRewardMonsters(player);
 		}
+		
 		if (npc.getId() == VIRA)
 		{
 			addMidbossDefeatCount(1);
@@ -494,6 +516,7 @@ public class Balok extends AbstractNpcAI
 			interBossesStatus();
 			lastHitRewardMonsters(player);
 		}
+		
 		if (npc.getId() == HEARAK)
 		{
 			addMidbossDefeatCount(1);
@@ -501,6 +524,7 @@ public class Balok extends AbstractNpcAI
 			interBossesStatus();
 			lastHitRewardMonsters(player);
 		}
+		
 		if (npc.getId() == HEEDER)
 		{
 			addMidbossDefeatCount(1);
@@ -508,6 +532,7 @@ public class Balok extends AbstractNpcAI
 			interBossesStatus();
 			lastHitRewardMonsters(player);
 		}
+		
 		if ((_stage == 1) && (_globalPoints >= 250000))
 		{
 			_stage = 2;
@@ -515,10 +540,12 @@ public class Balok extends AbstractNpcAI
 			Broadcast.toAllOnlinePlayers(new BalrogWarHud(_status, _stage));
 			Broadcast.toAllOnlinePlayers(new BalrogWarBossInfo(_finalBalokType, _finalBalokStatus, _kesmaStatus, _praisStatus, _viraStatus, _hearakStatus, _heederStatus));
 		}
+		
 		if ((_stage == 2) && (_globalPoints >= 320000) && !_firstWaveKilled && !_midBossFirstSpawn)
 		{
 			spawnInterBossesFirstWave();
 		}
+		
 		if ((_stage == 2) && (_midbossDefeatCount == 3) && _firstWaveKilled)
 		{
 			_stage = 3;
@@ -527,6 +554,7 @@ public class Balok extends AbstractNpcAI
 			Broadcast.toAllOnlinePlayers(new BalrogWarHud(_status, _stage));
 			Broadcast.toAllOnlinePlayers(new BalrogWarBossInfo(_finalBalokType, _finalBalokStatus, _kesmaStatus, _praisStatus, _viraStatus, _hearakStatus, _heederStatus));
 		}
+		
 		if ((_stage == 3) && (_globalPoints >= 800000) && !_secondWaveKilled && !_midBossSecondSpawn)
 		{
 			spawnInterBossesSecondWave();
@@ -534,6 +562,7 @@ public class Balok extends AbstractNpcAI
 			Broadcast.toAllOnlinePlayers(new BalrogWarHud(_status, _stage));
 			Broadcast.toAllOnlinePlayers(new BalrogWarBossInfo(_finalBalokType, _finalBalokStatus, _kesmaStatus, _praisStatus, _viraStatus, _hearakStatus, _heederStatus));
 		}
+		
 		if ((_stage == 3) && (_midbossDefeatCount == 5))
 		{
 			_stage = 4;
@@ -544,6 +573,7 @@ public class Balok extends AbstractNpcAI
 			Broadcast.toAllOnlinePlayers(new BalrogWarHud(_status, _stage));
 			Broadcast.toAllOnlinePlayers(new BalrogWarBossInfo(_finalBalokType, _finalBalokStatus, _kesmaStatus, _praisStatus, _viraStatus, _hearakStatus, _heederStatus));
 		}
+		
 		if ((_stage == 1) && (_globalPoints < 3000) && (getRandom(5000) < 10))
 		{
 			bypassRandomStage();
@@ -564,27 +594,33 @@ public class Balok extends AbstractNpcAI
 			_finalBalokStatus = 3;
 			Broadcast.toAllOnlinePlayers(new SystemMessage(SystemMessageId.YOU_VE_LOST_THE_BATTLE_WITH_BALOK));
 		}
+		
 		if (!_balokKilled && (_stage == 5))
 		{
 			_finalBalokStatus = 3;
 			Broadcast.toAllOnlinePlayers(new SystemMessage(SystemMessageId.YOU_VE_LOST_THE_BATTLE_WITH_LORD_BALOK));
 		}
+		
 		if (_kesmaStatus != 2)
 		{
 			_kesmaStatus = 3;
 		}
+		
 		if (_praisStatus != 2)
 		{
 			_praisStatus = 3;
 		}
+		
 		if (_viraStatus != 2)
 		{
 			_viraStatus = 3;
 		}
+		
 		if ((_heederStatus != 2) && (_stage >= 3) && (_globalPoints >= 800000))
 		{
 			_heederStatus = 3;
 		}
+		
 		if ((_hearakStatus != 2) && (_stage >= 3) && (_globalPoints >= 800000))
 		{
 			_hearakStatus = 3;
@@ -601,10 +637,12 @@ public class Balok extends AbstractNpcAI
 			
 			player.getVariables().set(PlayerVariables.BALOK_AVAILABLE_REWARD, 1);
 		}
+		
 		if (_rewardTask != null)
 		{
 			_rewardTask.cancel(true);
 		}
+		
 		ThreadPool.schedule(this::topRankingRewardFinish, 2400000); // 40 minutes
 	}
 	

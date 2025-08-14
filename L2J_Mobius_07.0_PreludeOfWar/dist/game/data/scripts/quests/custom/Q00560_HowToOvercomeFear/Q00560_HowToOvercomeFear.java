@@ -58,8 +58,10 @@ public class Q00560_HowToOvercomeFear extends Quest
 		24328,
 		24329,
 	};
+	
 	// Item
 	private static final int MONSTER_DROP = 80324;
+	
 	// Misc
 	private static final int REQUIRED_DROP_COUNT = 30;
 	private static final int KILLING_NPCSTRING_ID = NpcStringId.LV_110_HOW_TO_OVERCOME_FEAR_IN_PROGRESS.getId();
@@ -105,6 +107,7 @@ public class Q00560_HowToOvercomeFear extends Quest
 				if (qs.isCond(FINISH_COND) && (getQuestItemsCount(player, MONSTER_DROP) >= REQUIRED_DROP_COUNT))
 				{
 					takeItems(player, MONSTER_DROP, -1);
+					
 					// Reward.
 					addExpAndSp(player, 166685607000L, 166685580);
 					giveAdena(player, 4190158, false);
@@ -117,6 +120,7 @@ public class Q00560_HowToOvercomeFear extends Quest
 				return null;
 			}
 		}
+		
 		return event;
 	}
 	
@@ -161,6 +165,7 @@ public class Q00560_HowToOvercomeFear extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -175,6 +180,7 @@ public class Q00560_HowToOvercomeFear extends Quest
 			{
 				qs.setCond(FINISH_COND, true);
 			}
+			
 			sendNpcLogList(player);
 		}
 	}
@@ -189,6 +195,7 @@ public class Q00560_HowToOvercomeFear extends Quest
 			holder.add(new NpcLogListHolder(KILLING_NPCSTRING_ID, true, (int) getQuestItemsCount(player, MONSTER_DROP)));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

@@ -65,15 +65,18 @@ public class ChamberOfDelusion extends AbstractInstance
 		18820, // Square
 		18823, // Tower
 	};
+	
 	// Items
 	private static final int ENRIA = 4042;
 	private static final int ASOFE = 4043;
 	private static final int THONS = 4044;
 	private static final int LEONARD = 9628;
 	private static final int DELUSION_MARK = 15311;
+	
 	// Skills
 	private static final SkillHolder SUCCESS_SKILL = new SkillHolder(5758, 1);
 	private static final SkillHolder FAIL_SKILL = new SkillHolder(5376, 4);
+	
 	// Timers
 	private static final int ROOM_CHANGE_INTERVAL = 480; // 8 min
 	private static final int ROOM_CHANGE_RANDOM_TIME = 120; // 2 min
@@ -234,6 +237,7 @@ public class ChamberOfDelusion extends AbstractInstance
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -245,6 +249,7 @@ public class ChamberOfDelusion extends AbstractInstance
 		{
 			enterInstance(player, npc, ENTRANCE_GATEKEEPER.get(npcId));
 		}
+		
 		return null;
 	}
 	
@@ -275,6 +280,7 @@ public class ChamberOfDelusion extends AbstractInstance
 				break;
 			}
 		}
+		
 		return null;
 	}
 	
@@ -288,20 +294,24 @@ public class ChamberOfDelusion extends AbstractInstance
 			{
 				if (getRandom(100) < 33)
 				{
-					npc.dropItem(attacker, ENRIA, (int) (3 * Config.RATE_QUEST_DROP));
+					npc.dropItem(attacker, ENRIA, 3);
 				}
+				
 				if (getRandom(100) < 50)
 				{
-					npc.dropItem(attacker, THONS, (int) (4 * Config.RATE_QUEST_DROP));
+					npc.dropItem(attacker, THONS, 4);
 				}
+				
 				if (getRandom(100) < 50)
 				{
-					npc.dropItem(attacker, ASOFE, (int) (4 * Config.RATE_QUEST_DROP));
+					npc.dropItem(attacker, ASOFE, 4);
 				}
+				
 				if (getRandom(100) < 16)
 				{
-					npc.dropItem(attacker, LEONARD, (int) (2 * Config.RATE_QUEST_DROP));
+					npc.dropItem(attacker, LEONARD, 2);
 				}
+				
 				npc.broadcastEvent("SCE_LUCKY", 2000, null);
 				npc.doCast(SUCCESS_SKILL.getSkill());
 			}
@@ -331,6 +341,7 @@ public class ChamberOfDelusion extends AbstractInstance
 				stopRoomChangeTask(world);
 				scheduleRoomChange(world, true);
 			}
+			
 			world.spawnGroup("boxes");
 		}
 	}
@@ -377,6 +388,7 @@ public class ChamberOfDelusion extends AbstractInstance
 				newRoom = getRandom(locations.size() - 1);
 			}
 		}
+		
 		world.setParameter("currentRoom", newRoom);
 		
 		// Teleport players into new room
@@ -417,8 +429,10 @@ public class ChamberOfDelusion extends AbstractInstance
 					{
 						player.sendPacket(new Earthquake(player, 20, 10));
 					}
+					
 					// Wait for a while
 					Thread.sleep(5000);
+					
 					// Change room
 					changeRoom(world);
 				}

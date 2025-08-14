@@ -63,6 +63,7 @@ public class Q00782_UtilizeTheDarknessSeedOfHellfire extends Quest
 		23236, // Kunda
 		23237, // Engineer Zofan
 	};
+	
 	// Items
 	private static final int DISABLED_PETRA = 34976;
 	private static final int PETRA = 34959;
@@ -119,11 +120,13 @@ public class Q00782_UtilizeTheDarknessSeedOfHellfire extends Quest
 						qs.exitQuest(true, true);
 						break;
 					}
+					
 					htmltext = getNoQuestLevelRewardMsg(player);
 					break;
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -168,6 +171,7 @@ public class Q00782_UtilizeTheDarknessSeedOfHellfire extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -197,6 +201,7 @@ public class Q00782_UtilizeTheDarknessSeedOfHellfire extends Quest
 				{
 					qs.setCond(2, true);
 				}
+				
 				if ((getQuestItemsCount(killer, DISABLED_PETRA) == MAX_COUNT) && qs.isCond(2))
 				{
 					qs.setCond(3, true);

@@ -48,7 +48,7 @@ public class AdminFightCalculator implements IAdminCommandHandler
 	};
 	
 	@Override
-	public boolean useAdminCommand(String command, Player activeChar)
+	public boolean onCommand(String command, Player activeChar)
 	{
 		try
 		{
@@ -69,11 +69,12 @@ public class AdminFightCalculator implements IAdminCommandHandler
 		{
 			// Do nothing.
 		}
+		
 		return true;
 	}
 	
 	@Override
-	public String[] getAdminCommandList()
+	public String[] getCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}
@@ -93,16 +94,19 @@ public class AdminFightCalculator implements IAdminCommandHandler
 				lvl1 = Integer.parseInt(st.nextToken());
 				continue;
 			}
+			
 			if (s.equals("lvl2"))
 			{
 				lvl2 = Integer.parseInt(st.nextToken());
 				continue;
 			}
+			
 			if (s.equals("mid1"))
 			{
 				mid1 = Integer.parseInt(st.nextToken());
 				continue;
 			}
+			
 			if (s.equals("mid2"))
 			{
 				mid2 = Integer.parseInt(st.nextToken());
@@ -115,6 +119,7 @@ public class AdminFightCalculator implements IAdminCommandHandler
 		{
 			npc1 = NpcData.getInstance().getTemplate(mid1);
 		}
+		
 		NpcTemplate npc2 = null;
 		if (mid2 != 0)
 		{
@@ -204,6 +209,7 @@ public class AdminFightCalculator implements IAdminCommandHandler
 		// ATTACK speed in milliseconds
 		int sAtk1 = Formulas.calculateTimeBetweenAttacks(npc1.getPAtkSpd());
 		int sAtk2 = Formulas.calculateTimeBetweenAttacks(npc2.getPAtkSpd());
+		
 		// number of ATTACK per 100 seconds
 		sAtk1 = 100000 / sAtk1;
 		sAtk2 = 100000 / sAtk2;
@@ -214,11 +220,13 @@ public class AdminFightCalculator implements IAdminCommandHandler
 			{
 				miss1++;
 			}
+			
 			final byte calcShld1 = Formulas.calcShldUse(npc1, npc2, false);
 			if (calcShld1 > 0)
 			{
 				shld1++;
 			}
+			
 			final boolean calcCrit1 = Formulas.calcCrit(npc1.getCriticalHit(), npc1, npc2, null);
 			if (calcCrit1)
 			{
@@ -246,11 +254,13 @@ public class AdminFightCalculator implements IAdminCommandHandler
 			{
 				miss2++;
 			}
+			
 			final byte calcShld2 = Formulas.calcShldUse(npc2, npc1, false);
 			if (calcShld2 > 0)
 			{
 				shld2++;
 			}
+			
 			final boolean calcCrit2 = Formulas.calcCrit(npc2.getCriticalHit(), npc2, npc1, null);
 			if (calcCrit2)
 			{
@@ -287,6 +297,7 @@ public class AdminFightCalculator implements IAdminCommandHandler
 		// total damage per 100 seconds
 		final int tdmg1 = (int) (sAtk1 * dmg1);
 		final int tdmg2 = (int) (sAtk2 * dmg2);
+		
 		// HP restored per 100 seconds
 		final double maxHp1 = npc1.getMaxHp();
 		final int hp1 = (int) ((npc1.getStat().getValue(Stat.REGENERATE_HP_RATE) * 100000) / Formulas.getRegeneratePeriod(npc1));

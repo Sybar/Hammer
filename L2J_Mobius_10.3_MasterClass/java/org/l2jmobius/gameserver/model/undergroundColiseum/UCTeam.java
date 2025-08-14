@@ -225,6 +225,7 @@ public class UCTeam
 			getParty().setUCState(null);
 			_party = null;
 		}
+		
 		_party = null;
 		_lastParty = null;
 		_consecutiveWins = 0;
@@ -328,6 +329,7 @@ public class UCTeam
 							{
 								amount = Config.PC_CAFE_MAX_POINTS - member.getPcCafePoints();
 							}
+							
 							final SystemMessage sm = new SystemMessage(SystemMessageId.YOU_EARNED_S1_PA_POINT_S);
 							sm.addInt((int) amount);
 							member.sendPacket(sm);

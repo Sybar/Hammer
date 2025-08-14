@@ -60,7 +60,6 @@ import org.l2jmobius.gameserver.model.events.EventType;
 import org.l2jmobius.gameserver.model.events.holders.OnServerStart;
 import org.l2jmobius.gameserver.model.events.listeners.ConsumerEventListener;
 import org.l2jmobius.gameserver.model.item.enums.ItemProcessType;
-import org.l2jmobius.gameserver.script.DateRange;
 import org.l2jmobius.gameserver.util.Broadcast;
 
 /**
@@ -71,7 +70,10 @@ import org.l2jmobius.gameserver.util.Broadcast;
 public class LongTimeEvent extends Quest
 {
 	protected String _eventName;
-	protected DateRange _eventPeriod = null;
+	protected Date _startDate = null;
+	protected Date _endDate = null;
+	protected Date _dropStartDate = null;
+	protected Date _dropEndDate = null;
 	protected boolean _initialized = false;
 	protected boolean _active = false;
 	protected boolean _enableShrines = false;
@@ -109,18 +111,19 @@ public class LongTimeEvent extends Quest
 		super(-1);
 		loadConfig();
 		
-		if (_eventPeriod != null)
+		if ((_startDate != null) && (_endDate != null))
 		{
-			if (_eventPeriod.isWithinRange(new Date()))
+			final Date now = new Date();
+			if (isWithinRange(now))
 			{
 				startEvent();
-				LOGGER.info("Event " + _eventName + " active till " + _eventPeriod.getEndDate());
+				LOGGER.info("Event " + _eventName + " active till " + _endDate);
 			}
-			else if (_eventPeriod.getStartDate().after(new Date()))
+			else if (_startDate.after(now))
 			{
-				final long delay = _eventPeriod.getStartDate().getTime() - System.currentTimeMillis();
+				final long delay = _startDate.getTime() - System.currentTimeMillis();
 				ThreadPool.schedule(new ScheduleStart(), delay);
-				LOGGER.info("Event " + _eventName + " will be started at " + _eventPeriod.getStartDate());
+				LOGGER.info("Event " + _eventName + " will be started at " + _startDate);
 			}
 			else
 			{
@@ -134,6 +137,60 @@ public class LongTimeEvent extends Quest
 	}
 	
 	/**
+	 * Checks if the given date is within the event period.
+	 * @param date the date to check
+	 * @return {@code true} if the date is within range
+	 */
+	private boolean isWithinRange(Date date)
+	{
+		return (date.equals(_startDate) || date.after(_startDate)) && (date.equals(_endDate) || date.before(_endDate));
+	}
+	
+	private boolean isWithinDropPeriod(Date date)
+	{
+		return (date.equals(_dropStartDate) || date.after(_dropStartDate)) && (date.equals(_dropEndDate) || date.before(_dropEndDate));
+	}
+	
+	/**
+	 * Checks if the event period is valid (start before end).
+	 * @return {@code true} if the period is valid
+	 */
+	private boolean isValidPeriod()
+	{
+		return (_startDate != null) && (_endDate != null) && _startDate.before(_endDate);
+	}
+	
+	/**
+	 * Parses a date range string into start and end dates.
+	 * @param dateRange the date range string
+	 * @param format the date format to use
+	 * @return
+	 */
+	private Date[] parseDateRange(String dateRange, SimpleDateFormat format)
+	{
+		final String[] dates = dateRange.split("-");
+		if (dates.length == 2)
+		{
+			try
+			{
+				final Date start = format.parse(dates[0].trim());
+				final Date end = format.parse(dates[1].trim());
+				return new Date[]
+				{
+					start,
+					end
+				};
+			}
+			catch (Exception e)
+			{
+				LOGGER.warning("Invalid Date Format: " + e.getMessage());
+			}
+		}
+		
+		return null;
+	}
+	
+	/**
 	 * Load event configuration file
 	 */
 	private void loadConfig()
@@ -143,7 +200,7 @@ public class LongTimeEvent extends Quest
 			@Override
 			public void load()
 			{
-				parseDatapackFile("data/scripts/events/" + getScriptName() + "/config.xml");
+				parseDatapackFile("data/scripts/events/" + getName() + "/config.xml");
 			}
 			
 			@Override
@@ -151,38 +208,86 @@ public class LongTimeEvent extends Quest
 			{
 				if (!document.getDocumentElement().getNodeName().equalsIgnoreCase("event"))
 				{
-					throw new NullPointerException("WARNING!!! " + getScriptName() + " event: bad config file!");
+					throw new NullPointerException("WARNING!!! " + getName() + " event: bad config file!");
 				}
 				
 				_eventName = document.getDocumentElement().getAttributes().getNamedItem("name").getNodeValue();
 				final String currentYear = String.valueOf(Calendar.getInstance().get(Calendar.YEAR));
 				final String period = document.getDocumentElement().getAttributes().getNamedItem("active").getNodeValue();
+				String dropPeriod = document.getDocumentElement().getAttributes().getNamedItem("dropPeriod") != null ? document.getDocumentElement().getAttributes().getNamedItem("dropPeriod").getNodeValue() : null;
 				if ((document.getDocumentElement().getAttributes().getNamedItem("enableShrines") != null) && document.getDocumentElement().getAttributes().getNamedItem("enableShrines").getNodeValue().equalsIgnoreCase("true"))
 				{
 					_enableShrines = true;
 				}
+				
+				// If no drop period is defined, use the active period as the drop period
+				if ((dropPeriod == null) || dropPeriod.isEmpty())
+				{
+					dropPeriod = period; // Use the same period as the active period
+				}
+				
+				final SimpleDateFormat dateFormat = new SimpleDateFormat("dd MM yyyy", Locale.US);
+				
+				// Handle active period
 				if (period.length() == 21)
 				{
-					// dd MM yyyy-dd MM yyyy
-					_eventPeriod = DateRange.parse(period, new SimpleDateFormat("dd MM yyyy", Locale.US));
+					final Date[] range = parseDateRange(period, dateFormat);
+					if (range != null)
+					{
+						_startDate = range[0];
+						_endDate = range[1];
+					}
 				}
 				else if (period.length() == 11)
 				{
-					// dd MM-dd MM
-					final String start = period.split("-")[0].concat(" ").concat(currentYear);
-					final String end = period.split("-")[1].concat(" ").concat(currentYear);
-					final String activePeriod = start.concat("-").concat(end);
-					_eventPeriod = DateRange.parse(activePeriod, new SimpleDateFormat("dd MM yyyy", Locale.US));
+					final String[] parts = period.split("-");
+					final String start = parts[0] + " " + currentYear;
+					final String end = parts[1] + " " + currentYear;
+					final Date[] range = parseDateRange(start + "-" + end, dateFormat);
+					if (range != null)
+					{
+						_startDate = range[0];
+						_endDate = range[1];
+					}
 				}
 				
-				if (_eventPeriod == null)
+				// Handle drop period (may be different from event period)
+				if (dropPeriod.length() == 21)
+				{
+					final Date[] dropRange = parseDateRange(dropPeriod, dateFormat);
+					if (dropRange != null)
+					{
+						_dropStartDate = dropRange[0];
+						_dropEndDate = dropRange[1];
+					}
+				}
+				else if (dropPeriod.length() == 11)
+				{
+					final String[] parts = dropPeriod.split("-");
+					final String start = parts[0] + " " + currentYear;
+					final String end = parts[1] + " " + currentYear;
+					final Date[] dropRange = parseDateRange(start + "-" + end, dateFormat);
+					if (dropRange != null)
+					{
+						_dropStartDate = dropRange[0];
+						_dropEndDate = dropRange[1];
+					}
+				}
+				
+				// Check that drop period is inside active period
+				if (((_dropStartDate != null) && _dropStartDate.before(_startDate)) || ((_dropEndDate != null) && _dropEndDate.after(_endDate)))
+				{
+					throw new NullPointerException("WARNING!!! " + getName() + " event: drop period must be within the active period");
+				}
+				
+				if (!isValidPeriod())
 				{
 					throw new NullPointerException("WARNING!!! " + getName() + " event: illegal event period");
 				}
 				
 				final Date today = new Date();
 				
-				if (_eventPeriod.getStartDate().after(today) || _eventPeriod.isWithinRange(today))
+				if (_startDate.after(today) || isWithinRange(today))
 				{
 					for (Node n = document.getDocumentElement().getFirstChild(); n != null; n = n.getNextSibling())
 					{
@@ -307,7 +412,7 @@ public class LongTimeEvent extends Quest
 				{
 					if (n.getNodeName().equalsIgnoreCase("destroyItemsOnEnd"))
 					{
-						final long endtime = _eventPeriod.getEndDate().getTime();
+						final long endtime = _endDate.getTime();
 						for (Node d = n.getFirstChild(); d != null; d = d.getNextSibling())
 						{
 							if (d.getNodeName().equalsIgnoreCase("item"))
@@ -317,9 +422,10 @@ public class LongTimeEvent extends Quest
 									final int itemId = Integer.parseInt(d.getAttributes().getNamedItem("id").getNodeValue());
 									if (ItemData.getInstance().getTemplate(itemId) == null)
 									{
-										LOGGER.warning(getScriptName() + " event: Item " + itemId + " does not exist.");
+										LOGGER.warning(getName() + " event: Item " + itemId + " does not exist.");
 										continue;
 									}
+									
 									_destroyItemsOnEnd.add(itemId);
 									
 									// Add item deletion info to manager.
@@ -330,7 +436,7 @@ public class LongTimeEvent extends Quest
 								}
 								catch (NumberFormatException nfe)
 								{
-									LOGGER.warning("Wrong number format in config.xml destroyItemsOnEnd block for " + getScriptName() + " event");
+									LOGGER.warning("Wrong number format in config.xml destroyItemsOnEnd block for " + getName() + " event");
 								}
 							}
 						}
@@ -354,8 +460,11 @@ public class LongTimeEvent extends Quest
 		// Set Active.
 		_active = true;
 		
-		// Add event drops.
-		EventDropManager.getInstance().addDrops(this, _dropList);
+		// Add event drops if within the drop period.
+		if ((_dropStartDate != null) && (_dropEndDate != null) && isWithinDropPeriod(new Date()))
+		{
+			EventDropManager.getInstance().addDrops(this, _dropList);
+		}
 		
 		if (!_spawnList.isEmpty())
 		{
@@ -383,13 +492,13 @@ public class LongTimeEvent extends Quest
 			Broadcast.toAllOnlinePlayers(_onEnterMsg);
 			
 			// Add announce for entering players.
-			final EventAnnouncement announce = new EventAnnouncement(_eventPeriod, _onEnterMsg);
+			final EventAnnouncement announce = new EventAnnouncement(_startDate, _endDate, _onEnterMsg);
 			AnnouncementsTable.getInstance().addAnnouncement(announce);
 			_enterAnnounceId = announce.getId();
 		}
 		
 		// Schedule event end.
-		final Long millisToEventEnd = _eventPeriod.getEndDate().getTime() - System.currentTimeMillis();
+		final Long millisToEventEnd = _endDate.getTime() - System.currentTimeMillis();
 		ThreadPool.schedule(new ScheduleEnd(), millisToEventEnd);
 	}
 	
@@ -404,7 +513,7 @@ public class LongTimeEvent extends Quest
 	
 	protected void spawnNpcs()
 	{
-		final Long millisToEventEnd = _eventPeriod.getEndDate().getTime() - System.currentTimeMillis();
+		final Long millisToEventEnd = _endDate.getTime() - System.currentTimeMillis();
 		for (NpcSpawn npcSpawn : _spawnList)
 		{
 			final Npc npc = addSpawn(npcSpawn.npcId, npcSpawn.loc.getX(), npcSpawn.loc.getY(), npcSpawn.loc.getZ(), npcSpawn.loc.getHeading(), false, millisToEventEnd, false);
@@ -472,6 +581,7 @@ public class LongTimeEvent extends Quest
 						player.destroyItemByItemId(ItemProcessType.DESTROY, itemId, -1, player, true);
 					}
 				}
+				
 				// Update database.
 				try (Connection con = DatabaseFactory.getConnection();
 					PreparedStatement statement = con.prepareStatement("DELETE FROM items WHERE item_id=?"))
@@ -487,9 +597,20 @@ public class LongTimeEvent extends Quest
 		}
 	}
 	
-	public DateRange getEventPeriod()
+	/**
+	 * @return the event start date
+	 */
+	public Date getStartDate()
 	{
-		return _eventPeriod;
+		return _startDate;
+	}
+	
+	/**
+	 * @return the event end date
+	 */
+	public Date getEndDate()
+	{
+		return _endDate;
 	}
 	
 	/**

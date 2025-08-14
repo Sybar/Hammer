@@ -40,9 +40,11 @@ public class Q10329_BackupSeekers extends Quest
 	private static final int KAKAI = 30565;
 	private static final int ATRAN = 33448;
 	private static final int BART = 33204;
+	
 	// Items
 	private static final int RING_OF_KNOWLEDGE = 875;
 	private static final int NECKLACE_OF_KNOWLEDGE = 906;
+	
 	// Locations
 	private static final Location BART_SPAWN_1 = new Location(-117955, 255832, -1320);
 	private static final Location BART_SPAWN_2 = new Location(-114121, 252445, -1560);
@@ -68,6 +70,7 @@ public class Q10329_BackupSeekers extends Quest
 		new Location(-109180, 247015, -3088),
 		new Location(-107839, 248766, -3216),
 	};
+	
 	// Misc
 	private static final int MAX_LEVEL = 20;
 	
@@ -142,6 +145,7 @@ public class Q10329_BackupSeekers extends Quest
 									startQuestTimer("DELETE_NPC", 2000, npc, owner);
 									break;
 								}
+								
 								npc.getVariables().set("MOVE_INDEX", loc_index);
 								addMoveToDesire(npc, BART_LOC_1[loc_index], 0);
 							}
@@ -153,6 +157,7 @@ public class Q10329_BackupSeekers extends Quest
 									startQuestTimer("DELETE_NPC", 2000, npc, owner);
 									break;
 								}
+								
 								npc.getVariables().set("MOVE_INDEX", loc_index);
 								addMoveToDesire(npc, BART_LOC_2[loc_index], 0);
 							}
@@ -221,6 +226,7 @@ public class Q10329_BackupSeekers extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -273,6 +279,7 @@ public class Q10329_BackupSeekers extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

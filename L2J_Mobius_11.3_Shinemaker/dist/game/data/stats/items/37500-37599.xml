@@ -850,9 +850,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="material" val="LIQUID" />
 		<set name="immediate_effect" val="true" />
-		<cond>
+		<conditions>
 			<player MaximumVitalityPoints="140000" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="17119" level="1" /> <!-- Emperor's Vitality Tonic -->
 		</skills>
@@ -868,9 +868,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="material" val="LIQUID" />
 		<set name="immediate_effect" val="true" />
-		<cond>
+		<conditions>
 			<player MaximumVitalityPoints="140000" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="17120" level="1" /> <!-- Emperor's Vitality Tonic (Medium) -->
 		</skills>
@@ -886,9 +886,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="material" val="LIQUID" />
 		<set name="immediate_effect" val="true" />
-		<cond>
+		<conditions>
 			<player MaximumVitalityPoints="140000" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="17121" level="1" /> <!-- Emperor's Vitality Tonic (Large) -->
 		</skills>

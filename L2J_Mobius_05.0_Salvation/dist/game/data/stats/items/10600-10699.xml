@@ -142,12 +142,12 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="SummonItems" />
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
-		<cond>
+		</conditions>
+		<conditions>
 			<player clanHall="36, 37, 38, 39, 40, 41, 51, 52, 53, 54, 55, 56, 57" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2046" level="2" /> <!-- Summon Pet -->
 		</skills>
@@ -746,9 +746,9 @@
 		<set name="price" val="7" />
 		<set name="commissionItemType" val="RING" />
 		<set name="for_npc" val="true" />
-		<cond msgId="600">
+		<conditions msgId="600">
 			<player categoryType="ITEM_EQUIP_PET_GROUP" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="mDef">7</stat>
 		</stats>
@@ -796,9 +796,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="PET_SUPPLIES" />
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2046" level="1" /> <!-- Summon Pet -->
 		</skills>
@@ -812,9 +812,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="PET_SUPPLIES" />
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2046" level="1" /> <!-- Summon Pet -->
 		</skills>
@@ -828,9 +828,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="PET_SUPPLIES" />
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2046" level="1" /> <!-- Summon Pet -->
 		</skills>
@@ -844,9 +844,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="PET_SUPPLIES" />
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2046" level="1" /> <!-- Summon Pet -->
 		</skills>
@@ -860,9 +860,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="PET_SUPPLIES" />
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2046" level="1" /> <!-- Summon Pet -->
 		</skills>

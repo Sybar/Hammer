@@ -36,6 +36,7 @@ public class Q00005_MinersFavor extends Quest
 	private static final int GARITA = 30518;
 	private static final int REED = 30520;
 	private static final int BRUNON = 30526;
+	
 	// Items
 	private static final int BOLTERS_LIST = 1547;
 	private static final int MINING_BOOTS = 1548;
@@ -44,6 +45,7 @@ public class Q00005_MinersFavor extends Quest
 	private static final int REDSTONE_BEER = 1551;
 	private static final int BOLTERS_SMELLY_SOCKS = 1552;
 	private static final int NECKLACE = 49039; // Necklace (Novice)
+	
 	// Misc
 	private static final int MIN_LEVEL = 2;
 	private static final int MAX_LEVEL = 5;
@@ -82,6 +84,7 @@ public class Q00005_MinersFavor extends Quest
 				{
 					return "30526-04.html";
 				}
+				
 				takeItems(player, BOLTERS_SMELLY_SOCKS, -1);
 				giveItems(player, MINERS_PICK, 1);
 				checkProgress(player, qs);
@@ -97,6 +100,7 @@ public class Q00005_MinersFavor extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -126,6 +130,7 @@ public class Q00005_MinersFavor extends Quest
 						{
 							giveItems(player, NECKLACE, 1);
 							qs.exitQuest(false, true);
+							
 							// Newbie Guide
 							showOnScreenMsg(player, NpcStringId.DELIVERY_DUTY_COMPLETE_N_GO_FIND_THE_NEWBIE_HELPER, 2, 5000);
 							htmltext = "30554-06.html";
@@ -164,6 +169,7 @@ public class Q00005_MinersFavor extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -185,6 +191,7 @@ public class Q00005_MinersFavor extends Quest
 		{
 			return npcId + "-02.html";
 		}
+		
 		giveItems(player, itemId, 1);
 		playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 		checkProgress(player, qs);

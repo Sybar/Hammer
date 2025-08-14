@@ -108,7 +108,7 @@ public class HeartInfinityDefence extends AbstractNpcAI
 		22524
 	};
 	
-	//@formatter:off
+	// @formatter:off
 	protected static final int[][] ROOMS_MOBS =
 	{
 		{22520, -179949, 206751, -15521, 0, 60, 1},
@@ -226,7 +226,7 @@ public class HeartInfinityDefence extends AbstractNpcAI
 		{SOULWAGON, -179526, 206900, -15520, 0, 0, -1},
 		{SOULWAGON, -179329, 205916, -15532, 0, 0, -1}
 	};
-	//@formatter:on
+	// @formatter:on
 	
 	public HeartInfinityDefence()
 	{
@@ -241,6 +241,7 @@ public class HeartInfinityDefence extends AbstractNpcAI
 		{
 			addSpawnId(id);
 		}
+		
 		addSpawnId(SOULWAGON);
 		
 		addAggroRangeEnterId(18668);
@@ -273,21 +274,25 @@ public class HeartInfinityDefence extends AbstractNpcAI
 			player.sendPacket(SystemMessageId.YOU_ARE_NOT_CURRENTLY_IN_A_PARTY_SO_YOU_CANNOT_ENTER);
 			return false;
 		}
+		
 		if (party.getLeader() != player)
 		{
 			player.sendPacket(SystemMessageId.ONLY_A_PARTY_LEADER_CAN_TRY_TO_ENTER);
 			return false;
 		}
+		
 		if ((party.getCommandChannel() == null) || (party.getCommandChannel().getLeader() != player))
 		{
 			player.sendPacket(SystemMessageId.ONLY_A_PARTY_LEADER_CAN_TRY_TO_ENTER);
 			return false;
 		}
+		
 		if ((party.getCommandChannel().getMembers().size() < Config.HEART_DEFENCE_MIN_PLAYERS) || (party.getCommandChannel().getMembers().size() > Config.HEART_DEFENCE_MAX_PLAYERS))// 18 27
 		{
 			party.getCommandChannel().broadcastPacket(new SystemMessage(SystemMessageId.C1_S_LEVEL_DOES_NOT_CORRESPOND_TO_THE_REQUIREMENTS_FOR_ENTRY));
 			return false;
 		}
+		
 		for (Player partyMember : party.getCommandChannel().getMembers())
 		{
 			if ((partyMember.getLevel() < 75) || (partyMember.getLevel() > 85))
@@ -315,6 +320,7 @@ public class HeartInfinityDefence extends AbstractNpcAI
 				return false;
 			}
 		}
+		
 		return true;
 	}
 	
@@ -329,6 +335,7 @@ public class HeartInfinityDefence extends AbstractNpcAI
 				player.sendPacket(SystemMessageId.YOU_HAVE_ENTERED_ANOTHER_INSTANCE_ZONE_THEREFORE_YOU_CANNOT_ENTER_CORRESPONDING_DUNGEON);
 				return;
 			}
+			
 			teleportPlayer(player, coords, world.getInstanceId());
 			return;
 		}
@@ -364,6 +371,7 @@ public class HeartInfinityDefence extends AbstractNpcAI
 					}
 				}
 			}
+			
 			((HIDWorld) world).startTime = System.currentTimeMillis();
 			((HIDWorld) world).finishTask = ThreadPool.schedule(new FinishTask((HIDWorld) world), 30 * 60000);
 			((HIDWorld) world).timerTask = ThreadPool.scheduleAtFixedRate(new TimerTask((HIDWorld) world), 298 * 1000, 5 * 60 * 1000);
@@ -433,6 +441,7 @@ public class HeartInfinityDefence extends AbstractNpcAI
 								npc3.deleteMe();
 							}
 						}
+						
 						world.deadTumors.clear();
 					}
 					
@@ -445,6 +454,7 @@ public class HeartInfinityDefence extends AbstractNpcAI
 							world.deadTumors.add(npc4);
 						}
 					}
+					
 					broadCastPacket(world, new ExShowScreenMessage("The tumor inside has completely revived. Ekimus started to regain his energy and is desperately looking for his prey...", 2, 8000));
 				}
 			}, tumorRespawnTime);
@@ -512,6 +522,7 @@ public class HeartInfinityDefence extends AbstractNpcAI
 				}
 			}
 		}
+		
 		return "";
 	}
 	
@@ -529,6 +540,7 @@ public class HeartInfinityDefence extends AbstractNpcAI
 		{
 			enterInstance(player, ENTER_TELEPORT);
 		}
+		
 		return "";
 	}
 	
@@ -546,6 +558,7 @@ public class HeartInfinityDefence extends AbstractNpcAI
 				{
 					addSpawn(mobs[getRandom(mobs.length)], npc.getLocation(), world.getInstanceId());
 				}
+				
 				npc.doDie(npc);
 			}
 		}
@@ -677,6 +690,7 @@ public class HeartInfinityDefence extends AbstractNpcAI
 							qs.set("defenceDone", 1);
 						}
 					}
+					
 					broadCastPacket(_world, new ExShowScreenMessage("Congratulations! You have succeeded! The instance will shortly expire.", 2, 8000));
 					inst.removeNpcs();
 					if (inst.getPlayers().isEmpty())

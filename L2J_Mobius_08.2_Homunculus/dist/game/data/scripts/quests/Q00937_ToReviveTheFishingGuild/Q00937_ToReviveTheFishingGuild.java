@@ -67,9 +67,11 @@ public class Q00937_ToReviveTheFishingGuild extends Quest
 	private static final int EINDARKNER = 31697;
 	private static final int GALBA = 32007;
 	private static final int SANTIAGO = 34138;
+	
 	// Reward
 	private static final int BASIC_SUPPLY_BOX = 47571;
 	private static final int INTERMEDIATE_SUPPLY_BOX = 47572;
+	
 	// Misc
 	private static final int MIN_LEVEL = 85;
 	private static final String COUNT_VAR = "FishWinCount";
@@ -90,6 +92,7 @@ public class Q00937_ToReviveTheFishingGuild extends Quest
 		{
 			return null;
 		}
+		
 		String htmltext = null;
 		switch (event)
 		{
@@ -117,6 +120,7 @@ public class Q00937_ToReviveTheFishingGuild extends Quest
 					{
 						giveItems(player, INTERMEDIATE_SUPPLY_BOX, 1);
 					}
+					
 					addFactionPoints(player, Faction.FISHING_GUILD, 100);
 					qs.exitQuest(QuestType.REPEATABLE, true);
 					htmltext = event;
@@ -124,6 +128,7 @@ public class Q00937_ToReviveTheFishingGuild extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -157,6 +162,7 @@ public class Q00937_ToReviveTheFishingGuild extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -180,6 +186,7 @@ public class Q00937_ToReviveTheFishingGuild extends Quest
 				{
 					playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 				}
+				
 				sendNpcLogList(player);
 			}
 		}
@@ -199,6 +206,7 @@ public class Q00937_ToReviveTheFishingGuild extends Quest
 				return holder;
 			}
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

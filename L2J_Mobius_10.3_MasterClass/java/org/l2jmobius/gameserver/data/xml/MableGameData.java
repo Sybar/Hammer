@@ -128,6 +128,7 @@ public class MableGameData implements IXmlReader
 				ps.setString(5, entry.getKey());
 				ps.addBatch();
 			}
+			
 			ps.executeBatch();
 			LOGGER.warning(getClass().getSimpleName() + ": Saved player states.");
 		}
@@ -289,6 +290,7 @@ public class MableGameData implements IXmlReader
 				LOGGER.warning(getClass().getSimpleName() + ": Failed inserting player state for account: " + accountName + ". " + e.getMessage());
 			}
 		}
+		
 		return state;
 	}
 	
@@ -319,6 +321,7 @@ public class MableGameData implements IXmlReader
 					return color;
 				}
 			}
+			
 			return null;
 		}
 		
@@ -447,6 +450,7 @@ public class MableGameData implements IXmlReader
 						newCellId += cell.getParams()[Rnd.get(cell.getParams().length)];
 						newCellId = Math.min(newCellId, MableGameData.getInstance().getHighestCellId());
 					}
+					
 					setPendingCellIdPopup(newCellId);
 					setCurrentCellId(newCellId);
 					setMoved(true);

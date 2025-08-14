@@ -38,6 +38,7 @@ public class Q00415_PathOfTheOrcMonk extends Quest
 	private static final int ROSHEEK = 30590;
 	private static final int KASMAN = 30501;
 	private static final int TORUKU = 30591;
+	
 	// Items
 	private static final int POMEGRANATE = 1593;
 	private static final int LEATHER_POUCH_1 = 1594;

@@ -112,6 +112,7 @@ public class ZoneManager implements IXmlReader
 				_zoneRegions[x][y] = new ZoneRegion(x, y);
 			}
 		}
+		
 		LOGGER.info(getClass().getSimpleName() + " " + _zoneRegions.length + " by " + _zoneRegions[0].length + " Zone Region Grid set up.");
 		load();
 	}
@@ -293,6 +294,7 @@ public class ZoneManager implements IXmlReader
 										aX[i] = coords[i][0];
 										aY[i] = coords[i][1];
 									}
+									
 									zoneForm = new ZoneNPoly(aX, aY, minZ, maxZ);
 								}
 								else
@@ -379,6 +381,7 @@ public class ZoneManager implements IXmlReader
 								((RespawnZone) temp).addRaceRespawnPoint(race, point);
 							}
 						}
+						
 						if (checkId(zoneId))
 						{
 							LOGGER.config(getClass().getSimpleName() + ": Caution: Zone (" + zoneId + ") from file: " + file.getName() + " overrides previous definition.");
@@ -470,6 +473,7 @@ public class ZoneManager implements IXmlReader
 				count++;
 			}
 		}
+		
 		LOGGER.info(getClass().getSimpleName() + ": Removed zones in " + count + " regions.");
 	}
 	
@@ -484,6 +488,7 @@ public class ZoneManager implements IXmlReader
 		{
 			i += map.size();
 		}
+		
 		return i;
 	}
 	
@@ -501,6 +506,7 @@ public class ZoneManager implements IXmlReader
 				return true;
 			}
 		}
+		
 		return false;
 	}
 	
@@ -519,6 +525,7 @@ public class ZoneManager implements IXmlReader
 			_classZones.put(zone.getClass(), new ConcurrentHashMap<>());
 			map = (ConcurrentHashMap<Integer, T>) _classZones.get(zone.getClass());
 		}
+		
 		map.put(id, zone);
 	}
 	
@@ -548,6 +555,7 @@ public class ZoneManager implements IXmlReader
 				return map.get(id);
 			}
 		}
+		
 		return null;
 	}
 	
@@ -568,6 +576,7 @@ public class ZoneManager implements IXmlReader
 				}
 			}
 		}
+		
 		return null;
 	}
 	
@@ -604,6 +613,7 @@ public class ZoneManager implements IXmlReader
 				}
 			}
 		}
+		
 		return null;
 	}
 	
@@ -630,6 +640,7 @@ public class ZoneManager implements IXmlReader
 		{
 			return null;
 		}
+		
 		return getZone(locational.getX(), locational.getY(), locational.getZ(), type);
 	}
 	
@@ -649,6 +660,7 @@ public class ZoneManager implements IXmlReader
 				temp.add(zone);
 			}
 		}
+		
 		return temp;
 	}
 	
@@ -669,6 +681,7 @@ public class ZoneManager implements IXmlReader
 				temp.add(zone);
 			}
 		}
+		
 		return temp;
 	}
 	
@@ -691,6 +704,7 @@ public class ZoneManager implements IXmlReader
 				return (T) zone;
 			}
 		}
+		
 		return null;
 	}
 	
@@ -719,6 +733,7 @@ public class ZoneManager implements IXmlReader
 				temp.add(territory);
 			}
 		}
+		
 		return temp;
 	}
 	
@@ -741,6 +756,7 @@ public class ZoneManager implements IXmlReader
 				return (OlympiadStadiumZone) temp;
 			}
 		}
+		
 		return null;
 	}
 	
@@ -754,6 +770,7 @@ public class ZoneManager implements IXmlReader
 		{
 			_debugItems = new ArrayList<>();
 		}
+		
 		return _debugItems;
 	}
 	
@@ -771,6 +788,7 @@ public class ZoneManager implements IXmlReader
 					item.decayMe();
 				}
 			}
+			
 			_debugItems.clear();
 		}
 	}

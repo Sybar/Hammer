@@ -23,9 +23,9 @@ package org.l2jmobius.gameserver.network.clientpackets;
 import java.util.List;
 
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.actor.enums.player.Shortcut;
 import org.l2jmobius.gameserver.model.actor.enums.player.ShortcutType;
-import org.l2jmobius.gameserver.model.actor.enums.player.Shortcuts;
+import org.l2jmobius.gameserver.model.actor.holders.player.Shortcut;
+import org.l2jmobius.gameserver.model.actor.holders.player.Shortcuts;
 import org.l2jmobius.gameserver.model.item.instance.Item;
 import org.l2jmobius.gameserver.model.variables.PlayerVariables;
 import org.l2jmobius.gameserver.network.serverpackets.ShortcutRegister;
@@ -104,6 +104,7 @@ public class RequestShortcutReg extends ClientPacket
 		if (oldShortcut != null)
 		{
 			boolean removed = true;
+			
 			// Keep other similar shortcuts activated.
 			if (oldShortcut.isAutoUse())
 			{
@@ -117,6 +118,7 @@ public class RequestShortcutReg extends ClientPacket
 					}
 				}
 			}
+			
 			// Remove auto used ids.
 			if (removed)
 			{
@@ -148,6 +150,7 @@ public class RequestShortcutReg extends ClientPacket
 				}
 			}
 		}
+		
 		player.restoreAutoShortcutVisual();
 		
 		final Shortcut sc = new Shortcut(_slot, _page, _type, _id, _level, _subLevel, _characterType);

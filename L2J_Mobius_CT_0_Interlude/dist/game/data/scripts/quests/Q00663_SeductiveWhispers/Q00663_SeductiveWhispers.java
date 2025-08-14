@@ -34,8 +34,10 @@ public class Q00663_SeductiveWhispers extends Quest
 {
 	// NPC
 	private static final int WILBERT = 30846;
+	
 	// Quest item
 	private static final int SPIRIT_BEAD = 8766;
+	
 	// Rewards
 	private static final int ADENA = 57;
 	private static final int ENCHANT_WEAPON_A = 729;
@@ -70,6 +72,7 @@ public class Q00663_SeductiveWhispers extends Quest
 		4120,
 		4121
 	};
+	
 	// Text of cards
 	private static final Map<Integer, String> CARDS = new HashMap<>();
 	static
@@ -86,6 +89,7 @@ public class Q00663_SeductiveWhispers extends Quest
 		CARDS.put(24, "<font color=\"fff802\"> Moon Card: 4 </font>");
 		CARDS.put(25, "<font color=\"fff802\"> Moon Card: 5 </font>");
 	}
+	
 	// Drop chances
 	private static final Map<Integer, Integer> CHANCES = new HashMap<>();
 	static

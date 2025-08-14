@@ -36,13 +36,17 @@ public class Q00492_TombRaiders extends Quest
 {
 	// NPCs
 	private static final int ZENYA = 32140;
+	
 	// Items
 	private static final int RELICS_OF_THE_EMPIRE = 34769;
+	
 	// Reward
 	private static final int EXP_REWARD = 300500;
 	private static final int SP_REWARD = 75;
+	
 	// Misc
 	private static final int MIN_LEVEL = 80;
+	
 	// Monsters
 	private static final int[] MONSTERS =
 	{
@@ -86,6 +90,7 @@ public class Q00492_TombRaiders extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -133,6 +138,7 @@ public class Q00492_TombRaiders extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

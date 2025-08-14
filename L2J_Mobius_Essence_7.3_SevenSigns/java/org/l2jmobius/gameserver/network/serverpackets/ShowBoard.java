@@ -52,6 +52,7 @@ public class ShowBoard extends ServerPacket
 		{
 			builder.append(str).append("\u0008");
 		}
+		
 		_content = builder.toString();
 	}
 	

@@ -38,12 +38,14 @@ public class Q10833_PutTheQueenOfSpiritsToSleep extends Quest
 	// NPC
 	private static final int FERIN = 34054;
 	private static final int ISABELLA = 26131;
+	
 	// Items
 	private static final int MARK_OF_TRUST_HIGH_GRADE = 45848;
 	private static final int ISABELLAS_EVIL_THOUGHTS = 45839;
 	private static final int SOE = 46158;
 	private static final int ELCYUM_CRYSTAL = 36514;
 	private static final int GIANTS_CODEX = 46152;
+	
 	// Misc
 	private static final int MIN_LEVEL = 100;
 	
@@ -93,6 +95,7 @@ public class Q10833_PutTheQueenOfSpiritsToSleep extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -110,6 +113,7 @@ public class Q10833_PutTheQueenOfSpiritsToSleep extends Quest
 					htmltext = "noItem.htm";
 					break;
 				}
+				
 				htmltext = "34054-01.htm";
 				break;
 			}
@@ -131,6 +135,7 @@ public class Q10833_PutTheQueenOfSpiritsToSleep extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

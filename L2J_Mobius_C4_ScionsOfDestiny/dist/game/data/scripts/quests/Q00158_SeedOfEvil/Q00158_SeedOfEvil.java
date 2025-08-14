@@ -31,6 +31,7 @@ public class Q00158_SeedOfEvil extends Quest
 {
 	// Item
 	private static final int CLAY_TABLET = 1025;
+	
 	// Reward
 	private static final int ENCHANT_ARMOR_D = 956;
 	
@@ -108,6 +109,7 @@ public class Q00158_SeedOfEvil extends Quest
 			giveItems(killer, CLAY_TABLET, 1);
 			qs.setCond(2, true);
 		}
+		
 		npc.broadcastSay(ChatType.NPC_GENERAL, "The power of Lord Beleth rules the whole world...!");
 	}
 }

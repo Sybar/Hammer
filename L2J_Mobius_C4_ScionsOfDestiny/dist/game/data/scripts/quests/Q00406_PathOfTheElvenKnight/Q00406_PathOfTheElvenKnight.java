@@ -34,6 +34,7 @@ public class Q00406_PathOfTheElvenKnight extends Quest
 	// NPCs
 	private static final int SORIUS = 30327;
 	private static final int KLUTO = 30317;
+	
 	// Items
 	private static final int SORIUS_LETTER = 1202;
 	private static final int KLUTO_BOX = 1203;

@@ -115,14 +115,17 @@ public class Party implements IAffectScopeHandler
 				{
 					return false;
 				}
+				
 				if (n.isDead())
 				{
 					return false;
 				}
+				
 				if (n.isAutoAttackable(npc))
 				{
 					return false;
 				}
+				
 				if ((affectObject != null) && !affectObject.checkAffectedObject(creature, n))
 				{
 					return false;

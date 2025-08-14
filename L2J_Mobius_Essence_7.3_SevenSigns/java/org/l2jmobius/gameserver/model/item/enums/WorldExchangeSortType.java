@@ -58,6 +58,7 @@ public enum WorldExchangeSortType
 				return type;
 			}
 		}
+		
 		return null;
 	}
 }

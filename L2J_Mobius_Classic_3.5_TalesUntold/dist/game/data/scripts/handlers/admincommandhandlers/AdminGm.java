@@ -36,7 +36,7 @@ public class AdminGm implements IAdminCommandHandler
 	};
 	
 	@Override
-	public boolean useAdminCommand(String command, Player activeChar)
+	public boolean onCommand(String command, Player activeChar)
 	{
 		if (command.equals("admin_gm") && activeChar.isGM())
 		{
@@ -44,11 +44,12 @@ public class AdminGm implements IAdminCommandHandler
 			activeChar.setAccessLevel(0, true, false);
 			activeChar.sendSysMessage("You deactivated your GM access for this session, if you login again you will be GM again, in order to remove your access completely please shift yourself and set your accesslevel to 0.");
 		}
+		
 		return true;
 	}
 	
 	@Override
-	public String[] getAdminCommandList()
+	public String[] getCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}

@@ -48,6 +48,7 @@ public class Q00093_SagaOfTheSpectralMaster extends Quest
 	private static final int TABLET_OF_VISION_3 = 31652;
 	private static final int TABLET_OF_VISION_4 = 31656;
 	private static final int ENIGMATIC_SERVITOR = 31632;
+	
 	// Monsters
 	private static final int ICE_MONSTER = 27316;
 	private static final int SPIRIT_OF_A_DROWNED = 27317;
@@ -63,6 +64,7 @@ public class Q00093_SagaOfTheSpectralMaster extends Quest
 	private static final int VISION_GUARDIAN_SHAKIEL = 27313;
 	private static final int HALISHA_ARCHON = 27219;
 	private static final int MYSTERIOUS_SERVITOR = 27312;
+	
 	// Items
 	private static final int ICE_CRYSTAL_FRAGMENT = 49827;
 	private static final int HALISHA_BADGE = 7508;
@@ -71,8 +73,10 @@ public class Q00093_SagaOfTheSpectralMaster extends Quest
 	private static final int RESONANCE_AMULET_3 = 7353;
 	private static final int RESONANCE_AMULET_4 = 7384;
 	private static final int KAIRA_ANTIDOTE = 7606;
+	
 	// Reward
 	private static final int BOOK_SABERTOOTH = 90040;
+	
 	// Misc
 	private static final String KILL_COUNT_VAR = "KillCount";
 	
@@ -95,6 +99,7 @@ public class Q00093_SagaOfTheSpectralMaster extends Quest
 		{
 			return null;
 		}
+		
 		String htmltext = event;
 		switch (event)
 		{
@@ -242,6 +247,7 @@ public class Q00093_SagaOfTheSpectralMaster extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -430,6 +436,7 @@ public class Q00093_SagaOfTheSpectralMaster extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -500,6 +507,7 @@ public class Q00093_SagaOfTheSpectralMaster extends Quest
 						{
 							qs.set(KILL_COUNT_VAR, count + 1);
 						}
+						
 						if (count >= 20)
 						{
 							qs.setCond(8, true);
@@ -526,8 +534,10 @@ public class Q00093_SagaOfTheSpectralMaster extends Quest
 			{
 				holder.add(new NpcLogListHolder(GUARDIAN_OF_FORBIDDEN_KNOWLEDGE, false, guardiancount));
 			}
+			
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

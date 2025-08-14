@@ -131,6 +131,7 @@ public class ElementalSpirit
 				return absorbItem;
 			}
 		}
+		
 		return null;
 	}
 	
@@ -141,6 +142,7 @@ public class ElementalSpirit
 		{
 			amount += ElementalSpiritData.getInstance().getSpirit(_data.getType(), _data.getStage()).getMaxExperienceAtLevel(getLevel() - 1) / ElementalSpiritData.FRAGMENT_XP_CONSUME;
 		}
+		
 		return amount;
 	}
 	

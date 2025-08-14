@@ -31,10 +31,11 @@ public class DrillSergeant extends AbstractNpcAI
 	// NPCs
 	private static final int SERGANT = 33007; // Drill Sergant
 	private static final int GUARD = 33018;
+	
 	// Misc
-	//@formatter:off
+	// @formatter:off
 	private final int[] SOCIAL_ACTIONS = {9, 10, 11, 1 };
-	//@formatter:on
+	// @formatter:on
 	
 	private DrillSergeant()
 	{
@@ -66,6 +67,7 @@ public class DrillSergeant extends AbstractNpcAI
 				npc.broadcastSocialAction(socialActionId);
 			}
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	
@@ -76,6 +78,7 @@ public class DrillSergeant extends AbstractNpcAI
 		{
 			startQuestTimer("SOCIAL_SHOW", 10000, npc, null, true);
 		}
+		
 		npc.setRandomAnimation(false);
 	}
 	

@@ -113,6 +113,7 @@ public class SiegeManager
 		{
 			LOGGER.log(Level.WARNING, getClass().getSimpleName() + ": Exception: checkIsRegistered(): " + e.getMessage(), e);
 		}
+		
 		return register;
 	}
 	
@@ -195,6 +196,7 @@ public class SiegeManager
 					LOGGER.warning(getClass().getSimpleName() + ": Error while loading flame tower(s) for " + castle.getName() + " castle.");
 				}
 			}
+			
 			_controlTowers.put(castle.getResidenceId(), controlTowers);
 			_flameTowers.put(castle.getResidenceId(), flameTowers);
 			
@@ -276,6 +278,7 @@ public class SiegeManager
 				return castle.getSiege();
 			}
 		}
+		
 		return null;
 	}
 	
@@ -301,6 +304,7 @@ public class SiegeManager
 		{
 			sieges.add(castle.getSiege());
 		}
+		
 		return sieges;
 	}
 	
@@ -313,6 +317,7 @@ public class SiegeManager
 				return castle.getSiege();
 			}
 		}
+		
 		return null;
 	}
 	

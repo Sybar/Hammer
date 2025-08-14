@@ -39,6 +39,7 @@ public class MAccuracyFinalizer implements IStatFunction
 			// Enchanted gloves bonus
 			baseValue += calcEnchantBodyPart(creature, ItemTemplate.SLOT_GLOVES);
 		}
+		
 		return Stat.defaultValue(creature, stat, baseValue + (Math.sqrt(creature.getWIT()) * 3) + (creature.getLevel() * 2));
 	}
 	
@@ -49,6 +50,7 @@ public class MAccuracyFinalizer implements IStatFunction
 		{
 			return (0.3 * Math.max(enchantLevel - 3, 0)) + (0.3 * Math.max(enchantLevel - 6, 0));
 		}
+		
 		return (0.2 * Math.max(enchantLevel - 3, 0)) + (0.2 * Math.max(enchantLevel - 6, 0));
 	}
 }

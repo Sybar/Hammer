@@ -173,6 +173,7 @@ public class PunishmentTask implements Runnable
 			{
 				_task.cancel(false);
 			}
+			
 			_task = null;
 		}
 	}
@@ -201,6 +202,7 @@ public class PunishmentTask implements Runnable
 						_id = rset.getInt(1);
 					}
 				}
+				
 				_isStored = true;
 			}
 			catch (SQLException e)

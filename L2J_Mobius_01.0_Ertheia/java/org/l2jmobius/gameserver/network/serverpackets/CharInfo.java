@@ -42,7 +42,7 @@ import org.l2jmobius.gameserver.network.ServerPackets;
  */
 public class CharInfo extends ServerPacket
 {
-	private static final int[] PAPERDOLL_ORDER = new int[]
+	private static final int[] PAPERDOLL_ORDER =
 	{
 		Inventory.PAPERDOLL_UNDER,
 		Inventory.PAPERDOLL_HEAD,
@@ -98,6 +98,7 @@ public class CharInfo extends ServerPacket
 			_y = _player.getY();
 			_z = _player.getZ();
 		}
+		
 		_heading = _player.getHeading();
 		_mAtkSpd = _player.getMAtkSpd();
 		_pAtkSpd = _player.getPAtkSpd();
@@ -149,6 +150,7 @@ public class CharInfo extends ServerPacket
 		{
 			final VariationInstance augment = _player.getInventory().getPaperdollAugmentation(slot);
 			buffer.writeInt(augment != null ? augment.getOption1Id() : 0); // Confirmed
+			
 			// Mobius: Maybe use 2x writeH ?
 			// buffer.writeInt(augment != null ? augment.getOption2Id() : 0); // Confirmed
 		}
@@ -245,6 +247,7 @@ public class CharInfo extends ServerPacket
 		{
 			buffer.writeShort(abnormalVisualEffect.getClientId()); // Confirmed
 		}
+		
 		if (_gmSeeInvis)
 		{
 			buffer.writeShort(AbnormalVisualEffect.STEALTH.getClientId());

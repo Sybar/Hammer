@@ -36,7 +36,6 @@ import org.l2jmobius.gameserver.model.actor.Playable;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.Summon;
 import org.l2jmobius.gameserver.model.actor.enums.creature.InstanceType;
-import org.l2jmobius.gameserver.model.actor.enums.player.PlayerCondOverride;
 import org.l2jmobius.gameserver.model.actor.instance.Door;
 import org.l2jmobius.gameserver.model.actor.instance.Monster;
 import org.l2jmobius.gameserver.model.actor.instance.Pet;
@@ -116,7 +115,7 @@ public abstract class WorldObject extends ListenersContainer implements IPositio
 		final IActionHandler handler = ActionHandler.getInstance().getHandler(getInstanceType());
 		if (handler != null)
 		{
-			handler.action(player, this, interact);
+			handler.onAction(player, this, interact);
 		}
 		
 		player.sendPacket(ActionFailed.STATIC_PACKET);
@@ -127,7 +126,7 @@ public abstract class WorldObject extends ListenersContainer implements IPositio
 		final IActionShiftHandler handler = ActionShiftHandler.getInstance().getHandler(getInstanceType());
 		if (handler != null)
 		{
-			handler.action(player, this, true);
+			handler.onAction(player, this, true);
 		}
 		
 		player.sendPacket(ActionFailed.STATIC_PACKET);
@@ -190,6 +189,7 @@ public abstract class WorldObject extends ListenersContainer implements IPositio
 			{
 				spawnX = World.WORLD_X_MAX - 5000;
 			}
+			
 			if (spawnX < World.WORLD_X_MIN)
 			{
 				spawnX = World.WORLD_X_MIN + 5000;
@@ -200,6 +200,7 @@ public abstract class WorldObject extends ListenersContainer implements IPositio
 			{
 				spawnY = World.WORLD_Y_MAX - 5000;
 			}
+			
 			if (spawnY < World.WORLD_Y_MIN)
 			{
 				spawnY = World.WORLD_Y_MIN + 5000;
@@ -590,6 +591,7 @@ public abstract class WorldObject extends ListenersContainer implements IPositio
 				}
 			}
 		}
+		
 		_scripts.put(script.getClass().getName(), script);
 		return script;
 	}
@@ -606,6 +608,7 @@ public abstract class WorldObject extends ListenersContainer implements IPositio
 		{
 			return null;
 		}
+		
 		return (T) _scripts.remove(script.getName());
 	}
 	
@@ -621,6 +624,7 @@ public abstract class WorldObject extends ListenersContainer implements IPositio
 		{
 			return null;
 		}
+		
 		return (T) _scripts.get(script.getName());
 	}
 	
@@ -635,6 +639,7 @@ public abstract class WorldObject extends ListenersContainer implements IPositio
 		{
 			correctX = World.WORLD_X_MAX - 5000;
 		}
+		
 		if (correctX < World.WORLD_X_MIN)
 		{
 			correctX = World.WORLD_X_MIN + 5000;
@@ -645,6 +650,7 @@ public abstract class WorldObject extends ListenersContainer implements IPositio
 		{
 			correctY = World.WORLD_Y_MAX - 5000;
 		}
+		
 		if (correctY < World.WORLD_Y_MIN)
 		{
 			correctY = World.WORLD_Y_MIN + 5000;
@@ -670,6 +676,7 @@ public abstract class WorldObject extends ListenersContainer implements IPositio
 		{
 			_worldRegion.removeVisibleObject(this);
 		}
+		
 		_worldRegion = region;
 	}
 	
@@ -753,6 +760,7 @@ public abstract class WorldObject extends ListenersContainer implements IPositio
 				{
 					_worldRegion.removeVisibleObject(this);
 				}
+				
 				newRegion.addVisibleObject(this);
 				World.getInstance().switchRegion(this, newRegion);
 				setWorldRegion(newRegion);
@@ -812,6 +820,7 @@ public abstract class WorldObject extends ListenersContainer implements IPositio
 					sendInstanceUpdate(oldI, true);
 				}
 			}
+			
 			if (instanceId > 0)
 			{
 				newI.addPlayer(_objectId);
@@ -820,6 +829,7 @@ public abstract class WorldObject extends ListenersContainer implements IPositio
 					sendInstanceUpdate(newI, false);
 				}
 			}
+			
 			if (player.hasSummon())
 			{
 				player.getSummon().setInstanceId(instanceId);
@@ -832,6 +842,7 @@ public abstract class WorldObject extends ListenersContainer implements IPositio
 			{
 				oldI.removeNpc(npc);
 			}
+			
 			if (instanceId > 0)
 			{
 				newI.addNpc(npc);
@@ -891,6 +902,11 @@ public abstract class WorldObject extends ListenersContainer implements IPositio
 	 */
 	public double calculateDistance2D(ILocational loc)
 	{
+		if (loc == null)
+		{
+			return Double.MAX_VALUE;
+		}
+		
 		return calculateDistance2D(loc.getX(), loc.getY(), loc.getZ());
 	}
 	
@@ -913,6 +929,11 @@ public abstract class WorldObject extends ListenersContainer implements IPositio
 	 */
 	public double calculateDistance3D(ILocational loc)
 	{
+		if (loc == null)
+		{
+			return Double.MAX_VALUE;
+		}
+		
 		return calculateDistance3D(loc.getX(), loc.getY(), loc.getZ());
 	}
 	
@@ -966,7 +987,7 @@ public abstract class WorldObject extends ListenersContainer implements IPositio
 	 */
 	public boolean isVisibleFor(Player player)
 	{
-		return !_isInvisible || player.canOverrideCond(PlayerCondOverride.SEE_ALL_PLAYERS);
+		return !_isInvisible || player.isGM();
 	}
 	
 	/**

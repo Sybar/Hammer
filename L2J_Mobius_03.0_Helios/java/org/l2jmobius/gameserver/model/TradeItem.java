@@ -75,6 +75,7 @@ public class TradeItem
 		{
 			_elemDefAttr[type.getClientId()] = item.getDefenceAttribute(type);
 		}
+		
 		_enchantOptions = item.getEnchantOptions();
 		_soulCrystalOptions = item.getSpecialAbilities();
 		_soulCrystalSpecialOptions = item.getAdditionalSpecialAbilities();
@@ -123,6 +124,7 @@ public class TradeItem
 		{
 			_elemDefAttr[i] = item.getElementDefAttr(i);
 		}
+		
 		_enchantOptions = item.getEnchantOptions();
 		_soulCrystalOptions = item.getSoulCrystalOptions();
 		_soulCrystalSpecialOptions = item.getSoulCrystalSpecialOptions();

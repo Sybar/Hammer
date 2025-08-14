@@ -1634,9 +1634,9 @@
 		<set name="is_sellable" val="false" />
 		<set name="time" val="43200" />
 		<set name="enchanted" val="4" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">272</stat>
 			<stat type="mAtk">121</stat>
@@ -1668,9 +1668,9 @@
 		<set name="is_sellable" val="false" />
 		<set name="time" val="43200" />
 		<set name="enchanted" val="4" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">210</stat>
 			<stat type="mAtk">99</stat>
@@ -1702,9 +1702,9 @@
 		<set name="is_sellable" val="false" />
 		<set name="time" val="43200" />
 		<set name="enchanted" val="4" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">169</stat>
 			<stat type="mAtk">83</stat>
@@ -1736,9 +1736,9 @@
 		<set name="is_sellable" val="false" />
 		<set name="time" val="43200" />
 		<set name="enchanted" val="4" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">100</stat>
 			<stat type="mAtk">54</stat>
@@ -1767,9 +1767,9 @@
 		<set name="is_sellable" val="false" />
 		<set name="time" val="43200" />
 		<set name="enchanted" val="4" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">228</stat>
 			<stat type="mAtk">121</stat>
@@ -1802,9 +1802,9 @@
 		<set name="is_sellable" val="false" />
 		<set name="time" val="43200" />
 		<set name="enchanted" val="4" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">176</stat>
 			<stat type="mAtk">99</stat>
@@ -1837,9 +1837,9 @@
 		<set name="is_sellable" val="false" />
 		<set name="time" val="43200" />
 		<set name="enchanted" val="4" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">141</stat>
 			<stat type="mAtk">83</stat>
@@ -1872,9 +1872,9 @@
 		<set name="is_sellable" val="false" />
 		<set name="time" val="43200" />
 		<set name="enchanted" val="4" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">83</stat>
 			<stat type="mAtk">54</stat>
@@ -1907,9 +1907,9 @@
 		<set name="is_sellable" val="false" />
 		<set name="time" val="43200" />
 		<set name="enchanted" val="4" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">318</stat>
 			<stat type="mAtk">121</stat>
@@ -1942,9 +1942,9 @@
 		<set name="is_sellable" val="false" />
 		<set name="time" val="43200" />
 		<set name="enchanted" val="4" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">245</stat>
 			<stat type="mAtk">99</stat>
@@ -1977,9 +1977,9 @@
 		<set name="is_sellable" val="false" />
 		<set name="time" val="43200" />
 		<set name="enchanted" val="4" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">198</stat>
 			<stat type="mAtk">83</stat>
@@ -2012,9 +2012,9 @@
 		<set name="is_sellable" val="false" />
 		<set name="time" val="43200" />
 		<set name="enchanted" val="4" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">117</stat>
 			<stat type="mAtk">54</stat>

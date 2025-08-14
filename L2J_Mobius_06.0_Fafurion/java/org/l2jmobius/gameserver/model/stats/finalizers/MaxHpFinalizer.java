@@ -84,6 +84,7 @@ public class MaxHpFinalizer implements IStatFunction
 				add = creature.getStat().getAdd(Stat.HP_LIMIT);
 				return Math.min(maxHp, (Config.MAX_HP * mul) + add);
 			}
+			
 			return maxHp;
 		}
 		
@@ -120,6 +121,11 @@ public class MaxHpFinalizer implements IStatFunction
 		else
 		{
 			hpLimit = Double.MAX_VALUE;
+		}
+		
+		if (creature.isPlayer())
+		{
+			return Math.min(Math.min(maxHp, hpLimit), Integer.MAX_VALUE);
 		}
 		
 		return Math.min(maxHp, hpLimit);

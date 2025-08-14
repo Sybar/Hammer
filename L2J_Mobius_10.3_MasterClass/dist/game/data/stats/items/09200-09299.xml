@@ -118,9 +118,9 @@
 		<set name="commissionItemType" val="POTION" />
 		<set name="is_event_restricted" val="true" />
 		<set name="for_npc" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2037" level="1" /> <!-- Major HP Replenishing Potion -->
 		</skills>
@@ -140,9 +140,9 @@
 		<set name="commissionItemType" val="POTION" />
 		<set name="is_event_restricted" val="true" />
 		<set name="for_npc" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2038" level="1" /> <!-- Quick HP Replenishing Potion -->
 		</skills>
@@ -180,9 +180,9 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="commissionItemType" val="RAPIER" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">36</stat>
 			<stat type="mAtk">26</stat>
@@ -215,9 +215,9 @@
 		<set name="commissionItemType" val="ANCIENT_SWORD" />
 		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">43</stat>
 			<stat type="mAtk">26</stat>
@@ -247,9 +247,9 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
 		<set name="commissionItemType" val="ANCIENT_SWORD" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">43</stat>
 			<stat type="mAtk">26</stat>
@@ -280,9 +280,9 @@
 		<set name="commissionItemType" val="CROSSBOW" />
 		<set name="isAppearanceable" val="true" />
 		<set name="reuse_delay" val="400" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">51</stat>
 			<stat type="mAtk">26</stat>
@@ -312,9 +312,9 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="commissionItemType" val="RAPIER" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">46</stat>
 			<stat type="mAtk">32</stat>
@@ -347,9 +347,9 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="commissionItemType" val="RAPIER" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">46</stat>
 			<stat type="mAtk">32</stat>
@@ -382,9 +382,9 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="commissionItemType" val="RAPIER" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">46</stat>
 			<stat type="mAtk">32</stat>
@@ -416,9 +416,9 @@
 		<set name="commissionItemType" val="ANCIENT_SWORD" />
 		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">55</stat>
 			<stat type="mAtk">32</stat>
@@ -449,9 +449,9 @@
 		<set name="commissionItemType" val="CROSSBOW" />
 		<set name="isAppearanceable" val="true" />
 		<set name="reuse_delay" val="400" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">64</stat>
 			<stat type="mAtk">32</stat>
@@ -481,9 +481,9 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="commissionItemType" val="RAPIER" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">58</stat>
 			<stat type="mAtk">39</stat>
@@ -516,9 +516,9 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="commissionItemType" val="RAPIER" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">58</stat>
 			<stat type="mAtk">39</stat>
@@ -551,9 +551,9 @@
 		<set name="commissionItemType" val="ANCIENT_SWORD" />
 		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">69</stat>
 			<stat type="mAtk">39</stat>
@@ -584,9 +584,9 @@
 		<set name="commissionItemType" val="CROSSBOW" />
 		<set name="isAppearanceable" val="true" />
 		<set name="reuse_delay" val="400" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">81</stat>
 			<stat type="mAtk">39</stat>
@@ -616,9 +616,9 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="commissionItemType" val="RAPIER" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">72</stat>
 			<stat type="mAtk">47</stat>
@@ -651,9 +651,9 @@
 		<set name="commissionItemType" val="ANCIENT_SWORD" />
 		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">86</stat>
 			<stat type="mAtk">47</stat>
@@ -684,9 +684,9 @@
 		<set name="commissionItemType" val="CROSSBOW" />
 		<set name="isAppearanceable" val="true" />
 		<set name="reuse_delay" val="400" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">100</stat>
 			<stat type="mAtk">47</stat>
@@ -716,9 +716,9 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="commissionItemType" val="RAPIER" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">83</stat>
 			<stat type="mAtk">54</stat>
@@ -751,9 +751,9 @@
 		<set name="commissionItemType" val="ANCIENT_SWORD" />
 		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">100</stat>
 			<stat type="mAtk">54</stat>
@@ -784,9 +784,9 @@
 		<set name="commissionItemType" val="CROSSBOW" />
 		<set name="isAppearanceable" val="true" />
 		<set name="reuse_delay" val="400" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">117</stat>
 			<stat type="mAtk">54</stat>
@@ -818,9 +818,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="ensoulNormalSlots" val="1" />
 		<set name="ensoulSpecialSlots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">97</stat>
 			<stat type="mAtk">61</stat>
@@ -856,9 +856,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="ensoulNormalSlots" val="1" />
 		<set name="ensoulSpecialSlots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">97</stat>
 			<stat type="mAtk">61</stat>
@@ -895,9 +895,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="ensoulNormalSlots" val="1" />
 		<set name="ensoulSpecialSlots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">97</stat>
 			<stat type="mAtk">61</stat>
@@ -933,9 +933,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="ensoulNormalSlots" val="1" />
 		<set name="ensoulSpecialSlots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">97</stat>
 			<stat type="mAtk">61</stat>
@@ -971,9 +971,9 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="ensoulNormalSlots" val="1" />
 		<set name="ensoulSpecialSlots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">116</stat>
 			<stat type="mAtk">61</stat>
@@ -1005,9 +1005,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="ensoulNormalSlots" val="1" />
 		<set name="ensoulSpecialSlots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">116</stat>
 			<stat type="mAtk">61</stat>
@@ -1042,9 +1042,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="ensoulNormalSlots" val="1" />
 		<set name="ensoulSpecialSlots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">116</stat>
 			<stat type="mAtk">61</stat>
@@ -1079,9 +1079,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="ensoulNormalSlots" val="1" />
 		<set name="ensoulSpecialSlots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">116</stat>
 			<stat type="mAtk">61</stat>
@@ -1117,9 +1117,9 @@
 		<set name="reuse_delay" val="400" />
 		<set name="ensoulNormalSlots" val="1" />
 		<set name="ensoulSpecialSlots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">135</stat>
 			<stat type="mAtk">61</stat>
@@ -1152,9 +1152,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="ensoulNormalSlots" val="1" />
 		<set name="ensoulSpecialSlots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">135</stat>
 			<stat type="mAtk">61</stat>
@@ -1190,9 +1190,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="ensoulNormalSlots" val="1" />
 		<set name="ensoulSpecialSlots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">135</stat>
 			<stat type="mAtk">61</stat>
@@ -1228,9 +1228,9 @@
 		<set name="reuse_delay" val="332" />
 		<set name="ensoulNormalSlots" val="1" />
 		<set name="ensoulSpecialSlots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">135</stat>
 			<stat type="mAtk">61</stat>
@@ -1262,9 +1262,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="ensoulNormalSlots" val="1" />
 		<set name="ensoulSpecialSlots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">111</stat>
 			<stat type="mAtk">68</stat>
@@ -1299,9 +1299,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="ensoulNormalSlots" val="1" />
 		<set name="ensoulSpecialSlots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">111</stat>
 			<stat type="mAtk">68</stat>
@@ -1337,9 +1337,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="ensoulNormalSlots" val="1" />
 		<set name="ensoulSpecialSlots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">111</stat>
 			<stat type="mAtk">68</stat>
@@ -1375,9 +1375,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="ensoulNormalSlots" val="1" />
 		<set name="ensoulSpecialSlots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">111</stat>
 			<stat type="mAtk">68</stat>
@@ -1413,9 +1413,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="ensoulNormalSlots" val="1" />
 		<set name="ensoulSpecialSlots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">111</stat>
 			<stat type="mAtk">68</stat>
@@ -1450,9 +1450,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="ensoulNormalSlots" val="1" />
 		<set name="ensoulSpecialSlots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">111</stat>
 			<stat type="mAtk">68</stat>
@@ -1488,9 +1488,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="ensoulNormalSlots" val="1" />
 		<set name="ensoulSpecialSlots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">111</stat>
 			<stat type="mAtk">68</stat>
@@ -1526,9 +1526,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="ensoulNormalSlots" val="1" />
 		<set name="ensoulSpecialSlots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">111</stat>
 			<stat type="mAtk">68</stat>
@@ -1564,9 +1564,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="ensoulNormalSlots" val="1" />
 		<set name="ensoulSpecialSlots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">111</stat>
 			<stat type="mAtk">68</stat>
@@ -1601,9 +1601,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="ensoulNormalSlots" val="1" />
 		<set name="ensoulSpecialSlots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">111</stat>
 			<stat type="mAtk">68</stat>
@@ -1640,9 +1640,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="ensoulNormalSlots" val="1" />
 		<set name="ensoulSpecialSlots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">111</stat>
 			<stat type="mAtk">68</stat>
@@ -1678,9 +1678,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="ensoulNormalSlots" val="1" />
 		<set name="ensoulSpecialSlots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">111</stat>
 			<stat type="mAtk">68</stat>
@@ -1716,9 +1716,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="ensoulNormalSlots" val="1" />
 		<set name="ensoulSpecialSlots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">111</stat>
 			<stat type="mAtk">68</stat>
@@ -1753,9 +1753,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="ensoulNormalSlots" val="1" />
 		<set name="ensoulSpecialSlots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">111</stat>
 			<stat type="mAtk">68</stat>
@@ -1792,9 +1792,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="ensoulNormalSlots" val="1" />
 		<set name="ensoulSpecialSlots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">111</stat>
 			<stat type="mAtk">68</stat>
@@ -1831,9 +1831,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="ensoulNormalSlots" val="1" />
 		<set name="ensoulSpecialSlots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">111</stat>
 			<stat type="mAtk">68</stat>
@@ -1870,9 +1870,9 @@
 		<set name="reuse_delay" val="400" />
 		<set name="ensoulNormalSlots" val="1" />
 		<set name="ensoulSpecialSlots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">155</stat>
 			<stat type="mAtk">68</stat>
@@ -1905,9 +1905,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="ensoulNormalSlots" val="1" />
 		<set name="ensoulSpecialSlots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">155</stat>
 			<stat type="mAtk">68</stat>
@@ -1944,9 +1944,9 @@
 		<set name="reduced_soulshot" val="40,4" />
 		<set name="ensoulNormalSlots" val="1" />
 		<set name="ensoulSpecialSlots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">155</stat>
 			<stat type="mAtk">68</stat>
@@ -1979,9 +1979,9 @@
 		<set name="reuse_delay" val="320" />
 		<set name="ensoulNormalSlots" val="1" />
 		<set name="ensoulSpecialSlots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">155</stat>
 			<stat type="mAtk">68</stat>
@@ -2014,9 +2014,9 @@
 		<set name="reuse_delay" val="400" />
 		<set name="ensoulNormalSlots" val="1" />
 		<set name="ensoulSpecialSlots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">155</stat>
 			<stat type="mAtk">68</stat>
@@ -2049,9 +2049,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="ensoulNormalSlots" val="1" />
 		<set name="ensoulSpecialSlots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">155</stat>
 			<stat type="mAtk">68</stat>
@@ -2088,9 +2088,9 @@
 		<set name="reduced_soulshot" val="40,4" />
 		<set name="ensoulNormalSlots" val="1" />
 		<set name="ensoulSpecialSlots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">155</stat>
 			<stat type="mAtk">68</stat>
@@ -2123,9 +2123,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="ensoulNormalSlots" val="1" />
 		<set name="ensoulSpecialSlots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">155</stat>
 			<stat type="mAtk">68</stat>
@@ -2160,9 +2160,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="ensoulNormalSlots" val="1" />
 		<set name="ensoulSpecialSlots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">126</stat>
 			<stat type="mAtk">76</stat>
@@ -2197,9 +2197,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="ensoulNormalSlots" val="1" />
 		<set name="ensoulSpecialSlots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">126</stat>
 			<stat type="mAtk">76</stat>
@@ -2235,9 +2235,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="ensoulNormalSlots" val="1" />
 		<set name="ensoulSpecialSlots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">126</stat>
 			<stat type="mAtk">76</stat>
@@ -2273,9 +2273,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="ensoulNormalSlots" val="1" />
 		<set name="ensoulSpecialSlots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">126</stat>
 			<stat type="mAtk">76</stat>
@@ -2311,9 +2311,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="ensoulNormalSlots" val="1" />
 		<set name="ensoulSpecialSlots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">126</stat>
 			<stat type="mAtk">76</stat>
@@ -2348,9 +2348,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="ensoulNormalSlots" val="1" />
 		<set name="ensoulSpecialSlots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">126</stat>
 			<stat type="mAtk">76</stat>
@@ -2386,9 +2386,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="ensoulNormalSlots" val="1" />
 		<set name="ensoulSpecialSlots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">126</stat>
 			<stat type="mAtk">76</stat>
@@ -2424,9 +2424,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="ensoulNormalSlots" val="1" />
 		<set name="ensoulSpecialSlots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">126</stat>
 			<stat type="mAtk">76</stat>
@@ -2462,9 +2462,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="ensoulNormalSlots" val="1" />
 		<set name="ensoulSpecialSlots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">126</stat>
 			<stat type="mAtk">76</stat>
@@ -2499,9 +2499,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="ensoulNormalSlots" val="1" />
 		<set name="ensoulSpecialSlots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">126</stat>
 			<stat type="mAtk">76</stat>
@@ -2537,9 +2537,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="ensoulNormalSlots" val="1" />
 		<set name="ensoulSpecialSlots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">126</stat>
 			<stat type="mAtk">76</stat>
@@ -2575,9 +2575,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="ensoulNormalSlots" val="1" />
 		<set name="ensoulSpecialSlots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">126</stat>
 			<stat type="mAtk">76</stat>
@@ -2613,9 +2613,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="ensoulNormalSlots" val="1" />
 		<set name="ensoulSpecialSlots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">126</stat>
 			<stat type="mAtk">76</stat>
@@ -2650,9 +2650,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="ensoulNormalSlots" val="1" />
 		<set name="ensoulSpecialSlots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">126</stat>
 			<stat type="mAtk">76</stat>
@@ -2688,9 +2688,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="ensoulNormalSlots" val="1" />
 		<set name="ensoulSpecialSlots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">126</stat>
 			<stat type="mAtk">76</stat>
@@ -2726,9 +2726,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="ensoulNormalSlots" val="1" />
 		<set name="ensoulSpecialSlots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">126</stat>
 			<stat type="mAtk">76</stat>
@@ -2764,9 +2764,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="ensoulNormalSlots" val="1" />
 		<set name="ensoulSpecialSlots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">126</stat>
 			<stat type="mAtk">76</stat>
@@ -2801,9 +2801,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="ensoulNormalSlots" val="1" />
 		<set name="ensoulSpecialSlots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">126</stat>
 			<stat type="mAtk">76</stat>
@@ -2840,9 +2840,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="ensoulNormalSlots" val="1" />
 		<set name="ensoulSpecialSlots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">126</stat>
 			<stat type="mAtk">76</stat>
@@ -2878,9 +2878,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="ensoulNormalSlots" val="1" />
 		<set name="ensoulSpecialSlots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">126</stat>
 			<stat type="mAtk">76</stat>
@@ -2916,9 +2916,9 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="ensoulNormalSlots" val="1" />
 		<set name="ensoulSpecialSlots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">151</stat>
 			<stat type="mAtk">76</stat>
@@ -2950,9 +2950,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="ensoulNormalSlots" val="1" />
 		<set name="ensoulSpecialSlots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">151</stat>
 			<stat type="mAtk">76</stat>
@@ -2987,9 +2987,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="ensoulNormalSlots" val="1" />
 		<set name="ensoulSpecialSlots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">151</stat>
 			<stat type="mAtk">76</stat>
@@ -3024,9 +3024,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="ensoulNormalSlots" val="1" />
 		<set name="ensoulSpecialSlots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">151</stat>
 			<stat type="mAtk">76</stat>
@@ -3062,9 +3062,9 @@
 		<set name="reuse_delay" val="400" />
 		<set name="ensoulNormalSlots" val="1" />
 		<set name="ensoulSpecialSlots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">176</stat>
 			<stat type="mAtk">76</stat>
@@ -3097,9 +3097,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="ensoulNormalSlots" val="1" />
 		<set name="ensoulSpecialSlots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">176</stat>
 			<stat type="mAtk">76</stat>
@@ -3135,9 +3135,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="ensoulNormalSlots" val="1" />
 		<set name="ensoulSpecialSlots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">176</stat>
 			<stat type="mAtk">76</stat>
@@ -3174,9 +3174,9 @@
 		<set name="reduced_soulshot" val="32,4" />
 		<set name="ensoulNormalSlots" val="1" />
 		<set name="ensoulSpecialSlots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">176</stat>
 			<stat type="mAtk">76</stat>
@@ -3208,9 +3208,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="ensoulNormalSlots" val="1" />
 		<set name="ensoulSpecialSlots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">141</stat>
 			<stat type="mAtk">83</stat>
@@ -3245,9 +3245,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="ensoulNormalSlots" val="1" />
 		<set name="ensoulSpecialSlots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">141</stat>
 			<stat type="mAtk">83</stat>
@@ -3283,9 +3283,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="ensoulNormalSlots" val="1" />
 		<set name="ensoulSpecialSlots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">141</stat>
 			<stat type="mAtk">83</stat>
@@ -3321,9 +3321,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="ensoulNormalSlots" val="1" />
 		<set name="ensoulSpecialSlots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">141</stat>
 			<stat type="mAtk">83</stat>
@@ -3359,9 +3359,9 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="ensoulNormalSlots" val="1" />
 		<set name="ensoulSpecialSlots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">169</stat>
 			<stat type="mAtk">83</stat>
@@ -3393,9 +3393,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="ensoulNormalSlots" val="1" />
 		<set name="ensoulSpecialSlots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">169</stat>
 			<stat type="mAtk">83</stat>
@@ -3430,9 +3430,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="ensoulNormalSlots" val="1" />
 		<set name="ensoulSpecialSlots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">169</stat>
 			<stat type="mAtk">83</stat>
@@ -3467,9 +3467,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="ensoulNormalSlots" val="1" />
 		<set name="ensoulSpecialSlots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">169</stat>
 			<stat type="mAtk">83</stat>

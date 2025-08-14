@@ -54,6 +54,7 @@ public class Handermonkey extends AbstractNpcAI
 				npc.broadcastSocialAction(9);
 			}
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	

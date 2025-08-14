@@ -64,6 +64,7 @@ public class Q10425_TheKetraOrcSupporters extends Quest
 		21342, // Ketra Orc Grand Priest
 		27512, // Varka Backup Wizard
 	};
+	
 	// Misc
 	private static final int MIN_LEVEL = 76;
 	private static final int MAX_LEVEL = 80;
@@ -115,11 +116,13 @@ public class Q10425_TheKetraOrcSupporters extends Quest
 					{
 						addExpAndSp(player, 492760460, 5519);
 					}
+					
 					htmltext = event;
 				}
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -146,6 +149,7 @@ public class Q10425_TheKetraOrcSupporters extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -207,6 +211,7 @@ public class Q10425_TheKetraOrcSupporters extends Quest
 			npcLogList.add(new NpcLogListHolder(EMBRYO_WIZARD, false, qs.getInt("KillCount_" + EMBRYO_WIZARD)));
 			return npcLogList;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

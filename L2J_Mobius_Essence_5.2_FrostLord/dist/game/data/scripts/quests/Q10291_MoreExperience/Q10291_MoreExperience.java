@@ -42,18 +42,21 @@ public class Q10291_MoreExperience extends Quest
 {
 	// NPCs
 	private static final int CAPTAIN_BATHIS = 30332;
+	
 	// Monsters
 	private static final int OL_MAHUM_SHOOTER = 20063;
 	private static final int OL_MAHUM_SERGEANT = 20439;
 	private static final int OL_MAHUM_OFFICER = 20066;
 	private static final int OL_MAHUM_GENERAL = 20438;
 	private static final int OL_MAHUM_COMMANDER = 20076;
+	
 	// Items
 	private static final ItemHolder SOE_TO_CAPTAIN_BATHIS = new ItemHolder(91651, 1);
 	private static final ItemHolder SOE_ABANDNED_CAMP = new ItemHolder(91725, 1);
 	private static final ItemHolder ADVENTURERS_BROOCH = new ItemHolder(91932, 1);
 	private static final ItemHolder ADVENTURERS_BROOCH_GEMS = new ItemHolder(91936, 1);
 	private static final ItemHolder SCROLL_ENCHANT_ADEN_WEAPON = new ItemHolder(93038, 2);
+	
 	// Misc
 	private static final String KILL_COUNT_VAR = "KillCount";
 	private static final int MIN_LEVEL = 25;
@@ -110,6 +113,7 @@ public class Q10291_MoreExperience extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -137,6 +141,7 @@ public class Q10291_MoreExperience extends Quest
 		{
 			htmltext = getAlreadyCompletedMsg(player);
 		}
+		
 		return htmltext;
 	}
 	
@@ -173,6 +178,7 @@ public class Q10291_MoreExperience extends Quest
 			holder.add(new NpcLogListHolder(NpcStringId.KILL_MONSTERS_IN_THE_ABANDONED_CAMP.getId(), true, qs.getInt(KILL_COUNT_VAR)));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 	

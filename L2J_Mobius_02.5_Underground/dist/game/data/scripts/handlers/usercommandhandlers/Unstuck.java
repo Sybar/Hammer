@@ -30,7 +30,6 @@ import org.l2jmobius.gameserver.model.skill.SkillCaster;
 import org.l2jmobius.gameserver.model.skill.SkillCastingType;
 import org.l2jmobius.gameserver.network.SystemMessageId;
 import org.l2jmobius.gameserver.network.serverpackets.ActionFailed;
-import org.l2jmobius.gameserver.network.serverpackets.PlaySound;
 
 /**
  * Unstuck user command.
@@ -43,7 +42,7 @@ public class Unstuck implements IUserCommandHandler
 	};
 	
 	@Override
-	public boolean useUserCommand(int id, Player player)
+	public boolean onCommand(int id, Player player)
 	{
 		if (player.isJailed())
 		{
@@ -79,13 +78,15 @@ public class Unstuck implements IUserCommandHandler
 				player.doCast(gmEscape);
 				return true;
 			}
+			
 			player.sendMessage("You use Escape: 1 second.");
 		}
 		else if ((Config.UNSTUCK_INTERVAL == 300) && (escape != null))
 		{
-			// If unstuck is default (5min), send sound and system message.
-			player.sendPacket(new PlaySound("systemmsg_e.809"));
+			// If unstuck is default (5min), send retail system message.
 			player.sendPacket(SystemMessageId.YOU_ARE_STUCK_YOU_WILL_BE_TRANSPORTED_TO_THE_NEAREST_VILLAGE_IN_FIVE_MINUTES);
+			player.stopMove(null);
+			player.abortCast();
 			player.doCast(escape);
 			return true;
 		}
@@ -108,11 +109,12 @@ public class Unstuck implements IUserCommandHandler
 				player.sendMessage("You use Escape: " + (unstuckTimer / 1000) + " seconds.");
 			}
 		}
+		
 		return true;
 	}
 	
 	@Override
-	public int[] getUserCommandList()
+	public int[] getCommandList()
 	{
 		return COMMAND_IDS;
 	}

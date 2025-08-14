@@ -33,8 +33,10 @@ public class Rotina extends AbstractNpcAI
 	// NPC
 	private static final int ROTINA = 33027;
 	private static final int MEI = 33280;
+	
 	// Items
 	private static final int WEAPON = 15304;
+	
 	// Distances
 	private static final int MIN_DISTANCE = 70;
 	private static final int MAX_DISTANCE = 200;

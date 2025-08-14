@@ -54,9 +54,11 @@ public class Behemoth extends AbstractNpcAI
 	// NPC
 	private static final int BEHEMOTH = 25912;
 	private static final int ULTIMATE_BEHEMOTH = 25935;
+	
 	// Location
 	private static final ZoneType ZONE = ZoneManager.getInstance().getZoneByName("antharas_lair");
 	private static final Location LOCATION = new Location(148386, 117952, -3715);
+	
 	// skills
 	private static final SkillHolder ANTI_STRIDER = new SkillHolder(4258, 1); // Hinder Strider
 	private static final SkillHolder BEHEMOTH_ATTACK = new SkillHolder(48081, 1);
@@ -128,6 +130,7 @@ public class Behemoth extends AbstractNpcAI
 					{
 						LOGGER.warning(getClass().getSimpleName() + ": Zone is not initialized properly!");
 					}
+					
 					startQuestTimer("CHECK_ATTACK", 60000, null, null);
 				}
 				catch (Exception e)

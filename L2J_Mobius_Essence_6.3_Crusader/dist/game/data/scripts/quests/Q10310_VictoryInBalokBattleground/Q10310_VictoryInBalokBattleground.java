@@ -51,6 +51,7 @@ public class Q10310_VictoryInBalokBattleground extends Quest
 {
 	// NPC
 	private static final int KREIA = 34330;
+	
 	// Monsters
 	private static final Set<Integer> BALOK_MONSTERS = new HashSet<>();
 	static
@@ -60,10 +61,12 @@ public class Q10310_VictoryInBalokBattleground extends Quest
 		BALOK_MONSTERS.add(22414);
 		BALOK_MONSTERS.add(22416);
 	}
+	
 	// Items
 	private static final ItemHolder BOOST_ATTACK_SCROLL = new ItemHolder(94269, 10);
 	private static final ItemHolder BOOST_DEFENCE_SCROLL = new ItemHolder(94271, 10);
 	private static final ItemHolder BERSERKER_SCROLL = new ItemHolder(94777, 10);
+	
 	// Misc
 	private static final String VICTORY_IN_BALOK_BYPASS = "Quest Q10310_VictoryInBalokBattleground ";
 	private static final String KILL_COUNT_VAR = "KillCount";
@@ -103,6 +106,7 @@ public class Q10310_VictoryInBalokBattleground extends Quest
 				{
 					qs.startQuest();
 				}
+				
 				htmltext = event;
 				break;
 			}
@@ -112,6 +116,7 @@ public class Q10310_VictoryInBalokBattleground extends Quest
 				{
 					qs.setCond(2, true);
 				}
+				
 				htmltext = event;
 				break;
 			}
@@ -125,6 +130,7 @@ public class Q10310_VictoryInBalokBattleground extends Quest
 					giveItems(player, BERSERKER_SCROLL);
 					qs.exitQuest(false, true);
 				}
+				
 				htmltext = event;
 				break;
 			}
@@ -135,6 +141,7 @@ public class Q10310_VictoryInBalokBattleground extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -176,6 +183,7 @@ public class Q10310_VictoryInBalokBattleground extends Quest
 		{
 			htmltext = getAlreadyCompletedMsg(player);
 		}
+		
 		return htmltext;
 	}
 	
@@ -220,6 +228,7 @@ public class Q10310_VictoryInBalokBattleground extends Quest
 				return holder;
 			}
 		}
+		
 		return super.getNpcLogList(player);
 	}
 	

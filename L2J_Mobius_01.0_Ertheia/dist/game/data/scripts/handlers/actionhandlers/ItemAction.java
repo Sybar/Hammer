@@ -34,7 +34,7 @@ import org.l2jmobius.gameserver.network.SystemMessageId;
 public class ItemAction implements IActionHandler
 {
 	@Override
-	public boolean action(Player player, WorldObject target, boolean interact)
+	public boolean onAction(Player player, WorldObject target, boolean interact)
 	{
 		final Castle castle = CastleManager.getInstance().getCastle(target);
 		if ((castle != null) && (SiegeGuardManager.getInstance().getSiegeGuardByItem(castle.getResidenceId(), target.getId()) != null) && ((player.getClan() == null) || (castle.getOwnerId() != player.getClanId()) || !player.hasAccess(ClanAccess.CASTLE_MERCENARIES)))
@@ -49,6 +49,7 @@ public class ItemAction implements IActionHandler
 		{
 			player.getAI().setIntention(Intention.PICK_UP, target);
 		}
+		
 		return true;
 	}
 	

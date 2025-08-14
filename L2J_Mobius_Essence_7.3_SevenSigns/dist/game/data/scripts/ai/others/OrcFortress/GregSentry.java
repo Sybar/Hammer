@@ -57,6 +57,7 @@ public class GregSentry extends AbstractNpcAI
 				{
 					spawnGroup = FortSiege.ORC_FORTRESS_GREG_BOTTOM_RIGHT_SPAWN;
 				}
+				
 				flag.getVariables().set(FortSiege.GREG_SPAWN_VAR, spawnGroup);
 				siege.addFlagCount(1);
 			}

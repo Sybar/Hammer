@@ -61,6 +61,7 @@ public class RestorationRandom extends AbstractEffect
 			{
 				items.add(new RestorationItemHolder(item.getInt(".id"), item.getInt(".count"), item.getInt(".minEnchant", 0), item.getInt(".maxEnchant", 0)));
 			}
+			
 			_products.add(new ExtractableProductItem(items, group.getFloat(".chance")));
 		}
 	}
@@ -96,6 +97,7 @@ public class RestorationRandom extends AbstractEffect
 				creationList.addAll(expi.getItems());
 				break;
 			}
+			
 			chanceFrom += chance;
 		}
 		
@@ -148,8 +150,10 @@ public class RestorationRandom extends AbstractEffect
 						playerIU.addModifiedItem(itemInstance);
 					}
 				}
+				
 				sendMessage(player, entry.getKey(), entry.getValue().longValue());
 			}
+			
 			player.sendInventoryUpdate(playerIU);
 		}
 	}
@@ -180,6 +184,7 @@ public class RestorationRandom extends AbstractEffect
 			sm = new SystemMessage(SystemMessageId.YOU_HAVE_OBTAINED_S1);
 			sm.addItemName(item);
 		}
+		
 		player.sendPacket(sm);
 	}
 }

@@ -46,11 +46,14 @@ public class Q11033_AntidoteIngredients extends Quest
 	private static final int KALESIN = 33177;
 	private static final int KRAKOS_BAT = 24384;
 	private static final int A_VAMMPIRE = 24385;
+	
 	// Items
 	private static final int SECRET_MATERIAL = 80671;
 	private static final ItemHolder SOE_KALESIN = new ItemHolder(80679, 1);
+	
 	// Location
 	private static final Location TRAINING_GROUNDS_TELEPORT = new Location(-44121, 115926, -3624);
+	
 	// Misc
 	private static final int MIN_LEVEL = 20;
 	
@@ -122,6 +125,7 @@ public class Q11033_AntidoteIngredients extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -169,6 +173,7 @@ public class Q11033_AntidoteIngredients extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

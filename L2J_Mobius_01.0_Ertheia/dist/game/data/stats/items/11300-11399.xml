@@ -318,9 +318,9 @@
 		<set name="reuse_delay" val="400" />
 		<set name="commissionItemType" val="CROSSBOW" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">422</stat>
 			<stat type="mAtk">163</stat>
@@ -355,9 +355,9 @@
 		<set name="reuse_delay" val="400" />
 		<set name="commissionItemType" val="CROSSBOW" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">422</stat>
 			<stat type="mAtk">163</stat>
@@ -393,9 +393,9 @@
 		<set name="reuse_delay" val="400" />
 		<set name="commissionItemType" val="CROSSBOW" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">422</stat>
 			<stat type="mAtk">163</stat>
@@ -431,9 +431,9 @@
 		<set name="reuse_delay" val="400" />
 		<set name="commissionItemType" val="CROSSBOW" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">422</stat>
 			<stat type="mAtk">163</stat>
@@ -468,9 +468,9 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="commissionItemType" val="RAPIER" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">329</stat>
 			<stat type="mAtk">163</stat>
@@ -505,9 +505,9 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="commissionItemType" val="RAPIER" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">329</stat>
 			<stat type="mAtk">163</stat>
@@ -543,9 +543,9 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="commissionItemType" val="RAPIER" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">329</stat>
 			<stat type="mAtk">163</stat>
@@ -581,9 +581,9 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="commissionItemType" val="RAPIER" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">329</stat>
 			<stat type="mAtk">163</stat>
@@ -895,9 +895,9 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="commissionItemType" val="ANCIENT_SWORD" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">393</stat>
 			<stat type="mAtk">163</stat>
@@ -931,9 +931,9 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="commissionItemType" val="ANCIENT_SWORD" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">393</stat>
 			<stat type="mAtk">163</stat>
@@ -968,9 +968,9 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="commissionItemType" val="ANCIENT_SWORD" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">393</stat>
 			<stat type="mAtk">163</stat>
@@ -1005,9 +1005,9 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="commissionItemType" val="ANCIENT_SWORD" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">393</stat>
 			<stat type="mAtk">163</stat>

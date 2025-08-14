@@ -52,6 +52,7 @@ public class Q00454_CompletelyLost extends Quest
 	// NPCs
 	private static final int INJURED_SOLDIER = 32738;
 	private static final int ERMIAN = 32736;
+	
 	// Misc
 	private static final int MIN_LEVEL = 84;
 	private static final Location MOVE_TO = new Location(-180219, 186341, -10600);
@@ -111,6 +112,7 @@ public class Q00454_CompletelyLost extends Quest
 						}
 					}
 				}
+				
 				startQuestTimer("CHECK_TIMER", 2000, npc, null);
 				break;
 			}
@@ -161,6 +163,7 @@ public class Q00454_CompletelyLost extends Quest
 				{
 					whisper(npc, leader, NpcStringId.UGH_I_M_SORRY_IT_LOOKS_LIKE_THIS_IS_IT_FOR_ME_I_WANTED_TO_LIVE_AND_SEE_MY_FAMILY);
 				}
+				
 				npc.sendScriptEvent("SCE_A_SEED_ESCORT_QUEST_FAILURE", npc, null);
 				startQuestTimer("EXPIRED_TIMER", 2000, npc, null);
 				break;
@@ -199,6 +202,7 @@ public class Q00454_CompletelyLost extends Quest
 						{
 							npc.getVariables().set("partyId", player.getParty().getLeaderObjectId());
 						}
+						
 						qs.setMemoState(1);
 						qs.startQuest();
 						htmltext = event;
@@ -278,6 +282,7 @@ public class Q00454_CompletelyLost extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -329,6 +334,7 @@ public class Q00454_CompletelyLost extends Quest
 						}
 					}
 				}
+				
 				// Timers cleanup
 				cancelQuestTimer("CHECK_TIMER", receiver, null);
 				cancelQuestTimer("TIME_LIMIT1", receiver, null);
@@ -366,7 +372,9 @@ public class Q00454_CompletelyLost extends Quest
 						}
 					}
 				}
+				
 				receiver.deleteMe();
+				
 				// Timers cleanup
 				cancelQuestTimer("CHECK_TIMER", receiver, null);
 				cancelQuestTimer("TIME_LIMIT1", receiver, null);
@@ -377,6 +385,7 @@ public class Q00454_CompletelyLost extends Quest
 				break;
 			}
 		}
+		
 		return super.onEventReceived(eventName, sender, receiver, reference);
 	}
 	
@@ -424,6 +433,7 @@ public class Q00454_CompletelyLost extends Quest
 					htmltext = "32738-02.htm";
 					break;
 				}
+				
 				qs.setState(State.CREATED);
 				// break; fallthrough
 			}
@@ -742,6 +752,7 @@ public class Q00454_CompletelyLost extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

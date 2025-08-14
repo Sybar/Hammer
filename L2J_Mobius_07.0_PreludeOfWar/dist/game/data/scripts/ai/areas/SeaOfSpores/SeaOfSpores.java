@@ -52,11 +52,13 @@ public class SeaOfSpores extends AbstractNpcAI
 		24237, // Skeletus
 		24238, // Atrofine
 	};
+	
 	// Special Mobs
 	private static final int ARANEA = 24226;
 	private static final int ARIMA = 24232;
 	private static final int HARANE = 24233;
 	private static final int ARIMUS = 24239;
+	
 	// Skills
 	private static final SkillHolder ABSORB_ENERGY1 = new SkillHolder(32483, 1);
 	private static final SkillHolder ABSORB_ENERGY2 = new SkillHolder(32481, 1);
@@ -108,10 +110,12 @@ public class SeaOfSpores extends AbstractNpcAI
 			{
 				members.add(killer);
 			}
+			
 			for (Player member : members)
 			{
 				member.doCast(REFINED_ENERGY.getSkill());
 			}
+			
 			if (getRandom(1000) < 2)
 			{
 				addSpawn(ARANEA, npc, false, 300000);
@@ -129,6 +133,7 @@ public class SeaOfSpores extends AbstractNpcAI
 			{
 				members.add(killer);
 			}
+			
 			for (Player member : members)
 			{
 				member.doCast(REFINED_ENERGY.getSkill());

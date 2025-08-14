@@ -42,6 +42,7 @@ public class Theorn extends AbstractNpcAI
 {
 	// NPC
 	private static final int THERON = 33897;
+	
 	// Skills
 	private static final int REWARD_BUFF_X2 = 16136;
 	private static final int REWARD_BUFF_X4 = 16137;
@@ -181,6 +182,7 @@ public class Theorn extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -207,6 +209,7 @@ public class Theorn extends AbstractNpcAI
 		{
 			return "33897_x32.html";
 		}
+		
 		return "33897.html";
 	}
 	
@@ -216,6 +219,7 @@ public class Theorn extends AbstractNpcAI
 		{
 			return "nosp.html";
 		}
+		
 		takeItems(player, Inventory.ADENA_ID, 100000);
 		player.setSp(player.getSp() - 500000);
 		if (isLight ? getRandom(10) > 4 : getRandom(10) < 5)
@@ -223,6 +227,7 @@ public class Theorn extends AbstractNpcAI
 			SkillCaster.triggerCast(npc, player, skill);
 			return null;
 		}
+		
 		SkillCaster.triggerCast(npc, player, RESEARCH_FAIL);
 		startQuestTimer("REMOVE_BUFF", 3000, npc, player);
 		return null;

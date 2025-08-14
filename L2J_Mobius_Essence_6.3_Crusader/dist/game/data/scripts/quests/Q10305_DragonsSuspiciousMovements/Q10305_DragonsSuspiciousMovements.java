@@ -39,6 +39,7 @@ public class Q10305_DragonsSuspiciousMovements extends Quest
 {
 	// NPC
 	private static final int ORVEN = 30857;
+	
 	// Monsters
 	private static final int[] MONSTERS =
 	{
@@ -51,11 +52,13 @@ public class Q10305_DragonsSuspiciousMovements extends Quest
 		22311,
 		22305,
 	};
+	
 	// Items
 	private static final ItemHolder SOE_HIGH_PRIEST_OVEN = new ItemHolder(91768, 1);
 	private static final ItemHolder SAYHA_COOKIE = new ItemHolder(93274, 20);
 	private static final ItemHolder SAYHA_STORM = new ItemHolder(91712, 12);
 	private static final ItemHolder MAGIC_LAMP_CHARGING_POTION = new ItemHolder(91757, 2);
+	
 	// Misc
 	private static final int MIN_LEVEL = 82;
 	private static final String KILL_COUNT_VAR = "KillCount";
@@ -110,6 +113,7 @@ public class Q10305_DragonsSuspiciousMovements extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -145,6 +149,7 @@ public class Q10305_DragonsSuspiciousMovements extends Quest
 		{
 			htmltext = getAlreadyCompletedMsg(player);
 		}
+		
 		return htmltext;
 	}
 	
@@ -187,6 +192,7 @@ public class Q10305_DragonsSuspiciousMovements extends Quest
 			holder.add(new NpcLogListHolder(NpcStringId.DEFEAT_MONSTERS_IN_THE_DRAGON_VALLEY_EAST.getId(), true, qs.getInt(KILL_COUNT_VAR)));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

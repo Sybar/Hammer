@@ -54,9 +54,11 @@ public final class Q10553_WhatMattersMoreThanAbility extends Quest
 	// NPCs
 	private static final int STIG = 34361;
 	private static final int MCCOY = 34383;
+	
 	// Monster
 	private static final int HATCHLING = 24089;
 	private static final int GEM_DRAGON = 24097;
+	
 	// Misc
 	private static final int COUNT_HATCHLING = 5;
 	private static final int COUNT_GEM_DRAGON = 4;
@@ -145,6 +147,7 @@ public final class Q10553_WhatMattersMoreThanAbility extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -171,6 +174,7 @@ public final class Q10553_WhatMattersMoreThanAbility extends Quest
 						showHtmlFile(player, "stig_q10553_03.htm");
 						break;
 					}
+					
 					showHtmlFile(player, "mccoy_q10553_02.htm");
 					break;
 				}
@@ -210,6 +214,7 @@ public final class Q10553_WhatMattersMoreThanAbility extends Quest
 						qs.set("killed_" + HATCHLING, ++killedHatchling);
 						playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 					}
+					
 					sendNpcLogList(player);
 				}
 				
@@ -220,6 +225,7 @@ public final class Q10553_WhatMattersMoreThanAbility extends Quest
 						player.getVariables().set(PlayerVariables.BALTHUS_CAGE_EXP, 1);
 						player.addExpAndSp(578_317_523L, 100_000L);
 					}
+					
 					qs.setCond(3, true);
 				}
 			}
@@ -234,6 +240,7 @@ public final class Q10553_WhatMattersMoreThanAbility extends Quest
 						qs.set("killed_" + GEM_DRAGON, ++killedGemDragon);
 						playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 					}
+					
 					sendNpcLogList(player);
 				}
 				
@@ -264,6 +271,7 @@ public final class Q10553_WhatMattersMoreThanAbility extends Quest
 				return holder;
 			}
 		}
+		
 		return super.getNpcLogList(player);
 	}
 	

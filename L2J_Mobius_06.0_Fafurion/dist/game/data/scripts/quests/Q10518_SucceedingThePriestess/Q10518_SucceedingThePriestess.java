@@ -51,6 +51,7 @@ public final class Q10518_SucceedingThePriestess extends Quest
 {
 	// NPCs
 	private static final int LIONEL = 33907;
+	
 	// MOBs
 	private static final int[] FIELD_MOBS =
 	{
@@ -83,10 +84,12 @@ public final class Q10518_SucceedingThePriestess extends Quest
 		24328, // Temple Guardian Priest
 		24329, // Starving Water Dragon
 	};
+	
 	// Item
 	private static final int DEFORMED_CLAW = 80325;
 	private static final int BROKEN_CONTRACT_FRAGMENTS = 80326;
 	private static final int TOP_GRADE_SPIRIT_STONE = 45932;
+	
 	// Misc
 	private static final int MIN_LEVEL = 110;
 	private static final int REQUIRED_DROP_COUNT_1 = 10;
@@ -175,6 +178,7 @@ public final class Q10518_SucceedingThePriestess extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -228,6 +232,7 @@ public final class Q10518_SucceedingThePriestess extends Quest
 						}
 						break;
 					}
+					
 					getNoQuestLevelRewardMsg(player);
 					break;
 				}
@@ -293,6 +298,7 @@ public final class Q10518_SucceedingThePriestess extends Quest
 			holder.add(new NpcLogListHolder(80325, true, (int) getQuestItemsCount(player, DEFORMED_CLAW))); // Deformed Claw
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 	

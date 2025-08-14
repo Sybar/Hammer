@@ -39,17 +39,21 @@ public class Q10371_GraspThyPower extends Quest
 {
 	// NPCs
 	private static final int GERKENSHTEIN = 33648;
+	
 	// Monster's
 	private static final int SUCCUBUS_SOLDIER = 23181;
 	private static final int SUCCUBUS_WARRIOR = 23182;
 	private static final int SUCCUBUS_ARCHER = 23183;
 	private static final int SUCCUBUS_SHAMAN = 23184;
 	private static final int BLOODY_SUCCUBUS = 23185;
+	
 	// Items
 	private static final ItemHolder ADENA = new ItemHolder(57, 484990);
+	
 	// Reward
 	private static final int EXP_REWARD = 22641900;
 	private static final int SP_REWARD = 5434;
+	
 	// Misc
 	private static final int MIN_LEVEL = 76;
 	private static final int MAX_LEVEL = 81;
@@ -98,6 +102,7 @@ public class Q10371_GraspThyPower extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -122,6 +127,7 @@ public class Q10371_GraspThyPower extends Quest
 		{
 			htmltext = "complete.htm";
 		}
+		
 		return htmltext;
 	}
 	

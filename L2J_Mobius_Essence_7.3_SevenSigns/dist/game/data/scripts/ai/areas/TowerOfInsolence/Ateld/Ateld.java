@@ -36,8 +36,10 @@ public class Ateld extends AbstractNpcAI
 {
 	// NPC
 	private static final int ATELD = 31714;
+	
 	// Location
 	private static final Location TELEPORT_LOC = new Location(115322, 16756, 9012);
+	
 	// Misc
 	private static final NpcStringId[] TEXT =
 	{
@@ -63,6 +65,7 @@ public class Ateld extends AbstractNpcAI
 				{
 					return "31714-01.html";
 				}
+				
 				for (Player member : player.getCommandChannel().getMembers())
 				{
 					if ((member != null) && (member.getLevel() > 70))
@@ -79,6 +82,7 @@ public class Ateld extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return null;
 	}
 	

@@ -44,6 +44,7 @@ public final class Q10519_ControllingYourTemper extends Quest
 {
 	// NPCs
 	private static final int OKAYTI = 34490;
+	
 	// MOBs
 	private static final int[] FAFURIONS =
 	{
@@ -55,8 +56,10 @@ public final class Q10519_ControllingYourTemper extends Quest
 		29366, // Fafurion
 		29367, // Fafurion
 	};
+	
 	// Item
 	private static final int SUPERIOR_GIANT_CODEX_CHAPTER_1 = 46151;
+	
 	// Misc
 	private static final int MIN_LEVEL = 110;
 	
@@ -113,6 +116,7 @@ public final class Q10519_ControllingYourTemper extends Quest
 					htmltext = "okayti_q10519_06.htm";
 					break;
 				}
+				
 				htmltext = "okayti_q10519_07.htm";
 				break;
 			}
@@ -122,6 +126,7 @@ public final class Q10519_ControllingYourTemper extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -164,6 +169,7 @@ public final class Q10519_ControllingYourTemper extends Quest
 						}
 						break;
 					}
+					
 					getNoQuestLevelRewardMsg(player);
 					break;
 				}

@@ -35,14 +35,17 @@ public class Q00293_TheHiddenVeins extends Quest
 	// NPCs
 	private static final int FILAUR = 30535;
 	private static final int CHINCHIRIN = 30539;
+	
 	// Monsters
 	private static final int UTUKU_ORC = 20446;
 	private static final int UTUKU_ARCHER = 20447;
 	private static final int UTUKU_GRUNT = 20448;
+	
 	// Items
 	private static final int CHRYSOLITE_ORE = 1488;
 	private static final int TORN_MAP_FRAGMENT = 1489;
 	private static final int HIDDEN_VEIN_MAP = 1490;
+	
 	// Reward
 	private static final int SOULSHOT_FOR_BEGINNERS = 5789;
 	

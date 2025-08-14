@@ -40,10 +40,12 @@ public class Q10812_FacingSadness extends Quest
 {
 	// Npc
 	private static final int ELIKIA = 31620;
+	
 	// Items
 	private static final int ELIKIA_CERTIFICATE = 45623;
 	private static final int PROOF_OF_DISPOSAL = 45871;
 	private static final ItemHolder LIONEL_HUNTERS_LIST_PART_1 = new ItemHolder(45627, 1);
+	
 	// Mobs
 	private static final int[] MONSTERS =
 	{
@@ -159,6 +161,7 @@ public class Q10812_FacingSadness extends Quest
 						{
 							mainQ.notifyEvent("SUBQUEST_FINISHED_NOTIFY", npc, player);
 						}
+						
 						htmltext = event;
 					}
 					else
@@ -169,6 +172,7 @@ public class Q10812_FacingSadness extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -209,6 +213,7 @@ public class Q10812_FacingSadness extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -229,6 +234,7 @@ public class Q10812_FacingSadness extends Quest
 				giveItems(player, PROOF_OF_DISPOSAL, 1);
 				playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 			}
+			
 			if (getQuestItemsCount(player, PROOF_OF_DISPOSAL) >= 8000)
 			{
 				qs.setCond(2, true);

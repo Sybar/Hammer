@@ -33,11 +33,13 @@ public class Q00380_BringOutTheFlavorOfIngredients extends Quest
 	private static final int DIRE_WOLF = 20205;
 	private static final int KADIF_WEREWOLF = 20206;
 	private static final int GIANT_MIST_LEECH = 20225;
+	
 	// Items
 	private static final int RITRON_FRUIT = 5895;
 	private static final int MOON_FACE_FLOWER = 5896;
 	private static final int LEECH_FLUIDS = 5897;
 	private static final int ANTIDOTE = 1831;
+	
 	// Rewards
 	private static final int RITRON_JELLY = 5960;
 	private static final int JELLY_RECIPE = 5959;

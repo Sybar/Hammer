@@ -31,9 +31,11 @@ public class Q00637_ThroughOnceMore extends Quest
 {
 	// NPC
 	private static final int FLAURON = 32010;
+	
 	// Items
 	private static final int FADED_VISITOR_MARK = 8065;
 	private static final int NECROMANCER_HEART = 8066;
+	
 	// Reward
 	private static final int PAGAN_MARK = 8067;
 	

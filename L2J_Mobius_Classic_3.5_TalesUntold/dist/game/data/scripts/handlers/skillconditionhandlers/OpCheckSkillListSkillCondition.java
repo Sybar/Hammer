@@ -76,6 +76,7 @@ public class OpCheckSkillListSkillCondition implements ISkillCondition
 				break;
 			}
 		}
+		
 		return false;
 	}
 }

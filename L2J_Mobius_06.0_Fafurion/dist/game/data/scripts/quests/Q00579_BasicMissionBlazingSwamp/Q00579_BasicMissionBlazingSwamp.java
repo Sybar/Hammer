@@ -43,8 +43,10 @@ public final class Q00579_BasicMissionBlazingSwamp extends Quest
 	// NPCs
 	private static final int PENNY = 34413;
 	private static final int HARPE = 34014;
+	
 	// Item
 	private static final int SOE_SWAMP = 47063;
+	
 	// Misc
 	private static final int MIN_LEVEL = 97;
 	private static final int MAX_LEVEL = 99;
@@ -85,6 +87,7 @@ public final class Q00579_BasicMissionBlazingSwamp extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -103,6 +106,7 @@ public final class Q00579_BasicMissionBlazingSwamp extends Quest
 					htmltext = getAlreadyCompletedMsg(player);
 					break;
 				}
+				
 				qs.setState(State.CREATED);
 				// fallthrou
 			}
@@ -160,6 +164,7 @@ public final class Q00579_BasicMissionBlazingSwamp extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -203,6 +208,7 @@ public final class Q00579_BasicMissionBlazingSwamp extends Quest
 						}
 						break;
 					}
+					
 					getNoQuestLevelRewardMsg(player);
 					break;
 				}

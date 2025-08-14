@@ -44,9 +44,11 @@ public class Q10323_TrainLikeItsReal extends Quest
 	private static final int HOLDEN = 33194;
 	private static final int SHANNON = 32974;
 	private static final int TRAINING_GOLEM = 27532;
+	
 	// Items
 	private static final ItemHolder SPIRITSHOTS = new ItemHolder(2509, 500);
 	private static final ItemHolder SOULSHOTS = new ItemHolder(1835, 500);
+	
 	// Misc
 	private static final int MAX_LEVEL = 20;
 	
@@ -113,6 +115,7 @@ public class Q10323_TrainLikeItsReal extends Quest
 						getTimers().addTimer("SHOW_SCREENMSG", 4500, evnt -> showOnScreenMsg(player, NpcStringId.AUTOMATE_SOULSHOT_AS_SHOWN_IN_THE_TUTORIAL, ExShowScreenMessage.TOP_CENTER, 4500));
 						qs.setCond(4, true);
 					}
+					
 					htmltext = event;
 				}
 				break;
@@ -138,6 +141,7 @@ public class Q10323_TrainLikeItsReal extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -218,6 +222,7 @@ public class Q10323_TrainLikeItsReal extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -257,8 +262,10 @@ public class Q10323_TrainLikeItsReal extends Quest
 			{
 				npcLogList.add(new NpcLogListHolder(NpcStringId.ELIMINATE_THE_TRAINING_GOLEM_2, qs.getMemoState()));
 			}
+			
 			return npcLogList;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

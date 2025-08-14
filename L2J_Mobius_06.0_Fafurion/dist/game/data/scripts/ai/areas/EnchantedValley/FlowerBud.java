@@ -59,6 +59,7 @@ public class FlowerBud extends AbstractNpcAI
 			final Npc elegant = addSpawn(FLOWER_SPAWNS.get(getRandom(FLOWER_SPAWNS.size())), npc, false, 120000, false);
 			addAttackPlayerDesire(elegant, player);
 		}
+		
 		return event;
 	}
 	

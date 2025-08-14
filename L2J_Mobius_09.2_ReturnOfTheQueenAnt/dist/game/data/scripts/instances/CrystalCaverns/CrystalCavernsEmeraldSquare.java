@@ -50,15 +50,18 @@ public class CrystalCavernsEmeraldSquare extends AbstractInstance
 	private static final int STRONGHOLD_PROTECTOR = 23012;
 	private static final int SQUARE_INTRUDER = 23010;
 	private static final int SQUARE_ATTACKER = 23011;
+	
 	// Skills
 	private static final SkillHolder DESTROY_SKILL = new SkillHolder(12003, 1);
 	private static final SkillHolder WATER_CANNON_SKILL_ATTACK = new SkillHolder(14179, 1);
+	
 	// Locations
 	private static final Location[] BOSS_SPAWNS =
 	{
 		new Location(152745, 145957, -12584, 16446),
 		new Location(152816, 145968, -12633, 16446),
 	};
+	
 	// Misc
 	private static final int TEMPLATE_ID = 163;
 	private static final int RAID_DOOR_1 = 24220005;
@@ -85,6 +88,7 @@ public class CrystalCavernsEmeraldSquare extends AbstractInstance
 		{
 			enterInstance(player, npc, TEMPLATE_ID);
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	
@@ -121,6 +125,7 @@ public class CrystalCavernsEmeraldSquare extends AbstractInstance
 						{
 							instance.spawnGroup(spawnName);
 						}
+						
 						npcVars.increaseInt("SUPPORT_VALUE", 1);
 					}
 					

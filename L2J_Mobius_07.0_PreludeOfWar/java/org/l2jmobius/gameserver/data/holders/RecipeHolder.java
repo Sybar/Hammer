@@ -226,9 +226,11 @@ public class RecipeHolder
 						}
 					}
 				}
+				
 				return false;
 			}
 		}
+		
 		return true;
 	}
 	
@@ -251,6 +253,7 @@ public class RecipeHolder
 					sm.addLong(ingredient.getCount() - count);
 					player.sendPacket(sm);
 				}
+				
 				return false;
 			}
 		}

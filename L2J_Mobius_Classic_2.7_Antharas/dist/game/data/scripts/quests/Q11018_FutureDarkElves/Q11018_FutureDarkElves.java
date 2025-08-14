@@ -127,6 +127,7 @@ public class Q11018_FutureDarkElves extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -159,6 +160,7 @@ public class Q11018_FutureDarkElves extends Quest
 					}
 					break;
 				}
+				
 				if ((npc.getId() == VIRGIL) && (talker.getPlayerClass() != PlayerClass.PALUS_KNIGHT))
 				{
 					if (qs.isCond(2))
@@ -167,6 +169,7 @@ public class Q11018_FutureDarkElves extends Quest
 					}
 					break;
 				}
+				
 				if ((npc.getId() == TRISKEL) && (talker.getPlayerClass() != PlayerClass.ASSASSIN))
 				{
 					if (qs.isCond(3))
@@ -175,6 +178,7 @@ public class Q11018_FutureDarkElves extends Quest
 					}
 					break;
 				}
+				
 				if ((npc.getId() == VARIKA) && (talker.getPlayerClass() != PlayerClass.DARK_WIZARD))
 				{
 					if (qs.isCond(4))
@@ -183,6 +187,7 @@ public class Q11018_FutureDarkElves extends Quest
 					}
 					break;
 				}
+				
 				if ((npc.getId() == SIDRA) && (talker.getPlayerClass() != PlayerClass.DARK_WIZARD))
 				{
 					if (qs.isCond(5))
@@ -199,6 +204,7 @@ public class Q11018_FutureDarkElves extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

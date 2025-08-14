@@ -782,9 +782,9 @@
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="handler" val="ItemSkills" />
 		<set name="material" val="PAPER" />
-		<cond msgId="1902">
+		<conditions msgId="1902">
 			<player levelRange="1;84" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="18017" level="1" /> <!-- Fortune Bag -->
 		</skills>
@@ -800,9 +800,9 @@
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="handler" val="ItemSkills" />
 		<set name="material" val="PAPER" />
-		<cond msgId="1902">
+		<conditions msgId="1902">
 			<player levelRange="1;84" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="18018" level="1" /> <!-- Fortune Bag -->
 		</skills>
@@ -818,9 +818,9 @@
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="handler" val="ItemSkills" />
 		<set name="material" val="PAPER" />
-		<cond msgId="1902">
+		<conditions msgId="1902">
 			<player levelRange="1;84" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="18019" level="1" /> <!-- Fortune Bag -->
 			<skill id="18020" level="1" /> <!-- Fortune Bag -->
@@ -837,9 +837,9 @@
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="handler" val="ItemSkills" />
 		<set name="material" val="PAPER" />
-		<cond msgId="1902">
+		<conditions msgId="1902">
 			<player levelRange="85;107" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="18021" level="1" /> <!-- Fortune Bag -->
 		</skills>
@@ -854,9 +854,9 @@
 		<set name="etcitem_type" val="SCROLL" />
 		<set name="handler" val="ItemSkills" />
 		<set name="material" val="PAPER" />
-		<cond msgId="1902">
+		<conditions msgId="1902">
 			<player levelRange="85;107" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="18022" level="1" /> <!-- Fortune Bag -->
 			<skill id="18023" level="1" /> <!-- Fortune Bag -->

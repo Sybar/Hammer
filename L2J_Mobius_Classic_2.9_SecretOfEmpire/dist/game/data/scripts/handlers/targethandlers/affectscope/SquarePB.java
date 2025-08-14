@@ -60,6 +60,7 @@ public class SquarePB implements IAffectScopeHandler
 			{
 				return false;
 			}
+			
 			if (c.isDead())
 			{
 				return false;
@@ -76,6 +77,7 @@ public class SquarePB implements IAffectScopeHandler
 				{
 					return false;
 				}
+				
 				if (!GeoEngine.getInstance().canSeeTarget(creature, c))
 				{
 					return false;

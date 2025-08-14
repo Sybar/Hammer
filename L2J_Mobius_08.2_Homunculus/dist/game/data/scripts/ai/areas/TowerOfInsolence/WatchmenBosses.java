@@ -35,6 +35,7 @@ public class WatchmenBosses extends AbstractNpcAI
 	private static final int WATCHMAN_OF_THE_FORGOTTEN = 24555;
 	private static final int WATCHMAN_OF_THE_RESURRECTED = 24561;
 	private static final int WATCHMAN_OF_THE_CURSED = 24567;
+	
 	// Locations
 	private static final Location[] WATCHMAN_OF_THE_FORGOTTEN_LOCATIONS =
 	{
@@ -105,6 +106,7 @@ public class WatchmenBosses extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return null;
 	}
 	

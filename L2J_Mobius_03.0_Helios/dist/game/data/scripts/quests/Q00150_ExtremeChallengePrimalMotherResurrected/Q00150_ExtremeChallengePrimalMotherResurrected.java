@@ -37,9 +37,11 @@ public class Q00150_ExtremeChallengePrimalMotherResurrected extends Quest
 	// NPCs
 	private static final int RUMIESE = 33293;
 	private static final int ISTHINA_EXTRIM = 29196;
+	
 	// Item
 	private static final int SHILENS_MARK = 17589;
 	private static final int BOTTLE_OF_ISTHINAS_SOUL = 34883;
+	
 	// Misc
 	private static final int MIN_LEVEL = 97;
 	
@@ -84,10 +86,12 @@ public class Q00150_ExtremeChallengePrimalMotherResurrected extends Quest
 					giveItems(player, BOTTLE_OF_ISTHINAS_SOUL, 1);
 					qs.exitQuest(false, true);
 				}
+				
 				htmltext = event;
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -124,6 +128,7 @@ public class Q00150_ExtremeChallengePrimalMotherResurrected extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

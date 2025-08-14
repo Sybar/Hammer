@@ -44,6 +44,7 @@ public class Q10825_ForVictory extends Quest
 {
 	// NPC
 	private static final int KURTIZ = 30870;
+	
 	// Flag of Protection NPCs
 	private static final int FLAG_GLUDIO = 36741; // 1 Gludio Castle
 	private static final int FLAG_DION = 36742; // 2 Dion Castle
@@ -54,15 +55,18 @@ public class Q10825_ForVictory extends Quest
 	private static final int FLAG_GODDARD = 36747; // 7 Goddard Castle
 	private static final int FLAG_RUNE = 36748; // 8 Rune Castle
 	private static final int FLAG_SCHUTTGART = 36749; // 9 Schuttgart Castle
+	
 	// Items
 	private static final int PROOF_OF_SETTLEMENT = 80825;
 	private static final int MARK_OF_VALOR = 46059;
 	private static final int MERLOT_CERTIFICATE = 46056;
 	private static final int MAMMON_CERTIFICATE = 45635;
 	private static final int GUSTAV_CERTIFICATE = 45636;
+	
 	// Rewards
 	private static final int KURTIZ_CERTIFICATE = 46057;
 	private static final int SPELLBOOK_SUMMON_BATTLE_POTION = 45927;
+	
 	// Misc
 	private static final int MIN_LEVEL = 100;
 	private static final int MARK_OF_VALOR_NEEDED = 10;
@@ -119,6 +123,7 @@ public class Q10825_ForVictory extends Quest
 						{
 							htmltext = "30870-10.html";
 						}
+						
 						if (qs.isCond(2))
 						{
 							takeItems(player, MARK_OF_VALOR, MARK_OF_VALOR_NEEDED);
@@ -127,6 +132,7 @@ public class Q10825_ForVictory extends Quest
 						{
 							takeItems(player, PROOF_OF_SETTLEMENT, PROOF_OF_SETTLEMENT_NEEDED);
 						}
+						
 						htmltext = event;
 						giveItems(player, KURTIZ_CERTIFICATE, 1);
 						giveItems(player, SPELLBOOK_SUMMON_BATTLE_POTION, 1);
@@ -170,6 +176,7 @@ public class Q10825_ForVictory extends Quest
 									{
 										qs.setCond(2, true);
 									}
+									
 									playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 									htmltext = "CastleFlagOfProtection-02.html"; // Reward received
 								}
@@ -200,6 +207,7 @@ public class Q10825_ForVictory extends Quest
 									{
 										qs.setCond(2, true);
 									}
+									
 									playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 									htmltext = "CastleFlagOfProtection-02.html"; // Reward received
 								}
@@ -216,6 +224,7 @@ public class Q10825_ForVictory extends Quest
 			}
 				break;
 		}
+		
 		return htmltext;
 	}
 	
@@ -270,6 +279,7 @@ public class Q10825_ForVictory extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

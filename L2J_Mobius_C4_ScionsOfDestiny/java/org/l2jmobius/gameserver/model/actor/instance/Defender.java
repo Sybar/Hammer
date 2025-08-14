@@ -56,6 +56,7 @@ public class Defender extends Attackable
 		{
 			return new SiegeGuardAI(this);
 		}
+		
 		return new SpecialSiegeGuardAI(this);
 	}
 	
@@ -85,6 +86,7 @@ public class Defender extends Attackable
 				return true;
 			}
 		}
+		
 		return false;
 	}
 	
@@ -104,10 +106,12 @@ public class Defender extends Attackable
 		{
 			return;
 		}
+		
 		if (getSpawn() == null)
 		{
 			return;
 		}
+		
 		if (!isInsideRadius2D(getSpawn(), 40))
 		{
 			clearAggroList();
@@ -157,12 +161,14 @@ public class Defender extends Attackable
 			{
 				player.getAI().setIntention(Intention.ATTACK, this);
 			}
+			
 			// Notify the Player AI with INTERACT
 			if (!isAutoAttackable(player) && !canInteract(player))
 			{
 				player.getAI().setIntention(Intention.INTERACT, this);
 			}
 		}
+		
 		// Send a Server->Client ActionFailed to the Player in order to avoid that the client wait another packet
 		player.sendPacket(ActionFailed.STATIC_PACKET);
 	}
@@ -180,6 +186,7 @@ public class Defender extends Attackable
 			if ((damage == 0) && (aggro <= 1) && attacker.isPlayable())
 			{
 				final Player player = attacker.asPlayer();
+				
 				// Check if siege is in progress
 				if (((_castle != null) && _castle.getZone().isActive()) || ((_hall != null) && _hall.getSiegeZone().isActive()))
 				{
@@ -192,6 +199,7 @@ public class Defender extends Attackable
 					}
 				}
 			}
+			
 			super.addDamageHate(attacker, damage, aggro);
 		}
 	}

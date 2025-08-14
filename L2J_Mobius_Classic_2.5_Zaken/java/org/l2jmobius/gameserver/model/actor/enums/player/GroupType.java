@@ -49,6 +49,7 @@ public enum GroupType implements IUpdateTypeComponent
 				return type;
 			}
 		}
+		
 		return null;
 	}
 }

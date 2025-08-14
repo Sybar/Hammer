@@ -41,6 +41,7 @@ public class ToiSpecialMonsters extends AbstractNpcAI
 	private static final int ELITE_MONSTER_FLOOR7 = 24901;
 	private static final int ELITE_MONSTER_FLOOR8 = 24907;
 	private static final int ELITE_MONSTER_FLOOR9 = 24913;
+	
 	// Mimic Baium's Treasure
 	private static final int MIMIC_TREASURE_FLOOR1 = 24887;
 	private static final int MIMIC_TREASURE_FLOOR2 = 24888;
@@ -51,14 +52,17 @@ public class ToiSpecialMonsters extends AbstractNpcAI
 	private static final int MIMIC_TREASURE_FLOOR7 = 24893;
 	private static final int MIMIC_TREASURE_FLOOR8 = 24894;
 	private static final int MIMIC_TREASURE_FLOOR9 = 24895;
+	
 	// Elite Monsters Reward
 	private static final int ENHANCED_RUNE = 81453;
 	private static final int DROP_CHANCE = 25; // 25%
+	
 	// Misc
 	private static final int ELITE_MONSTERS_SPAWN_CHANCE = 1; // 1%
 	private static final int MIMIC_TREASURES_SPAWN_CHANCE = 2; // 2%
+	
 	// Trigger Monsters
-	//@formatter:off
+	// @formatter:off
 	private static final int[] TRIGGER_MOBS_FLOOR1 = {24550, 24551, 24552, 24553, 24554}; // Floor 1 Monsters
 	private static final int[] TRIGGER_MOBS_FLOOR2 = {24556, 24557, 24558, 24559, 24560}; // Floor 2 Monsters
 	private static final int[] TRIGGER_MOBS_FLOOR3 = {24562, 24563, 24564, 24565, 24566}; // Floor 3 Monsters
@@ -68,7 +72,7 @@ public class ToiSpecialMonsters extends AbstractNpcAI
 	private static final int[] TRIGGER_MOBS_FLOOR7 = {24896, 24897, 24898, 24899, 24900}; // Floor 7 Monsters
 	private static final int[] TRIGGER_MOBS_FLOOR8 = {24902, 24903, 24904, 24905, 24906}; // Floor 8 Monsters
 	private static final int[] TRIGGER_MOBS_FLOOR9 = {24908, 24909, 24910, 24911, 24912}; // Floor 9 Monsters
-	//@formatter:on
+	// @formatter:on
 	
 	private ToiSpecialMonsters()
 	{
@@ -150,6 +154,7 @@ public class ToiSpecialMonsters extends AbstractNpcAI
 				{
 					addSpawn(MIMIC_TREASURE_FLOOR4, npc, true, 0, true, npc.getInstanceId());
 				}
+				
 				if (getRandom(100) < ELITE_MONSTERS_SPAWN_CHANCE)
 				{
 					addSpawn(ELITE_MONSTER_FLOOR4, npc, true, 0, true, npc.getInstanceId());
@@ -167,6 +172,7 @@ public class ToiSpecialMonsters extends AbstractNpcAI
 				{
 					addSpawn(MIMIC_TREASURE_FLOOR5, npc, true, 0, true, npc.getInstanceId());
 				}
+				
 				if (getRandom(100) < ELITE_MONSTERS_SPAWN_CHANCE)
 				{
 					addSpawn(ELITE_MONSTER_FLOOR5, npc, true, 0, true, npc.getInstanceId());
@@ -184,6 +190,7 @@ public class ToiSpecialMonsters extends AbstractNpcAI
 				{
 					addSpawn(MIMIC_TREASURE_FLOOR6, npc, true, 0, true, npc.getInstanceId());
 				}
+				
 				if (getRandom(100) < ELITE_MONSTERS_SPAWN_CHANCE)
 				{
 					addSpawn(ELITE_MONSTER_FLOOR6, npc, true, 0, true, npc.getInstanceId());
@@ -201,6 +208,7 @@ public class ToiSpecialMonsters extends AbstractNpcAI
 				{
 					addSpawn(MIMIC_TREASURE_FLOOR7, npc, true, 0, true, npc.getInstanceId());
 				}
+				
 				if (getRandom(100) < ELITE_MONSTERS_SPAWN_CHANCE)
 				{
 					addSpawn(ELITE_MONSTER_FLOOR7, npc, true, 0, true, npc.getInstanceId());
@@ -218,6 +226,7 @@ public class ToiSpecialMonsters extends AbstractNpcAI
 				{
 					addSpawn(MIMIC_TREASURE_FLOOR8, npc, true, 0, true, npc.getInstanceId());
 				}
+				
 				if (getRandom(100) < ELITE_MONSTERS_SPAWN_CHANCE)
 				{
 					addSpawn(ELITE_MONSTER_FLOOR8, npc, true, 0, true, npc.getInstanceId());
@@ -235,6 +244,7 @@ public class ToiSpecialMonsters extends AbstractNpcAI
 				{
 					addSpawn(MIMIC_TREASURE_FLOOR9, npc, true, 0, true, npc.getInstanceId());
 				}
+				
 				if (getRandom(100) < ELITE_MONSTERS_SPAWN_CHANCE)
 				{
 					addSpawn(ELITE_MONSTER_FLOOR9, npc, true, 0, true, npc.getInstanceId());

@@ -48,6 +48,7 @@ public class Q00099_SagaOfTheFortuneSeeker extends Quest
 	private static final int TABLET_OF_VISION_3 = 31651;
 	private static final int TABLET_OF_VISION_4 = 31658;
 	private static final int PAMELA_APRODIA = 31601;
+	
 	// Monsters
 	private static final int ICE_MONSTER = 27316;
 	private static final int SPIRIT_OF_A_DROWNED = 27317;
@@ -63,6 +64,7 @@ public class Q00099_SagaOfTheFortuneSeeker extends Quest
 	private static final int ARCHANGEL_ICONOCLASSIS = 27257;
 	private static final int HALISHA_ARCHON = 27219;
 	private static final int MINERVIA_VAN_HAKKEN = 27309;
+	
 	// Items
 	private static final int ICE_CRYSTAL_FRAGMENT = 49833;
 	private static final int HALISHA_BADGE = 7514;
@@ -71,8 +73,10 @@ public class Q00099_SagaOfTheFortuneSeeker extends Quest
 	private static final int RESONANCE_AMULET_3 = 7359;
 	private static final int RESONANCE_AMULET_4 = 7390;
 	private static final int SEALED_DOCUMENT = 7608;
+	
 	// Reward
 	private static final int BOOK_KUKURU = 90041;
+	
 	// Misc
 	private static final String KILL_COUNT_VAR = "KillCount";
 	
@@ -95,6 +99,7 @@ public class Q00099_SagaOfTheFortuneSeeker extends Quest
 		{
 			return null;
 		}
+		
 		String htmltext = event;
 		switch (event)
 		{
@@ -242,6 +247,7 @@ public class Q00099_SagaOfTheFortuneSeeker extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -430,6 +436,7 @@ public class Q00099_SagaOfTheFortuneSeeker extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -500,6 +507,7 @@ public class Q00099_SagaOfTheFortuneSeeker extends Quest
 						{
 							qs.set(KILL_COUNT_VAR, count + 1);
 						}
+						
 						if (count >= 20)
 						{
 							qs.setCond(8, true);
@@ -526,8 +534,10 @@ public class Q00099_SagaOfTheFortuneSeeker extends Quest
 			{
 				holder.add(new NpcLogListHolder(KEEPER_OF_THE_HOLY_EDICT, false, guardiancount));
 			}
+			
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

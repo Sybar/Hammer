@@ -101,6 +101,7 @@ public class VentusTemple extends AbstractInstance
 			case CREATED:
 			{
 				instance.setStatus(TALK_WITH_VANTUS_MAID_ON_CREATE);
+				
 				// send screen message if player will not talk with Holy Grail's Raider
 				// I hate that cursed arrogant Ventus! You go ahead and get to the Temple of Ventus.
 				final ScheduledFuture<?> showFirstStringOnScreen = ThreadPool.schedule(() -> instance.broadcastPacket(new ExShowScreenMessage(STRING_ID_01, ExShowScreenMessage.TOP_CENTER, 10000, true)), 10000);
@@ -130,8 +131,10 @@ public class VentusTemple extends AbstractInstance
 				// spawn monsters who will be attack maid
 				final List<Npc> maidAttackers = instance.getNpcsOfGroup("VentusMonsters_2");
 				maidAttackers.forEach(npc -> npc.getSpawn().stopRespawn());
+				
 				// start attack maid
 				addDesireToAttack(instance, instance.getNpc(VentusMaid.VENTUS_MAID_NPC_ID));
+				
 				// add count of monsters who attack maid
 				instance.getParameters().set(MONSTERS_ATTACK_MAID_COUNTER, -(maidAttackers.size()));
 				break;
@@ -165,9 +168,11 @@ public class VentusTemple extends AbstractInstance
 	private void spawnBoss(Instance instance)
 	{
 		final boolean random = Rnd.nextBoolean();
+		
 		// show text
 		final NpcStringId bossText = random ? STRING_ID_05 : STRING_ID_06;
 		instance.broadcastPacket(new ExShowScreenMessage(bossText, ExShowScreenMessage.TOP_CENTER, 10000, true));
+		
 		// spawn boss
 		final String bossTemplate = random ? "VentusBoss_Ventus" : "VentusBoss_Rekario";
 		instance.spawnGroup(bossTemplate).forEach(n -> n.getSpawn().stopRespawn());
@@ -184,6 +189,7 @@ public class VentusTemple extends AbstractInstance
 			{
 				InstanceManager.getInstance().deleteInstanceTime(player, INSTANCE_ID);
 			}
+			
 			instance.destroy();
 			return;
 		}
@@ -202,6 +208,7 @@ public class VentusTemple extends AbstractInstance
 				{
 					randomNpcs.addAll(monsters);
 				}
+				
 				if (randomNpcs.size() < 4) // min instance count
 				{
 					while (randomNpcs.size() <= maxDreamerMonsters)
@@ -222,6 +229,7 @@ public class VentusTemple extends AbstractInstance
 			{
 				monster.deleteMe();
 			}
+			
 			monsters.remove(monster);
 		}
 		
@@ -365,14 +373,17 @@ public class VentusTemple extends AbstractInstance
 				showFirstStringOnScreen.cancel(true);
 				showFirstStringOnScreen = null;
 			}
+			
 			// First deal with those enslaved by Ventus. // guess
 			instance.broadcastPacket(new ExShowScreenMessage(STRING_ID_02, ExShowScreenMessage.TOP_CENTER, 10000, true));
 		}
+		
 		if ((showFirstStringOnScreen != null) && showFirstStringOnScreen.isDone())
 		{
 			showFirstStringOnScreen.cancel(true);
 			showFirstStringOnScreen = null;
 		}
+		
 		instance.getParameters().remove(FIRST_STRING_TIMER);
 	}
 	

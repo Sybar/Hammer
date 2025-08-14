@@ -51,8 +51,10 @@ public class Q10359_TracesOfEvil extends Quest
 		23026, // Sahara
 		20192, // Tyrant
 	};
+	
 	// Items
 	private static final int FRAGMENT = 17586; // Suspicious Fragment
+	
 	// Misc
 	private static final int MIN_LEVEL = 34;
 	private static final int MAX_LEVEL = 40;
@@ -129,6 +131,7 @@ public class Q10359_TracesOfEvil extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -212,6 +215,7 @@ public class Q10359_TracesOfEvil extends Quest
 										break;
 									}
 								}
+								
 								takeItems(player, FRAGMENT, 20);
 								playSound(player, QuestSound.ITEMSOUND_QUEST_MIDDLE);
 								break;
@@ -572,6 +576,7 @@ public class Q10359_TracesOfEvil extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

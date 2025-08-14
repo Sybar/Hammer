@@ -33,10 +33,13 @@ public class Q00652_AnAgedExAdventurer extends Quest
 	// NPCs
 	private static final int TANTAN = 32012;
 	private static final int SARA = 30180;
+	
 	// Item
 	private static final int SOULSHOT_C = 1464;
+	
 	// Reward
 	private static final int ENCHANT_ARMOR_D = 956;
+	
 	// Table of possible spawns
 	private static final Location[] SPAWNS =
 	{
@@ -46,6 +49,7 @@ public class Q00652_AnAgedExAdventurer extends Quest
 		new Location(94500, -10129, -3290, 0),
 		new Location(96534, -1237, -3677, 0)
 	};
+	
 	// Current position
 	private int _currentPosition = 0;
 	
@@ -133,6 +137,7 @@ public class Q00652_AnAgedExAdventurer extends Quest
 							htmltext = "30180-02.htm";
 							giveAdena(player, 10000, true);
 						}
+						
 						st.exitQuest(true, true);
 						break;
 					}

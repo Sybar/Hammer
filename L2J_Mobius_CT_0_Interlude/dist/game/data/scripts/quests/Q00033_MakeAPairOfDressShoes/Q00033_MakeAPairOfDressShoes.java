@@ -34,10 +34,12 @@ public class Q00033_MakeAPairOfDressShoes extends Quest
 	private static final int WOODLEY = 30838;
 	private static final int IAN = 30164;
 	private static final int LEIKAR = 31520;
+	
 	// Items
 	private static final int LEATHER = 1882;
 	private static final int THREAD = 1868;
 	private static final int ADENA = 57;
+	
 	// Rewards
 	public static final int DRESS_SHOES_BOX = 7113;
 	

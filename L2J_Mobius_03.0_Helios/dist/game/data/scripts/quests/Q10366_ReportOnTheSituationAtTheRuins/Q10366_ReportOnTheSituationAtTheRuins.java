@@ -51,6 +51,7 @@ public class Q10366_ReportOnTheSituationAtTheRuins extends Quest
 		23122
 		// Eyesaroch
 	};
+	
 	// Misc
 	private static final int MIN_LEVEL = 16;
 	private static final int MAX_LEVEL = 25;
@@ -97,10 +98,12 @@ public class Q10366_ReportOnTheSituationAtTheRuins extends Quest
 					addExpAndSp(player, 114000, 15);
 					qs.exitQuest(false, true);
 				}
+				
 				htmltext = event;
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -134,6 +137,7 @@ public class Q10366_ReportOnTheSituationAtTheRuins extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -170,6 +174,7 @@ public class Q10366_ReportOnTheSituationAtTheRuins extends Quest
 				return holder;
 			}
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

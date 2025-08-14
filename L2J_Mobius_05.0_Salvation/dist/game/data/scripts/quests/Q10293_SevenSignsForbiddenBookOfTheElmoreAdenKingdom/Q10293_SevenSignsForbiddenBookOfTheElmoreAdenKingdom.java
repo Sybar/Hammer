@@ -40,8 +40,10 @@ public class Q10293_SevenSignsForbiddenBookOfTheElmoreAdenKingdom extends Quest
 	private static final int PILE_OF_BOOKS5 = 32813;
 	private static final int SOPHIA2 = 32861;
 	private static final int SOPHIA3 = 32863;
+	
 	// Item
 	private static final int SOLINAS_BIOGRAPHY = 17213;
+	
 	// Misc
 	private static final int MIN_LEVEL = 81;
 	
@@ -198,6 +200,7 @@ public class Q10293_SevenSignsForbiddenBookOfTheElmoreAdenKingdom extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -214,6 +217,7 @@ public class Q10293_SevenSignsForbiddenBookOfTheElmoreAdenKingdom extends Quest
 		{
 			htmltext = "32863-04.html";
 		}
+		
 		return htmltext;
 	}
 	
@@ -395,6 +399,7 @@ public class Q10293_SevenSignsForbiddenBookOfTheElmoreAdenKingdom extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

@@ -44,6 +44,7 @@ public class ExAlchemySkillList extends ServerPacket
 				_skills.add(s);
 			}
 		}
+		
 		_skills.add(SkillData.getInstance().getSkill(CommonSkill.ALCHEMY_CUBE.getId(), 1));
 	}
 	

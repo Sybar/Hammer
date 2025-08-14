@@ -36,13 +36,16 @@ public class Q10746_SeeTheWorld extends Quest
 	private static final int KARLA = 33933;
 	private static final int ASTIEL = 33948;
 	private static final int LEVIAN = 30037;
+	
 	// Items
 	private static final int SOULSHOT = 1463;
 	private static final int SPIRITSHOT = 3948;
 	private static final int SCROLL_OF_ESCAPE = 736;
 	private static final int PAULINA_EQUIPMENT_SET = 46849;
+	
 	// Location
 	private static final Location GLUDIN_VILLAGE = new Location(-80684, 149770, -3040);
+	
 	// Misc
 	private static final int MIN_LEVEL = 19;
 	private static final int MAX_LEVEL = 25;
@@ -86,6 +89,7 @@ public class Q10746_SeeTheWorld extends Quest
 				htmltext = null;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -157,6 +161,7 @@ public class Q10746_SeeTheWorld extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

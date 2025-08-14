@@ -58,6 +58,7 @@ public class ExSetStatusBonus extends ClientPacket
 		{
 			return;
 		}
+		
 		if ((_str < 0) || (_dex < 0) || (_con < 0) || (_int < 0) || (_wit < 0) || (_men < 0))
 		{
 			return;
@@ -77,22 +78,27 @@ public class ExSetStatusBonus extends ClientPacket
 		{
 			player.getVariables().set(PlayerVariables.STAT_STR, player.getVariables().getInt(PlayerVariables.STAT_STR, 0) + _str);
 		}
+		
 		if (_dex > 0)
 		{
 			player.getVariables().set(PlayerVariables.STAT_DEX, player.getVariables().getInt(PlayerVariables.STAT_DEX, 0) + _dex);
 		}
+		
 		if (_con > 0)
 		{
 			player.getVariables().set(PlayerVariables.STAT_CON, player.getVariables().getInt(PlayerVariables.STAT_CON, 0) + _con);
 		}
+		
 		if (_int > 0)
 		{
 			player.getVariables().set(PlayerVariables.STAT_INT, player.getVariables().getInt(PlayerVariables.STAT_INT, 0) + _int);
 		}
+		
 		if (_wit > 0)
 		{
 			player.getVariables().set(PlayerVariables.STAT_WIT, player.getVariables().getInt(PlayerVariables.STAT_WIT, 0) + _wit);
 		}
+		
 		if (_men > 0)
 		{
 			player.getVariables().set(PlayerVariables.STAT_MEN, player.getVariables().getInt(PlayerVariables.STAT_MEN, 0) + _men);

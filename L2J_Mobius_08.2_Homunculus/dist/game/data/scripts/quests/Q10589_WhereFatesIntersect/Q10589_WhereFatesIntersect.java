@@ -58,6 +58,7 @@ public class Q10589_WhereFatesIntersect extends Quest
 		24454, // Doom Berserker
 		24455, // Doom Seer
 	};
+	
 	// Items
 	private static final int MONSTER_DROP = 80853; // Undead Blood
 	private static final ItemHolder SOE_HERPHAH = new ItemHolder(80857, 1); // Scroll of Escape: Herphah
@@ -69,9 +70,11 @@ public class Q10589_WhereFatesIntersect extends Quest
 	private static final QuestType QUEST_TYPE = QuestType.ONE_TIME; // REPEATABLE, ONE_TIME, DAILY
 	private static final int KILLING_COND = 3;
 	private static final int FINISH_COND = 4;
+	
 	// Rewards
 	private static final int REWARD_ITEM1 = 80908; // Lv. 95 Achievement Reward Box
 	private static final int REWARD_ITEM1_AMOUNT = 1;
+	
 	// Location
 	private static final Location TOWN_OF_ADEN = new Location(146568, 26808, -2208);
 	private static final Location ALTAR_OF_EVIL = new Location(-14088, 22168, -3626);
@@ -146,6 +149,7 @@ public class Q10589_WhereFatesIntersect extends Quest
 				if (qs.isCond(5))
 				{
 					takeItems(player, MONSTER_DROP, -1);
+					
 					// Reward.
 					rewardItems(player, REWARD_ITEM1, REWARD_ITEM1_AMOUNT);
 					qs.exitQuest(QUEST_TYPE, true);
@@ -165,6 +169,7 @@ public class Q10589_WhereFatesIntersect extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -249,6 +254,7 @@ public class Q10589_WhereFatesIntersect extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -269,11 +275,13 @@ public class Q10589_WhereFatesIntersect extends Quest
 				giveItemRandomly(player, MONSTER_DROP, 1, REQUIRED_DROP_COUNT, 1, true);
 				playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 			}
+			
 			if ((getQuestItemsCount(player, MONSTER_DROP) >= REQUIRED_DROP_COUNT) && (player.getLevel() >= 95))
 			{
 				qs.setCond(FINISH_COND, true);
 				giveItems(player, SOE_HERPHAH);
 			}
+			
 			sendNpcLogList(player);
 		}
 	}
@@ -289,10 +297,12 @@ public class Q10589_WhereFatesIntersect extends Quest
 			{
 				holder.add(new NpcLogListHolder(REACH_LV_95, true, 1));
 			}
+			
 			holder.add(new NpcLogListHolder(KILLING_NPCSTRING_ID1, true, (int) getQuestItemsCount(player, MONSTER_DROP)));
 			holder.add(new NpcLogListHolder(KILLING_NPCSTRING_ID2, true, (int) getQuestItemsCount(player, MONSTER_DROP)));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

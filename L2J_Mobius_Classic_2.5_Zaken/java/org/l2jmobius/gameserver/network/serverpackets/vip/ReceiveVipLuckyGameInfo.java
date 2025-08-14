@@ -32,7 +32,7 @@ import org.l2jmobius.gameserver.network.serverpackets.ServerPacket;
  */
 public class ReceiveVipLuckyGameInfo extends ServerPacket
 {
-	private final static int LCOIN_ID = 91663; // FIXME: Does not exist in client.
+	private static final int LCOIN_ID = 91663; // FIXME: Does not exist in client.
 	
 	private final short _adenaAmount;
 	private final short _lcoinCount;

@@ -2996,7 +2996,7 @@
 			<height normal="80" />
 		</collision>
 	</npc>
-	<npc id="29062" level="87" type="RaidBoss" name="Andreas Van Halter" title="Seer of Pagan">
+	<npc id="29062" level="87" type="RaidBoss" name="High Priestess van Halter" title="Raid Boss">
 		<parameters>
 			<minions name="Privates">
 				<npc id="29063" count="3" respawnTime="360" weightPoint="1" />
@@ -4975,7 +4975,7 @@
 			<height normal="46.6" />
 		</collision>
 	</npc>
-	<npc id="29096" level="87" type="RaidBoss" name="Anais" title="Lord of Splendor">
+	<npc id="29096" level="87" type="RaidBoss" name="Lord of Splendor Anays" title="Raid Boss">
 		<parameters>
 			<minions name="Privates">
 				<npc id="29098" count="3" respawnTime="360" weightPoint="1" /> <!-- Splendor Worshiper -->

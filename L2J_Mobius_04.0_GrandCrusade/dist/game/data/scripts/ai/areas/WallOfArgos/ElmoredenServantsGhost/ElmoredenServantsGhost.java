@@ -31,6 +31,7 @@ public class ElmoredenServantsGhost extends AbstractNpcAI
 {
 	// NPC
 	private static final int GHOST = 31920; // Elmoreden Servant's Ghost
+	
 	// Items
 	private static final int USED_GRAVE_PASS = 7261;
 	private static final int ANTIQUE_BROOCH = 7262;
@@ -70,6 +71,7 @@ public class ElmoredenServantsGhost extends AbstractNpcAI
 				player.teleToLocation(loc);
 			}
 		}
+		
 		return htmltext;
 	}
 	

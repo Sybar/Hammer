@@ -45,6 +45,7 @@ public class Q00219_TestimonyOfFate extends Quest
 	private static final int ARKENIA = 30419;
 	private static final int BLOODY_PIXY = 31845;
 	private static final int BLIGHT_TREANT = 31850;
+	
 	// Monsters
 	private static final int HANGMAN_TREE = 20144;
 	private static final int MARSH_STAKATO = 20157;
@@ -61,6 +62,7 @@ public class Q00219_TestimonyOfFate extends Quest
 	private static final int LETO_LIZARDMAN_OVERLORD = 20582;
 	private static final int KARUL_BUGBEAR = 20600;
 	private static final int BLACK_WILLOW_LURKER = 27079;
+	
 	// Items
 	private static final int KAIRA_LETTER = 3173;
 	private static final int METHEUS_FUNERAL_JAR = 3174;
@@ -92,9 +94,11 @@ public class Q00219_TestimonyOfFate extends Quest
 	private static final int BLACK_WILLOW_LEAF = 3200;
 	private static final int BLIGHT_TREANT_SAP = 3201;
 	private static final int ARKENIA_LETTER = 3202;
+	
 	// Rewards
 	private static final int MARK_OF_FATE = 3172;
 	private static final int DIMENSIONAL_DIAMOND = 7562;
+	
 	// Cond 6 drop chances
 	private static final Map<Integer, Integer> CHANCES = new HashMap<>();
 	static

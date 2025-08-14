@@ -40,12 +40,14 @@ public class Q10310_TwistedCreationTree extends Quest
 	// NPCs
 	private static final int SELINA = 33032;
 	private static final int GORFINA = 33031;
+	
 	// Monsters
 	private static final int GARDEN_SENTRY = 22947;
 	private static final int GARDEN_SCOUT = 22948;
 	private static final int GARDEN_COMMANDER = 22949;
 	private static final int OUTDOOR_GARDENER = 22950;
 	private static final int GARDEN_DESTROYER = 22951;
+	
 	// Misc
 	private static final int MIN_LEVEL = 90;
 	
@@ -106,6 +108,7 @@ public class Q10310_TwistedCreationTree extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -171,6 +174,7 @@ public class Q10310_TwistedCreationTree extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -238,6 +242,7 @@ public class Q10310_TwistedCreationTree extends Quest
 					break;
 				}
 			}
+			
 			final ExQuestNpcLogList log = new ExQuestNpcLogList(getId());
 			log.addNpc(GARDEN_SENTRY, qs.getInt(Integer.toString(GARDEN_SENTRY)));
 			log.addNpc(GARDEN_SCOUT, qs.getInt(Integer.toString(GARDEN_SCOUT)));

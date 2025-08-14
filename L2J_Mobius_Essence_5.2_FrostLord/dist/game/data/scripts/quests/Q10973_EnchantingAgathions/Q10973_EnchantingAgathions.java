@@ -37,9 +37,11 @@ public class Q10973_EnchantingAgathions extends Quest
 {
 	// NPC
 	private static final int RAYMOND = 30289;
+	
 	// Item
 	private static final int TRAVELER_AGATHION_GRIFFIN = 91935;
 	private static final int ENCHANT_SCROLL_AGATHION_GRIFFIN = 93040;
+	
 	// Misc
 	private static final int MIN_LEVEL = 35;
 	
@@ -93,6 +95,7 @@ public class Q10973_EnchantingAgathions extends Quest
 							break SEARCH;
 						}
 					}
+					
 					if (foundEnchant)
 					{
 						addExpAndSp(player, 0, 10000);
@@ -100,12 +103,14 @@ public class Q10973_EnchantingAgathions extends Quest
 						htmltext = event;
 						break;
 					}
+					
 					htmltext = "30289-03.htm";
 					player.sendPacket(new ExTutorialShowId(47));
 					break;
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -129,6 +134,7 @@ public class Q10973_EnchantingAgathions extends Quest
 		{
 			htmltext = getAlreadyCompletedMsg(player);
 		}
+		
 		return htmltext;
 	}
 }

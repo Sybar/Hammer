@@ -46,10 +46,13 @@ public class TautiWarzone extends AbstractInstance
 	private static final int TAUTI_EXTREME = 29234;
 	private static final int TAUTI_COMMON_AXE = 29236;
 	private static final int TAUTI_EXTREME_AXE = 29237;
+	
 	// Item
 	private static final int KEY_OF_DARKNESS = 34899;
+	
 	// Teleport
 	private static final Location TAUTI_TELEPORT = new Location(-148972, 209879, -10199);
+	
 	// Misc
 	private static final int TEMPLATE_ID = 218;
 	private static final int EXTREME_TEMPLATE_ID = 219;
@@ -98,6 +101,7 @@ public class TautiWarzone extends AbstractInstance
 					npc.broadcastPacket(new OnEventTrigger(15235001, true));
 					return "33678-3.htm";
 				}
+				
 				return "33678-1.htm";
 			}
 			case "teleport":
@@ -113,6 +117,7 @@ public class TautiWarzone extends AbstractInstance
 						startQuestTimer("PLAY_OPENING_B_MOVIE", 5000, null, member, false);
 					}
 				}
+				
 				startQuestTimer("SPAWN_TAUTI", 60000, npc, null, false);
 				break;
 			}
@@ -128,6 +133,7 @@ public class TautiWarzone extends AbstractInstance
 				{
 					world.spawnGroup("boss");
 				}
+				
 				world.openCloseDoor(DOOR_1, true);
 				break;
 			}
@@ -147,6 +153,7 @@ public class TautiWarzone extends AbstractInstance
 				{
 					return null;
 				}
+				
 				if (world.isStatus(0))
 				{
 					world.setStatus(1);
@@ -156,6 +163,7 @@ public class TautiWarzone extends AbstractInstance
 					{
 						takeItems(member, KEY_OF_DARKNESS, -1);
 					}
+					
 					startQuestTimer("WORLD_STATUS_CHECK", 5000, npc, null);
 				}
 				else if (world.isStatus(1))
@@ -169,11 +177,14 @@ public class TautiWarzone extends AbstractInstance
 							monster.setRandomWalking(false);
 						}
 					}
+					
 					startQuestTimer("WORLD_STATUS_CHECK", 5000, npc, null);
 				}
+				
 				return null;
 			}
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	
@@ -206,6 +217,7 @@ public class TautiWarzone extends AbstractInstance
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -221,6 +233,7 @@ public class TautiWarzone extends AbstractInstance
 			startQuestTimer("SPAWN_AXE", 15000, null, attacker, false);
 			playMovie(world.getPlayers(), Movie.SC_TAUTI_PHASE);
 		}
+		
 		if (world.isStatus(4))
 		{
 			world.setStatus(5);

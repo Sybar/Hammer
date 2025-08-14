@@ -192,6 +192,7 @@ public class KnockBack extends AbstractEffect
 			{
 				effected.setHeading(LocationUtil.calculateHeadingFrom(effected, effector));
 			}
+			
 			effected.setXYZ(loc);
 			effected.broadcastPacket(new ValidateLocation(effected));
 			effected.revalidateZone(true);

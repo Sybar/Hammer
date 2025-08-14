@@ -33,7 +33,7 @@ import org.l2jmobius.gameserver.network.serverpackets.SocialAction;
 public class WaitingAction implements IPlayerActionHandler
 {
 	@Override
-	public void useAction(Player player, ActionDataHolder data, boolean ctrlPressed, boolean shiftPressed)
+	public void onAction(Player player, ActionDataHolder data, boolean ctrlPressed, boolean shiftPressed)
 	{
 		final int actionId = (player.getClan() != null) && (CastleManager.getInstance().getCastleByOwner(player.getClan()) != null) ? player.isClanLeader() ? 100 : 101 : 0;
 		if (actionId == 0)

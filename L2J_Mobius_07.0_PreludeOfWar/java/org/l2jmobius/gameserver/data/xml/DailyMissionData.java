@@ -34,8 +34,8 @@ import org.w3c.dom.Document;
 import org.l2jmobius.commons.util.IXmlReader;
 import org.l2jmobius.gameserver.model.StatSet;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.actor.enums.player.DailyMissionDataHolder;
 import org.l2jmobius.gameserver.model.actor.enums.player.PlayerClass;
+import org.l2jmobius.gameserver.model.actor.holders.player.DailyMissionDataHolder;
 import org.l2jmobius.gameserver.model.item.holders.ItemHolder;
 
 /**
@@ -125,6 +125,7 @@ public class DailyMissionData implements IXmlReader
 				missionData.add(mission);
 			}
 		}
+		
 		return missionData;
 	}
 	

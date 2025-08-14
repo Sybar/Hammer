@@ -120,6 +120,7 @@ public class ExRequestMultiEnchantItemList extends ClientPacket
 				player.removeRequest(request.getClass());
 				return;
 			}
+			
 			slots[i - 1] = getMultiEnchantingSlotByObjectId(request, _itemObjectId.get(i));
 		}
 		
@@ -185,6 +186,7 @@ public class ExRequestMultiEnchantItemList extends ClientPacket
 							enchantItem.setEnchantLevel(enchantItem.getEnchantLevel() + Math.min(Rnd.get(scrollTemplate.getRandomEnchantMin(), scrollTemplate.getRandomEnchantMax()), scrollTemplate.getMaxEnchantLevel()));
 							enchantItem.updateDatabase();
 						}
+						
 						_result.put(i, "SUCCESS");
 						if (Config.LOG_ITEM_ENCHANTS)
 						{
@@ -220,6 +222,7 @@ public class ExRequestMultiEnchantItemList extends ClientPacket
 								}
 							}
 						}
+						
 						if (scrollTemplate.isBlessed() || scrollTemplate.isBlessedDown())
 						{
 							// Blessed enchant: Enchant value down by 1.
@@ -233,6 +236,7 @@ public class ExRequestMultiEnchantItemList extends ClientPacket
 								player.sendPacket(SystemMessageId.THE_BLESSED_ENCHANT_FAILED_THE_ENCHANT_VALUE_OF_THE_ITEM_BECAME_0);
 								enchantItem.setEnchantLevel(0);
 							}
+							
 							_result.put(i, "BLESSED_FAIL");
 							enchantItem.updateDatabase();
 							if (Config.LOG_ITEM_ENCHANTS)
@@ -365,6 +369,7 @@ public class ExRequestMultiEnchantItemList extends ClientPacket
 		{
 			request.addMultiEnchantFailItems(failure);
 		}
+		
 		request.setProcessing(false);
 		
 		player.sendItemList();
@@ -395,6 +400,7 @@ public class ExRequestMultiEnchantItemList extends ClientPacket
 				return i;
 			}
 		}
+		
 		return slotId;
 	}
 }

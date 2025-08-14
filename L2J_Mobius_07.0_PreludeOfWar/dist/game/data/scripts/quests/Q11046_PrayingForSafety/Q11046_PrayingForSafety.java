@@ -51,10 +51,13 @@ public class Q11046_PrayingForSafety extends Quest
 	private static final int TARTI = 34505;
 	private static final int KETRA_ORC_OFFICER = 24413;
 	private static final int KETRA_ORC_LEADER = 24414;
+	
 	// Items
 	private static final ItemHolder SOE_TARTI = new ItemHolder(80677, 1);
+	
 	// Location
 	private static final Location TRAINING_GROUNDS_TELEPORT = new Location(-87089, 103524, -3360);
+	
 	// Misc
 	private static final String KILL_COUNT_VAR = "KillCount";
 	private static final int MIN_LEVEL = 83;
@@ -124,6 +127,7 @@ public class Q11046_PrayingForSafety extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -171,6 +175,7 @@ public class Q11046_PrayingForSafety extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -207,6 +212,7 @@ public class Q11046_PrayingForSafety extends Quest
 			holder.add(new NpcLogListHolder(NpcStringId.DEFEAT_KETRA_OFFICERS_AND_CAPTAIN_2.getId(), true, qs.getInt(KILL_COUNT_VAR)));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

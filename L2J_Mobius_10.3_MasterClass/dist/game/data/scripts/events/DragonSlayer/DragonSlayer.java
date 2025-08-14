@@ -34,6 +34,7 @@ public class DragonSlayer extends LongTimeEvent
 {
 	// NPC
 	private static final int LUNA = 34419;
+	
 	// Items
 	private static final int MYSTERIOUS_DRAGON_SLAYER = 48494;
 	private static final ItemHolder REWARD_7_ID_AND_QTY = new ItemHolder(29759, 2); // Wondrous Shard
@@ -167,6 +168,7 @@ public class DragonSlayer extends LongTimeEvent
 						break;
 					}
 				}
+				
 				htmltext = "34419-rewardok.htm";
 			}
 			else
@@ -174,6 +176,7 @@ public class DragonSlayer extends LongTimeEvent
 				htmltext = "34419-rewardnosword.htm";
 			}
 		}
+		
 		return htmltext;
 	}
 	

@@ -89,6 +89,7 @@ public class AlchemistManager extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

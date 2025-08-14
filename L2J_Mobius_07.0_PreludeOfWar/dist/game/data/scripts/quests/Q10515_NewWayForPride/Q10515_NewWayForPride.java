@@ -42,10 +42,12 @@ public class Q10515_NewWayForPride extends Quest
 {
 	// NPCs
 	private static final int CARDINAL_SERESIN = 30657;
+	
 	// Items
 	private static final int SERESIN_CERTIFICATE = 80829;
 	private static final int PROOF_OF_PRIDE = 80827;
 	private static final ItemHolder LIONEL_HUNTERS_LIST_PART_5 = new ItemHolder(47834, 1);
+	
 	// Monsters
 	private static final int[] MONSTERS =
 	{
@@ -154,6 +156,7 @@ public class Q10515_NewWayForPride extends Quest
 						{
 							mainQ.notifyEvent("SUBQUEST_FINISHED_NOTIFY", npc, player);
 						}
+						
 						htmltext = event;
 					}
 					else
@@ -164,6 +167,7 @@ public class Q10515_NewWayForPride extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -205,6 +209,7 @@ public class Q10515_NewWayForPride extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

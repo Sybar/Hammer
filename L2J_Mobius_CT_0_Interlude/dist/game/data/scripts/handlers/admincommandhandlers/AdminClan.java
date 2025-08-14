@@ -46,7 +46,7 @@ public class AdminClan implements IAdminCommandHandler
 	};
 	
 	@Override
-	public boolean useAdminCommand(String command, Player activeChar)
+	public boolean onCommand(String command, Player activeChar)
 	{
 		final StringTokenizer st = new StringTokenizer(command);
 		final String cmd = st.nextToken();
@@ -127,6 +127,7 @@ public class AdminClan implements IAdminCommandHandler
 						sb.append("</tr>");
 					}
 				}
+				
 				html.replace("%data%", sb.toString());
 				activeChar.sendPacket(html);
 				break;
@@ -140,6 +141,7 @@ public class AdminClan implements IAdminCommandHandler
 					{
 						break;
 					}
+					
 					final int clanId = Integer.parseInt(token);
 					final Clan clan = ClanTable.getInstance().getClan(clanId);
 					if (clan == null)
@@ -159,6 +161,7 @@ public class AdminClan implements IAdminCommandHandler
 				}
 			}
 		}
+		
 		return true;
 	}
 	
@@ -174,6 +177,7 @@ public class AdminClan implements IAdminCommandHandler
 		if (st.hasMoreTokens())
 		{
 			val = st.nextToken();
+			
 			// From the HTML we receive player's object Id.
 			if (StringUtil.isNumeric(val))
 			{
@@ -202,13 +206,15 @@ public class AdminClan implements IAdminCommandHandler
 				activeChar.sendPacket(SystemMessageId.INVALID_TARGET);
 				return null;
 			}
+			
 			player = targetObj.asPlayer();
 		}
+		
 		return player;
 	}
 	
 	@Override
-	public String[] getAdminCommandList()
+	public String[] getCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}

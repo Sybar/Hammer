@@ -30,6 +30,7 @@ public class RequestMagicSkillList extends ClientPacket
 	protected void readImpl()
 	{
 		_objectId = readInt();
+		
 		// readInt(); _charId
 		// readInt(); _unk
 	}

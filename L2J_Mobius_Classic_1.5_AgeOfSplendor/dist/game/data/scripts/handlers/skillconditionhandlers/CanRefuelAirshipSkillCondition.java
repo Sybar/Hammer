@@ -45,6 +45,7 @@ public class CanRefuelAirshipSkillCondition implements ISkillCondition
 		{
 			canRefuelAirship = false;
 		}
+		
 		return canRefuelAirship;
 	}
 }

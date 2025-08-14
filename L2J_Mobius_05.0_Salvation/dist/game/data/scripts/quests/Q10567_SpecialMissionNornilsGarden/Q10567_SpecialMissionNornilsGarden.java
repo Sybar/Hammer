@@ -39,12 +39,15 @@ public class Q10567_SpecialMissionNornilsGarden extends Quest
 	private static final int PENNY = 34413;
 	private static final int HESET = 33780;
 	private static final int TAPOY = 30499;
+	
 	// Rewards
 	private static final int SCROLL_OF_ESCAPE_NORNIL_CAVE = 39503;
 	private static final int SCROLL_OF_ESCAPE_TOWN_OF_ADEN = 48413;
+	
 	// Misc
 	private static final int MIN_LEVEL = 93;
 	private static final int MAX_LEVEL = 96;
+	
 	// Location
 	private static final Location TOWN_OF_ADEN = new Location(146632, 26760, -2213);
 	
@@ -127,6 +130,7 @@ public class Q10567_SpecialMissionNornilsGarden extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -221,6 +225,7 @@ public class Q10567_SpecialMissionNornilsGarden extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

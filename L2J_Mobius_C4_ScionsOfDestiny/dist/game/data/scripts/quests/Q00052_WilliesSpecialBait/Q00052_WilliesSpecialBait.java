@@ -20,7 +20,6 @@
  */
 package quests.Q00052_WilliesSpecialBait;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.quest.Quest;
@@ -32,6 +31,7 @@ public class Q00052_WilliesSpecialBait extends Quest
 {
 	// Item
 	private static final int TARLK_EYE = 7623;
+	
 	// Reward
 	private static final int EARTH_FISHING_LURE = 7612;
 	
@@ -109,8 +109,7 @@ public class Q00052_WilliesSpecialBait extends Quest
 		final QuestState qs = getQuestState(partyMember, false);
 		if (getQuestItemsCount(partyMember, TARLK_EYE) < 100)
 		{
-			final float chance = 33 * Config.RATE_QUEST_DROP;
-			if (getRandom(100) < chance)
+			if (getRandom(100) < 33)
 			{
 				giveItems(partyMember, TARLK_EYE, 1);
 				playSound(partyMember, QuestSound.ITEMSOUND_QUEST_ITEMGET);

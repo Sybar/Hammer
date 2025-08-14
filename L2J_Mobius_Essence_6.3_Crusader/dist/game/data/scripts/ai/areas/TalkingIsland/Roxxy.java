@@ -49,6 +49,7 @@ public class Roxxy extends AbstractNpcAI
 			npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.SPEAK_WITH_ME_ABOUT_TRAVELING_AROUND_ADEN, 1000);
 			startQuestTimer("TEXT_SPAM", getRandom(10000, 30000), npc, null, false);
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	

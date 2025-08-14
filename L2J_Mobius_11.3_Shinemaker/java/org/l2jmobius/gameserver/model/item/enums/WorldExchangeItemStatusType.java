@@ -51,6 +51,7 @@ public enum WorldExchangeItemStatusType
 				return type;
 			}
 		}
+		
 		return null;
 	}
 }

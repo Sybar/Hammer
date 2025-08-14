@@ -62,6 +62,7 @@ public class Q00781_UtilizeTheDarknessSeedOfAnnihilation extends Quest
 		22765, // Elite Kaiona
 	
 	};
+	
 	// Items
 	private static final int SOUL_STONE_DUST = 15536;
 	private static final int SOUL_STONE_FRAGMENT = 15486;
@@ -118,11 +119,13 @@ public class Q00781_UtilizeTheDarknessSeedOfAnnihilation extends Quest
 						qs.exitQuest(true, true);
 						break;
 					}
+					
 					htmltext = getNoQuestLevelRewardMsg(player);
 					break;
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -167,6 +170,7 @@ public class Q00781_UtilizeTheDarknessSeedOfAnnihilation extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -196,6 +200,7 @@ public class Q00781_UtilizeTheDarknessSeedOfAnnihilation extends Quest
 				{
 					qs.setCond(2, true);
 				}
+				
 				if ((getQuestItemsCount(killer, SOUL_STONE_DUST) == MAX_COUNT) && qs.isCond(2))
 				{
 					qs.setCond(3, true);

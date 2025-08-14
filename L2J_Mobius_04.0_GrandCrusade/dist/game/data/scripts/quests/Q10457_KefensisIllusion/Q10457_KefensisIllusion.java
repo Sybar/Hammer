@@ -40,6 +40,7 @@ public class Q10457_KefensisIllusion extends Quest
 {
 	// NPC
 	private static final int DEVIANNE = 31590;
+	
 	// Monsters
 	private static final int VIPER = 23389;
 	private static final int SMAUG = 23384;
@@ -52,8 +53,10 @@ public class Q10457_KefensisIllusion extends Quest
 	private static final int DESERT_WENDIGO = 23397;
 	private static final int KORAZA = 23398;
 	private static final int BEND_BEETLE = 23399;
+	
 	// Skill
 	private static final SkillHolder DESERT_THIRST = new SkillHolder(16697, 1);
+	
 	// Misc
 	private static final int MIN_LEVEL = 99;
 	
@@ -77,6 +80,7 @@ public class Q10457_KefensisIllusion extends Quest
 		{
 			return htmltext;
 		}
+		
 		switch (event)
 		{
 			case "31590-02.htm":
@@ -101,6 +105,7 @@ public class Q10457_KefensisIllusion extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -141,6 +146,7 @@ public class Q10457_KefensisIllusion extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

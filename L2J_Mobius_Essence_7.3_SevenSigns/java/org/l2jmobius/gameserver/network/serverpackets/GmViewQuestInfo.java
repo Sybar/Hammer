@@ -51,6 +51,7 @@ public class GmViewQuestInfo extends ServerPacket
 			buffer.writeInt(quest.getId());
 			buffer.writeInt(qs == null ? 0 : qs.getCond());
 		}
+		
 		buffer.writeShort(0); // some size
 		// for size; ddQQ
 	}

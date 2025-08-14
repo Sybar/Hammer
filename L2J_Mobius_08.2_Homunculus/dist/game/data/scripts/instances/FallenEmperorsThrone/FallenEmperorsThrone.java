@@ -39,14 +39,17 @@ public class FallenEmperorsThrone extends AbstractInstance
 {
 	// NPC
 	private static final int KEKROPUS = 34222;
+	
 	// Raid
 	private static final int FE_HELIOS1 = 26333;
 	private static final int FE_HELIOS2 = 26334;
 	private static final int FE_HELIOS3 = 26335;
+	
 	// Minions
 	private static final int LEOPOLD = 26336;
 	private static final int HELIOS_RED_LIGHTNING = 26337;
 	private static final int HELIOS_BLUE_LIGHTNING = 26338;
+	
 	// Skills
 	private static final SkillHolder AUDIENCE_DEBUFF = new SkillHolder(16613, 1);
 	private static final SkillHolder RED_LIGHTNING_SPEAR = new SkillHolder(16617, 1);
@@ -62,6 +65,7 @@ public class FallenEmperorsThrone extends AbstractInstance
 	private static final SkillHolder LEOPOLD_MINI_GUN = new SkillHolder(16632, 1);
 	private static final SkillHolder LEOPOLD_SPRAY_SHOT = new SkillHolder(16633, 1);
 	private static final SkillHolder LEOPOLD_HARPOON = new SkillHolder(16634, 1);
+	
 	// Misc
 	private static final int TEMPLATE_ID = 283;
 	
@@ -211,6 +215,7 @@ public class FallenEmperorsThrone extends AbstractInstance
 							blueLightning.doCast(BLUE_LIGHTNING_SPEAR.getSkill());
 						}
 					}
+					
 					showOnScreenMsg(world, NpcStringId.HELIOS_PICKS_UP_THE_BLUE_LIGHTNING_SPEAR_AND_BEGINS_GATHERING_HIS_POWER, ExShowScreenMessage.TOP_CENTER, 10000, true);
 				}
 				break;
@@ -231,6 +236,7 @@ public class FallenEmperorsThrone extends AbstractInstance
 							redLightning.doCast(RED_LIGHTNING_SPEAR.getSkill());
 						}
 					}
+					
 					showOnScreenMsg(world, NpcStringId.HELIOS_PICKS_UP_THE_RED_LIGHTNING_SPEAR_AND_BEGINS_GATHERING_HIS_POWER, ExShowScreenMessage.TOP_CENTER, 10000, true);
 				}
 				break;
@@ -248,6 +254,7 @@ public class FallenEmperorsThrone extends AbstractInstance
 				break;
 			}
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	
@@ -270,12 +277,14 @@ public class FallenEmperorsThrone extends AbstractInstance
 				startQuestTimer("DEBUFF_TASK", 20000, npc, attacker);
 				Broadcast.toAllOnlinePlayers(new ExShowScreenMessage(NpcStringId.THE_ADEN_WARRIORS_BEGIN_BATTLE_WITH_THE_GIANT_EMPEROR_HELIOS, ExShowScreenMessage.TOP_CENTER, 10000, true));
 			}
+			
 			if ((npc.getId() == FE_HELIOS1) && !STAGE1_50 && (npc.getCurrentHp() <= (npc.getMaxHp() * 0.5)))
 			{
 				world.getParameters().set("ANNOUNCE", true);
 				world.getParameters().set("STAGE1_50", true);
 				HELIOS_RAGE1.getSkill().applyEffects(world.getNpc(FE_HELIOS1), world.getNpc(FE_HELIOS1));
 			}
+			
 			if ((npc.getId() == FE_HELIOS2) && !ACTIVATED)
 			{
 				world.getParameters().set("ACTIVATED", true);
@@ -284,17 +293,20 @@ public class FallenEmperorsThrone extends AbstractInstance
 				startQuestTimer("RED_SPEAR_TASK", 120000, npc, attacker);
 				startQuestTimer("LEOPOLD_TASK", 120000, npc, attacker);
 			}
+			
 			if ((npc.getId() == FE_HELIOS2) && !STAGE2_50 && (npc.getCurrentHp() <= (npc.getMaxHp() * 0.5)))
 			{
 				world.getParameters().set("STAGE2_50", true);
 				HELIOS_RAGE2.getSkill().applyEffects(world.getNpc(FE_HELIOS2), world.getNpc(FE_HELIOS2));
 			}
+			
 			if ((npc.getId() == FE_HELIOS3) && !ACTIVATED)
 			{
 				world.getParameters().set("ACTIVATED", true);
 				HELIOS_RAGE3.getSkill().applyEffects(world.getNpc(FE_HELIOS3), world.getNpc(FE_HELIOS3));
 				startQuestTimer("LEOPOLD_TASK", 120000, npc, attacker);
 			}
+			
 			if ((npc.getId() == FE_HELIOS3) && !HELIOS_80 && (npc.getCurrentHp() <= (npc.getMaxHp() * 0.8)))
 			{
 				world.getParameters().set("HELIOS_80", true);
@@ -336,14 +348,17 @@ public class FallenEmperorsThrone extends AbstractInstance
 					{
 						world.getNpc(LEOPOLD).deleteMe();
 					}
+					
 					if (world.getNpc(HELIOS_RED_LIGHTNING) != null)
 					{
 						world.getNpc(HELIOS_RED_LIGHTNING).deleteMe();
 					}
+					
 					if (world.getNpc(HELIOS_BLUE_LIGHTNING) != null)
 					{
 						world.getNpc(HELIOS_BLUE_LIGHTNING).deleteMe();
 					}
+					
 					playMovie(world.getPlayers(), Movie.SC_HELIOS_TRANS_B);
 					startQuestTimer("stage3", 15000, null, player);
 					break;
@@ -359,18 +374,22 @@ public class FallenEmperorsThrone extends AbstractInstance
 					{
 						cancelQuestTimer("BLUE_SPEAR_TASK", npc, player);
 					}
+					
 					if (getQuestTimer("RED_SPEAR_TASK", npc, player) != null)
 					{
 						cancelQuestTimer("RED_SPEAR_TASK", npc, player);
 					}
+					
 					if (getQuestTimer("LEOPOLD_TASK", npc, player) != null)
 					{
 						cancelQuestTimer("LEOPOLD_TASK", npc, player);
 					}
+					
 					if (getQuestTimer("DEBUFF_TASK", npc, player) != null)
 					{
 						cancelQuestTimer("DEBUFF_TASK", npc, player);
 					}
+					
 					world.finishInstance(2);
 					break;
 				}

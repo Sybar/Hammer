@@ -120,6 +120,7 @@ public class ItemCommissionManager
 						LOGGER.warning(getClass().getSimpleName() + ": Failed loading commission item with commission id " + commissionId + " because item instance does not exist or failed to load.");
 						continue;
 					}
+					
 					final CommissionItem commissionItem = new CommissionItem(commissionId, itemInstance, rs.getLong("price_per_unit"), rs.getTimestamp("start_time").toInstant(), rs.getByte("duration_in_days"), rs.getByte("discount_in_percentage"));
 					_commissionItems.put(commissionItem.getCommissionId(), commissionItem);
 					if (commissionItem.getEndTime().isBefore(Instant.now()))
@@ -471,6 +472,7 @@ public class ItemCommissionManager
 		{
 			LOGGER.log(Level.WARNING, getClass().getSimpleName() + ": Failed deleting commission item. Commission ID: " + commissionId, e);
 		}
+		
 		return false;
 	}
 	
@@ -510,6 +512,7 @@ public class ItemCommissionManager
 				return true;
 			}
 		}
+		
 		return false;
 	}
 	
@@ -527,6 +530,7 @@ public class ItemCommissionManager
 				return true;
 			}
 		}
+		
 		return false;
 	}
 	
@@ -542,6 +546,7 @@ public class ItemCommissionManager
 		{
 			return npc.calculateDistance3D(player) <= INTERACTION_DISTANCE;
 		}
+		
 		return false;
 	}
 	

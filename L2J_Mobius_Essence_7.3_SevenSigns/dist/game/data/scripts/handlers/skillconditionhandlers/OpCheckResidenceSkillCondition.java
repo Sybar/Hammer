@@ -57,6 +57,7 @@ public class OpCheckResidenceSkillCondition implements ISkillCondition
 				}
 			}
 		}
+		
 		return false;
 	}
 }

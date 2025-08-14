@@ -575,6 +575,7 @@ public abstract class AbstractAI
 			}
 			return;
 		}
+		
 		_clientAutoAttacking = isAutoAttacking;
 	}
 	
@@ -609,6 +610,7 @@ public abstract class AbstractAI
 				{
 					pet.broadcastPacket(new AutoAttackStart(pet.getObjectId()));
 				}
+				
 				_actor.getServitors().values().forEach(s -> s.broadcastPacket(new AutoAttackStart(s.getObjectId())));
 			}
 			

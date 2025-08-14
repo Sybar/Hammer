@@ -52,6 +52,7 @@ public class ExOlympiadMatchResult extends ServerPacket
 		{
 			_winTeam = 1;
 		}
+		
 		_round1winner = round1winner;
 		_round2winner = round2winner;
 		_round3winner = round3winner;
@@ -80,6 +81,7 @@ public class ExOlympiadMatchResult extends ServerPacket
 			buffer.writeInt(info.getDiffPoints());
 			buffer.writeInt(1); // Helios
 		}
+		
 		buffer.writeInt(_loseTeam);
 		buffer.writeInt(_loserList.size());
 		for (OlympiadInfo info : _loserList)
@@ -96,6 +98,7 @@ public class ExOlympiadMatchResult extends ServerPacket
 			buffer.writeInt(info.getDiffPoints());
 			buffer.writeInt(1); // Helios
 		}
+		
 		buffer.writeByte(_round1winner); // Round 1 outcome
 		buffer.writeByte(_round2winner); // Round 2 outcome
 		buffer.writeByte(_round3winner); // Round 3 outcome

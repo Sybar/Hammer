@@ -91,7 +91,7 @@ public class MagicalSoulDamage extends AbstractEffect
 		final boolean sps = skill.useSpiritShot() && effector.isChargedShot(ShotType.SPIRITSHOTS);
 		final boolean bss = skill.useSpiritShot() && effector.isChargedShot(ShotType.BLESSED_SPIRITSHOTS);
 		final boolean mcrit = Formulas.calcCrit(skill.getMagicCriticalRate(), effector, effected, skill);
-		final double mAtk = effector.getMAtk() * (chargedSouls > 0 ? (1.3 + (chargedSouls * 0.05)) : 1);
+		final double mAtk = effector.getMAtk() * (1 + (chargedSouls * 0.022));
 		final double damage = Formulas.calcMagicDam(effector, effected, skill, mAtk, _power, effected.getMDef(), sps, bss, mcrit);
 		
 		effector.doAttack(damage, effected, skill, false, false, mcrit, false);

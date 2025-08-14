@@ -38,8 +38,10 @@ public class Q10843_AnomalyInTheEnchantedValley extends Quest
 	// NPCs
 	private static final int CRONOS = 30610;
 	private static final int MIMYU = 30747;
+	
 	// Items
 	private static final int SOE = 46257; // Scroll of Escape: Enchanted Valley
+	
 	// Misc
 	private static final int MIN_LEVEL = 100;
 	
@@ -87,6 +89,7 @@ public class Q10843_AnomalyInTheEnchantedValley extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -134,6 +137,7 @@ public class Q10843_AnomalyInTheEnchantedValley extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

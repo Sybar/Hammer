@@ -71,6 +71,7 @@ public class ExOpenHtml extends ClientPacket
 				}
 				break;
 			}
+			
 			// case 7:
 			// {
 			// if (Config.EINHASAD_STORE_ENABLED)

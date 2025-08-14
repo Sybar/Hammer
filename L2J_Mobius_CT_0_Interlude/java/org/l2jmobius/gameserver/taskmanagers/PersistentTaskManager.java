@@ -40,9 +40,6 @@ import org.l2jmobius.gameserver.taskmanagers.tasks.PersistentTask;
 import org.l2jmobius.gameserver.taskmanagers.tasks.PersistentTaskType;
 import org.l2jmobius.gameserver.taskmanagers.tasks.TaskClanLeaderApply;
 import org.l2jmobius.gameserver.taskmanagers.tasks.TaskCleanUp;
-import org.l2jmobius.gameserver.taskmanagers.tasks.TaskDailySkillReuseClean;
-import org.l2jmobius.gameserver.taskmanagers.tasks.TaskGlobalVariablesSave;
-import org.l2jmobius.gameserver.taskmanagers.tasks.TaskOlympiadSave;
 import org.l2jmobius.gameserver.taskmanagers.tasks.TaskRaidPointsReset;
 import org.l2jmobius.gameserver.taskmanagers.tasks.TaskRecom;
 import org.l2jmobius.gameserver.taskmanagers.tasks.TaskRestart;
@@ -58,7 +55,6 @@ public class PersistentTaskManager
 	
 	private final Map<Integer, PersistentTask> _tasks = new ConcurrentHashMap<>();
 	final Collection<ExecutedTask> _currentTasks = ConcurrentHashMap.newKeySet();
-	
 	static final String[] SQL_STATEMENTS =
 	{
 		"SELECT id,task,type,last_activation,param1,param2,param3 FROM global_tasks",
@@ -174,9 +170,6 @@ public class PersistentTaskManager
 	{
 		registerTask(new TaskClanLeaderApply());
 		registerTask(new TaskCleanUp());
-		registerTask(new TaskDailySkillReuseClean());
-		registerTask(new TaskGlobalVariablesSave());
-		registerTask(new TaskOlympiadSave());
 		registerTask(new TaskRaidPointsReset());
 		registerTask(new TaskRecom());
 		registerTask(new TaskRestart());
@@ -260,6 +253,7 @@ public class PersistentTaskManager
 						task.scheduled = ThreadPool.schedule(task, diff);
 						return true;
 					}
+					
 					LOGGER.info(getClass().getSimpleName() + ": Task " + task.getId() + " is obsoleted.");
 				}
 				catch (Exception e)
@@ -311,6 +305,7 @@ public class PersistentTaskManager
 				{
 					delay += interval;
 				}
+				
 				task.scheduled = ThreadPool.scheduleAtFixedRate(task, delay, interval);
 				return true;
 			}
@@ -319,6 +314,7 @@ public class PersistentTaskManager
 				return false;
 			}
 		}
+		
 		return false;
 	}
 	
@@ -349,12 +345,14 @@ public class PersistentTaskManager
 					}
 				}
 			}
+			
 			return true;
 		}
 		catch (SQLException e)
 		{
 			LOGGER.log(Level.WARNING, PersistentTaskManager.class.getSimpleName() + ": Cannot add the unique task: " + e.getMessage(), e);
 		}
+		
 		return false;
 	}
 	
@@ -381,6 +379,7 @@ public class PersistentTaskManager
 		{
 			LOGGER.log(Level.WARNING, PersistentTaskManager.class.getSimpleName() + ": Cannot add the task: " + e.getMessage(), e);
 		}
+		
 		return false;
 	}
 	

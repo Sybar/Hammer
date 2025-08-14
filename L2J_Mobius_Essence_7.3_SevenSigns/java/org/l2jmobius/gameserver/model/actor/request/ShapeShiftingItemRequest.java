@@ -72,6 +72,7 @@ public class ShapeShiftingItemRequest extends AbstractRequest
 		{
 			return false;
 		}
+		
 		return (objectId > 0) && ((objectId == _appearanceStone.getObjectId()) || (objectId == _appearanceExtractItem.getObjectId()));
 	}
 }

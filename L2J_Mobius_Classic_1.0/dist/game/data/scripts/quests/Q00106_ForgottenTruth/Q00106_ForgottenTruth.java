@@ -40,16 +40,20 @@ public class Q00106_ForgottenTruth extends Quest
 	// NPCs
 	private static final int THIFIELL = 30358;
 	private static final int KARTA = 30133;
+	
 	// Monster
 	private static final int TUMRAN_ORC_BRIGAND = 27070;
+	
 	// Items
 	private static final int ONYX_TALISMAN1 = 984;
 	private static final int ONYX_TALISMAN2 = 985;
 	private static final int ANCIENT_SCROLL = 986;
 	private static final int ANCIENT_CLAY_TABLET = 987;
 	private static final int KARTAS_TRANSLATION = 988;
+	
 	// Reward
 	private static final int REWARDS = 49049; // Eldritch Dagger (Novice)
+	
 	// Misc
 	private static final int MIN_LEVEL = 10;
 	private static final int MAX_LEVEL = 15;
@@ -73,6 +77,7 @@ public class Q00106_ForgottenTruth extends Quest
 		{
 			return htmltext;
 		}
+		
 		switch (event)
 		{
 			case "30358-04.htm":
@@ -91,6 +96,7 @@ public class Q00106_ForgottenTruth extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -210,6 +216,7 @@ public class Q00106_ForgottenTruth extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

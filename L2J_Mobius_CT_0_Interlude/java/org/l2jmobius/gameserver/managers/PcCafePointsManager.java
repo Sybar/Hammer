@@ -123,10 +123,12 @@ public class PcCafePointsManager
 		{
 			player.sendMessage("You have acquired " + points + " PC Cafe points.");
 		}
+		
 		if ((player.getPcCafePoints() + points) > Config.PC_CAFE_MAX_POINTS)
 		{
 			points = Config.PC_CAFE_MAX_POINTS - player.getPcCafePoints();
 		}
+		
 		player.setPcCafePoints(player.getPcCafePoints() + points);
 		player.sendPacket(new ExPCCafePointInfo(player.getPcCafePoints(), points, 0));
 	}

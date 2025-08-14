@@ -64,6 +64,7 @@ public class Q10407_LetsGoFishing extends Quest
 	private static final int BATIDAE = 31989;
 	private static final int EINDARKNER = 31697;
 	private static final int GALBA = 32007;
+	
 	// Item
 	private static final int PRACTICE_FISHING_ROD = 47580;
 	private static final int PRACTICE_BAIT = 46737;
@@ -71,6 +72,7 @@ public class Q10407_LetsGoFishing extends Quest
 	private static final int FISHING_SHOT = 38154;
 	private static final int REWARD_FISHING_ROD_PACK = 46739;
 	private static final int BAIT = 47547;
+	
 	// Misc
 	private static final int MIN_LEVEL = 85;
 	private static final String COUNT_VAR = "FishCount";
@@ -92,6 +94,7 @@ public class Q10407_LetsGoFishing extends Quest
 		{
 			return null;
 		}
+		
 		String htmltext = null;
 		switch (event)
 		{
@@ -114,6 +117,7 @@ public class Q10407_LetsGoFishing extends Quest
 					htmltext = getHtm(player, "GiveRod.html").replace("%name%", npc.getName());
 					break;
 				}
+				
 				htmltext = getHtm(player, "noNeed.html").replace("%name%", npc.getName());
 				break;
 			}
@@ -125,6 +129,7 @@ public class Q10407_LetsGoFishing extends Quest
 					htmltext = getHtm(player, "GiveBait.html").replace("%name%", npc.getName());
 					break;
 				}
+				
 				htmltext = getHtm(player, "noNeed.html").replace("%name%", npc.getName());
 				break;
 			}
@@ -156,6 +161,7 @@ public class Q10407_LetsGoFishing extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -193,6 +199,7 @@ public class Q10407_LetsGoFishing extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -236,6 +243,7 @@ public class Q10407_LetsGoFishing extends Quest
 				return holder;
 			}
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

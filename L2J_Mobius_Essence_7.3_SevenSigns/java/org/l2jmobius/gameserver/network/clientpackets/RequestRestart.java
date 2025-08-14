@@ -89,23 +89,27 @@ public class RequestRestart extends ClientPacket
 					location = MapRegionManager.getInstance().getTeleToLocation(player, TeleportWhereType.TOWN);
 				}
 			}
+			
 			player.setInstance(null);
 		}
 		else if (player.isInTimedHuntingZone())
 		{
 			location = MapRegionManager.getInstance().getTeleToLocation(player, TeleportWhereType.TOWN);
 		}
+		
 		if (location != null)
 		{
 			player.getVariables().set(PlayerVariables.RESTORE_LOCATION, location.getX() + ";" + location.getY() + ";" + location.getZ());
 		}
 		
 		final GameClient client = getClient();
-		LOGGER_ACCOUNTING.info("Logged out, " + client);
-		
-		if (!OfflineTraderTable.getInstance().enteredOfflineMode(player))
+		if (OfflineTraderTable.getInstance().enteredOfflineMode(player))
 		{
-			Disconnection.of(client, player).storeMe().deleteMe();
+			LOGGER_ACCOUNTING.info("Entered offline mode, " + client);
+		}
+		else
+		{
+			Disconnection.of(client, player).storeAndDelete();
 		}
 		
 		// Return the client to the authenticated status.

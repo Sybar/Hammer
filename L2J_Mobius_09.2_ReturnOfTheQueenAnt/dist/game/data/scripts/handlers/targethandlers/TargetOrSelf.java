@@ -71,6 +71,7 @@ public class TargetOrSelf implements ITargetTypeHandler
 			{
 				creature.sendPacket(SystemMessageId.THE_DISTANCE_IS_TOO_FAR_AND_SO_THE_CASTING_HAS_BEEN_STOPPED);
 			}
+			
 			return creature;
 		}
 		
@@ -80,6 +81,7 @@ public class TargetOrSelf implements ITargetTypeHandler
 			{
 				creature.sendPacket(SystemMessageId.THE_TARGET_IS_LOCATED_WHERE_YOU_CANNOT_CHARGE);
 			}
+			
 			return creature;
 		}
 		

@@ -418,9 +418,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="is_freightable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player sex="1" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="20024" name="Visor" type="Armor">
 		<!-- An accessory that covers your eye. Male only. -->
@@ -436,9 +436,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="is_freightable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player sex="0" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="20025" name="My Teleport Scroll" type="EtcItem">
 		<!-- Can be used to teleport to a previously saved location. -->

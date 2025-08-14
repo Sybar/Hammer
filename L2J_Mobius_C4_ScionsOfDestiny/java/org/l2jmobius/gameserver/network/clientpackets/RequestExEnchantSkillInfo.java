@@ -106,6 +106,7 @@ public class RequestExEnchantSkillInfo extends ClientPacket
 		{
 			asi.addRequirement(4, 6622, 1, 0);
 		}
+		
 		player.sendPacket(asi);
 	}
 }

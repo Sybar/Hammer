@@ -37,6 +37,7 @@ public class LindviorBoss extends AbstractNpcAI
 	private static final int LINDVIOR_GROUND = 25899;
 	private static final int LINDVIOR_RAID = 29240;
 	private static final int LINDVIOR_FLY = 19424;
+	
 	// Skills
 	private static final SkillHolder MASS_HELL_BINDING = new SkillHolder(11052, 6);
 	private static final SkillHolder MIGHTY_WIND_STRIKE = new SkillHolder(15274, 1);
@@ -48,6 +49,7 @@ public class LindviorBoss extends AbstractNpcAI
 	private static final SkillHolder TAIL_SWIPE = new SkillHolder(15273, 1);
 	private static final SkillHolder TORNADO = new SkillHolder(15275, 1);
 	private static final SkillHolder LINDVIORS_ATTACK = new SkillHolder(15600, 1);
+	
 	// Chances
 	private static final int CHANCE_WIND_PULL = 4;
 	private static final int CHANCE_LINDVIORS_JUMP = 7;

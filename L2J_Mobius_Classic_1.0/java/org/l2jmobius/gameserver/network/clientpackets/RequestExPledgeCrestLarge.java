@@ -56,6 +56,7 @@ public class RequestExPledgeCrestLarge extends ClientPacket
 				{
 					continue;
 				}
+				
 				final byte[] chunk = new byte[size];
 				System.arraycopy(data, (14336 * i), chunk, 0, size);
 				player.sendPacket(new ExPledgeEmblem(_crestId, chunk, _clanId, i));

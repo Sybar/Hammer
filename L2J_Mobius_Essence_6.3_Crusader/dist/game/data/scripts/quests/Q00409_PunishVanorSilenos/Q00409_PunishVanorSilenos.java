@@ -40,11 +40,14 @@ public class Q00409_PunishVanorSilenos extends Quest
 {
 	// NPC
 	private static final int GENIE_LAMP = 34369;
+	
 	// Monsters
 	private static final int VANOR_SILENOS = 20681;
 	private static final int VANOR_SILENOS_SOLDIER = 20682;
+	
 	// Item
 	private static final ItemHolder BOOST_ATK_SCROLL = new ItemHolder(94269, 2);
+	
 	// Misc
 	private static final int MIN_LEVEL = 56;
 	private static final int MAX_LEVEL = 64;
@@ -99,6 +102,7 @@ public class Q00409_PunishVanorSilenos extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -137,6 +141,7 @@ public class Q00409_PunishVanorSilenos extends Quest
 				htmltext = getAlreadyCompletedMsg(player);
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -172,6 +177,7 @@ public class Q00409_PunishVanorSilenos extends Quest
 			holder.add(new NpcLogListHolder(NpcStringId.DEFEAT_MONSTERS_8.getId(), true, qs.getInt(KILL_COUNT_VAR)));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

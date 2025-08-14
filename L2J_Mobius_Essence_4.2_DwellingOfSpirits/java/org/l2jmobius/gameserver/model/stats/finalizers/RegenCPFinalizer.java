@@ -53,6 +53,7 @@ public class RegenCPFinalizer implements IStatFunction
 		{
 			baseValue *= 0.7; // Running
 		}
+		
 		return Stat.defaultValue(player, stat, baseValue);
 	}
 }

@@ -1040,9 +1040,9 @@
 		<set name="commissionItemType" val="PET_EQUIPMENT" />
 		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
-		<cond msgId="600">
+		<conditions msgId="600">
 			<player categoryType="ALL_WOLF_GROUP" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="mDef">16</stat>
 			<stat type="pDef">13</stat>
@@ -1062,9 +1062,9 @@
 		<set name="commissionItemType" val="PET_EQUIPMENT" />
 		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
-		<cond msgId="600">
+		<conditions msgId="600">
 			<player categoryType="ALL_WOLF_GROUP" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="mDef">18</stat>
 			<stat type="pDef">16</stat>
@@ -1084,9 +1084,9 @@
 		<set name="commissionItemType" val="PET_EQUIPMENT" />
 		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
-		<cond msgId="600">
+		<conditions msgId="600">
 			<player categoryType="ALL_WOLF_GROUP" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="mDef">20</stat>
 			<stat type="pDef">19</stat>
@@ -1106,9 +1106,9 @@
 		<set name="commissionItemType" val="PET_EQUIPMENT" />
 		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
-		<cond msgId="600">
+		<conditions msgId="600">
 			<player categoryType="ALL_WOLF_GROUP" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="mDef">23</stat>
 			<stat type="pDef">22</stat>
@@ -1128,9 +1128,9 @@
 		<set name="commissionItemType" val="PET_EQUIPMENT" />
 		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
-		<cond msgId="600">
+		<conditions msgId="600">
 			<player categoryType="ALL_WOLF_GROUP" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="mDef">26</stat>
 			<stat type="pDef">26</stat>
@@ -1150,9 +1150,9 @@
 		<set name="commissionItemType" val="PET_EQUIPMENT" />
 		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
-		<cond msgId="600">
+		<conditions msgId="600">
 			<player categoryType="ALL_WOLF_GROUP" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="mDef">29</stat>
 			<stat type="pDef">30</stat>
@@ -1172,9 +1172,9 @@
 		<set name="commissionItemType" val="PET_EQUIPMENT" />
 		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
-		<cond msgId="600">
+		<conditions msgId="600">
 			<player categoryType="ALL_WOLF_GROUP" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="mDef">31</stat>
 			<stat type="pDef">33</stat>
@@ -1194,9 +1194,9 @@
 		<set name="commissionItemType" val="PET_EQUIPMENT" />
 		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
-		<cond msgId="600">
+		<conditions msgId="600">
 			<player categoryType="ALL_WOLF_GROUP" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="mDef">33</stat>
 			<stat type="pDef">37</stat>
@@ -1216,9 +1216,9 @@
 		<set name="commissionItemType" val="PET_EQUIPMENT" />
 		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
-		<cond msgId="600">
+		<conditions msgId="600">
 			<player categoryType="ALL_WOLF_GROUP" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="mDef">36</stat>
 			<stat type="pDef">40</stat>

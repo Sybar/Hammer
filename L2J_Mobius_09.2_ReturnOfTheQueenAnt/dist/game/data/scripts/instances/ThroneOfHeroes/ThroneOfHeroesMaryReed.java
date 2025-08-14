@@ -35,13 +35,17 @@ public class ThroneOfHeroesMaryReed extends AbstractInstance
 {
 	// NPCs
 	private static final int ROIENTAL = 34571;
+	
 	// Monsters
 	private static final int MARY_REED = 26267;
 	private static final int MARY_REED_MINION_ZAKEN = 26255;
+	
 	// Throne's Treasure Chest Mary Reed
 	private static final int TREASURE_CHEST = 26456;
+	
 	// Misc
 	private static final int TEMPLATE_ID = 308;
+	
 	// NPC dialogs
 	private static final NpcStringId[] ZAKEN_MESSAGES =
 	{
@@ -188,6 +192,7 @@ public class ThroneOfHeroesMaryReed extends AbstractInstance
 				break;
 			}
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	
@@ -242,6 +247,7 @@ public class ThroneOfHeroesMaryReed extends AbstractInstance
 				{
 					addSpawn(TREASURE_CHEST, killer.getX() + getRandom(-150, 150), killer.getY() + getRandom(-150, 150), killer.getZ() + 20, 0, false, 0, true, world.getId());
 				}
+				
 				// Finish instance
 				world.finishInstance(2);
 				if (!killer.isGM())

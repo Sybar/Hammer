@@ -50,6 +50,7 @@ public class Karonf extends AbstractNpcAI
 				final Location randomLoc = LocationUtil.getRandomLocation(npc.getSpawn().getLocation(), 0, 500);
 				addMoveToDesire(npc, GeoEngine.getInstance().getValidLocation(npc.getLocation().getX(), npc.getLocation().getY(), npc.getLocation().getZ(), randomLoc.getX(), randomLoc.getY(), randomLoc.getZ(), npc.getInstanceWorld()), 23);
 			}
+			
 			startQuestTimer("NPC_MOVE", (10 + getRandom(5)) * 1000, npc, null);
 		}
 		else if (event.equals("NPC_SHOUT"))
@@ -63,8 +64,10 @@ public class Karonf extends AbstractNpcAI
 			{
 				npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.SOME_FOLKS_DON_T_KNOW_WHAT_THEY_ARE_DOING);
 			}
+			
 			startQuestTimer("NPC_SHOUT", (10 + getRandom(5)) * 1000, npc, null);
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	

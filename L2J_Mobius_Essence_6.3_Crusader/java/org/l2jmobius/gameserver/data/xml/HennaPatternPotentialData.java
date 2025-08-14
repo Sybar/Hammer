@@ -123,6 +123,7 @@ public class HennaPatternPotentialData implements IXmlReader
 											}
 										}
 									}
+									
 									_potenFees.put(step, new DyePotentialFee(step, new ItemHolder(itemId, itemCount), dailyCount, enchantExp));
 								}
 							}
@@ -150,6 +151,7 @@ public class HennaPatternPotentialData implements IXmlReader
 									{
 										MAX_POTEN_LEVEL = level;
 									}
+									
 									if (MAX_POTEN_EXP < exp)
 									{
 										MAX_POTEN_EXP = exp;
@@ -225,10 +227,12 @@ public class HennaPatternPotentialData implements IXmlReader
 		{
 			return null;
 		}
+		
 		if (potential.getSlotId() == slotId)
 		{
 			return potential.getSkill(level);
 		}
+		
 		return null;
 	}
 	
@@ -242,6 +246,7 @@ public class HennaPatternPotentialData implements IXmlReader
 				skillIds.add(potential.getSkillId());
 			}
 		}
+		
 		return skillIds;
 	}
 	

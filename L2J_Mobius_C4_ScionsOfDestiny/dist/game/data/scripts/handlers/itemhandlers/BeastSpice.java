@@ -33,7 +33,7 @@ import org.l2jmobius.gameserver.network.SystemMessageId;
 public class BeastSpice implements IItemHandler
 {
 	@Override
-	public boolean useItem(Playable playable, Item item, boolean forceUse)
+	public boolean onItemUse(Playable playable, Item item, boolean forceUse)
 	{
 		if (!playable.isPlayer())
 		{
@@ -59,6 +59,7 @@ public class BeastSpice implements IItemHandler
 		{
 			activeChar.useMagic(sk.getSkill(), false, false);
 		}
+		
 		return true;
 	}
 }

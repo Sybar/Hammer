@@ -74,6 +74,7 @@ public class AttributeMaster extends AbstractNpcAI
 					spirit.upgrade();
 				}
 			}
+			
 			final UserInfo userInfo = new UserInfo(player);
 			userInfo.addComponentType(UserInfoType.ATT_SPIRITS);
 			player.sendPacket(userInfo);
@@ -86,6 +87,7 @@ public class AttributeMaster extends AbstractNpcAI
 			
 			return "learn.htm";
 		}
+		
 		return null;
 	}
 	

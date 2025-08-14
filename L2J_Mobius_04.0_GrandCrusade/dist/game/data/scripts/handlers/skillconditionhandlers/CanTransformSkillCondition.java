@@ -66,6 +66,7 @@ public class CanTransformSkillCondition implements ISkillCondition
 			player.sendPacket(SystemMessageId.YOU_CANNOT_TRANSFORM_WHILE_RIDING_A_PET);
 			canTransform = false;
 		}
+		
 		return canTransform;
 	}
 }

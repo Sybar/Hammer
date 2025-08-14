@@ -95,6 +95,7 @@ public class RequestExTryToPutShapeShiftingEnchantSupportItem extends ClientPack
 			player.removeRequest(ShapeShiftingItemRequest.class);
 			return;
 		}
+		
 		final AppearanceStone appearanceStone = AppearanceItemData.getInstance().getStone(stone.getId());
 		if (appearanceStone == null)
 		{

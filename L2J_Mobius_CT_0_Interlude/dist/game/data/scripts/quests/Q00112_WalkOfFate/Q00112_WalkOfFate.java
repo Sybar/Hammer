@@ -31,6 +31,7 @@ public class Q00112_WalkOfFate extends Quest
 	// NPCs
 	private static final int LIVINA = 30572;
 	private static final int KARUDA = 32017;
+	
 	// Rewards
 	private static final int ENCHANT_D = 956;
 	

@@ -39,6 +39,7 @@ public class Q00171_ActsOfEvil extends Quest
 	private static final int ROLENTO = 30437;
 	private static final int NETI = 30425;
 	private static final int BURAI = 30617;
+	
 	// Items
 	private static final int BLADE_MOLD = 4239;
 	private static final int TYRA_BILL = 4240;
@@ -51,6 +52,7 @@ public class Q00171_ActsOfEvil extends Quest
 	private static final int CERTIFICATE = 4247;
 	private static final int CARGO_BOX = 4248;
 	private static final int OL_MAHUM_HEAD = 4249;
+	
 	// Turek Orcs drop chances
 	private static final Map<Integer, Integer> CHANCES = new HashMap<>();
 	static
@@ -330,6 +332,7 @@ public class Q00171_ActsOfEvil extends Quest
 						giveItems(player, BLADE_MOLD, 1);
 						playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 					}
+					
 					if ((count == 5) || ((count >= 10) && (getRandom(100) < 25)))
 					{
 						addSpawn(27190, player.getX(), player.getY(), player.getZ(), player.getHeading(), false, 0);

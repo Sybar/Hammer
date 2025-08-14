@@ -45,6 +45,7 @@ import org.l2jmobius.gameserver.model.events.EventType;
 import org.l2jmobius.gameserver.model.events.ListenerRegisterType;
 import org.l2jmobius.gameserver.model.events.annotations.RegisterEvent;
 import org.l2jmobius.gameserver.model.events.annotations.RegisterType;
+import org.l2jmobius.gameserver.model.events.holders.OnDailyReset;
 import org.l2jmobius.gameserver.model.events.holders.actor.player.OnPlayerPvPKill;
 import org.l2jmobius.gameserver.model.groups.Party;
 import org.l2jmobius.gameserver.model.item.enums.ItemProcessType;
@@ -117,6 +118,7 @@ public class ConquestEngine extends AbstractNpcAI
 			{
 				s = "-" + s;
 			}
+			
 			LOGGER.info(s);
 			LOGGER.info(ConquestEngine.class.getSimpleName() + ": Conquest is disabled.");
 		}
@@ -134,6 +136,7 @@ public class ConquestEngine extends AbstractNpcAI
 		String status = _isConquestAvailable ? "is Open, Closes in: " : "is Closed, Opens in: ";
 		LOGGER.info(ConquestEngine.class.getSimpleName() + ": Conquest Access: " + status + "" + numDays + " days, " + numHours + " hours and " + numMins + " mins.");
 		LOGGER.info(ConquestEngine.class.getSimpleName() + ": Conquest Season End: " + (new SimpleDateFormat("dd/MM/yyyy HH:mm:ss")).format(System.currentTimeMillis() + getMillisToConquestSeasonEnd()));
+		
 		// Current Cycle Status
 		boolean loaded = false;
 		_currentCycle = GlobalVariablesManager.getInstance().getInt(CONQUEST_CURRENT_CYCLE_VAR, 0);
@@ -143,14 +146,17 @@ public class ConquestEngine extends AbstractNpcAI
 			loaded = true;
 			LOGGER.info(ConquestEngine.class.getSimpleName() + ": Conquest Cycle data loaded from database.");
 		}
+		
 		if (!loaded)
 		{
 			_currentCycle = Config.CONQUEST_CURRENT_CYCLE;
 			_conquestSeasonEnd = Config.CONQUEST_SEASON_END;
 			LOGGER.info(ConquestEngine.class.getSimpleName() + ": Conquest Cycle data loaded from config.");
 		}
+		
 		LOGGER.info(ConquestEngine.class.getSimpleName() + ": Conquest Current cycle: " + _currentCycle);
 		setNewConquestSeasonEnd();
+		
 		// Current Points
 		addKillId(CONQUEST_POINT_DATA.getPointsInfo().keySet());
 		LOGGER.info(ConquestEngine.class.getSimpleName() + ": Conquest Server Points: " + getServerPoints());
@@ -165,14 +171,17 @@ public class ConquestEngine extends AbstractNpcAI
 	{
 		_conquestSeasonEnd = GlobalVariablesManager.getInstance().getLong(CONQUEST_SEASON_END_VAR, 0);
 		_currentCycle = GlobalVariablesManager.getInstance().getInt(CONQUEST_CURRENT_CYCLE_VAR, 0);
+		
 		// Get the current date and time.
 		LocalDateTime now = LocalDateTime.now();
 		final LocalDateTime resetTime = LocalDateTime.of(now.toLocalDate(), LocalTime.parse(Config.CONQUEST_RESET_TIME));
+		
 		// Check if conquest season end is on initial config value and set new value
 		if (_conquestSeasonEnd == 0)
 		{
 			_conquestSeasonEnd = System.currentTimeMillis() + getMillisToConquestSeasonEnd();
 			LOGGER.info(ConquestEngine.class.getSimpleName() + ": Conquest Season End was updated.");
+			
 			// Update db
 			saveConquestCycleData();
 		}
@@ -187,11 +196,14 @@ public class ConquestEngine extends AbstractNpcAI
 				sm.addInt(_currentCycle);
 				Broadcast.toAllOnlinePlayers(sm);
 				LOGGER.info(ConquestEngine.class.getSimpleName() + ": Conquest Cycle: " + _currentCycle + " is now over.");
+				
 				// Update Conquest Season End
 				_conquestSeasonEnd = System.currentTimeMillis() + getMillisToConquestSeasonEnd();
 				LOGGER.info(ConquestEngine.class.getSimpleName() + ": Conquest Season End was updated.");
+				
 				// Update db
 				saveConquestCycleData();
+				
 				// Next Cycle messages
 				int _nextCycle = _currentCycle + 1;
 				_currentCycle = _nextCycle;
@@ -236,6 +248,7 @@ public class ConquestEngine extends AbstractNpcAI
 			final LocalDateTime endTime = LocalDateTime.of(LocalDate.parse(customConfigDate.trim()), LocalTime.parse(Config.CONQUEST_RESET_TIME));
 			millisUntilSeasonEnd = ChronoUnit.MILLIS.between(now, endTime);
 		}
+		
 		return millisUntilSeasonEnd;
 	}
 	
@@ -254,6 +267,7 @@ public class ConquestEngine extends AbstractNpcAI
 			final LocalDateTime startTime1 = LocalDateTime.of(now.toLocalDate(), LocalTime.parse(Config.CONQUEST_START_HOUR1));
 			final LocalDateTime endTime1 = LocalDateTime.of(now.toLocalDate(), LocalTime.parse(Config.CONQUEST_END_HOUR1));
 			final LocalDateTime startTime2 = LocalDateTime.of(now.toLocalDate(), LocalTime.parse(Config.CONQUEST_START_HOUR2));
+			
 			// Added 1 day to endTime2 for proper millis calculation
 			final LocalDateTime endTime2 = LocalDateTime.of(now.toLocalDate().plusDays(1), LocalTime.parse(Config.CONQUEST_END_HOUR2));
 			
@@ -273,6 +287,7 @@ public class ConquestEngine extends AbstractNpcAI
 		else if (Config.CONQUEST_AVAILABLE_DAYS2.contains(now.getDayOfWeek().getValue()))
 		{
 			final LocalDateTime startTime3 = LocalDateTime.of(now.toLocalDate(), LocalTime.parse(Config.CONQUEST_START_HOUR3));
+			
 			// Added 1 day to endTime3 for proper millis calculation
 			final LocalDateTime endTime3 = LocalDateTime.of(now.toLocalDate().plusDays(1), LocalTime.parse(Config.CONQUEST_END_HOUR3));
 			if (now.isBefore(startTime3))
@@ -284,6 +299,7 @@ public class ConquestEngine extends AbstractNpcAI
 				millisUntilOpenAccessStart = 0;
 			}
 		}
+		
 		return millisUntilOpenAccessStart;
 	}
 	
@@ -330,6 +346,7 @@ public class ConquestEngine extends AbstractNpcAI
 				millisUntilOpenAccessEnd = ChronoUnit.MILLIS.between(now, endTime3);
 			}
 		}
+		
 		return millisUntilOpenAccessEnd;
 	}
 	
@@ -346,6 +363,7 @@ public class ConquestEngine extends AbstractNpcAI
 			}
 			return;
 		}
+		
 		// Start / Close Access
 		updateOpenAccessStatus();
 	}
@@ -358,8 +376,10 @@ public class ConquestEngine extends AbstractNpcAI
 			{
 				return;
 			}
+			
 			_isConquestAvailable = true;
 			GlobalVariablesManager.getInstance().set(CONQUEST_AVAILABLE_VAR, true);
+			
 			// Current Conquest Status
 			long millisToEnd = getMillisUntilOpenAccessEnd();
 			final long numDays = millisToEnd / 86400000;
@@ -367,12 +387,14 @@ public class ConquestEngine extends AbstractNpcAI
 			final long numHours = millisToEnd / 3600000;
 			millisToEnd %= 3600000;
 			final long numMins = millisToEnd / 60000;
+			
 			// Message on console when is open
 			LOGGER.info(ConquestEngine.class.getSimpleName() + ": Conquest Access: is Open, Closes in: " + numDays + " days, " + numHours + " hours and " + numMins + " mins.");
 			for (Player player : World.getInstance().getPlayers())
 			{
 				player.sendPacket(new ExDethroneSeasonInfo(true));
 			}
+			
 			Broadcast.toAllOnlinePlayers(new SystemMessage(SystemMessageId.THE_PATH_TO_THE_CONQUEST_WORLD_IS_OPEN_YOU_CAN_GET_THERE_ON_MONDAYS_TUESDAYS_WEDNESDAYS_AND_THURSDAYS_FROM_10_00_TILL_14_00_AND_FROM_22_00_TILL_00_00_AND_ON_FRIDAYS_SATURDAYS_AND_SUNDAYS_FROM_20_00_TILL_01_00_OF_THE_FOLLOWING_DAY_SERVER_TIME_PVP_IS_DISABLED_FROM_20_00_TILL_22_00_FOR_2_HOURS_BECAUSE_THE_NEW_WORLD_EXPLORATION_IS_UNDER_WAY));
 			_scheduledOpenAccessEndTask = ThreadPool.schedule(() ->
 			{
@@ -382,6 +404,7 @@ public class ConquestEngine extends AbstractNpcAI
 				{
 					GlobalVariablesManager.getInstance().set(CONQUEST_CONNECTED_VAR, false);
 				}
+				
 				// Current Conquest Status
 				long millisToEnd2 = getMillisUntilOpenAccessStart();
 				final long numDays2 = millisToEnd2 / 86400000;
@@ -389,13 +412,16 @@ public class ConquestEngine extends AbstractNpcAI
 				final long numHours2 = millisToEnd2 / 3600000;
 				millisToEnd2 %= 3600000;
 				final long numMins2 = millisToEnd2 / 60000;
+				
 				// Message on console when is closed
 				LOGGER.info(ConquestEngine.class.getSimpleName() + ": Conquest Access: is Closed, Opens in: " + numDays2 + " days, " + numHours2 + " hours and " + numMins2 + " mins.");
 				for (Player player : World.getInstance().getPlayers())
 				{
 					player.sendPacket(new ExDethroneSeasonInfo(false));
 				}
+				
 				Broadcast.toAllOnlinePlayers(new SystemMessage(SystemMessageId.THE_PATH_TO_THE_CONQUEST_WORLD_IS_CLOSED_YOU_CAN_GET_THERE_ON_MONDAYS_TUESDAYS_WEDNESDAYS_AND_THURSDAYS_FROM_10_00_TILL_14_00_AND_FROM_22_00_TILL_00_00_AND_ON_FRIDAYS_SATURDAYS_AND_SUNDAYS_FROM_20_00_TILL_01_00_OF_THE_FOLLOWING_DAY_SERVER_TIME_PVP_IS_DISABLED_FROM_20_00_TILL_22_00_FOR_2_HOURS_BECAUSE_THE_NEW_WORLD_EXPLORATION_IS_UNDER_WAY));
+				
 				// Teleport players to origin location if Open Access ends.
 				ConquestZone conquestZone = (ConquestZone) ZoneManager.getInstance().getZoneByName("conquest");
 				for (Player player : conquestZone.getPlayersInside())
@@ -412,6 +438,7 @@ public class ConquestEngine extends AbstractNpcAI
 							{
 								location = new Location(loc[0], loc[1], loc[2]);
 							}
+							
 							player.teleToLocation(location);
 							vars.remove(PlayerVariables.CONQUEST_ORIGIN);
 						}
@@ -421,7 +448,9 @@ public class ConquestEngine extends AbstractNpcAI
 						}
 					}
 				}
+				
 				init();
+				
 				// Reset Cycle when access closes if conditions are met
 				setNewConquestSeasonEnd();
 			}, getMillisUntilOpenAccessEnd());
@@ -467,6 +496,7 @@ public class ConquestEngine extends AbstractNpcAI
 		{
 			LOGGER.log(Level.SEVERE, ConquestEngine.class.getSimpleName() + ": Failed to save previous season rank list data to database: ", e);
 		}
+		
 		LOGGER.info(ConquestEngine.class.getSimpleName() + ": Conquest Previous Season ranklist data has been saved.");
 	}
 	
@@ -489,6 +519,7 @@ public class ConquestEngine extends AbstractNpcAI
 		// Reset Server Points and Soul Orbs for next season
 		GlobalVariablesManager.getInstance().set(CONQUEST_SERVER_POINTS_VAR, 0);
 		GlobalVariablesManager.getInstance().set(CONQUEST_SERVER_SOUL_ORBS_VAR, 0);
+		
 		// Reset Zone Points for next season
 		GlobalVariablesManager.getInstance().set(CONQUEST_ZONE_ASA_VAR, 0);
 		GlobalVariablesManager.getInstance().set(CONQUEST_ZONE_ANIMA_VAR, 0);
@@ -526,6 +557,7 @@ public class ConquestEngine extends AbstractNpcAI
 			player.getVariables().remove(PlayerVariables.CONQUEST_REWARDS_RECEIVED);
 			player.getVariables().storeMe();
 		}
+		
 		LOGGER.info(ConquestEngine.class.getSimpleName() + ": Conquest Previous Season online players data has been reset.");
 	}
 	
@@ -540,6 +572,7 @@ public class ConquestEngine extends AbstractNpcAI
 		{
 			LOGGER.info(ConquestEngine.class.getSimpleName() + ": Attack Points updated for player: " + player.getName() + " from " + getAttackPoints(player) + " to " + (getAttackPoints(player) + attackPoints) + ".");
 		}
+		
 		player.getVariables().set(PlayerVariables.CONQUEST_ATTACK_POINTS, getAttackPoints(player) + attackPoints);
 	}
 	
@@ -554,6 +587,7 @@ public class ConquestEngine extends AbstractNpcAI
 		{
 			LOGGER.info(ConquestEngine.class.getSimpleName() + ": Life Points updated for player: " + player.getName() + " from " + getLifePoints(player) + " to " + (getLifePoints(player) + lifePoints) + ".");
 		}
+		
 		player.getVariables().set(PlayerVariables.CONQUEST_LIFE_POINTS, getLifePoints(player) + lifePoints);
 	}
 	
@@ -568,6 +602,7 @@ public class ConquestEngine extends AbstractNpcAI
 		{
 			LOGGER.info(ConquestEngine.class.getSimpleName() + ": Personal Points updated from " + getPersonalPoints(player) + " to " + (getPersonalPoints(player) + personalPoints) + ".");
 		}
+		
 		player.getVariables().set(PlayerVariables.CONQUEST_PERSONAL_POINTS, getPersonalPoints(player) + personalPoints);
 	}
 	
@@ -582,6 +617,7 @@ public class ConquestEngine extends AbstractNpcAI
 		{
 			LOGGER.info(ConquestEngine.class.getSimpleName() + ": Server Points updated from " + getServerPoints() + " to " + (getServerPoints() + serverPoints) + ".");
 		}
+		
 		GlobalVariablesManager.getInstance().set(CONQUEST_SERVER_POINTS_VAR, getServerPoints() + serverPoints);
 	}
 	
@@ -596,6 +632,7 @@ public class ConquestEngine extends AbstractNpcAI
 		{
 			LOGGER.info(ConquestEngine.class.getSimpleName() + ": Soul Orbs updated from " + getServerSoulOrbs() + " to " + (getServerSoulOrbs() + serverSoulOrbs) + ".");
 		}
+		
 		GlobalVariablesManager.getInstance().set(CONQUEST_SERVER_SOUL_ORBS_VAR, getServerSoulOrbs() + serverSoulOrbs);
 	}
 	
@@ -629,6 +666,7 @@ public class ConquestEngine extends AbstractNpcAI
 				return "IGNIS";
 			}
 		}
+		
 		return "NONE";
 	}
 	
@@ -678,6 +716,7 @@ public class ConquestEngine extends AbstractNpcAI
 			finalServerSoulOrbs = serverSoulOrbs * Config.CONQUEST_RATE_SERVER_SOUL_ORBS;
 			finalZonePoints = zonePoints * Config.CONQUEST_RATE_ZONE_POINTS;
 		}
+		
 		setPersonalPoints(player, finalPersonalPoints);
 		setServerPoints(player, finalServerPoints);
 		setServerSoulOrbs(player, finalServerSoulOrbs);
@@ -798,6 +837,86 @@ public class ConquestEngine extends AbstractNpcAI
 				}
 			}
 		}
+	}
+	
+	@RegisterEvent(EventType.ON_DAILY_RESET)
+	@RegisterType(ListenerRegisterType.GLOBAL)
+	public void onDailyReset(OnDailyReset event)
+	{
+		// Update data for offline players.
+		// Attack Points
+		try (Connection con = DatabaseFactory.getConnection();
+			PreparedStatement ps = con.prepareStatement("UPDATE character_variables SET val = ? WHERE var = ?"))
+		{
+			ps.setInt(1, Config.CONQUEST_ATTACK_POINTS);
+			ps.setString(2, PlayerVariables.CONQUEST_ATTACK_POINTS);
+			ps.executeUpdate();
+		}
+		catch (Exception e)
+		{
+			LOGGER.warning(getClass().getSimpleName() + ": Could not reset Conquest Attack Points entries: " + e.getMessage());
+		}
+		
+		// Life Points
+		try (Connection con = DatabaseFactory.getConnection();
+			PreparedStatement ps = con.prepareStatement("UPDATE character_variables SET val = ? WHERE var = ?"))
+		{
+			ps.setInt(1, Config.CONQUEST_LIFE_POINTS);
+			ps.setString(2, PlayerVariables.CONQUEST_LIFE_POINTS);
+			ps.executeUpdate();
+		}
+		catch (Exception e)
+		{
+			LOGGER.warning(getClass().getSimpleName() + ": Could not reset Conquest Life Points entries: " + e.getMessage());
+		}
+		
+		// Abilities Counters
+		try (Connection con = DatabaseFactory.getConnection())
+		{
+			try (PreparedStatement ps = con.prepareStatement("DELETE FROM character_variables WHERE var IN (?, ?, ?, ?, ?, ?, ?, ?)"))
+			{
+				ps.setString(1, PlayerVariables.CONQUEST_ABILITY_LIFE_SOURCE_RESET);
+				ps.setString(2, PlayerVariables.CONQUEST_ABILITY_FLAME_SPARK_RESET);
+				ps.setString(3, PlayerVariables.CONQUEST_ABILITY_FIRE_TOTEM_RESET);
+				ps.setString(4, PlayerVariables.CONQUEST_ABILITY_BATTLE_SOUL_RESET);
+				ps.setString(5, PlayerVariables.CONQUEST_ABILITY_LIFE_SOURCE_UPGRADES);
+				ps.setString(6, PlayerVariables.CONQUEST_ABILITY_FLAME_SPARK_UPGRADES);
+				ps.setString(7, PlayerVariables.CONQUEST_ABILITY_FIRE_TOTEM_UPGRADES);
+				ps.setString(8, PlayerVariables.CONQUEST_ABILITY_BATTLE_SOUL_UPGRADES);
+				ps.execute();
+			}
+		}
+		catch (Exception e)
+		{
+			LOGGER.warning(getClass().getSimpleName() + ": Could not reset Ability counter entries: " + e.getMessage());
+		}
+		
+		// Update data for online players.
+		// Attack and Life Points
+		for (Player player : World.getInstance().getPlayers())
+		{
+			final PlayerVariables vars = player.getVariables();
+			vars.set(PlayerVariables.CONQUEST_ATTACK_POINTS, Config.CONQUEST_ATTACK_POINTS);
+			vars.set(PlayerVariables.CONQUEST_LIFE_POINTS, Config.CONQUEST_LIFE_POINTS);
+		}
+		
+		LOGGER.info(getClass().getSimpleName() + ": Player points entries have been reset.");
+		
+		// Abilities Counters
+		for (Player player : World.getInstance().getPlayers())
+		{
+			final PlayerVariables vars = player.getVariables();
+			vars.remove(PlayerVariables.CONQUEST_ABILITY_LIFE_SOURCE_RESET);
+			vars.remove(PlayerVariables.CONQUEST_ABILITY_FLAME_SPARK_RESET);
+			vars.remove(PlayerVariables.CONQUEST_ABILITY_FIRE_TOTEM_RESET);
+			vars.remove(PlayerVariables.CONQUEST_ABILITY_BATTLE_SOUL_RESET);
+			vars.remove(PlayerVariables.CONQUEST_ABILITY_LIFE_SOURCE_UPGRADES);
+			vars.remove(PlayerVariables.CONQUEST_ABILITY_FLAME_SPARK_UPGRADES);
+			vars.remove(PlayerVariables.CONQUEST_ABILITY_FIRE_TOTEM_UPGRADES);
+			vars.remove(PlayerVariables.CONQUEST_ABILITY_BATTLE_SOUL_UPGRADES);
+		}
+		
+		LOGGER.info(getClass().getSimpleName() + ": Ability counter entries have been reset.");
 	}
 	
 	public static void main(String[] args)

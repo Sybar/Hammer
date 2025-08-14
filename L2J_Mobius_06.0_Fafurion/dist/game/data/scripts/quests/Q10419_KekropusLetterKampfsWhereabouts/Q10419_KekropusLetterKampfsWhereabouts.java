@@ -36,11 +36,14 @@ public class Q10419_KekropusLetterKampfsWhereabouts extends LetterQuest
 	private static final int ANDREI = 31292;
 	private static final int HANSEN = 33853;
 	private static final int INVISIBLE_NPC = 19543;
+	
 	// Items
 	private static final int SOE_TOWN_OF_GODDARD = 37121; // Scroll of Escape: Town of Goddard
 	private static final int SOE_VARKA_SILENOS_BARRACKS = 37034; // Scroll of Escape: Varka Silenos Barracks
+	
 	// Location
 	private static final Location TELEPORT_LOC = new Location(147491, -56633, -2776);
+	
 	// Misc
 	private static final int MIN_LEVEL = 76;
 	private static final int MAX_LEVEL = 80;
@@ -95,12 +98,14 @@ public class Q10419_KekropusLetterKampfsWhereabouts extends LetterQuest
 					{
 						addExpAndSp(player, 1277640, 306);
 					}
+					
 					showOnScreenMsg(player, NpcStringId.GROW_STRONGER_HERE_UNTIL_YOU_RECEIVE_THE_NEXT_LETTER_FROM_KEKROPUS_AT_LV_81, ExShowScreenMessage.TOP_CENTER, 6000);
 					htmltext = event;
 				}
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -125,6 +130,7 @@ public class Q10419_KekropusLetterKampfsWhereabouts extends LetterQuest
 				htmltext = npc.getId() == ANDREI ? "31292-04.html" : "33853-01.html";
 			}
 		}
+		
 		return htmltext;
 	}
 	

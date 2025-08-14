@@ -143,11 +143,13 @@ public class RequestExEnchantItemAttribute extends ClientPacket
 		final int stoneId = stone.getId();
 		final long count = Math.min(stone.getCount(), _count);
 		AttributeType elementToAdd = ElementalAttributeData.getInstance().getItemElement(stoneId);
+		
 		// Armors have the opposite element
 		if (item.isArmor())
 		{
 			elementToAdd = elementToAdd.getOpposite();
 		}
+		
 		final AttributeType opositeElement = elementToAdd.getOpposite();
 		final AttributeHolder oldElement = item.getAttribute(elementToAdd);
 		final int elementValue = oldElement == null ? 0 : oldElement.getValue();
@@ -228,6 +230,7 @@ public class RequestExEnchantItemAttribute extends ClientPacket
 				{
 					sm = new SystemMessage(SystemMessageId.S2_ELEMENTAL_POWER_HAS_BEEN_ADDED_SUCCESSFULLY_TO_S1);
 				}
+				
 				sm.addItemName(item);
 				sm.addAttribute(realElement.getClientId());
 				if (item.isArmor())
@@ -245,6 +248,7 @@ public class RequestExEnchantItemAttribute extends ClientPacket
 				{
 					sm = new SystemMessage(SystemMessageId.S3_POWER_HAS_BEEN_ADDED_TO_S1_S2);
 				}
+				
 				sm.addInt(item.getEnchantLevel());
 				sm.addItemName(item);
 				sm.addAttribute(realElement.getClientId());
@@ -253,6 +257,7 @@ public class RequestExEnchantItemAttribute extends ClientPacket
 					sm.addAttribute(realElement.getOpposite().getClientId());
 				}
 			}
+			
 			player.sendPacket(sm);
 			
 			// send packets
@@ -327,6 +332,7 @@ public class RequestExEnchantItemAttribute extends ClientPacket
 		{
 			return ElementalAttributeData.WEAPON_VALUES[elementItem.getType().getMaxLevel()];
 		}
+		
 		return ElementalAttributeData.ARMOR_VALUES[elementItem.getType().getMaxLevel()];
 	}
 	
@@ -338,12 +344,14 @@ public class RequestExEnchantItemAttribute extends ClientPacket
 			{
 				return ElementalAttributeData.getInstance().getItemElemental(stoneId).getPower();
 			}
+			
 			if (item.isWeapon())
 			{
 				if (oldValue == 0)
 				{
 					return ElementalAttributeData.FIRST_WEAPON_BONUS;
 				}
+				
 				return ElementalAttributeData.NEXT_WEAPON_BONUS;
 			}
 			else if (item.isArmor())
@@ -351,6 +359,7 @@ public class RequestExEnchantItemAttribute extends ClientPacket
 				return ElementalAttributeData.ARMOR_BONUS;
 			}
 		}
+		
 		return 0;
 	}
 }

@@ -93,6 +93,7 @@ public class ConvertItem extends AbstractEffect
 		{
 			iu.addModifiedItem(unequippedItem);
 		}
+		
 		player.sendInventoryUpdate(iu);
 		
 		if (unequipped.isEmpty())
@@ -121,6 +122,7 @@ public class ConvertItem extends AbstractEffect
 				sm = new SystemMessage(SystemMessageId.S1_UNEQUIPPED);
 				sm.addItemName(unequippedItem);
 			}
+			
 			player.sendPacket(sm);
 		}
 		
@@ -145,6 +147,7 @@ public class ConvertItem extends AbstractEffect
 		{
 			newItem.setAttribute(elementals, true);
 		}
+		
 		newItem.setEnchantLevel(enchantLevel);
 		player.getInventory().equipItem(newItem);
 		
@@ -160,6 +163,7 @@ public class ConvertItem extends AbstractEffect
 			msg = new SystemMessage(SystemMessageId.S1_EQUIPPED);
 			msg.addItemName(newItem);
 		}
+		
 		player.sendPacket(msg);
 		
 		final InventoryUpdate u = new InventoryUpdate();

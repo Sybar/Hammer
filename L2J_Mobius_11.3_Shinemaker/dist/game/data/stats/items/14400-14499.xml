@@ -124,9 +124,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">329</stat>
 			<stat type="mAtk">163</stat>
@@ -162,9 +162,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">329</stat>
 			<stat type="mAtk">163</stat>
@@ -200,9 +200,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">329</stat>
 			<stat type="mAtk">163</stat>
@@ -238,9 +238,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">393</stat>
 			<stat type="mAtk">163</stat>
@@ -275,9 +275,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">393</stat>
 			<stat type="mAtk">163</stat>
@@ -312,9 +312,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">393</stat>
 			<stat type="mAtk">163</stat>
@@ -349,9 +349,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">422</stat>
 			<stat type="mAtk">163</stat>
@@ -387,9 +387,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">422</stat>
 			<stat type="mAtk">163</stat>
@@ -425,9 +425,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">422</stat>
 			<stat type="mAtk">163</stat>
@@ -775,9 +775,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">422</stat>
 			<stat type="mAtk">163</stat>
@@ -813,9 +813,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">422</stat>
 			<stat type="mAtk">163</stat>
@@ -852,9 +852,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">422</stat>
 			<stat type="mAtk">163</stat>
@@ -891,9 +891,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">422</stat>
 			<stat type="mAtk">163</stat>
@@ -929,9 +929,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">329</stat>
 			<stat type="mAtk">163</stat>
@@ -967,9 +967,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">329</stat>
 			<stat type="mAtk">163</stat>
@@ -1006,9 +1006,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">329</stat>
 			<stat type="mAtk">163</stat>
@@ -1045,9 +1045,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">329</stat>
 			<stat type="mAtk">163</stat>
@@ -1370,9 +1370,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">393</stat>
 			<stat type="mAtk">163</stat>
@@ -1407,9 +1407,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">393</stat>
 			<stat type="mAtk">163</stat>
@@ -1445,9 +1445,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">393</stat>
 			<stat type="mAtk">163</stat>
@@ -1483,9 +1483,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">393</stat>
 			<stat type="mAtk">163</stat>
@@ -2221,12 +2221,12 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player level="81" />
 				<player categoryType="DAGGER_MASTER" />
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">332</stat>
 			<stat type="mAtk">169</stat>
@@ -2663,9 +2663,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">359</stat>
 			<stat type="mAtk">176</stat>
@@ -2701,9 +2701,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">444</stat>
 			<stat type="mAtk">176</stat>
@@ -2737,9 +2737,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">429</stat>
 			<stat type="mAtk">176</stat>
@@ -2773,12 +2773,12 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player level="81" />
 				<player categoryType="DAGGER_MASTER" />
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">360</stat>
 			<stat type="mAtk">181</stat>

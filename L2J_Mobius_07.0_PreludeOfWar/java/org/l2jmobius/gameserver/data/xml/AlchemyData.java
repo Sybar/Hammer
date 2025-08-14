@@ -110,6 +110,7 @@ public class AlchemyData implements IXmlReader
 								}
 							}
 						}
+						
 						_alchemy.put(SkillData.getSkillHashCode(set.getInt("id"), set.getInt("level")), alchemyCraft);
 					}
 				}

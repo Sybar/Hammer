@@ -273,9 +273,9 @@
 		<set name="handler" val="SummonItems" />
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
 		<set name="commissionItemType" val="PET_SUPPLIES" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2046" level="1" /> <!-- Summon Pet -->
 		</skills>
@@ -292,9 +292,9 @@
 		<set name="handler" val="SummonItems" />
 		<set name="commissionItemType" val="PET_SUPPLIES" />
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2046" level="1" /> <!-- Summon Pet -->
 		</skills>
@@ -311,9 +311,9 @@
 		<set name="handler" val="SummonItems" />
 		<set name="commissionItemType" val="PET_SUPPLIES" />
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2046" level="1" /> <!-- Summon Pet -->
 		</skills>
@@ -335,9 +335,9 @@
 		<set name="is_questitem" val="true" />
 		<set name="commissionItemType" val="PET_SUPPLIES" />
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2046" level="1" /> <!-- Summon Pet -->
 		</skills>

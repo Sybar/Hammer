@@ -43,6 +43,7 @@ public class Q10790_AMercenaryHelper extends Quest
 {
 	// NPC
 	private static final int DOKARA = 33847;
+	
 	// Monsters
 	private static final int SPLINTER_STAKATO = 21508;
 	private static final int SPLINTER_STAKATO_WORKER = 21509;
@@ -57,12 +58,15 @@ public class Q10790_AMercenaryHelper extends Quest
 	{
 		MOBS_REQUIRED.put(SPLINTER_STAKATO, 50);
 	}
+	
 	// Item
 	private static final ItemHolder GUILD_COIN = new ItemHolder(37045, 3);
 	private static final ItemHolder ENCHANT_ARMOR_A = new ItemHolder(26351, 3);
+	
 	// Rewards
 	private static final int EXP_REWARD = 942690;
 	private static final int SP_REWARD = 226;
+	
 	// Other
 	private static final int MIN_LEVEL = 65;
 	private static final int MAX_LEVEL = 70;
@@ -116,6 +120,7 @@ public class Q10790_AMercenaryHelper extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -156,6 +161,7 @@ public class Q10790_AMercenaryHelper extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

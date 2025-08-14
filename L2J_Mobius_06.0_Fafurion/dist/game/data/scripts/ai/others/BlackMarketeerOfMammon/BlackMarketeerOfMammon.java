@@ -75,10 +75,12 @@ public class BlackMarketeerOfMammon extends AbstractNpcAI
 			{
 				return "31092-03.html";
 			}
+			
 			takeItems(player, Inventory.ANCIENT_ADENA_ID, count);
 			giveAdena(player, count, false);
 			return "31092-04.html";
 		}
+		
 		return super.onEvent(htmltext, npc, player);
 	}
 	

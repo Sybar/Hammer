@@ -38,6 +38,7 @@ public class Q00759_TheDwarvenNightmareContinues extends Quest
 	// NPCs
 	private static final int DAICHIR = 30537;
 	private static final int TRASKEN = 29195;
+	
 	// Misc
 	private static final int MIN_LEVEL = 98;
 	private static final int[] REWARDS =
@@ -109,11 +110,13 @@ public class Q00759_TheDwarvenNightmareContinues extends Quest
 						giveItems(player, reward, 1);
 						break;
 					}
+					
 					htmltext = getNoQuestLevelRewardMsg(player);
 					break;
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -131,6 +134,7 @@ public class Q00759_TheDwarvenNightmareContinues extends Quest
 					htmltext = "daichir_priest_of_earth_q0759_03.htm";
 					break;
 				}
+				
 				qs.setState(State.CREATED);
 				// fallthrough
 			}
@@ -157,6 +161,7 @@ public class Q00759_TheDwarvenNightmareContinues extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

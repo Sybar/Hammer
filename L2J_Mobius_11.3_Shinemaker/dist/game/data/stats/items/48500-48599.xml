@@ -794,9 +794,9 @@
 		<set name="is_event_restricted" val="true" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="weight" val="1300" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player isHero="true" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">1877</stat>
 			<stat type="mAtk">935</stat>
@@ -832,9 +832,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="is_event_restricted" val="true" />
 		<set name="damage_range" val="0;0;40;120" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player isHero="true" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">2146</stat>
 			<stat type="mAtk">935</stat>
@@ -869,9 +869,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="is_event_restricted" val="true" />
 		<set name="damage_range" val="0;0;40;120" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player isHero="true" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">2611</stat>
 			<stat type="mAtk">1247</stat>
@@ -906,9 +906,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="is_event_restricted" val="true" />
 		<set name="damage_range" val="0;0;40;120" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player isHero="true" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">2146</stat>
 			<stat type="mAtk">935</stat>
@@ -944,9 +944,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="is_event_restricted" val="true" />
 		<set name="damage_range" val="0;0;32;120" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player isHero="true" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">2611</stat>
 			<stat type="mAtk">935</stat>
@@ -982,9 +982,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="is_event_restricted" val="true" />
 		<set name="damage_range" val="0;0;66;120" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player isHero="true" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">2146</stat>
 			<stat type="mAtk">935</stat>
@@ -1022,9 +1022,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="is_event_restricted" val="true" />
 		<set name="damage_range" val="0;0;10;0" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player isHero="true" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">4225</stat>
 			<stat type="mAtk">1247</stat>
@@ -1060,9 +1060,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="is_event_restricted" val="true" />
 		<set name="damage_range" val="0;0;40;120" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player isHero="true" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">3804</stat>
 			<stat type="mAtk">1247</stat>
@@ -1099,9 +1099,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="is_event_restricted" val="true" />
 		<set name="damage_range" val="0;0;40;120" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player isHero="true" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">1716</stat>
 			<stat type="mAtk">1247</stat>
@@ -1137,9 +1137,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="is_event_restricted" val="true" />
 		<set name="damage_range" val="0;0;40;120" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player isHero="true" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">1716</stat>
 			<stat type="mAtk">1371</stat>
@@ -1176,9 +1176,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="is_event_restricted" val="true" />
 		<set name="damage_range" val="0;0;40;120" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player isHero="true" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">2090</stat>
 			<stat type="mAtk">935</stat>
@@ -1215,9 +1215,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="is_event_restricted" val="true" />
 		<set name="damage_range" val="0;0;40;120" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player isHero="true" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">2611</stat>
 			<stat type="mAtk">935</stat>
@@ -1251,9 +1251,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="is_event_restricted" val="true" />
 		<set name="damage_range" val="0;0;44;120" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player isHero="true" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">1877</stat>
 			<stat type="mAtk">935</stat>
@@ -1288,9 +1288,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="is_event_restricted" val="true" />
 		<set name="damage_range" val="0;0;40;120" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player isHero="true" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">2611</stat>
 			<stat type="mAtk">935</stat>

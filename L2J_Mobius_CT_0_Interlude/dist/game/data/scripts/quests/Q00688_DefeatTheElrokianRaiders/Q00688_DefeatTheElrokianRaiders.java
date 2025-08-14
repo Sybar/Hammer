@@ -31,8 +31,10 @@ public class Q00688_DefeatTheElrokianRaiders extends Quest
 {
 	// NPC
 	private static final int DINN = 32105;
+	
 	// Monster
 	private static final int ELROKI = 22214;
+	
 	// Item
 	private static final int DINOSAUR_FANG_NECKLACE = 8785;
 	
@@ -70,6 +72,7 @@ public class Q00688_DefeatTheElrokianRaiders extends Quest
 					takeItems(player, DINOSAUR_FANG_NECKLACE, -1);
 					giveAdena(player, count * 3000, true);
 				}
+				
 				st.exitQuest(true, true);
 				break;
 			}

@@ -45,10 +45,12 @@ public class HuntForSanta extends LongTimeEvent
 {
 	// NPC
 	private static final int NOELLE = 34008;
+	
 	// Skills
 	private static final SkillHolder BUFF_STOCKING = new SkillHolder(16419, 1);
 	private static final SkillHolder BUFF_TREE = new SkillHolder(16420, 1);
 	private static final SkillHolder BUFF_SNOWMAN = new SkillHolder(16421, 1);
+	
 	// Item
 	private static final int SANTAS_MARK = 40313;
 	
@@ -146,12 +148,14 @@ public class HuntForSanta extends LongTimeEvent
 					SkillCaster.triggerCast(npc, member, BUFF_SNOWMAN.getSkill());
 				}
 			}
+			
 			return "34008-2.htm";
 		}
 		else if (party == null)
 		{
 			return "34008-3.htm";
 		}
+		
 		return "34008-4.htm";
 	}
 	
@@ -178,11 +182,13 @@ public class HuntForSanta extends LongTimeEvent
 			cancelQuestTimer("rewardBuffStocking" + player.getObjectId(), null, player);
 			startQuestTimer("rewardBuffStocking" + player.getObjectId(), buffStocking.getTime() * 1000, null, player);
 		}
+		
 		if (buffTree != null)
 		{
 			cancelQuestTimer("rewardBuffTree" + player.getObjectId(), null, player);
 			startQuestTimer("rewardBuffTree" + player.getObjectId(), buffTree.getTime() * 1000, null, player);
 		}
+		
 		if (buffSnowman != null)
 		{
 			cancelQuestTimer("rewardBuffSnowman" + player.getObjectId(), null, player);

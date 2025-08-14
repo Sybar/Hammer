@@ -481,9 +481,9 @@
 			<item id="37135" min="1" max="1" chance="100" /> <!-- Steel Plate Helmet (60-day) -->
 			<item id="37323" min="1" max="1" chance="100" /> <!-- Destiny Support Pack - B-grade (Mystic Equipment) -->
 		</capsuled_items>
-		<cond msgId="1902">
+		<conditions msgId="1902">
 			<player levelRange="40;84" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="37317" name="Fated C-grade Support Box: Warrior" type="EtcItem">
 		<!-- Double-click to obtain C-grade equipment for warriors. Required level: 40-84. -->
@@ -511,9 +511,9 @@
 			<item id="37139" min="1" max="1" chance="100" /> <!-- Steel Plate Shield (60-day) -->
 			<item id="37324" min="1" max="1" chance="100" /> <!-- Destiny Support Pack - B-grade (Warrior Equipment) -->
 		</capsuled_items>
-		<cond msgId="1902">
+		<conditions msgId="1902">
 			<player levelRange="40;84" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="37318" name="Fated C-grade Support Box: Rogue" type="EtcItem">
 		<!-- Double-click to obtain C-grade equipment for rogues. Required level: 40-84. -->
@@ -541,9 +541,9 @@
 			<item id="37135" min="1" max="1" chance="100" /> <!-- Steel Plate Helmet (60-day) -->
 			<item id="37325" min="1" max="1" chance="100" /> <!-- Destiny Support Pack - B-grade (Rogue Equipment) -->
 		</capsuled_items>
-		<cond msgId="1902">
+		<conditions msgId="1902">
 			<player levelRange="40;84" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="37319" name="Fated C-grade Support Box: Kamael" type="EtcItem">
 		<!-- Double-click to obtain C-grade equipment for Kamaels. Required level: 40-84. -->
@@ -571,9 +571,9 @@
 			<item id="37249" min="1" max="1" chance="100" /> <!-- Steel Schlager (60-day) -->
 			<item id="37326" min="1" max="1" chance="100" /> <!-- Destiny Support Pack - B-grade (Kamael Equipment) -->
 		</capsuled_items>
-		<cond msgId="1902">
+		<conditions msgId="1902">
 			<player levelRange="40;84" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="37320" name="Fated C-grade Support Box: Orc Fighter" type="EtcItem">
 		<!-- Double-click to obtain C-grade equipment for Orc fighters. Required level: 40-84. -->
@@ -605,9 +605,9 @@
 			<item id="37252" min="1" max="1" chance="100" /> <!-- Steel Flamberge (60-day) -->
 			<item id="37327" min="1" max="1" chance="100" /> <!-- Destiny Support Pack - B-grade (Orc Fighter Equipment) -->
 		</capsuled_items>
-		<cond msgId="1902">
+		<conditions msgId="1902">
 			<player levelRange="40;84" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="37321" name="Fated C-grade Support Box: Orc Wizard" type="EtcItem">
 		<!-- Double-click to obtain C-grade equipment for Orc mystics. Required level: 40-84. -->
@@ -638,9 +638,9 @@
 			<item id="37139" min="1" max="1" chance="100" /> <!-- Steel Plate Shield (60-day) -->
 			<item id="37328" min="1" max="1" chance="100" /> <!-- Destiny Support Pack - B-grade (Orc Mystic Equipment) -->
 		</capsuled_items>
-		<cond msgId="1902">
+		<conditions msgId="1902">
 			<player levelRange="40;84" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="37322" name="Fated B-grade Support Box: Fighter" type="EtcItem">
 		<!-- Double-click to obtain B-grade equipment for fighters. Required level: 52-84. -->
@@ -668,9 +668,9 @@
 			<item id="37152" min="1" max="1" chance="100" /> <!-- Steel Doom Shield (60-day) -->
 			<item id="37329" min="1" max="1" chance="100" /> <!-- Destiny Support Pack - A-grade (Fighter Equipment) -->
 		</capsuled_items>
-		<cond msgId="1902">
+		<conditions msgId="1902">
 			<player levelRange="52;84" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="37323" name="Fated B-grade Support Box: Wizard" type="EtcItem">
 		<!-- Double-click to obtain B-grade equipment for mystics. Required level: 52-84. -->
@@ -696,9 +696,9 @@
 			<item id="37157" min="1" max="1" chance="100" /> <!-- Steel Avadon Shield (60-day) -->
 			<item id="37330" min="1" max="1" chance="100" /> <!-- Destiny Support Pack - A-grade (Mystic Equipment) -->
 		</capsuled_items>
-		<cond msgId="1902">
+		<conditions msgId="1902">
 			<player levelRange="52;84" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="37324" name="Fated B-grade Support Box: Warrior" type="EtcItem">
 		<!-- Double-click to obtain B-grade equipment for warriors. Required level: 52-84. -->
@@ -726,9 +726,9 @@
 			<item id="37152" min="1" max="1" chance="100" /> <!-- Steel Doom Shield (60-day) -->
 			<item id="37331" min="1" max="1" chance="100" /> <!-- Destiny Support Pack - A-grade (Warrior Equipment) -->
 		</capsuled_items>
-		<cond msgId="1902">
+		<conditions msgId="1902">
 			<player levelRange="52;84" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="37325" name="Fated B-grade Support Box: Rogue" type="EtcItem">
 		<!-- Double-click to obtain B-grade equipment for rogues. Required level: 52-84. -->
@@ -755,9 +755,9 @@
 			<item id="37148" min="1" max="1" chance="100" /> <!-- Steel Doom Helmet (60-day) -->
 			<item id="37332" min="1" max="1" chance="100" /> <!-- Destiny Support Pack - A-grade (Rogue Equipment) -->
 		</capsuled_items>
-		<cond msgId="1902">
+		<conditions msgId="1902">
 			<player levelRange="52;84" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="37326" name="Fated B-grade Support Box: Kamael" type="EtcItem">
 		<!-- Double-click to obtain B-grade equipment for Kamaels. Required level: 52-84. -->
@@ -784,9 +784,9 @@
 			<item id="37148" min="1" max="1" chance="100" /> <!-- Steel Doom Helmet (60-day) -->
 			<item id="37333" min="1" max="1" chance="100" /> <!-- Destiny Support Pack - A-grade (Kamael Equipment) -->
 		</capsuled_items>
-		<cond msgId="1902">
+		<conditions msgId="1902">
 			<player levelRange="52;84" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="37327" name="Fated B-grade Support Box: Orc Fighter" type="EtcItem">
 		<!-- Double-click to obtain B-grade equipment for Orc fighters. Required level: 52-84. -->
@@ -817,9 +817,9 @@
 			<item id="37152" min="1" max="1" chance="100" /> <!-- Steel Doom Shield (60-day) -->
 			<item id="37334" min="1" max="1" chance="100" /> <!-- Destiny Support Pack - A-grade (Orc Fighter Equipment) -->
 		</capsuled_items>
-		<cond msgId="1902">
+		<conditions msgId="1902">
 			<player levelRange="52;84" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="37328" name="Fated B-grade Support Box: Orc Wizard" type="EtcItem">
 		<!-- Double-click to obtain B-grade equipment for Orc mystics. Required level: 52-84. -->
@@ -851,9 +851,9 @@
 			<item id="37152" min="1" max="1" chance="100" /> <!-- Steel Doom Shield (60-day) -->
 			<item id="37335" min="1" max="1" chance="100" /> <!-- Destiny Support Pack - A-grade (Orc Mystic Equipment) -->
 		</capsuled_items>
-		<cond msgId="1902">
+		<conditions msgId="1902">
 			<player levelRange="52;84" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="37329" name="Fated A-grade Support Box: Fighter" type="EtcItem">
 		<!-- Double-click to obtain A-grade equipment for fighters. Required level: 61-84. -->
@@ -881,9 +881,9 @@
 			<item id="37165" min="1" max="1" chance="100" /> <!-- Steel Shield of Nightmare (60-day) -->
 			<item id="37336" min="1" max="1" chance="100" /> <!-- Destiny Support Pack - S-grade (Figher Equipment) -->
 		</capsuled_items>
-		<cond msgId="1902">
+		<conditions msgId="1902">
 			<player levelRange="61;84" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="37330" name="Fated A-grade Support Box: Wizard" type="EtcItem">
 		<!-- Double-click to obtain A-grade equipment for wizards. Required level: 61-84. -->
@@ -909,9 +909,9 @@
 			<item id="37170" min="1" max="1" chance="100" /> <!-- Steel Dark Crystal Shield (60-day) -->
 			<item id="37337" min="1" max="1" chance="100" /> <!-- Destiny Support Pack 1 - S-grade (Mystic Equipment) -->
 		</capsuled_items>
-		<cond msgId="1902">
+		<conditions msgId="1902">
 			<player levelRange="61;84" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="37331" name="Fated A-grade Support Box: Warrior" type="EtcItem">
 		<!-- Double-click to obtain A-grade equipment for warriors. Required level: 61-84. -->
@@ -939,9 +939,9 @@
 			<item id="37165" min="1" max="1" chance="100" /> <!-- Steel Shield of Nightmare (60-day) -->
 			<item id="37338" min="1" max="1" chance="100" /> <!-- Destiny Support Pack 1 - S-grade (Warrior Equipment) -->
 		</capsuled_items>
-		<cond msgId="1902">
+		<conditions msgId="1902">
 			<player levelRange="61;84" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="37332" name="Fated A-grade Support Box: Rogue" type="EtcItem">
 		<!-- Double-click to obtain A-grade equipment for rogues. Required level: 61-84. -->
@@ -969,9 +969,9 @@
 			<item id="37167" min="1" max="1" chance="100" /> <!-- Steel Dark Crystal Helmet (60-day) -->
 			<item id="37339" min="1" max="1" chance="100" /> <!-- Destiny Support Pack 1 - S-grade (Rogue Equipment) -->
 		</capsuled_items>
-		<cond msgId="1902">
+		<conditions msgId="1902">
 			<player levelRange="61;84" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="37333" name="Fated A-grade Support Box: Kamael" type="EtcItem">
 		<!-- Double-click to obtain A-grade equipment for Kamaels. Required level: 61-84. -->
@@ -999,9 +999,9 @@
 			<item id="37167" min="1" max="1" chance="100" /> <!-- Steel Dark Crystal Helmet (60-day) -->
 			<item id="37340" min="1" max="1" chance="100" /> <!-- Destiny Support Pack 1 - S-grade (Kamael Equipment) -->
 		</capsuled_items>
-		<cond msgId="1902">
+		<conditions msgId="1902">
 			<player levelRange="61;84" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="37334" name="Fated A-grade Support Box: Orc Fighter" type="EtcItem">
 		<!-- Double-click to obtain A-grade equipment for Orc fighters. Required level: 61-84. -->
@@ -1034,9 +1034,9 @@
 			<item id="37165" min="1" max="1" chance="100" /> <!-- Steel Shield of Nightmare (60-day) -->
 			<item id="37341" min="1" max="1" chance="100" /> <!-- Destiny Support Pack 1 - S-grade (Orc Figher Equipment) -->
 		</capsuled_items>
-		<cond msgId="1902">
+		<conditions msgId="1902">
 			<player levelRange="61;84" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="37335" name="Fated A-grade Support Box: Orc Wizard" type="EtcItem">
 		<!-- Double-click to obtain A-grade equipment for Orc mystics. Required level: 61-84. -->
@@ -1068,9 +1068,9 @@
 			<item id="37170" min="1" max="1" chance="100" /> <!-- Steel Dark Crystal Shield (60-day) -->
 			<item id="37342" min="1" max="1" chance="100" /> <!-- Destiny Support Pack 1 - S-grade (Orc Mystic Equipment) -->
 		</capsuled_items>
-		<cond msgId="1902">
+		<conditions msgId="1902">
 			<player levelRange="61;84" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="37336" name="Fated S-grade Support Box: Fighter Lv. 1" type="EtcItem">
 		<!-- Double-click to obtain S-grade equipment for fighters. Required level: 76-84. -->
@@ -1099,9 +1099,9 @@
 			<item id="37180" min="1" max="1" chance="100" /> <!-- Steel Imperial Crusader Shield (60-day) -->
 			<item id="37343" min="1" max="1" chance="100" /> <!-- Destiny Support Pack 2 - S-grade (Figher Equipment) -->
 		</capsuled_items>
-		<cond msgId="1902">
+		<conditions msgId="1902">
 			<player levelRange="76;84" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="37337" name="Fated S-grade Support Box: Wizard Lv. 1" type="EtcItem">
 		<!-- Double-click to obtain S-grade equipment for mystics. Required level: 76-84. -->
@@ -1127,9 +1127,9 @@
 			<item id="37185" min="1" max="1" chance="100" /> <!-- Steel Major Arcana Sigil (60-day) -->
 			<item id="37344" min="1" max="1" chance="100" /> <!-- Destiny Support Pack 2 - S-grade (Mystic Equipment) -->
 		</capsuled_items>
-		<cond msgId="1902">
+		<conditions msgId="1902">
 			<player levelRange="76;84" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="37338" name="Fated S-grade Support Box: Warrior Lv. 1" type="EtcItem">
 		<!-- Double-click to obtain S-grade equipment for warriors. Required level: 76-84. -->
@@ -1158,9 +1158,9 @@
 			<item id="37180" min="1" max="1" chance="100" /> <!-- Steel Imperial Crusader Shield (60-day) -->
 			<item id="37345" min="1" max="1" chance="100" /> <!-- Destiny Support Pack 2 - S-grade (Warrior Equipment) -->
 		</capsuled_items>
-		<cond msgId="1902">
+		<conditions msgId="1902">
 			<player levelRange="76;84" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="37339" name="Fated S-grade Support Box: Rogue Lv. 1" type="EtcItem">
 		<!-- Double-click to obtain S-grade equipment for rogues. Required level: 76-84. -->
@@ -1187,9 +1187,9 @@
 			<item id="37189" min="1" max="1" chance="100" /> <!-- Steel Draconic Leather Helmet (60-day) -->
 			<item id="37346" min="1" max="1" chance="100" /> <!-- Destiny Support Pack 2 - S-grade (Rogue Equipment) -->
 		</capsuled_items>
-		<cond msgId="1902">
+		<conditions msgId="1902">
 			<player levelRange="76;84" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="37340" name="Fated S-grade Support Box: Kamael Lv. 1" type="EtcItem">
 		<!-- Double-click to obtain S-grade equipment for Kamaels. Required level: 76-84. -->
@@ -1216,9 +1216,9 @@
 			<item id="37189" min="1" max="1" chance="100" /> <!-- Steel Draconic Leather Helmet (60-day) -->
 			<item id="37347" min="1" max="1" chance="100" /> <!-- Destiny Support Pack 2 - S-grade (Kamael Equipment) -->
 		</capsuled_items>
-		<cond msgId="1902">
+		<conditions msgId="1902">
 			<player levelRange="76;84" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="37341" name="Fated S-grade Support Box: Orc Fighter Lv. 1" type="EtcItem">
 		<!-- Double-click to obtain S-grade equipment for Orc fighters. Required level: 76-84. -->
@@ -1251,9 +1251,9 @@
 			<item id="37180" min="1" max="1" chance="100" /> <!-- Steel Imperial Crusader Shield (60-day) -->
 			<item id="37348" min="1" max="1" chance="100" /> <!-- Destiny Support Pack 2 - S-grade (Orc Figher Equipment) -->
 		</capsuled_items>
-		<cond msgId="1902">
+		<conditions msgId="1902">
 			<player levelRange="76;84" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="37342" name="Fated S-grade Support Box: Orc Wizard Lv. 1" type="EtcItem">
 		<!-- Double-click to obtain S-grade equipment for Orc mystics. Required level: 76-84. -->
@@ -1286,9 +1286,9 @@
 			<item id="37180" min="1" max="1" chance="100" /> <!-- Steel Imperial Crusader Shield (60-day) -->
 			<item id="37349" min="1" max="1" chance="100" /> <!-- Destiny Support Pack 2 - S-grade (Orc Mystic Equipment) -->
 		</capsuled_items>
-		<cond msgId="1902">
+		<conditions msgId="1902">
 			<player levelRange="76;84" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="37343" name="Fated S-grade Support Box: Fighter Lv. 2" type="EtcItem">
 		<!-- Double-click to obtain S-grade equipment for fighters. Required level: 81-84. -->
@@ -1317,9 +1317,9 @@
 			<item id="37195" min="1" max="1" chance="100" /> <!-- Steel Dynasty Shield (60-day) -->
 			<item id="37350" min="1" max="1" chance="100" /> <!-- Destiny Support Pack - R-grade (Sigel Knight Equipment) -->
 		</capsuled_items>
-		<cond msgId="1902">
+		<conditions msgId="1902">
 			<player levelRange="81;84" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="37344" name="Fated S-grade Support Box: Wizard Lv. 2" type="EtcItem">
 		<!-- Double-click to obtain S-grade equipment for mystics. Required level: 81-84. -->
@@ -1346,9 +1346,9 @@
 			<item id="37289" min="1" max="1" chance="100" /> <!-- Steel Dynasty Phantom (60-day) -->
 			<item id="37351" min="1" max="1" chance="100" /> <!-- Destiny Support Pack - R-grade (Tyrr Warrior Equipment) -->
 		</capsuled_items>
-		<cond msgId="1902">
+		<conditions msgId="1902">
 			<player levelRange="81;84" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="37345" name="Fated S-grade Support Box: Warrior Lv. 2" type="EtcItem">
 		<!-- Double-click to obtain S-grade equipment for warriors. Required level: 81-84. -->
@@ -1377,9 +1377,9 @@
 			<item id="37195" min="1" max="1" chance="100" /> <!-- Steel Dynasty Shield (60-day) -->
 			<item id="37352" min="1" max="1" chance="100" /> <!-- Destiny Support Pack - R-grade (Othell Rogue Equipment) -->
 		</capsuled_items>
-		<cond msgId="1902">
+		<conditions msgId="1902">
 			<player levelRange="81;84" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="37346" name="Fated S-grade Support Box: Rogue Lv. 2" type="EtcItem">
 		<!-- Double-click to obtain S-grade equipment for rogues. Required level: 81-84. -->
@@ -1407,9 +1407,9 @@
 			<item id="37293" min="1" max="1" chance="100" /> <!-- Steel Dynasty Knife (60-day) -->
 			<item id="37353" min="1" max="1" chance="100" /> <!-- Destiny Support Pack - R-grade (Yul Archer Equipment) -->
 		</capsuled_items>
-		<cond msgId="1902">
+		<conditions msgId="1902">
 			<player levelRange="81;84" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="37347" name="Fated S-grade Support Box: Kamael Lv. 2" type="EtcItem">
 		<!-- Double-click to obtain S-grade equipment for Kamaels. Required level: 81-84. -->
@@ -1437,9 +1437,9 @@
 			<item id="37204" min="1" max="1" chance="100" /> <!-- Steel Dynasty Leather Helmet (60-day) -->
 			<item id="37354" min="1" max="1" chance="100" /> <!-- Destiny Support Pack - R-grade (Feoh Wizard Equipment) -->
 		</capsuled_items>
-		<cond msgId="1902">
+		<conditions msgId="1902">
 			<player levelRange="81;84" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="37348" name="Fated S-grade Support Box: Orc Fighter Lv. 2" type="EtcItem">
 		<!-- Double-click to obtain S-grade equipment for Orc fighters. Required level: 81-84. -->
@@ -1473,9 +1473,9 @@
 			<item id="37195" min="1" max="1" chance="100" /> <!-- Steel Dynasty Shield (60-day) -->
 			<item id="37355" min="1" max="1" chance="100" /> <!-- Destiny Support Pack - R-grade (Wynn Summoner Equipment) -->
 		</capsuled_items>
-		<cond msgId="1902">
+		<conditions msgId="1902">
 			<player levelRange="81;84" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="37349" name="Fated S-grade Support Box: Orc Wizard Lv. 2" type="EtcItem">
 		<!-- Double-click to obtain S-grade equipment for Orc mystics. Required level: 81-84. -->
@@ -1509,9 +1509,9 @@
 			<item id="37195" min="1" max="1" chance="100" /> <!-- Steel Dynasty Shield (60-day) -->
 			<item id="37356" min="1" max="1" chance="100" /> <!-- Destiny Support Pack - R-grade (Aeore Healer Equipment) -->
 		</capsuled_items>
-		<cond msgId="1902">
+		<conditions msgId="1902">
 			<player levelRange="81;84" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="37350" name="Fated R-grade Support Box: Sigel Knight" type="EtcItem">
 		<!-- Double-click to obtain items for Sigel Knight. Required level: 85+. -->
@@ -1540,9 +1540,9 @@
 			<item id="37209" min="1" max="1" chance="100" /> <!-- Steel Immortal Helmet (30-day) -->
 			<item id="37212" min="1" max="1" chance="100" /> <!-- Steel Immortal Shield (30-day) -->
 		</capsuled_items>
-		<cond msgId="1902">
+		<conditions msgId="1902">
 			<player levelRange="85;99" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="37351" name="Fated R-grade Support Box: Tyrr Warrior" type="EtcItem">
 		<!-- Double-click to obtain items for Tyrr Warrior. Required level: 85+. -->
@@ -1578,9 +1578,9 @@
 			<item id="37212" min="1" max="1" chance="100" /> <!-- Steel Immortal Shield (30-day) -->
 			<item id="37303" min="1" max="1" chance="100" /> <!-- Steel Requiem Slasher (30-day) -->
 		</capsuled_items>
-		<cond msgId="1902">
+		<conditions msgId="1902">
 			<player levelRange="85;99" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="37352" name="Fated R-grade Support Box: Othell Rogue" type="EtcItem">
 		<!-- Double-click to obtain items for Othell Rogue. Required level: 85+. -->
@@ -1606,9 +1606,9 @@
 			<item id="37213" min="1" max="1" chance="100" /> <!-- Steel Immortal Leather Armor (30-day) -->
 			<item id="37215" min="1" max="1" chance="100" /> <!-- Steel Immortal Leather Helmet (30-day) -->
 		</capsuled_items>
-		<cond msgId="1902">
+		<conditions msgId="1902">
 			<player levelRange="85;99" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="37353" name="Fated R-grade Support Box: Yul Archer" type="EtcItem">
 		<!-- Double-click to obtain items for Yul Archer. Required level: 85+. -->
@@ -1634,9 +1634,9 @@
 			<item id="37215" min="1" max="1" chance="100" /> <!-- Steel Immortal Leather Helmet (30-day) -->
 			<item id="37310" min="1" max="1" chance="100" /> <!-- Steel Requiem Guardian (30-day) -->
 		</capsuled_items>
-		<cond msgId="1902">
+		<conditions msgId="1902">
 			<player levelRange="85;99" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="37354" name="Fated R-grade Support Box: Feoh Wizard" type="EtcItem">
 		<!-- Double-click to obtain items for Feoh Wizard. Required level: 85+. -->
@@ -1664,9 +1664,9 @@
 			<item id="37301" min="1" max="1" chance="100" /> <!-- Steel Requiem Buster (30-day) -->
 			<item id="37223" min="1" max="1" chance="100" /> <!-- Steel Immortal Sigil (30-day) -->
 		</capsuled_items>
-		<cond msgId="1902">
+		<conditions msgId="1902">
 			<player levelRange="85;99" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="37355" name="Fated R-grade Support Box: Wynn Summoner" type="EtcItem">
 		<!-- Double-click to obtain items for Wynn Summoner. Required level: 85+. -->
@@ -1700,9 +1700,9 @@
 			<item id="37301" min="1" max="1" chance="100" /> <!-- Steel Requiem Buster (30-day) -->
 			<item id="37223" min="1" max="1" chance="100" /> <!-- Steel Immortal Sigil (30-day) -->
 		</capsuled_items>
-		<cond msgId="1902">
+		<conditions msgId="1902">
 			<player levelRange="85;99" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="37356" name="Fated R-grade Support Box: Aeore Healer" type="EtcItem">
 		<!-- Double-click to obtain items for Aeore Healer. Required level: 85+. -->
@@ -1731,9 +1731,9 @@
 			<item id="37301" min="1" max="1" chance="100" /> <!-- Steel Requiem Buster (30-day) -->
 			<item id="37223" min="1" max="1" chance="100" /> <!-- Steel Immortal Sigil (30-day) -->
 		</capsuled_items>
-		<cond msgId="1902">
+		<conditions msgId="1902">
 			<player levelRange="85;99" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="37357" name="Fated R-grade Support Box: Iss Enchanter" type="EtcItem">
 		<!-- Double-click to obtain items for Iss Enchanter. Required level: 85+. -->
@@ -1771,9 +1771,9 @@
 			<item id="37209" min="1" max="1" chance="100" /> <!-- Steel Immortal Helmet (30-day) -->
 			<item id="37212" min="1" max="1" chance="100" /> <!-- Steel Immortal Shield (30-day) -->
 		</capsuled_items>
-		<cond msgId="1902">
+		<conditions msgId="1902">
 			<player levelRange="85;99" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="37358" name="Test Server Support Badge" type="EtcItem">
 		<!-- Badge that confirms you have obtained a Lindvior Support Box. -->

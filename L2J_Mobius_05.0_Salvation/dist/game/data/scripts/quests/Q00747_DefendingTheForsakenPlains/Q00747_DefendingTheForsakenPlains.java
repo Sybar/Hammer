@@ -36,6 +36,7 @@ public final class Q00747_DefendingTheForsakenPlains extends Quest
 	// NPCs
 	private static final int PATERSON = 33864;
 	private static final int EBLUNE = 33865;
+	
 	// Monsters
 	private static final int[] MONSTERS =
 	{
@@ -52,10 +53,12 @@ public final class Q00747_DefendingTheForsakenPlains extends Quest
 		20649, // Hamrut
 		20650, // Kranrot
 	};
+	
 	// Items
 	private static final int MARK_OF_THE_PLAINS = 47051;
 	private static final int MARK_OF_THE_PLATEAU = 47052;
 	private static final int PAULINAS_EQUIPMENT_SET_A = 46851;
+	
 	// Misc
 	private static final int MIN_LEVEL = 56;
 	private static final int MAX_LEVEL = 60;
@@ -117,12 +120,14 @@ public final class Q00747_DefendingTheForsakenPlains extends Quest
 						htmltext = event;
 						break;
 					}
+					
 					htmltext = getNoQuestLevelRewardMsg(player);
 					break;
 				}
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -143,6 +148,7 @@ public final class Q00747_DefendingTheForsakenPlains extends Quest
 						htmltext = "petterzan_q0747_01.htm";
 						break;
 					}
+					
 					htmltext = "petterzan_q0747_02.htm";
 					break;
 				}
@@ -205,6 +211,7 @@ public final class Q00747_DefendingTheForsakenPlains extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

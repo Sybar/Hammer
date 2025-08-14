@@ -19,7 +19,6 @@ package quests.Q00626_ADarkTwilight;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.quest.Quest;
@@ -35,8 +34,10 @@ public class Q00626_ADarkTwilight extends Quest
 {
 	// NPCs
 	private static final int HIERARCH = 31517;
+	
 	// Items
 	private static final int BLOOD_OF_SAINT = 7169;
+	
 	// Monsters
 	private static final Map<Integer, Integer> MONSTERS = new HashMap<>();
 	static
@@ -60,6 +61,7 @@ public class Q00626_ADarkTwilight extends Quest
 	// Misc
 	private static final int MIN_LEVEL_REQUIRED = 60;
 	private static final int ITEMS_COUNT_REQUIRED = 300;
+	
 	// Rewards
 	private static final int ADENA_COUNT = 100000;
 	private static final int XP_COUNT = 162773;
@@ -82,6 +84,7 @@ public class Q00626_ADarkTwilight extends Quest
 		{
 			return null;
 		}
+		
 		String htmltext = event;
 		switch (event)
 		{
@@ -100,6 +103,7 @@ public class Q00626_ADarkTwilight extends Quest
 				{
 					return "31517-06.html";
 				}
+				
 				addExpAndSp(player, XP_COUNT, SP_COUNT);
 				qs.exitQuest(true, true);
 				htmltext = "31517-07.html";
@@ -111,6 +115,7 @@ public class Q00626_ADarkTwilight extends Quest
 				{
 					return "31517-06.html";
 				}
+				
 				giveAdena(player, ADENA_COUNT, true);
 				qs.exitQuest(true, true);
 				htmltext = "31517-07.html";
@@ -122,6 +127,7 @@ public class Q00626_ADarkTwilight extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -131,9 +137,7 @@ public class Q00626_ADarkTwilight extends Quest
 		final Player partyMember = getRandomPartyMember(killer, 1);
 		if (partyMember != null)
 		{
-			final QuestState qs = getQuestState(partyMember, false);
-			final float chance = MONSTERS.get(npc.getId()) * Config.RATE_QUEST_DROP;
-			if (getRandom(1000) < chance)
+			if (getRandom(1000) < MONSTERS.get(npc.getId()))
 			{
 				giveItems(partyMember, BLOOD_OF_SAINT, 1);
 				if (getQuestItemsCount(partyMember, BLOOD_OF_SAINT) < ITEMS_COUNT_REQUIRED)
@@ -142,6 +146,7 @@ public class Q00626_ADarkTwilight extends Quest
 				}
 				else
 				{
+					final QuestState qs = getQuestState(partyMember, false);
 					qs.setCond(2, true);
 				}
 			}
@@ -179,6 +184,7 @@ public class Q00626_ADarkTwilight extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

@@ -50,6 +50,7 @@ public class Q00229_TestOfWitchcraft extends Quest
 	private static final int WARDEN_RODERIK = 30631;
 	private static final int WARDEN_ENDRIGO = 30632;
 	private static final int FISHER_EVERT = 30633;
+	
 	// Items
 	private static final int SWORD_OF_BINDING = 3029;
 	private static final int ORIMS_DIAGRAM = 3308;
@@ -80,8 +81,10 @@ public class Q00229_TestOfWitchcraft extends Quest
 	private static final int PURGATORY_KEY = 3333;
 	private static final int ZERUEL_BIND_CRYSTAL = 3334;
 	private static final int BRIMSTONE_2ND = 3335;
+	
 	// Reward
 	private static final int MARK_OF_WITCHCRAFT = 3307;
+	
 	// Monster
 	private static final int DIRE_WYRM = 20557;
 	private static final int ENCHANTED_STONE_GOLEM = 20565;
@@ -93,12 +96,15 @@ public class Q00229_TestOfWitchcraft extends Quest
 	private static final int LETO_LIZARDMAN_OVERLORD = 20582;
 	private static final int TAMLIN_ORC = 20601;
 	private static final int TAMLIN_ORC_ARCHER = 20602;
+	
 	// Quest Monster
 	private static final int NAMELESS_REVENANT = 27099;
 	private static final int SKELETAL_MERCENARY = 27100;
 	private static final int DREVANUL_PRINCE_ZERUEL = 27101;
+	
 	// Misc
 	private static final int MIN_LEVEL = 39;
+	
 	// Locations
 	private static final Location DREVANUL_PRINCE_ZERUEL_SPAWN = new Location(13395, 169807, -3708);
 	
@@ -226,6 +232,7 @@ public class Q00229_TestOfWitchcraft extends Quest
 				{
 					qs.setCond(7, true);
 				}
+				
 				htmltext = event;
 				break;
 			}
@@ -262,6 +269,7 @@ public class Q00229_TestOfWitchcraft extends Quest
 				{
 					qs.setCond(3, true);
 				}
+				
 				htmltext = event;
 				break;
 			}
@@ -273,10 +281,12 @@ public class Q00229_TestOfWitchcraft extends Quest
 				{
 					addSpawn(npc, DREVANUL_PRINCE_ZERUEL, DREVANUL_PRINCE_ZERUEL_SPAWN, false, 0);
 				}
+				
 				htmltext = event;
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -527,6 +537,7 @@ public class Q00229_TestOfWitchcraft extends Quest
 					{
 						htmltext = "30630-17.htm";
 					}
+					
 					if (hasQuestItems(player, SWORD_OF_BINDING, SOULTRAP_CRYSTAL))
 					{
 						qs.setCond(8, true);
@@ -598,6 +609,7 @@ public class Q00229_TestOfWitchcraft extends Quest
 								{
 									qs.setCond(3, true);
 								}
+								
 								htmltext = "30110-05.htm";
 							}
 							else
@@ -701,6 +713,7 @@ public class Q00229_TestOfWitchcraft extends Quest
 							{
 								qs.setCond(7, true);
 							}
+							
 							htmltext = "30417-05.htm";
 						}
 						else if (hasQuestItems(player, SWORD_OF_BINDING))
@@ -782,6 +795,7 @@ public class Q00229_TestOfWitchcraft extends Quest
 							{
 								addSpawn(npc, DREVANUL_PRINCE_ZERUEL, DREVANUL_PRINCE_ZERUEL_SPAWN, false, 0);
 							}
+							
 							htmltext = "30633-02.htm";
 						}
 						else if (hasQuestItems(player, ZERUEL_BIND_CRYSTAL) && !hasAtLeastOneQuestItem(player, SOULTRAP_CRYSTAL, BRIMSTONE_2ND))
@@ -800,6 +814,7 @@ public class Q00229_TestOfWitchcraft extends Quest
 				htmltext = getAlreadyCompletedMsg(player);
 			}
 		}
+		
 		return htmltext;
 	}
 	

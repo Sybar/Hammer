@@ -38,9 +38,11 @@ public class Q10465_SoulFrostSword extends Quest
 {
 	// NPC
 	private static final int RUPIO = 30471;
+	
 	// Items
 	private static final int PRACTICE_STORMBRINGER = 46629;
 	private static final int PRACTICE_SOUL_CRYSTAL = 46526;
+	
 	// Misc
 	private static final int MIN_LEVEL = 85;
 	private static final int MAX_LEVEL = 105;
@@ -63,6 +65,7 @@ public class Q10465_SoulFrostSword extends Quest
 		{
 			return null;
 		}
+		
 		String htmltext = null;
 		switch (event)
 		{
@@ -96,6 +99,7 @@ public class Q10465_SoulFrostSword extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -109,6 +113,7 @@ public class Q10465_SoulFrostSword extends Quest
 		{
 			return htmltext;
 		}
+		
 		if (qs.isCreated())
 		{
 			htmltext = "30471-01.htm";
@@ -128,10 +133,12 @@ public class Q10465_SoulFrostSword extends Quest
 				htmltext = "30471-05.html";
 			}
 		}
+		
 		if (qs.isCompleted())
 		{
 			htmltext = getAlreadyCompletedMsg(player);
 		}
+		
 		return htmltext;
 	}
 }

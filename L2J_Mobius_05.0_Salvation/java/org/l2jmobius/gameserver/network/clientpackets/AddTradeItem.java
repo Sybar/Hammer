@@ -24,6 +24,7 @@ import org.l2jmobius.gameserver.model.TradeItem;
 import org.l2jmobius.gameserver.model.TradeList;
 import org.l2jmobius.gameserver.model.World;
 import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.model.item.enums.ItemProcessType;
 import org.l2jmobius.gameserver.model.item.instance.Item;
 import org.l2jmobius.gameserver.network.PacketLogger;
 import org.l2jmobius.gameserver.network.SystemMessageId;
@@ -77,6 +78,7 @@ public class AddTradeItem extends ClientPacket
 			{
 				PacketLogger.warning("Character:" + player.getName() + " requested invalid trade object: " + _objectId);
 			}
+			
 			player.sendPacket(SystemMessageId.THAT_PLAYER_IS_NOT_ONLINE);
 			player.cancelActiveTrade();
 			return;
@@ -95,7 +97,7 @@ public class AddTradeItem extends ClientPacket
 			return;
 		}
 		
-		if (!player.validateItemManipulation(_objectId, "trade"))
+		if (!player.validateItemManipulation(_objectId, ItemProcessType.TRANSFER))
 		{
 			player.sendPacket(SystemMessageId.NOTHING_HAPPENED);
 			return;

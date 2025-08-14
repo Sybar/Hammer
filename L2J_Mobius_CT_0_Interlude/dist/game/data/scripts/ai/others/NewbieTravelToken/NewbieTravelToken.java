@@ -35,6 +35,7 @@ public class NewbieTravelToken extends AbstractNpcAI
 {
 	// Item
 	private static final int NEWBIE_TRAVEL_TOKEN = 8542;
+	
 	// NPC Id - Teleport Location
 	private static final Map<Integer, Location> DATA = new HashMap<>();
 	
@@ -71,9 +72,11 @@ public class NewbieTravelToken extends AbstractNpcAI
 				{
 					player.sendPacket(SystemMessageId.INCORRECT_ITEM_COUNT);
 				}
+				
 				return super.onEvent(event, npc, player);
 			}
 		}
+		
 		return event;
 	}
 	

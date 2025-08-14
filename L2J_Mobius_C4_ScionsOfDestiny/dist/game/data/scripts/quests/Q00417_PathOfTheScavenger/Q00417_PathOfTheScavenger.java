@@ -40,11 +40,13 @@ public class Q00417_PathOfTheScavenger extends Quest
 	private static final int ZIMENF = 30538;
 	private static final int TOMA = 30556;
 	private static final int TORAI = 30557;
+	
 	// Monsters
 	private static final int HUNTER_TARANTULA = 20403;
 	private static final int PLUNDER_TARANTULA = 20508;
 	private static final int HUNTER_BEAR = 20777;
 	private static final int HONEY_BEAR = 27058;
+	
 	// Items
 	private static final int RING_OF_RAVEN = 1642;
 	private static final int PIPPI_LETTER = 1643;
@@ -277,6 +279,7 @@ public class Q00417_PathOfTheScavenger extends Quest
 								htmltext = "30517-02.htm";
 								st.setCond(3, true);
 							}
+							
 							st.set("id", String.valueOf(id + 10));
 							takeItems(player, SHARI_AXE, 1);
 							giveItems(player, SHARI_PAY, 1);
@@ -301,6 +304,7 @@ public class Q00417_PathOfTheScavenger extends Quest
 								htmltext = "30525-02.htm";
 								st.setCond(3, true);
 							}
+							
 							st.set("id", String.valueOf(id + 10));
 							takeItems(player, BRONK_INGOT, 1);
 							giveItems(player, BRONK_PAY, 1);
@@ -325,6 +329,7 @@ public class Q00417_PathOfTheScavenger extends Quest
 								htmltext = "30538-02.htm";
 								st.setCond(3, true);
 							}
+							
 							st.set("id", String.valueOf(id + 10));
 							takeItems(player, ZIMENF_POTION, 1);
 							giveItems(player, ZIMENF_PAY, 1);

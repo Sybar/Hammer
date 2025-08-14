@@ -40,11 +40,14 @@ public class Q10844_BloodyBattleSeizingSupplies extends Quest
 	private static final int ELIKIA = 34057;
 	private static final int GLENKINCHIE = 34063;
 	private static final int EMBRYO_SUPPLY_BOX = 34137;
+	
 	// Monsters
 	private static final int FORTRESS_GUARDIAN_CAPTAIN = 23506;
 	private static final int FORTRESS_RAIDER = 23505;
+	
 	// Items
 	private static final int EMBRYO_SUPPLIES = 46282;
+	
 	// Misc
 	private static final int MIN_LEVEL = 101;
 	
@@ -110,6 +113,7 @@ public class Q10844_BloodyBattleSeizingSupplies extends Quest
 						}
 						break;
 					}
+					
 					final Npc captain = addSpawn(FORTRESS_GUARDIAN_CAPTAIN, npc, true, 120000, false);
 					captain.setTitleString(NpcStringId.SUPPLY_GUARDS);
 					addAttackPlayerDesire(captain, player);
@@ -133,6 +137,7 @@ public class Q10844_BloodyBattleSeizingSupplies extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -188,6 +193,7 @@ public class Q10844_BloodyBattleSeizingSupplies extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

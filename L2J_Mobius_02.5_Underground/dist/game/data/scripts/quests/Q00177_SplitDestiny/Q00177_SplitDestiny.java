@@ -54,14 +54,17 @@ public class Q00177_SplitDestiny extends Quest
 		22259, // Muddy Coral
 		22260, // Kleopora
 	};
+	
 	// Items
 	private static final ItemHolder PETRIFIED_GIANTS_HAND = new ItemHolder(17718, 2);
 	private static final ItemHolder PETRIFIED_GIANTS_FOOT = new ItemHolder(17719, 2);
 	private static final int PETRIFIED_GIANTS_HAND_PIECE = 17720;
 	private static final int PETRIFIED_GIANTS_FOOT_PIECE = 17721;
+	
 	// Rewards
 	private static final ItemHolder RECIPE_TWILIGHT_NECKLACE = new ItemHolder(36791, 1);
 	private static final ItemHolder CRYSTAL_R = new ItemHolder(17371, 5);
+	
 	// Variable
 	private static final String VAR_SUB_INDEX = "SPLIT_DESTINY_SUB_ID";
 	
@@ -173,6 +176,7 @@ public class Q00177_SplitDestiny extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -306,6 +310,7 @@ public class Q00177_SplitDestiny extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	

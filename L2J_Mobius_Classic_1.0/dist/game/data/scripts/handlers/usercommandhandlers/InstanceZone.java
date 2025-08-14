@@ -32,18 +32,19 @@ public class InstanceZone implements IUserCommandHandler
 	};
 	
 	@Override
-	public int[] getUserCommandList()
+	public int[] getCommandList()
 	{
 		return COMMAND_IDS;
 	}
 	
 	@Override
-	public boolean useUserCommand(int id, Player player)
+	public boolean onCommand(int id, Player player)
 	{
 		if (id != COMMAND_IDS[0])
 		{
 			return false;
 		}
+		
 		player.sendPacket(new ExInzoneWaiting(player));
 		return true;
 	}

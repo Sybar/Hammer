@@ -92,6 +92,7 @@ public class TradeRequest extends ClientPacket
 		}
 		
 		final WorldObject target = World.getInstance().findObject(_objectId);
+		
 		// If there is no target, target is far away or
 		// they are in different instances
 		// trade request is ignored and there is no system message.
@@ -119,11 +120,13 @@ public class TradeRequest extends ClientPacket
 					npcInRange = true;
 				}
 			}
+			
 			if (!npcInRange)
 			{
 				player.sendPacket(SystemMessageId.YOUR_TARGET_IS_OUT_OF_RANGE);
 				return;
 			}
+			
 			if (!player.isProcessingRequest())
 			{
 				final SystemMessage sm = new SystemMessage(SystemMessageId.YOU_HAVE_REQUESTED_A_TRADE_WITH_C1);

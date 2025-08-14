@@ -62,6 +62,7 @@ public class Eigis extends AbstractNpcAI
 	private static final String EIGIS_ALIVE_VAR = "EIGIS_ALIVE";
 	private static final int INVISIBLE_NPC = 18919;
 	private static final int INVISIBLE_NPC_2 = 18920;
+	
 	// Skills
 	private static final SkillHolder COMMON_SKILL = new SkillHolder(34108, 1); // Blade of Souls
 	private static final SkillHolder SPECIAL_AOE_1 = new SkillHolder(34113, 1); // Dark Wave Spray
@@ -71,8 +72,10 @@ public class Eigis extends AbstractNpcAI
 	private static final SkillHolder JUMP_IMPACT_VISUAL_3 = new SkillHolder(34110, 1); // Price for Temptation
 	private static final SkillHolder NPC_AOE_SKILL = new SkillHolder(34115, 1); // Tear to Shreds
 	private static final int NPC_LIFETIME = 6000;
+	
 	// Zone
 	private static final ArenaZone EIGIS_ZONE = ZoneManager.getInstance().getZoneByName("Eigis_Seat_Zone", ArenaZone.class);
+	
 	// Barrier
 	private static final int BARRIER_DURATION_MILLIS = 600000; // 10 minutes
 	private static final int HIT_COUNT = 2000; // 2000 Number of attacks needed to destroy the barrier
@@ -80,6 +83,7 @@ public class Eigis extends AbstractNpcAI
 	private static final int RENEW_DURATION_MILLIS = 600000; // 60 seconds of vulnerability
 	private static final SkillHolder LIMIT_BARRIER = new SkillHolder(29515, 1);
 	private boolean _barrierActivated = false;
+	
 	// Misc
 	private boolean _specialActivated = false;
 	private final AtomicBoolean _isUsingSpecialSkill = new AtomicBoolean(false);
@@ -116,6 +120,7 @@ public class Eigis extends AbstractNpcAI
 		{
 			calendarEigisStart.add(Calendar.WEEK_OF_YEAR, 1);
 		}
+		
 		if (calendarEigisSeal.getTimeInMillis() < currentTime)
 		{
 			calendarEigisSeal.add(Calendar.WEEK_OF_YEAR, 1);
@@ -337,6 +342,7 @@ public class Eigis extends AbstractNpcAI
 								{
 									useEigisSkills3(npc);
 								}
+								
 								startQuestTimer("SkillsBalancer", getRandom(10000, 35000), npc, null);
 							}
 							else
@@ -408,6 +414,7 @@ public class Eigis extends AbstractNpcAI
 				}
 			}
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	
@@ -571,6 +578,7 @@ public class Eigis extends AbstractNpcAI
 					}
 					
 					Npc newNpc = addSpawn(INVISIBLE_NPC_2, spawnLoc, false, NPC_LIFETIME);
+					
 					// newNpc.setName("Swords Eigis");
 					spawnedNpcs.add(newNpc);
 					newNpc.setInvul(true);

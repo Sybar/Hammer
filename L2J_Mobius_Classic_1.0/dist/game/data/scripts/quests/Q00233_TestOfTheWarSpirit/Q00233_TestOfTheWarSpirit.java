@@ -42,6 +42,7 @@ public class Q00233_TestOfTheWarSpirit extends Quest
 	private static final int SHADOW_ORIM = 30630;
 	private static final int ANCESTOR_MARTANKUS = 30649;
 	private static final int SEER_PEKIRON = 30682;
+	
 	// Items
 	private static final int VENDETTA_TOTEM = 2880;
 	private static final int TAMLIN_ORC_HEAD = 2881;
@@ -78,8 +79,10 @@ public class Q00233_TestOfTheWarSpirit extends Quest
 	private static final int TONARS_REMAINS2 = 2912;
 	private static final int HERMODTS_REMAINS2 = 2913;
 	private static final int KIRUNAS_REMAINS2 = 2914;
+	
 	// Reward
 	private static final int MARK_OF_WARSPIRIT = 2879;
+	
 	// Monster
 	private static final int NOBLE_ANT = 20089;
 	private static final int NOBLE_ANT_LEADER = 20090;
@@ -91,8 +94,10 @@ public class Q00233_TestOfTheWarSpirit extends Quest
 	private static final int LETO_LIZARDMAN_OVERLORD = 20582;
 	private static final int TAMLIN_ORC = 20601;
 	private static final int TAMLIN_ORC_ARCHER = 20602;
+	
 	// Quest Monster
 	private static final int STENOA_GORGON_QUEEN = 27108;
+	
 	// Misc
 	private static final int MIN_LEVEL = 39;
 	
@@ -183,6 +188,7 @@ public class Q00233_TestOfTheWarSpirit extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -491,6 +497,7 @@ public class Q00233_TestOfTheWarSpirit extends Quest
 							{
 								qs.setCond(2);
 							}
+							
 							htmltext = "30507-06.html";
 						}
 						else
@@ -525,6 +532,7 @@ public class Q00233_TestOfTheWarSpirit extends Quest
 							{
 								qs.setCond(2);
 							}
+							
 							htmltext = "30515-04.html";
 						}
 						else
@@ -561,6 +569,7 @@ public class Q00233_TestOfTheWarSpirit extends Quest
 							{
 								qs.setCond(2);
 							}
+							
 							htmltext = "30630-06.html";
 						}
 					}
@@ -599,6 +608,7 @@ public class Q00233_TestOfTheWarSpirit extends Quest
 							{
 								qs.setCond(2);
 							}
+							
 							htmltext = "30682-04.html";
 						}
 						else
@@ -621,6 +631,7 @@ public class Q00233_TestOfTheWarSpirit extends Quest
 				htmltext = getAlreadyCompletedMsg(player);
 			}
 		}
+		
 		return htmltext;
 	}
 }

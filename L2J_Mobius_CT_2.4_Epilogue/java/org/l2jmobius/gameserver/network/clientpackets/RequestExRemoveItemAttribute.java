@@ -66,10 +66,12 @@ public class RequestExRemoveItemAttribute extends ClientPacket
 			{
 				targetItem.removeElementAttrBonus(player);
 			}
+			
 			for (Elementals element : targetItem.getElementals())
 			{
 				targetItem.clearElementAttr(element.getElement());
 			}
+			
 			player.updateUserInfo();
 			
 			final InventoryUpdate iu = new InventoryUpdate();
@@ -127,6 +129,7 @@ public class RequestExRemoveItemAttribute extends ClientPacket
 				break;
 			}
 		}
+		
 		return _price;
 	}
 }

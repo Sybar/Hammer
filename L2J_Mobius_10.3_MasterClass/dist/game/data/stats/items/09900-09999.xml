@@ -1595,9 +1595,9 @@
 		<set name="commissionItemType" val="CROSSBOW" />
 		<set name="isAppearanceable" val="true" />
 		<set name="reuse_delay" val="400" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">64</stat>
 			<stat type="mAtk">32</stat>
@@ -1628,9 +1628,9 @@
 		<set name="commissionItemType" val="CROSSBOW" />
 		<set name="isAppearanceable" val="true" />
 		<set name="reuse_delay" val="400" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">64</stat>
 			<stat type="mAtk">32</stat>

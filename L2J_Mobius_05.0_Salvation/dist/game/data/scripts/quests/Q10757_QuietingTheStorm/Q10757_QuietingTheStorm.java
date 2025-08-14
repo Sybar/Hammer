@@ -38,10 +38,12 @@ public class Q10757_QuietingTheStorm extends Quest
 {
 	// NPC
 	private static final int PIO = 33963;
+	
 	// Monsters
 	private static final int VORTEX = 23417;
 	private static final int GIANT_WINDIMA = 23419;
 	private static final int IMMENSE_WINDIMA = 23420;
+	
 	// Misc
 	private static final int MIN_LEVEL = 24;
 	private static final String VORTEX_COUNT_VAR = "VortexKillCount";
@@ -97,6 +99,7 @@ public class Q10757_QuietingTheStorm extends Quest
 				htmltext = null;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -123,6 +126,7 @@ public class Q10757_QuietingTheStorm extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -174,8 +178,10 @@ public class Q10757_QuietingTheStorm extends Quest
 			{
 				holder.add(new NpcLogListHolder(NpcStringId.IMMENSE_WINDIMA_OR_GIANT_WINDIMA, windimaCount));
 			}
+			
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

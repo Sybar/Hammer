@@ -86,6 +86,7 @@ public class SpawnTemplate implements Cloneable, ITerritorized, IParameterized<S
 		{
 			_territories = new ArrayList<>();
 		}
+		
 		_territories.add(territory);
 	}
 	
@@ -102,6 +103,7 @@ public class SpawnTemplate implements Cloneable, ITerritorized, IParameterized<S
 		{
 			_bannedTerritories = new ArrayList<>();
 		}
+		
 		_bannedTerritories.add(territory);
 	}
 	
@@ -131,6 +133,7 @@ public class SpawnTemplate implements Cloneable, ITerritorized, IParameterized<S
 				result.add(group);
 			}
 		}
+		
 		return result;
 	}
 	
@@ -198,6 +201,7 @@ public class SpawnTemplate implements Cloneable, ITerritorized, IParameterized<S
 				group.despawnAll();
 			}
 		}
+		
 		notifyEvent(script -> script.onSpawnDeactivate(this));
 	}
 	

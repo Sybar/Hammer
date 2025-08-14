@@ -37,15 +37,18 @@ public class Q10817_ExaltedOneWhoOvercomesTheLimit extends Quest
 {
 	// NPC
 	private static final int LIONEL = 33907;
+	
 	// Items
 	private static final int DAICHIR_SERTIFICATE = 45628;
 	private static final int OLYMPIAD_MANAGER_CERTIFICATE = 45629;
 	private static final int ISHUMA_CERTIFICATE = 45630;
 	private static final int SIR_KRISTOF_RODEMAI_CERTIFICATE = 45631;
 	private static final int LIONEL_MISSION_LIST_2 = 45632;
+	
 	// Rewards
 	private static final int SPELLBOOK_DIGNITY_OF_THE_EXALTED = 45923;
 	private static final int SPELLBOOK_BELIEF_OF_THE_EXALTED = 45925;
+	
 	// Misc
 	private static final int MIN_LEVEL = 99;
 	private static final int MIN_COMPLETE_LEVEL = 100;
@@ -100,6 +103,7 @@ public class Q10817_ExaltedOneWhoOvercomesTheLimit extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -134,6 +138,7 @@ public class Q10817_ExaltedOneWhoOvercomesTheLimit extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

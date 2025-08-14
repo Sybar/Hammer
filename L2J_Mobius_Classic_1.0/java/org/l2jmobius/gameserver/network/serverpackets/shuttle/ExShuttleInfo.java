@@ -60,6 +60,7 @@ public class ExShuttleInfo extends ServerPacket
 				buffer.writeInt(loc.getY());
 				buffer.writeInt(loc.getZ());
 			}
+			
 			buffer.writeInt(stop.isDoorOpen());
 			buffer.writeInt(stop.hasDoorChanged());
 		}

@@ -37,11 +37,14 @@ public class Q10746_SeeTheWorld extends Quest
 	private static final int KARLA = 33933;
 	private static final int ASTIEL = 33948;
 	private static final int LEVIAN = 30037;
+	
 	// Items
 	private static final ItemHolder EMISSARY_SUPPORT_BOX_WARRIOR = new ItemHolder(40264, 1);
 	private static final ItemHolder EMISSARY_SUPPORT_BOX_MAGE = new ItemHolder(40265, 1);
+	
 	// Location
 	private static final Location GLUDIN_VILLAGE = new Location(-80684, 149770, -3040);
+	
 	// Misc
 	private static final int MIN_LEVEL = 19;
 	private static final int MAX_LEVEL = 25;
@@ -85,6 +88,7 @@ public class Q10746_SeeTheWorld extends Quest
 				htmltext = null;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -150,6 +154,7 @@ public class Q10746_SeeTheWorld extends Quest
 					{
 						giveItems(player, EMISSARY_SUPPORT_BOX_WARRIOR);
 					}
+					
 					showOnScreenMsg(player, NpcStringId.CHECK_YOUR_EQUIPMENT_IN_YOUR_INVENTORY, ExShowScreenMessage.TOP_CENTER, 10000);
 					qs.exitQuest(false, true);
 					htmltext = "30037-01.html";
@@ -161,6 +166,7 @@ public class Q10746_SeeTheWorld extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

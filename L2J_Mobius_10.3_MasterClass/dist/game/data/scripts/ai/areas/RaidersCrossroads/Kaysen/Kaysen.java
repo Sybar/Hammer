@@ -45,8 +45,10 @@ public class Kaysen extends AbstractNpcAI
 	private static final int KAYSEN = 19458;
 	private static final int NERVAS_TEMPORARY_PRISON = 19459;
 	private static final int NERVAS_KAYSEN = 23329;
+	
 	// Reward
 	private static final ItemHolder REWARD = new ItemHolder(57, 1000000);
+	
 	// Locations
 	private static final Location[] SPAWN_LOCATIONS =
 	{
@@ -59,6 +61,7 @@ public class Kaysen extends AbstractNpcAI
 		new Location(22684, -139168, -744, 9416),
 		new Location(23120, -146104, -464, 8732)
 	};
+	
 	// Misc
 	private static final int REWARD_CHANCE = 10;
 	private static final long EXP_REWARD = 1000000000;
@@ -106,6 +109,7 @@ public class Kaysen extends AbstractNpcAI
 					{
 						break;
 					}
+					
 					npc.setScriptValue(1);
 					
 					if (getRandom(100) < REWARD_CHANCE)
@@ -141,6 +145,7 @@ public class Kaysen extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return null;
 	}
 	
@@ -154,6 +159,7 @@ public class Kaysen extends AbstractNpcAI
 				return "19458-no.html";
 			}
 		}
+		
 		return "19458.html";
 	}
 	
@@ -178,6 +184,7 @@ public class Kaysen extends AbstractNpcAI
 			{
 				player.addExpAndSp(EXP_REWARD, 0);
 			}
+			
 			player.broadcastPacket(new ExShowScreenMessage(NpcStringId.YOU_HAVE_OBTAINED_EXTRA_XP, ExShowScreenMessage.TOP_CENTER, 10000));
 		}
 	}

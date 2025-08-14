@@ -936,9 +936,9 @@
 		<set name="handler" val="PetFood" />
 		<set name="commissionItemType" val="PET_SUPPLIES" />
 		<set name="for_npc" val="true" />
-		<cond msgId="600">
+		<conditions msgId="600">
 			<player categoryType="STRIDER" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2101" level="1" /> <!-- General Strider Food -->
 		</skills>
@@ -956,9 +956,9 @@
 		<set name="handler" val="PetFood" />
 		<set name="commissionItemType" val="PET_SUPPLIES" />
 		<set name="for_npc" val="true" />
-		<cond msgId="600">
+		<conditions msgId="600">
 			<player categoryType="STRIDER" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2102" level="1" /> <!-- Clan Hall Strider Food -->
 		</skills>
@@ -977,9 +977,9 @@
 		<set name="commissionItemType" val="PET_EQUIPMENT" />
 		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
-		<cond msgId="600">
+		<conditions msgId="600">
 			<player categoryType="STRIDER" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="mDef">41</stat>
 			<stat type="pDef">41</stat>
@@ -999,9 +999,9 @@
 		<set name="commissionItemType" val="PET_EQUIPMENT" />
 		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
-		<cond msgId="600">
+		<conditions msgId="600">
 			<player categoryType="STRIDER" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="mDef">44</stat>
 			<stat type="pDef">44</stat>
@@ -1021,9 +1021,9 @@
 		<set name="commissionItemType" val="PET_EQUIPMENT" />
 		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
-		<cond msgId="600">
+		<conditions msgId="600">
 			<player categoryType="STRIDER" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="mDef">46</stat>
 			<stat type="pDef">46</stat>
@@ -1043,9 +1043,9 @@
 		<set name="commissionItemType" val="PET_EQUIPMENT" />
 		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
-		<cond msgId="600">
+		<conditions msgId="600">
 			<player categoryType="STRIDER" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="mDef">49</stat>
 			<stat type="pDef">49</stat>
@@ -1065,9 +1065,9 @@
 		<set name="commissionItemType" val="PET_EQUIPMENT" />
 		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
-		<cond msgId="600">
+		<conditions msgId="600">
 			<player categoryType="STRIDER" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="mDef">52</stat>
 			<stat type="pDef">52</stat>
@@ -1087,9 +1087,9 @@
 		<set name="commissionItemType" val="PET_EQUIPMENT" />
 		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
-		<cond msgId="600">
+		<conditions msgId="600">
 			<player categoryType="STRIDER" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="mDef">54</stat>
 			<stat type="pDef">54</stat>
@@ -1110,9 +1110,9 @@
 		<set name="commissionItemType" val="PET_EQUIPMENT" />
 		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
-		<cond msgId="600">
+		<conditions msgId="600">
 			<player categoryType="STRIDER" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">17</stat>
 			<stat type="mAtk">21</stat>
@@ -1137,9 +1137,9 @@
 		<set name="commissionItemType" val="PET_EQUIPMENT" />
 		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
-		<cond msgId="600">
+		<conditions msgId="600">
 			<player categoryType="STRIDER" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">19</stat>
 			<stat type="mAtk">24</stat>
@@ -1164,9 +1164,9 @@
 		<set name="commissionItemType" val="PET_EQUIPMENT" />
 		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
-		<cond msgId="600">
+		<conditions msgId="600">
 			<player categoryType="STRIDER" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">21</stat>
 			<stat type="mAtk">27</stat>
@@ -1191,9 +1191,9 @@
 		<set name="commissionItemType" val="PET_EQUIPMENT" />
 		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
-		<cond msgId="600">
+		<conditions msgId="600">
 			<player categoryType="STRIDER" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">23</stat>
 			<stat type="mAtk">30</stat>
@@ -1218,9 +1218,9 @@
 		<set name="commissionItemType" val="PET_EQUIPMENT" />
 		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
-		<cond msgId="600">
+		<conditions msgId="600">
 			<player categoryType="STRIDER" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">25</stat>
 			<stat type="mAtk">34</stat>
@@ -1245,9 +1245,9 @@
 		<set name="commissionItemType" val="PET_EQUIPMENT" />
 		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
-		<cond msgId="600">
+		<conditions msgId="600">
 			<player categoryType="STRIDER" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">27</stat>
 			<stat type="mAtk">37</stat>
@@ -1271,9 +1271,9 @@
 		<set name="commissionItemType" val="PET_EQUIPMENT" />
 		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
-		<cond msgId="600">
+		<conditions msgId="600">
 			<player categoryType="HATCHLING_GROUP" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="mDef">44</stat>
 			<stat type="pDef">44</stat>
@@ -1293,9 +1293,9 @@
 		<set name="commissionItemType" val="PET_EQUIPMENT" />
 		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
-		<cond msgId="600">
+		<conditions msgId="600">
 			<player categoryType="HATCHLING_GROUP" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="mDef">46</stat>
 			<stat type="pDef">46</stat>
@@ -1315,9 +1315,9 @@
 		<set name="commissionItemType" val="PET_EQUIPMENT" />
 		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
-		<cond msgId="600">
+		<conditions msgId="600">
 			<player categoryType="HATCHLING_GROUP" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="mDef">49</stat>
 			<stat type="pDef">49</stat>
@@ -1337,9 +1337,9 @@
 		<set name="commissionItemType" val="PET_EQUIPMENT" />
 		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
-		<cond msgId="600">
+		<conditions msgId="600">
 			<player categoryType="HATCHLING_GROUP" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="mDef">52</stat>
 			<stat type="pDef">52</stat>
@@ -1359,9 +1359,9 @@
 		<set name="commissionItemType" val="PET_EQUIPMENT" />
 		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
-		<cond msgId="600">
+		<conditions msgId="600">
 			<player categoryType="HATCHLING_GROUP" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="mDef">54</stat>
 			<stat type="pDef">54</stat>
@@ -1382,9 +1382,9 @@
 		<set name="commissionItemType" val="PET_EQUIPMENT" />
 		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
-		<cond msgId="600">
+		<conditions msgId="600">
 			<player categoryType="HATCHLING_GROUP" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">19</stat>
 			<stat type="mAtk">24</stat>
@@ -1409,9 +1409,9 @@
 		<set name="commissionItemType" val="PET_EQUIPMENT" />
 		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
-		<cond msgId="600">
+		<conditions msgId="600">
 			<player categoryType="HATCHLING_GROUP" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">21</stat>
 			<stat type="mAtk">27</stat>
@@ -1436,9 +1436,9 @@
 		<set name="commissionItemType" val="PET_EQUIPMENT" />
 		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
-		<cond msgId="600">
+		<conditions msgId="600">
 			<player categoryType="HATCHLING_GROUP" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">23</stat>
 			<stat type="mAtk">30</stat>
@@ -1463,9 +1463,9 @@
 		<set name="commissionItemType" val="PET_EQUIPMENT" />
 		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
-		<cond msgId="600">
+		<conditions msgId="600">
 			<player categoryType="HATCHLING_GROUP" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">25</stat>
 			<stat type="mAtk">34</stat>
@@ -1490,9 +1490,9 @@
 		<set name="commissionItemType" val="PET_EQUIPMENT" />
 		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
-		<cond msgId="600">
+		<conditions msgId="600">
 			<player categoryType="HATCHLING_GROUP" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">27</stat>
 			<stat type="mAtk">37</stat>

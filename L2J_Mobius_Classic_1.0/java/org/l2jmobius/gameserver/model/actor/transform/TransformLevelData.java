@@ -49,6 +49,7 @@ public class TransformLevelData
 		{
 			_stats = new HashMap<>();
 		}
+		
 		_stats.put(stat.ordinal(), value);
 	}
 	

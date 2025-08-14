@@ -38,8 +38,10 @@ public class Q10858_QueenRamonaControllerOfTheVessel extends Quest
 	// NPCs
 	private static final int KEKROPUS = 34222;
 	private static final int RAMONA = 26143;
+	
 	// Item
 	private static final int SUPER_GIANT_CHAPTER_1 = 46150;
+	
 	// Misc
 	private static final int MIN_LEVEL = 102;
 	
@@ -61,6 +63,7 @@ public class Q10858_QueenRamonaControllerOfTheVessel extends Quest
 		{
 			return getNoQuestMsg(player);
 		}
+		
 		String htmltext = null;
 		switch (event)
 		{
@@ -86,11 +89,13 @@ public class Q10858_QueenRamonaControllerOfTheVessel extends Quest
 						addExpAndSp(player, 1630746824, 14221620);
 						break;
 					}
+					
 					htmltext = getNoQuestLevelRewardMsg(player);
 					break;
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -129,6 +134,7 @@ public class Q10858_QueenRamonaControllerOfTheVessel extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

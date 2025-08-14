@@ -88,6 +88,7 @@ public class CaptchaManager
 			{
 				MONSTER_COUNTER.put(killer.getObjectId(), 0);
 			}
+			
 			LAST_KILL_TIME.put(killer.getObjectId(), currentTime);
 		}
 		

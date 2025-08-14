@@ -92,6 +92,7 @@ public class EnsoulDailyMissionHandler extends AbstractDailyMissionHandler
 				}
 			}
 		}
+		
 		return false;
 	}
 	
@@ -102,6 +103,7 @@ public class EnsoulDailyMissionHandler extends AbstractDailyMissionHandler
 		{
 			return;
 		}
+		
 		if (_crystalIds.contains(event.getEnsoulStone().getId()))
 		{
 			processPlayerProgress(player);
@@ -117,6 +119,7 @@ public class EnsoulDailyMissionHandler extends AbstractDailyMissionHandler
 			{
 				entry.setStatus(DailyMissionStatus.AVAILABLE);
 			}
+			
 			storePlayerEntry(entry);
 		}
 	}

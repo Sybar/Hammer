@@ -801,7 +801,7 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="true" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="5" />
 			<set stat="mAtk" val="5" />
 			<set stat="critRate" val="12" />
@@ -809,7 +809,7 @@
 			<set stat="pAtkSpd" val="433" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="1472" type="Weapon" name="Dreadbane">
 		<set name="icon" val="icon.weapon_monster_i00" />
@@ -829,7 +829,7 @@
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="true" />
 		<set name="item_skill" val="3599-1" /> <!-- Polearm Multi-attack -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="50" />
 			<set stat="mAtk" val="26" />
 			<set stat="critRate" val="8" />
@@ -837,7 +837,7 @@
 			<set stat="pAtkSpd" val="325" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="1473" type="EtcItem" name="Kasha Wolf Fang">
 		<!-- A fang that is obtained by killing a kasha wolf. Collect fifty and take these to Praetorian Rukain. -->

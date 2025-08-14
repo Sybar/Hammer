@@ -114,6 +114,7 @@ public class GMViewCharacterInfo extends ServerPacket
 		buffer.writeInt(_player.getInventory().getPaperdollItemId(Inventory.PAPERDOLL_RHAND));
 		buffer.writeInt(_player.getInventory().getPaperdollItemId(Inventory.PAPERDOLL_HAIR));
 		buffer.writeInt(_player.getInventory().getPaperdollItemId(Inventory.PAPERDOLL_FACE));
+		
 		// c6 new h's
 		buffer.writeShort(0);
 		buffer.writeShort(0);
@@ -149,6 +150,7 @@ public class GMViewCharacterInfo extends ServerPacket
 		buffer.writeShort(0);
 		buffer.writeShort(0);
 		buffer.writeShort(0);
+		
 		// end of c6 new h's
 		buffer.writeInt((int) _player.getPAtk(null));
 		buffer.writeInt((int) _player.getPAtkSpd());

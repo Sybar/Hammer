@@ -32,6 +32,7 @@ public class Q00660_AidingTheFloranVillage extends Quest
 	// NPCs
 	private static final int MARIA = 30608;
 	private static final int ALEX = 30291;
+	
 	// Monsters
 	private static final int PLAIN_WATCHMAN = 21102;
 	private static final int ROCK_GOLEM = 21103;
@@ -40,10 +41,12 @@ public class Q00660_AidingTheFloranVillage extends Quest
 	private static final int CURSED_SEER = 21106;
 	private static final int LIZARDMEN_COMMANDER = 21107;
 	private static final int LIZARDMEN_SHAMAN = 20781;
+	
 	// Items
 	private static final int WATCHING_EYES = 8074;
 	private static final int GOLEM_SHARD = 8075;
 	private static final int LIZARDMEN_SCALE = 8076;
+	
 	// Rewards
 	private static final int ADENA = 57;
 	private static final int ENCHANT_WEAPON_D = 955;
@@ -185,6 +188,7 @@ public class Q00660_AidingTheFloranVillage extends Quest
 					takeItems(player, GOLEM_SHARD, -1);
 					rewardItems(player, ADENA, (count * 100) + ((count >= 45) ? 9000 : 0));
 				}
+				
 				st.exitQuest(true, true);
 				break;
 			}
@@ -254,6 +258,7 @@ public class Q00660_AidingTheFloranVillage extends Quest
 		{
 			return;
 		}
+		
 		final Player partyMember = qs.getPlayer();
 		
 		final QuestState st = getQuestState(partyMember, false);
@@ -333,6 +338,7 @@ public class Q00660_AidingTheFloranVillage extends Quest
 				takeItems(player, GOLEM_SHARD, currentNumber);
 			}
 		}
+		
 		return true;
 	}
 }

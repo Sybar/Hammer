@@ -44,6 +44,7 @@ public class Q00462_StuffedAncientHeroes extends Quest
 	// NPCs
 	private static final int LYDIA = 32892;
 	private static final int ANCIENT_HEROES = 33347;
+	
 	// Boss
 	private static final int[] BOSES =
 	{
@@ -58,8 +59,10 @@ public class Q00462_StuffedAncientHeroes extends Quest
 		25769, // Sotiris
 		25770 // Lazaros
 	};
+	
 	// Item
 	private static final int CERTIFICATE_OF_HERO = 30386;
+	
 	// Misc
 	private static final int MIN_LEVEL = 95;
 	private static final String KILL_COUNT_VAR = "KillCount";
@@ -83,6 +86,7 @@ public class Q00462_StuffedAncientHeroes extends Quest
 		{
 			return getNoQuestMsg(player);
 		}
+		
 		switch (event)
 		{
 			case "32892-02.htm":
@@ -112,10 +116,12 @@ public class Q00462_StuffedAncientHeroes extends Quest
 					giveItems(player, CERTIFICATE_OF_HERO, killCount);
 					qs.exitQuest(QuestType.DAILY, true);
 				}
+				
 				htmltext = event;
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -135,6 +141,7 @@ public class Q00462_StuffedAncientHeroes extends Quest
 						htmltext = "32892-00a.html";
 						break;
 					}
+					
 					qs.setState(State.CREATED);
 					// fallthrough
 				}
@@ -158,6 +165,7 @@ public class Q00462_StuffedAncientHeroes extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -199,6 +207,7 @@ public class Q00462_StuffedAncientHeroes extends Quest
 				return holder;
 			}
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

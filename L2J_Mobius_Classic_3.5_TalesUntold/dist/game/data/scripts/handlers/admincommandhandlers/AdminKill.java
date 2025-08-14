@@ -46,7 +46,7 @@ public class AdminKill implements IAdminCommandHandler
 	};
 	
 	@Override
-	public boolean useAdminCommand(String command, Player activeChar)
+	public boolean onCommand(String command, Player activeChar)
 	{
 		if (command.startsWith("admin_kill"))
 		{
@@ -82,6 +82,7 @@ public class AdminKill implements IAdminCommandHandler
 							return false;
 						}
 					}
+					
 					kill(activeChar, plyr);
 				}
 				else
@@ -95,6 +96,7 @@ public class AdminKill implements IAdminCommandHandler
 							{
 								return;
 							}
+							
 							kill(activeChar, wo);
 						});
 						
@@ -121,6 +123,7 @@ public class AdminKill implements IAdminCommandHandler
 				}
 			}
 		}
+		
 		return true;
 	}
 	
@@ -132,6 +135,7 @@ public class AdminKill implements IAdminCommandHandler
 			{
 				target.stopAllEffects(); // e.g. invincibility effect
 			}
+			
 			target.reduceCurrentHp(target.getMaxHp() + target.getMaxCp() + 1, activeChar, null);
 		}
 		else if (Config.CHAMPION_ENABLE && target.isChampion())
@@ -156,7 +160,7 @@ public class AdminKill implements IAdminCommandHandler
 	}
 	
 	@Override
-	public String[] getAdminCommandList()
+	public String[] getCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}

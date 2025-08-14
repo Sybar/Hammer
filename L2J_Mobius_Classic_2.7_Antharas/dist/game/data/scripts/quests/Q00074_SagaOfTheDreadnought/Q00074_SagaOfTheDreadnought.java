@@ -49,6 +49,7 @@ public class Q00074_SagaOfTheDreadnought extends Quest
 	private static final int TABLET_OF_VISION_3 = 31652;
 	private static final int TABLET_OF_VISION_4 = 31654;
 	private static final int KAIN_VAN_HALTER = 31595;
+	
 	// Monsters
 	private static final int ICE_MONSTER = 27316;
 	private static final int SPIRIT_OF_A_DROWNED = 27317;
@@ -64,6 +65,7 @@ public class Q00074_SagaOfTheDreadnought extends Quest
 	private static final int WHITE_WING_COMMANDER = 27290;
 	private static final int HALISHA_ARCHON = 27219;
 	private static final int BELETH_SHADOW = 27282;
+	
 	// Items
 	private static final int ICE_CRYSTAL_FRAGMENT = 49808;
 	private static final int HALISHA_BADGE = 7489;
@@ -72,8 +74,10 @@ public class Q00074_SagaOfTheDreadnought extends Quest
 	private static final int RESONANCE_AMULET_3 = 7334;
 	private static final int RESONANCE_AMULET_4 = 7365;
 	private static final int DEAD_SOUL_FISH_SOUP = 7538;
+	
 	// Reward
 	private static final int BOOK_GOLD_LION = 90038;
+	
 	// Misc
 	private static final String KILL_COUNT_VAR = "KillCount";
 	
@@ -96,6 +100,7 @@ public class Q00074_SagaOfTheDreadnought extends Quest
 		{
 			return null;
 		}
+		
 		String htmltext = event;
 		switch (event)
 		{
@@ -243,6 +248,7 @@ public class Q00074_SagaOfTheDreadnought extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -433,6 +439,7 @@ public class Q00074_SagaOfTheDreadnought extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -503,6 +510,7 @@ public class Q00074_SagaOfTheDreadnought extends Quest
 						{
 							qs.set(KILL_COUNT_VAR, count + 1);
 						}
+						
 						if (count >= 20)
 						{
 							qs.setCond(8, true);
@@ -529,8 +537,10 @@ public class Q00074_SagaOfTheDreadnought extends Quest
 			{
 				holder.add(new NpcLogListHolder(GUARDIAN_OF_FOBIDDEN_KNOWLEDGE, false, guardiancount));
 			}
+			
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

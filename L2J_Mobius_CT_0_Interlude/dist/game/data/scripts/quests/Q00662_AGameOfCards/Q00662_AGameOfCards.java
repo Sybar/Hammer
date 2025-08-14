@@ -36,8 +36,10 @@ public class Q00662_AGameOfCards extends Quest
 {
 	// NPC
 	private static final int KLUMP = 30845;
+	
 	// Quest Item
 	private static final int RED_GEM = 8765;
+	
 	// Reward Items
 	private static final int EW_S = 959;
 	private static final int EW_A = 729;
@@ -46,6 +48,7 @@ public class Q00662_AGameOfCards extends Quest
 	private static final int EW_D = 955;
 	private static final int EA_D = 956;
 	private static final int ZIGGO_GEMSTONE = 8868;
+	
 	// All cards
 	private static final Map<Integer, String> CARDS = new HashMap<>();
 	static
@@ -66,6 +69,7 @@ public class Q00662_AGameOfCards extends Quest
 		CARDS.put(13, "I");
 		CARDS.put(14, "N");
 	}
+	
 	// Drop chances
 	private static final Map<Integer, Integer> CHANCES = new HashMap<>();
 	static
@@ -325,6 +329,7 @@ public class Q00662_AGameOfCards extends Quest
 						break;
 					}
 				}
+				
 				if ((i9 % 32) < 31)
 				{
 					st.set("stateEx", String.valueOf((i9 * 100) + i5));
@@ -494,6 +499,7 @@ public class Q00662_AGameOfCards extends Quest
 					st.set("state", "0");
 					st.set("stateEx", "0");
 				}
+				
 				htmltext = htmltext.replace("%FontColor1%", ((i9 % 2) < 1) ? "ffff00" : "ff6f6f").replace("%Cell1%", ((i9 % 2) < 1) ? CARDS.get(0) : CARDS.get(i1));
 				htmltext = htmltext.replace("%FontColor2%", ((i9 % 4) < 2) ? "ffff00" : "ff6f6f").replace("%Cell2%", ((i9 % 4) < 2) ? CARDS.get(0) : CARDS.get(i2));
 				htmltext = htmltext.replace("%FontColor3%", ((i9 % 8) < 4) ? "ffff00" : "ff6f6f").replace("%Cell3%", ((i9 % 8) < 4) ? CARDS.get(0) : CARDS.get(i3));

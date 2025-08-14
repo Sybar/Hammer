@@ -76,6 +76,7 @@ public class ExPledgeContributionInfo extends ServerPacket
 		{
 			buffer.writeInt(_player.getVariables().getInt(PlayerVariables.CLAN_CONTRIBUTION_PREVIOUS, 0));
 		}
+		
 		buffer.writeInt(_player.getClanContributionTotal());
 		if (_previousClaims < 4)
 		{

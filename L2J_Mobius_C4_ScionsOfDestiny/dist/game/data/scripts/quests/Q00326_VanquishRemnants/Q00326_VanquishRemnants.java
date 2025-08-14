@@ -33,6 +33,7 @@ public class Q00326_VanquishRemnants extends Quest
 	private static final int RED_CROSS_BADGE = 1359;
 	private static final int BLUE_CROSS_BADGE = 1360;
 	private static final int BLACK_CROSS_BADGE = 1361;
+	
 	// Reward
 	private static final int BLACK_LION_MARK = 1369;
 	

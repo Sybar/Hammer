@@ -76,7 +76,6 @@ import org.l2jmobius.gameserver.model.events.holders.actor.npc.OnNpcSkillFinishe
 import org.l2jmobius.gameserver.model.events.holders.actor.npc.OnNpcSpawn;
 import org.l2jmobius.gameserver.model.events.holders.actor.npc.OnNpcTeleport;
 import org.l2jmobius.gameserver.model.events.returns.TerminateReturn;
-import org.l2jmobius.gameserver.model.events.timers.TimerHolder;
 import org.l2jmobius.gameserver.model.item.ItemTemplate;
 import org.l2jmobius.gameserver.model.item.Weapon;
 import org.l2jmobius.gameserver.model.item.enums.ItemProcessType;
@@ -85,6 +84,7 @@ import org.l2jmobius.gameserver.model.item.holders.ItemHolder;
 import org.l2jmobius.gameserver.model.item.instance.Item;
 import org.l2jmobius.gameserver.model.olympiad.Olympiad;
 import org.l2jmobius.gameserver.model.quest.QuestTimer;
+import org.l2jmobius.gameserver.model.quest.timers.TimerHolder;
 import org.l2jmobius.gameserver.model.sevensigns.SevenSigns;
 import org.l2jmobius.gameserver.model.sevensigns.SevenSignsFestival;
 import org.l2jmobius.gameserver.model.siege.Castle;
@@ -499,12 +499,14 @@ public class Npc extends Creature
 			player.sendPacket(ActionFailed.STATIC_PACKET);
 			return false;
 		}
+		
 		if (player.isLockedTarget() && (player.getLockedTarget() != this))
 		{
 			player.sendPacket(SystemMessageId.FAILED_TO_CHANGE_ATTACK_TARGET);
 			player.sendPacket(ActionFailed.STATIC_PACKET);
 			return false;
 		}
+		
 		return true;
 	}
 	
@@ -534,6 +536,7 @@ public class Npc extends Creature
 		{
 			return false;
 		}
+		
 		return true;
 	}
 	
@@ -582,6 +585,7 @@ public class Npc extends Creature
 			final int fortId = getFort() != null ? getFort().getResidenceId() : -1;
 			return (player.getClan().getCastleId() == castleId) || (player.getClan().getFortId() == fortId);
 		}
+		
 		return false;
 	}
 	
@@ -602,6 +606,7 @@ public class Npc extends Creature
 		{
 			return null;
 		}
+		
 		return CastleManager.getInstance().getCastles().get(index);
 	}
 	
@@ -645,6 +650,7 @@ public class Npc extends Creature
 		{
 			return null;
 		}
+		
 		return FortManager.getInstance().getForts().get(index);
 	}
 	
@@ -654,6 +660,7 @@ public class Npc extends Creature
 		{
 			getCastle();
 		}
+		
 		return _isInTown;
 	}
 	
@@ -687,7 +694,7 @@ public class Npc extends Creature
 				final IBypassHandler handler = BypassHandler.getInstance().getHandler(command);
 				if (handler != null)
 				{
-					handler.useBypass(command, player, this);
+					handler.onCommand(command, player, this);
 				}
 				else
 				{
@@ -841,6 +848,7 @@ public class Npc extends Creature
 			player.sendPacket(ActionFailed.STATIC_PACKET);
 			return true;
 		}
+		
 		return false;
 	}
 	
@@ -863,11 +871,13 @@ public class Npc extends Creature
 			player.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
+		
 		if (player.isCursedWeaponEquipped() && (!(player.getTarget() instanceof ClanHallManager) || !(player.getTarget() instanceof Doorman)))
 		{
 			player.setTarget(player);
 			return;
 		}
+		
 		if (player.getKarma() > 0)
 		{
 			if (!Config.ALT_GAME_KARMA_PLAYER_CAN_SHOP && (this instanceof Merchant))
@@ -972,6 +982,7 @@ public class Npc extends Creature
 						}
 					}
 				}
+				
 				filename += "mammmerch_1.htm";
 				break;
 			}
@@ -1008,6 +1019,7 @@ public class Npc extends Creature
 						}
 					}
 				}
+				
 				filename += "mammblack_1.htm";
 				break;
 			}
@@ -1091,10 +1103,12 @@ public class Npc extends Creature
 					}
 					break;
 				}
+				
 				if (((npcId >= 31093) && (npcId <= 31094)) || ((npcId >= 31172) && (npcId <= 31201)) || ((npcId >= 31239) && (npcId <= 31254)))
 				{
 					return;
 				}
+				
 				// Get the text of the selected HTML file in function of the npcId and of the page number
 				filename = (getHtmlPath(npcId, value));
 				break;
@@ -1209,6 +1223,7 @@ public class Npc extends Creature
 					player.setPkKills(player.getPkKills() + 1);
 					player.broadcastUserInfo();
 					player.checkItemRestriction();
+					
 					// pk item rewards
 					if (Config.REWARD_PK_ITEM)
 					{
@@ -1218,6 +1233,7 @@ public class Npc extends Creature
 							player.addItem(ItemProcessType.REWARD, Config.REWARD_PK_ITEM_ID, Config.REWARD_PK_ITEM_AMOUNT, this, Config.REWARD_PK_ITEM_MESSAGE);
 						}
 					}
+					
 					// announce pk
 					if (Config.ANNOUNCE_PK_PVP && !player.isGM())
 					{
@@ -1239,6 +1255,7 @@ public class Npc extends Creature
 			{
 				player.setPvpKills(player.getPvpKills() + 1);
 				player.broadcastUserInfo();
+				
 				// pvp item rewards
 				if (Config.REWARD_PVP_ITEM)
 				{
@@ -1248,6 +1265,7 @@ public class Npc extends Creature
 						player.addItem(ItemProcessType.REWARD, Config.REWARD_PVP_ITEM_ID, Config.REWARD_PVP_ITEM_AMOUNT, this, Config.REWARD_PVP_ITEM_MESSAGE);
 					}
 				}
+				
 				// announce pvp
 				if (Config.ANNOUNCE_PK_PVP && !player.isGM())
 				{
@@ -1338,6 +1356,7 @@ public class Npc extends Creature
 		{
 			return;
 		}
+		
 		setDecayed(true);
 		
 		// Remove the Npc from the world when the decay task is launched
@@ -1551,6 +1570,7 @@ public class Npc extends Creature
 		else if (this instanceof Trainer)
 		{
 			html = HtmCache.getInstance().getHtm(player, "data/html/trainer/" + npcId + "-noteach.htm");
+			
 			// Trainer Healer?
 			if (html == null)
 			{
@@ -1569,6 +1589,7 @@ public class Npc extends Creature
 			noTeachMsg.setHtml(html);
 			noTeachMsg.replace("%objectId%", String.valueOf(getObjectId()));
 		}
+		
 		player.sendPacket(noTeachMsg);
 	}
 	
@@ -1688,12 +1709,13 @@ public class Npc extends Creature
 		{
 			if (physical)
 			{
-				Broadcast.toSelfAndKnownPlayersInRadius(this, new MagicSkillUse(this, this, 2154, 1, 0, 0), 600);
+				broadcastPacket(new MagicSkillUse(this, this, 2154, 1, 0, 0));
 				setChargedShot(ShotType.SOULSHOTS, true);
 			}
+			
 			if (magic)
 			{
-				Broadcast.toSelfAndKnownPlayersInRadius(this, new MagicSkillUse(this, this, 2159, 1, 0, 0), 600);
+				broadcastPacket(new MagicSkillUse(this, this, 2159, 1, 0, 0));
 				setChargedShot(ShotType.SPIRITSHOTS, true);
 			}
 		}
@@ -1707,9 +1729,10 @@ public class Npc extends Creature
 				}
 				
 				_soulshotamount--;
-				Broadcast.toSelfAndKnownPlayersInRadius(this, new MagicSkillUse(this, this, 2154, 1, 0, 0), 600);
+				broadcastPacket(new MagicSkillUse(this, this, 2154, 1, 0, 0));
 				setChargedShot(ShotType.SOULSHOTS, true);
 			}
+			
 			if (magic)
 			{
 				if ((_spiritshotamount == 0) || (Rnd.get(100) > getSpiritShotChance()))
@@ -1718,7 +1741,7 @@ public class Npc extends Creature
 				}
 				
 				_spiritshotamount--;
-				Broadcast.toSelfAndKnownPlayersInRadius(this, new MagicSkillUse(this, this, 2159, 1, 0, 0), 600);
+				broadcastPacket(new MagicSkillUse(this, this, 2159, 1, 0, 0));
 				setChargedShot(ShotType.SPIRITSHOTS, true);
 			}
 		}
@@ -1893,6 +1916,7 @@ public class Npc extends Creature
 			{
 				ItemsAutoDestroyTaskManager.getInstance().addItem(item);
 			}
+			
 			item.setProtected(false);
 			
 			// If stackable, end loop as entire count is included in 1 instance of item.
@@ -1901,6 +1925,7 @@ public class Npc extends Creature
 				break;
 			}
 		}
+		
 		return item;
 	}
 	
@@ -1932,6 +1957,7 @@ public class Npc extends Creature
 				return term.terminate();
 			}
 		}
+		
 		return super.isVisibleFor(player);
 	}
 	
@@ -2039,6 +2065,7 @@ public class Npc extends Creature
 		{
 			return _summonedNpcs.get(objectId);
 		}
+		
 		return null;
 	}
 	
@@ -2113,6 +2140,7 @@ public class Npc extends Creature
 			{
 				timer.cancelTask();
 			}
+			
 			_questTimers.clear();
 		}
 	}
@@ -2141,6 +2169,7 @@ public class Npc extends Creature
 			{
 				timer.cancelTask();
 			}
+			
 			_timerHolders.clear();
 		}
 	}

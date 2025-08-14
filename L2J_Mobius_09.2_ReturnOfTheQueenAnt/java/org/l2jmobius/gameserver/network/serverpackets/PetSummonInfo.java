@@ -74,23 +74,28 @@ public class PetSummonInfo extends ServerPacket
 			_curFed = sum.getLifeTimeRemaining();
 			_maxFed = sum.getLifeTime();
 		}
+		
 		if (summon.isBetrayed())
 		{
 			_statusMask |= 0x01; // Auto attackable status
 		}
+		
 		_statusMask |= 0x02; // can be chatted with
 		if (summon.isRunning())
 		{
 			_statusMask |= 0x04;
 		}
+		
 		if (AttackStanceTaskManager.getInstance().hasAttackStanceTask(summon))
 		{
 			_statusMask |= 0x08;
 		}
+		
 		if (summon.isDead())
 		{
 			_statusMask |= 0x10;
 		}
+		
 		if (summon.isMountable())
 		{
 			_statusMask |= 0x20;
@@ -135,6 +140,7 @@ public class PetSummonInfo extends ServerPacket
 		{
 			buffer.writeString(_summon.getTemplate().isUsingServerSideName() ? _summon.getName() : ""); // Summon name.
 		}
+		
 		buffer.writeInt(-1); // High Five NPCString ID
 		buffer.writeString(_summon.getTitle()); // owner name
 		buffer.writeByte(_summon.getPvpFlag()); // confirmed
@@ -156,6 +162,7 @@ public class PetSummonInfo extends ServerPacket
 		{
 			buffer.writeLong(_summon.getExpForThisLevel()); // 0% absolute value
 		}
+		
 		buffer.writeLong(_summon.getExpForNextLevel()); // 100% absoulte value
 		buffer.writeInt(_summon.isPet() ? _summon.getInventory().getTotalWeight() : 0); // weight
 		buffer.writeInt(_summon.getMaxLoad()); // max weight it can carry
@@ -186,6 +193,7 @@ public class PetSummonInfo extends ServerPacket
 		{
 			buffer.writeShort(ave.getClientId()); // Confirmed
 		}
+		
 		buffer.writeByte(_statusMask);
 	}
 }

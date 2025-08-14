@@ -36,8 +36,10 @@ public class Fellow extends AbstractNpcAI
 {
 	// NPC
 	private static final int FELLOW = 31713;
+	
 	// Location - Antharas Heart
 	private static final Location TELEPORT_LOC = new Location(154376, 121290, -3807);
+	
 	// Misc
 	private static final NpcStringId[] TEXT =
 	{
@@ -63,6 +65,7 @@ public class Fellow extends AbstractNpcAI
 				{
 					return "31713-01.html";
 				}
+				
 				for (Player member : player.getCommandChannel().getMembers())
 				{
 					if ((member != null) && (member.getLevel() > 70))
@@ -79,6 +82,7 @@ public class Fellow extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return null;
 	}
 	

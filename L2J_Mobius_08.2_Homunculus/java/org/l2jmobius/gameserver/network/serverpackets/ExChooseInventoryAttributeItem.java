@@ -51,7 +51,9 @@ public class ExChooseInventoryAttributeItem extends ServerPacket
 		{
 			throw new IllegalArgumentException("Undefined Atribute item: " + stone);
 		}
+		
 		_level = ElementalAttributeData.getInstance().getMaxElementLevel(_itemId);
+		
 		// Register only items that can be put an attribute stone/crystal
 		for (Item item : player.getInventory().getItems())
 		{

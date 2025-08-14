@@ -45,6 +45,7 @@ public class KeyPacket extends ServerPacket
 		{
 			buffer.writeByte(_key[i]); // key
 		}
+		
 		buffer.writeInt(Config.SERVER_ID); // server id
 		buffer.writeInt(1);
 	}

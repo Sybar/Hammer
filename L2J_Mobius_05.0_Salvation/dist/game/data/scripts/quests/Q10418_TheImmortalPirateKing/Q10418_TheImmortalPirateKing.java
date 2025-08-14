@@ -36,8 +36,10 @@ public class Q10418_TheImmortalPirateKing extends Quest
 {
 	// NPC
 	private static final int JERONIN = 30121;
+	
 	// Raidboss
 	private static final int ZAKEN = 29181;
+	
 	// Misc
 	private static final int MIN_LEVEL = 83;
 	private static final int MAX_LEVEL = 90;
@@ -60,6 +62,7 @@ public class Q10418_TheImmortalPirateKing extends Quest
 		{
 			return htmltext;
 		}
+		
 		switch (event)
 		{
 			case "30121-02.htm":
@@ -84,6 +87,7 @@ public class Q10418_TheImmortalPirateKing extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -110,6 +114,7 @@ public class Q10418_TheImmortalPirateKing extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

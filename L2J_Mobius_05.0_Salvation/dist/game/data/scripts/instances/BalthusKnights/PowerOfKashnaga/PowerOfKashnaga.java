@@ -36,6 +36,7 @@ public final class PowerOfKashnaga extends AbstractInstance
 {
 	// NPCs
 	private static final int DAGGER_MASTER = 34388;
+	
 	// Misc
 	private static final int TEMPLATE_ID = 274;
 	
@@ -71,6 +72,7 @@ public final class PowerOfKashnaga extends AbstractInstance
 				}
 			}
 		}
+		
 		return null;
 	}
 	
@@ -86,6 +88,7 @@ public final class PowerOfKashnaga extends AbstractInstance
 				enterInstance(player, npc, TEMPLATE_ID);
 			}
 		}
+		
 		return htmltext;
 	}
 	

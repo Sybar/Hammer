@@ -35,6 +35,7 @@ public class Q10309_DreamlandsMysteries extends Quest
 {
 	// NPC
 	private static final int DREAM_PRIESTESS = 34304;
+	
 	// Monsters
 	private static final int[] MONSTERS =
 	{
@@ -46,10 +47,12 @@ public class Q10309_DreamlandsMysteries extends Quest
 		18684,
 		18685,
 	};
+	
 	// Items
 	private static final ItemHolder BOOST_ATK_SCROLL = new ItemHolder(94269, 10);
 	private static final ItemHolder BOOST_DEF_SCROLL = new ItemHolder(94271, 10);
 	private static final ItemHolder BERSERKER_SCROLL = new ItemHolder(94777, 10);
+	
 	// Misc
 	private static final int MIN_LEVEL = 76;
 	
@@ -99,10 +102,12 @@ public class Q10309_DreamlandsMysteries extends Quest
 					giveItems(player, BERSERKER_SCROLL);
 					qs.exitQuest(false, true);
 				}
+				
 				htmltext = event;
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -130,6 +135,7 @@ public class Q10309_DreamlandsMysteries extends Quest
 		{
 			htmltext = getAlreadyCompletedMsg(player);
 		}
+		
 		return htmltext;
 	}
 	

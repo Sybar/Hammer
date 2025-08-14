@@ -48,6 +48,7 @@ public class HolyThing implements ITargetTypeHandler
 		{
 			creature.sendPacket(SystemMessageId.THAT_IS_AN_INCORRECT_TARGET);
 		}
+		
 		return null;
 	}
 }

@@ -43,14 +43,17 @@ public class Q10825_ForVictory extends Quest
 {
 	// NPC
 	private static final int KURTIZ = 34019;
+	
 	// Items
 	private static final int MARK_OF_VALOR = 46059;
 	private static final int MERLOT_SERTIFICATE = 46056;
 	private static final int MAMMON_CERTIFICATE = 45635;
 	private static final int GUSTAV_CERTIFICATE = 45636;
+	
 	// Rewards
 	private static final int KURTIZ_CERTIFICATE = 46057;
 	private static final int SPELLBOOK_SUMMON_BATTLE_POTION = 45927;
+	
 	// Misc
 	private static final int MIN_LEVEL = 100;
 	
@@ -102,6 +105,7 @@ public class Q10825_ForVictory extends Quest
 						{
 							htmltext = event;
 						}
+						
 						giveItems(player, KURTIZ_CERTIFICATE, 1);
 						giveItems(player, SPELLBOOK_SUMMON_BATTLE_POTION, 1);
 						qs.exitQuest(false, true);
@@ -114,6 +118,7 @@ public class Q10825_ForVictory extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -147,6 +152,7 @@ public class Q10825_ForVictory extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

@@ -68,6 +68,7 @@ public class ExPvpRankingMyInfo extends ServerPacket
 					buffer.writeInt(ss.getInt("deaths")); // deaths
 				}
 			}
+			
 			if (!found)
 			{
 				buffer.writeLong(0); // pvp points

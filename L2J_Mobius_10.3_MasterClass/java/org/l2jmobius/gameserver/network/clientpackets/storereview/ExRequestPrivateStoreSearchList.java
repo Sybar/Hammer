@@ -149,21 +149,25 @@ public class ExRequestPrivateStoreSearchList extends ClientPacket
 			// Equipment - All
 			return item.getItem().isEquipable();
 		}
+		
 		if ((_itemType == StoreItemType.EQUIPMENT) && (_itemSubtype == StoreSubItemType.WEAPON) && (_searchCollection == 0))
 		{
 			// Equipment - Weapon
 			return item.getItem().isEquipable() && item.getItem().isWeapon();
 		}
+		
 		if ((_itemType == StoreItemType.EQUIPMENT) && (_itemSubtype == StoreSubItemType.ARMOR) && (_searchCollection == 0))
 		{
 			// Equipment - Armor
 			return item.getItem().isEquipable() && isEquipmentArmor(item.getItem());
 		}
+		
 		if ((_itemType == StoreItemType.EQUIPMENT) && (_itemSubtype == StoreSubItemType.ACCESSORY) && (_searchCollection == 0))
 		{
 			// Equipment - Accessory
 			return item.getItem().isEquipable() && isAccessory(item.getItem());
 		}
+		
 		if ((_itemType == StoreItemType.EQUIPMENT) && (_itemSubtype == StoreSubItemType.EQUIPMENT_MISC) && (_searchCollection == 0))
 		{
 			// Equipment - Misc
@@ -178,31 +182,37 @@ public class ExRequestPrivateStoreSearchList extends ClientPacket
 			// Exping / Enhancement - All
 			return isEnhancementItem(item.getItem());
 		}
+		
 		if ((_itemType == StoreItemType.ENHANCEMENT_OR_EXPING) && (_itemSubtype == StoreSubItemType.ENCHANT_SCROLL) && (_searchCollection == 0))
 		{
 			// Exping / Enhancement - Enchant Scroll
 			return isEnchantScroll(item.getItem());
 		}
+		
 		if ((_itemType == StoreItemType.ENHANCEMENT_OR_EXPING) && (_itemSubtype == StoreSubItemType.CRYSTAL) && (_searchCollection == 0))
 		{
 			// Exping / Enhancement - Crystal
 			return isCrystal(item.getItem());
 		}
+		
 		if ((_itemType == StoreItemType.ENHANCEMENT_OR_EXPING) && (_itemSubtype == StoreSubItemType.LIFE_STONE) && (_searchCollection == 0))
 		{
 			// Exping / Enhancement - Life Stone
 			return isLifeStone(item.getItem());
 		}
+		
 		if ((_itemType == StoreItemType.ENHANCEMENT_OR_EXPING) && (_itemSubtype == StoreSubItemType.DYES) && (_searchCollection == 0))
 		{
 			// Exping / Enhancement - Dyes
 			return isDye(item.getItem());
 		}
+		
 		if ((_itemType == StoreItemType.ENHANCEMENT_OR_EXPING) && (_itemSubtype == StoreSubItemType.SPELLBOOK) && (_searchCollection == 0))
 		{
 			// Exping / Enhancement - SpellBooks
 			return isSpellBook(item.getItem());
 		}
+		
 		if ((_itemType == StoreItemType.ENHANCEMENT_OR_EXPING) && (_itemSubtype == StoreSubItemType.ENHANCEMENT_MISC) && (_searchCollection == 0))
 		{
 			// Exping / Enhancement - Misc
@@ -217,21 +227,25 @@ public class ExRequestPrivateStoreSearchList extends ClientPacket
 			// Groceries - All
 			return item.getItem().isPotion() || item.getItem().isScroll() || isTicket(item.getItem()) || isPackOrCraft(item.getItem()) || isGroceryMisc(item.getItem());
 		}
+		
 		if ((_itemType == StoreItemType.GROCERY_OR_COLLECTION_MISC) && (_itemSubtype == StoreSubItemType.POTION_SCROLL) && (_searchCollection == 0))
 		{
 			// Groceries - Potion/Scroll
 			return item.getItem().isPotion() || item.getItem().isScroll();
 		}
+		
 		if ((_itemType == StoreItemType.GROCERY_OR_COLLECTION_MISC) && (_itemSubtype == StoreSubItemType.TICKET) && (_searchCollection == 0))
 		{
 			// Groceries - Ticket
 			return isTicket(item.getItem());
 		}
+		
 		if ((_itemType == StoreItemType.GROCERY_OR_COLLECTION_MISC) && (_itemSubtype == StoreSubItemType.PACK_CRAFT) && (_searchCollection == 0))
 		{
 			// Groceries - Pack/Craft
 			return isPackOrCraft(item.getItem());
 		}
+		
 		if ((_itemType == StoreItemType.GROCERY_OR_COLLECTION_MISC) && (_itemSubtype == StoreSubItemType.GROCERY_MISC) && (_searchCollection == 0))
 		{
 			// Groceries - Misc
@@ -246,16 +260,19 @@ public class ExRequestPrivateStoreSearchList extends ClientPacket
 			// Collections - All
 			return isCollection(item.getItem());
 		}
+		
 		if ((_itemType == StoreItemType.EQUIPMENT) && (_searchCollection == 1))
 		{
 			// Collections - Equipement
 			return isCollectionEquipement(item.getItem());
 		}
+		
 		if ((_itemType == StoreItemType.ENHANCEMENT_OR_EXPING) && (_searchCollection == 1))
 		{
 			// Collections - Enchanted Item
 			return isCollectionEnchanted(item.getItem());
 		}
+		
 		if ((_itemType == StoreItemType.GROCERY_OR_COLLECTION_MISC) && (_searchCollection == 1))
 		{
 			// Collections - Misc
@@ -356,6 +373,7 @@ public class ExRequestPrivateStoreSearchList extends ClientPacket
 				}
 			}
 		}
+		
 		return false;
 	}
 	
@@ -396,6 +414,7 @@ public class ExRequestPrivateStoreSearchList extends ClientPacket
 					return storeType;
 				}
 			}
+			
 			return null;
 		}
 		
@@ -428,6 +447,7 @@ public class ExRequestPrivateStoreSearchList extends ClientPacket
 					return storeItemType;
 				}
 			}
+			
 			return null;
 		}
 		
@@ -471,6 +491,7 @@ public class ExRequestPrivateStoreSearchList extends ClientPacket
 					return storeSubItemType;
 				}
 			}
+			
 			return null;
 		}
 		

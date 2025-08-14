@@ -32,8 +32,10 @@ public class Q10416_InSearchOfTheEyeOfArgos extends Quest
 	// NPCs
 	private static final int JANITT = 33851;
 	private static final int EYE_OF_ARGOS = 31683;
+	
 	// Items
 	private static final int EAA = 730; // Scroll: Enchant Armor (A-grade)
+	
 	// Misc
 	private static final int MIN_LEVEL = 70;
 	private static final int MAX_LEVEL = 75;
@@ -82,11 +84,13 @@ public class Q10416_InSearchOfTheEyeOfArgos extends Quest
 					{
 						addExpAndSp(player, 1_088_640, 261);
 					}
+					
 					htmltext = event;
 				}
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -122,6 +126,7 @@ public class Q10416_InSearchOfTheEyeOfArgos extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

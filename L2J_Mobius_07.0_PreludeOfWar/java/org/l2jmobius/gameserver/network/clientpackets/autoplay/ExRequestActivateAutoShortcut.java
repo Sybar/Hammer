@@ -27,9 +27,9 @@ import org.l2jmobius.gameserver.handler.PlayerActionHandler;
 import org.l2jmobius.gameserver.model.ActionDataHolder;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.Summon;
-import org.l2jmobius.gameserver.model.actor.enums.player.Shortcut;
 import org.l2jmobius.gameserver.model.actor.enums.player.ShortcutType;
-import org.l2jmobius.gameserver.model.actor.enums.player.Shortcuts;
+import org.l2jmobius.gameserver.model.actor.holders.player.Shortcut;
+import org.l2jmobius.gameserver.model.actor.holders.player.Shortcuts;
 import org.l2jmobius.gameserver.model.item.instance.Item;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.network.clientpackets.ClientPacket;
@@ -136,6 +136,7 @@ public class ExRequestActivateAutoShortcut extends ClientPacket
 						}
 					}
 				}
+				
 				if ((skill == null) && player.hasPet())
 				{
 					skill = player.getPet().getKnownSkill(skillId);
@@ -162,10 +163,11 @@ public class ExRequestActivateAutoShortcut extends ClientPacket
 					AutoUseTaskManager.getInstance().removeAutoPotionItem(player);
 				}
 			}
+			
 			// auto skill
 			if (skill != null)
 			{
-				if (skill.isBad())
+				if (skill.hasNegativeEffect())
 				{
 					AutoUseTaskManager.getInstance().removeAutoSkill(player, skill.getId());
 				}
@@ -201,10 +203,11 @@ public class ExRequestActivateAutoShortcut extends ClientPacket
 					return;
 				}
 			}
+			
 			// auto skill
 			if (Config.ENABLE_AUTO_SKILL && (skill != null))
 			{
-				if (skill.isBad())
+				if (skill.hasNegativeEffect())
 				{
 					AutoUseTaskManager.getInstance().addAutoSkill(player, skill.getId());
 				}
@@ -214,6 +217,7 @@ public class ExRequestActivateAutoShortcut extends ClientPacket
 				}
 				return;
 			}
+			
 			// action
 			final ActionDataHolder actionHolder = ActionData.getInstance().getActionData(shortcut.getId());
 			if (actionHolder != null)

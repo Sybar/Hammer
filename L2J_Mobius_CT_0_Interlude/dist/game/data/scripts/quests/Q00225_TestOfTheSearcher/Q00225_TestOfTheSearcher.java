@@ -40,6 +40,7 @@ public class Q00225_TestOfTheSearcher extends Quest
 	private static final int LEIRYNN = 30728;
 	private static final int BORYS = 30729;
 	private static final int JAX = 30730;
+	
 	// Monsters
 	private static final int HANGMAN_TREE = 20144;
 	private static final int ROAD_SCAVENGER = 20551;
@@ -47,6 +48,7 @@ public class Q00225_TestOfTheSearcher extends Quest
 	private static final int DELU_LIZARDMAN_SHAMAN = 20781;
 	private static final int DELU_CHIEF_KALKIS = 27093;
 	private static final int NEER_BODYGUARD = 27092;
+	
 	// Items
 	private static final int LUTHER_LETTER = 2784;
 	private static final int ALEX_WARRANT = 2785;
@@ -73,9 +75,11 @@ public class Q00225_TestOfTheSearcher extends Quest
 	private static final int RUSTED_KEY = 2806;
 	private static final int GOLD_BAR = 2807;
 	private static final int ALEX_RECOMMEND = 2808;
+	
 	// Rewards
 	private static final int MARK_OF_SEARCHER = 2809;
 	private static final int DIMENSIONAL_DIAMOND = 7562;
+	
 	// Misc
 	private static Npc _strongWoodenChest; // Used to avoid to spawn multiple instances.
 	

@@ -38,7 +38,7 @@ public class Freight implements IBypassHandler
 	};
 	
 	@Override
-	public boolean useBypass(String command, Player player, Creature target)
+	public boolean onCommand(String command, Player player, Creature target)
 	{
 		if (!target.isNpc())
 		{
@@ -60,6 +60,7 @@ public class Freight implements IBypassHandler
 							player.getActiveWarehouse().destroyItem(ItemProcessType.DESTROY, i, player, null);
 						}
 					}
+					
 					player.sendPacket(new WareHouseWithdrawalList(1, player, WareHouseWithdrawalList.FREIGHT));
 					player.sendPacket(new WareHouseWithdrawalList(2, player, WareHouseWithdrawalList.FREIGHT));
 				}
@@ -80,11 +81,12 @@ public class Freight implements IBypassHandler
 				player.sendPacket(new PackageToList(player.getAccountChars()));
 			}
 		}
+		
 		return false;
 	}
 	
 	@Override
-	public String[] getBypassList()
+	public String[] getCommandList()
 	{
 		return COMMANDS;
 	}

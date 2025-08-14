@@ -46,11 +46,13 @@ public class Q00833_DevilsTreasureTauti extends Quest
 	// NPCs
 	private static final int DETON = 34170;
 	private static final int SETTLEN = 34180;
+	
 	// Monsters
 	private static final int FLAME_SCORPION = 23682;
 	private static final int FLAME_GOLEM = 23680;
 	private static final int FLAME_SCARAB = 23709;
 	private static final int SEAL_TOMBSTONE = 19607;
+	
 	// Items
 	private static final int FRENZED_TAUTIS_FRAGMENT = 47884;
 	private static final int INSANE_KELBIMS_FRAGMENT = 47885;
@@ -94,12 +96,14 @@ public class Q00833_DevilsTreasureTauti extends Quest
 				{
 					giveItems(player, SOE_MISTYC_TAVERN, 1);
 				}
+				
 				addExpAndSp(player, 636254, 573);
 				qs.exitQuest(QuestType.REPEATABLE, true);
 				htmltext = event;
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -116,6 +120,7 @@ public class Q00833_DevilsTreasureTauti extends Quest
 				htmltext = (qs.isCond(8)) ? "34180-01.html" : "34180-03.html";
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -168,6 +173,7 @@ public class Q00833_DevilsTreasureTauti extends Quest
 					{
 						qs.setCond(2, true);
 					}
+					
 					sendNpcLogList(killer);
 				}
 				break;
@@ -195,6 +201,7 @@ public class Q00833_DevilsTreasureTauti extends Quest
 					{
 						qs.setCond(5, true);
 					}
+					
 					sendNpcLogList(killer);
 				}
 				break;
@@ -221,6 +228,7 @@ public class Q00833_DevilsTreasureTauti extends Quest
 			holder.add(new NpcLogListHolder(FLAME_SCARAB, false, qs.getInt("killed_" + FLAME_SCARAB)));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

@@ -105,6 +105,7 @@ public class RequestExPledgeDonationRequest extends ClientPacket
 				break;
 			}
 		}
+		
 		player.getVariables().set(PlayerVariables.CLAN_DONATION_POINTS, Math.max(player.getClanDonationPoints() - 1, 0));
 		criticalSuccess(player, clan, _type);
 		player.sendItemList();

@@ -95,6 +95,7 @@ public class Hp extends AbstractEffect
 			{
 				sm = new SystemMessage(SystemMessageId.YOU_VE_RECOVERED_S1_HP);
 			}
+			
 			sm.addInt((int) amount);
 			effected.sendPacket(sm);
 		}

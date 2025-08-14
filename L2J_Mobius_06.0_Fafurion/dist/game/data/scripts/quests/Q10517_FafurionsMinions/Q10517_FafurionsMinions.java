@@ -50,6 +50,7 @@ public final class Q10517_FafurionsMinions extends Quest
 {
 	// NPCs
 	private static final int LUPICIA = 34489;
+	
 	// MOBs
 	private static final int[] FF_MINIONS =
 	{
@@ -66,9 +67,11 @@ public final class Q10517_FafurionsMinions extends Quest
 		24328, // Temple Guardian Priest
 		24329, // Starving Water Dragon
 	};
+	
 	// Item
 	private static final int MINIONS_SYMBOL = 80323;
 	private static final int SUPERIOR_CODEX_CHAPTER_1 = 46150;
+	
 	// Misc
 	private static final int MIN_LEVEL = 110;
 	private static final int REQUIRED_DROP_COUNT = 10;
@@ -129,6 +132,7 @@ public final class Q10517_FafurionsMinions extends Quest
 					htmltext = "rupicia_q10517_06.htm";
 					break;
 				}
+				
 				htmltext = "rupicia_q10517_07.htm";
 				break;
 			}
@@ -138,6 +142,7 @@ public final class Q10517_FafurionsMinions extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -180,6 +185,7 @@ public final class Q10517_FafurionsMinions extends Quest
 						}
 						break;
 					}
+					
 					getNoQuestLevelRewardMsg(player);
 					break;
 				}
@@ -235,6 +241,7 @@ public final class Q10517_FafurionsMinions extends Quest
 			holder.add(new NpcLogListHolder(80323, false, (int) getQuestItemsCount(player, MINIONS_SYMBOL))); // Minion's Symbol
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 	

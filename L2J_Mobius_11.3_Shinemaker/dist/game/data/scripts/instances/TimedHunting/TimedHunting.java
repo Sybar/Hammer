@@ -44,18 +44,21 @@ public class TimedHunting extends AbstractInstance
 	private static final int RESEARCHERS_TELEPORTER_110 = 34618; // Isle of Prayer
 	private static final int RESEARCHERS_TELEPORTER_115 = 34624; // Alligator Island
 	private static final int RESEARCHERS_TELEPORTER_120 = 34682; // Frost Island
+	
 	// Jamoa's Camp
 	private static final int JAMOA = 34635;
 	private static final int EXPEDITION_TELEPORTER_105 = 34526; // Primeval Isle
 	private static final int EXPEDITION_TELEPORTER_110 = 34626; // Swamp of Screams
 	private static final int EXPEDITION_TELEPORTER_115 = 34628; // Blazing Swamp
 	private static final int EXPEDITION_TELEPORTER_120 = 34684; // Wasteland
+	
 	// Pantheon's Museum
 	private static final int PANTHEON = 34636;
 	private static final int OVERSEER_TELEPORTER_105 = 34524; // Golden Altar
 	private static final int OVERSEER_TELEPORTER_110 = 34630; // Mimir's Altar
 	private static final int OVERSEER_TELEPORTER_115 = 34632; // Plunderous Plains
 	private static final int OVERSEER_TELEPORTER_120 = 34686; // Elven Forest
+	
 	// Pantheon's Museum Monsters
 	private static final int[] PANTHEON_MONSTERS =
 	{
@@ -84,15 +87,19 @@ public class TimedHunting extends AbstractInstance
 		24978,
 		24979
 	};
+	
 	// Abandoned Coal Mines
 	private static final int INVESTIGATORS_TELEPORTER = 34551;
+	
 	// Imperial Tomb
 	private static final int SEARCH_TEAM_TELEPORTER = 34552;
+	
 	// Ravaged Innadril
 	private static final int LIONEL_HUNTER = 34646; // Heine
 	private static final int PATROL_TELEPORTER_105 = 34568; // Field of Silence
 	private static final int PATROL_TELEPORTER_115 = 34647; // Alligator Beach
 	private static final int PATROL_TELEPORTER_120 = 34688; // Alligator Island
+	
 	// Otherworldly Atelia Refinery
 	private static final int ATELIA_REFINERY_TELEPORT_DEVICE = 34583; // Otherworldly Atelia Refinery
 	
@@ -103,13 +110,16 @@ public class TimedHunting extends AbstractInstance
 	// Tower of Insolence
 	private static final int TELEPORT_SCOUT = 34549; // Tower of Insolence
 	private static final int SPACETEMPORAL_RIFT = 34616; // Tower of Insolence
+	
 	// Skills
 	private static final SkillHolder MORE_ADENA = new SkillHolder(32930, 1);
+	
 	// Locations
 	private static final Location FIELD_OF_SILENCE = new Location(95983, 170989, -3640);
 	private static final Location FIELD_OF_WHISPERS = new Location(95981, 210144, -3456);
 	private static final Location ALLIGATOR_BEACH = new Location(114572, 202589, -3408);
 	private static final Location ALLIGATOR_ISLAND = new Location(121342, 185640, -3587);
+	
 	// Misc
 	private static final int[] TEMPLATE_IDS =
 	{
@@ -198,6 +208,7 @@ public class TimedHunting extends AbstractInstance
 			{
 				return "34646-1.html";
 			}
+			
 			player.teleToLocation(FIELD_OF_WHISPERS);
 		}
 		else if (event.equals("toAlligatorBeach"))
@@ -206,6 +217,7 @@ public class TimedHunting extends AbstractInstance
 			{
 				return "34646-1.html";
 			}
+			
 			player.teleToLocation(ALLIGATOR_BEACH);
 		}
 		else if (event.equals("toAlligatorIsland"))
@@ -214,6 +226,7 @@ public class TimedHunting extends AbstractInstance
 			{
 				return "34646-1.html";
 			}
+			
 			player.teleToLocation(ALLIGATOR_ISLAND);
 		}
 		

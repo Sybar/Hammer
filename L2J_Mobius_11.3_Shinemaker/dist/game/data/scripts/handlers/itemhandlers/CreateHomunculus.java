@@ -47,7 +47,7 @@ import org.l2jmobius.gameserver.network.serverpackets.homunculus.ExShowHomunculu
 public class CreateHomunculus implements IItemHandler
 {
 	@Override
-	public boolean useItem(Playable playable, Item item, boolean forceUse)
+	public boolean onItemUse(Playable playable, Item item, boolean forceUse)
 	{
 		if (!playable.isPlayer())
 		{
@@ -119,6 +119,7 @@ public class CreateHomunculus implements IItemHandler
 			player.sendPacket(SystemMessageId.A_HOMUNCULUS_SLOT_IS_UNLOCKED);
 			player.calculateHomunculusSlots();
 		}
+		
 		player.sendPacket(new ExShowHomunculusCouponUi());
 		player.broadcastUserInfo();
 		player.sendPacket(new ExShowHomunculusList(player));

@@ -37,6 +37,7 @@ public class DimensionMakkum extends AbstractInstance
 	// NPCs
 	private static final int PIORE = 34290;
 	private static final int DIMENSIONAL_MAKKUM = 26195;
+	
 	// Misc
 	private static final int TEMPLATE_ID = 10658;
 	
@@ -73,6 +74,7 @@ public class DimensionMakkum extends AbstractInstance
 				break;
 			}
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	
@@ -97,6 +99,7 @@ public class DimensionMakkum extends AbstractInstance
 		{
 			qs.setCond(2, true);
 		}
+		
 		world.finishInstance();
 	}
 	

@@ -107,6 +107,7 @@ public class RequestBRBuyProduct extends ClientPacket
 					player.removeRequest(PrimeShopRequest.class);
 					return;
 				}
+				
 				player.setPrimePoints(player.getPrimePoints() - price);
 				if (Config.VIP_SYSTEM_PRIME_AFFECT)
 				{
@@ -118,6 +119,7 @@ public class RequestBRBuyProduct extends ClientPacket
 			{
 				player.addItem(ItemProcessType.BUY, subItem.getId(), subItem.getCount() * _count, player, true);
 			}
+			
 			if (item.isVipGift())
 			{
 				player.getAccountVariables().set(AccountVariables.VIP_ITEM_BOUGHT, System.currentTimeMillis());
@@ -252,6 +254,7 @@ public class RequestBRBuyProduct extends ClientPacket
 		{
 			return false;
 		}
+		
 		if (player.getVipTier() <= 0)
 		{
 			return false;
@@ -284,6 +287,7 @@ public class RequestBRBuyProduct extends ClientPacket
 				return HERO_COINS;
 			}
 		}
+		
 		return -1;
 	}
 }

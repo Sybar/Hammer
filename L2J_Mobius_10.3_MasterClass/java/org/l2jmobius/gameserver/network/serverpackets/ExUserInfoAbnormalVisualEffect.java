@@ -55,10 +55,12 @@ public class ExUserInfoAbnormalVisualEffect extends ServerPacket
 		{
 			buffer.writeShort(abnormalVisualEffect.getClientId());
 		}
+		
 		if (_invisible)
 		{
 			buffer.writeShort(AbnormalVisualEffect.STEALTH.getClientId());
 		}
+		
 		if (_team == Team.BLUE)
 		{
 			if (Config.BLUE_TEAM_ABNORMAL_EFFECT != null)

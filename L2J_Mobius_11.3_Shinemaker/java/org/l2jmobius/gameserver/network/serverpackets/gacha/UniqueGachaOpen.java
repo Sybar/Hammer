@@ -36,7 +36,7 @@ import org.l2jmobius.gameserver.network.serverpackets.ServerPacket;
 
 public class UniqueGachaOpen extends ServerPacket
 {
-	private final static int SHORT_PACKET_INFO = 2 + 1 + 4 + 8;
+	private static final int SHORT_PACKET_INFO = 2 + 1 + 4 + 8;
 	
 	private final int _fullInfo;
 	private final int _openMode;

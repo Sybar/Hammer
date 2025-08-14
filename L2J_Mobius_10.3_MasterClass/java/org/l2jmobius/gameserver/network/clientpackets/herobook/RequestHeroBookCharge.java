@@ -49,6 +49,7 @@ public class RequestHeroBookCharge extends ClientPacket
 				_items.clear();
 				return;
 			}
+			
 			_items.put(id, count);
 		}
 	}

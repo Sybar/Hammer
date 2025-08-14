@@ -37,6 +37,7 @@ public class Q10873_ExaltedReachingAnotherLevel extends Quest
 {
 	// NPC
 	private static final int LIONEL = 33907;
+	
 	// Items
 	private static final int SPORCHA_CERTIFICATE = 47830;
 	private static final int KEKROPUS_CERTIFICATE = 47831;
@@ -44,8 +45,10 @@ public class Q10873_ExaltedReachingAnotherLevel extends Quest
 	private static final int ARCTURUS_CERTIFICATE = 47833;
 	private static final int SYLVAIN_CERTIFICATE = 80828;
 	private static final int LIONEL_MISSION_LIST_4 = 47829;
+	
 	// Rewards
 	private static final int DIGNITY_OF_THE_EXALTED = 47852;
+	
 	// Misc
 	private static final int MIN_LEVEL = 103;
 	private static final int MIN_COMPLETE_LEVEL = 104;
@@ -69,6 +72,7 @@ public class Q10873_ExaltedReachingAnotherLevel extends Quest
 		{
 			return htmltext;
 		}
+		
 		switch (event)
 		{
 			case "33907-03.htm":
@@ -106,6 +110,7 @@ public class Q10873_ExaltedReachingAnotherLevel extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -158,6 +163,7 @@ public class Q10873_ExaltedReachingAnotherLevel extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

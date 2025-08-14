@@ -721,9 +721,9 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="material" val="PAPER" />
 		<set name="handler" val="ItemSkills" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="18534" level="1" /> <!-- Scroll of Escape: Mystic Tavern -->
 		</skills>

@@ -88,6 +88,7 @@ public class AttributeFinalizer implements IStatFunction
 				}
 			}
 		}
+		
 		return Stat.defaultValue(creature, stat, baseValue);
 	}
 }

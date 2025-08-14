@@ -42,6 +42,7 @@ public class Q10543_SheddingWeight extends Quest
 	// NPCs
 	private static final int SHANNON = 32974;
 	private static final int WILFORD = 30005;
+	
 	// Items
 	// private static final int NOVICE_TRAINING_LOG = 1835; // TODO Find item ID
 	private static final int APPRENTICE_ADVENTURERS_STAFF = 7816;
@@ -50,6 +51,7 @@ public class Q10543_SheddingWeight extends Quest
 	private static final int APPRENTICE_ADVENTURERS_CESTUS = 7819;
 	private static final int APPRENTICE_ADVENTURERS_BOW = 7820;
 	private static final int APPRENTICE_ADVENTURERS_LONG_SWORD = 7821;
+	
 	// Misc
 	private static final int MAX_LEVEL = 20;
 	
@@ -58,6 +60,7 @@ public class Q10543_SheddingWeight extends Quest
 		super(10543);
 		addStartNpc(SHANNON);
 		addTalkId(SHANNON, WILFORD);
+		
 		// registerQuestItems(NOVICE_TRAINING_LOG);
 		addCondNotRace(Race.ERTHEIA, "noRace.html");
 		addCondMaxLevel(MAX_LEVEL, "noLevel.html");
@@ -87,6 +90,7 @@ public class Q10543_SheddingWeight extends Quest
 				qs.startQuest();
 				qs.setCond(2); // arrow hack
 				qs.setCond(1);
+				
 				// giveItems(player, NOVICE_TRAINING_LOG, 1);
 				htmltext = event;
 				break;
@@ -107,6 +111,7 @@ public class Q10543_SheddingWeight extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -158,6 +163,7 @@ public class Q10543_SheddingWeight extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

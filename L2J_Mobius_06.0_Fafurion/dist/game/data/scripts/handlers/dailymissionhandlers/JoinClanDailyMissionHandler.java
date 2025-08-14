@@ -80,6 +80,7 @@ public class JoinClanDailyMissionHandler extends AbstractDailyMissionHandler
 			missionData.setProgress(1);
 			missionData.setStatus(DailyMissionStatus.AVAILABLE);
 		}
+		
 		storePlayerEntry(missionData);
 	}
 }

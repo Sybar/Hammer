@@ -4167,9 +4167,9 @@
 		<itemConsumeId>8556</itemConsumeId> <!-- Dewdrop of Destruction -->
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>80</magicLevel>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player insideZoneId="2276" />
-		</cond>
+		</conditions>
 	</skill>
 	<skill id="2277" toLevel="6" name="Event Gift Box">
 		<icon>icon.skill0000</icon>

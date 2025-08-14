@@ -42,12 +42,14 @@ public class Q00561_BasicMissionHarnakUndergroundRuins extends Quest
 	private static final int ELISA = 30848;
 	private static final int MILIA = 30006;
 	private static final int HADEL = 33344;
+	
 	// Rewards
 	private static final long EXP = 115930275;
 	private static final int SP = 115920;
 	private static final int FP = 100; // Faction points
 	private static final int SCROLL_OF_ESCAPE_HARNAK_UNDERGROUND_RUINS = 39496;
 	private static final int SCROLL_OF_ESCAPE_TOWN_OF_ADEN = 48413;
+	
 	// Misc
 	private static final int MIN_LEVEL = 85;
 	private static final int MAX_LEVEL = 87;
@@ -130,6 +132,7 @@ public class Q00561_BasicMissionHarnakUndergroundRuins extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -218,6 +221,7 @@ public class Q00561_BasicMissionHarnakUndergroundRuins extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

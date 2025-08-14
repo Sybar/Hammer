@@ -1159,12 +1159,12 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="commissionItemType" val="DUAL_DAGGER" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player level="81" />
 				<player categoryType="DAGGER_MASTER" />
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">304</stat>
 			<stat type="mAtk">157</stat>
@@ -1198,12 +1198,12 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
 		<set name="commissionItemType" val="DUAL_DAGGER" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player level="81" />
 				<player categoryType="DAGGER_MASTER" />
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">332</stat>
 			<stat type="mAtk">169</stat>
@@ -1237,12 +1237,12 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="commissionItemType" val="DUAL_DAGGER" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player level="81" />
 				<player categoryType="DAGGER_MASTER" />
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">360</stat>
 			<stat type="mAtk">181</stat>
@@ -1328,9 +1328,9 @@
 		<set name="weight" val="220" />
 		<set name="commissionItemType" val="CLOAK" />
 		<set name="price" val="28671000" />
-		<cond>
+		<conditions>
 			<player level="80" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">2</stat>
 		</stats>
@@ -1346,15 +1346,15 @@
 		<set name="weight" val="220" />
 		<set name="commissionItemType" val="CLOAK" />
 		<set name="price" val="28671000" />
-		<cond msgId="2453">
+		<conditions msgId="2453">
 			<and>
 				<player races="KAMAEL" />
 				<player cloakStatus="true" />
 			</and>
-		</cond>
-		<cond>
+		</conditions>
+		<conditions>
 			<player level="80" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">20</stat>
 			<stat type="darkRes">30</stat>
@@ -1371,12 +1371,12 @@
 		<set name="weight" val="220" />
 		<set name="price" val="28671000" />
 		<set name="commissionItemType" val="CLOAK" />
-		<cond msgId="2453">
+		<conditions msgId="2453">
 			<player cloakStatus="true" />
-		</cond>
-		<cond>
+		</conditions>
+		<conditions>
 			<player level="80" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">20</stat>
 			<stat type="darkRes">30</stat>
@@ -1393,16 +1393,16 @@
 		<set name="weight" val="220" />
 		<set name="commissionItemType" val="CLOAK" />
 		<set name="price" val="28671000" />
-		<cond msgId="2453">
+		<conditions msgId="2453">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 				<player categoryType="ROGUE_CLOACK" />
 				<player cloakStatus="true" />
 			</and>
-		</cond>
-		<cond>
+		</conditions>
+		<conditions>
 			<player level="80" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">20</stat>
 			<stat type="darkRes">30</stat>
@@ -1419,16 +1419,16 @@
 		<set name="weight" val="220" />
 		<set name="commissionItemType" val="CLOAK" />
 		<set name="price" val="28671000" />
-		<cond msgId="2453">
+		<conditions msgId="2453">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 				<player categoryType="MAGE_CLOACK" />
 				<player cloakStatus="true" />
 			</and>
-		</cond>
-		<cond>
+		</conditions>
+		<conditions>
 			<player level="80" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">20</stat>
 			<stat type="darkRes">30</stat>
@@ -1443,9 +1443,9 @@
 		<set name="crystal_type" val="S80" />
 		<set name="commissionItemType" val="CLOAK" />
 		<set name="price" val="28671000" />
-		<cond>
+		<conditions>
 			<player level="80" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">20</stat>
 		</stats>

@@ -37,6 +37,7 @@ public class Q00765_WeakeningTheKetraOrcForces extends Quest
 {
 	// NPC
 	private static final int LUGONESS = 33852;
+	
 	// Monsters
 	private static final int[] MONSTERS =
 	{
@@ -56,11 +57,14 @@ public class Q00765_WeakeningTheKetraOrcForces extends Quest
 		21345, // Ketra's Head Shaman
 		21347 // Ketra Prophet
 	};
+	
 	// Items
 	private static final int BADGE_SOLDIER = 36676;
 	private static final int BADGE_GENERAL = 36677;
+	
 	// Rewards
 	private static final int STEEL_DOOR_GUILD_BOX = 37393;
+	
 	// Misc
 	private static final int MIN_LEVEL = 76;
 	private static final int MAX_LEVEL = 80;
@@ -187,6 +191,7 @@ public class Q00765_WeakeningTheKetraOrcForces extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -211,6 +216,7 @@ public class Q00765_WeakeningTheKetraOrcForces extends Quest
 						htmltext = "33852-06.html";
 						break;
 					}
+					
 					qs.setState(State.CREATED);
 					break;
 				}
@@ -237,6 +243,7 @@ public class Q00765_WeakeningTheKetraOrcForces extends Quest
 		{
 			htmltext = "33852-06.html";
 		}
+		
 		return htmltext;
 	}
 	
@@ -248,6 +255,7 @@ public class Q00765_WeakeningTheKetraOrcForces extends Quest
 		{
 			qs.setCond(2, true);
 		}
+		
 		if ((qs != null) && qs.isCond(2) && (giveItemRandomly(killer, npc, BADGE_GENERAL, 1, 900, 0.35, true)))
 		{
 			qs.setCond(2, true);

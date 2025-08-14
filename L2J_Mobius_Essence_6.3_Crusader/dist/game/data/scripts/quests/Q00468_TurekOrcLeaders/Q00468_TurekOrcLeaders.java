@@ -40,11 +40,14 @@ public class Q00468_TurekOrcLeaders extends Quest
 {
 	// NPC
 	private static final int GENIE_LAMP = 34369;
+	
 	// Monsters
 	private static final int TUREK = 22140;
 	private static final int KERR = 22146;
+	
 	// Item
 	private static final ItemHolder BERSERKER_SCROLL = new ItemHolder(94777, 2);
+	
 	// Misc
 	private static final int MIN_LEVEL = 83;
 	private static final String KILL_COUNT_VAR = "KillCount";
@@ -97,6 +100,7 @@ public class Q00468_TurekOrcLeaders extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -135,6 +139,7 @@ public class Q00468_TurekOrcLeaders extends Quest
 				htmltext = getAlreadyCompletedMsg(player);
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -170,6 +175,7 @@ public class Q00468_TurekOrcLeaders extends Quest
 			holder.add(new NpcLogListHolder(NpcStringId.DEFEAT_MONSTERS_58.getId(), true, qs.getInt(KILL_COUNT_VAR)));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

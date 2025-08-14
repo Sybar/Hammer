@@ -32,6 +32,7 @@ public class Q00643_RiseAndFallOfTheElrokiTribe extends Quest
 	// NPCs
 	private static final int SINGSING = 32106;
 	private static final int KARAKAWEI = 32117;
+	
 	// Items
 	private static final int BONES = 8776;
 	

@@ -48,16 +48,19 @@ public class SSQSanctumOftheLordsOfDawn extends AbstractInstance
 	private static final int IDENTITY_CONFIRM_DEVICE = 32578;
 	private static final int DARKNESS_OF_DAWN = 32579;
 	private static final int SHELF = 32580;
+	
 	// Item
 	private static final int IDENTITY_CARD = 13822;
+	
 	// Skill
 	private static final SkillHolder GUARD_SKILL = new SkillHolder(5978, 1);
+	
 	// Misc
 	private static final int TEMPLATE_ID = 111;
 	private static final int DOOR_ONE = 17240001;
 	private static final int DOOR_TWO = 17240003;
 	private static final int DOOR_THREE = 17240005;
-	private static final Location[] SAVE_POINT = new Location[]
+	private static final Location[] SAVE_POINT =
 	{
 		new Location(-75775, 213415, -7120),
 		new Location(-74959, 209240, -7472),
@@ -123,9 +126,11 @@ public class SSQSanctumOftheLordsOfDawn extends AbstractInstance
 						break;
 					}
 				}
+				
 				player.teleToLocation(SAVE_POINT[npc.getScriptValue()]);
 			}
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	
@@ -142,6 +147,7 @@ public class SSQSanctumOftheLordsOfDawn extends AbstractInstance
 					enterInstance(talker, npc, TEMPLATE_ID);
 					return "32575-01.html";
 				}
+				
 				return "32575-02.html";
 			}
 			case IDENTITY_CONFIRM_DEVICE:
@@ -167,8 +173,10 @@ public class SSQSanctumOftheLordsOfDawn extends AbstractInstance
 							npc.decayMe();
 							playMovie(talker, Movie.SSQ_RITUAL_OF_PRIEST);
 						}
+						
 						return "32578-01.html";
 					}
+					
 					return "32578-02.html";
 				}
 				break;
@@ -195,6 +203,7 @@ public class SSQSanctumOftheLordsOfDawn extends AbstractInstance
 				return "32580-01.html";
 			}
 		}
+		
 		return "";
 	}
 	

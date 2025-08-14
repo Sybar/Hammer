@@ -37,6 +37,7 @@ public class Q00508_AClansReputation extends Quest
 {
 	// NPC
 	private static final int SIR_ERIC_RODEMAI = 30868;
+	
 	// Raidbosses
 	private static final int FLAMESTONE_GIANT = 25524;
 	private static final int PALIBATI_QUEEN_THEMIS = 25252;
@@ -44,6 +45,7 @@ public class Q00508_AClansReputation extends Quest
 	private static final int GARGOYLE_LORD_TIPHON = 25255;
 	private static final int LAST_LESSER_GIANT_GLAKI = 25245;
 	private static final int RAHHA = 25051;
+	
 	// Items
 	private static final int NUCLEUS_OF_FLAMESTONE_GIANT = 8494;
 	private static final int THEMIS_SCALE = 8277;
@@ -51,6 +53,7 @@ public class Q00508_AClansReputation extends Quest
 	private static final int TIPHON_SHARD = 8280;
 	private static final int GLAKIS_NUCLEUS = 8281;
 	private static final int RAHHAS_FANG = 8282;
+	
 	// Reward list (itemId, minClanPoints, maxClanPoints)
 	private static final int[][] REWARD_LIST =
 	{
@@ -62,6 +65,7 @@ public class Q00508_AClansReputation extends Quest
 		{RAHHA, RAHHAS_FANG, 40, 75},
 		{FLAMESTONE_GIANT, NUCLEUS_OF_FLAMESTONE_GIANT, 60, 95}
 	};
+	
 	// Radar
 	private static final int[][] radar =
 	{

@@ -69,6 +69,7 @@ public class RequestTryEnSoulExtraction extends ClientPacket
 		if (_type == 1)
 		{
 			option = item.getSpecialAbility(_position);
+			
 			// If position is invalid, check the other one.
 			if ((option == null) && (_position == 0))
 			{
@@ -79,14 +80,17 @@ public class RequestTryEnSoulExtraction extends ClientPacket
 				}
 			}
 		}
+		
 		if (_type == 2)
 		{
 			option = item.getAdditionalSpecialAbility(_position);
 		}
+		
 		if (option == null)
 		{
 			return;
 		}
+		
 		final int runeId = EnsoulData.getInstance().getStone(_type, option.getId());
 		final Collection<ItemHolder> removalFee = EnsoulData.getInstance().getRemovalFee(runeId);
 		if (removalFee.isEmpty())
@@ -121,6 +125,7 @@ public class RequestTryEnSoulExtraction extends ClientPacket
 		{
 			iu.addItem(player.addItem(ItemProcessType.REWARD, runeId, 1, player, true));
 		}
+		
 		player.sendInventoryUpdate(iu);
 		player.sendItemList();
 		

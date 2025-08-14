@@ -48,8 +48,10 @@ public class Q10437_TheSealOfPunishmentPlainsOfTheLizardmen extends Quest
 		22773, // Tanta Lizardman Wizards
 		22774, // Tanta Lizardman Summoners
 	};
+	
 	// Item
 	private static final int EMBRYO_FRAGMENT = 36687;
+	
 	// Misc
 	private static final int MIN_LEVEL = 81;
 	private static final int MAX_LEVEL = 84;
@@ -75,6 +77,7 @@ public class Q10437_TheSealOfPunishmentPlainsOfTheLizardmen extends Quest
 		{
 			return getNoQuestMsg(player);
 		}
+		
 		String htmltext = event;
 		switch (event)
 		{
@@ -100,6 +103,7 @@ public class Q10437_TheSealOfPunishmentPlainsOfTheLizardmen extends Quest
 				{
 					break;
 				}
+				
 				final int stoneId = Integer.parseInt(event.replaceAll("reward_", ""));
 				giveItems(player, stoneId, 15);
 				giveStoryQuestReward(player, 60);
@@ -144,11 +148,13 @@ public class Q10437_TheSealOfPunishmentPlainsOfTheLizardmen extends Quest
 				{
 					addExpAndSp(player, 282408000, 67770);
 				}
+				
 				qs.exitQuest(false, true);
 				htmltext = "32742-06.html";
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -186,6 +192,7 @@ public class Q10437_TheSealOfPunishmentPlainsOfTheLizardmen extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

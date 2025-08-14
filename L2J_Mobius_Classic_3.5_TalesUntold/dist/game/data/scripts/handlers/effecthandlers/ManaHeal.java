@@ -92,6 +92,7 @@ public class ManaHeal extends AbstractEffect
 		{
 			sm = new SystemMessage(SystemMessageId.S1_MP_HAS_BEEN_RESTORED);
 		}
+		
 		sm.addInt((int) amount);
 		effected.sendPacket(sm);
 	}

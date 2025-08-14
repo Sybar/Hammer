@@ -41,6 +41,7 @@ public class TavernEmployee extends AbstractNpcAI
 	private static final int LOYEE4 = 34205;
 	private static final int LOYEE5 = 34206;
 	private static final int LOYEE6 = 34207;
+	
 	// Text
 	private static final NpcStringId[] SPAM_TEXT1 =
 	{
@@ -168,6 +169,7 @@ public class TavernEmployee extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -180,22 +182,27 @@ public class TavernEmployee extends AbstractNpcAI
 		{
 			startQuestTimer("spam_text1", 17000, npc, null, true);
 		}
+		
 		if (npc.getId() == LOYEE2)
 		{
 			startQuestTimer("spam_text2", 180000, npc, null, true);
 		}
+		
 		if (npc.getId() == LOYEE3)
 		{
 			startQuestTimer("spam_text3", 16000, npc, null, true);
 		}
+		
 		if (npc.getId() == LOYEE4)
 		{
 			startQuestTimer("spam_text4", 180000, npc, null, true);
 		}
+		
 		if (npc.getId() == LOYEE5)
 		{
 			startQuestTimer("spam_text5", 15000, npc, null, true);
 		}
+		
 		if (npc.getId() == LOYEE6)
 		{
 			startQuestTimer("spam_text6", 18000, npc, null, true);

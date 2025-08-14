@@ -48,7 +48,7 @@ public class AdminElement implements IAdminCommandHandler
 	};
 	
 	@Override
-	public boolean useAdminCommand(String command, Player activeChar)
+	public boolean onCommand(String command, Player activeChar)
 	{
 		int armorType = -1;
 		if (command.startsWith("admin_setlh"))
@@ -106,7 +106,7 @@ public class AdminElement implements IAdminCommandHandler
 	}
 	
 	@Override
-	public String[] getAdminCommandList()
+	public String[] getCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}
@@ -119,6 +119,7 @@ public class AdminElement implements IAdminCommandHandler
 		{
 			target = activeChar;
 		}
+		
 		Player player = null;
 		if (target.isPlayer())
 		{
@@ -167,6 +168,7 @@ public class AdminElement implements IAdminCommandHandler
 			{
 				itemInstance.setAttribute(new AttributeHolder(type, value), true);
 			}
+			
 			player.getInventory().equipItem(itemInstance);
 			
 			if (itemInstance.getAttributes() == null)

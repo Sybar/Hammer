@@ -155,6 +155,7 @@ public class GraciaSeedsManager
 			{
 				setSoDState(2, false);
 			}
+			
 			saveData(SODTYPE);
 			final Quest esQuest = QuestManager.getInstance().getQuest(ENERGY_SEEDS);
 			if (esQuest == null)
@@ -178,6 +179,7 @@ public class GraciaSeedsManager
 		LOGGER.info(getClass().getSimpleName() + ": New Seed of Destruction state -> " + value + ".");
 		_SoDLastStateChangeDate.setTimeInMillis(System.currentTimeMillis());
 		_SoDState = value;
+		
 		// reset number of Tiat kills
 		if (_SoDState == 1)
 		{

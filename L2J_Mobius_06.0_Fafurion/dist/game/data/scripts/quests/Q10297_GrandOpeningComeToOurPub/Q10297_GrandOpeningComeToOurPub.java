@@ -36,8 +36,10 @@ public class Q10297_GrandOpeningComeToOurPub extends Quest
 	private static final int BRODIEN = 34184;
 	private static final int LUPIA = 34185;
 	private static final int LAILLY = 34181;
+	
 	// Item
 	private static final int SCROLL_OF_ESCAPE_MYSTIC_TAVERN = 46564;
+	
 	// Misc
 	private static final int MIN_LEVEL = 99;
 	
@@ -138,6 +140,7 @@ public class Q10297_GrandOpeningComeToOurPub extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -248,6 +251,7 @@ public class Q10297_GrandOpeningComeToOurPub extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

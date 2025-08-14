@@ -47,8 +47,10 @@ public class Q00727_HopeWithinTheDarkness extends Quest
 		36410, // Rune
 		36411, // Schuttgart
 	};
+	
 	// Items
 	private static final int KNIGHT_EPALUETTE = 9912;
+	
 	// Misc
 	private static final int MIN_LEVEL = 90;
 	
@@ -87,6 +89,7 @@ public class Q00727_HopeWithinTheDarkness extends Quest
 				htmltext = null;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -115,6 +118,7 @@ public class Q00727_HopeWithinTheDarkness extends Quest
 				htmltext = "Warden-05.html";
 			}
 		}
+		
 		return htmltext;
 	}
 }

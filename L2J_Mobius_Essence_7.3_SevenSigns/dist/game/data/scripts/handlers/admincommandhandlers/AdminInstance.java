@@ -76,7 +76,7 @@ public class AdminInstance implements IAdminCommandHandler
 	};
 	
 	@Override
-	public boolean useAdminCommand(String command, Player activeChar)
+	public boolean onCommand(String command, Player activeChar)
 	{
 		final StringTokenizer st = new StringTokenizer(command, " ");
 		final String actualCommand = st.nextToken();
@@ -160,6 +160,7 @@ public class AdminInstance implements IAdminCommandHandler
 							player.teleToLocation(loc, instance);
 						}
 					}
+					
 					sendTemplateDetails(activeChar, instance.getTemplateId());
 				}
 				else
@@ -181,6 +182,7 @@ public class AdminInstance implements IAdminCommandHandler
 						{
 							instance.addAllowed(activeChar);
 						}
+						
 						activeChar.teleToLocation(loc, false);
 						activeChar.setInstance(instance);
 						sendTemplateDetails(activeChar, instance.getTemplateId());
@@ -201,6 +203,7 @@ public class AdminInstance implements IAdminCommandHandler
 				break;
 			}
 		}
+		
 		return true;
 	}
 	
@@ -244,7 +247,7 @@ public class AdminInstance implements IAdminCommandHandler
 		else
 		{
 			player.sendMessage("Instance template with id " + templateId + " does not exist!");
-			useAdminCommand("admin_instance", player);
+			onCommand("admin_instance", player);
 		}
 	}
 	
@@ -256,7 +259,7 @@ public class AdminInstance implements IAdminCommandHandler
 		final InstanceManager instManager = InstanceManager.getInstance();
 		final List<InstanceTemplate> templateList = instManager.getInstanceTemplates().stream().sorted(Comparator.comparingLong(InstanceTemplate::getWorldCount).reversed()).filter(template -> !ArrayUtil.contains(IGNORED_TEMPLATES, template.getId())).collect(Collectors.toList());
 		
-		//@formatter:off
+		// @formatter:off
 		final PageResult result = PageBuilder.newBuilder(templateList, 4, "bypass -h admin_instancelist")
 			.currentPage(page)
 			.pageHandler(NextPrevPageHandler.INSTANCE)
@@ -285,7 +288,7 @@ public class AdminInstance implements IAdminCommandHandler
 			sb.append("</table>");
 			sb.append("<br>");
 		}).build();
-		//@formatter:on
+		// @formatter:on
 		
 		html.replace("%pages%", result.getPages() > 0 ? "<center><table width=\"100%\" cellspacing=0><tr>" + result.getPagerTemplate() + "</tr></table></center>" : "");
 		html.replace("%data%", result.getBodyTemplate().toString());
@@ -307,11 +310,12 @@ public class AdminInstance implements IAdminCommandHandler
 				// Ignore and return default.
 			}
 		}
+		
 		return defaultValue;
 	}
 	
 	@Override
-	public String[] getAdminCommandList()
+	public String[] getCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}

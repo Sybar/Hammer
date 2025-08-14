@@ -34,8 +34,10 @@ public class Q00645_GhostsOfBatur extends Quest
 {
 	// NPC
 	private static final int KARUDA = 32017;
+	
 	// Item
 	private static final int CURSED_GRAVE_GOODS = 8089;
+	
 	// Rewards
 	private static final int[][] REWARDS =
 	{

@@ -122,6 +122,7 @@ public class RequestEnchantItem extends ClientPacket
 				player.removeRequest(request.getClass());
 				return;
 			}
+			
 			supportTemplate = EnchantItemData.getInstance().getSupportItem(support);
 		}
 		
@@ -188,6 +189,7 @@ public class RequestEnchantItem extends ClientPacket
 				case SUCCESS:
 				{
 					final ItemTemplate it = item.getTemplate();
+					
 					// Increase enchant level only if scroll's base template has chance, some armors can success over +20 but they shouldn't have increased.
 					if (scrollTemplate.getChance(player, item) > 0)
 					{
@@ -199,8 +201,10 @@ public class RequestEnchantItem extends ClientPacket
 						{
 							item.setEnchantLevel(Math.min(item.getEnchantLevel() + Rnd.get(scrollTemplate.getRandomEnchantMin(), scrollTemplate.getRandomEnchantMax()), scrollTemplate.getMaxEnchantLevel()));
 						}
+						
 						item.updateDatabase();
 					}
+					
 					player.sendPacket(new EnchantResult(EnchantResult.SUCCESS, item));
 					if (Config.LOG_ITEM_ENCHANTS)
 					{
@@ -240,7 +244,7 @@ public class RequestEnchantItem extends ClientPacket
 						final Skill skill = CommonSkill.FIREWORK.getSkill();
 						if (skill != null)
 						{
-							player.broadcastPacket(new MagicSkillUse(player, player, skill.getId(), skill.getLevel(), skill.getHitTime(), skill.getReuseDelay()));
+							player.broadcastSkillPacket(new MagicSkillUse(player, player, skill.getId(), skill.getLevel(), skill.getHitTime(), skill.getReuseDelay()), player);
 						}
 					}
 					
@@ -258,6 +262,7 @@ public class RequestEnchantItem extends ClientPacket
 								}
 							});
 						}
+						
 						player.broadcastUserInfo(); // update user info
 					}
 					break;
@@ -316,6 +321,7 @@ public class RequestEnchantItem extends ClientPacket
 							{
 								iu.addModifiedItem(itm);
 							}
+							
 							player.sendInventoryUpdate(iu);
 							player.broadcastUserInfo();
 						}
@@ -333,6 +339,7 @@ public class RequestEnchantItem extends ClientPacket
 								player.sendPacket(SystemMessageId.THE_BLESSED_ENCHANT_FAILED_THE_ENCHANT_VALUE_OF_THE_ITEM_BECAME_0);
 								item.setEnchantLevel(0);
 							}
+							
 							item.updateDatabase();
 							player.sendPacket(new EnchantResult(EnchantResult.BLESSED_FAIL, 0, 0));
 							if (Config.LOG_ITEM_ENCHANTS)

@@ -68,6 +68,7 @@ public class ElementalSpiritTemplateHolder
 		{
 			_itemsToEvolve = new ArrayList<>(2);
 		}
+		
 		_itemsToEvolve.add(new ItemHolder(itemId, count));
 	}
 	
@@ -133,6 +134,7 @@ public class ElementalSpiritTemplateHolder
 		{
 			_absorbItems = new ArrayList<>();
 		}
+		
 		_absorbItems.add(new ElementalSpiritAbsorbItemHolder(itemId, experience));
 	}
 	

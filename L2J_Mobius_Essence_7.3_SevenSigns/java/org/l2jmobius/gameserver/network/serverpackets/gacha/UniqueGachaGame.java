@@ -61,6 +61,7 @@ public class UniqueGachaGame extends ServerPacket
 		buffer.writeByte(_success); // result // char
 		buffer.writeInt(_currencyCount); // amount // int
 		buffer.writeInt(_guaranteedReward); // guaranty // int
+		
 		// 0 - yellow
 		// 1 - purple
 		buffer.writeByte(_rare ? 1 : 0); // rank // char

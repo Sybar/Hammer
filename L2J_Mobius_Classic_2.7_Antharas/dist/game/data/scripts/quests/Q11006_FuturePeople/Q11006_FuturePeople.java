@@ -138,6 +138,7 @@ public class Q11006_FuturePeople extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -170,6 +171,7 @@ public class Q11006_FuturePeople extends Quest
 					}
 					break;
 				}
+				
 				if ((npc.getId() == PARINA) && (talker.getPlayerClass() != PlayerClass.WIZARD))
 				{
 					if (qs.isCond(5))
@@ -178,6 +180,7 @@ public class Q11006_FuturePeople extends Quest
 					}
 					break;
 				}
+				
 				if ((npc.getId() == ZIGAUNT) && (talker.getPlayerClass() != PlayerClass.CLERIC))
 				{
 					if (qs.isCond(6))
@@ -186,6 +189,7 @@ public class Q11006_FuturePeople extends Quest
 					}
 					break;
 				}
+				
 				if ((npc.getId() == AURON) && (talker.getPlayerClass() != PlayerClass.WARRIOR))
 				{
 					if (qs.isCond(2))
@@ -194,6 +198,7 @@ public class Q11006_FuturePeople extends Quest
 					}
 					break;
 				}
+				
 				if ((npc.getId() == KLAUS_VASPER) && (talker.getPlayerClass() != PlayerClass.WARRIOR))
 				{
 					if (qs.isCond(3))
@@ -202,6 +207,7 @@ public class Q11006_FuturePeople extends Quest
 					}
 					break;
 				}
+				
 				if ((npc.getId() == BEZIQUE) && (talker.getPlayerClass() != PlayerClass.WARRIOR))
 				{
 					if (qs.isCond(4))
@@ -218,6 +224,7 @@ public class Q11006_FuturePeople extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

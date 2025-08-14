@@ -39,11 +39,13 @@ import org.l2jmobius.gameserver.managers.DBSpawnManager;
 import org.l2jmobius.gameserver.managers.InstanceManager;
 import org.l2jmobius.gameserver.managers.QuestManager;
 import org.l2jmobius.gameserver.managers.ZoneManager;
+import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.Spawn;
 import org.l2jmobius.gameserver.model.World;
 import org.l2jmobius.gameserver.model.WorldObject;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.model.actor.instance.Monster;
 import org.l2jmobius.gameserver.model.actor.templates.NpcTemplate;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
 import org.l2jmobius.gameserver.network.SystemMessageId;
@@ -70,6 +72,8 @@ public class AdminSpawn implements IAdminCommandHandler
 		"admin_unspawnall",
 		"admin_respawnall",
 		"admin_spawn_reload",
+		"admin_spawn_misc",
+		"admin_spawnmisc",
 		"admin_npc_index",
 		"admin_spawn_once",
 		"admin_show_npcs",
@@ -84,7 +88,7 @@ public class AdminSpawn implements IAdminCommandHandler
 	};
 	
 	@Override
-	public boolean useAdminCommand(String command, Player activeChar)
+	public boolean onCommand(String command, Player activeChar)
 	{
 		if (command.equals("admin_show_spawns"))
 		{
@@ -134,6 +138,7 @@ public class AdminSpawn implements IAdminCommandHandler
 				catch (NoSuchElementException nsee)
 				{
 				}
+				
 				showMonsters(activeChar, level, from);
 			}
 			catch (Exception e)
@@ -160,6 +165,7 @@ public class AdminSpawn implements IAdminCommandHandler
 				catch (NoSuchElementException nsee)
 				{
 				}
+				
 				showNpcs(activeChar, letter, from);
 			}
 			catch (Exception e)
@@ -199,6 +205,7 @@ public class AdminSpawn implements IAdminCommandHandler
 								}
 							}
 						}
+						
 						html.append("<tr><td>Skipped:</td><td>" + skiped + "</td></tr></table></body></html>");
 						final NpcHtmlMessage ms = new NpcHtmlMessage(0, 1);
 						ms.setHtml(html.toString());
@@ -222,10 +229,13 @@ public class AdminSpawn implements IAdminCommandHandler
 		else if (command.startsWith("admin_unspawnall"))
 		{
 			Broadcast.toAllOnlinePlayers(new SystemMessage(SystemMessageId.THE_NPC_SERVER_IS_NOT_OPERATING_AT_THIS_TIME));
+			
 			// Unload all scripts.
 			QuestManager.getInstance().unloadAllScripts();
+			
 			// Unload all zones.
 			ZoneManager.getInstance().unload();
+			
 			// Delete all spawns.
 			for (Npc npc : DBSpawnManager.getInstance().getNpcs().values())
 			{
@@ -235,6 +245,7 @@ public class AdminSpawn implements IAdminCommandHandler
 					npc.deleteMe();
 				}
 			}
+			
 			DBSpawnManager.getInstance().cleanUp();
 			for (WorldObject obj : World.getInstance().getVisibleObjects())
 			{
@@ -250,6 +261,7 @@ public class AdminSpawn implements IAdminCommandHandler
 					}
 				}
 			}
+			
 			// Reload.
 			ZoneManager.getInstance().reload();
 			QuestManager.getInstance().reloadAllScripts();
@@ -259,8 +271,10 @@ public class AdminSpawn implements IAdminCommandHandler
 		{
 			// Unload all scripts.
 			QuestManager.getInstance().unloadAllScripts();
+			
 			// Unload all zones.
 			ZoneManager.getInstance().unload();
+			
 			// Delete all spawns.
 			for (Npc npc : DBSpawnManager.getInstance().getNpcs().values())
 			{
@@ -270,6 +284,7 @@ public class AdminSpawn implements IAdminCommandHandler
 					npc.deleteMe();
 				}
 			}
+			
 			DBSpawnManager.getInstance().cleanUp();
 			for (WorldObject obj : World.getInstance().getVisibleObjects())
 			{
@@ -285,12 +300,76 @@ public class AdminSpawn implements IAdminCommandHandler
 					}
 				}
 			}
+			
 			// Reload.
 			SpawnData.getInstance().init();
 			DBSpawnManager.getInstance().load();
 			ZoneManager.getInstance().reload();
 			QuestManager.getInstance().reloadAllScripts();
 			AdminData.getInstance().broadcastMessageToGMs("NPC respawn completed!");
+		}
+		else if (command.equals("admin_spawn_misc") || command.equals("admin_spawnmisc"))
+		{
+			LOGGER.info(activeChar + " is spawning GM misc room...");
+			activeChar.sendSysMessage("WARNING: There are several known issues regarding this feature. Spawning all NPCs during runtime is STRONGLY NOT RECOMMENDED for live servers, just for developing environments.");
+			
+			final int npcCount = 100000;
+			final int startX = -128670;
+			final int startY = -230115;
+			final int spawnZ = -15536;
+			final int endX = -100432;
+			final int distance = 200;
+			
+			int currentX = startX;
+			int currentY = startY;
+			for (int i = 1; i <= npcCount; i++)
+			{
+				final NpcTemplate template = NpcData.getInstance().getTemplate(i);
+				if ((template == null) || (template.getId() != template.getDisplayId()) || template.isType("GrandBoss") || template.isFakePlayer())
+				{
+					continue;
+				}
+				
+				try
+				{
+					final Spawn spawn = new Spawn(template);
+					spawn.setXYZ(new Location(currentX, currentY, spawnZ));
+					spawn.setAmount(1);
+					spawn.setHeading(0); // ?
+					spawn.setRespawnDelay(60);
+					SpawnTable.getInstance().addSpawn(spawn);
+					spawn.init();
+					spawn.stopRespawn();
+					
+					final Npc npc = spawn.getLastSpawn();
+					npc.setImmobilized(true);
+					npc.disableCoreAI(true);
+					npc.broadcastInfo(); // ?
+					
+					if (npc.isMonster())
+					{
+						final Monster monster = npc.asMonster();
+						if (monster.hasMinions())
+						{
+							monster.getMinionList().getSpawnedMinions().forEach(Monster::decayMe);
+						}
+					}
+				}
+				catch (Exception e)
+				{
+				}
+				
+				currentX += distance;
+				
+				if (currentX > endX)
+				{
+					currentX = startX;
+					currentY -= distance; // Move to the next line.
+				}
+			}
+			
+			activeChar.teleToLocation(new Location(currentX, currentY, spawnZ)); // Teleport player at GM Misc.
+			LOGGER.info(activeChar + " spawned all NPCs at GM misc room." + System.lineSeparator() + "WARNING: There are several known issues regarding this feature. Spawning all NPCs during runtime is STRONGLY NOT RECOMMENDED for live servers, just for developing environments.");
 		}
 		else if (command.startsWith("admin_spawnat"))
 		{
@@ -307,6 +386,7 @@ public class AdminSpawn implements IAdminCommandHandler
 				{
 					h = Integer.parseInt(st.nextToken());
 				}
+				
 				spawnMonster(activeChar, Integer.parseInt(id), Integer.parseInt(x), Integer.parseInt(y), Integer.parseInt(z), h);
 			}
 			catch (Exception e)
@@ -421,6 +501,7 @@ public class AdminSpawn implements IAdminCommandHandler
 				}
 				
 				final String searchString = searchParam.toString().trim();
+				
 				// If the search string is a number, use it as the NPC ID.
 				if (StringUtil.isNumeric(searchString))
 				{
@@ -462,11 +543,13 @@ public class AdminSpawn implements IAdminCommandHandler
 				{
 					count = Integer.parseInt(nextToken);
 				}
+				
 				if (count <= 0)
 				{
 					return true;
 				}
 			}
+			
 			final Map<Integer, Integer> npcsFound = new HashMap<>();
 			for (WorldObject obj : World.getInstance().getVisibleObjects())
 			{
@@ -474,6 +557,7 @@ public class AdminSpawn implements IAdminCommandHandler
 				{
 					continue;
 				}
+				
 				final int npcId = obj.getId();
 				if (npcsFound.containsKey(npcId))
 				{
@@ -484,6 +568,7 @@ public class AdminSpawn implements IAdminCommandHandler
 					npcsFound.put(npcId, 1);
 				}
 			}
+			
 			activeChar.sendSysMessage("Top " + count + " spawn count.");
 			for (Entry<Integer, Integer> entry : MapUtil.sortByValue(npcsFound, true).entrySet())
 			{
@@ -492,15 +577,17 @@ public class AdminSpawn implements IAdminCommandHandler
 				{
 					break;
 				}
+				
 				final int npcId = entry.getKey();
 				activeChar.sendSysMessage(NpcData.getInstance().getTemplate(npcId).getName() + " (" + npcId + "): " + entry.getValue());
 			}
 		}
+		
 		return true;
 	}
 	
 	@Override
-	public String[] getAdminCommandList()
+	public String[] getCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}
@@ -638,6 +725,7 @@ public class AdminSpawn implements IAdminCommandHandler
 			{
 				SpawnTable.getInstance().addSpawn(spawn);
 			}
+			
 			spawn.init();
 			
 			if (!permanent || (respawnTime <= 0))
@@ -688,6 +776,7 @@ public class AdminSpawn implements IAdminCommandHandler
 			{
 				spawn.stopRespawn();
 			}
+			
 			spawn.getLastSpawn().broadcastInfo();
 			activeChar.sendSysMessage("Created " + template1.getName() + " on " + target.getObjectId());
 		}

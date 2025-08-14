@@ -83,6 +83,7 @@ public class Harvesting extends AbstractEffect
 						sm.addItemName(item.getId());
 						sm.addLong(harvestedItem.getCount());
 					}
+					
 					player.sendPacket(sm);
 					
 					// Send msg to party
@@ -102,6 +103,7 @@ public class Harvesting extends AbstractEffect
 							sm.addLong(harvestedItem.getCount());
 							sm.addItemName(harvestedItem.getId());
 						}
+						
 						party.broadcastToPartyMembers(player, sm);
 					}
 				}
@@ -141,6 +143,7 @@ public class Harvesting extends AbstractEffect
 		{
 			basicSuccess = 1;
 		}
+		
 		return Rnd.get(99) < basicSuccess;
 	}
 }

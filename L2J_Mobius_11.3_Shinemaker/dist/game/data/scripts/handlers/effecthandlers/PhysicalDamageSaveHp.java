@@ -115,6 +115,7 @@ public class PhysicalDamageSaveHp extends AbstractEffect
 						{
 							ignoredShieldDef = Math.max(0, ignoredShieldDef - shieldDefenceIgnoreRemovalAdd);
 						}
+						
 						defence += shieldDef - ignoredShieldDef;
 					}
 					else

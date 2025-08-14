@@ -38,8 +38,10 @@ public class Q00266_PleasOfPixies extends Quest
 {
 	// NPC
 	private static final int PIXY_MURIKA = 31852;
+	
 	// Items
 	private static final int PREDATORS_FANG = 1334;
+	
 	// Monsters
 	private static final Map<Integer, List<ItemHolder>> MONSTERS = new HashMap<>();
 	static
@@ -49,6 +51,7 @@ public class Q00266_PleasOfPixies extends Quest
 		MONSTERS.put(20534, Arrays.asList(new ItemHolder(6, 1))); // Red Keltir
 		MONSTERS.put(20530, Arrays.asList(new ItemHolder(8, 1))); // Young Red Keltir
 	}
+	
 	// Rewards
 	private static final Map<Integer, List<ItemHolder>> REWARDS = new HashMap<>();
 	static
@@ -58,6 +61,7 @@ public class Q00266_PleasOfPixies extends Quest
 		REWARDS.put(2, Arrays.asList(new ItemHolder(1338, 1), new ItemHolder(57, 500))); // Blue Onyx, Adena
 		REWARDS.put(3, Arrays.asList(new ItemHolder(1337, 1), new ItemHolder(57, 5000))); // Emerald , Adena
 	}
+	
 	// Misc
 	private static final int MIN_LEVEL = 3;
 	
@@ -80,6 +84,7 @@ public class Q00266_PleasOfPixies extends Quest
 			qs.startQuest();
 			return event;
 		}
+		
 		return null;
 	}
 	
@@ -159,10 +164,12 @@ public class Q00266_PleasOfPixies extends Quest
 							{
 								reward = 3;
 							}
+							
 							for (ItemHolder item : REWARDS.get(reward))
 							{
 								rewardItems(player, item);
 							}
+							
 							qs.exitQuest(true, true);
 							htmltext = "31852-06.html";
 						}
@@ -172,6 +179,7 @@ public class Q00266_PleasOfPixies extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

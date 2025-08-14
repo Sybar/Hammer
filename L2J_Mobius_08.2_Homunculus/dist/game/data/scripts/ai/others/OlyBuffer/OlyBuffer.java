@@ -36,6 +36,7 @@ public class OlyBuffer extends AbstractNpcAI
 {
 	// NPC
 	private static final int OLYMPIAD_BUFFER = 36402;
+	
 	// Skills
 	private static final CommonSkill BUFF = CommonSkill.OLYMPIAD_HARMONY;
 	private static final CommonSkill[] BUFFS =
@@ -64,6 +65,7 @@ public class OlyBuffer extends AbstractNpcAI
 		{
 			htmltext = "olympiad_master001.htm";
 		}
+		
 		return htmltext;
 	}
 	
@@ -78,6 +80,7 @@ public class OlyBuffer extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		npc.setScriptValue(1);
 		getTimers().addTimer("DELETE_ME", 5000, evnt -> npc.deleteMe());
 		return "olympiad_master003.htm";
@@ -89,6 +92,7 @@ public class OlyBuffer extends AbstractNpcAI
 		{
 			SkillCaster.triggerCast(npc, player, holder.getSkill());
 		}
+		
 		SkillCaster.triggerCast(npc, player, skill.getSkill());
 	}
 	

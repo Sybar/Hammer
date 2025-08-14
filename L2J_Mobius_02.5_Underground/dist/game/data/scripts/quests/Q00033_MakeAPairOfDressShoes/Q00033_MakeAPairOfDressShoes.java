@@ -33,16 +33,17 @@ public class Q00033_MakeAPairOfDressShoes extends Quest
 	private static final int IAN = 30164;
 	private static final int WOODLEY = 30838;
 	private static final int LEIKAR = 31520;
+	
 	// Items
-	private static final int LEATHER = 1882;
-	private static final int THREAD = 1868;
+	private static final int WORN_LEATHER = 36516;
+	private static final int ACCESSORY_GEM = 36556;
 	private static final int DRESS_SHOES_BOX = 7113;
+	
 	// Misc
 	private static final int MIN_LEVEL = 60;
-	private static final int LEATHER_COUNT = 200;
-	private static final int THREAD_COUNT = 600;
+	private static final int LEATHER_COUNT = 360;
+	private static final int GEM_COUNT = 90;
 	private static final int ADENA_COUNT = 500000;
-	private static final int ADENA_COUNT2 = 200000;
 	private static final int ADENA_COUNT3 = 300000;
 	
 	public Q00033_MakeAPairOfDressShoes()
@@ -76,11 +77,10 @@ public class Q00033_MakeAPairOfDressShoes extends Quest
 			}
 			case "30838-09.html":
 			{
-				if ((getQuestItemsCount(player, LEATHER) >= LEATHER_COUNT) && (getQuestItemsCount(player, THREAD) >= THREAD_COUNT) && (player.getAdena() >= ADENA_COUNT2))
+				if ((getQuestItemsCount(player, WORN_LEATHER) >= LEATHER_COUNT) && (getQuestItemsCount(player, ACCESSORY_GEM) >= GEM_COUNT))
 				{
-					takeItems(player, LEATHER, LEATHER_COUNT);
-					takeItems(player, THREAD, LEATHER_COUNT);
-					takeItems(player, Inventory.ADENA_ID, ADENA_COUNT2);
+					takeItems(player, WORN_LEATHER, LEATHER_COUNT);
+					takeItems(player, ACCESSORY_GEM, GEM_COUNT);
 					qs.setCond(4, true);
 				}
 				else
@@ -106,6 +106,7 @@ public class Q00033_MakeAPairOfDressShoes extends Quest
 				{
 					return "30164-03.html";
 				}
+				
 				takeItems(player, Inventory.ADENA_ID, ADENA_COUNT3);
 				qs.setCond(5, true);
 				break;
@@ -116,6 +117,7 @@ public class Q00033_MakeAPairOfDressShoes extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -152,7 +154,7 @@ public class Q00033_MakeAPairOfDressShoes extends Quest
 							}
 							case 3:
 							{
-								htmltext = ((getQuestItemsCount(player, LEATHER) >= LEATHER_COUNT) && (getQuestItemsCount(player, THREAD) >= THREAD_COUNT) && (player.getAdena() >= ADENA_COUNT)) ? "30838-07.html" : "30838-08.html";
+								htmltext = ((getQuestItemsCount(player, WORN_LEATHER) >= LEATHER_COUNT) && (getQuestItemsCount(player, ACCESSORY_GEM) >= GEM_COUNT) && (player.getAdena() >= ADENA_COUNT)) ? "30838-07.html" : "30838-08.html";
 								break;
 							}
 							case 4:
@@ -207,6 +209,7 @@ public class Q00033_MakeAPairOfDressShoes extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

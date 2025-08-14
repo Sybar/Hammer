@@ -59,7 +59,7 @@ import org.l2jmobius.gameserver.managers.ZoneManager;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.SystemMessageId;
-import org.l2jmobius.gameserver.scripting.ScriptEngineManager;
+import org.l2jmobius.gameserver.scripting.ScriptManager;
 
 /**
  * @author NosBit
@@ -76,7 +76,7 @@ public class AdminReload implements IAdminCommandHandler
 	private static final String RELOAD_USAGE = "Usage: //reload <config|access|npc|quest [quest_id|quest_name]|walker|htm[l] [file|directory]|multisell|buylist|teleport|skill|item|door|effect|handler|enchant|options|fishing>";
 	
 	@Override
-	public boolean useAdminCommand(String command, Player activeChar)
+	public boolean onCommand(String command, Player activeChar)
 	{
 		final StringTokenizer st = new StringTokenizer(command, " ");
 		final String actualCommand = st.nextToken();
@@ -225,7 +225,7 @@ public class AdminReload implements IAdminCommandHandler
 				{
 					try
 					{
-						ScriptEngineManager.getInstance().executeScript(ScriptEngineManager.EFFECT_MASTER_HANDLER_FILE);
+						ScriptManager.getInstance().executeScript(ScriptManager.EFFECT_MASTER_HANDLER_FILE);
 						AdminData.getInstance().broadcastMessageToGMs(activeChar.getName() + ": Reloaded effect master handler.");
 					}
 					catch (Exception e)
@@ -239,7 +239,7 @@ public class AdminReload implements IAdminCommandHandler
 				{
 					try
 					{
-						ScriptEngineManager.getInstance().executeScript(ScriptEngineManager.MASTER_HANDLER_FILE);
+						ScriptManager.getInstance().executeScript(ScriptManager.MASTER_HANDLER_FILE);
 						AdminData.getInstance().broadcastMessageToGMs(activeChar.getName() + ": Reloaded master handler.");
 					}
 					catch (Exception e)
@@ -344,13 +344,15 @@ public class AdminReload implements IAdminCommandHandler
 					return true;
 				}
 			}
+			
 			activeChar.sendSysMessage("WARNING: There are several known issues regarding this feature. Reloading server data during runtime is STRONGLY NOT RECOMMENDED for live servers, just for developing environments.");
 		}
+		
 		return true;
 	}
 	
 	@Override
-	public String[] getAdminCommandList()
+	public String[] getCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}

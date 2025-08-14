@@ -39,6 +39,7 @@ public class Q00418_PathOfTheArtisan extends Quest
 	private static final int HITCHI = 31963;
 	private static final int LOCKIRIN = 30531;
 	private static final int RYDEL = 31956;
+	
 	// Items
 	private static final int SILVERA_RING = 1632;
 	private static final int FIRST_PASS_CERTIFICATE = 1633;

@@ -28,6 +28,7 @@ import org.l2jmobius.gameserver.handler.PlayerActionHandler;
 import org.l2jmobius.gameserver.model.ActionDataHolder;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.enums.player.PrivateStoreType;
+import org.l2jmobius.gameserver.model.actor.transform.Transform;
 import org.l2jmobius.gameserver.model.actor.transform.TransformTemplate;
 import org.l2jmobius.gameserver.model.effects.AbstractEffect;
 import org.l2jmobius.gameserver.model.skill.AbnormalType;
@@ -85,15 +86,16 @@ public class RequestActionUse extends ClientPacket
 			}
 		}
 		
-		// Don't allow to do some action if player is transformed
-		if (player.isTransformed())
+		// Don't allow to do some action if player is transformed.
+		final Transform transform = player.getTransformation();
+		if (transform != null)
 		{
-			final TransformTemplate transformTemplate = player.getTransformation().get().getTemplate(player);
+			final TransformTemplate transformTemplate = transform.getTemplate(player);
 			final int[] allowedActions = transformTemplate.getBasicActionList();
 			if ((allowedActions == null) || (Arrays.binarySearch(allowedActions, _actionId) < 0))
 			{
 				player.sendPacket(ActionFailed.STATIC_PACKET);
-				PacketLogger.warning(player + " used action which he does not have! Id = " + _actionId + " transform: " + player.getTransformation().get().getId());
+				PacketLogger.warning(player + " used action which he does not have! Id = " + _actionId + " transform: " + transform.getId());
 				return;
 			}
 		}
@@ -104,9 +106,10 @@ public class RequestActionUse extends ClientPacket
 			final IPlayerActionHandler actionHandler = PlayerActionHandler.getInstance().getHandler(actionHolder.getHandler());
 			if (actionHandler != null)
 			{
-				actionHandler.useAction(player, actionHolder, _ctrlPressed, _shiftPressed);
+				actionHandler.onAction(player, actionHolder, _ctrlPressed, _shiftPressed);
 				return;
 			}
+			
 			PacketLogger.warning("Couldn't find handler with name: " + actionHolder.getHandler());
 			return;
 		}
@@ -133,6 +136,7 @@ public class RequestActionUse extends ClientPacket
 					player.setPrivateStoreType(PrivateStoreType.NONE);
 					player.broadcastUserInfo();
 				}
+				
 				if (player.isSitting())
 				{
 					player.standUp();

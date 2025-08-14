@@ -50,6 +50,7 @@ public class OpChangeWeaponSkillCondition implements ISkillCondition
 		{
 			return false;
 		}
+		
 		return true;
 	}
 }

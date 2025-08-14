@@ -36,6 +36,7 @@ public class Q00407_PathOfTheElvenScout extends Quest
 	private static final int BABENCO = 30334;
 	private static final int MORETTI = 30337;
 	private static final int PRIAS = 30426;
+	
 	// Items
 	private static final int REISA_LETTER = 1207;
 	private static final int PRIAS_TORN_LETTER_1 = 1208;

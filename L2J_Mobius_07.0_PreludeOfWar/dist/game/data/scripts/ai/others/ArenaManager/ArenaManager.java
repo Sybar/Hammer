@@ -38,6 +38,7 @@ public class ArenaManager extends AbstractNpcAI
 		31225, // Arena Director (MDT)
 		31226, // Arena Manager (Coliseum)
 	};
+	
 	// Skills
 	private static final SkillHolder[] BUFFS =
 	{
@@ -128,6 +129,7 @@ public class ArenaManager extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	

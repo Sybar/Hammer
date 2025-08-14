@@ -35,9 +35,11 @@ public class UndergroundLabyrinthGuide extends AbstractNpcAI
 {
 	// NPCs
 	private static final int ROBIN = 34360;
+	
 	// Items
 	private static final int MARKS_OF_REPENTANCE = 97783;
 	private static final int LCOIN = 91663;
+	
 	// Locations
 	private static final Location ADEN = new Location(147433, 26627, -2205);
 	

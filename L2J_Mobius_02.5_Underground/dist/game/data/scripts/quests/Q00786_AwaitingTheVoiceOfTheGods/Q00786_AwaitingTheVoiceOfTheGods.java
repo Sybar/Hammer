@@ -39,6 +39,7 @@ public class Q00786_AwaitingTheVoiceOfTheGods extends Quest
 {
 	// NPC
 	private static final int HERMIT = 31616;
+	
 	// Monsters
 	private static final int[] MONSTERS =
 	{
@@ -58,10 +59,12 @@ public class Q00786_AwaitingTheVoiceOfTheGods extends Quest
 		21303, // Homunculus
 		21307 // Elder Homunculus
 	};
+	
 	// Items
 	private static final int EYE_OF_DARKNESS = 39734; // min 50
 	private static final int DARK_MALICE = 39735; // max 900
 	private static final int EMISSARY_REWARD_BOX = 39727; // Emissary's Reward Box (Mid-grade)
+	
 	// Misc
 	private static final int MIN_LEVEL = 70;
 	private static final int MAX_LEVEL = 75;
@@ -86,6 +89,7 @@ public class Q00786_AwaitingTheVoiceOfTheGods extends Quest
 		{
 			return getNoQuestMsg(player);
 		}
+		
 		switch (event)
 		{
 			case "31616-02.htm":
@@ -184,6 +188,7 @@ public class Q00786_AwaitingTheVoiceOfTheGods extends Quest
 					qs.exitQuest(QuestType.DAILY, true);
 					break;
 				}
+				
 				if ((getQuestItemsCount(player, EYE_OF_DARKNESS) >= 50) && (getQuestItemsCount(player, DARK_MALICE) >= 900))
 				{
 					takeItems(player, EYE_OF_DARKNESS, -1);
@@ -195,6 +200,7 @@ public class Q00786_AwaitingTheVoiceOfTheGods extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -214,6 +220,7 @@ public class Q00786_AwaitingTheVoiceOfTheGods extends Quest
 						htmltext = "31616-10.html";
 						break;
 					}
+					
 					qs.setState(State.CREATED);
 					break;
 				}
@@ -240,6 +247,7 @@ public class Q00786_AwaitingTheVoiceOfTheGods extends Quest
 		{
 			htmltext = "31616-10.html";
 		}
+		
 		return htmltext;
 	}
 	

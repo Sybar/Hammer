@@ -20,6 +20,7 @@
  */
 package instances.MuseumDungeon;
 
+import java.util.Collection;
 import java.util.List;
 
 import org.l2jmobius.gameserver.model.StatSet;
@@ -60,10 +61,13 @@ public class MuseumDungeon extends AbstractInstance
 	private static final int TOYRON = 33004;
 	private static final int DESK = 33126;
 	private static final int THIEF = 23121;
+	
 	// Items
 	private static final int THE_WAR_OF_GODS_AND_GIANTS = 17575;
+	
 	// Skills
 	private static final SkillHolder SPOIL = new SkillHolder(254, 1);
+	
 	// Misc
 	private static final int TEMPLATE_ID = 182;
 	private static final double DAMAGE_BY_SKILL = 0.5d;
@@ -137,6 +141,7 @@ public class MuseumDungeon extends AbstractInstance
 		{
 			enterInstance(player, npc, TEMPLATE_ID);
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	
@@ -150,7 +155,7 @@ public class MuseumDungeon extends AbstractInstance
 	}
 	
 	@Override
-	public void onSkillSee(Npc npc, Player caster, Skill skill, WorldObject[] targets, boolean isSummon)
+	public void onSkillSee(Npc npc, Player caster, Skill skill, Collection<WorldObject> targets, boolean isSummon)
 	{
 		if (npc.isScriptValue(0) && (skill == SPOIL.getSkill()) && (caster.getTarget() == npc) && (npc.calculateDistance2D(caster) < 200))
 		{
@@ -238,6 +243,7 @@ public class MuseumDungeon extends AbstractInstance
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -283,6 +289,7 @@ public class MuseumDungeon extends AbstractInstance
 				}
 			}
 		}
+		
 		return null;
 	}
 	

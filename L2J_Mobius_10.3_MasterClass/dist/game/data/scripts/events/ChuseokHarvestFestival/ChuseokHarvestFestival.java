@@ -22,14 +22,17 @@ package events.ChuseokHarvestFestival;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.util.Calendar;
-import java.util.logging.Level;
 
 import org.l2jmobius.commons.database.DatabaseFactory;
 import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.World;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.model.events.EventType;
+import org.l2jmobius.gameserver.model.events.ListenerRegisterType;
+import org.l2jmobius.gameserver.model.events.annotations.RegisterEvent;
+import org.l2jmobius.gameserver.model.events.annotations.RegisterType;
+import org.l2jmobius.gameserver.model.events.holders.OnDailyReset;
 import org.l2jmobius.gameserver.model.quest.LongTimeEvent;
 import org.l2jmobius.gameserver.model.skill.SkillCaster;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
@@ -44,13 +47,17 @@ public class ChuseokHarvestFestival extends LongTimeEvent
 	// NPCs
 	private static final int MOON_RABBIT = 34604;
 	private static final int FULL_MOON = 34605;
+	
 	// Item
 	private static final int WISH_TICKET = 82196;
+	
 	// Skill
 	private static final SkillHolder ENERGY_BUFF = new SkillHolder(34288, 1); // Full Moon's Festive Energy
+	
 	// Misc
 	private static final String CHUSEOK_HARVEST_FESTIVAL_VAR = "CHUSEOK_HARVEST_FESTIVAL_TICKET_RECEIVED";
 	private static final int PLAYER_LEVEL = 105;
+	
 	// Moon Location
 	private static final Location FULL_MOON_LOC = new Location(81241, 148863, -3472);
 	
@@ -59,8 +66,6 @@ public class ChuseokHarvestFestival extends LongTimeEvent
 		addStartNpc(MOON_RABBIT);
 		addFirstTalkId(MOON_RABBIT, FULL_MOON);
 		addTalkId(MOON_RABBIT, FULL_MOON);
-		
-		startQuestTimer("schedule", 1000, null, null);
 	}
 	
 	@Override
@@ -84,11 +89,13 @@ public class ChuseokHarvestFestival extends LongTimeEvent
 				{
 					break;
 				}
+				
 				if (player.getLevel() < PLAYER_LEVEL)
 				{
 					htmltext = "no-level.htm";
 					break;
 				}
+				
 				if (player.getVariables().getBoolean(CHUSEOK_HARVEST_FESTIVAL_VAR, false))
 				{
 					player.sendPacket(SystemMessageId.YOU_HAVE_ALREADY_BEEN_REWARDED_FOR_ENTERING_A_WISH_YOU_CAN_ONLY_MAKE_1_WISH_PER_CHARACTER);
@@ -106,11 +113,13 @@ public class ChuseokHarvestFestival extends LongTimeEvent
 				{
 					break;
 				}
+				
 				if (player.getLevel() < PLAYER_LEVEL)
 				{
 					htmltext = "no-level.htm";
 					break;
 				}
+				
 				if (player.isAffectedBySkill(ENERGY_BUFF))
 				{
 					player.sendPacket(SystemMessageId.YOU_CANNOT_CHANGE_YOUR_WISH_ONCE_ENTERED_PROCEED);
@@ -128,48 +137,8 @@ public class ChuseokHarvestFestival extends LongTimeEvent
 				}
 				break;
 			}
-			case "schedule":
-			{
-				final long currentTime = System.currentTimeMillis();
-				final Calendar calendar = Calendar.getInstance();
-				calendar.set(Calendar.HOUR_OF_DAY, 6);
-				calendar.set(Calendar.MINUTE, 30);
-				if (calendar.getTimeInMillis() < currentTime)
-				{
-					calendar.add(Calendar.DAY_OF_YEAR, 1);
-				}
-				cancelQuestTimers("reset");
-				startQuestTimer("reset", calendar.getTimeInMillis() - currentTime, null, null);
-				break;
-			}
-			case "reset":
-			{
-				if (isEventPeriod())
-				{
-					// Update data for offline players.
-					try (Connection con = DatabaseFactory.getConnection();
-						PreparedStatement ps = con.prepareStatement("DELETE FROM character_variables WHERE var=?"))
-					{
-						ps.setString(1, CHUSEOK_HARVEST_FESTIVAL_VAR);
-						ps.executeUpdate();
-					}
-					catch (Exception e)
-					{
-						LOGGER.log(Level.SEVERE, "Could not reset Chuseok Harvest Festival Event var: ", e);
-					}
-					
-					// Update data for online players.
-					for (Player plr : World.getInstance().getPlayers())
-					{
-						plr.getVariables().remove(CHUSEOK_HARVEST_FESTIVAL_VAR);
-						plr.getVariables().storeMe();
-					}
-				}
-				cancelQuestTimers("schedule");
-				startQuestTimer("schedule", 1000, null, null);
-				break;
-			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -177,6 +146,36 @@ public class ChuseokHarvestFestival extends LongTimeEvent
 	public String onFirstTalk(Npc npc, Player player)
 	{
 		return npc.getId() + ".htm";
+	}
+	
+	@RegisterEvent(EventType.ON_DAILY_RESET)
+	@RegisterType(ListenerRegisterType.GLOBAL)
+	public void onDailyReset(OnDailyReset event)
+	{
+		if (!isEventPeriod())
+		{
+			return;
+		}
+		
+		// Update data for offline players.
+		try (Connection con = DatabaseFactory.getConnection();
+			PreparedStatement ps = con.prepareStatement("DELETE FROM character_variables WHERE var=?"))
+		{
+			ps.setString(1, CHUSEOK_HARVEST_FESTIVAL_VAR);
+			ps.executeUpdate();
+		}
+		catch (Exception e)
+		{
+			LOGGER.warning(getClass().getSimpleName() + ": Could not reset variables: " + e.getMessage());
+		}
+		
+		// Update data for online players.
+		for (Player player : World.getInstance().getPlayers())
+		{
+			player.getVariables().remove(CHUSEOK_HARVEST_FESTIVAL_VAR);
+		}
+		
+		LOGGER.info(getClass().getSimpleName() + " has been reset.");
 	}
 	
 	public static void main(String[] args)

@@ -34,8 +34,10 @@ public class Q00626_ADarkTwilight extends Quest
 {
 	// NPC
 	private static final int HIERARCH = 31517;
+	
 	// Items
 	private static final int BLOOD_OF_SAINT = 7169;
+	
 	// Drop chances
 	private static final Map<Integer, Integer> CHANCES = new HashMap<>();
 	static
@@ -113,6 +115,7 @@ public class Q00626_ADarkTwilight extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

@@ -61,6 +61,7 @@ public class ExPledgeBonusList extends ServerPacket
 		{
 			buffer.writeInt(skillId);
 		}
+		
 		buffer.writeByte(1); // 140
 		for (int itemId : _huntingBonuses)
 		{

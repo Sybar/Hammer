@@ -44,10 +44,12 @@ public final class AeoreEvasSaintElena extends AbstractNpcAI
 	// NPCs
 	private static final int ELENA = 34379;
 	private static final int INVISIBLE_NPC = 18918;
+	
 	// Skills
 	private static final SkillHolder SalvationSkill = new SkillHolder(32181, 1);
 	private static final SkillHolder BrilliantHealSkill = new SkillHolder(32150, 1);
 	private static final SkillHolder BrilliantRechargeSkill = new SkillHolder(32151, 1);
+	
 	// Misc
 	private static final int p_CheckInterval = 1000;
 	private static final int p_TalkInterval = 15000;
@@ -86,6 +88,7 @@ public final class AeoreEvasSaintElena extends AbstractNpcAI
 						{
 							ThreadPool.schedule(new TalkTask(npc, instance), p_TalkInterval);
 						}
+						
 						npcVars.set("PLAYER_OBJECT", player);
 						ThreadPool.schedule(() ->
 						{
@@ -167,6 +170,7 @@ public final class AeoreEvasSaintElena extends AbstractNpcAI
 							{
 								_npc.setRunning();
 							}
+							
 							addMoveToDesire(_npc, randLoc, 23);
 						}
 					}

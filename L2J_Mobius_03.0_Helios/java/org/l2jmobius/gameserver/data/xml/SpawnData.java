@@ -137,6 +137,7 @@ public class SpawnData implements IXmlReader
 					{
 						defaultGroup = new SpawnGroup(StatSet.EMPTY_STATSET);
 					}
+					
 					parseNpc(innerNode, spawnTemplate, defaultGroup);
 					break;
 				}
@@ -153,6 +154,7 @@ public class SpawnData implements IXmlReader
 		{
 			spawnTemplate.addGroup(defaultGroup);
 		}
+		
 		spawns.add(spawnTemplate);
 	}
 	
@@ -421,7 +423,7 @@ public class SpawnData implements IXmlReader
 	 */
 	public void init()
 	{
-		if (Config.ALT_DEV_NO_SPAWNS)
+		if (Config.NO_SPAWNS)
 		{
 			return;
 		}
@@ -501,6 +503,7 @@ public class SpawnData implements IXmlReader
 				result.add(spawnTemplate);
 			}
 		}
+		
 		return result;
 	}
 	
@@ -518,6 +521,7 @@ public class SpawnData implements IXmlReader
 				return spawn;
 			}
 		}
+		
 		return null;
 	}
 	
@@ -538,6 +542,7 @@ public class SpawnData implements IXmlReader
 				}
 			}
 		}
+		
 		return null;
 	}
 	
@@ -562,6 +567,7 @@ public class SpawnData implements IXmlReader
 				}
 			}
 		}
+		
 		return result;
 	}
 	
@@ -589,6 +595,7 @@ public class SpawnData implements IXmlReader
 			{
 				// Ignore.
 			}
+			
 			if (result)
 			{
 				LOGGER.info(getClass().getSimpleName() + ": Created directory: " + OTHER_XML_FOLDER);
@@ -627,8 +634,10 @@ public class SpawnData implements IXmlReader
 						writer.write(currentLine + System.lineSeparator());
 						continue;
 					}
+					
 					writer.write(currentLine + System.lineSeparator());
 				}
+				
 				writer.close();
 				reader.close();
 				spawnFile.delete();
@@ -722,6 +731,7 @@ public class SpawnData implements IXmlReader
 							}
 							continue;
 						}
+						
 						if (currentLine.contains(spawnId) && currentLine.contains(spawnX) && currentLine.contains(spawnY) && currentLine.contains(spawnZ))
 						{
 							if (!currentLine.contains("/>") && !currentLine.contains("</npc>"))
@@ -735,11 +745,13 @@ public class SpawnData implements IXmlReader
 							continue;
 						}
 					}
+					
 					writer.write(currentLine + System.lineSeparator());
 					if (currentLine.contains("</list>"))
 					{
 						lastLineFound = true;
 					}
+					
 					if (!lastLineFound)
 					{
 						lineCount++;
@@ -760,6 +772,7 @@ public class SpawnData implements IXmlReader
 							}
 							continue;
 						}
+						
 						for (SpawnTerritory territory : territories)
 						{
 							if (currentLine.contains('"' + territory.getName() + '"'))
@@ -769,11 +782,13 @@ public class SpawnData implements IXmlReader
 							}
 						}
 					}
+					
 					writer.write(currentLine + System.lineSeparator());
 					if (currentLine.contains("</list>"))
 					{
 						lastLineFound = true;
 					}
+					
 					if (!lastLineFound)
 					{
 						lineCount++;

@@ -294,10 +294,12 @@ public class WorldExchangeManager implements IXmlReader
 						itemInstance.updateDatabase(true);
 						continue;
 					}
+					
 					endTime = calculateDate(Config.WORLD_EXCHANGE_ITEM_BACK_PERIOD);
 					storeType = WorldExchangeItemStatusType.WORLD_EXCHANGE_OUT_TIME;
 					needChange = true;
 				}
+				
 				_itemBids.put(worldExchangeId, new WorldExchangeHolder(worldExchangeId, itemInstance, new ItemInfo(itemInstance), price, bidPlayerObjectId, storeType, categoryId, startTime, endTime, needChange));
 			}
 		}
@@ -309,12 +311,7 @@ public class WorldExchangeManager implements IXmlReader
 	
 	private long calculateFeeForRegister(Player player, int objectId, long amount, long priceForEach)
 	{
-		final Item itemToRemove = player.getInventory().getItemByObjectId(objectId);
-		if (itemToRemove.getId() == Inventory.ADENA_ID)
-		{
-			return priceForEach * 100L;
-		}
-		return Math.round(priceForEach * (itemToRemove.getId() == Inventory.ADENA_ID ? 1 : amount) * Config.WORLD_EXCHANGE_ADENA_FEE);
+		return Math.round(priceForEach * Config.WORLD_EXCHANGE_ADENA_FEE);
 	}
 	
 	/**
@@ -338,12 +335,14 @@ public class WorldExchangeManager implements IXmlReader
 			player.sendPacket(WorldExchangeRegisterItem.FAIL);
 			return;
 		}
+		
 		if (player.getInventory().getItemByObjectId(itemObjectId) == null)
 		{
 			player.sendPacket(new SystemMessage(SystemMessageId.THE_ITEM_IS_NOT_FOUND));
 			player.sendPacket(WorldExchangeRegisterItem.FAIL);
 			return;
 		}
+		
 		if ((amount < 1) || (priceForEach < 1) || ((amount * priceForEach) < 1))
 		{
 			player.sendPacket(new SystemMessage(SystemMessageId.INCORRECT_ITEM_COUNT_2));
@@ -357,12 +356,14 @@ public class WorldExchangeManager implements IXmlReader
 		{
 			feePrice = Config.WORLD_EXCHANGE_MAX_ADENA_FEE;
 		}
+		
 		if (feePrice > player.getAdena())
 		{
 			player.sendPacket(new SystemMessage(SystemMessageId.NOT_ENOUGH_ADENA));
 			player.sendPacket(WorldExchangeRegisterItem.FAIL);
 			return;
 		}
+		
 		if (feePrice < 1)
 		{
 			player.sendPacket(new SystemMessage(SystemMessageId.INCORRECT_ITEM_COUNT_2));
@@ -583,7 +584,7 @@ public class WorldExchangeManager implements IXmlReader
 		}
 		
 		player.sendPacket(new WorldExchangeSettleRecvResult(worldExchangeItem.getItemInstance().getObjectId(), worldExchangeItem.getItemInstance().getCount(), (byte) 1));
-		final long fee = Math.round(((worldExchangeItem.getPrice() * Config.WORLD_EXCHANGE_LCOIN_TAX) * 100) / 100);
+		final long fee = Math.max(1, Math.min(20000, Math.round((worldExchangeItem.getPrice() * Config.WORLD_EXCHANGE_LCOIN_TAX * 100) / 100)));
 		final long returnPrice = worldExchangeItem.getPrice() - Math.min(fee, (Config.WORLD_EXCHANGE_MAX_LCOIN_TAX != -1 ? Config.WORLD_EXCHANGE_MAX_LCOIN_TAX : Long.MAX_VALUE)); // floating-point accuracy workaround :D
 		player.getInventory().addItem(ItemProcessType.FEE, Inventory.LCOIN_ID, (returnPrice), player, null);
 		worldExchangeItem.setStoreType(WorldExchangeItemStatusType.WORLD_EXCHANGE_NONE);
@@ -719,6 +720,7 @@ public class WorldExchangeManager implements IXmlReader
 		{
 			insert(worldExchangeItem.getWorldExchangeId(), false);
 		}
+		
 		final Item receivedItem = player.getInventory().addItem(ItemProcessType.BUY, worldExchangeItem.getItemInstance(), player, null);
 		player.sendPacket(new WorldExchangeBuyItem(receivedItem.getObjectId(), receivedItem.getCount(), (byte) 1));
 		final SystemMessage sm;
@@ -778,6 +780,7 @@ public class WorldExchangeManager implements IXmlReader
 		{
 			newItem.setAugmentation(vi, true);
 		}
+		
 		final InventoryUpdate iu = new InventoryUpdate();
 		iu.addRemovedItem(newItem);
 		requestor.sendInventoryUpdate(iu);
@@ -894,6 +897,7 @@ public class WorldExchangeManager implements IXmlReader
 				{
 					Collections.sort(sortedList, Comparator.comparing(o -> (o.getItemInstance().isBlessed() ? "Blessed " : "") + o.getItemInstance().getItemName()));
 				}
+				
 				Collections.reverse(sortedList);
 				break;
 			}
@@ -1060,6 +1064,7 @@ public class WorldExchangeManager implements IXmlReader
 				statement.setLong(8, holder.getEndTime());
 				statement.addBatch();
 			}
+			
 			statement.executeBatch();
 			statement.closeOnCompletion();
 		}
@@ -1119,6 +1124,7 @@ public class WorldExchangeManager implements IXmlReader
 			totalItemCount++;
 			totalPrice += holder.getPrice();
 		}
+		
 		return totalItemCount == 0 ? 0 : totalPrice / totalItemCount;
 	}
 	

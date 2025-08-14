@@ -49,8 +49,8 @@
 		<npc id="31954" x="86387" y="-140156" z="-1542" heading="54278" respawnDelay="60" /> <!-- Saroyan -->
 		<npc id="31955" x="86369" y="-140196" z="-1542" heading="56511" respawnDelay="60" /> <!-- Ruby -->
 		<npc id="31945" x="86459" y="-139631" z="-1527" heading="52453" respawnDelay="60" /> <!-- Auzendorff -->
-		<npc id="31946" x="86307" y="-139661" z="-1527" heading="51608" respawnDelay="60" /> <!-- Hombre -->
-		<npc id="31947" x="86282" y="-139682" z="-1528" heading="54339" respawnDelay="60" /> <!-- Owaki -->
+		<npc id="31946" x="86311" y="-139669" z="-1553" heading="53988" respawnDelay="60" /> <!-- Hombre -->
+		<npc id="31947" x="86285" y="-139679" z="-1553" heading="53634" respawnDelay="60" /> <!-- Owaki -->
 		<npc id="31948" x="86144" y="-139800" z="-1527" heading="60527" respawnDelay="60" /> <!-- Adrian -->
 		<npc id="32072" x="84460" y="-144052" z="-1530" heading="15666" respawnDelay="60" /> <!-- Edwin -->
 		<npc id="31733" x="87130" y="-140754" z="-1542" heading="15201" respawnDelay="60" /> <!-- Adventure Guildsman -->

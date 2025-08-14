@@ -48,13 +48,16 @@ public class Q00236_SeedsOfChaos extends Quest
 	private static final int KATENAR_A = 32332;
 	private static final int KATENAR_B = 32333;
 	private static final int HARKILGAMED_A = 32334;
+	
 	// Items
 	private static final int STAR_OF_DESTINY = 5011;
 	private static final int SHINING_MEDALLION = 9743;
 	private static final int BLOOD_JEWEL = 9744;
 	private static final int BLACK_ECHO_CRYSTAL = 9745;
+	
 	// Reward
 	private static final int SCROLL_ENCHANT_WEAPON_A_GRADE = 729;
+	
 	// Monster
 	private static final int NEEDLE_STAKATO_DRONE = 21516;
 	private static final int SHOUT_OF_SPLENDOR = 21532;
@@ -68,6 +71,7 @@ public class Q00236_SeedsOfChaos extends Quest
 	private static final int WAILINGOF_SPLENDOR_1 = 21540;
 	private static final int VAMPIRE_WIZARD = 21588;
 	private static final int VAMPIRE_WIZARD_A = 21589;
+	
 	// Misc
 	private static final int MIN_LEVEL = 75;
 	
@@ -96,6 +100,7 @@ public class Q00236_SeedsOfChaos extends Quest
 					npc.broadcastPacket(new NpcSay(npc, ChatType.NPC_GENERAL, "Hmm, where did my friend go?"));
 				}
 			}
+			
 			npc.deleteMe();
 			return super.onEvent(event, npc, player);
 		}
@@ -107,6 +112,7 @@ public class Q00236_SeedsOfChaos extends Quest
 				npc0.getVariables().set("SPAWNED", false);
 				npc.broadcastPacket(new NpcSay(npc, ChatType.NPC_GENERAL, "Graaah, we're being attacked!"));
 			}
+			
 			npc.deleteMe();
 			return super.onEvent(event, npc, player);
 		}
@@ -122,6 +128,7 @@ public class Q00236_SeedsOfChaos extends Quest
 					npc.broadcastPacket(new NpcSay(npc, ChatType.NPC_GENERAL, "Hmm, where did my friend go?"));
 				}
 			}
+			
 			npc.deleteMe();
 			return super.onEvent(event, npc, player);
 		}
@@ -137,6 +144,7 @@ public class Q00236_SeedsOfChaos extends Quest
 					npc.broadcastPacket(new NpcSay(npc, ChatType.NPC_GENERAL, "Hmm, where did my friend go?"));
 				}
 			}
+			
 			npc.deleteMe();
 			return super.onEvent(event, npc, player);
 		}
@@ -148,6 +156,7 @@ public class Q00236_SeedsOfChaos extends Quest
 				npc0.getVariables().set("SPAWNED", false);
 				npc.broadcastPacket(new NpcSay(npc, ChatType.NPC_GENERAL, "Graaah, we're being attacked!"));
 			}
+			
 			npc.deleteMe();
 			return super.onEvent(event, npc, player);
 		}
@@ -364,6 +373,7 @@ public class Q00236_SeedsOfChaos extends Quest
 						qs.setMemoStateEx(1, 0);
 						qs.setCond(12, true);
 					}
+					
 					htmltext = event;
 				}
 				break;
@@ -486,6 +496,7 @@ public class Q00236_SeedsOfChaos extends Quest
 						qs.setMemoStateEx(1, 0);
 						qs.setCond(8, true);
 					}
+					
 					htmltext = event;
 				}
 				break;
@@ -501,6 +512,7 @@ public class Q00236_SeedsOfChaos extends Quest
 						qs.setMemoState(30);
 						qs.setCond(14, true);
 					}
+					
 					htmltext = event;
 				}
 				break;
@@ -517,6 +529,7 @@ public class Q00236_SeedsOfChaos extends Quest
 						{
 							npc0.getVariables().set("SPAWNED", false);
 						}
+						
 						npc.broadcastPacket(new NpcSay(npc, ChatType.NPC_GENERAL, "Best of luck with your future endeavours."));
 						npc.deleteMe();
 					}
@@ -535,6 +548,7 @@ public class Q00236_SeedsOfChaos extends Quest
 						{
 							npc0.getVariables().set("SPAWNED", false);
 						}
+						
 						npc.broadcastPacket(new NpcSay(npc, ChatType.NPC_GENERAL, "In that case, I wish you good luck."));
 						npc.deleteMe();
 					}
@@ -551,6 +565,7 @@ public class Q00236_SeedsOfChaos extends Quest
 					{
 						npc0.getVariables().set("SPAWNED", false);
 					}
+					
 					npc.broadcastPacket(new NpcSay(npc, ChatType.NPC_GENERAL, "Best of luck with your future endeavours."));
 					npc.deleteMe();
 				}
@@ -568,6 +583,7 @@ public class Q00236_SeedsOfChaos extends Quest
 						{
 							npc0.getVariables().set("SPAWNED", false);
 						}
+						
 						npc.broadcastPacket(new NpcSay(npc, ChatType.NPC_GENERAL, "Best of luck with your future endeavours."));
 						npc.deleteMe();
 					}
@@ -586,6 +602,7 @@ public class Q00236_SeedsOfChaos extends Quest
 						{
 							npc0.getVariables().set("SPAWNED", false);
 						}
+						
 						npc.broadcastPacket(new NpcSay(npc, ChatType.NPC_GENERAL, "Safe travels!"));
 						npc.deleteMe();
 					}
@@ -644,6 +661,7 @@ public class Q00236_SeedsOfChaos extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -1124,6 +1142,7 @@ public class Q00236_SeedsOfChaos extends Quest
 				htmltext = getAlreadyCompletedMsg(player);
 			}
 		}
+		
 		return htmltext;
 	}
 	

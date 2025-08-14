@@ -39,7 +39,7 @@ public class AdminHwid implements IAdminCommandHandler
 	};
 	
 	@Override
-	public boolean useAdminCommand(String command, Player activeChar)
+	public boolean onCommand(String command, Player activeChar)
 	{
 		if ((activeChar.getTarget() == null) || !activeChar.getTarget().isPlayer())
 		{
@@ -77,7 +77,7 @@ public class AdminHwid implements IAdminCommandHandler
 	}
 	
 	@Override
-	public String[] getAdminCommandList()
+	public String[] getCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}

@@ -749,9 +749,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="is_event_restricted" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player class_id_restriction="10, 11, 12, 13, 14, 15, 16, 17, 94, 95, 96, 97, 98" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="40450" level="1" /> <!-- Facelifting Potion D -->
 		</skills>
@@ -773,9 +773,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="is_event_restricted" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player class_id_restriction="10, 11, 12, 13, 14, 15, 16, 17, 94, 95, 96, 97, 98" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="40451" level="1" /> <!-- Facelifting Potion E -->
 		</skills>
@@ -797,9 +797,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="is_event_restricted" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player class_id_restriction="10, 11, 12, 13, 14, 15, 16, 17, 94, 95, 96, 97, 98" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="40452" level="1" /> <!-- Hairstyle Change Potion H -->
 		</skills>
@@ -821,9 +821,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="is_event_restricted" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player class_id_restriction="10, 11, 12, 13, 14, 15, 16, 17, 94, 95, 96, 97, 98" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="40453" level="1" /> <!-- Hairstyle Change Potion I -->
 		</skills>
@@ -845,12 +845,12 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="is_event_restricted" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player sex="1" />
 				<player class_id_restriction="10, 11, 12, 13, 14, 15, 16, 17, 94, 95, 96, 97, 98" />
 			</and>
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="40454" level="1" /> <!-- Hairstyle Change Potion J -->
 		</skills>
@@ -872,12 +872,12 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="is_event_restricted" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player sex="1" />
 				<player class_id_restriction="10, 11, 12, 13, 14, 15, 16, 17, 94, 95, 96, 97, 98" />
 			</and>
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="40455" level="1" /> <!-- Hairstyle Change Potion K -->
 		</skills>
@@ -899,12 +899,12 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="is_event_restricted" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player sex="1" />
 				<player class_id_restriction="10, 11, 12, 13, 14, 15, 16, 17, 94, 95, 96, 97, 98" />
 			</and>
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="40456" level="1" /> <!-- Hairstyle Change Potion L -->
 		</skills>

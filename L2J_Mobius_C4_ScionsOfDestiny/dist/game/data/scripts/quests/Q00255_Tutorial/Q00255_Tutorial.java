@@ -45,6 +45,7 @@ public class Q00255_Tutorial extends Quest
 		{"49", "tutorial_voice_001h", "tutorial_orc_mage001.htm"},
 		{"53", "tutorial_voice_001i", "tutorial_dwarven_fighter001.htm"},
 	};
+	
 	// table for Client Event Enable (8) [raceId, html, x, y, z]
 	private static final String[][] CEEa =
 	{
@@ -58,6 +59,7 @@ public class Q00255_Tutorial extends Quest
 		{"49", "tutorial_orc007.htm", "-56736", "-113680", "-672"},
 		{"53", "tutorial_dwarven_fighter007.htm", "108567", "-173994", "-406"},
 	};
+	
 	// table for Question Mark Clicked (9 & 11) learning skills [raceId, html, x, y, z]
 	private static final String[][] QMCa =
 	{
@@ -72,6 +74,7 @@ public class Q00255_Tutorial extends Quest
 		{"53", "tutorial_fighter017.htm", "115447", "-182672", "-1440"},
 	};
 	// @formatter:on
+	
 	// table for Question Mark Clicked (24) newbie lvl [raceId, html]
 	private static final Map<Integer, String> QMCb = new HashMap<>();
 	static
@@ -86,6 +89,7 @@ public class Q00255_Tutorial extends Quest
 		QMCb.put(49, "tutorial_orc009.htm");
 		QMCb.put(53, "tutorial_dwarven009.htm");
 	}
+	
 	// table for Question Mark Clicked (35) 1st class transfer [raceId, html]
 	private static final Map<Integer, String> QMCc = new HashMap<>();
 	static
@@ -101,6 +105,7 @@ public class Q00255_Tutorial extends Quest
 		QMCc.put(53, "tutorial_21f.htm");
 		QMCc.put(53, "tutorial_21f.htm");
 	}
+	
 	// table for Tutorial Close Link (26) 2nd class transfer [raceId, html]
 	private static final Map<Integer, String> TCLa = new HashMap<>();
 	static
@@ -124,6 +129,7 @@ public class Q00255_Tutorial extends Quest
 		TCLa.put(54, "tutorial_22l.htm");
 		TCLa.put(56, "tutorial_22m.htm");
 	}
+	
 	// table for Tutorial Close Link (23) 2nd class transfer [raceId, html]
 	private static final Map<Integer, String> TCLb = new HashMap<>();
 	static
@@ -140,6 +146,7 @@ public class Q00255_Tutorial extends Quest
 		TCLb.put(39, "tutorial_22pa.htm");
 		TCLb.put(50, "tutorial_22ka.htm");
 	}
+	
 	// table for Tutorial Close Link (24) 2nd class transfer [raceId, html]
 	private static final Map<Integer, String> TCLc = new HashMap<>();
 	static
@@ -210,6 +217,7 @@ public class Q00255_Tutorial extends Quest
 						{
 							qs.showQuestionMark(5);
 						}
+						
 						playSound(player, "ItemSound.quest_tutorial");
 						break;
 					}
@@ -236,6 +244,7 @@ public class Q00255_Tutorial extends Quest
 						html = element[2];
 					}
 				}
+				
 				qs.playTutorialVoice(voice);
 				qs.set("Ex", "-3");
 				cancelQuestTimers("QT");
@@ -393,6 +402,7 @@ public class Q00255_Tutorial extends Quest
 						z = Integer.parseInt(element[4]);
 					}
 				}
+				
 				if (x != 0)
 				{
 					playSound(player, "ItemSound.quest_tutorial");
@@ -577,6 +587,7 @@ public class Q00255_Tutorial extends Quest
 							z = Integer.parseInt(element[4]);
 						}
 					}
+					
 					addRadar(player, x, y, z);
 					break;
 				}
@@ -598,6 +609,7 @@ public class Q00255_Tutorial extends Quest
 							z = Integer.parseInt(element[4]);
 						}
 					}
+					
 					addRadar(player, x, y, z);
 					html = "tutorial_11.htm";
 					break;
@@ -625,6 +637,7 @@ public class Q00255_Tutorial extends Quest
 							z = Integer.parseInt(element[4]);
 						}
 					}
+					
 					if (x != 0)
 					{
 						addRadar(player, x, y, z);
@@ -648,6 +661,7 @@ public class Q00255_Tutorial extends Quest
 							z = Integer.parseInt(element[4]);
 						}
 					}
+					
 					if (x != 0)
 					{
 						addRadar(player, x, y, z);
@@ -708,6 +722,7 @@ public class Q00255_Tutorial extends Quest
 		{
 			return null;
 		}
+		
 		qs.showTutorialHTML(html);
 		return null;
 	}

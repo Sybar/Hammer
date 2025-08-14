@@ -42,6 +42,7 @@ public class TargetRaceSkillCondition implements ISkillCondition
 		{
 			return false;
 		}
+		
 		final Creature targetCreature = target.asCreature();
 		return targetCreature.getRace() == _race;
 	}

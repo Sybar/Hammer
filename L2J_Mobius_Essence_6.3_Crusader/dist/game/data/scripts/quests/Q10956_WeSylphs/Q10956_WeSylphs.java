@@ -53,10 +53,12 @@ public class Q10956_WeSylphs extends Quest
 	// NPCs
 	private static final int KERKIN = 34210;
 	private static final int EVIA = 34211;
+	
 	// Monsters
 	private static final int VOLATU = 22328;
 	private static final int PHOTORONI = 22329;
 	private static final int ALES = 22330;
+	
 	// Items
 	private static final ItemHolder SOE_EVIA = new ItemHolder(95587, 1);
 	private static final ItemHolder SOE_NOVICE = new ItemHolder(10650, 20);
@@ -64,8 +66,10 @@ public class Q10956_WeSylphs extends Quest
 	private static final ItemHolder XP_GROWTH_SCROLL = new ItemHolder(49674, 1);
 	private static final ItemHolder HP_POTION_REWARD = new ItemHolder(91912, 50);
 	private static final ItemHolder SOE_TO_CAPTAIN_BATHIS = new ItemHolder(91651, 1);
+	
 	// Location
 	private static final Location WHISPERING_WOODS = new Location(117678, 55348, -4560);
+	
 	// Misc
 	private static final int MIN_LEVEL = 15;
 	private static final int MAX_LEVEL = 20;
@@ -133,12 +137,15 @@ public class Q10956_WeSylphs extends Quest
 						showOnScreenMsg(player, NpcStringId.YOU_VE_FINISHED_THE_TUTORIAL_TAKE_YOUR_FIRST_CLASS_TRANSFER_AND_COMPLETE_YOUR_TRAINING_WITH_MATHORN_TO_BECOME_STRONGER, ExShowScreenMessage.TOP_CENTER, 10000);
 						player.sendPacket(ExClassChangeSetAlarm.STATIC_PACKET);
 					}
+					
 					qs.exitQuest(false, true);
 				}
+				
 				htmltext = event;
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -170,6 +177,7 @@ public class Q10956_WeSylphs extends Quest
 					{
 						htmltext = "34210-04.html";
 					}
+					
 					htmltext = "34210-01.html";
 				}
 				else if (qs.isCond(2))
@@ -184,6 +192,7 @@ public class Q10956_WeSylphs extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -220,6 +229,7 @@ public class Q10956_WeSylphs extends Quest
 			holder.add(new NpcLogListHolder(NpcStringId.KILL_MONSTERS_IN_THE_WHISPERING_WOODS.getId(), true, qs.getInt(KILL_COUNT_VAR)));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 	

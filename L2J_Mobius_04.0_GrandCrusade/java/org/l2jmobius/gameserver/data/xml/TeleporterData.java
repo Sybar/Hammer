@@ -59,6 +59,7 @@ public class TeleporterData implements IXmlReader
 		forEach(document, "list", list -> forEach(list, "npc", npc ->
 		{
 			final Map<String, TeleportHolder> teleList = new HashMap<>();
+			
 			// Parse npc node child
 			final int npcId = parseInteger(npc.getAttributes(), "id");
 			forEach(npc, node ->
@@ -68,12 +69,15 @@ public class TeleporterData implements IXmlReader
 					case "teleport":
 					{
 						final NamedNodeMap nodeAttrs = node.getAttributes();
+						
 						// Parse attributes
 						final TeleportType type = parseEnum(nodeAttrs, TeleportType.class, "type");
 						final String name = parseString(nodeAttrs, "name", type.name());
+						
 						// Parse locations
 						final TeleportHolder holder = new TeleportHolder(name, type);
 						forEach(node, "location", location -> holder.registerLocation(new StatSet(parseAttributes(location))));
+						
 						// Register holder
 						if (teleList.putIfAbsent(name, holder) != null)
 						{

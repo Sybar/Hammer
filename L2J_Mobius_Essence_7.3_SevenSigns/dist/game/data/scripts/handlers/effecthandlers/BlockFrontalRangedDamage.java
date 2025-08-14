@@ -80,6 +80,7 @@ public class BlockFrontalRangedDamage extends AbstractEffect
 		{
 			effected.stopSkillEffects(SkillFinishType.REMOVED, skill.getId());
 		}
+		
 		DAMAGE_HOLDER.put(objectId, newDamageLeft);
 		
 		return new DamageReturn(false, true, false, newDamage);

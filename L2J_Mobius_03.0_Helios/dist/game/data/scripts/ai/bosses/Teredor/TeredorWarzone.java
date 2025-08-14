@@ -62,8 +62,10 @@ public class TeredorWarzone extends AbstractInstance
 		HATCHET_UNDERBUG,
 		HATCHET_MILLIPADE
 	};
+	
 	// Items
 	private static final int FAKE_TEREDOR_WEAPON = 15280;
+	
 	// Skill
 	private static final SkillHolder FAKE_TEREDOR_JUMP_SKILL = new SkillHolder(6268, 1);
 	private static final SkillHolder POISON_SKILL = new SkillHolder(14113, 1);
@@ -71,10 +73,11 @@ public class TeredorWarzone extends AbstractInstance
 	private static final SkillHolder TEREDOR_POISON_SKILL = new SkillHolder(14112, 1);
 	private static final SkillHolder TEREDOR_POISON_SKILL_2 = new SkillHolder(14112, 2);
 	private static final SkillHolder TEREDOR_CANCEL = new SkillHolder(5902, 1);
+	
 	// Misc
 	private static final int TEMPLATE_ID = 160;
 	private static final int MIN_PLAYERS = 5;
-	//@formatter:off
+	// @formatter:off
 	private static final Map<Integer, String[]> WALKING_DATA = new HashMap<>();
 	static
 	{
@@ -87,7 +90,7 @@ public class TeredorWarzone extends AbstractInstance
 		WALKING_DATA.put(7, new String[] {"trajan121", "trajan122"});
 		WALKING_DATA.put(8, new String[] {"trajan14", "trajan15", "trajan16"});
 	}
-	//@formatter:on
+	// @formatter:on
 	
 	public TeredorWarzone()
 	{
@@ -221,6 +224,7 @@ public class TeredorWarzone extends AbstractInstance
 				htmltext = event;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -427,6 +431,7 @@ public class TeredorWarzone extends AbstractInstance
 								{
 									addAttackPlayerDesire(minion, player, 23);
 								}
+								
 								npc.deleteMe();
 							}
 							break;
@@ -441,6 +446,7 @@ public class TeredorWarzone extends AbstractInstance
 				}
 			}
 		}
+		
 		return super.onEventReceived(eventName, sender, npc, reference);
 	}
 	
@@ -503,6 +509,7 @@ public class TeredorWarzone extends AbstractInstance
 							npc.getAI().setIntention(Intention.ACTIVE);
 							npc.broadcastSocialAction(4);
 							WalkingManager.getInstance().resumeMoving(npc);
+							
 							// myself->BroadcastScriptEvent(@SCE_EGG_SPAWN5, 0, 3000);
 							getTimers().addTimer("TEREDOR_BUHATIMER", 10000, npc, null);
 							getTimers().addTimer("TEREDOR_RUNTIMER_2", 30000, npc, null);
@@ -519,6 +526,7 @@ public class TeredorWarzone extends AbstractInstance
 						if (teredorStatus == 3)
 						{
 							addSkillCastDesire(npc, npc, TEREDOR_CANCEL, 23);
+							
 							// if (myself->i_ai2 == 1)
 							// {
 							// myself->AddUseSkillDesire(myself->sm, toggle_shield1, @HEAL, @STAND, 500000000);
@@ -529,8 +537,10 @@ public class TeredorWarzone extends AbstractInstance
 							// {
 							// myself->AddUseSkillDesire(myself->sm, toggle_shield2, @HEAL, @STAND, 500000000);
 							npc.setDisplayEffect(4);
+							
 							// myself->i_ai2 = myself->i_ai2 - 2;
 							// }
+							
 							teredorStatus = npcVars.increaseInt("TEREDOR_STATUS", 1);
 							npc.disableCoreAI(true);
 							npc.setTargetable(false);
@@ -541,6 +551,7 @@ public class TeredorWarzone extends AbstractInstance
 							npc.getAI().setIntention(Intention.ACTIVE);
 							npc.broadcastSocialAction(4);
 							WalkingManager.getInstance().resumeMoving(npc);
+							
 							// myself->BroadcastScriptEvent(@SCE_TRAJAN_EGG_DIE, gg->GetIndexFromCreature(c0), 3000);
 							// myself->BroadcastScriptEvent(@SCE_EGG_SPAWN6, 0, 3000);
 							getTimers().addTimer("TEREDOR_BUHATIMER", 10000, npc, null);
@@ -558,6 +569,7 @@ public class TeredorWarzone extends AbstractInstance
 						if (teredorStatus == 4)
 						{
 							addSkillCastDesire(npc, npc, TEREDOR_CANCEL, 23);
+							
 							// if (myself->i_ai2 == 1)
 							// {
 							// myself->AddUseSkillDesire(myself->sm, toggle_shield1, @HEAL, @STAND, 500000000);
@@ -568,8 +580,10 @@ public class TeredorWarzone extends AbstractInstance
 							// {
 							// myself->AddUseSkillDesire(myself->sm, toggle_shield2, @HEAL, @STAND, 500000000);
 							npc.setDisplayEffect(4);
+							
 							// myself->i_ai2 = myself->i_ai2 - 2;
 							// }
+							
 							teredorStatus = npcVars.increaseInt("TEREDOR_STATUS", 1);
 							npc.disableCoreAI(true);
 							npc.setTargetable(false);
@@ -580,6 +594,7 @@ public class TeredorWarzone extends AbstractInstance
 							npc.getAI().setIntention(Intention.ACTIVE);
 							npc.broadcastSocialAction(4);
 							WalkingManager.getInstance().resumeMoving(npc);
+							
 							// myself->BroadcastScriptEvent(@SCE_TRAJAN_EGG_DIE, gg->GetIndexFromCreature(c0), 3000);
 							// myself->BroadcastScriptEvent(@SCE_EGG_SPAWN7, 0, 3000);
 							// myself->AddUseSkillDesire(myself->sm, Lastskill, @HEAL, @STAND, 500000000);

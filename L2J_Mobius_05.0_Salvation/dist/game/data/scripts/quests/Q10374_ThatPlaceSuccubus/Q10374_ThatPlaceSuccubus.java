@@ -45,13 +45,17 @@ public class Q10374_ThatPlaceSuccubus extends Quest
 	private static final int ANDREI = 31292;
 	private static final int AGNES = 31588;
 	private static final int ZENYA = 32140;
+	
 	// Items
 	private static final ItemHolder ADENA = new ItemHolder(57, 500560);
+	
 	// Reward
 	private static final int EXP_REWARD = 23747100;
 	private static final int SP_REWARD = 5699;
+	
 	// Misc
 	private static final int MIN_LEVEL = 80;
+	
 	// Monsters
 	private static final int PHANTOM_SOLIDER = 23186;
 	private static final int PHANTOM_WARRIOR = 23187;
@@ -76,6 +80,7 @@ public class Q10374_ThatPlaceSuccubus extends Quest
 		{
 			return null;
 		}
+		
 		String htmltext = null;
 		switch (event)
 		{
@@ -106,6 +111,7 @@ public class Q10374_ThatPlaceSuccubus extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -189,6 +195,7 @@ public class Q10374_ThatPlaceSuccubus extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

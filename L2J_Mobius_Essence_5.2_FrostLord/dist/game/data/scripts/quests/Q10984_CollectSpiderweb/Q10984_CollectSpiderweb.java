@@ -46,10 +46,12 @@ public class Q10984_CollectSpiderweb extends Quest
 	// NPCs
 	private static final int HERBIEL = 30150;
 	private static final int CAPTAIN_BATHIS = 30332;
+	
 	// Monsters
 	private static final int HOOK_SPIDER = 20308;
 	private static final int CRIMSON_SPIDER = 20460;
 	private static final int PINCER_SPIDER = 20466;
+	
 	// Items
 	private static final int GIANT_COBWEB = 91652;
 	private static final ItemHolder SOE_TO_CAPTAIN_BATHIS = new ItemHolder(91651, 1);
@@ -57,6 +59,7 @@ public class Q10984_CollectSpiderweb extends Quest
 	private static final ItemHolder SPIRIT_ORE = new ItemHolder(3031, 50);
 	private static final ItemHolder HP_POTS = new ItemHolder(91912, 50);
 	private static final ItemHolder XP_GROWTH_SCROLL = new ItemHolder(49674, 1);
+	
 	// Misc
 	private static final int MAX_LEVEL = 20;
 	
@@ -128,11 +131,13 @@ public class Q10984_CollectSpiderweb extends Quest
 						showOnScreenMsg(player, NpcStringId.YOU_VE_FINISHED_THE_TUTORIAL_NTAKE_YOUR_1ST_CLASS_TRANSFER_AND_COMPLETE_YOUR_TRAINING_WITH_BATHIS_TO_BECOME_STRONGER, ExShowScreenMessage.TOP_CENTER, 10000);
 						player.sendPacket(ExClassChangeSetAlarm.STATIC_PACKET);
 					}
+					
 					qs.exitQuest(false, true);
 				}
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -174,6 +179,7 @@ public class Q10984_CollectSpiderweb extends Quest
 				htmltext = getAlreadyCompletedMsg(player);
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -187,6 +193,7 @@ public class Q10984_CollectSpiderweb extends Quest
 			{
 				giveItems(killer, GIANT_COBWEB, 1, true);
 			}
+			
 			if (getQuestItemsCount(killer, GIANT_COBWEB) >= 30)
 			{
 				qs.setCond(2, true);

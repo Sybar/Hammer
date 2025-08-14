@@ -32,6 +32,7 @@ public class Q00294_CovertBusiness extends Quest
 {
 	// Item
 	private static final int BAT_FANG = 1491;
+	
 	// Reward
 	private static final int RING_OF_RACCOON = 1508;
 	
@@ -106,6 +107,7 @@ public class Q00294_CovertBusiness extends Quest
 						htmltext = "30534-06.htm";
 						giveAdena(player, 2400, true);
 					}
+					
 					addExpAndSp(player, 0, 600);
 					st.exitQuest(true, true);
 				}

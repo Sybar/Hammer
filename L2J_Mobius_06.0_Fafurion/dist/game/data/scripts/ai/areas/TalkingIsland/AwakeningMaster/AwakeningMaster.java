@@ -63,6 +63,7 @@ public class AwakeningMaster extends AbstractNpcAI
 	private static final int ISS_MASTER = 33402;
 	private static final int WYNN_MASTER = 33403;
 	private static final int AEORE_MASTER = 33404;
+	
 	// Items
 	private static final int SCROLL_OF_AFTERLIFE = 17600;
 	private static final int CHAOS_POMANDER = 37374;
@@ -105,6 +106,7 @@ public class AwakeningMaster extends AbstractNpcAI
 		{
 			return null;
 		}
+		
 		final String htmltext = null;
 		switch (event)
 		{
@@ -200,6 +202,7 @@ public class AwakeningMaster extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -245,8 +248,10 @@ public class AwakeningMaster extends AbstractNpcAI
 					return setNextErtheiaQuestState(npc, qs, AEORE_MASTER, 16, AEORE_POWER);
 				}
 			}
+			
 			return "ertheia.html";
 		}
+		
 		return npc.getId() + ".html";
 	}
 	
@@ -325,6 +330,7 @@ public class AwakeningMaster extends AbstractNpcAI
 		{
 			player.setBaseClass(player.getActiveClass());
 		}
+		
 		player.sendPacket(SystemMessageId.CONGRATULATIONS_YOU_VE_COMPLETED_A_CLASS_TRANSFER);
 		player.broadcastUserInfo(UserInfoType.BASIC_INFO, UserInfoType.MAX_HPCPMP);
 		player.broadcastInfo();
@@ -338,12 +344,14 @@ public class AwakeningMaster extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		giveItems(player, player.isDualClassActive() ? CHAOS_POMANDER_DUAL_CLASS : CHAOS_POMANDER, 2);
 		SkillTreeData.getInstance().cleanSkillUponAwakening(player);
 		for (SkillLearn skill : SkillTreeData.getInstance().getRaceSkillTree(player.getRace()))
 		{
 			player.addSkill(SkillData.getInstance().getSkill(skill.getSkillId(), skill.getSkillLevel()), true);
 		}
+		
 		player.sendSkillList();
 		
 		ThreadPool.schedule(() -> player.sendPacket(ExShowUsm.AWAKENING_END), 10000);

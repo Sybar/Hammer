@@ -35,9 +35,11 @@ public class Q00273_InvadersOfTheHolyLand extends Quest
 {
 	// NPC
 	private static final int VARKEES = 30566;
+	
 	// Items
 	private static final int BLACK_SOULSTONE = 1475;
 	private static final int RED_SOULSTONE = 1476;
+	
 	// Monsters
 	private static final Map<Integer, Integer> MONSTERS = new HashMap<>();
 	static
@@ -46,6 +48,7 @@ public class Q00273_InvadersOfTheHolyLand extends Quest
 		MONSTERS.put(20312, 87); // Rakeclaw Imp Hunter
 		MONSTERS.put(20313, 77); // Rakeclaw Imp Chieftain
 	}
+	
 	// Misc
 	private static final int MIN_LEVEL = 6;
 	
@@ -87,6 +90,7 @@ public class Q00273_InvadersOfTheHolyLand extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -104,6 +108,7 @@ public class Q00273_InvadersOfTheHolyLand extends Quest
 			{
 				giveItems(killer, RED_SOULSTONE, 1);
 			}
+			
 			playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 		}
 	}
@@ -128,6 +133,7 @@ public class Q00273_InvadersOfTheHolyLand extends Quest
 					final long red = getQuestItemsCount(player, RED_SOULSTONE);
 					giveAdena(player, (red * 5) + (black * 3) + (((red + black) >= 10) ? 1000 : 0), true);
 					takeItems(player, -1, BLACK_SOULSTONE, RED_SOULSTONE);
+					
 					// Q00281_HeadForTheHills.giveNewbieReward(player);
 					htmltext = (red > 0) ? "30566-07.html" : "30566-06.html";
 				}
@@ -138,6 +144,7 @@ public class Q00273_InvadersOfTheHolyLand extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

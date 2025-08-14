@@ -40,13 +40,16 @@ public class Q00416_DeathBringers extends Quest
 {
 	// NPC
 	private static final int GENIE_LAMP = 34369;
+	
 	// Monsters
 	private static final int GRAVEYARD_WANDERER = 20659;
 	private static final int ARCHER_OF_GREED = 20660;
 	private static final int DEMONIC_EYE = 20664;
 	private static final int FARCRAN = 20667;
+	
 	// Item
 	private static final ItemHolder BOOST_ATK_SCROLL = new ItemHolder(94269, 2);
+	
 	// Misc
 	private static final int MIN_LEVEL = 64;
 	private static final int MAX_LEVEL = 75;
@@ -101,6 +104,7 @@ public class Q00416_DeathBringers extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -139,6 +143,7 @@ public class Q00416_DeathBringers extends Quest
 				htmltext = getAlreadyCompletedMsg(player);
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -174,6 +179,7 @@ public class Q00416_DeathBringers extends Quest
 			holder.add(new NpcLogListHolder(NpcStringId.DEFEAT_MONSTERS_14.getId(), true, qs.getInt(KILL_COUNT_VAR)));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

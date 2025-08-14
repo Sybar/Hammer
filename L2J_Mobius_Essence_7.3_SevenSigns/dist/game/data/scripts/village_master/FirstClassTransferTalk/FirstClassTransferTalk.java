@@ -151,6 +151,7 @@ public class FirstClassTransferTalk extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

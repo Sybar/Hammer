@@ -44,6 +44,7 @@ public class Sebion extends AbstractNpcAI
 		{
 			npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.TIS_A_SCRATCH, 1000);
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	

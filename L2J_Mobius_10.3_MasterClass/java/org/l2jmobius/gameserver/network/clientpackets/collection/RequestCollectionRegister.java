@@ -85,6 +85,7 @@ public class RequestCollectionRegister extends ClientPacket
 				break;
 			}
 		}
+		
 		if ((count == 0) || (item.getCount() < count) || item.isEquipped())
 		{
 			player.sendMessage("Incorrect item count.");
@@ -123,6 +124,7 @@ public class RequestCollectionRegister extends ClientPacket
 				completeCount++;
 			}
 		}
+		
 		if (completeCount == collection.getCompleteCount())
 		{
 			player.sendPacket(new ExCollectionComplete(_collectionId));

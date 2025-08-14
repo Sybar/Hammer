@@ -54,6 +54,7 @@ public class ElementalSpiritInfo extends AbstractElementalSpiritPacket
 			buffer.writeByte(0);
 			return;
 		}
+		
 		buffer.writeByte(_type); // show spirit info window 1; Change type 2; Only update 0
 		buffer.writeByte(_spiritType);
 		buffer.writeByte(spirits.length); // spirit count
@@ -61,9 +62,11 @@ public class ElementalSpiritInfo extends AbstractElementalSpiritPacket
 		{
 			buffer.writeByte(spirit.getType());
 			buffer.writeByte(1); // spirit active ?
+			
 			// if active
 			writeSpiritInfo(buffer, spirit);
 		}
+		
 		buffer.writeInt(1); // Reset talent items count
 		for (int j = 0; j < 1; j++)
 		{

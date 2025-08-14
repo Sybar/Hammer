@@ -36,8 +36,10 @@ public class Q00359_ForASleeplessDeadman extends Quest
 	private static final int DOOM_SERVANT = 21006;
 	private static final int DOOM_GUARD = 21007;
 	private static final int DOOM_ARCHER = 21008;
+	
 	// Item
 	private static final int REMAINS = 5869;
+	
 	// Reward
 	private static final int[] REWARD =
 	{
@@ -50,6 +52,7 @@ public class Q00359_ForASleeplessDeadman extends Quest
 		5494,
 		5495
 	};
+	
 	// Drop chances
 	private static final Map<Integer, Integer> CHANCES = new HashMap<>();
 	static

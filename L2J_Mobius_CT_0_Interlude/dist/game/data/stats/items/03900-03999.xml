@@ -11,13 +11,13 @@
 		<set name="weight" val="160" />
 		<set name="price" val="640000" />
 		<set name="for_npc" val="true" />
-		<cond msgId="600">
+		<conditions msgId="600">
 			<player categoryType="WOLF" />
-		</cond>
-		<for>
+		</conditions>
+		<stats>
 			<add order="0" stat="mDef" val="38" />
 			<add order="0" stat="pDef" val="43" />
-		</for>
+		</stats>
 	</item>
 	<item id="3901" type="Armor" name="Wolf's Mithril Armor">
 		<!-- Double-click to wear. Only for wolves. -->
@@ -30,13 +30,13 @@
 		<set name="weight" val="160" />
 		<set name="price" val="940000" />
 		<set name="for_npc" val="true" />
-		<cond msgId="600">
+		<conditions msgId="600">
 			<player categoryType="WOLF" />
-		</cond>
-		<for>
+		</conditions>
+		<stats>
 			<add order="0" stat="mDef" val="41" />
 			<add order="0" stat="pDef" val="47" />
-		</for>
+		</stats>
 	</item>
 	<item id="3902" type="Weapon" name="Ghost Canine">
 		<!-- Double-click to wear. Only for wolves. -->
@@ -52,15 +52,15 @@
 		<set name="weight" val="100" />
 		<set name="price" val="61000" />
 		<set name="for_npc" val="true" />
-		<cond msgId="600">
+		<conditions msgId="600">
 			<player categoryType="WOLF" />
-		</cond>
-		<for>
+		</conditions>
+		<stats>
 			<add stat="pAtk" val="11" />
 			<add stat="mAtk" val="10" />
 			<set stat="critRate" val="8" />
 			<set stat="pAtkSpd" val="277" />
-		</for>
+		</stats>
 	</item>
 	<item id="3903" type="Weapon" name="Mithril Canine">
 		<!-- Double-click to wear. Only for wolves. -->
@@ -76,15 +76,15 @@
 		<set name="weight" val="100" />
 		<set name="price" val="100000" />
 		<set name="for_npc" val="true" />
-		<cond msgId="600">
+		<conditions msgId="600">
 			<player categoryType="WOLF" />
-		</cond>
-		<for>
+		</conditions>
+		<stats>
 			<add stat="pAtk" val="16" />
 			<add stat="mAtk" val="14" />
 			<set stat="critRate" val="8" />
 			<set stat="pAtkSpd" val="277" />
-		</for>
+		</stats>
 	</item>
 	<item id="3904" type="Weapon" name="Sylvan Canine">
 		<!-- Double-click to wear. Only for wolves. -->
@@ -100,15 +100,15 @@
 		<set name="weight" val="100" />
 		<set name="price" val="160000" />
 		<set name="for_npc" val="true" />
-		<cond msgId="600">
+		<conditions msgId="600">
 			<player categoryType="WOLF" />
-		</cond>
-		<for>
+		</conditions>
+		<stats>
 			<add stat="pAtk" val="23" />
 			<add stat="mAtk" val="18" />
 			<set stat="critRate" val="8" />
 			<set stat="pAtkSpd" val="277" />
-		</for>
+		</stats>
 	</item>
 	<item id="3905" type="Weapon" name="Orikarukon Canine">
 		<!-- Double-click to wear. Only for wolves. -->
@@ -124,15 +124,15 @@
 		<set name="weight" val="100" />
 		<set name="price" val="240000" />
 		<set name="for_npc" val="true" />
-		<cond msgId="600">
+		<conditions msgId="600">
 			<player categoryType="WOLF" />
-		</cond>
-		<for>
+		</conditions>
+		<stats>
 			<add stat="pAtk" val="31" />
 			<add stat="mAtk" val="24" />
 			<set stat="critRate" val="8" />
 			<set stat="pAtkSpd" val="277" />
-		</for>
+		</stats>
 	</item>
 	<item id="3906" type="Weapon" name="Fang of Saltydog">
 		<!-- Double-click to wear. Only for wolves. -->
@@ -148,15 +148,15 @@
 		<set name="weight" val="100" />
 		<set name="price" val="350000" />
 		<set name="for_npc" val="true" />
-		<cond msgId="600">
+		<conditions msgId="600">
 			<player categoryType="WOLF" />
-		</cond>
-		<for>
+		</conditions>
+		<stats>
 			<add stat="pAtk" val="40" />
 			<add stat="mAtk" val="30" />
 			<set stat="critRate" val="8" />
 			<set stat="pAtkSpd" val="277" />
-		</for>
+		</stats>
 	</item>
 	<item id="3907" type="Weapon" name="Fang of Cerberus">
 		<!-- Double-click to wear. Only for wolves. -->
@@ -172,15 +172,15 @@
 		<set name="weight" val="100" />
 		<set name="price" val="450000" />
 		<set name="for_npc" val="true" />
-		<cond msgId="600">
+		<conditions msgId="600">
 			<player categoryType="WOLF" />
-		</cond>
-		<for>
+		</conditions>
+		<stats>
 			<add stat="pAtk" val="49" />
 			<add stat="mAtk" val="36" />
 			<set stat="critRate" val="8" />
 			<set stat="pAtkSpd" val="277" />
-		</for>
+		</stats>
 	</item>
 	<item id="3908" type="Weapon" name="Fang of Coyote">
 		<!-- Double-click to wear. Only for wolves. -->
@@ -196,15 +196,15 @@
 		<set name="weight" val="100" />
 		<set name="price" val="570000" />
 		<set name="for_npc" val="true" />
-		<cond msgId="600">
+		<conditions msgId="600">
 			<player categoryType="WOLF" />
-		</cond>
-		<for>
+		</conditions>
+		<stats>
 			<add stat="pAtk" val="58" />
 			<add stat="mAtk" val="42" />
 			<set stat="critRate" val="8" />
 			<set stat="pAtkSpd" val="277" />
-		</for>
+		</stats>
 	</item>
 	<item id="3909" type="Weapon" name="Crystallized Ice Canine">
 		<!-- Double-click to wear. Only for wolves. -->
@@ -220,15 +220,15 @@
 		<set name="weight" val="100" />
 		<set name="price" val="720000" />
 		<set name="for_npc" val="true" />
-		<cond msgId="600">
+		<conditions msgId="600">
 			<player categoryType="WOLF" />
-		</cond>
-		<for>
+		</conditions>
+		<stats>
 			<add stat="pAtk" val="69" />
 			<add stat="mAtk" val="50" />
 			<set stat="critRate" val="8" />
 			<set stat="pAtkSpd" val="277" />
-		</for>
+		</stats>
 	</item>
 	<item id="3910" type="Weapon" name="Fang of the Blue Wolf">
 		<!-- Double-click to wear. Only for wolves. -->
@@ -244,15 +244,15 @@
 		<set name="weight" val="100" />
 		<set name="price" val="1100000" />
 		<set name="for_npc" val="true" />
-		<cond msgId="600">
+		<conditions msgId="600">
 			<player categoryType="WOLF" />
-		</cond>
-		<for>
+		</conditions>
+		<stats>
 			<add stat="pAtk" val="80" />
 			<add stat="mAtk" val="58" />
 			<set stat="critRate" val="8" />
 			<set stat="pAtkSpd" val="277" />
-		</for>
+		</stats>
 	</item>
 	<item id="3911" type="Weapon" name="Fang of Fenrir">
 		<!-- Double-click to wear. Only for wolves. -->
@@ -268,15 +268,15 @@
 		<set name="weight" val="100" />
 		<set name="price" val="1500000" />
 		<set name="for_npc" val="true" />
-		<cond msgId="600">
+		<conditions msgId="600">
 			<player categoryType="WOLF" />
-		</cond>
-		<for>
+		</conditions>
+		<stats>
 			<add stat="pAtk" val="93" />
 			<add stat="mAtk" val="66" />
 			<set stat="critRate" val="8" />
 			<set stat="pAtkSpd" val="277" />
-		</for>
+		</stats>
 	</item>
 	<item id="3912" type="Armor" name="Hatchling's Soft Leather">
 		<!-- Double-click to wear. Only for hatchlings. -->
@@ -289,13 +289,13 @@
 		<set name="weight" val="160" />
 		<set name="price" val="200000" />
 		<set name="for_npc" val="true" />
-		<cond msgId="600">
+		<conditions msgId="600">
 			<player categoryType="HATCHLING_GROUP" />
-		</cond>
-		<for>
+		</conditions>
+		<stats>
 			<add order="0" stat="mDef" val="26" />
 			<add order="0" stat="pDef" val="26" />
-		</for>
+		</stats>
 	</item>
 	<item id="3913" type="Armor" name="Hatchling's Scale Mail">
 		<!-- Double-click to wear. Only for hatchlings. -->
@@ -308,13 +308,13 @@
 		<set name="weight" val="160" />
 		<set name="price" val="310000" />
 		<set name="for_npc" val="true" />
-		<cond msgId="600">
+		<conditions msgId="600">
 			<player categoryType="HATCHLING_GROUP" />
-		</cond>
-		<for>
+		</conditions>
+		<stats>
 			<add order="0" stat="mDef" val="29" />
 			<add order="0" stat="pDef" val="29" />
-		</for>
+		</stats>
 	</item>
 	<item id="3914" type="Armor" name="Hatchling's Brigandine">
 		<!-- Double-click to wear. Only for hatchlings. -->
@@ -327,13 +327,13 @@
 		<set name="weight" val="160" />
 		<set name="price" val="420000" />
 		<set name="for_npc" val="true" />
-		<cond msgId="600">
+		<conditions msgId="600">
 			<player categoryType="HATCHLING_GROUP" />
-		</cond>
-		<for>
+		</conditions>
+		<stats>
 			<add order="0" stat="mDef" val="31" />
 			<add order="0" stat="pDef" val="31" />
-		</for>
+		</stats>
 	</item>
 	<item id="3915" type="Armor" name="Hatchling's Bronze Coat">
 		<!-- Double-click to wear. Only for hatchlings. -->
@@ -346,13 +346,13 @@
 		<set name="weight" val="160" />
 		<set name="price" val="570000" />
 		<set name="for_npc" val="true" />
-		<cond msgId="600">
+		<conditions msgId="600">
 			<player categoryType="HATCHLING_GROUP" />
-		</cond>
-		<for>
+		</conditions>
+		<stats>
 			<add order="0" stat="mDef" val="33" />
 			<add order="0" stat="pDef" val="33" />
-		</for>
+		</stats>
 	</item>
 	<item id="3916" type="Armor" name="Hatchling's Steel Coat">
 		<!-- Double-click to wear. Only for hatchlings. -->
@@ -365,13 +365,13 @@
 		<set name="weight" val="160" />
 		<set name="price" val="760000" />
 		<set name="for_npc" val="true" />
-		<cond msgId="600">
+		<conditions msgId="600">
 			<player categoryType="HATCHLING_GROUP" />
-		</cond>
-		<for>
+		</conditions>
+		<stats>
 			<add order="0" stat="mDef" val="36" />
 			<add order="0" stat="pDef" val="36" />
-		</for>
+		</stats>
 	</item>
 	<item id="3917" type="Armor" name="Hatchling's Shadowplate">
 		<!-- Double-click to wear. Only for hatchlings. -->
@@ -384,13 +384,13 @@
 		<set name="weight" val="160" />
 		<set name="price" val="1100000" />
 		<set name="for_npc" val="true" />
-		<cond msgId="600">
+		<conditions msgId="600">
 			<player categoryType="HATCHLING_GROUP" />
-		</cond>
-		<for>
+		</conditions>
+		<stats>
 			<add order="0" stat="mDef" val="38" />
 			<add order="0" stat="pDef" val="38" />
-		</for>
+		</stats>
 	</item>
 	<item id="3918" type="Armor" name="Hatchling's Mithril Coat">
 		<!-- Double-click to wear. Only for hatchlings. -->
@@ -403,13 +403,13 @@
 		<set name="weight" val="160" />
 		<set name="price" val="1600000" />
 		<set name="for_npc" val="true" />
-		<cond msgId="600">
+		<conditions msgId="600">
 			<player categoryType="HATCHLING_GROUP" />
-		</cond>
-		<for>
+		</conditions>
+		<stats>
 			<add order="0" stat="mDef" val="41" />
 			<add order="0" stat="pDef" val="41" />
-		</for>
+		</stats>
 	</item>
 	<item id="3919" type="Weapon" name="Serpent Fang">
 		<!-- Double-click to wear. Only for hatchlings. -->
@@ -425,15 +425,15 @@
 		<set name="weight" val="100" />
 		<set name="price" val="197143" />
 		<set name="for_npc" val="true" />
-		<cond msgId="600">
+		<conditions msgId="600">
 			<player categoryType="HATCHLING_GROUP" />
-		</cond>
-		<for>
+		</conditions>
+		<stats>
 			<add stat="pAtk" val="8" />
 			<add stat="mAtk" val="7" />
 			<set stat="critRate" val="8" />
 			<set stat="pAtkSpd" val="277" />
-		</for>
+		</stats>
 	</item>
 	<item id="3920" type="Weapon" name="Viperbite">
 		<!-- Double-click to wear. Only for hatchlings. -->
@@ -449,15 +449,15 @@
 		<set name="weight" val="100" />
 		<set name="price" val="310000" />
 		<set name="for_npc" val="true" />
-		<cond msgId="600">
+		<conditions msgId="600">
 			<player categoryType="HATCHLING_GROUP" />
-		</cond>
-		<for>
+		</conditions>
+		<stats>
 			<add stat="pAtk" val="9" />
 			<add stat="mAtk" val="10" />
 			<set stat="critRate" val="8" />
 			<set stat="pAtkSpd" val="277" />
-		</for>
+		</stats>
 	</item>
 	<item id="3921" type="Weapon" name="Shadow Fang">
 		<!-- Double-click to wear. Only for hatchlings. -->
@@ -473,15 +473,15 @@
 		<set name="weight" val="100" />
 		<set name="price" val="420000" />
 		<set name="for_npc" val="true" />
-		<cond msgId="600">
+		<conditions msgId="600">
 			<player categoryType="HATCHLING_GROUP" />
-		</cond>
-		<for>
+		</conditions>
+		<stats>
 			<add stat="pAtk" val="10" />
 			<add stat="mAtk" val="11" />
 			<set stat="critRate" val="8" />
 			<set stat="pAtkSpd" val="277" />
-		</for>
+		</stats>
 	</item>
 	<item id="3922" type="Weapon" name="Alya Fang">
 		<!-- Double-click to wear. Only for hatchlings. -->
@@ -497,15 +497,15 @@
 		<set name="weight" val="100" />
 		<set name="price" val="570000" />
 		<set name="for_npc" val="true" />
-		<cond msgId="600">
+		<conditions msgId="600">
 			<player categoryType="HATCHLING_GROUP" />
-		</cond>
-		<for>
+		</conditions>
+		<stats>
 			<add stat="pAtk" val="12" />
 			<add stat="mAtk" val="13" />
 			<set stat="critRate" val="8" />
 			<set stat="pAtkSpd" val="277" />
-		</for>
+		</stats>
 	</item>
 	<item id="3923" type="Weapon" name="Torturer">
 		<!-- Double-click to wear. Only for hatchlings. -->
@@ -521,15 +521,15 @@
 		<set name="weight" val="100" />
 		<set name="price" val="760000" />
 		<set name="for_npc" val="true" />
-		<cond msgId="600">
+		<conditions msgId="600">
 			<player categoryType="HATCHLING_GROUP" />
-		</cond>
-		<for>
+		</conditions>
+		<stats>
 			<add stat="pAtk" val="13" />
 			<add stat="mAtk" val="16" />
 			<set stat="critRate" val="8" />
 			<set stat="pAtkSpd" val="277" />
-		</for>
+		</stats>
 	</item>
 	<item id="3924" type="Weapon" name="Unuk Alhay Fang">
 		<!-- Double-click to wear. Only for hatchlings. -->
@@ -545,15 +545,15 @@
 		<set name="weight" val="100" />
 		<set name="price" val="1100000" />
 		<set name="for_npc" val="true" />
-		<cond msgId="600">
+		<conditions msgId="600">
 			<player categoryType="HATCHLING_GROUP" />
-		</cond>
-		<for>
+		</conditions>
+		<stats>
 			<add stat="pAtk" val="15" />
 			<add stat="mAtk" val="18" />
 			<set stat="critRate" val="8" />
 			<set stat="pAtkSpd" val="277" />
-		</for>
+		</stats>
 	</item>
 	<item id="3925" type="Weapon" name="Antiplague">
 		<!-- Double-click to wear. Only for hatchlings. -->
@@ -569,15 +569,15 @@
 		<set name="weight" val="100" />
 		<set name="price" val="1600000" />
 		<set name="for_npc" val="true" />
-		<cond msgId="600">
+		<conditions msgId="600">
 			<player categoryType="HATCHLING_GROUP" />
-		</cond>
-		<for>
+		</conditions>
+		<stats>
 			<add stat="pAtk" val="17" />
 			<add stat="mAtk" val="21" />
 			<set stat="critRate" val="8" />
 			<set stat="pAtkSpd" val="277" />
-		</for>
+		</stats>
 	</item>
 	<item id="3926" type="EtcItem" name="L2Day - Scroll of Guidance">
 		<!-- Increases accuracy. Intensity 3. -->
@@ -741,7 +741,7 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="item_skill" val="3599-1" /> <!-- Polearm Multi-attack -->
 		<set name="for_npc" val="true" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="50" />
 			<set stat="mAtk" val="26" />
 			<set stat="critRate" val="8" />
@@ -749,7 +749,7 @@
 			<set stat="pAtkSpd" val="325" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="3938" type="Weapon" name="Giant Rod">
 		<set name="icon" val="icon.weapon_monster_i00" />
@@ -770,7 +770,7 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="item_skill" val="3599-1" /> <!-- Polearm Multi-attack -->
 		<set name="for_npc" val="true" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="50" />
 			<set stat="mAtk" val="26" />
 			<set stat="critRate" val="8" />
@@ -778,7 +778,7 @@
 			<set stat="pAtkSpd" val="325" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="3939" type="Weapon" name="Lady's Fan">
 		<set name="icon" val="icon.weapon_monster_i00" />
@@ -799,7 +799,7 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="item_skill" val="3599-1" /> <!-- Polearm Multi-attack -->
 		<set name="for_npc" val="true" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="50" />
 			<set stat="mAtk" val="26" />
 			<set stat="critRate" val="8" />
@@ -807,7 +807,7 @@
 			<set stat="pAtkSpd" val="325" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="3940" type="EtcItem" name="Blueprint: Summon Siege Golem">
 		<!-- Blueprint needed to learn the Summon Siege Golem technique. -->

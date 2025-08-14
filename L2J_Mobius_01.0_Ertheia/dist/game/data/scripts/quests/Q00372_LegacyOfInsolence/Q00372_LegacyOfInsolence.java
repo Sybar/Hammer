@@ -39,6 +39,7 @@ public class Q00372_LegacyOfInsolence extends Quest
 	private static final int MAGISTER_DESMOND = 30855;
 	private static final int ANTIQUE_DEALER_PATRIN = 30929;
 	private static final int CLAUDIA_ATHEBALDT = 31001;
+	
 	// Items
 	private static final int ANCIENT_RED_PAPYRUS = 5966;
 	private static final int ANCIENT_BLUE_PAPYRUS = 5967;
@@ -74,6 +75,7 @@ public class Q00372_LegacyOfInsolence extends Quest
 	private static final int BLUEPRINT_TOWER_OF_INSOLENCE_11TH_FLOOR = 5999;
 	private static final int BLUEPRINT_TOWER_OF_INSOLENCE_12TH_FLOOR = 6000;
 	private static final int BLUEPRINT_TOWER_OF_INSOLENCE_13TH_FLOOR = 6001;
+	
 	// Rewards
 	private static final int RECIPE_SEALED_DARK_CRYSTAL_BOOTS_60 = 5368;
 	private static final int RECIPE_SEALED_TALLUM_BOOTS_60 = 5370;
@@ -99,6 +101,7 @@ public class Q00372_LegacyOfInsolence extends Quest
 	private static final int SEALED_TALLUM_HELM_DESIGN = 5526;
 	private static final int SEALED_HELM_OF_NIGHTMARE_DESIGN = 5527;
 	private static final int SEALED_MAJESTIC_CIRCLET_DESIGN = 5528;
+	
 	// Monsters
 	private static final int HALLATES_INSPECTOR = 20825;
 	private static final Map<Integer, ItemChanceHolder> MONSTER_REWARDS = new HashMap<>();
@@ -222,6 +225,7 @@ public class Q00372_LegacyOfInsolence extends Quest
 						giveItems(player, RECIPE_SEALED_DARK_CRYSTAL_GLOVES_60, 1);
 						giveItems(player, RECIPE_SEALED_DARK_CRYSTAL_HELMET_60, 1);
 					}
+					
 					htmltext = event;
 				}
 				else
@@ -286,6 +290,7 @@ public class Q00372_LegacyOfInsolence extends Quest
 						giveItems(player, RECIPE_SEALED_TALLUM_GLOVES_60, 1);
 						giveItems(player, RECIPE_SEALED_TALLUM_HELMET_60, 1);
 					}
+					
 					htmltext = event;
 				}
 				else
@@ -350,6 +355,7 @@ public class Q00372_LegacyOfInsolence extends Quest
 						giveItems(player, RECIPE_SEALED_GAUNTLETS_OF_NIGHTMARE_60, 1);
 						giveItems(player, RECIPE_SEALED_HELM_OF_NIGHTMARE_60, 1);
 					}
+					
 					htmltext = event;
 				}
 				else
@@ -414,6 +420,7 @@ public class Q00372_LegacyOfInsolence extends Quest
 						giveItems(player, RECIPE_SEALED_MAJESTIC_GAUNTLETS_60, 1);
 						giveItems(player, RECIPE_SEALED_MAJESTIC_CIRCLET_60, 1);
 					}
+					
 					htmltext = event;
 				}
 				else
@@ -439,6 +446,7 @@ public class Q00372_LegacyOfInsolence extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -557,6 +565,7 @@ public class Q00372_LegacyOfInsolence extends Quest
 						{
 							giveAdena(player, 4000, true);
 						}
+						
 						htmltext = "30839-02.html";
 					}
 					else
@@ -600,6 +609,7 @@ public class Q00372_LegacyOfInsolence extends Quest
 						{
 							giveAdena(player, 4000, true);
 						}
+						
 						htmltext = "30855-02.html";
 					}
 					else
@@ -639,6 +649,7 @@ public class Q00372_LegacyOfInsolence extends Quest
 						{
 							giveAdena(player, 4000, true);
 						}
+						
 						htmltext = "30929-02.html";
 					}
 					else
@@ -682,6 +693,7 @@ public class Q00372_LegacyOfInsolence extends Quest
 						{
 							giveAdena(player, 4000, true);
 						}
+						
 						htmltext = "31001-02.html";
 					}
 					else
@@ -692,6 +704,7 @@ public class Q00372_LegacyOfInsolence extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 }

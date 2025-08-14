@@ -46,9 +46,11 @@ public class QueenAntLair extends AbstractInstance
 	private static final int ESCORT = 18023;
 	private static final int NURSE = 18022;
 	private static final int JIO = 34185;
+	
 	// Skills
 	private static final SkillHolder RAIN_OF_STONES_LV_1 = new SkillHolder(48254, 1); // When player in Radius target boss attack.
 	private static final SkillHolder HEAL = new SkillHolder(4020, 1);
+	
 	// Misc
 	private static final int TEMPLATE_ID = 217;
 	
@@ -78,6 +80,7 @@ public class QueenAntLair extends AbstractInstance
 							player.sendMessage("Player " + member.getName() + " must go closer to Jio.");
 							break;
 						}
+						
 						enterInstance(member, npc, TEMPLATE_ID);
 					}
 				}
@@ -93,6 +96,7 @@ public class QueenAntLair extends AbstractInstance
 						player.sendMessage("You must go closer to Jio.");
 						break;
 					}
+					
 					enterInstance(player, npc, TEMPLATE_ID);
 				}
 				break;
@@ -144,26 +148,31 @@ public class QueenAntLair extends AbstractInstance
 					nurse1.setTarget(world.getNpc(QUEEN));
 					nurse1.doCast(HEAL.getSkill());
 				}
+				
 				if (!nurse2.isDead())
 				{
 					nurse2.setTarget(world.getNpc(QUEEN));
 					nurse2.doCast(HEAL.getSkill());
 				}
+				
 				if (!nurse3.isDead())
 				{
 					nurse3.setTarget(world.getNpc(QUEEN));
 					nurse3.doCast(HEAL.getSkill());
 				}
+				
 				if (!nurse4.isDead())
 				{
 					nurse4.setTarget(world.getNpc(QUEEN));
 					nurse4.doCast(HEAL.getSkill());
 				}
+				
 				if (!nurse5.isDead())
 				{
 					nurse5.setTarget(world.getNpc(QUEEN));
 					nurse5.doCast(HEAL.getSkill());
 				}
+				
 				if (!nurse6.isDead())
 				{
 					nurse6.setTarget(world.getNpc(QUEEN));
@@ -182,6 +191,7 @@ public class QueenAntLair extends AbstractInstance
 				break;
 			}
 		}
+		
 		return null;
 	}
 	
@@ -294,6 +304,7 @@ public class QueenAntLair extends AbstractInstance
 			{
 				gamer.sendPacket(new ExSendUIEvent(gamer, false, false, 0, 0, NpcStringId.TIME_LEFT));
 			}
+			
 			world.finishInstance();
 		}
 	}

@@ -50,10 +50,13 @@ public class Q11037_WhyAreTheRatelHere extends Quest
 	private static final int PIO = 33963;
 	private static final int AWESOME_HONEY_BADGER = 24394;
 	private static final int AWESOME_STRONG_HONEY_BADGER = 24395;
+	
 	// Items
 	private static final ItemHolder SOE_PIO = new ItemHolder(80681, 1);
+	
 	// Location
 	private static final Location TRAINING_GROUNDS_TELEPORT = new Location(-80777, 91995, -3720);
+	
 	// Misc
 	private static final String KILL_COUNT_VAR = "KillCount";
 	private static final int MIN_LEVEL = 45;
@@ -120,6 +123,7 @@ public class Q11037_WhyAreTheRatelHere extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -163,6 +167,7 @@ public class Q11037_WhyAreTheRatelHere extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -199,6 +204,7 @@ public class Q11037_WhyAreTheRatelHere extends Quest
 			holder.add(new NpcLogListHolder(NpcStringId.ERADICATE_THE_FEAR_RATEL_2.getId(), true, qs.getInt(KILL_COUNT_VAR)));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

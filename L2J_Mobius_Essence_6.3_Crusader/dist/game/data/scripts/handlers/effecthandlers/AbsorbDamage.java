@@ -126,6 +126,7 @@ public class AbsorbDamage extends AbstractEffect
 		{
 			PER_DAMAGE_HOLDER.remove(effected.getObjectId());
 		}
+		
 		HITS_HOLDER.remove(effected.getObjectId());
 		
 		// Stop other effects when shield is removed.
@@ -148,6 +149,7 @@ public class AbsorbDamage extends AbstractEffect
 			PER_DAMAGE_HOLDER.put(effected.getObjectId(), _damage + ((effector.getMaxHp() * _casterHpMod) / 100));
 			effected.addListener(new FunctionEventListener(effected, EventType.ON_CREATURE_DAMAGE_RECEIVED, (OnCreatureDamageReceived event) -> onDamageReceivedPerEvent(event), this));
 		}
+		
 		HITS_HOLDER.put(effected.getObjectId(), 0);
 	}
 }

@@ -74,6 +74,7 @@ public class BossDailyMissionHandler extends AbstractDailyMissionHandler
 				}
 			}
 		}
+		
 		return false;
 	}
 	
@@ -112,6 +113,7 @@ public class BossDailyMissionHandler extends AbstractDailyMissionHandler
 			{
 				entry.setStatus(DailyMissionStatus.AVAILABLE);
 			}
+			
 			storePlayerEntry(entry);
 		}
 	}

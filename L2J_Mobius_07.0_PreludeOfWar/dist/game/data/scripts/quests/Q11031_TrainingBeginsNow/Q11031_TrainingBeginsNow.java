@@ -57,12 +57,15 @@ public class Q11031_TrainingBeginsNow extends Quest
 	private static final int SILVAN = 33178;
 	private static final int NASTY_EYE = 24380;
 	private static final int NASTY_BUGGLE = 24381;
+	
 	// Items
 	private static final ItemHolder NOVICE_SOULSHOTS = new ItemHolder(5789, 1500);
 	private static final ItemHolder NOVICE_SPIRITSHOTS = new ItemHolder(5790, 500); // TODO: Check guessed amount.
 	private static final ItemHolder SOE_SILVAN = new ItemHolder(80678, 1);
+	
 	// Location
 	private static final Location TRAINING_GROUNDS_TELEPORT = new Location(-17447, 145170, -3816);
+	
 	// Misc
 	private static final String NOVICE_SHOTS_REWARDED_VAR = "NOVICE_SHOTS_REWARDED";
 	private static final String KILL_COUNT_VAR = "KillCount";
@@ -149,6 +152,7 @@ public class Q11031_TrainingBeginsNow extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -180,6 +184,7 @@ public class Q11031_TrainingBeginsNow extends Quest
 								startQuestTimer("reward_shots", 100, npc, player);
 								player.sendPacket(new ExTutorialShowId(14)); // Soulshots and Spiritshots
 							}
+							
 							htmltext = "34505-04.html";
 						}
 						else
@@ -205,6 +210,7 @@ public class Q11031_TrainingBeginsNow extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -241,6 +247,7 @@ public class Q11031_TrainingBeginsNow extends Quest
 			holder.add(new NpcLogListHolder(NpcStringId.COMBAT_TRAINING_AT_THE_RUINS_OF_DESPAIR.getId(), true, qs.getInt(KILL_COUNT_VAR)));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 	

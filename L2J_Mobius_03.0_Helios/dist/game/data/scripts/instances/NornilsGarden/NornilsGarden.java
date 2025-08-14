@@ -45,6 +45,7 @@ public class NornilsGarden extends AbstractInstance
 	// NPCs
 	private static final int BOZ_CORE = 33781;
 	private static final int SPICULA_ZERO = 25901;
+	
 	// Monsters
 	private static final int BOZ_STAGE1 = 19298;
 	private static final int BOZ_STAGE2 = 19305;
@@ -66,18 +67,21 @@ public class NornilsGarden extends AbstractInstance
 		ELITE_SOLDIER_CLONE_2,
 		SPICULA_ELITE_GUARD_2
 	};
+	
 	// Skills
 	private static final SkillHolder DARK_SPHERES = new SkillHolder(15234, 1);
 	private static final SkillHolder DARK_WIND = new SkillHolder(15235, 1);
 	private static final SkillHolder DARK_THRUST = new SkillHolder(15236, 1);
 	private static final SkillHolder DARK_BUSTER = new SkillHolder(15237, 1);
 	private static final SkillHolder DARK_BREATH = new SkillHolder(15238, 1);
+	
 	// Chance
 	private static final int CHANCE_DARK_SPHERES = 15;
 	private static final int CHANCE_DARK_WIND = 30;
 	private static final int CHANCE_DARK_THRUST = 15;
 	private static final int CHANCE_DARK_BUSTER = 15;
 	private static final int CHANCE_DARK_BREATH = 30;
+	
 	// Misc
 	private static final int TEMPLATE_ID = 231;
 	
@@ -160,6 +164,7 @@ public class NornilsGarden extends AbstractInstance
 		{
 			enterInstance(player, npc, TEMPLATE_ID);
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	
@@ -171,6 +176,7 @@ public class NornilsGarden extends AbstractInstance
 		{
 			world.openCloseDoor(16200201, false);
 		}
+		
 		if ((attacker != null) && !attacker.isDead() && !npc.isCastingNow())
 		{
 			if ((getRandom(100) < CHANCE_DARK_SPHERES) && (npc.getCurrentHpPercent() <= 95))

@@ -204,6 +204,7 @@ public abstract class ZoneType extends ListenersContainer
 			{
 				return false;
 			}
+			
 			if (!isEnabled(creature.getInstanceId()))
 			{
 				return false;
@@ -225,6 +226,7 @@ public abstract class ZoneType extends ListenersContainer
 			{
 				creature.asPlayer().sendPacket(new ExShowScreenMessage(SystemMessageId.YOU_CANNOT_ENTER_AS_YOUR_LEVEL_DOESN_T_MEED_THE_REQUIREMENTS, ExShowScreenMessage.TOP_CENTER, 10000));
 			}
+			
 			return false;
 		}
 		
@@ -290,6 +292,7 @@ public abstract class ZoneType extends ListenersContainer
 				}
 			}
 		}
+		
 		return true;
 	}
 	
@@ -303,6 +306,7 @@ public abstract class ZoneType extends ListenersContainer
 		{
 			throw new IllegalStateException("Zone already set");
 		}
+		
 		_zone = zone;
 	}
 	
@@ -321,6 +325,7 @@ public abstract class ZoneType extends ListenersContainer
 		{
 			throw new IllegalStateException("Blocked zone already set");
 		}
+		
 		_blockedZones = blockedZones;
 	}
 	
@@ -497,6 +502,7 @@ public abstract class ZoneType extends ListenersContainer
 		{
 			_settings.clear();
 		}
+		
 		_settings = settings;
 	}
 	
@@ -540,6 +546,7 @@ public abstract class ZoneType extends ListenersContainer
 				players.add(ch.asPlayer());
 			}
 		}
+		
 		return players;
 	}
 	
@@ -627,6 +634,7 @@ public abstract class ZoneType extends ListenersContainer
 		{
 			return _enabledInInstance.getOrDefault(instanceId, _enabled);
 		}
+		
 		return _enabled;
 	}
 	

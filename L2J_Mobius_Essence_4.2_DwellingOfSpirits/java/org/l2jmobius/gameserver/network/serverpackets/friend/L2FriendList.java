@@ -74,6 +74,7 @@ public class L2FriendList extends ServerPacket
 				level = CharInfoTable.getInstance().getLevelById(objId);
 				classId = CharInfoTable.getInstance().getClassIdById(objId);
 			}
+			
 			_info.add(new FriendInfo(objId, name, online, level, classId));
 		}
 	}

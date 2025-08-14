@@ -32,6 +32,7 @@ public class Q00109_InSearchOfTheNest extends Quest
 	private static final int PIERCE = 31553;
 	private static final int KAHMAN = 31554;
 	private static final int SCOUT_CORPSE = 32015;
+	
 	// Items
 	private static final int SCOUT_MEMO = 8083;
 	private static final int RECRUIT_BADGE = 7246;

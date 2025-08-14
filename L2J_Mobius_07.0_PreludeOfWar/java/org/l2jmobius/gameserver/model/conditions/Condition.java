@@ -17,7 +17,7 @@
 package org.l2jmobius.gameserver.model.conditions;
 
 import org.l2jmobius.gameserver.model.actor.Creature;
-import org.l2jmobius.gameserver.model.actor.enums.player.DailyMissionDataHolder;
+import org.l2jmobius.gameserver.model.actor.holders.player.DailyMissionDataHolder;
 import org.l2jmobius.gameserver.model.item.ItemTemplate;
 import org.l2jmobius.gameserver.model.skill.Skill;
 
@@ -128,6 +128,7 @@ public abstract class Condition implements ConditionListener
 			_result = res;
 			notifyChanged();
 		}
+		
 		return res;
 	}
 	

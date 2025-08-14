@@ -32,17 +32,21 @@ public class Q00291_RevengeOfTheRedbonnet extends Quest
 {
 	// NPC
 	private static final int MARYSE_REDBONNET = 30553;
+	
 	// Item
 	private static final ItemHolder BLACK_WOLF_PELT = new ItemHolder(1482, 40);
+	
 	// Monster
 	private static final int BLACK_WOLF = 20317;
 	private static final int BLACK_TIMBER_WOLF = 20318;
+	
 	// Rewards
 	private static final int ADENA = 57;
 	private static final int GRANDMAS_PEARL = 1502;
 	private static final int GRANDMAS_MIRROR = 1503;
 	private static final int GRANDMAS_NECKLACE = 1504;
 	private static final int GRANDMAS_HAIRPIN = 1505;
+	
 	// Misc
 	private static final int MIN_LEVEL = 4;
 	
@@ -64,6 +68,7 @@ public class Q00291_RevengeOfTheRedbonnet extends Quest
 			qs.startQuest();
 			return event;
 		}
+		
 		return null;
 	}
 	
@@ -112,6 +117,7 @@ public class Q00291_RevengeOfTheRedbonnet extends Quest
 				{
 					giveItems(player, ADENA, 20);
 				}
+				
 				qs.exitQuest(true, true);
 				html = "30553-05.html";
 			}
@@ -120,6 +126,7 @@ public class Q00291_RevengeOfTheRedbonnet extends Quest
 				html = "30553-04.html";
 			}
 		}
+		
 		return html;
 	}
 }

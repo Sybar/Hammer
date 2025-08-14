@@ -36,8 +36,10 @@ public class Q00162_CurseOfTheUndergroundFortress extends Quest
 	// Items
 	private static final int BONE_FRAGMENT = 1158;
 	private static final int ELF_SKULL = 1159;
+	
 	// Rewards
 	private static final int BONE_SHIELD = 625;
+	
 	// Drop chances
 	private static final Map<Integer, Integer> MONSTERS_SKULLS = new HashMap<>();
 	private static final Map<Integer, Integer> MONSTERS_BONES = new HashMap<>();

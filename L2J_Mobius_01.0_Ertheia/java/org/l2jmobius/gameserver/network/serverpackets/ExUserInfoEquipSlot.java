@@ -30,7 +30,7 @@ import org.l2jmobius.gameserver.network.enums.InventorySlot;
 public class ExUserInfoEquipSlot extends AbstractMaskPacket<InventorySlot>
 {
 	private final Player _player;
-	private final byte[] _masks = new byte[]
+	private final byte[] _masks =
 	{
 		(byte) 0x00,
 		(byte) 0x00,
@@ -76,6 +76,7 @@ public class ExUserInfoEquipSlot extends AbstractMaskPacket<InventorySlot>
 				buffer.writeInt(inventory.getPaperdollObjectId(slot.getSlot()));
 				buffer.writeInt(inventory.getPaperdollItemId(slot.getSlot()));
 				buffer.writeInt(augment != null ? augment.getOption1Id() : 0);
+				
 				// Mobius: Maybe use 2x writeH?
 				// buffer.writeInt(augment != null ? augment.getOption2Id() : 0);
 				buffer.writeInt(inventory.getPaperdollItemVisualId(slot.getSlot()));

@@ -64,7 +64,9 @@ public class ExOlympiadMyRankingInfo extends ServerPacket
 		final Calendar calendar = new GregorianCalendar();
 		calendar.setTime(date);
 		int year = calendar.get(Calendar.YEAR);
+		
 		// Add one to month {0 - 11}
+		
 		int month = calendar.get(Calendar.MONTH) + 1;
 		
 		int currentPlace = 0;
@@ -87,6 +89,7 @@ public class ExOlympiadMyRankingInfo extends ServerPacket
 						currentLoses = rset.getInt("competitions_lost");
 						currentPoints = rset.getInt("olympiad_points");
 					}
+					
 					i++;
 				}
 			}
@@ -95,6 +98,7 @@ public class ExOlympiadMyRankingInfo extends ServerPacket
 		{
 			PacketLogger.warning("Olympiad my ranking: Could not load data: " + e.getMessage());
 		}
+		
 		int previousPlace = 0;
 		int previousWins = 0;
 		int previousLoses = 0;
@@ -115,6 +119,7 @@ public class ExOlympiadMyRankingInfo extends ServerPacket
 						previousLoses = rset.getInt("competitions_lost");
 						previousPoints = rset.getInt("olympiad_points");
 					}
+					
 					i++;
 				}
 			}
@@ -123,6 +128,7 @@ public class ExOlympiadMyRankingInfo extends ServerPacket
 		{
 			PacketLogger.warning("Olympiad my ranking: Could not load data: " + e.getMessage());
 		}
+		
 		int heroCount = 0;
 		int legendCount = 0;
 		if (Hero.getInstance().getCompleteHeroes().containsKey(_player.getObjectId()))
@@ -131,6 +137,7 @@ public class ExOlympiadMyRankingInfo extends ServerPacket
 			heroCount = hero.getInt("count", 0);
 			legendCount = hero.getInt("legend_count", 0);
 		}
+		
 		buffer.writeInt(year); // Year
 		buffer.writeInt(month); // Month
 		buffer.writeInt(Math.min(Olympiad.getInstance().getCurrentCycle() - 1, 0)); // cycle ?

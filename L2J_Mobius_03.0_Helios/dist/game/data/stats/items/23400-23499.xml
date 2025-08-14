@@ -785,12 +785,12 @@
 		<set name="immediate_effect" val="true" />
 		<set name="weight" val="220" />
 		<set name="material" val="CLOTH" />
-		<cond msgId="2453">
+		<conditions msgId="2453">
 			<player cloakStatus="true" />
-		</cond>
-		<cond>
+		</conditions>
+		<conditions>
 			<player level="80" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">25</stat>
 			<stat type="fireRes">7</stat>
@@ -838,12 +838,12 @@
 		<set name="immediate_effect" val="true" />
 		<set name="weight" val="220" />
 		<set name="material" val="CLOTH" />
-		<cond msgId="2453">
+		<conditions msgId="2453">
 			<player cloakStatus="true" />
-		</cond>
-		<cond>
+		</conditions>
+		<conditions>
 			<player level="80" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">25</stat>
 			<stat type="fireRes">7</stat>
@@ -1217,9 +1217,9 @@
 		<set name="etcitem_type" val="SCROLL" />
 		<set name="handler" val="ItemSkills" />
 		<set name="material" val="PAPER" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player insideZoneId="60025, 60026, 60027" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="22748" level="1" /> <!-- Scroll: PK (Low-grade) -->
 		</skills>
@@ -1238,9 +1238,9 @@
 		<set name="etcitem_type" val="SCROLL" />
 		<set name="handler" val="ItemSkills" />
 		<set name="material" val="PAPER" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player insideZoneId="60025, 60026, 60027" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="22749" level="1" /> <!-- Scroll: PK (Mid-grade) -->
 		</skills>
@@ -1259,9 +1259,9 @@
 		<set name="etcitem_type" val="SCROLL" />
 		<set name="handler" val="ItemSkills" />
 		<set name="material" val="PAPER" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player insideZoneId="60025, 60026, 60027" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="22750" level="1" /> <!-- Scroll: PK (High-grade) -->
 		</skills>
@@ -1280,9 +1280,9 @@
 		<set name="etcitem_type" val="SCROLL" />
 		<set name="handler" val="ItemSkills" />
 		<set name="material" val="PAPER" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player insideZoneId="60025, 60026, 60027" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="22751" level="1" /> <!-- Scroll: PK (Top-grade) -->
 		</skills>

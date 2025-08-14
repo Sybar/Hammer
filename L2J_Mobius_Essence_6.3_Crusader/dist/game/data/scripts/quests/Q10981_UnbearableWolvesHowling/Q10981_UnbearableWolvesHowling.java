@@ -43,15 +43,18 @@ public class Q10981_UnbearableWolvesHowling extends Quest
 	// NPCs
 	private static final int NEWBIE_GUIDE = 30598;
 	private static final int JACKSON = 30002;
+	
 	// Items
 	private static final ItemHolder SOE_TO_JACKSON = new ItemHolder(91646, 1);
 	private static final ItemHolder SOE_NOVICE = new ItemHolder(10650, 10);
 	private static final ItemHolder RING_NOVICE = new ItemHolder(49041, 2);
 	private static final ItemHolder EARRING_NOVICE = new ItemHolder(49040, 2);
 	private static final ItemHolder NECKLACE_NOVICE = new ItemHolder(49039, 1);
+	
 	// Monsters
 	private static final int BEARDED_KELTIR = 20481;
 	private static final int WOLF = 20120;
+	
 	// Misc
 	private static final int MAX_LEVEL = 20;
 	private static final String KILL_COUNT_VAR = "KillCount";
@@ -114,6 +117,7 @@ public class Q10981_UnbearableWolvesHowling extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -151,6 +155,7 @@ public class Q10981_UnbearableWolvesHowling extends Quest
 			holder.add(new NpcLogListHolder(NpcStringId.KILL_WOLVES_AND_BEARDED_KELTIRS.getId(), true, qs.getInt(KILL_COUNT_VAR)));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 	
@@ -192,6 +197,7 @@ public class Q10981_UnbearableWolvesHowling extends Quest
 				htmltext = getAlreadyCompletedMsg(player);
 			}
 		}
+		
 		return htmltext;
 	}
 }

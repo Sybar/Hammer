@@ -69,6 +69,7 @@ public class MacroList
 			{
 				macro.setId(_macroId++);
 			}
+			
 			_macroses.put(macro.getId(), macro);
 			registerMacroInDb(macro);
 		}
@@ -80,8 +81,10 @@ public class MacroList
 			{
 				deleteMacroFromDb(old);
 			}
+			
 			registerMacroInDb(macro);
 		}
+		
 		_owner.sendPacket(new SendMacroList(1, macro, updateType));
 	}
 	
@@ -100,6 +103,7 @@ public class MacroList
 				_owner.deleteShortcut(sc.getSlot(), sc.getPage());
 			}
 		}
+		
 		_owner.sendPacket(new SendMacroList(0, removed, MacroUpdateType.DELETE));
 	}
 	
@@ -200,6 +204,7 @@ public class MacroList
 						{
 							continue;
 						}
+						
 						final MacroType type = MacroType.values()[Integer.parseInt(st.nextToken())];
 						final int d1 = Integer.parseInt(st.nextToken());
 						final int d2 = Integer.parseInt(st.nextToken());
@@ -208,8 +213,10 @@ public class MacroList
 						{
 							cmd = st.nextToken();
 						}
+						
 						commands.add(new MacroCmd(commands.size(), type, d1, d2, cmd));
 					}
+					
 					_macroses.put(id, new Macro(id, icon, name, descr, acronym, commands));
 				}
 			}
@@ -219,6 +226,7 @@ public class MacroList
 			LOGGER.log(Level.WARNING, "could not store shortcuts:", e);
 			return false;
 		}
+		
 		return true;
 	}
 }

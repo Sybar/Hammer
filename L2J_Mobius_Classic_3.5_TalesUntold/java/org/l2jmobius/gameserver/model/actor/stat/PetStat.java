@@ -78,6 +78,7 @@ public class PetStat extends SummonStat
 		{
 			pet.broadcastPacket(new SocialAction(pet.getObjectId(), SocialAction.LEVEL_UP));
 		}
+		
 		// Send a Server->Client packet PetInfo to the Player
 		pet.updateAndBroadcastStatus(1);
 		
@@ -103,6 +104,7 @@ public class PetStat extends SummonStat
 			{
 				LOGGER.warning("Pet objectId:" + pet.getObjectId() + ", NpcId:" + pet.getId() + ", level:" + level + " is missing data from pets_stats table!");
 			}
+			
 			throw e;
 		}
 	}
@@ -158,6 +160,7 @@ public class PetStat extends SummonStat
 		{
 			val /= 2;
 		}
+		
 		return val;
 	}
 	
@@ -169,6 +172,7 @@ public class PetStat extends SummonStat
 		{
 			val /= 2;
 		}
+		
 		return val;
 	}
 	

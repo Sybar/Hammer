@@ -36,9 +36,11 @@ public class Q10812_FacingSadness extends Quest
 {
 	// Npc
 	private static final int ELIKIA = 31620;
+	
 	// Items
 	private static final int ELIKIA_CERTIFICATE = 45623;
 	private static final int PROOF_OF_DISPOSAL = 45871;
+	
 	// Monsters (first group for one quest item, second for two quest items)
 	// TODO: Monsters from Raider's Crossroads
 	private static final int[] MONSTERS_1 =
@@ -77,6 +79,7 @@ public class Q10812_FacingSadness extends Quest
 		23398, // Koraza
 		23399, // Bend Beetle
 	};
+	
 	// Misc
 	private static final int MIN_LEVEL = 99;
 	
@@ -132,6 +135,7 @@ public class Q10812_FacingSadness extends Quest
 						{
 							mainQ.notifyEvent("SUBQUEST_FINISHED_NOTIFY", npc, player);
 						}
+						
 						htmltext = event;
 					}
 					else
@@ -142,6 +146,7 @@ public class Q10812_FacingSadness extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -175,6 +180,7 @@ public class Q10812_FacingSadness extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -195,6 +201,7 @@ public class Q10812_FacingSadness extends Quest
 				giveItems(player, PROOF_OF_DISPOSAL, ArrayUtil.contains(MONSTERS_1, npc.getId()) ? 1 : 2);
 				playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 			}
+			
 			if (getQuestItemsCount(player, PROOF_OF_DISPOSAL) >= 8000)
 			{
 				qs.setCond(2, true);

@@ -35,9 +35,11 @@ public class Q00260_OrcHunting extends Quest
 {
 	// NPC
 	private static final int RAYEN = 30221;
+	
 	// Items
 	private static final int ORC_AMULET = 1114;
 	private static final int ORC_NECKLACE = 1115;
+	
 	// Monsters
 	private static final Map<Integer, Integer> MONSTERS = new HashMap<>();
 	static
@@ -49,6 +51,7 @@ public class Q00260_OrcHunting extends Quest
 		MONSTERS.put(20472, ORC_NECKLACE); // Kaboo Orc Fighter Leader
 		MONSTERS.put(20473, ORC_NECKLACE); // Kaboo Orc Fighter Lieutenant
 	}
+	
 	// Misc
 	private static final int MIN_LEVEL = 6;
 	
@@ -92,6 +95,7 @@ public class Q00260_OrcHunting extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -126,6 +130,7 @@ public class Q00260_OrcHunting extends Quest
 					final long necklaces = getQuestItemsCount(player, ORC_NECKLACE);
 					giveAdena(player, ((amulets * 4) + (necklaces * 10) + ((amulets + necklaces) >= 10 ? 1000 : 0)), true);
 					takeItems(player, -1, getRegisteredItemIds());
+					
 					// Q00281_HeadForTheHills.giveNewbieReward(player);
 					htmltext = "30221-06.html";
 				}
@@ -136,6 +141,7 @@ public class Q00260_OrcHunting extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

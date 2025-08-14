@@ -34,11 +34,13 @@ public class Q00628_HuntGoldenRam extends Quest
 {
 	// NPCs
 	private static final int KAHMAN = 31554;
+	
 	// Items
 	private static final int SPLINTER_STAKATO_CHITIN = 7248;
 	private static final int NEEDLE_STAKATO_CHITIN = 7249;
 	private static final int GOLDEN_RAM_BADGE_RECRUIT = 7246;
 	private static final int GOLDEN_RAM_BADGE_SOLDIER = 7247;
+	
 	// Drop chances
 	private static final Map<Integer, Integer> CHANCES = new HashMap<>();
 	static

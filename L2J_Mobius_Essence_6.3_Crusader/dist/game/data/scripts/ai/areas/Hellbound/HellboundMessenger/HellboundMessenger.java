@@ -33,8 +33,10 @@ public class HellboundMessenger extends AbstractNpcAI
 {
 	// NPC
 	private static final int MESSENGER = 34196;
+	
 	// Location
 	private static final Location IVORY_TOWER = new Location(86722, 15389, -3515);
+	
 	// Misc
 	private static final int MINIMUM_LEVEL = 85;
 	

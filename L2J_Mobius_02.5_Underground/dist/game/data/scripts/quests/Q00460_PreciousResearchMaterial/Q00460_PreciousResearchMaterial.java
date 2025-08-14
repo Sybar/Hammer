@@ -37,11 +37,14 @@ public class Q00460_PreciousResearchMaterial extends Quest
 	// NPCs
 	private static final int AMER = 33092;
 	private static final int FILAUR = 30535;
+	
 	// Monster
 	private static final int EGG = 18997;
+	
 	// Item's
 	private static final int PROOF_OF_FIDELITY = 19450; //
 	private static final int TEREDOR_EGG_FRAGMENT = 17735;
+	
 	// Misc
 	private static final int MIN_LEVEL = 85;
 	
@@ -64,6 +67,7 @@ public class Q00460_PreciousResearchMaterial extends Quest
 		{
 			return getNoQuestMsg(player);
 		}
+		
 		switch (event)
 		{
 			case "30535-02.html":
@@ -74,6 +78,7 @@ public class Q00460_PreciousResearchMaterial extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -95,6 +100,7 @@ public class Q00460_PreciousResearchMaterial extends Quest
 							htmltext = getNoQuestMsg(player);
 							break;
 						}
+						
 						qs.setState(State.CREATED);
 						// fallthrough
 					}
@@ -120,6 +126,7 @@ public class Q00460_PreciousResearchMaterial extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	

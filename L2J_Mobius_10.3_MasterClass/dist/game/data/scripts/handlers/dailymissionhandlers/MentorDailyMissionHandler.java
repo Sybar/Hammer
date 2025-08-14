@@ -78,6 +78,7 @@ public class MentorDailyMissionHandler extends AbstractDailyMissionHandler
 				}
 			}
 		}
+		
 		return false;
 	}
 	
@@ -89,6 +90,7 @@ public class MentorDailyMissionHandler extends AbstractDailyMissionHandler
 		{
 			return;
 		}
+		
 		// TODO: Check mentor for mentee training complete
 		if (player == mentor.getPlayer())
 		{
@@ -105,6 +107,7 @@ public class MentorDailyMissionHandler extends AbstractDailyMissionHandler
 			{
 				entry.setStatus(DailyMissionStatus.AVAILABLE);
 			}
+			
 			storePlayerEntry(entry);
 		}
 	}

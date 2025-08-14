@@ -831,9 +831,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">359</stat>
 			<stat type="mAtk">176</stat>
@@ -870,9 +870,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">444</stat>
 			<stat type="mAtk">176</stat>
@@ -908,9 +908,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">429</stat>
 			<stat type="mAtk">176</stat>
@@ -947,12 +947,12 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="ensoulNormalSlots" val="1" />
 		<set name="ensoulSpecialSlots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player level="81" />
 				<player categoryType="DAGGER_MASTER" />
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">360</stat>
 			<stat type="mAtk">181</stat>
@@ -987,12 +987,12 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player level="81" />
 				<player categoryType="DAGGER_MASTER" />
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">360</stat>
 			<stat type="mAtk">181</stat>
@@ -1100,12 +1100,12 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="ensoulNormalSlots" val="1" />
 		<set name="ensoulSpecialSlots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player level="84" />
 				<player categoryType="DAGGER_MASTER" />
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">415</stat>
 			<stat type="mAtk">183</stat>
@@ -1139,12 +1139,12 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player level="84" />
 				<player categoryType="DAGGER_MASTER" />
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">415</stat>
 			<stat type="mAtk">183</stat>
@@ -1249,12 +1249,12 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="ensoulNormalSlots" val="1" />
 		<set name="ensoulSpecialSlots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player level="85" />
 				<player categoryType="DAGGER_MASTER" />
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">437</stat>
 			<stat type="mAtk">192</stat>
@@ -1288,12 +1288,12 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player level="85" />
 				<player categoryType="DAGGER_MASTER" />
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">437</stat>
 			<stat type="mAtk">192</stat>
@@ -1386,9 +1386,9 @@
 		<set name="price" val="49680" />
 		<set name="commissionItemType" val="LIFE_STONE" />
 		<set name="is_stackable" val="true" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="85" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="16161" name="Mid-grade Life Stone Lv. 85" type="EtcItem">
 		<!-- A mineral formed inside a monster under immense impact. Outdated and almost no longer used. Can be exchanged for Spirit Stones through a blacksmith in any town. -->
@@ -1399,9 +1399,9 @@
 		<set name="price" val="198960" />
 		<set name="commissionItemType" val="LIFE_STONE" />
 		<set name="is_stackable" val="true" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="85" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="16162" name="High-grade Life Stone Lv. 85" type="EtcItem">
 		<!-- A mineral formed inside a monster under immense impact. Outdated and almost no longer used. Can be exchanged for Spirit Stones through a blacksmith in any town. -->
@@ -1412,9 +1412,9 @@
 		<set name="price" val="994800" />
 		<set name="is_stackable" val="true" />
 		<set name="commissionItemType" val="LIFE_STONE" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="85" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="16163" name="Top-grade Life Stone Lv. 85" type="EtcItem">
 		<!-- A mineral formed inside a monster under immense impact. Outdated and almost no longer used. Can be exchanged for Spirit Stones through a blacksmith in any town. -->
@@ -1425,9 +1425,9 @@
 		<set name="price" val="4975200" />
 		<set name="commissionItemType" val="LIFE_STONE" />
 		<set name="is_stackable" val="true" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="85" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="16164" name="Life Stone Lv. 86" type="EtcItem">
 		<!-- A mineral formed inside a monster under immense impact. Outdated and almost no longer used. Can be exchanged for Spirit Stones through a blacksmith in any town. -->
@@ -1438,9 +1438,9 @@
 		<set name="price" val="59616" />
 		<set name="is_stackable" val="true" />
 		<set name="commissionItemType" val="LIFE_STONE" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="85" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="16165" name="Mid-grade Life Stone Lv. 86" type="EtcItem">
 		<!-- A mineral formed inside a monster under immense impact. Outdated and almost no longer used. Can be exchanged for Spirit Stones through a blacksmith in any town. -->
@@ -1451,9 +1451,9 @@
 		<set name="price" val="238752" />
 		<set name="is_stackable" val="true" />
 		<set name="commissionItemType" val="LIFE_STONE" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="85" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="16166" name="High-grade Life Stone Lv. 86" type="EtcItem">
 		<!-- A mineral formed inside a monster under immense impact. Outdated and almost no longer used. Can be exchanged for Spirit Stones through a blacksmith in any town. -->
@@ -1464,9 +1464,9 @@
 		<set name="price" val="1193760" />
 		<set name="is_stackable" val="true" />
 		<set name="commissionItemType" val="LIFE_STONE" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="85" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="16167" name="Top-grade Life Stone Lv. 86" type="EtcItem">
 		<!-- A mineral formed inside a monster under immense impact. Outdated and almost no longer used. Can be exchanged for Spirit Stones through a blacksmith in any town. -->
@@ -1477,9 +1477,9 @@
 		<set name="price" val="5970240" />
 		<set name="commissionItemType" val="LIFE_STONE" />
 		<set name="is_stackable" val="true" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="85" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="16168" name="Elegia Breastplate {PvP}" type="Armor">
 		<!-- Decreases received PvP damage. Has a certain chance to decrease all types of enemy's Speed. -->
@@ -1700,9 +1700,9 @@
 		<set name="price" val="49680" />
 		<set name="commissionItemType" val="LIFE_STONE" />
 		<set name="is_stackable" val="true" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="85" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="16178" name="Life Stone: Accessory Lv. 86" type="EtcItem">
 		<!-- A mineral formed inside a monster under immense impact. Outdated and almost no longer used. Can be exchanged for Spirit Stones through a blacksmith in any town. -->
@@ -1713,9 +1713,9 @@
 		<set name="price" val="59616" />
 		<set name="commissionItemType" val="LIFE_STONE" />
 		<set name="is_stackable" val="true" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="85" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="16179" name="Vesper Cutter - Thunder {PvP} - Haste" type="Weapon">
 		<!-- Masterwork item that increases Critical Rate for standard attacks. <Special properties>. Atk. Spd. +11%. Increases PvP damage. Has a chance of recovering CP after an attack. No Soul Crystal can be inserted. -->

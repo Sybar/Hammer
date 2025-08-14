@@ -23,23 +23,23 @@ package org.l2jmobius.gameserver.network.serverpackets.attendance;
 import java.util.List;
 
 import org.l2jmobius.commons.network.WritableBuffer;
+import org.l2jmobius.gameserver.data.holders.AttendanceItemHolder;
 import org.l2jmobius.gameserver.data.xml.AttendanceRewardData;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.holders.player.AttendanceInfoHolder;
-import org.l2jmobius.gameserver.model.item.holders.ItemHolder;
 import org.l2jmobius.gameserver.network.GameClient;
 import org.l2jmobius.gameserver.network.ServerPackets;
 import org.l2jmobius.gameserver.network.serverpackets.ServerPacket;
 
 /**
- * @author Mobius, Serenitty
+ * @author Mobius, Serenitty, Lonely
  */
 public class ExVipAttendanceList extends ServerPacket
 {
 	private final int _index;
 	private final int _delayreward;
 	private final boolean _available;
-	private final List<ItemHolder> _rewardItems;
+	private final List<AttendanceItemHolder> _rewardItems;
 	
 	public ExVipAttendanceList(Player player)
 	{
@@ -56,11 +56,11 @@ public class ExVipAttendanceList extends ServerPacket
 		ServerPackets.EX_VIP_ATTENDANCE_LIST.writeId(this, buffer);
 		
 		buffer.writeInt(_rewardItems.size());
-		for (ItemHolder reward : _rewardItems)
+		for (AttendanceItemHolder reward : _rewardItems)
 		{
-			buffer.writeInt(reward.getId());
-			buffer.writeLong(reward.getCount());
-			buffer.writeByte(0); // Enchant level?
+			buffer.writeInt(reward.getItemId());
+			buffer.writeLong(reward.getItemCount());
+			buffer.writeByte(reward.getHighlight());
 		}
 		
 		buffer.writeInt(1); // MinimumLevel
@@ -76,6 +76,7 @@ public class ExVipAttendanceList extends ServerPacket
 			{
 				buffer.writeByte(_index); // AttendanceDay
 			}
+			
 			buffer.writeByte(_index); // RewardDay
 			buffer.writeByte(0); // FollowBaseDay
 			// buffer.writeByte(_available);
@@ -92,6 +93,7 @@ public class ExVipAttendanceList extends ServerPacket
 			{
 				buffer.writeByte(_index); // AttendanceDay
 			}
+			
 			buffer.writeByte(_index); // RewardDay
 			buffer.writeByte(0); // FollowBaseDay
 			// buffer.writeByte(_available);

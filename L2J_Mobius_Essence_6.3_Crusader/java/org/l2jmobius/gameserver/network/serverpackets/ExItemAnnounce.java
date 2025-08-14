@@ -51,7 +51,7 @@ public class ExItemAnnounce extends ServerPacket
 	{
 		_item = item;
 		_type = type;
-		if (player.getClientSettings().isAnnounceEnabled())
+		if (!player.getClientSettings().isAnnounceDisabled())
 		{
 			_announceName = player.getName();
 		}

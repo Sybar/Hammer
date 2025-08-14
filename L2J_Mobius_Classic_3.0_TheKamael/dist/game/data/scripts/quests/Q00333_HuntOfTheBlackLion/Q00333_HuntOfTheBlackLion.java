@@ -39,6 +39,7 @@ public class Q00333_HuntOfTheBlackLion extends Quest
 	private static final int MERCENARY_CAPTAIN_SOPHYA = 30735;
 	private static final int MERCENARY_REEDFOOT = 30736;
 	private static final int GUILDSMAN_MORGON = 30737;
+	
 	// Items
 	private static final int BLACK_LION_MARK = 1369;
 	private static final int CARGO_BOX_1ST = 3440;
@@ -66,6 +67,7 @@ public class Q00333_HuntOfTheBlackLion extends Quest
 	private static final int BLOODY_AXE_INSIGNIA = 3849;
 	private static final int DELU_LIZARDMAN_FANG = 3850;
 	private static final int STAKATO_TALON = 3851;
+	
 	// Rewards
 	private static final int ALACRITY_POTION = 735;
 	private static final int SCROL_OF_ESCAPE = 736;
@@ -85,6 +87,7 @@ public class Q00333_HuntOfTheBlackLion extends Quest
 	private static final int AVELLAN_SILK_FROCK = 3454;
 	private static final int FERIOTIC_PORCELAIN_URM = 3455;
 	private static final int IMPERIAL_DIAMOND = 3456;
+	
 	// Monster
 	private static final int MARSH_STAKATO = 20157;
 	private static final int NEER_CRAWLER = 20160;
@@ -104,9 +107,11 @@ public class Q00333_HuntOfTheBlackLion extends Quest
 	private static final int DELU_LIZARDMAN = 20251;
 	private static final int DELU_LIZARDMAN_SCOUT = 20252;
 	private static final int DELU_LIZARDMAN_WARRIOR = 20253;
+	
 	// Quest Monster
 	private static final int DELU_LIZARDMAN_HEADHUNTER = 27151;
 	private static final int MARSH_STAKATO_MARQUESS = 27152;
+	
 	// Misc
 	private static final int MIN_LEVEL = 25;
 	
@@ -228,6 +233,7 @@ public class Q00333_HuntOfTheBlackLion extends Quest
 					{
 						giveItems(player, ALACRITY_POTION, 3);
 					}
+					
 					takeItems(player, LIONS_CLAW, 10);
 					htmltext = "30735-17a.html";
 				}
@@ -257,6 +263,7 @@ public class Q00333_HuntOfTheBlackLion extends Quest
 					{
 						giveItems(player, ALACRITY_POTION, 3);
 					}
+					
 					takeItems(player, LIONS_CLAW, 10);
 					htmltext = "30735-18b.html";
 				}
@@ -286,6 +293,7 @@ public class Q00333_HuntOfTheBlackLion extends Quest
 					{
 						giveItems(player, ALACRITY_POTION, 4);
 					}
+					
 					takeItems(player, LIONS_CLAW, 10);
 					htmltext = "30735-19b.html";
 				}
@@ -507,6 +515,7 @@ public class Q00333_HuntOfTheBlackLion extends Quest
 						{
 							giveItems(player, STATUE_OF_SHILEN_LEG, 1);
 						}
+						
 						htmltext = "30736-04n.html";
 					}
 					else
@@ -527,6 +536,7 @@ public class Q00333_HuntOfTheBlackLion extends Quest
 						{
 							giveItems(player, FRAGMENT_OF_ANCIENT_TABLET_4TH_PIECE, 1);
 						}
+						
 						htmltext = "30736-04o.html";
 					}
 				}
@@ -628,6 +638,7 @@ public class Q00333_HuntOfTheBlackLion extends Quest
 					{
 						htmltext = "30736-08t.html";
 					}
+					
 					takeItems(player, Inventory.ADENA_ID, 200 + (qs.getMemoState() * 200));
 					qs.setMemoState(qs.getMemoState() + 1);
 				}
@@ -686,6 +697,7 @@ public class Q00333_HuntOfTheBlackLion extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -705,10 +717,12 @@ public class Q00333_HuntOfTheBlackLion extends Quest
 						{
 							giveItems(killer, STAKATO_TALON, 1);
 						}
+						
 						if (getRandom(100) < 12)
 						{
 							giveItems(killer, CARGO_BOX_4TH, 1);
 						}
+						
 						if ((getRandom(100) < 2) && hasQuestItems(killer, SOPHYAS_4TH_ORDER))
 						{
 							addSpawn(MARSH_STAKATO_MARQUESS, npc, true, 0, false);
@@ -724,6 +738,7 @@ public class Q00333_HuntOfTheBlackLion extends Quest
 						{
 							giveItems(killer, UNDEAD_ASH, 1);
 						}
+						
 						if (getRandom(100) < 11)
 						{
 							giveItems(killer, CARGO_BOX_1ST, 1);
@@ -739,6 +754,7 @@ public class Q00333_HuntOfTheBlackLion extends Quest
 						{
 							giveItems(killer, UNDEAD_ASH, 1);
 						}
+						
 						if (getRandom(100) < 8)
 						{
 							giveItems(killer, CARGO_BOX_1ST, 1);
@@ -754,6 +770,7 @@ public class Q00333_HuntOfTheBlackLion extends Quest
 						{
 							giveItems(killer, UNDEAD_ASH, 1);
 						}
+						
 						if (getRandom(100) < 9)
 						{
 							giveItems(killer, CARGO_BOX_1ST, 1);
@@ -769,6 +786,7 @@ public class Q00333_HuntOfTheBlackLion extends Quest
 						{
 							giveItems(killer, UNDEAD_ASH, 1);
 						}
+						
 						if (getRandom(100) < 12)
 						{
 							giveItems(killer, CARGO_BOX_1ST, 1);
@@ -784,6 +802,7 @@ public class Q00333_HuntOfTheBlackLion extends Quest
 						{
 							giveItems(killer, UNDEAD_ASH, 1);
 						}
+						
 						if (getRandom(100) < 13)
 						{
 							giveItems(killer, CARGO_BOX_1ST, 1);
@@ -799,6 +818,7 @@ public class Q00333_HuntOfTheBlackLion extends Quest
 						{
 							giveItems(killer, UNDEAD_ASH, 1);
 						}
+						
 						if (getRandom(100) < 15)
 						{
 							giveItems(killer, CARGO_BOX_1ST, 1);
@@ -814,6 +834,7 @@ public class Q00333_HuntOfTheBlackLion extends Quest
 						{
 							giveItems(killer, BLOODY_AXE_INSIGNIA, 1);
 						}
+						
 						if (getRandom(100) < 9)
 						{
 							giveItems(killer, CARGO_BOX_2ND, 1);
@@ -829,6 +850,7 @@ public class Q00333_HuntOfTheBlackLion extends Quest
 						{
 							giveItems(killer, BLOODY_AXE_INSIGNIA, 1);
 						}
+						
 						if (getRandom(100) < 10)
 						{
 							giveItems(killer, CARGO_BOX_2ND, 1);
@@ -844,6 +866,7 @@ public class Q00333_HuntOfTheBlackLion extends Quest
 						{
 							giveItems(killer, BLOODY_AXE_INSIGNIA, 1);
 						}
+						
 						if (getRandom(100) < 11)
 						{
 							giveItems(killer, CARGO_BOX_2ND, 1);
@@ -859,6 +882,7 @@ public class Q00333_HuntOfTheBlackLion extends Quest
 						{
 							giveItems(killer, BLOODY_AXE_INSIGNIA, 1);
 						}
+						
 						if (getRandom(100) < 12)
 						{
 							giveItems(killer, CARGO_BOX_2ND, 1);
@@ -874,6 +898,7 @@ public class Q00333_HuntOfTheBlackLion extends Quest
 						{
 							giveItems(killer, BLOODY_AXE_INSIGNIA, 1);
 						}
+						
 						if (getRandom(100) < 13)
 						{
 							giveItems(killer, CARGO_BOX_2ND, 1);
@@ -889,10 +914,12 @@ public class Q00333_HuntOfTheBlackLion extends Quest
 						{
 							giveItems(killer, STAKATO_TALON, 1);
 						}
+						
 						if (getRandom(100) < 13)
 						{
 							giveItems(killer, CARGO_BOX_4TH, 1);
 						}
+						
 						if ((getRandom(100) < 2) && hasQuestItems(killer, SOPHYAS_4TH_ORDER))
 						{
 							addSpawn(MARSH_STAKATO_MARQUESS, npc, true, 0, false);
@@ -908,10 +935,12 @@ public class Q00333_HuntOfTheBlackLion extends Quest
 						{
 							giveItems(killer, STAKATO_TALON, 1);
 						}
+						
 						if (getRandom(100) < 14)
 						{
 							giveItems(killer, CARGO_BOX_4TH, 1);
 						}
+						
 						if ((getRandom(100) < 2) && hasQuestItems(killer, SOPHYAS_4TH_ORDER))
 						{
 							addSpawn(MARSH_STAKATO_MARQUESS, npc, true, 0, false);
@@ -927,10 +956,12 @@ public class Q00333_HuntOfTheBlackLion extends Quest
 						{
 							giveItems(killer, STAKATO_TALON, 1);
 						}
+						
 						if (getRandom(100) < 15)
 						{
 							giveItems(killer, CARGO_BOX_4TH, 1);
 						}
+						
 						if ((getRandom(100) < 2) && hasQuestItems(killer, SOPHYAS_4TH_ORDER))
 						{
 							addSpawn(MARSH_STAKATO_MARQUESS, npc, true, 0, false);
@@ -947,11 +978,13 @@ public class Q00333_HuntOfTheBlackLion extends Quest
 						{
 							giveItems(killer, DELU_LIZARDMAN_FANG, 1);
 						}
+						
 						if (getRandom(100) < 14)
 						{
 							giveItems(killer, CARGO_BOX_3RD, 1);
 						}
 					}
+					
 					if ((getRandom(100) < 3) && hasQuestItems(killer, SOPHYAS_3RD_ORDER))
 					{
 						addSpawn(DELU_LIZARDMAN_HEADHUNTER, npc, true, 0, false);
@@ -967,11 +1000,13 @@ public class Q00333_HuntOfTheBlackLion extends Quest
 						{
 							giveItems(killer, DELU_LIZARDMAN_FANG, 1);
 						}
+						
 						if (getRandom(100) < 15)
 						{
 							giveItems(killer, CARGO_BOX_3RD, 1);
 						}
 					}
+					
 					if ((getRandom(100) < 3) && hasQuestItems(killer, SOPHYAS_3RD_ORDER))
 					{
 						addSpawn(DELU_LIZARDMAN_HEADHUNTER, npc, true, 0, false);
@@ -1064,6 +1099,7 @@ public class Q00333_HuntOfTheBlackLion extends Quest
 						{
 							giveItems(player, LIONS_CLAW, 3);
 						}
+						
 						final long ash = getQuestItemsCount(player, UNDEAD_ASH);
 						final long insignia = getQuestItemsCount(player, BLOODY_AXE_INSIGNIA);
 						final long fang = getQuestItemsCount(player, DELU_LIZARDMAN_FANG);
@@ -1095,6 +1131,7 @@ public class Q00333_HuntOfTheBlackLion extends Quest
 						{
 							giveItems(player, LIONS_CLAW, 3);
 						}
+						
 						giveAdena(player, (getQuestItemsCount(player, UNDEAD_ASH) * 10), true);
 						giveAdena(player, (getQuestItemsCount(player, BLOODY_AXE_INSIGNIA) * 10), true);
 						giveAdena(player, (getQuestItemsCount(player, DELU_LIZARDMAN_FANG) * 7), true);
@@ -1184,6 +1221,7 @@ public class Q00333_HuntOfTheBlackLion extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 }

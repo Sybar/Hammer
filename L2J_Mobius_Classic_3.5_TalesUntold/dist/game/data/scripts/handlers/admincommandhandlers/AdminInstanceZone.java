@@ -40,7 +40,7 @@ public class AdminInstanceZone implements IAdminCommandHandler
 	};
 	
 	@Override
-	public boolean useAdminCommand(String command, Player activeChar)
+	public boolean onCommand(String command, Player activeChar)
 	{
 		final String target = (activeChar.getTarget() != null) ? activeChar.getTarget().getName() : "no-target";
 		GMAudit.logAction(activeChar.getName(), command, target, "");
@@ -107,6 +107,7 @@ public class AdminInstanceZone implements IAdminCommandHandler
 				display(activeChar, activeChar);
 			}
 		}
+		
 		return true;
 	}
 	
@@ -138,7 +139,7 @@ public class AdminInstanceZone implements IAdminCommandHandler
 	}
 	
 	@Override
-	public String[] getAdminCommandList()
+	public String[] getCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}

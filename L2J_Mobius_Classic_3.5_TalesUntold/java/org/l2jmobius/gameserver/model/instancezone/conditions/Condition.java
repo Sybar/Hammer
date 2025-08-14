@@ -94,6 +94,7 @@ public abstract class Condition
 				break;
 			}
 		}
+		
 		return true;
 	}
 	
@@ -111,6 +112,7 @@ public abstract class Condition
 		{
 			// Send HTML only to player who make request to enter
 			htmlCallback.accept(group.get(0), html);
+			
 			// Stop execution if only one message is allowed
 			if (!_showMessageAndHtml)
 			{

@@ -38,6 +38,7 @@ public class LindviorHerald extends AbstractNpcAI
 {
 	// Npc
 	private static final int LIONEL_HUNTER = 33886;
+	
 	// Misc
 	private static final String ROUTE_NAME = "Rune_Lionel";
 	

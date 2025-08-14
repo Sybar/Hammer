@@ -103,6 +103,7 @@ public class KartiaHelperElise extends AbstractNpcAI
 		33629, // Eliyah's Guardian Spirit (Kartia 90)
 		33640, // Eliyah's Guardian Spirit (Kartia 95)
 	};
+	
 	// Misc
 	private static final int[] KARTIA_SOLO_INSTANCES =
 	{
@@ -130,6 +131,7 @@ public class KartiaHelperElise extends AbstractNpcAI
 			{
 				healFriends(npc);
 			}
+			
 			if (adolph != null)
 			{
 				final double distance = npc.calculateDistance2D(adolph);
@@ -145,9 +147,11 @@ public class KartiaHelperElise extends AbstractNpcAI
 					{
 						npc.setRunning();
 					}
+					
 					addMoveToDesire(npc, randLoc, 23);
 				}
 			}
+			
 			npc.setTarget(npc);
 		}
 	}

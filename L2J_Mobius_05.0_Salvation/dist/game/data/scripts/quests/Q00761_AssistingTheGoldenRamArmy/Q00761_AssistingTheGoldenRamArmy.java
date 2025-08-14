@@ -49,12 +49,14 @@ public class Q00761_AssistingTheGoldenRamArmy extends Quest
 		21517, // Needle Stakato Drone
 		21518, // Frenzied Stakato Soldier
 	};
+	
 	// Items
 	private static final int SHELL = 36668; // Intact Stakato Shell
 	private static final int TALON = 36669; // Intact Stakato Talon
 	private static final int STEEL_DOOR_BOX = 37391; // Steel Door Guild Reward Box (Low-grade)
+	
 	// Rewards
-	//@formatter:off
+	// @formatter:off
 	// Format: min item count, exp reward, sp reward, item count reward
 	private static final int[][] REWARD =
 	{
@@ -69,7 +71,8 @@ public class Q00761_AssistingTheGoldenRamArmy extends Quest
 		{100, 28_280_700, 6789, 2},
 		{0, 14_140_350, 3393, 1},
 	};
-	//@formatter:on
+	// @formatter:on
+	
 	// Misc
 	private static final int MIN_LEVEL = 65;
 	private static final int MAX_LEVEL = 70;
@@ -125,6 +128,7 @@ public class Q00761_AssistingTheGoldenRamArmy extends Quest
 							{
 								addExpAndSp(player, data[1], data[2]);
 							}
+							
 							giveItems(player, STEEL_DOOR_BOX, data[3]);
 							qs.exitQuest(QuestType.DAILY, true);
 							htmltext = event;
@@ -135,6 +139,7 @@ public class Q00761_AssistingTheGoldenRamArmy extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -169,6 +174,7 @@ public class Q00761_AssistingTheGoldenRamArmy extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

@@ -63,7 +63,7 @@ public class AppearanceItemData implements IXmlReader
 		
 		LOGGER.info(getClass().getSimpleName() + ": Loaded " + _stoneMap.size() + " stones.");
 		
-		//@formatter:off
+		// @formatter:off
 		/*
 		for (Item item : ItemData.getInstance().getAllItems())
 		{
@@ -71,6 +71,7 @@ public class AppearanceItemData implements IXmlReader
 			{
 				continue;
 			}
+			
 			if (item.getName().contains("Pack") || _stones.containsKey(item.getId()))
 			{
 				continue;
@@ -79,7 +80,7 @@ public class AppearanceItemData implements IXmlReader
 			System.out.println("Unhandled appearance stone: " + item);
 		}
 		*/
-		//@formatter:on
+		// @formatter:on
 		
 		_stoneMap.clear();
 	}
@@ -136,6 +137,7 @@ public class AppearanceItemData implements IXmlReader
 								}
 							}
 						}
+						
 						if (ItemData.getInstance().getTemplate(stone.getId()) != null)
 						{
 							_stoneMap.put(stone.getId(), stone);
@@ -156,6 +158,7 @@ public class AppearanceItemData implements IXmlReader
 		{
 			return _stones[stone];
 		}
+		
 		return null;
 	}
 	

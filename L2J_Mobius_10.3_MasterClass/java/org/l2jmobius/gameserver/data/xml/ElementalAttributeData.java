@@ -136,6 +136,7 @@ public class ElementalAttributeData implements IXmlReader
 		{
 			return item.getElement();
 		}
+		
 		return AttributeType.NONE;
 	}
 	
@@ -151,6 +152,7 @@ public class ElementalAttributeData implements IXmlReader
 		{
 			return item.getType().getMaxLevel();
 		}
+		
 		return -1;
 	}
 	
@@ -240,10 +242,12 @@ public class ElementalAttributeData implements IXmlReader
 				break;
 			}
 		}
+		
 		if ((row != -1) && (column != -1))
 		{
 			return Rnd.get(100) < CHANCE_TABLE[row][column];
 		}
+		
 		return true;
 	}
 	

@@ -32,8 +32,10 @@ public class Q00367_ElectrifyingRecharge extends Quest
 {
 	// NPCs
 	private static final int LORAIN = 30673;
+	
 	// Monsters
 	private static final int CATHEROK = 21035;
+	
 	// Item
 	private static final int LORAIN_LAMP = 5875;
 	private static final int TITAN_LAMP_1 = 5876;
@@ -41,6 +43,7 @@ public class Q00367_ElectrifyingRecharge extends Quest
 	private static final int TITAN_LAMP_3 = 5878;
 	private static final int TITAN_LAMP_4 = 5879;
 	private static final int TITAN_LAMP_5 = 5880;
+	
 	// Reward
 	private static final int[] REWARD =
 	{
@@ -104,6 +107,7 @@ public class Q00367_ElectrifyingRecharge extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -162,6 +166,7 @@ public class Q00367_ElectrifyingRecharge extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

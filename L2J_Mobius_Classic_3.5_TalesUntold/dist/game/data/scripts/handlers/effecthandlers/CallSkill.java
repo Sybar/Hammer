@@ -111,7 +111,7 @@ public class CallSkill extends AbstractEffect
 					return;
 				}
 				
-				effector.broadcastPacket(new MagicSkillUse(effector, effected, triggerSkill.getDisplayId(), triggerSkill.getLevel(), hitTime, 0));
+				effector.broadcastSkillPacket(new MagicSkillUse(effector, effected, triggerSkill.getDisplayId(), triggerSkill.getLevel(), hitTime, 0), effected);
 				ThreadPool.schedule(() -> SkillCaster.triggerCast(effector, effected, triggerSkill), hitTime);
 			}
 			else

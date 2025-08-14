@@ -955,9 +955,9 @@
 		<set name="material" val="PAPER" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="26917" level="1" /> <!-- Transformation Scroll: Priestess Tsubaki -->
 		</skills>

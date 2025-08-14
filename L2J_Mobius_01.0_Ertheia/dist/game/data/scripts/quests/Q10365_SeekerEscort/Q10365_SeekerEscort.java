@@ -40,9 +40,11 @@ public class Q10365_SeekerEscort extends Quest
 	private static final int DEP = 33453;
 	private static final int BLOODHOUND = 32988;
 	private static final int SEBION = 32978;
+	
 	// Misc
 	private static final int MIN_LEVEL = 16;
 	private static final int MAX_LEVEL = 25;
+	
 	// Locations
 	private static final Location BLOODHOUND_SPAWN_1 = new Location(-110624, 238369, -2920);
 	private static final Location BLOODHOUND_SPAWN_2 = new Location(-112660, 233942, -3072);
@@ -156,6 +158,7 @@ public class Q10365_SeekerEscort extends Quest
 									startQuestTimer("DELETE_NPC", 8000, npc, owner);
 									break;
 								}
+								
 								npc.getVariables().set("MOVE_INDEX", loc_index);
 								addMoveToDesire(npc, BLOODHOUND_LOC_1[loc_index], 0);
 							}
@@ -167,6 +170,7 @@ public class Q10365_SeekerEscort extends Quest
 									startQuestTimer("DELETE_NPC", 2000, npc, owner);
 									break;
 								}
+								
 								npc.getVariables().set("MOVE_INDEX", loc_index);
 								addMoveToDesire(npc, BLOODHOUND_LOC_2[loc_index], 0);
 							}
@@ -184,6 +188,7 @@ public class Q10365_SeekerEscort extends Quest
 							npc.deleteMe();
 							break;
 						}
+						
 						startQuestTimer("CHECK_PLAYER", 1000, npc, owner);
 						if (getRandom(100) < 10)
 						{
@@ -243,6 +248,7 @@ public class Q10365_SeekerEscort extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -303,6 +309,7 @@ public class Q10365_SeekerEscort extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

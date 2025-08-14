@@ -63,6 +63,7 @@ public class Q10752_WindsOfFateAPromise extends Quest
 	private static final int TOMBSTONE = 31523;
 	private static final int GHOST_OF_VON_HELLMAN = 31524;
 	private static final int BROKEN_BOOKSHELF = 31526;
+	
 	// Items
 	private static final int NAVARI_MARK = 39536;
 	private static final int PROPHECY_MACHINE_FRAGMENT = 39537;
@@ -71,9 +72,11 @@ public class Q10752_WindsOfFateAPromise extends Quest
 	private static final int SPIRITSHOT = 3952;
 	private static final int BLESSED_SCROLL_OF_RESURRECTION = 33518;
 	private static final int PAULINAS_EQUIPMENT_SET = 46852;
+	
 	// Location
 	private static final Location TELEPORT_LOC = new Location(-81948, 249635, -3371);
 	private static final Location GHOST_SPAWN_LOC = new Location(51483, -54407, -3160);
+	
 	// Misc
 	private static final int MIN_LEVEL = 76;
 	
@@ -173,6 +176,7 @@ public class Q10752_WindsOfFateAPromise extends Quest
 				{
 					qs.setCond(6, true);
 				}
+				
 				showOnScreenMsg(player, NpcStringId.TALK_TO_THE_GHOST_OF_VON_HELLMANN, ExShowScreenMessage.TOP_CENTER, 5000);
 				addSpawn(GHOST_OF_VON_HELLMAN, GHOST_SPAWN_LOC, true, 20000);
 				break;
@@ -223,6 +227,7 @@ public class Q10752_WindsOfFateAPromise extends Quest
 					{
 						player.setBaseClass(newClass);
 					}
+					
 					player.setPlayerClass(newClass.getId());
 					player.broadcastUserInfo();
 					player.sendSkillList();
@@ -246,6 +251,7 @@ public class Q10752_WindsOfFateAPromise extends Quest
 					{
 						player.setBaseClass(newClass);
 					}
+					
 					player.setPlayerClass(newClass.getId());
 					player.broadcastUserInfo();
 					player.sendSkillList();
@@ -261,6 +267,7 @@ public class Q10752_WindsOfFateAPromise extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -281,6 +288,7 @@ public class Q10752_WindsOfFateAPromise extends Quest
 						htmltext = !player.isMageClass() ? "33943-01.htm" : "33943-12.html";
 						break;
 					}
+					
 					htmltext = "33943-12.html";
 				}
 				else if (npc.getId() == AYANTHE)
@@ -290,6 +298,7 @@ public class Q10752_WindsOfFateAPromise extends Quest
 						htmltext = player.isMageClass() ? "33942-01.htm" : "33942-09.html";
 						break;
 					}
+					
 					htmltext = "33942-09.html";
 				}
 				break;
@@ -461,6 +470,7 @@ public class Q10752_WindsOfFateAPromise extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -529,6 +539,7 @@ public class Q10752_WindsOfFateAPromise extends Quest
 				{
 					player.teleToLocation(TELEPORT_LOC);
 				}
+				
 				player.clearHtmlActions(HtmlActionScope.TUTORIAL_HTML);
 			}
 			else if (command.equals("Q10752_close"))
@@ -563,6 +574,7 @@ public class Q10752_WindsOfFateAPromise extends Quest
 			{
 				showOnScreenMsg(player, NpcStringId.MASTER_KATALIN_HAS_SENT_A_LETTER_NCLICK_THE_QUESTION_MARK_ICON_TO_READ, ExShowScreenMessage.TOP_CENTER, 10000);
 			}
+			
 			player.sendPacket(new TutorialShowQuestionMark(getId(), 1));
 		}
 	}
@@ -588,6 +600,7 @@ public class Q10752_WindsOfFateAPromise extends Quest
 			{
 				showOnScreenMsg(player, NpcStringId.MASTER_KATALIN_HAS_SENT_A_LETTER_NCLICK_THE_QUESTION_MARK_ICON_TO_READ, ExShowScreenMessage.TOP_CENTER, 10000);
 			}
+			
 			player.sendPacket(new TutorialShowQuestionMark(getId(), 1));
 		}
 	}

@@ -98,12 +98,14 @@ public class SystemMessage extends ServerPacket
 	public static final byte TYPE_BYTE = 20;
 	public static final byte TYPE_POPUP_ID = 16;
 	public static final byte TYPE_CLASS_ID = 15;
+	
 	// id 14 dSSSSS
 	public static final byte TYPE_SYSTEM_STRING = 13;
 	public static final byte TYPE_PLAYER_NAME = 12;
 	public static final byte TYPE_DOOR_NAME = 11;
 	public static final byte TYPE_INSTANCE_NAME = 10;
 	public static final byte TYPE_ELEMENT_NAME = 9;
+	
 	// id 8 - ddd
 	public static final byte TYPE_ZONE_NAME = 7;
 	public static final byte TYPE_LONG_NUMBER = 6;
@@ -130,6 +132,7 @@ public class SystemMessage extends ServerPacket
 		{
 			throw new NullPointerException("SystemMessageId cannot be null!");
 		}
+		
 		_smId = smId;
 		_params = smId.getParamCount() > 0 ? new SMParam[smId.getParamCount()] : EMPTY_PARAM_ARRAY;
 	}
@@ -140,6 +143,7 @@ public class SystemMessage extends ServerPacket
 		{
 			throw new NullPointerException();
 		}
+		
 		_smId = SystemMessageId.getSystemMessageId(SystemMessageId.S1_2.getId());
 		_params = new SMParam[1];
 		addString(text);
@@ -161,12 +165,14 @@ public class SystemMessage extends ServerPacket
 		{
 			_params = Arrays.copyOf(_params, _paramIndex + 1);
 			_smId.setParamCount(_paramIndex + 1);
+			
 			// Mobius: With additional on-screen damage param (popup), length is increased.
 			if (param.getType() != TYPE_POPUP_ID)
 			{
 				PacketLogger.info("Wrong parameter count '" + (_paramIndex + 1) + "' for SystemMessageId: " + _smId);
 			}
 		}
+		
 		_params[_paramIndex++] = param;
 	}
 	
@@ -246,6 +252,7 @@ public class SystemMessage extends ServerPacket
 		{
 			return addString(template.getName());
 		}
+		
 		return addNpcName(template.getId());
 	}
 	
@@ -272,6 +279,7 @@ public class SystemMessage extends ServerPacket
 		{
 			return addString(item.getName());
 		}
+		
 		append(new SMParam(TYPE_ITEM_NAME, id));
 		return this;
 	}
@@ -293,6 +301,7 @@ public class SystemMessage extends ServerPacket
 		{
 			return addString(skill.getName());
 		}
+		
 		return addSkillName(skill.getId(), skill.getLevel(), skill.getSubLevel());
 	}
 	
@@ -412,6 +421,7 @@ public class SystemMessage extends ServerPacket
 						{
 							params[i] = _params[i].getValue();
 						}
+						
 						buffer.writeShort(SystemMessageId.S1_2.getId());
 						buffer.writeByte(1);
 						buffer.writeByte(TYPE_TEXT);
@@ -431,6 +441,7 @@ public class SystemMessage extends ServerPacket
 				PacketLogger.warning("Found null parameter for SystemMessageId " + _smId);
 				continue;
 			}
+			
 			buffer.writeByte(param.getType());
 			switch (param.getType())
 			{

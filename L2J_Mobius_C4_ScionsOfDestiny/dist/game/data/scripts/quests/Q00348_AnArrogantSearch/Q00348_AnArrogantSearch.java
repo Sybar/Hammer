@@ -42,6 +42,7 @@ public class Q00348_AnArrogantSearch extends Quest
 	private static final int GUSTAV_ATHEBALDT = 30760;
 	private static final int HARDIN = 30832;
 	private static final int IASON_HEINE = 30969;
+	
 	// Monsters
 	private static final int LESSER_GIANT_MAGE = 20657;
 	private static final int LESSER_GIANT_ELDER = 20658;
@@ -49,10 +50,12 @@ public class Q00348_AnArrogantSearch extends Quest
 	private static final int PLATINUM_TRIBE_OVERLORD = 20829;
 	private static final int GUARDIAN_ANGEL = 20859;
 	private static final int SEAL_ANGEL = 20860;
+	
 	// Quest Monsters
 	private static final int ANGEL_KILLER = 27184;
 	private static final int ARK_GUARDIAN_ELBEROTH = 27182;
 	private static final int ARK_GUARDIAN_SHADOW_FANG = 27183;
+	
 	// Items
 	private static final int TITAN_POWERSTONE = 4287;
 	private static final int HANELLIN_FIRST_LETTER = 4288;
@@ -69,6 +72,7 @@ public class Q00348_AnArrogantSearch extends Quest
 	private static final int BLOODED_FABRIC = 4295;
 	private static final int ANTIDOTE = 1831;
 	private static final int HEALING_POTION = 1061;
+	
 	// NPCs instances, in order to avoid infinite instances creation speaking to chests.
 	private Npc _elberoth;
 	private Npc _shadowFang;
@@ -750,6 +754,7 @@ public class Q00348_AnArrogantSearch extends Quest
 					giveItems(player, SECOND_KEY_OF_ARK, 1);
 					npc.broadcastSay(ChatType.GENERAL, "Oh, dull-witted.. God, they...");
 				}
+				
 				_elberoth = null;
 				break;
 			}
@@ -761,6 +766,7 @@ public class Q00348_AnArrogantSearch extends Quest
 					giveItems(player, THIRD_KEY_OF_ARK, 1);
 					npc.broadcastSay(ChatType.GENERAL, "You do not know.. Seven seals are.. coughs");
 				}
+				
 				_shadowFang = null;
 				break;
 			}

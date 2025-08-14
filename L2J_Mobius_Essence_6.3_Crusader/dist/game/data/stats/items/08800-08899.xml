@@ -641,9 +641,9 @@
 		<set name="weight" val="20" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="price" val="10000" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="20" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="8872" name="Flash Gunpowder" type="EtcItem">
 		<!-- This specially processed gunpowder doesn't create smoke. It is consumed while using the swoop cannon skill. -->

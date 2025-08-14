@@ -83,6 +83,7 @@ public class CastleManager
 				}
 			}
 		}
+		
 		return nearestCastle;
 	}
 	
@@ -97,6 +98,7 @@ public class CastleManager
 		{
 			return null;
 		}
+		
 		for (Castle temp : _castles.values())
 		{
 			if (temp.getOwnerId() == clan.getId())
@@ -104,6 +106,7 @@ public class CastleManager
 				return temp;
 			}
 		}
+		
 		return null;
 	}
 	
@@ -116,6 +119,7 @@ public class CastleManager
 				return temp;
 			}
 		}
+		
 		return null;
 	}
 	
@@ -128,6 +132,7 @@ public class CastleManager
 				return temp;
 			}
 		}
+		
 		return null;
 	}
 	
@@ -152,6 +157,7 @@ public class CastleManager
 				break;
 			}
 		}
+		
 		return hasOwnedCastle;
 	}
 	
@@ -161,6 +167,7 @@ public class CastleManager
 		{
 			return _castleCirclets[castleId];
 		}
+		
 		return 0;
 	}
 	
@@ -179,6 +186,7 @@ public class CastleManager
 		{
 			return;
 		}
+		
 		final Player player = member.getPlayer();
 		final int circletId = getCircletByCastleId(castleId);
 		if (circletId != 0)
@@ -195,6 +203,7 @@ public class CastleManager
 						{
 							player.getInventory().unEquipItemInSlot(circlet.getLocationSlot());
 						}
+						
 						player.destroyItemByItemId(ItemProcessType.DESTROY, circletId, 1, player, true);
 					}
 					return;
@@ -230,6 +239,7 @@ public class CastleManager
 				final int castleId = rs.getInt("id");
 				_castles.put(castleId, new Castle(castleId));
 			}
+			
 			LOGGER.info(getClass().getSimpleName() + ": Loaded " + _castles.values().size() + " castles.");
 		}
 		catch (Exception e)
@@ -261,6 +271,7 @@ public class CastleManager
 				count++;
 			}
 		}
+		
 		return count;
 	}
 	

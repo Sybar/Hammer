@@ -32,6 +32,7 @@ public class Q00012_SecretMeetingWithVarkaSilenos extends Quest
 	private static final int CADMON = 31296;
 	private static final int HELMUT = 31258;
 	private static final int NARAN_ASHANUK = 31378;
+	
 	// Items
 	private static final int MUNITIONS_BOX = 7232;
 	

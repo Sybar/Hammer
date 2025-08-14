@@ -47,6 +47,7 @@ public class Q00220_TestimonyOfGlory extends Quest
 	private static final int LEUNT_CHIEF_HARAK = 30618;
 	private static final int VUKU_CHIEF_DRIKO = 30619;
 	private static final int GANDI_CHIEF_CHIANTA = 30642;
+	
 	// Items
 	private static final int VOKIANS_ORDER = 3204;
 	private static final int MANASHEN_SHARD = 3205;
@@ -82,9 +83,11 @@ public class Q00220_TestimonyOfGlory extends Quest
 	private static final int TANAPIS_ORDER = 3235;
 	private static final int SCEPTER_OF_TANTOS = 3236;
 	private static final int RITUAL_BOX = 3237;
+	
 	// Reward
 	private static final int MARK_OF_GLORY = 3203;
 	private static final int DIMENSIONAL_DIAMOND = 7562;
+	
 	// Monster
 	private static final int TYRANT = 20192;
 	private static final int TYRANT_KINGPIN = 20193;
@@ -101,12 +104,14 @@ public class Q00220_TestimonyOfGlory extends Quest
 	private static final int TAMLIN_ORC_ARCHER = 20602;
 	private static final int RAGNA_ORC_OVERLORD = 20778;
 	private static final int RAGNA_ORC_SEER = 20779;
+	
 	// Quest Monster
 	private static final int PASHIKA_SON_OF_VOLTAR = 27080;
 	private static final int VULTUS_SON_OF_VOLTAR = 27081;
 	private static final int ENKU_ORC_OVERLORD = 27082;
 	private static final int MAKUM_BUGBEAR_THUG = 27083;
 	private static final int REVENANT_OF_TANTOS_CHIEF = 27086;
+	
 	// Misc
 	private static final int MIN_LEVEL = 37;
 	
@@ -318,6 +323,7 @@ public class Q00220_TestimonyOfGlory extends Quest
 					{
 						qs.setCond(5, true);
 					}
+					
 					htmltext = event;
 				}
 				break;
@@ -363,6 +369,7 @@ public class Q00220_TestimonyOfGlory extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -812,6 +819,7 @@ public class Q00220_TestimonyOfGlory extends Quest
 								addAttackDesire(addSpawn(npc, PASHIKA_SON_OF_VOLTAR, npc, true, 200000), player);
 								addAttackDesire(addSpawn(npc, VULTUS_SON_OF_VOLTAR, npc, true, 200000), player);
 							}
+							
 							htmltext = "30615-05.html";
 						}
 						else if (hasQuestItems(player, PASHIKAS_HEAD, VULTUS_HEAD))
@@ -823,6 +831,7 @@ public class Q00220_TestimonyOfGlory extends Quest
 							{
 								qs.setCond(5, true);
 							}
+							
 							htmltext = "30615-06.html";
 						}
 						else if (hasQuestItems(player, SCEPTER_OF_BREKA))
@@ -855,6 +864,7 @@ public class Q00220_TestimonyOfGlory extends Quest
 							{
 								addAttackDesire(addSpawn(npc, ENKU_ORC_OVERLORD, npc, true, 200000), player);
 							}
+							
 							htmltext = "30616-05.html";
 						}
 						else if (getQuestItemsCount(player, ENKU_OVERLORD_HEAD) >= 4)
@@ -865,6 +875,7 @@ public class Q00220_TestimonyOfGlory extends Quest
 							{
 								qs.setCond(5, true);
 							}
+							
 							htmltext = "30616-06.html";
 						}
 						else if (hasQuestItems(player, SCEPTER_OF_ENKU))
@@ -898,6 +909,7 @@ public class Q00220_TestimonyOfGlory extends Quest
 								addAttackDesire(addSpawn(npc, MAKUM_BUGBEAR_THUG, npc, true, 200000), player);
 								addAttackDesire(addSpawn(npc, MAKUM_BUGBEAR_THUG, npc, true, 200000), player);
 							}
+							
 							htmltext = "30617-04.html";
 						}
 						else if (getQuestItemsCount(player, MAKUM_BUGBEAR_HEAD) >= 2)
@@ -908,6 +920,7 @@ public class Q00220_TestimonyOfGlory extends Quest
 							{
 								qs.setCond(5, true);
 							}
+							
 							htmltext = "30617-05.html";
 						}
 						else if (hasQuestItems(player, SCEPTER_OF_TUREK))
@@ -973,6 +986,7 @@ public class Q00220_TestimonyOfGlory extends Quest
 								{
 									qs.setCond(5, true);
 								}
+								
 								htmltext = "30619-05.html";
 							}
 						}
@@ -1046,6 +1060,7 @@ public class Q00220_TestimonyOfGlory extends Quest
 				htmltext = getAlreadyCompletedMsg(player);
 			}
 		}
+		
 		return htmltext;
 	}
 }

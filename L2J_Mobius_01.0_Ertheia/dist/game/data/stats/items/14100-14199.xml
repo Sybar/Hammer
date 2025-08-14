@@ -1448,9 +1448,9 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="commissionItemType" val="RAPIER" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">359</stat>
 			<stat type="mAtk">176</stat>
@@ -1485,9 +1485,9 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="commissionItemType" val="RAPIER" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">359</stat>
 			<stat type="mAtk">176</stat>
@@ -1522,9 +1522,9 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="commissionItemType" val="RAPIER" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">359</stat>
 			<stat type="mAtk">176</stat>
@@ -1560,9 +1560,9 @@
 		<set name="reuse_delay" val="400" />
 		<set name="commissionItemType" val="CROSSBOW" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">444</stat>
 			<stat type="mAtk">176</stat>
@@ -1598,9 +1598,9 @@
 		<set name="reuse_delay" val="400" />
 		<set name="commissionItemType" val="CROSSBOW" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">444</stat>
 			<stat type="mAtk">176</stat>
@@ -1635,9 +1635,9 @@
 		<set name="reuse_delay" val="400" />
 		<set name="commissionItemType" val="CROSSBOW" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">444</stat>
 			<stat type="mAtk">176</stat>
@@ -1672,9 +1672,9 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="commissionItemType" val="ANCIENT_SWORD" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">429</stat>
 			<stat type="mAtk">176</stat>
@@ -1708,9 +1708,9 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="commissionItemType" val="ANCIENT_SWORD" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">429</stat>
 			<stat type="mAtk">176</stat>
@@ -1744,9 +1744,9 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="commissionItemType" val="ANCIENT_SWORD" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">429</stat>
 			<stat type="mAtk">176</stat>
@@ -1874,9 +1874,9 @@
 		<set name="price" val="41400" />
 		<set name="is_stackable" val="true" />
 		<set name="commissionItemType" val="LIFE_STONE" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="84" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="14167" name="Mid-grade Life Stone - Lv. 84" type="EtcItem">
 		<!-- Mid-grade mineral that has been petrified by a creature's physical or magical damage. Key component used in weapon Augmentation by characters level 84 or above. -->
@@ -1887,9 +1887,9 @@
 		<set name="price" val="165800" />
 		<set name="is_stackable" val="true" />
 		<set name="commissionItemType" val="LIFE_STONE" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="84" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="14168" name="High-grade Life Stone - Lv. 84" type="EtcItem">
 		<!-- High-grade mineral that has been petrified by a creature's physical or magical damage. Key component used in weapon Augmentation by characters level 84 or above. -->
@@ -1900,9 +1900,9 @@
 		<set name="price" val="829000" />
 		<set name="is_stackable" val="true" />
 		<set name="commissionItemType" val="LIFE_STONE" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="84" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="14169" name="Top-grade Life Stone - Lv. 84" type="EtcItem">
 		<!-- The highest-grade mineral available that has been petrified by a creature's physical or magical damage. Key component used in weapon Augmentation by characters level 84 or above. -->
@@ -1913,9 +1913,9 @@
 		<set name="price" val="4146000" />
 		<set name="is_stackable" val="true" />
 		<set name="commissionItemType" val="LIFE_STONE" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="84" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="14170" name="Forgotten Scroll: Seed of Revenge" type="EtcItem">
 		<!-- This Forgotten Scroll can be used by Hell Knights level 83 or above to learn the Seed of Revenge. -->

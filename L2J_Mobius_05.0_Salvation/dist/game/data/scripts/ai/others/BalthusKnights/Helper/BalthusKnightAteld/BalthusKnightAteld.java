@@ -35,11 +35,14 @@ public final class BalthusKnightAteld extends AbstractNpcAI
 {
 	// NPCs
 	private static final int ATELD = 34369;
+	
 	// Monsters
 	private static final int ANTHARAS_TRANSFORM = 24088;
+	
 	// Skills
 	// TODO: It's "Balthus Volcanic Destruction" on Orfen
 	private static final SkillHolder ElementalSpikeSkill = new SkillHolder(32152, 1);
+	
 	// Misc
 	private static final int p_CheckFirstInterval = 15000;
 	private static final int p_CheckInterval = 3000;
@@ -65,6 +68,7 @@ public final class BalthusKnightAteld extends AbstractNpcAI
 					{
 						npc.setTarget(antharas_trans);
 					}
+					
 					npc.setInvul(true);
 					npc.setTalkable(false);
 					npc.setRandomWalking(false);

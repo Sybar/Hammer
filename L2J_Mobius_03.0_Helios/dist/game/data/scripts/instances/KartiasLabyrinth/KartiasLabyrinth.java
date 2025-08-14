@@ -131,12 +131,14 @@ public class KartiasLabyrinth extends AbstractInstance
 		33643, // Kartia Prisoner (90)
 		33645, // Kartia Prisoner (95)
 	};
+	
 	// Skills
 	private static final SkillHolder MIRROR_SKILL_1 = new SkillHolder(15401, 1);
 	private static final SkillHolder MIRROR_SKILL_2 = new SkillHolder(14065, 1);
 	private static final SkillHolder BOSS_STONE = new SkillHolder(15155, 1);
 	private static final SkillHolder PRISONER_HOLD = new SkillHolder(14988, 1);
 	private static final SkillHolder PRISONER_CLEANSE = new SkillHolder(14992, 1);
+	
 	// Zones
 	private static final int KARTIA_85_DETECT_1 = 12020;
 	private static final int KARTIA_85_DETECT_2 = 12021;
@@ -144,6 +146,7 @@ public class KartiasLabyrinth extends AbstractInstance
 	private static final int KARTIA_90_DETECT_2 = 12026;
 	private static final int KARTIA_95_DETECT_1 = 12030;
 	private static final int KARTIA_95_DETECT_2 = 12031;
+	
 	// Misc
 	private static final int TEMPLATE_ID_SOLO_85 = 205;
 	private static final int TEMPLATE_ID_SOLO_90 = 206;
@@ -153,6 +156,7 @@ public class KartiasLabyrinth extends AbstractInstance
 	private static final int TEMPLATE_ID_GROUP_95 = 210;
 	private static final long WAVE_DEALY = 30000;
 	private static final long WAVE_MONITOR_DELAY = 3000;
+	
 	// Solo instance XP reward values
 	private static final int SOLO_BASE_EXP_85 = 480000000;
 	private static final int SOLO_RAND_EXP_85 = 8055934;
@@ -160,6 +164,7 @@ public class KartiasLabyrinth extends AbstractInstance
 	private static final int SOLO_RAND_EXP_90 = 6173918;
 	private static final int SOLO_BASE_EXP_95 = 970000000;
 	private static final int SOLO_RAND_EXP_95 = 6305195;
+	
 	// Solo instance SP reward values
 	private static final int SOLO_BASE_SP_85 = 3800000;
 	private static final int SOLO_RAND_SP_85 = 73460;
@@ -263,6 +268,7 @@ public class KartiasLabyrinth extends AbstractInstance
 								getTimers().addTimer("TELEPORT_PLAYER", 3000, npc, player);
 								return "adolph-04.html";
 							}
+							
 							return "adolph-02.html";
 						}
 					}
@@ -270,6 +276,7 @@ public class KartiasLabyrinth extends AbstractInstance
 				break;
 			}
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	
@@ -422,6 +429,7 @@ public class KartiasLabyrinth extends AbstractInstance
 					}
 				}
 			}
+			
 			instance.finishInstance();
 		}
 	}
@@ -513,6 +521,7 @@ public class KartiasLabyrinth extends AbstractInstance
 				npc.deleteMe();
 			}
 		}
+		
 		super.onMoveFinished(npc);
 	}
 	
@@ -671,6 +680,7 @@ public class KartiasLabyrinth extends AbstractInstance
 								param.set("STAGE", 4);
 								param.set("WAVE", 1);
 							}
+							
 							getTimers().addTimer("CALL_PROGRESS", 8000, n -> manageProgressInInstance(instance));
 							break;
 						}
@@ -866,6 +876,7 @@ public class KartiasLabyrinth extends AbstractInstance
 				{
 					onTimerEvent("MOVE_TO_MIDDLE", null, monster, null);
 				}
+				
 				monster.asAttackable().setCanReturnToSpawnPoint(false);
 			}
 		}
@@ -898,26 +909,32 @@ public class KartiasLabyrinth extends AbstractInstance
 		{
 			return "33647.htm";
 		}
+		
 		if (ArrayUtil.contains(ADOLPH, npc.getId()))
 		{
 			return "adolph.html";
 		}
+		
 		if (ArrayUtil.contains(BARTON, npc.getId()))
 		{
 			return "barton.html";
 		}
+		
 		if (ArrayUtil.contains(ELISE, npc.getId()))
 		{
 			return "elise.html";
 		}
+		
 		if (ArrayUtil.contains(ELIYAH, npc.getId()))
 		{
 			return "eliyah.html";
 		}
+		
 		if (ArrayUtil.contains(HAYUK, npc.getId()))
 		{
 			return "hayuk.html";
 		}
+		
 		return "";
 	}
 	

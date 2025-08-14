@@ -56,8 +56,10 @@ public class Q10434_TheSealOfPunishmentSelMahumTrainingGrounds extends Quest
 		22787, // Sel Mahum Squad Leader(Warrior)
 		22788, // Sel Mahum Squad Leader(Archer)
 	};
+	
 	// Item
 	private static final int EVIDENCE_OF_CONSPIRACY = 36692;
+	
 	// Misc
 	private static final int MIN_LEVEL = 81;
 	private static final int MAX_LEVEL = 84;
@@ -83,6 +85,7 @@ public class Q10434_TheSealOfPunishmentSelMahumTrainingGrounds extends Quest
 		{
 			return getNoQuestMsg(player);
 		}
+		
 		String htmltext = event;
 		switch (event)
 		{
@@ -108,6 +111,7 @@ public class Q10434_TheSealOfPunishmentSelMahumTrainingGrounds extends Quest
 				{
 					break;
 				}
+				
 				final int stoneId = Integer.parseInt(event.replaceAll("reward_", ""));
 				giveItems(player, stoneId, 15);
 				giveStoryQuestReward(player, 60);
@@ -152,11 +156,13 @@ public class Q10434_TheSealOfPunishmentSelMahumTrainingGrounds extends Quest
 				{
 					addExpAndSp(player, 282408000, 67770);
 				}
+				
 				qs.exitQuest(false, true);
 				htmltext = "33841-06.html";
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -194,6 +200,7 @@ public class Q10434_TheSealOfPunishmentSelMahumTrainingGrounds extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

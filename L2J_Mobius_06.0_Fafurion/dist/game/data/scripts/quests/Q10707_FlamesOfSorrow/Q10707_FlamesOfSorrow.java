@@ -47,11 +47,14 @@ public class Q10707_FlamesOfSorrow extends Quest
 	private static final int WARNING_FIRE = 19545;
 	private static final int VENGEFUL_SPIRIT = 27518;
 	private static final int SPIRIT = 33959;
+	
 	// Items
 	private static final int MARK = 39508; // Mark of Gratitude
+	
 	// Rewards
 	private static final int XP = 14518600; // Experience points
 	private static final int SP = 756; // Skill Points
+	
 	// Misc
 	private static final int MIN_LEVEL = 46;
 	private static final int MAX_LEVEL = 56;
@@ -115,6 +118,7 @@ public class Q10707_FlamesOfSorrow extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -151,6 +155,7 @@ public class Q10707_FlamesOfSorrow extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -168,6 +173,7 @@ public class Q10707_FlamesOfSorrow extends Quest
 			{
 				qs.setCond(4, true);
 			}
+			
 			sendNpcLogList(player);
 		}
 	}
@@ -182,6 +188,7 @@ public class Q10707_FlamesOfSorrow extends Quest
 			holder.add(new NpcLogListHolder(NPCSTRING_ID, true, (int) getQuestItemsCount(player, MARK)));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 	

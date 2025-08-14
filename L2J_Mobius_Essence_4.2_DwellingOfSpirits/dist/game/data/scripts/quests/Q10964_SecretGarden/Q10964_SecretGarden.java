@@ -43,16 +43,19 @@ public class Q10964_SecretGarden extends Quest
 	// NPC
 	private static final int CAPTAIN_BATHIS = 30332;
 	private static final int RAYMOND = 30289;
+	
 	// Monsters
 	private static final int HARPY = 20145;
 	private static final int MEDUSA = 20158;
 	private static final int WYRM = 20176;
 	private static final int TURAK_BUGBEAR = 20248;
 	private static final int TURAK_BUGBEAR_WARRIOR = 20249;
+	
 	// Items
 	private static final ItemHolder SCROLL_ENCHANT_ADEN_WEAPON = new ItemHolder(93038, 2);
 	private static final ItemHolder TRAVELER_AGATHION_SUMMON_BRACELET = new ItemHolder(91933, 1);
 	private static final ItemHolder TRAVELER_AGATHION_GRIFFIN = new ItemHolder(91935, 1);
+	
 	// Misc
 	private static final String KILL_COUNT_VAR = "KillCount";
 	private static final int MIN_LEVEL = 30;
@@ -132,6 +135,7 @@ public class Q10964_SecretGarden extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -167,6 +171,7 @@ public class Q10964_SecretGarden extends Quest
 			holder.add(new NpcLogListHolder(NpcStringId.KILL_MONSTERS_IN_THE_GORGON_FLOWER_GARDEN.getId(), true, qs.getInt(KILL_COUNT_VAR)));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 	
@@ -214,6 +219,7 @@ public class Q10964_SecretGarden extends Quest
 				htmltext = getAlreadyCompletedMsg(player);
 			}
 		}
+		
 		return htmltext;
 	}
 }

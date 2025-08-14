@@ -42,6 +42,7 @@ public class Q10296_LetsPayRespectsToOurFallenBrethren extends Quest
 {
 	// NPCs
 	private static final int ORVEN = 30857;
+	
 	// Monsters
 	private static final int ACHER_OF_DESTRUCTION = 21001;
 	private static final int GRAVEYARD_LICH = 21003;
@@ -55,6 +56,7 @@ public class Q10296_LetsPayRespectsToOurFallenBrethren extends Quest
 	private static final int DOOM_TROOPER = 21009;
 	private static final int DOOM_WARRIOR = 21010;
 	private static final int GUARD_BUTCHER = 22101;
+	
 	// Items
 	private static final ItemHolder SOE_FIELDS_OF_MASSACRE = new ItemHolder(95592, 1);
 	private static final ItemHolder SOE_HIGH_PRIEST_OVEN = new ItemHolder(91768, 1);
@@ -62,6 +64,7 @@ public class Q10296_LetsPayRespectsToOurFallenBrethren extends Quest
 	private static final ItemHolder SOULSHOT_TICKET = new ItemHolder(90907, 10);
 	private static final ItemHolder SAYHA_GUST = new ItemHolder(91776, 9);
 	private static final ItemHolder SPIRIT_ORE = new ItemHolder(3031, 450);
+	
 	// Misc
 	private static final int MIN_LEVEL = 52;
 	private static final int MAX_LEVEL = 56;
@@ -128,6 +131,7 @@ public class Q10296_LetsPayRespectsToOurFallenBrethren extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -163,6 +167,7 @@ public class Q10296_LetsPayRespectsToOurFallenBrethren extends Quest
 		{
 			htmltext = getAlreadyCompletedMsg(player);
 		}
+		
 		return htmltext;
 	}
 	
@@ -200,6 +205,7 @@ public class Q10296_LetsPayRespectsToOurFallenBrethren extends Quest
 			holder.add(new NpcLogListHolder(NpcStringId.REACH_LV_58, player.getLevel() > 57 ? 1 : 0));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 	

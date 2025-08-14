@@ -39,8 +39,10 @@ public class Q10891_AtANewPlace extends Quest
 	private static final int FERIN = 34054;
 	private static final int DEVIANNE = 34427;
 	private static final int LEONA = 34425;
+	
 	// Reward
 	private static final int SCROLL = 46158; // Scroll of Escape: Blackbird Campsite
+	
 	// Misc
 	private static final int MIN_LEVEL = 103;
 	
@@ -118,6 +120,7 @@ public class Q10891_AtANewPlace extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -209,6 +212,7 @@ public class Q10891_AtANewPlace extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

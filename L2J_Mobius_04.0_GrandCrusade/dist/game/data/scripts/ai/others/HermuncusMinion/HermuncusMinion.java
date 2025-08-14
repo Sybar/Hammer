@@ -39,7 +39,6 @@ public class HermuncusMinion extends AbstractNpcAI
 {
 	// NPCs
 	private static final Map<Integer, Integer> HERMUNCUS_MINIONS = new HashMap<>();
-	
 	static
 	{
 		HERMUNCUS_MINIONS.put(33560, 1010720); // Town of Schuttgart
@@ -58,7 +57,6 @@ public class HermuncusMinion extends AbstractNpcAI
 	
 	// Locations
 	private static final Map<Integer, Location> TELEPORTS_85 = new LinkedHashMap<>();
-	
 	static
 	{
 		TELEPORTS_85.put(1010720, new Location(86153, -143707, -1336)); // Town of Schuttgart
@@ -68,7 +66,6 @@ public class HermuncusMinion extends AbstractNpcAI
 	}
 	
 	private static final Map<Integer, Location> TELEPORTS_90 = new LinkedHashMap<>();
-	
 	static
 	{
 		TELEPORTS_90.put(1010724, new Location(207688, 84720, -1144)); // Ancient City Arcan
@@ -119,6 +116,7 @@ public class HermuncusMinion extends AbstractNpcAI
 				{
 					sb.append(generateButton(teleportLoc));
 				}
+				
 				htmltext = getHtm(player, "HermuncusMinion-01.html").replace("%locations%", sb.toString());
 			}
 		}
@@ -147,6 +145,7 @@ public class HermuncusMinion extends AbstractNpcAI
 				player.teleToLocation(loc);
 			}
 		}
+		
 		return htmltext;
 	}
 	

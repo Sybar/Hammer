@@ -1043,9 +1043,9 @@
 		<set name="commissionItemType" val="ONE_HAND_SWORD" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_oly_restricted" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player isHero="true" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">567</stat>
 			<stat type="mAtk">275</stat>
@@ -1078,9 +1078,9 @@
 		<set name="commissionItemType" val="DAGGER" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_oly_restricted" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player isHero="true" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">496</stat>
 			<stat type="mAtk">275</stat>
@@ -1115,9 +1115,9 @@
 		<set name="commissionItemType" val="BLUNT_WEAPON" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_oly_restricted" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player isHero="true" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">567</stat>
 			<stat type="mAtk">275</stat>
@@ -1151,9 +1151,9 @@
 		<set name="commissionItemType" val="TWO_HAND_BLUNT_WEAPON" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_oly_restricted" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player isHero="true" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">690</stat>
 			<stat type="mAtk">275</stat>
@@ -1188,9 +1188,9 @@
 		<set name="commissionItemType" val="TWO_HAND_SWORD" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_oly_restricted" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player isHero="true" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">690</stat>
 			<stat type="mAtk">275</stat>
@@ -1223,9 +1223,9 @@
 		<set name="commissionItemType" val="FIST_WEAPON" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_oly_restricted" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player isHero="true" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">690</stat>
 			<stat type="mAtk">275</stat>
@@ -1260,9 +1260,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="commissionItemType" val="SPEAR" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player isHero="true" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">567</stat>
 			<stat type="mAtk">275</stat>
@@ -1297,9 +1297,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="is_magic_weapon" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player isHero="true" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">454</stat>
 			<stat type="mAtk">367</stat>
@@ -1334,9 +1334,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="is_magic_weapon" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player isHero="true" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">553</stat>
 			<stat type="mAtk">403</stat>
@@ -1372,9 +1372,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="is_magic_weapon" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player isHero="true" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">454</stat>
 			<stat type="mAtk">367</stat>
@@ -1410,9 +1410,9 @@
 		<set name="commissionItemType" val="BOW" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_oly_restricted" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player isHero="true" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">1117</stat>
 			<stat type="mAtk">275</stat>
@@ -1447,12 +1447,12 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="commissionItemType" val="RAPIER" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player races="KAMAEL" />
 				<player isHero="true" />
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">344</stat>
 			<stat type="mAtk">183</stat>
@@ -1486,12 +1486,12 @@
 		<set name="commissionItemType" val="ANCIENT_SWORD" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_oly_restricted" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player races="KAMAEL" />
 				<player isHero="true" />
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">429</stat>
 			<stat type="mAtk">183</stat>
@@ -1521,12 +1521,12 @@
 		<set name="commissionItemType" val="CROSSBOW" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_oly_restricted" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player races="KAMAEL" />
 				<player isHero="true" />
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">444</stat>
 			<stat type="mAtk">183</stat>

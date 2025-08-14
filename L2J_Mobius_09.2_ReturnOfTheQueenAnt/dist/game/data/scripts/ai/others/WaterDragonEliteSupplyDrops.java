@@ -22,14 +22,17 @@ package ai.others;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.util.Calendar;
-import java.util.logging.Level;
 
 import org.l2jmobius.Config;
 import org.l2jmobius.commons.database.DatabaseFactory;
 import org.l2jmobius.gameserver.model.World;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.model.events.EventType;
+import org.l2jmobius.gameserver.model.events.ListenerRegisterType;
+import org.l2jmobius.gameserver.model.events.annotations.RegisterEvent;
+import org.l2jmobius.gameserver.model.events.annotations.RegisterType;
+import org.l2jmobius.gameserver.model.events.holders.OnDailyReset;
 import org.l2jmobius.gameserver.network.SystemMessageId;
 
 import ai.AbstractNpcAI;
@@ -53,8 +56,10 @@ public class WaterDragonEliteSupplyDrops extends AbstractNpcAI
 		24604, // Water Dragon's Swordsman
 		24605, // Weakened Krotania
 	};
+	
 	// Item
 	private static final int WATER_DRAGON_ELITE_SUPPLIES = 81758;
+	
 	// Misc
 	private static final String WATER_DRAGON_ELITE_SUPPLIES_COUNT_VAR = "WATER_DRAGON_SUPPLIES_DROP_COUNT";
 	private static final int PLAYER_LEVEL = 100;
@@ -66,56 +71,6 @@ public class WaterDragonEliteSupplyDrops extends AbstractNpcAI
 	private WaterDragonEliteSupplyDrops()
 	{
 		addKillId(MONSTERS);
-		startQuestTimer("schedule", 1000, null, null);
-	}
-	
-	@Override
-	public String onEvent(String event, Npc npc, Player player)
-	{
-		if ((npc != null) || (player != null))
-		{
-			return null;
-		}
-		
-		if (event.equals("schedule"))
-		{
-			final long currentTime = System.currentTimeMillis();
-			final Calendar calendar = Calendar.getInstance();
-			calendar.set(Calendar.HOUR_OF_DAY, 6);
-			calendar.set(Calendar.MINUTE, 30);
-			if (calendar.getTimeInMillis() < currentTime)
-			{
-				calendar.add(Calendar.DAY_OF_YEAR, 1);
-			}
-			cancelQuestTimers("reset");
-			startQuestTimer("reset", calendar.getTimeInMillis() - currentTime, null, null);
-		}
-		else if (event.equals("reset"))
-		{
-			// Update data for offline players.
-			try (Connection con = DatabaseFactory.getConnection();
-				PreparedStatement ps = con.prepareStatement("DELETE FROM character_variables WHERE var=?"))
-			{
-				ps.setString(1, WATER_DRAGON_ELITE_SUPPLIES_COUNT_VAR);
-				ps.executeUpdate();
-			}
-			catch (Exception e)
-			{
-				LOGGER.log(Level.SEVERE, "Could not reset Corroded Fields drop count: ", e);
-			}
-			
-			// Update data for online players.
-			for (Player plr : World.getInstance().getPlayers())
-			{
-				plr.getVariables().remove(WATER_DRAGON_ELITE_SUPPLIES_COUNT_VAR);
-				plr.getVariables().storeMe();
-			}
-			
-			cancelQuestTimers("schedule");
-			startQuestTimer("schedule", 1000, null, null);
-		}
-		
-		return null;
 	}
 	
 	@Override
@@ -137,9 +92,35 @@ public class WaterDragonEliteSupplyDrops extends AbstractNpcAI
 					player.getVariables().set(WATER_DRAGON_ELITE_SUPPLIES_COUNT_VAR, count + 1);
 					player.sendPacket(SystemMessageId.YOU_EXCEEDED_THE_LIMIT_AND_CANNOT_COMPLETE_THE_TASK);
 				}
+				
 				player.sendMessage("You obtained all available Water Dragon's Elite Supplies for this day!");
 			}
 		}
+	}
+	
+	@RegisterEvent(EventType.ON_DAILY_RESET)
+	@RegisterType(ListenerRegisterType.GLOBAL)
+	public void onDailyReset(OnDailyReset event)
+	{
+		// Update data for offline players.
+		try (Connection con = DatabaseFactory.getConnection();
+			PreparedStatement ps = con.prepareStatement("DELETE FROM character_variables WHERE var=?"))
+		{
+			ps.setString(1, WATER_DRAGON_ELITE_SUPPLIES_COUNT_VAR);
+			ps.executeUpdate();
+		}
+		catch (Exception e)
+		{
+			LOGGER.warning(getClass().getSimpleName() + ": Could not reset variables: " + e.getMessage());
+		}
+		
+		// Update data for online players.
+		for (Player player : World.getInstance().getPlayers())
+		{
+			player.getVariables().remove(WATER_DRAGON_ELITE_SUPPLIES_COUNT_VAR);
+		}
+		
+		LOGGER.info(getClass().getSimpleName() + " has been reset.");
 	}
 	
 	public static void main(String[] args)

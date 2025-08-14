@@ -40,6 +40,7 @@ public class Q00443_BornFromDragonBlood extends Quest
 {
 	// NPC
 	private static final int GENIE_LAMP = 34369;
+	
 	// Monsters
 	private static final int CAVE_MAIDEN = 20134;
 	private static final int DRAKE = 20285;
@@ -47,8 +48,10 @@ public class Q00443_BornFromDragonBlood extends Quest
 	private static final int BLOOD_QUEEN = 20142;
 	private static final int BLOOD_QUEEN2 = 22066;
 	private static final int ROYAL_CAVE = 20240;
+	
 	// Item
 	private static final ItemHolder XP_GROWTH = new ItemHolder(49674, 4);
+	
 	// Misc
 	private static final int MIN_LEVEL = 78;
 	private static final int MAX_LEVEL = 90;
@@ -103,6 +106,7 @@ public class Q00443_BornFromDragonBlood extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -141,6 +145,7 @@ public class Q00443_BornFromDragonBlood extends Quest
 				htmltext = getAlreadyCompletedMsg(player);
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -176,6 +181,7 @@ public class Q00443_BornFromDragonBlood extends Quest
 			holder.add(new NpcLogListHolder(NpcStringId.DEFEAT_MONSTERS_37.getId(), true, qs.getInt(KILL_COUNT_VAR)));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

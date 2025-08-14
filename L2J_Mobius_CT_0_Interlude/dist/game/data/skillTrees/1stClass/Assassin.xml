@@ -21,8 +21,11 @@
 		<skill skillName="Long Shot" skillId="113" skillLevel="1" getLevel="20" levelUpSp="2800" learnedByNpc="true" />
 		<skill skillName="Breath Boost" skillId="195" skillLevel="1" getLevel="20" levelUpSp="2800" learnedByNpc="true" />
 		<skill skillName="Acrobatics" skillId="173" skillLevel="1" getLevel="20" levelUpSp="2800" learnedByNpc="true" />
-		<skill skillName="Poison" skillId="129" skillLevel="1" getLevel="20" levelUpSp="2800" learnedByNpc="true" />
+		<skill skillName="Poison" skillId="129" skillLevel="1" getLevel="20" levelUpSp="2800" learnedByNpc="true">
+			<item id="1383" count="1" /> <!-- Spellbook: Poison -->
+		</skill>
 		<skill skillName="Unlock" skillId="27" skillLevel="1" getLevel="20" levelUpSp="2800" learnedByNpc="true" />
+
 		<skill skillName="Bow Mastery" skillId="208" skillLevel="4" getLevel="24" levelUpSp="1700" learnedByNpc="true" />
 		<skill skillName="Bow Mastery" skillId="208" skillLevel="5" getLevel="24" levelUpSp="1700" learnedByNpc="true" />
 		<skill skillName="Bow Mastery" skillId="208" skillLevel="6" getLevel="24" levelUpSp="1700" learnedByNpc="true" />
@@ -45,9 +48,12 @@
 		<skill skillName="Critical Power" skillId="193" skillLevel="1" getLevel="24" levelUpSp="5000" learnedByNpc="true" />
 		<skill skillName="Boost Evasion" skillId="198" skillLevel="1" getLevel="24" levelUpSp="5000" learnedByNpc="true" />
 		<skill skillName="Bleed" skillId="96" skillLevel="1" getLevel="24" levelUpSp="5000" learnedByNpc="true" />
-		<skill skillName="Confusion" skillId="2" skillLevel="1" getLevel="24" levelUpSp="5000" learnedByNpc="true" />
+		<skill skillName="Confusion" skillId="2" skillLevel="1" getLevel="24" levelUpSp="5000" learnedByNpc="true">
+			<item id="1512" count="1" /> <!-- Spellbook: Confusion -->
+		</skill>
 		<skill skillName="Accuracy" skillId="256" skillLevel="1" getLevel="24" levelUpSp="5000" learnedByNpc="true" />
 		<skill skillName="Unlock" skillId="27" skillLevel="2" getLevel="24" levelUpSp="5000" learnedByNpc="true" />
+
 		<skill skillName="Bow Mastery" skillId="208" skillLevel="7" getLevel="28" levelUpSp="2900" learnedByNpc="true" />
 		<skill skillName="Bow Mastery" skillId="208" skillLevel="8" getLevel="28" levelUpSp="2900" learnedByNpc="true" />
 		<skill skillName="Bow Mastery" skillId="208" skillLevel="9" getLevel="28" levelUpSp="2900" learnedByNpc="true" />
@@ -74,6 +80,7 @@
 		<skill skillName="Acrobatic Move" skillId="225" skillLevel="1" getLevel="28" levelUpSp="8500" learnedByNpc="true" />
 		<skill skillName="Unlock" skillId="27" skillLevel="3" getLevel="28" levelUpSp="8500" learnedByNpc="true" />
 		<skill skillName="Ultimate Evasion" skillId="111" skillLevel="1" getLevel="28" levelUpSp="8500" learnedByNpc="true" />
+
 		<skill skillName="Bow Mastery" skillId="208" skillLevel="10" getLevel="32" levelUpSp="4800" learnedByNpc="true" />
 		<skill skillName="Bow Mastery" skillId="208" skillLevel="11" getLevel="32" levelUpSp="4800" learnedByNpc="true" />
 		<skill skillName="Bow Mastery" skillId="208" skillLevel="12" getLevel="32" levelUpSp="4800" learnedByNpc="true" />
@@ -99,7 +106,10 @@
 		<skill skillName="Bleed" skillId="96" skillLevel="2" getLevel="32" levelUpSp="14000" learnedByNpc="true" />
 		<skill skillName="Unlock" skillId="27" skillLevel="4" getLevel="32" levelUpSp="14000" learnedByNpc="true" />
 		<skill skillName="Confusion" skillId="2" skillLevel="3" getLevel="32" levelUpSp="14000" learnedByNpc="true" />
-		<skill skillName="Power Break" skillId="115" skillLevel="1" getLevel="32" levelUpSp="14000" learnedByNpc="true" />
+		<skill skillName="Power Break" skillId="115" skillLevel="1" getLevel="32" levelUpSp="14000" learnedByNpc="true">
+			<item id="1382" count="1" /> <!-- Spellbook: Power Break -->
+		</skill>
+
 		<skill skillName="Bow Mastery" skillId="208" skillLevel="13" getLevel="36" levelUpSp="7400" learnedByNpc="true" />
 		<skill skillName="Bow Mastery" skillId="208" skillLevel="14" getLevel="36" levelUpSp="7400" learnedByNpc="true" />
 		<skill skillName="Bow Mastery" skillId="208" skillLevel="15" getLevel="36" levelUpSp="7400" learnedByNpc="true" />
@@ -119,7 +129,9 @@
 		<skill skillName="Sting" skillId="223" skillLevel="10" getLevel="36" levelUpSp="7400" learnedByNpc="true" />
 		<skill skillName="Sting" skillId="223" skillLevel="11" getLevel="36" levelUpSp="7400" learnedByNpc="true" />
 		<skill skillName="Sting" skillId="223" skillLevel="12" getLevel="36" levelUpSp="7400" learnedByNpc="true" />
-		<skill skillName="Freezing Strike" skillId="105" skillLevel="1" getLevel="36" levelUpSp="11000" learnedByNpc="true" />
+		<skill skillName="Freezing Strike" skillId="105" skillLevel="1" getLevel="36" levelUpSp="11000" learnedByNpc="true">
+			<item id="1381" count="1" /> <!-- Spellbook: Freezing Strike -->
+		</skill>
 		<skill skillName="Freezing Strike" skillId="105" skillLevel="2" getLevel="36" levelUpSp="11000" learnedByNpc="true" />
 		<skill skillName="Stunning Shot" skillId="101" skillLevel="1" getLevel="36" levelUpSp="7400" learnedByNpc="true" />
 		<skill skillName="Stunning Shot" skillId="101" skillLevel="2" getLevel="36" levelUpSp="7400" learnedByNpc="true" />

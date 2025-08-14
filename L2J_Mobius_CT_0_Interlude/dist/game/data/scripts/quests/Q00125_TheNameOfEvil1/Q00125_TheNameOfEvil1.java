@@ -23,7 +23,6 @@ package quests.Q00125_TheNameOfEvil1;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.gameserver.data.xml.SkillData;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
@@ -278,13 +277,13 @@ public class Q00125_TheNameOfEvil1 extends Quest
 		final int npcId = npc.getId();
 		if (ORNITHOMIMUS.containsKey(npcId))
 		{
-			if ((getQuestItemsCount(player, ORNITHOMIMUS_CLAW) < 2) && (getRandom(1000) < (ORNITHOMIMUS.get(npcId) * Config.RATE_QUEST_DROP)))
+			if ((getQuestItemsCount(player, ORNITHOMIMUS_CLAW) < 2) && (getRandom(1000) < ORNITHOMIMUS.get(npcId)))
 			{
 				giveItems(player, ORNITHOMIMUS_CLAW, 1);
 				playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 			}
 		}
-		else if (DEINONYCHUS.containsKey(npcId) && (getQuestItemsCount(player, DEINONYCHUS_BONE) < 2) && (getRandom(1000) < (DEINONYCHUS.get(npcId) * Config.RATE_QUEST_DROP)))
+		else if (DEINONYCHUS.containsKey(npcId) && (getQuestItemsCount(player, DEINONYCHUS_BONE) < 2) && (getRandom(1000) < DEINONYCHUS.get(npcId)))
 		{
 			giveItems(player, DEINONYCHUS_BONE, 1);
 			playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);

@@ -22,14 +22,17 @@ package ai.others;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.util.Calendar;
-import java.util.logging.Level;
 
 import org.l2jmobius.Config;
 import org.l2jmobius.commons.database.DatabaseFactory;
 import org.l2jmobius.gameserver.model.World;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.model.events.EventType;
+import org.l2jmobius.gameserver.model.events.ListenerRegisterType;
+import org.l2jmobius.gameserver.model.events.annotations.RegisterEvent;
+import org.l2jmobius.gameserver.model.events.annotations.RegisterType;
+import org.l2jmobius.gameserver.model.events.holders.OnDailyReset;
 import org.l2jmobius.gameserver.network.SystemMessageId;
 
 import ai.AbstractNpcAI;
@@ -230,8 +233,10 @@ public class AetherDrops extends AbstractNpcAI
 		24623, // Lesatanas
 		24624, // Arbor
 	};
+	
 	// Item
 	private static final int AETHER = 81215;
+	
 	// Misc
 	private static final String AETHER_DROP_COUNT_VAR = "AETHER_DROP_COUNT";
 	private static final int PLAYER_LEVEL = 85;
@@ -243,56 +248,6 @@ public class AetherDrops extends AbstractNpcAI
 	private AetherDrops()
 	{
 		addKillId(MONSTERS);
-		startQuestTimer("schedule", 1000, null, null);
-	}
-	
-	@Override
-	public String onEvent(String event, Npc npc, Player player)
-	{
-		if ((npc != null) || (player != null))
-		{
-			return null;
-		}
-		
-		if (event.equals("schedule"))
-		{
-			final long currentTime = System.currentTimeMillis();
-			final Calendar calendar = Calendar.getInstance();
-			calendar.set(Calendar.HOUR_OF_DAY, 6);
-			calendar.set(Calendar.MINUTE, 30);
-			if (calendar.getTimeInMillis() < currentTime)
-			{
-				calendar.add(Calendar.DAY_OF_YEAR, 1);
-			}
-			cancelQuestTimers("reset");
-			startQuestTimer("reset", calendar.getTimeInMillis() - currentTime, null, null);
-		}
-		else if (event.equals("reset"))
-		{
-			// Update data for offline players.
-			try (Connection con = DatabaseFactory.getConnection();
-				PreparedStatement ps = con.prepareStatement("DELETE FROM character_variables WHERE var=?"))
-			{
-				ps.setString(1, AETHER_DROP_COUNT_VAR);
-				ps.executeUpdate();
-			}
-			catch (Exception e)
-			{
-				LOGGER.log(Level.SEVERE, "Could not reset Aether drop count: ", e);
-			}
-			
-			// Update data for online players.
-			for (Player plr : World.getInstance().getPlayers())
-			{
-				plr.getVariables().remove(AETHER_DROP_COUNT_VAR);
-				plr.getVariables().storeMe();
-			}
-			
-			cancelQuestTimers("schedule");
-			startQuestTimer("schedule", 1000, null, null);
-		}
-		
-		return null;
 	}
 	
 	@Override
@@ -314,9 +269,35 @@ public class AetherDrops extends AbstractNpcAI
 					player.getVariables().set(AETHER_DROP_COUNT_VAR, count + 1);
 					player.sendPacket(SystemMessageId.YOU_EXCEEDED_THE_LIMIT_AND_CANNOT_COMPLETE_THE_TASK);
 				}
+				
 				player.sendMessage("You obtained all available Aether for this day!");
 			}
 		}
+	}
+	
+	@RegisterEvent(EventType.ON_DAILY_RESET)
+	@RegisterType(ListenerRegisterType.GLOBAL)
+	public void onDailyReset(OnDailyReset event)
+	{
+		// Update data for offline players.
+		try (Connection con = DatabaseFactory.getConnection();
+			PreparedStatement ps = con.prepareStatement("DELETE FROM character_variables WHERE var=?"))
+		{
+			ps.setString(1, AETHER_DROP_COUNT_VAR);
+			ps.executeUpdate();
+		}
+		catch (Exception e)
+		{
+			LOGGER.warning(getClass().getSimpleName() + ": Could not reset Aether drop count: " + e.getMessage());
+		}
+		
+		// Update data for online players.
+		for (Player player : World.getInstance().getPlayers())
+		{
+			player.getVariables().remove(AETHER_DROP_COUNT_VAR);
+		}
+		
+		LOGGER.info(getClass().getSimpleName() + " drop count has been reset.");
 	}
 	
 	public static void main(String[] args)

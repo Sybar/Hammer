@@ -40,6 +40,7 @@ public class Q00401_BuryInOblivion extends Quest
 {
 	// NPC
 	private static final int GENIE_LAMP = 34369;
+	
 	// Monsters
 	private static final int DOOM_ARCHER = 21008;
 	private static final int DOOM_SCOUT = 21002;
@@ -47,8 +48,10 @@ public class Q00401_BuryInOblivion extends Quest
 	private static final int DOOM_GUARD = 21007;
 	private static final int DOOM_TROOPER = 21009;
 	private static final int DOOM_WARRIOR = 21010;
+	
 	// Item
 	private static final ItemHolder XP_GROWTH = new ItemHolder(49674, 2);
+	
 	// Misc
 	private static final int MIN_LEVEL = 52;
 	private static final int MAX_LEVEL = 56;
@@ -103,6 +106,7 @@ public class Q00401_BuryInOblivion extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -141,6 +145,7 @@ public class Q00401_BuryInOblivion extends Quest
 				htmltext = getAlreadyCompletedMsg(player);
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -176,6 +181,7 @@ public class Q00401_BuryInOblivion extends Quest
 			holder.add(new NpcLogListHolder(NpcStringId.DEFEAT_MONSTERS.getId(), true, qs.getInt(KILL_COUNT_VAR)));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

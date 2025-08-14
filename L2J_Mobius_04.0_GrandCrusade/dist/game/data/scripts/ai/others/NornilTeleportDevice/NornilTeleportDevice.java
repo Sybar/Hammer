@@ -30,6 +30,7 @@ public class NornilTeleportDevice extends AbstractNpcAI
 {
 	// NPCs
 	private static final int DEVICE = 33790; // Nornil Teleport Device
+	
 	// Locations
 	private static final Location[] LOCATIONS =
 	{
@@ -55,6 +56,7 @@ public class NornilTeleportDevice extends AbstractNpcAI
 			final int locId = Integer.parseInt(event.replace("teleport_", ""));
 			player.teleToLocation(LOCATIONS[locId - 1]);
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	

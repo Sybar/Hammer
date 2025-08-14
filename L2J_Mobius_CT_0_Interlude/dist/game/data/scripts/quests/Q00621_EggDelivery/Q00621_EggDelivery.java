@@ -37,9 +37,11 @@ public class Q00621_EggDelivery extends Quest
 	private static final int KUBER = 31546;
 	private static final int BEOLIN = 31547;
 	private static final int VALENTINE = 31584;
+	
 	// Items
 	private static final int BOILED_EGGS = 7195;
 	private static final int FEE_OF_BOILED_EGG = 7196;
+	
 	// Rewards
 	private static final int HASTE_POTION = 1062;
 	private static final int[] RECIPES =
@@ -146,6 +148,7 @@ public class Q00621_EggDelivery extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

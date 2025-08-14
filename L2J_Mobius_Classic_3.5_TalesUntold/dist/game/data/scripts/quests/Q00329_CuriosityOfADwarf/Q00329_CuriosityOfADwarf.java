@@ -38,11 +38,14 @@ public class Q00329_CuriosityOfADwarf extends Quest
 {
 	// NPC
 	private static final int TRADER_ROLENTO = 30437;
+	
 	// Items
 	private static final int GOLEM_HEARTSTONE = 1346;
 	private static final int BROKEN_HEARTSTONE = 1365;
+	
 	// Misc
 	private static final int MIN_LEVEL = 33;
+	
 	// Monsters
 	private static final Map<Integer, List<ItemHolder>> MONSTER_DROPS = new HashMap<>();
 	static
@@ -94,6 +97,7 @@ public class Q00329_CuriosityOfADwarf extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -144,6 +148,7 @@ public class Q00329_CuriosityOfADwarf extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

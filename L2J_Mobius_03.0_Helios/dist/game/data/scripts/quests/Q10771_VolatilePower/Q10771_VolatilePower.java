@@ -38,12 +38,15 @@ public class Q10771_VolatilePower extends Quest
 	// NPCs
 	private static final int JANSSEN = 30484;
 	private static final int HIDDEN_CRUSHER = 33990;
+	
 	// Monsters
 	private static final int FRAGMENT_EATER = 27533;
+	
 	// Items
 	private static final int SHINING_MYSTERIOUS_FRAGMENT = 39713;
 	private static final int NORMAL_FRAGMENT_DUST = 39714;
 	private static final int ENCHANT_ARMOR_C = 952;
+	
 	// Misc
 	private static final int MIN_LEVEL = 44;
 	
@@ -99,6 +102,7 @@ public class Q10771_VolatilePower extends Quest
 				htmltext = null;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -154,6 +158,7 @@ public class Q10771_VolatilePower extends Quest
 					mob.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.KILL_THEM_DON_T_LET_THEM_GET_AWAY_WITH_THE_FRAGMENT);
 					addAttackPlayerDesire(mob, player);
 				}
+				
 				takeItems(player, SHINING_MYSTERIOUS_FRAGMENT, reduceCount);
 				giveItems(player, NORMAL_FRAGMENT_DUST, reduceCount);
 				getTimers().addTimer("DESTROY_COUNT", 2000, npc, player);
@@ -161,6 +166,7 @@ public class Q10771_VolatilePower extends Quest
 				{
 					qs.setCond(3, true); // Looks like cond 2 is skipped.
 				}
+				
 				htmltext = null;
 			}
 			else
@@ -172,6 +178,7 @@ public class Q10771_VolatilePower extends Quest
 		{
 			htmltext = "33990-01.html";
 		}
+		
 		return htmltext;
 	}
 	

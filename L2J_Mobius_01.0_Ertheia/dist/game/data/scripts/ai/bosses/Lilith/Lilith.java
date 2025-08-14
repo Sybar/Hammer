@@ -22,6 +22,7 @@ package ai.bosses.Lilith;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collection;
 import java.util.List;
 
 import org.l2jmobius.Config;
@@ -63,16 +64,17 @@ public class Lilith extends AbstractNpcAI
 	private static final int WAITING = 1;
 	private static final int FIGHTING = 2;
 	private static final int DEAD = 3;
+	
 	// NPCs
 	private static final int LILITH = 25283;
 	private static final int REMNANT = 19490;
 	private static final int ENTER_CUBIC = 31118;
 	private static final int EXIST_CUBIC = 31124;
 	private static final int LILITH_CUBIC = 31110;
-	//@formatter:off
+	// @formatter:off
 	private static final int[] LILITH_MINIONS = {25284, 25285};
 	private static final int[] NECRO_MOBS = {21178, 21179, 21180, 21181, 21182, 21183, 21184, 21185, 21186};
-	//@formatter:on	
+	// @formatter:on
 	private static final int[] ALL_MOBS =
 	{
 		LILITH,
@@ -89,6 +91,7 @@ public class Lilith extends AbstractNpcAI
 		NECRO_MOBS[8],
 		REMNANT
 	};
+	
 	// Spawns
 	private static final List<SpawnHolder> SPAWNS = new ArrayList<>();
 	static
@@ -345,13 +348,16 @@ public class Lilith extends AbstractNpcAI
 		SPAWNS.add(new SpawnHolder(21183, -14996, 16061, -4905, 32947, false));
 		SPAWNS.add(new SpawnHolder(21184, -15242, 16055, -4905, 33022, false));
 	}
+	
 	// Skill
 	private static final Skill REMANT_TELE = SkillData.getInstance().getSkill(23303, 1);
+	
 	// Misc
 	private static final Location ENTER_LOC = new Location(-19361, 13504, -4906);
 	private static final Location ENTER_LILITH_LOC = new Location(184449, -9032, -5499);
 	private static final ZoneType BOSS_ZONE = ZoneManager.getInstance().getZoneById(12005);
 	private static final ZoneType PRE_LILITH_ZONE = ZoneManager.getInstance().getZoneById(12006);
+	
 	// Others
 	private static List<Npc> _spawns = new ArrayList<>();
 	private static List<Npc> _remnants = new ArrayList<>();
@@ -418,6 +424,7 @@ public class Lilith extends AbstractNpcAI
 							}
 						}
 					}
+					
 					startQuestTimer("end_lilith", 2000, null, null);
 				}
 				else
@@ -474,6 +481,7 @@ public class Lilith extends AbstractNpcAI
 				{
 					_lilithBoss.deleteMe();
 				}
+				
 				BOSS_ZONE.oustAllPlayers();
 				PRE_LILITH_ZONE.oustAllPlayers();
 				for (Npc spawn : _spawns)
@@ -483,6 +491,7 @@ public class Lilith extends AbstractNpcAI
 						spawn.deleteMe();
 					}
 				}
+				
 				_spawns.clear();
 				for (Npc remnant : _remnants)
 				{
@@ -490,8 +499,10 @@ public class Lilith extends AbstractNpcAI
 					{
 						continue;
 					}
+					
 					remnant.deleteMe();
 				}
+				
 				if (GrandBossManager.getInstance().getStatus(LILITH) != DEAD)
 				{
 					GrandBossManager.getInstance().setStatus(LILITH, ALIVE);
@@ -504,6 +515,7 @@ public class Lilith extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	
@@ -517,6 +529,7 @@ public class Lilith extends AbstractNpcAI
 			{
 				return "31118-01.html";
 			}
+			
 			if (!player.isInParty())
 			{
 				final NpcHtmlMessage packet = new NpcHtmlMessage(npc.getObjectId());
@@ -525,6 +538,7 @@ public class Lilith extends AbstractNpcAI
 				player.sendPacket(packet);
 				return null;
 			}
+			
 			final Party party = player.getParty();
 			final boolean isInCC = party.isInCommandChannel();
 			final List<Player> members = (isInCC) ? party.getCommandChannel().getMembers() : party.getMembers();
@@ -576,6 +590,7 @@ public class Lilith extends AbstractNpcAI
 				{
 					_spawns.add(addSpawn(spawn.getNpcId(), spawn.getLocation()));
 				}
+				
 				_remnants.clear();
 				notifyEvent("spawn_remant", null, null);
 				_lastAction = System.currentTimeMillis();
@@ -584,12 +599,14 @@ public class Lilith extends AbstractNpcAI
 			else if ((_lilithStatus == WAITING) && (npc.getId() == LILITH_CUBIC))
 			{
 				GrandBossManager.getInstance().setStatus(LILITH, FIGHTING);
+				
 				// Spawn the rb
 				_lilithBoss = addSpawn(LILITH, 185062, -9605, -5499, 15640, false, 0);
 				GrandBossManager.getInstance().addBoss((GrandBoss) _lilithBoss);
 				startQuestTimer("end_lilith", 60 * 60000, null, null); // 1h
 			}
 		}
+		
 		return super.onTalk(npc, player);
 	}
 	
@@ -604,6 +621,7 @@ public class Lilith extends AbstractNpcAI
 			{
 				attacker.doDie(null);
 			}
+			
 			if (!BOSS_ZONE.isInsideZone(npc)) // Npc moved out of the zone
 			{
 				final Spawn spawn = npc.getSpawn();
@@ -613,6 +631,7 @@ public class Lilith extends AbstractNpcAI
 				}
 			}
 		}
+		
 		if ((npc.getId() == REMNANT) && (npc.getCurrentHp() < (npc.getMaxHp() * 0.30)) && !npc.isCastingNow() && (getRandom(100) > 95))
 		{
 			npc.doCast(REMANT_TELE);
@@ -656,7 +675,7 @@ public class Lilith extends AbstractNpcAI
 	}
 	
 	@Override
-	public void onSkillSee(Npc npc, Player caster, Skill skill, WorldObject[] targets, boolean isPet)
+	public void onSkillSee(Npc npc, Player caster, Skill skill, Collection<WorldObject> targets, boolean isPet)
 	{
 		if (ArrayUtil.contains(LILITH_MINIONS, npc.getId()) && getRandomBoolean() && (skill.getAbnormalType() == AbnormalType.HP_RECOVER) && !npc.isCastingNow() && (npc.getTarget() != npc) && (npc.getTarget() != caster) && (npc.getTarget() != _lilithBoss))
 		{
@@ -689,6 +708,7 @@ public class Lilith extends AbstractNpcAI
 		{
 			day1.add(Calendar.WEEK_OF_MONTH, 1);
 		}
+		
 		if (now.after(day2))
 		{
 			day2.add(Calendar.WEEK_OF_MONTH, 1);
@@ -699,6 +719,7 @@ public class Lilith extends AbstractNpcAI
 		{
 			reenter = day2;
 		}
+		
 		return reenter.getTimeInMillis() - System.currentTimeMillis();
 	}
 	

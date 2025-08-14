@@ -46,17 +46,20 @@ public class AllyLeave extends ClientPacket
 			player.sendPacket(SystemMessageId.YOU_ARE_NOT_A_CLAN_MEMBER_2);
 			return;
 		}
+		
 		if (!player.isClanLeader())
 		{
 			player.sendPacket(SystemMessageId.ONLY_THE_CLAN_LEADER_MAY_APPLY_FOR_WITHDRAWAL_FROM_THE_ALLIANCE);
 			return;
 		}
+		
 		final Clan clan = player.getClan();
 		if (clan.getAllyId() == 0)
 		{
 			player.sendPacket(SystemMessageId.YOU_ARE_NOT_IN_AN_ALLIANCE);
 			return;
 		}
+		
 		if (clan.getId() == clan.getAllyId())
 		{
 			player.sendPacket(SystemMessageId.ALLIANCE_LEADERS_CANNOT_WITHDRAW);

@@ -39,6 +39,7 @@ public class Q11013_ShilensHunt extends Quest
 	// NPCs
 	private static final int NEWBIE_GUIDE = 30600;
 	private static final int TALOS = 30141;
+	
 	// Items
 	private static final int WOLF_TAIL = 90238;
 	private static final int GOBLIN_POISONOUS_DART = 90239;
@@ -46,11 +47,13 @@ public class Q11013_ShilensHunt extends Quest
 	private static final int FUNGUS_JUICE = 90241;
 	private static final int BALOR_ORC_FANG = 90242;
 	private static final int HUNTING_PLAN = 90237;
+	
 	// Rewards
 	private static final int BLOOD_SABER = 49050;
 	private static final int ELDRITCH_DAGGER = 49049;
 	private static final int RING_NOVICE = 29497;
 	private static final int NECKLACE_NOVICE = 49039;
+	
 	// Monsters
 	private static final int ASHEN_WOLVES = 20456;
 	private static final int GOBLIN = 20003;
@@ -60,6 +63,7 @@ public class Q11013_ShilensHunt extends Quest
 	private static final int BALOR_ORC_WARRIOR = 20386;
 	private static final int BALOR_ORC_CAPTAIN = 20387;
 	private static final int BALOR_ORC_LIEUTENANTS = 20388;
+	
 	// Misc
 	private static final int MIN_LEVEL = 2;
 	private static final int MAX_LEVEL = 20;
@@ -133,6 +137,7 @@ public class Q11013_ShilensHunt extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -193,6 +198,7 @@ public class Q11013_ShilensHunt extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

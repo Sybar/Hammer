@@ -43,9 +43,11 @@ public class Q10528_TheAssassinationOfTheKetraOrcChief extends Quest
 {
 	// NPCs
 	private static final int LUGONNES = 33852;
+	
 	// Monsters
 	private static final int KETRAS_CHIEF_BRAKKI = 27501;
 	private static final int BELOS = 27513;
+	
 	// Misc
 	private static final int MIN_LEVEL = 76;
 	private static final int MAX_LEVEL = 80;
@@ -70,6 +72,7 @@ public class Q10528_TheAssassinationOfTheKetraOrcChief extends Quest
 		{
 			return null;
 		}
+		
 		String htmltext = null;
 		switch (event)
 		{
@@ -103,6 +106,7 @@ public class Q10528_TheAssassinationOfTheKetraOrcChief extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -136,6 +140,7 @@ public class Q10528_TheAssassinationOfTheKetraOrcChief extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

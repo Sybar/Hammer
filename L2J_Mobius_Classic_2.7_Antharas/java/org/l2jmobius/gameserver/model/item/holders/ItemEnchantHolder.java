@@ -66,6 +66,7 @@ public class ItemEnchantHolder extends ItemHolder
 		{
 			return true;
 		}
+		
 		return (getId() == objInstance.getId()) && ((getCount() == objInstance.getCount()) && (_enchantLevel == objInstance.getEnchantLevel()));
 	}
 	

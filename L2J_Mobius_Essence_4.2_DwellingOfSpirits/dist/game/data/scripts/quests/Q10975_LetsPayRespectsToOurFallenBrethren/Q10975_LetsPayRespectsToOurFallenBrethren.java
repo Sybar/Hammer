@@ -39,6 +39,7 @@ public class Q10975_LetsPayRespectsToOurFallenBrethren extends Quest
 {
 	// NPCs
 	private static final int ORVEN = 30857;
+	
 	// Monsters
 	private static final int ACHER_OF_DESTRUCTION = 21001;
 	private static final int GRAVEYARD_LICH = 21003;
@@ -52,11 +53,13 @@ public class Q10975_LetsPayRespectsToOurFallenBrethren extends Quest
 	private static final int DOOM_TROOPER = 21009;
 	private static final int DOOM_WARRIOR = 21010;
 	private static final int GUARD_BUTCHER = 22101;
+	
 	// Items
 	private static final ItemHolder MAGIC_LAMP_CHARGING_POTION = new ItemHolder(91757, 3);
 	private static final ItemHolder SOULSHOT_TICKET = new ItemHolder(90907, 10);
 	private static final ItemHolder SAYHA_GUST = new ItemHolder(91776, 9);
 	private static final ItemHolder SPIRIT_ORE = new ItemHolder(3031, 450);
+	
 	// Misc
 	private static final int MIN_LEVEL = 45;
 	private static final String KILL_COUNT_VAR = "KillCount";
@@ -117,6 +120,7 @@ public class Q10975_LetsPayRespectsToOurFallenBrethren extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -152,6 +156,7 @@ public class Q10975_LetsPayRespectsToOurFallenBrethren extends Quest
 		{
 			htmltext = getAlreadyCompletedMsg(player);
 		}
+		
 		return htmltext;
 	}
 	
@@ -186,6 +191,7 @@ public class Q10975_LetsPayRespectsToOurFallenBrethren extends Quest
 			holder.add(new NpcLogListHolder(NpcStringId.KILL_MONSTERS_IN_THE_FIELDS_OF_MASSACRE_2.getId(), true, qs.getInt(KILL_COUNT_VAR)));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

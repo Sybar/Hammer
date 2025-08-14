@@ -37,6 +37,7 @@ public class Q00787_TheRoleOfAWatcher extends Quest
 {
 	// NPCs
 	private static final int NAMO = 33973;
+	
 	// Monsters
 	private static final int[] MONSTERS =
 	{
@@ -65,6 +66,7 @@ public class Q00787_TheRoleOfAWatcher extends Quest
 	private static final int DRAGON_BONE_DUST = 39736; // min 50
 	private static final int DRAGON_BONE_FRAGMENT = 39737; // max 900
 	private static final int EMISSARY_REWARD_BOX = 39728; // Emissary's Reward Box (High-grade)
+	
 	// Misc
 	private static final int MIN_LEVEL = 81;
 	private static final int MAX_LEVEL = 84;
@@ -180,6 +182,7 @@ public class Q00787_TheRoleOfAWatcher extends Quest
 					htmltext = event;
 					break;
 				}
+				
 				if ((getQuestItemsCount(player, DRAGON_BONE_DUST) >= 50) && (getQuestItemsCount(player, DRAGON_BONE_FRAGMENT) >= 900))
 				{
 					addExpAndSp(player, 141403500, 33930);
@@ -190,6 +193,7 @@ public class Q00787_TheRoleOfAWatcher extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -209,6 +213,7 @@ public class Q00787_TheRoleOfAWatcher extends Quest
 						htmltext = "33973-10.html";
 						break;
 					}
+					
 					qs.setState(State.CREATED);
 					// fallthrough
 				}
@@ -231,6 +236,7 @@ public class Q00787_TheRoleOfAWatcher extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -242,6 +248,7 @@ public class Q00787_TheRoleOfAWatcher extends Quest
 		{
 			qs.setCond(2, true);
 		}
+		
 		if ((qs != null) && (qs.isCond(2)) && giveItemRandomly(killer, npc, DRAGON_BONE_FRAGMENT, 1, 900, 0.25, true))
 		{
 			qs.setCond(2, true);

@@ -37,7 +37,7 @@ public class TerritoryStatus implements IBypassHandler
 	};
 	
 	@Override
-	public boolean useBypass(String command, Player player, Creature target)
+	public boolean onCommand(String command, Player player, Creature target)
 	{
 		if (!target.isNpc())
 		{
@@ -59,6 +59,7 @@ public class TerritoryStatus implements IBypassHandler
 				html.setFile(player, "data/html/territorynoclan.htm");
 			}
 		}
+		
 		html.replace("%castlename%", npc.getCastle().getName());
 		html.replace("%taxpercent%", Integer.toString(npc.getCastle().getTaxPercent(TaxType.BUY)));
 		html.replace("%objectId%", String.valueOf(npc.getObjectId()));
@@ -72,12 +73,13 @@ public class TerritoryStatus implements IBypassHandler
 				html.replace("%territory%", "The Kingdom of Aden");
 			}
 		}
+		
 		player.sendPacket(html);
 		return true;
 	}
 	
 	@Override
-	public String[] getBypassList()
+	public String[] getCommandList()
 	{
 		return COMMANDS;
 	}

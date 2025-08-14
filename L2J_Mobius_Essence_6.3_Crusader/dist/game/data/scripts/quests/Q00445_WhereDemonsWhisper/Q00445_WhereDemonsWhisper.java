@@ -40,6 +40,7 @@ public class Q00445_WhereDemonsWhisper extends Quest
 {
 	// NPC
 	private static final int GENIE_LAMP = 34369;
+	
 	// Monsters
 	private static final int CAVE_KEEPER = 20246;
 	private static final int DUSTWIND_GARGOYLE = 20281;
@@ -48,8 +49,10 @@ public class Q00445_WhereDemonsWhisper extends Quest
 	private static final int MALUK_SUCCUBUS = 20244;
 	private static final int CAVE_SERVANT_ARCHER = 20238;
 	private static final int DRAGON = 22364;
+	
 	// Item
 	private static final ItemHolder BOOST_DEF_SCROLL = new ItemHolder(94271, 4);
+	
 	// Misc
 	private static final int MIN_LEVEL = 78;
 	private static final int MAX_LEVEL = 90;
@@ -105,6 +108,7 @@ public class Q00445_WhereDemonsWhisper extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -143,6 +147,7 @@ public class Q00445_WhereDemonsWhisper extends Quest
 				htmltext = getAlreadyCompletedMsg(player);
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -178,6 +183,7 @@ public class Q00445_WhereDemonsWhisper extends Quest
 			holder.add(new NpcLogListHolder(NpcStringId.DEFEAT_MONSTERS_39.getId(), true, qs.getInt(KILL_COUNT_VAR)));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

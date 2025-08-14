@@ -83,6 +83,7 @@ public class SiegeGuardManager
 					_droppedTickets.add(dropticket);
 				}
 			}
+			
 			LOGGER.info(getClass().getSimpleName() + ": Loaded " + _droppedTickets.size() + " siege guards tickets.");
 		}
 		catch (Exception e)
@@ -106,6 +107,7 @@ public class SiegeGuardManager
 				return holder;
 			}
 		}
+		
 		return null;
 	}
 	
@@ -124,6 +126,7 @@ public class SiegeGuardManager
 				return holder;
 			}
 		}
+		
 		return null;
 	}
 	
@@ -141,6 +144,7 @@ public class SiegeGuardManager
 				return true;
 			}
 		}
+		
 		return false;
 	}
 	
@@ -161,6 +165,7 @@ public class SiegeGuardManager
 				count++;
 			}
 		}
+		
 		return count >= holder.getMaxNpcAmout();
 	}
 	
@@ -394,6 +399,7 @@ public class SiegeGuardManager
 				spawn.getLastSpawn().deleteMe();
 			}
 		}
+		
 		getSpawnedGuards(castle.getResidenceId()).clear();
 	}
 	

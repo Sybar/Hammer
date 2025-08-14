@@ -43,6 +43,7 @@ public class LeopardDragonHachling extends AbstractNpcAI
 	// NPCs
 	private static final int DRAGON_HACHLING = 23434;
 	private static final int LEOPARD_DRAGON = 23435;
+	
 	// Locations
 	private static final List<Location> TRANSFORM_LOCATIONS = new ArrayList<>();
 	static
@@ -72,6 +73,7 @@ public class LeopardDragonHachling extends AbstractNpcAI
 					leopard.broadcastPacket(new NpcSay(leopard.getObjectId(), ChatType.NPC_GENERAL, LEOPARD_DRAGON, NpcStringId.I_M_GOING_TO_TRANSFORM_WITH_THE_POWER_OF_THE_VORTEX_YOU_JUST_WATCH));
 					addAttackDesire(leopard, player);
 				}
+				
 				cancelQuestTimer("MOVE_TO_TRANSFORM", npc, player);
 				npc.deleteMe();
 			}
@@ -81,6 +83,7 @@ public class LeopardDragonHachling extends AbstractNpcAI
 				npc.getAI().setIntention(Intention.MOVE_TO, nearestLocation(npc));
 			}
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	
@@ -93,6 +96,7 @@ public class LeopardDragonHachling extends AbstractNpcAI
 			npc.broadcastPacket(new NpcSay(npc.getObjectId(), ChatType.NPC_GENERAL, DRAGON_HACHLING, NpcStringId.HEY_THAT_HURT_YOU_JUST_WAIT_HERE_AND_I_LL_BE_BACK_AS_A_STRONGER_DRAGON));
 			startQuestTimer("MOVE_TO_TRANSFORM", 1000, npc, attacker, true);
 		}
+		
 		npc.abortAttack();
 		npc.getAI().setIntention(Intention.MOVE_TO, nearestLocation(npc));
 	}
@@ -107,6 +111,7 @@ public class LeopardDragonHachling extends AbstractNpcAI
 				gotoLoc = loc;
 			}
 		}
+		
 		return gotoLoc;
 	}
 	

@@ -156,6 +156,7 @@ public class EtcItem extends ItemTemplate
 		{
 			_extractableItems = new ArrayList<>();
 		}
+		
 		_extractableItems.add(extractableProduct);
 	}
 	

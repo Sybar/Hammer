@@ -82,6 +82,7 @@ public class ExResponseCommissionList extends AbstractItemPacket
 				{
 					chunkSize = MAX_CHUNK_SIZE;
 				}
+				
 				buffer.writeInt(chunkSize);
 				for (int i = _listIndexStart; i < (_listIndexStart + chunkSize); i++)
 				{

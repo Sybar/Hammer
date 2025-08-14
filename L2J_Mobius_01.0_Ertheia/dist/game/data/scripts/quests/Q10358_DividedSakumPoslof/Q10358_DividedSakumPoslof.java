@@ -41,8 +41,10 @@ public class Q10358_DividedSakumPoslof extends Quest
 	private static final int ZOMBIE_WARRIOR = 20458;
 	private static final int VEELEAN = 20402; // Veelan Bugbear Warrior
 	private static final int POSLOF = 27452;
+	
 	// Items
 	private static final int SAKUM_SKETCH = 17585;
+	
 	// Misc
 	private static final int MIN_LEVEL = 33;
 	private static final int MAX_LEVEL = 40;
@@ -94,6 +96,7 @@ public class Q10358_DividedSakumPoslof extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -152,6 +155,7 @@ public class Q10358_DividedSakumPoslof extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -214,6 +218,7 @@ public class Q10358_DividedSakumPoslof extends Quest
 				return npcLogList;
 			}
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

@@ -74,6 +74,7 @@ public class ExRequestRandomCraftExtract extends ClientPacket
 		{
 			return;
 		}
+		
 		player.addRequest(new RandomCraftRequest(player));
 		
 		int points = 0;
@@ -119,6 +120,7 @@ public class ExRequestRandomCraftExtract extends ClientPacket
 			{
 				player.destroyItem(ItemProcessType.FEE, e.getKey(), e.getValue(), player, true);
 			}
+			
 			player.getRandomCraft().addCraftPoints(points);
 		}
 		

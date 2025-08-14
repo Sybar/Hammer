@@ -30,9 +30,9 @@
 		<set name="weight" val="220" />
 		<set name="bodypart" val="back" />
 		<set name="material" val="CLOTH" />
-		<cond msgId="2453">
+		<conditions msgId="2453">
 			<player cloakStatus="true" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">50</stat>
 			<stat type="mDef">40.0</stat>

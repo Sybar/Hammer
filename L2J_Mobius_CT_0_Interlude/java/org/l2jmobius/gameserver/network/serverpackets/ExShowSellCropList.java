@@ -48,6 +48,7 @@ public class ExShowSellCropList extends ServerPacket
 				_cropsItems.put(cropId, item);
 			}
 		}
+		
 		for (CropProcure crop : CastleManorManager.getInstance().getCropProcure(_manorId, false))
 		{
 			if (_cropsItems.containsKey(crop.getId()) && (crop.getAmount() > 0))
@@ -88,6 +89,7 @@ public class ExShowSellCropList extends ServerPacket
 				buffer.writeInt(0); // buy price
 				buffer.writeByte(0); // reward
 			}
+			
 			buffer.writeInt(item.getCount()); // my crops
 		}
 	}

@@ -41,6 +41,7 @@ public class GardenOfSpirits extends AbstractNpcAI
 	private static final int ZONE_ID_6 = 200218;
 	private static final int ZONE_ID_7 = 200219;
 	private static final int ZONE_ID_8 = 200220;
+	
 	// Teleport Locations
 	private static final Location TELEPORT_LOC_1 = new Location(-55613, 84681, -4560);
 	private static final Location TELEPORT_LOC_2 = new Location(-53634, 88711, -3944);

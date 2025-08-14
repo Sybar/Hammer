@@ -81,6 +81,7 @@ public class LoginPacketHandler
 				break;
 			}
 		}
+		
 		return packet;
 	}
 	

@@ -103,6 +103,7 @@ class NpcBuffersData implements IXmlReader
 								}
 							}
 						}
+						
 						_npcBuffers.put(npcId, npc);
 					}
 				}

@@ -39,6 +39,7 @@ public class Q00171_ActsOfEvil extends Quest
 	private static final int NETI = 30425;
 	private static final int TRADER_ROLENTO = 30437;
 	private static final int TUREK_CHIEF_BURAI = 30617;
+	
 	// Items
 	private static final int BLADE_MOLD = 4239;
 	private static final int TYRAS_BILL = 4240;
@@ -51,6 +52,7 @@ public class Q00171_ActsOfEvil extends Quest
 	private static final int CERTIFICATE_OF_THE_SILVER_GUILD = 4247;
 	private static final int ROLENTOS_CARGOBOX = 4248;
 	private static final int OL_MAHUM_CAPTAINS_HEAD = 4249;
+	
 	// Monster
 	private static final int TUMRAN_BUGBEAR = 20062;
 	private static final int TUMRAN_BUGBEAR_WARRIOR = 20064;
@@ -60,8 +62,10 @@ public class Q00171_ActsOfEvil extends Quest
 	private static final int TUREK_ORC_SKIRMISHER = 20497;
 	private static final int TUREK_ORC_SUPPLIER = 20498;
 	private static final int TUREK_ORC_FOOTMAN = 20499;
+	
 	// Quest Monster
 	private static final int OL_MAHUM_SUPPORT_TROOP = 27190;
+	
 	// Misc
 	private static final int MIN_LEVEL = 27;
 	
@@ -85,6 +89,7 @@ public class Q00171_ActsOfEvil extends Quest
 				npc.broadcastPacket(new NpcSay(npc, ChatType.NPC_GENERAL, "You should consider going back..."));
 				npc.deleteMe();
 			}
+			
 			return super.onEvent(event, npc, player);
 		}
 		
@@ -151,6 +156,7 @@ public class Q00171_ActsOfEvil extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -224,6 +230,7 @@ public class Q00171_ActsOfEvil extends Quest
 							giveItems(killer, WEAPONS_TRADE_CONTRACT, 1);
 							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 						}
+						
 						if (!hasQuestItems(killer, ATTACK_DIRECTIVES))
 						{
 							giveItems(killer, ATTACK_DIRECTIVES, 1);
@@ -248,10 +255,12 @@ public class Q00171_ActsOfEvil extends Quest
 								playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 							}
 						}
+						
 						if (getQuestItemsCount(killer, BLADE_MOLD) == 5)
 						{
 							addAttackDesire(addSpawn(OL_MAHUM_SUPPORT_TROOP, npc, true, 0, false), killer);
 						}
+						
 						if ((getQuestItemsCount(killer, BLADE_MOLD) >= 10) && (getRandom(100) <= 24))
 						{
 							addAttackDesire(addSpawn(OL_MAHUM_SUPPORT_TROOP, npc, true, 0, false), killer);
@@ -275,10 +284,12 @@ public class Q00171_ActsOfEvil extends Quest
 								playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 							}
 						}
+						
 						if (getQuestItemsCount(killer, BLADE_MOLD) == 5)
 						{
 							addAttackDesire(addSpawn(OL_MAHUM_SUPPORT_TROOP, npc, true, 0, false), killer);
 						}
+						
 						if ((getQuestItemsCount(killer, BLADE_MOLD) >= 10) && (getRandom(100) <= 24))
 						{
 							addAttackDesire(addSpawn(OL_MAHUM_SUPPORT_TROOP, npc, true, 0, false), killer);
@@ -302,10 +313,12 @@ public class Q00171_ActsOfEvil extends Quest
 								playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 							}
 						}
+						
 						if (getQuestItemsCount(killer, BLADE_MOLD) == 5)
 						{
 							addAttackDesire(addSpawn(OL_MAHUM_SUPPORT_TROOP, npc, true, 0, false), killer);
 						}
+						
 						if ((getQuestItemsCount(killer, BLADE_MOLD) >= 10) && (getRandom(100) <= 24))
 						{
 							addAttackDesire(addSpawn(OL_MAHUM_SUPPORT_TROOP, npc, true, 0, false), killer);
@@ -329,10 +342,12 @@ public class Q00171_ActsOfEvil extends Quest
 								playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 							}
 						}
+						
 						if (getQuestItemsCount(killer, BLADE_MOLD) == 5)
 						{
 							addAttackDesire(addSpawn(OL_MAHUM_SUPPORT_TROOP, npc, true, 0, false), killer);
 						}
+						
 						if ((getQuestItemsCount(killer, BLADE_MOLD) >= 10) && (getRandom(100) <= 24))
 						{
 							addAttackDesire(addSpawn(OL_MAHUM_SUPPORT_TROOP, npc, true, 0, false), killer);
@@ -582,6 +597,7 @@ public class Q00171_ActsOfEvil extends Quest
 				htmltext = getAlreadyCompletedMsg(player);
 			}
 		}
+		
 		return htmltext;
 	}
 	

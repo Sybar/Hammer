@@ -31,6 +31,7 @@ public class Q00013_ParcelDelivery extends Quest
 	// NPCs
 	private static final int FUNDIN = 31274;
 	private static final int VULCAN = 31539;
+	
 	// Item
 	private static final int PACKAGE = 7263;
 	

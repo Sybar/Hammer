@@ -1078,9 +1078,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="is_freightable" val="true" />
 		<set name="reuse_delay" val="540000" />
-		<cond>
+		<conditions>
 			<player MinimumVitalityPoints="35000" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="39489" level="1" /> <!-- PA Storm Scroll -->
 		</skills>
@@ -1315,9 +1315,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="is_event_restricted" val="true" />
 		<set name="commissionItemType" val="POTION" />
-		<cond>
+		<conditions>
 			<player symbolsealpoints="7800" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="39494" level="1" /> <!-- Dye Powder -->
 		</skills>

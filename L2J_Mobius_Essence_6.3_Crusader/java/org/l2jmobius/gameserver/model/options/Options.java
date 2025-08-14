@@ -56,6 +56,7 @@ public class Options
 		{
 			_effects = new ArrayList<>();
 		}
+		
 		_effects.add(effect);
 	}
 	
@@ -85,6 +86,7 @@ public class Options
 		{
 			_activeSkill = new ArrayList<>();
 		}
+		
 		_activeSkill.add(holder);
 	}
 	
@@ -104,6 +106,7 @@ public class Options
 		{
 			_passiveSkill = new ArrayList<>();
 		}
+		
 		_passiveSkill.add(holder);
 	}
 	
@@ -124,6 +127,7 @@ public class Options
 				}
 			}
 		}
+		
 		return false;
 	}
 	
@@ -145,6 +149,7 @@ public class Options
 				}
 			}
 		}
+		
 		return temp;
 	}
 	
@@ -154,6 +159,7 @@ public class Options
 		{
 			_activationSkills = new ArrayList<>();
 		}
+		
 		_activationSkills.add(holder);
 	}
 	
@@ -181,11 +187,13 @@ public class Options
 					}
 				}
 			}
+			
 			if (!info.getEffects().isEmpty())
 			{
 				playable.getEffectList().add(info);
 			}
 		}
+		
 		if (hasActiveSkills())
 		{
 			for (Skill skill : _activeSkill)
@@ -193,6 +201,7 @@ public class Options
 				addSkill(playable, skill);
 			}
 		}
+		
 		if (hasPassiveSkills())
 		{
 			for (Skill skill : _passiveSkill)
@@ -200,6 +209,7 @@ public class Options
 				addSkill(playable, skill);
 			}
 		}
+		
 		if (hasActivationSkills())
 		{
 			for (OptionSkillHolder holder : _activationSkills)
@@ -227,6 +237,7 @@ public class Options
 				}
 			}
 		}
+		
 		if (hasActiveSkills())
 		{
 			for (Skill skill : _activeSkill)
@@ -234,6 +245,7 @@ public class Options
 				playable.removeSkill(skill, false);
 			}
 		}
+		
 		if (hasPassiveSkills())
 		{
 			for (Skill skill : _passiveSkill)
@@ -241,6 +253,7 @@ public class Options
 				playable.removeSkill(skill, true);
 			}
 		}
+		
 		if (hasActivationSkills())
 		{
 			for (OptionSkillHolder holder : _activationSkills)
@@ -268,8 +281,10 @@ public class Options
 				playable.addTimeStamp(skill, remainingTime);
 				playable.disableSkill(skill, remainingTime);
 			}
+			
 			updateTimeStamp = true;
 		}
+		
 		if (updateTimeStamp && playable.isPlayer())
 		{
 			playable.sendPacket(new SkillCoolTime(playable.asPlayer()));

@@ -49,11 +49,13 @@ public class RequestExPledgeMasterySet extends ClientPacket
 		{
 			return;
 		}
+		
 		final Clan clan = player.getClan();
 		if (clan == null)
 		{
 			return;
 		}
+		
 		if (player.getObjectId() != clan.getLeaderId())
 		{
 			player.sendMessage("You do not have enough privileges to take this action.");
@@ -73,17 +75,20 @@ public class RequestExPledgeMasterySet extends ClientPacket
 			player.sendMessage("Your clan develpment points are not sufficient.");
 			return;
 		}
+		
 		final ClanMasteryHolder mastery = ClanMasteryData.getInstance().getClanMastery(_masteryId);
 		if (clan.getLevel() < mastery.getClanLevel())
 		{
 			player.sendMessage("Your clan level is lower than the requirement.");
 			return;
 		}
+		
 		if (clan.getReputationScore() < mastery.getClanReputation())
 		{
 			player.sendMessage("Your clan reputation is lower than the requirement.");
 			return;
 		}
+		
 		final int previous = mastery.getPreviousMastery();
 		final int previousAlt = mastery.getPreviousMasteryAlt();
 		if (previousAlt > 0)
@@ -108,6 +113,7 @@ public class RequestExPledgeMasterySet extends ClientPacket
 		{
 			clan.addNewSkill(skill);
 		}
+		
 		player.sendPacket(new ExPledgeMasteryInfo(player));
 	}
 }

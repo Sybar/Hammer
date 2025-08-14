@@ -50,10 +50,13 @@ public class Q11042_SuspiciousMovements extends Quest
 	private static final int RECLOUS = 30648;
 	private static final int ARCHER_ORKOV_TUREK = 24405;
 	private static final int BANDIT_ORKOV_TUREK = 24406;
+	
 	// Items
 	private static final ItemHolder SOE_RECLOUS = new ItemHolder(80682, 1);
+	
 	// Location
 	private static final Location TRAINING_GROUNDS_TELEPORT = new Location(-92290, 116512, -3472);
+	
 	// Misc
 	private static final String KILL_COUNT_VAR = "KillCount";
 	private static final int MIN_LEVEL = 77;
@@ -120,6 +123,7 @@ public class Q11042_SuspiciousMovements extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -163,6 +167,7 @@ public class Q11042_SuspiciousMovements extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -199,6 +204,7 @@ public class Q11042_SuspiciousMovements extends Quest
 			holder.add(new NpcLogListHolder(NpcStringId.DEFEAT_TUREK_ARCHERS_AND_SKIRMISHERS_2.getId(), true, qs.getInt(KILL_COUNT_VAR)));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

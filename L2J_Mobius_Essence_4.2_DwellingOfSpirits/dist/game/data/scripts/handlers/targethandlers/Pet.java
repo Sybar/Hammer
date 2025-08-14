@@ -44,10 +44,12 @@ public class Pet implements ITargetTypeHandler
 		{
 			return creature;
 		}
+		
 		if (creature.hasPet())
 		{
 			return creature.getPet();
 		}
+		
 		return null;
 	}
 }

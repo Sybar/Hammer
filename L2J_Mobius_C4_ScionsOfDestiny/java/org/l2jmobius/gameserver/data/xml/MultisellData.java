@@ -50,6 +50,7 @@ public class MultisellData implements IXmlReader
 	private final Map<Integer, ListContainer> _entries = new ConcurrentHashMap<>();
 	
 	public static final int PAGE_SIZE = 40;
+	
 	// Special IDs.
 	public static final int PC_CAFE_POINTS = -100;
 	public static final int CLAN_REPUTATION = -200;
@@ -140,6 +141,7 @@ public class MultisellData implements IXmlReader
 					}
 				}
 			}
+			
 			_entries.put(id, list);
 		}
 		catch (Exception e)
@@ -173,6 +175,7 @@ public class MultisellData implements IXmlReader
 					att = attrs.item(i);
 					set.set(att.getNodeName(), att.getNodeValue());
 				}
+				
 				entry.addIngredient(new Ingredient(set));
 			}
 			else if ("production".equalsIgnoreCase(n.getNodeName()))
@@ -184,6 +187,7 @@ public class MultisellData implements IXmlReader
 					att = attrs.item(i);
 					set.set(att.getNodeName(), att.getNodeValue());
 				}
+				
 				entry.addProduct(new Ingredient(set));
 			}
 		}
@@ -282,6 +286,7 @@ public class MultisellData implements IXmlReader
 				entry.getIngredients().forEach(ingredient -> ingredient.setItemCount((int) Math.max(ingredient.getItemCount() * ingredientMultiplier, 1)));
 			});
 		}
+		
 		int index = 0;
 		do
 		{
@@ -309,8 +314,10 @@ public class MultisellData implements IXmlReader
 					player.sendPacket(SystemMessageId.YOU_ARE_SHORT_OF_ACCUMULATED_POINTS);
 					break;
 				}
+				
 				return true;
 			}
+			
 			// case CLAN_REPUTATION:
 			// {
 			// final Clan clan = player.getClan();
@@ -338,9 +345,11 @@ public class MultisellData implements IXmlReader
 					player.sendMessage("You don't have enough reputation to do that.");
 					break;
 				}
+				
 				return true;
 			}
 		}
+		
 		return false;
 	}
 	
@@ -354,6 +363,7 @@ public class MultisellData implements IXmlReader
 				player.sendPacket(new ExPCCafePointInfo(player.getPcCafePoints(), -amount, 0));
 				return true;
 			}
+			
 			// case CLAN_REPUTATION:
 			// {
 			// player.getClan().takeReputationScore(amount);
@@ -367,6 +377,7 @@ public class MultisellData implements IXmlReader
 				return true;
 			}
 		}
+		
 		return false;
 	}
 	
@@ -380,6 +391,7 @@ public class MultisellData implements IXmlReader
 				player.sendPacket(new ExPCCafePointInfo(player.getPcCafePoints(), (int) amount, 0));
 				break;
 			}
+			
 			// case CLAN_REPUTATION:
 			// {
 			// player.getClan().addReputationScore((int) amount);
@@ -410,6 +422,7 @@ public class MultisellData implements IXmlReader
 						LOGGER.warning(getClass().getSimpleName() + ": can't find ingredient with itemId: " + ing.getItemId() + " in list: " + list.getListId());
 					}
 				}
+				
 				for (Ingredient ing : ent.getProducts())
 				{
 					if (!verifyIngredient(ing))

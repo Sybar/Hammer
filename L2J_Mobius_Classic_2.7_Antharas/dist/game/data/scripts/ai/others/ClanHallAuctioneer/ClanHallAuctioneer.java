@@ -231,6 +231,7 @@ public class ClanHallAuctioneer extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -281,7 +282,7 @@ public class ClanHallAuctioneer extends AbstractNpcAI
 			else
 			{
 				final NpcHtmlMessage html = new NpcHtmlMessage(npc.getObjectId(), getHtm(player, "ClanHallAuctioneer-list.html"));
-				//@formatter:off
+				// @formatter:off
 				final PageResult result = PageBuilder.newBuilder(clanHalls, 8, "bypass -h Quest ClanHallAuctioneer auctionList")
 					.currentPage(page)
 					.pageHandler(NextPrevPageHandler.INSTANCE)
@@ -295,6 +296,7 @@ public class ClanHallAuctioneer extends AbstractNpcAI
 						// System.out.println(clanHall.getResidenceId());
 						return;
 					}
+					
 					sb.append("<tr><td width=50><font color=\"aaaaff\">&^");
 					sb.append(clanHall.getResidenceId());
 					sb.append(";</font></td><td width=100><a action=\"bypass -h Quest ClanHallAuctioneer auctionList id=");
@@ -307,7 +309,7 @@ public class ClanHallAuctioneer extends AbstractNpcAI
 					sb.append(auction.getHighestBid());
 					sb.append("</font></td></tr>");
 				}).build();
-				//@formatter:on
+				// @formatter:on
 				html.replace("%pages%", result.getPages() > 0 ? result.getPagerTemplate() : "");
 				html.replace("%agitList%", result.getBodyTemplate().toString());
 				player.sendPacket(html);
@@ -327,6 +329,7 @@ public class ClanHallAuctioneer extends AbstractNpcAI
 			{
 				return;
 			}
+			
 			final Clan clan = player.getClan();
 			if (clan == null)
 			{
@@ -339,6 +342,7 @@ public class ClanHallAuctioneer extends AbstractNpcAI
 				player.sendPacket(SystemMessageId.ONLY_A_CLAN_LEADER_WHOSE_CLAN_IS_OF_LEVEL_2_OR_ABOVE_IS_ALLOWED_TO_PARTICIPATE_IN_A_CLAN_HALL_AUCTION);
 				return;
 			}
+			
 			final ClanHall playerClanHall = ClanHallData.getInstance().getClanHallByClan(clan);
 			if (playerClanHall != null)
 			{
@@ -351,6 +355,7 @@ public class ClanHallAuctioneer extends AbstractNpcAI
 				player.sendPacket(SystemMessageId.SINCE_YOU_HAVE_ALREADY_SUBMITTED_A_BID_YOU_ARE_NOT_ALLOWED_TO_PARTICIPATE_IN_ANOTHER_AUCTION_AT_THIS_TIME);
 				return;
 			}
+			
 			if (bid == 0)
 			{
 				final NpcHtmlMessage html = new NpcHtmlMessage(npc.getObjectId());
@@ -368,6 +373,7 @@ public class ClanHallAuctioneer extends AbstractNpcAI
 					player.sendPacket(SystemMessageId.THE_HIGHEST_BID_IS_OVER_999_9_BILLION_THEREFORE_YOU_CANNOT_PLACE_A_BID);
 					return;
 				}
+				
 				final ClanHallAuction auction = ClanHallAuctionManager.getInstance().getClanHallAuctionById(clanHallId);
 				if (bid < auction.getHighestBid())
 				{
@@ -413,7 +419,7 @@ public class ClanHallAuctioneer extends AbstractNpcAI
 			}
 			
 			final NpcHtmlMessage html = new NpcHtmlMessage(npc.getObjectId(), getHtm(player, "ClanHallAuctioneer-bidderList.html"));
-			//@formatter:off
+			// @formatter:off
 			final PageResult result = PageBuilder.newBuilder(clanHallAuction.getBids().values().stream().sorted(Comparator.comparingLong(Bidder::getTime).reversed()).collect(Collectors.toList()), 10, "bypass -h Quest ClanHallAuctioneer auctionList")
 				.currentPage(page)
 				.pageHandler(NextPrevPageHandler.INSTANCE)
@@ -429,7 +435,7 @@ public class ClanHallAuctioneer extends AbstractNpcAI
 				sb.append(bidder.getFormattedTime());
 				sb.append("</td></tr>");
 			}).build();
-			//@formatter:on
+			// @formatter:on
 			html.replace("%pages%", result.getPages() > 0 ? result.getPagerTemplate() : "");
 			html.replace("%bidderList%", result.getBodyTemplate().toString());
 			html.replace("%id%", clanHallAuction.getClanHallId());
@@ -452,6 +458,7 @@ public class ClanHallAuctioneer extends AbstractNpcAI
 				// Ignore and return default.
 			}
 		}
+		
 		return defaultValue;
 	}
 	
@@ -470,6 +477,7 @@ public class ClanHallAuctioneer extends AbstractNpcAI
 				// Ignore and return default.
 			}
 		}
+		
 		return defaultValue;
 	}
 	
@@ -526,6 +534,7 @@ public class ClanHallAuctioneer extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return name;
 	}
 	

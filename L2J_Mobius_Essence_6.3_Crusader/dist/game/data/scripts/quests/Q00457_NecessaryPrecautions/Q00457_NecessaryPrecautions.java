@@ -40,12 +40,15 @@ public class Q00457_NecessaryPrecautions extends Quest
 {
 	// NPC
 	private static final int GENIE_LAMP = 34369;
+	
 	// Monsters
 	private static final int SEL_MAHUM_SNIPER = 22237;
 	private static final int SEL_MAHUM_THIEF = 22241;
 	private static final int SEL_MAHUM_BOWMAN = 22245;
+	
 	// Item
 	private static final ItemHolder EINHASAD_BLESSING_SCROLL = new ItemHolder(92991, 2);
+	
 	// Misc
 	private static final int MIN_LEVEL = 83;
 	private static final String KILL_COUNT_VAR = "KillCount";
@@ -98,6 +101,7 @@ public class Q00457_NecessaryPrecautions extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -136,6 +140,7 @@ public class Q00457_NecessaryPrecautions extends Quest
 				htmltext = getAlreadyCompletedMsg(player);
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -171,6 +176,7 @@ public class Q00457_NecessaryPrecautions extends Quest
 			holder.add(new NpcLogListHolder(NpcStringId.DEFEAT_MONSTERS_49.getId(), true, qs.getInt(KILL_COUNT_VAR)));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

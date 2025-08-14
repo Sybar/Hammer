@@ -83,9 +83,9 @@
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>40195</itemConsumeId>
 		<magicLevel>1</magicLevel>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player insideZoneId="10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508" />
-		</cond>
+		</conditions>
 		<conditions>
 			<condition name="OpCanEscape" />
 		</conditions>
@@ -1772,14 +1772,14 @@
 		<itemConsumeId>40309</itemConsumeId>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<and>
 				<player canEscape="true" />
 				<not>
 					<player insideZoneId="10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508" />
 				</not>
 			</and>
-		</cond>
+		</conditions>
 		<effects>
 			<effect name="Teleport">
 				<x>115504</x>

@@ -102,6 +102,7 @@ public class RequestNewEnchantRetryToPutItems extends ClientPacket
 			player.removeRequest(request.getClass());
 			return;
 		}
+		
 		player.sendPacket(ExEnchantRetryToPutItemOk.STATIC_PACKET);
 	}
 }

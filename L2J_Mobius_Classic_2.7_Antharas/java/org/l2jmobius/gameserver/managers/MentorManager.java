@@ -124,6 +124,7 @@ public class MentorManager
 				return true;
 			}
 		}
+		
 		return false;
 	}
 	
@@ -210,9 +211,11 @@ public class MentorManager
 				{
 					_mentors.put(map.getKey(), new Mentee(map.getKey()));
 				}
+				
 				return _mentors.get(map.getKey());
 			}
 		}
+		
 		return null;
 	}
 	
@@ -222,6 +225,7 @@ public class MentorManager
 		{
 			return _menteeData.get(mentorId).values();
 		}
+		
 		return Collections.emptyList();
 	}
 	
@@ -236,6 +240,7 @@ public class MentorManager
 		{
 			return _menteeData.get(mentorId).get(menteeId);
 		}
+		
 		return null;
 	}
 	
@@ -250,6 +255,7 @@ public class MentorManager
 				break;
 			}
 		}
+		
 		return isAllMenteesOffline;
 	}
 	
@@ -262,6 +268,7 @@ public class MentorManager
 				return true;
 			}
 		}
+		
 		return false;
 	}
 	

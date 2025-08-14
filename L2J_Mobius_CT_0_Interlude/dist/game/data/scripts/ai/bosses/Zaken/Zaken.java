@@ -23,10 +23,8 @@ package ai.bosses.Zaken;
 import java.util.logging.Logger;
 
 import org.l2jmobius.Config;
-import org.l2jmobius.commons.threads.ThreadPool;
 import org.l2jmobius.commons.time.TimeUtil;
 import org.l2jmobius.gameserver.ai.Intention;
-import org.l2jmobius.gameserver.data.xml.DoorData;
 import org.l2jmobius.gameserver.data.xml.SkillData;
 import org.l2jmobius.gameserver.managers.GrandBossManager;
 import org.l2jmobius.gameserver.model.StatSet;
@@ -53,6 +51,7 @@ public class Zaken extends AbstractNpcAI
 	// Zaken status
 	private static final byte ALIVE = 0; // Zaken is spawned.
 	private static final byte DEAD = 1; // Zaken has been killed.
+	
 	// NPCs
 	private static final int ZAKEN = 29022;
 	private static final int DOLL_BLADER_B = 29023;
@@ -113,6 +112,7 @@ public class Zaken extends AbstractNpcAI
 		-2944,
 		-2944
 	};
+	
 	// Misc
 	private static BossZone _zone;
 	private int _1001 = 0; // Used for first cancel of QuestTimer "1001".
@@ -132,35 +132,6 @@ public class Zaken extends AbstractNpcAI
 	
 	public Zaken()
 	{
-		// Zaken doors handling.
-		ThreadPool.scheduleAtFixedRate(() ->
-		{
-			try
-			{
-				if (getTimeHour() == 0)
-				{
-					LOGGER.info("Zaken door id 21240006 opened, game time 00.00.");
-					DoorData.getInstance().getDoor(21240006).openMe();
-					ThreadPool.schedule(() ->
-					{
-						try
-						{
-							LOGGER.info("Zaken door id 21240006 closed.");
-							DoorData.getInstance().getDoor(21240006).closeMe();
-						}
-						catch (Throwable e)
-						{
-							LOGGER.warning("Cannot close door ID: 21240006 " + e);
-						}
-					}, 300000L);
-				}
-			}
-			catch (Throwable e)
-			{
-				LOGGER.warning("Cannot open door ID: 21240006 " + e);
-			}
-		}, 2000L, 600000L);
-		
 		addKillId(ZAKEN);
 		addAttackId(ZAKEN);
 		
@@ -172,6 +143,7 @@ public class Zaken extends AbstractNpcAI
 		{
 			// Load the unlock date and time for zaken from DB.
 			final long temp = info.getLong("respawn_time") - System.currentTimeMillis();
+			
 			// If Zaken is locked until a certain time, mark it so and start the unlock timer.
 			// The unlock time has not yet expired.
 			if (temp > 0)
@@ -212,6 +184,7 @@ public class Zaken extends AbstractNpcAI
 					_1001 = 0;
 					cancelQuestTimer("1001", npc, null);
 				}
+				
 				int sk4223 = 0;
 				int sk4227 = 0;
 				for (BuffInfo e : npc.getEffectList().getEffects())
@@ -220,11 +193,13 @@ public class Zaken extends AbstractNpcAI
 					{
 						sk4227 = 1;
 					}
+					
 					if (e.getSkill().getId() == 4223)
 					{
 						sk4223 = 1;
 					}
 				}
+				
 				if (getTimeHour() < 5)
 				{
 					if (sk4223 == 1) // Use night face if Zaken have day face.
@@ -235,11 +210,13 @@ public class Zaken extends AbstractNpcAI
 						_ai2 = npc.getY();
 						_ai3 = npc.getZ();
 					}
+					
 					if (sk4227 == 0) // Use Zaken regeneration.
 					{
 						npc.setTarget(npc);
 						npc.doCast(SkillData.getInstance().getSkill(4227, 1));
 					}
+					
 					if ((npc.getAI().getIntention() == Intention.ATTACK) && (_ai0 == 0))
 					{
 						int i0 = 0;
@@ -254,10 +231,12 @@ public class Zaken extends AbstractNpcAI
 							{
 								i0 = 0;
 							}
+							
 							if (i0 == 0)
 							{
 								i1 = 0;
 							}
+							
 							if (_quest0 > 0)
 							{
 								if (c_quest0 == null)
@@ -272,11 +251,13 @@ public class Zaken extends AbstractNpcAI
 								{
 									i0 = 0;
 								}
+								
 								if (i0 == 0)
 								{
 									i1 = 0;
 								}
 							}
+							
 							if (_quest0 > 1)
 							{
 								if (c_quest1 == null)
@@ -291,11 +272,13 @@ public class Zaken extends AbstractNpcAI
 								{
 									i0 = 0;
 								}
+								
 								if (i0 == 0)
 								{
 									i1 = 0;
 								}
 							}
+							
 							if (_quest0 > 2)
 							{
 								if (c_quest2 == null)
@@ -310,11 +293,13 @@ public class Zaken extends AbstractNpcAI
 								{
 									i0 = 0;
 								}
+								
 								if (i0 == 0)
 								{
 									i1 = 0;
 								}
 							}
+							
 							if (_quest0 > 3)
 							{
 								if (c_quest3 == null)
@@ -329,11 +314,13 @@ public class Zaken extends AbstractNpcAI
 								{
 									i0 = 0;
 								}
+								
 								if (i0 == 0)
 								{
 									i1 = 0;
 								}
 							}
+							
 							if (_quest0 > 4)
 							{
 								if (c_quest4 == null)
@@ -348,11 +335,13 @@ public class Zaken extends AbstractNpcAI
 								{
 									i0 = 0;
 								}
+								
 								if (i0 == 0)
 								{
 									i1 = 0;
 								}
 							}
+							
 							if (i1 == 1)
 							{
 								_quest0 = 0;
@@ -365,12 +354,14 @@ public class Zaken extends AbstractNpcAI
 							}
 						}
 					}
+					
 					if ((getRandom(20) < 1) && (_ai0 == 0))
 					{
 						_ai1 = npc.getX();
 						_ai2 = npc.getY();
 						_ai3 = npc.getZ();
 					}
+					
 					Creature cAi0 = null;
 					if ((npc.getAI().getIntention() == Intention.ATTACK) && (_quest1 == 0))
 					{
@@ -392,10 +383,12 @@ public class Zaken extends AbstractNpcAI
 							cAi0 = npc.asAttackable().getMostHated();
 						}
 					}
+					
 					if (npc.getAI().getIntention() == Intention.IDLE)
 					{
 						_quest1 = 0;
 					}
+					
 					if (_quest1 > 5)
 					{
 						npc.asAttackable().stopHating(cAi0);
@@ -404,6 +397,7 @@ public class Zaken extends AbstractNpcAI
 						{
 							npc.getAI().setIntention(Intention.ATTACK, nextTarget);
 						}
+						
 						_quest1 = 0;
 					}
 				}
@@ -413,11 +407,13 @@ public class Zaken extends AbstractNpcAI
 					npc.doCast(SkillData.getInstance().getSkill(4223, 1));
 					_quest2 = 3;
 				}
+				
 				if (sk4227 == 1) // When switching to day time, cancel zaken night regen.
 				{
 					npc.setTarget(npc);
 					npc.doCast(SkillData.getInstance().getSkill(4242, 1));
 				}
+				
 				if (getRandom(40) < 1)
 				{
 					final int i2 = getRandom(15);
@@ -427,6 +423,7 @@ public class Zaken extends AbstractNpcAI
 					npc.setTarget(npc);
 					npc.doCast(SkillData.getInstance().getSkill(4222, 1));
 				}
+				
 				startQuestTimer("1001", 30000, npc, null);
 				break;
 			}
@@ -593,6 +590,7 @@ public class Zaken extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	
@@ -658,6 +656,7 @@ public class Zaken extends AbstractNpcAI
 					{
 						i0 = 0;
 					}
+					
 					if (i0 == 0)
 					{
 						i1 = getRandom(15);
@@ -665,6 +664,7 @@ public class Zaken extends AbstractNpcAI
 						npc.asAttackable().stopHating(c_quest0);
 					}
 				}
+				
 				if ((c_quest1 != null) && (_quest0 > 1) && (c_quest1 != player) && (c_quest1.getZ() > (player.getZ() - 100)) && (c_quest1.getZ() < (player.getZ() + 100)))
 				{
 					if ((((c_quest1.getX() - player.getX()) * (c_quest1.getX() - player.getX())) + ((c_quest1.getY() - player.getY()) * (c_quest1.getY() - player.getY()))) > (250 * 250))
@@ -675,6 +675,7 @@ public class Zaken extends AbstractNpcAI
 					{
 						i0 = 0;
 					}
+					
 					if (i0 == 0)
 					{
 						i1 = getRandom(15);
@@ -682,6 +683,7 @@ public class Zaken extends AbstractNpcAI
 						npc.asAttackable().stopHating(c_quest1);
 					}
 				}
+				
 				if ((c_quest2 != null) && (_quest0 > 2) && (c_quest2 != player) && (c_quest2.getZ() > (player.getZ() - 100)) && (c_quest2.getZ() < (player.getZ() + 100)))
 				{
 					if ((((c_quest2.getX() - player.getX()) * (c_quest2.getX() - player.getX())) + ((c_quest2.getY() - player.getY()) * (c_quest2.getY() - player.getY()))) > (250 * 250))
@@ -692,6 +694,7 @@ public class Zaken extends AbstractNpcAI
 					{
 						i0 = 0;
 					}
+					
 					if (i0 == 0)
 					{
 						i1 = getRandom(15);
@@ -699,6 +702,7 @@ public class Zaken extends AbstractNpcAI
 						npc.asAttackable().stopHating(c_quest2);
 					}
 				}
+				
 				if ((c_quest3 != null) && (_quest0 > 3) && (c_quest3 != player) && (c_quest3.getZ() > (player.getZ() - 100)) && (c_quest3.getZ() < (player.getZ() + 100)))
 				{
 					if ((((c_quest3.getX() - player.getX()) * (c_quest3.getX() - player.getX())) + ((c_quest3.getY() - player.getY()) * (c_quest3.getY() - player.getY()))) > (250 * 250))
@@ -709,6 +713,7 @@ public class Zaken extends AbstractNpcAI
 					{
 						i0 = 0;
 					}
+					
 					if (i0 == 0)
 					{
 						i1 = getRandom(15);
@@ -716,6 +721,7 @@ public class Zaken extends AbstractNpcAI
 						npc.asAttackable().stopHating(c_quest3);
 					}
 				}
+				
 				if ((c_quest4 != null) && (_quest0 > 4) && (c_quest4 != player) && (c_quest4.getZ() > (player.getZ() - 100)) && (c_quest4.getZ() < (player.getZ() + 100)))
 				{
 					if ((((c_quest4.getX() - player.getX()) * (c_quest4.getX() - player.getX())) + ((c_quest4.getY() - player.getY()) * (c_quest4.getY() - player.getY()))) > (250 * 250))
@@ -726,6 +732,7 @@ public class Zaken extends AbstractNpcAI
 					{
 						i0 = 0;
 					}
+					
 					if (i0 == 0)
 					{
 						i1 = getRandom(15);
@@ -733,6 +740,7 @@ public class Zaken extends AbstractNpcAI
 						npc.asAttackable().stopHating(c_quest4);
 					}
 				}
+				
 				final Creature nextTarget = npc.asAttackable().getMostHated();
 				if (nextTarget != null)
 				{
@@ -758,12 +766,14 @@ public class Zaken extends AbstractNpcAI
 						sk4258 = 1;
 					}
 				}
+				
 				if (sk4258 == 0)
 				{
 					npc.setTarget(attacker);
 					npc.doCast(SkillData.getInstance().getSkill(4258, 1));
 				}
 			}
+			
 			final Creature originalAttacker = isPet ? attacker.getSummon() : attacker;
 			final int hate = (int) (((damage / npc.getMaxHp()) / 0.05) * 20000);
 			npc.asAttackable().addDamageHate(originalAttacker, 0, hate);
@@ -798,6 +808,7 @@ public class Zaken extends AbstractNpcAI
 						{
 							continue;
 						}
+						
 						if (attacker != npc.asAttackable().getMostHated())
 						{
 							npc.setTarget(attacker);
@@ -805,12 +816,14 @@ public class Zaken extends AbstractNpcAI
 						}
 					}
 				}
+				
 				if (getRandomBoolean() && (attacker == npc.asAttackable().getMostHated()))
 				{
 					npc.setTarget(attacker);
 					npc.doCast(SkillData.getInstance().getSkill(4220, 1));
 				}
 			}
+			
 			if ((getTimeHour() >= 5) && (npc.getCurrentHp() < ((npc.getMaxHp() * _quest2) / 4.0)))
 			{
 				_quest2 = (_quest2 - 1);
@@ -868,6 +881,7 @@ public class Zaken extends AbstractNpcAI
 				final Creature target = isPet ? player.getSummon() : player;
 				npc.asAttackable().addDamageHate(target, 1, 200);
 			}
+			
 			if ((player.getZ() > (npc.getZ() - 100)) && (player.getZ() < (npc.getZ() + 100)))
 			{
 				if ((_quest0 < 5) && (getRandom(3) < 1))
@@ -892,8 +906,10 @@ public class Zaken extends AbstractNpcAI
 					{
 						c_quest4 = player;
 					}
+					
 					_quest0++;
 				}
+				
 				if (getRandom(15) < 1)
 				{
 					final int i0 = getRandom((15 * 15));
@@ -925,6 +941,7 @@ public class Zaken extends AbstractNpcAI
 							{
 								continue;
 							}
+							
 							if (player != npc.asAttackable().getMostHated())
 							{
 								npc.setTarget(player);
@@ -932,6 +949,7 @@ public class Zaken extends AbstractNpcAI
 							}
 						}
 					}
+					
 					if (getRandomBoolean() && (player == npc.asAttackable().getMostHated()))
 					{
 						npc.setTarget(player);
@@ -949,6 +967,7 @@ public class Zaken extends AbstractNpcAI
 			LOGGER.warning("Zaken AI failed to load, missing Zaken in grandboss_data.sql");
 			return;
 		}
+		
 		GrandBossManager.getInstance().addBoss(npc);
 		
 		npc.broadcastPacket(new PlaySound(1, "BS01_A", 1, npc.getObjectId(), npc.getX(), npc.getY(), npc.getZ()));
@@ -964,11 +983,13 @@ public class Zaken extends AbstractNpcAI
 			LOGGER.warning("Zaken AI failed to load, missing zone for Zaken");
 			return;
 		}
+		
 		if (_zone.isInsideZone(npc))
 		{
 			_ai4 = 1;
 			startQuestTimer("1003", 1700, null, null);
 		}
+		
 		_1001 = 1;
 		startQuestTimer("1001", 1000, npc, null); // Buffs, random teleports.
 	}

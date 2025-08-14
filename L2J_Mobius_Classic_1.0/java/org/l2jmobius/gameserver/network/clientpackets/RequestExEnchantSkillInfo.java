@@ -79,6 +79,7 @@ public class RequestExEnchantSkillInfo extends ClientPacket
 		{
 			return;
 		}
+		
 		final Set<Integer> route = EnchantSkillGroupsData.getInstance().getRouteForSkill(_skillId, skillLevel);
 		if (route.isEmpty())
 		{
@@ -92,6 +93,7 @@ public class RequestExEnchantSkillInfo extends ClientPacket
 		}
 		
 		player.sendPacket(new ExEnchantSkillInfo(_skillId, skillLevel, skillSubLevel, playerSkill.getSubLevel()));
+		
 		// ExEnchantSkillInfoDetail - not really necessary I think
 		// player.sendPacket(new ExEnchantSkillInfoDetail(SkillEnchantType.NORMAL, _skillId, _skillLevel, _skillSubLevel , activeChar));
 	}

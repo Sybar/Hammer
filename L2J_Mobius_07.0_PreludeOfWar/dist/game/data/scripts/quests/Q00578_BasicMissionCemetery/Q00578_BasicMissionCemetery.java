@@ -38,9 +38,11 @@ public class Q00578_BasicMissionCemetery extends Quest
 	// NPCs
 	private static final int PENNY = 34413;
 	private static final int QUTAERMASTER = 33407;
+	
 	// Rewards
 	private static final int SCROLL_OF_ESCAPE_CEMETERY = 47062;
 	private static final int SCROLL_OF_ESCAPE_TOWN_OF_ADEN = 48413;
+	
 	// Misc
 	private static final int MIN_LEVEL = 97;
 	private static final int MAX_LEVEL = 99;
@@ -94,6 +96,7 @@ public class Q00578_BasicMissionCemetery extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -172,6 +175,7 @@ public class Q00578_BasicMissionCemetery extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

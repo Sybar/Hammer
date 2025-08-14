@@ -46,6 +46,7 @@ public class RecieveAdventurerBuffs extends AbstractNpcAI
 	{
 		80000
 	};
+	
 	// Skills
 	private static final SkillHolder FANTASIA = new SkillHolder(32840, 1); // Fantasia Harmony - Adventurer
 	private static final SkillHolder[] GROUP_BUFFS =
@@ -77,6 +78,7 @@ public class RecieveAdventurerBuffs extends AbstractNpcAI
 						{
 							SkillCaster.triggerCast(nearby, npc, holder.getSkill());
 						}
+						
 						if (npc.getTemplate().getFakePlayerInfo().getPlayerClass().isMage())
 						{
 							SkillCaster.triggerCast(nearby, npc, FANTASIA.getSkill()); // TODO: Merge events.
@@ -89,8 +91,10 @@ public class RecieveAdventurerBuffs extends AbstractNpcAI
 					}
 				}
 			}
+			
 			startQuestTimer("AUTOBUFF", 30000, npc, null);
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	

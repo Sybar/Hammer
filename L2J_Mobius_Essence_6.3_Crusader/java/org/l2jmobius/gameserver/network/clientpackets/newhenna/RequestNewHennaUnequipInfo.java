@@ -59,6 +59,7 @@ public class RequestNewHennaUnequipInfo extends ClientPacket
 				break;
 			}
 		}
+		
 		if (henna == null)
 		{
 			PacketLogger.warning("Invalid Henna Id: " + _hennaId + " from " + player);

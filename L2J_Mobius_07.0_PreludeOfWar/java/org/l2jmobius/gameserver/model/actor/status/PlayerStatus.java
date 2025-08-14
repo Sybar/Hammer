@@ -27,8 +27,8 @@ import org.l2jmobius.gameserver.managers.DuelManager;
 import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.Summon;
-import org.l2jmobius.gameserver.model.actor.enums.player.Duel;
 import org.l2jmobius.gameserver.model.actor.enums.player.PrivateStoreType;
+import org.l2jmobius.gameserver.model.actor.holders.player.Duel;
 import org.l2jmobius.gameserver.model.actor.stat.PlayerStat;
 import org.l2jmobius.gameserver.model.effects.EffectFlag;
 import org.l2jmobius.gameserver.model.events.EventDispatcher;
@@ -108,6 +108,7 @@ public class PlayerStatus extends PlayableStatus
 			{
 				player.stopEffectsOnDamage();
 			}
+			
 			// Attacked players in craft/shops stand up.
 			if (player.isCrafting() || player.isInStoreMode())
 			{
@@ -126,6 +127,7 @@ public class PlayerStatus extends PlayableStatus
 				{
 					player.stopStunning(true);
 				}
+				
 				if (Formulas.calcRealTargetBreak())
 				{
 					player.getEffectList().stopEffects(AbnormalType.REAL_TARGET);
@@ -338,6 +340,7 @@ public class PlayerStatus extends PlayableStatus
 				{
 					pet.getAI().setIntention(Intention.IDLE);
 				}
+				
 				player.getServitors().values().forEach(s -> s.getAI().setIntention(Intention.IDLE));
 				return;
 			}

@@ -63,6 +63,7 @@ public class RequestExPledgeMissionReward extends ClientPacket
 		{
 			return;
 		}
+		
 		player.addRequest(new RewardRequest(player));
 		
 		final Collection<DailyMissionDataHolder> reward = DailyMissionData.getInstance().getDailyMissionData(_id);
@@ -76,6 +77,7 @@ public class RequestExPledgeMissionReward extends ClientPacket
 					player.sendPacket(new ExPledgeMissionInfo(player, holder));
 				}
 			}
+			
 			player.sendPacket(new ExPledgeMissionRewardCount(player));
 		}
 		

@@ -33,10 +33,13 @@ public class Q00366_SilverHairedShaman extends Quest
 {
 	// NPC
 	private static final int DIETER = 30111;
+	
 	// Item
 	private static final int SAIRONS_SILVER_HAIR = 5874;
+	
 	// Misc
 	private static final int MIN_LEVEL = 48;
+	
 	// Drop chances
 	private static final Map<Integer, Integer> CHANCES = new HashMap<>();
 	static

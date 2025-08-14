@@ -39,6 +39,7 @@ public class Q00102_SeaOfSporesFever extends Quest
 	private static final int VELTRESS = 30219;
 	private static final int RAYEN = 30221;
 	private static final int GARTRANDELL = 30285;
+	
 	// Items
 	private static final int ALBERIUS_LETTER = 964;
 	private static final int EVERGREEN_AMULET = 965;
@@ -49,6 +50,7 @@ public class Q00102_SeaOfSporesFever extends Quest
 	private static final int COBENDELL_MEDICINE_3 = 1132;
 	private static final int COBENDELL_MEDICINE_4 = 1133;
 	private static final int COBENDELL_MEDICINE_5 = 1134;
+	
 	// Rewards
 	private static final int SPIRITSHOT_NO_GRADE = 2509;
 	private static final int SOULSHOT_NO_GRADE = 1835;
@@ -60,6 +62,7 @@ public class Q00102_SeaOfSporesFever extends Quest
 	private static final int ECHO_SOLITUDE = 4414;
 	private static final int ECHO_FEAST = 4415;
 	private static final int ECHO_CELEBRATION = 4416;
+	
 	// Newbie Rewards
 	private static final int SPIRITSHOT_FOR_BEGINNERS = 5790;
 	private static final int SOULSHOT_FOR_BEGINNERS = 5789;

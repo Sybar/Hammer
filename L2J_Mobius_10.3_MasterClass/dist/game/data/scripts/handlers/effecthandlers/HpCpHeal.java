@@ -106,6 +106,7 @@ public class HpCpHeal extends AbstractEffect
 			{
 				mAtkMul = weaponInst.getTemplate().getCrystalTypePlus() == CrystalType.R ? 4 : weaponInst.getTemplate().getCrystalTypePlus() == CrystalType.S ? 2 : 1;
 			}
+			
 			// shot dynamic bonus
 			mAtkMul = bss ? mAtkMul * 4 : mAtkMul + 1;
 		}
@@ -116,6 +117,7 @@ public class HpCpHeal extends AbstractEffect
 			amount *= effected.getStat().getValue(Stat.HEAL_EFFECT, 1);
 			amount += effected.getStat().getValue(Stat.HEAL_EFFECT_ADD, 0);
 			amount *= (item == null) && effector.isPlayable() ? Config.PLAYER_HEALING_SKILL_MULTIPLIERS[effector.asPlayer().getPlayerClass().getId()] : 1f;
+			
 			// Heal critic, since CT2.3 Gracia Final
 			if (skill.isMagic() && (Formulas.calcCrit(skill.getMagicCriticalRate(), effector, effected, skill) || effector.isAffected(EffectFlag.HPCPHEAL_CRITICAL)))
 			{
@@ -150,6 +152,7 @@ public class HpCpHeal extends AbstractEffect
 			{
 				additionalHp = Math.max(effected.getMaxRecoverableHp() - newHp, 0);
 			}
+			
 			effected.setCurrentHp(newHp + additionalHp, false);
 			
 			if (effector.isPlayer() && (effector != effected))
@@ -178,6 +181,7 @@ public class HpCpHeal extends AbstractEffect
 				{
 					additionalCp = Math.max(effected.getMaxRecoverableCp() - newCp, 0);
 				}
+				
 				effected.setCurrentCp(newCp + additionalCp, false);
 				
 				if (effector != effected)

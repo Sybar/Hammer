@@ -41,12 +41,15 @@ public final class OthellFortuneSeekerMion extends AbstractNpcAI
 {
 	// NPCs
 	private static final int MION = 34375;
+	
 	// Monsters
 	private static final int ANTHARAS = 24087;
 	private static final int INVISIBLE_NPC = 18918;
+	
 	// Skills
 	private static final SkillHolder ShadowIllusionSkill = new SkillHolder(32141, 1);
 	private static final SkillHolder AngelOfDeathSkill = new SkillHolder(32142, 1);
+	
 	// Misc
 	private static final int p_CheckInterval = 3000;
 	private static final int p_TalkInterval = 15000;

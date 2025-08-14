@@ -42,6 +42,7 @@ public class RequestChangeAttributeCancel extends ClientPacket
 		{
 			return;
 		}
+		
 		player.sendPacket(ExChangeAttributeFail.STATIC);
 	}
 }

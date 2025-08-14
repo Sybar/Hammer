@@ -169,9 +169,11 @@ public class Folk extends Npc
 			{
 				continue;
 			}
+			
 			count++;
 			esl.addSkill(s.getId(), s.getLevel(), s.getSpCost(), s.getExp());
 		}
+		
 		if (count == 0)
 		{
 			player.sendPacket(SystemMessageId.THERE_IS_NO_SKILL_THAT_ENABLES_ENCHANT);
@@ -186,6 +188,7 @@ public class Folk extends Npc
 			{
 				player.sendPacket(SystemMessageId.THERE_ARE_NO_OTHER_SKILLS_TO_LEARN);
 			}
+			
 			player.sendPacket(AcquireSkillDone.STATIC_PACKET);
 		}
 		else

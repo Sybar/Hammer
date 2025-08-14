@@ -42,12 +42,15 @@ public class Q10521_QueenNavarisLetterVarkaSilenosBarracks extends LetterQuest
 	// NPCs
 	private static final int GREGORY = 31279;
 	private static final int HANSEN = 33853;
+	
 	// Items
 	private static final int VARKA_SILENOS_BARRAKS = 46730;
 	private static final int SOE_TOWN_OF_GODDARD = 46731;
+	
 	// Misc
 	private static final int MIN_LEVEL = 76;
 	private static final int MAX_LEVEL = 80;
+	
 	// Teleport
 	private static final Location TELEPORT_LOC = new Location(147711, -52920, -2728);
 	
@@ -109,6 +112,7 @@ public class Q10521_QueenNavarisLetterVarkaSilenosBarracks extends LetterQuest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -128,6 +132,7 @@ public class Q10521_QueenNavarisLetterVarkaSilenosBarracks extends LetterQuest
 				htmltext = "33853-01.html";
 			}
 		}
+		
 		return htmltext;
 	}
 	

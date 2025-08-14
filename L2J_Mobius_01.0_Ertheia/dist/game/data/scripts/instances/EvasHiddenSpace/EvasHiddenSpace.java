@@ -33,6 +33,7 @@ public class EvasHiddenSpace extends AbstractInstance
 	// NPCs
 	private static final int CERENAS = 31281;
 	private static final int EVAS_AVATAR = 33686;
+	
 	// Misc
 	private static final int TEMPLATE_ID = 217;
 	
@@ -80,6 +81,7 @@ public class EvasHiddenSpace extends AbstractInstance
 				teleportPlayerOut(player, world);
 			}
 		}
+		
 		return htmltext;
 	}
 	

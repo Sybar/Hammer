@@ -83,6 +83,7 @@ public class PledgeShowMemberListUpdate extends ServerPacket
 			buffer.writeInt(0);
 			buffer.writeInt(0);
 		}
+		
 		buffer.writeInt(_hasSponsor);
 		buffer.writeByte(_onlineStatus);
 	}

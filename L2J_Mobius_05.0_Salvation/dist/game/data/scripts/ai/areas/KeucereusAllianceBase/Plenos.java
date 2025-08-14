@@ -44,6 +44,7 @@ public class Plenos extends AbstractNpcAI
 		{
 			npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.YOU_CAN_BE_TELEPORTED_TO_EACH_SEED_IF_YOU_VOLUNTEER_WHY_NOT_TRY, 1000);
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	

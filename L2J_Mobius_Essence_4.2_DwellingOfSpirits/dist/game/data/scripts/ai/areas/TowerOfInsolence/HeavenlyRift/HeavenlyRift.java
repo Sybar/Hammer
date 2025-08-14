@@ -52,45 +52,55 @@ public class HeavenlyRift extends AbstractNpcAI
 	// NPCs
 	private static final int DIMENTIONAL_VORTEX = 30952;
 	private static final int ARUSHINAI = 30401;
+	
 	// Monsters
 	private static final int BOMB = 18003;
 	private static final int DIVINE_ANGEL = 20139;
 	private static final int TOWER = 18004;
+	
 	// Items
 	private static final int CELESTIAL_SHARD = 49759;
 	private static final int BROKEN_CELESTIAL_SHARD = 49767;
-	private static final int[] ITEM_DROP_1 = new int[]
+	private static final int[] ITEM_DROP_1 =
 	{
 		49756,
 		49762,
 		49763
 	};
-	private static final int[] ITEM_DROP_2 = new int[]
+	private static final int[] ITEM_DROP_2 =
 	{
 		49760,
 		49761
 	};
+	
 	// Reward
 	private static final int SP_SCROLL_20000 = 49764;
 	private static final int LIFE_CONTROL_TOWER_SCROLL_OF_BLESSING = 49765;
+	
 	// Zone
 	protected static final ZoneType ZONE = ZoneManager.getInstance().getZoneByName("heavenly_rift");
+	
 	// Teleports
 	private static final Location ENTER = new Location(112685, 13362, 10966);
 	private static final Location EXIT = new Location(114326, 13407, -5096);
 	private static final Location CENTER = new Location(112710, 14098, 10984);
+	
 	// Time
 	private static final int TIME_FOR_PREPARE = 3; // min
 	private static final int BATTLE_TIME = 20; // min
+	
 	// Misc
 	private static final int CHANCE_TO_SPAWN_ANGEL_AFTER_KILL_BOOM = 33; // %
+	
 	// Etc - variation 1
 	private static int _var1; // Tower and 20x of Angels
 	private static int _varAngelCount1;
 	private static int _varRewardTaken1; // 0 not taken 1 taken
+	
 	// Etc - variation 2
 	private static int _var2; // Bombs
 	private static int _varBombCount2;
+	
 	// Etc - variation 3
 	private static int _var3; // 40x of Angels
 	private static int _varAngelCount3;
@@ -144,6 +154,7 @@ public class HeavenlyRift extends AbstractNpcAI
 							creature.deleteMe();
 						}
 					}
+					
 					resetVars();
 				}
 				break;
@@ -163,6 +174,7 @@ public class HeavenlyRift extends AbstractNpcAI
 					// Prevent to get null if testing with Gm, others single players will be teleported out by ZONE_CHECKER.
 					player.teleToLocation(EXIT);
 				}
+				
 				startQuestTimer("CLEAN", 1000, null, null);
 				break;
 			}
@@ -219,6 +231,7 @@ public class HeavenlyRift extends AbstractNpcAI
 					{
 						return "no-level.html";
 					}
+					
 					final Item item = player.getInventory().getItemByItemId(CELESTIAL_SHARD);
 					if (item == null)
 					{
@@ -256,6 +269,7 @@ public class HeavenlyRift extends AbstractNpcAI
 					{
 						creature.teleToLocation(EXIT);
 					}
+					
 					if (creature.isNpc() || creature.isMonster())
 					{
 						if (creature.getId() != ARUSHINAI)
@@ -275,6 +289,7 @@ public class HeavenlyRift extends AbstractNpcAI
 					{
 						creature.teleToLocation(EXIT);
 					}
+					
 					if (creature.isNpc() || creature.isMonster())
 					{
 						if (creature.getId() != ARUSHINAI)
@@ -419,6 +434,7 @@ public class HeavenlyRift extends AbstractNpcAI
 				return "30401-finish.html";
 			}
 		}
+		
 		return super.onFirstTalk(npc, player);
 	}
 	

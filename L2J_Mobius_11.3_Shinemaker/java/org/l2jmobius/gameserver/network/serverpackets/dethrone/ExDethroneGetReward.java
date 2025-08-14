@@ -74,6 +74,7 @@ public class ExDethroneGetReward extends ServerPacket
 				}
 			}
 		}
+		
 		if (_rewarded)
 		{
 			player.sendPacket(SystemMessageId.YOU_HAVE_ALREADY_RECEIVED_THE_REWARD);

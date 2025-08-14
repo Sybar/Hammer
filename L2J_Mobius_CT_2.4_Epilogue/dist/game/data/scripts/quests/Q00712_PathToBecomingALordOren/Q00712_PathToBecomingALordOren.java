@@ -125,6 +125,7 @@ public class Q00712_PathToBecomingALordOren extends Quest
 				break;
 			}
 		}
+		
 		return event;
 	}
 	
@@ -138,6 +139,7 @@ public class Q00712_PathToBecomingALordOren extends Quest
 			{
 				giveItems(killer, NEBULITE_ORB, 1);
 			}
+			
 			if (getQuestItemsCount(killer, NEBULITE_ORB) >= 300)
 			{
 				qs.setCond(7);
@@ -249,6 +251,7 @@ public class Q00712_PathToBecomingALordOren extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -261,6 +264,7 @@ public class Q00712_PathToBecomingALordOren extends Quest
 				return true;
 			}
 		}
+		
 		return false;
 	}
 	

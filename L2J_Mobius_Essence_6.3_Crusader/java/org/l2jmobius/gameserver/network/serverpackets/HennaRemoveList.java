@@ -42,6 +42,7 @@ public class HennaRemoveList extends ServerPacket
 	public void writeImpl(GameClient client, WritableBuffer buffer)
 	{
 		ServerPackets.HENNA_UNEQUIP_LIST.writeId(this, buffer);
+		
 		// buffer.writeLong(_player.getAdena());
 		// buffer.writeInt(3); // seems to be max size
 		// buffer.writeInt(3 - _player.getHennaEmptySlots());

@@ -901,13 +901,13 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="7" />
 			<set stat="mAtk" val="5" />
 			<set stat="critRate" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="325" />
-		</for>
+		</stats>
 	</item>
 	<item id="2369" type="Weapon" name="Squire's Sword">
 		<set name="icon" val="icon.weapon_squires_sword_i00" />
@@ -926,12 +926,12 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="6" />
 			<set stat="mAtk" val="5" />
 			<set stat="critRate" val="8" />
 			<set stat="pAtkSpd" val="379" />
-		</for>
+		</stats>
 	</item>
 	<item id="2370" type="Weapon" name="Guild Member's Club">
 		<set name="icon" val="icon.weapon_club_i00" />
@@ -950,13 +950,13 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="6" />
 			<set stat="mAtk" val="5" />
 			<set stat="critRate" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-		</for>
+		</stats>
 	</item>
 	<item id="2371" type="Weapon" name="Fist of Butcher">
 		<set name="icon" val="icon.weapon_iron_glove_i00" />
@@ -972,13 +972,13 @@
 		<set name="price" val="25500" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="16" />
 			<set stat="mAtk" val="10" />
 			<set stat="critRate" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="325" />
-		</for>
+		</stats>
 	</item>
 	<item id="2372" type="Weapon" name="Dagger of Adept">
 		<set name="icon" val="icon.weapon_doomed_dagger_i00" />
@@ -994,13 +994,13 @@
 		<set name="price" val="25500" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="11" />
 			<set stat="mAtk" val="10" />
 			<set stat="critRate" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="433" />
-		</for>
+		</stats>
 	</item>
 	<item id="2373" type="Weapon" name="Eldritch Staff">
 		<set name="icon" val="icon.weapon_apprentices_staff_i00" />
@@ -1017,13 +1017,13 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="is_magic_weapon" val="true" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="13" />
 			<set stat="mAtk" val="13" />
 			<set stat="critRate" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="325" />
-		</for>
+		</stats>
 	</item>
 	<item id="2374" type="Weapon" name="Red Sunset Dagger">
 		<set name="icon" val="icon.weapon_doomed_dagger_i00" />
@@ -1039,13 +1039,13 @@
 		<set name="price" val="25500" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="11" />
 			<set stat="mAtk" val="10" />
 			<set stat="critRate" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="433" />
-		</for>
+		</stats>
 	</item>
 	<item id="2375" type="EtcItem" name="Wolf Collar">
 		<set name="icon" val="icon.etc_prefect_belt_i00" />
@@ -1071,13 +1071,13 @@
 		<set name="weight" val="7920" />
 		<set name="price" val="2080000" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
-		<for>
+		</conditions>
+		<stats>
 			<add order="0" stat="pDef" val="157" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2377" type="Armor" name="Mithril Scale Gaiters">
 		<set name="icon" val="icon.armor_t40_l_i00" />
@@ -1091,13 +1091,13 @@
 		<set name="weight" val="3870" />
 		<set name="price" val="187000" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
-		<for>
+		</conditions>
+		<stats>
 			<add order="0" stat="pDef" val="64" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2378" type="Armor" name="Brigandine Gaiters">
 		<!-- Part of the brigandine set. -->
@@ -1112,13 +1112,13 @@
 		<set name="weight" val="3820" />
 		<set name="price" val="187000" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
-		<for>
+		</conditions>
+		<stats>
 			<add order="0" stat="pDef" val="64" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2379" type="Armor" name="Avadon Gaiters">
 		<!-- Part of the heavy avadon set. -->
@@ -1133,13 +1133,13 @@
 		<set name="weight" val="3520" />
 		<set name="price" val="1300000" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
-		<for>
+		</conditions>
+		<stats>
 			<add order="0" stat="pDef" val="98" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2380" type="Armor" name="Blue Wolf Gaiters">
 		<!-- Part of the heavy blue wolf set. -->
@@ -1154,13 +1154,13 @@
 		<set name="weight" val="3370" />
 		<set name="price" val="2010000" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
-		<for>
+		</conditions>
+		<stats>
 			<add order="0" stat="pDef" val="104" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2381" type="Armor" name="Doom Plate Armor">
 		<!-- Upper and lower body armor. Produces the following effects when worn with a doom helmet, doom gloves and doom boots (heavy armor): HP +320, Breath Gauge increased, STR -3 and CON +3. With a doom shield, shield defense rate +24%. -->
@@ -1175,13 +1175,13 @@
 		<set name="weight" val="9980" />
 		<set name="price" val="4710000" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
-		<for>
+		</conditions>
+		<stats>
 			<add order="0" stat="pDef" val="270" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2382" type="Armor" name="Tallum Plate Armor">
 		<!-- Upper and lower body armor. Produces the following effects when worn with tallum helmet, tallum gloves and tallum boots (heavy armor): Atk. Spd. +8%, weight limit +5759, Poison and Bleed Resistance +80%, STR+2, and CON-2. -->
@@ -1196,13 +1196,13 @@
 		<set name="weight" val="9780" />
 		<set name="price" val="6770000" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
-		<for>
+		</conditions>
+		<stats>
 			<add order="0" stat="pDef" val="278" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2383" type="Armor" name="Majestic Plate Armor">
 		<!-- Upper and lower armor. Produces the following effects when worn with a majestic circlet, majestic gloves and majestic boots (heavy armor): P. Atk. +4%, Accuracy +3, Stun Resistance +50%, STR+2 and Con-2. -->
@@ -1217,13 +1217,13 @@
 		<set name="weight" val="9200" />
 		<set name="price" val="10300000" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
-		<for>
+		</conditions>
+		<stats>
 			<add order="0" stat="pDef" val="293" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2384" type="Armor" name="Zubei's Leather Shirt">
 		<!-- Produces the following effects when worn with Zubei's leather gaiters, Zubei's helmet, Zubei's gauntlets and Zubei's boots (light armor): Evasion +4. -->
@@ -1238,10 +1238,10 @@
 		<set name="weight" val="4330" />
 		<set name="price" val="1560000" />
 		<set name="enchant_enabled" val="true" />
-		<for>
+		<stats>
 			<add order="0" stat="pDef" val="117" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2385" type="Armor" name="Dark Crystal Leather Armor">
 		<!-- Produces the following effects when worn with dark crystalline leggings, dark crystal helmet, dark crystal gloves and dark crystal boots (light armor): Atk. Spd. +4%,P. Atk. +4%, Paralysis Resistance +50%, STR +1, and CON -1. -->
@@ -1256,10 +1256,10 @@
 		<set name="weight" val="4300" />
 		<set name="price" val="3470000" />
 		<set name="enchant_enabled" val="true" />
-		<for>
+		<stats>
 			<add order="0" stat="pDef" val="128" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2386" type="Armor" name="Wooden Gaiters">
 		<!-- Part of the wooden set. -->
@@ -1271,9 +1271,9 @@
 		<set name="material" val="LEATHER" />
 		<set name="weight" val="1670" />
 		<set name="price" val="4970" />
-		<for>
+		<stats>
 			<add order="0" stat="pDef" val="29" />
-		</for>
+		</stats>
 	</item>
 	<item id="2387" type="Armor" name="Tempered Mithril Gaiters">
 		<!-- Part of the tempered mithril set. -->
@@ -1288,10 +1288,10 @@
 		<set name="weight" val="1530" />
 		<set name="price" val="237000" />
 		<set name="enchant_enabled" val="true" />
-		<for>
+		<stats>
 			<add order="0" stat="pDef" val="56" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2388" type="Armor" name="Zubei's Leather Gaiters">
 		<!-- Part of the light Zubei's set. -->
@@ -1306,10 +1306,10 @@
 		<set name="weight" val="1480" />
 		<set name="price" val="973000" />
 		<set name="enchant_enabled" val="true" />
-		<for>
+		<stats>
 			<add order="0" stat="pDef" val="73" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2389" type="Armor" name="Dark Crystalline Leggings">
 		<!-- Part of the light dark crystal set. -->
@@ -1324,10 +1324,10 @@
 		<set name="weight" val="1480" />
 		<set name="price" val="2170000" />
 		<set name="enchant_enabled" val="true" />
-		<for>
+		<stats>
 			<add order="0" stat="pDef" val="80" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2390" type="Armor" name="Avadon Leather Armor">
 		<!-- Produces the following effects when worn with an avadon circlet, avadon gloves and avadon boots (light armor): M. Def. +5.25% and weight +5795. -->
@@ -1342,10 +1342,10 @@
 		<set name="weight" val="5600" />
 		<set name="price" val="2280000" />
 		<set name="enchant_enabled" val="true" />
-		<for>
+		<stats>
 			<add order="0" stat="pDef" val="191" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2391" type="Armor" name="Blue Wolf Leather Armor">
 		<!-- Upper and lower body armor. Produces the following effects when worn with blue wolf helmet, blue wolf gloves and blue wolf boots (light armor): P. Def. +5.24%, Casting Spd. +15%, INT -2, MEN +3 and WIT -1. -->
@@ -1360,10 +1360,10 @@
 		<set name="weight" val="5500" />
 		<set name="price" val="3530000" />
 		<set name="enchant_enabled" val="true" />
-		<for>
+		<stats>
 			<add order="0" stat="pDef" val="202" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2392" type="Armor" name="Leather Armor of Doom">
 		<!-- Upper and lower body armor. Produces the following effects when worn with a doom helmet, doom gloves and doom boots (light armor): Breath Gauge increased, P. Atk. +2.7%, MP Regeneration +2.5%, STR -1, CON -2, DEX +3 and Poison Resistance +20%. -->
@@ -1378,10 +1378,10 @@
 		<set name="weight" val="5500" />
 		<set name="price" val="3530000" />
 		<set name="enchant_enabled" val="true" />
-		<for>
+		<stats>
 			<add order="0" stat="pDef" val="202" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2393" type="Armor" name="Tallum Leather Armor">
 		<!-- Upper and lower body armor. Produces the following effects when worn with a tallum helm, tallum gloves and tallum boots (light armor): MP Regeneration +8%, MP +222, Poison and Bleed Resistance +80%, MEN +2, and WIT -2. -->
@@ -1396,10 +1396,10 @@
 		<set name="weight" val="5400" />
 		<set name="price" val="5080000" />
 		<set name="enchant_enabled" val="true" />
-		<for>
+		<stats>
 			<add order="0" stat="pDef" val="209" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2394" type="Armor" name="Nightmarish Leather Armor">
 		<!-- Upper and lower body armor. Produces the following effects when worn with helm of nightmare, gloves of nightmare and boots of nightmare (light): M. Def. +4%, Sleep and Hold Resistance +70%, Restores 3% of melee damage inflicted on the enemy to oneself, DEX +1, and CON -1. -->
@@ -1414,10 +1414,10 @@
 		<set name="weight" val="5300" />
 		<set name="price" val="7730000" />
 		<set name="enchant_enabled" val="true" />
-		<for>
+		<stats>
 			<add order="0" stat="pDef" val="220" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2395" type="Armor" name="Majestic Leather Armor">
 		<!-- Upper and lower body armor. Produces the following effects when worn with majestic circlet, majestic gloves and majestic boots (light): Archery P. Atk. +8%, MP +240, weight +5759, Stun Resistance +50%, DEX+1, CON-1. -->
@@ -1432,10 +1432,10 @@
 		<set name="weight" val="5350" />
 		<set name="price" val="7730000" />
 		<set name="enchant_enabled" val="true" />
-		<for>
+		<stats>
 			<add order="0" stat="pDef" val="220" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2396" type="Armor" name="Elven Mithril Tunic">
 		<set name="icon" val="icon.armor_elven_tunic_i00" />
@@ -1449,14 +1449,14 @@
 		<set name="weight" val="720" />
 		<set name="price" val="224000" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
-		<for>
+		</conditions>
+		<stats>
 			<add order="0" stat="pDef" val="54" />
 			<add stat="maxMp" val="169" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2397" type="Armor" name="Tunic of Zubei">
 		<!-- Produces the following effects when worn with stockings of Zubei, Zubei's helmet, Zubei's gauntlets and Zubei's boots (robe): M. Atk. +10% and MP Regeneration -5%. -->
@@ -1471,14 +1471,14 @@
 		<set name="weight" val="1960" />
 		<set name="price" val="1560000" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
-		<for>
+		</conditions>
+		<stats>
 			<add order="0" stat="pDef" val="78" />
 			<add stat="maxMp" val="345" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2398" type="Armor" name="Blue Wolf Tunic">
 		<!-- Produces the following effects when worn with blue wolf stockings, blue wolf helmet, blue wolf gloves and blue wolf boots (robe): MP +206, MP Regeneration +5.24%, INT-2, MEN-1, and WIT+3. -->
@@ -1493,14 +1493,14 @@
 		<set name="weight" val="1920" />
 		<set name="price" val="2410000" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
-		<for>
+		</conditions>
+		<stats>
 			<add order="0" stat="pDef" val="83" />
 			<add stat="maxMp" val="377" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2399" type="Armor" name="Tunic of Doom">
 		<!-- Produces the following effects when worn with stockings of doom, doom helmet, doom gloves and doom boots (robe): Speed + 7, increased Breath Gauge, MP Regeneration +5.24%, INT +2, MEN +1, and WIT -3. -->
@@ -1515,13 +1515,13 @@
 		<set name="weight" val="1900" />
 		<set name="price" val="2410000" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
-		<for>
+		</conditions>
+		<stats>
 			<add order="0" stat="pDef" val="83" />
 			<add stat="maxMp" val="377" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 </list>

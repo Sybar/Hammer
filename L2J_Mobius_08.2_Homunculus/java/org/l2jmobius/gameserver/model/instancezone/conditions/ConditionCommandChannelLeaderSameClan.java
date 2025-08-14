@@ -49,6 +49,7 @@ public class ConditionCommandChannelLeaderSameClan extends Condition
 			{
 				return true;
 			}
+			
 			return false;
 		}));
 	}

@@ -83,6 +83,7 @@ public class HpToOwner extends AbstractEffect
 			effector.setCurrentHp(effector.getCurrentHp() + amount);
 			effector.setCurrentMp(effector.getCurrentMp() + amount);
 		}
+		
 		return skill.isToggle();
 	}
 }

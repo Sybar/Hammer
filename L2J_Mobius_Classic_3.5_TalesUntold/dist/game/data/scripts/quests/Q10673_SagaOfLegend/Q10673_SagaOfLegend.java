@@ -52,6 +52,7 @@ public class Q10673_SagaOfLegend extends Quest
 {
 	// NPCs
 	private static final int ORVEN = 30857;
+	
 	// Monsters
 	private static final int[] MOBS =
 	{
@@ -96,6 +97,7 @@ public class Q10673_SagaOfLegend extends Quest
 		24039, // Pearl Horror 75
 		24038, // Tor Scorpion 75
 	};
+	
 	// Rewards
 	private static final int MAGICAL_TABLET = 90045;
 	private static final int SPELLBOOK_HUMAN = 90038; // Spellbook: Mount Golden Lion
@@ -104,6 +106,7 @@ public class Q10673_SagaOfLegend extends Quest
 	private static final int SPELLBOOK_ORC = 90042; // Spellbook: Mount Black Bear
 	private static final int SPELLBOOK_DWARF = 90041; // Spellbook: Mount Kukuru
 	private static final int SPELLBOOK_KAMAEL = 91946; // Spellbook: Mount Griffin
+	
 	// Misc
 	private static final int MIN_LEVEL = 76;
 	private static final String KILL_COUNT_VAR = "KillCount";
@@ -167,11 +170,13 @@ public class Q10673_SagaOfLegend extends Quest
 					{
 						player.sendPacket(ExClassChangeSetAlarm.STATIC_PACKET);
 					}
+					
 					htmltext = event;
 				}
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -220,6 +225,7 @@ public class Q10673_SagaOfLegend extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -254,6 +260,7 @@ public class Q10673_SagaOfLegend extends Quest
 			holder.add(new NpcLogListHolder(NpcStringId.ORVEN_S_REQUEST.getId(), true, qs.getInt(KILL_COUNT_VAR)));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 	

@@ -132,29 +132,35 @@ public abstract class AirShipController extends AbstractNpcAI
 				{
 					player.sendPacket(SystemMessageId.YOUR_CLAN_ALREADY_HAS_AN_AIRSHIP);
 				}
+				
 				return null;
 			}
+			
 			if (_isBusy)
 			{
 				player.sendPacket(SystemMessageId.ANOTHER_AIRSHIP_HAS_BEEN_SUMMONED_TO_THE_WHARF_PLEASE_TRY_AGAIN_LATER);
 				return null;
 			}
+			
 			if (!player.hasAccess(ClanAccess.ACCESS_AIRSHIP))
 			{
 				player.sendPacket(SystemMessageId.THE_AIRSHIP_SUMMON_LICENSE_REGISTRATION_CAN_ONLY_BE_DONE_BY_THE_CLAN_LEADER);
 				return null;
 			}
+			
 			final int ownerId = player.getClanId();
 			if (!AirShipManager.getInstance().hasAirShipLicense(ownerId))
 			{
 				player.sendPacket(SystemMessageId.YOU_HAVEN_T_REGISTERED_YOUR_AIRSHIP_LICENSE_OR_YOUR_CLAN_DOESN_T_HAVE_IT);
 				return null;
 			}
+			
 			if (AirShipManager.getInstance().hasAirShip(ownerId))
 			{
 				player.sendPacket(SystemMessageId.YOUR_CLAN_S_AIRSHIP_IS_ALREADY_BEING_USED_BY_ANOTHER_CLAN_MEMBER);
 				return null;
 			}
+			
 			if (!player.destroyItemByItemId(ItemProcessType.FEE, STARSTONE, SUMMON_COST, npc, true))
 			{
 				player.sendPacket(SM_NEED_MORE);
@@ -256,17 +262,20 @@ public abstract class AirShipController extends AbstractNpcAI
 				player.sendPacket(SystemMessageId.ONLY_CLANS_OF_LV_5_OR_HIGHER_CAN_GET_THE_AIRSHIP);
 				return null;
 			}
+			
 			if (!player.isClanLeader())
 			{
 				player.sendPacket(SystemMessageId.THE_AIRSHIP_SUMMON_LICENSE_REGISTRATION_CAN_ONLY_BE_DONE_BY_THE_CLAN_LEADER);
 				return null;
 			}
+			
 			final int ownerId = player.getClanId();
 			if (AirShipManager.getInstance().hasAirShipLicense(ownerId))
 			{
 				player.sendPacket(SystemMessageId.THE_AIRSHIP_SUMMON_LICENSE_HAS_ALREADY_BEEN_ACQUIRED);
 				return null;
 			}
+			
 			if (!player.destroyItemByItemId(ItemProcessType.FEE, LICENSE, 1, npc, true))
 			{
 				player.sendPacket(SM_NEED_MORE);

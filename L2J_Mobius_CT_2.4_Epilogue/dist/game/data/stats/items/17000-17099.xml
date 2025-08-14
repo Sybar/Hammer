@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
 	<item id="17000" type="EtcItem" name="Black Ore Set of Fortune - 90-day limited period">
 		<!-- When used, you acquire a Black Ore Set of Friendship. Expires after 90 days if not used. No exchange/drop available. -->
@@ -102,12 +102,12 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="true" />
 		<set name="is_depositable" val="false" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
-		<for>
+		</conditions>
+		<stats>
 			<add order="0" stat="pDef" val="236" />
-		</for>
+		</stats>
 	</item>
 	<item id="17007" type="Armor" name="Sealed Vesper Noble Leather Breastplate">
 		<!-- Sealed Vesper Noble Leather Breastplate. Seal can be removed by the blacksmith of Mammon or Maestro Ishuma. -->
@@ -124,9 +124,9 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="true" />
 		<set name="is_depositable" val="false" />
-		<for>
+		<stats>
 			<add order="0" stat="pDef" val="177" />
-		</for>
+		</stats>
 	</item>
 	<item id="17008" type="Armor" name="Sealed Vesper Noble Tunic">
 		<!-- Sealed Vesper Noble Tunic. Seal can be removed by the blacksmith of Mammon or Maestro Ishuma. -->
@@ -143,13 +143,13 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="true" />
 		<set name="is_depositable" val="false" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
-		<for>
+		</conditions>
+		<stats>
 			<add order="0" stat="pDef" val="118" />
 			<add stat="maxMp" val="637" />
-		</for>
+		</stats>
 	</item>
 	<item id="17009" type="Armor" name="Sealed Vesper Noble Gaiters">
 		<!-- Sealed Vesper Noble Gaiters. Seal can be removed by the blacksmith of Mammon or Maestro Ishuma. -->
@@ -166,12 +166,12 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="true" />
 		<set name="is_depositable" val="false" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
-		<for>
+		</conditions>
+		<stats>
 			<add order="0" stat="pDef" val="148" />
-		</for>
+		</stats>
 	</item>
 	<item id="17010" type="Armor" name="Sealed Vesper Noble Gauntlet">
 		<!-- Sealed Vesper Noble Gauntlet. Seal can be removed by the blacksmith of Mammon or Maestro Ishuma. -->
@@ -187,12 +187,12 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="true" />
 		<set name="is_depositable" val="false" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
-		<for>
+		</conditions>
+		<stats>
 			<add order="0" stat="pDef" val="68" />
-		</for>
+		</stats>
 	</item>
 	<item id="17011" type="Armor" name="Sealed Vesper Noble Boots">
 		<!-- Sealed Vesper Noble Boots. Seal can be removed by the blacksmith of Mammon or Maestro Ishuma. -->
@@ -208,12 +208,12 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="true" />
 		<set name="is_depositable" val="false" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
-		<for>
+		</conditions>
+		<stats>
 			<add order="0" stat="pDef" val="68" />
-		</for>
+		</stats>
 	</item>
 	<item id="17012" type="Armor" name="Sealed Vesper Noble Leather Leggings">
 		<!-- Sealed Vesper Noble Leather Leggings. Seal can be removed by the blacksmith of Mammon or Maestro Ishuma. -->
@@ -230,9 +230,9 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="true" />
 		<set name="is_depositable" val="false" />
-		<for>
+		<stats>
 			<add order="0" stat="pDef" val="111" />
-		</for>
+		</stats>
 	</item>
 	<item id="17013" type="Armor" name="Sealed Vesper Noble Leather Gloves">
 		<!-- Sealed Vesper Noble Leather Gloves. Seal can be removed by the blacksmith of Mammon or Maestro Ishuma. -->
@@ -248,9 +248,9 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="true" />
 		<set name="is_depositable" val="false" />
-		<for>
+		<stats>
 			<add order="0" stat="pDef" val="68" />
-		</for>
+		</stats>
 	</item>
 	<item id="17014" type="Armor" name="Sealed Vesper Noble Leather Boots">
 		<!-- Sealed Vesper Noble Leather Boots. Seal can be removed by the blacksmith of Mammon or Maestro Ishuma. -->
@@ -266,9 +266,9 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="true" />
 		<set name="is_depositable" val="false" />
-		<for>
+		<stats>
 			<add order="0" stat="pDef" val="68" />
-		</for>
+		</stats>
 	</item>
 	<item id="17015" type="Armor" name="Sealed Vesper Noble Stockings">
 		<!-- Sealed Vesper Noble Stockings. Seal can be removed by the blacksmith of Mammon or Maestro Ishuma. -->
@@ -285,13 +285,13 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="true" />
 		<set name="is_depositable" val="false" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
-		<for>
+		</conditions>
+		<stats>
 			<add order="0" stat="pDef" val="74" />
 			<add stat="maxMp" val="415" />
-		</for>
+		</stats>
 	</item>
 	<item id="17016" type="Armor" name="Sealed Vesper Noble Gloves">
 		<!-- Sealed Vesper Noble Gloves. Seal can be removed by the blacksmith of Mammon or Maestro Ishuma. -->
@@ -307,12 +307,12 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="true" />
 		<set name="is_depositable" val="false" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
-		<for>
+		</conditions>
+		<stats>
 			<add order="0" stat="pDef" val="68" />
-		</for>
+		</stats>
 	</item>
 	<item id="17017" type="Armor" name="Sealed Vesper Noble Shoes">
 		<!-- Sealed Vesper Noble Shoes. Seal can be removed by the blacksmith of Mammon or Maestro Ishuma. -->
@@ -328,11 +328,11 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="true" />
 		<set name="is_depositable" val="false" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
-		<for>
+		</conditions>
+		<stats>
 			<add order="0" stat="pDef" val="68" />
-		</for>
+		</stats>
 	</item>
 </list>

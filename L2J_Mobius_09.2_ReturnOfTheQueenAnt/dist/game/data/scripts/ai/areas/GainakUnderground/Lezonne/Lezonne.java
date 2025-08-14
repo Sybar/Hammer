@@ -34,8 +34,10 @@ public class Lezonne extends AbstractNpcAI
 {
 	// NPC
 	private static final int LEZONNE = 33834;
+	
 	// Items
 	private static final int ADENA = 57;
+	
 	// Skills
 	private static final SkillHolder[] DONATE_BUFFS =
 	{
@@ -83,6 +85,7 @@ public class Lezonne extends AbstractNpcAI
 			}
 			
 		}
+		
 		return htmltext;
 	}
 	

@@ -35,10 +35,12 @@ public class Q00756_TopQualityPetra extends Quest
 {
 	// NPCs
 	private static final int AKU = 33671;
+	
 	// Items
 	private static final int AKU_MARK = 34910;
 	private static final int TOP_QUALITY_PETRA = 35703;
 	private static final int ZAHAK_PETRA = 35702;
+	
 	// Other
 	private static final int MIN_LEVEL = 97;
 	
@@ -75,6 +77,7 @@ public class Q00756_TopQualityPetra extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -116,6 +119,7 @@ public class Q00756_TopQualityPetra extends Quest
 				htmltext = "petra_of_zahaq_q0756_02.htm";
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -132,6 +136,7 @@ public class Q00756_TopQualityPetra extends Quest
 		{
 			htmltext = "sofa_aku_q0756_03.html";
 		}
+		
 		return htmltext;
 	}
 }

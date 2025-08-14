@@ -130,6 +130,7 @@ public class PrisonZone extends ZoneType
 					}
 				}
 			}
+			
 			stopEffects(player);
 		}
 	}

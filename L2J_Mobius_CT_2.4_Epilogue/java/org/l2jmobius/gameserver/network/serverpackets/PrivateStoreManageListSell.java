@@ -50,10 +50,12 @@ public class PrivateStoreManageListSell extends ServerPacket
 	public void writeImpl(GameClient client, WritableBuffer buffer)
 	{
 		ServerPackets.PRIVATE_STORE_SELL_MANAGE_LIST.writeId(this, buffer);
+		
 		// section 1
 		buffer.writeInt(_objId);
 		buffer.writeInt(_packageSale); // Package sell
 		buffer.writeLong(_playerAdena);
+		
 		// section2
 		buffer.writeInt(_itemList.size()); // for potential sells
 		for (TradeItem item : _itemList)
@@ -67,6 +69,7 @@ public class PrivateStoreManageListSell extends ServerPacket
 			buffer.writeShort(item.getCustomType2());
 			buffer.writeInt(item.getItem().getBodyPart());
 			buffer.writeLong(item.getPrice()); // store price
+			
 			// T1
 			buffer.writeShort(item.getAttackElementType());
 			buffer.writeShort(item.getAttackElementPower());
@@ -74,11 +77,13 @@ public class PrivateStoreManageListSell extends ServerPacket
 			{
 				buffer.writeShort(item.getElementDefAttr(i));
 			}
+			
 			for (int op : item.getEnchantOptions())
 			{
 				buffer.writeShort(op);
 			}
 		}
+		
 		// section 3
 		buffer.writeInt(_sellList.size()); // count for any items already added for sell
 		for (TradeItem item : _sellList)
@@ -93,6 +98,7 @@ public class PrivateStoreManageListSell extends ServerPacket
 			buffer.writeInt(item.getItem().getBodyPart());
 			buffer.writeLong(item.getPrice()); // your price
 			buffer.writeLong(item.getItem().getReferencePrice()); // store price
+			
 			// T1
 			buffer.writeShort(item.getAttackElementType());
 			buffer.writeShort(item.getAttackElementPower());
@@ -100,6 +106,7 @@ public class PrivateStoreManageListSell extends ServerPacket
 			{
 				buffer.writeShort(item.getElementDefAttr(i));
 			}
+			
 			for (int op : item.getEnchantOptions())
 			{
 				buffer.writeShort(op);

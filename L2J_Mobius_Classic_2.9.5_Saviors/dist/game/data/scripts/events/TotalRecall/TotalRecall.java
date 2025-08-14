@@ -35,6 +35,7 @@ public class TotalRecall extends LongTimeEvent
 {
 	// NPC
 	private static final int FROG = 9013;
+	
 	// Skill
 	private static final SkillHolder FROG_KISS = new SkillHolder(55314, 1);
 	
@@ -65,6 +66,7 @@ public class TotalRecall extends LongTimeEvent
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

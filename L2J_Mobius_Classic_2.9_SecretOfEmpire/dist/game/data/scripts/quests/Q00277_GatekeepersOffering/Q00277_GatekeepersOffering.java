@@ -31,11 +31,14 @@ public class Q00277_GatekeepersOffering extends Quest
 {
 	// NPC
 	private static final int TAMIL = 30576;
+	
 	// Monster
 	private static final int GREYSTONE_GOLEM = 20333;
+	
 	// Items
 	private static final int STARSTONE = 1572;
 	private static final int GATEKEEPER_CHARM = 1658;
+	
 	// Misc
 	private static final int MIN_LEVEL = 15;
 	private static final int STARSTONE_COUT = 20;
@@ -60,9 +63,11 @@ public class Q00277_GatekeepersOffering extends Quest
 			{
 				return "30576-01.htm";
 			}
+			
 			qs.startQuest();
 			return event;
 		}
+		
 		return null;
 	}
 	
@@ -111,6 +116,7 @@ public class Q00277_GatekeepersOffering extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

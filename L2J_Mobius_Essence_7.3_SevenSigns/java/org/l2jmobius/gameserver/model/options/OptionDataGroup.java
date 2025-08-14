@@ -54,11 +54,13 @@ public class OptionDataGroup
 					}
 					continue;
 				}
+				
 				if (category.getChance() >= random)
 				{
 					result = category.getRandomOptions();
 					break;
 				}
+				
 				random -= category.getChance();
 			}
 		}

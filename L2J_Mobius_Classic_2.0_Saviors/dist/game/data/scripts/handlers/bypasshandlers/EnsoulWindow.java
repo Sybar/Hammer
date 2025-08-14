@@ -34,7 +34,7 @@ public class EnsoulWindow implements IBypassHandler
 	};
 	
 	@Override
-	public boolean useBypass(String command, Player player, Creature target)
+	public boolean onCommand(String command, Player player, Creature target)
 	{
 		if (!target.isNpc())
 		{
@@ -51,11 +51,12 @@ public class EnsoulWindow implements IBypassHandler
 			player.sendPacket(ExShowEnsoulExtractionWindow.STATIC_PACKET);
 			return true;
 		}
+		
 		return false;
 	}
 	
 	@Override
-	public String[] getBypassList()
+	public String[] getCommandList()
 	{
 		return COMMANDS;
 	}

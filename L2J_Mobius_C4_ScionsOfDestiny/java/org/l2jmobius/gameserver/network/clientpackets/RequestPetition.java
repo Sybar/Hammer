@@ -21,7 +21,6 @@ import org.l2jmobius.gameserver.data.xml.AdminData;
 import org.l2jmobius.gameserver.managers.PetitionManager;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.network.SystemMessageId;
-import org.l2jmobius.gameserver.network.serverpackets.PlaySound;
 import org.l2jmobius.gameserver.network.serverpackets.SystemMessage;
 
 /**
@@ -62,7 +61,6 @@ public class RequestPetition extends ClientPacket
 		
 		if (!AdminData.getInstance().isGmOnline(false))
 		{
-			player.sendPacket(new PlaySound("systemmsg_e.702"));
 			player.sendPacket(SystemMessageId.THERE_ARE_NOT_ANY_GMS_THAT_ARE_PROVIDING_CUSTOMER_SERVICE_CURRENTLY);
 			return;
 		}

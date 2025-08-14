@@ -84,26 +84,31 @@ public class ExElementalSpiritExtract extends ClientPacket
 			player.sendPacket(SystemMessageId.NOT_ENOUGH_ATTRIBUTE_XP_FOR_EXTRACTION);
 			return false;
 		}
+		
 		if (!player.getInventory().validateCapacity(1))
 		{
 			player.sendPacket(SystemMessageId.UNABLE_TO_EXTRACT_BECAUSE_INVENTORY_IS_FULL);
 			return false;
 		}
+		
 		if (player.isInStoreMode())
 		{
 			player.sendPacket(SystemMessageId.CANNOT_EVOLVE_ABSORB_EXTRACT_WHILE_USING_THE_PRIVATE_STORE_WORKSHOP);
 			return false;
 		}
+		
 		if (player.isInBattle())
 		{
 			player.sendPacket(SystemMessageId.UNABLE_TO_EVOLVE_DURING_BATTLE);
 			return false;
 		}
+		
 		if (!player.reduceAdena(ItemProcessType.FEE, ElementalSpiritData.EXTRACT_FEES[spirit.getStage() - 1], player, true))
 		{
 			player.sendPacket(SystemMessageId.NOT_ENOUGH_INGREDIENTS_TO_EXTRACT);
 			return false;
 		}
+		
 		return true;
 	}
 }

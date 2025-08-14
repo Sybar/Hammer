@@ -36,13 +36,16 @@ public class Q00127_FishingSpecialistsRequest extends Quest
 	private static final int PIERRE = 30013;
 	private static final int FERMA = 30015;
 	private static final int BAIKAL = 30016;
+	
 	// Items
 	private static final int PIERRE_LETTER = 49510;
 	private static final int FISH_REPORT = 49504;
 	private static final int SEALED_BOTTLE = 49505;
 	private static final int FISHING_ROD_CHEST = 49507;
+	
 	// Location
 	private static final Location TELEPORT_LOC = new Location(105276, 162500, -3600);
+	
 	// Misc
 	private static final int MIN_LEVEL = 20;
 	private static final int MAX_LEVEL = 75;
@@ -81,6 +84,7 @@ public class Q00127_FishingSpecialistsRequest extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -172,6 +176,7 @@ public class Q00127_FishingSpecialistsRequest extends Quest
 		{
 			htmltext = getAlreadyCompletedMsg(player);
 		}
+		
 		return htmltext;
 	}
 }

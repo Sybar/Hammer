@@ -41,6 +41,7 @@ public class Q10838_TheReasonForNotBeingAbleToGetOut extends Quest
 {
 	// NPC
 	private static final int HURAK = 34064;
+	
 	// Monsters
 	private static final int[] MONSTERS =
 	{
@@ -49,10 +50,12 @@ public class Q10838_TheReasonForNotBeingAbleToGetOut extends Quest
 		23507, // Atelia Passionate Soldier
 		23508 // Atelia Elite Captain
 	};
+	
 	// Items
 	private static final int BLACKBIRD_REPORT_HURAK = 46135;
 	private static final int BLACKBIRD_SEAL = 46132;
 	private static final int DARK_ATELIA_NATURALIZER = 46133;
+	
 	// Misc
 	private static final int MIN_LEVEL = 101;
 	private static final String KILL_COUNT_VAR = "KillCount";
@@ -100,6 +103,7 @@ public class Q10838_TheReasonForNotBeingAbleToGetOut extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -117,6 +121,7 @@ public class Q10838_TheReasonForNotBeingAbleToGetOut extends Quest
 					htmltext = "34064-03.htm";
 					break;
 				}
+				
 				htmltext = "34064-01.htm";
 				break;
 			}
@@ -138,6 +143,7 @@ public class Q10838_TheReasonForNotBeingAbleToGetOut extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -159,6 +165,7 @@ public class Q10838_TheReasonForNotBeingAbleToGetOut extends Quest
 				{
 					giveItems(killer, DARK_ATELIA_NATURALIZER, 1);
 				}
+				
 				playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 			}
 		}
@@ -178,6 +185,7 @@ public class Q10838_TheReasonForNotBeingAbleToGetOut extends Quest
 				return holder;
 			}
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

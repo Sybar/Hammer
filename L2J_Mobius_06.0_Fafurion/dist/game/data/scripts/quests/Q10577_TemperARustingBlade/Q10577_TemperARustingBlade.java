@@ -44,14 +44,17 @@ public class Q10577_TemperARustingBlade extends Quest
 {
 	// NPCs
 	private static final int FLUTTER = 30677;
+	
 	// Item
 	private static final int AUGMENTATION_PRACTICE_STORMBRINGER = 36717;
 	private static final int AUGMENTATION_PRACTICE_SPIRIT_STONE = 36718;
 	private static final int AUGMENTATION_PRACTICE_GEMSTONE = 36719;
+	
 	// Rewards
 	private static final long XP = 597699960;
 	private static final int SP = 597690;
 	private static final int CERTIFICATE_FROM_FLUTTER = 48175;
+	
 	// Misc
 	private static final int MIN_LEVEL = 95;
 	
@@ -74,6 +77,7 @@ public class Q10577_TemperARustingBlade extends Quest
 		{
 			return getNoQuestMsg(player);
 		}
+		
 		String htmltext = null;
 		switch (event)
 		{
@@ -117,6 +121,7 @@ public class Q10577_TemperARustingBlade extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -154,6 +159,7 @@ public class Q10577_TemperARustingBlade extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -166,6 +172,7 @@ public class Q10577_TemperARustingBlade extends Quest
 		}
 		
 		final QuestState qs = getQuestState(player, false);
+		
 		// Check if weapon has been augmented to complete the quest
 		if ((qs != null) && qs.isCond(2) && (player.getInventory().getItemByItemId(AUGMENTATION_PRACTICE_STORMBRINGER).isAugmented()))
 		{

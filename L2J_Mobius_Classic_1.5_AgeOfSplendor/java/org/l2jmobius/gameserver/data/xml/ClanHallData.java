@@ -103,6 +103,7 @@ public class ClanHallData implements IXmlReader
 											npcs.add(npcId);
 										}
 									}
+									
 									params.set("npcList", npcs);
 									break;
 								}
@@ -121,6 +122,7 @@ public class ClanHallData implements IXmlReader
 											}
 										}
 									}
+									
 									params.set("doorList", doors);
 									break;
 								}
@@ -140,6 +142,7 @@ public class ClanHallData implements IXmlReader
 											teleports.add(new ClanHallTeleportHolder(npcStringId, x, y, z, minFunctionLevel, cost));
 										}
 									}
+									
 									params.set("teleportList", teleports);
 									break;
 								}
@@ -161,6 +164,7 @@ public class ClanHallData implements IXmlReader
 				}
 			}
 		}
+		
 		_clanHalls.put(params.getInt("id"), new ClanHall(params));
 	}
 	
@@ -183,6 +187,7 @@ public class ClanHallData implements IXmlReader
 				return ch;
 			}
 		}
+		
 		return null;
 	}
 	
@@ -195,6 +200,7 @@ public class ClanHallData implements IXmlReader
 				return ch;
 			}
 		}
+		
 		return null;
 	}
 	
@@ -208,6 +214,7 @@ public class ClanHallData implements IXmlReader
 				return ch;
 			}
 		}
+		
 		return null;
 	}
 	
@@ -221,6 +228,7 @@ public class ClanHallData implements IXmlReader
 				freeAuctionableHalls.add(ch);
 			}
 		}
+		
 		Collections.sort(freeAuctionableHalls, Comparator.comparingInt(ClanHall::getResidenceId));
 		return freeAuctionableHalls;
 	}

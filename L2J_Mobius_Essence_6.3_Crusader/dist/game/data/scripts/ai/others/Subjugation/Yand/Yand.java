@@ -34,8 +34,10 @@ public class Yand extends AbstractNpcAI
 {
 	// NPC
 	private static final int YAND = 34327;
+	
 	// Item
 	private static final int MORGOS_MILITARY_SCROLL_MS = 90318605;
+	
 	// Location
 	private static final Location TELEPORT_LOC = new Location(146915, -82589, -5128);
 	
@@ -58,6 +60,7 @@ public class Yand extends AbstractNpcAI
 				{
 					return "34327-01.html";
 				}
+				
 				player.teleToLocation(TELEPORT_LOC);
 				player.getVariables().set("MORGOS_MILITARY_FREE", 0);
 				break;
@@ -68,6 +71,7 @@ public class Yand extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return null;
 	}
 	

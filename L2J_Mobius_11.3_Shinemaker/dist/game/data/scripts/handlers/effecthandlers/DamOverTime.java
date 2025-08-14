@@ -101,6 +101,7 @@ public class DamOverTime extends AbstractEffect
 				{
 					return skill.isToggle();
 				}
+				
 				damage = effected.getCurrentHp() - 1;
 			}
 		}

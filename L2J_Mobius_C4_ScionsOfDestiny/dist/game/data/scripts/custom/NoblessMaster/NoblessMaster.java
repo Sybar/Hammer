@@ -21,6 +21,7 @@
 package custom.NoblessMaster;
 
 import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.data.xml.ItemData;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.quest.QuestSound;
@@ -58,16 +59,30 @@ public class NoblessMaster extends AbstractNpcAI
 				{
 					return "1003000-3.htm";
 				}
+				
+				if (Config.NOBLESS_MASTER_ITEM_COUNT > 0)
+				{
+					if (getQuestItemsCount(player, Config.NOBLESS_MASTER_ITEM_ID) < Config.NOBLESS_MASTER_ITEM_COUNT)
+					{
+						player.sendMessage(Config.NOBLESS_MASTER_ITEM_COUNT + " unit(s) of the item " + ItemData.getInstance().getTemplate(Config.NOBLESS_MASTER_ITEM_ID).getName() + " is/are required.");
+						return "1003000-4.htm";
+					}
+					
+					takeItems(player, Config.NOBLESS_MASTER_ITEM_ID, Config.NOBLESS_MASTER_ITEM_COUNT);
+				}
+				
 				if (player.getLevel() >= Config.NOBLESS_MASTER_LEVEL_REQUIREMENT)
 				{
 					if (Config.NOBLESS_MASTER_REWARD_TIARA)
 					{
 						giveItems(player, NOBLESS_TIARA, 1);
 					}
+					
 					player.setNoble(true);
 					player.sendPacket(QuestSound.ITEMSOUND_QUEST_FINISH.getPacket());
 					return "1003000-1.htm";
 				}
+				
 				return "1003000-2.htm";
 			}
 		}

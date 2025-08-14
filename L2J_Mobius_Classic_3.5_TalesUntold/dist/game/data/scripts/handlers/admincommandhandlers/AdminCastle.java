@@ -42,7 +42,7 @@ public class AdminCastle implements IAdminCommandHandler
 	};
 	
 	@Override
-	public boolean useAdminCommand(String command, Player activeChar)
+	public boolean onCommand(String command, Player activeChar)
 	{
 		final StringTokenizer st = new StringTokenizer(command, " ");
 		final String actualCommand = st.nextToken();
@@ -152,6 +152,7 @@ public class AdminCastle implements IAdminCommandHandler
 							{
 								activeChar.sendSysMessage("Castle siege is not currently in progress!");
 							}
+							
 							showCastleMenu(activeChar, castle.getResidenceId());
 							break;
 						}
@@ -182,6 +183,7 @@ public class AdminCastle implements IAdminCommandHandler
 									castle.setOwner(target.getClan());
 								}
 							}
+							
 							showCastleMenu(activeChar, castle.getResidenceId());
 							break;
 						}
@@ -196,6 +198,7 @@ public class AdminCastle implements IAdminCommandHandler
 							{
 								activeChar.sendSysMessage("Error during removing castle!");
 							}
+							
 							showCastleMenu(activeChar, castle.getResidenceId());
 							break;
 						}
@@ -213,6 +216,7 @@ public class AdminCastle implements IAdminCommandHandler
 							{
 								activeChar.sendSysMessage("You can't switch sides when is castle neutral!");
 							}
+							
 							showCastleMenu(activeChar, castle.getResidenceId());
 							break;
 						}
@@ -226,6 +230,7 @@ public class AdminCastle implements IAdminCommandHandler
 				activeChar.sendPacket(html);
 			}
 		}
+		
 		return true;
 	}
 	
@@ -252,7 +257,7 @@ public class AdminCastle implements IAdminCommandHandler
 	}
 	
 	@Override
-	public String[] getAdminCommandList()
+	public String[] getCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}

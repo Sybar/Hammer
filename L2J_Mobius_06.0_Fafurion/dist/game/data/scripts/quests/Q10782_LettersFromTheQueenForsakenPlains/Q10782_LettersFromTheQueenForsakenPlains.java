@@ -34,11 +34,14 @@ public class Q10782_LettersFromTheQueenForsakenPlains extends LetterQuest
 	// NPCs
 	private static final int ORVEN = 30857;
 	private static final int NOVAIN = 33866;
+	
 	// Items
 	private static final int SOE_ADEN = 39576;
 	private static final int SOE_FORSAKEN_PLAINS = 39577;
+	
 	// Location
 	private static final Location TELEPORT_LOC = new Location(147446, 22761, -1984);
+	
 	// Misc
 	private static final int MIN_LEVEL = 56;
 	private static final int MAX_LEVEL = 60;
@@ -95,6 +98,7 @@ public class Q10782_LettersFromTheQueenForsakenPlains extends LetterQuest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -119,6 +123,7 @@ public class Q10782_LettersFromTheQueenForsakenPlains extends LetterQuest
 				htmltext = "33866-01.html";
 			}
 		}
+		
 		return htmltext;
 	}
 }

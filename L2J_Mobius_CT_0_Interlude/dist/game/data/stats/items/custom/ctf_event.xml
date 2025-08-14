@@ -20,9 +20,9 @@
 		<set name="isForceEquip" val="true" />
 		<set name="isAttackWeapon" val="false" />
 		<set name="useWeaponSkillsOnly" val="true" />
-		<for>
+		<stats>
 			<set stat="pAtkSpd" val="325" />
-		</for>
+		</stats>
 	</item>
 	<item id="13534" type="Weapon" name="Red Flag">
 		<set name="icon" val="icon.weapon_monster_i00" />
@@ -44,8 +44,8 @@
 		<set name="isForceEquip" val="true" />
 		<set name="isAttackWeapon" val="false" />
 		<set name="useWeaponSkillsOnly" val="true" />
-		<for>
+		<stats>
 			<set stat="pAtkSpd" val="325" />
-		</for>
+		</stats>
 	</item>
 </list>

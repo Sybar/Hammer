@@ -42,6 +42,7 @@ public class ResidenceOfKingProcella extends AbstractInstance
 	private static final int PROCELLA_GUARDIAN_2 = 29113;
 	private static final int PROCELLA_GUARDIAN_3 = 29114;
 	private static final int PROCELLA_STORM = 29115;
+	
 	// Skills
 	private static final SkillHolder HURRICANE_SUMMON = new SkillHolder(50042, 1); // When spawn Minion
 	private static final int HURRICANE_BOLT = 50043;
@@ -142,6 +143,7 @@ public class ResidenceOfKingProcella extends AbstractInstance
 								npc.doCast(HURRICANE_BOLT_LV_1.getSkill());
 							}
 						}
+						
 						startQuestTimer("CHECK_CHAR_INSIDE_RADIUS_NPC", 100, npc, player); // All time checking
 					}
 					else
@@ -152,6 +154,7 @@ public class ResidenceOfKingProcella extends AbstractInstance
 				break;
 			}
 		}
+		
 		return null;
 	}
 	

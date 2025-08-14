@@ -39,6 +39,7 @@ public class Q00004_LongLiveThePaagrioLord extends Quest
 	private static final int NAKUSIN = 30578;
 	private static final int HESTUI = 30585;
 	private static final int URUTU = 30587;
+	
 	// Items
 	private static final int HONEY_KHANDAR = 1541;
 	private static final int BEAR_FUR_CLOAK = 1542;
@@ -46,8 +47,10 @@ public class Q00004_LongLiveThePaagrioLord extends Quest
 	private static final int ANCESTOR_SKULL = 1544;
 	private static final int SPIDER_DUST = 1545;
 	private static final int DEEP_SEA_ORB = 1546;
+	
 	// Rewards
 	private static final int CLUB = 49051; // Club (Novice)
+	
 	// Misc
 	private static final int MIN_LEVEL = 2;
 	private static final int MAX_LEVEL = 5;
@@ -88,6 +91,7 @@ public class Q00004_LongLiveThePaagrioLord extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -162,6 +166,7 @@ public class Q00004_LongLiveThePaagrioLord extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -175,12 +180,14 @@ public class Q00004_LongLiveThePaagrioLord extends Quest
 		{
 			return npcId + "-02.html";
 		}
+		
 		giveItems(player, itemId, 1);
 		playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 		if (hasQuestItems(player, items))
 		{
 			qs.setCond(2, true);
 		}
+		
 		return npcId + "-01.html";
 	}
 }

@@ -217,6 +217,7 @@ public class CharSelectInfoPackage
 		{
 			return _face;
 		}
+		
 		return _vars.getInt("visualFaceId", _face);
 	}
 	
@@ -231,6 +232,7 @@ public class CharSelectInfoPackage
 		{
 			return _hairColor;
 		}
+		
 		return _vars.getInt("visualHairColorId", _hairColor);
 	}
 	
@@ -245,6 +247,7 @@ public class CharSelectInfoPackage
 		{
 			return _hairStyle;
 		}
+		
 		return _vars.getInt("visualHairId", _hairStyle);
 	}
 	

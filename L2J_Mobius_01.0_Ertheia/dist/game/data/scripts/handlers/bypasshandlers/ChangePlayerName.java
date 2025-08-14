@@ -45,7 +45,7 @@ public class ChangePlayerName implements IBypassHandler
 	};
 	
 	@Override
-	public boolean useBypass(String command, Player player, Creature target)
+	public boolean onCommand(String command, Player player, Creature target)
 	{
 		// Need to have at least one Name Change Ticket in order to proceed.
 		final PlayerInventory inventory = player.getInventory();
@@ -60,6 +60,7 @@ public class ChangePlayerName implements IBypassHandler
 			player.sendMessage("Name must only contain alphanumeric characters.");
 			return false;
 		}
+		
 		if (CharInfoTable.getInstance().doesCharNameExist(newName))
 		{
 			player.sendMessage("Name " + newName + " already exists.");
@@ -91,6 +92,7 @@ public class ChangePlayerName implements IBypassHandler
 				}
 			}
 		}
+		
 		final Clan clan = player.getClan();
 		if (clan != null)
 		{
@@ -101,7 +103,7 @@ public class ChangePlayerName implements IBypassHandler
 	}
 	
 	@Override
-	public String[] getBypassList()
+	public String[] getCommandList()
 	{
 		return COMMANDS;
 	}

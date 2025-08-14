@@ -46,11 +46,13 @@ public class RequestExPledgeSkillActivate extends ClientPacket
 		{
 			return;
 		}
+		
 		final Clan clan = player.getClan();
 		if (clan == null)
 		{
 			return;
 		}
+		
 		if (player.getObjectId() != clan.getLeaderId())
 		{
 			player.sendMessage("You do not have enough privileges to take this action.");
@@ -93,11 +95,13 @@ public class RequestExPledgeSkillActivate extends ClientPacket
 				break;
 			}
 		}
+		
 		if (clan.getReputationScore() < cost)
 		{
 			player.sendMessage("Your clan reputation is lower than the requirement.");
 			return;
 		}
+		
 		if (!clan.hasMastery(previous))
 		{
 			player.sendMessage("You need to learn the previous mastery.");

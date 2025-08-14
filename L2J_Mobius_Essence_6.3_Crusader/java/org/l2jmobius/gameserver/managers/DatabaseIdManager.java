@@ -153,6 +153,7 @@ public class DatabaseIdManager
 				LOGGER.warning("DatabaseIdManager: Could not execute cleanup query: " + query + " - " + e);
 			}
 		}
+		
 		LOGGER.info("DatabaseIdManager: Cleaned " + cleanCount + " elements in " + ((System.currentTimeMillis() - cleanupStart) / 1000) + " seconds.");
 		
 		for (String query : UPDATE_QUERIES)
@@ -202,6 +203,7 @@ public class DatabaseIdManager
 					cleanCount += statement.executeUpdate();
 				}
 			}
+			
 			LOGGER.info("DatabaseIdManager: Cleaned " + cleanCount + " expired timestamps.");
 		}
 		catch (Exception e)

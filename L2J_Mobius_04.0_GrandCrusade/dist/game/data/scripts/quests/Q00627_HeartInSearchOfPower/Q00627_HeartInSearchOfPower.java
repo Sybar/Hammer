@@ -19,7 +19,6 @@ package quests.Q00627_HeartInSearchOfPower;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.quest.Quest;
@@ -36,15 +35,16 @@ public class Q00627_HeartInSearchOfPower extends Quest
 	// NPCs
 	private static final int MYSTERIOUS_NECROMANCER = 31518;
 	private static final int ENFEUX = 31519;
+	
 	// Items
 	private static final int SEAL_OF_LIGHT = 7170;
 	private static final int BEAD_OF_OBEDIENCE = 7171;
 	private static final int GEM_OF_SAINTS = 7172;
 	private static final int COKES = 36561;
 	private static final int LOW_GRADE_ARMOR = 36551;
+	
 	// Monsters
 	private static final Map<Integer, Integer> MONSTERS = new HashMap<>();
-	
 	static
 	{
 		MONSTERS.put(21520, 661); // Eye of Splendor
@@ -85,6 +85,7 @@ public class Q00627_HeartInSearchOfPower extends Quest
 		{
 			return null;
 		}
+		
 		String htmltext = event;
 		switch (event)
 		{
@@ -99,6 +100,7 @@ public class Q00627_HeartInSearchOfPower extends Quest
 				{
 					return "31518-05.html";
 				}
+				
 				giveItems(player, SEAL_OF_LIGHT, 1);
 				takeItems(player, BEAD_OF_OBEDIENCE, -1);
 				qs.setCond(3);
@@ -139,6 +141,7 @@ public class Q00627_HeartInSearchOfPower extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -148,9 +151,7 @@ public class Q00627_HeartInSearchOfPower extends Quest
 		final Player partyMember = getRandomPartyMember(killer, 1);
 		if (partyMember != null)
 		{
-			final QuestState qs = getQuestState(partyMember, false);
-			final float chance = (MONSTERS.get(npc.getId()) * Config.RATE_QUEST_DROP);
-			if (getRandom(1000) < chance)
+			if (getRandom(1000) < MONSTERS.get(npc.getId()))
 			{
 				giveItems(partyMember, BEAD_OF_OBEDIENCE, 1);
 				if (getQuestItemsCount(partyMember, BEAD_OF_OBEDIENCE) < BEAD_OF_OBEDIENCE_COUNT_REQUIRED)
@@ -159,6 +160,7 @@ public class Q00627_HeartInSearchOfPower extends Quest
 				}
 				else
 				{
+					final QuestState qs = getQuestState(partyMember, false);
 					qs.setCond(2, true);
 				}
 			}
@@ -223,6 +225,7 @@ public class Q00627_HeartInSearchOfPower extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

@@ -41,6 +41,7 @@ public class Q10389_TheVoiceOfAuthority extends Quest
 {
 	// NPCs
 	private static final int RADZEN = 33803;
+	
 	// Monsters
 	private static final int[] MONSTERS =
 	{
@@ -55,6 +56,7 @@ public class Q10389_TheVoiceOfAuthority extends Quest
 		22154, // Ritual Sacrifice
 		22155, // Triol's High Priest
 	};
+	
 	// Misc
 	private static final int MIN_LEVEL = 97;
 	private static final String KILL_COUNT_VAR = "KillCount";
@@ -96,6 +98,7 @@ public class Q10389_TheVoiceOfAuthority extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -129,6 +132,7 @@ public class Q10389_TheVoiceOfAuthority extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -165,6 +169,7 @@ public class Q10389_TheVoiceOfAuthority extends Quest
 				return holder;
 			}
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

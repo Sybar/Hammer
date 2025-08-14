@@ -42,6 +42,7 @@ public class Q00217_TestimonyOfTrust extends Quest
 	private static final int LOCKIRIN = 30531;
 	private static final int NIKOLA = 30621;
 	private static final int BIOTIN = 30031;
+	
 	// Monsters
 	private static final int DRYAD = 20013;
 	private static final int DRYAD_ELDER = 20019;
@@ -61,6 +62,7 @@ public class Q00217_TestimonyOfTrust extends Quest
 	private static final int MARSH_STAKATO_DRONE = 20234;
 	private static final int WINDSUS = 20553;
 	private static final int PORTA = 20213;
+	
 	// Items
 	private static final int LETTER_TO_ELF = 2735;
 	private static final int LETTER_TO_DARK_ELF = 2736;
@@ -89,6 +91,7 @@ public class Q00217_TestimonyOfTrust extends Quest
 	private static final int LETTER_TO_NIKOLA = 2759;
 	private static final int ORDER_OF_NIKOLA = 2760;
 	private static final int HEARTSTONE_OF_PORTA = 2761;
+	
 	// Rewards
 	private static final int MARK_OF_TRUST = 2734;
 	private static final int DIMENSIONAL_DIAMOND = 7562;

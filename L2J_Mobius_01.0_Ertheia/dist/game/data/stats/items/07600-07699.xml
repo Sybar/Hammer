@@ -219,9 +219,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2213" level="20" /> <!-- Scroll of Escape: Ketra Orc Village -->
 		</skills>
@@ -237,9 +237,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2213" level="21" /> <!-- Scroll of Escape: Varka Silenos Village -->
 		</skills>
@@ -954,9 +954,9 @@
 		<set name="commissionItemType" val="HAIR_ACCESSORY" />
 		<set name="isAppearanceable" val="true" />
 		<set name="price" val="50000" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player sex="1" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="7683" name="Rabbit Ears" type="Armor">
 		<!-- Hair accessory in the shape of Rabbit Ears. -->
@@ -1124,9 +1124,9 @@
 		<set name="commissionItemType" val="HAIR_ACCESSORY" />
 		<set name="isAppearanceable" val="true" />
 		<set name="price" val="50000" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player sex="1" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="7696" name="Daisy Hairpin" type="Armor">
 		<!-- Hairpin with a daisy pattern. Hair accessory exclusively for female characters. -->
@@ -1140,9 +1140,9 @@
 		<set name="commissionItemType" val="HAIR_ACCESSORY" />
 		<set name="isAppearanceable" val="true" />
 		<set name="price" val="50000" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player sex="1" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="7697" name="Forget-me-not Hairpin Fragment" type="EtcItem">
 		<!-- Indispensable raw material that is needed to make a Forget-me-not Hairpin. It can be sold at a general store. -->

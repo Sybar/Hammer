@@ -80,6 +80,7 @@ public class MoveToLocationAirShip extends ClientPacket
 				{
 					return;
 				}
+				
 				if (_param1 < World.GRACIA_MAX_X)
 				{
 					ship.getAI().setIntention(Intention.MOVE_TO, new Location(_param1, _param2, z));
@@ -92,6 +93,7 @@ public class MoveToLocationAirShip extends ClientPacket
 				{
 					return;
 				}
+				
 				ship.getAI().setIntention(Intention.ACTIVE);
 				break;
 			}
@@ -101,6 +103,7 @@ public class MoveToLocationAirShip extends ClientPacket
 				{
 					return;
 				}
+				
 				if (z < World.GRACIA_MAX_Z)
 				{
 					z = Math.min(z + STEP, World.GRACIA_MAX_Z);
@@ -114,6 +117,7 @@ public class MoveToLocationAirShip extends ClientPacket
 				{
 					return;
 				}
+				
 				if (z > World.GRACIA_MIN_Z)
 				{
 					z = Math.max(z - STEP, World.GRACIA_MIN_Z);
@@ -143,6 +147,7 @@ public class MoveToLocationAirShip extends ClientPacket
 						player.sendPacket(SystemMessageId.YOUR_AIRSHIP_CANNOT_TELEPORT_BECAUSE_DUE_TO_LOW_FUEL);
 						return;
 					}
+					
 					ship.setFuel(ship.getFuel() - fuelConsumption);
 				}
 				

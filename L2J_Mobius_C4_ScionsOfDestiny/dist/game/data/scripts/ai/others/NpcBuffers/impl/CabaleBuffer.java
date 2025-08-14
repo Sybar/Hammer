@@ -96,6 +96,7 @@ public class CabaleBuffer extends AbstractNpcAI
 				{
 					messages = PREACHER_MSG;
 				}
+				
 				broadcastSay(_npc, getRandomEntry(messages), -1);
 				ThreadPool.schedule(this, 60000);
 			}
@@ -155,6 +156,7 @@ public class CabaleBuffer extends AbstractNpcAI
 							{
 								broadcastSay(_npc, "I bestow upon you a blessing!", 1);
 							}
+							
 							isBuffAWinner = true;
 							continue;
 						}
@@ -171,6 +173,7 @@ public class CabaleBuffer extends AbstractNpcAI
 							{
 								broadcastSay(_npc, "Herald of the new era, open your eyes!", 1);
 							}
+							
 							isBuffAWinner = true;
 							continue;
 						}
@@ -190,6 +193,7 @@ public class CabaleBuffer extends AbstractNpcAI
 							{
 								broadcastSay(_npc, "You don't have any hope! Your end has come!", 1);
 							}
+							
 							isBuffALoser = true;
 							continue;
 						}
@@ -206,6 +210,7 @@ public class CabaleBuffer extends AbstractNpcAI
 							{
 								broadcastSay(_npc, player.getName() + "! You bring an ill wind!", 1);
 							}
+							
 							isBuffALoser = true;
 							continue;
 						}
@@ -217,6 +222,7 @@ public class CabaleBuffer extends AbstractNpcAI
 					break;
 				}
 			}
+			
 			ThreadPool.schedule(this, 3000);
 		}
 		
@@ -264,6 +270,7 @@ public class CabaleBuffer extends AbstractNpcAI
 				_npc.doCast(skill);
 				return true;
 			}
+			
 			return false;
 		}
 	}

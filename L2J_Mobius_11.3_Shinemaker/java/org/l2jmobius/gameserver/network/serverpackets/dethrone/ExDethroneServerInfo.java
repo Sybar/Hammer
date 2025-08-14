@@ -48,6 +48,7 @@ public class ExDethroneServerInfo extends ServerPacket
 	public void writeImpl(GameClient client, WritableBuffer buffer)
 	{
 		ServerPackets.EX_DETHRONE_SERVER_INFO.writeId(this, buffer);
+		
 		// Receiving Server Points
 		buffer.writeInt(1); // array size (only one server atm)
 		

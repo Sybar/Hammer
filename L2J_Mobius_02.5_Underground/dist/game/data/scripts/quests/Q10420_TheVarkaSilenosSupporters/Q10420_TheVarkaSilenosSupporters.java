@@ -59,8 +59,10 @@ public class Q10420_TheVarkaSilenosSupporters extends Quest
 		21357, // Varka Silenos Priest
 		27515, // Varka Backup Wizard
 	};
+	
 	// Items
 	private static final int EAS = 26353; // Scroll: Enchant Armor (S-grade)
+	
 	// Misc
 	private static final int MIN_LEVEL = 76;
 	
@@ -111,11 +113,13 @@ public class Q10420_TheVarkaSilenosSupporters extends Quest
 					{
 						addExpAndSp(player, 22_997_520, 5519);
 					}
+					
 					htmltext = event;
 				}
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -142,6 +146,7 @@ public class Q10420_TheVarkaSilenosSupporters extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -203,6 +208,7 @@ public class Q10420_TheVarkaSilenosSupporters extends Quest
 			npcLogList.add(new NpcLogListHolder(EMBRYO_WIZARD, false, qs.getInt("KillCount_" + EMBRYO_WIZARD)));
 			return npcLogList;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

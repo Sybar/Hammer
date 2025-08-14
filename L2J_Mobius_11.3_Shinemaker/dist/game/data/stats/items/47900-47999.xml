@@ -214,9 +214,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="time" val="43200" />
-		<cond msgId="2453">
+		<conditions msgId="2453">
 			<player cloakStatus="true" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="mDef">80</stat>
 			<stat type="pDef">100</stat>
@@ -236,9 +236,9 @@
 		<set name="material" val="PAPER" />
 		<set name="handler" val="ItemSkills" />
 		<set name="reuse_delay" val="300000" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="18797" level="1" /> <!-- Nevit's Gold Hourglass -->
 		</skills>
@@ -253,9 +253,9 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="85" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="18798" level="1" /> <!-- Shining Scroll of Growth -->
 		</skills>

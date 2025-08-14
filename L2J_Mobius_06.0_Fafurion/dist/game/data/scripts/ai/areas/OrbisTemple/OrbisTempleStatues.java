@@ -47,9 +47,11 @@ public class OrbisTempleStatues extends AbstractNpcAI
 	private static final int ANCIENT_HERO = 22925;
 	private static final int CURATOR = 22923;
 	private static final int CHIEF_CURATOR = 22927;
+	
 	// Items
 	private static final int SWORD = 15280;
 	private static final int SPEAR = 17372;
+	
 	// Skill
 	private static final SkillHolder SPAWN_SKILL = new SkillHolder(14277, 1); // Orbis Spawn
 	private static final SkillHolder DESPAWN_SKILL = new SkillHolder(14278, 1); // Orbis De-spawn
@@ -113,6 +115,7 @@ public class OrbisTempleStatues extends AbstractNpcAI
 		{
 			npc.setImmobilized(true);
 		}
+		
 		if (npc.isMonster())
 		{
 			npc.stopSkillEffects(SkillFinishType.SILENT, DESPAWN_SKILL.getSkillId());

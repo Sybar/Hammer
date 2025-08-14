@@ -70,6 +70,7 @@ public class TradeItem
 		{
 			_elemDefAttr[type.getClientId()] = item.getDefenceAttribute(type);
 		}
+		
 		_enchantOptions = item.getEnchantOptions();
 		_visualId = item.getVisualId();
 		if (item.getAugmentation() != null)
@@ -114,6 +115,7 @@ public class TradeItem
 		{
 			_elemDefAttr[i] = item.getElementDefAttr(i);
 		}
+		
 		_enchantOptions = item.getEnchantOptions();
 		_visualId = item.getVisualId();
 	}

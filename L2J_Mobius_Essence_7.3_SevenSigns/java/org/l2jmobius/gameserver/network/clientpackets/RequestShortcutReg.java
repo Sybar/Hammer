@@ -114,6 +114,7 @@ public class RequestShortcutReg extends ClientPacket
 		if (oldShortcut != null)
 		{
 			boolean removed = true;
+			
 			// Keep other similar shortcuts activated.
 			if (oldShortcut.isAutoUse())
 			{
@@ -127,6 +128,7 @@ public class RequestShortcutReg extends ClientPacket
 					}
 				}
 			}
+			
 			// Remove auto used ids.
 			if (removed)
 			{
@@ -158,6 +160,7 @@ public class RequestShortcutReg extends ClientPacket
 				}
 			}
 		}
+		
 		player.restoreAutoShortcutVisual();
 		
 		final Shortcut sc = new Shortcut(_slot, _page, _type, _id, _level, _subLevel, _characterType);

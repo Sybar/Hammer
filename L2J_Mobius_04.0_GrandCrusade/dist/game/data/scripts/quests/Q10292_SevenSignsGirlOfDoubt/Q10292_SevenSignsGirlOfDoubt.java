@@ -42,11 +42,14 @@ public class Q10292_SevenSignsGirlOfDoubt extends Quest
 	private static final int WOOD = 32593;
 	private static final int FRANZ = 32597;
 	private static final int ELCADIA = 32784;
+	
 	// Item
 	private static final ItemHolder ELCADIAS_MARK = new ItemHolder(17226, 10);
+	
 	// Misc
 	private static final int MIN_LEVEL = 81;
 	private boolean isBusy = false;
+	
 	// Monster
 	private static final int CREATURE_OF_THE_DUSK1 = 27422;
 	private static final int CREATURE_OF_THE_DUSK2 = 27424;
@@ -191,6 +194,7 @@ public class Q10292_SevenSignsGirlOfDoubt extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -330,6 +334,7 @@ public class Q10292_SevenSignsGirlOfDoubt extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

@@ -289,8 +289,10 @@ public class RequestAcquireSkill extends ClientPacket
 						{
 							list += ";";
 						}
+						
 						list += _id + "-" + _level;
 					}
+					
 					vars.set("SubSkillList", list);
 					giveSkill(player, trainer, skill, false);
 				}
@@ -319,8 +321,10 @@ public class RequestAcquireSkill extends ClientPacket
 						{
 							list += ";";
 						}
+						
 						list += _id + "-" + _level;
 					}
+					
 					vars.set("DualSkillList", list);
 					giveSkill(player, trainer, skill, false);
 				}
@@ -367,6 +371,7 @@ public class RequestAcquireSkill extends ClientPacket
 					PunishmentManager.handleIllegalPlayerAction(player, player + " is requesting skill Id: " + _id + " level " + _level + " while Sub-Class is active!", IllegalActionPunishmentType.NONE);
 					return;
 				}
+				
 				if ((player.getLevel() < 85) || !player.isInCategory(CategoryType.SIXTH_CLASS_GROUP))
 				{
 					player.sendPacket(SystemMessageId.YOU_DO_NOT_HAVE_THE_NECESSARY_MATERIALS_OR_PREREQUISITES_TO_LEARN_THIS_SKILL);
@@ -576,6 +581,7 @@ public class RequestAcquireSkill extends ClientPacket
 						{
 							player.sendPacket(SystemMessageId.YOU_DO_NOT_HAVE_THE_NECESSARY_MATERIALS_OR_PREREQUISITES_TO_LEARN_THIS_SKILL);
 						}
+						
 						return false;
 					}
 				}
@@ -628,8 +634,10 @@ public class RequestAcquireSkill extends ClientPacket
 				ui.addComponentType(UserInfoType.CURRENT_HPMPCP_EXP_SP);
 				player.sendPacket(ui);
 			}
+			
 			return true;
 		}
+		
 		return false;
 	}
 	
@@ -718,6 +726,7 @@ public class RequestAcquireSkill extends ClientPacket
 		{
 			return true;
 		}
+		
 		final QuestState qs = player.getQuestState("Q00136_MoreThanMeetsTheEye");
 		return (qs != null) && qs.isCompleted();
 	}

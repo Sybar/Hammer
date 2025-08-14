@@ -31,6 +31,7 @@ public class Q00601_WatchingEyes extends Quest
 {
 	// Items
 	private static final int PROOF_OF_AVENGER = 7188;
+	
 	// Rewards
 	private static final int[][] REWARDS =
 	{
@@ -90,6 +91,7 @@ public class Q00601_WatchingEyes extends Quest
 					break;
 				}
 			}
+			
 			st.exitQuest(true, true);
 		}
 		

@@ -54,18 +54,22 @@ public class Range implements IAffectScopeHandler
 			{
 				return false;
 			}
+			
 			if (c.isDead() && (targetType != TargetType.NPC_BODY) && (targetType != TargetType.PC_BODY))
 			{
 				return false;
 			}
+			
 			if ((c == creature) && (target != creature)) // Range skills appear to not affect you unless you are the main target.
 			{
 				return false;
 			}
+			
 			if ((c != target) && (affectObject != null) && !affectObject.checkAffectedObject(creature, c))
 			{
 				return false;
 			}
+			
 			if (!GeoEngine.getInstance().canSeeTarget(target, c))
 			{
 				return false;
@@ -89,6 +93,7 @@ public class Range implements IAffectScopeHandler
 						{
 							return;
 						}
+						
 						if (filter.test(c))
 						{
 							action.accept(c);

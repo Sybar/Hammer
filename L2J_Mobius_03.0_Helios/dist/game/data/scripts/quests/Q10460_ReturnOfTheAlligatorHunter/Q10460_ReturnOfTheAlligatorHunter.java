@@ -40,11 +40,13 @@ public class Q10460_ReturnOfTheAlligatorHunter extends Quest
 		20807, // Farhite Lad
 		20808, // Nos Lad
 	};
+	
 	// Items
 	private static final int LEATHER = 36710; // Alligator Leather
 	private static final int BLUE_LEATHER = 36711; // Blue Alligator Leather
 	private static final int BEJEWELED_LEATHER = 36712; // Bejeweled Alligator Leather
 	private static final int EAC = 952; // Scroll: Enchant Armor (C-grade)
+	
 	// Misc
 	private static final int MIN_LEVEL = 40;
 	private static final int MAX_LEVEL = 46;
@@ -97,6 +99,7 @@ public class Q10460_ReturnOfTheAlligatorHunter extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -131,6 +134,7 @@ public class Q10460_ReturnOfTheAlligatorHunter extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

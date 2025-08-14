@@ -96,6 +96,7 @@ public class RequestRefundItem extends ClientPacket
 				player.sendPacket(ActionFailed.STATIC_PACKET);
 				return;
 			}
+			
 			merchant = (Merchant) target;
 		}
 		

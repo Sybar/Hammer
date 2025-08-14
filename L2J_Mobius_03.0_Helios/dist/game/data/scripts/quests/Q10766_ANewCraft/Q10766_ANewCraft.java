@@ -45,13 +45,16 @@ public class Q10766_ANewCraft extends Quest
 	private static final int KATALIN = 33943;
 	private static final int AYANTHE = 33942;
 	private static final int ZEPHYRA = 33978;
+	
 	// Items
 	private static final ItemHolder WINDY_HEALING_POTION = new ItemHolder(39466, 50);
 	private static final ItemHolder WINDY_QUICK_HEALING_POTION = new ItemHolder(39471, 50);
 	private static final int AIR_STONE = 39461;
 	private static final int WINDY_HEALING_POTION_1 = 39466;
+	
 	// Misc
 	private static final int MIN_LEVEL = 85;
+	
 	// Reward
 	private static final int EXP_REWARD = 168000;
 	private static final int SP_REWARD = 40;
@@ -129,6 +132,7 @@ public class Q10766_ANewCraft extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -149,6 +153,7 @@ public class Q10766_ANewCraft extends Quest
 				{
 					htmltext = "noFighter.html";
 				}
+				
 				if (qs.getCond() > 0)
 				{
 					htmltext = "33943-05.html";
@@ -169,6 +174,7 @@ public class Q10766_ANewCraft extends Quest
 				{
 					htmltext = "noMage.html";
 				}
+				
 				if (qs.getCond() > 0)
 				{
 					htmltext = "33942-05.html";
@@ -210,6 +216,7 @@ public class Q10766_ANewCraft extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

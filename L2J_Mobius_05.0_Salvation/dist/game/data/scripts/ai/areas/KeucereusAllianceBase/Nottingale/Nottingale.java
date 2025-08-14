@@ -37,9 +37,9 @@ public class Nottingale extends AbstractNpcAI
 {
 	// NPC
 	private static final int NOTTINGALE = 32627;
+	
 	// Misc
 	private static final Map<Integer, RadarControl> RADARS = new HashMap<>();
-	
 	static
 	{
 		RADARS.put(2, new RadarControl(0, 2, -184545, 243120, 1581));
@@ -115,6 +115,7 @@ public class Nottingale extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

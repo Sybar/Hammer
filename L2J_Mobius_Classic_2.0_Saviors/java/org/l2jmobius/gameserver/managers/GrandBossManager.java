@@ -93,6 +93,7 @@ public class GrandBossManager
 					LOGGER.warning(getClass().getSimpleName() + ": Could not find GrandBoss NPC template for " + bossId);
 				}
 			}
+			
 			LOGGER.info(getClass().getSimpleName() + ": Loaded " + _storedInfo.size() + " instances.");
 		}
 		catch (SQLException e)
@@ -103,6 +104,7 @@ public class GrandBossManager
 		{
 			LOGGER.log(Level.WARNING, getClass().getSimpleName() + ": Error while initializing GrandBossManager: " + e.getMessage(), e);
 		}
+		
 		ThreadPool.scheduleAtFixedRate(new GrandBossManagerStoreTask(), 5 * 60 * 1000, 5 * 60 * 1000);
 	}
 	
@@ -180,6 +182,7 @@ public class GrandBossManager
 							hp = boss.getMaxHp();
 							mp = boss.getMaxMp();
 						}
+						
 						update.setDouble(6, hp);
 						update.setDouble(7, mp);
 						update.setInt(8, _bossStatus.get(e.getKey()));
@@ -195,6 +198,7 @@ public class GrandBossManager
 			LOGGER.log(Level.WARNING, "Couldn't store grandbosses to database: " + e.getMessage(), e);
 			return false;
 		}
+		
 		return true;
 	}
 	
@@ -229,6 +233,7 @@ public class GrandBossManager
 						hp = boss.getMaxHp();
 						mp = boss.getMaxMp();
 					}
+					
 					ps.setDouble(6, hp);
 					ps.setDouble(7, mp);
 					ps.setInt(8, _bossStatus.get(bossId));

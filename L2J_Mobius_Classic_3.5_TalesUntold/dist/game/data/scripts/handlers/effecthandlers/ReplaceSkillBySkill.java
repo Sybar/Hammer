@@ -20,12 +20,18 @@
  */
 package handlers.effecthandlers;
 
+import java.util.Collection;
+import java.util.List;
+
 import org.l2jmobius.gameserver.data.xml.SkillData;
 import org.l2jmobius.gameserver.model.StatSet;
 import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.enums.player.ShortcutType;
+import org.l2jmobius.gameserver.model.actor.holders.player.AutoUseSettingsHolder;
 import org.l2jmobius.gameserver.model.actor.holders.player.Shortcut;
+import org.l2jmobius.gameserver.model.actor.transform.Transform;
+import org.l2jmobius.gameserver.model.actor.transform.TransformType;
 import org.l2jmobius.gameserver.model.effects.AbstractEffect;
 import org.l2jmobius.gameserver.model.item.instance.Item;
 import org.l2jmobius.gameserver.model.skill.AbnormalType;
@@ -51,11 +57,30 @@ public class ReplaceSkillBySkill extends AbstractEffect
 	@Override
 	public boolean canStart(Creature effector, Creature effected, Skill skill)
 	{
-		return effected.isPlayer() && (!effected.isTransformed() || effected.hasAbnormalType(AbnormalType.KAMAEL_TRANSFORM));
+		final Transform transform = effected.getTransformation();
+		return effected.isPlayer() && ((transform == null) || (transform.getType() == TransformType.MODE_CHANGE) || effected.hasAbnormalType(AbnormalType.KAMAEL_TRANSFORM));
+	}
+	
+	@Override
+	public boolean canPump(Creature effector, Creature effected, Skill skill)
+	{
+		final Transform transform = effected.getTransformation();
+		return (skill != null) && skill.isPassive() && effected.isPlayer() && ((transform == null) || (transform.getType() == TransformType.MODE_CHANGE) || effected.hasAbnormalType(AbnormalType.KAMAEL_TRANSFORM));
 	}
 	
 	@Override
 	public void onStart(Creature effector, Creature effected, Skill skill, Item item)
+	{
+		applyEffect(effector, effected, skill, item);
+	}
+	
+	@Override
+	public void pump(Creature effected, Skill skill)
+	{
+		applyEffect(effected, effected, skill, null);
+	}
+	
+	private void applyEffect(Creature effector, Creature effected, Skill skill, Item item)
 	{
 		final Player player = effected.asPlayer();
 		final Skill knownSkill = player.getKnownSkill(_existingSkill.getSkillId());
@@ -71,18 +96,24 @@ public class ReplaceSkillBySkill extends AbstractEffect
 		{
 			if (shortcut.isAutoUse() && (shortcut.getType() == ShortcutType.SKILL) && (shortcut.getId() == knownSkill.getId()))
 			{
-				if (knownSkill.isBad())
+				final AutoUseSettingsHolder autoUseSettings = player.getAutoUseSettings();
+				if (knownSkill.hasNegativeEffect())
 				{
-					if (player.getAutoUseSettings().getAutoSkills().contains(knownSkill.getId()))
+					final List<Integer> autoSkills = autoUseSettings.getAutoSkills();
+					if (autoSkills.contains(knownSkill.getId()))
 					{
-						player.getAutoUseSettings().getAutoSkills().add(addedSkill.getId());
-						player.getAutoUseSettings().getAutoSkills().remove(Integer.valueOf(knownSkill.getId()));
+						autoSkills.add(addedSkill.getId());
+						autoSkills.remove(Integer.valueOf(knownSkill.getId()));
 					}
 				}
-				else if (player.getAutoUseSettings().getAutoBuffs().contains(knownSkill.getId()))
+				else
 				{
-					player.getAutoUseSettings().getAutoBuffs().add(addedSkill.getId());
-					player.getAutoUseSettings().getAutoBuffs().remove(knownSkill.getId());
+					final Collection<Integer> autoBuffs = autoUseSettings.getAutoBuffs();
+					if (autoBuffs.contains(knownSkill.getId()))
+					{
+						autoBuffs.add(addedSkill.getId());
+						autoBuffs.remove(knownSkill.getId());
+					}
 				}
 			}
 		}
@@ -112,6 +143,7 @@ public class ReplaceSkillBySkill extends AbstractEffect
 						asu.addSkill(info);
 					}
 				}
+				
 				player.sendPacket(asu);
 			}
 		}
@@ -143,18 +175,24 @@ public class ReplaceSkillBySkill extends AbstractEffect
 		{
 			if (shortcut.isAutoUse() && (shortcut.getType() == ShortcutType.SKILL) && (shortcut.getId() == addedSkill.getId()))
 			{
-				if (knownSkill.isBad())
+				final AutoUseSettingsHolder autoUseSettings = player.getAutoUseSettings();
+				if (knownSkill.hasNegativeEffect())
 				{
-					if (player.getAutoUseSettings().getAutoSkills().contains(knownSkill.getId()))
+					final List<Integer> autoSkills = autoUseSettings.getAutoSkills();
+					if (autoSkills.contains(knownSkill.getId()))
 					{
-						player.getAutoUseSettings().getAutoSkills().add(addedSkill.getId());
-						player.getAutoUseSettings().getAutoSkills().remove(Integer.valueOf(knownSkill.getId()));
+						autoSkills.add(addedSkill.getId());
+						autoSkills.remove(Integer.valueOf(knownSkill.getId()));
 					}
 				}
-				else if (player.getAutoUseSettings().getAutoBuffs().contains(knownSkill.getId()))
+				else
 				{
-					player.getAutoUseSettings().getAutoBuffs().add(addedSkill.getId());
-					player.getAutoUseSettings().getAutoBuffs().remove(knownSkill.getId());
+					final Collection<Integer> autoBuffs = autoUseSettings.getAutoBuffs();
+					if (autoBuffs.contains(knownSkill.getId()))
+					{
+						autoBuffs.add(addedSkill.getId());
+						autoBuffs.remove(knownSkill.getId());
+					}
 				}
 			}
 		}
@@ -184,6 +222,7 @@ public class ReplaceSkillBySkill extends AbstractEffect
 						asu.addSkill(info);
 					}
 				}
+				
 				player.sendPacket(asu);
 			}
 		}

@@ -57,12 +57,14 @@ public class Q00763_ADauntingTask extends Quest
 		23312, // Valley Grendel
 		23313, // Disciple of Protection
 	};
+	
 	// Items
 	private static final int EYE = 36672; // Evil Eye of Darkness
 	private static final int MALICE = 36673; // Powerful Dark Malice
 	private static final int STEEL_DOOR_BOX = 37392; // Steel Door Guild Reward Box (Mid-grade)
+	
 	// Rewards
-	//@formatter:off
+	// @formatter:off
 	// Format: min item count, exp reward, sp reward, item count reward
 	private static final int[][] REWARD = 
 	{
@@ -77,7 +79,8 @@ public class Q00763_ADauntingTask extends Quest
 		{100, 32_659_200, 7_838, 2},
 		{0, 16_329_600, 3_919, 1},
 	};
-	//@formatter:on
+	// @formatter:on
+	
 	// Misc
 	private static final int MIN_LEVEL = 70;
 	
@@ -131,6 +134,7 @@ public class Q00763_ADauntingTask extends Quest
 							{
 								addExpAndSp(player, data[1], data[2]);
 							}
+							
 							giveItems(player, STEEL_DOOR_BOX, data[3]);
 							qs.exitQuest(QuestType.DAILY, true);
 							htmltext = event;
@@ -141,6 +145,7 @@ public class Q00763_ADauntingTask extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -175,6 +180,7 @@ public class Q00763_ADauntingTask extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

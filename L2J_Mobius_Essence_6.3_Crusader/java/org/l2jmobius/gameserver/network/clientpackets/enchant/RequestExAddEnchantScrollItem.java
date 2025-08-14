@@ -61,6 +61,7 @@ public class RequestExAddEnchantScrollItem extends ClientPacket
 			player.sendPacket(new ExPutEnchantScrollItemResult(0));
 			return;
 		}
+		
 		request.setEnchantingScroll(_scrollObjectId);
 		
 		final Item scroll = request.getEnchantingScroll();

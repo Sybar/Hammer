@@ -40,9 +40,11 @@ public class Q10330_ToTheRuinsOfYeSagira extends Quest
 	private static final int VALFAR = 32146; // Kamael
 	private static final int MILA = 30006;
 	private static final int LAKCIS = 32977;
+	
 	// Items
 	private static final int RING_OF_KNOWLEDGE = 875;
 	private static final int HEALING_POTION = 1060;
+	
 	// Misc
 	private static final int MIN_LEVEL = 7;
 	private static final int MAX_LEVEL = 20;
@@ -117,6 +119,7 @@ public class Q10330_ToTheRuinsOfYeSagira extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -245,6 +248,7 @@ public class Q10330_ToTheRuinsOfYeSagira extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

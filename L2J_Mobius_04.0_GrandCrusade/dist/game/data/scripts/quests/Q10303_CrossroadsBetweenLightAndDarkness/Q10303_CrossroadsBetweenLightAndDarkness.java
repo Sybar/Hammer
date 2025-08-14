@@ -39,6 +39,7 @@ public class Q10303_CrossroadsBetweenLightAndDarkness extends Quest
 	// Npc
 	private static final int JONAH = 32909;
 	private static final int MYSTERIUS_PRIEST = 33361;
+	
 	// Mobs
 	private static final int[] MOBS =
 	{
@@ -48,11 +49,14 @@ public class Q10303_CrossroadsBetweenLightAndDarkness extends Quest
 		22887, // Satyr Wizard
 		22895 // Satyr Summoner
 	};
+	
 	// Item
 	private static final int TRACE_OF_DECAYNG_DARKNESS = 17747;
 	private static final int TRACE_OF_DECAYNG_DARKNESS_Q = 17820;
+	
 	// Misc
 	private static final int MIN_LEVEL = 90;
+	
 	// Reward
 	private static final int[] JOHAN_REWARD =
 	{
@@ -153,6 +157,7 @@ public class Q10303_CrossroadsBetweenLightAndDarkness extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -165,6 +170,7 @@ public class Q10303_CrossroadsBetweenLightAndDarkness extends Quest
 		{
 			htmltext = getNoQuestMsg(player);
 		}
+		
 		boolean startQuest = false;
 		switch (qs.getState())
 		{
@@ -182,6 +188,7 @@ public class Q10303_CrossroadsBetweenLightAndDarkness extends Quest
 				qs.startQuest();
 				takeItems(player, TRACE_OF_DECAYNG_DARKNESS, 1);
 				giveItems(player, TRACE_OF_DECAYNG_DARKNESS_Q, 1);
+				
 				// htmltext = "start.html";
 				htmltext = "";
 			}
@@ -190,6 +197,7 @@ public class Q10303_CrossroadsBetweenLightAndDarkness extends Quest
 				htmltext = "noLevel.htm";
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -251,6 +259,7 @@ public class Q10303_CrossroadsBetweenLightAndDarkness extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

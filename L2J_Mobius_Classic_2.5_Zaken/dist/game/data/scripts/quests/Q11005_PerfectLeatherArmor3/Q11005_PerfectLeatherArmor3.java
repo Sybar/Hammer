@@ -40,16 +40,19 @@ public class Q11005_PerfectLeatherArmor3 extends Quest
 {
 	// NPCs
 	private static final int LECTOR = 30001;
+	
 	// Items
 	private static final int COBWEB = 90215;
 	private static final int ESSENCE_OF_WATER = 90216;
 	private static final int LECTORS_NOTES = 90214;
+	
 	// Rewards
 	private static final int SCROLL_OF_ESCAPE = 10650;
 	private static final int HEALING_POTION = 1073;
 	private static final int MP_RECOVERY_POTION = 90310;
 	private static final int SOULSHOTS_NO_GRADE = 5789;
 	private static final int SPIRITSHOT_NO_GRADE = 5790;
+	
 	// Monsters
 	private static final int GIANT_SPIDER = 20103;
 	private static final int GIANT_FANG_SPIDER = 20106;
@@ -57,6 +60,7 @@ public class Q11005_PerfectLeatherArmor3 extends Quest
 	private static final int UNDINE = 20110;
 	private static final int UNDINE_ELDER = 20113;
 	private static final int UNDINE_NOBLE = 20115;
+	
 	// Misc
 	private static final int MIN_LEVEL = 15;
 	private static final int MAX_LEVEL = 20;
@@ -135,6 +139,7 @@ public class Q11005_PerfectLeatherArmor3 extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -169,6 +174,7 @@ public class Q11005_PerfectLeatherArmor3 extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

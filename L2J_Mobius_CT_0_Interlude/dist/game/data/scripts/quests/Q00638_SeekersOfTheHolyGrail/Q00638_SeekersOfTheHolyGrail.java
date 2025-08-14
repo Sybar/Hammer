@@ -31,6 +31,7 @@ public class Q00638_SeekersOfTheHolyGrail extends Quest
 {
 	// NPC
 	private static final int INNOCENTIN = 31328;
+	
 	// Item
 	private static final int PAGAN_TOTEM = 8068;
 	

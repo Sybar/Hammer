@@ -136,9 +136,11 @@ public class DarkWaterDragon extends AbstractNpcAI
 					MY_TRACKING_SET.remove(npc.getObjectId());
 					ID_MAP.remove(npc.getObjectId());
 				}
+				
 				npc.reduceCurrentHp(500, npc, null); // poison kills Fafurion if he is not healed
 			}
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	

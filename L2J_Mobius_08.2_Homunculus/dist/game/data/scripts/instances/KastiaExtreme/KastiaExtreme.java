@@ -39,6 +39,7 @@ public class KastiaExtreme extends AbstractInstance
 {
 	// NPC
 	private static final int KARINIA = 34541;
+	
 	// Monsters
 	private static final int[] MONSTERS =
 	{
@@ -47,8 +48,10 @@ public class KastiaExtreme extends AbstractInstance
 		24594, // Kastia's Warder
 		24595, // Tykan
 	};
+	
 	// Item
 	private static final ItemHolder KASTIAS_LV5_PACK = new ItemHolder(81466, 1);
+	
 	// Misc
 	private static final int TEMPLATE_ID = 306;
 	
@@ -83,6 +86,7 @@ public class KastiaExtreme extends AbstractInstance
 				{
 					startQuestTimer("check_status", 10000, null, player);
 				}
+				
 				return null;
 			}
 			case "check_status":
@@ -92,6 +96,7 @@ public class KastiaExtreme extends AbstractInstance
 				{
 					return null;
 				}
+				
 				switch (world.getStatus())
 				{
 					case 0:
@@ -110,6 +115,7 @@ public class KastiaExtreme extends AbstractInstance
 							world.setStatus(2);
 							world.spawnGroup("wave_2");
 						}
+						
 						startQuestTimer("check_status", 10000, null, player);
 						break;
 					}
@@ -121,6 +127,7 @@ public class KastiaExtreme extends AbstractInstance
 							world.setStatus(3);
 							world.spawnGroup("wave_3");
 						}
+						
 						startQuestTimer("check_status", 10000, null, player);
 						break;
 					}
@@ -132,6 +139,7 @@ public class KastiaExtreme extends AbstractInstance
 							world.setStatus(4);
 							world.spawnGroup("wave_4");
 						}
+						
 						startQuestTimer("check_status", 10000, null, player);
 						break;
 					}
@@ -143,6 +151,7 @@ public class KastiaExtreme extends AbstractInstance
 							world.setStatus(5);
 							world.spawnGroup("wave_5");
 						}
+						
 						startQuestTimer("check_status", 10000, null, player);
 						break;
 					}
@@ -154,6 +163,7 @@ public class KastiaExtreme extends AbstractInstance
 							world.setStatus(6);
 							world.spawnGroup("wave_6");
 						}
+						
 						startQuestTimer("check_status", 10000, null, player);
 						break;
 					}
@@ -165,6 +175,7 @@ public class KastiaExtreme extends AbstractInstance
 							world.setStatus(7);
 							world.spawnGroup("wave_7");
 						}
+						
 						startQuestTimer("check_status", 10000, null, player);
 						break;
 					}
@@ -183,9 +194,11 @@ public class KastiaExtreme extends AbstractInstance
 						break;
 					}
 				}
+				
 				return null;
 			}
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	

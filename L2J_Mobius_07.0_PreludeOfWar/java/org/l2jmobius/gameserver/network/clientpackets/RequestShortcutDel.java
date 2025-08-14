@@ -21,8 +21,8 @@
 package org.l2jmobius.gameserver.network.clientpackets;
 
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.actor.enums.player.Shortcut;
-import org.l2jmobius.gameserver.model.actor.enums.player.Shortcuts;
+import org.l2jmobius.gameserver.model.actor.holders.player.Shortcut;
+import org.l2jmobius.gameserver.model.actor.holders.player.Shortcuts;
 import org.l2jmobius.gameserver.taskmanagers.AutoUseTaskManager;
 
 /**

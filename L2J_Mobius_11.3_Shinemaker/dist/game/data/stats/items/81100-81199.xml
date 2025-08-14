@@ -435,9 +435,9 @@
 		<set name="is_stackable" val="true" />
 		<set name="immediate_effect" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<cond>
+		<conditions>
 			<player MinimumVitalityPoints="35000" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="39612" level="1" /> <!-- Santiago's Sea Wind Scroll -->
 		</skills>

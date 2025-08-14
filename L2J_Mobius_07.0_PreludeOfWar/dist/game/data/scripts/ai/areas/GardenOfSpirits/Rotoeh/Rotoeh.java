@@ -34,6 +34,7 @@ public class Rotoeh extends AbstractNpcAI
 {
 	// NPC
 	private static final int ROTOEH = 34239;
+	
 	// Teleport
 	private static final Location BLACKBIRD_CAMPSITE = new Location(-48354, 69435, -3081);
 	
@@ -62,6 +63,7 @@ public class Rotoeh extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

@@ -34,8 +34,10 @@ public class Zenya extends AbstractNpcAI
 {
 	// NPC
 	private static final int ZENYA = 32140;
+	
 	// Location
 	private static final Location IMPERIAL_TOMB = new Location(183400, -81208, -5323);
+	
 	// Misc
 	private static final int MIN_LEVEL = 80;
 	
@@ -66,6 +68,7 @@ public class Zenya extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

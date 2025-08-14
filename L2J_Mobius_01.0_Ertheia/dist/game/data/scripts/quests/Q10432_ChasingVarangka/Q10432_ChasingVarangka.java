@@ -41,9 +41,11 @@ public class Q10432_ChasingVarangka extends Quest
 	private static final int CHAIREN = 32655;
 	private static final int JOKEL = 33868;
 	private static final int DARK_SHAMAN_VARANGKA = 18808;
+	
 	// Misc
 	private static final int MIN_LEVEL = 81;
 	private static final int MAX_LEVEL = 84;
+	
 	// Rewards
 	private static final int EAS = 960;
 	
@@ -104,6 +106,7 @@ public class Q10432_ChasingVarangka extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -155,6 +158,7 @@ public class Q10432_ChasingVarangka extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

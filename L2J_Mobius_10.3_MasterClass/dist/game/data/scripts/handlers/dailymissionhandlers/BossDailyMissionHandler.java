@@ -95,6 +95,7 @@ public class BossDailyMissionHandler extends AbstractDailyMissionHandler
 				}
 			}
 		}
+		
 		return false;
 	}
 	
@@ -141,6 +142,7 @@ public class BossDailyMissionHandler extends AbstractDailyMissionHandler
 			{
 				entry.setStatus(DailyMissionStatus.AVAILABLE);
 			}
+			
 			storePlayerEntry(entry);
 		}
 	}
@@ -151,6 +153,7 @@ public class BossDailyMissionHandler extends AbstractDailyMissionHandler
 		{
 			return false;
 		}
+		
 		return ((player.getLevel() >= _minLevel)) || (player.getLevel() <= _maxLevel);
 	}
 	

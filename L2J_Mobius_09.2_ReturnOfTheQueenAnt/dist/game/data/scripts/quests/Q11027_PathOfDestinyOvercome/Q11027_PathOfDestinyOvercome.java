@@ -64,11 +64,13 @@ public class Q11027_PathOfDestinyOvercome extends Quest
 	private static final int RAYMOND = 30289;
 	private static final int GERETH = 33932;
 	private static final int RECLOUS = 30648;
+	
 	// Items
 	private static final int PROPHECY_MACHINE = 39540;
 	private static final int ATELIA = 39542;
 	private static final int ORC_EMPOWERING_POTION = 80675;
 	private static final int KETRA_ORDER = 80676;
+	
 	// Monsters
 	private static final int TUREK_WAR_HOUND = 24403;
 	private static final int TUREK_ORC_FOOTMAN = 24404;
@@ -82,6 +84,7 @@ public class Q11027_PathOfDestinyOvercome extends Quest
 	private static final int KETRA_ORC_PRIEST = 24412;
 	private static final int KETRA_ORC_OFFICER = 24413;
 	private static final int KETRA_ORC_CAPTAIN = 24414;
+	
 	// Reward
 	private static final int CHAOS_POMANDER = 37374;
 	private static final int VITALITY_MAINTAINING_RUNE = 80712;
@@ -97,6 +100,7 @@ public class Q11027_PathOfDestinyOvercome extends Quest
 		AWAKE_POWER.put(CategoryType.SIXTH_IS_GROUP, 32270);
 		AWAKE_POWER.put(CategoryType.SIXTH_EOLH_GROUP, 32271);
 	}
+	
 	// Location
 	private static final Location TELEPORT1 = new Location(-89443, 111717, -3336);
 	private static final Location TELEPORT2 = new Location(-92290, 116512, -3472);
@@ -106,6 +110,7 @@ public class Q11027_PathOfDestinyOvercome extends Quest
 	private static final Location TELEPORT6 = new Location(-88533, 104054, -3416);
 	private static final Location TELEPORT7 = new Location(-78669, 251000, -2971);
 	private static final Location TELEPORT8 = new Location(-14180, 123840, -3120);
+	
 	// Misc
 	private static final String KILL_COUNT_VAR = "KillCount";
 	private static final String KILL_COUNT_VAR2 = "KillCount2";
@@ -322,6 +327,7 @@ public class Q11027_PathOfDestinyOvercome extends Quest
 						{
 							addExpAndSp(player, 1176372111, 527586);
 						}
+						
 						giveAdena(player, 420000, true);
 					}
 				}
@@ -376,6 +382,7 @@ public class Q11027_PathOfDestinyOvercome extends Quest
 						showOnScreenMsg(player, NpcStringId.CLASS_TRANSFER_IS_AVAILABLE_NCLICK_THE_CLASS_TRANSFER_ICON_IN_THE_NOTIFICATION_WINDOW_TO_TRANSFER_YOUR_CLASS, ExShowScreenMessage.TOP_CENTER, 10000);
 						player.sendPacket(ExClassChangeSetAlarm.STATIC_PACKET);
 					}
+					
 					htmltext = event;
 				}
 				break;
@@ -445,6 +452,7 @@ public class Q11027_PathOfDestinyOvercome extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -630,6 +638,7 @@ public class Q11027_PathOfDestinyOvercome extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -693,6 +702,7 @@ public class Q11027_PathOfDestinyOvercome extends Quest
 							giveItems(killer, ORC_EMPOWERING_POTION, 1);
 							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 						}
+						
 						if (getQuestItemsCount(killer, ORC_EMPOWERING_POTION) >= 15)
 						{
 							qs.setCond(8, true);
@@ -732,6 +742,7 @@ public class Q11027_PathOfDestinyOvercome extends Quest
 							giveItems(killer, KETRA_ORDER, 1);
 							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 						}
+						
 						if (getQuestItemsCount(killer, KETRA_ORDER) >= 15)
 						{
 							qs.setCond(14, true);
@@ -799,6 +810,7 @@ public class Q11027_PathOfDestinyOvercome extends Quest
 				}
 			}
 		}
+		
 		return super.getNpcLogList(player);
 	}
 	
@@ -834,6 +846,7 @@ public class Q11027_PathOfDestinyOvercome extends Quest
 					player.getVariables().set(AWAKE_POWER_REWARDED_VAR, true);
 					giveItems(player, 40268, 1);
 				}
+				
 				if (player.getPlayerClass() == PlayerClass.SAYHA_SEER)
 				{
 					player.getVariables().set(AWAKE_POWER_REWARDED_VAR, true);

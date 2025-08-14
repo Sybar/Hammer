@@ -21,8 +21,8 @@ import org.l2jmobius.gameserver.data.xml.SkillData;
 import org.l2jmobius.gameserver.model.StatSet;
 import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.actor.enums.player.Shortcut;
 import org.l2jmobius.gameserver.model.actor.enums.player.SubclassInfoType;
+import org.l2jmobius.gameserver.model.actor.holders.player.Shortcut;
 import org.l2jmobius.gameserver.model.effects.AbstractEffect;
 import org.l2jmobius.gameserver.model.groups.Party;
 import org.l2jmobius.gameserver.model.item.instance.Item;
@@ -132,7 +132,7 @@ public class ClassChange extends AbstractEffect
 					final Skill knownSkill = player.getKnownSkill(shortcut.getId());
 					if (knownSkill != null)
 					{
-						if (knownSkill.isBad())
+						if (knownSkill.hasNegativeEffect())
 						{
 							AutoUseTaskManager.getInstance().removeAutoSkill(player, shortcut.getId());
 						}

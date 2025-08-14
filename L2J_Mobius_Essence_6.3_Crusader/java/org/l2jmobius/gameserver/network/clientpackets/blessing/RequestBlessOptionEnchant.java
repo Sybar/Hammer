@@ -74,6 +74,7 @@ public class RequestBlessOptionEnchant extends ClientPacket
 			player.sendPacket(new ExBlessOptionEnchant(EnchantResult.ERROR));
 			return;
 		}
+		
 		request.setProcessing(true);
 		request.setTimestamp(System.currentTimeMillis());
 		
@@ -123,10 +124,12 @@ public class RequestBlessOptionEnchant extends ClientPacket
 		if (Rnd.get(100) < Config.BLESSING_CHANCE) // Success
 		{
 			final ItemTemplate it = item.getTemplate();
+			
 			// Increase enchant level only if scroll's base template has chance, some armors can success over +20 but they shouldn't have increased.
 			item.setBlessed(true);
 			item.updateDatabase();
 			player.sendPacket(new ExBlessOptionEnchant(1));
+			
 			// Announce the success.
 			if ((item.getEnchantLevel() >= (item.isArmor() ? Config.MIN_ARMOR_ENCHANT_ANNOUNCE : Config.MIN_WEAPON_ENCHANT_ANNOUNCE)) //
 				&& (item.getEnchantLevel() <= (item.isArmor() ? Config.MAX_ARMOR_ENCHANT_ANNOUNCE : Config.MAX_WEAPON_ENCHANT_ANNOUNCE)))
@@ -141,9 +144,10 @@ public class RequestBlessOptionEnchant extends ClientPacket
 				final Skill skill = CommonSkill.FIREWORK.getSkill();
 				if (skill != null)
 				{
-					player.broadcastPacket(new MagicSkillUse(player, player, skill.getId(), skill.getLevel(), skill.getHitTime(), skill.getReuseDelay()));
+					player.broadcastSkillPacket(new MagicSkillUse(player, player, skill.getId(), skill.getLevel(), skill.getHitTime(), skill.getReuseDelay()), player);
 				}
 			}
+			
 			if (item.isEquipped())
 			{
 				if (item.isArmor())
@@ -154,6 +158,7 @@ public class RequestBlessOptionEnchant extends ClientPacket
 						player.sendSkillList();
 					});
 				}
+				
 				player.broadcastUserInfo();
 			}
 		}

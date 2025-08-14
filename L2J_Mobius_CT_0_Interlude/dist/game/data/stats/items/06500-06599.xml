@@ -391,12 +391,12 @@
 		<set name="weight" val="1000" />
 		<set name="price" val="30000" />
 		<set name="isAttackWeapon" val="false" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="1" />
 			<set stat="mAtk" val="1" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="325" />
-		</for>
+		</stats>
 	</item>
 	<item id="6530" type="Weapon" name="Albatross Rod">
 		<!-- D-grade fishing rod. It can't launch a general attack. Consumes one D-grade Fishing Shot. -->
@@ -413,14 +413,14 @@
 		<set name="weight" val="1000" />
 		<set name="price" val="100000" />
 		<set name="isAttackWeapon" val="false" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="1" />
 			<set stat="mAtk" val="1" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="325" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="6531" type="Weapon" name="Pelican Rod">
 		<!-- C-grade fishing rod. It can't launch a general attack. Consumes one C-grade Fishing Shot. -->
@@ -437,14 +437,14 @@
 		<set name="weight" val="1000" />
 		<set name="price" val="400000" />
 		<set name="isAttackWeapon" val="false" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="1" />
 			<set stat="mAtk" val="1" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="325" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="6532" type="Weapon" name="KingFisher Rod">
 		<!-- B-grade fishing rod. It can't launch a general attack. Consumes one B-grade Fishing Shot. -->
@@ -461,14 +461,14 @@
 		<set name="weight" val="1000" />
 		<set name="price" val="1200000" />
 		<set name="isAttackWeapon" val="false" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="1" />
 			<set stat="mAtk" val="1" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="325" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="6533" type="Weapon" name="Cygnus Pole">
 		<!-- A-grade fishing rod. It can't launch a general attack. Consumes one A-grade Fishing Shot. -->
@@ -485,14 +485,14 @@
 		<set name="weight" val="1000" />
 		<set name="price" val="4000000" />
 		<set name="isAttackWeapon" val="false" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="1" />
 			<set stat="mAtk" val="1" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="325" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="6534" type="Weapon" name="Triton Pole">
 		<!-- S-grade fishing rod. It can't launch a general attack. Consumes one S-grade Fishing Shot. -->
@@ -509,14 +509,14 @@
 		<set name="weight" val="1000" />
 		<set name="price" val="10000000" />
 		<set name="isAttackWeapon" val="false" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="1" />
 			<set stat="mAtk" val="1" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="325" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="6535" type="EtcItem" name="Fishing Shot: non-grade">
 		<!-- Soulshot consumed by a fishing rod like general soulshots. Gives double damage when the pumping or reeling skill is cast. Usable for the non-grade fishing rod. -->
@@ -985,7 +985,7 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="true" />
 		<set name="is_magic_weapon" val="true" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="225" />
 			<set stat="mAtk" val="175" />
 			<set stat="critRate" val="4" />
@@ -993,7 +993,7 @@
 			<set stat="pAtkSpd" val="379" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="6580" type="Weapon" name="Tallum Blade*Dark Legion's Edge">
 		<!-- P.Atk of dual swords will increase more than one-handed type weapon when enchanted. Max HP +15%, Max MP +20%, Max CP +30% when enchanted by 4 or more. Enhances damage to target during PvP. -->
@@ -1016,14 +1016,14 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="enchant4_skill" val="3570-1" />
 		<set name="item_skill" val="3552-1" /> <!-- Special Ability: PvP Damage -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="342" />
 			<set stat="mAtk" val="132" />
 			<set stat="critRate" val="8" />
 			<set stat="pAtkSpd" val="325" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="6581" type="Weapon" name="Forgotten Blade - Haste">
 		<!-- <Soul Crystal Enhancement>. Increases Atk. Spd. by about 7%. Increases damage inflicted during PvP. -->
@@ -1045,14 +1045,14 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="true" />
 		<set name="item_skill" val="3564-1" /> <!-- Special Ability: Haste -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="281" />
 			<set stat="mAtk" val="132" />
 			<set stat="critRate" val="8" />
 			<set stat="pAtkSpd" val="379" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="6582" type="Weapon" name="Forgotten Blade - Health">
 		<!-- <Soul Crystal Enhancement>. Increases maximum HP by 25%. Increases damage inflicted during PvP. -->
@@ -1074,14 +1074,14 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="true" />
 		<set name="item_skill" val="3013-3" /> <!-- Special Ability: Health -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="281" />
 			<set stat="mAtk" val="132" />
 			<set stat="critRate" val="8" />
 			<set stat="pAtkSpd" val="379" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="6583" type="Weapon" name="Forgotten Blade - Focus">
 		<!-- <Soul Crystal Enhancement> Increases critical chance by 84. Increases damage inflicted during PvP. -->
@@ -1103,14 +1103,14 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="true" />
 		<set name="item_skill" val="3566-1" /> <!-- Special Ability: Focus -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="281" />
 			<set stat="mAtk" val="132" />
 			<set stat="critRate" val="8" />
 			<set stat="pAtkSpd" val="379" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="6584" type="Weapon" name="Basalt Battlehammer - HP Drain">
 		<!-- <Soul Crystal Enhancement>. Restores 3% of melee damage inflicted upon the enemy to your own HP. Increases damage inflicted during PvP. -->
@@ -1132,7 +1132,7 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="true" />
 		<set name="item_skill" val="3568-1" /> <!-- Special Ability: HP Drain -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="281" />
 			<set stat="mAtk" val="132" />
 			<set stat="critRate" val="4" />
@@ -1140,7 +1140,7 @@
 			<set stat="pAtkSpd" val="379" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="6585" type="Weapon" name="Basalt Battlehammer - Health">
 		<!-- <Soul Crystal Enhancement>. Increases maximum HP by 25%. Increases damage inflicted during PvP. -->
@@ -1162,7 +1162,7 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="true" />
 		<set name="item_skill" val="3013-3" /> <!-- Special Ability: Health -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="281" />
 			<set stat="mAtk" val="132" />
 			<set stat="critRate" val="4" />
@@ -1170,7 +1170,7 @@
 			<set stat="pAtkSpd" val="379" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="6586" type="Weapon" name="Basalt Battlehammer - HP Regeneration">
 		<!-- <Soul Crystal Enhancement>. Increases HP regeneration rate. Increases damage inflicted during PvP. -->
@@ -1192,7 +1192,7 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="true" />
 		<set name="item_skill" val="3569-1" /> <!-- Special Ability: HP Regeneration -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="281" />
 			<set stat="mAtk" val="132" />
 			<set stat="critRate" val="4" />
@@ -1200,7 +1200,7 @@
 			<set stat="pAtkSpd" val="379" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="6587" type="Weapon" name="Imperial Staff - Empower">
 		<!-- <Soul Crystal Enhancement>. Increases M. Atk. by 60. Increases damage inflicted during PvP. -->
@@ -1223,7 +1223,7 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="is_magic_weapon" val="true" />
 		<set name="item_skill" val="3575-1" /> <!-- Special Ability: Empower Option -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="274" />
 			<set stat="mAtk" val="193" />
 			<set stat="critRate" val="4" />
@@ -1231,7 +1231,7 @@
 			<set stat="pAtkSpd" val="325" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="6588" type="Weapon" name="Imperial Staff - MP Regeneration">
 		<!-- <Soul Crystal Enhancement>. Increases MP regeneration rate. Increases damage inflicted during PvP. -->
@@ -1254,7 +1254,7 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="is_magic_weapon" val="true" />
 		<set name="item_skill" val="3576-1" /> <!-- Special Ability: MP Regeneration -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="274" />
 			<set stat="mAtk" val="193" />
 			<set stat="critRate" val="4" />
@@ -1262,7 +1262,7 @@
 			<set stat="pAtkSpd" val="325" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="6589" type="Weapon" name="Imperial Staff - Magic Hold">
 		<!-- <Soul Crystal Enhancement>. Increases the chances of causing Dryad Root by 20% when using dark magic upon a target. Increases damage inflicted during PvP. -->
@@ -1287,7 +1287,7 @@
 		<set name="onmagic_chance" val="20" />
 		<set name="onmagic_skill" val="3577-1" />
 		<set name="item_skill" val="3552-1" /> <!-- Special Ability: PvP Damage -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="274" />
 			<set stat="mAtk" val="193" />
 			<set stat="critRate" val="4" />
@@ -1295,7 +1295,7 @@
 			<set stat="pAtkSpd" val="325" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="6590" type="Weapon" name="Angel Slayer - Critical Damage">
 		<!-- <Soul Crystal Enhancement>. Increases P. Atk. by 265 during a critical attack. Increases damage inflicted during PvP. -->
@@ -1317,7 +1317,7 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="true" />
 		<set name="item_skill" val="3572-1" /> <!-- Special Ability: Crt. Damage -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="246" />
 			<set stat="mAtk" val="132" />
 			<set stat="critRate" val="12" />
@@ -1325,7 +1325,7 @@
 			<set stat="pAtkSpd" val="433" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="6591" type="Weapon" name="Angel Slayer - HP Drain">
 		<!-- <Soul Crystal Enhancement>. Restores 3% of melee damage inflicted upon the enemy to your own HP. Increases damage inflicted during PvP. -->
@@ -1347,7 +1347,7 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="true" />
 		<set name="item_skill" val="3568-1" /> <!-- Special Ability: HP Drain -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="246" />
 			<set stat="mAtk" val="132" />
 			<set stat="critRate" val="12" />
@@ -1355,7 +1355,7 @@
 			<set stat="pAtkSpd" val="433" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="6592" type="Weapon" name="Angel Slayer - Haste">
 		<!-- <Soul Crystal Enhancement>. Increases Atk. Spd. by about 7%. Increases damage inflicted during PvP. -->
@@ -1377,7 +1377,7 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="true" />
 		<set name="item_skill" val="3564-1" /> <!-- Special Ability: Haste -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="246" />
 			<set stat="mAtk" val="132" />
 			<set stat="critRate" val="12" />
@@ -1385,7 +1385,7 @@
 			<set stat="pAtkSpd" val="433" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="6593" type="Weapon" name="Shining Bow - Cheap Shot">
 		<set name="icon" val="icon.weapon_shining_bow_i01" />
@@ -1407,7 +1407,7 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="true" />
 		<set name="reuse_delay" val="820" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="581" />
 			<set stat="mAtk" val="132" />
 			<set stat="critRate" val="12" />
@@ -1415,7 +1415,7 @@
 			<set stat="pAtkSpd" val="293" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="6594" type="Weapon" name="Shining Bow - Focus">
 		<set name="icon" val="icon.weapon_shining_bow_i01" />
@@ -1437,7 +1437,7 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="true" />
 		<set name="reuse_delay" val="820" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="581" />
 			<set stat="mAtk" val="132" />
 			<set stat="critRate" val="12" />
@@ -1445,7 +1445,7 @@
 			<set stat="pAtkSpd" val="293" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="6595" type="Weapon" name="Shining Bow - Critical Slow">
 		<set name="icon" val="icon.weapon_shining_bow_i01" />
@@ -1467,7 +1467,7 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="true" />
 		<set name="reuse_delay" val="820" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="581" />
 			<set stat="mAtk" val="132" />
 			<set stat="critRate" val="12" />
@@ -1475,7 +1475,7 @@
 			<set stat="pAtkSpd" val="293" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="6596" type="Weapon" name="Dragon Hunter Axe - HP Regeneration">
 		<!-- <Soul Crystal Enhancement>. Increases HP regeneration rate. Increases damage inflicted during PvP. -->
@@ -1497,7 +1497,7 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="true" />
 		<set name="item_skill" val="3569-1" /> <!-- Special Ability: HP Regeneration -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="342" />
 			<set stat="mAtk" val="132" />
 			<set stat="critRate" val="4" />
@@ -1505,7 +1505,7 @@
 			<set stat="pAtkSpd" val="325" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="6597" type="Weapon" name="Dragon Hunter Axe - Health">
 		<!-- <Soul Crystal Enhancement>. Increases maximum HP by 25%. Increases damage inflicted during PvP. -->
@@ -1527,7 +1527,7 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="true" />
 		<set name="item_skill" val="3013-3" /> <!-- Special Ability: Health -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="342" />
 			<set stat="mAtk" val="132" />
 			<set stat="critRate" val="4" />
@@ -1535,7 +1535,7 @@
 			<set stat="pAtkSpd" val="325" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="6598" type="Weapon" name="Dragon Hunter Axe - HP Drain">
 		<!-- <Soul Crystal Enhancement>. Restores 3% of melee damage inflicted upon the enemy to your own HP. Increases damage inflicted during PvP. -->
@@ -1557,7 +1557,7 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="true" />
 		<set name="item_skill" val="3568-1" /> <!-- Special Ability: HP Drain -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="342" />
 			<set stat="mAtk" val="132" />
 			<set stat="critRate" val="4" />
@@ -1565,7 +1565,7 @@
 			<set stat="pAtkSpd" val="325" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="6599" type="Weapon" name="Saint Spear - Health">
 		<!-- <Soul Crystal Enhancement>. Increases maximum HP by 25%. Increases damage inflicted during PvP. -->
@@ -1587,7 +1587,7 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="true" />
 		<set name="item_skill" val="3013-4" /> <!-- Special Ability: Health -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="281" />
 			<set stat="mAtk" val="132" />
 			<set stat="critRate" val="8" />
@@ -1595,6 +1595,6 @@
 			<set stat="pAtkSpd" val="325" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 </list>

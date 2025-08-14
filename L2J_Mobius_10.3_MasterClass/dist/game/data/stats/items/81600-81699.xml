@@ -773,9 +773,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="itemSkills" />
 		<set name="reuse_delay" val="540000" />
-		<cond>
+		<conditions>
 			<player MinimumVitalityPoints="35000" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="39669" level="1" /> <!-- Maphr's Wind Scroll -->
 		</skills>
@@ -792,9 +792,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="itemSkills" />
 		<set name="reuse_delay" val="540000" />
-		<cond>
+		<conditions>
 			<player MinimumVitalityPoints="35000" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="39670" level="1" /> <!-- Maphr's Scroll of Storm -->
 		</skills>
@@ -1118,9 +1118,9 @@
 		<set name="for_npc" val="true" />
 		<set name="is_event_restricted" val="true" />
 		<set name="commissionItemType" val="POTION" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="39671" level="1" /> <!-- Essence of Time -->
 		</skills>
@@ -1140,9 +1140,9 @@
 		<set name="for_npc" val="true" />
 		<set name="is_event_restricted" val="true" />
 		<set name="commissionItemType" val="POTION" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="39672" level="1" /> <!-- Essence of Time (test) -->
 		</skills>

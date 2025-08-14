@@ -41,14 +41,17 @@ public class Q00242_PossessorOfAPreciousSoul2 extends Quest
 	private static final int CORNERSTONE = 31748;
 	private static final int FALLEN_UNICORN = 31746;
 	private static final int PURE_UNICORN = 31747;
+	
 	// Monsters
 	private static final int RESTRAINER_OF_GLORY = 27317;
+	
 	// Items
 	private static final int VIRGIL_LETTER = 7677;
 	private static final int GOLDEN_HAIR = 7590;
 	private static final int SORCERY_INGREDIENT = 7596;
 	private static final int ORB_OF_BINDING = 7595;
 	private static final int CARADINE_LETTER = 7678;
+	
 	// Misc
 	private static boolean _unicorn = false;
 	
@@ -371,6 +374,7 @@ public class Q00242_PossessorOfAPreciousSoul2 extends Quest
 								npc.deleteMe();
 								startQuestTimer("spu", 3000, npc, player, false);
 							}
+							
 							htmltext = "31746-02.htm";
 						}
 						break;
@@ -385,6 +389,7 @@ public class Q00242_PossessorOfAPreciousSoul2 extends Quest
 								_unicorn = false;
 								startQuestTimer("dspu", 3000, npc, player, false);
 							}
+							
 							htmltext = "31747-01.htm";
 						}
 						else if (cond == 11)
@@ -402,6 +407,7 @@ public class Q00242_PossessorOfAPreciousSoul2 extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

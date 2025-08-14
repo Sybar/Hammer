@@ -41,8 +41,10 @@ public class Wormhole extends AbstractNpcAI
 	// NPCs
 	private static final int WORMHOLE = 33901;
 	private static final int BELETH = 29118;
+	
 	// Location
 	private static final Location BELETH_LOCATION = new Location(16327, 209228, -9357);
+	
 	// TODO: New location
 	// private static final Location BELETH_LOCATION = new Location(-17551, 245949, -832);
 	
@@ -62,6 +64,7 @@ public class Wormhole extends AbstractNpcAI
 			{
 				return "33901-4.html";
 			}
+			
 			if (status == 2)
 			{
 				return "33901-5.html";
@@ -102,6 +105,7 @@ public class Wormhole extends AbstractNpcAI
 				}
 			}
 		}
+		
 		return null;
 	}
 	

@@ -64,9 +64,11 @@ public class Q10529_IvoryTowersResearchFloatingSeaJournal extends Quest
 		24232,
 		24239,
 	};
+	
 	// Item
 	private static final int MONSTER_DROP_1 = 48836;
 	private static final int MONSTER_DROP_2 = 48837;
+	
 	// Misc
 	private static final int REQUIRED_DROP_COUNT_1 = 100;
 	private static final int REQUIRED_DROP_COUNT_2 = 1;
@@ -124,6 +126,7 @@ public class Q10529_IvoryTowersResearchFloatingSeaJournal extends Quest
 				if (qs.isCond(FINISH_COND_2) && (getQuestItemsCount(player, MONSTER_DROP_2) >= REQUIRED_DROP_COUNT_2))
 				{
 					takeItems(player, MONSTER_DROP_2, -1);
+					
 					// Reward.
 					addExpAndSp(player, 99527685300L, 99527580);
 					rewardItems(player, 19448, 1);
@@ -136,6 +139,7 @@ public class Q10529_IvoryTowersResearchFloatingSeaJournal extends Quest
 				return null;
 			}
 		}
+		
 		return event;
 	}
 	
@@ -188,6 +192,7 @@ public class Q10529_IvoryTowersResearchFloatingSeaJournal extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -204,6 +209,7 @@ public class Q10529_IvoryTowersResearchFloatingSeaJournal extends Quest
 				{
 					qs.setCond(FINISH_COND_1, true);
 				}
+				
 				sendNpcLogList(player);
 			}
 			else if (qs.isCond(KILLING_COND_2) && ArrayUtil.contains(MONSTERS_2, npc.getId()))
@@ -226,6 +232,7 @@ public class Q10529_IvoryTowersResearchFloatingSeaJournal extends Quest
 			holder.add(new NpcLogListHolder(KILLING_NPCSTRING_ID, false, (int) getQuestItemsCount(player, MONSTER_DROP_1)));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

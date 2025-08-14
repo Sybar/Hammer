@@ -35,9 +35,11 @@ public class Q10972_CombiningGems extends Quest
 {
 	// NPC
 	private static final int CAPTAIN_BATHIS = 30332;
+	
 	// Items
 	private static final int ADVENTURE_ROUGH_JEWEL_LV1 = 91936;
 	private static final int ADVENTURE_ROUGH_JEWEL_LV2 = 93065;
+	
 	// Misc
 	private static final int MIN_LEVEL = 30;
 	
@@ -97,6 +99,7 @@ public class Q10972_CombiningGems extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -117,6 +120,7 @@ public class Q10972_CombiningGems extends Quest
 		{
 			htmltext = getAlreadyCompletedMsg(player);
 		}
+		
 		return htmltext;
 	}
 }

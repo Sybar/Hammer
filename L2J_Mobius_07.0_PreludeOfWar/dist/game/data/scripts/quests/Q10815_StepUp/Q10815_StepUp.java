@@ -48,9 +48,11 @@ public class Q10815_StepUp extends Quest
 {
 	// Npc
 	private static final int SIR_ERIC_RODEMAI = 30868;
+	
 	// Items
 	private static final int RODEMAI_RUNE = 45642;
 	private static final int SIR_ERIC_RODEMAI_CERTIFICATE = 45626;
+	
 	// Misc
 	private static final int MIN_LEVEL = 99;
 	private static final int WORLD_CHAT_COUNT = 30; // POW Client description says 30 times
@@ -104,14 +106,17 @@ public class Q10815_StepUp extends Quest
 						{
 							mainQ.notifyEvent("SUBQUEST_FINISHED_NOTIFY", npc, player);
 						}
+						
 						htmltext = event;
 						break;
 					}
+					
 					htmltext = getNoQuestLevelRewardMsg(player);
 					break;
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -145,6 +150,7 @@ public class Q10815_StepUp extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -173,6 +179,7 @@ public class Q10815_StepUp extends Quest
 						return;
 					}
 				}
+				
 				chatCount++;
 				
 				if (chatCount >= WORLD_CHAT_COUNT)
@@ -201,6 +208,7 @@ public class Q10815_StepUp extends Quest
 			npcLogList.add(new NpcLogListHolder(NpcStringId.WORLD_CHAT, qs.getInt("chat")));
 			return npcLogList;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

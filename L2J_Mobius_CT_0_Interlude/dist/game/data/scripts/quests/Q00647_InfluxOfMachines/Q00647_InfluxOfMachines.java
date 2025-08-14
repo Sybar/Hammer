@@ -31,6 +31,7 @@ public class Q00647_InfluxOfMachines extends Quest
 {
 	// NPC
 	private static final int GUTENHAGEN = 32069;
+	
 	// Item
 	private static final int DESTROYED_GOLEM_SHARD = 8100;
 	

@@ -30,6 +30,7 @@ public class Lykus extends AbstractNpcAI
 {
 	// NPCs
 	private static final int LYKUS = 33521;
+	
 	// Items
 	private static final int POLISHED_SHIELD = 17723; // Polished Ancient Hero's Shield
 	private static final int OLD_SHIELD = 17724; // Orbis Ancient Hero's Shield
@@ -82,6 +83,7 @@ public class Lykus extends AbstractNpcAI
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	

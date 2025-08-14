@@ -91,6 +91,7 @@ public class RequestChangeAttributeItem extends ClientPacket
 		{
 			iu.addItem(i);
 		}
+		
 		player.sendInventoryUpdate(iu);
 		player.broadcastUserInfo();
 		player.sendPacket(ExChangeAttributeOk.STATIC);

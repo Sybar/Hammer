@@ -125,6 +125,7 @@ public class DailyMissionData implements IXmlReader
 				missionData.add(mission);
 			}
 		}
+		
 		return missionData;
 	}
 	

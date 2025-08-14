@@ -61,6 +61,7 @@ public class ItemCrystallizationData implements IXmlReader
 		{
 			_crystallizationTemplates.put(crystalType, new EnumMap<>(CrystallizationType.class));
 		}
+		
 		_items.clear();
 		parseDatapackFile("data/CrystallizableItems.xml");
 		LOGGER.info(getClass().getSimpleName() + ": Loaded " + _crystallizationTemplates.size() + " crystallization templates.");
@@ -123,6 +124,7 @@ public class ItemCrystallizationData implements IXmlReader
 										crystallizeRewards.add(new ItemChanceHolder(itemId, itemChance, itemCount));
 									}
 								}
+								
 								_items.put(id, new CrystallizationDataHolder(id, crystallizeRewards));
 							}
 						}
@@ -218,6 +220,7 @@ public class ItemCrystallizationData implements IXmlReader
 					break;
 				}
 			}
+			
 			if (!found)
 			{
 				result.add(new ItemChanceHolder(crystalItemId, 100, item.getCrystalCount()));

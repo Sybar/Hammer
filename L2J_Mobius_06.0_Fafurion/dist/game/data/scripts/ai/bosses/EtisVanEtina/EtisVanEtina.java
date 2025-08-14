@@ -61,10 +61,12 @@ public class EtisVanEtina extends AbstractNpcAI
 	private static final int WAITING = 1;
 	private static final int FIGHTING = 2;
 	private static final int DEAD = 3;
+	
 	// NPCs
 	private static final int ETIS_VAN_ETINA1 = 29318;
 	private static final int ETIS_VAN_ETINA2 = 29319;
 	private static final int KAIN_VAN_HALTER = 29320;
+	
 	// Corridor Mobs
 	private static final int TEMPLE_ARCHON = 24085;
 	private static final int TEMPLE_RAIDER = 24079;
@@ -86,14 +88,16 @@ public class EtisVanEtina extends AbstractNpcAI
 	private static final int TEMPLE_HIGH_PRIEST = 24086;
 	private static final int CREED_GUARDIAN = 24073;
 	private static final int PARAGON = 24072;
-	//@formatter:off
+	// @formatter:off
 	private static final int[] CORRIDOR_MOBS = {24085, 24079, 24081, 24082, 24084, 24080, 24083, 24093, 24096, 24094, 24076, 24075, 24074, 24077, 24095, 24092, 24078, 24086, 24073};
-	//@formatter:on
+	// @formatter:on
+	
 	// Minions
 	private static final int MARTYR_OF_GREED = 29321;
 	private static final int LIBERATOR_OF_LUST = 29324;
 	private static final int SEEKER_OF_DESPAIR = 29323;
 	private static final int GUIDE_OF_PRIDE = 29322;
+	
 	// Seals
 	private static final int SEAL_OF_GNOSIS = 19677;
 	private static final int SEAL_OF_STRIFE = 19678;
@@ -102,12 +106,14 @@ public class EtisVanEtina extends AbstractNpcAI
 	private static final int SEAL_OF_AWAKENING = 19681;
 	private static final int SEAL_OF_CALAMITY = 19682;
 	private static final int SEAL_OF_DESTRUCTION = 19683;
+	
 	// Others
 	private static final int BARRICADE = 19724;
 	private static final int DOOR1 = 12230702;
 	private static final int DOOR2 = 12230704;
 	private static final int DOOR3 = 12230802;
 	private static final int DOOR4 = 12230804;
+	
 	// Location
 	private static final Location PARAGON_LOC = new Location(-245757, 187778, 3042);
 	private static final Location ETINA_LOC = new Location(-245765, 194229, 3200);
@@ -122,6 +128,7 @@ public class EtisVanEtina extends AbstractNpcAI
 	
 	private static final int ZONE_ID = 85001;
 	private static final NoRestartZone BOSS_ZONE = ZoneManager.getInstance().getZoneById(ZONE_ID, NoRestartZone.class);
+	
 	// Spawns
 	private static final List<SpawnHolder> SPAWNS_CORRIDOR = new ArrayList<>();
 	static
@@ -277,6 +284,7 @@ public class EtisVanEtina extends AbstractNpcAI
 		SPAWNS_MINIONS.add(new SpawnHolder(GUIDE_OF_PRIDE, KAIN_LOC, 0, false));
 		SPAWNS_MINIONS.add(new SpawnHolder(GUIDE_OF_PRIDE, KAIN_LOC, 0, false));
 	}
+	
 	// Skills
 	private static final SkillHolder CALL_OF_SEVEN_SIGNS = new SkillHolder(32317, 1);
 	private static final SkillHolder CALL_OF_SEVEN_SIGNS_SEAL_N = new SkillHolder(32004, 1);
@@ -288,6 +296,7 @@ public class EtisVanEtina extends AbstractNpcAI
 	private static final SkillHolder ETINA_DIVINE_PUNISHMENT = new SkillHolder(32023, 2);
 	private static final SkillHolder ETINA_OBSERVATION = new SkillHolder(32024, 2);
 	private static final SkillHolder RAGE_OF_THE_OPEN_EYE = new SkillHolder(32026, 2);
+	
 	// Camille -> Horseshoe Trampling, Horizon Bash, Joust Lunge, Call of Etina (summon minions?)
 	// Vars
 	private static long _lastAction;
@@ -297,8 +306,10 @@ public class EtisVanEtina extends AbstractNpcAI
 	protected ScheduledFuture<?> _avariceCastTask;
 	protected ScheduledFuture<?> _punishmentCastTask;
 	protected ScheduledFuture<?> _awakeningCastTask;
+	
 	// summon 5 black holes, that uses skill Explosion of Calamity(32029, 1)
 	protected ScheduledFuture<?> _calamityCastTask;
+	
 	// summon 5 black holes, that uses skill Cyclone of Chaos(32028, 1)
 	protected ScheduledFuture<?> _destructionCastTask;
 	private static List<Npc> _spawns = new ArrayList<>();
@@ -368,6 +379,7 @@ public class EtisVanEtina extends AbstractNpcAI
 					{
 						GrandBossManager.getInstance().setStatus(ETIS_VAN_ETINA1, ALIVE);
 					}
+					
 					for (Creature creature : BOSS_ZONE.getCharactersInside())
 					{
 						if (creature != null)
@@ -382,6 +394,7 @@ public class EtisVanEtina extends AbstractNpcAI
 							}
 						}
 					}
+					
 					startQuestTimer("end_etina", 2000, null, null);
 				}
 				else if (GrandBossManager.getInstance().getStatus(ETIS_VAN_ETINA1) == FIGHTING)
@@ -505,6 +518,7 @@ public class EtisVanEtina extends AbstractNpcAI
 							creature.deleteMe();
 						}
 					}
+					
 					if (player != null)
 					{
 						player.sendMessage(getClass().getSimpleName() + ": All minions has been deleted!");
@@ -518,6 +532,7 @@ public class EtisVanEtina extends AbstractNpcAI
 			}
 			
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	
@@ -535,41 +550,49 @@ public class EtisVanEtina extends AbstractNpcAI
 			_gnosisCastTask.cancel(false);
 			_gnosisCastTask = null;
 		}
+		
 		if (_strifeCastTask != null)
 		{
 			_strifeCastTask.cancel(false);
 			_strifeCastTask = null;
 		}
+		
 		if (_avariceCastTask != null)
 		{
 			_avariceCastTask.cancel(false);
 			_avariceCastTask = null;
 		}
+		
 		if (_punishmentCastTask != null)
 		{
 			_punishmentCastTask.cancel(false);
 			_punishmentCastTask = null;
 		}
+		
 		if (_awakeningCastTask != null)
 		{
 			_awakeningCastTask.cancel(false);
 			_awakeningCastTask = null;
 		}
+		
 		if (_calamityCastTask != null)
 		{
 			_calamityCastTask.cancel(false);
 			_calamityCastTask = null;
 		}
+		
 		if (_destructionCastTask != null)
 		{
 			_destructionCastTask.cancel(false);
 			_destructionCastTask = null;
 		}
+		
 		if (_collapseTask != null)
 		{
 			_collapseTask.cancel(false);
 			_collapseTask = null;
 		}
+		
 		notifyEvent("cancel_timers", null, null);
 		BOSS_ZONE.oustAllPlayers();
 		closeDoor(DOOR1, 0);
@@ -586,12 +609,14 @@ public class EtisVanEtina extends AbstractNpcAI
 	public void onAttack(Npc npc, Player attacker, int damage, boolean isSummon)
 	{
 		_lastAction = System.currentTimeMillis();
+		
 		// Anti BUGGERS
 		if (!BOSS_ZONE.isInsideZone(attacker))
 		{
 			attacker.doDie(null);
 			LOGGER.warning(getName() + ": Character: " + attacker.getName() + " attacked: " + npc.getName() + " out of the boss zone!");
 		}
+		
 		if (!BOSS_ZONE.isInsideZone(npc))
 		{
 			Spawn spawn = npc.getSpawn();
@@ -599,8 +624,10 @@ public class EtisVanEtina extends AbstractNpcAI
 			{
 				npc.teleToLocation(spawn.getX(), spawn.getY(), spawn.getZ());
 			}
+			
 			LOGGER.warning(getName() + ": Character: " + attacker.getName() + " attacked: " + npc.getName() + " wich is out of the boss zone!");
 		}
+		
 		if (npc.getId() == KAIN_VAN_HALTER)
 		{
 			if ((npc.getCurrentHp() <= (npc.getMaxHp() * 0.3)) && !_kain30)
@@ -631,6 +658,7 @@ public class EtisVanEtina extends AbstractNpcAI
 				{
 					_minionSpawns.add(addSpawn(spawn.getNpcId(), spawn.getLocation()));
 				}
+				
 				_etina.abortCast();
 				_etina.broadcastPacket(new MagicSkillUse(_etina, _etina, CALL_OF_SEVEN_SIGNS.getSkillId(), CALL_OF_SEVEN_SIGNS.getSkillLevel(), 3000, 0));
 				BOSS_ZONE.getPlayersInside().forEach(player -> player.sendPacket(new ExShowScreenMessage(NpcStringId.ETIS_VAN_ETINA_USES_THE_POWER_OF_THE_SEVEN_SIGNS_TO_SUMMON_ALL_7_SEALS_INSIDE_THE_TEMPLE, ExShowScreenMessage.TOP_CENTER, 7000, true)));
@@ -715,6 +743,7 @@ public class EtisVanEtina extends AbstractNpcAI
 				_calamityCastTask = ThreadPool.scheduleAtFixedRate(() ->
 				{
 					_sealOfCalamity.setDisplayEffect(3);
+					
 					// TODO: Seal of Calamity skill cast.
 					_sealOfCalamity.broadcastPacket(new MagicSkillUse(_sealOfCalamity, _sealOfCalamity, CALL_OF_SEVEN_SIGNS_SEAL_N.getSkillId(), 6, 10000, 0));
 					BOSS_ZONE.getPlayersInside().forEach(player -> player.sendPacket(new ExShowScreenMessage(NpcStringId.THE_SEAL_OF_CALAMITY_ACTIVATES_AND_ENORMOUS_POWER_BEGINS_TO_FLOW_OUT, ExShowScreenMessage.TOP_CENTER, 7000, true)));
@@ -722,6 +751,7 @@ public class EtisVanEtina extends AbstractNpcAI
 				_destructionCastTask = ThreadPool.scheduleAtFixedRate(() ->
 				{
 					_sealOfDestruction.setDisplayEffect(3);
+					
 					// TODO: Seal of Destruction skill cast.
 					_sealOfDestruction.broadcastPacket(new MagicSkillUse(_sealOfDestruction, _sealOfDestruction, CALL_OF_SEVEN_SIGNS_SEAL_N.getSkillId(), 7, 10000, 0));
 					BOSS_ZONE.getPlayersInside().forEach(player -> player.sendPacket(new ExShowScreenMessage(NpcStringId.THE_SEAL_OF_DESTRUCTION_ACTIVATES_AND_THE_ENTIRE_ETINA_GREAT_TEMPLE_IS_NOW_UNDER_THE_INFLUENCE_OF_THE_SEAL, ExShowScreenMessage.TOP_CENTER, 7000, true)));
@@ -734,6 +764,7 @@ public class EtisVanEtina extends AbstractNpcAI
 				{
 					_minionSpawns.add(addSpawn(spawn.getNpcId(), spawn.getLocation()));
 				}
+				
 				// TODO: decrease etina and seals power
 				BOSS_ZONE.getPlayersInside().forEach(player -> player.sendPacket(new ExShowScreenMessage(NpcStringId.ETIS_VAN_ETINA_AND_THE_POWER_OF_SEVEN_SEALS_ARE_WEAKENING, ExShowScreenMessage.TOP_CENTER, 7000, true)));
 			}
@@ -750,6 +781,7 @@ public class EtisVanEtina extends AbstractNpcAI
 				_collapseTask.cancel(true);
 				_collapseTask = null;
 			}
+			
 			if ((GrandBossManager.getInstance().getStatus(ETIS_VAN_ETINA1) == WAITING) && !_spawned)
 			{
 				_spawned = true;
@@ -759,10 +791,12 @@ public class EtisVanEtina extends AbstractNpcAI
 				{
 					_spawns.add(addSpawn(spawn.getNpcId(), spawn.getLocation()));
 				}
+				
 				for (SpawnHolder spawn : SPAWNS_BARRICADE)
 				{
 					_barricadeSpawns.add(addSpawn(spawn.getNpcId(), spawn.getLocation()));
 				}
+				
 				_paragon = addSpawn(PARAGON, PARAGON_LOC).asMonster();
 				_paragon.setInvul(true);
 				BOSS_ZONE.getPlayersInside().forEach(player -> player.sendPacket(new ExShowScreenMessage(NpcStringId.YOU_CAN_T_DEFEAT_PARAGON_WHILE_PARAGON_S_MINIONS_ARE_ALIVE, ExShowScreenMessage.TOP_CENTER, 7000, true)));

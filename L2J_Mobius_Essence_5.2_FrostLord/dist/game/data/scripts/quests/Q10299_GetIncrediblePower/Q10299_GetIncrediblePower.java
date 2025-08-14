@@ -39,6 +39,7 @@ public class Q10299_GetIncrediblePower extends Quest
 {
 	// NPCs
 	private static final int ORVEN = 30857;
+	
 	// Monsters
 	private static final int[] MONSTERS =
 	{
@@ -68,8 +69,10 @@ public class Q10299_GetIncrediblePower extends Quest
 		22278,
 		22292,
 	};
+	
 	// Items
 	private static final ItemHolder SAYHA_GUST = new ItemHolder(91776, 9);
+	
 	// Misc
 	private static final int MIN_LEVEL = 45;
 	private static final String KILL_COUNT_VAR = "KillCount";
@@ -129,6 +132,7 @@ public class Q10299_GetIncrediblePower extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -164,6 +168,7 @@ public class Q10299_GetIncrediblePower extends Quest
 		{
 			htmltext = getAlreadyCompletedMsg(player);
 		}
+		
 		return htmltext;
 	}
 	
@@ -198,6 +203,7 @@ public class Q10299_GetIncrediblePower extends Quest
 			holder.add(new NpcLogListHolder(NpcStringId.KILL_MONSTERS_IN_A_TRANSCENDENT_INSTANCE_ZONE.getId(), true, qs.getInt(KILL_COUNT_VAR)));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

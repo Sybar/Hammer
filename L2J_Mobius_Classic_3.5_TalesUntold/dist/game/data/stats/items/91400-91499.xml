@@ -1055,9 +1055,9 @@
 		<set name="material" val="PAPER" />
 		<set name="is_stackable" val="true" />
 		<set name="is_sellable" val="false" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="76" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="91483" name="Scroll - Bind" type="EtcItem">
 		<!-- Scroll needed to learn Bind. -->
@@ -1065,9 +1065,9 @@
 		<set name="material" val="PAPER" />
 		<set name="is_stackable" val="true" />
 		<set name="is_sellable" val="false" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="76" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="91484" name="Scroll - Mass Chain Strike" type="EtcItem">
 		<!-- Scroll needed to learn Mass Chain Strike. -->
@@ -1075,9 +1075,9 @@
 		<set name="material" val="PAPER" />
 		<set name="is_stackable" val="true" />
 		<set name="is_sellable" val="false" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="78" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="91485" name="Scroll - Critical Vulnerability Decrease" type="EtcItem">
 		<!-- Scroll needed to learn Reduce Crisis. -->
@@ -1085,9 +1085,9 @@
 		<set name="material" val="PAPER" />
 		<set name="is_stackable" val="true" />
 		<set name="is_sellable" val="false" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="76" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="91486" name="Scroll - Full Swing" type="EtcItem">
 		<!-- Scroll needed to learn Full Swing. -->
@@ -1095,9 +1095,9 @@
 		<set name="material" val="PAPER" />
 		<set name="is_stackable" val="true" />
 		<set name="is_sellable" val="false" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="76" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="91487" name="Scroll - Seal of Blockade" type="EtcItem">
 		<!-- Scroll needed to learn Seal of Blockade. -->
@@ -1105,9 +1105,9 @@
 		<set name="material" val="PAPER" />
 		<set name="is_stackable" val="true" />
 		<set name="is_sellable" val="false" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="79" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="91488" name="Blessed Soulshot (S-grade)" type="EtcItem">
 		<!-- Bestows the Spirit Light on the weapon to spontaneously launch a powerful attack on the enemy. Used with an S-grade weapon. Exchange for a new Soulshot through the Dimensional Merchant. -->

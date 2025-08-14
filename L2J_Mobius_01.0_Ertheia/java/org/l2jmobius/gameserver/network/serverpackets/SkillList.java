@@ -85,6 +85,7 @@ public class SkillList extends ServerPacket
 			buffer.writeByte(temp.disabled ? 1 : 0); // iSkillDisabled
 			buffer.writeByte(temp.enchanted ? 1 : 0); // CanEnchant
 		}
+		
 		buffer.writeInt(_lastLearnedSkillId);
 	}
 }

@@ -53,6 +53,7 @@ public class Core extends AbstractNpcAI
 	private static final int DEATH_KNIGHT = 29007;
 	private static final int DOOM_WRAITH = 29008;
 	private static final int SUSCEPTOR = 29011;
+	
 	// Spawns
 	private static final Map<Integer, Location> MINNION_SPAWNS = new HashMap<>();
 	static
@@ -77,6 +78,7 @@ public class Core extends AbstractNpcAI
 		MINNION_SPAWNS.put(SUSCEPTOR, new Location(17706, 109423, -6488));
 		MINNION_SPAWNS.put(SUSCEPTOR, new Location(17849, 109388, -6480));
 	}
+	
 	// Misc
 	private static final byte ALIVE = 0;
 	private static final byte DEAD = 1;
@@ -92,6 +94,7 @@ public class Core extends AbstractNpcAI
 		{
 			// Load the unlock date and time for Core from DB.
 			final long temp = info.getLong("respawn_time") - System.currentTimeMillis();
+			
 			// If Core is locked until a certain time, mark it so and start the unlock timer the unlock time has not yet expired.
 			if (temp > 0)
 			{
@@ -112,6 +115,7 @@ public class Core extends AbstractNpcAI
 			{
 				_firstAttacked = true;
 			}
+			
 			final int loc_x = info.getInt("loc_x");
 			final int loc_y = info.getInt("loc_y");
 			final int loc_z = info.getInt("loc_z");
@@ -134,6 +138,7 @@ public class Core extends AbstractNpcAI
 	{
 		GrandBossManager.getInstance().addBoss(npc);
 		npc.broadcastPacket(new PlaySound(1, "BS01_A", 1, npc.getObjectId(), npc.getX(), npc.getY(), npc.getZ()));
+		
 		// Spawn minions
 		Attackable mob;
 		Location spawnLocation;
@@ -166,6 +171,7 @@ public class Core extends AbstractNpcAI
 			_minions.forEach(Attackable::decayMe);
 			_minions.clear();
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	
@@ -214,6 +220,7 @@ public class Core extends AbstractNpcAI
 			LOGGER.info("Core will respawn at: " + TimeUtil.getDateTimeString(nextRespawnTime));
 			
 			startQuestTimer("core_unlock", respawnTime, null, null);
+			
 			// Also save the respawn time so that the info is maintained past reboots.
 			final StatSet info = GrandBossManager.getInstance().getStatSet(CORE);
 			info.set("respawn_time", System.currentTimeMillis() + respawnTime);

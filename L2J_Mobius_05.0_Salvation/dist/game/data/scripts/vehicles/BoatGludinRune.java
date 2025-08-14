@@ -242,6 +242,7 @@ public class BoatGludinRune implements Runnable
 						ThreadPool.schedule(this, 5000);
 						return;
 					}
+					
 					_boat.executePath(RUNE_DOCK);
 					break;
 				}
@@ -322,6 +323,7 @@ public class BoatGludinRune implements Runnable
 						ThreadPool.schedule(this, 5000);
 						return;
 					}
+					
 					_boat.executePath(GLUDIN_DOCK);
 					break;
 				}
@@ -334,6 +336,7 @@ public class BoatGludinRune implements Runnable
 					break;
 				}
 			}
+			
 			_shoutCount = 0;
 			_cycle++;
 			if (_cycle > 19)

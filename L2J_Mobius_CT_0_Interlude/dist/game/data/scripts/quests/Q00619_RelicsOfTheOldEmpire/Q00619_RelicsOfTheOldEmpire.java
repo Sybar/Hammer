@@ -23,7 +23,6 @@ package quests.Q00619_RelicsOfTheOldEmpire;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.quest.Quest;
-import org.l2jmobius.gameserver.model.quest.QuestSound;
 import org.l2jmobius.gameserver.model.quest.QuestState;
 import org.l2jmobius.gameserver.model.quest.State;
 
@@ -31,11 +30,13 @@ public class Q00619_RelicsOfTheOldEmpire extends Quest
 {
 	// NPC
 	private static int GHOST_OF_ADVENTURER = 31538;
+	
 	// Items
 	private static int RELICS = 7254;
 	private static int ENTRANCE = 7075;
+	
 	// Rewards ; all S grade weapons recipe (60%)
-	private static int[] RCP_REWARDS = new int[]
+	private static int[] RCP_REWARDS =
 	{
 		6881,
 		6883,
@@ -60,6 +61,7 @@ public class Q00619_RelicsOfTheOldEmpire extends Quest
 			// IT monsters
 			addKillId(id);
 		}
+		
 		// monsters at IT entrance
 		addKillId(21798, 21799, 21800);
 		for (int id = 18120; id <= 18256; id++)
@@ -106,6 +108,7 @@ public class Q00619_RelicsOfTheOldEmpire extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -153,11 +156,12 @@ public class Q00619_RelicsOfTheOldEmpire extends Quest
 		}
 		
 		final Player partyMember = qs.getPlayer();
+		
 		giveItemRandomly(partyMember, npc, RELICS, 1, 0, 1, true);
-		if (getRandomBoolean())
+		
+		if (getRandom(100) < 30)
 		{
-			giveItems(partyMember, ENTRANCE, 1);
-			playSound(partyMember, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+			giveItemRandomly(partyMember, npc, ENTRANCE, 1, 0, 1, true);
 		}
 	}
 }

@@ -36,7 +36,7 @@ public class EnchantSkillList implements IBypassHandler
 	};
 	
 	@Override
-	public boolean useBypass(String command, Player player, Creature target)
+	public boolean onCommand(String command, Player player, Creature target)
 	{
 		if (!(target instanceof Folk))
 		{
@@ -49,7 +49,7 @@ public class EnchantSkillList implements IBypassHandler
 	}
 	
 	@Override
-	public String[] getBypassList()
+	public String[] getCommandList()
 	{
 		return COMMANDS;
 	}

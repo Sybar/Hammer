@@ -43,6 +43,7 @@ public class ElfHumanWizardChange1 extends AbstractNpcAI
 	private static final int ETERNITY_DIAMOND = 1230;
 	private static final int LEAF_OF_ORACLE = 1235;
 	private static final int BEAD_OF_SEASON = 1292;
+	
 	// Classes
 	private static final int WIZARD = 11;
 	private static final int CLERIC = 15;
@@ -144,6 +145,7 @@ public class ElfHumanWizardChange1 extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -180,6 +182,7 @@ public class ElfHumanWizardChange1 extends AbstractNpcAI
 				takeItems(player, BEAD_OF_SEASON, -1);
 				player.setPlayerClass(WIZARD);
 				player.setBaseClass(WIZARD);
+				
 				// SystemMessage and cast skill is done by setClassId
 				player.broadcastUserInfo();
 				htmltext = npc.getId() + "-20.htm"; // fnAfterClassChange11
@@ -207,6 +210,7 @@ public class ElfHumanWizardChange1 extends AbstractNpcAI
 				takeItems(player, MARK_OF_FAITH, -1);
 				player.setPlayerClass(CLERIC);
 				player.setBaseClass(CLERIC);
+				
 				// SystemMessage and cast skill is done by setClassId
 				player.broadcastUserInfo();
 				htmltext = npc.getId() + "-24.htm"; // fnAfterClassChange12
@@ -234,6 +238,7 @@ public class ElfHumanWizardChange1 extends AbstractNpcAI
 				takeItems(player, ETERNITY_DIAMOND, -1);
 				player.setPlayerClass(ELVEN_WIZARD);
 				player.setBaseClass(ELVEN_WIZARD);
+				
 				// SystemMessage and cast skill is done by setClassId
 				player.broadcastUserInfo();
 				htmltext = npc.getId() + "-28.htm"; // fnAfterClassChange21
@@ -261,6 +266,7 @@ public class ElfHumanWizardChange1 extends AbstractNpcAI
 				takeItems(player, LEAF_OF_ORACLE, -1);
 				player.setPlayerClass(ORACLE);
 				player.setBaseClass(ORACLE);
+				
 				// SystemMessage and cast skill is done by setClassId
 				player.broadcastUserInfo();
 				htmltext = npc.getId() + "-32.htm"; // fnAfterClassChange22
@@ -270,6 +276,7 @@ public class ElfHumanWizardChange1 extends AbstractNpcAI
 				htmltext = npc.getId() + "-33.htm"; // fnNoProof22
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -293,6 +300,7 @@ public class ElfHumanWizardChange1 extends AbstractNpcAI
 		{
 			htmltext = npc.getId() + "-15.htm"; // fnClassMismatch
 		}
+		
 		return htmltext;
 	}
 	

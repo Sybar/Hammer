@@ -165,9 +165,9 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="commissionItemType" val="RAPIER" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">36</stat>
 			<stat type="mAtk">26</stat>
@@ -511,9 +511,9 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="commissionItemType" val="ANCIENT_SWORD" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">43</stat>
 			<stat type="mAtk">26</stat>
@@ -541,9 +541,9 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="commissionItemType" val="ANCIENT_SWORD" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">43</stat>
 			<stat type="mAtk">26</stat>
@@ -627,9 +627,9 @@
 		<set name="spiritshots" val="2" />
 		<set name="commissionItemType" val="CROSSBOW" />
 		<set name="reuse_delay" val="400" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">51</stat>
 			<stat type="mAtk">26</stat>
@@ -1034,9 +1034,9 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="commissionItemType" val="ANCIENT_SWORD" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">55</stat>
 			<stat type="mAtk">32</stat>
@@ -1280,9 +1280,9 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="commissionItemType" val="RAPIER" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">46</stat>
 			<stat type="mAtk">32</stat>
@@ -1313,9 +1313,9 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="commissionItemType" val="RAPIER" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">46</stat>
 			<stat type="mAtk">32</stat>
@@ -1346,9 +1346,9 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="commissionItemType" val="RAPIER" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">46</stat>
 			<stat type="mAtk">32</stat>
@@ -1379,9 +1379,9 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="commissionItemType" val="RAPIER" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">46</stat>
 			<stat type="mAtk">32</stat>
@@ -1413,9 +1413,9 @@
 		<set name="spiritshots" val="2" />
 		<set name="commissionItemType" val="CROSSBOW" />
 		<set name="reuse_delay" val="400" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">64</stat>
 			<stat type="mAtk">32</stat>
@@ -1444,9 +1444,9 @@
 		<set name="spiritshots" val="2" />
 		<set name="commissionItemType" val="CROSSBOW" />
 		<set name="reuse_delay" val="400" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">64</stat>
 			<stat type="mAtk">32</stat>
@@ -1475,9 +1475,9 @@
 		<set name="spiritshots" val="2" />
 		<set name="commissionItemType" val="CROSSBOW" />
 		<set name="reuse_delay" val="400" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">64</stat>
 			<stat type="mAtk">32</stat>
@@ -1852,9 +1852,9 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="commissionItemType" val="RAPIER" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">58</stat>
 			<stat type="mAtk">39</stat>
@@ -1885,9 +1885,9 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="commissionItemType" val="RAPIER" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">58</stat>
 			<stat type="mAtk">39</stat>
@@ -2027,9 +2027,9 @@
 		<set name="spiritshots" val="2" />
 		<set name="commissionItemType" val="CROSSBOW" />
 		<set name="reuse_delay" val="400" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">81</stat>
 			<stat type="mAtk">39</stat>
@@ -2109,9 +2109,9 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="commissionItemType" val="ANCIENT_SWORD" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">69</stat>
 			<stat type="mAtk">39</stat>

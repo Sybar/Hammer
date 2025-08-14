@@ -51,9 +51,11 @@ public class Q10541_TrainLikeTheRealThing extends Quest
 	private static final int SHANNON = 32974;
 	private static final int ADVENTURERS_GUIDE = 32981;
 	private static final int DUMMY = 27457;
+	
 	// Misc
 	private static final int MAX_LEVEL = 20;
 	private static final String KILL_COUNT_VAR = "KillCount";
+	
 	// Buffs
 	private static final SkillHolder WARRIOR = new SkillHolder(15649, 1); // Warrior's Harmony (Adventurer)
 	private static final SkillHolder WIZARD = new SkillHolder(15650, 1); // Wizard's Harmony (Adventurer)
@@ -121,12 +123,14 @@ public class Q10541_TrainLikeTheRealThing extends Quest
 				{
 					applyBuffs(npc, player, WARRIOR.getSkill());
 				}
+				
 				showOnScreenMsg(player, NpcStringId.ATTACK_THE_TRAINING_DUMMY, ExShowScreenMessage.TOP_CENTER, 8000);
 				qs.setCond(4, true);
 				htmltext = "32981-04.html";
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -203,6 +207,7 @@ public class Q10541_TrainLikeTheRealThing extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -234,6 +239,7 @@ public class Q10541_TrainLikeTheRealThing extends Quest
 					qs.set(Integer.toString(DUMMY), kills);
 					playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 				}
+				
 				final ExQuestNpcLogList log = new ExQuestNpcLogList(getId());
 				log.addNpc(DUMMY, qs.getInt(Integer.toString(DUMMY)));
 				qs.getPlayer().sendPacket(log);
@@ -260,6 +266,7 @@ public class Q10541_TrainLikeTheRealThing extends Quest
 				return holder;
 			}
 		}
+		
 		return super.getNpcLogList(player);
 	}
 	
@@ -269,6 +276,7 @@ public class Q10541_TrainLikeTheRealThing extends Quest
 		{
 			holder.getSkill().applyEffects(npc, player);
 		}
+		
 		skill.applyEffects(npc, player);
 		return null;
 	}

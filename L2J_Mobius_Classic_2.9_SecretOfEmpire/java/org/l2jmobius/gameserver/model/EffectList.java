@@ -1,18 +1,22 @@
 /*
- * This file is part of the L2J Mobius project.
+ * Copyright (c) 2013 L2jMobius
  * 
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
  * 
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
+ * The above copyright notice and this permission notice shall be
+ * included in all copies or substantial portions of the Software.
  * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+ * WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR
+ * IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 package org.l2jmobius.gameserver.model;
 
@@ -62,7 +66,7 @@ import org.l2jmobius.gameserver.network.serverpackets.ShortBuffStatusUpdate;
  * Uses maps with skill ID as key and buff info DTO as value to avoid iterations.<br>
  * Uses Double-Checked Locking to avoid useless initialization and synchronization issues and overhead.<br>
  * Methods may resemble List interface, although it doesn't implement such interface.
- * @author Zoey76
+ * @author Zoey76, Mobius
  */
 public class EffectList
 {
@@ -151,6 +155,7 @@ public class EffectList
 				result.add(info);
 			}
 		}
+		
 		return result;
 	}
 	
@@ -168,6 +173,7 @@ public class EffectList
 				result.add(info);
 			}
 		}
+		
 		return result;
 	}
 	
@@ -185,6 +191,7 @@ public class EffectList
 				result.add(info);
 			}
 		}
+		
 		return result;
 	}
 	
@@ -202,6 +209,7 @@ public class EffectList
 				return true;
 			}
 		}
+		
 		for (BuffInfo info : _passives)
 		{
 			if (info.getSkill().getId() == skillId)
@@ -209,6 +217,7 @@ public class EffectList
 				return true;
 			}
 		}
+		
 		return false;
 	}
 	
@@ -226,6 +235,7 @@ public class EffectList
 				return info;
 			}
 		}
+		
 		for (BuffInfo info : _passives)
 		{
 			if (info.getSkill().getId() == skillId)
@@ -233,6 +243,7 @@ public class EffectList
 				return info;
 			}
 		}
+		
 		return null;
 	}
 	
@@ -260,6 +271,7 @@ public class EffectList
 				return true;
 			}
 		}
+		
 		return false;
 	}
 	
@@ -280,6 +292,7 @@ public class EffectList
 				}
 			}
 		}
+		
 		return false;
 	}
 	
@@ -301,6 +314,7 @@ public class EffectList
 				}
 			}
 		}
+		
 		return null;
 	}
 	
@@ -442,10 +456,12 @@ public class EffectList
 		{
 			remove(info);
 		}
+		
 		for (BuffInfo info : _passives)
 		{
 			remove(info);
 		}
+		
 		for (BuffInfo info : _options)
 		{
 			remove(info);
@@ -487,6 +503,7 @@ public class EffectList
 		if (!_passives.isEmpty())
 		{
 			_passives.forEach(this::remove);
+			
 			// Update stats, effect flags and icons.
 			if (update)
 			{
@@ -505,6 +522,7 @@ public class EffectList
 		if (!_options.isEmpty())
 		{
 			_options.forEach(this::remove);
+			
 			// Update stats, effect flags and icons.
 			if (update)
 			{
@@ -589,6 +607,7 @@ public class EffectList
 			stopEffects(i -> i.isAbnormalType(type), true, true);
 			return true;
 		}
+		
 		return false;
 	}
 	
@@ -604,6 +623,7 @@ public class EffectList
 			stopEffects(i -> types.contains(i.getSkill().getAbnormalType()), true, true);
 			return true;
 		}
+		
 		return false;
 	}
 	
@@ -699,6 +719,7 @@ public class EffectList
 				}
 			}
 		}
+		
 		return false;
 	}
 	
@@ -734,6 +755,7 @@ public class EffectList
 				_hasBuffsRemovedOnAnyAction.decrementAndGet();
 			}
 		}
+		
 		if (info.getSkill().isRemovedOnDamage())
 		{
 			if (increase)
@@ -932,7 +954,7 @@ public class EffectList
 		if (info.getEffector() != null)
 		{
 			// Check for debuffs against target.
-			if ((info.getEffector() != info.getEffected()) && skill.isBad())
+			if ((info.getEffector() != info.getEffected()) && skill.hasNegativeEffect())
 			{
 				// Check if effected is debuff blocked.
 				if ((info.getEffected().isDebuffBlocked() || (info.getEffector().isGM() && !info.getEffector().getAccessLevel().canGiveDamage())))
@@ -947,7 +969,7 @@ public class EffectList
 			}
 			
 			// Check if buff skills are blocked.
-			if (info.getEffected().isBuffBlocked() && !skill.isBad())
+			if (info.getEffected().isBuffBlocked() && !skill.hasNegativeEffect())
 			{
 				return;
 			}
@@ -959,6 +981,7 @@ public class EffectList
 			for (BuffInfo existingInfo : _actives)
 			{
 				final Skill existingSkill = existingInfo.getSkill();
+				
 				// Check if existing effect should be removed due to stack.
 				// Effects with no abnormal don't stack if their ID is the same. Effects of the same abnormal type don't stack.
 				if ((skill.getAbnormalType().isNone() && (existingSkill.getId() == skill.getId())) || (!skill.getAbnormalType().isNone() && (existingSkill.getAbnormalType() == skill.getAbnormalType())))
@@ -1022,6 +1045,7 @@ public class EffectList
 		// After removing old buff (same ID) or stacked buff (same abnormal type),
 		// Add the buff to the end of the effect list.
 		_actives.add(info);
+		
 		// Initialize effects.
 		info.initializeEffects();
 	}
@@ -1190,6 +1214,7 @@ public class EffectList
 		{
 			_abnormalVisualEffects.add(ave);
 		}
+		
 		_owner.updateAbnormalVisualEffects();
 	}
 	
@@ -1203,6 +1228,7 @@ public class EffectList
 		{
 			_abnormalVisualEffects.remove(ave);
 		}
+		
 		_owner.updateAbnormalVisualEffects();
 	}
 	
@@ -1269,6 +1295,7 @@ public class EffectList
 						abnormalVisualEffectFlags.add(ave);
 						_abnormalVisualEffects.add(ave);
 					}
+					
 					if (broadcast)
 					{
 						_owner.updateAbnormalVisualEffects();
@@ -1276,6 +1303,7 @@ public class EffectList
 				}
 			}
 		}
+		
 		// Add passive effect flags.
 		for (BuffInfo info : _passives)
 		{

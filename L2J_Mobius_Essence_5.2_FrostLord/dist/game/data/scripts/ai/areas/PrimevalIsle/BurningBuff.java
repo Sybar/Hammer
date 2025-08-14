@@ -34,6 +34,7 @@ public class BurningBuff extends AbstractNpcAI
 {
 	// NPC
 	private static final int TYRANNOSAURUS = 21978;
+	
 	// Skill
 	private static final SkillHolder BURNING = new SkillHolder(48054, 1);
 	

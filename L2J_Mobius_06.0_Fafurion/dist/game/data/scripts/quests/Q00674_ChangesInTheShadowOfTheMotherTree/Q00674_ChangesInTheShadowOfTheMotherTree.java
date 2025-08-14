@@ -44,6 +44,7 @@ public class Q00674_ChangesInTheShadowOfTheMotherTree extends Quest
 	// NPCs
 	private static final int CERIEL = 34415;
 	private static final int NERUPA = 34412;
+	
 	// Monsters
 	private static final int[] MONSTERS =
 	{
@@ -57,10 +58,12 @@ public class Q00674_ChangesInTheShadowOfTheMotherTree extends Quest
 		24141, // Blossom Child
 		24142 // Teasle Child
 	};
+	
 	// Items
 	private static final int BASIC_SUPPLY_BOX = 48397; // Mother Tree Guardians Basic Treasure Chest: Shadow of the Mother Tree
 	private static final int INTERMEDIATE_SUPPLY_BOX = 48398; // Mother Tree Guardians Intermediate Treasure Chest: Shadow of the Mother Tree
 	private static final int ADVANCED_SUPPLY_BOX = 48399; // Mother Tree Guardians Advanced Treasure Chest: Shadow of the Mother Tree
+	
 	// Misc
 	private static final int KILLING_NPCSTRING_ID = NpcStringId.ELIMINATE_THE_GIANT.getId(); // NpcStringId.1019709
 	private static final boolean PARTY_QUEST = false;
@@ -112,6 +115,7 @@ public class Q00674_ChangesInTheShadowOfTheMotherTree extends Quest
 					htmltext = "34415-04b.htm";
 					break;
 				}
+				
 				htmltext = "34415-04.htm";
 				break;
 			}
@@ -127,6 +131,7 @@ public class Q00674_ChangesInTheShadowOfTheMotherTree extends Quest
 					htmltext = "34415-04b.htm";
 					break;
 				}
+				
 				htmltext = "34415-04.htm";
 				break;
 			}
@@ -169,6 +174,7 @@ public class Q00674_ChangesInTheShadowOfTheMotherTree extends Quest
 							{
 								giveItems(player, BASIC_SUPPLY_BOX, 1);
 							}
+							
 							addExpAndSp(player, 27_191_624_760L, 27_191_610);
 							addFactionPoints(player, Faction.MOTHER_TREE_GUARDIANS, 100);
 							qs.exitQuest(QuestType.DAILY, true);
@@ -196,6 +202,7 @@ public class Q00674_ChangesInTheShadowOfTheMotherTree extends Quest
 							{
 								giveItems(player, INTERMEDIATE_SUPPLY_BOX, 1);
 							}
+							
 							addExpAndSp(player, 54_383_249_520L, 54_383_220);
 							addFactionPoints(player, Faction.MOTHER_TREE_GUARDIANS, 200);
 							qs.exitQuest(QuestType.DAILY, true);
@@ -223,6 +230,7 @@ public class Q00674_ChangesInTheShadowOfTheMotherTree extends Quest
 							{
 								giveItems(player, ADVANCED_SUPPLY_BOX, 1);
 							}
+							
 							addExpAndSp(player, 81_574_874_280L, 81_574_830);
 							addFactionPoints(player, Faction.MOTHER_TREE_GUARDIANS, 300);
 							qs.exitQuest(QuestType.DAILY, true);
@@ -238,6 +246,7 @@ public class Q00674_ChangesInTheShadowOfTheMotherTree extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -276,6 +285,7 @@ public class Q00674_ChangesInTheShadowOfTheMotherTree extends Quest
 									htmltext = "34415-04b.htm";
 									break;
 								}
+								
 								htmltext = "34415-04.htm";
 								break;
 							}
@@ -328,6 +338,7 @@ public class Q00674_ChangesInTheShadowOfTheMotherTree extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -386,6 +397,7 @@ public class Q00674_ChangesInTheShadowOfTheMotherTree extends Quest
 			holder.add(new NpcLogListHolder(KILLING_NPCSTRING_ID, true, qs.getInt("AncientGhosts")));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

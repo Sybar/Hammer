@@ -105,6 +105,7 @@ public class RequestUpgradeSystemResult extends ClientPacket
 		{
 			player.destroyItemByItemId(ItemProcessType.FEE, material.getId(), material.getCount(), player, true);
 		}
+		
 		if (adena > 0)
 		{
 			player.reduceAdena(ItemProcessType.FEE, adena, player, true);

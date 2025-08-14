@@ -44,7 +44,7 @@ public class Atingo extends AbstractNpcAI
 	// NPCs
 	private static final int ATINGO = 25914;
 	private static final int SIN_EATER = 25924;
-	public static final int[] PETS = new int[]
+	public static final int[] PETS =
 	{
 		25923,
 		25922,
@@ -53,6 +53,7 @@ public class Atingo extends AbstractNpcAI
 		25920,
 		25919
 	};
+	
 	// Locations
 	private static final Location[] SPAWNS =
 	{
@@ -61,6 +62,7 @@ public class Atingo extends AbstractNpcAI
 		new Location(113906, 14873, -3612, 49656), // Tower of Insolence
 		new Location(171896, 20824, -3334, 16115), // Orc Barracks
 	};
+	
 	// Misc
 	private static final Duration ATINGO_RESPAWN_DURATION = Duration.ofMinutes(10);
 	private static final double ATINGO_PET_SPAWN_RATE = 10;

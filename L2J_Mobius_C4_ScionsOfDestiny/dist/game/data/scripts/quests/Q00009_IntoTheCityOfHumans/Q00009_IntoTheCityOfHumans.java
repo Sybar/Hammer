@@ -33,6 +33,7 @@ public class Q00009_IntoTheCityOfHumans extends Quest
 	private static final int PETUKAI = 30583;
 	private static final int TANAPI = 30571;
 	private static final int TAMIL = 30576;
+	
 	// Rewards
 	private static final int MARK_OF_TRAVELER = 7570;
 	private static final int SOE_GIRAN = 7126;

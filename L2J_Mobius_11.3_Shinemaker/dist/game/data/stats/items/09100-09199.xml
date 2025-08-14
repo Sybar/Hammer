@@ -778,9 +778,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="for_npc" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2310" level="1" /> <!-- Scroll: Guidance (Event) -->
 		</skills>
@@ -797,9 +797,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="for_npc" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2311" level="1" /> <!-- Scroll: Death Whisper (Event) -->
 		</skills>
@@ -816,9 +816,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="for_npc" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2312" level="1" /> <!-- Scroll: Focus (Event) -->
 		</skills>
@@ -835,9 +835,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="for_npc" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2313" level="1" /> <!-- Scroll: Acumen - Event -->
 		</skills>
@@ -854,9 +854,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="for_npc" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2314" level="1" /> <!-- Scroll: Haste (Event) -->
 		</skills>
@@ -873,9 +873,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="for_npc" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2315" level="1" /> <!-- Scroll: Agility (Event) -->
 		</skills>
@@ -892,9 +892,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="for_npc" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2316" level="1" /> <!-- Scroll: Empower (Event) -->
 		</skills>
@@ -911,9 +911,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="for_npc" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2317" level="1" /> <!-- Scroll: Might (Event) -->
 		</skills>
@@ -930,9 +930,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="for_npc" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2318" level="1" /> <!-- Scroll: Wind Walk (Event) -->
 		</skills>
@@ -949,9 +949,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="for_npc" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2319" level="1" /> <!-- Scroll: Shield (Event) -->
 		</skills>

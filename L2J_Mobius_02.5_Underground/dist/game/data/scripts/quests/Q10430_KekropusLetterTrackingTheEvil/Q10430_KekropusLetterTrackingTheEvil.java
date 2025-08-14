@@ -41,13 +41,16 @@ public class Q10430_KekropusLetterTrackingTheEvil extends LetterQuest
 	private static final int VISHOTSKY = 31981;
 	private static final int JOKEL = 33868;
 	private static final int INVISIBLE_NPC = 19543;
+	
 	// Items
 	private static final int SOE_TOWN_OF_SCHUTTGART = 37123; // Scroll of Escape: Town of Schuttgart
 	private static final int SOE_DEN_OF_EVIL = 37036; // Scroll of Escape: Den of Evil
 	private static final int EWS = 959; // Scroll: Enchant Weapon (S-grade)
 	private static final int EAS = 960; // Scroll: Enchant Armor (S-grade)
+	
 	// Location
 	private static final Location TELEPORT_LOC = new Location(86404, -142221, -1341);
+	
 	// Misc
 	private static final int MIN_LEVEL = 81;
 	private static final int MAX_LEVEL = 84;
@@ -105,11 +108,13 @@ public class Q10430_KekropusLetterTrackingTheEvil extends LetterQuest
 					{
 						addExpAndSp(player, 1_412_040, 338);
 					}
+					
 					htmltext = event;
 				}
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -134,6 +139,7 @@ public class Q10430_KekropusLetterTrackingTheEvil extends LetterQuest
 				htmltext = npc.getId() == VISHOTSKY ? "31981-04.html" : "33868-01.html";
 			}
 		}
+		
 		return htmltext;
 	}
 	

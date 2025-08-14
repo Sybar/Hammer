@@ -140,6 +140,7 @@ public class FortCommander extends Defender
 							{
 								attacker = attacker.asSummon().getOwner();
 							}
+							
 							npcString = "Everyone, concentrate your attacks on " + attacker.getName() + "! Show the enemy your resolve!";
 							break;
 						}
@@ -149,6 +150,7 @@ public class FortCommander extends Defender
 							break;
 						}
 					}
+					
 					if (npcString != null)
 					{
 						final NpcSay ns = new NpcSay(getObjectId(), ChatType.NPC_SHOUT, getId(), npcString);
@@ -159,6 +161,7 @@ public class FortCommander extends Defender
 				}
 			}
 		}
+		
 		super.addDamage(attacker, damage, skill);
 	}
 	

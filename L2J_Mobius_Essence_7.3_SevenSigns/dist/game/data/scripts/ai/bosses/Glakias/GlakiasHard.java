@@ -36,6 +36,7 @@ public class GlakiasHard extends AbstractNpcAI
 	// NPCs
 	private static final int GLAKIAS = 29138;
 	private static final int GLAKIAS2 = 29139;
+	
 	// Skills
 	private static final SkillHolder SUMMON_GLAKIAS = new SkillHolder(48373, 2);
 	private static final SkillHolder ICE_STORM_LV_1 = new SkillHolder(48381, 1);

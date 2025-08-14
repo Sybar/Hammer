@@ -46,6 +46,7 @@ public class Q10472_WindsOfFateEncroachingShadows extends Quest
 	private static final int HARDIN = 33870;
 	private static final int KARLA = 33933;
 	private static final int RAINA = 33491;
+	
 	// Mobs
 	private static final int[] MOBS =
 	{
@@ -57,9 +58,11 @@ public class Q10472_WindsOfFateEncroachingShadows extends Quest
 		23179, // Dimensional Rifter
 		23180, // Hellgate Fighting Dog
 	};
+	
 	// Items
 	private static final int DARK_FRAGMENT = 40060;
 	private static final int COUNTERFEIT_ATELIA = 40059;
+	
 	// Rewards
 	private static final ItemHolder RECIPE_TWILIGHT_NECKLACE = new ItemHolder(36791, 1);
 	private static final ItemHolder CRYSTAL_R = new ItemHolder(17371, 5);
@@ -72,9 +75,11 @@ public class Q10472_WindsOfFateEncroachingShadows extends Quest
 	private static final ItemHolder WIND_STONE = new ItemHolder(9549, 15);
 	private static final ItemHolder DARK_STONE = new ItemHolder(9550, 15);
 	private static final ItemHolder HOLY_STONE = new ItemHolder(9551, 15);
+	
 	// Skill
 	private static final SkillHolder ABSORB_WIND = new SkillHolder(16389, 1);
 	private static final SkillHolder ATELIA_ENERGY = new SkillHolder(16398, 1);
+	
 	// Misc
 	private static final double DROP_CHANCE = 0.6d; // Guessed
 	private static final int DARK_FRAGMENT_COUNT = 50;
@@ -277,6 +282,7 @@ public class Q10472_WindsOfFateEncroachingShadows extends Quest
 							break;
 						}
 					}
+					
 					// Give soul crystal
 					switch (qs.get("SoulCrystal"))
 					{
@@ -296,6 +302,7 @@ public class Q10472_WindsOfFateEncroachingShadows extends Quest
 							break;
 						}
 					}
+					
 					giveItems(player, CRYSTAL_R);
 					giveItems(player, RECIPE_TWILIGHT_NECKLACE);
 					addExpAndSp(player, 175739575, 42177);
@@ -309,6 +316,7 @@ public class Q10472_WindsOfFateEncroachingShadows extends Quest
 				htmltext = null;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -466,6 +474,7 @@ public class Q10472_WindsOfFateEncroachingShadows extends Quest
 				htmltext = getAlreadyCompletedMsg(player);
 			}
 		}
+		
 		return htmltext;
 	}
 	

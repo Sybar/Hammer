@@ -52,7 +52,7 @@ public class AdminMissingHtmls implements IAdminCommandHandler
 	};
 	
 	@Override
-	public boolean useAdminCommand(String command, Player activeChar)
+	public boolean onCommand(String command, Player activeChar)
 	{
 		final StringTokenizer st = new StringTokenizer(command, " ");
 		final String actualCommand = st.nextToken();
@@ -91,11 +91,13 @@ public class AdminMissingHtmls implements IAdminCommandHandler
 						}
 					}
 				}
+				
 				Collections.sort(results);
 				for (int id : results)
 				{
 					activeChar.sendSysMessage("NPC " + id + " does not have a default html.");
 				}
+				
 				activeChar.sendSysMessage("Found " + results.size() + " results.");
 				break;
 			}
@@ -126,11 +128,13 @@ public class AdminMissingHtmls implements IAdminCommandHandler
 						}
 					}
 				}
+				
 				Collections.sort(results);
 				for (int id : results)
 				{
 					activeChar.sendSysMessage("NPC " + id + " does not have a default html.");
 				}
+				
 				activeChar.sendSysMessage("Found " + results.size() + " results.");
 				break;
 			}
@@ -163,11 +167,12 @@ public class AdminMissingHtmls implements IAdminCommandHandler
 				break;
 			}
 		}
+		
 		return true;
 	}
 	
 	@Override
-	public String[] getAdminCommandList()
+	public String[] getCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}

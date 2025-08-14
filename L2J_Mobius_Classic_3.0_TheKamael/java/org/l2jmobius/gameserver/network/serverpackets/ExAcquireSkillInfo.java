@@ -86,6 +86,7 @@ public class ExAcquireSkillInfo extends ServerPacket
 			buffer.writeInt(holder.getId());
 			buffer.writeLong(holder.getCount());
 		}
+		
 		buffer.writeInt(_skillRem.size());
 		for (Skill skill : _skillRem)
 		{

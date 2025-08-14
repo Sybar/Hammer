@@ -105,6 +105,7 @@ public class CostumesCollectionSkillsData implements IXmlReader
 				}
 			}
 		}
+		
 		_stackedBonus.put(count, bonus);
 	}
 	

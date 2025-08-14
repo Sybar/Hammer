@@ -80,6 +80,7 @@ public class AbilityPointsData implements IXmlReader
 				return holder;
 			}
 		}
+		
 		return null;
 	}
 	
@@ -98,6 +99,7 @@ public class AbilityPointsData implements IXmlReader
 			// No data found
 			return points >= 13 ? 1000000000 : points >= 9 ? 750000000 : points >= 5 ? 500000000 : 250000000;
 		}
+		
 		return holder.getSP();
 	}
 	

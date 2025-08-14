@@ -168,6 +168,7 @@ public class ListenerTest extends AbstractNpcAI
 			LOGGER.info(getClass().getSimpleName() + ": Player: " + event.getTarget() + " was prevented from dying!");
 			return new TerminateReturn(true, true, true);
 		}
+		
 		return null;
 	}
 	

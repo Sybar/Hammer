@@ -47,6 +47,7 @@ public class ImprovedBabyPets extends AbstractNpcAI
 		16035, // Improved Baby Kookaburra
 		16036, // Improved Baby Cougar
 	};
+	
 	// Skills
 	private static final int PET_CONTROL = 5771;
 	
@@ -108,6 +109,7 @@ public class ImprovedBabyPets extends AbstractNpcAI
 				}
 			}
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	
@@ -156,10 +158,12 @@ public class ImprovedBabyPets extends AbstractNpcAI
 					{
 						summon.setFollowStatus(previousFollowStatus);
 					}
+					
 					return true;
 				}
 			}
 		}
+		
 		return false;
 	}
 	

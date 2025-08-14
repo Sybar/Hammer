@@ -40,6 +40,7 @@ public class Q00447_DragonsTraces extends Quest
 {
 	// NPC
 	private static final int GENIE_LAMP = 34369;
+	
 	// Monsters
 	private static final int DRAGON_BEARER_CAPTAIN = 22096;
 	private static final int DRAGON_BEARER_WARRIOR = 20759;
@@ -48,8 +49,10 @@ public class Q00447_DragonsTraces extends Quest
 	private static final int ISHKA = 21960;
 	private static final int ISHKA2 = 25407;
 	private static final int DRAGON = 22364;
+	
 	// Item
 	private static final ItemHolder SOULSHOT_TICKET = new ItemHolder(90907, 50);
+	
 	// Misc
 	private static final int MIN_LEVEL = 78;
 	private static final int MAX_LEVEL = 90;
@@ -105,6 +108,7 @@ public class Q00447_DragonsTraces extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -143,6 +147,7 @@ public class Q00447_DragonsTraces extends Quest
 				htmltext = getAlreadyCompletedMsg(player);
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -178,6 +183,7 @@ public class Q00447_DragonsTraces extends Quest
 			holder.add(new NpcLogListHolder(NpcStringId.DEFEAT_MONSTERS_41.getId(), true, qs.getInt(KILL_COUNT_VAR)));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

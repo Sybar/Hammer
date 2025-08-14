@@ -37,6 +37,7 @@ public final class Q00748_EndlessRevenge extends Quest
 	private static final int PATERSON = 33864;
 	private static final int SHUVANN = 33867;
 	private static final int MATHIAS = 31340;
+	
 	// Monsters
 	private static final int[] MONSTERS =
 	{
@@ -55,8 +56,10 @@ public final class Q00748_EndlessRevenge extends Quest
 		21010, // Doom Warrior
 		20674, // Doom Knight
 	};
+	
 	// Items
 	private static final int SLAUGHTERER_MARK = 47053;
+	
 	// Misc
 	private static final int MIN_LEVEL = 61;
 	private static final int MAX_LEVEL = 64;
@@ -117,12 +120,14 @@ public final class Q00748_EndlessRevenge extends Quest
 						htmltext = event;
 						break;
 					}
+					
 					htmltext = getNoQuestLevelRewardMsg(player);
 					break;
 				}
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -143,6 +148,7 @@ public final class Q00748_EndlessRevenge extends Quest
 						htmltext = "petterzan_q0748_01.htm";
 						break;
 					}
+					
 					htmltext = "petterzan_q0748_02.htm";
 					break;
 				}
@@ -206,6 +212,7 @@ public final class Q00748_EndlessRevenge extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

@@ -45,6 +45,7 @@ public class Q00232_TestOfTheLord extends Quest
 	private static final int CHIANTA = 30642;
 	private static final int FIRST_ORC = 30643;
 	private static final int ANCESTOR_MARTANKUS = 30649;
+	
 	// Items
 	private static final int ORDEAL_NECKLACE = 3391;
 	private static final int VARKEES_CHARM = 3392;
@@ -73,9 +74,11 @@ public class Q00232_TestOfTheLord extends Quest
 	private static final int RAGNA_CHIEF_NOTICE = 3415;
 	private static final int BONE_ARROW = 1341;
 	private static final int IMMORTAL_FLAME = 3416;
+	
 	// Rewards
 	private static final int MARK_LORD = 3390;
 	private static final int DIMENSIONAL_DIAMOND = 7562;
+	
 	// Misc
 	private static Npc _firstOrc; // Used to avoid to spawn multiple instances.
 	
@@ -647,6 +650,7 @@ public class Q00232_TestOfTheLord extends Quest
 					{
 						giveItems(player, MARSH_SPIDER_FEELER, 1);
 					}
+					
 					playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 				}
 				break;

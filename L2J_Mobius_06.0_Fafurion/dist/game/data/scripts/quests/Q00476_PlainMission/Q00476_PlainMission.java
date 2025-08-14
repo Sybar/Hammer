@@ -62,6 +62,7 @@ public class Q00476_PlainMission extends Quest
 		21283,
 		21284,
 	};
+	
 	// Misc
 	private static final int MIN_LEVEL = 65;
 	private static final int MAX_LEVEL = 69;
@@ -103,6 +104,7 @@ public class Q00476_PlainMission extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -142,6 +144,7 @@ public class Q00476_PlainMission extends Quest
 						{
 							addExpAndSp(player, 4_685_175, 1_124);
 						}
+						
 						htmltext = "31292-01.html";
 					}
 				}
@@ -161,6 +164,7 @@ public class Q00476_PlainMission extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -228,6 +232,7 @@ public class Q00476_PlainMission extends Quest
 			npcLogList.add(new NpcLogListHolder(GRENDEL[0], false, qs.getInt("killed_" + GRENDEL[0])));
 			return npcLogList;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

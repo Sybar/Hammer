@@ -153,6 +153,7 @@ public abstract class AbstractResidence extends ListenersContainer
 						removeFunction(func);
 						continue;
 					}
+					
 					_functions.put(id, func);
 				}
 			}
@@ -195,6 +196,7 @@ public abstract class AbstractResidence extends ListenersContainer
 			{
 				removeFunction(_functions.get(func.getId()));
 			}
+			
 			_functions.put(func.getId(), func);
 		}
 	}
@@ -259,6 +261,7 @@ public abstract class AbstractResidence extends ListenersContainer
 				return true;
 			}
 		}
+		
 		return false;
 	}
 	
@@ -275,6 +278,7 @@ public abstract class AbstractResidence extends ListenersContainer
 				return function;
 			}
 		}
+		
 		return null;
 	}
 	
@@ -292,6 +296,7 @@ public abstract class AbstractResidence extends ListenersContainer
 				return func;
 			}
 		}
+		
 		return null;
 	}
 	
@@ -308,6 +313,7 @@ public abstract class AbstractResidence extends ListenersContainer
 				return func;
 			}
 		}
+		
 		return null;
 	}
 	
@@ -336,6 +342,7 @@ public abstract class AbstractResidence extends ListenersContainer
 				break;
 			}
 		}
+		
 		return function != null ? function.getExpiration() : -1;
 	}
 	

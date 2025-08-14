@@ -66,6 +66,7 @@ public abstract class MatchingRoom
 				}
 			}
 		}
+		
 		return _members;
 	}
 	

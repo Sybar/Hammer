@@ -36,6 +36,7 @@ public class Q00015_SweetWhispers extends Quest
 	private static final int VLADIMIR = 31302;
 	private static final int HIERARCH = 31517;
 	private static final int M_NECROMANCER = 31518;
+	
 	// Misc
 	private static final int MIN_LEVEL = 60;
 	
@@ -82,6 +83,7 @@ public class Q00015_SweetWhispers extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -147,6 +149,7 @@ public class Q00015_SweetWhispers extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

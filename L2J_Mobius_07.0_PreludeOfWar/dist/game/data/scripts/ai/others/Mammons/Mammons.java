@@ -44,6 +44,7 @@ public class Mammons extends AbstractNpcAI
 		33739, // Priest of Mammon
 		33511, // Merchant of Mammon
 	};
+	
 	// Locations
 	private static final Location[] BLACKSMITH_LOC =
 	{
@@ -63,6 +64,7 @@ public class Mammons extends AbstractNpcAI
 		new Location(81284, 150155, -3528, 891), // Giran
 		new Location(42784, -41236, -2192, 37972), // Rune
 	};
+	
 	// Misc
 	private static final NpcStringId[] RANDOM_SAY =
 	{
@@ -109,6 +111,7 @@ public class Mammons extends AbstractNpcAI
 					_mammons.stream().filter(Objects::nonNull).forEach(Npc::deleteMe);
 					_mammons.clear();
 				}
+				
 				final int town = getRandom(3);
 				final Npc blacksmith = addSpawn(MAMMONS[0], BLACKSMITH_LOC[town]);
 				final Npc merchant = addSpawn(MAMMONS[1], MERCHANT_LOC[town]);
@@ -125,6 +128,7 @@ public class Mammons extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

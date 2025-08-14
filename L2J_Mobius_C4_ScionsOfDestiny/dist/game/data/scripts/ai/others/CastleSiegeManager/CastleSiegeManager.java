@@ -72,6 +72,7 @@ public class CastleSiegeManager extends AbstractNpcAI
 		{
 			npc.getCastle().getSiege().listRegisterClan(player);
 		}
+		
 		return htmltext;
 	}
 	
@@ -85,6 +86,7 @@ public class CastleSiegeManager extends AbstractNpcAI
 		{
 			return true;
 		}
+		
 		return false;
 	}
 	

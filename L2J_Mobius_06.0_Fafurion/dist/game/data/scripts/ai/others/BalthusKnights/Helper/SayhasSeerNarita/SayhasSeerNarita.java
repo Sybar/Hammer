@@ -41,9 +41,11 @@ public final class SayhasSeerNarita extends AbstractNpcAI
 {
 	// NPCs
 	private static final int NARITA = 34381;
+	
 	// Monsters
 	private static final int ANTHARAS = 24087;
 	private static final int INVISIBLE_NPC = 18918;
+	
 	// Skills
 	private static final SkillHolder HydroAttackSkill = new SkillHolder(32157, 1);
 	// private static final SkillHolder FatalWoundRecoverySkill = new SkillHolder(32184, 1);
@@ -99,6 +101,7 @@ public final class SayhasSeerNarita extends AbstractNpcAI
 						narita.setTalkable(true);
 						narita.teleToLocation(171771, 190975, -11536, 25797, instance);
 						narita.setTarget(narita);
+						
 						// TODO: Check why the head goes crazy with this skill
 						// narita.setTarget(narita, TargetChangeReason.STANDARD);
 						// addSkillCastDesire(narita, npc.getTarget(), FatalWoundRecoverySkill, 1);

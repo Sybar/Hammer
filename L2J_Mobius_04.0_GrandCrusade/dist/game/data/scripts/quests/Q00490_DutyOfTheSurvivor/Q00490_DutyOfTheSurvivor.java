@@ -55,9 +55,11 @@ public class Q00490_DutyOfTheSurvivor extends Quest
 		23172, // Delegate of Blood
 		23173, // Blood Aide
 	};
+	
 	// Items
 	private static final int EXTRACT = 34059; // Putrefied Extract
 	private static final int BLOOD = 34060; // Rotten Blood
+	
 	// Misc
 	private static final int DROP_CHANCE = 65; // Guessed
 	private static final int MIN_LEVEL = 85;
@@ -99,6 +101,7 @@ public class Q00490_DutyOfTheSurvivor extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -130,6 +133,7 @@ public class Q00490_DutyOfTheSurvivor extends Quest
 						{
 							addExpAndSp(player, 145_557_000, 34_933);
 						}
+						
 						htmltext = "30137-07.htm";
 					}
 					break;
@@ -149,6 +153,7 @@ public class Q00490_DutyOfTheSurvivor extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -187,6 +192,7 @@ public class Q00490_DutyOfTheSurvivor extends Quest
 			npcLogList.add(new NpcLogListHolder(BLOOD, false, (int) getQuestItemsCount(player, BLOOD)));
 			return npcLogList;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

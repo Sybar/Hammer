@@ -38,12 +38,14 @@ public class LilithBoss extends AbstractNpcAI
 {
 	// Npc
 	private static final int LILITH = 29336;
+	
 	// Skills
 	private static final SkillHolder MAGIC_BOLT = new SkillHolder(32536, 1);
 	private static final SkillHolder MAGIC_BLAST = new SkillHolder(32537, 1);
 	private static final SkillHolder UNHOLY_VENGEANCE = new SkillHolder(32538, 1);
 	private static final SkillHolder UNHOLY_DIMENSION = new SkillHolder(32539, 1);
 	private static final SkillHolder UNHOLY_SHIELD = new SkillHolder(32540, 1);
+	
 	// Others
 	private boolean _hp75 = false;
 	private boolean _hp50 = false;
@@ -68,6 +70,7 @@ public class LilithBoss extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	
@@ -96,6 +99,7 @@ public class LilithBoss extends AbstractNpcAI
 			{
 				refreshAiParams(attacker, npc, ((damage / 3) * 20));
 			}
+			
 			manageSkills(npc);
 		}
 	}
@@ -121,6 +125,7 @@ public class LilithBoss extends AbstractNpcAI
 				return;
 			}
 		}
+		
 		final int index = MathUtil.getIndexOfMinValue(vars.getInt("i_quest0"), vars.getInt("i_quest1"), vars.getInt("i_quest2"));
 		vars.set("i_quest" + index, newAggroVal);
 		vars.set("c_quest" + index, attacker);
@@ -148,6 +153,7 @@ public class LilithBoss extends AbstractNpcAI
 				vars.set("i_quest" + i, 0);
 			}
 		}
+		
 		final int index = MathUtil.getIndexOfMaxValue(vars.getInt("i_quest0"), vars.getInt("i_quest1"), vars.getInt("i_quest2"));
 		final Creature player = vars.getObject("c_quest" + index, Creature.class);
 		final int i2 = vars.getInt("i_quest" + index);
@@ -185,6 +191,7 @@ public class LilithBoss extends AbstractNpcAI
 			npc.doCast(UNHOLY_SHIELD.getSkill());
 			return;
 		}
+		
 		if ((player != null) && !player.isDead())
 		{
 			if (chance < 15)

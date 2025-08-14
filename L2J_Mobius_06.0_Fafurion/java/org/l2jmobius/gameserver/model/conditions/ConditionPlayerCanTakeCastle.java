@@ -73,6 +73,7 @@ public class ConditionPlayerCanTakeCastle extends Condition
 			player.sendPacket(SystemMessageId.THE_DISTANCE_IS_TOO_FAR_AND_SO_THE_CASTING_HAS_BEEN_STOPPED);
 			canTakeCastle = false;
 		}
+		
 		return _value == canTakeCastle;
 	}
 }

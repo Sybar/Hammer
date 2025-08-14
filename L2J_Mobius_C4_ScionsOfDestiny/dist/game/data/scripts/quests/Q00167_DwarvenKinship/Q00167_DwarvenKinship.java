@@ -32,6 +32,7 @@ public class Q00167_DwarvenKinship extends Quest
 	private static final int CARLON = 30350;
 	private static final int NORMAN = 30210;
 	private static final int HAPROCK = 30255;
+	
 	// Items
 	private static final int CARLON_LETTER = 1076;
 	private static final int NORMAN_LETTER = 1106;

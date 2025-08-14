@@ -68,6 +68,7 @@ public class LoginWeekendDailyMissionHandler extends AbstractDailyMissionHandler
 				entry.setStatus(DailyMissionStatus.AVAILABLE);
 			}
 		}
+		
 		storePlayerEntry(entry);
 	}
 }

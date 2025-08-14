@@ -45,8 +45,10 @@ public class Elpies extends Event
 {
 	// NPC
 	private static final int ELPY = 900100;
+	
 	// Amount of Elpies to spawn when the event starts
 	private static final int ELPY_AMOUNT = 100;
+	
 	// Event duration in minutes
 	private static final int EVENT_DURATION_MINUTES = 2;
 	// @formatter:off
@@ -73,6 +75,7 @@ public class Elpies extends Event
 		{ 1462,  0, 10,  20 }	// Crystal S-Grade
 	};
 	// @formatter:on
+	
 	// Non-final variables
 	private static boolean EVENT_ACTIVE = false;
 	private static int CURRENT_ELPY_COUNT = 0;

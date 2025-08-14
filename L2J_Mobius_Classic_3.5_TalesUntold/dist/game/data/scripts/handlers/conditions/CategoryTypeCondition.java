@@ -51,6 +51,7 @@ public class CategoryTypeCondition implements ICondition
 				return true;
 			}
 		}
+		
 		return false;
 	}
 }

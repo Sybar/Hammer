@@ -37,8 +37,10 @@ public class Q10885_SaviorsPathDiscovery extends Quest
 	// NPCs
 	private static final int LEONA_BLACKBIRD = 34425;
 	private static final int ELIKIA = 34057;
+	
 	// Item
 	private static final int LEONA_BLACKBIRDS_MESSAGE = 48545;
+	
 	// Misc
 	private static final int MIN_LEVEL = 103;
 	
@@ -75,6 +77,7 @@ public class Q10885_SaviorsPathDiscovery extends Quest
 				{
 					qs.setCond(2);
 				}
+				
 				htmltext = event;
 				break;
 			}
@@ -86,6 +89,7 @@ public class Q10885_SaviorsPathDiscovery extends Quest
 					playMovie(player, Movie.EP5_ASTATINE_QST_START);
 					qs.setCond(3);
 				}
+				
 				htmltext = event;
 				break;
 			}
@@ -108,6 +112,7 @@ public class Q10885_SaviorsPathDiscovery extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -167,6 +172,7 @@ public class Q10885_SaviorsPathDiscovery extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

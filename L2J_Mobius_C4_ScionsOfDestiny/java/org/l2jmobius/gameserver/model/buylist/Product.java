@@ -89,6 +89,7 @@ public class Product
 		{
 			return 0;
 		}
+		
 		final int count = _count.get();
 		return count > 0 ? count : 0;
 	}
@@ -99,6 +100,7 @@ public class Product
 		{
 			_count = new AtomicInteger();
 		}
+		
 		_count.set(currentCount);
 	}
 	

@@ -50,6 +50,6 @@ public class TaskRecom extends PersistentTask
 	public void initializate()
 	{
 		super.initializate();
-		PersistentTaskManager.addUniqueTask(NAME, PersistentTaskType.TYPE_GLOBAL_TASK, "1", "06:30:00", ""); // 13:00:00 ?
+		PersistentTaskManager.addUniqueTask(NAME, PersistentTaskType.TYPE_GLOBAL_TASK, "1", "13:00:00", "");
 	}
 }

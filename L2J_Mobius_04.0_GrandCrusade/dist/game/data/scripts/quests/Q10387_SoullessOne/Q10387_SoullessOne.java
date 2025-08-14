@@ -35,11 +35,13 @@ public class Q10387_SoullessOne extends Quest
 	private static final int HASED = 33780;
 	private static final int VERNA = 33796;
 	private static final int SPICULA_ZERO = 25901;
+	
 	// Items
 	private static final int EWR = 17526; // Scroll: Enchant Weapon (R-grade)
 	private static final int EAR = 17527; // Scroll: Enchant Armor (R-grade)
 	private static final int COKES = 36563; // Synthetic Cokes
 	private static final int POUCH = 34861; // Ingredient and Hardener Pouch (R-grade)
+	
 	// Misc
 	private static final int MIN_LEVEL = 93;
 	
@@ -100,6 +102,7 @@ public class Q10387_SoullessOne extends Quest
 					{
 						addExpAndSp(player, 817_330_500, 196_159);
 					}
+					
 					qs.exitQuest(false, true);
 					htmltext = "33796-10.html";
 				}
@@ -115,6 +118,7 @@ public class Q10387_SoullessOne extends Quest
 					{
 						addExpAndSp(player, 817_330_500, 196_159);
 					}
+					
 					qs.exitQuest(false, true);
 					htmltext = "33796-10.html";
 				}
@@ -130,12 +134,14 @@ public class Q10387_SoullessOne extends Quest
 					{
 						addExpAndSp(player, 817_330_500, 196_159);
 					}
+					
 					qs.exitQuest(false, true);
 					htmltext = "33796-10.html";
 				}
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -193,6 +199,7 @@ public class Q10387_SoullessOne extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

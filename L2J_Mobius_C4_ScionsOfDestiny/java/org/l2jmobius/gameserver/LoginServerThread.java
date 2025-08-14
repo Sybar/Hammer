@@ -108,6 +108,7 @@ public class LoginServerThread extends Thread
 		{
 			_requestID = Config.SERVER_ID;
 		}
+		
 		_acceptAlternate = Config.ACCEPT_ALTERNATE_ID;
 		_reserveHost = Config.RESERVE_HOST_ON_LOGIN;
 		_subnets = Config.GAME_SERVER_SUBNETS;
@@ -200,6 +201,7 @@ public class LoginServerThread extends Thread
 							
 							// Send the blowfish key through the RSA encryption.
 							sendPacket(new BlowFishKey(blowfishKey, publicKey));
+							
 							// Now, only accept packet with the new encryption.
 							_blowfish = new NewCrypt(blowfishKey);
 							sendPacket(new AuthRequest(_requestID, _acceptAlternate, _hexID, _gamePort, _reserveHost, _maxPlayer, _subnets, _hosts));
@@ -209,6 +211,7 @@ public class LoginServerThread extends Thread
 						{
 							final LoginServerFail lsf = new LoginServerFail(incoming);
 							LOGGER.info(getClass().getSimpleName() + ": Damn! Registration Failed: " + lsf.getReasonString());
+							
 							// Login will close the connection here.
 							break;
 						}
@@ -229,6 +232,7 @@ public class LoginServerThread extends Thread
 							{
 								st.addAttribute(ServerStatus.SERVER_LIST_SQUARE_BRACKET, ServerStatus.OFF);
 							}
+							
 							if (Config.SERVER_LIST_CLOCK)
 							{
 								st.addAttribute(ServerStatus.SERVER_LIST_CLOCK, ServerStatus.ON);
@@ -237,6 +241,7 @@ public class LoginServerThread extends Thread
 							{
 								st.addAttribute(ServerStatus.SERVER_LIST_CLOCK, ServerStatus.OFF);
 							}
+							
 							if (Config.SERVER_LIST_TESTSERVER)
 							{
 								st.addAttribute(ServerStatus.TEST_SERVER, ServerStatus.ON);
@@ -245,6 +250,7 @@ public class LoginServerThread extends Thread
 							{
 								st.addAttribute(ServerStatus.TEST_SERVER, ServerStatus.OFF);
 							}
+							
 							if (Config.SERVER_GMONLY)
 							{
 								st.addAttribute(ServerStatus.SERVER_LIST_STATUS, ServerStatus.STATUS_GM_ONLY);
@@ -253,6 +259,7 @@ public class LoginServerThread extends Thread
 							{
 								st.addAttribute(ServerStatus.SERVER_LIST_STATUS, ServerStatus.STATUS_AUTO);
 							}
+							
 							sendPacket(st);
 							if (World.getAllPlayersCount() > 0)
 							{
@@ -261,6 +268,7 @@ public class LoginServerThread extends Thread
 								{
 									playerList.add(player.getAccountName());
 								}
+								
 								sendPacket(new PlayerInGame(playerList));
 							}
 							break;
@@ -281,6 +289,7 @@ public class LoginServerThread extends Thread
 									}
 								}
 							}
+							
 							if (wcToRemove != null)
 							{
 								if (par.isAuthed())
@@ -300,6 +309,7 @@ public class LoginServerThread extends Thread
 									wcToRemove.gameClient.close(new LoginFail(LoginFail.SYSTEM_ERROR_LOGIN_LATER));
 									_accountsInGameServer.remove(wcToRemove.account);
 								}
+								
 								_waitingClients.remove(wcToRemove);
 							}
 							break;
@@ -385,6 +395,7 @@ public class LoginServerThread extends Thread
 					break;
 				}
 			}
+			
 			if (toRemove != null)
 			{
 				_waitingClients.remove(toRemove);

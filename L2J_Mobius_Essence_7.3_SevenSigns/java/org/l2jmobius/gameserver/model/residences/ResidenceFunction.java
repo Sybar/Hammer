@@ -174,6 +174,7 @@ public class ResidenceFunction
 			_expiration = System.currentTimeMillis() + (template.getDuration().getSeconds() * 1000);
 			init();
 		}
+		
 		return true;
 	}
 	
@@ -186,6 +187,7 @@ public class ResidenceFunction
 		{
 			_task.cancel(true);
 		}
+		
 		_task = null;
 	}
 }

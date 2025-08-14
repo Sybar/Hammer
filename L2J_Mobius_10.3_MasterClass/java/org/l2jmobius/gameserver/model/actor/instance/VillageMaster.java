@@ -65,6 +65,7 @@ public class VillageMaster extends Folk
 		{
 			return true;
 		}
+		
 		return super.isAutoAttackable(attacker);
 	}
 	
@@ -80,6 +81,7 @@ public class VillageMaster extends Folk
 		{
 			pom = npcId + "-" + value;
 		}
+		
 		return "data/html/villagemaster/" + pom + ".htm";
 	}
 	
@@ -94,6 +96,7 @@ public class VillageMaster extends Folk
 		{
 			cmdParams = commandStr[1];
 		}
+		
 		if (commandStr.length >= 3)
 		{
 			cmdParams2 = commandStr[2];
@@ -196,6 +199,7 @@ public class VillageMaster extends Folk
 				{
 					msg.setFile(player, "data/scripts/village_master/ClanMaster/9000-07-in-progress.htm");
 				}
+				
 				player.sendPacket(msg);
 			}
 		}
@@ -229,8 +233,8 @@ public class VillageMaster extends Folk
 		{
 			if (player.getClan().levelUpClan(player))
 			{
-				player.broadcastPacket(new MagicSkillUse(player, 5103, 1, 0, 0));
-				player.broadcastPacket(new MagicSkillLaunched(player, 5103, 1));
+				player.broadcastSkillPacket(new MagicSkillUse(player, 5103, 1, 0, 0), player);
+				player.broadcastSkillPacket(new MagicSkillLaunched(player, 5103, 1), player);
 			}
 		}
 		else
@@ -253,11 +257,13 @@ public class VillageMaster extends Folk
 			player.sendPacket(SystemMessageId.THE_OPPOSING_CLAN_HAS_REQUESTED_TO_DISSOLVE);
 			return;
 		}
+		
 		if (clan.isAtWar())
 		{
 			player.sendPacket(SystemMessageId.YOU_CANNOT_DISSOLVE_A_CLAN_WHILE_ENGAGED_IN_A_WAR);
 			return;
 		}
+		
 		if ((clan.getCastleId() != 0) || (clan.getHideoutId() != 0) || (clan.getFortId() != 0))
 		{
 			player.sendPacket(SystemMessageId.YOU_CAN_T_DISBAND_THE_CLAN_THAT_HAS_A_CLAN_HALL_OR_CASTLE);
@@ -272,6 +278,7 @@ public class VillageMaster extends Folk
 				return;
 			}
 		}
+		
 		for (Fort fort : FortManager.getInstance().getForts())
 		{
 			if (FortSiegeManager.getInstance().checkIsRegistered(clan, fort.getResidenceId()))
@@ -286,6 +293,7 @@ public class VillageMaster extends Folk
 			player.sendPacket(SystemMessageId.YOU_CANNOT_DISSOLVE_A_CLAN_DURING_A_SIEGE_OR_WHILE_PROTECTING_A_CASTLE);
 			return;
 		}
+		
 		if (clan.getDissolvingExpiryTime() > System.currentTimeMillis())
 		{
 			final SystemMessage sm = new SystemMessage(SystemMessageId.YOU_HAVE_ALREADY_REQUESTED_THE_DISSOLUTION_OF_S1_CLAN);
@@ -327,6 +335,7 @@ public class VillageMaster extends Folk
 			LOGGER.warning("ERROR: Wrong pattern for clan name!");
 			pattern = Pattern.compile(".*");
 		}
+		
 		return pattern.matcher(name).matches();
 	}
 }

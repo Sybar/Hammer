@@ -278,6 +278,7 @@ public class AirShipManager
 		{
 			LOGGER.log(Level.WARNING, getClass().getSimpleName() + ": Error while initializing: ", e);
 		}
+		
 		LOGGER.info(getClass().getSimpleName() + ": Loaded " + _airShipsInfo.size() + " private airships");
 	}
 	

@@ -1,18 +1,22 @@
 /*
- * This file is part of the L2J Mobius project.
+ * Copyright (c) 2013 L2jMobius
  * 
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
  * 
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
+ * The above copyright notice and this permission notice shall be
+ * included in all copies or substantial portions of the Software.
  * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+ * WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR
+ * IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 package org.l2jmobius.gameserver.model.stats.finalizers;
 
@@ -22,6 +26,7 @@ import org.l2jmobius.Config;
 import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.instance.Pet;
+import org.l2jmobius.gameserver.model.actor.transform.Transform;
 import org.l2jmobius.gameserver.model.item.instance.Item;
 import org.l2jmobius.gameserver.model.itemcontainer.Inventory;
 import org.l2jmobius.gameserver.model.stats.BaseStat;
@@ -29,7 +34,7 @@ import org.l2jmobius.gameserver.model.stats.IStatFunction;
 import org.l2jmobius.gameserver.model.stats.Stat;
 
 /**
- * @author UnAfraid
+ * @author UnAfraid, Mobius
  */
 public class MDefenseFinalizer implements IStatFunction
 {
@@ -52,6 +57,7 @@ public class MDefenseFinalizer implements IStatFunction
 			final Pet pet = creature.asPet();
 			baseValue = pet.getPetLevelData().getPetMDef();
 		}
+		
 		baseValue += calcEnchantedItemBonus(creature, stat);
 		
 		final Inventory inv = creature.getInventory();
@@ -66,12 +72,12 @@ public class MDefenseFinalizer implements IStatFunction
 		if (creature.isPlayer())
 		{
 			final Player player = creature.asPlayer();
+			final Transform transform = creature.getTransformation();
 			for (int slot : SLOTS)
 			{
 				if (!player.getInventory().isPaperdollSlotEmpty(slot))
 				{
-					final int defaultStatValue = player.getTemplate().getBaseDefBySlot(slot);
-					baseValue -= creature.getTransformation().map(transform -> transform.getBaseDefBySlot(player, slot)).orElse(defaultStatValue);
+					baseValue -= transform == null ? player.getTemplate().getBaseDefBySlot(slot) : transform.getBaseDefBySlot(player, slot);
 				}
 			}
 			
@@ -81,6 +87,7 @@ public class MDefenseFinalizer implements IStatFunction
 		{
 			baseValue -= 13;
 		}
+		
 		if (creature.isRaid())
 		{
 			baseValue *= Config.RAID_MDEFENCE_MULTIPLIER;

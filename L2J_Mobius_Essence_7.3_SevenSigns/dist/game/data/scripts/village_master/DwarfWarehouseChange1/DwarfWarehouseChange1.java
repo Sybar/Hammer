@@ -40,6 +40,7 @@ public class DwarfWarehouseChange1 extends AbstractNpcAI
 	// Items
 	private static final int SHADOW_ITEM_EXCHANGE_COUPON_D_GRADE = 8869;
 	private static final int RING_OF_RAVEN = 1642;
+	
 	// Class
 	private static final int SCAVENGER = 54;
 	
@@ -81,6 +82,7 @@ public class DwarfWarehouseChange1 extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -117,6 +119,7 @@ public class DwarfWarehouseChange1 extends AbstractNpcAI
 				takeItems(player, RING_OF_RAVEN, -1);
 				player.setPlayerClass(SCAVENGER);
 				player.setBaseClass(SCAVENGER);
+				
 				// SystemMessage and cast skill is done by setClassId
 				player.broadcastUserInfo();
 				giveItems(player, SHADOW_ITEM_EXCHANGE_COUPON_D_GRADE, 15);
@@ -127,6 +130,7 @@ public class DwarfWarehouseChange1 extends AbstractNpcAI
 				htmltext = npc.getId() + "-11.htm"; // fnNoProof11
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -142,6 +146,7 @@ public class DwarfWarehouseChange1 extends AbstractNpcAI
 		{
 			htmltext = npc.getId() + "-05.htm"; // fnClassMismatch
 		}
+		
 		return htmltext;
 	}
 	

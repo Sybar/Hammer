@@ -136,6 +136,7 @@ public class RequestRestartPoint extends ClientPacket
 		{
 			_requestedPointType = 5;
 		}
+		
 		switch (_requestedPointType)
 		{
 			case 1: // to clanhall
@@ -145,6 +146,7 @@ public class RequestRestartPoint extends ClientPacket
 					PacketLogger.warning("Player [" + player.getName() + "] called RestartPointPacket - To Clanhall and he doesn't have Clanhall!");
 					return;
 				}
+				
 				loc = MapRegionManager.getInstance().getTeleToLocation(player, TeleportWhereType.CLANHALL);
 				if ((ClanHallTable.getInstance().getClanHallByOwner(player.getClan()) != null) && (ClanHallTable.getInstance().getClanHallByOwner(player.getClan()).getFunction(ClanHall.FUNC_RESTORE_EXP) != null))
 				{
@@ -178,8 +180,10 @@ public class RequestRestartPoint extends ClientPacket
 					{
 						return;
 					}
+					
 					loc = MapRegionManager.getInstance().getTeleToLocation(player, TeleportWhereType.CASTLE);
 				}
+				
 				if ((CastleManager.getInstance().getCastleByOwner(player.getClan()) != null) && (CastleManager.getInstance().getCastleByOwner(player.getClan()).getFunction(Castle.FUNC_RESTORE_EXP) != null))
 				{
 					player.restoreExp(CastleManager.getInstance().getCastleByOwner(player.getClan()).getFunction(Castle.FUNC_RESTORE_EXP).getLvl());
@@ -199,6 +203,7 @@ public class RequestRestartPoint extends ClientPacket
 				{
 					siegeClan = hall.getSiege().getAttackerClan(player.getClan());
 				}
+				
 				if ((siegeClan == null) || siegeClan.getFlag().isEmpty())
 				{
 					// Check if clan hall has inner spawns loc
@@ -214,6 +219,7 @@ public class RequestRestartPoint extends ClientPacket
 					PacketLogger.warning("Player [" + player.getName() + "] called RestartPointPacket - To Siege HQ and he doesn't have Siege HQ!");
 					return;
 				}
+				
 				loc = MapRegionManager.getInstance().getTeleToLocation(player, TeleportWhereType.SIEGEFLAG);
 				break;
 			}
@@ -224,6 +230,7 @@ public class RequestRestartPoint extends ClientPacket
 					PacketLogger.warning("Player [" + player.getName() + "] called RestartPointPacket - Fixed and he isn't festival participant!");
 					return;
 				}
+				
 				if (player.isGM() || player.destroyItemByItemId(ItemProcessType.FEE, 10649, 1, player, false) || player.destroyItemByItemId(ItemProcessType.FEE, 13300, 1, player, false) || player.destroyItemByItemId(ItemProcessType.FEE, 13128, 1, player, false))
 				{
 					player.doRevive(100.00);
@@ -246,6 +253,7 @@ public class RequestRestartPoint extends ClientPacket
 				{
 					return;
 				}
+				
 				loc = new Location(-114356, -249645, -2984);
 				break;
 			}

@@ -31,6 +31,7 @@ public class Cerenas extends AbstractNpcAI
 {
 	// NPC
 	private static final int CERENAS = 31281;
+	
 	// Item
 	private static final int NOBLESSE_TIARA = 7694;
 	
@@ -63,6 +64,7 @@ public class Cerenas extends AbstractNpcAI
 				htmltext = "31281-01.html";
 			}
 		}
+		
 		return htmltext;
 	}
 	

@@ -186,6 +186,7 @@ public abstract class OlympiadGameNormal extends AbstractOlympiadGame
 			LOGGER.log(Level.WARNING, "", e);
 			return false;
 		}
+		
 		return result;
 	}
 	
@@ -203,6 +204,7 @@ public abstract class OlympiadGameNormal extends AbstractOlympiadGame
 			LOGGER.log(Level.WARNING, "", e);
 			return false;
 		}
+		
 		return result;
 	}
 	
@@ -265,6 +267,7 @@ public abstract class OlympiadGameNormal extends AbstractOlympiadGame
 		{
 			portPlayerBack(_playerOne.getPlayer());
 		}
+		
 		if ((_playerTwo.getPlayer() != null) && !_playerTwo.isDefaulted() && !_playerTwo.isDisconnected())
 		{
 			portPlayerBack(_playerTwo.getPlayer());
@@ -525,6 +528,7 @@ public abstract class OlympiadGameNormal extends AbstractOlympiadGame
 				_playerTwo.getPlayer().sendPacket(new ExOlympiadMatchInfo(_playerOne.getName(), _playerTwo.getName(), 0, 0, 1, 20));
 				ThreadPool.schedule(() -> _playerTwo.getPlayer().sendPacket(new ExOlympiadMatchInfo(_playerOne.getName(), _playerTwo.getName(), 0, 0, 2, 100)), 20000);
 			}
+			
 			resetDamage();
 		}
 		catch (Exception e)
@@ -603,6 +607,7 @@ public abstract class OlympiadGameNormal extends AbstractOlympiadGame
 					_playerOne.getPlayer().sendPacket(new ExOlympiadMatchInfo(_playerOne.getName(), _playerTwo.getName(), 1, 0, 2, 20));
 					ThreadPool.schedule(() -> _playerOne.getPlayer().sendPacket(new ExOlympiadMatchInfo(_playerOne.getName(), _playerTwo.getName(), 1, 0, 3, 100)), 20000);
 				}
+				
 				ThreadPool.schedule(() -> SkillCaster.triggerCast(_playerOne.getPlayer(), _playerOne.getPlayer(), CommonSkill.OLYMPIAD_WIN.getSkill()), 2000);
 				
 				if (_playerTwo.getPlayer() != null)
@@ -649,6 +654,7 @@ public abstract class OlympiadGameNormal extends AbstractOlympiadGame
 					_playerTwo.getPlayer().sendPacket(new ExOlympiadMatchInfo(_playerOne.getName(), _playerTwo.getName(), 0, 1, 2, 20));
 					ThreadPool.schedule(() -> _playerTwo.getPlayer().sendPacket(new ExOlympiadMatchInfo(_playerOne.getName(), _playerTwo.getName(), 0, 1, 3, 100)), 20000);
 				}
+				
 				ThreadPool.schedule(() -> SkillCaster.triggerCast(_playerTwo.getPlayer(), _playerTwo.getPlayer(), CommonSkill.OLYMPIAD_WIN.getSkill()), 2000);
 				
 				if (_playerOne.getPlayer() != null)
@@ -698,6 +704,7 @@ public abstract class OlympiadGameNormal extends AbstractOlympiadGame
 					ThreadPool.schedule(() -> _playerTwo.getPlayer().sendPacket(new ExOlympiadMatchInfo(_playerOne.getName(), _playerTwo.getName(), 0, 1, 3, 100)), 20000);
 				}
 			}
+			
 			resetDamage();
 		}
 		catch (Exception e)
@@ -769,6 +776,7 @@ public abstract class OlympiadGameNormal extends AbstractOlympiadGame
 				{
 					_playerOne.getPlayer().sendPacket(new ExOlympiadMatchInfo(_playerOne.getName(), _playerTwo.getName(), 1, 2, 3, 0));
 				}
+				
 				ThreadPool.schedule(() -> SkillCaster.triggerCast(_playerOne.getPlayer(), _playerOne.getPlayer(), CommonSkill.OLYMPIAD_WIN.getSkill()), 2000);
 				
 				if (_playerTwo.getPlayer() != null)
@@ -802,6 +810,7 @@ public abstract class OlympiadGameNormal extends AbstractOlympiadGame
 				{
 					_playerTwo.getPlayer().sendPacket(new ExOlympiadMatchInfo(_playerOne.getName(), _playerTwo.getName(), 2, 1, 3, 0));
 				}
+				
 				ThreadPool.schedule(() -> SkillCaster.triggerCast(_playerTwo.getPlayer(), _playerTwo.getPlayer(), CommonSkill.OLYMPIAD_WIN.getSkill()), 2000);
 				
 				if (_playerOne.getPlayer() != null)
@@ -824,6 +833,7 @@ public abstract class OlympiadGameNormal extends AbstractOlympiadGame
 				_playerTwo.getPlayer().broadcastPacket(tie);
 				_playerOne.getPlayer().broadcastPacket(tie);
 			}
+			
 			resetDamage();
 		}
 		catch (Exception e)
@@ -891,6 +901,7 @@ public abstract class OlympiadGameNormal extends AbstractOlympiadGame
 						LOGGER.log(Level.WARNING, "Exception on validateWinner(): " + e.getMessage(), e);
 					}
 				}
+				
 				if (_playerTwo.isDefaulted())
 				{
 					try
@@ -1234,6 +1245,7 @@ public abstract class OlympiadGameNormal extends AbstractOlympiadGame
 			{
 				_playerOne.getPlayer().sendPacket(resultP1);
 			}
+			
 			if (_playerTwo != null)
 			{
 				_playerTwo.getPlayer().sendPacket(resultP2);
@@ -1442,6 +1454,7 @@ public abstract class OlympiadGameNormal extends AbstractOlympiadGame
 		{
 			_playerOne.getPlayer().setInvul(true);
 		}
+		
 		if (_playerTwo.getPlayer() != null)
 		{
 			_playerTwo.getPlayer().setInvul(true);
@@ -1455,6 +1468,7 @@ public abstract class OlympiadGameNormal extends AbstractOlympiadGame
 		{
 			_playerOne.getPlayer().setInvul(false);
 		}
+		
 		if (_playerTwo.getPlayer() != null)
 		{
 			_playerTwo.getPlayer().setInvul(false);

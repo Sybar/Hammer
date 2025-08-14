@@ -143,6 +143,7 @@ public class Venom extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return super.onTalk(npc, talker);
 	}
 	
@@ -179,6 +180,7 @@ public class Venom extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return event;
 	}
 	
@@ -219,6 +221,7 @@ public class Venom extends AbstractNpcAI
 			_venom.disableSkill(VENOM_TELEPORT.getSkill(), -1);
 			_venom.disableSkill(RANGE_TELEPORT.getSkill(), -1);
 		}
+		
 		updateStatus(ALIVE);
 		cancelQuestTimer("tower_check", _venom, null);
 		cancelQuestTimer("raid_check", _venom, null);
@@ -258,6 +261,7 @@ public class Venom extends AbstractNpcAI
 							npc.asAttackable().stopHating(target);
 						}
 					}
+					
 					_targets.clear();
 				}
 				break;
@@ -291,6 +295,7 @@ public class Venom extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		if (checkStatus() == DEAD)
 		{
 			npc.deleteMe();
@@ -337,6 +342,7 @@ public class Venom extends AbstractNpcAI
 			final Npc cube = addSpawn(TELEPORT_CUBE, CUBE, false, 0);
 			startQuestTimer("cube_despawn", 120000, cube, null);
 		}
+		
 		cancelQuestTimer("raid_check", npc, null);
 	}
 	
@@ -363,11 +369,13 @@ public class Venom extends AbstractNpcAI
 				{
 					_venom.teleToLocation(DUNGEON, false);
 				}
+				
 				cancelQuestTimer("raid_check", _venom, null);
 				cancelQuestTimer("tower_check", _venom, null);
 				break;
 			}
 		}
+		
 		_loc.setLocation(_venom.getLocation());
 	}
 	
@@ -396,6 +404,7 @@ public class Venom extends AbstractNpcAI
 		{
 			GlobalVariablesManager.getInstance().set("VenomStatus", 0);
 		}
+		
 		return checkStatus;
 	}
 	

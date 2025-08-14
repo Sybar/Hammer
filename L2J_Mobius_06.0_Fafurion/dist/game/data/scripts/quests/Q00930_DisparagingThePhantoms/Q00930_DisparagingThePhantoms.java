@@ -46,6 +46,7 @@ public class Q00930_DisparagingThePhantoms extends Quest
 {
 	// NPCs
 	private static final int SPORCHA = 34230;
+	
 	// Monsters
 	private static final int VIPER = 23389;
 	private static final int VIPER_CHERKIA = 23796;
@@ -64,10 +65,12 @@ public class Q00930_DisparagingThePhantoms extends Quest
 		23389, // Viper
 		23796, // Viper Cherkia
 	};
+	
 	// Items Rewards
 	private static final int BASIC_SUPPLY_BOX = 47356; // Basic Supply Box Blackbird Clan
 	private static final int INTERMEDIATE_SUPPLY_BOX = 47357; // Intermediate Supply Box Blackbird Clan
 	private static final int ADVANCED_SUPPLY_BOX = 47358; // Advanced Supply Box Blackbird Clan
+	
 	// Misc
 	private static final int MIN_LEVEL = 99;
 	
@@ -113,6 +116,7 @@ public class Q00930_DisparagingThePhantoms extends Quest
 					htmltext = "34230-04a.htm";
 					break;
 				}
+				
 				htmltext = "34230-04.htm";
 				break;
 			}
@@ -123,6 +127,7 @@ public class Q00930_DisparagingThePhantoms extends Quest
 					htmltext = "34230-04a.htm";
 					break;
 				}
+				
 				htmltext = "34230-04.htm";
 				break;
 			}
@@ -159,6 +164,7 @@ public class Q00930_DisparagingThePhantoms extends Quest
 							{
 								giveItems(player, BASIC_SUPPLY_BOX, 1);
 							}
+							
 							addExpAndSp(player, 12113489880L, 12113460);
 							addFactionPoints(player, Faction.BLACKBIRD_CLAN, 100);
 							qs.exitQuest(QuestType.DAILY, true);
@@ -186,6 +192,7 @@ public class Q00930_DisparagingThePhantoms extends Quest
 							{
 								giveItems(player, INTERMEDIATE_SUPPLY_BOX, 1);
 							}
+							
 							addExpAndSp(player, 24226979760L, 24226920);
 							addFactionPoints(player, Faction.BLACKBIRD_CLAN, 200);
 							qs.exitQuest(QuestType.DAILY, true);
@@ -201,6 +208,7 @@ public class Q00930_DisparagingThePhantoms extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -228,6 +236,7 @@ public class Q00930_DisparagingThePhantoms extends Quest
 							htmltext = "34230-04a.htm";
 							break;
 						}
+						
 						htmltext = "34230-04.htm";
 						break;
 					}
@@ -264,6 +273,7 @@ public class Q00930_DisparagingThePhantoms extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -357,6 +367,7 @@ public class Q00930_DisparagingThePhantoms extends Quest
 			npcLogList.add(new NpcLogListHolder(VIPE[0], false, qs.getInt("killed_" + VIPE[0])));
 			return npcLogList;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

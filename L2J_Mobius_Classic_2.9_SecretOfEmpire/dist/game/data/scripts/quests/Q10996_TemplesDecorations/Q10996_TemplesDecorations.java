@@ -41,18 +41,21 @@ public class Q10996_TemplesDecorations extends Quest
 	// NPCs
 	private static final int ZIMENF = 30538;
 	private static final int REEP = 30516;
+	
 	// Items
 	private static final int BARBED_BAT_WING_SAC = 90291;
 	private static final int PUMA_FUR = 90292;
 	private static final int GOBLIN_JEWEL = 90293;
 	private static final int GOLEM_ORE = 90294;
 	private static final int TEMPLE_RECONSTRUCTION_REQUEST = 90290; // Need finish htm
+	
 	// Rewards
 	private static final int WARRIORS_ARMOR = 90306;
 	private static final int WARRIORS_GAITERS = 90307;
 	private static final int MEDIUMS_TUNIC = 90308;
 	private static final int MEDIUMS_STOCKINGS = 90309;
 	private static final int EARRING_NOVICE = 29486;
+	
 	// Monsters
 	private static final int BARBED_BATS = 20370;
 	private static final int CRYSTAL_PUMA = 20510;
@@ -60,6 +63,7 @@ public class Q10996_TemplesDecorations extends Quest
 	private static final int GOBLIN_BRIGAND_LEADER = 20323;
 	private static final int WINSTONE_GOLEM = 20521;
 	private static final int OBSIDIAN_GOLEM = 20526;
+	
 	// Misc
 	private static final int MIN_LEVEL = 11;
 	private static final int MAX_LEVEL = 20;
@@ -132,6 +136,7 @@ public class Q10996_TemplesDecorations extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -192,6 +197,7 @@ public class Q10996_TemplesDecorations extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

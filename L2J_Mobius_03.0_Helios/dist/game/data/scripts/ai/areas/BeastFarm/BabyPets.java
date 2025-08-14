@@ -46,6 +46,7 @@ public class BabyPets extends AbstractNpcAI
 		12781, // Baby Kookaburra
 		12782, // Baby Cougar
 	};
+	
 	// Skills
 	private static final int HEAL_1 = 4717; // Heal Trick
 	private static final int HEAL_2 = 4718; // Greater Heal Trick
@@ -78,6 +79,7 @@ public class BabyPets extends AbstractNpcAI
 				cancelQuestTimer("HEAL", null, player);
 			}
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	

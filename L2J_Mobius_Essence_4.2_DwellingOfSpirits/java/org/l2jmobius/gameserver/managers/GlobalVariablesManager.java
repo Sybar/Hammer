@@ -90,6 +90,7 @@ public class GlobalVariablesManager extends AbstractVariables
 				st.setString(2, String.valueOf(entry.getValue()));
 				st.addBatch();
 			}
+			
 			st.executeBatch();
 		}
 		catch (SQLException e)
@@ -114,6 +115,7 @@ public class GlobalVariablesManager extends AbstractVariables
 			LOGGER.log(Level.WARNING, getClass().getSimpleName() + ": Couldn't delete global variables to database.", e);
 			return false;
 		}
+		
 		return true;
 	}
 	

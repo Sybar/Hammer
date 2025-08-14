@@ -82,14 +82,16 @@ public class AltarOfShilen extends AbstractInstance
 	private static final int EMBRYO_WATCHMAN = 23140;
 	private static final int EMBRYO_FIGHTER = 23141;
 	private static final int EMBRYO_GUARD = 23142;
+	
 	// Skills
 	static final SkillHolder PROTECTED_ALTAR = new SkillHolder(14496, 1);
+	
 	// Misc
 	private static final int TEMPLATE_ID = 194;
 	private static final int ALTAR_TIME = 180;
-	//@formatter:off
+	// @formatter:off
 	private static final int[] DOORS = { 25180001, 25180002, 25180003, 25180004, 25180005, 25180006, 25180007 };
-	//@formatter:on
+	// @formatter:on
 	private static final NpcStringId[] SHOUT_MSG =
 	{
 		NpcStringId.I_NEED_HELP,
@@ -105,10 +107,12 @@ public class AltarOfShilen extends AbstractInstance
 		NpcStringId.BLINK_ATTACK,
 		NpcStringId.ONLY_DEATH_AWAITS_FOR_THE_WEAK,
 	};
+	
 	// Locations
 	static final Location MELISSA_SPAWN = new Location(178146, 14356, -13688);
 	private static final Location SECOND_FLOOR = new Location(179357, 13664, -9828);
 	private static final Location THIRD_FLOOR = new Location(179354, 12922, -12776);
+	
 	// Misc
 	final List<Player> _playersInside = new ArrayList<>();
 	final Map<Integer, Integer> _killedMonsters = new ConcurrentHashMap<>();
@@ -145,6 +149,7 @@ public class AltarOfShilen extends AbstractInstance
 			{
 				_playersInside.add(player);
 			}
+			
 			final Party party = player.getParty();
 			if (party != null)
 			{
@@ -154,6 +159,7 @@ public class AltarOfShilen extends AbstractInstance
 				}
 			}
 		}
+		
 		if (event.equals("check_player"))
 		{
 			World.getInstance().forEachVisibleObjectInRange(npc, Player.class, 400, p ->
@@ -176,6 +182,7 @@ public class AltarOfShilen extends AbstractInstance
 				}
 			});
 		}
+		
 		if (isInInstance(world))
 		{
 			switch (npc.getId())
@@ -190,6 +197,7 @@ public class AltarOfShilen extends AbstractInstance
 							{
 								world.getDoor(DOORS[0]).openMe();
 							}
+							
 							world.setStatus(2);
 							onStatusChanged(world);
 							break;
@@ -200,6 +208,7 @@ public class AltarOfShilen extends AbstractInstance
 							{
 								world.getDoor(DOORS[1]).openMe();
 							}
+							
 							world.setStatus(4);
 							onStatusChanged(world);
 							break;
@@ -210,6 +219,7 @@ public class AltarOfShilen extends AbstractInstance
 							{
 								world.getDoor(DOORS[2]).openMe();
 							}
+							
 							world.setStatus(6);
 							onStatusChanged(world);
 							break;
@@ -259,10 +269,11 @@ public class AltarOfShilen extends AbstractInstance
 				{
 					if ((world.getStatus() == 6) && event.equals("final_door"))
 					{
-						if (!world.getDoor(DOORS[6]).isOpen())
+						if ((world.getDoor(DOORS[6]) != null) || !world.getDoor(DOORS[6]).isOpen())
 						{
 							world.getDoor(DOORS[6]).openMe();
 						}
+						
 						world.setStatus(7);
 						onStatusChanged(world);
 						cancelQuestTimer("check_player", npc, null);
@@ -272,6 +283,7 @@ public class AltarOfShilen extends AbstractInstance
 				}
 			}
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	
@@ -299,6 +311,7 @@ public class AltarOfShilen extends AbstractInstance
 			{
 				_killedMonsters.put(npcId, _killedMonsters.get(npcId) + 1);
 			}
+			
 			// 1st Floor
 			if (world.getStatus() == 2)
 			{
@@ -311,12 +324,14 @@ public class AltarOfShilen extends AbstractInstance
 						captain.setInvul(false);
 					}
 				}
+				
 				if (_killedMonsters.containsKey(CORRUPTED_CAPTAIN) && (_killedMonsters.get(CORRUPTED_CAPTAIN) >= 1))
 				{
 					for (Player player : _playersInside)
 					{
 						player.sendPacket(new ExShowScreenMessage(NpcStringId.YOU_CAN_MOVE_TO_THE_NEXT_FLOOR_THROUGH_THE_ALTAR_OF_SACRIFICE, ExShowScreenMessage.MIDDLE_CENTER, 5000));
 					}
+					
 					world.setStatus(3);
 					_killedMonsters.clear();
 					onStatusChanged(world);
@@ -334,12 +349,14 @@ public class AltarOfShilen extends AbstractInstance
 						priest.setInvul(false);
 					}
 				}
+				
 				if (_killedMonsters.containsKey(CORRUPTED_HIGH_PRIEST) && (_killedMonsters.get(CORRUPTED_HIGH_PRIEST) >= 1))
 				{
 					for (Player player : _playersInside)
 					{
 						player.sendPacket(new ExShowScreenMessage(NpcStringId.YOU_CAN_MOVE_TO_THE_NEXT_FLOOR_THROUGH_THE_ALTAR_OF_SACRIFICE, ExShowScreenMessage.MIDDLE_CENTER, 5000));
 					}
+					
 					world.setStatus(5);
 					_killedMonsters.clear();
 					onStatusChanged(world);
@@ -353,20 +370,29 @@ public class AltarOfShilen extends AbstractInstance
 				{
 					case ETINA_GOSPEL:
 					{
-						world.getDoor(DOORS[3]).openMe();
-						ThreadPool.schedule(() -> world.getDoor(DOORS[3]).closeMe(), 5000);
+						if (world.getDoor(DOORS[3]) != null)
+						{
+							world.getDoor(DOORS[3]).openMe();
+							ThreadPool.schedule(() -> world.getDoor(DOORS[3]).closeMe(), 5000);
+						}
 						break;
 					}
 					case ETINA_PROTECTORS:
 					{
-						world.getDoor(DOORS[4]).openMe();
-						ThreadPool.schedule(() -> world.getDoor(DOORS[4]).closeMe(), 5000);
+						if (world.getDoor(DOORS[4]) != null)
+						{
+							world.getDoor(DOORS[4]).openMe();
+							ThreadPool.schedule(() -> world.getDoor(DOORS[4]).closeMe(), 5000);
+						}
 						break;
 					}
 					case ETINA_PUNISHERS:
 					{
-						world.getDoor(DOORS[5]).openMe();
-						ThreadPool.schedule(() -> world.getDoor(DOORS[5]).closeMe(), 5000);
+						if (world.getDoor(DOORS[5]) != null)
+						{
+							world.getDoor(DOORS[5]).openMe();
+							ThreadPool.schedule(() -> world.getDoor(DOORS[5]).closeMe(), 5000);
+						}
 						break;
 					}
 				}
@@ -379,6 +405,7 @@ public class AltarOfShilen extends AbstractInstance
 					{
 						player.sendPacket(new ExShowScreenMessage(NpcStringId.ALTAR_OF_SHILLIEN_HAS_BEEN_DESTROYED_YOU_VE_WON, ExShowScreenMessage.TOP_CENTER, 5000, true));
 					}
+					
 					_playersInside.clear();
 					_killedMonsters.clear();
 					world.finishInstance(1);
@@ -468,6 +495,7 @@ public class AltarOfShilen extends AbstractInstance
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -493,6 +521,7 @@ public class AltarOfShilen extends AbstractInstance
 			{
 				player.sendPacket(new ExSendUIEvent(player, ExSendUIEvent.TYPE_GP_TIMER, (_time--), 0, NpcStringId.SACRIFICE_LEFT_S1, String.valueOf(_victims)));
 			}
+			
 			if (_time <= 0)
 			{
 				_time = _initialTime;
@@ -503,11 +532,13 @@ public class AltarOfShilen extends AbstractInstance
 					player.sendPacket(new ExShowScreenMessage(NpcStringId.SACRIFICE_HAS_BEEN_KILLED_SACRIFICE_LEFT_S1, ExShowScreenMessage.MIDDLE_CENTER, 3000, String.valueOf(_victims)));
 				}
 			}
+			
 			if ((_world.getStatus() == 2) && !_firstFloorVictims.isEmpty())
 			{
 				_firstFloorVictims.get(0).deleteMe();
 				_firstFloorVictims.remove(0);
 			}
+			
 			if ((_victims == 1) && (_world.getStatus() == 2))
 			{
 				for (Player player : _world.getPlayers())
@@ -515,6 +546,7 @@ public class AltarOfShilen extends AbstractInstance
 					player.sendPacket(new ExShowScreenMessage(NpcStringId.FOUR_LIVES_WERE_SACRIFICED_AND_THE_BLESSING_OF_BLOOD_IS_BESTOWED_UPON_THE_CORRUPTED_CAPTAIN, ExShowScreenMessage.MIDDLE_CENTER, 10000));
 				}
 			}
+			
 			if ((_victims == 1) && (_world.getStatus() == 4))
 			{
 				for (Player player : _world.getPlayers())
@@ -522,6 +554,7 @@ public class AltarOfShilen extends AbstractInstance
 					player.sendPacket(new ExShowScreenMessage(NpcStringId.FOUR_LIVES_WERE_SACRIFICED_AND_THE_BLESSING_OF_BLOOD_IS_BESTOWED_UPON_THE_CORRUPTED_HIGH_PRIEST, ExShowScreenMessage.MIDDLE_CENTER, 10000));
 				}
 			}
+			
 			if (_victims <= 0)
 			{
 				ThreadPool.schedule(() ->
@@ -530,11 +563,13 @@ public class AltarOfShilen extends AbstractInstance
 					{
 						player.sendPacket(new ExShowScreenMessage(NpcStringId.ALL_OFFERINGS_WERE_SACRIFICED_AND_THE_BLESSING_OF_BLOOD_IS_BESTOWED_UPON_THE_EMBRYO_COLONY_IN_THAT_FLOOR, ExShowScreenMessage.MIDDLE_CENTER, 3000));
 					}
+					
 					if (_timer != null)
 					{
 						_timer.cancel(true);
 						_timer = null;
 					}
+					
 					_world.finishInstance(1);
 				}, 3000);
 			}
@@ -556,10 +591,12 @@ public class AltarOfShilen extends AbstractInstance
 				{
 					_timer.cancel(true);
 				}
+				
 				for (Player player : _playersInside)
 				{
 					player.sendPacket(new ExShowScreenMessage(NpcStringId.YOU_MUST_STOP_THE_ALTAR_BEFORE_EVERYTHING_IS_SACRIFICED, ExShowScreenMessage.MIDDLE_CENTER, 6000));
 				}
+				
 				_timer = ThreadPool.scheduleAtFixedRate(new VictimDefeatTask(5, ALTAR_TIME, world), 0, 1000);
 				break;
 			}
@@ -578,10 +615,12 @@ public class AltarOfShilen extends AbstractInstance
 				{
 					_timer.cancel(true);
 				}
+				
 				for (Player player : _playersInside)
 				{
 					player.sendPacket(new ExShowScreenMessage(NpcStringId.YOU_MUST_STOP_THE_ALTAR_BEFORE_EVERYTHING_IS_SACRIFICED, ExShowScreenMessage.MIDDLE_CENTER, 6000));
 				}
+				
 				_timer = ThreadPool.scheduleAtFixedRate(new VictimDefeatTask(5, ALTAR_TIME, world), 0, 1000);
 				break;
 			}
@@ -608,6 +647,7 @@ public class AltarOfShilen extends AbstractInstance
 						{
 							return;
 						}
+						
 						boolean defeated = false;
 						if (_killedMonsters.containsKey(MELISSA0) && (_killedMonsters.get(MELISSA0) == 1) && _killedMonsters.containsKey(ISADORA) && (_killedMonsters.get(ISADORA) == 1))
 						{
@@ -623,6 +663,7 @@ public class AltarOfShilen extends AbstractInstance
 									_timer.cancel(true);
 									_timer = null;
 								}
+								
 								_altar.deleteMe();
 								world.setStatus(8);
 							}
@@ -635,6 +676,7 @@ public class AltarOfShilen extends AbstractInstance
 								{
 									player.sendPacket(new ExShowScreenMessage(NpcStringId.SOMETHING_IS_GOING_ON_AT_THE_ALTAR_OF_SHILLIEN_FOCUS_FIRE_ON_THE_ALTAR, ExShowScreenMessage.MIDDLE_CENTER, 5000));
 								}
+								
 								player.sendPacket(new ExSendUIEvent(player, ExSendUIEvent.TYPE_NORNIL, (_time--), 0, 0, 0, 0, 2518008));
 							}
 						}

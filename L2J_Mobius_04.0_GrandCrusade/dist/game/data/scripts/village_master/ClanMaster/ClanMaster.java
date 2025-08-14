@@ -87,6 +87,7 @@ public class ClanMaster extends AbstractNpcAI
 		{
 			return LEADER_REQUIRED.get(event);
 		}
+		
 		return event;
 	}
 	
@@ -134,6 +135,7 @@ public class ClanMaster extends AbstractNpcAI
 				}
 			});
 		}
+		
 		if (clan != null)
 		{
 			player.getEffectList().stopSkillEffects(SkillFinishType.REMOVED, CommonSkill.CLAN_ADVENT.getId());

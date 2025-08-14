@@ -53,6 +53,7 @@ public class TradeUpdate extends ServerPacket
 				return item.getCount();
 			}
 		}
+		
 		return 0;
 	}
 	
@@ -70,6 +71,7 @@ public class TradeUpdate extends ServerPacket
 				aveCount = 1;
 				stackable = false;
 			}
+			
 			buffer.writeShort(stackable ? 3 : 2);
 			buffer.writeShort(item.getItem().getType1()); // item type1
 			buffer.writeInt(item.getObjectId());

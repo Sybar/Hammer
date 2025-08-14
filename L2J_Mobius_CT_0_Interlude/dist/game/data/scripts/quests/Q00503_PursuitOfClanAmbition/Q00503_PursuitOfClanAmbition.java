@@ -47,6 +47,7 @@ public class Q00503_PursuitOfClanAmbition extends Quest
 	private static final int RODEMAI = 30868;
 	private static final int COFFER = 30765;
 	private static final int CLEO = 30766;
+	
 	// Monsters
 	private static final int THUNDER_WYRM = 20282;
 	private static final int THUNDER_WYRM_TWO = 20243;
@@ -58,8 +59,10 @@ public class Q00503_PursuitOfClanAmbition extends Quest
 	private static final int GRAVE_GUARD = 20668;
 	private static final int GRAVE_KEYMASTER = 27179;
 	private static final int IMPERIAL_SLAVE = 27180;
+	
 	// Attack mob
 	private static final int IMPERIAL_GRAVEKEEPER = 27181;
+	
 	// First part items
 	private static final int G_LET_MARTIEN = 3866;
 	private static final int TH_WYRM_EGGS = 3842;
@@ -68,18 +71,22 @@ public class Q00503_PursuitOfClanAmbition extends Quest
 	private static final int MI_DRAKE_EGGS = 3839;
 	private static final int BROOCH = 3843;
 	private static final int BL_ANVIL_COIN = 3871;
+	
 	// Second part items
 	private static final int G_LET_BALTHAZAR = 3867;
 	private static final int RECIPE_POWER_STONE = 3838;
 	private static final int POWER_STONE = 3846;
 	private static final int NEBULITE_CRYSTALS = 3844;
 	private static final int BROKE_POWER_STONE = 3845;
+	
 	// Third part items
 	private static final int G_LET_RODEMAI = 3868;
 	private static final int IMP_KEYS = 3847;
 	private static final int SCEPTER_JUDGEMENT = 3869;
+	
 	// Final item
 	private static final int PROOF_ASPIRATION = 3870;
+	
 	// Droplist
 	private static final int[][] DROPLIST =
 	{
@@ -712,6 +719,7 @@ public class Q00503_PursuitOfClanAmbition extends Quest
 							addSpawn(GRAVE_KEYMASTER, player.getX(), player.getY(), player.getZ(), player.getHeading(), true, 0);
 						}
 					}
+					
 					if ((item2 != 0) && (item3 != 0))
 					{
 						if (getRandom(4) == 0)

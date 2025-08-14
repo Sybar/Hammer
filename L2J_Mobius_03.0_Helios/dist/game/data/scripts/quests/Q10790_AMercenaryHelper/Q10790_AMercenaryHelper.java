@@ -44,6 +44,7 @@ public class Q10790_AMercenaryHelper extends Quest
 {
 	// NPCs
 	private static final int DOKARA = 33847;
+	
 	// Monsters
 	private static final int[] MONSTERS =
 	{
@@ -60,8 +61,10 @@ public class Q10790_AMercenaryHelper extends Quest
 		21518, // Frenzied Stakato Soldier
 		21519 // Frenzied Stakato Drone
 	};
+	
 	// Items
 	private static final int EAA = 730;
+	
 	// Misc
 	private static final int MIN_LEVEL = 65;
 	private static final int MAX_LEVEL = 70;
@@ -112,6 +115,7 @@ public class Q10790_AMercenaryHelper extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -138,6 +142,7 @@ public class Q10790_AMercenaryHelper extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -174,6 +179,7 @@ public class Q10790_AMercenaryHelper extends Quest
 				return holder;
 			}
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

@@ -41,8 +41,10 @@ public class Q00489_InThisQuietPlace extends Quest
 		21650, // Shrine Knight
 		21651, // Shrine Guard
 	};
+	
 	// Items
 	private static final int EVIL_SPIRIT = 19501; // Trace of Evil Spirit
+	
 	// Misc
 	private static final int MIN_LEVEL = 75;
 	private static final int MAX_LEVEL = 79;
@@ -82,6 +84,7 @@ public class Q00489_InThisQuietPlace extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -121,6 +124,7 @@ public class Q00489_InThisQuietPlace extends Quest
 						{
 							addExpAndSp(player, 19_890_000, 4_773);
 						}
+						
 						htmltext = "32180-02.html";
 					}
 				}
@@ -140,6 +144,7 @@ public class Q00489_InThisQuietPlace extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

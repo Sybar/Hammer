@@ -39,6 +39,7 @@ public class Q00669_DesperateFightWithTheDragons extends Quest
 	// NPCs
 	private static final int ARCTURUS = 34267;
 	private static final int COLIN = 30703;
+	
 	// BOSS
 	private static final int[] BOSSES =
 	{
@@ -47,6 +48,7 @@ public class Q00669_DesperateFightWithTheDragons extends Quest
 		29068, // Antharas 118
 		29028, // Valakas 118
 	};
+	
 	// Misc
 	private static final int MIN_LEVEL = 85;
 	
@@ -69,6 +71,7 @@ public class Q00669_DesperateFightWithTheDragons extends Quest
 		{
 			return htmltext;
 		}
+		
 		switch (event)
 		{
 			case "30703-02.htm":
@@ -95,6 +98,7 @@ public class Q00669_DesperateFightWithTheDragons extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -146,9 +150,11 @@ public class Q00669_DesperateFightWithTheDragons extends Quest
 					htmltext = getAlreadyCompletedMsg(player, QuestType.DAILY);
 					break;
 				}
+				
 				qs.setState(State.CREATED);
 			}
 		}
+		
 		return htmltext;
 	}
 	

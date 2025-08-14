@@ -35,9 +35,11 @@ public class ThePowerOfLove extends LongTimeEvent
 {
 	// NPC
 	private static final int COCO = 33893;
+	
 	// Items
 	private static final int COCOGIFBOX = 36081;
 	private static final int AMULETLOVE = 70232;
+	
 	// Skill
 	private static final SkillHolder COCO_M = new SkillHolder(55327, 1); // Sweet Chocolate Energy
 	
@@ -89,6 +91,7 @@ public class ThePowerOfLove extends LongTimeEvent
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

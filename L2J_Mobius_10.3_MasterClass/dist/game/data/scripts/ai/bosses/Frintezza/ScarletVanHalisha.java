@@ -42,12 +42,14 @@ public class ScarletVanHalisha extends AbstractNpcAI
 	// NPCs
 	private static final int HALISHA2 = 29046;
 	private static final int HALISHA3 = 29047;
+	
 	// Skills
 	private static final int FRINTEZZA_DAEMON_ATTACK = 5014;
 	private static final int FRINTEZZA_DAEMON_CHARGE = 5015;
 	private static final int YOKE_OF_SCARLET = 5016;
 	private static final int FRINTEZZA_DAEMON_MORPH = 5018;
 	private static final int FRINTEZZA_DAEMON_FIELD = 5019;
+	
 	// Misc
 	private static final int RANGED_SKILL_MIN_COOLTIME = 60000; // 1 minute
 	private Creature _target;
@@ -81,6 +83,7 @@ public class ScarletVanHalisha extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	
@@ -159,6 +162,7 @@ public class ScarletVanHalisha extends AbstractNpcAI
 				}
 			}
 		}
+		
 		return SkillData.getInstance().getSkill(FRINTEZZA_DAEMON_ATTACK, 1);
 	}
 	
@@ -174,6 +178,7 @@ public class ScarletVanHalisha extends AbstractNpcAI
 			_skill = getRndSkills(npc);
 			_target = getRandomTarget(npc, _skill);
 		}
+		
 		Skill skill = _skill;
 		if (skill == null)
 		{
@@ -258,6 +263,7 @@ public class ScarletVanHalisha extends AbstractNpcAI
 				}
 			}
 		}
+		
 		return getRandomEntry(result);
 	}
 	

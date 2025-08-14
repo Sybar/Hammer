@@ -40,6 +40,7 @@ public class LionelHunter extends AbstractNpcAI
 {
 	// NPC
 	private static final int LIONEL_HUNTER_HEINE = 33907;
+	
 	// Items
 	private static final int SPELLBOOK_DIGNITY_OF_THE_EXALTED = 45922;
 	private static final int SPELLBOOK_DIGNITY_OF_THE_EXALTED_LV2 = 45923;
@@ -176,6 +177,7 @@ public class LionelHunter extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

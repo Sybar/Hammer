@@ -49,13 +49,16 @@ public final class StigMachFriend extends AbstractNpcAI
 {
 	// NPCs
 	private static final int STIG_MACH_FRIEND = 34366;
+	
 	// Monsters
 	private static final int GEM_DRAGON_ANTHARAS = 24091;
 	private static final int ANTHARAS = 24087;
 	private static final int ANTHARAS_TRANSFORM = 24088;
+	
 	// Skills
 	private static final SkillHolder ChainHydraSkill = new SkillHolder(32135, 1);
 	private static final SkillHolder GustBladeSkill = new SkillHolder(32136, 1);
+	
 	// Misc
 	private static final int p_CheckInterval = 3000;
 	private static final int p_CheckTransInterval = 3000;
@@ -124,6 +127,7 @@ public final class StigMachFriend extends AbstractNpcAI
 		{
 			htmltext = "stig_friend002.htm";
 		}
+		
 		return htmltext;
 	}
 	

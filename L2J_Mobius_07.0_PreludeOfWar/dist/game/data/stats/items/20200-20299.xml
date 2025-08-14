@@ -1437,9 +1437,9 @@
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="time" val="10080" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">1</stat>
 			<stat type="mAtk">3</stat>
@@ -1472,9 +1472,9 @@
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="time" val="10080" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">1</stat>
 			<stat type="mAtk">3</stat>
@@ -1507,9 +1507,9 @@
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="time" val="10080" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">1</stat>
 			<stat type="mAtk">3</stat>

@@ -39,10 +39,13 @@ public class Q10889_SaviorsPathFallenEmperorsThrone extends Quest
 {
 	// NPC
 	private static final int LEONA_BLACKBIRD = 34425;
+	
 	// Monsters
 	private static final int FE_HELIOS = 26335;
+	
 	// Items
 	private static final int ORIGIN_OF_GIANTS = 48548;
+	
 	// Misc
 	private static final int MIN_LEVEL = 103;
 	private static final int ORIGIN_OF_GIANTS_NEEDED = 5;
@@ -106,6 +109,7 @@ public class Q10889_SaviorsPathFallenEmperorsThrone extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -139,6 +143,7 @@ public class Q10889_SaviorsPathFallenEmperorsThrone extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -159,6 +164,7 @@ public class Q10889_SaviorsPathFallenEmperorsThrone extends Quest
 				giveItems(player, ORIGIN_OF_GIANTS, 1);
 				playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 			}
+			
 			if (getQuestItemsCount(player, ORIGIN_OF_GIANTS) >= ORIGIN_OF_GIANTS_NEEDED)
 			{
 				qs.setCond(2, true);

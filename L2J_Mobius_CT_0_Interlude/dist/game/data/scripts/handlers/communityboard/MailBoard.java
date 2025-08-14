@@ -52,7 +52,6 @@ import org.l2jmobius.gameserver.model.events.listeners.ConsumerEventListener;
 import org.l2jmobius.gameserver.network.SystemMessageId;
 import org.l2jmobius.gameserver.network.enums.MailType;
 import org.l2jmobius.gameserver.network.serverpackets.ExMailArrived;
-import org.l2jmobius.gameserver.network.serverpackets.PlaySound;
 import org.l2jmobius.gameserver.network.serverpackets.SystemMessage;
 import org.l2jmobius.gameserver.util.HtmlUtil;
 
@@ -108,13 +107,13 @@ public class MailBoard implements IWriteBoardHandler
 	};
 	
 	@Override
-	public String[] getCommunityBoardCommands()
+	public String[] getCommandList()
 	{
 		return COMMANDS;
 	}
 	
 	@Override
-	public boolean parseCommunityBoardCommand(String command, Player player)
+	public boolean onCommand(String command, Player player)
 	{
 		CommunityBoardHandler.getInstance().addBypass(player, "Mail Command", command);
 		
@@ -179,6 +178,7 @@ public class MailBoard implements IWriteBoardHandler
 						{
 							deleteMail(player, delMail.getId());
 						}
+						
 						showLastForum(player);
 						break;
 					case "store":
@@ -188,6 +188,7 @@ public class MailBoard implements IWriteBoardHandler
 						{
 							setMailLocation(player, storeMail.getId(), MailType.ARCHIVE);
 						}
+						
 						showMailList(player, 1, MailType.ARCHIVE);
 						break;
 					default:
@@ -200,6 +201,7 @@ public class MailBoard implements IWriteBoardHandler
 				LOGGER.warning("Invalid MailType or command format: " + action);
 			}
 		}
+		
 		return false;
 	}
 	
@@ -284,6 +286,7 @@ public class MailBoard implements IWriteBoardHandler
 		{
 			page = maxpage;
 		}
+		
 		if (page < 1)
 		{
 			page = 1;
@@ -296,11 +299,22 @@ public class MailBoard implements IWriteBoardHandler
 		int maxIndex = 0;
 		maxIndex = (page == 1 ? page * 9 : (page * 10) - 1);
 		minIndex = maxIndex - 9;
+		
 		String content = HtmCache.getInstance().getHtm(player, "data/html/CommunityBoard/mail/mail.html");
-		content = content.replace("%inbox%", Integer.toString(getMailCount(player.getObjectId(), MailType.INBOX, "", "")));
-		content = content.replace("%sentbox%", Integer.toString(getMailCount(player.getObjectId(), MailType.SENTBOX, "", "")));
-		content = content.replace("%archive%", Integer.toString(getMailCount(player.getObjectId(), MailType.ARCHIVE, "", "")));
-		content = content.replace("%temparchive%", Integer.toString(getMailCount(player.getObjectId(), MailType.TEMPARCHIVE, "", "")));
+		
+		int inboxCount = getMailCount(player.getObjectId(), MailType.INBOX, "", "");
+		int sentboxCount = getMailCount(player.getObjectId(), MailType.SENTBOX, "", "");
+		int archiveCount = getMailCount(player.getObjectId(), MailType.ARCHIVE, "", "");
+		int tempArchiveCount = getMailCount(player.getObjectId(), MailType.TEMPARCHIVE, "", "");
+		
+		String inbox = (type == MailType.INBOX) ? MailType.INBOX.getDescription() + "&nbsp;(" + inboxCount + ")" : MailType.INBOX.getBypass() + "&nbsp;(" + inboxCount + ")";
+		String sentbox = (type == MailType.SENTBOX) ? MailType.SENTBOX.getDescription() + "&nbsp;(" + sentboxCount + ")" : MailType.SENTBOX.getBypass() + "&nbsp;(" + sentboxCount + ")";
+		String archive = (type == MailType.ARCHIVE) ? MailType.ARCHIVE.getDescription() + "&nbsp;(" + archiveCount + ")" : MailType.ARCHIVE.getBypass() + "&nbsp;(" + archiveCount + ")";
+		
+		content = content.replace("%inbox%", inbox);
+		content = content.replace("%sentbox%", sentbox);
+		content = content.replace("%archive%", archive);
+		content = content.replace("%temparchive%", Integer.toString(tempArchiveCount));
 		content = content.replace("%type%", type.getDescription());
 		content = content.replace("%htype%", type.toString().toLowerCase());
 		
@@ -341,12 +355,14 @@ public class MailBoard implements IWriteBoardHandler
 				index++;
 			}
 		}
+		
 		content = content.replace("%maillist%", sb.toString());
 		
 		// CLeanup sb.
 		sb.setLength(0);
 		
 		final String fullSearch = (!sType.equals("") && !search.equals("")) ? ";" + sType + ";" + search : "";
+		
 		// Previous page button
 		sb.append("<td><table><tr><td></td></tr><tr><td><button action=\"bypass _bbsmail;");
 		sb.append(type);
@@ -398,6 +414,7 @@ public class MailBoard implements IWriteBoardHandler
 					sb.append(i);
 					sb.append(" </a></td>");
 				}
+				
 				for (i = page; i <= (page + 10); i++)
 				{
 					if (i == page)
@@ -465,6 +482,7 @@ public class MailBoard implements IWriteBoardHandler
 				}
 			}
 		}
+		
 		// Next page button
 		sb.append("<td><table><tr><td></td></tr><tr><td><button action=\"bypass _bbsmail;");
 		sb.append(type).append(";");
@@ -638,7 +656,6 @@ public class MailBoard implements IWriteBoardHandler
 				if (recipientPlayer != null)
 				{
 					recipientPlayer.sendPacket(SystemMessageId.YOU_VE_GOT_MAIL);
-					recipientPlayer.sendPacket(new PlaySound("systemmsg_e.1233"));
 					recipientPlayer.sendPacket(ExMailArrived.STATIC_PACKET);
 				}
 			}
@@ -708,6 +725,7 @@ public class MailBoard implements IWriteBoardHandler
 				}
 			}
 		}
+		
 		return count;
 	}
 	
@@ -812,7 +830,6 @@ public class MailBoard implements IWriteBoardHandler
 			if (checkIfUnreadMail(player))
 			{
 				player.sendPacket(SystemMessageId.YOU_VE_GOT_MAIL);
-				player.sendPacket(new PlaySound("systemmsg_e.1233"));
 				player.sendPacket(ExMailArrived.STATIC_PACKET);
 			}
 		}

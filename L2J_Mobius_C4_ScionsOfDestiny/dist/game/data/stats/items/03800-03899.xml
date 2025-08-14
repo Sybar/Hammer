@@ -988,13 +988,13 @@
 		<set name="weight" val="160" />
 		<set name="price" val="18000" />
 		<set name="for_npc" val="true" />
-		<cond msgId="600">
+		<conditions msgId="600">
 			<player categoryType="WOLF" />
-		</cond>
-		<for>
+		</conditions>
+		<stats>
 			<add order="0" stat="mDef" val="16" />
 			<add order="0" stat="pDef" val="13" />
-		</for>
+		</stats>
 	</item>
 	<item id="3892" type="Armor" name="Wolf's Hard Leather Mail">
 		<!-- Double-click to wear. Only for wolves. -->
@@ -1007,13 +1007,13 @@
 		<set name="weight" val="160" />
 		<set name="price" val="32000" />
 		<set name="for_npc" val="true" />
-		<cond msgId="600">
+		<conditions msgId="600">
 			<player categoryType="WOLF" />
-		</cond>
-		<for>
+		</conditions>
+		<stats>
 			<add order="0" stat="mDef" val="18" />
 			<add order="0" stat="pDef" val="16" />
-		</for>
+		</stats>
 	</item>
 	<item id="3893" type="Armor" name="Wolf's Wooden Armor">
 		<!-- Double-click to wear. Only for wolves. -->
@@ -1026,13 +1026,13 @@
 		<set name="weight" val="160" />
 		<set name="price" val="55000" />
 		<set name="for_npc" val="true" />
-		<cond msgId="600">
+		<conditions msgId="600">
 			<player categoryType="WOLF" />
-		</cond>
-		<for>
+		</conditions>
+		<stats>
 			<add order="0" stat="mDef" val="20" />
 			<add order="0" stat="pDef" val="19" />
-		</for>
+		</stats>
 	</item>
 	<item id="3894" type="Armor" name="Wolf's Ring Mail">
 		<!-- Double-click to wear. Only for wolves. -->
@@ -1045,13 +1045,13 @@
 		<set name="weight" val="160" />
 		<set name="price" val="5649" />
 		<set name="for_npc" val="true" />
-		<cond msgId="600">
+		<conditions msgId="600">
 			<player categoryType="WOLF" />
-		</cond>
-		<for>
+		</conditions>
+		<stats>
 			<add order="0" stat="mDef" val="23" />
 			<add order="0" stat="pDef" val="22" />
-		</for>
+		</stats>
 	</item>
 	<item id="3895" type="Armor" name="Wolf's Bone Armor">
 		<!-- Double-click to wear. Only for wolves. -->
@@ -1064,13 +1064,13 @@
 		<set name="weight" val="160" />
 		<set name="price" val="130000" />
 		<set name="for_npc" val="true" />
-		<cond msgId="600">
+		<conditions msgId="600">
 			<player categoryType="WOLF" />
-		</cond>
-		<for>
+		</conditions>
+		<stats>
 			<add order="0" stat="mDef" val="26" />
 			<add order="0" stat="pDef" val="26" />
-		</for>
+		</stats>
 	</item>
 	<item id="3896" type="Armor" name="Wolf's Scale Male">
 		<!-- Double-click to wear. Only for wolves. -->
@@ -1083,13 +1083,13 @@
 		<set name="weight" val="160" />
 		<set name="price" val="200000" />
 		<set name="for_npc" val="true" />
-		<cond msgId="600">
+		<conditions msgId="600">
 			<player categoryType="WOLF" />
-		</cond>
-		<for>
+		</conditions>
+		<stats>
 			<add order="0" stat="mDef" val="29" />
 			<add order="0" stat="pDef" val="30" />
-		</for>
+		</stats>
 	</item>
 	<item id="3897" type="Armor" name="Wof's Bronze Armor">
 		<!-- Double-click to wear. Only for wolves. -->
@@ -1102,13 +1102,13 @@
 		<set name="weight" val="160" />
 		<set name="price" val="260000" />
 		<set name="for_npc" val="true" />
-		<cond msgId="600">
+		<conditions msgId="600">
 			<player categoryType="WOLF" />
-		</cond>
-		<for>
+		</conditions>
+		<stats>
 			<add order="0" stat="mDef" val="31" />
 			<add order="0" stat="pDef" val="33" />
-		</for>
+		</stats>
 	</item>
 	<item id="3898" type="Armor" name="Wolf's Plate Mail">
 		<!-- Double-click to wear. Only for wolves. -->
@@ -1121,13 +1121,13 @@
 		<set name="weight" val="160" />
 		<set name="price" val="330000" />
 		<set name="for_npc" val="true" />
-		<cond msgId="600">
+		<conditions msgId="600">
 			<player categoryType="WOLF" />
-		</cond>
-		<for>
+		</conditions>
+		<stats>
 			<add order="0" stat="mDef" val="33" />
 			<add order="0" stat="pDef" val="37" />
-		</for>
+		</stats>
 	</item>
 	<item id="3899" type="Armor" name="Wolf's Steel Armor">
 		<!-- Double-click to wear. Only for wolves. -->
@@ -1140,12 +1140,12 @@
 		<set name="weight" val="160" />
 		<set name="price" val="420000" />
 		<set name="for_npc" val="true" />
-		<cond msgId="600">
+		<conditions msgId="600">
 			<player categoryType="WOLF" />
-		</cond>
-		<for>
+		</conditions>
+		<stats>
 			<add order="0" stat="mDef" val="36" />
 			<add order="0" stat="pDef" val="40" />
-		</for>
+		</stats>
 	</item>
 </list>

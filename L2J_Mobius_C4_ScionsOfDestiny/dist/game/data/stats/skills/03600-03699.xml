@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="3600" levels="9" name="Special Ability: Anger">
 		<!-- Level 1: Decreases Max HP and increases P. Atk. Allows one to attack multiple opponents. -->
@@ -14,10 +14,10 @@
 		<table name="#pAtk">20.44 22.64 24.77 26.78 28.59 30.12 31.30 39 45</table>
 		<table name="#pvpBonus">1 1 1 1 1 1 1.05 1.05 1.05</table>
 		<set name="icon" val="icon.skill1062" />
-		<set name="magicLevel" val="#magicLevel" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<set name="magicLevel" val="#magicLevel" />
+		<effects>
 			<effect name="Buff">
 				<add stat="pAtk" val="#pAtk" />
 				<mul stat="maxHp" val="0.85" />
@@ -26,7 +26,7 @@
 				<mul stat="pvpPhysSkillsDmg" val="#pvpBonus" />
 				<mul stat="pvpMagicalDmg" val="#pvpBonus" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3601" levels="9" name="Special Ability: Haste">
 		<!-- Level 1: Increases Atk. Spd. Allows one to attak multiple opponents. -->
@@ -42,17 +42,17 @@
 		<table name="#pAtkSpd">1.08 1.07 1.07 1.07 1.06 1.06 1.06 1.06 1.07</table>
 		<table name="#pvpBonus">1 1 1 1 1 1 1.05 1.05 1.05</table>
 		<set name="icon" val="icon.skill1086" />
-		<set name="magicLevel" val="#magicLevel" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<set name="magicLevel" val="#magicLevel" />
+		<effects>
 			<effect name="Buff">
 				<mul stat="pAtkSpd" val="#pAtkSpd" />
 				<add stat="atkCountMax" val="4" />
 				<mul stat="pvpPhysDmg" val="#pvpBonus" />
 				<mul stat="pvpMagicalDmg" val="#pvpBonus" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 	<skill id="3602" levels="9" name="Special Ability: Guidance">
 		<!-- Level 1: Increases Accuracy. Allows one to attak multiple opponents. -->
@@ -68,10 +68,10 @@
 		<table name="#magicLevel">46 49 52 55 58 61 64 67 75</table>
 		<table name="#pvpBonus">1 1 1 1 1 1 1.05 1.05 1.05</table>
 		<set name="icon" val="icon.skill1240" />
-		<set name="magicLevel" val="#magicLevel" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<for>
+		<set name="magicLevel" val="#magicLevel" />
+		<effects>
 			<effect name="Buff">
 				<add stat="accCombat" val="#accCombat" />
 				<add stat="atkCountMax" val="4" />
@@ -79,6 +79,6 @@
 				<mul stat="pvpPhysSkillsDmg" val="#pvpBonus" />
 				<mul stat="pvpMagicalDmg" val="#pvpBonus" />
 			</effect>
-		</for>
+		</effects>
 	</skill>
 </list>

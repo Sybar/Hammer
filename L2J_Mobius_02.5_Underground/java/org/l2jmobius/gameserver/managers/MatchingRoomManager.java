@@ -53,6 +53,7 @@ public class MatchingRoomManager
 				}
 			}
 		}
+		
 		_waitingList.add(player);
 	}
 	
@@ -81,6 +82,7 @@ public class MatchingRoomManager
 				players.add(player);
 			}
 		}
+		
 		return players;
 	}
 	
@@ -115,6 +117,7 @@ public class MatchingRoomManager
 				}
 			}
 		}
+		
 		return result;
 	}
 	
@@ -137,6 +140,7 @@ public class MatchingRoomManager
 				}
 			}
 		}
+		
 		return result;
 	}
 	
@@ -158,6 +162,7 @@ public class MatchingRoomManager
 				}
 			}
 		}
+		
 		return null;
 	}
 	

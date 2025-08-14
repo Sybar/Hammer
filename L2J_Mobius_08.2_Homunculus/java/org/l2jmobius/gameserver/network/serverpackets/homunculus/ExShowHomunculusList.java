@@ -87,11 +87,13 @@ public class ExShowHomunculusList extends ServerPacket
 				{
 					buffer.writeInt(0);
 				}
+				
 				buffer.writeInt(0);
 				for (int j = 1; j <= 5; j++)
 				{
 					buffer.writeInt(0);
 				}
+				
 				buffer.writeInt(0); // Level
 				buffer.writeInt(0); // HP
 				buffer.writeInt(0); // HP
@@ -99,6 +101,7 @@ public class ExShowHomunculusList extends ServerPacket
 				buffer.writeInt(0); // Defence
 				buffer.writeInt(0); // Critical
 			}
+			
 			counter++;
 		}
 	}

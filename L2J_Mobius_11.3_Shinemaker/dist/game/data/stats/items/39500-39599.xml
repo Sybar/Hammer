@@ -208,9 +208,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="material" val="PAPER" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="18004" level="1" /> <!-- Scroll of Escape: Valley of Saints -->
 		</skills>
@@ -228,9 +228,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="material" val="PAPER" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="18005" level="1" /> <!-- Scroll of Escape: Forge of Gods -->
 		</skills>
@@ -248,9 +248,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="material" val="PAPER" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="18006" level="1" /> <!-- Scroll of Escape: Ivory Tower -->
 		</skills>
@@ -268,9 +268,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="material" val="PAPER" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="18007" level="1" /> <!-- Scroll of Escape: Secret Room -->
 		</skills>
@@ -1040,9 +1040,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_destroyable" val="false" />
 		<set name="is_stackable" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="17949" level="1" /> <!-- Scroll of Escape: Oren -->
 		</skills>
@@ -1057,9 +1057,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_destroyable" val="false" />
 		<set name="is_stackable" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="17950" level="1" /> <!-- Scroll of Escape: Sea of Spores -->
 		</skills>
@@ -1074,9 +1074,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_destroyable" val="false" />
 		<set name="is_stackable" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="17951" level="1" /> <!-- Scroll of Escape: Aden -->
 		</skills>
@@ -1091,9 +1091,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_destroyable" val="false" />
 		<set name="is_stackable" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="17952" level="1" /> <!-- Scroll of Escape: Forsaken Plains -->
 		</skills>
@@ -1108,9 +1108,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_destroyable" val="false" />
 		<set name="is_stackable" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="17953" level="1" /> <!-- Scroll of Escape: Aden -->
 		</skills>
@@ -1125,9 +1125,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_destroyable" val="false" />
 		<set name="is_stackable" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="17954" level="1" /> <!-- Scroll of Escape: Fields of Massacre -->
 		</skills>
@@ -1142,9 +1142,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_destroyable" val="false" />
 		<set name="is_stackable" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="17955" level="1" /> <!-- Scroll of Escape: Rune -->
 		</skills>
@@ -1159,9 +1159,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_destroyable" val="false" />
 		<set name="is_stackable" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="17956" level="1" /> <!-- Scroll of Escape: Swamp of Screams -->
 		</skills>
@@ -1176,9 +1176,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_destroyable" val="false" />
 		<set name="is_stackable" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="17957" level="1" /> <!-- Scroll of Escape: Rune -->
 		</skills>
@@ -1193,9 +1193,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_destroyable" val="false" />
 		<set name="is_stackable" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="17958" level="1" /> <!-- Scroll of Escape: Forest of the Dead -->
 		</skills>
@@ -1210,9 +1210,9 @@
 		<set name="is_destroyable" val="false" />
 		<set name="weight" val="30" />
 		<set name="is_stackable" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="17959" level="1" /> <!-- Scroll of Escape: Goddard -->
 		</skills>
@@ -1227,9 +1227,9 @@
 		<set name="is_destroyable" val="false" />
 		<set name="weight" val="30" />
 		<set name="is_stackable" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="17960" level="1" /> <!-- Scroll of Escape: Wall of Argos -->
 		</skills>
@@ -1244,9 +1244,9 @@
 		<set name="is_destroyable" val="false" />
 		<set name="weight" val="30" />
 		<set name="is_stackable" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="17961" level="1" /> <!-- Scroll of Escape: Giran -->
 		</skills>
@@ -1261,9 +1261,9 @@
 		<set name="is_destroyable" val="false" />
 		<set name="weight" val="30" />
 		<set name="is_stackable" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="17962" level="1" /> <!-- Scroll of Escape: Dragon Valley -->
 		</skills>
@@ -1354,9 +1354,9 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_destroyable" val="false" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="17985" level="1" /> <!-- Scroll of Escape: Dion -->
 		</skills>
@@ -1371,9 +1371,9 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_destroyable" val="false" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="17986" level="1" /> <!-- Scroll of Escape: Cruma Tower -->
 		</skills>
@@ -1388,9 +1388,9 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_destroyable" val="false" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="17987" level="1" /> <!-- Scroll of Escape: Dion -->
 		</skills>
@@ -1405,9 +1405,9 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_destroyable" val="false" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="17988" level="1" /> <!-- Scroll of Escape: Cruma Tower (2nd Floor) -->
 		</skills>

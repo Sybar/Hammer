@@ -64,11 +64,13 @@ public class ExQuestItemList extends AbstractItemPacket
 		{
 			buffer.writeShort(0);
 		}
+		
 		buffer.writeInt(_items.size());
 		for (Item item : _items)
 		{
 			writeItem(item, buffer);
 		}
+		
 		writeInventoryBlock(_player.getInventory(), buffer);
 	}
 }

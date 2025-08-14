@@ -30,6 +30,7 @@ public class Sirra extends AbstractNpcAI
 {
 	// NPC
 	private static final int SIRRA = 32762;
+	
 	// Misc
 	private static final int FREYA_INSTID = 139;
 	private static final int FREYA_HARD_INSTID = 144;
@@ -54,6 +55,7 @@ public class Sirra extends AbstractNpcAI
 				return (world.isStatus(0)) ? "32762-hard.html" : "32762-hardfight.html";
 			}
 		}
+		
 		return "32762.html";
 	}
 	

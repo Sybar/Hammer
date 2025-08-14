@@ -46,6 +46,7 @@ public class RequestConfirmCancelItem extends ClientPacket
 		{
 			return;
 		}
+		
 		final Item item = player.getInventory().getItemByObjectId(_objectId);
 		if (item == null)
 		{

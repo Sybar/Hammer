@@ -78,8 +78,10 @@ public class Q00828_EvasBlessing extends Quest
 		34134,
 		34135,
 	};
+	
 	// Items
 	private static final int GLUDIN_HERO_REWARD = 46375;
+	
 	// Misc
 	private static final NpcStringId[] CAPTIVES_TEXT =
 	{
@@ -134,6 +136,7 @@ public class Q00828_EvasBlessing extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -178,6 +181,7 @@ public class Q00828_EvasBlessing extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -196,6 +200,7 @@ public class Q00828_EvasBlessing extends Quest
 			{
 				members.add(player);
 			}
+			
 			for (Player member : members)
 			{
 				final QuestState ms = getQuestState(member, false);
@@ -210,16 +215,19 @@ public class Q00828_EvasBlessing extends Quest
 						log.addNpcString(NpcStringId.RESCUING_CAPTIVES, count);
 						member.sendPacket(log);
 					}
+					
 					if (count >= 20)
 					{
 						ms.setCond(2, true);
 					}
 				}
 			}
+			
 			npc.broadcastSay(ChatType.NPC_GENERAL, getRandomEntry(CAPTIVES_TEXT));
 			npc.deleteMe();
 			return "captive-0" + getRandom(1, 3) + ".html";
 		}
+		
 		return null;
 	}
 }

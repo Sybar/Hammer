@@ -47,10 +47,12 @@ public class SevenSignsRBs extends AbstractNpcAI
 	private static final int GATEKEEPER_SPIRIT_OUT_TELEPORT = 31088;
 	private static final int ANAKIM = 25286;
 	private static final int LILITH = 25283;
+	
 	// Misc
 	private static final int MAX_PLAYERS_IN_ZONE = 300;
 	private static final NoRestartZone ANAKIM_ZONE = ZoneManager.getInstance().getZoneById(70052, NoRestartZone.class);
 	private static final NoRestartZone LILITH_ZONE = ZoneManager.getInstance().getZoneById(70053, NoRestartZone.class);
+	
 	// TELEPORTS
 	private static final Location TELEPORT_TO_LILITH = new Location(185657, -10112, -5496);
 	private static final Location TELEPORT_TO_ANAKIM = new Location(-7283, 19086, -5496);
@@ -91,6 +93,7 @@ public class SevenSignsRBs extends AbstractNpcAI
 					player.sendMessage("Anakim is not present at the moment");
 					break;
 				}
+				
 				if (player.isInParty())
 				{
 					final Party party = player.getParty();
@@ -109,6 +112,7 @@ public class SevenSignsRBs extends AbstractNpcAI
 								player.sendMessage("Player " + member.getName() + " must go closer to Gatekeeper Spirit.");
 								break;
 							}
+							
 							member.teleToLocation(TELEPORT_TO_ANAKIM);
 						}
 					}
@@ -125,6 +129,7 @@ public class SevenSignsRBs extends AbstractNpcAI
 						player.sendMessage("You must go closer to Gatekeeper Spirit.");
 						break;
 					}
+					
 					player.teleToLocation(TELEPORT_TO_ANAKIM);
 				}
 				break;
@@ -136,6 +141,7 @@ public class SevenSignsRBs extends AbstractNpcAI
 					player.sendMessage("Lilith is not present at the moment");
 					break;
 				}
+				
 				if (player.isInParty())
 				{
 					final Party party = player.getParty();
@@ -154,6 +160,7 @@ public class SevenSignsRBs extends AbstractNpcAI
 								player.sendMessage("Player " + member.getName() + " must go closer to Gatekeeper Spirit.");
 								break;
 							}
+							
 							member.teleToLocation(TELEPORT_TO_LILITH);
 						}
 					}
@@ -170,6 +177,7 @@ public class SevenSignsRBs extends AbstractNpcAI
 						player.sendMessage("You must go closer to Gatekeeper Spirit.");
 						break;
 					}
+					
 					player.teleToLocation(TELEPORT_TO_LILITH);
 				}
 				break;
@@ -204,6 +212,7 @@ public class SevenSignsRBs extends AbstractNpcAI
 					player.teleToLocation(destination.getX() + getRandom(100), destination.getY() + getRandom(100), destination.getZ());
 					break;
 				}
+				
 				if (LILITH_ZONE.isInsideZone(player.getLocation()))
 				{
 					final Location destination = TELEPORT_TO_ADEN[getRandom(TELEPORT_TO_ADEN.length)];
@@ -250,6 +259,7 @@ public class SevenSignsRBs extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return null;
 	}
 	

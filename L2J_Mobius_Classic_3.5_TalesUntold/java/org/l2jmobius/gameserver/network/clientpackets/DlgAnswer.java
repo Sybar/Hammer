@@ -19,6 +19,7 @@ package org.l2jmobius.gameserver.network.clientpackets;
 import org.l2jmobius.Config;
 import org.l2jmobius.gameserver.data.sql.OfflineTraderTable;
 import org.l2jmobius.gameserver.handler.AdminCommandHandler;
+import org.l2jmobius.gameserver.managers.ZoneBuildManager;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.enums.player.PlayerAction;
 import org.l2jmobius.gameserver.model.actor.holders.creature.DoorRequestHolder;
@@ -112,6 +113,17 @@ public class DlgAnswer extends ClientPacket
 				return;
 			}
 			
+			if (player.removeAction(PlayerAction.ADMIN_SAVE_ZONE))
+			{
+				if (_answer == 0)
+				{
+					return;
+				}
+				
+				ZoneBuildManager.getInstance().buildZone(player);
+				return;
+			}
+			
 			if (player.removeAction(PlayerAction.ADMIN_COMMAND))
 			{
 				final String cmd = player.getAdminConfirmCmd();
@@ -122,7 +134,7 @@ public class DlgAnswer extends ClientPacket
 				}
 				
 				// The 'useConfirm' must be disabled here, as we don't want to repeat that process.
-				AdminCommandHandler.getInstance().useAdminCommand(player, cmd, false);
+				AdminCommandHandler.getInstance().onCommand(player, cmd, false);
 			}
 		}
 		else if (_messageId == SystemMessageId.DO_YOU_WISH_TO_EXIT_THE_GAME.getId())
@@ -151,7 +163,7 @@ public class DlgAnswer extends ClientPacket
 			
 			if (!OfflineTraderTable.getInstance().enteredOfflineMode(player))
 			{
-				Disconnection.of(getClient(), player).defaultSequence(LeaveWorld.STATIC_PACKET);
+				Disconnection.of(getClient(), player).storeAndDeleteWith(LeaveWorld.STATIC_PACKET);
 			}
 		}
 		else if ((_messageId == SystemMessageId.C1_IS_ATTEMPTING_TO_DO_A_RESURRECTION_THAT_RESTORES_S2_S3_XP_ACCEPT.getId()) || (_messageId == SystemMessageId.YOUR_CHARM_OF_COURAGE_IS_TRYING_TO_RESURRECT_YOU_WOULD_YOU_LIKE_TO_RESURRECT_NOW.getId()))

@@ -48,6 +48,7 @@ public class RequestExPledgeSkillInfo extends ClientPacket
 		{
 			return;
 		}
+		
 		final Clan clan = player.getClan();
 		if (clan == null)
 		{
@@ -83,6 +84,7 @@ public class RequestExPledgeSkillInfo extends ClientPacket
 				break;
 			}
 		}
+		
 		int time = -1;
 		int available = 0;
 		final int remainingTime = clan.getMasterySkillRemainingTime(_skillId);
@@ -95,6 +97,7 @@ public class RequestExPledgeSkillInfo extends ClientPacket
 		{
 			available = 1;
 		}
+		
 		player.sendPacket(new ExPledgeSkillInfo(_skillId, _skillLevel, time, available));
 	}
 }

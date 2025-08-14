@@ -36,6 +36,7 @@ public class Q10811_ExaltedOneWhoFacesTheLimit extends Quest
 {
 	// Npc
 	private static final int LIONEL = 33907;
+	
 	// Items
 	private static final int LIONEL_HUNTER_MISSING_LIST = 45627;
 	private static final int ELIKIA_CERTIFICATE = 45623;
@@ -43,6 +44,7 @@ public class Q10811_ExaltedOneWhoFacesTheLimit extends Quest
 	private static final int SIR_ERIC_RODEMAI_CERTIFICATE = 45626;
 	private static final int GALLADUCI_RODEMAI_CERTIFICATE = 45625;
 	private static final int SPELLBOOK_DIGNITY_OF_THE_EXALTED = 45922;
+	
 	// Misc
 	private static final int MIN_LEVEL = 99;
 	
@@ -104,6 +106,7 @@ public class Q10811_ExaltedOneWhoFacesTheLimit extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -141,6 +144,7 @@ public class Q10811_ExaltedOneWhoFacesTheLimit extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

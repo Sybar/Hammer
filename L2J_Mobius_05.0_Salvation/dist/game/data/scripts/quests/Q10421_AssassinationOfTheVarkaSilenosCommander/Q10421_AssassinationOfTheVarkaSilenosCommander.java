@@ -35,6 +35,7 @@ public class Q10421_AssassinationOfTheVarkaSilenosCommander extends Quest
 	// NPCs
 	private static final int HANSEN = 33853;
 	private static final int COMMANDER_MOS = 27502;
+	
 	// Misc
 	private static final int MIN_LEVEL = 76;
 	
@@ -91,11 +92,13 @@ public class Q10421_AssassinationOfTheVarkaSilenosCommander extends Quest
 					{
 						addExpAndSp(player, 327446943, 1839);
 					}
+					
 					htmltext = "33853-07.html";
 				}
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -122,6 +125,7 @@ public class Q10421_AssassinationOfTheVarkaSilenosCommander extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

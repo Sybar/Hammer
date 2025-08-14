@@ -77,6 +77,7 @@ public class ExPurchaseLimitShopItemListNew extends ServerPacket
 			buffer.writeShort(product.getIngredientEnchants()[2]);
 			buffer.writeShort(product.getIngredientEnchants()[3]); // 306
 			buffer.writeShort(product.getIngredientEnchants()[4]); // 306
+			
 			// Check limits.
 			if (product.getAccountDailyLimit() > 0) // Sale period.
 			{
@@ -115,6 +116,7 @@ public class ExPurchaseLimitShopItemListNew extends ServerPacket
 			{
 				buffer.writeInt(1);
 			}
+			
 			buffer.writeInt(0); // nRemainSec
 			buffer.writeInt(0); // nRemainServerItemAmount
 			buffer.writeShort(0); // sCircleNum (311)

@@ -76,6 +76,7 @@ public class TeleportListData implements IXmlReader
 			{
 				locations.add(new Location(set.getInt("x"), set.getInt("y"), set.getInt("z")));
 			}
+			
 			_teleports.put(tpId, new TeleportListHolder(tpId, locations, tpPrice));
 		}));
 	}

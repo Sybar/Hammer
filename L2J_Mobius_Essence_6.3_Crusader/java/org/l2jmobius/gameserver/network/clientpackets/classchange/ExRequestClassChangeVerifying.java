@@ -131,6 +131,7 @@ public class ExRequestClassChangeVerifying extends ClientPacket
 				}
 			}
 		}
+		
 		return (qs != null) && qs.isCompleted();
 	}
 	

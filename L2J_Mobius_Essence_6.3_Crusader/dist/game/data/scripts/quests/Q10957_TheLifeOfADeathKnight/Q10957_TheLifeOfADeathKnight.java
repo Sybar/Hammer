@@ -45,13 +45,16 @@ public class Q10957_TheLifeOfADeathKnight extends Quest
 	// NPCs
 	private static final int KILREMANGE = 34138;
 	private static final int TRAINING_DUMMY = 22183;
+	
 	// Items
 	private static final ItemHolder SOULSHOT_REWARD = new ItemHolder(91927, 200);
 	private static final ItemHolder SOE_REWARD = new ItemHolder(10650, 5);
 	private static final ItemHolder WW_POTION_REWARD = new ItemHolder(49036, 5);
 	private static final ItemHolder HP_POTION_REWARD = new ItemHolder(91912, 50);
+	
 	// Skill
 	private static final SkillHolder DK_TRANSORMATION = new SkillHolder(48057, 1);
+	
 	// Misc
 	private static final String REWARD_CHECK_VAR1 = "Q10957_REWARD_1";
 	private static final String REWARD_CHECK_VAR2 = "Q10957_REWARD_2";
@@ -100,6 +103,7 @@ public class Q10957_TheLifeOfADeathKnight extends Quest
 						giveItems(player, SOULSHOT_REWARD);
 					}
 				}
+				
 				htmltext = event;
 				break;
 			}
@@ -122,6 +126,7 @@ public class Q10957_TheLifeOfADeathKnight extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -177,6 +182,7 @@ public class Q10957_TheLifeOfADeathKnight extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

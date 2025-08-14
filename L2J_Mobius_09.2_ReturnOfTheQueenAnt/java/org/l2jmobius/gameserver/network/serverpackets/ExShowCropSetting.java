@@ -50,6 +50,7 @@ public class ExShowCropSetting extends ServerPacket
 			{
 				_current.put(s.getCropId(), cp);
 			}
+			
 			// Next period
 			cp = manor.getCropProcure(manorId, s.getCropId(), true);
 			if (cp != null)
@@ -77,6 +78,7 @@ public class ExShowCropSetting extends ServerPacket
 			buffer.writeInt(0); // ???
 			buffer.writeInt(s.getCropMinPrice()); // min crop price
 			buffer.writeInt((int) s.getCropMaxPrice()); // max crop price
+			
 			// Current period
 			if (_current.containsKey(s.getCropId()))
 			{
@@ -91,6 +93,7 @@ public class ExShowCropSetting extends ServerPacket
 				buffer.writeLong(0);
 				buffer.writeByte(0);
 			}
+			
 			// Next period
 			if (_next.containsKey(s.getCropId()))
 			{
@@ -106,6 +109,7 @@ public class ExShowCropSetting extends ServerPacket
 				buffer.writeByte(0);
 			}
 		}
+		
 		_next.clear();
 		_current.clear();
 	}

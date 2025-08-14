@@ -73,6 +73,7 @@ public class PetInventory extends Inventory
 				equippedItems.add(item);
 			}
 		}
+		
 		return equippedItems;
 	}
 	
@@ -83,6 +84,7 @@ public class PetInventory extends Inventory
 		{
 			slots++;
 		}
+		
 		return validateCapacity(slots);
 	}
 	
@@ -100,6 +102,7 @@ public class PetInventory extends Inventory
 		{
 			return false;
 		}
+		
 		weight += count * template.getWeight();
 		return validateWeight(weight);
 	}

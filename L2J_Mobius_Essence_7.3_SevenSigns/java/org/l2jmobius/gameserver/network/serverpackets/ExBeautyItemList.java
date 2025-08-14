@@ -54,6 +54,7 @@ public class ExBeautyItemList extends ServerPacket
 				colors.add(color);
 				_colorCount++;
 			}
+			
 			_colorData.put(hair.getId(), colors);
 		}
 	}
@@ -73,6 +74,7 @@ public class ExBeautyItemList extends ServerPacket
 			buffer.writeInt(hair.getBeautyShopTicket());
 			buffer.writeInt(1); // Limit
 		}
+		
 		buffer.writeInt(FACE_TYPE);
 		buffer.writeInt(_beautyData.getFaceList().size());
 		for (BeautyItem face : _beautyData.getFaceList().values())
@@ -84,6 +86,7 @@ public class ExBeautyItemList extends ServerPacket
 			buffer.writeInt(face.getBeautyShopTicket());
 			buffer.writeInt(1); // Limit
 		}
+		
 		buffer.writeInt(COLOR_TYPE);
 		buffer.writeInt(_colorCount);
 		for (Entry<Integer, List<BeautyItem>> entry : _colorData.entrySet())

@@ -43,18 +43,22 @@ public class Q10955_NewLifeLessons extends Quest
 {
 	// NPCs
 	private static final int KERKIN = 34210;
+	
 	// Monsters
 	private static final int DIFFLOE = 22325;
 	private static final int APIS = 22326;
 	private static final int ECHINU = 22327;
+	
 	// Items
 	private static final ItemHolder SOE_KERKIR = new ItemHolder(95586, 1);
 	private static final ItemHolder SOE_NOVICE = new ItemHolder(10650, 10);
 	private static final ItemHolder RING_NOVICE = new ItemHolder(49041, 2);
 	private static final ItemHolder EARRING_NOVICE = new ItemHolder(49040, 2);
 	private static final ItemHolder NECKLACE_NOVICE = new ItemHolder(49039, 1);
+	
 	// Location
 	private static final Location QUIET_PLAIN = new Location(106025, 53773, -4576);
+	
 	// Misc
 	private static final int MIN_LEVEL = 2;
 	private static final int MAX_LEVEL = 15;
@@ -117,10 +121,12 @@ public class Q10955_NewLifeLessons extends Quest
 					addExpAndSp(player, 260000, 6000);
 					qs.exitQuest(false, true);
 				}
+				
 				htmltext = event;
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -158,6 +164,7 @@ public class Q10955_NewLifeLessons extends Quest
 						{
 							htmltext = "34210-03.html";
 						}
+						
 						htmltext = "34210-04.html";
 					}
 				}
@@ -169,6 +176,7 @@ public class Q10955_NewLifeLessons extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -205,6 +213,7 @@ public class Q10955_NewLifeLessons extends Quest
 			holder.add(new NpcLogListHolder(NpcStringId.KILL_MONSTERS_IN_THE_QUIET_PLAIN.getId(), true, qs.getInt(KILL_COUNT_VAR)));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

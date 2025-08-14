@@ -1660,11 +1660,11 @@
 		<magicLevel>76</magicLevel>
 		<mpConsume>550</mpConsume>
 		<reuseDelay>300000</reuseDelay>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<not>
 				<player insideZoneId="10501, 10502, 10503" />
 			</not>
-		</cond>
+		</conditions>
 		<conditions>
 			<condition name="OpCallPc" />
 		</conditions>

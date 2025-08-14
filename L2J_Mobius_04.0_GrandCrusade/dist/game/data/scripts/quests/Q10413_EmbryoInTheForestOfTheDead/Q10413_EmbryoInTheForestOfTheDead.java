@@ -84,6 +84,7 @@ public class Q10413_EmbryoInTheForestOfTheDead extends Quest
 		21595, // Vampire Warlord
 		21599, // Requiem Priest
 	};
+	
 	// Misc
 	private static final int MIN_LEVEL = 65;
 	private static final int MAX_LEVEL = 70;
@@ -135,11 +136,13 @@ public class Q10413_EmbryoInTheForestOfTheDead extends Quest
 					{
 						addExpAndSp(player, 161046201, 4072);
 					}
+					
 					htmltext = event;
 				}
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -166,6 +169,7 @@ public class Q10413_EmbryoInTheForestOfTheDead extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -207,6 +211,7 @@ public class Q10413_EmbryoInTheForestOfTheDead extends Quest
 			npcLogList.add(new NpcLogListHolder(EMBRYO, false, qs.getInt("KillCount")));
 			return npcLogList;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

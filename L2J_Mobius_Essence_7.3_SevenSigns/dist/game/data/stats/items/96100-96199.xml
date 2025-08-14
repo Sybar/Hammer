@@ -359,9 +359,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="40383" level="1" /> <!-- Growth Scroll -->
 		</skills>
@@ -391,9 +391,9 @@
 		<set name="is_freightable" val="true" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="60" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="40382" level="1" /> <!-- Elmoreden Tower's Time Stone -->
 		</skills>

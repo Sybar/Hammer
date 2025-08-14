@@ -38,6 +38,7 @@ public class Q00636_TruthBeyondTheGate extends Quest
 	// NPCs
 	private static final int ELIYAH = 31329;
 	private static final int FLAURON = 32010;
+	
 	// Item
 	private static final int VISITOR_MARK = 8064;
 	private static final int FADED_VISITOR_MARK = 8065;

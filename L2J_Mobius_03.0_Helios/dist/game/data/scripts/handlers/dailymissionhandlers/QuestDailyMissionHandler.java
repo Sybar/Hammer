@@ -69,6 +69,7 @@ public class QuestDailyMissionHandler extends AbstractDailyMissionHandler
 				}
 			}
 		}
+		
 		return false;
 	}
 	
@@ -84,6 +85,7 @@ public class QuestDailyMissionHandler extends AbstractDailyMissionHandler
 				{
 					entry.setStatus(DailyMissionStatus.AVAILABLE);
 				}
+				
 				storePlayerEntry(entry);
 			}
 		}

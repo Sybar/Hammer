@@ -43,6 +43,7 @@ public class FleeMonsters extends AbstractNpcAI
 		20002, // Rabbit
 		20432, // Elpy
 	};
+	
 	// Misc
 	private static final int FLEE_DISTANCE = 500;
 	

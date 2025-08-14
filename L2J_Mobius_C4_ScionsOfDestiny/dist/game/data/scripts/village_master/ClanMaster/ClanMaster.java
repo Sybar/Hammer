@@ -65,6 +65,7 @@ public class ClanMaster extends AbstractNpcAI
 		{
 			return LEADER_REQUIRED.get(event);
 		}
+		
 		return event;
 	}
 	

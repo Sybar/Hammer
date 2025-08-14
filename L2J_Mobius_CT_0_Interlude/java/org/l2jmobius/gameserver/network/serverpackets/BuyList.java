@@ -76,6 +76,7 @@ public class BuyList extends ServerPacket
 					buffer.writeShort(0);
 					buffer.writeShort(0);
 				}
+				
 				if ((product.getItemId() >= 3960) && (product.getItemId() <= 4026))
 				{
 					buffer.writeInt((int) (product.getPrice() * Config.RATE_SIEGE_GUARDS_PRICE * (1 + _taxRate)));

@@ -71,6 +71,7 @@ public class Guillotine extends AbstractNpcAI
 	private static final int SLAVE1_NPC_ID = 29404;
 	private static final int SLAVE2_NPC_ID = 29405;
 	private static final int SLAVE3_NPC_ID = 29406;
+	
 	// ID of temporary Clones NPCs
 	private static final int CLONESTEMP94_NPC_ID = 29403;
 	private static final int CLONESTEMP75_NPC_ID = 29403;
@@ -163,6 +164,7 @@ public class Guillotine extends AbstractNpcAI
 			checkBossInArena();
 			checkBossHP();
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	
@@ -301,6 +303,7 @@ public class Guillotine extends AbstractNpcAI
 						clone.deleteMe();
 					}
 				}
+				
 				_clonesTemp94.clear();
 			}
 			
@@ -314,6 +317,7 @@ public class Guillotine extends AbstractNpcAI
 				_spawningClonesTemp42 = true;
 				spawnClonesTemp42();
 			}
+			
 			if ((currentHPPercentage <= 93) && !_spawningSlaves93)
 			{
 				_spawningSlaves93 = true;

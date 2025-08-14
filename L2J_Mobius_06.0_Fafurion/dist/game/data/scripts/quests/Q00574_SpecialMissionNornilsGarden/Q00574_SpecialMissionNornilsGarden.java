@@ -38,10 +38,13 @@ public class Q00574_SpecialMissionNornilsGarden extends Quest
 {
 	// NPCs
 	private static final int PENNY = 34413;
+	
 	// Monsters
 	private static final int SPICULA = 25901;
+	
 	// Rewards
 	private static final int SCROLL_OF_ESCAPE_NORNILS_CAVE = 39503;
+	
 	// Misc
 	private static final int MIN_LEVEL = 93;
 	private static final int MAX_LEVEL = 96;
@@ -65,6 +68,7 @@ public class Q00574_SpecialMissionNornilsGarden extends Quest
 		{
 			return htmltext;
 		}
+		
 		switch (event)
 		{
 			case "34413-02.htm":
@@ -90,6 +94,7 @@ public class Q00574_SpecialMissionNornilsGarden extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -117,9 +122,11 @@ public class Q00574_SpecialMissionNornilsGarden extends Quest
 					htmltext = getAlreadyCompletedMsg(player, QuestType.DAILY);
 					break;
 				}
+				
 				qs.setState(State.CREATED);
 			}
 		}
+		
 		return htmltext;
 	}
 	

@@ -84,6 +84,7 @@ public abstract class AbstractItemPacket extends AbstractMaskPacket<ItemListType
 	protected void writeItem(ItemInfo item, WritableBuffer buffer)
 	{
 		final int mask = calculateMask(item);
+		
 		// cddcQcchQccddc
 		buffer.writeByte(mask);
 		buffer.writeInt(item.getObjectId()); // ObjectId
@@ -103,14 +104,17 @@ public abstract class AbstractItemPacket extends AbstractMaskPacket<ItemListType
 		{
 			writeItemAugment(item, buffer);
 		}
+		
 		if (containsMask(mask, ItemListType.ELEMENTAL_ATTRIBUTE))
 		{
 			writeItemElemental(item, buffer);
 		}
+		
 		if (containsMask(mask, ItemListType.ENCHANT_EFFECT))
 		{
 			writeItemEnchantEffect(item, buffer);
 		}
+		
 		if (containsMask(mask, ItemListType.VISUAL_ID))
 		{
 			buffer.writeInt(item.getVisualId()); // Item remodel visual ID
@@ -124,10 +128,12 @@ public abstract class AbstractItemPacket extends AbstractMaskPacket<ItemListType
 		{
 			mask |= ItemListType.AUGMENT_BONUS.getMask();
 		}
+		
 		if ((item.getAttackElementType() >= 0) || (item.getAttributeDefence(AttributeType.FIRE) > 0) || (item.getAttributeDefence(AttributeType.WATER) > 0) || (item.getAttributeDefence(AttributeType.WIND) > 0) || (item.getAttributeDefence(AttributeType.EARTH) > 0) || (item.getAttributeDefence(AttributeType.HOLY) > 0) || (item.getAttributeDefence(AttributeType.DARK) > 0))
 		{
 			mask |= ItemListType.ELEMENTAL_ATTRIBUTE.getMask();
 		}
+		
 		if (item.getEnchantOptions() != null)
 		{
 			for (int id : item.getEnchantOptions())
@@ -139,10 +145,12 @@ public abstract class AbstractItemPacket extends AbstractMaskPacket<ItemListType
 				}
 			}
 		}
+		
 		if (item.getVisualId() > 0)
 		{
 			mask |= ItemListType.VISUAL_ID.getMask();
 		}
+		
 		return mask;
 	}
 	

@@ -69,6 +69,7 @@ public class ExQuestUI extends ServerPacket
 				buffer.writeInt(questState.getCount());
 				buffer.writeByte(questState.getState());
 			}
+			
 			buffer.writeInt(_activeQuestCount);
 		}
 		else

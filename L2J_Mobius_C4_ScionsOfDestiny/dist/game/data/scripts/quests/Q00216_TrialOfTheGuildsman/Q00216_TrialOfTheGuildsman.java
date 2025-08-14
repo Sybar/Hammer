@@ -37,6 +37,7 @@ public class Q00216_TrialOfTheGuildsman extends Quest
 	private static final int ALTRAN = 30283;
 	private static final int PINTER = 30298;
 	private static final int DUNING = 30688;
+	
 	// Monsters
 	private static final int ANT = 20079;
 	private static final int ANT_CAPTAIN = 20080;
@@ -51,6 +52,7 @@ public class Q00216_TrialOfTheGuildsman extends Quest
 	private static final int BREKA_ORC_SHAMAN = 20269;
 	private static final int BREKA_ORC_OVERLORD = 20270;
 	private static final int BREKA_ORC_WARRIOR = 20271;
+	
 	// Items
 	private static final int RECIPE_JOURNEYMAN_RING = 3024;
 	private static final int RECIPE_AMBER_BEAD = 3025;
@@ -74,6 +76,7 @@ public class Q00216_TrialOfTheGuildsman extends Quest
 	private static final int AMBER_LUMP = 3137;
 	private static final int JOURNEYMAN_DECO_BEADS = 3138;
 	private static final int JOURNEYMAN_RING = 3139;
+	
 	// Rewards
 	private static final int MARK_OF_GUILDSMAN = 3119;
 	private static final int DIMENSIONAL_DIAMOND = 7562;
@@ -170,6 +173,7 @@ public class Q00216_TrialOfTheGuildsman extends Quest
 				playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 				takeItems(player, ALTRAN_RECOMMENDATION_2, 1);
 				giveItems(player, PINTER_INSTRUCTIONS, 1);
+				
 				// Artisan receives a recipe to craft Amber Beads, while spoiler case is handled in onKill section.
 				if (player.getPlayerClass() == PlayerClass.ARTISAN)
 				{

@@ -36,6 +36,7 @@ public final class PowerOfAbelius extends AbstractInstance
 {
 	// NPCs
 	private static final int MASTER_DEFENDER = 34386;
+	
 	// Misc
 	private static final int TEMPLATE_ID = 272;
 	
@@ -67,6 +68,7 @@ public final class PowerOfAbelius extends AbstractInstance
 				}
 			}
 		}
+		
 		return null;
 	}
 	
@@ -91,6 +93,7 @@ public final class PowerOfAbelius extends AbstractInstance
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	

@@ -79,6 +79,7 @@ public class Antharas extends AbstractInstance
 		INVISIBLE_NPC.put(29093, new Location(178419, 113417, -7735)); // antaras_clear_npc_17
 		INVISIBLE_NPC.put(29094, new Location(177855, 113282, -7735)); // antaras_clear_npc_18
 	}
+	
 	// Skill
 	private static final SkillHolder ANTH_JUMP = new SkillHolder(4106, 1); // Antharas Stun
 	private static final SkillHolder ANTH_TAIL = new SkillHolder(4107, 1); // Antharas Stun
@@ -99,6 +100,7 @@ public class Antharas extends AbstractInstance
 	// Zone
 	private static final NoRestartZone ZONE = ZoneManager.getInstance().getZoneById(70050, NoRestartZone.class); // Antharas Nest zone
 	// @formatter:on
+	
 	// Misc
 	private static final int TEMPLATE_ID = 304;
 	
@@ -269,6 +271,7 @@ public class Antharas extends AbstractInstance
 					{
 						npc.getAI().setIntention(Intention.CAST, ANTH_REGEN_1.getSkill(), npc);
 					}
+					
 					startQuestTimer("SET_REGEN", 60000, npc, player, false);
 				}
 				break;
@@ -282,16 +285,19 @@ public class Antharas extends AbstractInstance
 					{
 						npc.getInstanceWorld().getParameters().set("attacker1hate", attacker1hate - getRandom(10));
 					}
+					
 					final int attacker2hate = npc.getInstanceWorld().getParameters().getInt("attacker2hate", 0);
 					if (attacker2hate > 10)
 					{
 						npc.getInstanceWorld().getParameters().set("attacker2hate", attacker2hate - getRandom(10));
 					}
+					
 					final int attacker3hate = npc.getInstanceWorld().getParameters().getInt("attacker3hate", 0);
 					if (attacker3hate > 10)
 					{
 						npc.getInstanceWorld().getParameters().set("attacker3hate", attacker3hate - getRandom(10));
 					}
+					
 					manageSkills(npc);
 					startQuestTimer("CHECK_ATTACK", 60000, npc, null, false);
 				}
@@ -352,6 +358,7 @@ public class Antharas extends AbstractInstance
 				break;
 			}
 		}
+		
 		return null;
 	}
 	
@@ -398,6 +405,7 @@ public class Antharas extends AbstractInstance
 			{
 				refreshAiParams(attacker, (damage / 3) * 20);
 			}
+			
 			manageSkills(npc);
 		}
 	}
@@ -442,6 +450,7 @@ public class Antharas extends AbstractInstance
 		{
 			startQuestTimer("TID_USED_FEAR", 7000, npc, null);
 		}
+		
 		startQuestTimer("MANAGE_SKILL", 1000, npc, null);
 	}
 	
@@ -523,6 +532,7 @@ public class Antharas extends AbstractInstance
 				teleportPlayerOut(player, world);
 			}
 		}
+		
 		return null;
 	}
 	
@@ -596,6 +606,7 @@ public class Antharas extends AbstractInstance
 			i2 = attacker3hate;
 			c2 = attacker3;
 		}
+		
 		if (i2 > 0)
 		{
 			if (getRandom(100) < 70)

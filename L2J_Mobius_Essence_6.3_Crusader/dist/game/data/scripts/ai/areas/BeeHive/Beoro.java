@@ -20,6 +20,7 @@
  */
 package ai.areas.BeeHive;
 
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -109,6 +110,7 @@ public class Beoro extends AbstractNpcAI
 				}
 			}
 		}
+		
 		if ((npc.getId() == BEORO) || (npc.getId() == HERMIT_BEORO))
 		{
 			synchronized (npc)
@@ -124,6 +126,7 @@ public class Beoro extends AbstractNpcAI
 				}
 			}
 		}
+		
 		if (npc.getId() == ROYDA)
 		{
 			synchronized (npc)
@@ -139,7 +142,7 @@ public class Beoro extends AbstractNpcAI
 	}
 	
 	@Override
-	public void onSkillSee(Npc npc, Player caster, Skill skill, WorldObject[] targets, boolean isSummon)
+	public void onSkillSee(Npc npc, Player caster, Skill skill, Collection<WorldObject> targets, boolean isSummon)
 	{
 		if (isSummon)
 		{
@@ -155,6 +158,7 @@ public class Beoro extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		if (isTarget)
 		{
 			petrify(npc, caster);
@@ -172,6 +176,7 @@ public class Beoro extends AbstractNpcAI
 		{
 			npc.asAttackable().reduceHate(playable, -aggr.getHate());
 		}
+		
 		if (npc.getTarget() == playable)
 		{
 			npc.setTarget(null);

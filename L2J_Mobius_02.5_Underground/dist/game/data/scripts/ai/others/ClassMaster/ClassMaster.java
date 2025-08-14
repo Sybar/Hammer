@@ -80,6 +80,7 @@ public class ClassMaster extends AbstractNpcAI implements IXmlReader
 		CLASS_MASTERS.add(31756); // Mr. Cat
 		CLASS_MASTERS.add(31757); // Queen of Hearts
 	}
+	
 	// Misc
 	private boolean _isEnabled;
 	private boolean _spawnClassMasters;
@@ -162,6 +163,7 @@ public class ClassMaster extends AbstractNpcAI implements IXmlReader
 											}
 										}
 									}
+									
 									if ("rewards".equals(b.getNodeName()))
 									{
 										for (Node r = b.getFirstChild(); r != null; r = r.getNextSibling())
@@ -273,6 +275,7 @@ public class ClassMaster extends AbstractNpcAI implements IXmlReader
 				{
 					player.setNobleLevel(1);
 					player.broadcastUserInfo();
+					
 					// TODO: SetOneTimeQuestFlag(talker, 10385, 1);
 					htmltext = "test_server_helper025.html";
 				}
@@ -391,11 +394,13 @@ public class ClassMaster extends AbstractNpcAI implements IXmlReader
 									return null; // No class change if payment failed.
 								}
 							}
+							
 							for (ItemHolder ri : data.getItemsRequired())
 							{
 								player.destroyItemByItemId(ItemProcessType.FEE, ri.getId(), ri.getCount(), npc, true);
 							}
 						}
+						
 						// Give possible rewards.
 						if (!data.getItemsRewarded().isEmpty())
 						{
@@ -404,11 +409,13 @@ public class ClassMaster extends AbstractNpcAI implements IXmlReader
 								giveItems(player, ri);
 							}
 						}
+						
 						// Give possible nobless status reward.
 						if (data.isRewardNoblesse())
 						{
 							player.setNobleLevel(1);
 						}
+						
 						// Give possible hero status reward.
 						if (data.isRewardHero())
 						{
@@ -425,6 +432,7 @@ public class ClassMaster extends AbstractNpcAI implements IXmlReader
 					{
 						player.setBaseClass(player.getActiveClass());
 					}
+					
 					if (player.isInCategory(CategoryType.SIXTH_CLASS_GROUP))
 					{
 						SkillTreeData.getInstance().cleanSkillUponAwakening(player);
@@ -433,10 +441,12 @@ public class ClassMaster extends AbstractNpcAI implements IXmlReader
 							player.addSkill(SkillData.getInstance().getSkill(skill.getSkillId(), skill.getSkillLevel()), true);
 						}
 					}
+					
 					if (Config.AUTO_LEARN_SKILLS)
 					{
 						player.giveAvailableSkills(Config.AUTO_LEARN_FS_SKILLS, true, Config.AUTO_LEARN_SKILLS_WITHOUT_ITEMS);
 					}
+					
 					player.store(false); // Save player cause if server crashes before this char is saved, he will lose class and the money payed for class change.
 					player.broadcastUserInfo();
 					player.sendSkillList();
@@ -586,6 +596,7 @@ public class ClassMaster extends AbstractNpcAI implements IXmlReader
 		{
 			htmltext = "test_server_helper011a.html";
 		}
+		
 		return htmltext;
 	}
 	
@@ -774,6 +785,7 @@ public class ClassMaster extends AbstractNpcAI implements IXmlReader
 		{
 			htmltext = "test_server_helper029.html";
 		}
+		
 		return htmltext;
 	}
 	
@@ -818,6 +830,7 @@ public class ClassMaster extends AbstractNpcAI implements IXmlReader
 					break;
 				}
 			}
+			
 			if (data != null)
 			{
 				// Required items.
@@ -831,11 +844,13 @@ public class ClassMaster extends AbstractNpcAI implements IXmlReader
 							return false; // No class change if payment failed.
 						}
 					}
+					
 					for (ItemHolder ri : data.getItemsRequired())
 					{
 						player.destroyItemByItemId(ItemProcessType.FEE, ri.getId(), ri.getCount(), player, true);
 					}
 				}
+				
 				// Give possible rewards.
 				if (!data.getItemsRewarded().isEmpty())
 				{
@@ -844,11 +859,13 @@ public class ClassMaster extends AbstractNpcAI implements IXmlReader
 						giveItems(player, ri);
 					}
 				}
+				
 				// Give possible nobless status reward.
 				if (data.isRewardNoblesse())
 				{
 					player.setNobleLevel(1);
 				}
+				
 				// Give possible hero status reward.
 				if (data.isRewardHero())
 				{
@@ -865,6 +882,7 @@ public class ClassMaster extends AbstractNpcAI implements IXmlReader
 			{
 				player.setBaseClass(player.getActiveClass());
 			}
+			
 			if (player.isInCategory(CategoryType.SIXTH_CLASS_GROUP))
 			{
 				SkillTreeData.getInstance().cleanSkillUponAwakening(player);
@@ -873,10 +891,12 @@ public class ClassMaster extends AbstractNpcAI implements IXmlReader
 					player.addSkill(SkillData.getInstance().getSkill(skill.getSkillId(), skill.getSkillLevel()), true);
 				}
 			}
+			
 			if (Config.AUTO_LEARN_SKILLS)
 			{
 				player.giveAvailableSkills(Config.AUTO_LEARN_FS_SKILLS, true, Config.AUTO_LEARN_SKILLS_WITHOUT_ITEMS);
 			}
+			
 			player.store(false); // Save player cause if server crashes before this char is saved, he will lose class and the money payed for class change.
 			player.broadcastUserInfo();
 			player.sendSkillList();
@@ -891,12 +911,12 @@ public class ClassMaster extends AbstractNpcAI implements IXmlReader
 			return;
 		}
 		
-		//@formatter:off
+		// @formatter:off
 		if ((player.isInCategory(CategoryType.FIRST_CLASS_GROUP) && (player.getLevel() >= 20)) ||
 			((player.isInCategory(CategoryType.SECOND_CLASS_GROUP) || player.isInCategory(CategoryType.FIRST_CLASS_GROUP)) && (player.getLevel() >= 40)) ||
 			(player.isInCategory(CategoryType.THIRD_CLASS_GROUP) && (player.getLevel() >= 76)) ||
 			(player.isInCategory(CategoryType.FOURTH_CLASS_GROUP) && (player.getLevel() >= 85)))
-		//@formatter:on
+		// @formatter:on
 		{
 			player.sendPacket(new TutorialShowQuestionMark(1001));
 		}
@@ -1019,11 +1039,13 @@ public class ClassMaster extends AbstractNpcAI implements IXmlReader
 				{
 					sb.append("<tr><td><font color=\"LEVEL\">Noblesse status.</font></td></tr>");
 				}
+				
 				if (option.isRewardHero())
 				{
 					sb.append("<tr><td><font color=\"LEVEL\">Hero status.</font></td></tr>");
 				}
 			}
+			
 			sb.append("</table></td></tr>");
 			sb.append("</table></td></tr>");
 			sb.append("<tr><td><img src=L2UI_CT1.ChatBalloon_DF_TopCenter width=276 height=1 /></td></tr>");
@@ -1069,6 +1091,7 @@ public class ClassMaster extends AbstractNpcAI implements IXmlReader
 					}
 				}
 			}
+			
 			return false;
 		}
 		
@@ -1138,6 +1161,7 @@ public class ClassMaster extends AbstractNpcAI implements IXmlReader
 					count++;
 				}
 			}
+			
 			if (count > 1)
 			{
 				showOptions = true;
@@ -1153,6 +1177,7 @@ public class ClassMaster extends AbstractNpcAI implements IXmlReader
 		{
 			return _classChangeData.get(index);
 		}
+		
 		return null;
 	}
 	

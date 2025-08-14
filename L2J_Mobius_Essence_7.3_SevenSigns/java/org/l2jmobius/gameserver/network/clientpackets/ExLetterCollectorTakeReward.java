@@ -72,6 +72,7 @@ public class ExLetterCollectorTakeReward extends ClientPacket
 				return;
 			}
 		}
+		
 		for (ItemHolder destroyLetter : LetterCollectorManager.getInstance().getWord(_wordId))
 		{
 			if (!player.destroyItemByItemId(ItemProcessType.FEE, destroyLetter.getId(), destroyLetter.getCount(), player, true))
@@ -103,9 +104,11 @@ public class ExLetterCollectorTakeReward extends ClientPacket
 				{
 					return null;
 				}
+				
 				return rewardItem;
 			}
 		}
+		
 		return null;
 	}
 }

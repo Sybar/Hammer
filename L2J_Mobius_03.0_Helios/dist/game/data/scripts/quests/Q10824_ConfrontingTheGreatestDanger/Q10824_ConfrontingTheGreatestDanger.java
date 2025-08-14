@@ -37,14 +37,17 @@ public class Q10824_ConfrontingTheGreatestDanger extends Quest
 {
 	// NPC
 	private static final int MERLOT = 34019;
+	
 	// Items
 	private static final int MARK_OF_ADVANCE = 46058;
 	private static final int KURTIZ_CERTIFICATE = 46057;
 	private static final int MAMMON_CERTIFICATE = 45635;
 	private static final int GUSTAV_CERTIFICATE = 45636;
+	
 	// Rewards
 	private static final int MERLOT_SERTIFICATE = 46056;
 	private static final int SPELLBOOK_BLESSING_OF_THE_EXALTED = 45926;
+	
 	// Misc
 	private static final int MIN_LEVEL = 100;
 	
@@ -96,6 +99,7 @@ public class Q10824_ConfrontingTheGreatestDanger extends Quest
 						{
 							htmltext = event;
 						}
+						
 						takeItems(player, MARK_OF_ADVANCE, 3);
 						giveItems(player, MERLOT_SERTIFICATE, 1);
 						giveItems(player, SPELLBOOK_BLESSING_OF_THE_EXALTED, 1);
@@ -109,6 +113,7 @@ public class Q10824_ConfrontingTheGreatestDanger extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -142,6 +147,7 @@ public class Q10824_ConfrontingTheGreatestDanger extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

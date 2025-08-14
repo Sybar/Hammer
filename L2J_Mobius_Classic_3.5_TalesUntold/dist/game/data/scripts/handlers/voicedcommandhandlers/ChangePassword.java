@@ -39,7 +39,7 @@ public class ChangePassword implements IVoicedCommandHandler
 	};
 	
 	@Override
-	public boolean useVoicedCommand(String command, Player activeChar, String target)
+	public boolean onCommand(String command, Player activeChar, String target)
 	{
 		if (target != null)
 		{
@@ -53,10 +53,12 @@ public class ChangePassword implements IVoicedCommandHandler
 				{
 					curpass = st.nextToken();
 				}
+				
 				if (st.hasMoreTokens())
 				{
 					newpass = st.nextToken();
 				}
+				
 				if (st.hasMoreTokens())
 				{
 					repeatnewpass = st.nextToken();
@@ -69,11 +71,13 @@ public class ChangePassword implements IVoicedCommandHandler
 						activeChar.sendMessage("The new password doesn't match with the repeated one!");
 						return false;
 					}
+					
 					if (newpass.length() < 3)
 					{
 						activeChar.sendMessage("The new password is shorter than 3 chars! Please try with a longer one.");
 						return false;
 					}
+					
 					if (newpass.length() > 30)
 					{
 						activeChar.sendMessage("The new password is longer than 30 chars! Please try with a shorter one.");
@@ -102,14 +106,16 @@ public class ChangePassword implements IVoicedCommandHandler
 			{
 				html = "<html><body><br><br><center><font color=LEVEL>404:</font> File Not Found</center></body></html>";
 			}
+			
 			activeChar.sendPacket(new NpcHtmlMessage(html));
 			return true;
 		}
+		
 		return true;
 	}
 	
 	@Override
-	public String[] getVoicedCommandList()
+	public String[] getCommandList()
 	{
 		return VOICED_COMMANDS;
 	}

@@ -37,7 +37,7 @@ import org.l2jmobius.gameserver.network.serverpackets.relics.ExRelicsSummonResul
 public class RelicSummonCoupon implements IItemHandler
 {
 	@Override
-	public boolean useItem(Playable playable, Item item, boolean forceUse)
+	public boolean onItemUse(Playable playable, Item item, boolean forceUse)
 	{
 		if (!playable.isPlayer())
 		{
@@ -62,11 +62,17 @@ public class RelicSummonCoupon implements IItemHandler
 		{
 			return false;
 		}
+		
+		if (!player.destroyItemByItemId(ItemProcessType.FEE, item.getId(), 1, player, true))
+		{
+			player.sendPacket(SystemMessageId.FAILURE_ALL_MATERIALS_ARE_LOST);
+			return false;
+		}
+		
 		player.addRequest(new RelicSummonRequest(player));
 		
 		final int relicSummonCount = Config.ELEVEN_SUMMON_COUNT_COUPONS.contains(item.getId()) ? 11 : 1;
 		player.sendPacket(new ExRelicsSummonResult(player, item.getId(), relicSummonCount));
-		player.destroyItem(ItemProcessType.DESTROY, item, 1, player, true);
 		return true;
 	}
 }

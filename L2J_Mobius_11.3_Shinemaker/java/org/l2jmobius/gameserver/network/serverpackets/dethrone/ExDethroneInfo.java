@@ -75,6 +75,7 @@ public class ExDethroneInfo extends ServerPacket
 				break;
 			}
 		}
+		
 		_previousRankSize = previousRankList.size();
 	}
 	

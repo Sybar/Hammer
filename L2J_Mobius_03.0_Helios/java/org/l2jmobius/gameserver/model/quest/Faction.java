@@ -57,10 +57,12 @@ public enum Faction
 		{
 			return 0;
 		}
+		
 		if (level > (_points.length - 1))
 		{
 			return _points[_points.length - 1];
 		}
+		
 		return _points[level];
 	}
 }

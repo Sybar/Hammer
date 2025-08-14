@@ -53,7 +53,7 @@ public class QuestLink implements IBypassHandler
 	};
 	
 	@Override
-	public boolean useBypass(String command, Player player, Creature target)
+	public boolean onCommand(String command, Player player, Creature target)
 	{
 		String quest = "";
 		try
@@ -64,6 +64,7 @@ public class QuestLink implements IBypassHandler
 		{
 			// Handled bellow.
 		}
+		
 		if (quest.isEmpty())
 		{
 			showQuestWindow(player, target.asNpc());
@@ -80,6 +81,7 @@ public class QuestLink implements IBypassHandler
 				player.processQuestEvent(quest.substring(0, questNameEnd), quest.substring(questNameEnd).trim());
 			}
 		}
+		
 		return true;
 	}
 	
@@ -118,6 +120,7 @@ public class QuestLink implements IBypassHandler
 			{
 				state = " (Done)";
 			}
+			
 			sb.append("<a action=\"bypass npc_" + npc.getObjectId() + "_Quest " + quest.getName() + "\">");
 			sb.append("[");
 			
@@ -144,6 +147,7 @@ public class QuestLink implements IBypassHandler
 				}
 			}
 		}
+		
 		sb.append("</body></html>");
 		
 		// Send a Server->Client packet NpcHtmlMessage to the Player in order to display the message of the Npc
@@ -257,6 +261,7 @@ public class QuestLink implements IBypassHandler
 				LOGGER.log(Level.WARNING, player + " Requested incorrect quest state for non existing quest: " + state.getQuestName());
 				continue;
 			}
+			
 			if ((quest.getId() > 0) && (quest.getId() < 20000))
 			{
 				options.add(quest);
@@ -302,7 +307,7 @@ public class QuestLink implements IBypassHandler
 	}
 	
 	@Override
-	public String[] getBypassList()
+	public String[] getCommandList()
 	{
 		return COMMANDS;
 	}

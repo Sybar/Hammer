@@ -43,10 +43,12 @@ public class Q00215_TrialOfThePilgrim extends Quest
 	private static final int ANDELLIA = 30362;
 	private static final int URUHA = 30652;
 	private static final int CASIAN = 30612;
+	
 	// Monsters
 	private static final int LAVA_SALAMANDER = 27116;
 	private static final int NAHIR = 27117;
 	private static final int BLACK_WILLOW = 27118;
+	
 	// Items
 	private static final int BOOK_OF_SAGE = 2722;
 	private static final int VOUCHER_OF_TRIAL = 2723;
@@ -60,6 +62,7 @@ public class Q00215_TrialOfThePilgrim extends Quest
 	private static final int BOOK_OF_DARKNESS = 2731;
 	private static final int DEBRIS_OF_WILLOW = 2732;
 	private static final int TAG_OF_RUMOR = 2733;
+	
 	// Rewards
 	private static final int MARK_OF_PILGRIM = 2721;
 	private static final int DIMENSIONAL_DIAMOND = 7562;

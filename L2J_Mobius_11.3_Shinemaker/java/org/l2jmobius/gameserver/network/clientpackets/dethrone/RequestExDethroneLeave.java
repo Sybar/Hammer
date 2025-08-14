@@ -21,8 +21,9 @@
 package org.l2jmobius.gameserver.network.clientpackets.dethrone;
 
 import org.l2jmobius.commons.threads.ThreadPool;
+import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.actor.enums.player.TeleportWhereType;
+import org.l2jmobius.gameserver.model.variables.PlayerVariables;
 import org.l2jmobius.gameserver.network.clientpackets.ClientPacket;
 import org.l2jmobius.gameserver.network.serverpackets.dethrone.ExDethroneLeave;
 
@@ -47,6 +48,24 @@ public class RequestExDethroneLeave extends ClientPacket
 		}
 		
 		player.sendPacket(new ExDethroneLeave());
-		ThreadPool.schedule(() -> player.teleToLocation(TeleportWhereType.TOWN), 3000); // 3 sec
+		
+		ThreadPool.schedule(() ->
+		{
+			Location location = new Location(146783, 25808, -2008); // Aden
+			
+			final PlayerVariables variables = player.getVariables();
+			if (variables.contains(PlayerVariables.CONQUEST_ORIGIN))
+			{
+				final int[] loc = variables.getIntArray(PlayerVariables.CONQUEST_ORIGIN, ";");
+				if ((loc != null) && (loc.length == 3))
+				{
+					location = new Location(loc[0], loc[1], loc[2]);
+				}
+				
+				variables.remove(PlayerVariables.CONQUEST_ORIGIN);
+			}
+			
+			player.teleToLocation(location);
+		}, 3000);
 	}
 }

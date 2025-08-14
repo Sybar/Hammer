@@ -36,6 +36,7 @@ public final class PowerOfSoltkreig extends AbstractInstance
 {
 	// NPCs
 	private static final int MASTER_WIZARD = 34390;
+	
 	// Misc
 	private static final int TEMPLATE_ID = 278;
 	
@@ -71,6 +72,7 @@ public final class PowerOfSoltkreig extends AbstractInstance
 				}
 			}
 		}
+		
 		return null;
 	}
 	
@@ -96,6 +98,7 @@ public final class PowerOfSoltkreig extends AbstractInstance
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	

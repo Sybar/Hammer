@@ -78,6 +78,7 @@ public class EventDispatcher
 				}
 			}
 		}
+		
 		return hasListeners;
 	}
 	
@@ -130,6 +131,7 @@ public class EventDispatcher
 		{
 			LOGGER.log(Level.WARNING, getClass().getSimpleName() + ": Couldn't notify event " + event.getClass().getSimpleName(), e);
 		}
+		
 		return null;
 	}
 	
@@ -198,6 +200,7 @@ public class EventDispatcher
 		{
 			LOGGER.log(Level.WARNING, getClass().getSimpleName() + ": Couldn't notify event " + event.getClass().getSimpleName(), e);
 		}
+		
 		return null;
 	}
 	
@@ -242,6 +245,7 @@ public class EventDispatcher
 		{
 			LOGGER.log(Level.WARNING, getClass().getSimpleName() + ": Couldn't notify event " + event.getClass().getSimpleName(), e);
 		}
+		
 		return null;
 	}
 	
@@ -295,6 +299,7 @@ public class EventDispatcher
 				{
 					continue;
 				}
+				
 				if ((callback == null) || rb.override()) // Let's check if this listener wants to override previous return object or we simply don't have one
 				{
 					callback = rb;
@@ -309,6 +314,7 @@ public class EventDispatcher
 				LOGGER.log(Level.WARNING, getClass().getSimpleName() + ": Exception during notification of event: " + event.getClass().getSimpleName() + " listener: " + listener.getClass().getSimpleName(), e);
 			}
 		}
+		
 		return callback;
 	}
 	

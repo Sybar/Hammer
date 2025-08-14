@@ -37,6 +37,7 @@ public class Kerr extends AbstractNpcAI
 {
 	// NPC
 	private static final int KERR = 22140;
+	
 	// Locations
 	private static final Location[] SPAWNS =
 	{
@@ -55,6 +56,7 @@ public class Kerr extends AbstractNpcAI
 		new Location(-89841, 100158, -3612),
 		new Location(-88155, 103068, -3385),
 	};
+	
 	// Misc
 	private static final int SPAWN_COUNT = 3;
 	private static final int RESPAWN_DELAY = 60000; // 1 minute.

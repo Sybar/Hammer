@@ -39,8 +39,10 @@ public class Q10455_ElikiasLetter extends Quest
 	private static final int ELRIKIA_VERDURE_ELDER = 31620;
 	private static final int DEVIANNE_TRUTH_SEEKER = 31590;
 	private static final int LEONA_BLACKBIRD_FIRE_DRAGON_BRIDE = 31595;
+	
 	// Items
 	private static final int ELRIKIAS_LETTER = 37765;
+	
 	// Misc
 	private static final int MIN_LEVEL = 99;
 	
@@ -99,6 +101,7 @@ public class Q10455_ElikiasLetter extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -142,6 +145,7 @@ public class Q10455_ElikiasLetter extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

@@ -35,10 +35,12 @@ public class Q00627_HeartInSearchOfPower extends Quest
 	// NPCs
 	private static final int NECROMANCER = 31518;
 	private static final int ENFEUX = 31519;
+	
 	// Items
 	private static final int SEAL_OF_LIGHT = 7170;
 	private static final int BEAD_OF_OBEDIENCE = 7171;
 	private static final int GEM_OF_SAINTS = 7172;
+	
 	// Drop chances
 	private static final Map<Integer, Integer> CHANCES = new HashMap<>();
 	static
@@ -58,6 +60,7 @@ public class Q00627_HeartInSearchOfPower extends Quest
 		CHANCES.put(21540, 762000);
 		CHANCES.put(21658, 690000);
 	}
+	
 	// Rewards
 	private static final Map<String, int[]> REWARDS = new HashMap<>();
 	static
@@ -129,6 +132,7 @@ public class Q00627_HeartInSearchOfPower extends Quest
 				{
 					giveItems(player, REWARDS.get(event)[0], REWARDS.get(event)[1]);
 				}
+				
 				giveAdena(player, REWARDS.get(event)[2], true);
 				
 				st.exitQuest(true, true);

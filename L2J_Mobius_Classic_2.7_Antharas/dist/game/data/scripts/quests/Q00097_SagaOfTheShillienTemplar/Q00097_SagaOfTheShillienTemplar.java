@@ -48,6 +48,7 @@ public class Q00097_SagaOfTheShillienTemplar extends Quest
 	private static final int TABLET_OF_VISION_3 = 31651;
 	private static final int TABLET_OF_VISION_4 = 31656;
 	private static final int SHIKEN_GLOOMDRAKE = 31610;
+	
 	// Monsters
 	private static final int ICE_MONSTER = 27316;
 	private static final int SPIRIT_OF_A_DROWNED = 27317;
@@ -63,6 +64,7 @@ public class Q00097_SagaOfTheShillienTemplar extends Quest
 	private static final int CHIMERA_GOLEM = 27271;
 	private static final int HALISHA_ARCHON = 27219;
 	private static final int ASSASSIN_PEZEL = 27273;
+	
 	// Items
 	private static final int ICE_CRYSTAL_FRAGMENT = 49831;
 	private static final int HALISHA_BADGE = 7512;
@@ -71,8 +73,10 @@ public class Q00097_SagaOfTheShillienTemplar extends Quest
 	private static final int RESONANCE_AMULET_3 = 7357;
 	private static final int RESONANCE_AMULET_4 = 7388;
 	private static final int ANCIENT_LANGUAGE_DICTIONARY = 7526;
+	
 	// Reward
 	private static final int BOOK_SABERTOOTH = 90040;
+	
 	// Misc
 	private static final String KILL_COUNT_VAR = "KillCount";
 	
@@ -95,6 +99,7 @@ public class Q00097_SagaOfTheShillienTemplar extends Quest
 		{
 			return null;
 		}
+		
 		String htmltext = event;
 		switch (event)
 		{
@@ -242,6 +247,7 @@ public class Q00097_SagaOfTheShillienTemplar extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -430,6 +436,7 @@ public class Q00097_SagaOfTheShillienTemplar extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -500,6 +507,7 @@ public class Q00097_SagaOfTheShillienTemplar extends Quest
 						{
 							qs.set(KILL_COUNT_VAR, count + 1);
 						}
+						
 						if (count >= 20)
 						{
 							qs.setCond(8, true);
@@ -526,8 +534,10 @@ public class Q00097_SagaOfTheShillienTemplar extends Quest
 			{
 				holder.add(new NpcLogListHolder(KEEPER_OF_THE_HOLY_EDICT, false, guardiancount));
 			}
+			
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

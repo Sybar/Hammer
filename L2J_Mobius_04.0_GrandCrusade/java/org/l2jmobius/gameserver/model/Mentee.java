@@ -92,6 +92,7 @@ public class Mentee
 		{
 			_classId = getPlayer().getPlayerClass().getId();
 		}
+		
 		return _classId;
 	}
 	
@@ -101,6 +102,7 @@ public class Mentee
 		{
 			_currentLevel = getPlayer().getLevel();
 		}
+		
 		return _currentLevel;
 	}
 	

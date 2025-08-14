@@ -40,8 +40,10 @@ public class Q10523_TheAssassinationOfTheVarkaSilenosCommander extends Quest
 {
 	// NPCs
 	private static final int HANSEN = 33853;
+	
 	// Monsters
 	private static final int VARKAS_COMMANDER_MOS = 27502;
+	
 	// Misc
 	private static final int MIN_LEVEL = 76;
 	private static final int MAX_LEVEL = 80;
@@ -66,6 +68,7 @@ public class Q10523_TheAssassinationOfTheVarkaSilenosCommander extends Quest
 		{
 			return null;
 		}
+		
 		String htmltext = null;
 		switch (event)
 		{
@@ -99,6 +102,7 @@ public class Q10523_TheAssassinationOfTheVarkaSilenosCommander extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -132,6 +136,7 @@ public class Q10523_TheAssassinationOfTheVarkaSilenosCommander extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

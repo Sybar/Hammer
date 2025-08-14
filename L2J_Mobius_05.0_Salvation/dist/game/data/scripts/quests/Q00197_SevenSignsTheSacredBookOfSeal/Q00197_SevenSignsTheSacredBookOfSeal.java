@@ -43,9 +43,11 @@ public class Q00197_SevenSignsTheSacredBookOfSeal extends Quest
 	private static final int LEOPARD = 32594;
 	private static final int LAWRENCE = 32595;
 	private static final int SOPHIA = 32596;
+	
 	// Items
 	private static final int MYSTERIOUS_HAND_WRITTEN_TEXT = 13829;
 	private static final int SCULPTURE_OF_DOUBT = 14354;
+	
 	// Misc
 	private static final int MIN_LEVEL = 79;
 	private boolean isBusy = false;
@@ -72,6 +74,7 @@ public class Q00197_SevenSignsTheSacredBookOfSeal extends Quest
 				npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.NEXT_TIME_YOU_WILL_NOT_ESCAPE);
 				npc.deleteMe();
 			}
+			
 			return super.onEvent(event, npc, player);
 		}
 		
@@ -219,6 +222,7 @@ public class Q00197_SevenSignsTheSacredBookOfSeal extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -358,6 +362,7 @@ public class Q00197_SevenSignsTheSacredBookOfSeal extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

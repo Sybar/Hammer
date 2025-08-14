@@ -61,36 +61,43 @@ public class ExTimedHuntingZoneEnter extends ClientPacket
 			player.sendPacket(SystemMessageId.CAN_ONLY_ENTER_TO_A_PEACE_ZONE);
 			return;
 		}
+		
 		if (player.isInCombat())
 		{
 			player.sendMessage("You can only enter in time-limited hunting zones while not in combat.");
 			return;
 		}
+		
 		if (player.getReputation() < 0)
 		{
 			player.sendMessage("You can only enter in time-limited hunting zones when you have positive reputation.");
 			return;
 		}
+		
 		if (player.isMounted())
 		{
 			player.sendMessage("Cannot use time-limited hunting zones while mounted.");
 			return;
 		}
+		
 		if (player.isInDuel())
 		{
 			player.sendMessage("Cannot use time-limited hunting zones during a duel.");
 			return;
 		}
+		
 		if (player.isInOlympiadMode() || OlympiadManager.getInstance().isRegistered(player))
 		{
 			player.sendPacket(SystemMessageId.CANNOT_USE_TIME_LIMITED_HUNTING_ZONES_WHILE_WAITING_FOR_THE_OLYMPIAD);
 			return;
 		}
+		
 		if (player.isRegisteredOnEvent() || (player.getBlockCheckerArena() > -1))
 		{
 			player.sendMessage("Cannot use time-limited hunting zones while registered on an event.");
 			return;
 		}
+		
 		if (player.isInInstance() /* || player.isInTimedHuntingZone() */)
 		{
 			player.sendMessage("Cannot use time-limited hunting zones while in an instance.");
@@ -125,6 +132,7 @@ public class ExTimedHuntingZoneEnter extends ClientPacket
 			{
 				endTime += holder.getInitialTime();
 			}
+			
 			player.getVariables().set(PlayerVariables.HUNTING_ZONE_ENTRY + _zoneId, currentTime);
 		}
 		

@@ -591,9 +591,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="time" val="10080" />
 		<set name="is_destroyable" val="false" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player sex="0" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="21538" name="Ribbon Hairband" additionalName="7-day / Event" type="Armor">
 		<!-- A head accessory decorated with a large ribbon bow. Available for 7 d. Female only. Equipped in 2 head accessory slots. -->
@@ -608,9 +608,9 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="time" val="10080" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player sex="0" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="21539" name="Ribbon Hairband" additionalName="30-day" type="Armor">
 		<!-- A head accessory decorated with a large ribbon bow. Available for 30 d. Female only. Equipped in 2 head accessory slots. -->
@@ -625,9 +625,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="time" val="43200" />
 		<set name="is_destroyable" val="false" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player sex="0" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="21540" name="Ribbon Hairband" additionalName="30-day / Event" type="Armor">
 		<!-- A head accessory decorated with a large ribbon bow. Available for 30 d. Female only. Equipped in 2 head accessory slots. -->
@@ -642,9 +642,9 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="time" val="43200" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player sex="0" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="21541" name="Ribbon Hairband" type="Armor">
 		<!-- A head accessory decorated with a large ribbon bow. Female only. Equipped in 2 head accessory slots. -->
@@ -658,9 +658,9 @@
 		<set name="is_freightable" val="true" />
 		<set name="enchant_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player sex="0" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="21542" name="Ribbon Hairband" additionalName="Event" type="Armor">
 		<!-- A head accessory decorated with a large ribbon bow. Female only. Equipped in 2 head accessory slots. -->
@@ -676,9 +676,9 @@
 		<set name="is_freightable" val="true" />
 		<set name="enchant_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player sex="0" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="21543" name="Package: Refined Dapper Cap (7-day)" type="EtcItem">
 		<!-- Double-click to obtain 1 Refined Dapper Cap (7-day). -->
@@ -1309,9 +1309,9 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_freightable" val="true" />
 		<set name="immediate_effect" val="true" />
-		<cond msgId="2453">
+		<conditions msgId="2453">
 			<player cloakStatus="true" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">25</stat>
 			<stat type="fireRes">7</stat>
@@ -1350,9 +1350,9 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_freightable" val="true" />
 		<set name="immediate_effect" val="true" />
-		<cond msgId="2453">
+		<conditions msgId="2453">
 			<player cloakStatus="true" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">25</stat>
 			<stat type="fireRes">7</stat>
@@ -1391,9 +1391,9 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_freightable" val="true" />
 		<set name="immediate_effect" val="true" />
-		<cond msgId="2453">
+		<conditions msgId="2453">
 			<player cloakStatus="true" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">25</stat>
 			<stat type="fireRes">7</stat>
@@ -1416,9 +1416,9 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_freightable" val="true" />
 		<set name="immediate_effect" val="true" />
-		<cond msgId="2453">
+		<conditions msgId="2453">
 			<player cloakStatus="true" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">25</stat>
 			<stat type="fireRes">7</stat>
@@ -1457,9 +1457,9 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_freightable" val="true" />
 		<set name="immediate_effect" val="true" />
-		<cond msgId="2453">
+		<conditions msgId="2453">
 			<player cloakStatus="true" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">25</stat>
 			<stat type="fireRes">7</stat>
@@ -1540,10 +1540,10 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_premium" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player vehicleMounted="false" />
 			<!-- TEMP FIX: To prevent retail bug lose a cake in ship/airship -->
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="22249" level="1" /> <!-- Birthday Cake -->
 		</skills>

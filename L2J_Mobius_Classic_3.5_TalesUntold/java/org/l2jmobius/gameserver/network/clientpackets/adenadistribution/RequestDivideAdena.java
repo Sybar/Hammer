@@ -128,6 +128,7 @@ public class RequestDivideAdena extends ClientPacket
 					// those sys msg exists and bother me ADENA_WAS_NOT_DISTRIBUTED_TO_S1 / YOU_DID_NOT_RECEIVE_ADENA_DISTRIBUTION
 					continue;
 				}
+				
 				target.addAdena(ItemProcessType.TRANSFER, memberAdenaGet, player, false);
 				target.sendPacket(new ExDivideAdenaDone(party.isLeader(target), (commandChannel != null) && commandChannel.isLeader(target), _adenaCount, memberAdenaGet, targets.size(), player.getName()));
 				target.removeRequest(AdenaDistributionRequest.class);

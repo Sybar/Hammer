@@ -56,7 +56,7 @@ public class AdminClanHall implements IAdminCommandHandler
 	};
 	
 	@Override
-	public boolean useAdminCommand(String command, Player activeChar)
+	public boolean onCommand(String command, Player activeChar)
 	{
 		final StringTokenizer st = new StringTokenizer(command, " ");
 		final String actualCommand = st.nextToken();
@@ -64,6 +64,7 @@ public class AdminClanHall implements IAdminCommandHandler
 		{
 			processBypass(activeChar, command);
 		}
+		
 		return true;
 	}
 	
@@ -104,6 +105,7 @@ public class AdminClanHall implements IAdminCommandHandler
 								loc = player.getLocation();
 							}
 						}
+						
 						player.teleToLocation(loc);
 					}
 					break;
@@ -155,7 +157,8 @@ public class AdminClanHall implements IAdminCommandHandler
 		{
 			player.sendMessage("Clan Hall with id " + clanHallId + " does not exist!");
 		}
-		useAdminCommand("admin_clanhall id=" + clanHallId, player);
+		
+		onCommand("admin_clanhall id=" + clanHallId, player);
 	}
 	
 	private void sendClanHallList(Player player, int page)
@@ -164,7 +167,7 @@ public class AdminClanHall implements IAdminCommandHandler
 		html.setFile(player, "data/html/admin/clanhall_list.htm");
 		final List<ClanHall> clanHallList = ClanHallData.getInstance().getClanHalls().stream().sorted(Comparator.comparingLong(ClanHall::getResidenceId)).collect(Collectors.toList());
 		
-		//@formatter:off
+		// @formatter:off
 		final PageResult result = PageBuilder.newBuilder(clanHallList, 4, "bypass -h admin_clanhall")
 			.currentPage(page)
 			.pageHandler(NextPrevPageHandler.INSTANCE)
@@ -199,7 +202,7 @@ public class AdminClanHall implements IAdminCommandHandler
 			sb.append("</table>");
 			sb.append("<br>");
 		}).build();
-		//@formatter:on
+		// @formatter:on
 		
 		html.replace("%pages%", result.getPages() > 0 ? "<center><table width=\"100%\" cellspacing=0><tr>" + result.getPagerTemplate() + "</tr></table></center>" : "");
 		html.replace("%data%", result.getBodyTemplate().toString());
@@ -247,13 +250,14 @@ public class AdminClanHall implements IAdminCommandHandler
 			{
 				sb.append("This Clan Hall doesn't have any Function yet.");
 			}
+			
 			html.replace("%functionList%", sb.toString());
 			player.sendPacket(html);
 		}
 		else
 		{
 			player.sendMessage("Clan Hall with id " + clanHallId + " does not exist!");
-			useAdminCommand("admin_clanhall", player);
+			onCommand("admin_clanhall", player);
 		}
 	}
 	
@@ -293,6 +297,7 @@ public class AdminClanHall implements IAdminCommandHandler
 				// Ignore and return default.
 			}
 		}
+		
 		return defaultValue;
 	}
 	
@@ -304,11 +309,12 @@ public class AdminClanHall implements IAdminCommandHandler
 		{
 			return matcher.group(1).trim();
 		}
+		
 		return defaultValue;
 	}
 	
 	@Override
-	public String[] getAdminCommandList()
+	public String[] getCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}

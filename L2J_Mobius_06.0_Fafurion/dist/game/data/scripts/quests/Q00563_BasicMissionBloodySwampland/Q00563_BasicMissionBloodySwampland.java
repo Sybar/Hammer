@@ -38,11 +38,13 @@ public class Q00563_BasicMissionBloodySwampland extends Quest
 	// NPCs
 	private static final int PENNY = 34413;
 	private static final int VOLLODOS = 30137;
+	
 	// Reward's
 	private static final long EXP = 429526470;
 	private static final int SP = 429510;
 	private static final int FP = 220; // Faction points
 	private static final int SCROLL_OF_ESCAPE_BLOODY_SWAMPLAND = 39494;
+	
 	// Misc
 	private static final int MIN_LEVEL = 86;
 	private static final int MAX_LEVEL = 90;
@@ -99,6 +101,7 @@ public class Q00563_BasicMissionBloodySwampland extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -166,6 +169,7 @@ public class Q00563_BasicMissionBloodySwampland extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -179,12 +183,14 @@ public class Q00563_BasicMissionBloodySwampland extends Quest
 			index = 0;
 			string.setCharAt(index, ch);
 		}
+		
 		final QuestState st2 = player.getQuestState("Q00584_NeverSayGoodBye");
 		if ((st2 != null) && st2.isCompleted())
 		{
 			index = 1;
 			string.setCharAt(index, ch);
 		}
+		
 		return string;
 	}
 }

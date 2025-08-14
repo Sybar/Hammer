@@ -67,6 +67,7 @@ public class KarmaData implements IXmlReader
 						{
 							break;
 						}
+						
 						_karmaTable.put(level, parseDouble(attrs, "val"));
 					}
 				}

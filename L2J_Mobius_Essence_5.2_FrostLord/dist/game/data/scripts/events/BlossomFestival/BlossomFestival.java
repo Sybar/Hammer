@@ -31,8 +31,10 @@ public class BlossomFestival extends LongTimeEvent
 {
 	// NPC
 	private static final int AUGUSTINA = 34163;
+	
 	// Item
 	private static final int REWARD = 94448;
+	
 	// Misc
 	private static final String REWARD_VAR = "AUGUSTINA_REWARD_VAR";
 	private static final Object REWARD_LOCK = new Object();
@@ -76,6 +78,7 @@ public class BlossomFestival extends LongTimeEvent
 				}
 			}
 		}
+		
 		return null;
 	}
 	

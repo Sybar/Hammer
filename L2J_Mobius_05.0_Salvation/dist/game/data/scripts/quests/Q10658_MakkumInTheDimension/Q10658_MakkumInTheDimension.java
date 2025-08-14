@@ -39,8 +39,10 @@ public class Q10658_MakkumInTheDimension extends Quest
 {
 	// Npc
 	private static final int LIAS = 34265;
+	
 	// Items
 	private static final int DIMENSIONAL_TRACES = 47511;
+	
 	// Misc
 	private static final int MIN_LEVEL = 100;
 	
@@ -98,6 +100,7 @@ public class Q10658_MakkumInTheDimension extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -115,6 +118,7 @@ public class Q10658_MakkumInTheDimension extends Quest
 					htmltext = "34265-01.htm";
 					break;
 				}
+				
 				htmltext = "34265-00.htm";
 				break;
 			}
@@ -129,6 +133,7 @@ public class Q10658_MakkumInTheDimension extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

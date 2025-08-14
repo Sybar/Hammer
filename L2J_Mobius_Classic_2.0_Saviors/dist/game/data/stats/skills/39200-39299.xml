@@ -42,13 +42,13 @@
 		<effects>
 			<effect name="RestorationRandom">
 				<items>
-					<item chance="70">
+					<item chance="40">
 						<item id="90012" count="1" /> <!-- Low-grade Life Stone -->
 					</item>
-					<item chance="20">
+					<item chance="30">
 						<item id="90013" count="1" /> <!-- Mid-grade Life Stone -->
 					</item>
-					<item chance="10">
+					<item chance="30">
 						<item id="90014" count="1" /> <!-- High-grade Life Stone -->
 					</item>
 				</items>

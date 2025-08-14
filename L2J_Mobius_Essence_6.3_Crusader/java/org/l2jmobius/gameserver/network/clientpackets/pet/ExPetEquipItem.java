@@ -62,6 +62,7 @@ public class ExPetEquipItem extends ClientPacket
 		{
 			return;
 		}
+		
 		final Pet pet = player.getPet();
 		if (pet == null)
 		{
@@ -176,6 +177,7 @@ public class ExPetEquipItem extends ClientPacket
 			{
 				pet.transferItem(ItemProcessType.TRANSFER, oldItem.getObjectId(), 1, player.getInventory(), player, null);
 			}
+			
 			if (player.isCastingNow())
 			{
 				// Create and Bind the next action to the AI.

@@ -83,6 +83,7 @@ public class OlympiadHeroDailyMissionHandler extends AbstractDailyMissionHandler
 				}
 			}
 		}
+		
 		return false;
 	}
 	
@@ -95,6 +96,7 @@ public class OlympiadHeroDailyMissionHandler extends AbstractDailyMissionHandler
 			{
 				return;
 			}
+			
 			final DailyMissionPlayerEntry heroEntry = getPlayerEntry(player.getObjectId(), true);
 			if ((heroEntry.getStatus() == DailyMissionStatus.NOT_AVAILABLE) && (((_requiredMissionCompleteId != 0) && checkRequiredMission(player)) || (_requiredMissionCompleteId == 0)))
 			{
@@ -102,6 +104,7 @@ public class OlympiadHeroDailyMissionHandler extends AbstractDailyMissionHandler
 				{
 					heroEntry.setStatus(DailyMissionStatus.AVAILABLE);
 				}
+				
 				storePlayerEntry(heroEntry);
 			}
 		}

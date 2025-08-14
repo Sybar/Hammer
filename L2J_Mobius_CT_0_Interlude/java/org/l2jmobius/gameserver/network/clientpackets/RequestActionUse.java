@@ -34,6 +34,7 @@ import org.l2jmobius.gameserver.model.actor.Summon;
 import org.l2jmobius.gameserver.model.actor.enums.player.MountType;
 import org.l2jmobius.gameserver.model.actor.enums.player.PrivateStoreType;
 import org.l2jmobius.gameserver.model.actor.instance.BabyPet;
+import org.l2jmobius.gameserver.model.actor.instance.Pet;
 import org.l2jmobius.gameserver.model.actor.instance.SiegeFlag;
 import org.l2jmobius.gameserver.model.actor.instance.StaticObject;
 import org.l2jmobius.gameserver.model.effects.EffectType;
@@ -105,6 +106,7 @@ public class RequestActionUse extends ClientPacket
 					// Sit when arrive using next action.
 					// Creating next action class.
 					final NextAction nextAction = new NextAction(Action.ARRIVED, Intention.MOVE_TO, () -> useSit(player, target));
+					
 					// Binding next action to AI.
 					player.getAI().setNextAction(nextAction);
 				}
@@ -157,28 +159,41 @@ public class RequestActionUse extends ClientPacket
 				{
 					break;
 				}
+				
 				if (summon.isDead())
 				{
 					player.sendPacket(SystemMessageId.A_DEAD_PET_CANNOT_BE_SENT_BACK);
 					break;
 				}
-				if (summon.isAttackingNow() || summon.isInCombat() || summon.isMovementDisabled())
+				
+				if (summon.isMovementDisabled())
+				{
+					player.sendPacket(SystemMessageId.YOUR_PET_SERVITOR_IS_CURRENTLY_IN_A_STATE_OF_DISTRESS);
+					break;
+				}
+				
+				if (summon.isAttackingNow() || summon.isInCombat())
 				{
 					player.sendPacket(SystemMessageId.A_PET_CANNOT_BE_SENT_BACK_DURING_BATTLE);
 					break;
 				}
-				if (summon.isHungry())
+				
+				if (summon.isPet())
 				{
-					if (summon.isPet() && !summon.asPet().getPetData().getFood().isEmpty())
+					final Pet pet = summon.asPet();
+					float currentFedPercent = (pet.getCurrentFed() / (float) pet.getPetLevelData().getPetMaxFeed()) * 100f;
+					if (currentFedPercent < 40f)
 					{
 						player.sendPacket(SystemMessageId.YOU_MAY_NOT_RESTORE_A_HUNGRY_PET);
+						break;
 					}
-					else
-					{
-						player.sendMessage("The hunting helper pet cannot be returned because there is not much time remaining until it leaves.");
-					}
+				}
+				else
+				{
+					player.sendMessage("The hunting helper pet cannot be returned because there is not much time remaining until it leaves.");
 					break;
 				}
+				
 				summon.unSummon(player);
 				break;
 			}
@@ -228,15 +243,24 @@ public class RequestActionUse extends ClientPacket
 					player.sendPacket(ActionFailed.STATIC_PACKET);
 					return;
 				}
+				
+				if (player.isMounted())
+				{
+					player.sendPacket(ActionFailed.STATIC_PACKET);
+					return;
+				}
+				
 				if (player.isInStoreMode())
 				{
 					player.setPrivateStoreType(PrivateStoreType.NONE);
 					player.broadcastUserInfo();
 				}
+				
 				if (player.isSitting())
 				{
 					player.standUp();
 				}
+				
 				player.sendPacket(new RecipeShopManageList(player, true));
 				break;
 			}
@@ -308,15 +332,18 @@ public class RequestActionUse extends ClientPacket
 					player.sendPacket(ActionFailed.STATIC_PACKET);
 					return;
 				}
+				
 				if (player.getPrivateStoreType() != PrivateStoreType.NONE)
 				{
 					player.setPrivateStoreType(PrivateStoreType.NONE);
 					player.broadcastUserInfo();
 				}
+				
 				if (player.isSitting())
 				{
 					player.standUp();
 				}
+				
 				player.sendPacket(new RecipeShopManageList(player, false));
 				break;
 			}
@@ -324,11 +351,18 @@ public class RequestActionUse extends ClientPacket
 			{
 				if (validateSummon(player, summon, false))
 				{
+					if (summon.isMovementDisabled())
+					{
+						player.sendPacket(SystemMessageId.YOUR_PET_SERVITOR_IS_CURRENTLY_IN_A_STATE_OF_DISTRESS);
+						break;
+					}
+					
 					if (summon.isAttackingNow() || summon.isInCombat())
 					{
 						player.sendPacket(SystemMessageId.A_SERVITOR_WHOM_IS_ENGAGED_IN_BATTLE_CANNOT_BE_DE_ACTIVATED);
 						break;
 					}
+					
 					summon.unSummon(player);
 				}
 				break;
@@ -600,6 +634,7 @@ public class RequestActionUse extends ClientPacket
 		{
 			player.sitDown();
 		}
+		
 		return true;
 	}
 	
@@ -737,14 +772,16 @@ public class RequestActionUse extends ClientPacket
 		{
 			if (summon.isPet() && summon.asPet().isUncontrollable())
 			{
-				player.sendPacket(SystemMessageId.ONLY_A_CLAN_LEADER_THAT_IS_A_NOBLESSE_CAN_VIEW_THE_SIEGE_WAR_STATUS_WINDOW_DURING_A_SIEGE_WAR);
+				player.sendPacket(SystemMessageId.YOUR_PET_SERVITOR_IS_UNRESPONSIVE_AND_WILL_NOT_OBEY_ANY_ORDERS);
 				return false;
 			}
+			
 			if (summon.isBetrayed())
 			{
 				player.sendPacket(SystemMessageId.YOUR_PET_SERVITOR_IS_UNRESPONSIVE_AND_WILL_NOT_OBEY_ANY_ORDERS);
 				return false;
 			}
+			
 			return true;
 		}
 		
@@ -756,6 +793,7 @@ public class RequestActionUse extends ClientPacket
 		{
 			player.sendMessage("You do not have a servitor.");
 		}
+		
 		return false;
 	}
 	

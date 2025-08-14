@@ -16,6 +16,8 @@
  */
 package quests.Q10301_ShadowOfTerrorBlackishRedFog;
 
+import java.util.Collection;
+
 import org.l2jmobius.Config;
 import org.l2jmobius.gameserver.model.WorldObject;
 import org.l2jmobius.gameserver.model.actor.Npc;
@@ -49,13 +51,16 @@ public class Q10301_ShadowOfTerrorBlackishRedFog extends Quest
 	private static final int SLASKI = 32893;
 	private static final int LARGE_VERDANT_WILDS = 33489;
 	private static final int WHISP = 27456;
+	
 	// Items
 	private static final int LADA_LETTER = 17725; // Lada's Letter
 	private static final int GLIMMER_CRYSTAL = 17604; // Glimmer Crystal
 	private static final int SPIRIT_ITEM = 17588; // Calsuled Whisp
 	private static final int FAIRY = 17380; // Agathion - Fairy
+	
 	// Skills
 	private static final int WHISP_SKILL = 12001;
+	
 	// Misc
 	private static final int MIN_LEVEL = 88;
 	
@@ -79,6 +84,7 @@ public class Q10301_ShadowOfTerrorBlackishRedFog extends Quest
 		{
 			return htmltext;
 		}
+		
 		switch (event)
 		{
 			case "33100-02.htm":
@@ -106,6 +112,7 @@ public class Q10301_ShadowOfTerrorBlackishRedFog extends Quest
 					htmltext = "33100-06.html";
 					break;
 				}
+				
 				htmltext = "33100-06a.html";
 				break;
 			}
@@ -123,6 +130,7 @@ public class Q10301_ShadowOfTerrorBlackishRedFog extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -154,6 +162,7 @@ public class Q10301_ShadowOfTerrorBlackishRedFog extends Quest
 				htmltext = "33100-08.htm";
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -199,11 +208,12 @@ public class Q10301_ShadowOfTerrorBlackishRedFog extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
 	@Override
-	public void onSkillSee(Npc npc, Player caster, Skill skill, WorldObject[] targets, boolean isSummon)
+	public void onSkillSee(Npc npc, Player caster, Skill skill, Collection<WorldObject> targets, boolean isSummon)
 	{
 		final QuestState qs = getQuestState(caster, false);
 		if ((qs != null) && qs.isCond(2) && (skill.getId() == WHISP_SKILL))

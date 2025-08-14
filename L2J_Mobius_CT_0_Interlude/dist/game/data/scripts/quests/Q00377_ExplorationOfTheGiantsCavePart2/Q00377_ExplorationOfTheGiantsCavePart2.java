@@ -40,6 +40,7 @@ public class Q00377_ExplorationOfTheGiantsCavePart2 extends Quest
 		{5950, 5951, 5952, 5953, 5954}
 		// @formatter:on
 	};
+	
 	// Rewards
 	private static final int[][] RECIPES =
 	{
@@ -148,6 +149,7 @@ public class Q00377_ExplorationOfTheGiantsCavePart2 extends Quest
 				return "31147-04.htm";
 			}
 		}
+		
 		return "31147-05.htm";
 	}
 }

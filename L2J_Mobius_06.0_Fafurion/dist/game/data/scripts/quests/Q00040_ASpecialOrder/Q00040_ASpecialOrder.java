@@ -32,11 +32,13 @@ public class Q00040_ASpecialOrder extends Quest
 	private static final int HELVETIA = 30081;
 	private static final int O_FULLE = 31572;
 	private static final int GESTO = 30511;
+	
 	// Items
 	private static final int FISH_CHEST = 12764;
 	private static final int SEED_JAR = 12765;
 	private static final int ELCYUM_CRYSTAL = 36514;
 	private static final int WONDEROUS_CUBIC = 10632;
+	
 	// Misc
 	private static final int MIN_LEVEL = 85;
 	
@@ -103,6 +105,7 @@ public class Q00040_ASpecialOrder extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -202,6 +205,7 @@ public class Q00040_ASpecialOrder extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

@@ -41,16 +41,18 @@ public class ToIVortex extends AbstractNpcAI
 	private static final int DIMENSION_VORTEX_1 = 30952;
 	private static final int DIMENSION_VORTEX_2 = 30953;
 	private static final int DIMENSION_VORTEX_3 = 30954;
+	
 	// Items
 	private static final int GREEN_DIMENSION_STONE = 4401;
 	private static final int BLUE_DIMENSION_STONE = 4402;
 	private static final int RED_DIMENSION_STONE = 4403;
 	private static final Map<String, Integer> TOI_FLOOR_ITEMS = new HashMap<>();
+	
 	// Locations
 	private static final Map<String, Location> TOI_FLOORS = new HashMap<>();
+	
 	// Misc
 	private static final Map<String, Integer> DIMENSION_TRADE = new HashMap<>();
-	
 	static
 	{
 		TOI_FLOORS.put("1", new Location(114356, 13423, -5096));
@@ -133,6 +135,7 @@ public class ToIVortex extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	

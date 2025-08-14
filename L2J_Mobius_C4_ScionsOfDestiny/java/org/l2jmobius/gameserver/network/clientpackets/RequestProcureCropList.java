@@ -63,11 +63,13 @@ public class RequestProcureCropList extends ClientPacket
 			{
 				cnt = Integer.MAX_VALUE;
 			}
+			
 			if ((objId < 1) || (itemId < 1) || (manorId < 0) || (cnt < 0))
 			{
 				_items = null;
 				return;
 			}
+			
 			_items.add(new CropHolder(objId, itemId, cnt, manorId));
 		}
 	}
@@ -190,6 +192,7 @@ public class RequestProcureCropList extends ClientPacket
 			{
 				continue;
 			}
+			
 			player.addItem(ItemProcessType.REWARD, i.getRewardId(), rewardItemCount, manager, true);
 			if (Config.ALT_MANOR_SAVE_ALL_ACTIONS)
 			{
@@ -231,6 +234,7 @@ public class RequestProcureCropList extends ClientPacket
 			{
 				_cp = CastleManorManager.getInstance().getCropProcure(_manorId, getId(), false);
 			}
+			
 			return _cp;
 		}
 		
@@ -240,6 +244,7 @@ public class RequestProcureCropList extends ClientPacket
 			{
 				_rewardId = CastleManorManager.getInstance().getSeedByCrop(_cp.getId()).getReward(_cp.getReward());
 			}
+			
 			return _rewardId;
 		}
 	}

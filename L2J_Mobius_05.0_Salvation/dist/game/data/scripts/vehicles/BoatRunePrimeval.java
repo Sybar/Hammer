@@ -148,6 +148,7 @@ public class BoatRunePrimeval implements Runnable
 						ThreadPool.schedule(this, 5000);
 						return;
 					}
+					
 					_boat.executePath(RUNE_DOCK);
 					break;
 				}
@@ -159,6 +160,7 @@ public class BoatRunePrimeval implements Runnable
 					break;
 				}
 			}
+			
 			_shoutCount = 0;
 			_cycle++;
 			if (_cycle > 4)

@@ -41,6 +41,7 @@ public class Q00778_OperationRoaringFlame extends Quest
 {
 	// NPCs
 	private static final int BRUENER = 33840;
+	
 	// Mob
 	private static final int[] MOBS =
 	{
@@ -55,9 +56,11 @@ public class Q00778_OperationRoaringFlame extends Quest
 		23322, // Nerva Orc Prefect
 		23324 // Captain (Nerva Bloodlust)
 	};
+	
 	// Items'
 	private static final int TURAKANS_SECRET_LETTER = 36682;
 	private static final int BROKEN_WEAPON_FRAGMENT = 36683;
+	
 	// rewards
 	private static final int SCROLL_OF_ESCAPE_RAIDERS_CROSSROAD = 37017;
 	private static final int ELIXIR_OF_BLESSING = 32316;
@@ -65,6 +68,7 @@ public class Q00778_OperationRoaringFlame extends Quest
 	private static final int ELIXIR_OF_LIFE = 30357;
 	private static final int ELMORE_NOBLE_BOX = 37022;
 	private static final int ENERGY_OF_DESTRUCTION = 35562;
+	
 	// Misc
 	private static final int MIN_LEVEL = 97;
 	
@@ -88,6 +92,7 @@ public class Q00778_OperationRoaringFlame extends Quest
 		{
 			return null;
 		}
+		
 		switch (event)
 		{
 			case "33840-02.htm":
@@ -118,6 +123,7 @@ public class Q00778_OperationRoaringFlame extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -137,6 +143,7 @@ public class Q00778_OperationRoaringFlame extends Quest
 						htmltext = "Complete.html";
 						break;
 					}
+					
 					qs.setState(State.CREATED);
 					// fallthrough
 				}
@@ -159,6 +166,7 @@ public class Q00778_OperationRoaringFlame extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -173,11 +181,13 @@ public class Q00778_OperationRoaringFlame extends Quest
 				giveItems(player, TURAKANS_SECRET_LETTER, getRandom(1, 2));
 				playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 			}
+			
 			if (getQuestItemsCount(player, BROKEN_WEAPON_FRAGMENT) < 500)
 			{
 				giveItems(player, BROKEN_WEAPON_FRAGMENT, getRandom(1, 2));
 				playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 			}
+			
 			if ((getQuestItemsCount(player, TURAKANS_SECRET_LETTER) >= 500) && (getQuestItemsCount(player, BROKEN_WEAPON_FRAGMENT) >= 500))
 			{
 				qs.setCond(2, true);

@@ -44,6 +44,7 @@ public class Q10295_RespectForGraves extends Quest
 {
 	// NPC
 	private static final int ORVEN = 30857;
+	
 	// Monsters
 	private static final int TAIK_ORC_WATCHMAN = 20666;
 	private static final int GRAVE_GUARD = 20668;
@@ -55,12 +56,15 @@ public class Q10295_RespectForGraves extends Quest
 	private static final int CRUEL_PUNISHER = 20998;
 	private static final int ROVING_SOUL = 20999;
 	private static final int SOUL_OF_RUNIS = 21000;
+	
 	// Items
 	private static final ItemHolder SOE_CEMETERY = new ItemHolder(95591, 1);
 	private static final ItemHolder SOE_HIGH_PRIEST_OVEN = new ItemHolder(91768, 1);
+	
 	// Reward
 	private static final ItemHolder ASOFE = new ItemHolder(92994, 1);
 	private static final ItemHolder SAYHA_GUST = new ItemHolder(91776, 9);
+	
 	// Misc
 	private static final String KILL_COUNT_VAR = "KillCount";
 	private static final int MIN_LEVEL = 45;
@@ -130,6 +134,7 @@ public class Q10295_RespectForGraves extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -157,6 +162,7 @@ public class Q10295_RespectForGraves extends Quest
 		{
 			htmltext = getAlreadyCompletedMsg(player);
 		}
+		
 		return htmltext;
 	}
 	
@@ -194,6 +200,7 @@ public class Q10295_RespectForGraves extends Quest
 			holder.add(new NpcLogListHolder(NpcStringId.LEVEL_52_ACCOMPLISHED, player.getLevel() > 51 ? 1 : 0));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 	

@@ -35,10 +35,13 @@ public class Q00265_BondsOfSlavery extends Quest
 {
 	// Item
 	private static final int IMP_SHACKLES = 1368;
+	
 	// NPC
 	private static final int KRISTIN = 30357;
+	
 	// Misc
 	private static final int MIN_LEVEL = 6;
+	
 	// Monsters
 	private static final Map<Integer, Integer> MONSTERS = new HashMap<>();
 	static
@@ -87,6 +90,7 @@ public class Q00265_BondsOfSlavery extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -120,6 +124,7 @@ public class Q00265_BondsOfSlavery extends Quest
 					final long shackles = getQuestItemsCount(player, IMP_SHACKLES);
 					giveAdena(player, (shackles * 5) + (shackles >= 10 ? 500 : 0), true);
 					takeItems(player, IMP_SHACKLES, -1);
+					
 					// Q00281_HeadForTheHills.giveNewbieReward(player);
 					htmltext = "30357-06.html";
 				}
@@ -130,6 +135,7 @@ public class Q00265_BondsOfSlavery extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

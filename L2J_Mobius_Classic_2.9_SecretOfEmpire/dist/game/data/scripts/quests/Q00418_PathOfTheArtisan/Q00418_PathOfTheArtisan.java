@@ -37,6 +37,7 @@ public class Q00418_PathOfTheArtisan extends Quest
 	private static final int BLACKSMITH_PINTER = 30298;
 	private static final int BLACKSMITH_KLUTO = 30317;
 	private static final int IRON_GATES_LOCKIRIN = 30531;
+	
 	// Items
 	private static final int SILVERYS_RING = 1632;
 	private static final int PASS_1ST_CERTIFICATE = 1633;
@@ -47,12 +48,15 @@ public class Q00418_PathOfTheArtisan extends Quest
 	private static final int FOOTPRINT_OF_THIEF = 1639;
 	private static final int STOLEN_SECRET_BOX = 1640;
 	private static final int SECRET_BOX = 1641;
+	
 	// Reward
 	private static final int FINAL_PASS_CERTIFICATE = 1635;
+	
 	// Monster
 	private static final int VUKU_ORC_FIGHTER = 20017;
 	private static final int BOOGLE_RATMAN = 20389;
 	private static final int BOOGLE_RATMAN_LEADER = 20390;
+	
 	// Misc
 	private static final int MIN_LEVEL = 19;
 	
@@ -213,6 +217,7 @@ public class Q00418_PathOfTheArtisan extends Quest
 					{
 						addExpAndSp(player, 80314, 5087);
 					}
+					
 					qs.exitQuest(false, true);
 					player.sendPacket(new SocialAction(player.getObjectId(), 3));
 					htmltext = event;
@@ -237,6 +242,7 @@ public class Q00418_PathOfTheArtisan extends Quest
 					{
 						addExpAndSp(player, 80314, 5087);
 					}
+					
 					qs.exitQuest(false, true);
 					player.sendPacket(new SocialAction(player.getObjectId(), 3));
 					htmltext = event;
@@ -261,6 +267,7 @@ public class Q00418_PathOfTheArtisan extends Quest
 					{
 						addExpAndSp(player, 80314, 5087);
 					}
+					
 					qs.exitQuest(false, true);
 					player.sendPacket(new SocialAction(player.getObjectId(), 3));
 					htmltext = event;
@@ -285,6 +292,7 @@ public class Q00418_PathOfTheArtisan extends Quest
 					{
 						addExpAndSp(player, 80314, 5087);
 					}
+					
 					qs.exitQuest(false, true);
 					player.sendPacket(new SocialAction(player.getObjectId(), 3));
 					htmltext = event;
@@ -357,6 +365,7 @@ public class Q00418_PathOfTheArtisan extends Quest
 					{
 						addExpAndSp(player, 80314, 5087);
 					}
+					
 					qs.exitQuest(false, true);
 					player.sendPacket(new SocialAction(player.getObjectId(), 3));
 					htmltext = event;
@@ -391,6 +400,7 @@ public class Q00418_PathOfTheArtisan extends Quest
 					{
 						addExpAndSp(player, 80314, 5087);
 					}
+					
 					qs.exitQuest(false, true);
 					player.sendPacket(new SocialAction(player.getObjectId(), 3));
 					htmltext = event;
@@ -398,6 +408,7 @@ public class Q00418_PathOfTheArtisan extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -556,6 +567,7 @@ public class Q00418_PathOfTheArtisan extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 }

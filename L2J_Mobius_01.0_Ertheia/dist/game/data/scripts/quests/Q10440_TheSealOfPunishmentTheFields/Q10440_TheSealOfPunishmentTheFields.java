@@ -42,6 +42,7 @@ public class Q10440_TheSealOfPunishmentTheFields extends Quest
 	// NPCs
 	private static final int HELVETICA = 32641;
 	private static final int ATHENIA = 32643;
+	
 	// Monsters
 	private static final int MUCROKIAN_FANATIC = 22650;
 	private static final int MUCROKIAN_ASCETIC = 22651;
@@ -49,6 +50,7 @@ public class Q10440_TheSealOfPunishmentTheFields extends Quest
 	private static final int MUCROKIAN_PROPHET = 22653;
 	private static final int CONTAMINATED_MUCROKIAN = 22654;
 	private static final int AWAKENED_MUCROKIAN = 22655;
+	
 	// Misc
 	private static final String KILL_COUNT_VAR = "KillCounts";
 	private static final int MIN_LEVEL = 81;
@@ -74,6 +76,7 @@ public class Q10440_TheSealOfPunishmentTheFields extends Quest
 		{
 			return getNoQuestMsg(player);
 		}
+		
 		String htmltext = event;
 		switch (event)
 		{
@@ -152,6 +155,7 @@ public class Q10440_TheSealOfPunishmentTheFields extends Quest
 				{
 					addExpAndSp(player, 282408000, 67770);
 				}
+				
 				if ((qs.isCond(2)) && (qs.isMemoState(1)))
 				{
 					htmltext = "32641-07.html";
@@ -160,10 +164,12 @@ public class Q10440_TheSealOfPunishmentTheFields extends Quest
 				{
 					htmltext = "32643-07.html";
 				}
+				
 				qs.exitQuest(false, true);
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -215,6 +221,7 @@ public class Q10440_TheSealOfPunishmentTheFields extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -257,6 +264,7 @@ public class Q10440_TheSealOfPunishmentTheFields extends Quest
 				return holder;
 			}
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

@@ -47,6 +47,7 @@ public final class Q10594_FergasonsScheme extends Quest
 	private static final int FERGASON = 33681;
 	private static final int SIZRAK = 33669;
 	private static final int AKU = 33671;
+	
 	// Monsters
 	private final int[] MONSTER_LIST =
 	{
@@ -70,6 +71,7 @@ public final class Q10594_FergasonsScheme extends Quest
 		23226, // Kunda Executor
 		19265, // Kunda Lord
 	};
+	
 	// Misc
 	private static final int SEED_OF_HELLFIRE_MONSTER = 19701;
 	private static final int MIN_LEVEL = 97;
@@ -135,12 +137,14 @@ public final class Q10594_FergasonsScheme extends Quest
 						addExpAndSp(player, 8076389850L, 8076330);
 						break;
 					}
+					
 					htmltext = getNoQuestLevelRewardMsg(player);
 					break;
 				}
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -161,6 +165,7 @@ public final class Q10594_FergasonsScheme extends Quest
 						htmltext = "maestro_ferguson_q10594_01.htm";
 						break;
 					}
+					
 					htmltext = "maestro_ferguson_q10594_02.htm";
 					break;
 				}
@@ -272,6 +277,7 @@ public final class Q10594_FergasonsScheme extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -309,6 +315,7 @@ public final class Q10594_FergasonsScheme extends Quest
 			npcLogList.add(new NpcLogListHolder(SEED_OF_HELLFIRE_MONSTER, false, st.getInt("KILLED_COUNT")));
 			return npcLogList;
 		}
+		
 		return super.getNpcLogList(activeChar);
 	}
 	

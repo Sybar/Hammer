@@ -18,9 +18,9 @@ package handlers.dailymissionhandlers;
 
 import org.l2jmobius.gameserver.handler.AbstractDailyMissionHandler;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.actor.enums.player.DailyMissionDataHolder;
-import org.l2jmobius.gameserver.model.actor.enums.player.DailyMissionPlayerEntry;
 import org.l2jmobius.gameserver.model.actor.enums.player.DailyMissionStatus;
+import org.l2jmobius.gameserver.model.actor.holders.player.DailyMissionDataHolder;
+import org.l2jmobius.gameserver.model.actor.holders.player.DailyMissionPlayerEntry;
 import org.l2jmobius.gameserver.model.events.Containers;
 import org.l2jmobius.gameserver.model.events.EventType;
 import org.l2jmobius.gameserver.model.events.holders.olympiad.OnOlympiadMatchResult;
@@ -70,6 +70,7 @@ public class OlympiadDailyMissionHandler extends AbstractDailyMissionHandler
 				}
 			}
 		}
+		
 		return false;
 	}
 	
@@ -84,6 +85,7 @@ public class OlympiadDailyMissionHandler extends AbstractDailyMissionHandler
 				{
 					winnerEntry.setStatus(DailyMissionStatus.AVAILABLE);
 				}
+				
 				storePlayerEntry(winnerEntry);
 			}
 		}
@@ -97,6 +99,7 @@ public class OlympiadDailyMissionHandler extends AbstractDailyMissionHandler
 				{
 					loseEntry.setStatus(DailyMissionStatus.AVAILABLE);
 				}
+				
 				storePlayerEntry(loseEntry);
 			}
 		}

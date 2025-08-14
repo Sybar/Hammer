@@ -68,17 +68,20 @@ public class MentorGuide extends AbstractNpcAI implements IXmlReader
 	
 	// NPCs
 	private static final int MENTOR_GUIDE = 33587;
+	
 	// Items
 	private static final int MENTEE_CERT = 33800;
 	private static final int MENTEE_MARK = 33804;
 	private static final int GRADUTION_BOX = 81348;
 	private static final int MENTEE_HEADPHONE = 34759;
 	private static final int DIPLOMA = 33805;
+	
 	// Skills
 	private static final SkillHolder[] MENTEE_BUFFS =
 	{
 		new SkillHolder(9233, 1), // Mentor's Guidance
 	};
+	
 	// Skills
 	private static final SkillHolder[] MENTEE_BUFFS_WITHOUT_MENTOR_ONLINE =
 	{
@@ -150,6 +153,7 @@ public class MentorGuide extends AbstractNpcAI implements IXmlReader
 				giveItems(player, DIPLOMA, 40);
 				return null;
 			}
+			
 			htmltext = "33587-04.htm";
 		}
 		else if (event.startsWith("REMOVE_BUFFS"))
@@ -168,10 +172,12 @@ public class MentorGuide extends AbstractNpcAI implements IXmlReader
 							menteePlayer.stopSkillEffects(holder.getSkill());
 						}
 					}
+					
 					mentee.sendPacket(new ExMentorList(mentee.getPlayer()));
 				});
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -234,13 +240,13 @@ public class MentorGuide extends AbstractNpcAI implements IXmlReader
 				
 				if (mentor.isOnline())
 				{
-					//@formatter:off
+					// @formatter:off
 					final long mentorBuffs = mentor.getPlayer().getEffectList().getEffects()
 						.stream()
 						.map(BuffInfo::getSkill)
 						.filter(Skill::isMentoring)
 						.count();
-					//@formatter:on
+					// @formatter:on
 					
 					if (mentorBuffs != MENTOR_BUFFS.length)
 					{
@@ -264,6 +270,7 @@ public class MentorGuide extends AbstractNpcAI implements IXmlReader
 					mentor.sendPacket(new ExMentorList(mentor.getPlayer()));
 				}
 			}
+			
 			player.sendPacket(new ExMentorList(player));
 		}
 		else
@@ -293,13 +300,13 @@ public class MentorGuide extends AbstractNpcAI implements IXmlReader
 			cancelQuestTimer("REMOVE_BUFFS " + player.getObjectId(), null, null);
 			MentorManager.getInstance().getMentees(player.getObjectId()).stream().filter(Objects::nonNull).filter(Mentee::isOnline).forEach(mentee ->
 			{
-				//@formatter:off
+				// @formatter:off
 				final long menteeBuffs = mentee.getPlayer().getEffectList().getEffects()
 					.stream()
 					.map(BuffInfo::getSkill)
 					.filter(Skill::isMentoring)
 					.count();
-				//@formatter:on
+				// @formatter:on
 				
 				if (menteeBuffs != MENTEE_BUFFS.length)
 				{
@@ -393,6 +400,7 @@ public class MentorGuide extends AbstractNpcAI implements IXmlReader
 	{
 		final Player player = event.getMentee();
 		final Player mentor = event.getMentor().getPlayer();
+		
 		// Remove the mentee skills
 		player.removeSkill(MENTEE_MENTOR_SUMMON.getSkill(), true);
 		
@@ -470,6 +478,7 @@ public class MentorGuide extends AbstractNpcAI implements IXmlReader
 				{
 					MentorManager.getInstance().cancelAllMentoringBuffs(mentor.getPlayer());
 				}
+				
 				mentor.sendPacket(new ExMentorList(mentor.getPlayer()));
 			}
 			

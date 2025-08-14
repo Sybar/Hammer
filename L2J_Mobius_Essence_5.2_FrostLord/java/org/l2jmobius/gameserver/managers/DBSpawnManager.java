@@ -70,7 +70,7 @@ public class DBSpawnManager
 	 */
 	public void load()
 	{
-		if (Config.ALT_DEV_NO_SPAWNS)
+		if (Config.NO_SPAWNS)
 		{
 			return;
 		}
@@ -126,10 +126,12 @@ public class DBSpawnManager
 					{
 						respawn = (int) spawnTemplate.getRespawnTime().getSeconds();
 					}
+					
 					if (spawnTemplate.getRespawnTimeRandom() != null)
 					{
 						respawnRandom = (int) spawnTemplate.getRespawnTimeRandom().getSeconds();
 					}
+					
 					if (spawnTemplate.getRespawnPattern() != null)
 					{
 						respawnPattern = spawnTemplate.getRespawnPattern();
@@ -255,6 +257,7 @@ public class DBSpawnManager
 			info.set("currentMP", npc.getCurrentMp());
 			info.set("respawnTime", 0);
 		}
+		
 		_storedInfo.put(npc.getId(), info);
 	}
 	
@@ -272,6 +275,7 @@ public class DBSpawnManager
 		{
 			return;
 		}
+		
 		if (_spawns.containsKey(spawn.getId()))
 		{
 			return;
@@ -285,10 +289,14 @@ public class DBSpawnManager
 			final Npc npc = spawn.doSpawn();
 			if (npc != null)
 			{
-				npc.setCurrentHp(currentHP);
-				npc.setCurrentMp(currentMP);
-				npc.setDBStatus(RaidBossStatus.ALIVE);
+				// Fully heal NPC.
+				ThreadPool.schedule(() ->
+				{
+					npc.setCurrentHp(currentHP);
+					npc.setCurrentMp(currentMP, false);
+				}, 100 /* Compensate for recalculateStats task delay. */);
 				
+				npc.setDBStatus(RaidBossStatus.ALIVE);
 				_npcs.put(npcId, npc);
 				
 				final StatSet info = new StatSet();
@@ -350,6 +358,7 @@ public class DBSpawnManager
 		{
 			throw new NullPointerException();
 		}
+		
 		npc.setDBStatus(RaidBossStatus.ALIVE);
 		
 		final StatSet info = new StatSet();
@@ -633,6 +642,7 @@ public class DBSpawnManager
 		{
 			shedule.cancel(true);
 		}
+		
 		_schedules.clear();
 		
 		_storedInfo.clear();

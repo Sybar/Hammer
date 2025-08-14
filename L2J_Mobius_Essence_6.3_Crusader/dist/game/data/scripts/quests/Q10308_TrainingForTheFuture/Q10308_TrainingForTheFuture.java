@@ -39,6 +39,7 @@ public class Q10308_TrainingForTheFuture extends Quest
 	private static final int ERI = 34306;
 	private static final int GROWN = 34307;
 	private static final int TIND = 34308;
+	
 	// Monsters
 	private static final int[] BOSS =
 	{
@@ -50,11 +51,13 @@ public class Q10308_TrainingForTheFuture extends Quest
 		25961,
 		25962,
 	};
+	
 	// Items
 	private static final ItemHolder BOOST_ATK_SCROLL = new ItemHolder(94269, 5);
 	private static final ItemHolder BOOST_DEF_SCROLL = new ItemHolder(94271, 5);
 	private static final ItemHolder BERSERKER_SCROLL = new ItemHolder(94777, 5);
 	private static final ItemHolder TRAINING_EXTRA_PASS = new ItemHolder(96941, 1);
+	
 	// Misc
 	private static final int MIN_LEVEL = 76;
 	
@@ -114,6 +117,7 @@ public class Q10308_TrainingForTheFuture extends Quest
 				{
 					qs.setCond(2);
 				}
+				
 				showOnScreenMsg(player, NpcStringId.HAVING_CHOSEN_THE_ZONE_FOR_YOUR_TRAINING_TALK_TO_TELEPORT_MENTOR_TIND, ExShowScreenMessage.TOP_CENTER, 10000);
 				htmltext = event;
 				break;
@@ -124,6 +128,7 @@ public class Q10308_TrainingForTheFuture extends Quest
 				{
 					qs.setCond(3);
 				}
+				
 				showOnScreenMsg(player, NpcStringId.TALK_TO_TELEPORT_MENTOR_TIND_AND_MOVE_TO_THE_TRAINING_ZONE, ExShowScreenMessage.TOP_CENTER, 10000);
 				htmltext = event;
 				break;
@@ -134,6 +139,7 @@ public class Q10308_TrainingForTheFuture extends Quest
 				{
 					qs.setCond(4);
 				}
+				
 				htmltext = event;
 				break;
 			}
@@ -143,6 +149,7 @@ public class Q10308_TrainingForTheFuture extends Quest
 				{
 					qs.setCond(5);
 				}
+				
 				showOnScreenMsg(player, NpcStringId.HAVING_CHOSEN_THE_SUPPORT_MAGIC_YOU_NEED_DEFEAT_THE_MONSTERS_YOU_HAVE_DEFEAT_A_RAID_BOSS_WHICH_WILL_APPEAR_10_MIN_BEFORE_THE_TIME_RUNS_OUT, ExShowScreenMessage.TOP_CENTER, 10000);
 				htmltext = event;
 				break;
@@ -162,6 +169,7 @@ public class Q10308_TrainingForTheFuture extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -229,6 +237,7 @@ public class Q10308_TrainingForTheFuture extends Quest
 		{
 			htmltext = getAlreadyCompletedMsg(player);
 		}
+		
 		return htmltext;
 	}
 	

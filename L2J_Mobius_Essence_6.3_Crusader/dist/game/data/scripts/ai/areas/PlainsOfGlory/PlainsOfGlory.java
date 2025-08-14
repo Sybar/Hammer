@@ -40,6 +40,7 @@ public class PlainsOfGlory extends AbstractNpcAI
 	private static final int VANOR_SILENOS_SHAMAN = 20685;
 	private static final int VANOR_SILENOS_CHIEFTAIN = 20686;
 	private static final int VANOR = 24014;
+	
 	// Guard
 	private static final int GUARD_OF_HONOR = 22102;
 	

@@ -49,6 +49,7 @@ public class OpNotAffectedBySkillSkillCondition implements ISkillCondition
 		{
 			return (buffInfo == null) || (buffInfo.getSkill().getLevel() < _skillLevel);
 		}
+		
 		return buffInfo == null;
 	}
 }

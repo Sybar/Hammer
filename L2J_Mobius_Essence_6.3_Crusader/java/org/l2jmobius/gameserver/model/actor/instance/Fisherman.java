@@ -52,6 +52,7 @@ public class Fisherman extends Merchant
 		{
 			pom = npcId + "-" + value;
 		}
+		
 		return "data/html/fisherman/" + pom + ".htm";
 	}
 	

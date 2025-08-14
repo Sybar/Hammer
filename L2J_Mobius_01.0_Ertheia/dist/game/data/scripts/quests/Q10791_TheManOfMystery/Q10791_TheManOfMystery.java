@@ -43,14 +43,17 @@ public class Q10791_TheManOfMystery extends Quest
 	// NPCs
 	private static final int DOKARA = 33847;
 	private static final int KAIN_VAN_HALTER = 33993;
+	
 	// Monsters
 	private static final int SUSPICIOUS_COCOON = 27536;
 	private static final int SUSPICIOUS_COCOON1 = 27537;
 	private static final int SUSPICIOUS_COCOON2 = 27538;
 	private static final int NEEDLE_STAKATO_CAPTAIN = 27542;
 	private static final int NEEDLE_STAKATO = 27543;
+	
 	// Items
 	private static final int EAA = 730;
+	
 	// Misc
 	private static final int MIN_LEVEL = 65;
 	private static final int MAX_LEVEL = 70;
@@ -112,6 +115,7 @@ public class Q10791_TheManOfMystery extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -145,6 +149,7 @@ public class Q10791_TheManOfMystery extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -187,6 +192,7 @@ public class Q10791_TheManOfMystery extends Quest
 						qs.set(Integer.toString(SUSPICIOUS_COCOON), kills);
 						playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 					}
+					
 					if (kills >= 5)
 					{
 						final Npc monster = addSpawn(NEEDLE_STAKATO_CAPTAIN, npc.getX(), npc.getY(), npc.getZ(), npc.getHeading(), true, 600000, false);
@@ -208,6 +214,7 @@ public class Q10791_TheManOfMystery extends Quest
 						qs.set(Integer.toString(NEEDLE_STAKATO_CAPTAIN), kills);
 						playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 					}
+					
 					if (qs.getInt(Integer.toString(NEEDLE_STAKATO_CAPTAIN)) >= 1)
 					{
 						qs.setCond(1);
@@ -216,6 +223,7 @@ public class Q10791_TheManOfMystery extends Quest
 					break;
 				}
 			}
+			
 			final ExQuestNpcLogList log = new ExQuestNpcLogList(getId());
 			log.addNpc(SUSPICIOUS_COCOON, qs.getInt(Integer.toString(SUSPICIOUS_COCOON)));
 			log.addNpc(NEEDLE_STAKATO_CAPTAIN, qs.getInt(Integer.toString(NEEDLE_STAKATO_CAPTAIN)));

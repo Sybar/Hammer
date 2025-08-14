@@ -118,6 +118,7 @@ public class LaVieEnRose extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

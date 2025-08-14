@@ -76,6 +76,7 @@ public class Product
 		{
 			price *= Config.RATE_SIEGE_GUARDS_PRICE;
 		}
+		
 		return price;
 	}
 	
@@ -100,6 +101,7 @@ public class Product
 		{
 			return 0;
 		}
+		
 		final long count = _count.get();
 		return count > 0 ? count : 0;
 	}
@@ -110,6 +112,7 @@ public class Product
 		{
 			_count = new AtomicLong();
 		}
+		
 		_count.set(currentCount);
 	}
 	

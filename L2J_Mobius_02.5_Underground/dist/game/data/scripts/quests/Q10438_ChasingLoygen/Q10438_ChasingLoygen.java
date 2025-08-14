@@ -40,8 +40,10 @@ public class Q10438_ChasingLoygen extends Quest
 	// NPCs
 	private static final int LAKI = 32742;
 	private static final int TANTA_LIZARDMAN_CHIEF_LOYGEN = 27497;
+	
 	// Misc
 	private static final int MIN_LEVEL = 81;
+	
 	// Reward
 	private static final int EAS = 960;
 	
@@ -102,6 +104,7 @@ public class Q10438_ChasingLoygen extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -136,6 +139,7 @@ public class Q10438_ChasingLoygen extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

@@ -38,9 +38,11 @@ public class Q10707_FlamesOfSorrow extends Quest
 	private static final int WARNING_FIRE = 19545;
 	private static final int VENGEFUL_SPIRIT = 27518;
 	private static final int SPIRIT = 33959;
+	
 	// Items
 	private static final int MARK = 39508; // Mark of Gratitude
 	private static final int EAC = 952; // Scroll: Enchant Armor (C-grade)
+	
 	// Misc
 	private static final int MIN_LEVEL = 46;
 	private static final int MAX_LEVEL = 51;
@@ -96,6 +98,7 @@ public class Q10707_FlamesOfSorrow extends Quest
 					{
 						addExpAndSp(player, 483_840, 116);
 					}
+					
 					htmltext = event;
 				}
 				break;
@@ -112,6 +115,7 @@ public class Q10707_FlamesOfSorrow extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -155,6 +159,7 @@ public class Q10707_FlamesOfSorrow extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

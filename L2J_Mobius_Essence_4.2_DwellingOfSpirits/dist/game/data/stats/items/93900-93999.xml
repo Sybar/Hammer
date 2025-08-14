@@ -708,9 +708,9 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ExtractableItems" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="40" />
-		</cond>
+		</conditions>
 		<capsuled_items>
 			<item id="3031" min="160" max="160" chance="100" /> <!-- Spirit Ore -->
 			<item id="49674" min="16" max="16" chance="100" /> <!-- XP Growth Scroll -->
@@ -731,9 +731,9 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ExtractableItems" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="45" />
-		</cond>
+		</conditions>
 		<capsuled_items>
 			<item id="3031" min="200" max="200" chance="100" /> <!-- Spirit Ore -->
 			<item id="49674" min="16" max="16" chance="100" /> <!-- XP Growth Scroll -->
@@ -755,9 +755,9 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ExtractableItems" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="50" />
-		</cond>
+		</conditions>
 		<capsuled_items>
 			<item id="3031" min="250" max="250" chance="100" /> <!-- Spirit Ore -->
 			<item id="49674" min="16" max="16" chance="100" /> <!-- XP Growth Scroll -->
@@ -780,9 +780,9 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ExtractableItems" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="55" />
-		</cond>
+		</conditions>
 		<capsuled_items>
 			<item id="3031" min="300" max="300" chance="100" /> <!-- Spirit Ore -->
 			<item id="49674" min="16" max="16" chance="100" /> <!-- XP Growth Scroll -->
@@ -805,9 +805,9 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ExtractableItems" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="60" />
-		</cond>
+		</conditions>
 		<capsuled_items>
 			<item id="3031" min="350" max="350" chance="100" /> <!-- Spirit Ore -->
 			<item id="49674" min="16" max="16" chance="100" /> <!-- XP Growth Scroll -->
@@ -830,9 +830,9 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ExtractableItems" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="65" />
-		</cond>
+		</conditions>
 		<capsuled_items>
 			<item id="3031" min="400" max="400" chance="100" /> <!-- Spirit Ore -->
 			<item id="49674" min="16" max="16" chance="100" /> <!-- XP Growth Scroll -->
@@ -855,9 +855,9 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ExtractableItems" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="70" />
-		</cond>
+		</conditions>
 		<capsuled_items>
 			<item id="3031" min="450" max="450" chance="100" /> <!-- Spirit Ore -->
 			<item id="49674" min="16" max="16" chance="100" /> <!-- XP Growth Scroll -->
@@ -881,9 +881,9 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ExtractableItems" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="75" />
-		</cond>
+		</conditions>
 		<capsuled_items>
 			<item id="3031" min="500" max="500" chance="100" /> <!-- Spirit Ore -->
 			<item id="49674" min="16" max="16" chance="100" /> <!-- XP Growth Scroll -->
@@ -1003,9 +1003,9 @@
 		<set name="price" val="30" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2048" level="1" /> <!-- Wolf Food -->
 		</skills>

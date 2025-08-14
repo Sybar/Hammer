@@ -92,6 +92,7 @@ public class TurekOrcs extends AbstractNpcAI
 				npc.getVariables().remove("state");
 			}
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	
@@ -128,6 +129,7 @@ public class TurekOrcs extends AbstractNpcAI
 				receiver.getAI().setIntention(Intention.ATTACK, player);
 			}
 		}
+		
 		return super.onEventReceived(eventName, sender, receiver, reference);
 	}
 	

@@ -35,6 +35,7 @@ public class SSQElcadiasTent extends AbstractInstance
 	// NPCs
 	private static final int ELCADIA = 32784;
 	private static final int GRUFF_LOOKING_MAN = 32862;
+	
 	// Misc
 	private static final int TEMPLATE_ID = 158;
 	
@@ -72,6 +73,7 @@ public class SSQElcadiasTent extends AbstractInstance
 		{
 			finishInstance(talker, 0);
 		}
+		
 		return super.onTalk(npc, talker);
 	}
 	

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
 	<item id="4600" type="EtcItem" name="Greater Dye of WIT (Wit+2 Men-2)">
 		<!-- Greater Dye of WIT <Wit+2 Men-2>. Collect and take 10 units of this type of magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities tatooed onto your body. Can be used by the Wizard class and the Healer class after completion of their second class transfer, and can be kept and used after the completion of the third class transfer as well. -->
@@ -703,13 +703,13 @@
 		<set name="is_destroyable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="10" />
 			<set stat="mAtk" val="9" />
 			<set stat="critRate" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="433" />
-		</for>
+		</stats>
 	</item>
 	<item id="4666" type="EtcItem" name="Reiria's Soul Orb">
 		<!-- A sphere containing Reiria's Soul. Take it to Maestro Reorin. -->
@@ -925,14 +925,14 @@
 		<set name="oncrit_chance" val="10" />
 		<set name="oncrit_skill" val="3025-1" />
 		<set name="item_skill" val="3026-1" /> <!-- Special Ability: Critical Anger -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="107" />
 			<set stat="mAtk" val="61" />
 			<set stat="critRate" val="8" />
 			<set stat="pAtkSpd" val="379" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4682" type="Weapon" name="Stormbringer - Focus">
 		<!-- <Soul Crystal Enhancement>. Increases Critical Attack by 86. -->
@@ -953,14 +953,14 @@
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="true" />
 		<set name="item_skill" val="3010-1" /> <!-- Special Ability: Focus -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="107" />
 			<set stat="mAtk" val="61" />
 			<set stat="critRate" val="8" />
 			<set stat="pAtkSpd" val="379" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4683" type="Weapon" name="Stormbringer - Light">
 		<!-- <Soul Crystal Enhancement>. Reduces a weapon's weight by half. -->
@@ -981,14 +981,14 @@
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="true" />
 		<set name="item_skill" val="3498-1" /> <!-- Special Ability Light -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="107" />
 			<set stat="mAtk" val="61" />
 			<set stat="critRate" val="8" />
 			<set stat="pAtkSpd" val="379" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4684" type="Weapon" name="Shamshir - Guidance">
 		<!-- <Soul Crystal Enhancement>. Increases Accuracy by 6. -->
@@ -1009,14 +1009,14 @@
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="true" />
 		<set name="item_skill" val="3007-2" /> <!-- Special Ability: Guidance -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="122" />
 			<set stat="mAtk" val="68" />
 			<set stat="critRate" val="8" />
 			<set stat="pAtkSpd" val="379" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4685" type="Weapon" name="Shamshir - Back Blow">
 		<!-- <Soul Crystal Enhancement>. Increases Critical Attack by 67 when attacking the enemy from behind. -->
@@ -1037,14 +1037,14 @@
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="true" />
 		<set name="item_skill" val="3018-2" /> <!-- Special Ability: Back Blow -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="122" />
 			<set stat="mAtk" val="68" />
 			<set stat="critRate" val="8" />
 			<set stat="pAtkSpd" val="379" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4686" type="Weapon" name="Shamshir - Rsk. Evasion">
 		<!-- <Soul Crystal Enhancement>. Increases Evasion by 7 when HP becomes 60% or lower. -->
@@ -1065,14 +1065,14 @@
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="true" />
 		<set name="item_skill" val="3028-2" /> <!-- Special Ability: Rsk. Evasion -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="122" />
 			<set stat="mAtk" val="68" />
 			<set stat="critRate" val="8" />
 			<set stat="pAtkSpd" val="379" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4687" type="Weapon" name="Katana - Focus">
 		<!-- <Soul Crystal Enhancement>. Increases Critical Attack by 82. -->
@@ -1093,14 +1093,14 @@
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="true" />
 		<set name="item_skill" val="3010-2" /> <!-- Special Ability: Focus -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="122" />
 			<set stat="mAtk" val="68" />
 			<set stat="critRate" val="8" />
 			<set stat="pAtkSpd" val="379" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4688" type="Weapon" name="Katana - Critical Damage">
 		<!-- <Soul Crystal Enhancement>. Increases P. Atk. by 194 during a critical attack. -->
@@ -1121,14 +1121,14 @@
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="true" />
 		<set name="item_skill" val="3023-2" /> <!-- Special Ability: Critical Damage -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="122" />
 			<set stat="mAtk" val="68" />
 			<set stat="critRate" val="8" />
 			<set stat="pAtkSpd" val="379" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4689" type="Weapon" name="Katana - Haste">
 		<!-- <Soul Crystal Enhancement>. Increases Atk. Spd. by about 7%. -->
@@ -1149,14 +1149,14 @@
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="true" />
 		<set name="item_skill" val="3036-2" /> <!-- Special Ability: Haste -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="122" />
 			<set stat="mAtk" val="68" />
 			<set stat="critRate" val="8" />
 			<set stat="pAtkSpd" val="379" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4690" type="Weapon" name="Spirit Sword - Critical Damage">
 		<!-- <Soul Crystal Enhancement>. Increases P. Atk. by 194 during a critical attack. -->
@@ -1177,14 +1177,14 @@
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="true" />
 		<set name="item_skill" val="3023-2" /> <!-- Special Ability: Critical Damage -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="122" />
 			<set stat="mAtk" val="68" />
 			<set stat="critRate" val="8" />
 			<set stat="pAtkSpd" val="379" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4691" type="Weapon" name="Spirit Sword - Critical Poison">
 		<!-- <Soul Crystal Enhancement>. 15% chance that target will be poisoned during critical attack. Effect 5 -->
@@ -1206,14 +1206,14 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="oncrit_chance" val="15" />
 		<set name="oncrit_skill" val="3024-2" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="122" />
 			<set stat="mAtk" val="68" />
 			<set stat="critRate" val="8" />
 			<set stat="pAtkSpd" val="379" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4692" type="Weapon" name="Spirit Sword - Haste">
 		<!-- <Soul Crystal Enhancement>. Increases Atk. Spd. by about 7%. -->
@@ -1234,14 +1234,14 @@
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="true" />
 		<set name="item_skill" val="3036-2" /> <!-- Special Ability: Haste -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="122" />
 			<set stat="mAtk" val="68" />
 			<set stat="critRate" val="8" />
 			<set stat="pAtkSpd" val="379" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4693" type="Weapon" name="Raid Sword - Focus">
 		<!-- <Soul Crystal Enhancement>. Increases Critical Attack by 82. -->
@@ -1262,14 +1262,14 @@
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="true" />
 		<set name="item_skill" val="3010-2" /> <!-- Special Ability: Focus -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="122" />
 			<set stat="mAtk" val="68" />
 			<set stat="critRate" val="8" />
 			<set stat="pAtkSpd" val="379" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4694" type="Weapon" name="Raid Sword - Critical Drain">
 		<!-- <Soul Crystal Enhancement>. User absorbs 9 HP from target during critical attack. -->
@@ -1291,14 +1291,14 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="oncrit_chance" val="35" />
 		<set name="oncrit_skill" val="3022-2" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="122" />
 			<set stat="mAtk" val="68" />
 			<set stat="critRate" val="8" />
 			<set stat="pAtkSpd" val="379" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4695" type="Weapon" name="Raid Sword - Critical Poison">
 		<!-- <Soul Crystal Enhancement>. 15% chance that target will be poisoned during critical attack. Effect 5 -->
@@ -1320,14 +1320,14 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="oncrit_chance" val="15" />
 		<set name="oncrit_skill" val="3024-2" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="122" />
 			<set stat="mAtk" val="68" />
 			<set stat="critRate" val="8" />
 			<set stat="pAtkSpd" val="379" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4696" type="Weapon" name="Caliburs - Guidance">
 		<!-- <Soul Crystal Enhancement>. Increases Accuracy by 5. -->
@@ -1348,14 +1348,14 @@
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="true" />
 		<set name="item_skill" val="3007-3" /> <!-- Special Ability: Guidance -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="139" />
 			<set stat="mAtk" val="76" />
 			<set stat="critRate" val="8" />
 			<set stat="pAtkSpd" val="379" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4697" type="Weapon" name="Caliburs - Focus">
 		<!-- <Soul Crystal Enhancement>. Increases Critical Attack by 77. -->
@@ -1376,14 +1376,14 @@
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="true" />
 		<set name="item_skill" val="3010-3" /> <!-- Special Ability: Focus -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="139" />
 			<set stat="mAtk" val="76" />
 			<set stat="critRate" val="8" />
 			<set stat="pAtkSpd" val="379" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4698" type="Weapon" name="Caliburs - Critical Damage">
 		<!-- <Soul Crystal Enhancement>. Increases P. Atk. by 213 during a critical attack. -->
@@ -1404,14 +1404,14 @@
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="true" />
 		<set name="item_skill" val="3023-3" /> <!-- Special Ability: Critical Damage -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="139" />
 			<set stat="mAtk" val="76" />
 			<set stat="critRate" val="8" />
 			<set stat="pAtkSpd" val="379" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4699" type="Weapon" name="Sword of Delusion - Focus">
 		<!-- <Soul Crystal Enhancement>. Increases Critical Attack by 77. -->
@@ -1432,13 +1432,13 @@
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="true" />
 		<set name="item_skill" val="3010-3" /> <!-- Special Ability: Focus -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="139" />
 			<set stat="mAtk" val="76" />
 			<set stat="critRate" val="8" />
 			<set stat="pAtkSpd" val="379" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 </list>

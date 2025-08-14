@@ -221,6 +221,7 @@ public class LimitShopData implements IXmlReader
 									}
 								}
 							}
+							
 							_products.add(new LimitShopProductHolder(id, category, minLevel, maxLevel, ingredientIds, ingredientQuantities, ingredientEnchants, productionId, productionCount, 100, false, 0, 0, 0, 0, false, 0, 0, 0, false, 0, 0, 0, false, 0, 0, false, accountDailyLimit, accountWeeklyLimit, accountMonthlyLimit, accountBuyLimit));
 						}
 					}
@@ -238,6 +239,7 @@ public class LimitShopData implements IXmlReader
 				return product;
 			}
 		}
+		
 		return null;
 	}
 	

@@ -56,6 +56,7 @@ public class SevenSignsDungeons extends AbstractNpcAI
 		ZIGGURAT_SPAWNS.put(31079, new Location(140032, 79680, -5424));
 		ZIGGURAT_SPAWNS.put(31080, new Location(140784, 79680, -5424));
 	}
+	
 	// Teleports
 	private static final Map<Integer, Location> ENTER_TELEPORTS = new HashMap<>();
 	static
@@ -71,8 +72,9 @@ public class SevenSignsDungeons extends AbstractNpcAI
 		EXIT_TELEPORTS.put(31078, new Location(-22076, 77375, -5168));
 		EXIT_TELEPORTS.put(31080, new Location(139938, 79727, -5424));
 	}
-	private final static Location GIRAN_TELEPORT = TeleportListData.getInstance().getTeleport(25).getLocation();
-	private final static Location ADEN_TELEPORT = TeleportListData.getInstance().getTeleport(321).getLocation();
+	private static final Location GIRAN_TELEPORT = TeleportListData.getInstance().getTeleport(25).getLocation();
+	private static final Location ADEN_TELEPORT = TeleportListData.getInstance().getTeleport(321).getLocation();
+	
 	// Misc
 	private static final SpawnTemplate PATRIOT_SPAWNS = SpawnData.getInstance().getSpawnByName("NecropolisOfThePatriots");
 	private static final SpawnTemplate FORBIDDEN_SPAWNS = SpawnData.getInstance().getSpawnByName("CatacombOfTheForbiddenPath");
@@ -138,6 +140,7 @@ public class SevenSignsDungeons extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return null;
 	}
 	

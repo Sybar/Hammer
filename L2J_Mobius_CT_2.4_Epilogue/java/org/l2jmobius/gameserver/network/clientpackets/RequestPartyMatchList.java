@@ -102,6 +102,7 @@ public class RequestPartyMatchList extends ClientPacket
 					{
 						continue;
 					}
+					
 					if (ptmember == player)
 					{
 						continue;
@@ -112,6 +113,7 @@ public class RequestPartyMatchList extends ClientPacket
 					room.addMember(ptmember);
 				}
 			}
+			
 			player.sendPacket(new PartyMatchDetail(room));
 			player.sendPacket(new ExPartyRoomMember(room, 1));
 			player.sendPacket(SystemMessageId.A_PARTY_ROOM_HAS_BEEN_CREATED);

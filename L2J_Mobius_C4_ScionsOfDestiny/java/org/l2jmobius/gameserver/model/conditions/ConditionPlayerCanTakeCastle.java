@@ -65,6 +65,7 @@ public class ConditionPlayerCanTakeCastle extends Condition
 			player.sendPacket(SystemMessageId.THE_DISTANCE_IS_TOO_FAR_AND_SO_THE_CASTING_HAS_BEEN_STOPPED);
 			return false;
 		}
+		
 		castle.getSiege().announceToPlayer(new SystemMessage(SystemMessageId.THE_OPPONENT_CLAN_HAS_BEGUN_TO_ENGRAVE_THE_RULER), false);
 		return true;
 	}

@@ -16,9 +16,9 @@
 		<set name="is_event_restricted" val="true" />
 		<set name="commissionItemType" val="POTION" />
 		<set name="is_sellable" val="false" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2863" level="1" /> <!-- Superior HP Replenishing Potion -->
 		</skills>
@@ -38,9 +38,9 @@
 		<set name="for_npc" val="true" />
 		<set name="is_event_restricted" val="true" />
 		<set name="commissionItemType" val="POTION" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2864" level="1" /> <!-- Superior Quick HP Replenishing Potion -->
 		</skills>
@@ -361,9 +361,9 @@
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="POTION" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2867" level="1" /> <!-- Cupid's Cure -->
 		</skills>
@@ -378,9 +378,9 @@
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="POTION" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2868" level="1" /> <!-- Cupid's Enhanced Cure -->
 		</skills>
@@ -1101,9 +1101,9 @@
 		<set name="commissionItemType" val="HAIR_ACCESSORY" />
 		<set name="isAppearanceable" val="true" />
 		<set name="weight" val="10" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player sex="1" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="14773" name="Formal Wear" additionalName="14-day" type="Armor">
 		<!-- A tuxedo for men, and a wedding dress for women. Equipping this disables armor. Headgear, weapons and accessories remain equipped. Available for 14 d. Cannot be restored once deleted. -->
@@ -1471,9 +1471,9 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="commissionItemType" val="RAPIER" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="rCrit">10</stat>
 			<stat type="accCombat">-1.5</stat>
@@ -1495,9 +1495,9 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="commissionItemType" val="ANCIENT_SWORD" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="rCrit">8</stat>
 			<stat type="accCombat">2</stat>
@@ -1519,9 +1519,9 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="commissionItemType" val="CROSSBOW" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="rCrit">10</stat>
 			<stat type="accCombat">-1.5</stat>
@@ -1580,12 +1580,12 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="commissionItemType" val="DUAL_DAGGER" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player level="81" />
 				<player categoryType="DAGGER_MASTER" />
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="rCrit">12</stat>
 			<stat type="accCombat">-3.75</stat>

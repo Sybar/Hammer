@@ -43,11 +43,14 @@ public class GeneralDilios extends AbstractNpcAI
 	private static final String[] DILIOS_TEXT =
 	{
 		"Messenger, inform the patrons of the Keucereus Alliance Base! We're gathering brave adventurers to attack Tiat's Mounted Troop that's rooted in the Seed of Destruction.",
+		
 		// "Messenger, inform the patrons of the Keucereus Alliance Base! The Seed of Destruction is currently secured under the flag of the Keucereus Alliance!",
 		// "Messenger, inform the patrons of the Keucereus Alliance Base! The Seed of Destruction is currently secured under the flag of the Keucereus Alliance!",
 		"Messenger, inform the brothers in Kucereus' clan outpost! Brave adventurers who have challenged the Seed of Infinity are currently infiltrating the Hall of Erosion through the defensively weak Hall of Suffering!",
+		
 		// "Messenger, inform the brothers in Kucereus' clan outpost! Sweeping the Seed of Infinity is currently complete to the Heart of the Seed. Ekimus is being directly attacked, and the Undead remaining in the Hall of Suffering are being eradicated!",
 		"Messenger, inform the patrons of the Keucereus Alliance Base! The Seed of Infinity is currently secured under the flag of the Keucereus Alliance!"
+		
 		// "Messenger, inform the patrons of the Keucereus Alliance Base! The resurrected Undead in the Seed of Infinity are pouring into the Hall of Suffering and the Hall of Erosion!"
 		// "Messenger, inform the brothers in Kucereus' clan outpost! Ekimus is about to be revived by the resurrected Undead in Seed of Infinity. Send all reinforcements to the Heart and the Hall of Suffering!"
 	};
@@ -73,6 +76,7 @@ public class GeneralDilios extends AbstractNpcAI
 				value = -1;
 				_general.broadcastPacket(new NpcSay(_general.getObjectId(), ChatType.NPC_SHOUT, GENERAL_ID, getRandomEntry(DILIOS_TEXT)));
 			}
+			
 			startQuestTimer("command_" + (value + 1), 60000, null, null);
 		}
 		else if (event.startsWith("guard_animation_"))
@@ -82,11 +86,13 @@ public class GeneralDilios extends AbstractNpcAI
 			{
 				guard.getLastSpawn().broadcastSocialAction(4);
 			}
+			
 			if (value < 2)
 			{
 				startQuestTimer("guard_animation_" + (value + 1), 1500, null, null);
 			}
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	

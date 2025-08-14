@@ -26,7 +26,6 @@ import java.sql.ResultSet;
 import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.concurrent.atomic.AtomicInteger;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -59,7 +58,6 @@ public class PlayerInventory extends Inventory
 	private final Player _owner;
 	private Item _adena;
 	private Item _ancientAdena;
-	private final AtomicInteger _questItemSize = new AtomicInteger();
 	
 	private int[] _blockItems = null;
 	
@@ -155,6 +153,7 @@ public class PlayerInventory extends Inventory
 				result.add(item);
 			}
 		}
+		
 		return result;
 	}
 	
@@ -190,6 +189,7 @@ public class PlayerInventory extends Inventory
 				result.add(item);
 			}
 		}
+		
 		return result;
 	}
 	
@@ -209,6 +209,7 @@ public class PlayerInventory extends Inventory
 				result.add(item);
 			}
 		}
+		
 		return result;
 	}
 	
@@ -239,6 +240,7 @@ public class PlayerInventory extends Inventory
 				result.add(item);
 			}
 		}
+		
 		return result;
 	}
 	
@@ -265,8 +267,10 @@ public class PlayerInventory extends Inventory
 				}
 				continue;
 			}
+			
 			result.add(item);
 		}
+		
 		return result;
 	}
 	
@@ -289,6 +293,7 @@ public class PlayerInventory extends Inventory
 				}
 			}
 		}
+		
 		return result;
 	}
 	
@@ -314,6 +319,7 @@ public class PlayerInventory extends Inventory
 				break;
 			}
 		}
+		
 		if (notAllEquipped)
 		{
 			final Item adjItem = getItemByItemId(item.getItem().getId());
@@ -360,6 +366,7 @@ public class PlayerInventory extends Inventory
 		{
 			return destroyItemByItemId(process, ADENA_ID, count, actor, reference) != null;
 		}
+		
 		return false;
 	}
 	
@@ -420,6 +427,7 @@ public class PlayerInventory extends Inventory
 				EventDispatcher.getInstance().notifyEventAsync(new OnPlayerItemAdd(actor, addedItem), actor);
 			}
 		}
+		
 		return addedItem;
 	}
 	
@@ -459,6 +467,7 @@ public class PlayerInventory extends Inventory
 				{
 					playerIU.addNewItem(item);
 				}
+				
 				actor.sendInventoryUpdate(playerIU);
 				
 				// Update current load as well
@@ -473,6 +482,7 @@ public class PlayerInventory extends Inventory
 				}
 			}
 		}
+		
 		return item;
 	}
 	
@@ -705,11 +715,6 @@ public class PlayerInventory extends Inventory
 	@Override
 	protected void addItem(Item item)
 	{
-		if (item.isQuestItem())
-		{
-			_questItemSize.incrementAndGet();
-		}
-		
 		super.addItem(item);
 	}
 	
@@ -738,20 +743,7 @@ public class PlayerInventory extends Inventory
 			_ancientAdena = null;
 		}
 		
-		if (item.isQuestItem())
-		{
-			_questItemSize.decrementAndGet();
-		}
-		
 		return super.removeItem(item);
-	}
-	
-	/**
-	 * @return the quantity of quest items in the inventory
-	 */
-	public int getQuestSize()
-	{
-		return _questItemSize.get();
 	}
 	
 	/**
@@ -759,7 +751,7 @@ public class PlayerInventory extends Inventory
 	 */
 	public int getNonQuestSize()
 	{
-		return _items.size() - _questItemSize.get();
+		return _items.size();
 	}
 	
 	/**
@@ -807,6 +799,7 @@ public class PlayerInventory extends Inventory
 						final ItemTemplate template = ItemData.getInstance().getTemplate(itemId);
 						paperdoll[slot][1] = template == null ? itemId : template.getDisplayId();
 					}
+					
 					paperdoll[slot][2] = invdata.getInt("enchant_level");
 				}
 			}
@@ -815,6 +808,7 @@ public class PlayerInventory extends Inventory
 		{
 			LOGGER.log(Level.WARNING, "Could not restore inventory: " + e.getMessage(), e);
 		}
+		
 		return paperdoll;
 	}
 	
@@ -837,6 +831,7 @@ public class PlayerInventory extends Inventory
 				{
 					requiredSlots++;
 				}
+				
 				lootWeight += item.getWeight();
 			}
 		}
@@ -850,6 +845,7 @@ public class PlayerInventory extends Inventory
 				_owner.sendPacket(SystemMessageId.WEIGHT_AND_VOLUME_LIMIT_HAS_BEEN_EXCEEDED_THAT_SKILL_IS_CURRENTLY_UNAVAILABLE);
 			}
 		}
+		
 		return inventoryStatusOK;
 	}
 	
@@ -865,6 +861,7 @@ public class PlayerInventory extends Inventory
 		{
 			slots++;
 		}
+		
 		return validateCapacity(slots, item.isQuestItem());
 	}
 	
@@ -881,6 +878,7 @@ public class PlayerInventory extends Inventory
 		{
 			slots++;
 		}
+		
 		return validateCapacity(slots, ItemData.getInstance().getTemplate(itemId).isQuestItem());
 	}
 	
@@ -892,7 +890,7 @@ public class PlayerInventory extends Inventory
 	
 	public boolean validateCapacity(long slots, boolean questItem)
 	{
-		return ((slots == 0) && !Config.AUTO_LOOT_SLOT_LIMIT) || questItem ? (getQuestSize() + slots) <= _owner.getQuestInventoryLimit() : (getNonQuestSize() + slots) <= _owner.getInventoryLimit();
+		return ((slots == 0) && !Config.AUTO_LOOT_SLOT_LIMIT) || ((getNonQuestSize() + slots) <= _owner.getInventoryLimit());
 	}
 	
 	@Override
@@ -903,6 +901,7 @@ public class PlayerInventory extends Inventory
 		{
 			return true;
 		}
+		
 		return ((_totalWeight + weight) <= _owner.getMaxLoad());
 	}
 	

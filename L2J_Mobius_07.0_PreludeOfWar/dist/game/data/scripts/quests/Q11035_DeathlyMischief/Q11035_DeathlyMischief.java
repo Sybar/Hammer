@@ -46,11 +46,14 @@ public class Q11035_DeathlyMischief extends Quest
 	private static final int TARTI = 34505;
 	private static final int PHANTOM_SKELETON_SOLDIER = 24389;
 	private static final int SKELETON_BERSERKER = 24390;
+	
 	// Items
 	private static final int BREATH_OF_DEATH = 80672;
 	private static final ItemHolder SOE_TARTI = new ItemHolder(80677, 1);
+	
 	// Location
 	private static final Location TRAINING_GROUNDS_TELEPORT = new Location(-51130, 110053, -3664);
+	
 	// Misc
 	private static final int MIN_LEVEL = 33;
 	
@@ -118,6 +121,7 @@ public class Q11035_DeathlyMischief extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -165,6 +169,7 @@ public class Q11035_DeathlyMischief extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

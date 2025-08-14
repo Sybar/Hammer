@@ -444,6 +444,7 @@ public class SellBuffsManager implements IXmlReader
 				return true;
 			}
 		}
+		
 		return false;
 	}
 	
@@ -502,6 +503,7 @@ public class SellBuffsManager implements IXmlReader
 			player.sendMessage("You can't sell buffs here!");
 			return false;
 		}
+		
 		return true;
 	}
 	

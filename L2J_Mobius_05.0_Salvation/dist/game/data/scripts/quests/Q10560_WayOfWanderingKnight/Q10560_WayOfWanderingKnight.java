@@ -36,7 +36,7 @@ import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
 import org.l2jmobius.gameserver.network.serverpackets.ExTutorialShowId;
 import org.l2jmobius.gameserver.network.serverpackets.TutorialShowHtml;
 
-//import ai.others.AdventurersGuide.AdventurersGuide;
+// import ai.others.AdventurersGuide.AdventurersGuide;
 
 /**
  * Way Of Wandering Knight (10560)
@@ -49,6 +49,7 @@ public class Q10560_WayOfWanderingKnight extends Quest
 	private static final int HERPHAH = 34362;
 	private static final int PENNY = 34413;
 	private static final int ADVENTURERS_GUIDE = 32327;
+	
 	// Skills
 	private static final SkillHolder KNIGHT = new SkillHolder(15648, 1); // Knight's Harmony (Adventurer)
 	private static final SkillHolder WARRIOR = new SkillHolder(15649, 1); // Warrior's Harmony (Adventurer)
@@ -63,6 +64,7 @@ public class Q10560_WayOfWanderingKnight extends Quest
 		new SkillHolder(15652, 1), // Daring Sonata (Adventurer)
 		new SkillHolder(15653, 1), // Refreshing Sonata (Adventurer)
 	};
+	
 	// Reward's
 	private static final long EXP = 1889719478;
 	private static final int SP = 1700747;
@@ -70,6 +72,7 @@ public class Q10560_WayOfWanderingKnight extends Quest
 	private static final int BS_SHOT_GRADE_R = 22434;
 	private static final int PA_ART_OF_SEDUCTION = 37928;
 	private static final int ELEMENTARY_SEED_BRACELET = 48072;
+	
 	// Misc
 	private static final int MIN_LEVEL = 85;
 	private static final int MAX_LEVEL = 97;
@@ -135,6 +138,7 @@ public class Q10560_WayOfWanderingKnight extends Quest
 			{
 				// Show Service/Help/Faction System page
 				player.sendPacket(new TutorialShowHtml(npc.getObjectId(), "..\\L2Text\\help_faction.htm", TutorialShowHtml.LARGE_WINDOW));
+				
 				// TODO: Find the correct Id for player.sendPacket(new ExTutorialShowId(22));
 				qs.setCond(4, true);
 				htmltext = event;
@@ -178,6 +182,7 @@ public class Q10560_WayOfWanderingKnight extends Quest
 				{
 					htmltext = getHtm(player, "32327-03.html").replace("%classbuff%", "Knight");
 				}
+				
 				// Show Service/Help/Adventurer's Guide page
 				player.sendPacket(new ExTutorialShowId(25));
 				break;
@@ -222,6 +227,7 @@ public class Q10560_WayOfWanderingKnight extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -285,6 +291,7 @@ public class Q10560_WayOfWanderingKnight extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -294,6 +301,7 @@ public class Q10560_WayOfWanderingKnight extends Quest
 		{
 			SkillCaster.triggerCast(npc, player, holder.getSkill());
 		}
+		
 		SkillCaster.triggerCast(npc, player, skill);
 		
 		return null;

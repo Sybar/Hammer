@@ -28,7 +28,7 @@ import java.util.logging.Logger;
 
 import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.Spawn;
-import org.l2jmobius.gameserver.model.events.AbstractScript;
+import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.siege.Castle;
 
 /**
@@ -130,7 +130,7 @@ public class SiegeFlagOfProtectionManager
 				try
 				{
 					spawn = new Spawn(FLAG_GLUDIO);
-					spawn.setXYZ(AbstractScript.getRandomEntry(FLAG_LOC_GLUDIO));
+					spawn.setXYZ(Quest.getRandomEntry(FLAG_LOC_GLUDIO));
 					getSpawnedFlags(castle.getResidenceId()).add(spawn);
 				}
 				catch (ClassNotFoundException | NoSuchMethodException | ClassCastException e)
@@ -144,7 +144,7 @@ public class SiegeFlagOfProtectionManager
 				try
 				{
 					spawn = new Spawn(FLAG_DION);
-					spawn.setXYZ(AbstractScript.getRandomEntry(FLAG_LOC_DION));
+					spawn.setXYZ(Quest.getRandomEntry(FLAG_LOC_DION));
 					getSpawnedFlags(castle.getResidenceId()).add(spawn);
 				}
 				catch (ClassNotFoundException | NoSuchMethodException | ClassCastException e)
@@ -158,7 +158,7 @@ public class SiegeFlagOfProtectionManager
 				try
 				{
 					spawn = new Spawn(FLAG_GIRAN);
-					spawn.setXYZ(AbstractScript.getRandomEntry(FLAG_LOC_GIRAN));
+					spawn.setXYZ(Quest.getRandomEntry(FLAG_LOC_GIRAN));
 					getSpawnedFlags(castle.getResidenceId()).add(spawn);
 				}
 				catch (ClassNotFoundException | NoSuchMethodException | ClassCastException e)
@@ -172,7 +172,7 @@ public class SiegeFlagOfProtectionManager
 				try
 				{
 					spawn = new Spawn(FLAG_OREN);
-					spawn.setXYZ(AbstractScript.getRandomEntry(FLAG_LOC_OREN));
+					spawn.setXYZ(Quest.getRandomEntry(FLAG_LOC_OREN));
 					getSpawnedFlags(castle.getResidenceId()).add(spawn);
 				}
 				catch (ClassNotFoundException | NoSuchMethodException | ClassCastException e)
@@ -186,7 +186,7 @@ public class SiegeFlagOfProtectionManager
 				try
 				{
 					spawn = new Spawn(FLAG_ADEN);
-					spawn.setXYZ(AbstractScript.getRandomEntry(FLAG_LOC_ADEN));
+					spawn.setXYZ(Quest.getRandomEntry(FLAG_LOC_ADEN));
 					getSpawnedFlags(castle.getResidenceId()).add(spawn);
 				}
 				catch (ClassNotFoundException | NoSuchMethodException | ClassCastException e)
@@ -200,7 +200,7 @@ public class SiegeFlagOfProtectionManager
 				try
 				{
 					spawn = new Spawn(FLAG_INNADRIL);
-					spawn.setXYZ(AbstractScript.getRandomEntry(FLAG_LOC_INNADRIL));
+					spawn.setXYZ(Quest.getRandomEntry(FLAG_LOC_INNADRIL));
 					getSpawnedFlags(castle.getResidenceId()).add(spawn);
 				}
 				catch (ClassNotFoundException | NoSuchMethodException | ClassCastException e)
@@ -214,7 +214,7 @@ public class SiegeFlagOfProtectionManager
 				try
 				{
 					spawn = new Spawn(FLAG_GODDARD);
-					spawn.setXYZ(AbstractScript.getRandomEntry(FLAG_LOC_GODDARD));
+					spawn.setXYZ(Quest.getRandomEntry(FLAG_LOC_GODDARD));
 					getSpawnedFlags(castle.getResidenceId()).add(spawn);
 				}
 				catch (ClassNotFoundException | NoSuchMethodException | ClassCastException e)
@@ -228,7 +228,7 @@ public class SiegeFlagOfProtectionManager
 				try
 				{
 					spawn = new Spawn(FLAG_RUNE);
-					spawn.setXYZ(AbstractScript.getRandomEntry(FLAG_LOC_RUNE));
+					spawn.setXYZ(Quest.getRandomEntry(FLAG_LOC_RUNE));
 					getSpawnedFlags(castle.getResidenceId()).add(spawn);
 				}
 				catch (ClassNotFoundException | NoSuchMethodException | ClassCastException e)
@@ -242,7 +242,7 @@ public class SiegeFlagOfProtectionManager
 				try
 				{
 					spawn = new Spawn(FLAG_SCHUTTGART);
-					spawn.setXYZ(AbstractScript.getRandomEntry(FLAG_LOC_SCHUTTGART));
+					spawn.setXYZ(Quest.getRandomEntry(FLAG_LOC_SCHUTTGART));
 					getSpawnedFlags(castle.getResidenceId()).add(spawn);
 				}
 				catch (ClassNotFoundException | NoSuchMethodException | ClassCastException e)
@@ -292,6 +292,7 @@ public class SiegeFlagOfProtectionManager
 				spawn.getLastSpawn().doDie(spawn.getLastSpawn());
 			}
 		}
+		
 		getSpawnedFlags(castle.getResidenceId()).clear();
 	}
 	

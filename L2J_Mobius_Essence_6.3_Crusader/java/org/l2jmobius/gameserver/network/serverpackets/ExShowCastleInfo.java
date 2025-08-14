@@ -67,6 +67,7 @@ public class ExShowCastleInfo extends ServerPacket
 			{
 				buffer.writeString("");
 			}
+			
 			buffer.writeInt(castle.getTaxPercent(TaxType.BUY));
 			buffer.writeInt((int) (castle.getSiege().getSiegeDate().getTimeInMillis() / 1000));
 			buffer.writeByte(castle.getSiege().isInProgress()); // Grand Crusade

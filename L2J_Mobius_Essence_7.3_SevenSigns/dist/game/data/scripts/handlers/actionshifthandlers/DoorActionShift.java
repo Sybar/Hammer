@@ -36,7 +36,7 @@ import org.l2jmobius.gameserver.util.HtmlUtil;
 public class DoorActionShift implements IActionShiftHandler
 {
 	@Override
-	public boolean action(Player player, WorldObject target, boolean interact)
+	public boolean onAction(Player player, WorldObject target, boolean interact)
 	{
 		if (player.isGM())
 		{
@@ -48,25 +48,30 @@ public class DoorActionShift implements IActionShiftHandler
 			player.sendPacket(new StaticObjectInfo(door, player.isGM()));
 			final NpcHtmlMessage html = new NpcHtmlMessage(0, 1);
 			html.setFile(player, "data/html/admin/doorinfo.htm");
+			
 			// Hp / MP
 			html.replace("%hpGauge%", HtmlUtil.getHpGauge(250, (long) door.getCurrentHp(), door.getMaxHp(), false));
 			html.replace("%mpGauge%", HtmlUtil.getMpGauge(250, (long) door.getCurrentMp(), door.getMaxMp(), false));
+			
 			// Basic info
 			html.replace("%doorName%", door.getName());
 			html.replace("%objId%", String.valueOf(door.getObjectId()));
 			html.replace("%doorId%", String.valueOf(door.getId()));
+			
 			// Position info
 			html.replace("%position%", door.getX() + ", " + door.getY() + ", " + door.getZ());
 			html.replace("%node1%", door.getX(0) + ", " + door.getY(0) + ", " + door.getZMin());
 			html.replace("%node2%", door.getX(1) + ", " + door.getY(1) + ", " + door.getZMin());
 			html.replace("%node3%", door.getX(2) + ", " + door.getY(2) + ", " + door.getZMax());
 			html.replace("%node4%", door.getX(3) + ", " + door.getY(3) + ", " + door.getZMax());
+			
 			// Residence info
 			html.replace("%fortress%", fort != null ? fort.getName() : "None");
 			html.replace("%clanHall%", clanHall != null ? clanHall.getName() : "None");
 			html.replace("%castle%", castle != null ? castle.getName() + " Castle" : "None");
 			player.sendPacket(html);
 		}
+		
 		return true;
 	}
 	

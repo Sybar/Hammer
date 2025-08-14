@@ -130,6 +130,7 @@ public class DraconidFortress extends AbstractInstance
 			case KILL_FOUR_DREAM_WATCHERS_INSIDE_SECOND_TIME:
 			{
 				instance.broadcastPacket(new ExShowScreenMessage(STRING_ID_03, ExShowScreenMessage.TOP_CENTER, 10_000, true));
+				
 				// use the same counter
 				instance.getParameters().set(DREAM_WATCHER_COUNTER, 0);
 				instance.openCloseDoor(SECOND_DOOR, true);
@@ -162,9 +163,11 @@ public class DraconidFortress extends AbstractInstance
 	private void spawnBoss(Instance instance)
 	{
 		final boolean random = Rnd.nextBoolean();
+		
 		// show text
 		final NpcStringId bossText = random ? STRING_ID_05 : STRING_ID_06;
 		instance.broadcastPacket(new ExShowScreenMessage(bossText, ExShowScreenMessage.TOP_CENTER, 10000, true));
+		
 		// spawn boss
 		final String bossTemplate = random ? "DraconidMonsters_BossTiad" : "DraconidMonsters_BossBaint";
 		instance.spawnGroup(bossTemplate).forEach(n -> n.getSpawn().stopRespawn());
@@ -192,6 +195,7 @@ public class DraconidFortress extends AbstractInstance
 			{
 				InstanceManager.getInstance().deleteInstanceTime(player, INSTANCE_ID);
 			}
+			
 			instance.destroy();
 			return;
 		}
@@ -213,6 +217,7 @@ public class DraconidFortress extends AbstractInstance
 			monster.setTitleString(DREAM_WATCHER);
 			monster.broadcastInfo();
 		}
+		
 		monsterList.clear();
 		randomNpcs.clear();
 	}
@@ -224,6 +229,7 @@ public class DraconidFortress extends AbstractInstance
 		{
 			return;
 		}
+		
 		Instance instance = killer.getInstanceWorld();
 		if ((instance == null) || (instance.getTemplateId() != INSTANCE_ID))
 		{

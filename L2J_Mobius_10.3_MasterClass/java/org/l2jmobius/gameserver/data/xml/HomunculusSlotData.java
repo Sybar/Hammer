@@ -87,6 +87,7 @@ public class HomunculusSlotData implements IXmlReader
 								break;
 							}
 						}
+						
 						final int slotId = set.getInt("slotId");
 						TEMPLATES.put(slotId, new HomunculusSlotTemplate(slotId, fee, set.getBoolean("isEnabled", false)));
 					}
@@ -107,6 +108,7 @@ public class HomunculusSlotData implements IXmlReader
 				items.add(new ItemHolder(itemId, itemCount));
 			}
 		}
+		
 		return items;
 	}
 	

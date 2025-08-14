@@ -90,6 +90,7 @@ public class AchievementBoxHolder
 			}
 			return;
 		}
+		
 		_monsterPoints += value;
 	}
 	
@@ -108,6 +109,7 @@ public class AchievementBoxHolder
 			}
 			return;
 		}
+		
 		_pvpPoints += value;
 	}
 	
@@ -138,6 +140,7 @@ public class AchievementBoxHolder
 							{
 								state = 1;
 							}
+							
 							final AchievementBoxInfoHolder holder = new AchievementBoxInfoHolder(i, state, type);
 							_achievementBox.add(i - 1, holder);
 						}
@@ -176,6 +179,7 @@ public class AchievementBoxHolder
 				ps.setInt(7 + (i * 2), 0);
 				ps.setInt(8 + (i * 2), 0);
 			}
+			
 			ps.executeUpdate();
 		}
 		catch (SQLException e)
@@ -209,6 +213,7 @@ public class AchievementBoxHolder
 					ps.setInt(7 + (i * 2), 0);
 				}
 			}
+			
 			ps.setInt(14, _owner.getObjectId());
 			ps.execute();
 		}
@@ -237,6 +242,7 @@ public class AchievementBoxHolder
 				break;
 			}
 		}
+		
 		if (free != null)
 		{
 			int rnd = Rnd.get(0, 100);
@@ -254,8 +260,10 @@ public class AchievementBoxHolder
 					break;
 				}
 			}
+			
 			return true;
 		}
+		
 		return false;
 	}
 	
@@ -320,6 +328,7 @@ public class AchievementBoxHolder
 			{
 				cancelTask();
 			}
+			
 			finishAndUnlockChest(slotId);
 		}
 	}
@@ -554,6 +563,7 @@ public class AchievementBoxHolder
 		{
 			calendar.add(Calendar.MONTH, 1);
 		}
+		
 		_pvpEndDate = (int) (calendar.getTimeInMillis() / 1000);
 	}
 }

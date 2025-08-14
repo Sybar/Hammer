@@ -56,6 +56,7 @@ public class Q10881_ForThePride extends Quest
 	private static final int KINGDOM_ROYAL_GUARD_CERTIFICATION = 47846;
 	private static final ItemHolder LIONEL_HUNTERS_LIST_PART_5 = new ItemHolder(47834, 1);
 	private static final int SPELLBOOK_VITALITY_OF_THE_EXALTED = 47855;
+	
 	// Misc
 	private static final int MIN_LEVEL = 104;
 	
@@ -115,6 +116,7 @@ public class Q10881_ForThePride extends Quest
 						{
 							mainQ.notifyEvent("SUBQUEST_FINISHED_NOTIFY", npc, player);
 						}
+						
 						htmltext = event;
 					}
 					else
@@ -125,6 +127,7 @@ public class Q10881_ForThePride extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -180,6 +183,7 @@ public class Q10881_ForThePride extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

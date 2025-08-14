@@ -37,8 +37,10 @@ public class Q00776_SlayDarkLordEkimus extends Quest
 {
 	// NPCs
 	private static final int TEPIOS = 32603;
+	
 	// Boss
 	private static final int EKIMUS = 29150;
+	
 	// Misc
 	private static final int MIN_LEVEL = 95;
 	private static final int FREED_SOUL_CRYSTAL = 38576;
@@ -61,6 +63,7 @@ public class Q00776_SlayDarkLordEkimus extends Quest
 		{
 			return null;
 		}
+		
 		switch (event)
 		{
 			case "32603-02.htm":
@@ -85,6 +88,7 @@ public class Q00776_SlayDarkLordEkimus extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -104,6 +108,7 @@ public class Q00776_SlayDarkLordEkimus extends Quest
 						htmltext = "Complete.html";
 						break;
 					}
+					
 					qs.setState(State.CREATED);
 					// fallthrough
 				}
@@ -126,6 +131,7 @@ public class Q00776_SlayDarkLordEkimus extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	

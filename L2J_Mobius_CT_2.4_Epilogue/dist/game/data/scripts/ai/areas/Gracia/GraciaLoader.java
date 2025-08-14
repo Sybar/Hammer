@@ -27,6 +27,7 @@ import ai.areas.Gracia.AI.EnergySeeds;
 import ai.areas.Gracia.AI.Lindvior;
 import ai.areas.Gracia.AI.StarStones;
 import ai.areas.Gracia.AI.NPC.AbyssGaze.AbyssGaze;
+import ai.areas.Gracia.AI.NPC.DestroyedTumors.DestroyedTumors;
 import ai.areas.Gracia.AI.NPC.EkimusMouth.EkimusMouth;
 import ai.areas.Gracia.AI.NPC.FortuneTelling.FortuneTelling;
 import ai.areas.Gracia.AI.NPC.GeneralDilios.GeneralDilios;
@@ -67,6 +68,8 @@ public class GraciaLoader
 		EnergySeeds.class,
 		Lindvior.class,
 		StarStones.class,
+		DestroyedTumors.class,
+		
 		// NPCs
 		AbyssGaze.class,
 		EkimusMouth.class,
@@ -77,6 +80,7 @@ public class GraciaLoader
 		Nottingale.class,
 		Seyo.class,
 		ZealotOfShilen.class,
+		
 		// Instances
 		SecretArea.class,
 		SeedOfDestruction.class,
@@ -90,6 +94,7 @@ public class GraciaLoader
 		HallOfSufferingDefence.class,
 		HeartInfinityAttack.class,
 		HeartInfinityDefence.class,
+		
 		// Vehicles
 		AirShipGludioGracia.class,
 		KeucereusNorthController.class,

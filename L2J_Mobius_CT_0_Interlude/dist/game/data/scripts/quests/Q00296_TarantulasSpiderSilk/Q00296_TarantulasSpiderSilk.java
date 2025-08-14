@@ -33,9 +33,11 @@ public class Q00296_TarantulasSpiderSilk extends Quest
 	// NPCs
 	private static final int MION = 30519;
 	private static final int DEFENDER_NATHAN = 30548;
+	
 	// Quest Items
 	private static final int TARANTULA_SPIDER_SILK = 1493;
 	private static final int TARANTULA_SPINNERETTE = 1494;
+	
 	// Items
 	private static final int RING_OF_RACCOON = 1508;
 	private static final int RING_OF_FIREFLY = 1509;
@@ -144,6 +146,7 @@ public class Q00296_TarantulasSpiderSilk extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

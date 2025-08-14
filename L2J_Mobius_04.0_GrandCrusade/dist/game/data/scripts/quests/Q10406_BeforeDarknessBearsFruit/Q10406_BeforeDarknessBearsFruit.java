@@ -39,6 +39,7 @@ public class Q10406_BeforeDarknessBearsFruit extends Quest
 	// NPCs
 	private static final int SHUVANN = 33867;
 	private static final int KARTIAS_FLOWER = 19470;
+	
 	// Misc
 	private static final int MIN_LEVEL = 61;
 	private static final int MAX_LEVEL = 65;
@@ -88,11 +89,13 @@ public class Q10406_BeforeDarknessBearsFruit extends Quest
 					{
 						addExpAndSp(player, 13561681, 750);
 					}
+					
 					htmltext = event;
 				}
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -120,6 +123,7 @@ public class Q10406_BeforeDarknessBearsFruit extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -154,6 +158,7 @@ public class Q10406_BeforeDarknessBearsFruit extends Quest
 			npcLogList.add(new NpcLogListHolder(KARTIAS_FLOWER, false, qs.getInt("KILLED_COUNT")));
 			return npcLogList;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

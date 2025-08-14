@@ -37,7 +37,7 @@ import org.l2jmobius.loginserver.network.serverpackets.PlayOk;
  */
 public class RequestServerLogin extends AbstractClientPacket
 {
-	private final static Logger LOGGER = Logger.getLogger(RequestServerLogin.class.getName());
+	private static final Logger LOGGER = Logger.getLogger(RequestServerLogin.class.getName());
 	
 	private final int _key1;
 	private final int _key2;
@@ -109,6 +109,7 @@ public class RequestServerLogin extends AbstractClientPacket
 				getClient().sendPacket(new LoginFail(LoginFail.REASON_ACCESS_FAILED));
 				return;
 			}
+			
 			getClient().setHasAgreed(false);
 		}
 		

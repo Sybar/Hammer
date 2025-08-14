@@ -40,6 +40,7 @@ public class Q00335_TheSongOfTheHunter extends Quest
 	private static final int GREY = 30744;
 	private static final int TOR = 30745;
 	private static final int CYBELLIN = 30746;
+	
 	// Monsters
 	private static final int BREKA_ORC_SHAMAN = 20269;
 	private static final int BREKA_ORC_WARRIOR = 20271;
@@ -117,6 +118,7 @@ public class Q00335_TheSongOfTheHunter extends Quest
 	private static final int HATAR_CHIEFTAIN_KUBEL = 27162;
 	private static final int VANOR_ELDER_KERUNOS = 27163;
 	private static final int KARUL_CHIEF_OROOTO = 27164;
+	
 	// Misc
 	private static final int MIN_LEVEL = 35;
 	private static final int MAX_LEVEL = 45;
@@ -595,6 +597,7 @@ public class Q00335_TheSongOfTheHunter extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -617,6 +620,7 @@ public class Q00335_TheSongOfTheHunter extends Quest
 				{
 					giveItems(player, TEST_INSTRUCTIONS_1, 1);
 				}
+				
 				qs.setMemoState(0);
 				htmltext = event;
 				break;
@@ -755,6 +759,7 @@ public class Q00335_TheSongOfTheHunter extends Quest
 							{
 								i1 = getRandom(12);
 							}
+							
 							i2 = getRandom(6);
 							i3 = getRandom(6) + 6;
 							i4 = getRandom(12);
@@ -771,6 +776,7 @@ public class Q00335_TheSongOfTheHunter extends Quest
 							{
 								i1 = getRandom(12);
 							}
+							
 							i2 = getRandom(6);
 							i3 = getRandom(6) + 6;
 							i4 = getRandom(12);
@@ -860,6 +866,7 @@ public class Q00335_TheSongOfTheHunter extends Quest
 							{
 								i1 = getRandom(10);
 							}
+							
 							i2 = getRandom(5);
 							i3 = getRandom(5) + 5;
 							i4 = getRandom(10);
@@ -876,6 +883,7 @@ public class Q00335_TheSongOfTheHunter extends Quest
 							{
 								i1 = getRandom(10);
 							}
+							
 							i2 = getRandom(5);
 							i3 = getRandom(5) + 5;
 							i4 = getRandom(10);
@@ -918,15 +926,18 @@ public class Q00335_TheSongOfTheHunter extends Quest
 				{
 					giveItems(player, CYBELLINS_DAGGER, 1);
 				}
+				
 				if (getQuestItemsCount(player, CYBELLINS_REQUEST) == 0)
 				{
 					giveItems(player, CYBELLINS_REQUEST, 1);
 				}
+				
 				giveItems(player, BLOOD_CRYSTAL_PURITY_1, 1);
 				if (hasQuestItems(player, BROKEN_BLOOD_CRYSTAL))
 				{
 					takeItems(player, BROKEN_BLOOD_CRYSTAL, -1);
 				}
+				
 				htmltext = event;
 				break;
 			}
@@ -968,6 +979,7 @@ public class Q00335_TheSongOfTheHunter extends Quest
 				{
 					giveAdena(player, 870400, true);
 				}
+				
 				takeItems(player, BLOOD_CRYSTAL_PURITY_2, -1);
 				takeItems(player, BLOOD_CRYSTAL_PURITY_3, -1);
 				takeItems(player, BLOOD_CRYSTAL_PURITY_4, -1);
@@ -1240,6 +1252,7 @@ public class Q00335_TheSongOfTheHunter extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -1551,11 +1564,14 @@ public class Q00335_TheSongOfTheHunter extends Quest
 					{
 						takeItems(player, reward[1], -1);
 					}
+					
 					return (hasQuestItems(player, FIRST_CIRCLE_HUNTER_LICENSE) ? "30745-06a.html" : "30745-06b.html");
 				}
+				
 				return "30745-05.html";
 			}
 		}
+		
 		return null;
 	}
 	

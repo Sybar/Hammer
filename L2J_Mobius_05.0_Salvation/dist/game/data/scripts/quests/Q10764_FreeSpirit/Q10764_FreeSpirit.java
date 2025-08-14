@@ -41,11 +41,14 @@ public class Q10764_FreeSpirit extends Quest
 	private static final int SYLPH = 33967;
 	private static final int LIBERATED_WIND_SPIRIT = 33968;
 	private static final int LIBERATED_TREE_SPIRIT = 33969;
+	
 	// Items
 	private static final int MAGIC_CHAIN_KEY_BUNDLE = 39490;
 	private static final int LOOSENED_CHAIN = 39518;
+	
 	// Location
 	private static final Location SYLPH_LOCATION = new Location(-85001, 106057, -3592);
+	
 	// Misc
 	private static final int MIN_LEVEL = 38;
 	
@@ -99,6 +102,7 @@ public class Q10764_FreeSpirit extends Quest
 				htmltext = null;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -139,12 +143,14 @@ public class Q10764_FreeSpirit extends Quest
 			{
 				qs.setCond(2, true);
 			}
+			
 			htmltext = null;
 		}
 		else
 		{
 			htmltext = npc.getId() + "-01.html";
 		}
+		
 		return htmltext;
 	}
 	

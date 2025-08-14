@@ -36,6 +36,7 @@ public class Q00348_AnArrogantSearch extends Quest
 	private static final int HANELLIN = 30864;
 	private static final int CLAUDIA_ATHEBALT = 31001;
 	private static final int TABLE_OF_VISION = 31646;
+	
 	// Monsters
 	private static final int CRIMSON_DRAKE = 20670;
 	private static final int KADIOS = 20671;
@@ -44,6 +45,7 @@ public class Q00348_AnArrogantSearch extends Quest
 	private static final int GUARDIAN_ANGEL = 20830;
 	private static final int SEAL_ANGEL = 20831;
 	private static final int STONE_WATCHMAN_EZEKIEL = 27296;
+	
 	// Items
 	private static final int SHELL_OF_MONSTERS = 14857;
 	private static final int BOOK_OF_SAINT = 4397;
@@ -163,6 +165,7 @@ public class Q00348_AnArrogantSearch extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -264,6 +267,7 @@ public class Q00348_AnArrogantSearch extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	

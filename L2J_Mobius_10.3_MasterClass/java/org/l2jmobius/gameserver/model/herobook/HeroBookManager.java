@@ -339,6 +339,7 @@ public class HeroBookManager
 				{
 					levelHolder.getItems().forEach(itemHolder -> player.addItem(ItemProcessType.REWARD, itemHolder.getId(), itemHolder.getCount(), player, true));
 				}
+				
 				applyLevelEffects(player);
 			}
 			else
@@ -348,6 +349,7 @@ public class HeroBookManager
 				resultStatus = false;
 			}
 		}
+		
 		player.sendPacket(new ExHeroBookInfo(holder));
 		player.sendPacket(new ExHeroBookEnchant(resultStatus ? 0 : 1));
 	}
@@ -395,12 +397,15 @@ public class HeroBookManager
 			{
 				break;
 			}
+			
 			if (level.getSkills() == null)
 			{
 				continue;
 			}
+			
 			applySkills.addAll(level.getSkills());
 		}
+		
 		for (SkillHolder skill : applySkills)
 		{
 			player.removeSkill(skill.getSkill(), false, true);

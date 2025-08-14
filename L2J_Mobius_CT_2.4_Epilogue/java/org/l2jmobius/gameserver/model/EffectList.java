@@ -1,18 +1,22 @@
 /*
- * This file is part of the L2J Mobius project.
+ * Copyright (c) 2013 L2jMobius
  * 
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
  * 
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
+ * The above copyright notice and this permission notice shall be
+ * included in all copies or substantial portions of the Software.
  * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+ * WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR
+ * IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 package org.l2jmobius.gameserver.model;
 
@@ -55,7 +59,7 @@ import org.l2jmobius.gameserver.network.serverpackets.ShortBuffStatusUpdate;
  * Manages the logic that controls whether a buff is added, remove, replaced or set inactive.<br>
  * Uses maps with skill ID as key and buff info DTO as value to avoid iterations.<br>
  * Methods may resemble List interface, although it doesn't implement such interface.
- * @author Zoey76
+ * @author Zoey76, Mobius
  */
 public class EffectList
 {
@@ -215,6 +219,7 @@ public class EffectList
 		{
 			effects = _buffs;
 		}
+		
 		return effects;
 	}
 	
@@ -294,6 +299,7 @@ public class EffectList
 				}
 			}
 		}
+		
 		return null;
 	}
 	
@@ -470,6 +476,7 @@ public class EffectList
 				return true;
 			}
 		}
+		
 		return false;
 	}
 	
@@ -538,8 +545,10 @@ public class EffectList
 		
 		// Removes the buff from the given effect list.
 		buffs.remove(info);
+		
 		// Stop the buff effects.
 		info.stopAllEffects(type, broadcast);
+		
 		// If it's a hidden buff that ends, then decrease hidden buff count.
 		if (!info.isInUse())
 		{
@@ -559,10 +568,13 @@ public class EffectList
 				{
 					// Sets the buff in use again.
 					buff.setInUse(true);
+					
 					// Adds the stats.
 					buff.addStats();
+					
 					// Adds the buff to the stack.
 					_stackedEffects.put(buff.getSkill().getAbnormalType(), buff);
+					
 					// If it's a hidden buff that gets activated, then decrease hidden buff count.
 					_hiddenBuffs.decrementAndGet();
 					break;
@@ -584,10 +596,13 @@ public class EffectList
 	{
 		// Stop buffs.
 		stopAllBuffs(false);
+		
 		// Stop dances and songs.
 		stopAllDances(false);
+		
 		// Stop toggles.
 		stopAllToggles(false);
+		
 		// Stop debuffs.
 		stopAllDebuffs(false);
 		
@@ -613,6 +628,7 @@ public class EffectList
 					stopAndRemove(true, info, _buffs);
 				}
 			}
+			
 			update = true;
 		}
 		
@@ -625,6 +641,7 @@ public class EffectList
 					stopAndRemove(true, info, _debuffs);
 				}
 			}
+			
 			update = true;
 		}
 		
@@ -637,6 +654,7 @@ public class EffectList
 					stopAndRemove(true, info, _dances);
 				}
 			}
+			
 			update = true;
 		}
 		
@@ -649,6 +667,7 @@ public class EffectList
 					stopAndRemove(true, info, _toggles);
 				}
 			}
+			
 			update = true;
 		}
 		
@@ -668,18 +687,22 @@ public class EffectList
 		{
 			stopAndRemove(broadcast, info, _buffs);
 		}
+		
 		for (BuffInfo info : _dances)
 		{
 			stopAndRemove(broadcast, info, _dances);
 		}
+		
 		for (BuffInfo info : _toggles)
 		{
 			stopAndRemove(broadcast, info, _toggles);
 		}
+		
 		for (BuffInfo info : _debuffs)
 		{
 			stopAndRemove(broadcast, info, _debuffs);
 		}
+		
 		for (BuffInfo info : _passives)
 		{
 			stopAndRemove(broadcast, info, _passives);
@@ -707,6 +730,7 @@ public class EffectList
 					stopAndRemove(true, info, _buffs);
 				}
 			}
+			
 			update = true;
 		}
 		
@@ -719,6 +743,7 @@ public class EffectList
 					stopAndRemove(true, info, _debuffs);
 				}
 			}
+			
 			update = true;
 		}
 		
@@ -731,6 +756,7 @@ public class EffectList
 					stopAndRemove(true, info, _dances);
 				}
 			}
+			
 			update = true;
 		}
 		
@@ -743,6 +769,7 @@ public class EffectList
 					stopAndRemove(true, info, _toggles);
 				}
 			}
+			
 			update = true;
 		}
 		
@@ -784,7 +811,9 @@ public class EffectList
 		{
 			return;
 		}
+		
 		_toggles.forEach(b -> stopAndRemove(update, b, _toggles));
+		
 		// Update effect flags and icons.
 		updateEffectList(update);
 	}
@@ -799,7 +828,9 @@ public class EffectList
 		{
 			return;
 		}
+		
 		_dances.forEach(b -> stopAndRemove(update, b, _dances));
+		
 		// Update effect flags and icons.
 		updateEffectList(update);
 	}
@@ -814,7 +845,9 @@ public class EffectList
 		{
 			return;
 		}
+		
 		_debuffs.forEach(b -> stopAndRemove(update, b, _debuffs));
+		
 		// Update effect flags and icons.
 		updateEffectList(update);
 	}
@@ -847,6 +880,7 @@ public class EffectList
 					action.accept(info);
 				}
 			}
+			
 			update = true;
 		}
 		
@@ -859,6 +893,7 @@ public class EffectList
 					action.accept(info);
 				}
 			}
+			
 			update = true;
 		}
 		
@@ -871,6 +906,7 @@ public class EffectList
 					action.accept(info);
 				}
 			}
+			
 			update = true;
 		}
 		
@@ -883,6 +919,7 @@ public class EffectList
 					action.accept(info);
 				}
 			}
+			
 			update = true;
 		}
 		
@@ -938,6 +975,7 @@ public class EffectList
 			stopSkillEffects(removeType, old.getSkill());
 			return true;
 		}
+		
 		return false;
 	}
 	
@@ -963,6 +1001,7 @@ public class EffectList
 					stopAndRemove(true, info, _buffs);
 				}
 			}
+			
 			update = true;
 		}
 		
@@ -975,6 +1014,7 @@ public class EffectList
 					stopAndRemove(true, info, _debuffs);
 				}
 			}
+			
 			update = true;
 		}
 		
@@ -987,6 +1027,7 @@ public class EffectList
 					stopAndRemove(true, info, _dances);
 				}
 			}
+			
 			update = true;
 		}
 		
@@ -999,6 +1040,7 @@ public class EffectList
 					stopAndRemove(true, info, _toggles);
 				}
 			}
+			
 			update = true;
 		}
 		
@@ -1025,6 +1067,7 @@ public class EffectList
 						stopAndRemove(true, info, _buffs);
 					}
 				}
+				
 				update = true;
 			}
 			
@@ -1037,6 +1080,7 @@ public class EffectList
 						stopAndRemove(true, info, _dances);
 					}
 				}
+				
 				update = true;
 			}
 			
@@ -1049,6 +1093,7 @@ public class EffectList
 						stopAndRemove(true, info, _toggles);
 					}
 				}
+				
 				update = true;
 			}
 		}
@@ -1062,6 +1107,7 @@ public class EffectList
 					stopAndRemove(true, info, _debuffs);
 				}
 			}
+			
 			update = true;
 		}
 		
@@ -1078,6 +1124,7 @@ public class EffectList
 		{
 			_partyOnly = true;
 		}
+		
 		// Update effect flags and icons.
 		updateEffectList(true);
 	}
@@ -1182,6 +1229,7 @@ public class EffectList
 				update |= function.apply(info);
 			}
 		}
+		
 		// Update effect flags and icons.
 		updateEffectList(update);
 	}
@@ -1200,6 +1248,7 @@ public class EffectList
 		
 		// Remove the effect from creature effects.
 		stopAndRemove(true, type, info, getEffectList(info.getSkill()));
+		
 		// Update effect flags and icons.
 		updateEffectList(true);
 	}
@@ -1276,6 +1325,7 @@ public class EffectList
 				if (_stackedEffects.containsKey(skill.getAbnormalType()))
 				{
 					BuffInfo stackedInfo = _stackedEffects.get(skill.getAbnormalType());
+					
 					// Skills are only replaced if the incoming buff has greater or equal abnormal level.
 					if ((stackedInfo != null) && (skill.getAbnormalLevel() >= stackedInfo.getSkill().getAbnormalLevel()))
 					{
@@ -1294,6 +1344,7 @@ public class EffectList
 							if (stackedInfo != null)
 							{
 								stackedInfo.setInUse(false);
+								
 								// Remove stats
 								stackedInfo.removeStats();
 								_hiddenBuffs.incrementAndGet();
@@ -1305,6 +1356,7 @@ public class EffectList
 							{
 								stopSkillEffects(SkillFinishType.NORMAL, skill.getAbnormalType());
 							}
+							
 							stopSkillEffects(SkillFinishType.NORMAL, skill.getAbnormalType());
 						}
 					}
@@ -1313,12 +1365,14 @@ public class EffectList
 						return;
 					}
 				}
+				
 				_stackedEffects.put(skill.getAbnormalType(), info);
 			}
 		}
 		
 		// Select the map that holds the effects related to this skill.
 		final Queue<BuffInfo> effects = getEffectList(skill);
+		
 		// Remove first buff when buff list is full.
 		if (!skill.isDebuff() && !skill.isToggle() && !skill.is7Signs() && !doesStack(skill))
 		{
@@ -1352,8 +1406,10 @@ public class EffectList
 		// After removing old buff (same ID) or stacked buff (same abnormal type),
 		// Add the buff to the end of the effect list.
 		effects.add(info);
+		
 		// Initialize effects.
 		info.initializeEffects();
+		
 		// Update effect flags and icons.
 		updateEffectList(true);
 	}
@@ -1672,6 +1728,7 @@ public class EffectList
 				}
 			}
 		}
+		
 		_effectFlags = flags;
 	}
 	

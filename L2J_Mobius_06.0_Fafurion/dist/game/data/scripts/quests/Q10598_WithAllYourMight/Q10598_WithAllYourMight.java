@@ -42,6 +42,7 @@ public class Q10598_WithAllYourMight extends Quest
 	// NPCs
 	private static final int ASTERIOS = 34411;
 	private static final int NERUPA = 34412;
+	
 	// Monsters
 	private static final int[] MONSTERS =
 	{
@@ -62,11 +63,14 @@ public class Q10598_WithAllYourMight extends Quest
 		24127, // Lithra Aprias
 		24128 // Nerupa Aprias
 	};
+	
 	// Items
 	private static final int LITHRAS_CONSIDERATION = 48366;
+	
 	// Rewards
 	private static final int ELCYUM_CRYSTAL = 36514;
 	private static final int RUNE_STONE = 39738;
+	
 	// Misc
 	private static final int MIN_LEVEL = 103;
 	
@@ -129,6 +133,7 @@ public class Q10598_WithAllYourMight extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -192,6 +197,7 @@ public class Q10598_WithAllYourMight extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

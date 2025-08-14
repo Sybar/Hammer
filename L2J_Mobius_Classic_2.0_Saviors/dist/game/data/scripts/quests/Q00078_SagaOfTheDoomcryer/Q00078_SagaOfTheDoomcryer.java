@@ -49,6 +49,7 @@ public class Q00078_SagaOfTheDoomcryer extends Quest
 	private static final int TABLET_OF_VISION_3 = 31651;
 	private static final int TABLET_OF_VISION_4 = 31657;
 	private static final int TAKAI_ZU_DUDA_MARA = 31642;
+	
 	// Monsters
 	private static final int ICE_MONSTER = 27316;
 	private static final int SPIRIT_OF_A_DROWNED = 27317;
@@ -64,6 +65,7 @@ public class Q00078_SagaOfTheDoomcryer extends Quest
 	private static final int SHARUSHI_MOUTH_MUDAHA = 27295;
 	private static final int HALISHA_ARCHON = 27219;
 	private static final int LIZARD_TOTEM_SHARUHI = 27285;
+	
 	// Items
 	private static final int ICE_CRYSTAL_FRAGMENT = 49812;
 	private static final int HALISHA_BADGE = 7493;
@@ -72,8 +74,10 @@ public class Q00078_SagaOfTheDoomcryer extends Quest
 	private static final int RESONANCE_AMULET_3 = 7338;
 	private static final int RESONANCE_AMULET_4 = 7369;
 	private static final int BITTER_COLD_VODKA = 49843;
+	
 	// Reward
 	private static final int BOOK_BLACK_BEAR = 90042;
+	
 	// Misc
 	private static final String KILL_COUNT_VAR = "KillCount";
 	
@@ -96,6 +100,7 @@ public class Q00078_SagaOfTheDoomcryer extends Quest
 		{
 			return null;
 		}
+		
 		String htmltext = event;
 		switch (event)
 		{
@@ -243,6 +248,7 @@ public class Q00078_SagaOfTheDoomcryer extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -433,6 +439,7 @@ public class Q00078_SagaOfTheDoomcryer extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -503,6 +510,7 @@ public class Q00078_SagaOfTheDoomcryer extends Quest
 						{
 							qs.set(KILL_COUNT_VAR, count + 1);
 						}
+						
 						if (count >= 20)
 						{
 							qs.setCond(8, true);
@@ -529,8 +537,10 @@ public class Q00078_SagaOfTheDoomcryer extends Quest
 			{
 				holder.add(new NpcLogListHolder(WATCHER_OF_THE_ANCIENT_PLEDGE, false, guardiancount));
 			}
+			
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

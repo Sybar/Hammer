@@ -51,10 +51,12 @@ public final class Q10854_ToSeizeTheFortress extends Quest
 	private static final int HAYUK = 34060;
 	private static final int ELISE = 34061;
 	private static final int ELIYAH = 34062;
+	
 	// Mobs
 	private static final int GEORK = 23586;
 	private static final int QUARTERMASTER = 23588;
 	private static final int BURNSTEIN = 26136;
+	
 	// Items
 	private static final int REPORT_BARTON = 47193;
 	private static final int REPORT_HAYUK = 47194;
@@ -62,6 +64,7 @@ public final class Q10854_ToSeizeTheFortress extends Quest
 	private static final int REPORT_ELIYAH = 47196;
 	private static final int RUNE_STONE = 39738;
 	private static final int SPELLBOOK_WAR_HORSE = 47149;
+	
 	// Misc
 	private static final int MIN_LEVEL = 101;
 	private static boolean _bartonReport = false;
@@ -118,9 +121,11 @@ public final class Q10854_ToSeizeTheFortress extends Quest
 							htmltext = "royal_maestre_q10854_01.htm";
 							break;
 						}
+						
 						htmltext = "royal_maestre_q10854_02.htm";
 						break;
 					}
+					
 					htmltext = "royal_maestre_q10854_03.htm";
 					break;
 				}
@@ -142,6 +147,7 @@ public final class Q10854_ToSeizeTheFortress extends Quest
 									htmltext = "royal_maestre_q10854_08.htm";
 									break;
 								}
+								
 								htmltext = "royal_maestre_q10854_07.htm";
 								break;
 							}
@@ -178,12 +184,14 @@ public final class Q10854_ToSeizeTheFortress extends Quest
 								htmltext = "member_barton_q10854_04.htm";
 								break;
 							}
+							
 							if (!_bartonReport)
 							{
 								giveItems(player, REPORT_BARTON, 1);
 								htmltext = "member_barton_q10854_03.htm";
 								break;
 							}
+							
 							htmltext = "member_barton_q10854_01.htm";
 						}
 						break;
@@ -197,12 +205,14 @@ public final class Q10854_ToSeizeTheFortress extends Quest
 								htmltext = "member_hayuk_q10854_04.htm";
 								break;
 							}
+							
 							if (!_hayukReport)
 							{
 								giveItems(player, REPORT_HAYUK, 1);
 								htmltext = "member_hayuk_q10854_03.htm";
 								break;
 							}
+							
 							htmltext = "member_hayuk_q10854_01.htm";
 						}
 						break;
@@ -216,12 +226,14 @@ public final class Q10854_ToSeizeTheFortress extends Quest
 								htmltext = "member_alice_q10854_04.htm";
 								break;
 							}
+							
 							if (!_eliseReport)
 							{
 								giveItems(player, REPORT_ELISE, 1);
 								htmltext = "member_alice_q10854_03.htm";
 								break;
 							}
+							
 							htmltext = "member_alice_q10854_01.htm";
 						}
 						break;
@@ -235,12 +247,14 @@ public final class Q10854_ToSeizeTheFortress extends Quest
 								htmltext = "member_elliyah_q10854_04.htm";
 								break;
 							}
+							
 							if (!_eliyahReport)
 							{
 								giveItems(player, REPORT_ELIYAH, 1);
 								htmltext = "member_elliyah_q10854_03.htm";
 								break;
 							}
+							
 							htmltext = "member_elliyah_q10854_01.htm";
 						}
 						break;
@@ -254,6 +268,7 @@ public final class Q10854_ToSeizeTheFortress extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -353,6 +368,7 @@ public final class Q10854_ToSeizeTheFortress extends Quest
 							qs.set("killed_" + GEORK, 1);
 							playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 						}
+						
 						sendNpcLogList(player);
 						break;
 					}
@@ -363,6 +379,7 @@ public final class Q10854_ToSeizeTheFortress extends Quest
 							qs.set("killed_" + GEORK, 1);
 							playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 						}
+						
 						sendNpcLogList(player);
 						break;
 					}
@@ -394,6 +411,7 @@ public final class Q10854_ToSeizeTheFortress extends Quest
 			holder.add(new NpcLogListHolder(QUARTERMASTER, false, qs.getInt("killed_" + QUARTERMASTER)));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 	

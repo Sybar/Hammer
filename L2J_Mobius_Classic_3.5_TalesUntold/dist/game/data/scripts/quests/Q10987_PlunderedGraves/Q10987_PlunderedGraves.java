@@ -43,17 +43,20 @@ public class Q10987_PlunderedGraves extends Quest
 	// NPCs
 	private static final int NEWBIE_GUIDE = 30602;
 	private static final int USKA = 30560;
+	
 	// Monsters
 	private static final int KASHA_WOLF = 20475;
 	private static final int KASHA_TIMBER_WOLF = 20477; // NOTE: Kasha Forest Wolf in old client
 	private static final int GOBLIN_TOMB_RAIDER = 20319;
 	private static final int RAKECLAW_IMP_HUNTER = 20312;
+	
 	// Items
 	private static final ItemHolder SOE_TO_USKA = new ItemHolder(91649, 1);
 	private static final ItemHolder SOE_NOVICE = new ItemHolder(10650, 10);
 	private static final ItemHolder RING_NOVICE = new ItemHolder(49041, 2);
 	private static final ItemHolder EARRING_NOVICE = new ItemHolder(49040, 2);
 	private static final ItemHolder NECKLACE_NOVICE = new ItemHolder(49039, 1);
+	
 	// Misc
 	private static final int MAX_LEVEL = 20;
 	private static final String KILL_COUNT_VAR = "KillCount";
@@ -113,6 +116,7 @@ public class Q10987_PlunderedGraves extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -150,6 +154,7 @@ public class Q10987_PlunderedGraves extends Quest
 			holder.add(new NpcLogListHolder(NpcStringId.EXPEL_GRAVE_ROBBER.getId(), true, qs.getInt(KILL_COUNT_VAR)));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 	
@@ -191,6 +196,7 @@ public class Q10987_PlunderedGraves extends Quest
 				htmltext = getAlreadyCompletedMsg(player);
 			}
 		}
+		
 		return htmltext;
 	}
 }

@@ -31,6 +31,7 @@ public class Q00383_TreasureHunt extends Quest
 	// NPCs
 	private static final int ESPEN = 30890;
 	private static final int PIRATE_CHEST = 31148;
+	
 	// Items
 	private static final int PIRATE_TREASURE_MAP = 5915;
 	private static final int THIEF_KEY = 1661;

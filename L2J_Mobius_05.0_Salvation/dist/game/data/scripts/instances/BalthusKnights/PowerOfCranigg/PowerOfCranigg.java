@@ -36,6 +36,7 @@ public final class PowerOfCranigg extends AbstractInstance
 {
 	// NPCs
 	private static final int BOW_MASTER = 34389;
+	
 	// Misc
 	private static final int TEMPLATE_ID = 275;
 	
@@ -71,6 +72,7 @@ public final class PowerOfCranigg extends AbstractInstance
 				}
 			}
 		}
+		
 		return null;
 	}
 	
@@ -86,6 +88,7 @@ public final class PowerOfCranigg extends AbstractInstance
 				enterInstance(player, npc, TEMPLATE_ID);
 			}
 		}
+		
 		return htmltext;
 	}
 	

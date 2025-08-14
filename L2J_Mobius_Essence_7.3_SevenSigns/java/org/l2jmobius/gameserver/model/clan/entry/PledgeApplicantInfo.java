@@ -58,6 +58,7 @@ public class PledgeApplicantInfo
 		{
 			_playerName = getPlayer().getName();
 		}
+		
 		return _playerName;
 	}
 	
@@ -67,6 +68,7 @@ public class PledgeApplicantInfo
 		{
 			_playerLvl = getPlayer().getLevel();
 		}
+		
 		return _playerLvl;
 	}
 	
@@ -76,6 +78,7 @@ public class PledgeApplicantInfo
 		{
 			_classId = getPlayer().getPlayerClass().getId();
 		}
+		
 		return _classId;
 	}
 	

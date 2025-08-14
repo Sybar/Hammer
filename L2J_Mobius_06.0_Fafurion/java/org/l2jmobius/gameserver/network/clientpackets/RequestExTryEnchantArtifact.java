@@ -154,6 +154,7 @@ public class RequestExTryEnchantArtifact extends ClientPacket
 				player.sendPacket(ExTryEnchantArtifactResult.ERROR_PACKET);
 				return;
 			}
+			
 			player.destroyItem(ItemProcessType.FEE, ingredient, 1, player, true);
 		}
 		

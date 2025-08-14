@@ -121,8 +121,10 @@ public class FishingBait
 			{
 				return fishingCatchData;
 			}
+			
 			random -= fishingCatchData.getChance();
 		}
+		
 		return null;
 	}
 }

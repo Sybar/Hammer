@@ -44,6 +44,7 @@ public class ResidenceOfQueenNebula extends AbstractInstance
 	private static final int IRIS = 34046;
 	private static final int NEBULA = 29106;
 	private static final int WATER_SLIME = 29111;
+	
 	// Skills
 	private static final int AQUA_RAGE = 50036;
 	private static final SkillHolder AQUA_RAGE_1 = new SkillHolder(AQUA_RAGE, 1);
@@ -52,6 +53,7 @@ public class ResidenceOfQueenNebula extends AbstractInstance
 	private static final SkillHolder AQUA_RAGE_4 = new SkillHolder(AQUA_RAGE, 4);
 	private static final SkillHolder AQUA_RAGE_5 = new SkillHolder(AQUA_RAGE, 5);
 	private static final SkillHolder AQUA_SUMMON = new SkillHolder(50037, 1);
+	
 	// Misc
 	private static final int TEMPLATE_ID = 196;
 	
@@ -85,6 +87,7 @@ public class ResidenceOfQueenNebula extends AbstractInstance
 					{
 						startQuestTimer("CAST_AQUA_RAGE", 60000 + getRandom(-15000, 15000), npc, plr);
 					}
+					
 					if (npc.getId() == NEBULA)
 					{
 						npc.doCast(AQUA_SUMMON.getSkill());
@@ -163,6 +166,7 @@ public class ResidenceOfQueenNebula extends AbstractInstance
 				break;
 			}
 		}
+		
 		return null;
 	}
 	

@@ -51,8 +51,10 @@ public class TerritoryWarSuperClass extends Quest
 	public int[] LEADER_IDS;
 	public int[] GUARD_IDS;
 	public String[] npcString = {};
+	
 	// "Protect the ..." quests variables
 	public int[] NPC_IDS;
+	
 	// "Kill The ..."
 	public int[] CLASS_IDS;
 	public int RANDOM_MIN;
@@ -98,6 +100,7 @@ public class TerritoryWarSuperClass extends Quest
 				kill = qs.getInt("kill") + 1;
 				max = qs.getInt("max");
 			}
+			
 			if (kill >= max)
 			{
 				TerritoryWarManager.getInstance().giveTWQuestPoint(player);
@@ -158,6 +161,7 @@ public class TerritoryWarSuperClass extends Quest
 						{
 							qs = newQuestState(pl);
 						}
+						
 						if (!qs.isStarted())
 						{
 							qs.setState(State.STARTED, false);
@@ -194,6 +198,7 @@ public class TerritoryWarSuperClass extends Quest
 						handleStepsForHonor(actingPlayer);
 						handleBecomeMercenaryQuest(actingPlayer, false);
 					}
+					
 					handleKillTheQuest(pl);
 				}
 			}
@@ -221,6 +226,7 @@ public class TerritoryWarSuperClass extends Quest
 			{
 				qs = territoryQuest.newQuestState(player);
 			}
+			
 			qs.setState(State.STARTED, false);
 			qs.setCond(1);
 			
@@ -235,6 +241,7 @@ public class TerritoryWarSuperClass extends Quest
 					{
 						qs = killthe.newQuestState(player);
 					}
+					
 					player.addNotifyQuestOfDeath(qs);
 				}
 				else
@@ -294,6 +301,7 @@ public class TerritoryWarSuperClass extends Quest
 				{
 					return;
 				}
+				
 				if ((caster.getSiegeSide() - 80) == ward.getOwnerCastleId())
 				{
 					for (TerritoryNPCSpawn wardSpawn : TerritoryWarManager.getInstance().getTerritory(ward.getOwnerCastleId()).getOwnedWard())
@@ -325,6 +333,7 @@ public class TerritoryWarSuperClass extends Quest
 		{
 			addKillId(mobid);
 		}
+		
 		for (int mobid : GUARD_IDS)
 		{
 			addKillId(mobid);
@@ -351,6 +360,7 @@ public class TerritoryWarSuperClass extends Quest
 				{
 					qs.setState(State.STARTED, false);
 					qs.setCond(1);
+					
 					// register player on Death
 					if (player.getLevel() >= 61)
 					{
@@ -362,6 +372,7 @@ public class TerritoryWarSuperClass extends Quest
 							{
 								qs = killthe.newQuestState(player);
 							}
+							
 							player.addNotifyQuestOfDeath(qs);
 						}
 						else
@@ -381,6 +392,7 @@ public class TerritoryWarSuperClass extends Quest
 							qs.exitQuest(false);
 						}
 					}
+					
 					// unregister player on Death
 					final TerritoryWarSuperClass killthe = TerritoryWarSuperClassLoader.getKillTheScripts().get(player.getClassIndex());
 					if (killthe != null)

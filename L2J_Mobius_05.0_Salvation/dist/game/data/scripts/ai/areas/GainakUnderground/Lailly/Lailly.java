@@ -38,6 +38,7 @@ public class Lailly extends AbstractNpcAI
 {
 	// NPCs
 	private static final int LAILLY = 34181;
+	
 	// Instances
 	private static final int INSTANCE_TAUTI = 261;
 	private static final int INSTANCE_KELBIM = 262;
@@ -82,10 +83,12 @@ public class Lailly extends AbstractNpcAI
 					}
 					break;
 				}
+				
 				htmltext = "34181-1.html";
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

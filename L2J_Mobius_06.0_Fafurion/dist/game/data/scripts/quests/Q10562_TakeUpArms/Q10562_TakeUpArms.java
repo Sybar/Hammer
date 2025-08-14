@@ -38,6 +38,7 @@ public class Q10562_TakeUpArms extends Quest
 	// NPCs
 	private static final int HERPHAH = 34362;
 	private static final int PENNY = 34413;
+	
 	// Rewards
 	private static final long EXP = 7123508455L;
 	private static final int SP = 6411158;
@@ -46,6 +47,7 @@ public class Q10562_TakeUpArms extends Quest
 	private static final int PA_ART_OF_SEDUCTION = 37928;
 	private static final int LA_VIE_EN_ROSES_NOBLE_BROOCH = 38767;
 	private static final int EMERALD = 38880;
+	
 	// Misc
 	private static final int MIN_LEVEL = 85;
 	private static final int MAX_LEVEL = 99;
@@ -102,6 +104,7 @@ public class Q10562_TakeUpArms extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -166,6 +169,7 @@ public class Q10562_TakeUpArms extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

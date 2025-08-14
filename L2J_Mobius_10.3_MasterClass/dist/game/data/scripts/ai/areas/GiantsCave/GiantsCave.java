@@ -93,6 +93,7 @@ public class GiantsCave extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -131,6 +132,7 @@ public class GiantsCave extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return npc.getId() + ".html";
 	}
 	

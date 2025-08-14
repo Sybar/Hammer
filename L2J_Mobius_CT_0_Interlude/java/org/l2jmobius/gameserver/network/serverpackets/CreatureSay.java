@@ -78,6 +78,7 @@ public class CreatureSay extends ServerPacket
 		{
 			_parameters = new ArrayList<>();
 		}
+		
 		_parameters.add(text);
 	}
 	
@@ -95,6 +96,7 @@ public class CreatureSay extends ServerPacket
 		{
 			buffer.writeInt(_charId);
 		}
+		
 		if (_messageId != 0)
 		{
 			buffer.writeInt(_messageId);
@@ -117,7 +119,7 @@ public class CreatureSay extends ServerPacket
 	{
 		if (player != null)
 		{
-			player.broadcastSnoop(_chatType, _senderName, _text);
+			player.broadcastSnoop(_chatType, _senderName, _text, this);
 		}
 	}
 }

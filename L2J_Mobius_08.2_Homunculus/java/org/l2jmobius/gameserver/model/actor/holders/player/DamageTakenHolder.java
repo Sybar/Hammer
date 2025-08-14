@@ -53,6 +53,7 @@ public class DamageTakenHolder
 		{
 			_damageTakenType = DamageTakenType.NORMAL_DAMAGE;
 		}
+		
 		_damage = damage;
 	}
 	

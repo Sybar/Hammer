@@ -36,10 +36,12 @@ public class AltarOfSouls extends AbstractNpcAI
 	private static final int LADAR = 25942;
 	private static final int CASSIUS = 25943;
 	private static final int TERAKAN = 25944;
+	
 	// Items
 	private static final int APPARITION_STONE_88 = 38572;
 	private static final int APPARITION_STONE_93 = 38573;
 	private static final int APPARITION_STONE_98 = 38574;
+	
 	// Misc
 	private Npc BOSS_88;
 	private Npc BOSS_93;
@@ -63,12 +65,14 @@ public class AltarOfSouls extends AbstractNpcAI
 				{
 					return "33920-4.html";
 				}
+				
 				if (hasQuestItems(player, APPARITION_STONE_88))
 				{
 					takeItems(player, APPARITION_STONE_88, 1);
 					BOSS_88 = addSpawn(TERAKAN, player.getX() + getRandom(-300, 300), player.getY() + getRandom(-300, 300), player.getZ() + 20, getRandom(64000), false, 0, true);
 					return "33920-1.html";
 				}
+				
 				return "33920-7.html";
 			}
 			case "request_boss_93":
@@ -77,12 +81,14 @@ public class AltarOfSouls extends AbstractNpcAI
 				{
 					return "33920-5.html";
 				}
+				
 				if (hasQuestItems(player, APPARITION_STONE_93))
 				{
 					takeItems(player, APPARITION_STONE_93, 1);
 					BOSS_93 = addSpawn(CASSIUS, player.getX() + getRandom(-300, 300), player.getY() + getRandom(-300, 300), player.getZ() + 20, getRandom(64000), false, 0, true);
 					return "33920-2.html";
 				}
+				
 				return "33920-8.html";
 			}
 			case "request_boss_98":
@@ -91,15 +97,18 @@ public class AltarOfSouls extends AbstractNpcAI
 				{
 					return "33920-6.html";
 				}
+				
 				if (hasQuestItems(player, APPARITION_STONE_98))
 				{
 					takeItems(player, APPARITION_STONE_98, 1);
 					BOSS_98 = addSpawn(LADAR, player.getX() + getRandom(-300, 300), player.getY() + getRandom(-300, 300), player.getZ() + 20, getRandom(64000), false, 0, true);
 					return "33920-3.html";
 				}
+				
 				return "33920-9.html";
 			}
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	

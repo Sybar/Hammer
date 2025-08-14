@@ -1724,9 +1724,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="price" val="24236000" />
 		<!-- H5 Price -->
-		<cond msgId="600">
+		<conditions msgId="600">
 			<player categoryType="GROWN_UP_WOLF_GROUP" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="mDef">14</stat>
 			<stat type="pDef">160</stat>

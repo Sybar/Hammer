@@ -39,14 +39,16 @@ public class Self implements ITargetTypeHandler
 	@Override
 	public WorldObject getTarget(Creature creature, WorldObject selectedTarget, Skill skill, boolean forceUse, boolean dontMove, boolean sendMessage)
 	{
-		if (creature.isInsideZone(ZoneId.PEACE) && skill.isBad())
+		if (creature.isInsideZone(ZoneId.PEACE) && skill.hasNegativeEffect())
 		{
 			if (sendMessage)
 			{
 				creature.sendPacket(SystemMessageId.A_MALICIOUS_SKILL_CANNOT_BE_USED_IN_A_PEACE_ZONE);
 			}
+			
 			return null;
 		}
+		
 		return creature;
 	}
 }

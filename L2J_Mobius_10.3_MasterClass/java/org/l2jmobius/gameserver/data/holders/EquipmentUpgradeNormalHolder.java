@@ -64,11 +64,13 @@ public class EquipmentUpgradeNormalHolder
 		{
 			_items.put(UpgradeDataType.MATERIAL, materialItems);
 		}
+		
 		_items.put(UpgradeDataType.ON_SUCCESS, onSuccessItems);
 		if (onFailureItems != null)
 		{
 			_items.put(UpgradeDataType.ON_FAILURE, onFailureItems);
 		}
+		
 		if (bonusItems != null)
 		{
 			_items.put(UpgradeDataType.BONUS_TYPE, bonusItems);
@@ -116,6 +118,7 @@ public class EquipmentUpgradeNormalHolder
 		{
 			return false;
 		}
+		
 		return _items.containsKey(upgradeDataType);
 	}
 }

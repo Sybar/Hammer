@@ -21,6 +21,7 @@
 package ai.bosses.Anakim;
 
 import java.util.Calendar;
+import java.util.Collection;
 import java.util.List;
 
 import org.l2jmobius.Config;
@@ -59,13 +60,14 @@ public class Anakim extends AbstractNpcAI
 	private static final int ALIVE = 0;
 	private static final int FIGHTING = 1;
 	private static final int DEAD = 2;
+	
 	// NPCs
 	private static final int ANAKIM = 29348;
 	private static final int EXIST_CUBIC = 31109;
 	private static final int ANAKIM_CUBIC = 31111;
-	//@formatter:off
+	// @formatter:off
     private static final int[] ANAKIM_MINIONS = {29349, 29350, 29351};
-    //@formatter:on	
+    // @formatter:on
 	private static final int[] ALL_MOBS =
 	{
 		ANAKIM,
@@ -73,9 +75,11 @@ public class Anakim extends AbstractNpcAI
 		ANAKIM_MINIONS[1],
 		ANAKIM_MINIONS[2],
 	};
+	
 	// Misc
 	private static final Location ENTER_ANAKIM_LOC = new Location(184569, -12134, -5499);
 	private static final ZoneType BOSS_ZONE = ZoneManager.getInstance().getZoneById(12003);
+	
 	// Vars
 	private static long _lastAction;
 	private static Npc _anakimBoss;
@@ -146,6 +150,7 @@ public class Anakim extends AbstractNpcAI
 							}
 						}
 					}
+					
 					startQuestTimer("end_anakim", 2000, null, null);
 				}
 				else
@@ -176,6 +181,7 @@ public class Anakim extends AbstractNpcAI
 				{
 					_anakimBoss.deleteMe();
 				}
+				
 				BOSS_ZONE.oustAllPlayers();
 				if (GrandBossManager.getInstance().getStatus(ANAKIM) != DEAD)
 				{
@@ -189,6 +195,7 @@ public class Anakim extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	
@@ -202,6 +209,7 @@ public class Anakim extends AbstractNpcAI
 			{
 				return "31101-01.html";
 			}
+			
 			if (!player.isInParty())
 			{
 				final NpcHtmlMessage packet = new NpcHtmlMessage(npc.getObjectId());
@@ -210,6 +218,7 @@ public class Anakim extends AbstractNpcAI
 				player.sendPacket(packet);
 				return null;
 			}
+			
 			final Party party = player.getParty();
 			final boolean isInCC = party.isInCommandChannel();
 			final List<Player> members = (isInCC) ? party.getCommandChannel().getMembers() : party.getMembers();
@@ -251,12 +260,14 @@ public class Anakim extends AbstractNpcAI
 			if ((_anakimStatus == ALIVE) && (npc.getId() == ANAKIM_CUBIC))
 			{
 				GrandBossManager.getInstance().setStatus(ANAKIM, FIGHTING);
+				
 				// Spawn the rb
 				_anakimBoss = addSpawn(ANAKIM, 185080, -12613, -5499, 16550, false, 0);
 				GrandBossManager.getInstance().addBoss((GrandBoss) _anakimBoss);
 				startQuestTimer("end_anakim", 60 * 60000, null, null); // 1h
 			}
 		}
+		
 		return super.onTalk(npc, player);
 	}
 	
@@ -277,6 +288,7 @@ public class Anakim extends AbstractNpcAI
 			{
 				attacker.doDie(null);
 			}
+			
 			if (!BOSS_ZONE.isInsideZone(npc)) // Npc moved out of the zone
 			{
 				Spawn spawn = npc.getSpawn();
@@ -308,7 +320,7 @@ public class Anakim extends AbstractNpcAI
 	}
 	
 	@Override
-	public void onSkillSee(Npc npc, Player caster, Skill skill, WorldObject[] targets, boolean isPet)
+	public void onSkillSee(Npc npc, Player caster, Skill skill, Collection<WorldObject> targets, boolean isPet)
 	{
 		if (ArrayUtil.contains(ANAKIM_MINIONS, npc.getId()) && getRandomBoolean())
 		{
@@ -347,6 +359,7 @@ public class Anakim extends AbstractNpcAI
 		{
 			day1.add(Calendar.WEEK_OF_MONTH, 1);
 		}
+		
 		if (now.after(day2))
 		{
 			day2.add(Calendar.WEEK_OF_MONTH, 1);
@@ -357,6 +370,7 @@ public class Anakim extends AbstractNpcAI
 		{
 			reenter = day2;
 		}
+		
 		return reenter.getTimeInMillis() - System.currentTimeMillis();
 	}
 	

@@ -108,6 +108,7 @@ public class ExUpgradeSystemNormalRequest extends ClientPacket
 		{
 			player.destroyItemByItemId(ItemProcessType.FEE, material.getId(), material.getCount(), player, true);
 		}
+		
 		if (adena > 0)
 		{
 			player.reduceAdena(ItemProcessType.FEE, adena, player, true);
@@ -127,8 +128,10 @@ public class ExUpgradeSystemNormalRequest extends ClientPacket
 				{
 					addItem.setEnchantLevel(item.getEnchantLevel());
 				}
+				
 				player.sendPacket(new SystemMessage(SystemMessageId.C1_YOU_OBTAINED_S2_THROUGH_EQUIPMENT_UPGRADE).addPcName(player).addItemName(addItem));
 			}
+			
 			if (upgradeHolder.getBonus() != null)
 			{
 				final double randomBonus = (Rnd.nextDouble() * 100);
@@ -143,6 +146,7 @@ public class ExUpgradeSystemNormalRequest extends ClientPacket
 						{
 							addItem.setEnchantLevel(item.getEnchantLevel());
 						}
+						
 						player.sendPacket(new SystemMessage(SystemMessageId.C1_YOU_OBTAINED_S2_THROUGH_EQUIPMENT_UPGRADE).addPcName(player).addItemName(addItem));
 					}
 				}
@@ -160,10 +164,12 @@ public class ExUpgradeSystemNormalRequest extends ClientPacket
 					{
 						addItem.setEnchantLevel(item.getEnchantLevel());
 					}
+					
 					player.sendPacket(new SystemMessage(SystemMessageId.C1_YOU_OBTAINED_S2_THROUGH_EQUIPMENT_UPGRADE).addPcName(player).addItemName(addItem));
 				}
 			}
 		}
+		
 		items.forEach((_, item) ->
 		{
 			item.updateDatabase(true);

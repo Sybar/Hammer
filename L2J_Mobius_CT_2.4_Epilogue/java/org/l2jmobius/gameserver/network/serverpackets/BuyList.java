@@ -76,6 +76,7 @@ public class BuyList extends ServerPacket
 					buffer.writeShort(0);
 					buffer.writeShort(0);
 				}
+				
 				if ((product.getItemId() >= 3960) && (product.getItemId() <= 4026))
 				{
 					buffer.writeLong((long) (product.getPrice() * Config.RATE_SIEGE_GUARDS_PRICE * (1 + _taxRate)));
@@ -84,11 +85,13 @@ public class BuyList extends ServerPacket
 				{
 					buffer.writeLong((long) (product.getPrice() * (1 + _taxRate)));
 				}
+				
 				// T1
 				for (byte i = 0; i < 8; i++)
 				{
 					buffer.writeShort(0);
 				}
+				
 				buffer.writeShort(0); // Enchant effect 1
 				buffer.writeShort(0); // Enchant effect 2
 				buffer.writeShort(0); // Enchant effect 3

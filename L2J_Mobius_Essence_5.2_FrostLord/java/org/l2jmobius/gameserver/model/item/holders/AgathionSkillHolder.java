@@ -56,6 +56,7 @@ public class AgathionSkillHolder
 		{
 			return Collections.emptyList();
 		}
+		
 		return _mainSkill.get(enchantLevel);
 	}
 	
@@ -65,6 +66,7 @@ public class AgathionSkillHolder
 		{
 			return Collections.emptyList();
 		}
+		
 		return _subSkill.get(enchantLevel);
 	}
 }

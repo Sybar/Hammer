@@ -94,6 +94,7 @@ public class ExRelicsCombination extends ServerPacket
 		int obtainedRelicId = 0;
 		int relicsFailedCount = 0;
 		int relicsSuccededCount = 0;
+		
 		// Loop each obtained relic.
 		for (int i = 0; i < arraySize; i++)
 		{
@@ -114,6 +115,7 @@ public class ExRelicsCombination extends ServerPacket
 						{
 							obtainedRelicId = Config.D_GRADE_COMMON_RELICS.get(Rnd.get(Config.D_GRADE_COMMON_RELICS.size())); // Random D Grade relic id.
 						}
+						
 						relicsSuccededCount++;
 					}
 					else
@@ -121,6 +123,7 @@ public class ExRelicsCombination extends ServerPacket
 						obtainedRelicId = Config.NO_GRADE_COMMON_RELICS.get(Rnd.get(Config.NO_GRADE_COMMON_RELICS.size())); // Random No Grade relic id.
 						relicsFailedCount++;
 					}
+					
 					buffer.writeInt(obtainedRelicId);
 					break;
 				}
@@ -138,6 +141,7 @@ public class ExRelicsCombination extends ServerPacket
 						{
 							obtainedRelicId = Config.C_GRADE_COMMON_RELICS.get(Rnd.get(Config.C_GRADE_COMMON_RELICS.size())); // Random C Grade relic id.
 						}
+						
 						relicsSuccededCount++;
 					}
 					else
@@ -150,8 +154,10 @@ public class ExRelicsCombination extends ServerPacket
 						{
 							obtainedRelicId = Config.D_GRADE_COMMON_RELICS.get(Rnd.get(Config.D_GRADE_COMMON_RELICS.size())); // Random D Grade relic id.
 						}
+						
 						relicsFailedCount++;
 					}
+					
 					buffer.writeInt(obtainedRelicId);
 					break;
 				}
@@ -172,6 +178,7 @@ public class ExRelicsCombination extends ServerPacket
 						{
 							obtainedRelicId = Config.B_GRADE_COMMON_RELICS.get(Rnd.get(Config.B_GRADE_COMMON_RELICS.size())); // Random B Grade relic id.
 						}
+						
 						relicsSuccededCount++;
 					}
 					else
@@ -184,8 +191,10 @@ public class ExRelicsCombination extends ServerPacket
 						{
 							obtainedRelicId = Config.C_GRADE_COMMON_RELICS.get(Rnd.get(Config.C_GRADE_COMMON_RELICS.size())); // Random C Grade relic id.
 						}
+						
 						relicsFailedCount++;
 					}
+					
 					buffer.writeInt(obtainedRelicId);
 					break;
 				}
@@ -211,8 +220,10 @@ public class ExRelicsCombination extends ServerPacket
 						{
 							obtainedRelicId = Config.B_GRADE_COMMON_RELICS.get(Rnd.get(Config.B_GRADE_COMMON_RELICS.size())); // Random B Grade relic id.
 						}
+						
 						relicsFailedCount++;
 					}
+					
 					buffer.writeInt(obtainedRelicId);
 					break;
 				}
@@ -234,6 +245,7 @@ public class ExRelicsCombination extends ServerPacket
 			
 			final int obtainedRelicGrade = RelicData.getInstance().getRelic(obtainedRelicId).getGrade();
 			final PlayerRelicData newRelic = new PlayerRelicData(obtainedRelicId, 0, 0, 0, 0);
+			
 			// Increment the count of the existing relic.
 			if (existingRelic != null)
 			{
@@ -250,10 +262,12 @@ public class ExRelicsCombination extends ServerPacket
 							unconfirmedRelics.add(relic2.getRelicIndex());
 						}
 					}
+					
 					if (Config.RELIC_SYSTEM_DEBUG_ENABLED)
 					{
 						_player.sendMessage("0.Duplicate relic indexes list: " + unconfirmedRelics);
 					}
+					
 					newRelic.setRelicCount(1);
 					newRelic.setRelicIndex(300 + unconfirmedRelics.size()); // Need to update this to increase last 300+ index.
 					newRelic.setRelicSummonTime(System.currentTimeMillis());
@@ -273,6 +287,7 @@ public class ExRelicsCombination extends ServerPacket
 					{
 						_player.sendMessage("Existing relic id: " + obtainedRelicId + " count increased.");
 					}
+					
 					if (existingRelic.getRelicIndex() == 0)
 					{
 						if (!_player.isRelicRegistered(existingRelic.getRelicId(), existingRelic.getRelicLevel()))
@@ -319,6 +334,7 @@ public class ExRelicsCombination extends ServerPacket
 				}
 			}
 		}
+		
 		// Show obtained items when failed.
 		buffer.writeInt(itemsOnFailureCount); // Obtained items when failed array size.
 		buffer.writeInt(shardId); // Item 1 id.
@@ -327,6 +343,7 @@ public class ExRelicsCombination extends ServerPacket
 		_player.sendPacket(new ExRelicsList(_player)); // Update confirmed relic list relics count.
 		_player.sendMessage("You obtained through compounding: " + arraySize + " relics.");
 		_player.destroyItemByItemId(ItemProcessType.FEE, feeItemId, feeItemCount * arraySize, _player, true);
+		
 		// Send summary of compounds
 		_player.sendMessage("Relics compound summary: " + relicsSuccededCount + " succeded and " + relicsFailedCount + " failed.");
 		if (relicsFailedCount > relicsSuccededCount)

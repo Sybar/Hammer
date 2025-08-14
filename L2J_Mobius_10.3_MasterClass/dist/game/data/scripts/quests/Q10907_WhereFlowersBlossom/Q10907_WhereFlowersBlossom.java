@@ -37,6 +37,7 @@ public class Q10907_WhereFlowersBlossom extends Quest
 {
 	// NPC
 	private static final int ENTROPY = 34599;
+	
 	// Monsters
 	private static final int[] MONSTERS =
 	{
@@ -50,8 +51,10 @@ public class Q10907_WhereFlowersBlossom extends Quest
 		19822, // Soul Flower - Nox Area 2 (Lv. 120)
 		19823, // Soul Flower - Nox Area 3 (Lv. 124)
 	};
+	
 	// Item
 	private static final int SOUL_FLOWER_PETAL = 82178;
+	
 	// Misc
 	private static final int MIN_LEVEL = 110;
 	private static final int SOUL_FLOWER_PETAL_NEEDED = 120;
@@ -105,6 +108,7 @@ public class Q10907_WhereFlowersBlossom extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -144,6 +148,7 @@ public class Q10907_WhereFlowersBlossom extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -164,6 +169,7 @@ public class Q10907_WhereFlowersBlossom extends Quest
 				giveItems(player, SOUL_FLOWER_PETAL, 1);
 				playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 			}
+			
 			if (getQuestItemsCount(player, SOUL_FLOWER_PETAL) >= SOUL_FLOWER_PETAL_NEEDED)
 			{
 				qs.setCond(2, true);

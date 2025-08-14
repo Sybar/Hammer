@@ -35,13 +35,16 @@ public class Q00169_OffspringOfNightmares extends Quest
 {
 	// NPC
 	private static final int VLASTY = 30145;
+	
 	// Monsters
 	private static final int LESSER_DARK_HORROR = 20025;
 	private static final int DARK_HORROR = 20105;
+	
 	// Items
 	private static final int BONE_GAITERS = 31;
 	private static final int CRACKED_SKULL = 1030;
 	private static final int PERFECT_SKULL = 1031;
+	
 	// Misc
 	private static final int MIN_LEVEL = 15;
 	private static final int GUIDE_MISSION = 41;
@@ -91,6 +94,7 @@ public class Q00169_OffspringOfNightmares extends Quest
 								setNRMemoState(newbieGuideQs, GUIDE_MISSION, getNRMemoState(newbieGuideQs, GUIDE_MISSION) + 10000000);
 								showOnScreenMsg(player, "Last duty complete. \\n Go find the Newbie Guide.", 2, 5000);
 							}
+							
 							newbieGuideQs.setState(State.COMPLETED);
 						}
 					}
@@ -104,6 +108,7 @@ public class Q00169_OffspringOfNightmares extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -160,6 +165,7 @@ public class Q00169_OffspringOfNightmares extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

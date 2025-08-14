@@ -22,7 +22,6 @@ import org.l2jmobius.Config;
 import org.l2jmobius.commons.threads.ThreadPool;
 import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.actor.enums.player.PlayerCondOverride;
 import org.l2jmobius.gameserver.model.fishing.Fishing;
 import org.l2jmobius.gameserver.model.zone.ZoneId;
 import org.l2jmobius.gameserver.model.zone.ZoneType;
@@ -44,7 +43,7 @@ public class FishingZone extends ZoneType
 	{
 		if (creature.isPlayer())
 		{
-			if ((Config.ALLOW_FISHING || creature.canOverrideCond(PlayerCondOverride.ZONE_CONDITIONS)) && !creature.isInsideZone(ZoneId.FISHING))
+			if ((Config.ALLOW_FISHING || creature.isGM()) && !creature.isInsideZone(ZoneId.FISHING))
 			{
 				final WeakReference<Player> weakPlayer = new WeakReference<>(creature.asPlayer());
 				ThreadPool.execute(new Runnable()
@@ -69,6 +68,7 @@ public class FishingZone extends ZoneType
 										player.sendPacket(ExAutoFishAvailable.NO);
 									}
 								}
+								
 								ThreadPool.schedule(this, 1500);
 							}
 							else
@@ -79,6 +79,7 @@ public class FishingZone extends ZoneType
 					}
 				});
 			}
+			
 			creature.setInsideZone(ZoneId.FISHING, true);
 		}
 	}

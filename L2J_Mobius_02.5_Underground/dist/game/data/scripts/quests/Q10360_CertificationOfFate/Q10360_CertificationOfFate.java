@@ -62,11 +62,14 @@ public class Q10360_CertificationOfFate extends Quest
 	private static final int REGENERATED_KANILOV = 27459;
 	private static final int REGENERATED_POSLOF = 27460;
 	private static final int SAKUM = 27453;
+	
 	// Items
 	private static final int SHINE_STONE = 17587;
 	private static final int PROOF_OF_JUSTICE = 17822;
+	
 	// Locations
 	private static final Location WASTELANDS_TELEPORT = new Location(-24795, 188754, -3960);
+	
 	// Misc
 	private static final int MIN_LEVEL = 38;
 	
@@ -205,6 +208,7 @@ public class Q10360_CertificationOfFate extends Quest
 						break;
 					}
 				}
+				
 				playSound(player, QuestSound.ITEMSOUND_QUEST_MIDDLE);
 				break;
 			}
@@ -228,6 +232,7 @@ public class Q10360_CertificationOfFate extends Quest
 						PunishmentManager.handleIllegalPlayerAction(player, "Player " + player.getName() + " tried to cheat the 2nd class transfer!", Config.DEFAULT_PUNISH);
 						return null;
 					}
+					
 					player.setBaseClass(newClassId);
 					player.setPlayerClass(newClassId.getId());
 					player.store(false);
@@ -243,6 +248,7 @@ public class Q10360_CertificationOfFate extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -270,6 +276,7 @@ public class Q10360_CertificationOfFate extends Quest
 		{
 			npc.showChatWindow(player);
 		}
+		
 		return htmltext;
 	}
 	
@@ -398,6 +405,7 @@ public class Q10360_CertificationOfFate extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -475,6 +483,7 @@ public class Q10360_CertificationOfFate extends Quest
 				break;
 			}
 		}
+		
 		return false;
 	}
 	
@@ -503,6 +512,7 @@ public class Q10360_CertificationOfFate extends Quest
 					break;
 				}
 			}
+			
 			player.sendPacket(new TutorialShowHtml(getHtm(player, fileName)));
 		}
 	}

@@ -48,6 +48,7 @@ public class Q00501_ProofOfClanAlliance extends Quest
 	private static final int STATUE_OF_OFFERING = 30757;
 	private static final int ATHREA = 30758;
 	private static final int KALIS = 30759;
+	
 	// Monsters
 	private static final int OEL_MAHUM_WITCH_DOCTOR = 20576;
 	private static final int HARIT_LIZARDMAN_SHAMAN = 20644;
@@ -57,6 +58,7 @@ public class Q00501_ProofOfClanAlliance extends Quest
 	private static final int BOX_OF_ATHREA_3 = 27175;
 	private static final int BOX_OF_ATHREA_4 = 27176;
 	private static final int BOX_OF_ATHREA_5 = 27177;
+	
 	// Items
 	private static final int HERB_OF_HARIT = 3832;
 	private static final int HERB_OF_VANOR = 3833;
@@ -68,9 +70,11 @@ public class Q00501_ProofOfClanAlliance extends Quest
 	private static final int VOUCHER_OF_FAITH = 3873;
 	private static final int ALLIANCE_MANIFESTO = 3874;
 	private static final int POTION_OF_RECOVERY = 3889;
+	
 	// Skills
 	private static final SkillHolder POISON_OF_DEATH = new SkillHolder(4082, 1);
 	private static final SkillHolder DIE_YOU_FOOL = new SkillHolder(4083, 1);
+	
 	// Locations
 	// @formatter:off
 	private static final List<Location> LOCS = Arrays.asList(
@@ -91,6 +95,7 @@ public class Q00501_ProofOfClanAlliance extends Quest
 		new Location(102269, 103076, -3533),
 		new Location(102186, 103022, -3541));
 	// @formatter:on
+	
 	// Misc
 	private static final int CLAN_MIN_LEVEL = 3;
 	private static final int CLAN_MEMBER_MIN_LEVEL = 40;
@@ -147,6 +152,7 @@ public class Q00501_ProofOfClanAlliance extends Quest
 						giveItems(player, SYMBOL_OF_LOYALTY, 1);
 						qs.set("flag", 2501);
 					}
+					
 					htmltext = event;
 				}
 				else
@@ -174,6 +180,7 @@ public class Q00501_ProofOfClanAlliance extends Quest
 							box.disableCoreAI(true);
 							box.setRandomWalking(true);
 						}
+						
 						htmltext = event;
 					}
 					else
@@ -191,6 +198,7 @@ public class Q00501_ProofOfClanAlliance extends Quest
 					{
 						takeItems(player, ADENA_TO_RESTART_GAME, Inventory.ADENA_ID);
 					}
+					
 					htmltext = event;
 				}
 				else
@@ -233,6 +241,7 @@ public class Q00501_ProofOfClanAlliance extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -313,6 +322,7 @@ public class Q00501_ProofOfClanAlliance extends Quest
 								npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.BINGO);
 							}
 						}
+						
 						arthea.setScriptValue(arthea.getScriptValue() + 1);
 					}
 					break;
@@ -495,6 +505,7 @@ public class Q00501_ProofOfClanAlliance extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -524,6 +535,7 @@ public class Q00501_ProofOfClanAlliance extends Quest
 				return leader.getQuestState(quest);
 			}
 		}
+		
 		return null;
 	}
 	
@@ -542,6 +554,7 @@ public class Q00501_ProofOfClanAlliance extends Quest
 			{
 				return null;
 			}
+			
 			return qs;
 		}
 		
@@ -578,6 +591,7 @@ public class Q00501_ProofOfClanAlliance extends Quest
 		{
 			return null;
 		}
+		
 		return qs;
 	}
 }

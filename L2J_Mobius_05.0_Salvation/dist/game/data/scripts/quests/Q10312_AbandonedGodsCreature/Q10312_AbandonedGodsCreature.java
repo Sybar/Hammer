@@ -36,8 +36,10 @@ public class Q10312_AbandonedGodsCreature extends Quest
 {
 	// Npc
 	private static final int HORPINA = 33031;
+	
 	// Boss
 	private static final int APHERUS = 25775;
+	
 	// Items
 	private static final int WARSMITH_HOLDER = 19305; // Corroded Giant's Warsmith' Holder
 	private static final int REORINS_MOLD = 19306; // Corroded Giant's Reorin's Mold
@@ -45,6 +47,7 @@ public class Q10312_AbandonedGodsCreature extends Quest
 	private static final int WARSMITH_MOLD = 19308; // Corroded Giant's Warsmith' Mold
 	private static final int EAR = 17527; // Scroll: Enchant Armor (R-grade)
 	private static final int POUCH = 34861; // Ingredient and Hardener Pouch (R-grade)
+	
 	// Misc
 	private static final int MIN_LEVEL = 90;
 	
@@ -67,6 +70,7 @@ public class Q10312_AbandonedGodsCreature extends Quest
 		{
 			return htmltext;
 		}
+		
 		switch (event)
 		{
 			case "33031-02.htm":
@@ -110,6 +114,7 @@ public class Q10312_AbandonedGodsCreature extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -134,6 +139,7 @@ public class Q10312_AbandonedGodsCreature extends Quest
 		{
 			htmltext = "Complete.html";
 		}
+		
 		return htmltext;
 	}
 	

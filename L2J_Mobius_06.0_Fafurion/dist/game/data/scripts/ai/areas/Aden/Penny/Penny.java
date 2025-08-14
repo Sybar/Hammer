@@ -35,6 +35,7 @@ public class Penny extends AbstractNpcAI
 {
 	// NPC
 	private static final int PENNY = 34413;
+	
 	// Misc
 	private static final String[] RANDOM_VOICE =
 	{
@@ -66,6 +67,7 @@ public class Penny extends AbstractNpcAI
 				return null;
 			}
 		}
+		
 		return null;
 	}
 	

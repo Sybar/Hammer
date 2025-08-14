@@ -73,6 +73,7 @@ public class MonsterDailyMissionHandler extends AbstractDailyMissionHandler
 				}
 			}
 		}
+		
 		_startHour = holder.getParams().getString("startHour", "");
 		_endHour = holder.getParams().getString("endHour", "");
 	}
@@ -106,6 +107,7 @@ public class MonsterDailyMissionHandler extends AbstractDailyMissionHandler
 				}
 			}
 		}
+		
 		return false;
 	}
 	
@@ -156,6 +158,7 @@ public class MonsterDailyMissionHandler extends AbstractDailyMissionHandler
 			{
 				entry.setStatus(DailyMissionStatus.AVAILABLE);
 			}
+			
 			storePlayerEntry(entry);
 		}
 	}
@@ -180,6 +183,7 @@ public class MonsterDailyMissionHandler extends AbstractDailyMissionHandler
 				e.printStackTrace();
 			}
 		}
+		
 		return false;
 	}
 	

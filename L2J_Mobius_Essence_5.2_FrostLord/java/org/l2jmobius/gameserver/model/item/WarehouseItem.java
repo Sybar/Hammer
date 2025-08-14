@@ -95,6 +95,7 @@ public class WarehouseItem
 		{
 			_elemDefAttr[type.getClientId()] = item.getDefenceAttribute(type);
 		}
+		
 		_enchantOptions = item.getEnchantOptions();
 		_soulCrystalOptions = item.getSpecialAbilities();
 		_soulCrystalSpecialOptions = item.getAdditionalSpecialAbilities();

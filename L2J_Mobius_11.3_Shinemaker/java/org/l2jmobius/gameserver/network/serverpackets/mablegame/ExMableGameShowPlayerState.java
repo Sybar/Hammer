@@ -66,6 +66,7 @@ public class ExMableGameShowPlayerState extends ServerPacket
 			buffer.writeInt(_finishReward.getId());
 			buffer.writeLong(_finishReward.getCount());
 		}
+		
 		buffer.writeInt(_resetItems.size()); // ResetItems
 		for (ItemHolder item : _resetItems)
 		{

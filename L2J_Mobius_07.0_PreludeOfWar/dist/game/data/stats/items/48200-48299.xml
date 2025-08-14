@@ -606,12 +606,12 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="2453">
+		<conditions msgId="2453">
 			<player cloakStatus="true" />
-		</cond>
-		<cond>
+		</conditions>
+		<conditions>
 			<player level="85" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="mDef">40</stat>
 			<stat type="pDef">50</stat>
@@ -636,12 +636,12 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="2453">
+		<conditions msgId="2453">
 			<player cloakStatus="true" />
-		</cond>
-		<cond>
+		</conditions>
+		<conditions>
 			<player level="99" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="mDef">45</stat>
 			<stat type="pDef">60</stat>
@@ -666,12 +666,12 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="2453">
+		<conditions msgId="2453">
 			<player cloakStatus="true" />
-		</cond>
-		<cond>
+		</conditions>
+		<conditions>
 			<player level="105" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="mDef">50</stat>
 			<stat type="pDef">70</stat>
@@ -696,12 +696,12 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="2453">
+		<conditions msgId="2453">
 			<player cloakStatus="true" />
-		</cond>
-		<cond>
+		</conditions>
+		<conditions>
 			<player level="110" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="mDef">60</stat>
 			<stat type="pDef">80</stat>
@@ -794,12 +794,12 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="2453">
+		<conditions msgId="2453">
 			<player cloakStatus="true" />
-		</cond>
-		<cond>
+		</conditions>
+		<conditions>
 			<player level="85" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="mDef">40</stat>
 			<stat type="pDef">50</stat>
@@ -824,12 +824,12 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="2453">
+		<conditions msgId="2453">
 			<player cloakStatus="true" />
-		</cond>
-		<cond>
+		</conditions>
+		<conditions>
 			<player level="99" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="mDef">45</stat>
 			<stat type="pDef">60</stat>
@@ -854,12 +854,12 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="2453">
+		<conditions msgId="2453">
 			<player cloakStatus="true" />
-		</cond>
-		<cond>
+		</conditions>
+		<conditions>
 			<player level="105" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="mDef">50</stat>
 			<stat type="pDef">70</stat>
@@ -884,12 +884,12 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="2453">
+		<conditions msgId="2453">
 			<player cloakStatus="true" />
-		</cond>
-		<cond>
+		</conditions>
+		<conditions>
 			<player level="110" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="mDef">60</stat>
 			<stat type="pDef">80</stat>

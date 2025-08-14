@@ -33,6 +33,7 @@ import org.l2jmobius.gameserver.model.actor.enums.creature.AttributeType;
 import org.l2jmobius.gameserver.model.actor.enums.creature.Position;
 import org.l2jmobius.gameserver.model.actor.instance.SiegeFlag;
 import org.l2jmobius.gameserver.model.actor.instance.StaticObject;
+import org.l2jmobius.gameserver.model.actor.transform.Transform;
 import org.l2jmobius.gameserver.model.effects.EffectFlag;
 import org.l2jmobius.gameserver.model.effects.EffectType;
 import org.l2jmobius.gameserver.model.interfaces.ILocational;
@@ -103,6 +104,7 @@ public class Formulas
 		final double criticalAddMod = attacker.getStat().getValue(Stat.CRITICAL_DAMAGE_ADD, 0);
 		final double criticalAddVuln = target.getStat().getValue(Stat.DEFENCE_CRITICAL_DAMAGE_ADD, 0);
 		final double criticalSkillMod = calcCritDamage(attacker, target, skill) / 2;
+		
 		// Trait, elements
 		final double weaponTraitMod = calcWeaponTraitBonus(attacker, target);
 		final double generalTraitMod = calcGeneralTraitBonus(attacker, target, skill.getTraitType(), true);
@@ -129,6 +131,7 @@ public class Formulas
 		{
 			balanceMod = target.isPlayable() ? Config.PVP_BLOW_SKILL_DAMAGE_MULTIPLIERS[attacker.asPlayer().getPlayerClass().getId()] : Config.PVE_BLOW_SKILL_DAMAGE_MULTIPLIERS[attacker.asPlayer().getPlayerClass().getId()];
 		}
+		
 		if (target.isPlayable())
 		{
 			defence *= attacker.isPlayable() ? Config.PVP_BLOW_SKILL_DEFENCE_MULTIPLIERS[target.asPlayer().getPlayerClass().getId()] : Config.PVE_BLOW_SKILL_DEFENCE_MULTIPLIERS[target.asPlayer().getPlayerClass().getId()];
@@ -190,6 +193,7 @@ public class Formulas
 					{
 						attacker.sendPacket(SystemMessageId.YOUR_ATTACK_HAS_FAILED);
 					}
+					
 					damage /= 2;
 				}
 				else
@@ -216,7 +220,7 @@ public class Formulas
 		damage += critMagicAdd;
 		
 		// AoE modifiers.
-		if (skill.isBad() && (skill.getAffectLimit() > 0))
+		if (skill.hasNegativeEffect() && (skill.getAffectLimit() > 0))
 		{
 			damage *= Math.max((attacker.getStat().getMul(Stat.AREA_OF_EFFECT_DAMAGE_MODIFY, 1) - target.getStat().getValue(Stat.AREA_OF_EFFECT_DAMAGE_DEFENCE, 0)), 0.01);
 		}
@@ -243,7 +247,7 @@ public class Formulas
 			if (skill.isMagic())
 			{
 				final double magicRate = creature.getStat().getValue(Stat.MAGIC_CRITICAL_RATE);
-				if ((target == null) || !skill.isBad())
+				if ((target == null) || !skill.hasNegativeEffect())
 				{
 					return Math.min(magicRate, 320) > Rnd.get(1000);
 				}
@@ -454,6 +458,7 @@ public class Formulas
 		{
 			init = 15;
 		}
+		
 		if (Config.ALT_GAME_CANCEL_BOW && target.isAttackingNow())
 		{
 			final Weapon wpn = target.getActiveWeaponItem();
@@ -496,6 +501,7 @@ public class Formulas
 		{
 			return (int) ((skillTime / attacker.getMAtkSpd()) * 333);
 		}
+		
 		return (int) ((skillTime / attacker.getPAtkSpd()) * 300);
 	}
 	
@@ -549,6 +555,7 @@ public class Formulas
 				factor /= npcFactor;
 			}
 		}
+		
 		return Math.max(0.01, factor);
 	}
 	
@@ -654,7 +661,7 @@ public class Formulas
 	public static boolean calcMagicAffected(Creature actor, Creature target, Skill skill)
 	{
 		double defence = 0;
-		if (skill.isActive() && skill.isBad())
+		if (skill.isActive() && skill.hasNegativeEffect())
 		{
 			defence = target.getMDef();
 		}
@@ -763,6 +770,7 @@ public class Formulas
 			attacker.sendPacket(new ExMagicAttackInfo(attacker.getObjectId(), target.getObjectId(), ExMagicAttackInfo.RESISTED));
 			return false;
 		}
+		
 		return true;
 	}
 	
@@ -844,6 +852,7 @@ public class Formulas
 		{
 			sapphireBonus = attacker.asPlayer().getActiveShappireJewel().getBonus();
 		}
+		
 		mAtk *= bss ? 4 + (shotsBonus + sapphireBonus) : sps ? 2 + (shotsBonus + sapphireBonus) : 1;
 		
 		double damage = (Math.sqrt(mAtk) * power * (mp / 97)) / mDef;
@@ -877,6 +886,7 @@ public class Formulas
 			damage = Math.min(damage, critLimit);
 			attacker.sendPacket(SystemMessageId.M_CRITICAL);
 		}
+		
 		return damage;
 	}
 	
@@ -909,14 +919,17 @@ public class Formulas
 				sm.addString(target.getName());
 				creature.asPlayer().sendPacket(sm);
 			}
+			
 			if (target.isPlayer())
 			{
 				final SystemMessage sm = new SystemMessage(SystemMessageId.YOU_HAVE_DODGED_C1_S_ATTACK);
 				sm.addString(creature.getName());
 				target.asPlayer().sendPacket(sm);
 			}
+			
 			return true;
 		}
+		
 		return false;
 	}
 	
@@ -997,6 +1010,7 @@ public class Formulas
 				sm.addString(attacker.getName());
 				target.sendPacket(sm);
 			}
+			
 			if (attacker.isPlayer())
 			{
 				final SystemMessage sm = new SystemMessage(SystemMessageId.C1_IS_PERFORMING_A_COUNTERATTACK);
@@ -1025,6 +1039,7 @@ public class Formulas
 		{
 			return false;
 		}
+		
 		return target.getStat().getValue(skill.isMagic() ? Stat.REFLECT_SKILL_MAGIC : Stat.REFLECT_SKILL_PHYSIC, 0) > Rnd.get(100);
 	}
 	
@@ -1040,6 +1055,7 @@ public class Formulas
 		{
 			return 0;
 		}
+		
 		return creature.getStat().getValue(Stat.FALL, (fallHeight * creature.getMaxHp()) / 1000.0);
 	}
 	
@@ -1064,6 +1080,7 @@ public class Formulas
 	{
 		final Weapon weapon = creature.getActiveWeaponItem();
 		final double weaponCritical = weapon != null ? weapon.getStats(Stat.CRITICAL_RATE, creature.getTemplate().getBaseCritRate()) : creature.getTemplate().getBaseCritRate();
+		
 		// double dexBonus = BaseStats.DEX.calcBonus(activeChar); Not used in GOD
 		final double critHeightBonus = calcCriticalHeightBonus(creature, target);
 		final double criticalPosition = calcCriticalPositionBonus(creature, target); // 30% chance from back, 10% chance from side. Include buffs that give positional crit rate.
@@ -1085,7 +1102,7 @@ public class Formulas
 			case BUFF:
 			{
 				// Resist Modifier.
-				final int cancelMagicLvl = skill.getMagicLevel();
+				final int cancelMagicLvl = skill == null ? creature.getLevel() : skill.getMagicLevel();
 				
 				// Prevent initialization.
 				final List<BuffInfo> dances = target.getEffectList().getDances();
@@ -1096,6 +1113,7 @@ public class Formulas
 					{
 						continue;
 					}
+					
 					canceled.add(info);
 					if (canceled.size() >= max)
 					{
@@ -1114,6 +1132,7 @@ public class Formulas
 						{
 							continue;
 						}
+						
 						canceled.add(info);
 						if (canceled.size() >= max)
 						{
@@ -1141,6 +1160,7 @@ public class Formulas
 				break;
 			}
 		}
+		
 		return canceled;
 	}
 	
@@ -1237,6 +1257,7 @@ public class Formulas
 		{
 			return (int) ((Math.abs(finalExp / Config.RATE_KARMA_LOST) / karmaLooseMul) / 30);
 		}
+		
 		return (int) ((Math.abs(finalExp) / karmaLooseMul) / 30);
 	}
 	
@@ -1322,6 +1343,7 @@ public class Formulas
 				result *= Math.max(attacker.getStat().getAttackTrait(trait) - target.getStat().getDefenceTrait(trait), 0.05);
 			}
 		}
+		
 		return result;
 	}
 	
@@ -1470,6 +1492,7 @@ public class Formulas
 			// Any stun that has double duration due to skill mastery, doesn't get removed until its time reaches the usual abnormal time.
 			return creature.getEffectList().hasAbnormalType(AbnormalType.STUN, info -> info.getTime() <= info.getSkill().getAbnormalTime());
 		}
+		
 		return false;
 	}
 	
@@ -1553,7 +1576,8 @@ public class Formulas
 		}
 		
 		final WeaponType defaultAttackType = weapon.getItemType();
-		final WeaponType weaponType = creature.getTransformation().map(transform -> transform.getBaseAttackType(creature, defaultAttackType)).orElse(defaultAttackType);
+		final Transform transform = creature.getTransformation();
+		final WeaponType weaponType = transform == null ? defaultAttackType : transform.getBaseAttackType(creature, defaultAttackType);
 		
 		// Only ranged weapons should continue for now.
 		if (!weaponType.isRanged())

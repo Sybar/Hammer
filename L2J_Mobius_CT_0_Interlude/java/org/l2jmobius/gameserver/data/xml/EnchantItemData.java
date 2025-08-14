@@ -87,6 +87,7 @@ public class EnchantItemData implements IXmlReader
 									item.addItem(parseInteger(cd.getAttributes(), "id"), parseInteger(cd.getAttributes(), "altScrollGroupId", -1));
 								}
 							}
+							
 							_scrolls.put(item.getId(), item);
 						}
 						catch (NullPointerException e)
@@ -119,6 +120,7 @@ public class EnchantItemData implements IXmlReader
 		{
 			return null;
 		}
+		
 		return _scrolls.get(item.getId());
 	}
 	

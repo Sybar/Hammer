@@ -21,6 +21,7 @@
 package handlers.effecthandlers;
 
 import org.l2jmobius.commons.threads.ThreadPool;
+import org.l2jmobius.commons.util.Rnd;
 import org.l2jmobius.gameserver.model.StatSet;
 import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.effects.AbstractEffect;
@@ -40,6 +41,7 @@ public class ComboSkill extends AbstractEffect
 	private final int _checkSkill;
 	private final int _checkSkill2;
 	private final String _mode;
+	private final int _chance;
 	
 	public ComboSkill(StatSet params)
 	{
@@ -47,6 +49,7 @@ public class ComboSkill extends AbstractEffect
 		_checkSkill = params.getInt("targetCheckSkillId", 0);
 		_checkSkill2 = params.getInt("targetCheckSkillId2", 0);
 		_mode = params.getString("mode", "DUAL");
+		_chance = params.getInt("chance", 100);
 	}
 	
 	@Override
@@ -80,33 +83,36 @@ public class ComboSkill extends AbstractEffect
 			}
 		}
 		
-		if (triggerSkill != null)
+		if ((_chance < 100) && (Rnd.get(100) >= _chance))
 		{
-			// Prevent infinite loop.
-			if ((skill.getId() == triggerSkill.getId()) && (skill.getLevel() == triggerSkill.getLevel()))
+			return;
+		}
+		
+		if (triggerSkill == null)
+		{
+			return;
+		}
+		
+		// Prevent infinite loop.
+		if ((skill.getId() == triggerSkill.getId()) && (skill.getLevel() == triggerSkill.getLevel()))
+		{
+			return;
+		}
+		
+		final int hitTime = triggerSkill.getHitTime();
+		if (hitTime > 0)
+		{
+			if (effector.isSkillDisabled(triggerSkill))
 			{
 				return;
 			}
 			
-			final int hitTime = triggerSkill.getHitTime();
-			if (hitTime > 0)
-			{
-				if (effector.isSkillDisabled(triggerSkill))
-				{
-					return;
-				}
-				
-				effector.broadcastPacket(new MagicSkillUse(effector, effected, triggerSkill.getDisplayId(), triggerSkill.getLevel(), hitTime, 0));
-				ThreadPool.schedule(() -> SkillCaster.triggerCast(effector, effected, triggerSkill), hitTime);
-			}
-			else
-			{
-				SkillCaster.triggerCast(effector, effected, triggerSkill);
-			}
+			effector.broadcastSkillPacket(new MagicSkillUse(effector, effected, triggerSkill.getDisplayId(), triggerSkill.getLevel(), hitTime, 0), effected);
+			ThreadPool.schedule(() -> SkillCaster.triggerCast(effector, effected, triggerSkill), hitTime);
 		}
 		else
 		{
-			LOGGER.warning("Skill not found effect called from " + skill);
+			SkillCaster.triggerCast(effector, effected, triggerSkill);
 		}
 	}
 }

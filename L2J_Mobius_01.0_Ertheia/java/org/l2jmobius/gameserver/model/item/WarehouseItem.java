@@ -90,6 +90,7 @@ public class WarehouseItem
 		{
 			_elemDefAttr[type.getClientId()] = item.getDefenceAttribute(type);
 		}
+		
 		_enchantOptions = item.getEnchantOptions();
 	}
 	

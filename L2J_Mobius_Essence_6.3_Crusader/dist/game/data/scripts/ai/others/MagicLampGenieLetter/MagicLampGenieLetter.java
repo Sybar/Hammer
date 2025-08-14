@@ -45,8 +45,10 @@ public class MagicLampGenieLetter extends AbstractNpcAI
 {
 	// NPC
 	private static final int GENIE_LAMP_NPC = 34369;
+	
 	// Item
 	private static final ItemHolder GENIE_LAMP = new ItemHolder(97943, 1);
+	
 	// Misc
 	private static final int LEVEL_MIN = 52;
 	private static final String TUTORIAL_BYPASS = "Quest MagicLampGenieLetter ";
@@ -86,6 +88,7 @@ public class MagicLampGenieLetter extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -101,6 +104,7 @@ public class MagicLampGenieLetter extends AbstractNpcAI
 				return npc.getId() + "-2.html";
 			}
 		}
+		
 		return npc.getId() + "-1.html";
 		
 	}

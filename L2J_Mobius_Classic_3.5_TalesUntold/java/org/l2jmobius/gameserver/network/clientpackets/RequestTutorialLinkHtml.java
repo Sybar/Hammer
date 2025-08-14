@@ -50,14 +50,14 @@ public class RequestTutorialLinkHtml extends ClientPacket
 		
 		if (_bypass.startsWith("admin_"))
 		{
-			AdminCommandHandler.getInstance().useAdminCommand(player, _bypass, true);
+			AdminCommandHandler.getInstance().onCommand(player, _bypass, true);
 		}
 		else
 		{
 			final IBypassHandler handler = BypassHandler.getInstance().getHandler(_bypass);
 			if (handler != null)
 			{
-				handler.useBypass(_bypass, player, null);
+				handler.onCommand(_bypass, player, null);
 			}
 		}
 	}

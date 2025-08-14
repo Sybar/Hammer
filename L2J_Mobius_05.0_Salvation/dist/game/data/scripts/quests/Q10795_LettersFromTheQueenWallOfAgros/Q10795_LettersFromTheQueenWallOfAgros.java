@@ -39,12 +39,15 @@ public class Q10795_LettersFromTheQueenWallOfAgros extends LetterQuest
 	// NPCs
 	private static final int GREGORY = 31279;
 	private static final int HERMIT = 31616;
+	
 	// Items
 	private static final int SOE_WAAL_OF_ARGOS = 39585;
 	private static final int SOE_GODDARD = 39584;
+	
 	// Misc
 	private static final int MIN_LEVEL = 70;
 	private static final int MAX_LEVEL = 75;
+	
 	// Teleport
 	private static final Location TELEPORT_LOC = new Location(147711, -53956, -2728);
 	
@@ -100,6 +103,7 @@ public class Q10795_LettersFromTheQueenWallOfAgros extends LetterQuest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -112,6 +116,7 @@ public class Q10795_LettersFromTheQueenWallOfAgros extends LetterQuest
 		{
 			return htmltext;
 		}
+		
 		if (qs.isStarted())
 		{
 			if (npc.getId() == GREGORY)
@@ -123,6 +128,7 @@ public class Q10795_LettersFromTheQueenWallOfAgros extends LetterQuest
 				htmltext = "31616-01.html";
 			}
 		}
+		
 		return htmltext;
 	}
 }

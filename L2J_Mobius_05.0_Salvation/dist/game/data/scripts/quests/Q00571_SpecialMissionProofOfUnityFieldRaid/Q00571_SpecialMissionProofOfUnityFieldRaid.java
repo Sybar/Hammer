@@ -44,6 +44,7 @@ public class Q00571_SpecialMissionProofOfUnityFieldRaid extends Quest
 {
 	// NPCs
 	private static final int PENNY = 34413;
+	
 	// Raidbosses
 	private static final int[] BOSSES =
 	{
@@ -62,6 +63,7 @@ public class Q00571_SpecialMissionProofOfUnityFieldRaid extends Quest
 		26081, // Monster Artarot
 		26082, // Monster Centaur
 	};
+	
 	// Misc
 	private static final int MIN_LEVEL = 86;
 	private static final int MAX_LEVEL = 88;
@@ -86,6 +88,7 @@ public class Q00571_SpecialMissionProofOfUnityFieldRaid extends Quest
 		{
 			return htmltext;
 		}
+		
 		switch (event)
 		{
 			case "34413-02.htm":
@@ -102,6 +105,7 @@ public class Q00571_SpecialMissionProofOfUnityFieldRaid extends Quest
 					htmltext = "34413-04.htm";
 					break;
 				}
+				
 				htmltext = "34413-00.htm";
 				break;
 			}
@@ -115,6 +119,7 @@ public class Q00571_SpecialMissionProofOfUnityFieldRaid extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -149,6 +154,7 @@ public class Q00571_SpecialMissionProofOfUnityFieldRaid extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -186,6 +192,7 @@ public class Q00571_SpecialMissionProofOfUnityFieldRaid extends Quest
 				return holder;
 			}
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

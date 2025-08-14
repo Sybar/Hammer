@@ -40,11 +40,14 @@ public class Q00417_WeirdCreatures extends Quest
 {
 	// NPC
 	private static final int GENIE_LAMP = 34369;
+	
 	// Monster
 	private static final int HATAR_HASNISHEE = 20663;
 	private static final int DEMONIC_EYE = 20664;
+	
 	// Item
 	private static final ItemHolder BOOST_DEF_SCROLL = new ItemHolder(94271, 2);
+	
 	// Misc
 	private static final int MIN_LEVEL = 64;
 	private static final int MAX_LEVEL = 75;
@@ -99,6 +102,7 @@ public class Q00417_WeirdCreatures extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -137,6 +141,7 @@ public class Q00417_WeirdCreatures extends Quest
 				htmltext = getAlreadyCompletedMsg(player);
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -172,6 +177,7 @@ public class Q00417_WeirdCreatures extends Quest
 			holder.add(new NpcLogListHolder(NpcStringId.DEFEAT_MONSTERS_15.getId(), true, qs.getInt(KILL_COUNT_VAR)));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

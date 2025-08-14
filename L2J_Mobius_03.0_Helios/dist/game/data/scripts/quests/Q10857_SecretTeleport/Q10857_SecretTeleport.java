@@ -39,6 +39,7 @@ public class Q10857_SecretTeleport extends Quest
 	// NPCs
 	private static final int KEKROPUS = 34222;
 	private static final int HISTIE = 34243;
+	
 	// Monsters
 	private static final int[] MONSTERS =
 	{
@@ -53,10 +54,13 @@ public class Q10857_SecretTeleport extends Quest
 		23782, // Royal Archmage
 		23783 // Royal Gatekeeper
 	};
+	
 	// Misc
 	private static final int MIN_LEVEL = 102;
+	
 	// Items
 	private static final int SUPERION_MAP_PIECE = 47191; // Quest item: Old Box
+	
 	// Reward
 	private static final int GIANTS_ENERGY = 35563;
 	
@@ -121,6 +125,7 @@ public class Q10857_SecretTeleport extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -177,9 +182,11 @@ public class Q10857_SecretTeleport extends Quest
 					htmltext = "34222-01.htm";
 					break;
 				}
+				
 				qs.setState(State.CREATED);
 			}
 		}
+		
 		return htmltext;
 	}
 	

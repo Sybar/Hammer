@@ -157,9 +157,9 @@
 		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2213" level="16" /> <!-- Scroll of Escape: Aden -->
 		</skills>
@@ -177,9 +177,9 @@
 		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2214" level="7" /> <!-- Scroll of Escape: Talking Island Village -->
 		</skills>
@@ -1311,9 +1311,9 @@
 		<set name="is_sellable" val="false" />
 		<set name="enchant_enabled" val="true" />
 		<set name="enchant_limit" val="5" />
-		<cond>
+		<conditions>
 			<player level="85" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="mDef">23</stat>
 			<stat type="pDef">46</stat>
@@ -1338,9 +1338,9 @@
 		<set name="is_sellable" val="false" />
 		<set name="enchant_enabled" val="true" />
 		<set name="enchant_limit" val="5" />
-		<cond>
+		<conditions>
 			<player level="99" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="mDef">27</stat>
 			<stat type="pDef">54</stat>
@@ -1363,9 +1363,9 @@
 		<set name="is_sellable" val="false" />
 		<set name="enchant_enabled" val="true" />
 		<set name="enchant_limit" val="10" />
-		<cond>
+		<conditions>
 			<player level="105" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="mDef">31</stat>
 			<stat type="pDef">62</stat>

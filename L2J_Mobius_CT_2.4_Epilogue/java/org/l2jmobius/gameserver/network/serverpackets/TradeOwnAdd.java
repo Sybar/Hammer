@@ -48,6 +48,7 @@ public class TradeOwnAdd extends ServerPacket
 		buffer.writeShort(_item.getEnchant()); // enchant level
 		buffer.writeShort(0);
 		buffer.writeShort(_item.getCustomType2());
+		
 		// T1
 		buffer.writeShort(_item.getAttackElementType());
 		buffer.writeShort(_item.getAttackElementPower());
@@ -55,6 +56,7 @@ public class TradeOwnAdd extends ServerPacket
 		{
 			buffer.writeShort(_item.getElementDefAttr(i));
 		}
+		
 		for (int op : _item.getEnchantOptions())
 		{
 			buffer.writeShort(op);

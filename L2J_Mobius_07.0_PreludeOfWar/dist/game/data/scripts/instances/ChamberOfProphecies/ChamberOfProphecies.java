@@ -52,9 +52,11 @@ public class ChamberOfProphecies extends AbstractInstance
 	private static final int KAIN_VAN_HALTER = 31639;
 	private static final int GRAIL = 33996;
 	private static final int MYSTERIOUS_WIZARD = 33980;
+	
 	// Helper NPCs
 	private static final int HELPER_VAN_HALTER = 33999;
 	private static final int HELPER_FERIN = 34001;
+	
 	// Misc
 	private static final int DOOR_2 = 17230102;
 	private static final int DOOR_3 = 17230103;
@@ -95,6 +97,7 @@ public class ChamberOfProphecies extends AbstractInstance
 				{
 					return null;
 				}
+				
 				world.openCloseDoor(DOOR_4, false);
 				world.broadcastPacket(ExShowUsm.USM_Q015_E);
 				world.despawnGroup("q10753_16_instance_grail");
@@ -123,6 +126,7 @@ public class ChamberOfProphecies extends AbstractInstance
 				{
 					return null;
 				}
+				
 				world.spawnGroup("q10753_16_instance_halter_2");
 				world.setStatus(6);
 				startQuestTimer("DESPAWN_WIZARD", 2000, npc, player);
@@ -139,6 +143,7 @@ public class ChamberOfProphecies extends AbstractInstance
 					{
 						takeItems(player, PROPHECY_MACHINE, 1);
 					}
+					
 					qs.setCond(4, true);
 				}
 				break;
@@ -150,21 +155,25 @@ public class ChamberOfProphecies extends AbstractInstance
 				{
 					return null;
 				}
+				
 				final FriendlyNpc vanHalter = (FriendlyNpc) world.getNpc(HELPER_VAN_HALTER);
 				if (vanHalter != null)
 				{
 					vanHalter.deleteMe(); // probably needs another npc id for initial room
 				}
+				
 				final FriendlyNpc ferin = (FriendlyNpc) world.getNpc(HELPER_FERIN);
 				if (ferin != null)
 				{
 					ferin.deleteMe(); // probably needs another npc id for initial room
 				}
+				
 				if (world.isStatus(0) && world.getAliveNpcs(Monster.class).isEmpty())
 				{
 					world.spawnGroup("q10753_16_instance_halter_1_1");
 					world.spawnGroup("wof_room1");
 				}
+				
 				if (world.getStatus() < 3)
 				{
 					player.teleToLocation(FIRST_ROOM_LOC);
@@ -173,6 +182,7 @@ public class ChamberOfProphecies extends AbstractInstance
 				{
 					player.teleToLocation(THIRD_ROOM_LOC);
 				}
+				
 				cancelQuestTimer("CHECK_STATUS", npc, player);
 				startQuestTimer("CHECK_STATUS", 7000, world.getNpc(KAIN_VAN_HALTER), player);
 				break;
@@ -184,11 +194,13 @@ public class ChamberOfProphecies extends AbstractInstance
 				{
 					return null;
 				}
+				
 				if (world.getStatus() < 5)
 				{
 					htmltext = "31639-01.html";
 					break;
 				}
+				
 				htmltext = "31639-02.html";
 				break;
 			}
@@ -212,6 +224,7 @@ public class ChamberOfProphecies extends AbstractInstance
 							startQuestTimer("SEY_KAIN", 24000, vanHalter, player);
 							startQuestTimer("OPEN_DOOR1", 5000, npc, player);
 						}
+						
 						startQuestTimer("CHECK_STATUS", 7000, npc, player);
 						break;
 					}
@@ -222,6 +235,7 @@ public class ChamberOfProphecies extends AbstractInstance
 							world.spawnGroup("wof_room2_1");
 							world.setStatus(2);
 						}
+						
 						startQuestTimer("CHECK_STATUS", 7000, npc, player);
 						break;
 					}
@@ -232,6 +246,7 @@ public class ChamberOfProphecies extends AbstractInstance
 							startQuestTimer("SEY3", 8000, ferin, player);
 							startQuestTimer("OPEN_DOOR2", 5000, npc, player);
 						}
+						
 						startQuestTimer("CHECK_STATUS", 7000, npc, player);
 						break;
 					}
@@ -244,6 +259,7 @@ public class ChamberOfProphecies extends AbstractInstance
 							world.openCloseDoor(DOOR_3, false);
 							startQuestTimer("SEY_KAIN_1", 5000, vanHalter, player);
 						}
+						
 						startQuestTimer("CHECK_STATUS", 7000, npc, player);
 						break;
 					}
@@ -274,6 +290,7 @@ public class ChamberOfProphecies extends AbstractInstance
 				{
 					return null;
 				}
+				
 				npc.setRunning();
 				npc.asAttackable().setCanReturnToSpawnPoint(false);
 				if (npc.isScriptValue(0) && world.getAliveNpcs(Monster.class).isEmpty())
@@ -298,6 +315,7 @@ public class ChamberOfProphecies extends AbstractInstance
 				{
 					return null;
 				}
+				
 				cancelQuestTimer("ATTACK", npc, player);
 				world.setStatus(1);
 				world.openCloseDoor(DOOR_2, true);
@@ -311,6 +329,7 @@ public class ChamberOfProphecies extends AbstractInstance
 				{
 					return null;
 				}
+				
 				cancelQuestTimer("ATTACK1", npc, player);
 				startQuestTimer("ATTACK2", 200, world.getNpc(HELPER_VAN_HALTER), player, true);
 				world.setStatus(3);
@@ -343,6 +362,7 @@ public class ChamberOfProphecies extends AbstractInstance
 					npc.broadcastPacket(new NpcSay(npc.getObjectId(), ChatType.NPC_GENERAL, npc.getId(), NpcStringId.GISELLE_WAS_SUCH_A_SWEET_CHILD));
 					player.sendPacket(new PlaySound(3, "Npcdialog1.holter_quest_1", 0, 0, 0, 0, 0));
 				}
+				
 				startQuestTimer("ATTACK1", 200, npc, player, true);
 				break;
 			}
@@ -370,6 +390,7 @@ public class ChamberOfProphecies extends AbstractInstance
 					npc.broadcastPacket(new NpcSay(npc.getObjectId(), ChatType.NPC_GENERAL, npc.getId(), NpcStringId.THAT_S_THE_MONSTER_THAT_ATTACKED_FAERON_YOU_RE_OUTMATCHED_HERE_GO_AHEAD_I_LL_CATCH_UP));
 					player.sendPacket(new PlaySound(3, "Npcdialog1.holter_quest_6", 0, 0, 0, 0, 0));
 				}
+				
 				startQuestTimer("SEY_KAIN_3", 7000, npc, player);
 				break;
 			}
@@ -380,6 +401,7 @@ public class ChamberOfProphecies extends AbstractInstance
 					npc.broadcastPacket(new NpcSay(npc.getObjectId(), ChatType.NPC_GENERAL, npc.getId(), NpcStringId.GO_NOW_KAIN_CAN_HANDLE_THIS));
 					npc.setScriptValue(1);
 				}
+				
 				startQuestTimer("REST", 5000, npc, player);
 				break;
 			}
@@ -390,6 +412,7 @@ public class ChamberOfProphecies extends AbstractInstance
 					npc.broadcastPacket(new NpcSay(npc.getObjectId(), ChatType.NPC_GENERAL, npc.getId(), NpcStringId.LEAVE_THIS_TO_ME_GO));
 					npc.setScriptValue(1);
 				}
+				
 				startQuestTimer("SEY_KAIN_4", 1000, npc, player);
 				break;
 			}
@@ -399,6 +422,7 @@ public class ChamberOfProphecies extends AbstractInstance
 				{
 					npc.getAI().setIntention(Intention.IDLE, player);
 				}
+				
 				cancelQuestTimer("BROADCAST_TEXT", npc, player);
 				break;
 			}
@@ -409,6 +433,7 @@ public class ChamberOfProphecies extends AbstractInstance
 				{
 					return null;
 				}
+				
 				world.setStatus(5);
 				world.spawnGroup("q10753_16_instance_grail");
 				showOnScreenMsg(player, NpcStringId.LEAVE_THIS_PLACE_TO_KAIN_NGO_TO_THE_NEXT_ROOM, ExShowScreenMessage.TOP_CENTER, 6000);
@@ -418,6 +443,7 @@ public class ChamberOfProphecies extends AbstractInstance
 				{
 					npc.getAI().setIntention(Intention.ACTIVE, player);
 				}
+				
 				startQuestTimer("CLOSE", 15000, null, player);
 				break;
 			}
@@ -428,6 +454,7 @@ public class ChamberOfProphecies extends AbstractInstance
 				{
 					return null;
 				}
+				
 				final Npc grail = world.getNpc(GRAIL);
 				if ((grail != null) && (player.calculateDistance2D(grail) < 390))
 				{
@@ -448,6 +475,7 @@ public class ChamberOfProphecies extends AbstractInstance
 				{
 					return null;
 				}
+				
 				world.despawnGroup("q10753_16_instance_wizard");
 				break;
 			}
@@ -469,10 +497,12 @@ public class ChamberOfProphecies extends AbstractInstance
 				{
 					return null;
 				}
+				
 				world.finishInstance(0);
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -505,6 +535,7 @@ public class ChamberOfProphecies extends AbstractInstance
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

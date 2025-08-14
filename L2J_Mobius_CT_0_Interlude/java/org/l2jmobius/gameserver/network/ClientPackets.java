@@ -43,7 +43,7 @@ public enum ClientPackets
 	CHARACTER_RESTORE(0x62, CharacterRestore::new, ConnectionState.AUTHENTICATED),
 	REQUEST_PLEDGE_CREST(0x68, RequestPledgeCrest::new, ConnectionState.AUTHENTICATED, ConnectionState.IN_GAME),
 	ENTER_WORLD(0x03, EnterWorld::new, ConnectionState.ENTERING),
-	MOVE_BACKWARD_TO_LOCATION(0x01, MoveBackwardToLocation::new, ConnectionState.IN_GAME),
+	MOVE_TO_LOCATION(0x01, MoveToLocation::new, ConnectionState.IN_GAME),
 	ACTION(0x04, Action::new, ConnectionState.IN_GAME),
 	ATTACK_REQUEST(0x0A, AttackRequest::new, ConnectionState.IN_GAME),
 	REQUEST_ITEM_LIST(0x0F, RequestItemList::new, ConnectionState.IN_GAME),
@@ -236,7 +236,7 @@ public enum ClientPackets
 			if (packet != null)
 			{
 				final String name = packet.getClass().getSimpleName();
-				if (!Config.ALT_DEV_EXCLUDED_PACKETS.contains(name))
+				if (!Config.EXCLUDED_DEBUG_PACKETS.contains(name))
 				{
 					PacketLogger.info("[C] " + name);
 				}
@@ -246,6 +246,7 @@ public enum ClientPackets
 				PacketLogger.info("[C] 0x" + Integer.toHexString(_packetId).toUpperCase());
 			}
 		}
+		
 		return packet;
 	}
 	

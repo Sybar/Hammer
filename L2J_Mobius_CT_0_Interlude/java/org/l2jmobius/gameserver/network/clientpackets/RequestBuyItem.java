@@ -119,6 +119,7 @@ public class RequestBuyItem extends ClientPacket
 				player.sendPacket(ActionFailed.STATIC_PACKET);
 				return;
 			}
+			
 			merchant = target.asCreature();
 		}
 		
@@ -211,6 +212,7 @@ public class RequestBuyItem extends ClientPacket
 				PunishmentManager.handleIllegalPlayerAction(player, "Warning!! Character " + player.getName() + " of account " + player.getAccountName() + " tried to purchase over " + MAX_ADENA + " adena worth of goods.", Config.DEFAULT_PUNISH);
 				return;
 			}
+			
 			// first calculate price per item with tax, then multiply by count
 			price = (int) (price * (1 + castleTaxRate + baseTaxRate));
 			subTotal += i.getCount() * price;

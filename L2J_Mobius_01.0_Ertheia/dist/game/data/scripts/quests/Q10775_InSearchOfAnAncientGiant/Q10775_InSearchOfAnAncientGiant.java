@@ -32,6 +32,7 @@ public class Q10775_InSearchOfAnAncientGiant extends Quest
 	// NPCs
 	private static final int BELKADHI = 30485;
 	private static final int ROMBEL = 30487;
+	
 	// Monsters
 	private static final int[] MONSTERS =
 	{
@@ -45,9 +46,11 @@ public class Q10775_InSearchOfAnAncientGiant extends Quest
 		23154, // Styrindo
 		23155, // Ashende
 	};
+	
 	// Items
 	private static final int ENERGY_OF_REGENERATION = 39715;
 	private static final int ENCHANT_ARMOR_C = 952;
+	
 	// Misc
 	private static final int MIN_LEVEL = 46;
 	
@@ -104,6 +107,7 @@ public class Q10775_InSearchOfAnAncientGiant extends Quest
 				htmltext = null;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -140,6 +144,7 @@ public class Q10775_InSearchOfAnAncientGiant extends Quest
 		{
 			htmltext = "30485-01.html";
 		}
+		
 		return htmltext;
 	}
 	

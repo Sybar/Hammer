@@ -45,7 +45,7 @@ import handlers.bypasshandlers.NpcViewMod;
 public class NpcActionShift implements IActionShiftHandler
 {
 	@Override
-	public boolean action(Player player, WorldObject target, boolean interact)
+	public boolean onAction(Player player, WorldObject target, boolean interact)
 	{
 		// Check if the Player is a GM
 		if (player.isGM())
@@ -131,8 +131,10 @@ public class NpcActionShift implements IActionShiftHandler
 							html.replace("%spawnai%", "<a action=\"bypass -h admin_quest_info " + script.getName() + "\"><font color=\"LEVEL\">" + script.getName() + "</font></a>");
 						}
 					}
+					
 					html.replace("%spawnai%", "<font color=FF0000>" + template.getSpawnTemplate().getAI() + "</font>");
 				}
+				
 				html.replace("%spawn%", (template != null ? template.getSpawnLocation().getX() : npc.getSpawn().getX()) + " " + (template != null ? template.getSpawnLocation().getY() : npc.getSpawn().getY()) + " " + (template != null ? template.getSpawnLocation().getZ() : npc.getSpawn().getZ()));
 				if (npc.getSpawn().getRespawnMinDelay() == 0)
 				{
@@ -146,6 +148,7 @@ public class NpcActionShift implements IActionShiftHandler
 				{
 					html.replace("%resp%", (npc.getSpawn().getRespawnMinDelay() / 1000) + " sec");
 				}
+				
 				html.replace("%chaseRange%", npc.getSpawn().getChaseRange());
 			}
 			else
@@ -191,6 +194,7 @@ public class NpcActionShift implements IActionShiftHandler
 			{
 				html.replace("%route%", "");
 			}
+			
 			player.sendPacket(html);
 		}
 		else if (Config.ALT_GAME_VIEWNPC)
@@ -199,9 +203,17 @@ public class NpcActionShift implements IActionShiftHandler
 			{
 				return false;
 			}
+			
 			player.setTarget(target);
-			NpcViewMod.sendNpcView(player, target.asNpc());
+			
+			// Only show view if NPC is alive.
+			final Npc npc = target.asNpc();
+			if ((npc != null) && !npc.isDead())
+			{
+				NpcViewMod.sendNpcView(player, npc);
+			}
 		}
+		
 		return true;
 	}
 	

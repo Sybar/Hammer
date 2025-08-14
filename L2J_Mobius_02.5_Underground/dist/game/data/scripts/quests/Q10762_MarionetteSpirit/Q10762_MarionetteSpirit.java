@@ -33,10 +33,13 @@ public class Q10762_MarionetteSpirit extends Quest
 {
 	// NPC
 	private static final int VORBOS = 33966;
+	
 	// Monster
 	private static final int MARIONETTE_SPIRIT = 23418;
+	
 	// Items
 	private static final int MAGIC_CHAIN_KEY = 39488;
+	
 	// Misc
 	private static final int MIN_LEVEL = 34;
 	private static final int DROP_RATE = 70;
@@ -90,6 +93,7 @@ public class Q10762_MarionetteSpirit extends Quest
 				htmltext = null;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -116,6 +120,7 @@ public class Q10762_MarionetteSpirit extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

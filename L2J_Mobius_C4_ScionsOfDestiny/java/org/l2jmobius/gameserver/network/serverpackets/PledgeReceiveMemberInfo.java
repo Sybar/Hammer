@@ -16,8 +16,11 @@
  */
 package org.l2jmobius.gameserver.network.serverpackets;
 
+import java.util.Collection;
+
 import org.l2jmobius.commons.network.WritableBuffer;
 import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.model.clan.Clan;
 import org.l2jmobius.gameserver.model.clan.ClanMember;
 import org.l2jmobius.gameserver.network.GameClient;
 import org.l2jmobius.gameserver.network.ServerPackets;
@@ -27,12 +30,12 @@ import org.l2jmobius.gameserver.network.ServerPackets;
  */
 public class PledgeReceiveMemberInfo extends ServerPacket
 {
-	private final ClanMember _member;
+	private final Clan _clan;
 	private final Player _player;
 	
 	public PledgeReceiveMemberInfo(ClanMember member, Player player)
 	{
-		_member = member;
+		_clan = member.getClan();
 		_player = player;
 	}
 	
@@ -40,35 +43,38 @@ public class PledgeReceiveMemberInfo extends ServerPacket
 	public void writeImpl(GameClient client, WritableBuffer buffer)
 	{
 		ServerPackets.PLEDGE_RECEIVE_MEMBER_INFO.writeId(this, buffer);
-		buffer.writeInt(_member.getClan().getId());
-		buffer.writeString(_member.getClan().getName());
-		buffer.writeString(_member.getClan().getLeaderName());
-		buffer.writeInt(_member.getClan().getCrestId()); // crest id .. is used again
-		buffer.writeInt(_member.getClan().getLevel());
-		buffer.writeInt(_member.getClan().getCastleId());
-		buffer.writeInt(_member.getClan().getHideoutId());
+		buffer.writeInt(_clan.getId());
+		buffer.writeString(_clan.getName());
+		buffer.writeString(_clan.getLeaderName());
+		buffer.writeInt(_clan.getCrestId()); // crest id .. is used again
+		buffer.writeInt(_clan.getLevel());
+		buffer.writeInt(_clan.getCastleId());
+		buffer.writeInt(_clan.getHideoutId());
 		buffer.writeInt(0);
 		buffer.writeInt(_player.getLevel()); // ??
-		buffer.writeInt(_member.getClan().getDissolvingExpiryTime() > System.currentTimeMillis() ? 3 : 0);
+		buffer.writeInt(_clan.getDissolvingExpiryTime() > System.currentTimeMillis() ? 3 : 0);
 		buffer.writeInt(0);
-		buffer.writeInt(_member.getClan().getAllyId());
-		buffer.writeString(_member.getClan().getAllyName());
-		buffer.writeInt(_member.getClan().getAllyCrestId());
-		buffer.writeInt(_member.getClan().isAtWar()); // new c3
-		buffer.writeInt(_member.getClan().getMembers().length - 1);
-		for (ClanMember m : _member.getClan().getMembers())
+		buffer.writeInt(_clan.getAllyId());
+		buffer.writeString(_clan.getAllyName());
+		buffer.writeInt(_clan.getAllyCrestId());
+		buffer.writeInt(_clan.isAtWar()); // new c3
+		
+		final Collection<ClanMember> members = _clan.getMembers();
+		buffer.writeInt(members.size() - 1);
+		for (ClanMember member : members)
 		{
 			// TODO is this c4?
-			if (m.getObjectId() == _player.getObjectId())
+			if (member.getObjectId() == _player.getObjectId())
 			{
 				continue;
 			}
-			buffer.writeString(m.getName());
-			buffer.writeInt(m.getLevel());
-			buffer.writeInt(m.getClassId());
+			
+			buffer.writeString(member.getName());
+			buffer.writeInt(member.getLevel());
+			buffer.writeInt(member.getClassId());
 			buffer.writeInt(0);
 			buffer.writeInt(1);
-			buffer.writeInt(m.isOnline() ? m.getObjectId() : 0); // 1=online 0=offline
+			buffer.writeInt(member.isOnline() ? member.getObjectId() : 0); // 1=online 0=offline
 		}
 	}
 }

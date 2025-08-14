@@ -40,6 +40,7 @@ public class GiantSoldiers extends AbstractNpcAI
 	private static final int SEKNUS = 33480;
 	private static final int DRELL = 33481;
 	private static final int CELLPHINE = 33477;
+	
 	// Location
 	private static final Location NEAR_PANTHEON = new Location(-114371, 260183, -1192);
 	
@@ -121,6 +122,7 @@ public class GiantSoldiers extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

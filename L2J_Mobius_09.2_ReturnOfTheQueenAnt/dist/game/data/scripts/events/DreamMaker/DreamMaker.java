@@ -33,10 +33,12 @@ public class DreamMaker extends LongTimeEvent
 {
 	// NPC
 	private static final int MOO_COW = 34590;
+	
 	// Items
 	private static final int LUCKY_POUCH_GROWTH = 81934; // Lucky Pouch Growth
 	private static final int LUCKY_POUCH_PROSPERITY = 81935; // Lucky Pouch Prosperity
 	private static final int LUCKY_POUCH_HARMONY = 81936; // Lucky Pouch Harmony
+	
 	// Buffs
 	private static final SkillHolder[] BUFFS =
 	{
@@ -97,6 +99,7 @@ public class DreamMaker extends LongTimeEvent
 					{
 						takeItems(player, LUCKY_POUCH_HARMONY, 1);
 					}
+					
 					giveItems(player, LUCKY_POUCH_GROWTH, 1);
 					player.getVariables().set("DREAM_MAKER_GIFT_EXCHANGED", true);
 					htmltext = "34590-successful.htm";
@@ -127,6 +130,7 @@ public class DreamMaker extends LongTimeEvent
 					{
 						takeItems(player, LUCKY_POUCH_HARMONY, 1);
 					}
+					
 					giveItems(player, LUCKY_POUCH_PROSPERITY, 1);
 					player.getVariables().set("DREAM_MAKER_GIFT_EXCHANGED", true);
 					htmltext = "34590-successful.htm";
@@ -157,6 +161,7 @@ public class DreamMaker extends LongTimeEvent
 					{
 						takeItems(player, LUCKY_POUCH_PROSPERITY, 1);
 					}
+					
 					giveItems(player, LUCKY_POUCH_HARMONY, 1);
 					player.getVariables().set("DREAM_MAKER_GIFT_EXCHANGED", true);
 					htmltext = "34590-successful.htm";
@@ -201,6 +206,7 @@ public class DreamMaker extends LongTimeEvent
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

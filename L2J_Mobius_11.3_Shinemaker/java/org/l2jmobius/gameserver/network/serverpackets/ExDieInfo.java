@@ -54,6 +54,7 @@ public class ExDieInfo extends ServerPacket
 			buffer.writeInt(item.getEnchantLevel());
 			buffer.writeInt((int) item.getCount());
 		}
+		
 		buffer.writeShort(_lastDamageTaken.size());
 		for (DamageTakenHolder damageHolder : _lastDamageTaken)
 		{
@@ -70,6 +71,7 @@ public class ExDieInfo extends ServerPacket
 				buffer.writeString(damageHolder.getCreature().getName());
 				buffer.writeString(clan == null ? "" : clan.getName());
 			}
+			
 			buffer.writeInt(damageHolder.getSkillId());
 			buffer.writeDouble(damageHolder.getDamage());
 			buffer.writeShort(damageHolder.getClientId());

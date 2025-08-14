@@ -42,6 +42,7 @@ public class Q10849_TrialsForAdaptation extends Quest
 	private static final int ROTOEH = 34239;
 	private static final int CYPHONA = 34055;
 	private static final int BELAS = 34056;
+	
 	// Monsters
 	private static final int KERBEROS_LAGER_N = 23550; // (night)
 	private static final int KERBEROS_LAGER = 23541;
@@ -59,12 +60,15 @@ public class Q10849_TrialsForAdaptation extends Quest
 	private static final int FURY_KERBEROS_LEGER = 23545;
 	private static final int FURY_KERBEROS_NERO_N = 23558; // (night)
 	private static final int FURY_KERBEROS_NERO = 23549;
+	
 	// Items
 	private static final int ENERGY_LADEL_WITH_THE_DAYS = 47189;
 	private static final int ENERGY_LADEL_WITH_THE_NIGHTS = 47190;
+	
 	// Reward
 	private static final int RUNE_STONE = 39738;
 	private static final int SPELLBOOK_WING_HOUND = 47152;
+	
 	// Misc
 	private static final int MIN_LEVEL = 102;
 	
@@ -150,6 +154,7 @@ public class Q10849_TrialsForAdaptation extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -249,6 +254,7 @@ public class Q10849_TrialsForAdaptation extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -293,6 +299,7 @@ public class Q10849_TrialsForAdaptation extends Quest
 					break;
 				}
 			}
+			
 			if ((getQuestItemsCount(killer, ENERGY_LADEL_WITH_THE_DAYS) >= 1500) && (getQuestItemsCount(killer, ENERGY_LADEL_WITH_THE_NIGHTS) >= 500))
 			{
 				qs.setCond(2, true);

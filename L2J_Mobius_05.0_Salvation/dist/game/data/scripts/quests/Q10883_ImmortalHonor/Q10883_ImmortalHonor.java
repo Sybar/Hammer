@@ -41,12 +41,15 @@ public class Q10883_ImmortalHonor extends Quest
 {
 	// Npcs
 	private static final int KEUCEREUS_ADMIRAL = 32548;
+	
 	// Raids
 	private static final int CAMILLE = 26236;
 	private static final int KAIN_VAN_HALTER = 26235;
+	
 	// Items
 	private static final int KEUCEREUS_CERTIFICATE = 47837;
 	private static final ItemHolder LIONEL_HUNTERS_LIST_PART_5 = new ItemHolder(47834, 1);
+	
 	// Misc
 	private static final int MIN_LEVEL = 104;
 	
@@ -105,6 +108,7 @@ public class Q10883_ImmortalHonor extends Quest
 						{
 							mainQ.notifyEvent("SUBQUEST_FINISHED_NOTIFY", npc, player);
 						}
+						
 						htmltext = event;
 					}
 					else
@@ -115,6 +119,7 @@ public class Q10883_ImmortalHonor extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -155,6 +160,7 @@ public class Q10883_ImmortalHonor extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -172,6 +178,7 @@ public class Q10883_ImmortalHonor extends Quest
 		{
 			qs.set(Integer.toString(npc.getId()), "true");
 			playSound(player, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+			
 			// notifyKill(npc, player, isSummon);
 			sendNpcLogList(player);
 		}

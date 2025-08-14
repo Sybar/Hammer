@@ -117,6 +117,7 @@ public class WorldExchangeHolder
 			_hasChanges = false;
 			return true;
 		}
+		
 		return false;
 	}
 	

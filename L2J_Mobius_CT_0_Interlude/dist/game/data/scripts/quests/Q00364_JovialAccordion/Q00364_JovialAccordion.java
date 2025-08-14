@@ -36,6 +36,7 @@ public class Q00364_JovialAccordion extends Quest
 	private static final int XABER = 30075;
 	private static final int CLOTH_CHEST = 30961;
 	private static final int BEER_CHEST = 30960;
+	
 	// Items
 	private static final int KEY_1 = 4323;
 	private static final int KEY_2 = 4324;

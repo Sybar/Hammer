@@ -61,10 +61,12 @@ public class PaybackList extends ServerPacket
 				buffer.writeInt(reward.getId());
 				buffer.writeInt(Math.toIntExact(reward.getCount()));
 			}
+			
 			buffer.writeByte(id);
 			buffer.writeInt(Math.toIntExact(manager.getRewards().get(id).getCount()));
 			buffer.writeByte(rewardStatus.get(id - 1));
 		}
+		
 		buffer.writeByte(_eventID);
 		buffer.writeInt(Math.toIntExact(manager.getEndTime() / 1000));
 		buffer.writeInt(manager.getCoinID());

@@ -90,6 +90,7 @@ public class Q00602_ShadowOfLight extends Quest
 					break;
 				}
 			}
+			
 			st.exitQuest(true, true);
 		}
 		

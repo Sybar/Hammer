@@ -37,6 +37,7 @@ public class Q00422_RepentYourSins extends Quest
 	private static final int CASIAN = 30612;
 	private static final int JOAN = 30718;
 	private static final int PUSHKIN = 30300;
+	
 	// Items
 	private static final int RATMAN_SCAVENGER_SKULL = 4326;
 	private static final int TUREK_WAR_HOUND_TAIL = 4327;
@@ -136,6 +137,7 @@ public class Q00422_RepentYourSins extends Quest
 			case "Pk":
 			{
 				final Summon pet = player.getSummon();
+				
 				// If Sin Eater is currently summoned, show a warning.
 				if ((pet != null) && (pet.getId() == 12564))
 				{

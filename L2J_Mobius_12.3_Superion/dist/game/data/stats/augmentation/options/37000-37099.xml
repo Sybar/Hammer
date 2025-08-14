@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/optionsData.xsd">
+	<option id="37000" name="option_id_37000">
+		<!-- All Critical Damage +1%, all received Critical Damage -1% -->
+	</option>
+	<option id="37001" name="option_id_37001">
+		<!-- Soulshot/ Spiritshot damage +2% -->
+	</option>
+	<option id="37002" name="option_id_37002">
+		<!-- Debilitation Atk. Rate +5 -->
+	</option>
+	<option id="37003" name="option_id_37003">
+		<!-- Confusion Atk. Rate +5 -->
+	</option>
+	<option id="37004" name="option_id_37004">
+		<!-- Stupor Atk. Rate +5 -->
+	</option>
+	<option id="37005" name="option_id_37005">
+		<!-- Danger Zone Atk. Rate +5 -->
+	</option>
+	<option id="37006" name="option_id_37006">
+		<!-- Pull Atk. Rate +5 -->
+	</option>
+	<option id="37007" name="option_id_37007">
+		<!-- Petrification Atk. Rate +5 -->
+	</option>
+	<option id="37008" name="option_id_37008">
+		<!-- Infection Atk. Rate +5 -->
+	</option>
+	<option id="37009" name="option_id_37009">
+		<!-- Obstruction Atk. Rate +5 -->
+	</option>
+	<option id="37010" name="option_id_37010">
+		<!-- P. Accuracy +1 -->
+	</option>
+	<option id="37011" name="option_id_37011">
+		<!-- M. Accuracy +1 -->
+	</option>
+	<option id="37012" name="option_id_37012">
+		<!-- Weapon P. Atk. +10 -->
+	</option>
+	<option id="37013" name="option_id_37013">
+		<!-- Weapon M. Atk. +10 -->
+	</option>
+	<option id="37014" name="option_id_37014">
+		<!-- Attribute Attack +30 -->
+	</option>
+	<option id="37015" name="option_id_37015">
+		<!-- P. Def. +2% -->
+	</option>
+	<option id="37016" name="option_id_37016">
+		<!-- M. Def. +2% -->
+	</option>
+	<option id="37017" name="option_id_37017">
+		<!-- P. Evasion +2 -->
+	</option>
+	<option id="37018" name="option_id_37018">
+		<!-- M. Evasion +2 -->
+	</option>
+	<option id="37019" name="option_id_37019">
+		<!-- Armor P. Def. +2 -->
+	</option>
+	<option id="37020" name="option_id_37020">
+		<!-- Accessory M. Def. +2 -->
+	</option>
+	<option id="37021" name="option_id_37021">
+		<!-- P./ M. Atk. +1% -->
+	</option>
+	<option id="37022" name="option_id_37022">
+		<!-- Critical Rate for basic attacks +1% -->
+	</option>
+	<option id="37023" name="option_id_37023">
+		<!-- P. Skill Critical Rate +1% -->
+	</option>
+	<option id="37024" name="option_id_37024">
+		<!-- M. Skill Critical Rate +1% -->
+	</option>
+	<option id="37025" name="option_id_37025">
+		<!-- Max HP +1% -->
+	</option>
+	<option id="37026" name="option_id_37026">
+		<!-- Max MP +1% -->
+	</option>
+	<option id="37027" name="option_id_37027">
+		<!-- Acquired XP/ SP +3% -->
+	</option>
+	<option id="37028" name="option_id_37028">
+		<!-- Soulshot damage +1% -->
+	</option>
+	<option id="37029" name="option_id_37029">
+		<!-- Spiritshot damage +1% -->
+	</option>
+	<option id="37030" name="option_id_37030">
+		<!-- Debilitation/ Confusion/ Obstruction/ Stupor/ Infection/ Petrification/ Pull/ Danger Zone Resistance +5 -->
+	</option>
+	<option id="37031" name="option_id_37031">
+		<!-- Debilitation/ Confusion/ Obstruction/ Stupor/ Infection/ Petrification/ Pull/ Danger Zone Atk. Rate +5 -->
+	</option>
+	<option id="37032" name="option_id_37032">
+		<!-- AoE Damage Resistance +3% -->
+	</option>
+	<option id="37033" name="option_id_37033">
+		<!-- Damage +1%, received damage -1% -->
+	</option>
+	<option id="37034" name="option_id_37034">
+		<!-- Basic Attack Power +1% -->
+	</option>
+	<option id="37035" name="option_id_37035">
+		<!-- P. Skill Power +1% -->
+	</option>
+	<option id="37036" name="option_id_37036">
+		<!-- M. Skill Power +1% -->
+	</option>
+	<option id="37037" name="option_id_37037">
+		<!-- Critical Rate for basic attacks +2% -->
+	</option>
+	<option id="37038" name="option_id_37038">
+		<!-- P. Skill Critical Rate +2% -->
+	</option>
+	<option id="37039" name="option_id_37039">
+		<!-- M. Skill Critical Rate +2% -->
+	</option>
+	<option id="37040" name="option_id_37040">
+		<!-- Skill mastery +1% -->
+	</option>
+	<option id="37041" name="option_id_37041">
+		<!-- Debilitation/ Confusion/ Obstruction/ Stupor/ Infection/ Petrification/ Pull/ Danger Zone Resistance +10 -->
+	</option>
+	<option id="37042" name="option_id_37042">
+		<!-- Debilitation/ Confusion/ Obstruction/ Stupor/ Infection/ Petrification/ Pull/ Danger Zone Atk. Rate +10 -->
+	</option>
+	<option id="37043" name="option_id_37043">
+		<!-- Debilitation Resistance +5 -->
+	</option>
+	<option id="37044" name="option_id_37044">
+		<!-- Confusion Resistance +5 -->
+	</option>
+	<option id="37045" name="option_id_37045">
+		<!-- Stupor Resistance +5 -->
+	</option>
+	<option id="37046" name="option_id_37046">
+		<!-- Danger Zone Resistance +5 -->
+	</option>
+	<option id="37047" name="option_id_37047">
+		<!-- Pull Resistance +5 -->
+	</option>
+	<option id="37048" name="option_id_37048">
+		<!-- Petrification Resistance +5 -->
+	</option>
+	<option id="37049" name="option_id_37049">
+		<!-- Infection Resistance +5 -->
+	</option>
+	<option id="37050" name="option_id_37050">
+		<!-- Obstruction Resistance +5 -->
+	</option>
+	<option id="37051" name="option_id_37051">
+		<!-- Weapon P. Atk. +10 -->
+	</option>
+	<option id="37052" name="option_id_37052">
+		<!-- Weapon M. Atk. +10 -->
+	</option>
+	<option id="37053" name="option_id_37053">
+		<!-- Armor P. Def. +2 -->
+	</option>
+	<option id="37054" name="option_id_37054">
+		<!-- Accessory M. Def. +2 -->
+	</option>
+	<option id="37055" name="option_id_37055">
+		<!-- Damage +2% -->
+	</option>
+	<option id="37056" name="option_id_37056">
+		<!-- Received damage -2% -->
+	</option>
+	<option id="37057" name="option_id_37057">
+		<!-- Attribute Attack +20 -->
+	</option>
+	<option id="37058" name="option_id_37058">
+		<!-- Attribute Resistance +20 -->
+	</option>
+	<option id="37059" name="option_id_37059">
+		<!-- Attribute Attack/ Resistance +10 -->
+	</option>
+	<option id="37060" name="option_id_37060">
+		<!-- Basic Attack Power +2% -->
+	</option>
+	<option id="37061" name="option_id_37061">
+		<!-- P. Skill Power +2% -->
+	</option>
+	<option id="37062" name="option_id_37062">
+		<!-- M. Skill Power +2% -->
+	</option>
+	<option id="37063" name="option_id_37063">
+		<!-- Skill mastery +1% -->
+	</option>
+	<option id="37064" name="option_id_37064">
+		<!-- Max HP +1% -->
+	</option>
+	<option id="37065" name="option_id_37065">
+		<!-- Max MP +1% -->
+	</option>
+	<option id="37066" name="option_id_37066">
+		<!-- AoE Damage Resistance +1% -->
+	</option>
+	<option id="37067" name="option_id_37067">
+		<!-- P. Accuracy +1 -->
+	</option>
+	<option id="37068" name="option_id_37068">
+		<!-- M. Accuracy +1 -->
+	</option>
+	<option id="37069" name="option_id_37069">
+		<!-- P. Evasion +1 -->
+	</option>
+	<option id="37070" name="option_id_37070">
+		<!-- M. Evasion +1 -->
+	</option>
+	<option id="37071" name="option_id_37071">
+		<!-- Damage to immobilized targets +1% -->
+	</option>
+	<option id="37072" name="option_id_37072">
+		<!-- Received damage when immobilized -1% -->
+	</option>
+	<option id="37073" name="option_id_37073">
+		<!-- Acquired XP/ SP +2% -->
+	</option>
+	<option id="37074" name="option_id_37074">
+		<!-- Acquired XP/ SP +2% -->
+	</option>
+	<option id="37075" name="option_id_37075">
+		<!-- Received damage -1% -->
+	</option>
+	<option id="37076" name="option_id_37076">
+		<!-- Damage +1% -->
+	</option>
+	<option id="37077" name="option_id_37077">
+		<!-- Basic Attack Power +1% -->
+	</option>
+	<option id="37078" name="option_id_37078">
+		<!-- Basic Attack Power +1% -->
+	</option>
+	<option id="37079" name="option_id_37079">
+		<!-- P. Skill Power +1% -->
+	</option>
+	<option id="37080" name="option_id_37080">
+		<!-- P. Skill Power +1% -->
+	</option>
+	<option id="37081" name="option_id_37081">
+		<!-- M. Skill Power +1% -->
+	</option>
+	<option id="37082" name="option_id_37082">
+		<!-- M. Skill Power +1% -->
+	</option>
+	<option id="37083" name="option_id_37083">
+		<!-- All Critical Rate +2% -->
+	</option>
+	<option id="37084" name="option_id_37084">
+		<!-- Attribute Resistance +30 -->
+	</option>
+	<option id="37085" name="option_id_37085">
+		<!-- Received damage -1% -->
+	</option>
+	<option id="37086" name="option_id_37086">
+		<!-- Damage +1% -->
+	</option>
+	<option id="37087" name="option_id_37087">
+		<!-- Received damage -1% -->
+	</option>
+	<option id="37088" name="option_id_37088">
+		<!-- Damage +1% -->
+	</option>
+	<option id="37089" name="option_id_37089">
+		<!-- Received damage -1% -->
+	</option>
+	<option id="37090" name="option_id_37090">
+		<!-- Damage +1% -->
+	</option>
+	<option id="37091" name="option_id_37091">
+		<!-- Received damage -1% -->
+	</option>
+	<option id="37092" name="option_id_37092">
+		<!-- Damage +1% -->
+	</option>
+	<option id="37093" name="option_id_37093">
+		<!-- Debilitation/ Confusion/ Obstruction/ Stupor/ Infection/ Petrification/ Pull/ Danger Zone Atk. Rate and Resistance +10 -->
+	</option>
+	<option id="37094" name="option_id_37094">
+		<!-- Debilitation/ Confusion/ Obstruction/ Stupor/ Infection/ Petrification/ Pull/ Danger Zone Atk. Rate and Resistance +10 -->
+	</option>
+	<option id="37095" name="option_id_37095">
+		<!-- Debilitation/ Confusion/ Obstruction/ Stupor/ Infection/ Petrification/ Pull/ Danger Zone Atk. Rate and Resistance +10 -->
+	</option>
+	<option id="37096" name="option_id_37096">
+		<!-- Debilitation/ Confusion/ Obstruction/ Stupor/ Infection/ Petrification/ Pull/ Danger Zone Atk. Rate and Resistance +10 -->
+	</option>
+	<option id="37097" name="option_id_37097">
+		<!-- Debilitation/ Confusion/ Obstruction/ Stupor/ Infection/ Petrification/ Pull/ Danger Zone Atk. Rate and Resistance +10 -->
+	</option>
+	<option id="37098" name="option_id_37098">
+		<!-- All Critical Rate +1%, received Critical Rate -1% -->
+	</option>
+	<option id="37099" name="option_id_37099">
+		<!-- All Critical Rate +1%, received Critical Rate -1% -->
+	</option>
+</list>

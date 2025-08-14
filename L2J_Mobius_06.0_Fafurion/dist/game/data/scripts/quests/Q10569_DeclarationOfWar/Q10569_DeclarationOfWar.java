@@ -44,8 +44,10 @@ public class Q10569_DeclarationOfWar extends Quest
 	// NPCs
 	private static final int KEKROPUS = 34222;
 	private static final int HISTIE = 34243;
+	
 	// BOSS
 	private static final int RAMONA = 26143;
+	
 	// Monsters
 	private static final int[] MONSTERS =
 	{
@@ -65,11 +67,13 @@ public class Q10569_DeclarationOfWar extends Quest
 		23816, // Om Bathus
 		23817 // Om Kshana
 	};
+	
 	// Misc
 	private static final int MIN_LEVEL = 102;
 	private static final int KILLING_NPCSTRING_ID = NpcStringId.SELECT_QUEST_STAGE_15.getId(); // NpcStringId.1019685
 	private static final int KILLING_NPCSTRING_ID2 = NpcStringId.SELECT_QUEST_STAGE_15.getId(); // NpcStringId.1019686
 	private static final boolean PARTY_QUEST = true;
+	
 	// Reward
 	private static final int RUNE_STONE = 39738;
 	
@@ -147,6 +151,7 @@ public class Q10569_DeclarationOfWar extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -223,9 +228,11 @@ public class Q10569_DeclarationOfWar extends Quest
 					htmltext = "34222-01.htm";
 					break;
 				}
+				
 				qs.setState(State.CREATED);
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -267,6 +274,7 @@ public class Q10569_DeclarationOfWar extends Quest
 				}
 			}
 		}
+		
 		if ((qs != null) && qs.isCond(4))
 		{
 			qs.setCond(5, true);
@@ -292,6 +300,7 @@ public class Q10569_DeclarationOfWar extends Quest
 				return holder;
 			}
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

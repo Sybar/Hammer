@@ -45,16 +45,19 @@ public class Q00932_SayhasEnergy extends Quest
 {
 	// NPC
 	private static final int BELAS = 34056;
+	
 	// Monsters
 	private static final int[] MONSTERS =
 	{
 		23545, // Fury Kiku
 		23554, // Fury Kiku N
 	};
+	
 	// Item's
 	private static final int UNWORLDLY_VISITORS_BASIC_SUPPLY_BOX = 47181;
 	private static final int UNWORLDLY_VISITORS_INTERMEDIATE_SUPPLY_BOX = 47182;
 	private static final int UNWORLDLY_VISITORS_ADVANCED_SUPPLY_BOX = 47183;
+	
 	// Misc
 	private static final int KILLING_NPCSTRING_ID = NpcStringId.SELECT_QUEST_STAGE_15.getId();
 	private static final boolean PARTY_QUEST = true;
@@ -101,6 +104,7 @@ public class Q00932_SayhasEnergy extends Quest
 					htmltext = "34056-04a.htm";
 					break;
 				}
+				
 				htmltext = "34056-04.htm";
 				break;
 			}
@@ -111,6 +115,7 @@ public class Q00932_SayhasEnergy extends Quest
 					htmltext = "34056-04a.htm";
 					break;
 				}
+				
 				htmltext = "34056-04.htm";
 				break;
 			}
@@ -147,6 +152,7 @@ public class Q00932_SayhasEnergy extends Quest
 							{
 								giveItems(player, UNWORLDLY_VISITORS_BASIC_SUPPLY_BOX, 1);
 							}
+							
 							addExpAndSp(player, 22_221_427_950L, 22_221_360);
 							addFactionPoints(player, Faction.UNWORLDLY_VISITORS, 100);
 							qs.exitQuest(QuestType.DAILY, true);
@@ -174,6 +180,7 @@ public class Q00932_SayhasEnergy extends Quest
 							{
 								giveItems(player, UNWORLDLY_VISITORS_INTERMEDIATE_SUPPLY_BOX, 1);
 							}
+							
 							addExpAndSp(player, 44_442_855_900L, 44_442_720);
 							addFactionPoints(player, Faction.UNWORLDLY_VISITORS, 200);
 							qs.exitQuest(QuestType.DAILY, true);
@@ -189,6 +196,7 @@ public class Q00932_SayhasEnergy extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -215,6 +223,7 @@ public class Q00932_SayhasEnergy extends Quest
 							htmltext = "34056-04a.htm";
 							break;
 						}
+						
 						htmltext = "34056-04.htm";
 						break;
 					}
@@ -251,6 +260,7 @@ public class Q00932_SayhasEnergy extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -298,6 +308,7 @@ public class Q00932_SayhasEnergy extends Quest
 			holder.add(new NpcLogListHolder(KILLING_NPCSTRING_ID, true, qs.getInt("AncientGhosts")));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

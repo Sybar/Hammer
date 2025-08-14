@@ -873,9 +873,9 @@
 		<set name="is_freightable" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="for_npc" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2429" level="1" /> <!-- Haste Potion -->
 		</skills>
@@ -897,9 +897,9 @@
 		<set name="is_freightable" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="for_npc" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2432" level="1" /> <!-- Critical Rate Juice -->
 		</skills>
@@ -921,9 +921,9 @@
 		<set name="is_freightable" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="for_npc" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2437" level="1" /> <!-- Wind Walk Juice -->
 		</skills>
@@ -1536,9 +1536,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="for_npc" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2436" level="1" /> <!-- P. Atk. Potion -->
 		</skills>

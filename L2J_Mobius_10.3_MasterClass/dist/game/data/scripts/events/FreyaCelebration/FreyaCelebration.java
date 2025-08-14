@@ -16,6 +16,8 @@
  */
 package events.FreyaCelebration;
 
+import java.util.Collection;
+
 import org.l2jmobius.gameserver.model.WorldObject;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
@@ -38,9 +40,11 @@ public class FreyaCelebration extends LongTimeEvent
 {
 	// NPC
 	private static final int FREYA = 13296;
+	
 	// Items
 	private static final int FREYA_POTION = 15440;
 	private static final int FREYA_GIFT = 17138;
+	
 	// Misc
 	private static final String RESET_VAR = "FreyaCelebration";
 	private static final int HOURS = 20;
@@ -108,18 +112,19 @@ public class FreyaCelebration extends LongTimeEvent
 				player.sendPacket(sm);
 			}
 		}
+		
 		return null;
 	}
 	
 	@Override
-	public void onSkillSee(Npc npc, Player caster, Skill skill, WorldObject[] targets, boolean isSummon)
+	public void onSkillSee(Npc npc, Player caster, Skill skill, Collection<WorldObject> targets, boolean isSummon)
 	{
 		if ((caster == null) || (npc == null))
 		{
 			return;
 		}
 		
-		if ((npc.getId() == FREYA) && ArrayUtil.contains(targets, npc) && ArrayUtil.contains(SKILLS, skill.getId()))
+		if ((npc.getId() == FREYA) && targets.contains(npc) && ArrayUtil.contains(SKILLS, skill.getId()))
 		{
 			if (getRandom(100) < 5)
 			{

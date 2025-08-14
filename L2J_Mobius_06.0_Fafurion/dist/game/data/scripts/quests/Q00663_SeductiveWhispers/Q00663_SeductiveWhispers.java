@@ -36,8 +36,10 @@ public class Q00663_SeductiveWhispers extends Quest
 {
 	// NPC
 	private static final int WILBERT = 30846;
+	
 	// Item
 	private static final int SPIRIT_BEAD = 8766;
+	
 	// Monsters
 	private static final int[] MOBS =
 	{
@@ -61,6 +63,7 @@ public class Q00663_SeductiveWhispers extends Quest
 		21001,
 		21002
 	};
+	
 	// Rewards
 	private static final int[] RECIPES_B_GRADE =
 	{
@@ -106,6 +109,7 @@ public class Q00663_SeductiveWhispers extends Quest
 		4106,
 		4118
 	};
+	
 	// Misc
 	private static final Card[] cards = new Card[10];
 	static
@@ -153,6 +157,7 @@ public class Q00663_SeductiveWhispers extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -194,6 +199,7 @@ public class Q00663_SeductiveWhispers extends Quest
 				{
 					return "30846-13.html";
 				}
+				
 				takeItems(player, SPIRIT_BEAD, 1);
 				break;
 			}
@@ -207,6 +213,7 @@ public class Q00663_SeductiveWhispers extends Quest
 				{
 					playerCard = getRandomCard();
 				}
+				
 				return play(player, true, true);
 			}
 			case "30846-23.html":
@@ -220,6 +227,7 @@ public class Q00663_SeductiveWhispers extends Quest
 				{
 					npcCard = getRandomCard();
 				}
+				
 				return play(player, false, true);
 			}
 			case "30846-15.html":
@@ -228,6 +236,7 @@ public class Q00663_SeductiveWhispers extends Quest
 				{
 					return "30846-08.html";
 				}
+				
 				takeItems(player, SPIRIT_BEAD, 50);
 				break;
 			}
@@ -242,6 +251,7 @@ public class Q00663_SeductiveWhispers extends Quest
 				{
 					playerCard = getRandomCard();
 				}
+				
 				return play(player, true, false);
 			}
 			case "30846-17.html":
@@ -256,6 +266,7 @@ public class Q00663_SeductiveWhispers extends Quest
 				{
 					npcCard = getRandomCard();
 				}
+				
 				return play(player, false, false);
 			}
 			case "30846-20.html":
@@ -265,6 +276,7 @@ public class Q00663_SeductiveWhispers extends Quest
 					giveRewards(player, winCount);
 					winCount = 0;
 				}
+				
 				reset(false);
 				break;
 			}
@@ -335,6 +347,7 @@ public class Q00663_SeductiveWhispers extends Quest
 		{
 			reset(false);
 		}
+		
 		if (isNpcWin)
 		{
 			reset(true);
@@ -391,6 +404,7 @@ public class Q00663_SeductiveWhispers extends Quest
 		{
 			return true;
 		}
+		
 		if ((npcCard != null) && (playerCard.getSide().ordinal() == npcCard.getSide().ordinal()))
 		{
 			return (playerCard.getNumber() + npcCard.getNumber()) == 5;
@@ -403,6 +417,7 @@ public class Q00663_SeductiveWhispers extends Quest
 		{
 			return npcCard.getNumber() == 5;
 		}
+		
 		return false;
 	}
 	

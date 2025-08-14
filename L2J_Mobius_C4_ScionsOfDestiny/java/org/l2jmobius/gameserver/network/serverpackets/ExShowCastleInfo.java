@@ -56,6 +56,7 @@ public class ExShowCastleInfo extends ServerPacket
 			{
 				buffer.writeString("");
 			}
+			
 			buffer.writeInt(castle.getTaxPercent());
 			buffer.writeInt((int) (castle.getSiege().getSiegeDate().getTimeInMillis() / 1000));
 		}

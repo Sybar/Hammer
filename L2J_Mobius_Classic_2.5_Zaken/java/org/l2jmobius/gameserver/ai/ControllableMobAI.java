@@ -146,6 +146,7 @@ public class ControllableMobAI extends AttackableAI
 		if (!_actor.isMuted())
 		{
 			int maxRange = 0;
+			
 			// check distant skills
 			for (Skill sk : _actor.getAllSkills())
 			{
@@ -154,6 +155,7 @@ public class ControllableMobAI extends AttackableAI
 					_actor.doCast(sk);
 					return;
 				}
+				
 				maxRange = Math.max(maxRange, sk.getCastRange());
 			}
 			
@@ -180,6 +182,7 @@ public class ControllableMobAI extends AttackableAI
 		}
 		
 		setTarget(target);
+		
 		// as a response, we put the target in a forcedattack mode
 		final ControllableMob theTarget = (ControllableMob) target;
 		final ControllableMobAI controllableMobAI = (ControllableMobAI) theTarget.getAI();
@@ -210,6 +213,7 @@ public class ControllableMobAI extends AttackableAI
 			
 			return;
 		}
+		
 		_actor.doAutoAttack(target);
 	}
 	
@@ -419,7 +423,7 @@ public class ControllableMobAI extends AttackableAI
 		final List<Creature> potentialTarget = new ArrayList<>();
 		World.getInstance().forEachVisibleObject(_actor, Creature.class, target ->
 		{
-			if (LocationUtil.checkIfInShortRange(_actor.asAttackable().getAggroRange(), _actor, target, true) && checkAutoAttackCondition(target))
+			if ((_actor.calculateDistance3D(target) < _actor.asAttackable().getAggroRange()) && checkAutoAttackCondition(target))
 			{
 				potentialTarget.add(target);
 			}

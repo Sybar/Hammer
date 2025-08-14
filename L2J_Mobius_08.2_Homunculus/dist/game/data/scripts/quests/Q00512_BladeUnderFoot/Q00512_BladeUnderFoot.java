@@ -47,9 +47,11 @@ public class Q00512_BladeUnderFoot extends Quest
 		36410, // Rune
 		36411, // Schuttgart
 	};
+	
 	// Items
 	private static final int MARK = 9798;
 	private static final int KNIGHT_EPALUETTE = 9912;
+	
 	// Misc
 	private static final int MIN_LEVEL = 90;
 	
@@ -96,6 +98,7 @@ public class Q00512_BladeUnderFoot extends Quest
 				htmltext = null;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -124,6 +127,7 @@ public class Q00512_BladeUnderFoot extends Quest
 				htmltext = "Warden-08.html";
 			}
 		}
+		
 		return htmltext;
 	}
 }

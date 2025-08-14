@@ -121,6 +121,7 @@ public abstract class Playable extends Creature
 			{
 				return false;
 			}
+			
 			// now reset currentHp to zero
 			setCurrentHp(0);
 			setDead(true);
@@ -145,6 +146,7 @@ public abstract class Playable extends Creature
 			stopEffects(EffectFlag.NOBLESS_BLESSING);
 			deleteBuffs = false;
 		}
+		
 		if (isResurrectSpecialAffected())
 		{
 			stopEffects(EffectFlag.RESURRECTION_SPECIAL);
@@ -160,6 +162,7 @@ public abstract class Playable extends Creature
 				{
 					player.reviveRequest(player, false, 0, 0, 0, 0);
 				}
+				
 				player.setCharmOfCourage(false);
 				player.sendPacket(new EtcStatusUpdate(player));
 			}
@@ -231,6 +234,7 @@ public abstract class Playable extends Creature
 			final ClanWar war = playerClan.getWarWith(target.getClanId());
 			return (war != null) && (war.getState() == ClanWarState.MUTUAL);
 		}
+		
 		return false;
 	}
 	

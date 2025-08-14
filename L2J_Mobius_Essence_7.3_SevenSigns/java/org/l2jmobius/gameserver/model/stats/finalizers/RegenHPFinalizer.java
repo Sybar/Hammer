@@ -198,6 +198,7 @@ public class RegenHPFinalizer implements IStatFunction
 				break;
 			}
 		}
+		
 		if (!inRange)
 		{
 			return 0;

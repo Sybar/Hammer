@@ -43,10 +43,13 @@ public class MithrilMine extends AbstractInstance
 	private static final int MITHRIL_MILLIPEDE = 22766;
 	private static final int KRUN = 32653;
 	private static final int TARUN = 32654;
+	
 	// Item
 	private static final int COLD_RESISTANCE_POTION = 15514;
+	
 	// Skill
 	private static final SkillHolder BLESS_OF_SWORD = new SkillHolder(6286, 1);
+	
 	// Misc
 	private static final int TEMPLATE_ID = 138;
 	
@@ -71,6 +74,7 @@ public class MithrilMine extends AbstractInstance
 					npc.setTarget(player);
 					npc.doCast(BLESS_OF_SWORD.getSkill());
 				}
+				
 				startQuestTimer("BUFF", 30000, npc, player);
 				break;
 			}
@@ -107,6 +111,7 @@ public class MithrilMine extends AbstractInstance
 				break;
 			}
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	
@@ -129,6 +134,7 @@ public class MithrilMine extends AbstractInstance
 				return "18846-03.html";
 			}
 		}
+		
 		return super.onFirstTalk(npc, player);
 	}
 	
@@ -178,6 +184,7 @@ public class MithrilMine extends AbstractInstance
 					{
 						giveItems(talker, COLD_RESISTANCE_POTION, 1);
 					}
+					
 					qs.setCond(4, true);
 					enterInstance(talker, npc, TEMPLATE_ID);
 				}
@@ -198,6 +205,7 @@ public class MithrilMine extends AbstractInstance
 				break;
 			}
 		}
+		
 		return super.onTalk(npc, talker);
 	}
 	

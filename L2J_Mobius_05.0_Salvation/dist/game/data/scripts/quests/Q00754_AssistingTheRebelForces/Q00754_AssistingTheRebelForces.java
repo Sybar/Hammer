@@ -35,13 +35,16 @@ public class Q00754_AssistingTheRebelForces extends Quest
 	// Items
 	private static final int REBEL_SUPPLY_BOX = 35549;
 	private static final int MARK_OF_RESISTANCE = 34909;
+	
 	// Npcs
 	private static final int SIZRAK = 33669;
 	private static final int COMMUNICATION = 33676;
+	
 	// Monsters
 	private static final int KUNDA_GUARDIAN = 23224;
 	private static final int KUNDA_BERSERKER = 23225;
 	private static final int KUNDA_EXECUTOR = 23226;
+	
 	// Misc
 	private static final int MIN_LEVEL = 97;
 	private static final int KUNDA_GUARDIAN_KILL = 5;
@@ -75,6 +78,7 @@ public class Q00754_AssistingTheRebelForces extends Quest
 			qs.set(Integer.toString(KUNDA_EXECUTOR), 0);
 			htmltext = "sofa_sizraku_q0754_04.html";
 		}
+		
 		return htmltext;
 	}
 	
@@ -126,6 +130,7 @@ public class Q00754_AssistingTheRebelForces extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

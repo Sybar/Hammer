@@ -26,7 +26,7 @@ import ai.AbstractNpcAI;
  */
 public class SeeThroughSilentMove extends AbstractNpcAI
 {
-	//@formatter:off
+	// @formatter:off
 	private static final int[] MONSTERS =
 	{
 		18001, 18002, 22199, 22215, 22216, 22217, /*22327,*/ 22746, 22747, 22748,
@@ -41,7 +41,7 @@ public class SeeThroughSilentMove extends AbstractNpcAI
 		19255, // Kalios (Solo 95)
 		25884, // Kalios (Group 95)
 	};
-	//@formatter:on
+	// @formatter:on
 	
 	private SeeThroughSilentMove()
 	{

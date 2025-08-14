@@ -142,9 +142,9 @@
 		<set name="immediate_effect" val="true" />
 		<set name="is_sellable" val="false" />
 		<set name="material" val="CLOTH" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player class_id_restriction="148, 149, 150, 151" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">50</stat>
 			<stat type="mDef">40</stat>
@@ -163,9 +163,9 @@
 		<set name="immediate_effect" val="true" />
 		<set name="is_sellable" val="false" />
 		<set name="material" val="CLOTH" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player class_id_restriction="152, 153, 154, 155, 156, 157" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">50</stat>
 			<stat type="mDef">40</stat>
@@ -184,9 +184,9 @@
 		<set name="immediate_effect" val="true" />
 		<set name="is_sellable" val="false" />
 		<set name="material" val="CLOTH" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player class_id_restriction="158, 159, 160, 161" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">50</stat>
 			<stat type="mDef">40</stat>
@@ -205,9 +205,9 @@
 		<set name="immediate_effect" val="true" />
 		<set name="is_sellable" val="false" />
 		<set name="material" val="CLOTH" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player class_id_restriction="162, 163, 164, 165" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">50</stat>
 			<stat type="mDef">40</stat>
@@ -226,9 +226,9 @@
 		<set name="immediate_effect" val="true" />
 		<set name="is_sellable" val="false" />
 		<set name="material" val="CLOTH" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player class_id_restriction="166, 167, 168, 169, 170" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">50</stat>
 			<stat type="mDef">40</stat>
@@ -247,9 +247,9 @@
 		<set name="immediate_effect" val="true" />
 		<set name="is_sellable" val="false" />
 		<set name="material" val="CLOTH" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player class_id_restriction="176, 177, 178" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">50</stat>
 			<stat type="mDef">40</stat>
@@ -268,9 +268,9 @@
 		<set name="immediate_effect" val="true" />
 		<set name="is_sellable" val="false" />
 		<set name="material" val="CLOTH" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player class_id_restriction="171, 172, 173, 174, 175" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">50</stat>
 			<stat type="mDef">40</stat>
@@ -289,9 +289,9 @@
 		<set name="immediate_effect" val="true" />
 		<set name="is_sellable" val="false" />
 		<set name="material" val="CLOTH" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player class_id_restriction="179, 180, 181" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">50</stat>
 			<stat type="mDef">40</stat>
@@ -987,9 +987,9 @@
 		<set name="crystal_type" val="R" />
 		<set name="is_event_restricted" val="true" />
 		<set name="commissionItemType" val="POTION" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2287" level="7" /> <!-- Elixir of Life (R-grade) -->
 		</skills>
@@ -1011,9 +1011,9 @@
 		<set name="crystal_type" val="R" />
 		<set name="is_event_restricted" val="true" />
 		<set name="commissionItemType" val="POTION" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2288" level="7" /> <!-- Elixir of Mind (R-grade) -->
 		</skills>
@@ -1055,9 +1055,9 @@
 		<set name="crystal_type" val="R" />
 		<set name="is_event_restricted" val="true" />
 		<set name="commissionItemType" val="POTION" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2860" level="7" /> <!-- Superior Elixir of Life (R-grade) -->
 		</skills>
@@ -1078,9 +1078,9 @@
 		<set name="crystal_type" val="R" />
 		<set name="is_event_restricted" val="true" />
 		<set name="commissionItemType" val="POTION" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2861" level="7" /> <!-- Superior Elixir of Mind (R-grade) -->
 		</skills>

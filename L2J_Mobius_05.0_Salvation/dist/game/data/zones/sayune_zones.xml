@@ -310,7 +310,7 @@
 		<stat name="mapId" val="81" />
 		<node X="-61054" Y="86493" />
 	</zone>
-	<zone name="Sayune_82" type="SayuneZone" shape="Cylinder" minZ="2240" maxZ="2250" rad="100">
+	<zone name="Sayune_82" type="SayuneZone" shape="Cylinder" minZ="2200" maxZ="2250" rad="100">
 		<stat name="mapId" val="82" />
 		<node X="81182" Y="153116" />
 	</zone>

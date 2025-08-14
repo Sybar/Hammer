@@ -200,11 +200,13 @@ public class RequestAlchemyConversion extends ClientPacket
 			final Item item = player.getInventory().getItemByItemId(ingredient.getId());
 			player.getInventory().destroyItem(ItemProcessType.FEE, item, ingredient.getCount() * _craftTimes, player, null);
 		}
+		
 		// Add success items.
 		if (successCount > 0)
 		{
 			player.getInventory().addItem(ItemProcessType.REWARD, data.getProductionSuccess().getId(), data.getProductionSuccess().getCount() * successCount, player, null);
 		}
+		
 		// Add failed items.
 		if (failureCount > 0)
 		{

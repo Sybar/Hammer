@@ -72,6 +72,7 @@ public class QueenShyeed extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return null;
 	}
 	
@@ -92,9 +93,11 @@ public class QueenShyeed extends AbstractNpcAI
 			startQuestTimer("respawn", remain, null, null);
 			return;
 		}
+		
 		final Npc npc = addSpawn(SHYEED, SHYEED_LOC, false, 0);
 		startQuestTimer("despawn", 10800000, npc, null);
 		PC_BUFF_ZONE.setEnabled(false);
+		
 		// MOB_BUFF_ZONE.setEnabled(true);
 		MOB_BUFF_DISPLAY_ZONE.setEnabled(true);
 	}
@@ -104,6 +107,7 @@ public class QueenShyeed extends AbstractNpcAI
 		final int respawnTime = RESPAWN - getRandom(RANDOM_RESPAWN);
 		GlobalVariablesManager.getInstance().set("QueenShyeedRespawn", Long.toString(System.currentTimeMillis() + respawnTime));
 		startQuestTimer("respawn", respawnTime, null, null);
+		
 		// MOB_BUFF_ZONE.setEnabled(false);
 		MOB_BUFF_DISPLAY_ZONE.setEnabled(false);
 	}

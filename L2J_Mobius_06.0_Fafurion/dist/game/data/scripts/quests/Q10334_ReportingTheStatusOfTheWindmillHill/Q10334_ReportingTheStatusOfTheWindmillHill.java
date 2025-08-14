@@ -34,6 +34,7 @@ public class Q10334_ReportingTheStatusOfTheWindmillHill extends Quest
 	// NPCs
 	private static final int SCHUNAIN = 33508;
 	private static final int BATHIS = 30332;
+	
 	// Misc
 	private static final int MIN_LEVEL = 22;
 	private static final int MAX_LEVEL = 40;
@@ -85,6 +86,7 @@ public class Q10334_ReportingTheStatusOfTheWindmillHill extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -115,6 +117,7 @@ public class Q10334_ReportingTheStatusOfTheWindmillHill extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

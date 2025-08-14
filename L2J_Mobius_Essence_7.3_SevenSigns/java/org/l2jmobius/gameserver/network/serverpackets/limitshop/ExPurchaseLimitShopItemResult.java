@@ -61,6 +61,7 @@ public class ExPurchaseLimitShopItemResult extends ServerPacket
 			buffer.writeInt(entry.getItemId());
 			buffer.writeInt(entry.getCount().get());
 		}
+		
 		buffer.writeInt(_remainingInfo);
 	}
 }

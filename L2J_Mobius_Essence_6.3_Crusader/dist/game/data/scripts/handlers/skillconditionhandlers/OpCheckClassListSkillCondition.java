@@ -48,6 +48,7 @@ public class OpCheckClassListSkillCondition implements ISkillCondition
 		{
 			_classIds.addAll(classIds);
 		}
+		
 		_affectType = params.getEnum("affectType", SkillConditionAffectType.class);
 		_isWithin = params.getBoolean("isWithin");
 	}

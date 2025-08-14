@@ -38,13 +38,16 @@ public class Q10837_LookingForTheBlackbirdClanMember extends Quest
 	// NPC
 	private static final int ADOLF = 34058;
 	private static final int GLENKINCHIE = 34063;
+	
 	// Monsters
 	private static final int FORTRESS_GUARDIAN_CAPTAIN = 23506;
 	private static final int FORTRESS_RAIDER = 23505;
 	private static final int ATELIA_PASSIONATE_SOLDIER = 23507;
+	
 	// Items
 	private static final int BLACKBIRD_REPORT_GLENKINCHIE = 46134;
 	private static final int BLACKBIRD_SEAL = 46132;
+	
 	// Misc
 	private static final int MIN_LEVEL = 101;
 	
@@ -90,6 +93,7 @@ public class Q10837_LookingForTheBlackbirdClanMember extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -109,6 +113,7 @@ public class Q10837_LookingForTheBlackbirdClanMember extends Quest
 						htmltext = "34058-06.htm";
 						break;
 					}
+					
 					htmltext = "34058-01.htm";
 				}
 				break;
@@ -146,6 +151,7 @@ public class Q10837_LookingForTheBlackbirdClanMember extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

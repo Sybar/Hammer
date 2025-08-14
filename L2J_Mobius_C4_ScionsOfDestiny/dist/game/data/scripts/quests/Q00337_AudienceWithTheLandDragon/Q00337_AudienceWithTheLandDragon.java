@@ -40,6 +40,7 @@ public class Q00337_AudienceWithTheLandDragon extends Quest
 	private static final int HELTON = 30678; // 2nd abyssal
 	private static final int GILMORE = 30754; // 3rd abyssal
 	private static final int THEODRIC = 30755;
+	
 	// Monsters
 	private static final int BLOOD_QUEEN = 18001; // 1
 	private static final int SACRIFICE_OF_THE_SACRIFICED = 27171; // 1
@@ -60,6 +61,7 @@ public class Q00337_AudienceWithTheLandDragon extends Quest
 	private static final int CAVE_KEEPER_2 = 20277;
 	private static final int ABYSSAL_JEWEL_3 = 27167;
 	private static final int JEWEL_GUARDIAN_PYTON = 27170;
+	
 	// Items
 	private static final int FEATHER_OF_GABRIELLE = 3852;
 	private static final int MARK_OF_WATCHMAN = 3864;
@@ -76,6 +78,7 @@ public class Q00337_AudienceWithTheLandDragon extends Quest
 	private static final int HERALD_OF_SLAYER = 3890;
 	private static final int THIRD_FRAGMENT_OF_ABYSS_JEWEL = 3861; // 3rd abyssal
 	private static final int PORTAL_STONE = 3865;
+	
 	// Variables
 	private static boolean _jewel1 = false;
 	private static boolean _jewel2 = false;

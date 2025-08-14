@@ -42,6 +42,7 @@ public class Q00165_ShilensHunt extends Quest
 		MONSTERS.put(20532, 1); // Brown Keltir
 		MONSTERS.put(20536, 2); // Elder Brown Keltir
 	}
+	
 	// Items
 	private static final int DARK_BEZOAR = 1160;
 	private static final int LESSER_HEALING_POTION = 1060;

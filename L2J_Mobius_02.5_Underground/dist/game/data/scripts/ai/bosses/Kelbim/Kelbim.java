@@ -58,6 +58,7 @@ public class Kelbim extends AbstractNpcAI
 	private static final int WAITING = 1;
 	private static final int FIGHTING = 2;
 	private static final int DEAD = 3;
+	
 	// NPCs
 	private static final int ENTER_DEVICE = 34052;
 	private static final int TELEPORT_DEVICE = 34053;
@@ -86,9 +87,11 @@ public class Kelbim extends AbstractNpcAI
 		KELBIM_MINIONS[2],
 		KELBIM_ALTAR
 	};
+	
 	// Doors
 	private static final int DOOR1 = 18190002;
 	private static final int DOOR2 = 18190004;
+	
 	// Skills
 	private static final Skill METEOR_CRASH = SkillData.getInstance().getSkill(23692, 1);
 	private static final Skill WATER_DROP = SkillData.getInstance().getSkill(23693, 1);
@@ -101,9 +104,11 @@ public class Kelbim extends AbstractNpcAI
 		TORNADO_SACKLE,
 		FLAME_THROWER
 	};
+	
 	// Misc
 	private static final ZoneType ZONE = ZoneManager.getInstance().getZoneById(60023);
 	private static final Location KELBIM_LOCATION = new Location(-55386, 58939, -274);
+	
 	// Vars
 	private static GrandBoss _kelbimBoss;
 	private static long _lastAction;
@@ -175,6 +180,7 @@ public class Kelbim extends AbstractNpcAI
 							}
 						}
 					}
+					
 					startQuestTimer("end_kelbim", 2000, null, null);
 				}
 				else
@@ -209,6 +215,7 @@ public class Kelbim extends AbstractNpcAI
 					minion.asAttackable().setIsRaidMinion(true);
 					_minions.add(minion);
 				}
+				
 				for (int i = 0; i < getRandom((_bossStage * 2) / 2, _bossStage * 2); i++)
 				{
 					final Npc minion = addSpawn(KELBIM_GUARDIANS[getRandom(KELBIM_GUARDIANS.length)], _kelbimBoss.getX(), _kelbimBoss.getY(), _kelbimBoss.getZ(), 0, true, 0, true, 0);
@@ -232,6 +239,7 @@ public class Kelbim extends AbstractNpcAI
 							{
 								continue;
 							}
+							
 							if (getRandom(100) > 40)
 							{
 								final Npc skillMob = addSpawn(KELBIM_SHOUT, pl.getX(), pl.getY(), pl.getZ() + 20, 0, true, 60000, false, 0);
@@ -239,15 +247,18 @@ public class Kelbim extends AbstractNpcAI
 								_minions.add(skillMob);
 							}
 						}
+						
 						for (Npc skillNpc : skillNpcs)
 						{
 							if (skillNpc == null)
 							{
 								continue;
 							}
+							
 							skillNpc.doCast(randomAttackSkill);
 						}
 					}
+					
 					startQuestTimer("stage_all_random_area_attack", getRandom(1, 2) * 60000, null, null);
 				}
 				break;
@@ -269,6 +280,7 @@ public class Kelbim extends AbstractNpcAI
 				{
 					_kelbimBoss.deleteMe();
 				}
+				
 				if (!_minions.isEmpty())
 				{
 					for (Npc minion : _minions)
@@ -277,13 +289,16 @@ public class Kelbim extends AbstractNpcAI
 						{
 							continue;
 						}
+						
 						minion.deleteMe();
 					}
 				}
+				
 				_minions.clear();
 				break;
 			}
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	
@@ -302,6 +317,7 @@ public class Kelbim extends AbstractNpcAI
 				return "34052.html";
 			}
 		}
+		
 		return super.onFirstTalk(npc, player);
 	}
 	
@@ -315,6 +331,7 @@ public class Kelbim extends AbstractNpcAI
 			{
 				return "34052-1.html";
 			}
+			
 			if (!player.isInParty())
 			{
 				final NpcHtmlMessage packet = new NpcHtmlMessage(npc.getObjectId());
@@ -335,6 +352,7 @@ public class Kelbim extends AbstractNpcAI
 					return "34052-2.html";
 				}
 			}
+			
 			if (!isPartyLeader)
 			{
 				return "34052-3.html";
@@ -363,6 +381,7 @@ public class Kelbim extends AbstractNpcAI
 				}
 			}
 		}
+		
 		return super.onTalk(npc, player);
 	}
 	

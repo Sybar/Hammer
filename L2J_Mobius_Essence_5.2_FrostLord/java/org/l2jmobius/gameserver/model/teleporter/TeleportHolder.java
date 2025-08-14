@@ -177,6 +177,7 @@ public class TeleportHolder
 				sb.append("<button align=left icon=\"teleport\" action=\"bypass -h " + bypass + " " + _name + " " + loc.getId() + "\" msg=\"811;" + confirmDesc + "\">" + finalName + "</button>");
 			}
 		}
+		
 		sbF.append(sb.toString());
 		
 		// Send html message
@@ -227,6 +228,7 @@ public class TeleportHolder
 			{
 				final NpcHtmlMessage msg = new NpcHtmlMessage(npc.getObjectId());
 				msg.setFile(player, "data/html/teleporter/castleteleporter-busy.htm");
+				msg.replace("%npcname%", npc.getName());
 				player.sendPacket(msg);
 				return;
 			}
@@ -306,6 +308,7 @@ public class TeleportHolder
 				return loc.getFeeCount() / 2;
 			}
 		}
+		
 		return loc.getFeeCount();
 	}
 	
@@ -333,6 +336,7 @@ public class TeleportHolder
 				return "<fstring>1000309</fstring>";
 			}
 		}
+		
 		final ItemTemplate item = ItemData.getInstance().getTemplate(itemId);
 		if (item != null)
 		{
@@ -370,6 +374,7 @@ public class TeleportHolder
 				}
 			}
 		}
+		
 		return "Unknown item: " + itemId;
 	}
 }

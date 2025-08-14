@@ -35,8 +35,10 @@ public class Q00013_ParcelDelivery extends Quest
 	// NPCs
 	private static final int FUNDIN = 31274;
 	private static final int VULCAN = 31539;
+	
 	// Item
 	private static final int PACKAGE = 7263;
+	
 	// Misc
 	private static final int MIN_LEVEL = 74;
 	
@@ -82,6 +84,7 @@ public class Q00013_ParcelDelivery extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -127,6 +130,7 @@ public class Q00013_ParcelDelivery extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

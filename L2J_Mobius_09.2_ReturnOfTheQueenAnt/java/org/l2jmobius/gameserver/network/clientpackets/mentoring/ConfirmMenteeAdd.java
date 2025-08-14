@@ -166,6 +166,7 @@ public class ConfirmMenteeAdd extends ClientPacket
 			mentor.sendPacket(new SystemMessage(SystemMessageId.S1_ALREADY_HAS_A_MENTOR).addString(mentee.getName()));
 			return false;
 		}
+		
 		return true;
 	}
 }

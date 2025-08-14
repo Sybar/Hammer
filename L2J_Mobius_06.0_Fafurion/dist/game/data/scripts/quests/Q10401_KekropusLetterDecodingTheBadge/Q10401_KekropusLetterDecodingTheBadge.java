@@ -36,11 +36,14 @@ public class Q10401_KekropusLetterDecodingTheBadge extends LetterQuest
 	private static final int PATERSON = 33864;
 	private static final int EBLUNE = 33865;
 	private static final int INVISIBLE_NPC = 19543;
+	
 	// Items
 	private static final int SOE_TOWN_OF_ADEN = 37115; // Scroll of Escape: Town of Aden
 	private static final int SOE_FORSAKEN_PLAINS = 37028; // Scroll of Escape: Forsaken Plains
+	
 	// Location
 	private static final Location TELEPORT_LOC = new Location(147540, 24661, -1984);
+	
 	// Misc
 	private static final int MIN_LEVEL = 56;
 	private static final int MAX_LEVEL = 60;
@@ -94,12 +97,14 @@ public class Q10401_KekropusLetterDecodingTheBadge extends LetterQuest
 					{
 						addExpAndSp(player, 731010, 175);
 					}
+					
 					showOnScreenMsg(player, NpcStringId.GROW_STRONGER_HERE_UNTIL_YOU_RECEIVE_THE_NEXT_LETTER_FROM_KEKROPUS_AT_LV_61, ExShowScreenMessage.TOP_CENTER, 6000);
 					htmltext = event;
 				}
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -124,6 +129,7 @@ public class Q10401_KekropusLetterDecodingTheBadge extends LetterQuest
 				htmltext = npc.getId() == PATERSON ? "33864-04.html" : "33865-01.html";
 			}
 		}
+		
 		return htmltext;
 	}
 	

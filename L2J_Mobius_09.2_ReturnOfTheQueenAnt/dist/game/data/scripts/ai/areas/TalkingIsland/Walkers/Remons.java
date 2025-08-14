@@ -33,6 +33,7 @@ public class Remons extends AbstractNpcAI
 	// NPC
 	private static final int REMONS = 33570;
 	private static final int SOROS = 33218;
+	
 	// Distances
 	private static final int MIN_DISTANCE = 70;
 	private static final int MAX_DISTANCE = 200;

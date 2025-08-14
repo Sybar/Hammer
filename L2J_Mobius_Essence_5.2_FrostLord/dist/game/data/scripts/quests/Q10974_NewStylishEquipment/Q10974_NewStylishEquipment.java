@@ -35,6 +35,7 @@ public class Q10974_NewStylishEquipment extends Quest
 {
 	// NPC
 	private static final int ORVEN = 30857;
+	
 	// Items
 	private static final ItemHolder ADVENTURER_SHEEP_HAT = new ItemHolder(93044, 1);
 	private static final ItemHolder ENCHANT_SCROLL_ADVENTURER_SHEEP_HAT = new ItemHolder(93043, 1);
@@ -48,6 +49,7 @@ public class Q10974_NewStylishEquipment extends Quest
 	// Reward
 	private static final ItemHolder ADVENTURER_PENDANT = new ItemHolder(95690, 1);
 	private static final ItemHolder SAYHA_GUST = new ItemHolder(91776, 2);
+	
 	// Misc
 	private static final int MIN_LEVEL = 40;
 	
@@ -83,15 +85,18 @@ public class Q10974_NewStylishEquipment extends Quest
 			case "30857-03.htm":
 			{
 				qs.startQuest();
+				
 				// TODO: Find a better way to do this: Tempfix for not giving items when already have them in inventory (bugging abort and re-accepting).
 				if (player.getInventory().getAllItemsByItemId(ADVENTURER_SHEEP_HAT.getId()).isEmpty())
 				{
 					giveItems(player, ADVENTURER_SHEEP_HAT);
 				}
+				
 				if (player.getInventory().getAllItemsByItemId(ENCHANT_SCROLL_ADVENTURER_SHEEP_HAT.getId()).isEmpty())
 				{
 					giveItems(player, ENCHANT_SCROLL_ADVENTURER_SHEEP_HAT);
 				}
+				
 				htmltext = event;
 				break;
 			}
@@ -108,12 +113,14 @@ public class Q10974_NewStylishEquipment extends Quest
 							break SEARCH;
 						}
 					}
+					
 					if (foundEnchant)
 					{
 						qs.setCond(2);
 						htmltext = event;
 						break;
 					}
+					
 					htmltext = "no_sheep_hat.html";
 				}
 				break;
@@ -121,15 +128,18 @@ public class Q10974_NewStylishEquipment extends Quest
 			case "30857-05.html":
 			{
 				qs.startQuest();
+				
 				// TODO: Find a better way to do this: Tempfix for not giving items when already have them in inventory (bugging abort and re-accepting).
 				if (player.getInventory().getAllItemsByItemId(ADVENTURER_BELT.getId()).isEmpty())
 				{
 					giveItems(player, ADVENTURER_BELT);
 				}
+				
 				if (player.getInventory().getAllItemsByItemId(ENCHANT_SCROLL_ADVENTURER_BELT.getId()).isEmpty())
 				{
 					giveItems(player, ENCHANT_SCROLL_ADVENTURER_BELT);
 				}
+				
 				htmltext = event;
 				break;
 			}
@@ -146,12 +156,14 @@ public class Q10974_NewStylishEquipment extends Quest
 							break SEARCH;
 						}
 					}
+					
 					if (foundEnchant)
 					{
 						qs.setCond(3);
 						htmltext = event;
 						break;
 					}
+					
 					htmltext = "no_belt.html";
 				}
 				break;
@@ -159,15 +171,18 @@ public class Q10974_NewStylishEquipment extends Quest
 			case "30857-07.html":
 			{
 				qs.startQuest();
+				
 				// TODO: Find a better way to do this: Tempfix for not giving items when already have them in inventory (bugging abort and re-accepting).
 				if (player.getInventory().getAllItemsByItemId(ADVENTURER_CLOAK.getId()).isEmpty())
 				{
 					giveItems(player, ADVENTURER_CLOAK);
 				}
+				
 				if (player.getInventory().getAllItemsByItemId(ENCHANT_SCROLL_ADVENTURER_CLOAK.getId()).isEmpty())
 				{
 					giveItems(player, ENCHANT_SCROLL_ADVENTURER_CLOAK);
 				}
+				
 				htmltext = event;
 				break;
 			}
@@ -184,12 +199,14 @@ public class Q10974_NewStylishEquipment extends Quest
 							break SEARCH;
 						}
 					}
+					
 					if (foundEnchant)
 					{
 						qs.setCond(4);
 						htmltext = event;
 						break;
 					}
+					
 					htmltext = "no_cloak.html";
 				}
 				break;
@@ -206,6 +223,7 @@ public class Q10974_NewStylishEquipment extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -233,6 +251,7 @@ public class Q10974_NewStylishEquipment extends Quest
 							break SEARCH;
 						}
 					}
+					
 					if (foundEnchant)
 					{
 						qs.setCond(2);
@@ -255,6 +274,7 @@ public class Q10974_NewStylishEquipment extends Quest
 							break SEARCH;
 						}
 					}
+					
 					if (foundEnchant)
 					{
 						qs.setCond(3);
@@ -277,6 +297,7 @@ public class Q10974_NewStylishEquipment extends Quest
 							break SEARCH;
 						}
 					}
+					
 					if (foundEnchant)
 					{
 						qs.setCond(4);
@@ -294,6 +315,7 @@ public class Q10974_NewStylishEquipment extends Quest
 		{
 			htmltext = getAlreadyCompletedMsg(player);
 		}
+		
 		return htmltext;
 	}
 }

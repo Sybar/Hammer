@@ -607,9 +607,9 @@
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="immediate_effect" val="true" />
-		<cond>
+		<conditions>
 			<player MaximumVitalityPoints="140000" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="39577" level="1" /> <!-- Vitality -->
 		</skills>
@@ -627,9 +627,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="is_dropable" val="false" />
 		<set name="reuse_delay" val="540000" />
-		<cond>
+		<conditions>
 			<player MinimumVitalityPoints="35000" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="18646" level="1" /> <!-- Freya's Scroll of Storm -->
 		</skills>

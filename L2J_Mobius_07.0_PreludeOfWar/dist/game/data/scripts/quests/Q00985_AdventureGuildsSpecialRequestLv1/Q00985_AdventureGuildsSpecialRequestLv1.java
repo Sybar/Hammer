@@ -41,6 +41,7 @@ public class Q00985_AdventureGuildsSpecialRequestLv1 extends Quest
 {
 	// NPCs
 	private static final int ADVENTURE_GUILDSMAN = 33946;
+	
 	// Monsters
 	private static final int[] MONSTERS =
 	{
@@ -53,10 +54,12 @@ public class Q00985_AdventureGuildsSpecialRequestLv1 extends Quest
 		24453, // Servant of Fate
 		24452, // Soldier of Fate
 	};
+	
 	// Misc
 	private static final int MIN_LEVEL = 85;
 	private static final int MAX_LEVEL = 89;
 	private static final boolean PARTY_QUEST = true;
+	
 	// Reward
 	private static final int RUNE_WIND_RESISTANCE_RING = 14599;
 	
@@ -104,6 +107,7 @@ public class Q00985_AdventureGuildsSpecialRequestLv1 extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -146,6 +150,7 @@ public class Q00985_AdventureGuildsSpecialRequestLv1 extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -163,6 +168,7 @@ public class Q00985_AdventureGuildsSpecialRequestLv1 extends Quest
 			{
 				qs.setCond(2, true);
 			}
+			
 			sendNpcLogList(killer);
 		}
 	}
@@ -177,6 +183,7 @@ public class Q00985_AdventureGuildsSpecialRequestLv1 extends Quest
 			holder.add(new NpcLogListHolder(NpcStringId.DEFEAT_MONSTER.getId(), true, qs.getInt("AncientGhosts")));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

@@ -996,9 +996,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="POTION" />
 		<set name="for_npc" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2074" level="1" /> <!-- Potion of Critical Escape -->
 		</skills>
@@ -1018,9 +1018,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="for_npc" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2075" level="1" /> <!-- Scroll: Decrease Hate -->
 		</skills>
@@ -1040,9 +1040,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="for_npc" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2076" level="1" /> <!-- Eva's Blessing -->
 		</skills>
@@ -1062,9 +1062,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="POTION" />
 		<set name="for_npc" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2077" level="1" /> <!-- Potion of Revenge -->
 		</skills>

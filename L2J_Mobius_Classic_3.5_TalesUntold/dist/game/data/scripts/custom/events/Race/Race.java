@@ -54,11 +54,14 @@ public class Race extends Event
 {
 	// 5 min for register
 	private static final int REGISTER_TIME = 5;
+	
 	// 5 min for race
 	private static final int RACE_TIME = 10;
+	
 	// NPCs
 	private static final int START_NPC = 900103;
 	private static final int STOP_NPC = 900104;
+	
 	// Locations
 	private static final String[] LOCATIONS =
 	{
@@ -67,20 +70,28 @@ public class Race extends Event
 		"Floran village enterance",
 		"Floran fort gate"
 	};
+	
 	// Event NPCs list
 	private List<Npc> _npclist;
+	
 	// Npc
 	private Npc _npc;
+	
 	// Player list
 	private Collection<Player> _players;
+	
 	// Event Task
 	ScheduledFuture<?> _eventTask = null;
+	
 	// Event state
 	private static boolean _isactive = false;
+	
 	// Race state
 	private static boolean _isRaceStarted = false;
+	
 	// Skills (Frog by default)
 	private static int _skill = 6201;
+	
 	// We must keep second NPC spawn for radar
 	private static int[] _randspawn = null;
 	
@@ -187,6 +198,7 @@ public class Race extends Event
 		{
 			return false;
 		}
+		
 		// Check Custom Table - we use custom NPCs
 		if (!Config.CUSTOM_NPC_DATA)
 		{
@@ -194,11 +206,14 @@ public class Race extends Event
 			eventMaker.sendMessage("Event " + getName() + " can't be started because custom NPC table is disabled!");
 			return false;
 		}
+		
 		// Initialize list
 		_npclist = new ArrayList<>();
 		_players = ConcurrentHashMap.newKeySet();
+		
 		// Set Event active
 		_isactive = true;
+		
 		// Spawn Manager
 		_npc = recordSpawn(START_NPC, 18429, 145861, -3090, 0, false, 0);
 		
@@ -220,15 +235,20 @@ public class Race extends Event
 			eventStop();
 			return;
 		}
+		
 		// Set state
 		_isRaceStarted = true;
+		
 		// Announce
 		Broadcast.toAllOnlinePlayers("Race started!");
+		
 		// Get random Finish
 		final int location = getRandom(0, LOCATIONS.length - 1);
 		_randspawn = COORDS[location];
+		
 		// And spawn NPC
 		recordSpawn(STOP_NPC, _randspawn[0], _randspawn[1], _randspawn[2], _randspawn[3], false, 0);
+		
 		// Transform players and send message
 		for (Player player : _players)
 		{
@@ -247,6 +267,7 @@ public class Race extends Event
 				}
 			}
 		}
+		
 		// Schedule timeup for Race
 		_eventTask = ThreadPool.schedule(this::timeUp, RACE_TIME * 60 * 1000);
 	}
@@ -270,6 +291,7 @@ public class Race extends Event
 			_eventTask.cancel(true);
 			_eventTask = null;
 		}
+		
 		// Untransform players
 		// Teleport to event start point
 		for (Player player : _players)
@@ -280,6 +302,7 @@ public class Race extends Event
 				player.teleToLocation(_npc, true);
 			}
 		}
+		
 		// Despawn NPCs
 		for (Npc npc : _npclist)
 		{
@@ -288,8 +311,10 @@ public class Race extends Event
 				npc.deleteMe();
 			}
 		}
+		
 		_npclist.clear();
 		_players.clear();
+		
 		// Announce event end
 		Broadcast.toAllOnlinePlayers("* Race Event finished *");
 		return true;
@@ -331,6 +356,7 @@ public class Race extends Event
 				player.teleToLocation(18429, 145861, -3090);
 			}
 		}
+		
 		showMenu(player);
 		return true;
 	}
@@ -366,6 +392,7 @@ public class Race extends Event
 			{
 				return "900103-onlist.htm";
 			}
+			
 			_players.add(player);
 			return "900103-signup.htm";
 		}
@@ -376,6 +403,7 @@ public class Race extends Event
 			{
 				_players.remove(player);
 			}
+			
 			return "900103-quit.htm";
 		}
 		else if (event.equalsIgnoreCase("finish"))
@@ -385,8 +413,10 @@ public class Race extends Event
 				winRace(player);
 				return "900104-winner.htm";
 			}
+			
 			return "900104-notrans.htm";
 		}
+		
 		return htmltext;
 	}
 	
@@ -400,12 +430,14 @@ public class Race extends Event
 			{
 				return START_NPC + "-started-" + isRacing(player) + ".htm";
 			}
+			
 			return START_NPC + "-" + isRacing(player) + ".htm";
 		}
 		else if ((npc.getId() == STOP_NPC) && _isRaceStarted)
 		{
 			return STOP_NPC + "-" + isRacing(player) + ".htm";
 		}
+		
 		return npc.getId() + ".htm";
 	}
 	
@@ -421,6 +453,7 @@ public class Race extends Event
 		{
 			_npclist.add(npc);
 		}
+		
 		return npc;
 	}
 	
@@ -430,6 +463,7 @@ public class Race extends Event
 		{
 			player.untransform();
 		}
+		
 		if (player.isSitting())
 		{
 			player.standUp();

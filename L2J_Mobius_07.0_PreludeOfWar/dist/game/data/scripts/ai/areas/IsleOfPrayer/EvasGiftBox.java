@@ -30,6 +30,7 @@ public class EvasGiftBox extends AbstractNpcAI
 {
 	// NPC
 	private static final int BOX = 32342; // Eva's Gift Box
+	
 	// Skill
 	private static final SkillHolder KISS_OF_EVA = new SkillHolder(1073, 1); // Kiss of Eva
 	// Items

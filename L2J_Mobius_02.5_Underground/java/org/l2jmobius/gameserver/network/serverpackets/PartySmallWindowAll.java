@@ -79,6 +79,7 @@ public class PartySmallWindowAll extends ServerPacket
 					buffer.writeInt(pet.getMaxMp());
 					buffer.writeByte(pet.getLevel());
 				}
+				
 				member.getServitors().values().forEach(s ->
 				{
 					buffer.writeInt(s.getObjectId());

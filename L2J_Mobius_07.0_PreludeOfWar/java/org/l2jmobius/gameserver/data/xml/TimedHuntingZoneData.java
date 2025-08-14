@@ -186,6 +186,7 @@ public class TimedHuntingZoneData implements IXmlReader
 									}
 								}
 							}
+							
 							_timedHuntingZoneData.put(id, new TimedHuntingZoneHolder(id, name, initialTime, maxAddedTime, resetDelay, entryItemId, entryFee, minLevel, maxLevel, remainRefillTime, refillTimeMax, pvpZone, noPvpZone, instanceId, soloInstance, weekly, enterLocation, exitLocation));
 						}
 					}

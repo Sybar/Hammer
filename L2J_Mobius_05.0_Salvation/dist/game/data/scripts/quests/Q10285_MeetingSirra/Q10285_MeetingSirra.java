@@ -41,8 +41,10 @@ public class Q10285_MeetingSirra extends Quest
 	private static final int KEGOR = 32761;
 	private static final int SIRRA = 32762;
 	private static final int JINIA2 = 32781;
+	
 	// Misc
 	private static final int MIN_LEVEL = 82;
+	
 	// Locations
 	private static final Location EXIT_LOC = new Location(113793, -109342, -845, 0);
 	private static final Location FREYA_LOC = new Location(103045, -124361, -2768, 0);
@@ -140,6 +142,7 @@ public class Q10285_MeetingSirra extends Quest
 					{
 						world.finishInstance(0);
 					}
+					
 					htmltext = event;
 				}
 				break;
@@ -205,6 +208,7 @@ public class Q10285_MeetingSirra extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -369,6 +373,7 @@ public class Q10285_MeetingSirra extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

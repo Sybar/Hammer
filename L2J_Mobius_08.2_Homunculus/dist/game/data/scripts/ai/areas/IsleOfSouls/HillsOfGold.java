@@ -77,6 +77,7 @@ public class HillsOfGold extends AbstractNpcAI
 					}
 				});
 			}
+			
 			getTimers().addTimer("SPICULA_AGGRO_" + npc.getObjectId(), null, 10000, npc, null);
 		}
 	}

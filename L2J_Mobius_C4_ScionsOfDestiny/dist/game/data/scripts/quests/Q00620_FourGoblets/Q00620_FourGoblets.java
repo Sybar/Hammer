@@ -40,6 +40,7 @@ public class Q00620_FourGoblets extends Quest
 	private static final int EMPERORS_SEPULCHER_MANAGER = 31922;
 	private static final int GREAT_SAGES_SEPULCHER_MANAGER = 31923;
 	private static final int JUDGES_SEPULCHER_MANAGER = 31924;
+	
 	// Items
 	private static final int RELIC = 7254;
 	private static final int SEALED_BOX = 7255;
@@ -48,9 +49,10 @@ public class Q00620_FourGoblets extends Quest
 	private static final int GOBLET_OF_MEKARA = 7258;
 	private static final int GOBLET_OF_MORIGUL = 7259;
 	private static final int USED_GRAVE_PASS = 7261;
+	
 	// Rewards
 	private static final int ANTIQUE_BROOCH = 7262;
-	private static final int[] RCP_REWARDS = new int[]
+	private static final int[] RCP_REWARDS =
 	{
 		6881,
 		6883,
@@ -93,7 +95,7 @@ public class Q00620_FourGoblets extends Quest
 				htmltext = (getRandomBoolean()) ? "31452-03.htm" : "31452-04.htm";
 			}
 		}
-		else if (event.equals("31452-06.htm"))
+		else if (event.equals("EXIT"))
 		{
 			player.teleToLocation(169590, -90218, -2914); // Wigoth : Teleport back to Pilgrim's Temple
 		}
@@ -144,7 +146,7 @@ public class Q00620_FourGoblets extends Quest
 			}
 		}
 		// Ghost Chamberlain of Elmoreden: Teleport to 4s.
-		else if (event.equals("go_to_4s"))
+		else if (event.equals("TELEPORT_TO_4S"))
 		{
 			if (hasQuestItems(player, ANTIQUE_BROOCH))
 			{
@@ -158,10 +160,11 @@ public class Q00620_FourGoblets extends Quest
 				player.teleToLocation(178298, -84574, -7216);
 				return null;
 			}
+			
 			htmltext = npc.getId() + "-00.htm";
 		}
 		// Ghost Chamberlain of Elmoreden: Teleport to Imperial Tomb Entrance.
-		else if (event.equals("go_to_it"))
+		else if (event.equals("TELEPORT_TO_IT"))
 		{
 			if (hasQuestItems(player, ANTIQUE_BROOCH))
 			{
@@ -175,6 +178,7 @@ public class Q00620_FourGoblets extends Quest
 				player.teleToLocation(186942, -75602, -2834);
 				return null;
 			}
+			
 			htmltext = npc.getId() + "-00.htm";
 		}
 		else if (event.equals("31919-06.htm"))
@@ -201,8 +205,10 @@ public class Q00620_FourGoblets extends Quest
 				takeItems(player, RELIC, 1000);
 				giveItems(player, id, 1);
 			}
+			
 			htmltext = "31454-12.htm";
 		}
+		
 		return htmltext;
 	}
 	
@@ -282,6 +288,7 @@ public class Q00620_FourGoblets extends Quest
 		{
 			return;
 		}
+		
 		final Player partyMember = st.getPlayer();
 		
 		if (getRandom(10) < 3)

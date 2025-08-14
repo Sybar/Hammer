@@ -66,6 +66,7 @@ public class Q00338_AlligatorHunter extends Quest
 				{
 					reward += 3430;
 				}
+				
 				takeItems(player, ALLIGATOR_PELT, -1);
 				giveAdena(player, reward, true);
 				break;

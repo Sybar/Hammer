@@ -17,7 +17,9 @@
 		<skill skillName="Elemental Heal" skillId="58" skillLevel="4" getLevel="20" levelUpSp="1200" learnedByNpc="true" />
 		<skill skillName="Elemental Heal" skillId="58" skillLevel="5" getLevel="20" levelUpSp="1200" learnedByNpc="true" />
 		<skill skillName="Elemental Heal" skillId="58" skillLevel="6" getLevel="20" levelUpSp="1200" learnedByNpc="true" />
-		<skill skillName="Charm" skillId="15" skillLevel="1" getLevel="20" levelUpSp="950" learnedByNpc="true" />
+		<skill skillName="Charm" skillId="15" skillLevel="1" getLevel="20" levelUpSp="950" learnedByNpc="true">
+			<item id="1513" count="1" /> <!-- Spellbook: Charm -->
+		</skill>
 		<skill skillName="Charm" skillId="15" skillLevel="2" getLevel="20" levelUpSp="950" learnedByNpc="true" />
 		<skill skillName="Charm" skillId="15" skillLevel="3" getLevel="20" levelUpSp="950" learnedByNpc="true" />
 		<skill skillName="Vicious Stance" skillId="312" skillLevel="1" getLevel="20" levelUpSp="2800" learnedByNpc="true" />
@@ -26,6 +28,7 @@
 		<skill skillName="Breath Boost" skillId="195" skillLevel="1" getLevel="20" levelUpSp="2800" learnedByNpc="true" />
 		<skill skillName="Acrobatics" skillId="173" skillLevel="1" getLevel="20" levelUpSp="2800" learnedByNpc="true" />
 		<skill skillName="Unlock" skillId="27" skillLevel="1" getLevel="20" levelUpSp="2800" learnedByNpc="true" />
+
 		<skill skillName="Bow Mastery" skillId="208" skillLevel="4" getLevel="24" levelUpSp="1700" learnedByNpc="true" />
 		<skill skillName="Bow Mastery" skillId="208" skillLevel="5" getLevel="24" levelUpSp="1700" learnedByNpc="true" />
 		<skill skillName="Bow Mastery" skillId="208" skillLevel="6" getLevel="24" levelUpSp="1700" learnedByNpc="true" />
@@ -46,11 +49,16 @@
 		<skill skillName="Charm" skillId="15" skillLevel="6" getLevel="24" levelUpSp="1700" learnedByNpc="true" />
 		<skill skillName="Vicious Stance" skillId="312" skillLevel="2" getLevel="24" levelUpSp="5000" learnedByNpc="true" />
 		<skill skillName="Boost Evasion" skillId="198" skillLevel="1" getLevel="24" levelUpSp="5000" learnedByNpc="true" />
-		<skill skillName="Cure Bleeding" skillId="61" skillLevel="1" getLevel="24" levelUpSp="5000" learnedByNpc="true" />
-		<skill skillName="Poison Recovery" skillId="21" skillLevel="1" getLevel="24" levelUpSp="5000" learnedByNpc="true" />
+		<skill skillName="Cure Bleeding" skillId="61" skillLevel="1" getLevel="24" levelUpSp="5000" learnedByNpc="true">
+			<item id="1379" count="1" /> <!-- Spellbook: Cure Bleeding -->
+		</skill>
+		<skill skillName="Poison Recovery" skillId="21" skillLevel="1" getLevel="24" levelUpSp="5000" learnedByNpc="true">
+			<item id="1377" count="1" /> <!-- Spellbook: Poison Recovery -->
+		</skill>
 		<skill skillName="Bleed" skillId="96" skillLevel="1" getLevel="24" levelUpSp="5000" learnedByNpc="true" />
 		<skill skillName="Accuracy" skillId="256" skillLevel="1" getLevel="24" levelUpSp="5000" learnedByNpc="true" />
 		<skill skillName="Unlock" skillId="27" skillLevel="2" getLevel="24" levelUpSp="5000" learnedByNpc="true" />
+
 		<skill skillName="Bow Mastery" skillId="208" skillLevel="7" getLevel="28" levelUpSp="3100" learnedByNpc="true" />
 		<skill skillName="Bow Mastery" skillId="208" skillLevel="8" getLevel="28" levelUpSp="3100" learnedByNpc="true" />
 		<skill skillName="Bow Mastery" skillId="208" skillLevel="9" getLevel="28" levelUpSp="3100" learnedByNpc="true" />
@@ -76,6 +84,7 @@
 		<skill skillName="Attack Aura" skillId="77" skillLevel="2" getLevel="28" levelUpSp="9200" learnedByNpc="true" />
 		<skill skillName="Unlock" skillId="27" skillLevel="3" getLevel="28" levelUpSp="9200" learnedByNpc="true" />
 		<skill skillName="Ultimate Evasion" skillId="111" skillLevel="1" getLevel="28" levelUpSp="9200" learnedByNpc="true" />
+
 		<skill skillName="Bow Mastery" skillId="208" skillLevel="10" getLevel="32" levelUpSp="5100" learnedByNpc="true" />
 		<skill skillName="Bow Mastery" skillId="208" skillLevel="11" getLevel="32" levelUpSp="5100" learnedByNpc="true" />
 		<skill skillName="Bow Mastery" skillId="208" skillLevel="12" getLevel="32" levelUpSp="5100" learnedByNpc="true" />
@@ -98,9 +107,12 @@
 		<skill skillName="Vicious Stance" skillId="312" skillLevel="4" getLevel="32" levelUpSp="15000" learnedByNpc="true" />
 		<skill skillName="Critical Chance" skillId="137" skillLevel="1" getLevel="32" levelUpSp="15000" learnedByNpc="true" />
 		<skill skillName="Rapid Shot" skillId="99" skillLevel="1" getLevel="32" levelUpSp="15000" learnedByNpc="true" />
-		<skill skillName="Sprint" skillId="230" skillLevel="1" getLevel="32" levelUpSp="15000" learnedByNpc="true" />
+		<skill skillName="Sprint" skillId="230" skillLevel="1" getLevel="32" levelUpSp="15000" learnedByNpc="true">
+			<item id="1384" count="1" /> <!-- Spellbook: Sprint -->
+		</skill>
 		<skill skillName="Bleed" skillId="96" skillLevel="2" getLevel="32" levelUpSp="15000" learnedByNpc="true" />
 		<skill skillName="Unlock" skillId="27" skillLevel="4" getLevel="32" levelUpSp="15000" learnedByNpc="true" />
+
 		<skill skillName="Bow Mastery" skillId="208" skillLevel="13" getLevel="36" levelUpSp="8600" learnedByNpc="true" />
 		<skill skillName="Bow Mastery" skillId="208" skillLevel="14" getLevel="36" levelUpSp="8600" learnedByNpc="true" />
 		<skill skillName="Bow Mastery" skillId="208" skillLevel="15" getLevel="36" levelUpSp="8600" learnedByNpc="true" />
@@ -124,7 +136,9 @@
 		<skill skillName="Stunning Shot" skillId="101" skillLevel="2" getLevel="36" levelUpSp="8600" learnedByNpc="true" />
 		<skill skillName="Stunning Shot" skillId="101" skillLevel="3" getLevel="36" levelUpSp="8600" learnedByNpc="true" />
 		<skill skillName="Vicious Stance" skillId="312" skillLevel="5" getLevel="36" levelUpSp="26000" learnedByNpc="true" />
-		<skill skillName="Entangle" skillId="102" skillLevel="1" getLevel="36" levelUpSp="26000" learnedByNpc="true" />
+		<skill skillName="Entangle" skillId="102" skillLevel="1" getLevel="36" levelUpSp="26000" learnedByNpc="true">
+			<item id="1380" count="1" /> <!-- Spellbook: Entangle -->
+		</skill>
 		<skill skillName="Esprit" skillId="171" skillLevel="1" getLevel="36" levelUpSp="26000" learnedByNpc="true" />
 		<skill skillName="Unlock" skillId="27" skillLevel="5" getLevel="36" levelUpSp="26000" learnedByNpc="true" />
 	</skillTree>

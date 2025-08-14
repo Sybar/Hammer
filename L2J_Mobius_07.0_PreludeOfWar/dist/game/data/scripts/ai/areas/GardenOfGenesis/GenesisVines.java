@@ -32,6 +32,7 @@ public class GenesisVines extends AbstractNpcAI
 	// NPCs
 	private static final int VINE = 18987; // Vine
 	private static final int ROSE_VINE = 18988; // Rose Vine
+	
 	// Skills
 	private static final SkillHolder VINE_SKILL = new SkillHolder(14092, 1);
 	private static final SkillHolder ROSE_VINE_SKILL = new SkillHolder(14091, 1);
@@ -51,6 +52,7 @@ public class GenesisVines extends AbstractNpcAI
 			{
 				addSkillCastDesire(npc, npc, skill, 23);
 			}
+			
 			startQuestTimer("CAST_SKILL", 3000, npc, null);
 		}
 		else if (event.equals("DELETE"))
@@ -58,6 +60,7 @@ public class GenesisVines extends AbstractNpcAI
 			npc.setScriptValue(0);
 			npc.deleteMe();
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	

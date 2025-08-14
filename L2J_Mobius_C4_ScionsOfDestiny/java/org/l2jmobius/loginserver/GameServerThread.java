@@ -95,15 +95,18 @@ public class GameServerThread extends Thread
 		{
 			final InitLS startPacket = new InitLS(_publicKey.getModulus().toByteArray());
 			sendPacket(startPacket);
+			
 			// register server and pass this to a GameServerThread
 			connectionIpAddress = _connection.getInetAddress().getHostAddress();
 			if (isBannedGameserverIP(connectionIpAddress))
 			{
 				final LoginServerFail lsf = new LoginServerFail(LoginServerFail.REASON_IP_BANNED);
 				sendPacket(lsf);
+				
 				// throw new IOException("banned IP");
 				LOGGER.info("GameServerRegistration: IP Address " + connectionIpAddress + " is on Banned IP list.");
 			}
+			
 			int lengthHi = 0;
 			int lengthLo = 0;
 			int length = 0;
@@ -183,6 +186,7 @@ public class GameServerThread extends Thread
 							_connection.close();
 							break;
 						}
+						
 						final PlayerInGame pig = new PlayerInGame(data);
 						for (String account : pig.getAccounts())
 						{
@@ -199,6 +203,7 @@ public class GameServerThread extends Thread
 							_connection.close();
 							break;
 						}
+						
 						final PlayerLogout plo = new PlayerLogout(data);
 						_accountsInGame.remove(plo.getAccount());
 						break;
@@ -212,6 +217,7 @@ public class GameServerThread extends Thread
 							_connection.close();
 							break;
 						}
+						
 						final ChangeAccessLevel cal = new ChangeAccessLevel(data);
 						LoginController.getInstance().setAccountAccessLevel(cal.getAccount(), cal.getLevel());
 						LOGGER.info("Changed " + cal.getAccount() + " access level to" + cal.getLevel());
@@ -237,6 +243,7 @@ public class GameServerThread extends Thread
 						{
 							sendPacket(new PlayerAuthResponse(par.getAccount(), false));
 						}
+						
 						LoginController.getInstance().removeLoginClient(par.getAccount());
 						break;
 					}
@@ -270,6 +277,7 @@ public class GameServerThread extends Thread
 				GameServerTable.getInstance().setServerReallyDown(_server_id);
 				LOGGER.info("Server " + GameServerTable.getInstance()._serverNames.get(_server_id) + " (" + _server_id + "): Set as disconnected");
 			}
+			
 			LoginServer.getGameServerListener().removeGameServer(this);
 			LoginServer.getGameServerListener().removeFloodProtection(_connectionIp);
 		}
@@ -292,6 +300,7 @@ public class GameServerThread extends Thread
 					_connection.close();
 					return;
 				}
+				
 				_gamePort = gameServerauth.getPort();
 				setGameHosts(gameServerauth.getExternalHost(), gameServerauth.getInternalHost());
 				_max_players = gameServerauth.getMaxPlayers();
@@ -338,6 +347,7 @@ public class GameServerThread extends Thread
 					{
 						id = gameServerauth.getDesiredID();
 					}
+					
 					_server_id = id;
 					_gamePort = gameServerauth.getPort();
 					setGameHosts(gameServerauth.getExternalHost(), gameServerauth.getInternalHost());
@@ -385,6 +395,7 @@ public class GameServerThread extends Thread
 		{
 			e.printStackTrace();
 		}
+		
 		final KeyPair pair = GameServerTable.getInstance().getKeyPair();
 		_privateKey = (RSAPrivateKey) pair.getPrivate();
 		_publicKey = (RSAPublicKey) pair.getPublic();
@@ -518,6 +529,7 @@ public class GameServerThread extends Thread
 		{
 			_gameExternalIP = _connectionIp;
 		}
+		
 		if (!_gameInternalHost.equals("*"))
 		{
 			try
@@ -539,6 +551,7 @@ public class GameServerThread extends Thread
 		{
 			LOGGER.info("Updated Gameserver " + serverName + " Internal IP to: " + getGameInternalIP());
 		}
+		
 		if ((oldExternal == null) || !oldExternal.equalsIgnoreCase(_gameExternalIP))
 		{
 			LOGGER.info("Updated Gameserver " + serverName + " External IP to: " + getGameExternalIP());

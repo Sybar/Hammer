@@ -147,6 +147,7 @@ public class RequestRefine extends AbstractRefinePacket
 			{
 				iu.addModifiedItem(itm);
 			}
+			
 			player.broadcastUserInfo();
 		}
 		

@@ -33,6 +33,7 @@ public class Q10361_RolesOfTheSeeker extends Quest
 	// NPCs
 	private static final int LAKCIS = 32977;
 	private static final int CHESHA = 33449;
+	
 	// Misc
 	private static final int MIN_LEVEL = 10;
 	private static final int MAX_LEVEL = 20;
@@ -82,6 +83,7 @@ public class Q10361_RolesOfTheSeeker extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -111,6 +113,7 @@ public class Q10361_RolesOfTheSeeker extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

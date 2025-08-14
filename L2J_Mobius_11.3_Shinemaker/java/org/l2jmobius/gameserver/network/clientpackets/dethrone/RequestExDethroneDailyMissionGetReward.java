@@ -65,6 +65,7 @@ public class RequestExDethroneDailyMissionGetReward extends ClientPacket
 		{
 			return;
 		}
+		
 		player.addRequest(new RewardRequest(player));
 		
 		final Collection<DailyMissionDataHolder> reward = DailyMissionDataConquest.getInstance().getDailyMissionData(_id);
@@ -77,6 +78,7 @@ public class RequestExDethroneDailyMissionGetReward extends ClientPacket
 					holder.requestReward(player);
 					player.sendPacket(new ExDethroneDailyMissionInfo(player, holder));
 				}
+				
 				player.sendPacket(new ExDethroneDailyMissionComplete(true));
 				
 				final int personalDethronePoint = 250; // reward

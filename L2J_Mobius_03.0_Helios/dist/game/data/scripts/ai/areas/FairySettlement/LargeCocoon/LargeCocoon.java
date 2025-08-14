@@ -134,10 +134,12 @@ public class LargeCocoon extends AbstractNpcAI
 						}
 					}
 				}
+				
 				npc.deleteMe();
 				break;
 			}
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	
@@ -334,6 +336,7 @@ public class LargeCocoon extends AbstractNpcAI
 				}
 			}
 		}
+		
 		npc.deleteMe();
 	}
 	

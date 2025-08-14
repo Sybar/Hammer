@@ -106,6 +106,7 @@ public class Q10993_FutureDwarves extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -134,6 +135,7 @@ public class Q10993_FutureDwarves extends Quest
 					}
 					break;
 				}
+				
 				if ((npc.getId() == PIPPI) && (talker.getPlayerClass() != PlayerClass.SCAVENGER))
 				{
 					if (qs.isCond(2))
@@ -142,6 +144,7 @@ public class Q10993_FutureDwarves extends Quest
 					}
 					break;
 				}
+				
 				if ((npc.getId() == SILVERA) && (talker.getPlayerClass() != PlayerClass.ARTISAN))
 				{
 					if (qs.isCond(3))
@@ -158,6 +161,7 @@ public class Q10993_FutureDwarves extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

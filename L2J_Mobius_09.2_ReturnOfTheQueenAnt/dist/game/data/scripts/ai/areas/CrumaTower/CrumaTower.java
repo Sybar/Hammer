@@ -53,6 +53,7 @@ public class CrumaTower extends AbstractNpcAI
 			npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.YOU_CAN_GO_TO_UNDERGROUND_LV_3_USING_THE_ELEVATOR_IN_THE_BACK);
 			startQuestTimer(event, 15000, npc, player);
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	

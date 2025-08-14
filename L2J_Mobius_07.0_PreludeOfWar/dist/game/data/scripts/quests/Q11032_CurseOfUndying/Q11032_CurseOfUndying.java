@@ -60,10 +60,13 @@ public class Q11032_CurseOfUndying extends Quest
 	private static final int TARTI = 34505;
 	private static final int DISGUSTING_ZOMBIES = 24382;
 	private static final int THE_HIDEOUS_LORD_ZOMBIE = 24383;
+	
 	// Item
 	private static final ItemHolder SOE_SILVAN = new ItemHolder(80677, 1);
+	
 	// Location
 	private static final Location TRAINING_GROUNDS_TELEPORT = new Location(-19204, 138941, -3896);
+	
 	// Misc
 	private static final String KILL_COUNT_VAR = "KillCount";
 	private static final int MIN_LEVEL = 10;
@@ -132,6 +135,7 @@ public class Q11032_CurseOfUndying extends Quest
 				{
 					addExpAndSp(player, 787633, 708);
 					qs.exitQuest(false, true);
+					
 					// Ertheias do not change.
 					if (player.getRace() != Race.ERTHEIA)
 					{
@@ -141,12 +145,14 @@ public class Q11032_CurseOfUndying extends Quest
 							player.sendPacket(ExRequestClassChangeUi.STATIC_PACKET);
 						}
 					}
+					
 					giveStoryBuffReward(npc, player);
 					htmltext = event;
 					break;
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -194,6 +200,7 @@ public class Q11032_CurseOfUndying extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -230,6 +237,7 @@ public class Q11032_CurseOfUndying extends Quest
 			holder.add(new NpcLogListHolder(NpcStringId.DEFEAT_THE_SWARM_OF_ZOMBIES.getId(), true, qs.getInt(KILL_COUNT_VAR)));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 	

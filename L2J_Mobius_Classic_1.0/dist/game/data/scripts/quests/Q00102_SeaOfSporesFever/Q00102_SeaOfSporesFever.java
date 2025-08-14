@@ -40,9 +40,11 @@ public class Q00102_SeaOfSporesFever extends Quest
 	private static final int RAYEN = 30221;
 	private static final int ALBERIUS = 30284;
 	private static final int GARTRANDELL = 30285;
+	
 	// Monsters
 	private static final int DRYAD = 20013;
 	private static final int DRYAD_ELDER = 20019;
+	
 	// Items
 	private static final int SWORD_OF_SENTINEL = 49047;
 	private static final int STAFF_OF_SENTINEL = 49048;
@@ -89,6 +91,7 @@ public class Q00102_SeaOfSporesFever extends Quest
 			giveItems(player, ALBERIUS_LETTER, 1);
 			return event;
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	
@@ -177,6 +180,7 @@ public class Q00102_SeaOfSporesFever extends Quest
 									{
 										giveItems(player, SWORD_OF_SENTINEL, 1);
 									}
+									
 									qs.exitQuest(false, true);
 									htmltext = "30284-06.html";
 								}
@@ -263,11 +267,13 @@ public class Q00102_SeaOfSporesFever extends Quest
 					{
 						qs.setCond(6);
 					}
+					
 					htmltext = npc.getId() + "-01.html";
 				}
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

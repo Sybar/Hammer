@@ -41,12 +41,14 @@ public class Q00835_PitiableMelisa extends Quest
 	// NPCs
 	private static final int KANNA = 34173;
 	private static final int SETTLEN = 34180;
+	
 	// Monsters
 	private static final int[] MONSTERS =
 	{
 		23686, // Frost Glacier Golem
 		23687 // Glacier Golem
 	};
+	
 	// Items
 	private static final int ICE_CRYSTAL_SHARD = 46594;
 	private static final int FRENZED_TAUTIS_FRAGMENT = 47884;
@@ -95,12 +97,14 @@ public class Q00835_PitiableMelisa extends Quest
 				{
 					giveItems(player, SOE_MISTYC_TAVERN, 1);
 				}
+				
 				addExpAndSp(player, 636254, 573);
 				qs.exitQuest(QuestType.REPEATABLE, true);
 				htmltext = event;
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -120,6 +124,7 @@ public class Q00835_PitiableMelisa extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	

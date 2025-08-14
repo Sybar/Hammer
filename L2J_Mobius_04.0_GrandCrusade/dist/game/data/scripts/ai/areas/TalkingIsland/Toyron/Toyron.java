@@ -34,8 +34,10 @@ public class Toyron extends AbstractNpcAI
 {
 	// NPC
 	private static final int TOYRON = 33004;
+	
 	// Misc
 	private static final int TEMPLATE_ID = 182;
+	
 	// Location
 	private static final Location MUSEUM_OUT = new Location(-111464, 255828, -1440);
 	
@@ -62,6 +64,7 @@ public class Toyron extends AbstractNpcAI
 				player.teleToLocation(MUSEUM_OUT);
 			}
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	
@@ -92,6 +95,7 @@ public class Toyron extends AbstractNpcAI
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	

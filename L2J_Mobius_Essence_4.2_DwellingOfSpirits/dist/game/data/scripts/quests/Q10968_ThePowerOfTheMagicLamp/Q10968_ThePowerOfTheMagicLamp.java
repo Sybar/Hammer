@@ -40,9 +40,11 @@ public class Q10968_ThePowerOfTheMagicLamp extends Quest
 {
 	// NPC
 	private static final int MAXIMILLIAN = 30120;
+	
 	// Items
 	// private static final int BLUE_LANTERN = 93074;
 	private static final ItemHolder MAGIC_FIRE = new ItemHolder(92033, 1);
+	
 	// Misc
 	private static final int MIN_LEVEL = 39;
 	
@@ -88,10 +90,12 @@ public class Q10968_ThePowerOfTheMagicLamp extends Quest
 					qs.exitQuest(false, true);
 					break;
 				}
+				
 				htmltext = "no-refill.html";
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -112,6 +116,7 @@ public class Q10968_ThePowerOfTheMagicLamp extends Quest
 		{
 			htmltext = getAlreadyCompletedMsg(player);
 		}
+		
 		return htmltext;
 	}
 	

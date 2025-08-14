@@ -40,6 +40,7 @@ public class Q00218_TestimonyOfLife extends Quest
 	private static final int ARKENIA = 30419;
 	private static final int CARDIEN = 30460;
 	private static final int ISAEL = 30655;
+	
 	// Items
 	private static final int TALINS_SPEAR = 3026;
 	private static final int CARDIEN_LETTER = 3141;
@@ -76,6 +77,7 @@ public class Q00218_TestimonyOfLife extends Quest
 		3170,
 		3171
 	};
+	
 	// Rewards
 	private static final int MARK_OF_LIFE = 3140;
 	private static final int DIMENSIONAL_DIAMOND = 7562;
@@ -597,6 +599,7 @@ public class Q00218_TestimonyOfLife extends Quest
 							return;
 						}
 					}
+					
 					st.setCond(16, true);
 				}
 				break;

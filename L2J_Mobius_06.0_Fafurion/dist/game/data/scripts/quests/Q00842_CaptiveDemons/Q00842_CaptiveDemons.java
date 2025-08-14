@@ -43,6 +43,7 @@ public class Q00842_CaptiveDemons extends Quest
 {
 	// NPC
 	private static final int STHOR = 34219;
+	
 	// Monsters
 	private static final int[] MONSTERS =
 	{
@@ -51,10 +52,12 @@ public class Q00842_CaptiveDemons extends Quest
 		23737, // Captive Succubus
 		23738 // Captive Phantom
 	};
+	
 	// Items
 	private static final int GIANT_TRACKERS_BASIC_SUPPLY_BOX = 47184;
 	private static final int GIANT_TRACKERS_INTERMEDIATE_SUPPLY_BOX = 47185;
 	private static final int GIANT_TRACKERS_ADVANCED_SUPPLY_BOX = 47186;
+	
 	// Misc
 	private static final int KILLING_NPCSTRING_ID = NpcStringId.DEFEATING_THE_CAPTIVE_DEMONS.getId();
 	private static final boolean PARTY_QUEST = true;
@@ -100,6 +103,7 @@ public class Q00842_CaptiveDemons extends Quest
 					htmltext = "34219-04a.htm";
 					break;
 				}
+				
 				htmltext = "34219-04.htm";
 				break;
 			}
@@ -110,6 +114,7 @@ public class Q00842_CaptiveDemons extends Quest
 					htmltext = "34219-04a.htm";
 					break;
 				}
+				
 				htmltext = "34219-04.htm";
 				break;
 			}
@@ -146,6 +151,7 @@ public class Q00842_CaptiveDemons extends Quest
 							{
 								giveItems(player, GIANT_TRACKERS_BASIC_SUPPLY_BOX, 1);
 							}
+							
 							addExpAndSp(player, 5_536_944_000L, 13_288_590);
 							addFactionPoints(player, Faction.GIANT_TRACKERS, 100);
 							qs.exitQuest(QuestType.DAILY, true);
@@ -173,6 +179,7 @@ public class Q00842_CaptiveDemons extends Quest
 							{
 								giveItems(player, GIANT_TRACKERS_INTERMEDIATE_SUPPLY_BOX, 1);
 							}
+							
 							addExpAndSp(player, 11_073_888_000L, 26_577_180);
 							addFactionPoints(player, Faction.GIANT_TRACKERS, 200);
 							qs.exitQuest(QuestType.DAILY, true);
@@ -188,6 +195,7 @@ public class Q00842_CaptiveDemons extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -214,6 +222,7 @@ public class Q00842_CaptiveDemons extends Quest
 							htmltext = "34219-04a.htm";
 							break;
 						}
+						
 						htmltext = "34219-04.htm";
 						break;
 					}
@@ -250,6 +259,7 @@ public class Q00842_CaptiveDemons extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -297,6 +307,7 @@ public class Q00842_CaptiveDemons extends Quest
 			holder.add(new NpcLogListHolder(KILLING_NPCSTRING_ID, true, qs.getInt("AncientGhosts")));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

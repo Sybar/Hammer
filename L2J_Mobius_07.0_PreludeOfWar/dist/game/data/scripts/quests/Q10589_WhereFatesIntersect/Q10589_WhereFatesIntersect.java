@@ -53,8 +53,10 @@ public class Q10589_WhereFatesIntersect extends Quest
 		24454, // Doom Berserker
 		24455, // Doom Seer
 	};
+	
 	// Item
 	private static final int MONSTER_DROP = 80853; // Undead Blood
+	
 	// Misc
 	private static final int REQUIRED_DROP_COUNT = 200;
 	private static final int KILLING_NPCSTRING_ID1 = NpcStringId.LV_85_WHERE_FATES_INTERSECT_IN_PROGRESS.getId();
@@ -65,9 +67,11 @@ public class Q10589_WhereFatesIntersect extends Quest
 	private static final int KILLING_COND = 3;
 	private static final int FINISH_COND = 4;
 	private static final int MIN_LEVEL = 85;
+	
 	// Rewards
 	private static final int REWARD_ITEM1 = 80908; // Lv. 95 Achievement Reward Box
 	private static final int REWARD_ITEM1_AMOUNT = 1;
+	
 	// Location
 	private static final Location TOWN_OF_ADEN = new Location(146568, 26808, -2208);
 	private static final Location ALTAR_OF_EVIL = new Location(-14088, 22168, -3626);
@@ -142,6 +146,7 @@ public class Q10589_WhereFatesIntersect extends Quest
 				if (qs.isCond(5))
 				{
 					takeItems(player, MONSTER_DROP, -1);
+					
 					// Reward.
 					rewardItems(player, REWARD_ITEM1, REWARD_ITEM1_AMOUNT);
 					qs.exitQuest(QUEST_TYPE, true);
@@ -159,6 +164,7 @@ public class Q10589_WhereFatesIntersect extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -243,6 +249,7 @@ public class Q10589_WhereFatesIntersect extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -274,10 +281,12 @@ public class Q10589_WhereFatesIntersect extends Quest
 			{
 				holder.add(new NpcLogListHolder(REACH_LV_95, true, 1));
 			}
+			
 			holder.add(new NpcLogListHolder(KILLING_NPCSTRING_ID1, true, (int) getQuestItemsCount(player, MONSTER_DROP)));
 			holder.add(new NpcLogListHolder(KILLING_NPCSTRING_ID2, true, (int) getQuestItemsCount(player, MONSTER_DROP)));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

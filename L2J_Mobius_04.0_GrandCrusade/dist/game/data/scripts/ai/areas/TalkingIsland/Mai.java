@@ -44,6 +44,7 @@ public class Mai extends AbstractNpcAI
 		{
 			npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.EVERY_RACE_BUILT_A_PIECE_OF_THIS_VILLAGE, 1000);
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	

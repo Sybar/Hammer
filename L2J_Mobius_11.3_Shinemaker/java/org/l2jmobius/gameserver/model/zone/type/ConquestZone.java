@@ -210,6 +210,7 @@ public class ConquestZone extends ZoneType
 						{
 							location = new Location(loc[0], loc[1], loc[2]);
 						}
+						
 						player.teleToLocation(location);
 						vars.remove(PlayerVariables.CONQUEST_ORIGIN);
 					}
@@ -217,6 +218,7 @@ public class ConquestZone extends ZoneType
 					{
 						player.teleToLocation(location);
 					}
+					
 					onExit(player);
 				}
 			}
@@ -250,6 +252,7 @@ public class ConquestZone extends ZoneType
 					player.sendPacket(new EtcStatusUpdate(player));
 				}
 			}
+			
 			if (_removeEffectsOnExit && (_skills != null))
 			{
 				for (Entry<Integer, Integer> e : _skills.entrySet())
@@ -258,6 +261,52 @@ public class ConquestZone extends ZoneType
 					if ((skill != null) && player.isAffectedBySkill(skill.getId()))
 					{
 						player.stopSkillEffects(SkillFinishType.REMOVED, skill.getId());
+					}
+				}
+			}
+		}
+		
+		if (getCharactersInside().isEmpty() && (_task != null))
+		{
+			_task.cancel(true);
+			_task = null;
+		}
+	}
+	
+	@Override
+	public void onPlayerLogoutInside(Player player)
+	{
+		if (player != null)
+		{
+			player.setInsideZone(ZoneId.CONQUEST, false);
+			
+			// Restore player information.
+			final PlayerAppearance appearance = player.getAppearance();
+			appearance.setVisibleName(null);
+			appearance.setVisibleTitle(null);
+			appearance.setVisibleClanData(-1, -1, -1, -1, -1);
+			
+			if (Config.CONQUEST_PVP_ZONE)
+			{
+				player.setInsideZone(ZoneId.PVP, false);
+			}
+			
+			if (_isShowDangerIcon)
+			{
+				player.setInsideZone(ZoneId.DANGER_AREA, false);
+				if (!player.isInsideZone(ZoneId.DANGER_AREA))
+				{
+					player.sendPacket(new EtcStatusUpdate(player));
+				}
+			}
+			
+			if (_removeEffectsOnExit && (_skills != null))
+			{
+				for (int skillId : _skills.keySet())
+				{
+					if (player.isAffectedBySkill(skillId))
+					{
+						player.stopSkillEffects(SkillFinishType.REMOVED, skillId);
 					}
 				}
 			}
@@ -293,6 +342,7 @@ public class ConquestZone extends ZoneType
 				}
 			}
 		}
+		
 		_skills.put(skillId, skillLevel);
 	}
 	
@@ -318,6 +368,7 @@ public class ConquestZone extends ZoneType
 		{
 			return 0;
 		}
+		
 		return _skills.get(skillId);
 	}
 	

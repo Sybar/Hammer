@@ -86,6 +86,7 @@ public class HealPercent extends AbstractEffect
 			{
 				amount *= healEffectVal;
 			}
+			
 			final double healEffectAddVal = effected.getStat().getValue(Stat.HEAL_EFFECT_ADD, 0);
 			if (healEffectAddVal > 0)
 			{
@@ -114,6 +115,7 @@ public class HealPercent extends AbstractEffect
 			{
 				sm = new SystemMessage(SystemMessageId.YOU_VE_RECOVERED_S1_HP);
 			}
+			
 			sm.addInt((int) amount);
 			effected.sendPacket(sm);
 		}

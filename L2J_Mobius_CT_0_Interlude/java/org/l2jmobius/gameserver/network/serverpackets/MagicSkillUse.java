@@ -82,6 +82,7 @@ public class MagicSkillUse extends ServerPacket
 		{
 			buffer.writeInt(0);
 		}
+		
 		buffer.writeInt(_target.getX());
 		buffer.writeInt(_target.getY());
 		buffer.writeInt(_target.getZ());

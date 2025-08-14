@@ -144,28 +144,22 @@ public class SchemeBuffer extends Npc
 			final List<Integer> skills = SchemeBufferTable.getInstance().getScheme(player.getObjectId(), schemeName);
 			if (currentCommand.startsWith("skillselect") && !schemeName.equalsIgnoreCase("none"))
 			{
-				final Skill skill = SkillData.getInstance().getSkill(skillId, SkillData.getInstance().getMaxLevel(skillId));
-				if (skill.isDance())
+				final Skill skill = SkillData.getInstance().getSkill(skillId, 1);
+				final int totalBuffs = skills.size();
+				final int currentDanceSongCount = getCountOf(skills, true); // true = dances/songs
+				final boolean isDanceOrSong = skill.isDance();
+				final int maxCount = player.getStat().getMaxBuffCount();
+				if (totalBuffs >= maxCount)
 				{
-					if (getCountOf(skills, true) < Config.DANCES_MAX_AMOUNT)
-					{
-						skills.add(skillId);
-					}
-					else
-					{
-						player.sendMessage("This scheme has reached the maximum amount of dances/songs.");
-					}
+					player.sendMessage("This scheme has reached the maximum amount of buffs.");
+				}
+				else if (isDanceOrSong && (currentDanceSongCount >= Config.DANCES_MAX_AMOUNT))
+				{
+					player.sendMessage("You cannot add more than " + Config.DANCES_MAX_AMOUNT + " songs/dances to this scheme.");
 				}
 				else
 				{
-					if (getCountOf(skills, false) < player.getStat().getMaxBuffCount())
-					{
-						skills.add(skillId);
-					}
-					else
-					{
-						player.sendMessage("This scheme has reached the maximum amount of buffs.");
-					}
+					skills.add(skillId);
 				}
 			}
 			else if (currentCommand.startsWith("skillunselect"))
@@ -185,6 +179,7 @@ public class SchemeBuffer extends Npc
 					player.sendMessage("Scheme's name must contain up to 14 chars.");
 					return;
 				}
+				
 				// Simple hack to use spaces, dots, commas, minus, plus, exclamations or question marks.
 				if (!StringUtil.isAlphaNumeric(schemeName.replace(" ", "").replace(".", "").replace(",", "").replace("-", "").replace("+", "").replace("!", "").replace("?", "")))
 				{
@@ -231,6 +226,7 @@ public class SchemeBuffer extends Npc
 			{
 				player.sendMessage("This scheme name is invalid.");
 			}
+			
 			showGiveBuffsWindow(player);
 		}
 	}
@@ -247,6 +243,7 @@ public class SchemeBuffer extends Npc
 		{
 			filename = npcId + "-" + value;
 		}
+		
 		return "data/html/mods/SchemeBuffer/" + filename + ".htm";
 	}
 	
@@ -296,7 +293,7 @@ public class SchemeBuffer extends Npc
 		final List<Integer> schemeSkills = SchemeBufferTable.getInstance().getScheme(player.getObjectId(), schemeName);
 		html.setFile(player, getHtmlPath(getId(), 2));
 		html.replace("%schemename%", schemeName);
-		html.replace("%count%", getCountOf(schemeSkills, false) + " / " + player.getStat().getMaxBuffCount() + " buffs, " + getCountOf(schemeSkills, true) + " / " + Config.DANCES_MAX_AMOUNT + " dances/songs");
+		html.replace("%count%", (getCountOf(schemeSkills, false) + getCountOf(schemeSkills, true)) + " / " + player.getStat().getMaxBuffCount() + " buffs");
 		html.replace("%typesframe%", getTypesFrame(groupType, schemeName));
 		html.replace("%skilllistframe%", getGroupSkillList(player, groupType, schemeName, page));
 		html.replace("%objectId%", getObjectId());
@@ -451,6 +448,7 @@ public class SchemeBuffer extends Npc
 				count++;
 			}
 		}
+		
 		return count;
 	}
 }

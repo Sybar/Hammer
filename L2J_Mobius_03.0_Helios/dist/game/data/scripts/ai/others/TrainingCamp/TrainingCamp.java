@@ -51,6 +51,7 @@ public class TrainingCamp extends AbstractNpcAI
 {
 	// NPC
 	private static final int RECRUITER = 4378;
+	
 	// Misc
 	private static final Location TRAINING_LOCATION = new Location(-56516, 135938, -2672);
 	
@@ -104,6 +105,7 @@ public class TrainingCamp extends AbstractNpcAI
 					{
 						holder = null;
 					}
+					
 					if (holder == null)
 					{
 						player.disableAutoShotsAll();
@@ -113,6 +115,7 @@ public class TrainingCamp extends AbstractNpcAI
 						player.setInvisible(true);
 						player.teleToLocation(TRAINING_LOCATION);
 						player.setImmobilized(true);
+						
 						// @Sdw: Here we are supposed to send ExUserInfoEquipSlot with a fake equip of a SLS, feels ugly to me, not doing it.
 						player.setTraingCampInfo(new TrainingHolder(player.getObjectId(), player.getClassIndex(), player.getLevel(), System.currentTimeMillis(), -1));
 						final long timeRemaining = Config.TRAINING_CAMP_MAX_DURATION - trainingCampDuration;
@@ -191,6 +194,7 @@ public class TrainingCamp extends AbstractNpcAI
 						{
 							player.sendPacket(SystemMessageId.YOU_CANNOT_RECEIVE_REWARDS_FOR_TRAINING_IF_YOU_HAVE_TRAINED_FOR_LESS_THAN_1_MINUTE);
 						}
+						
 						player.setTraingCampDuration(player.getTraingCampDuration() + holder.getTrainingTime(TimeUnit.SECONDS));
 						player.removeTraingCampInfo();
 					}
@@ -219,6 +223,7 @@ public class TrainingCamp extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -245,6 +250,7 @@ public class TrainingCamp extends AbstractNpcAI
 			player.sendPacket(SystemMessageId.YOU_CANNOT_ENTER_THE_TRAINING_CAMP_WITH_A_MOUNT_OR_IN_A_TRANSFORMED_STATE);
 			return false;
 		}
+		
 		final TrainingHolder holder = player.getTraingCampInfo();
 		if ((holder != null) && (holder.getObjectId() != player.getObjectId()))
 		{
@@ -292,6 +298,7 @@ public class TrainingCamp extends AbstractNpcAI
 		{
 			return false;
 		}
+		
 		return true;
 	}
 	

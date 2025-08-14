@@ -21,6 +21,7 @@
 package events.WatermelonNinja;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -358,6 +359,7 @@ public class WatermelonNinja extends LongTimeEvent
 			{
 				npc.doDie(attacker);
 			}
+			
 			npc.setInvul(true);
 		}
 		else if (getRandom(100) < 20)
@@ -367,7 +369,7 @@ public class WatermelonNinja extends LongTimeEvent
 	}
 	
 	@Override
-	public void onSkillSee(Npc npc, Player caster, Skill skill, WorldObject[] targets, boolean isPet)
+	public void onSkillSee(Npc npc, Player caster, Skill skill, Collection<WorldObject> targets, boolean isPet)
 	{
 		if ((skill.getId() == NECTAR_SKILL) && (caster.getTarget() == npc))
 		{

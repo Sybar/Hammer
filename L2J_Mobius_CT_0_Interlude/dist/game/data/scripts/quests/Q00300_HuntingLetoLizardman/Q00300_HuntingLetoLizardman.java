@@ -38,8 +38,10 @@ public class Q00300_HuntingLetoLizardman extends Quest
 	private static final int LETO_LIZARDMAN_SOLDIER = 20579;
 	private static final int LETO_LIZARDMAN_WARRIOR = 20580;
 	private static final int LETO_LIZARDMAN_OVERLORD = 20582;
+	
 	// Item
 	private static final int BRACELET = 7139;
+	
 	// Drop chances
 	private static final Map<Integer, Integer> CHANCES = new HashMap<>();
 	static

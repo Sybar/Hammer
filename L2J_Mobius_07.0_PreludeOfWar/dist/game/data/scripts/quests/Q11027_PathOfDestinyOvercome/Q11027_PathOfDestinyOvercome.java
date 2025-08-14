@@ -57,9 +57,11 @@ public class Q11027_PathOfDestinyOvercome extends Quest
 	private static final int TARTI = 34505;
 	private static final int RAYMOND = 30289;
 	private static final int GERETH = 33932;
+	
 	// Items
 	private static final int PROPHECY_MACHINE = 39540;
 	private static final int ATELIA = 39542;
+	
 	// Reward
 	private static final int CHAOS_POMANDER = 37374;
 	private static final Map<CategoryType, Integer> AWAKE_POWER = new EnumMap<>(CategoryType.class);
@@ -74,9 +76,11 @@ public class Q11027_PathOfDestinyOvercome extends Quest
 		AWAKE_POWER.put(CategoryType.SIXTH_IS_GROUP, 32270);
 		AWAKE_POWER.put(CategoryType.SIXTH_EOLH_GROUP, 32271);
 	}
+	
 	// Location
 	private static final Location TELEPORT_1 = new Location(-78670, 251026, -2960);
 	private static final Location TELEPORT_2 = new Location(-14180, 123840, -3120);
+	
 	// Misc
 	private static final String AWAKE_POWER_REWARDED_VAR = "AWAKE_POWER_REWARDED";
 	private static final int MIN_LEVEL = 85;
@@ -135,6 +139,7 @@ public class Q11027_PathOfDestinyOvercome extends Quest
 				{
 					qs.setCond(2, true);
 				}
+				
 				htmltext = event;
 				break;
 			}
@@ -176,12 +181,14 @@ public class Q11027_PathOfDestinyOvercome extends Quest
 					{
 						player.sendPacket(ExRequestClassChangeUi.STATIC_PACKET);
 					}
+					
 					giveStoryBuffReward(npc, player);
 					htmltext = event;
 				}
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -284,6 +291,7 @@ public class Q11027_PathOfDestinyOvercome extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -319,6 +327,7 @@ public class Q11027_PathOfDestinyOvercome extends Quest
 					player.getVariables().set(AWAKE_POWER_REWARDED_VAR, true);
 					giveItems(player, 40268, 1);
 				}
+				
 				if (player.getPlayerClass() == PlayerClass.SAYHA_SEER)
 				{
 					player.getVariables().set(AWAKE_POWER_REWARDED_VAR, true);

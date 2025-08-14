@@ -35,10 +35,13 @@ public class DefeatTheQueen extends LongTimeEvent
 	// NPCs
 	private static final int ANTRI = 34184;
 	private static final int JIO = 34185;
+	
 	// Skill
 	private static final SkillHolder ANT_PROPHECY = new SkillHolder(48200, 1);
+	
 	// Teleport
 	private static final Location ANT_NEST = new Location(-9997, 175533, -4152);
+	
 	// Misc
 	private static final int MIN_LEVEL = 65;
 	
@@ -89,6 +92,7 @@ public class DefeatTheQueen extends LongTimeEvent
 				break;
 			}
 		}
+		
 		return null;
 	}
 	
@@ -101,11 +105,13 @@ public class DefeatTheQueen extends LongTimeEvent
 			{
 				return "34185-2.htm";
 			}
+			
 			if (player.getLevel() < MIN_LEVEL)
 			{
 				return "34185-1.htm";
 			}
 		}
+		
 		return npc.getId() + ".htm";
 	}
 	

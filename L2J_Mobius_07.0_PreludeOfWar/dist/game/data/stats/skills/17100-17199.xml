@@ -1631,7 +1631,6 @@
 		<affectScope>SINGLE</affectScope>
 		<effectPoint>1</effectPoint>
 		<isMagic>2</isMagic> <!-- Static Skill -->
-		<reuseDelay>180000</reuseDelay>
 		<effects>
 			<effect name="HairAccessorySet" />
 		</effects>

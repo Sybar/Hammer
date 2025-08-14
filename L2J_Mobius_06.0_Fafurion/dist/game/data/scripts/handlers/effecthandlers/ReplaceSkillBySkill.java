@@ -57,7 +57,24 @@ public class ReplaceSkillBySkill extends AbstractEffect
 	}
 	
 	@Override
+	public boolean canPump(Creature effector, Creature effected, Skill skill)
+	{
+		return (skill != null) && skill.isPassive() && effected.isPlayer() && !effected.isTransformed();
+	}
+	
+	@Override
 	public void onStart(Creature effector, Creature effected, Skill skill, Item item)
+	{
+		applyEffect(effector, effected, skill, item);
+	}
+	
+	@Override
+	public void pump(Creature effected, Skill skill)
+	{
+		applyEffect(effected, effected, skill, null);
+	}
+	
+	private void applyEffect(Creature effector, Creature effected, Skill skill, Item item)
 	{
 		final Player player = effected.asPlayer();
 		final Skill knownSkill = player.getKnownSkill(_existingSkill.getSkillId());
@@ -108,6 +125,7 @@ public class ReplaceSkillBySkill extends AbstractEffect
 						asu.addSkill(info);
 					}
 				}
+				
 				player.sendPacket(asu);
 			}
 		}
@@ -169,6 +187,7 @@ public class ReplaceSkillBySkill extends AbstractEffect
 						asu.addSkill(info);
 					}
 				}
+				
 				player.sendPacket(asu);
 			}
 		}

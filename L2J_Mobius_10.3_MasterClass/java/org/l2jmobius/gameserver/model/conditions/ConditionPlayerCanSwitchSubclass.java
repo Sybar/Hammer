@@ -78,6 +78,7 @@ public class ConditionPlayerCanSwitchSubclass extends Condition
 		{
 			canSwitchSub = false;
 		}
+		
 		return canSwitchSub;
 	}
 }

@@ -44,11 +44,13 @@ public final class Q10564_ProveProgress extends Quest
 	// NPCs
 	private static final int HERPHAH = 34362;
 	private static final int PENNY = 34413;
+	
 	// Items
 	private static final int SOULSHOT_R_GRADE = 33780;
 	private static final int B_SPIRITSHOT_R_GRADE = 33794;
 	private static final int PA_ART_OF_DESUCTION = 37928;
 	private static final int OLD_ELEMENTAL_SHIRT = 47005;
+	
 	// Misc
 	private static final int MIN_LEVEL = 85;
 	private static final int MAX_LEVEL = 99;
@@ -136,6 +138,7 @@ public final class Q10564_ProveProgress extends Quest
 									htmltext = "adventurer_penny_q10564_03.htm";
 									break;
 								}
+								
 								htmltext = "adventurer_penny_q10564_04.htm";
 								break;
 							}
@@ -156,6 +159,7 @@ public final class Q10564_ProveProgress extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

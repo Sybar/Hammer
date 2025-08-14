@@ -198,9 +198,9 @@
 		<set name="immediate_effect" val="true" />
 		<set name="weight" val="220" />
 		<set name="material" val="CLOTH" />
-		<cond msgId="2453">
+		<conditions msgId="2453">
 			<player cloakStatus="true" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">25</stat>
 			<stat type="fireRes">7</stat>

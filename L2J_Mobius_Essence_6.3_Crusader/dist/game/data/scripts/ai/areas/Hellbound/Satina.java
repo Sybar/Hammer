@@ -41,14 +41,17 @@ public class Satina extends AbstractNpcAI
 {
 	// NPC
 	private static final int SATINA = 25934;
+	
 	// Locations
 	private static final Location[] SPAWNS =
 	{
 		new Location(7647, 242440, -2429),
 		new Location(8209, 236339, -2290),
 	};
+	
 	// Zone
 	private static final ScriptZone ZONE = ZoneManager.getInstance().getZoneByName("hellboud_island1", ScriptZone.class);
+	
 	// Misc
 	private static final int ALIVE_MILLISECONDS = 3600000;
 	private static final String SATINA_RESPAWN_PATTERN = "0 14 * * 6";
@@ -104,6 +107,7 @@ public class Satina extends AbstractNpcAI
 				{
 					_startTask.cancel(true);
 				}
+				
 				_startTask = ThreadPool.schedule(new ScheduleAiTask(), (getNextRespawn() - System.currentTimeMillis()));
 			}
 		}

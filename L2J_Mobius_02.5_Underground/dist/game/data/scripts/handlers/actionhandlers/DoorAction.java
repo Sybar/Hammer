@@ -36,7 +36,7 @@ import org.l2jmobius.gameserver.network.serverpackets.ConfirmDlg;
 public class DoorAction implements IActionHandler
 {
 	@Override
-	public boolean action(Player player, WorldObject target, boolean interact)
+	public boolean onAction(Player player, WorldObject target, boolean interact)
 	{
 		// Check if the Player already target the Npc
 		if (player.getTarget() != target)
@@ -47,6 +47,7 @@ public class DoorAction implements IActionHandler
 		{
 			final Door door = target.asDoor();
 			final ClanHall clanHall = ClanHallData.getInstance().getClanHallByDoorId(door.getId());
+			
 			// MyTargetSelected my = new MyTargetSelected(getObjectId(), player.getLevel());
 			// player.sendPacket(my);
 			final Clan clan = player.getClan();
@@ -96,6 +97,7 @@ public class DoorAction implements IActionHandler
 				}
 			}
 		}
+		
 		return true;
 	}
 	

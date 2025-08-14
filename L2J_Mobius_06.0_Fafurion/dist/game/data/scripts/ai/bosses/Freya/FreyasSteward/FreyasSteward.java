@@ -30,8 +30,10 @@ public class FreyasSteward extends AbstractNpcAI
 {
 	// NPC
 	private static final int FREYAS_STEWARD = 32029;
+	
 	// Location
 	private static final Location TELEPORT_LOC = new Location(103045, -124361, -2768);
+	
 	// Misc
 	private static final int MIN_LEVEL = 82;
 	
@@ -56,6 +58,7 @@ public class FreyasSteward extends AbstractNpcAI
 			player.teleToLocation(TELEPORT_LOC);
 			return null;
 		}
+		
 		return "32029-1.html";
 	}
 	

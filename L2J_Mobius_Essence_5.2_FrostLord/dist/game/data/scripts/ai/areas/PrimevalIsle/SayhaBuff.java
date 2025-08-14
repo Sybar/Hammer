@@ -49,6 +49,7 @@ public class SayhaBuff extends AbstractNpcAI
 		22058, // Ornithomimus
 		22059, // Pterosaur
 	};
+	
 	// Skill
 	private static final SkillHolder BENEFACTION_OF_BLUE_HAWK = new SkillHolder(50123, 1);
 	

@@ -288,8 +288,10 @@ public class RankManager
 					{
 						stats.set("classRank", i + 1);
 					}
+					
 					i++;
 				}
+				
 				if (i == 0)
 				{
 					stats.set("classRank", 0);
@@ -317,8 +319,10 @@ public class RankManager
 					{
 						stats.set("raceRank", i + 1);
 					}
+					
 					i++;
 				}
+				
 				if (i == 0)
 				{
 					stats.set("raceRank", 0);

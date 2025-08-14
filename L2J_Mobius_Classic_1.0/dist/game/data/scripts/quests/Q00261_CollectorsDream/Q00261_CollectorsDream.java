@@ -35,18 +35,22 @@ public class Q00261_CollectorsDream extends Quest
 {
 	// Npc
 	private static final int ALSHUPES = 30222;
+	
 	// Monsters
-	private static final int[] MONSTERS = new int[]
+	private static final int[] MONSTERS =
 	{
 		20308, // Hook Spider
 		20460, // Crimson Spider
 		20466, // Pincer Spider
 	};
+	
 	// Item
 	private static final int SPIDER_LEG = 1087;
+	
 	// Misc
 	private static final int MIN_LEVEL = 15;
 	private static final int MAX_LEG_COUNT = 8;
+	
 	// Message
 	private static final ExShowScreenMessage MESSAGE = new ExShowScreenMessage(NpcStringId.LAST_DUTY_COMPLETE_GO_FIND_THE_NEWBIE_HELPER, 2, 5000);
 	
@@ -69,6 +73,7 @@ public class Q00261_CollectorsDream extends Quest
 			qs.startQuest();
 			return event;
 		}
+		
 		return null;
 	}
 	
@@ -118,6 +123,7 @@ public class Q00261_CollectorsDream extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

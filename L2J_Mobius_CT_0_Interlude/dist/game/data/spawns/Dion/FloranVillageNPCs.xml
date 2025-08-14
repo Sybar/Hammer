@@ -13,5 +13,6 @@
 		<npc id="31802" x="14784" y="168800" z="-3504" heading="58000" respawnDelay="60" /> <!-- Adventure Guildsman -->
 		<npc id="30633" x="13258" y="169790" z="-3705" heading="1000" respawnDelay="60" /> <!-- Evert -->
 		<npc id="30609" x="17475" y="169556" z="-3493" heading="57344" respawnDelay="60" /> <!-- Creta -->
+		<npc id="30981" x="15520" y="174572" z="-3637" heading="57344" respawnDelay="60" /> <!-- Black Judge -->
 	</spawn>
 </list>

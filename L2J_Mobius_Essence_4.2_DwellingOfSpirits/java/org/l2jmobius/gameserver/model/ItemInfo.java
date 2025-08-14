@@ -155,6 +155,7 @@ public class ItemInfo
 		{
 			_attributeDefence[type.getClientId()] = item.getDefenceAttribute(type);
 		}
+		
 		_isBlessed = item.isBlessed();
 		_option = item.getEnchantOptions();
 		_soulCrystalOptions = item.getSpecialAbilities();
@@ -304,6 +305,7 @@ public class ItemInfo
 		{
 			_attributeDefence[i] = item.getElementDefAttr(i);
 		}
+		
 		_option = item.getEnchantOptions();
 		_soulCrystalOptions = item.getSoulCrystalOptions();
 		_soulCrystalSpecialOptions = item.getSoulCrystalSpecialOptions();
@@ -428,6 +430,7 @@ public class ItemInfo
 					break SEARCH;
 				}
 			}
+			
 			if (!found)
 			{
 				return false;
@@ -460,6 +463,7 @@ public class ItemInfo
 					break SEARCH;
 				}
 			}
+			
 			if (!found)
 			{
 				return false;

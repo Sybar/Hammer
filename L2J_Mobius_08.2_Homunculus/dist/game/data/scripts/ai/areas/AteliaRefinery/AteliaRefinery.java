@@ -35,6 +35,7 @@ public class AteliaRefinery extends AbstractNpcAI
 {
 	// NPC
 	private static final int ATELIA_REFINERY_TELEPORT_DEVICE = 34441;
+	
 	// Teleport Locations
 	private static final Location[] TELE_LOCATIONS =
 	{
@@ -44,10 +45,12 @@ public class AteliaRefinery extends AbstractNpcAI
 		new Location(-56160, 45406, -8847), // Second Area
 		new Location(-56140, 41067, -8965), // Third Area
 	};
+	
 	// Special Mobs
 	private static final int HARKE = 24161;
 	private static final int ERGALION = 24162;
 	private static final int SPIRA = 24163;
+	
 	// Mobs
 	private static final int[] MOBS =
 	{
@@ -114,6 +117,7 @@ public class AteliaRefinery extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -148,6 +152,7 @@ public class AteliaRefinery extends AbstractNpcAI
 		{
 			htmltext = "34441.html";
 		}
+		
 		return htmltext;
 	}
 	

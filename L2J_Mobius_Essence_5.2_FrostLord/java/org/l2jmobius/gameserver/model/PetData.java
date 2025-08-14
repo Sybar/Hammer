@@ -100,10 +100,12 @@ public class PetData
 		{
 			_minLevel = level;
 		}
+		
 		if (_maxLevel < level)
 		{
 			_maxLevel = level;
 		}
+		
 		_levelStats.put(level, data);
 	}
 	
@@ -223,6 +225,7 @@ public class PetData
 			{
 				continue;
 			}
+			
 			found = true;
 			if (temp.getSkillLevel() == 0)
 			{
@@ -252,10 +255,12 @@ public class PetData
 				lvl = temp.getSkillLevel();
 			}
 		}
+		
 		if (found && (lvl == 0))
 		{
 			return 1;
 		}
+		
 		return lvl;
 	}
 	

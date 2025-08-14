@@ -56,6 +56,7 @@ public class TownPets extends AbstractNpcAI
 		31704, // Saint's Follower_b
 		31758, // Rafi
 	};
+	
 	// Misc
 	private static final int MOVE_INTERVAL = 5000;
 	
@@ -79,6 +80,7 @@ public class TownPets extends AbstractNpcAI
 				{
 					npc.getAI().setIntention(Intention.MOVE_TO, moveLocation);
 				}
+				
 				startQuestTimer("move", MOVE_INTERVAL, npc, null);
 			}
 			else
@@ -86,6 +88,7 @@ public class TownPets extends AbstractNpcAI
 				startQuestTimer("move", MOVE_INTERVAL * 3, npc, null);
 			}
 		}
+		
 		return null;
 	}
 	

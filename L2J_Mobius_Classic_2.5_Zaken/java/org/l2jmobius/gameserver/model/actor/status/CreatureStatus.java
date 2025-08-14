@@ -121,6 +121,7 @@ public class CreatureStatus
 		{
 			_StatusListener = ConcurrentHashMap.newKeySet();
 		}
+		
 		return _StatusListener;
 	}
 	
@@ -173,10 +174,12 @@ public class CreatureStatus
 			{
 				creature.stopEffectsOnDamage();
 			}
+			
 			if (Formulas.calcStunBreak(creature))
 			{
 				creature.stopStunning(true);
 			}
+			
 			if (Formulas.calcRealTargetBreak())
 			{
 				_creature.getEffectList().stopEffects(AbnormalType.REAL_TARGET);

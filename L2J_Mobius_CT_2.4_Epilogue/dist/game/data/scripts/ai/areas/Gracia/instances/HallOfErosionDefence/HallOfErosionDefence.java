@@ -101,7 +101,7 @@ public class HallOfErosionDefence extends AbstractNpcAI
 		22532
 	};
 	
-	//@formatter:off
+	// @formatter:off
 	private static final int[][] SEEDS_SPAWN =
 	{
 		{SEED, -178418, 211653, -12029, 49151, 0, 1},
@@ -205,7 +205,7 @@ public class HallOfErosionDefence extends AbstractNpcAI
 		{18711, -181069, 209698, -12467, -24792, 120, 1},
 		{18668, -180228, 209744, -12467, 25920, 120, 1}
 	};
-	//@formatter:on
+	// @formatter:on
 	
 	public HallOfErosionDefence()
 	{
@@ -307,6 +307,7 @@ public class HallOfErosionDefence extends AbstractNpcAI
 				return false;
 			}
 		}
+		
 		return true;
 	}
 	
@@ -320,6 +321,7 @@ public class HallOfErosionDefence extends AbstractNpcAI
 				player.sendPacket(SystemMessageId.YOU_HAVE_ENTERED_ANOTHER_INSTANCE_ZONE_THEREFORE_YOU_CANNOT_ENTER_CORRESPONDING_DUNGEON);
 				return;
 			}
+			
 			teleportPlayer(player, coords, world.getInstanceId());
 			return;
 		}
@@ -368,6 +370,7 @@ public class HallOfErosionDefence extends AbstractNpcAI
 				{
 					npc.getSpawn().stopRespawn();
 				}
+				
 				world.npcList.add(npc);
 			}
 		}
@@ -403,6 +406,7 @@ public class HallOfErosionDefence extends AbstractNpcAI
 						world.alivetumor.add(npc);
 					}
 				}
+				
 				broadCastPacket(world, new ExShowScreenMessage("The tumor inside has completely revived. Recovered nearby Undead are swarming toward Seed of Life...", 2, 8000));
 			}
 		}, 180 * 1000);
@@ -421,6 +425,7 @@ public class HallOfErosionDefence extends AbstractNpcAI
 				}
 			}
 		}
+		
 		world.deadTumors.clear();
 	}
 	
@@ -455,6 +460,7 @@ public class HallOfErosionDefence extends AbstractNpcAI
 				}
 			}
 		}
+		
 		return "";
 	}
 	
@@ -466,6 +472,7 @@ public class HallOfErosionDefence extends AbstractNpcAI
 			enterInstance(player, ENTER_TELEPORT);
 			return "";
 		}
+		
 		return "";
 	}
 	
@@ -482,6 +489,7 @@ public class HallOfErosionDefence extends AbstractNpcAI
 				{
 					addSpawn(mobs[getRandom(mobs.length)], npc.getLocation(), world.getInstanceId());
 				}
+				
 				npc.deleteMe();
 			}
 		}
@@ -587,6 +595,7 @@ public class HallOfErosionDefence extends AbstractNpcAI
 			{
 				return;
 			}
+			
 			for (int i = 0; i < 4; i++)
 			{
 				final Npc worm = addSpawn(18709, _npc.getLocation(), _world.getInstanceId());
@@ -624,6 +633,7 @@ public class HallOfErosionDefence extends AbstractNpcAI
 							}
 						}
 					}
+					
 					broadCastPacket(_world, new ExShowScreenMessage("Congratulations! You have succeeded! The instance will shortly expire.", 2, 8000));
 					inst.removeNpcs();
 					if (inst.getPlayers().isEmpty())
@@ -647,6 +657,7 @@ public class HallOfErosionDefence extends AbstractNpcAI
 			world.finishTask.cancel(false);
 			world.finishTask = null;
 		}
+		
 		broadCastPacket(world, new ExShowScreenMessage("You have failed... The instance will shortly expire.", 2, 8000));
 		conquestEnded = true;
 		final Instance inst = InstanceManager.getInstance().getInstance(world.getInstanceId());

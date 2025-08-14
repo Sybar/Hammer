@@ -35,6 +35,7 @@ public class Q00413_PathOfTheShillienOracle extends Quest
 	private static final int SIDRA = 30330;
 	private static final int ADONIUS = 30375;
 	private static final int TALBOT = 30377;
+	
 	// Items
 	private static final int SIDRA_LETTER = 1262;
 	private static final int BLANK_SHEET = 1263;

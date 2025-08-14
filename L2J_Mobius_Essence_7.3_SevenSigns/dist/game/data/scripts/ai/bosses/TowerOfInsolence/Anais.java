@@ -34,8 +34,10 @@ public class Anais extends AbstractNpcAI
 {
 	// NPC
 	private static final int ANAIS = 29207;
+	
 	// Location
 	private static final Location ANAIS_LOC = new Location(115213, 16623, 10080);
+	
 	// Misc
 	private static final String ANAIS_RESPAWN_PATTERN = "30 22 * * 1";
 	private SchedulingPattern _respawnPattern = null;
@@ -64,6 +66,7 @@ public class Anais extends AbstractNpcAI
 		{
 			addSpawn(ANAIS, ANAIS_LOC, false, getDespawnTime());
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	

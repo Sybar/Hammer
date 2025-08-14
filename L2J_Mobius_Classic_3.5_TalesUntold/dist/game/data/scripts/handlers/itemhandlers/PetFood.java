@@ -40,7 +40,7 @@ import org.l2jmobius.gameserver.network.serverpackets.SystemMessage;
 public class PetFood implements IItemHandler
 {
 	@Override
-	public boolean useItem(Playable playable, Item item, boolean forceUse)
+	public boolean onItemUse(Playable playable, Item item, boolean forceUse)
 	{
 		if (playable.isPet() && !playable.asPet().canEatFoodId(item.getId()))
 		{
@@ -53,6 +53,7 @@ public class PetFood implements IItemHandler
 		{
 			skills.forEach(holder -> useFood(playable, holder.getSkillId(), holder.getSkillLevel(), item));
 		}
+		
 		return true;
 	}
 	
@@ -66,13 +67,14 @@ public class PetFood implements IItemHandler
 				final Pet pet = activeChar.asPet();
 				if (pet.destroyItem(ItemProcessType.NONE, item.getObjectId(), 1, null, false))
 				{
-					pet.broadcastPacket(new MagicSkillUse(pet, pet, skillId, skillLevel, 0, 0));
+					pet.broadcastSkillPacket(new MagicSkillUse(pet, pet, skillId, skillLevel, 0, 0), pet);
 					skill.applyEffects(pet, pet);
 					pet.broadcastStatusUpdate();
 					if (pet.isHungry())
 					{
 						pet.sendPacket(SystemMessageId.YOUR_PET_ATE_A_LITTLE_BUT_IS_STILL_HUNGRY);
 					}
+					
 					return true;
 				}
 			}
@@ -84,16 +86,18 @@ public class PetFood implements IItemHandler
 					final Set<Integer> foodIds = PetDataTable.getInstance().getPetData(player.getMountNpcId()).getFood();
 					if (foodIds.contains(item.getId()) && player.destroyItem(ItemProcessType.NONE, item.getObjectId(), 1, null, false))
 					{
-						player.broadcastPacket(new MagicSkillUse(player, player, skillId, skillLevel, 0, 0));
+						player.broadcastSkillPacket(new MagicSkillUse(player, player, skillId, skillLevel, 0, 0), player);
 						skill.applyEffects(player, player);
 						return true;
 					}
 				}
+				
 				final SystemMessage sm = new SystemMessage(SystemMessageId.S1_CANNOT_BE_USED_DUE_TO_UNSUITABLE_TERMS);
 				sm.addItemName(item);
 				player.sendPacket(sm);
 			}
 		}
+		
 		return false;
 	}
 }

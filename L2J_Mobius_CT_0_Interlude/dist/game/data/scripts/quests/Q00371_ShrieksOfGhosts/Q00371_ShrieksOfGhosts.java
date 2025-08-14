@@ -58,9 +58,11 @@ public class Q00371_ShrieksOfGhosts extends Quest
 	// NPCs
 	private static final int REVA = 30867;
 	private static final int PATRIN = 30929;
+	
 	// Item
 	private static final int URN = 5903;
 	private static final int PORCELAIN = 6002;
+	
 	// Drop chances
 	private static final Map<Integer, DropInfo> MOBS = new HashMap<>();
 	static
@@ -111,6 +113,7 @@ public class Q00371_ShrieksOfGhosts extends Quest
 					{
 						urns += 7;
 					}
+					
 					giveAdena(player, urns * 1000, true);
 				}
 				break;

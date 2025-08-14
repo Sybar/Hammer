@@ -43,9 +43,11 @@ public class Q10823_ExaltedOneWhoShattersTheLimit extends Quest
 {
 	// NPC
 	private static final int LIONEL = 33907;
+	
 	// Items
 	private static final int PROOF_OF_PREPARATION = 80824;
 	private static final int LIONEL_MISSION_LIST_3 = 45637;
+	
 	// Rewards
 	private static final int EXALTED_CLOAK = 37763;
 	private static final int OBTAIN_EXALTED_STATUS = 45638;
@@ -55,11 +57,13 @@ public class Q10823_ExaltedOneWhoShattersTheLimit extends Quest
 	private static final int SUMMON_BATTLE_POTION = 45927;
 	private static final int FATE_OF_THE_EXALTED = 46036;
 	private static final int FAVOR_OF_THE_EXALTED_LV2 = 45870;
+	
 	// Misc
 	private static final int MIN_LEVEL = 102;
 	private static final int MIN_COMPLETE_LEVEL = 103;
 	private static final int REACH_LV_103 = NpcStringId.REACH_LV_103.getId();
 	private static final int PROOF_OF_PREPARATION_NEEDED = 40000;
+	
 	// Monsters
 	private static final int[] MONSTERS =
 	{
@@ -312,6 +316,7 @@ public class Q10823_ExaltedOneWhoShattersTheLimit extends Quest
 					giveItems(player, SUMMON_BATTLE_POTION, 1);
 					giveItems(player, FATE_OF_THE_EXALTED, 1);
 					giveItems(player, FAVOR_OF_THE_EXALTED_LV2, 1);
+					
 					// Give Exalted status here?
 					// https://l2wiki.com/Noblesse
 					player.setNobleLevel(2);
@@ -322,6 +327,7 @@ public class Q10823_ExaltedOneWhoShattersTheLimit extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -356,6 +362,7 @@ public class Q10823_ExaltedOneWhoShattersTheLimit extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -375,10 +382,12 @@ public class Q10823_ExaltedOneWhoShattersTheLimit extends Quest
 			{
 				giveItemRandomly(player, PROOF_OF_PREPARATION, 1, PROOF_OF_PREPARATION_NEEDED, 1, true);
 			}
+			
 			if ((getQuestItemsCount(player, PROOF_OF_PREPARATION) >= PROOF_OF_PREPARATION_NEEDED) && (player.getLevel() >= MIN_COMPLETE_LEVEL))
 			{
 				qs.setCond(2, true);
 			}
+			
 			sendNpcLogList(player);
 		}
 	}
@@ -394,8 +403,10 @@ public class Q10823_ExaltedOneWhoShattersTheLimit extends Quest
 			{
 				holder.add(new NpcLogListHolder(REACH_LV_103, true, 1));
 			}
+			
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

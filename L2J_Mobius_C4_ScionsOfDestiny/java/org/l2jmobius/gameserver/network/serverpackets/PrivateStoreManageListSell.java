@@ -50,10 +50,12 @@ public class PrivateStoreManageListSell extends ServerPacket
 	public void writeImpl(GameClient client, WritableBuffer buffer)
 	{
 		ServerPackets.PRIVATE_STORE_MANAGE_LIST_SELL.writeId(this, buffer);
+		
 		// section 1
 		buffer.writeInt(_objId);
 		buffer.writeInt(_packageSale); // Package sell
 		buffer.writeInt(_playerAdena);
+		
 		// section2
 		buffer.writeInt(_itemList.size()); // for potential sells
 		for (TradeItem item : _itemList)
@@ -68,6 +70,7 @@ public class PrivateStoreManageListSell extends ServerPacket
 			buffer.writeInt(item.getItem().getBodyPart());
 			buffer.writeInt(item.getPrice()); // store price
 		}
+		
 		// section 3
 		buffer.writeInt(_sellList.size()); // count for any items already added for sell
 		for (TradeItem item : _sellList)

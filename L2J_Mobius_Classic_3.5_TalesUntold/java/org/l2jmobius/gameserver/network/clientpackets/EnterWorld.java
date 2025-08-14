@@ -52,7 +52,6 @@ import org.l2jmobius.gameserver.model.WorldObject;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.appearance.PlayerAppearance;
 import org.l2jmobius.gameserver.model.actor.enums.player.IllegalActionPunishmentType;
-import org.l2jmobius.gameserver.model.actor.enums.player.PlayerCondOverride;
 import org.l2jmobius.gameserver.model.actor.enums.player.SubclassInfoType;
 import org.l2jmobius.gameserver.model.actor.enums.player.TeleportWhereType;
 import org.l2jmobius.gameserver.model.actor.holders.player.AttendanceInfoHolder;
@@ -153,6 +152,7 @@ public class EnterWorld extends ClientPacket
 				_tracert[i][o] = readUnsignedByte();
 			}
 		}
+		
 		readInt(); // Unknown Value
 		readInt(); // Unknown Value
 		readInt(); // Unknown Value
@@ -169,7 +169,7 @@ public class EnterWorld extends ClientPacket
 		if (player == null)
 		{
 			PacketLogger.warning("EnterWorld failed! player returned 'null'.");
-			Disconnection.of(client).defaultSequence(LeaveWorld.STATIC_PACKET);
+			Disconnection.of(client).storeAndDeleteWith(LeaveWorld.STATIC_PACKET);
 			return;
 		}
 		
@@ -195,6 +195,7 @@ public class EnterWorld extends ClientPacket
 			{
 				player.setInstance(instance);
 			}
+			
 			vars.remove(PlayerVariables.INSTANCE_RESTORE);
 		}
 		
@@ -543,6 +544,7 @@ public class EnterWorld extends ClientPacket
 			{
 				item.scheduleLifeTimeTask();
 			}
+			
 			if (item.isShadowItem() && item.isEquipped())
 			{
 				item.decreaseMana(false);
@@ -580,7 +582,7 @@ public class EnterWorld extends ClientPacket
 		
 		// Attacker or spectator logging in to a siege zone.
 		// Actually should be checked for inside castle only?
-		if (!player.canOverrideCond(PlayerCondOverride.ZONE_CONDITIONS) && player.isInsideZone(ZoneId.SIEGE) && (!player.isInSiege() || (player.getSiegeState() < 2)))
+		if (!player.isGM() && player.isInsideZone(ZoneId.SIEGE) && (!player.isInSiege() || (player.getSiegeState() < 2)))
 		{
 			player.teleToLocation(TeleportWhereType.TOWN);
 		}
@@ -601,6 +603,7 @@ public class EnterWorld extends ClientPacket
 					punish = true;
 				}
 			}
+			
 			if (punish && (Config.OVER_ENCHANT_PUNISHMENT != IllegalActionPunishmentType.NONE))
 			{
 				player.sendMessage("[Server]: You have over-enchanted items!");
@@ -615,6 +618,7 @@ public class EnterWorld extends ClientPacket
 		{
 			player.destroyItem(ItemProcessType.DESTROY, player.getInventory().getItemByItemId(8190), null, true);
 		}
+		
 		if ((player.getInventory().getItemByItemId(8689) != null) && !player.isCursedWeaponEquipped())
 		{
 			player.destroyItem(ItemProcessType.DESTROY, player.getInventory().getItemByItemId(8689), null, true);
@@ -671,6 +675,7 @@ public class EnterWorld extends ClientPacket
 		{
 			player.sendPacket(new ExWorldChatCnt(player));
 		}
+		
 		player.sendPacket(new ExConnectedTimeAndGettableReward(player));
 		player.sendPacket(new ExOneDayReceiveRewardList(player, true));
 		
@@ -686,7 +691,7 @@ public class EnterWorld extends ClientPacket
 		
 		// Client settings restore.
 		player.getClientSettings();
-		player.sendPacket(new ExItemAnnounceSetting(player.getClientSettings().isAnnounceEnabled()));
+		player.sendPacket(new ExItemAnnounceSetting(player.getClientSettings().isAnnounceDisabled()));
 		
 		// Fix for equipped item skills
 		if (!player.getEffectList().getCurrentAbnormalVisualEffects().isEmpty())
@@ -754,6 +759,7 @@ public class EnterWorld extends ClientPacket
 						sb.append(".");
 					}
 				}
+				
 				final String trace = sb.toString();
 				
 				// Get hardware info from client.
@@ -788,14 +794,14 @@ public class EnterWorld extends ClientPacket
 				// Banned?
 				if ((hwInfo != null) && PunishmentManager.getInstance().hasPunishment(hwInfo.getMacAddress(), PunishmentAffect.HWID, PunishmentType.BAN))
 				{
-					Disconnection.of(client).defaultSequence(LeaveWorld.STATIC_PACKET);
+					Disconnection.of(client).storeAndDeleteWith(LeaveWorld.STATIC_PACKET);
 					return;
 				}
 				
 				// Check max players.
 				if (Config.KICK_MISSING_HWID && (hwInfo == null))
 				{
-					Disconnection.of(client).defaultSequence(LeaveWorld.STATIC_PACKET);
+					Disconnection.of(client).storeAndDeleteWith(LeaveWorld.STATIC_PACKET);
 				}
 				else if (Config.MAX_PLAYERS_PER_HWID > 0)
 				{
@@ -811,9 +817,10 @@ public class EnterWorld extends ClientPacket
 							}
 						}
 					}
+					
 					if (count > Config.MAX_PLAYERS_PER_HWID)
 					{
-						Disconnection.of(client).defaultSequence(LeaveWorld.STATIC_PACKET);
+						Disconnection.of(client).storeAndDeleteWith(LeaveWorld.STATIC_PACKET);
 					}
 				}
 			}, 5000);

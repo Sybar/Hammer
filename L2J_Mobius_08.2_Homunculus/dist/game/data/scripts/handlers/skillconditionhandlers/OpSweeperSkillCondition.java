@@ -56,6 +56,7 @@ public class OpSweeperSkillCondition implements ISkillCondition
 							{
 								canSweep = !attackable.isOldCorpse(sweeper, Config.CORPSE_CONSUME_SKILL_ALLOWED_TIME_BEFORE_DECAY, true);
 							}
+							
 							if (canSweep)
 							{
 								canSweep = sweeper.getInventory().checkInventorySlotsAndWeight(attackable.getSpoilLootItems(), true, true);
@@ -69,6 +70,7 @@ public class OpSweeperSkillCondition implements ISkillCondition
 				}
 			}
 		}
+		
 		return canSweep;
 	}
 }

@@ -39,10 +39,12 @@ public class Q10737_GrakonsWarehouse extends Quest
 	private static final int KATALIN = 33943;
 	private static final int AYANTHE = 33942;
 	private static final int GRAKON = 33947;
+	
 	// Items
 	private static final ItemHolder APPRENTICE_SUPPORT_BOX = new ItemHolder(39520, 1);
 	private static final ItemHolder APPRENTICE_ADVENTURER_STAFF = new ItemHolder(7816, 1);
 	private static final ItemHolder APPRENTICE_ADVENTURER_FISTS = new ItemHolder(7819, 1);
+	
 	// Misc
 	private static final int MIN_LEVEL = 5;
 	private static final int MAX_LEVEL = 20;
@@ -98,6 +100,7 @@ public class Q10737_GrakonsWarehouse extends Quest
 					{
 						giveItems(player, APPRENTICE_ADVENTURER_FISTS);
 					}
+					
 					addExpAndSp(player, 2625, 0);
 					qs.exitQuest(false, true);
 				}
@@ -108,6 +111,7 @@ public class Q10737_GrakonsWarehouse extends Quest
 				htmltext = null;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -162,6 +166,7 @@ public class Q10737_GrakonsWarehouse extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -176,6 +181,7 @@ public class Q10737_GrakonsWarehouse extends Quest
 		{
 			qs = player.getQuestState(Q10736_ASpecialPower.class.getSimpleName());
 		}
+		
 		return (player.getLevel() >= MIN_LEVEL) && (player.getLevel() <= MAX_LEVEL) && (qs != null) && qs.isCompleted();
 	}
 }

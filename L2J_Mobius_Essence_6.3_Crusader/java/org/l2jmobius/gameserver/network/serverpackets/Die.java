@@ -93,16 +93,19 @@ public class Die extends ServerPacket
 				{
 					_flags += 2;
 				}
+				
 				// Castle check.
 				if (((clan != null) && (clan.getCastleId() > 0)) || isInCastleDefense)
 				{
 					_flags += 4;
 				}
+				
 				// Fortress check.
 				if (((clan != null) && (clan.getFortId() > 0)) || isInFortDefense)
 				{
 					_flags += 8;
 				}
+				
 				// Outpost check.
 				if (((siegeClan != null) && !isInCastleDefense && !isInFortDefense && !siegeClan.getFlag().isEmpty()))
 				{
@@ -154,6 +157,7 @@ public class Die extends ServerPacket
 			buffer.writeInt(0); // L-Coin resurrection
 			buffer.writeInt(-1); // L-Coin count%
 		}
+		
 		buffer.writeInt(0);
 	}
 	

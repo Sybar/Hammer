@@ -44,14 +44,17 @@ public class Q10578_TheSoulOfASword extends Quest
 {
 	// NPCs
 	private static final int VINCENZ = 31316;
+	
 	// Items
 	private static final int PRACTICE_STORMBRINGER = 46629;
 	private static final int PRACTICE_SOUL_CRYSTAL_STAGE1 = 46526;
 	private static final int SOUL_CRYSTAL_PRACTICE_GEMSTONE = 36722;
+	
 	// Rewards
 	private static final long XP = 597699960;
 	private static final int SP = 597690;
 	private static final int CERTIFICATE_FROM_VINCENZ = 48176;
+	
 	// Misc
 	private static final int MIN_LEVEL = 95;
 	
@@ -74,6 +77,7 @@ public class Q10578_TheSoulOfASword extends Quest
 		{
 			return getNoQuestMsg(player);
 		}
+		
 		String htmltext = null;
 		switch (event)
 		{
@@ -102,6 +106,7 @@ public class Q10578_TheSoulOfASword extends Quest
 			{
 				// show Service/Help/Buy Item page
 				player.sendPacket(new ExTutorialShowId(36));
+				
 				// TODO: check if player already have quest items
 				if (hasQuestItems(player, PRACTICE_STORMBRINGER, PRACTICE_SOUL_CRYSTAL_STAGE1, SOUL_CRYSTAL_PRACTICE_GEMSTONE))
 				{
@@ -128,6 +133,7 @@ public class Q10578_TheSoulOfASword extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -165,6 +171,7 @@ public class Q10578_TheSoulOfASword extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -177,6 +184,7 @@ public class Q10578_TheSoulOfASword extends Quest
 		}
 		
 		final QuestState qs = getQuestState(player, false);
+		
 		// Check if weapon has been augmented to complete the quest
 		if ((qs != null) && qs.isCond(2) && (!player.getInventory().getItemByItemId(PRACTICE_STORMBRINGER).getSpecialAbilities().isEmpty()))
 		{

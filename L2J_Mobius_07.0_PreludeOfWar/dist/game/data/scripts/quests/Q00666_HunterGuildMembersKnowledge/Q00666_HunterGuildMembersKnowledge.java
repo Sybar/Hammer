@@ -39,6 +39,7 @@ public class Q00666_HunterGuildMembersKnowledge extends Quest
 	// NPCs
 	private static final int ARCTURUS = 34267;
 	private static final int COLIN = 30703;
+	
 	// BOSS
 	private static final int[] BOSES =
 	{
@@ -86,6 +87,7 @@ public class Q00666_HunterGuildMembersKnowledge extends Quest
 		29163, // Tiat (attack type)
 		29374, // Cyrax
 	};
+	
 	// Misc
 	private static final int MIN_LEVEL = 85;
 	
@@ -108,6 +110,7 @@ public class Q00666_HunterGuildMembersKnowledge extends Quest
 		{
 			return htmltext;
 		}
+		
 		switch (event)
 		{
 			case "30703-02.htm":
@@ -134,6 +137,7 @@ public class Q00666_HunterGuildMembersKnowledge extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -185,9 +189,11 @@ public class Q00666_HunterGuildMembersKnowledge extends Quest
 					htmltext = getAlreadyCompletedMsg(player, QuestType.DAILY);
 					break;
 				}
+				
 				qs.setState(State.CREATED);
 			}
 		}
+		
 		return htmltext;
 	}
 	

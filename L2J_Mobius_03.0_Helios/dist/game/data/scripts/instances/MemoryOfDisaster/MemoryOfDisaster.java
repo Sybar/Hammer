@@ -111,6 +111,7 @@ public class MemoryOfDisaster extends AbstractInstance
 		33544,
 		33546
 	};
+	
 	// Skills
 	private static final SkillHolder SWOOP_CANNON_SKILL = new SkillHolder(16023, 1);
 	private static final SkillHolder SIEGE_GOLEM_SKILL_1 = new SkillHolder(16022, 1);
@@ -122,8 +123,10 @@ public class MemoryOfDisaster extends AbstractInstance
 	private static final SkillHolder TRASKEN_SKILL_2 = new SkillHolder(14337, 1);
 	private static final SkillHolder TRASKEN_SKILL_3 = new SkillHolder(14338, 1);
 	private static final SkillHolder TRASKEN_SKILL_4 = new SkillHolder(14340, 1);
+	
 	// Items
 	private static final int TRANSPARENT_1HS = 15280;
+	
 	// Locations
 	private static final Location BATTLE_PORT = new Location(116063, -183167, -1480, 64960);
 	private static final Location ROGIN_MOVE = new Location(116400, -183069, -1600);
@@ -152,6 +155,7 @@ public class MemoryOfDisaster extends AbstractInstance
 		new Location(116656, -180461, -1240, 56363),
 	};
 	private static final Location DE_VILLAGE_START = new Location(10400, 17092, -4584, getRandom(65520));
+	
 	// Misc
 	private static final int FIRE_IN_DWARVEN_VILLAGE = 23120700;
 	private static final int TEMPLATE_ID = 200;
@@ -467,6 +471,7 @@ public class MemoryOfDisaster extends AbstractInstance
 						getTimers().addTimer("ROGIN_TALK", 2000, npc, null);
 						npc.getInstanceWorld().getNpc(TOROCCO).broadcastSay(ChatType.NPC_GENERAL, NpcStringId.ROGIN_I_M_HERE);
 						npc.getInstanceWorld().getNpc(BRONK).broadcastSay(ChatType.NPC_GENERAL, NpcStringId.MM_I_SEE);
+						
 						// Set Bronk heading towards Rogin
 						break;
 					}
@@ -676,6 +681,7 @@ public class MemoryOfDisaster extends AbstractInstance
 				addMoveToDesire(npc, DWARVES_MOVE_RANDOM[getRandom(DWARVES_MOVE_RANDOM.length)], 23);
 			}
 		}
+		
 		switch (npc.getId())
 		{
 			case ROGIN:
@@ -750,6 +756,7 @@ public class MemoryOfDisaster extends AbstractInstance
 					npc.getVariables().set("attackCount", attackCount);
 				}
 			}
+			
 			switch (npc.getId())
 			{
 				case BRONK:
@@ -819,6 +826,7 @@ public class MemoryOfDisaster extends AbstractInstance
 							golem.abortCast();
 							world.getNpc(SIEGE_GOLEM).getAI().moveTo(GOLEM_MOVE);
 						}
+						
 						addAttackDesire(npc, attacker);
 					}
 					break;
@@ -865,6 +873,7 @@ public class MemoryOfDisaster extends AbstractInstance
 					dwarf.broadcastSay(ChatType.NPC_GENERAL, SHOUT_BRONK_DEATH[getRandom(SHOUT_BRONK_DEATH.length)]);
 				}
 			}
+			
 			npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.UGH_IF_I_SEE_YOU_IN_THE_SPIRIT_WORLD_FIRST_ROUND_IS_ON_ME);
 			getTimers().addTimer("ATTACK_TIME", 1000, npc, null);
 			getTimers().addTimer("RUN_TIME", 10000, npc, null);
@@ -931,6 +940,7 @@ public class MemoryOfDisaster extends AbstractInstance
 						final Npc invisibleNpc = addSpawn(npc, INVISIBLE_NPC, npc.getLocation(), false, npc.getInstanceId());
 						invisibleNpc.getVariables().set("type", "BOUNCER");
 					}
+					
 					npc.setTarget(npc);
 					npc.doCast(TRASKEN_SKILL_4.getSkill());
 				}
@@ -969,6 +979,7 @@ public class MemoryOfDisaster extends AbstractInstance
 		{
 			getTimers().addTimer("TIMER_ID_DIE", getRandom(60000) + 5000, receiver, null);
 		}
+		
 		return super.onEventReceived(event, sender, receiver, reference);
 	}
 	

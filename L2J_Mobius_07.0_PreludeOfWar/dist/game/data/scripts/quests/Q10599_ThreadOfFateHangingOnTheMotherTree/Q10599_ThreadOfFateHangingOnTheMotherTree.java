@@ -46,6 +46,7 @@ public class Q10599_ThreadOfFateHangingOnTheMotherTree extends Quest
 {
 	// NPCs
 	private static final int NERUPA = 34412;
+	
 	// Monsters
 	private static final int BOSS = 26312; // Lithra 106
 	private static final int[] MONSTERS =
@@ -57,12 +58,15 @@ public class Q10599_ThreadOfFateHangingOnTheMotherTree extends Quest
 		24126, // Creeper Rampike
 		24128 // Nerupa Aprias
 	};
+	
 	// Items
 	private static final int THREAD_OF_FATE = 48367; // Thread of Fate
+	
 	// Reward Items
 	private static final int IMMORTAL_SCROLL_CHAPTER = 26431;
 	private static final int RUNE_STONE = 39738;
 	private static final int HUNTERS_AMULET = 47739;
+	
 	// Misc
 	private static final int MIN_LEVEL = 103;
 	private static final String KILL_COUNT_VAR = "KillCount";
@@ -127,6 +131,7 @@ public class Q10599_ThreadOfFateHangingOnTheMotherTree extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -176,6 +181,7 @@ public class Q10599_ThreadOfFateHangingOnTheMotherTree extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -187,6 +193,7 @@ public class Q10599_ThreadOfFateHangingOnTheMotherTree extends Quest
 		{
 			qs.setCond(2, true);
 		}
+		
 		if ((qs != null) && qs.isCond(2) && ArrayUtil.contains(MONSTERS, npc.getId()))
 		{
 			int count = qs.getInt(KILL_COUNT_VAR);
@@ -200,6 +207,7 @@ public class Q10599_ThreadOfFateHangingOnTheMotherTree extends Quest
 				playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 			}
 		}
+		
 		if ((qs != null) && qs.isCond(4) && (npc.getId() == BOSS))
 		{
 			qs.setCond(5, true);
@@ -221,6 +229,7 @@ public class Q10599_ThreadOfFateHangingOnTheMotherTree extends Quest
 				return holder;
 			}
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

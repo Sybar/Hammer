@@ -40,11 +40,14 @@ public final class Q10748_MysteriousSuggestion1 extends Quest
 {
 	// NPC
 	private static final int BUTLER = 33685;
+	
 	// Items
 	private static final int TOURNAMENT_REMNANTS_I = 35544;
+	
 	// Rewards
 	private static final int MYSTERIOUS_POWER = 34904;
 	private static final int MYSTERIOUS_SHADOW = 34903;
+	
 	// Misc
 	private static final int MIN_LEVEL = 85;
 	
@@ -81,6 +84,7 @@ public final class Q10748_MysteriousSuggestion1 extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -107,12 +111,15 @@ public final class Q10748_MysteriousSuggestion1 extends Quest
 							htmltext = "grankain_lumiere_q10748_01.htm";
 							break;
 						}
+						
 						htmltext = "grankain_lumiere_q10748_04.htm";
 						break;
 					}
+					
 					htmltext = "grankain_lumiere_q10748_04.htm";
 					break;
 				}
+				
 				htmltext = "grankain_lumiere_q10748_04.htm";
 				break;
 			}
@@ -138,10 +145,12 @@ public final class Q10748_MysteriousSuggestion1 extends Quest
 								htmltext = "grankain_lumiere_q10748_07.htm";
 								break;
 							}
+							
 							qs.exitQuest(QuestType.DAILY, true);
 							htmltext = "grankain_lumiere_q10748_09.htm";
 							break;
 						}
+						
 						qs.exitQuest(QuestType.DAILY, true);
 						htmltext = "grankain_lumiere_q10748_08.htm";
 						break;
@@ -156,9 +165,11 @@ public final class Q10748_MysteriousSuggestion1 extends Quest
 					htmltext = "grankain_lumiere_q10748_05.htm";
 					break;
 				}
+				
 				qs.setState(State.CREATED);
 			}
 		}
+		
 		return htmltext;
 	}
 	

@@ -136,6 +136,7 @@ public class MonkOfChaos extends AbstractNpcAI
 						count++;
 					}
 				}
+				
 				if ((player.getLevel() < MIN_LEVEL) || !player.isInCategory(CategoryType.SIXTH_CLASS_GROUP) || (count == 0))
 				{
 					htmltext = "no-cancel.html";
@@ -147,6 +148,7 @@ public class MonkOfChaos extends AbstractNpcAI
 					htmltext = "no-adena.html";
 					break;
 				}
+				
 				takeItems(player, 57, CANCEL_FEE);
 				
 				for (SkillLearn skillLearn : SkillTreeData.getInstance().getAllRevelationSkills(player, player.isDualClassActive() ? SubclassType.DUALCLASS : SubclassType.BASECLASS))
@@ -157,6 +159,7 @@ public class MonkOfChaos extends AbstractNpcAI
 						player.removeSkill(skill);
 					}
 				}
+				
 				for (String varName : varNames)
 				{
 					player.getVariables().remove(varName);
@@ -167,6 +170,7 @@ public class MonkOfChaos extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

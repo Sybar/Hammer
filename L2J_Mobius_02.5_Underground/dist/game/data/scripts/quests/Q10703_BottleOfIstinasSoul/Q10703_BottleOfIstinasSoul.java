@@ -37,8 +37,10 @@ public class Q10703_BottleOfIstinasSoul extends Quest
 {
 	// NPCs
 	private static final int RUMIESE = 33293;
+	
 	// Item
 	private static final int ISTINAS_SOUL_BOTTLE = 34883;
+	
 	// Misc
 	private static final int MIN_LEVEL = 97;
 	
@@ -92,6 +94,7 @@ public class Q10703_BottleOfIstinasSoul extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -128,6 +131,7 @@ public class Q10703_BottleOfIstinasSoul extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

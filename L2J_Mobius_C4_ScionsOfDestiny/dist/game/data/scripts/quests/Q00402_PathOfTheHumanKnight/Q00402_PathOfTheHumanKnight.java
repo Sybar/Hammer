@@ -41,6 +41,7 @@ public class Q00402_PathOfTheHumanKnight extends Quest
 	private static final int BIOTIN = 30031;
 	private static final int SIR_AARON_TANFORD = 30653;
 	private static final int SIR_COLLIN_WINDAWOOD = 30311;
+	
 	// Items
 	private static final int SWORD_OF_RITUAL = 1161;
 	private static final int COIN_OF_LORDS_1 = 1162;

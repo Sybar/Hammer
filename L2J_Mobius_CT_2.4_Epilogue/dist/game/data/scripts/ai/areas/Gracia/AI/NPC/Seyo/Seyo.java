@@ -30,8 +30,10 @@ public class Seyo extends AbstractNpcAI
 {
 	// NPC
 	private static final int SEYO = 32737;
+	
 	// Item
 	private static final int STONE_FRAGMENT = 15486; // Spirit Stone Fragment
+	
 	// Misc
 	private static final String[] TEXT =
 	{
@@ -57,6 +59,7 @@ public class Seyo extends AbstractNpcAI
 		{
 			return htmltext;
 		}
+		
 		switch (event)
 		{
 			case "TRICKERY_TIMER":
@@ -91,6 +94,7 @@ public class Seyo extends AbstractNpcAI
 					{
 						npc.broadcastSay(ChatType.NPC_GENERAL, "Hmm? Hey, did you give " + player.getName() + " something? But it was just 1. Haha.");
 					}
+					
 					startQuestTimer("TRICKERY_TIMER", 5000, npc, null);
 				}
 				break;
@@ -125,6 +129,7 @@ public class Seyo extends AbstractNpcAI
 						giveItems(player, STONE_FRAGMENT, itemCount);
 						npc.broadcastSay(ChatType.NPC_GENERAL, player.getName() + " pulled one with " + itemCount + " digits. Lucky~ Not bad~");
 					}
+					
 					startQuestTimer("TRICKERY_TIMER", 5000, npc, null);
 				}
 				break;
@@ -159,11 +164,13 @@ public class Seyo extends AbstractNpcAI
 						giveItems(player, STONE_FRAGMENT, getRandom(1, 100));
 						npc.broadcastSay(ChatType.NPC_GENERAL, "A big piece is made up of little pieces. So here's a little piece~");
 					}
+					
 					startQuestTimer("TRICKERY_TIMER", 5000, npc, null);
 				}
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

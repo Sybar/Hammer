@@ -36,6 +36,7 @@ public class TeleportDevice extends AbstractNpcAI
 {
 	// NPC
 	private static final int TELEPORT_DEVICE = 34242;
+	
 	// Teleport's
 	private static final Location LOCATION1 = new Location(-46335, 59575, -2960);
 	private static final Location LOCATION2 = new Location(-42307, 51232, -2032);
@@ -55,6 +56,7 @@ public class TeleportDevice extends AbstractNpcAI
 		{
 			return "34242-01.html";
 		}
+		
 		switch (event)
 		{
 			case "teleport1":
@@ -78,6 +80,7 @@ public class TeleportDevice extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return null;
 	}
 	

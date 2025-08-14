@@ -34,6 +34,7 @@ public class Q10784_TheBrokenDevice extends Quest
 {
 	// NPC
 	private static final int NOVAIN = 33866;
+	
 	// Monsters
 	private static final int[] MONSTERS =
 	{
@@ -42,9 +43,11 @@ public class Q10784_TheBrokenDevice extends Quest
 		20649, // Hamrut
 		20650, // Kranrot
 	};
+	
 	// Items
 	private static final int BROKE_MAGIC_DEVICE_FRAGMENT = 39723;
 	private static final int ENCHANT_ARMOR_B = 948;
+	
 	// Misc
 	private static final int MIN_LEVEL = 58;
 	private static final int MAX_LEVEL = 61;
@@ -100,6 +103,7 @@ public class Q10784_TheBrokenDevice extends Quest
 				htmltext = null;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -126,6 +130,7 @@ public class Q10784_TheBrokenDevice extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

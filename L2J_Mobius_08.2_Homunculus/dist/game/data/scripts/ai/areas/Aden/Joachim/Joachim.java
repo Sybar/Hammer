@@ -57,6 +57,7 @@ public class Joachim extends AbstractNpcAI
 {
 	// NPC
 	private static final int JOACHIM = 34513;
+	
 	// Items
 	private static final int CHAOS_POMANDER_DUAL_CLASS = 37375;
 	private static final int PAULINAS_RGRADE_EQUIPMENT_SET = 46919;
@@ -72,6 +73,7 @@ public class Joachim extends AbstractNpcAI
 		POWER_ITEMS.put(CategoryType.SIXTH_IS_GROUP, 32270); // Leister Power
 		POWER_ITEMS.put(CategoryType.SIXTH_EOLH_GROUP, 32271); // Laksis Power
 	}
+	
 	// Misc
 	private static final List<PlayerClass> DUAL_CLASS_LIST = new ArrayList<>();
 	static
@@ -144,6 +146,7 @@ public class Joachim extends AbstractNpcAI
 						sb.append("<button value=\"" + ClassListData.getInstance().getClass(dualClasses.getId()).getClassName() + "\" action=\"bypass -h menu_select?ask=1&reply=" + dualClasses.getId() + "\" width=\"200\" height=\"31\" back=\"L2UI_CT1.HtmlWnd_DF_Awake_Down\" fore=\"L2UI_CT1.HtmlWnd_DF_Awake\"><br>");
 					}
 				}
+				
 				html.replace("%dualclassList%", sb.toString());
 				player.sendPacket(html);
 				break;
@@ -168,6 +171,7 @@ public class Joachim extends AbstractNpcAI
 			LOGGER.info("Cannot find HTML file for " + Joachim.class.getSimpleName() + " AI: " + fileName);
 			return null;
 		}
+		
 		html.setHtml(text);
 		return html;
 	}
@@ -184,6 +188,7 @@ public class Joachim extends AbstractNpcAI
 				tempList.add(temp);
 			}
 		}
+		
 		return tempList;
 	}
 	

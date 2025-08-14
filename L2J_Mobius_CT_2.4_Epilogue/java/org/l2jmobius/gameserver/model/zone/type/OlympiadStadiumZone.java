@@ -75,6 +75,7 @@ public class OlympiadStadiumZone extends ZoneType
 				{
 					character.asSummon().unSummon(player);
 				}
+				
 				player.teleToLocation(TeleportWhereType.TOWN);
 			}
 		}

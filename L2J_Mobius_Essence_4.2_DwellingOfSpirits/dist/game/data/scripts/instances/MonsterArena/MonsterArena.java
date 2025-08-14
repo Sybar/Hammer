@@ -82,6 +82,7 @@ public class MonsterArena extends AbstractInstance
 		25837, // Cherkia
 		25838, // Spicula
 	};
+	
 	// Rewards
 	private static final int BATTLE_BOX_1 = 90913;
 	private static final int BATTLE_BOX_2 = 90913;
@@ -90,8 +91,10 @@ public class MonsterArena extends AbstractInstance
 	private static final int VALOR_BOX = 90915;
 	private static final int TICKET_M = 90946;
 	private static final int TICKET_H = 90947;
+	
 	// Skill
 	private static final int CLAN_EXUBERANCE = 1867;
+	
 	// Misc
 	private static final Collection<Player> REWARDED_PLAYERS = ConcurrentHashMap.newKeySet();
 	private static final int TEMPLATE_ID = 192;
@@ -139,6 +142,7 @@ public class MonsterArena extends AbstractInstance
 							{
 								player.sendPacket(new ExSendUIEvent(player, false, false, (int) (world.getRemainingTime() / 1000), 0, NpcStringId.TIME_LEFT));
 							}
+							
 							return null;
 						}
 					}
@@ -149,11 +153,13 @@ public class MonsterArena extends AbstractInstance
 				{
 					return "30202-03.htm";
 				}
+				
 				if (clan.getLevel() < 3)
 				{
 					player.sendMessage("Your clan must be at least level 3.");
 					return null;
 				}
+				
 				for (Player member : player.getCommandChannel().getMembers())
 				{
 					if ((member.getClan() == null) || (member.getClanId() != player.getClanId()))
@@ -286,6 +292,7 @@ public class MonsterArena extends AbstractInstance
 				break;
 			}
 		}
+		
 		return null;
 	}
 	
@@ -326,6 +333,7 @@ public class MonsterArena extends AbstractInstance
 				{
 					plr.sendPacket(new ExSendUIEvent(plr, false, false, 0, 0, NpcStringId.TIME_LEFT));
 				}
+				
 				world.finishInstance();
 			}
 		}

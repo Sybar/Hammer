@@ -32,6 +32,7 @@ public class JiniaGuildHideout3 extends AbstractInstance
 {
 	// NPC
 	private static final int RAFFORTY = 32020;
+	
 	// Misc
 	private static final int TEMPLATE_ID = 145;
 	

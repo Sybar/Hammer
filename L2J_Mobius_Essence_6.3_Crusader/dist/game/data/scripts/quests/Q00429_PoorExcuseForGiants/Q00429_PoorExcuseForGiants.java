@@ -40,13 +40,16 @@ public class Q00429_PoorExcuseForGiants extends Quest
 {
 	// NPC
 	private static final int GENIE_LAMP = 34369;
+	
 	// Monsters
 	private static final int GIANT_SHADOW = 20969;
 	private static final int WARRIOR_OF_ANCIENT_TIMES = 20971;
 	private static final int SHAMAN_OF_ANCIENT_TIMES = 20972;
 	private static final int FORGOTTEN_ANCIENT_CREATURE = 20973;
+	
 	// Item
 	private static final ItemHolder XP_GROWTH = new ItemHolder(49674, 3);
+	
 	// Misc
 	private static final int MIN_LEVEL = 64;
 	private static final int MAX_LEVEL = 75;
@@ -101,6 +104,7 @@ public class Q00429_PoorExcuseForGiants extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -139,6 +143,7 @@ public class Q00429_PoorExcuseForGiants extends Quest
 				htmltext = getAlreadyCompletedMsg(player);
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -174,6 +179,7 @@ public class Q00429_PoorExcuseForGiants extends Quest
 			holder.add(new NpcLogListHolder(NpcStringId.DEFEAT_MONSTERS_25.getId(), true, qs.getInt(KILL_COUNT_VAR)));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

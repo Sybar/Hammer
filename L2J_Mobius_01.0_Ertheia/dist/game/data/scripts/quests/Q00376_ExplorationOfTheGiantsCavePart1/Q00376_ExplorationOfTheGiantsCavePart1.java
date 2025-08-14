@@ -36,6 +36,7 @@ public class Q00376_ExplorationOfTheGiantsCavePart1 extends Quest
 {
 	// NPC
 	private static final int SOBLING = 31147;
+	
 	// Items
 	private static final int ANCIENT_PARCHMENT = 14841;
 	private static final int BOOK1 = 14836;
@@ -43,6 +44,7 @@ public class Q00376_ExplorationOfTheGiantsCavePart1 extends Quest
 	private static final int BOOK3 = 14838;
 	private static final int BOOK4 = 14839;
 	private static final int BOOK5 = 14840;
+	
 	// Mobs
 	private static final Map<Integer, Double> MOBS = new HashMap<>();
 	static
@@ -97,6 +99,7 @@ public class Q00376_ExplorationOfTheGiantsCavePart1 extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -123,6 +126,7 @@ public class Q00376_ExplorationOfTheGiantsCavePart1 extends Quest
 		{
 			htmltext = hasQuestItems(player, BOOK1, BOOK2, BOOK3, BOOK4, BOOK5) ? "31147-03.html" : "31147-02a.html";
 		}
+		
 		return htmltext;
 	}
 }

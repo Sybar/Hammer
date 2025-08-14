@@ -62,22 +62,26 @@ public class Q10295_SevenSignsSolinasTomb extends Quest
 	private static final int SUPPLICANT_OF_REST = 27403;
 	private static final int TRAINEE_OF_REST = 27404;
 	private static final int SOLINAS_EVIL_THOUGHTS = 32793;
+	
 	// Items
 	private static final int SCROLL_RELIC = 17228;
 	private static final int SHIELD_RELIC = 17229;
 	private static final int SWORD_RELIC = 17230;
 	private static final int STAFF_RELIC = 17231;
+	
 	// Teleports
 	private static final Location START_LOC = new Location(45545, -249423, -6760);
 	private static final Location BACK_LOC = new Location(120727, -86868, -3392);
 	private static final Location ROOM_LOC = new Location(56078, -252944, -6768);
 	private static final Location ROOM_2_LOC = new Location(55955, -250394, -6760);
+	
 	// Client Effects
 	private static final int TELEPORT_DEVICE_EVENT = 21100100;
 	private static final int SCROLL_ALTAR_EVENT = 21100200;
 	private static final int SHIELD_ALTAR_EVENT = 21100202;
 	private static final int SWORD_ALTAR_EVENT = 21100204;
 	private static final int STAFF_ALTAR_EVENT = 21100206;
+	
 	// Misc
 	private static final int TELEPORTER_WALL = 21100018;
 	private static final int[] WALLS =
@@ -154,6 +158,7 @@ public class Q10295_SevenSignsSolinasTomb extends Quest
 					player.sendPacket(new OnEventTrigger(STAFF_ALTAR_EVENT, true));
 					playMovie(player, Movie.SSQ2_SOLINA_TOMB_OPENING);
 				}
+				
 				return null;
 			}
 			case "32857-02.html":
@@ -212,6 +217,7 @@ public class Q10295_SevenSignsSolinasTomb extends Quest
 					guardian.setInvul(false);
 					guardian.getEffectList().stopAbnormalVisualEffect(AbnormalVisualEffect.INVINCIBILITY);
 				}
+				
 				return null;
 			}
 			case "enable_sword_guardian":
@@ -223,6 +229,7 @@ public class Q10295_SevenSignsSolinasTomb extends Quest
 					guardian.setInvul(false);
 					guardian.getEffectList().stopAbnormalVisualEffect(AbnormalVisualEffect.INVINCIBILITY);
 				}
+				
 				return null;
 			}
 			case "enable_shield_guardian":
@@ -234,6 +241,7 @@ public class Q10295_SevenSignsSolinasTomb extends Quest
 					guardian.setInvul(false);
 					guardian.getEffectList().stopAbnormalVisualEffect(AbnormalVisualEffect.INVINCIBILITY);
 				}
+				
 				return null;
 			}
 			case "enable_scroll_guardian":
@@ -245,6 +253,7 @@ public class Q10295_SevenSignsSolinasTomb extends Quest
 					guardian.setInvul(false);
 					guardian.getEffectList().stopAbnormalVisualEffect(AbnormalVisualEffect.INVINCIBILITY);
 				}
+				
 				return null;
 			}
 			case "teleport_to_room":
@@ -257,10 +266,12 @@ public class Q10295_SevenSignsSolinasTomb extends Quest
 					{
 						closeDoor(door, player.getInstanceId());
 					}
+					
 					player.teleToLocation(ROOM_LOC);
 					final Npc elcadia = player.getInstanceWorld().getNpc(ELCADIA_INSTANCE);
 					elcadia.teleToLocation(player, true);
 				}
+				
 				return null;
 			}
 			case "activate_trap":
@@ -271,6 +282,7 @@ public class Q10295_SevenSignsSolinasTomb extends Quest
 				{
 					openDoor(door, player.getInstanceId());
 				}
+				
 				htmltext = "32843-02.html";
 				break;
 			}
@@ -282,6 +294,7 @@ public class Q10295_SevenSignsSolinasTomb extends Quest
 					final Npc elcadia = player.getInstanceWorld().getNpc(ELCADIA_INSTANCE);
 					elcadia.teleToLocation(player, true);
 				}
+				
 				return null;
 			}
 			case "32793-04.html":
@@ -299,10 +312,12 @@ public class Q10295_SevenSignsSolinasTomb extends Quest
 				{
 					qs.setCond(3);
 				}
+				
 				htmltext = event;
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -462,6 +477,7 @@ public class Q10295_SevenSignsSolinasTomb extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -533,6 +549,7 @@ public class Q10295_SevenSignsSolinasTomb extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

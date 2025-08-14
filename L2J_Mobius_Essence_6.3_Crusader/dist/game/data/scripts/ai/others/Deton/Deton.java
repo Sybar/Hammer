@@ -34,6 +34,7 @@ public class Deton extends AbstractNpcAI
 {
 	// NPC
 	private static final int DETON = 34143;
+	
 	// Location
 	private static final Location MASSACRE_SOUTH = new Location(179446, -7811, -3528);
 	private static final Location MASSACRE_NORTH = new Location(188337, -25395, -1472);
@@ -149,6 +150,7 @@ public class Deton extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

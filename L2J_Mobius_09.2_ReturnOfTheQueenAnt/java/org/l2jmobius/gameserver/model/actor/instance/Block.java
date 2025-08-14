@@ -58,6 +58,7 @@ public class Block extends Monster
 			{
 				// Change color
 				_colorEffect = 0x00;
+				
 				// BroadCast to all known players
 				broadcastPacket(new NpcInfo(this));
 				increaseTeamPointsAndSend(attacker, team, event);
@@ -66,12 +67,15 @@ public class Block extends Monster
 			{
 				// Change color
 				_colorEffect = 0x53;
+				
 				// BroadCast to all known players
 				broadcastPacket(new NpcInfo(this));
 				increaseTeamPointsAndSend(attacker, team, event);
 			}
+			
 			// 30% chance to drop the event items
 			final int random = Rnd.get(100);
+			
 			// Bond
 			if ((random > 69) && (random <= 84))
 			{
@@ -109,6 +113,7 @@ public class Block extends Monster
 		{
 			return attacker.isPlayer() && (attacker.asPlayer().getBlockCheckerArena() > -1);
 		}
+		
 		return true;
 	}
 	

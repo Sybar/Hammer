@@ -33,6 +33,7 @@ public class Q00028_ChestCaughtWithABaitOfIcyAir extends Quest
 	// NPCs
 	private static final int OFULLE = 31572;
 	private static final int KIKI = 31442;
+	
 	// Items
 	private static final int BIG_YELLOW_TREASURE_CHEST = 6503;
 	private static final int KIKI_LETTER = 7626;

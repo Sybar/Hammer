@@ -41,12 +41,14 @@ public class FactionCertificates extends AbstractNpcAI
 	private static final int IRENE = 34233; // Mother Tree Guardians Guild Leader
 	private static final int FERIN = 34054; // Unwordly Visitors Guild Leader
 	private static final int LOGART_VAN_DIKE = 34235; // Royal Kingdom Guards Guild Leader
+	
 	// Certificates
 	private static final int BLACKBIRD_CLAN_CERTIFICATION = 47840;
 	private static final int GIANT_TRACKERS_CERTIFICATION = 47841;
 	private static final int MOTHER_TREE_GUARDIANS_CERTIFICATION = 47844;
 	private static final int UNWORDLY_VISITORS_CERTIFICATION = 47845;
 	private static final int KINGDOM_ROYAL_GUARDS_CERTIFICATION = 47846;
+	
 	// Other
 	private static final int FACTION_LEVEL = 6;
 	
@@ -116,6 +118,7 @@ public class FactionCertificates extends AbstractNpcAI
 				}
 			}
 		}
+		
 		htmltext = "not-ready.html";
 		return htmltext;
 	}

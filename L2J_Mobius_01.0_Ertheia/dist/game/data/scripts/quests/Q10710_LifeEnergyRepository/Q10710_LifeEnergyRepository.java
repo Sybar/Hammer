@@ -37,9 +37,11 @@ public class Q10710_LifeEnergyRepository extends Quest
 	private static final int SHUVANN = 33867;
 	private static final int LIFE_ENERGY = 33961; // Life Energy Repository
 	private static final int EMBRYO = 27521;
+	
 	// Items
 	private static final int FRAGMENT = 39512; // Shine Stone Fragment
 	private static final int EAA = 730; // Scroll: Enchant Armor (A-grade)
+	
 	// Locations
 	private static final Location[] EMBRYO_LOC =
 	{
@@ -49,6 +51,7 @@ public class Q10710_LifeEnergyRepository extends Quest
 		new Location(177658, -14223, -2464),
 		new Location(177555, -14281, -2464),
 	};
+	
 	// Misc
 	private static final int MIN_LEVEL = 61;
 	private static final int MAX_LEVEL = 65;
@@ -117,11 +120,13 @@ public class Q10710_LifeEnergyRepository extends Quest
 					{
 						addExpAndSp(player, 3_125_586, 750);
 					}
+					
 					htmltext = event;
 				}
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -158,6 +163,7 @@ public class Q10710_LifeEnergyRepository extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

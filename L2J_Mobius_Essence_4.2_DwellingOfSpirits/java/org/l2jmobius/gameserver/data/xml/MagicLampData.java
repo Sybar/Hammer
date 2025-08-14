@@ -84,6 +84,7 @@ public class MagicLampData implements IXmlReader
 				calc %= Config.MAGIC_LAMP_MAX_LEVEL_EXP;
 				player.setLampCount(player.getLampCount() + 1);
 			}
+			
 			player.setLampExp(calc);
 			player.sendPacket(new ExMagicLampExpInfoUI(player));
 		}

@@ -515,9 +515,9 @@
 		<set name="price" val="50000" />
 		<set name="commissionItemType" val="HAIR_ACCESSORY" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player sex="1" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="17393" level="1" /> <!-- Lady's Hairpin: STR -->
 		</skills>
@@ -533,9 +533,9 @@
 		<set name="price" val="50000" />
 		<set name="commissionItemType" val="HAIR_ACCESSORY" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player sex="1" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="17394" level="1" /> <!-- Lady's Hairpin: DEX -->
 		</skills>
@@ -551,9 +551,9 @@
 		<set name="price" val="50000" />
 		<set name="commissionItemType" val="HAIR_ACCESSORY" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player sex="1" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="17395" level="1" /> <!-- Lady's Hairpin: CON -->
 		</skills>
@@ -569,9 +569,9 @@
 		<set name="price" val="50000" />
 		<set name="commissionItemType" val="HAIR_ACCESSORY" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player sex="1" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="17396" level="1" /> <!-- Lady's Hairpin: MEN -->
 		</skills>
@@ -587,9 +587,9 @@
 		<set name="price" val="50000" />
 		<set name="commissionItemType" val="HAIR_ACCESSORY" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player sex="1" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="17397" level="1" /> <!-- Lady's Hairpin: INT -->
 		</skills>
@@ -605,9 +605,9 @@
 		<set name="price" val="50000" />
 		<set name="commissionItemType" val="HAIR_ACCESSORY" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player sex="1" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="17398" level="1" /> <!-- Lady's Hairpin: WIT -->
 		</skills>
@@ -623,9 +623,9 @@
 		<set name="price" val="50000" />
 		<set name="commissionItemType" val="HAIR_ACCESSORY" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player sex="1" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="17399" level="1" /> <!-- Lady's Hairpin: Critical Rate -->
 		</skills>
@@ -641,9 +641,9 @@
 		<set name="price" val="50000" />
 		<set name="commissionItemType" val="HAIR_ACCESSORY" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player sex="1" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="17400" level="1" /> <!-- Lady's Hairpin: Critical Damage -->
 		</skills>
@@ -659,9 +659,9 @@
 		<set name="price" val="50000" />
 		<set name="commissionItemType" val="HAIR_ACCESSORY" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player sex="1" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="17401" level="1" /> <!-- Lady's Hairpin: P. Def. -->
 		</skills>
@@ -677,9 +677,9 @@
 		<set name="price" val="50000" />
 		<set name="commissionItemType" val="HAIR_ACCESSORY" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player sex="1" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="17402" level="1" /> <!-- Lady's Hairpin: M. Def. -->
 		</skills>
@@ -695,9 +695,9 @@
 		<set name="price" val="50000" />
 		<set name="commissionItemType" val="HAIR_ACCESSORY" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player sex="1" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="17403" level="1" /> <!-- Lady's Hairpin: Evasion -->
 		</skills>
@@ -713,9 +713,9 @@
 		<set name="price" val="50000" />
 		<set name="commissionItemType" val="HAIR_ACCESSORY" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player sex="1" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="17404" level="1" /> <!-- Lady's Hairpin: P. Atk. -->
 		</skills>
@@ -731,9 +731,9 @@
 		<set name="price" val="50000" />
 		<set name="commissionItemType" val="HAIR_ACCESSORY" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player sex="1" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="17405" level="1" /> <!-- Lady's Hairpin: M. Atk. -->
 		</skills>
@@ -749,9 +749,9 @@
 		<set name="price" val="50000" />
 		<set name="commissionItemType" val="HAIR_ACCESSORY" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player sex="1" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="17406" level="1" /> <!-- Lady's Hairpin: Accuracy -->
 		</skills>
@@ -1187,9 +1187,9 @@
 		<set name="price" val="50000" />
 		<set name="commissionItemType" val="HAIR_ACCESSORY" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player sex="1" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="17435" level="1" /> <!-- Maiden's Hairpin: STR -->
 		</skills>
@@ -1205,9 +1205,9 @@
 		<set name="price" val="50000" />
 		<set name="commissionItemType" val="HAIR_ACCESSORY" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player sex="1" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="17436" level="1" /> <!-- Maiden's Hairpin: DEX -->
 		</skills>
@@ -1223,9 +1223,9 @@
 		<set name="price" val="50000" />
 		<set name="commissionItemType" val="HAIR_ACCESSORY" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player sex="1" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="17437" level="1" /> <!-- Maiden's Hairpin: CON -->
 		</skills>
@@ -1241,9 +1241,9 @@
 		<set name="price" val="50000" />
 		<set name="commissionItemType" val="HAIR_ACCESSORY" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player sex="1" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="17438" level="1" /> <!-- Maiden's Hairpin: MEN -->
 		</skills>
@@ -1259,9 +1259,9 @@
 		<set name="price" val="50000" />
 		<set name="commissionItemType" val="HAIR_ACCESSORY" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player sex="1" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="17439" level="1" /> <!-- Maiden's Hairpin: INT -->
 		</skills>
@@ -1277,9 +1277,9 @@
 		<set name="price" val="50000" />
 		<set name="commissionItemType" val="HAIR_ACCESSORY" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player sex="1" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="17440" level="1" /> <!-- Maiden's Hairpin: WIT -->
 		</skills>
@@ -1295,9 +1295,9 @@
 		<set name="price" val="50000" />
 		<set name="commissionItemType" val="HAIR_ACCESSORY" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player sex="1" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="17441" level="1" /> <!-- Maiden's Hairpin: Critical Rate -->
 		</skills>
@@ -1313,9 +1313,9 @@
 		<set name="price" val="50000" />
 		<set name="commissionItemType" val="HAIR_ACCESSORY" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player sex="1" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="17442" level="1" /> <!-- Maiden's Hairpin: Critical Damage -->
 		</skills>
@@ -1331,9 +1331,9 @@
 		<set name="price" val="50000" />
 		<set name="commissionItemType" val="HAIR_ACCESSORY" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player sex="1" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="17443" level="1" /> <!-- Maiden's Hairpin: P. Def. -->
 		</skills>
@@ -1349,9 +1349,9 @@
 		<set name="price" val="50000" />
 		<set name="commissionItemType" val="HAIR_ACCESSORY" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player sex="1" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="17444" level="1" /> <!-- Maiden's Hairpin: M. Def. -->
 		</skills>
@@ -1367,9 +1367,9 @@
 		<set name="price" val="50000" />
 		<set name="commissionItemType" val="HAIR_ACCESSORY" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player sex="1" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="17445" level="1" /> <!-- Maiden's Hairpin: Evasion -->
 		</skills>
@@ -1385,9 +1385,9 @@
 		<set name="price" val="50000" />
 		<set name="commissionItemType" val="HAIR_ACCESSORY" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player sex="1" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="17446" level="1" /> <!-- Maiden's Hairpin: P. Atk. -->
 		</skills>
@@ -1403,9 +1403,9 @@
 		<set name="price" val="50000" />
 		<set name="commissionItemType" val="HAIR_ACCESSORY" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player sex="1" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="17447" level="1" /> <!-- Maiden's Hairpin: M. Atk. -->
 		</skills>
@@ -1421,9 +1421,9 @@
 		<set name="price" val="50000" />
 		<set name="commissionItemType" val="HAIR_ACCESSORY" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player sex="1" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="17448" level="1" /> <!-- Maiden's Hairpin: Accuracy -->
 		</skills>
@@ -1439,9 +1439,9 @@
 		<set name="price" val="50000" />
 		<set name="commissionItemType" val="HAIR_ACCESSORY" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player sex="1" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="17449" level="1" /> <!-- Forget-me-not Hairpin: STR -->
 		</skills>
@@ -1457,9 +1457,9 @@
 		<set name="price" val="50000" />
 		<set name="commissionItemType" val="HAIR_ACCESSORY" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player sex="1" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="17450" level="1" /> <!-- Forget-me-not Hairpin: DEX -->
 		</skills>
@@ -1475,9 +1475,9 @@
 		<set name="price" val="50000" />
 		<set name="commissionItemType" val="HAIR_ACCESSORY" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player sex="1" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="17451" level="1" /> <!-- Forget-me-not Hairpin: CON -->
 		</skills>
@@ -1493,9 +1493,9 @@
 		<set name="price" val="50000" />
 		<set name="commissionItemType" val="HAIR_ACCESSORY" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player sex="1" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="17452" level="1" /> <!-- Forget-me-not Hairpin: MEN -->
 		</skills>
@@ -1511,9 +1511,9 @@
 		<set name="price" val="50000" />
 		<set name="commissionItemType" val="HAIR_ACCESSORY" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player sex="1" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="17453" level="1" /> <!-- Forget-me-not Hairpin: INT -->
 		</skills>
@@ -1529,9 +1529,9 @@
 		<set name="price" val="50000" />
 		<set name="commissionItemType" val="HAIR_ACCESSORY" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player sex="1" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="17454" level="1" /> <!-- Forget-me-not Hairpin: WIT -->
 		</skills>
@@ -1547,9 +1547,9 @@
 		<set name="price" val="50000" />
 		<set name="commissionItemType" val="HAIR_ACCESSORY" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player sex="1" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="17455" level="1" /> <!-- Forget-me-not Hairpin: Critical Rate -->
 		</skills>
@@ -1565,9 +1565,9 @@
 		<set name="price" val="50000" />
 		<set name="commissionItemType" val="HAIR_ACCESSORY" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player sex="1" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="17456" level="1" /> <!-- Forget-me-not Hairpin: Critical Damage -->
 		</skills>
@@ -1583,9 +1583,9 @@
 		<set name="price" val="50000" />
 		<set name="commissionItemType" val="HAIR_ACCESSORY" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player sex="1" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="17457" level="1" /> <!-- Forget-me-not Hairpin: P. Def. -->
 		</skills>
@@ -1601,9 +1601,9 @@
 		<set name="price" val="50000" />
 		<set name="commissionItemType" val="HAIR_ACCESSORY" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player sex="1" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="17458" level="1" /> <!-- Forget-me-not Hairpin: M. Def. -->
 		</skills>
@@ -1619,9 +1619,9 @@
 		<set name="price" val="50000" />
 		<set name="commissionItemType" val="HAIR_ACCESSORY" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player sex="1" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="17459" level="1" /> <!-- Forget-me-not Hairpin: Evasion -->
 		</skills>
@@ -1637,9 +1637,9 @@
 		<set name="price" val="50000" />
 		<set name="commissionItemType" val="HAIR_ACCESSORY" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player sex="1" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="17460" level="1" /> <!-- Forget-me-not Hairpin: P. Atk. -->
 		</skills>
@@ -1655,9 +1655,9 @@
 		<set name="price" val="50000" />
 		<set name="commissionItemType" val="HAIR_ACCESSORY" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player sex="1" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="17461" level="1" /> <!-- Forget-me-not Hairpin: M. Atk. -->
 		</skills>
@@ -1673,9 +1673,9 @@
 		<set name="price" val="50000" />
 		<set name="commissionItemType" val="HAIR_ACCESSORY" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player sex="1" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="17462" level="1" /> <!-- Forget-me-not Hairpin: Accuracy -->
 		</skills>
@@ -1691,9 +1691,9 @@
 		<set name="price" val="50000" />
 		<set name="commissionItemType" val="HAIR_ACCESSORY" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player sex="1" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="17463" level="1" /> <!-- Daisy Hairpin: STR -->
 		</skills>
@@ -1709,9 +1709,9 @@
 		<set name="price" val="50000" />
 		<set name="commissionItemType" val="HAIR_ACCESSORY" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player sex="1" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="17464" level="1" /> <!-- Daisy Hairpin: DEX -->
 		</skills>

@@ -39,6 +39,7 @@ public class TargetMyMenteeSkillCondition implements ISkillCondition
 		{
 			return false;
 		}
+		
 		return MentorManager.getInstance().getMentee(caster.getObjectId(), target.getObjectId()) != null;
 	}
 }

@@ -42,13 +42,16 @@ public class Q10827_StepUpToLead extends Quest
 {
 	// NPC
 	private static final int GUSTAV = 30760;
+	
 	// Items
 	private static final int MERLOT_SERTIFICATE = 46056;
 	private static final int KURTIZ_CERTIFICATE = 46057;
 	private static final int MAMMON_CERTIFICATE = 45635;
+	
 	// Rewards
 	private static final int GUSTAV_CERTIFICATE = 45636;
 	private static final int SPELLBOOK_FAVOR_OF_THE_EXALTED = 45870;
+	
 	// Misc
 	private static final int MIN_LEVEL = 100;
 	
@@ -99,6 +102,7 @@ public class Q10827_StepUpToLead extends Quest
 						{
 							htmltext = event;
 						}
+						
 						giveItems(player, GUSTAV_CERTIFICATE, 1);
 						giveItems(player, SPELLBOOK_FAVOR_OF_THE_EXALTED, 1);
 						
@@ -117,6 +121,7 @@ public class Q10827_StepUpToLead extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -150,6 +155,7 @@ public class Q10827_StepUpToLead extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -162,23 +168,28 @@ public class Q10827_StepUpToLead extends Quest
 		{
 			return;
 		}
+		
 		final QuestState qs = getQuestState(player, false);
 		if (qs == null)
 		{
 			return;
 		}
+		
 		if (player.getParty() == null)
 		{
 			return;
 		}
+		
 		if (player.getParty().getLeader() != player)
 		{
 			return;
 		}
+		
 		if (!event.getTarget().isRaid())
 		{
 			return;
 		}
+		
 		if (event.getTarget().isRaidMinion())
 		{
 			return;

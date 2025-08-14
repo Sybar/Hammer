@@ -38,6 +38,7 @@ public class Q00405_PathOfTheCleric extends Quest
 	private static final int PRAGA = 30333;
 	private static final int SIMPLON = 30253;
 	private static final int LIONEL = 30408;
+	
 	// Items
 	private static final int LETTER_OF_ORDER_1 = 1191;
 	private static final int LETTER_OF_ORDER_2 = 1192;
@@ -49,6 +50,7 @@ public class Q00405_PathOfTheCleric extends Quest
 	private static final int PENDANT_OF_MOTHER = 1198;
 	private static final int NECKLACE_OF_MOTHER = 1199;
 	private static final int LIONEL_COVENANT = 1200;
+	
 	// Reward
 	private static final int MARK_OF_FATE = 1201;
 	

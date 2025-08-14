@@ -39,6 +39,7 @@ public class Q10368_RebellionOfMonsters extends Quest
 	private static final int WEARY_JAGUAR_SCOUT = 23025;
 	private static final int ANT_SOLDIER = 23099;
 	private static final int ANT_WARRIOR_CAPTAIN = 23100;
+	
 	// Misc
 	private static final int MIN_LEVEL = 34;
 	private static final int MAX_LEVEL = 40;
@@ -88,6 +89,7 @@ public class Q10368_RebellionOfMonsters extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -122,6 +124,7 @@ public class Q10368_RebellionOfMonsters extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -200,6 +203,7 @@ public class Q10368_RebellionOfMonsters extends Quest
 			npcLogList.add(new NpcLogListHolder(ANT_WARRIOR_CAPTAIN, false, qs.getInt("killed_" + ANT_WARRIOR_CAPTAIN)));
 			return npcLogList;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

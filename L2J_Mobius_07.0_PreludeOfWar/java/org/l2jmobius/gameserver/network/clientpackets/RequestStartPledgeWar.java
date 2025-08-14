@@ -124,12 +124,14 @@ public class RequestStartPledgeWar extends ClientPacket
 				player.sendPacket(ActionFailed.STATIC_PACKET);
 				return;
 			}
+			
 			if (clanWar.getState() == ClanWarState.MUTUAL)
 			{
 				player.sendMessage("You have already been at war with " + clanDeclaredWar.getName() + ".");
 				player.sendPacket(ActionFailed.STATIC_PACKET);
 				return;
 			}
+			
 			if (clanWar.getState() == ClanWarState.BLOOD_DECLARATION)
 			{
 				clanWar.mutualClanWarAccepted(clanDeclaredWar, clanDeclaringWar);
@@ -141,6 +143,7 @@ public class RequestStartPledgeWar extends ClientPacket
 						member.getPlayer().broadcastUserInfo(UserInfoType.CLAN);
 					}
 				}
+				
 				for (ClanMember member : clanDeclaredWar.getMembers())
 				{
 					if ((member != null) && member.isOnline())
@@ -164,6 +167,7 @@ public class RequestStartPledgeWar extends ClientPacket
 				member.getPlayer().broadcastUserInfo(UserInfoType.CLAN);
 			}
 		}
+		
 		for (ClanMember member : clanDeclaredWar.getMembers())
 		{
 			if ((member != null) && member.isOnline())
@@ -171,6 +175,7 @@ public class RequestStartPledgeWar extends ClientPacket
 				member.getPlayer().broadcastUserInfo(UserInfoType.CLAN);
 			}
 		}
+		
 		player.sendPacket(new PledgeReceiveWarList(player.getClan(), 0));
 	}
 }

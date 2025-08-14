@@ -39,7 +39,6 @@ import org.l2jmobius.gameserver.model.StatSet;
 import org.l2jmobius.gameserver.model.WorldObject;
 import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.enums.creature.AttributeType;
-import org.l2jmobius.gameserver.model.actor.enums.player.PlayerCondOverride;
 import org.l2jmobius.gameserver.model.commission.CommissionItemType;
 import org.l2jmobius.gameserver.model.conditions.Condition;
 import org.l2jmobius.gameserver.model.events.ListenersContainer;
@@ -774,6 +773,7 @@ public abstract class ItemTemplate extends ListenersContainer
 		{
 			_funcTemplates = new EnumMap<>(Stat.class);
 		}
+		
 		if (_funcTemplates.put(template.getStat(), template) != null)
 		{
 			LOGGER.warning("Item with id " + _itemId + " has 2 func templates with same stat: " + template.getStat());
@@ -786,6 +786,7 @@ public abstract class ItemTemplate extends ListenersContainer
 		{
 			_preConditions = new ArrayList<>();
 		}
+		
 		_preConditions.add(c);
 	}
 	
@@ -827,6 +828,7 @@ public abstract class ItemTemplate extends ListenersContainer
 				result.add(skill);
 			}
 		}
+		
 		return result;
 	}
 	
@@ -849,6 +851,7 @@ public abstract class ItemTemplate extends ListenersContainer
 				result.add(skill);
 			}
 		}
+		
 		return result;
 	}
 	
@@ -877,12 +880,13 @@ public abstract class ItemTemplate extends ListenersContainer
 		{
 			_skills = new ArrayList<>();
 		}
+		
 		_skills.add(holder);
 	}
 	
 	public boolean checkCondition(Creature creature, WorldObject object, boolean sendMessage)
 	{
-		if (creature.canOverrideCond(PlayerCondOverride.ITEM_CONDITIONS) && !Config.GM_ITEM_RESTRICTION)
+		if (creature.isGM() && !Config.GM_ITEM_RESTRICTION)
 		{
 			return true;
 		}
@@ -900,6 +904,7 @@ public abstract class ItemTemplate extends ListenersContainer
 				{
 					creature.sendPacket(SystemMessageId.YOU_CANNOT_USE_THAT_ITEM_IN_A_OLYMPIAD_MATCH);
 				}
+				
 				return false;
 			}
 			
@@ -946,12 +951,15 @@ public abstract class ItemTemplate extends ListenersContainer
 						{
 							sm.addItemName(_itemId);
 						}
+						
 						creature.sendPacket(sm);
 					}
 				}
+				
 				return false;
 			}
 		}
+		
 		return true;
 	}
 	
@@ -1103,6 +1111,7 @@ public abstract class ItemTemplate extends ListenersContainer
 				return template.getValue();
 			}
 		}
+		
 		return defaultValue;
 	}
 	

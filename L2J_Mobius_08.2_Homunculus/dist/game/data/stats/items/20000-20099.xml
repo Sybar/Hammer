@@ -408,9 +408,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="is_freightable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player sex="1" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="20024" name="Visor" type="Armor">
 		<!-- Shades your eyes in style. Exclusive for male characters. -->
@@ -426,9 +426,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="is_freightable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player sex="0" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="20025" name="My Teleport Scroll" type="EtcItem">
 		<!-- This consumable item allows you to magically transport yourself to a specific location. -->

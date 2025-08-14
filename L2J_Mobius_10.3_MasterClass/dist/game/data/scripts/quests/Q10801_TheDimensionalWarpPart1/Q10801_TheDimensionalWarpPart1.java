@@ -42,8 +42,10 @@ public class Q10801_TheDimensionalWarpPart1 extends Quest
 {
 	// NPC
 	private static final int RESED = 33974;
+	
 	// Monsters
 	private static final int DIMENSIONAL_BUGBEAR = 23465;
+	
 	// Others
 	private static final int MIN_LEVEL = 99;
 	private static final int DIMENSIONAL_BRACELET_STAGE_1 = 39747;
@@ -102,6 +104,7 @@ public class Q10801_TheDimensionalWarpPart1 extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -128,6 +131,7 @@ public class Q10801_TheDimensionalWarpPart1 extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -157,10 +161,12 @@ public class Q10801_TheDimensionalWarpPart1 extends Quest
 				qs.set("killed_" + DIMENSIONAL_BUGBEAR, ++kills);
 				playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 			}
+			
 			if (kills >= 100)
 			{
 				qs.setCond(2, true);
 			}
+			
 			sendNpcLogList(player);
 		}
 	}
@@ -175,6 +181,7 @@ public class Q10801_TheDimensionalWarpPart1 extends Quest
 			holder.add(new NpcLogListHolder(DIMENSIONAL_BUGBEAR, false, qs.getInt("killed_" + DIMENSIONAL_BUGBEAR)));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

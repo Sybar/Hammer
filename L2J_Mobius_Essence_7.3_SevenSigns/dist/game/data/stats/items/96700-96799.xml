@@ -2073,9 +2073,9 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ExtractableItems" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<target levelRange="85;98" />
-		</cond>
+		</conditions>
 		<capsuled_items>
 			<item id="93068" min="400" max="400" chance="100" /> <!-- Red Lantern - 1st Place - Sealed -->
 		</capsuled_items>

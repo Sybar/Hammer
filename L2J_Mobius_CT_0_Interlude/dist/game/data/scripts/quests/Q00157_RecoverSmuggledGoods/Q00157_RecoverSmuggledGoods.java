@@ -31,6 +31,7 @@ public class Q00157_RecoverSmuggledGoods extends Quest
 {
 	// Item
 	private static final int ADAMANTITE_ORE = 1024;
+	
 	// Reward
 	private static final int BUCKLER = 20;
 	
@@ -96,6 +97,7 @@ public class Q00157_RecoverSmuggledGoods extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

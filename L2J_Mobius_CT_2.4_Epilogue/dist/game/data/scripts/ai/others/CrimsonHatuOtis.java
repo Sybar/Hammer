@@ -31,6 +31,7 @@ public class CrimsonHatuOtis extends AbstractNpcAI
 {
 	// Npc
 	private static final int CRIMSON_HATU_OTIS = 18558;
+	
 	// Skills
 	private static final SkillHolder BOSS_SPINING_SLASH = new SkillHolder(4737, 1);
 	private static final SkillHolder BOSS_HASTE = new SkillHolder(4175, 1);
@@ -53,6 +54,7 @@ public class CrimsonHatuOtis extends AbstractNpcAI
 					cancelQuestTimer("SKILL", npc, null);
 					return null;
 				}
+				
 				npc.setTarget(player);
 				npc.doCast(BOSS_SPINING_SLASH.getSkill());
 				startQuestTimer("SKILL", 60000, npc, null);
@@ -68,6 +70,7 @@ public class CrimsonHatuOtis extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	

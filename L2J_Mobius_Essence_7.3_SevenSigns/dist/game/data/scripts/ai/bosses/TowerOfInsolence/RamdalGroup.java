@@ -46,6 +46,7 @@ public class RamdalGroup extends AbstractNpcAI
 	private static final int MALISHA = 25979;
 	private static final int SHURIEL = 25143;
 	private static final int GALAXIA = 25450;
+	
 	// Locations
 	private static final Location RAMDAL_LOC = new Location(112565, 16055, -4376);
 	private static final Location HALLATE_LOC = new Location(114635, 18179, -2896);
@@ -60,6 +61,7 @@ public class RamdalGroup extends AbstractNpcAI
 	private static final Location MALISHA_LOC = new Location(114641, 16071, 7000);
 	private static final Location SHURIEL_LOC = new Location(114243, 14482, 7992);
 	private static final Location GALAXIA_LOC = new Location(113430, 14836, 9560);
+	
 	// Misc
 	private static final String RAMDAL_RESPAWN_PATTERN = "30 16 * * * | 30 21 * * *";
 	private SchedulingPattern _respawnPattern = null;
@@ -88,6 +90,7 @@ public class RamdalGroup extends AbstractNpcAI
 		{
 			addSpawn(RAMDAL, RAMDAL_LOC, false, getDespawnTime());
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	

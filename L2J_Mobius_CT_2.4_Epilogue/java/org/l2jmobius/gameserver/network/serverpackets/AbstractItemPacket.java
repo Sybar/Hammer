@@ -58,6 +58,7 @@ public abstract class AbstractItemPacket extends ServerPacket
 		{
 			buffer.writeShort(item.getElementDefAttr(i));
 		}
+		
 		buffer.writeInt(item.getTime());
 		for (int op : item.getEnchantOptions())
 		{

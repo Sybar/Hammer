@@ -213,6 +213,7 @@ public class Q00126_TheNameOfEvil2 extends Quest
 				{
 					st.set("FA_2", "1");
 				}
+				
 				htmltext = getSongOne(st);
 				break;
 			}
@@ -258,6 +259,7 @@ public class Q00126_TheNameOfEvil2 extends Quest
 				{
 					st.set("FA_2", "1");
 				}
+				
 				htmltext = getSongTwo(st);
 				break;
 			}
@@ -303,6 +305,7 @@ public class Q00126_TheNameOfEvil2 extends Quest
 				{
 					st.set("MI_2", "1");
 				}
+				
 				htmltext = getSongTri(st);
 				break;
 			}
@@ -543,6 +546,7 @@ public class Q00126_TheNameOfEvil2 extends Quest
 			st.unset("SOL");
 			st.unset("FA_2");
 		}
+		
 		return htmltext;
 	}
 	
@@ -559,6 +563,7 @@ public class Q00126_TheNameOfEvil2 extends Quest
 			st.unset("SOL_2");
 			st.unset("FA3_2");
 		}
+		
 		return htmltext;
 	}
 	
@@ -575,6 +580,7 @@ public class Q00126_TheNameOfEvil2 extends Quest
 			st.unset("FA_2");
 			st.unset("MI_2");
 		}
+		
 		return htmltext;
 	}
 }

@@ -42,6 +42,7 @@ public class PlayerPurgeHolder
 		{
 			return 0;
 		}
+		
 		return _points;
 	}
 	
@@ -56,6 +57,7 @@ public class PlayerPurgeHolder
 		{
 			_remainingKeys = 40;
 		}
+		
 		return _remainingKeys;
 	}
 }

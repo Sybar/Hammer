@@ -43,6 +43,7 @@ public class Q00665_BasicTrainingForHunterGuildMember extends Quest
 {
 	// NPCs
 	private static final int ARCTURUS = 34267;
+	
 	// BOSS
 	private static final int[] BOSS =
 	{
@@ -54,6 +55,7 @@ public class Q00665_BasicTrainingForHunterGuildMember extends Quest
 		25876, // Maliss
 		25877 // Isadora
 	};
+	
 	// Misc
 	private static final boolean PARTY_QUEST = true;
 	private static final int MIN_LEVEL = 85;
@@ -97,6 +99,7 @@ public class Q00665_BasicTrainingForHunterGuildMember extends Quest
 					htmltext = "34267-04a.htm";
 					break;
 				}
+				
 				htmltext = "34267-04.htm";
 				break;
 			}
@@ -107,6 +110,7 @@ public class Q00665_BasicTrainingForHunterGuildMember extends Quest
 					htmltext = "34267-04a.htm";
 					break;
 				}
+				
 				htmltext = "34267-04.htm";
 				break;
 			}
@@ -158,6 +162,7 @@ public class Q00665_BasicTrainingForHunterGuildMember extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -184,6 +189,7 @@ public class Q00665_BasicTrainingForHunterGuildMember extends Quest
 							htmltext = "34267-04a.htm";
 							break;
 						}
+						
 						htmltext = "34267-04.htm";
 						break;
 					}
@@ -220,6 +226,7 @@ public class Q00665_BasicTrainingForHunterGuildMember extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -267,6 +274,7 @@ public class Q00665_BasicTrainingForHunterGuildMember extends Quest
 			holder.add(new NpcLogListHolder(NpcStringId.COMPLETE_BASIC_TRAINING.getId(), true, qs.getInt("AncientGhosts")));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

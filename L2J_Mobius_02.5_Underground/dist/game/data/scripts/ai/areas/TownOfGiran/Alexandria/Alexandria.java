@@ -36,6 +36,7 @@ public class Alexandria extends AbstractNpcAI
 {
 	// NPC
 	private static final int ALEXANDRIA = 30098;
+	
 	// Items
 	private static final ItemHolder[] REQUIRED_ITEMS = new ItemHolder[]
 	{
@@ -47,6 +48,7 @@ public class Alexandria extends AbstractNpcAI
 		new ItemHolder(9816, 50),
 		new ItemHolder(9817, 50),
 	};
+	
 	// Agathions
 	private static final ItemChanceHolder[] LITTLE_DEVILS = new ItemChanceHolder[]
 	{
@@ -67,7 +69,6 @@ public class Alexandria extends AbstractNpcAI
 		new ItemChanceHolder(10320, 370),
 	};
 	private static final Map<String, List<ItemChanceHolder>> AGATHIONS = new HashMap<>();
-	
 	static
 	{
 		AGATHIONS.put("littleAngel", Arrays.asList(LITTLE_ANGELS));
@@ -115,9 +116,11 @@ public class Alexandria extends AbstractNpcAI
 					}
 					break;
 				}
+				
 				chance2 += agathion.getChance();
 			}
 		}
+		
 		return htmltext;
 	}
 	

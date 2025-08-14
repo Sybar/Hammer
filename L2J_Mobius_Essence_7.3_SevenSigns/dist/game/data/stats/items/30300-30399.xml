@@ -13,9 +13,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="is_sellable" val="false" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player isHero="true" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="13136" level="1" /> <!-- Hero's Cloak -->
 		</skills>
@@ -33,9 +33,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="is_sellable" val="false" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player isHero="true" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="45048" level="1" /> <!-- Glorious Cloak -->
 		</skills>

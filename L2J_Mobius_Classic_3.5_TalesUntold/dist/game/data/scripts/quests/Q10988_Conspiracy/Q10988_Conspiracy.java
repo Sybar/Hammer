@@ -52,31 +52,38 @@ public class Q10988_Conspiracy extends Quest
 	// NPCs
 	private static final int USKA = 30560;
 	private static final int CAPTAIN_BATHIS = 30332;
+	
 	// Monsters
 	private static final int KASHA_SPIDER = 20474;
 	private static final int KASHA_BLADE_SPIDER = 20478;
 	private static final int MARAKU_WEREVOLF_CHIEFTAIN = 20364;
 	private static final int EVIL_EYE_PATROL = 20428;
+	
 	// Items
 	private static final ItemHolder SOE_TO_CAPTAIN_BATHIS = new ItemHolder(91651, 1);
 	private static final ItemHolder SOE_NOVICE = new ItemHolder(10650, 20);
 	private static final ItemHolder SPIRIT_ORE = new ItemHolder(3031, 50);
 	private static final ItemHolder HP_POTS = new ItemHolder(91912, 50);
 	private static final ItemHolder RICE_CAKE_OF_FLAMING_FIGHTING_SPIRIT_EVENT = new ItemHolder(91840, 1);
+	
 	// HELMET FOR ALL ARMORS
 	private static final ItemHolder MOON_HELMET = new ItemHolder(7850, 1);
+	
 	// HEAVY
 	private static final ItemHolder MOON_ARMOR = new ItemHolder(7851, 1);
 	private static final ItemHolder MOON_GAUNTLETS = new ItemHolder(7852, 1);
 	private static final ItemHolder MOON_BOOTS = new ItemHolder(7853, 1);
+	
 	// LIGHT
 	private static final ItemHolder MOON_SHELL = new ItemHolder(7854, 1);
 	private static final ItemHolder MOON_LEATHER_GLOVES = new ItemHolder(7855, 1);
 	private static final ItemHolder MOON_SHOES = new ItemHolder(7856, 1);
+	
 	// ROBE
 	private static final ItemHolder MOON_CAPE = new ItemHolder(7857, 1);
 	private static final ItemHolder MOON_SILK = new ItemHolder(7858, 1);
 	private static final ItemHolder MOON_SANDALS = new ItemHolder(7859, 1);
+	
 	// Misc
 	private static final int MAX_LEVEL = 20;
 	private static final String KILL_COUNT_VAR = "KillCount";
@@ -165,6 +172,7 @@ public class Q10988_Conspiracy extends Quest
 						showOnScreenMsg(player, NpcStringId.COMPLETED_THE_TUTORIAL_NOW_TRY_THE_FIRST_CLASS_TRANSFER_AND_AS_INSTRUCTED_BY_BATHIS_CARRY_OUT_THE_ADVENTURER_S_JOURNEY_MISSIONS_TO_GROW_YOUR_CHARACTER, ExShowScreenMessage.TOP_CENTER, 10000);
 						player.sendPacket(ExClassChangeSetAlarm.STATIC_PACKET);
 					}
+					
 					qs.exitQuest(false, true);
 					htmltext = event;
 				}
@@ -188,6 +196,7 @@ public class Q10988_Conspiracy extends Quest
 						showOnScreenMsg(player, NpcStringId.COMPLETED_THE_TUTORIAL_NOW_TRY_THE_FIRST_CLASS_TRANSFER_AND_AS_INSTRUCTED_BY_BATHIS_CARRY_OUT_THE_ADVENTURER_S_JOURNEY_MISSIONS_TO_GROW_YOUR_CHARACTER, ExShowScreenMessage.TOP_CENTER, 10000);
 						player.sendPacket(ExClassChangeSetAlarm.STATIC_PACKET);
 					}
+					
 					qs.exitQuest(false, true);
 					htmltext = event;
 				}
@@ -211,12 +220,14 @@ public class Q10988_Conspiracy extends Quest
 						showOnScreenMsg(player, NpcStringId.COMPLETED_THE_TUTORIAL_NOW_TRY_THE_FIRST_CLASS_TRANSFER_AND_AS_INSTRUCTED_BY_BATHIS_CARRY_OUT_THE_ADVENTURER_S_JOURNEY_MISSIONS_TO_GROW_YOUR_CHARACTER, ExShowScreenMessage.TOP_CENTER, 10000);
 						player.sendPacket(ExClassChangeSetAlarm.STATIC_PACKET);
 					}
+					
 					qs.exitQuest(false, true);
 					htmltext = event;
 				}
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -253,6 +264,7 @@ public class Q10988_Conspiracy extends Quest
 			holder.add(new NpcLogListHolder(NpcStringId.STOP_THE_MARAKU_WEREWOLF_S_PLAN.getId(), true, qs.getInt(KILL_COUNT_VAR)));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 	
@@ -294,6 +306,7 @@ public class Q10988_Conspiracy extends Quest
 				htmltext = getAlreadyCompletedMsg(player);
 			}
 		}
+		
 		return htmltext;
 	}
 	

@@ -44,7 +44,7 @@ public class Observation implements IBypassHandler
 	
 	private static final int[][] LOCATIONS = new int[][]
 	{
-		//@formatter:off
+		// @formatter:off
 		// Gludio
 		{-18347, 114000, -2360, 500},
 		{-18347, 113090, -2085, 500},
@@ -91,11 +91,11 @@ public class Observation implements IBypassHandler
 		// Monster Race Track
 		{13152, 182546, -3207, 0},
 		{11905, 182073, -3235, 0}
-		//@formatter:on
+		// @formatter:on
 	};
 	
 	@Override
-	public boolean useBypass(String command, Player player, Creature target)
+	public boolean onCommand(String command, Player player, Creature target)
 	{
 		if (!(target instanceof BroadcastingTower))
 		{
@@ -107,11 +107,13 @@ public class Observation implements IBypassHandler
 			player.sendPacket(SystemMessageId.YOU_MAY_NOT_OBSERVE_A_SUMMONED_CREATURE);
 			return false;
 		}
+		
 		if (player.isRegisteredOnEvent())
 		{
 			player.sendMessage("Cannot use while registered on an event");
 			return false;
 		}
+		
 		if (player.isInCombat())
 		{
 			player.sendPacket(SystemMessageId.WATCHING_IS_IMPOSSIBLE_DURING_COMBAT);
@@ -134,6 +136,7 @@ public class Observation implements IBypassHandler
 		{
 			return false;
 		}
+		
 		final int[] locCost = LOCATIONS[param];
 		final Location loc = new Location(locCost[0], locCost[1], locCost[2]);
 		final int cost = locCost[3];
@@ -150,6 +153,7 @@ public class Observation implements IBypassHandler
 				{
 					player.sendPacket(SystemMessageId.YOU_ARE_ONLY_QUALIFIED_TO_OBSERVE_DURING_A_SIEGE);
 				}
+				
 				return true;
 			}
 			case "observeoracle": // Oracle Dusk/Dawn
@@ -163,6 +167,7 @@ public class Observation implements IBypassHandler
 				return true;
 			}
 		}
+		
 		return false;
 	}
 	
@@ -174,11 +179,12 @@ public class Observation implements IBypassHandler
 			player.enterObserverMode(pos);
 			player.sendItemList(false);
 		}
+		
 		player.sendPacket(ActionFailed.STATIC_PACKET);
 	}
 	
 	@Override
-	public String[] getBypassList()
+	public String[] getCommandList()
 	{
 		return COMMANDS;
 	}

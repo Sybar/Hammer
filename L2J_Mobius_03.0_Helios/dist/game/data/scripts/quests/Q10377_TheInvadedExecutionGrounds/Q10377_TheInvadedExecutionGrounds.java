@@ -44,11 +44,13 @@ public class Q10377_TheInvadedExecutionGrounds extends Quest
 	private static final int TOMBSTONE_OF_THE_GUILLOTINE_OF_DEATH = 33717;
 	private static final int TOMBSTONE_OF_HOUPON_THE_WARDEN_OVERSEER = 33718;
 	private static final int TOMBSTONE_OF_CROOK_THE_MAD = 33719;
+	
 	// Items
 	private static final int SOE_GUILLOTINE_FORTRESS = 35292;
 	private static final int ADENA = 57;
 	private static final int HARLANS_ORDERS = 34972;
 	private static final int ENDRIGOS_REPORT = 34973;
+	
 	// Misc
 	private static final int MIN_LEVEL = 95;
 	
@@ -118,6 +120,7 @@ public class Q10377_TheInvadedExecutionGrounds extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -155,6 +158,7 @@ public class Q10377_TheInvadedExecutionGrounds extends Quest
 				}
 			}
 		}
+		
 		return null;
 	}
 	
@@ -231,6 +235,7 @@ public class Q10377_TheInvadedExecutionGrounds extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

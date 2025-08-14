@@ -84,19 +84,23 @@ public class CreatureSay extends ServerPacket
 			{
 				_mask |= 0x01;
 			}
+			
 			if ((receiver.getClanId() > 0) && (receiver.getClanId() == sender.getClanId()))
 			{
 				_mask |= 0x02;
 			}
+			
 			if ((MentorManager.getInstance().getMentee(receiver.getObjectId(), sender.getObjectId()) != null) || (MentorManager.getInstance().getMentee(sender.getObjectId(), receiver.getObjectId()) != null))
 			{
 				_mask |= 0x04;
 			}
+			
 			if ((receiver.getAllyId() > 0) && (receiver.getAllyId() == sender.getAllyId()))
 			{
 				_mask |= 0x08;
 			}
 		}
+		
 		// Does not shows level
 		if (sender.isGM())
 		{
@@ -147,6 +151,7 @@ public class CreatureSay extends ServerPacket
 		{
 			_parameters = new ArrayList<>();
 		}
+		
 		_parameters.add(text);
 	}
 	
@@ -164,6 +169,7 @@ public class CreatureSay extends ServerPacket
 		{
 			buffer.writeInt(_charId);
 		}
+		
 		buffer.writeInt(_messageId); // High Five NPCString ID
 		if (_text != null)
 		{
@@ -184,6 +190,7 @@ public class CreatureSay extends ServerPacket
 				buffer.writeString(s);
 			}
 		}
+		
 		// Rank
 		if ((_sender != null) && _sender.isPlayer())
 		{
@@ -210,6 +217,7 @@ public class CreatureSay extends ServerPacket
 			{
 				buffer.writeByte(3);
 			}
+			
 			if (clan != null)
 			{
 				buffer.writeByte(clan.getCastleId());
@@ -236,7 +244,7 @@ public class CreatureSay extends ServerPacket
 	{
 		if (player != null)
 		{
-			player.broadcastSnoop(_chatType, _senderName, _text);
+			player.broadcastSnoop(_chatType, _senderName, _text, this);
 		}
 	}
 }

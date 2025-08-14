@@ -112,6 +112,7 @@ public class Tutorial extends AbstractNpcAI
 		{
 			return;
 		}
+		
 		player.getVariables().set(TUTORIAL_VAR, 0);
 	}
 	

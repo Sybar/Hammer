@@ -1625,9 +1625,9 @@
 		<set name="immediate_effect" val="true" />
 		<set name="weight" val="220" />
 		<set name="material" val="CLOTH" />
-		<cond msgId="2453">
+		<conditions msgId="2453">
 			<player cloakStatus="true" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="35990" name="Circlet of Ice" additionalName="Ceremony of Chaos" type="Armor">
 		<set name="icon" val="icon.accessory_ice_circlet_i00" />
@@ -1657,9 +1657,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player instanceId="224,225,226,227" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="9546" level="1" /> <!-- Drum Melody - Chaos Arena -->
 			<skill id="9547" level="1" /> <!-- Pipe Organ Melody - Chaos Arena -->
@@ -1684,9 +1684,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player instanceId="224,225,226,227" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="9546" level="1" /> <!-- Drum Melody - Chaos Arena -->
 			<skill id="9547" level="1" /> <!-- Pipe Organ Melody - Chaos Arena -->
@@ -1711,9 +1711,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player instanceId="224,225,226,227" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="9546" level="1" /> <!-- Drum Melody - Chaos Arena -->
 			<skill id="9547" level="1" /> <!-- Pipe Organ Melody - Chaos Arena -->

@@ -34,6 +34,7 @@ public class Q00107_MercilessPunishment extends Quest
 	// NPCs
 	private static final int HATOS = 30568;
 	private static final int PARUGON = 30580;
+	
 	// Items
 	private static final int HATOS_ORDER_1 = 1553;
 	private static final int HATOS_ORDER_2 = 1554;
@@ -41,6 +42,7 @@ public class Q00107_MercilessPunishment extends Quest
 	private static final int LETTER_TO_HUMAN = 1557;
 	private static final int LETTER_TO_DARKELF = 1556;
 	private static final int LETTER_TO_ELF = 1558;
+	
 	// Rewards
 	private static final int BUTCHER_SWORD = 1510;
 	private static final int SOULSHOT_FOR_BEGINNERS = 5789;

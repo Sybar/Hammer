@@ -158,7 +158,7 @@ public class AutoPlay implements IVoicedCommandHandler
 	}
 	
 	@Override
-	public boolean useVoicedCommand(String command, Player player, String params)
+	public boolean onCommand(String command, Player player, String params)
 	{
 		if (!Config.ENABLE_AUTO_PLAY || (player == null))
 		{
@@ -298,6 +298,7 @@ public class AutoPlay implements IVoicedCommandHandler
 						skills.add(skill);
 					}
 				}
+				
 				if (player.hasServitors())
 				{
 					for (Summon summon : player.getServitors().values())
@@ -309,6 +310,7 @@ public class AutoPlay implements IVoicedCommandHandler
 								skills.add(skill);
 							}
 						}
+						
 						for (Skill skill : PetSkillData.getInstance().getKnownSkills(summon))
 						{
 							if (!skill.isPassive() && !skill.isToggle() && !skills.contains(skill) && !Config.DISABLED_AUTO_SKILLS.contains(skill.getId()))
@@ -318,6 +320,7 @@ public class AutoPlay implements IVoicedCommandHandler
 						}
 					}
 				}
+				
 				if (player.hasPet())
 				{
 					final Summon summon = player.getPet();
@@ -328,6 +331,7 @@ public class AutoPlay implements IVoicedCommandHandler
 							skills.add(skill);
 						}
 					}
+					
 					for (Skill skill : PetSkillData.getInstance().getKnownSkills(summon))
 					{
 						if (!skill.isPassive() && !skill.isToggle() && !skills.contains(skill) && !Config.DISABLED_AUTO_SKILLS.contains(skill.getId()))
@@ -416,12 +420,14 @@ public class AutoPlay implements IVoicedCommandHandler
 								{
 									knownSkill = PetSkillData.getInstance().getKnownSkill(summon, skillId);
 								}
+								
 								if (knownSkill != null)
 								{
 									break;
 								}
 							}
 						}
+						
 						if ((knownSkill == null) && player.hasPet())
 						{
 							final Summon summon = player.getPet();
@@ -432,9 +438,10 @@ public class AutoPlay implements IVoicedCommandHandler
 							}
 						}
 					}
+					
 					if (Config.ENABLE_AUTO_SKILL && (knownSkill != null) && skills.contains(knownSkill))
 					{
-						if (knownSkill.isBad())
+						if (knownSkill.hasNegativeEffect())
 						{
 							if (player.getAutoUseSettings().getAutoSkills().contains(skillId))
 							{
@@ -729,7 +736,7 @@ public class AutoPlay implements IVoicedCommandHandler
 	}
 	
 	@Override
-	public String[] getVoicedCommandList()
+	public String[] getCommandList()
 	{
 		return VOICED_COMMANDS;
 	}

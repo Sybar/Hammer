@@ -42,6 +42,7 @@ public class HealthCondition implements ICubicCondition
 			final double hpPer = (target.isDoor() ? target.asDoor() : target.asCreature()).getCurrentHpPercent();
 			return (hpPer > _min) && (hpPer < _max);
 		}
+		
 		return false;
 	}
 	

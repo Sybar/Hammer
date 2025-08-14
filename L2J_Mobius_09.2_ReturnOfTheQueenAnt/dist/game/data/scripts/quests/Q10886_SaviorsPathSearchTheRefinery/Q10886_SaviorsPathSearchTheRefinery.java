@@ -40,11 +40,14 @@ public class Q10886_SaviorsPathSearchTheRefinery extends Quest
 	// NPCs
 	private static final int LEONA_BLACKBIRD = 34425;
 	private static final int DEVIANNE = 34427;
+	
 	// Monsters
 	private static final int ATELIA_YUYURINA = 24159;
 	private static final int ATELIA_POPOBENA = 24160;
+	
 	// Items
 	private static final int TOKEN_OF_ETINA = 48546;
+	
 	// Misc
 	private static final int MIN_LEVEL = 103;
 	private static final int TOKEN_OF_ETINA_NEEDED = 20;
@@ -95,6 +98,7 @@ public class Q10886_SaviorsPathSearchTheRefinery extends Quest
 				{
 					qs.setCond(2);
 				}
+				
 				htmltext = event;
 				break;
 			}
@@ -117,6 +121,7 @@ public class Q10886_SaviorsPathSearchTheRefinery extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -173,6 +178,7 @@ public class Q10886_SaviorsPathSearchTheRefinery extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -193,6 +199,7 @@ public class Q10886_SaviorsPathSearchTheRefinery extends Quest
 				giveItems(player, TOKEN_OF_ETINA, 1);
 				playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 			}
+			
 			if (getQuestItemsCount(player, TOKEN_OF_ETINA) >= TOKEN_OF_ETINA_NEEDED)
 			{
 				qs.setCond(3, true);

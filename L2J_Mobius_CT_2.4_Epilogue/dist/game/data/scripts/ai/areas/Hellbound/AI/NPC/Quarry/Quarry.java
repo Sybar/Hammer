@@ -16,7 +16,6 @@
  */
 package ai.areas.Hellbound.AI.NPC.Quarry;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.gameserver.ai.Intention;
 import org.l2jmobius.gameserver.managers.ZoneManager;
 import org.l2jmobius.gameserver.model.actor.Attackable;
@@ -39,6 +38,7 @@ public class Quarry extends AbstractNpcAI
 {
 	// NPCs
 	private static final int SLAVE = 32299;
+	
 	// Items
 	protected static final ItemChanceHolder[] DROP_LIST =
 	{
@@ -49,8 +49,10 @@ public class Quarry extends AbstractNpcAI
 		new ItemChanceHolder(1877, 1333), // Adamantine nugget
 		new ItemChanceHolder(1874, 2222), // Oriharukon ore
 	};
+	
 	// Zone
 	private static final int ZONE = 40107;
+	
 	// Misc
 	private static final int TRUST = 50;
 	
@@ -82,6 +84,7 @@ public class Quarry extends AbstractNpcAI
 				{
 					startQuestTimer("TIME_LIMIT", 900000, npc, null); // 15 min limit for save
 				}
+				
 				htmltext = "32299-02.htm";
 				break;
 			}
@@ -99,6 +102,7 @@ public class Quarry extends AbstractNpcAI
 						return null;
 					}
 				}
+				
 				npc.broadcastSay(ChatType.NPC_GENERAL, "Hun... hungry");
 				npc.doDie(npc);
 				break;
@@ -113,11 +117,12 @@ public class Quarry extends AbstractNpcAI
 						{
 							if (getRandom(10000) < item.getChance())
 							{
-								npc.dropItem(npc.getTarget().asPlayer(), item.getId(), (int) (item.getCount() * Config.RATE_QUEST_DROP));
+								npc.dropItem(npc.getTarget().asPlayer(), item.getId(), (int) item.getCount());
 								break;
 							}
 						}
 					}
+					
 					npc.setAutoAttackable(false);
 					npc.getSpawn().decreaseCount(npc);
 					HellboundEngine.getInstance().updateTrust(TRUST, true);
@@ -125,6 +130,7 @@ public class Quarry extends AbstractNpcAI
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -145,6 +151,7 @@ public class Quarry extends AbstractNpcAI
 		{
 			return "32299.htm";
 		}
+		
 		return "32299-01.htm";
 	}
 	

@@ -48,13 +48,17 @@ public class Q10376_BloodyGoodTime extends Quest
 	private static final int AGNES = 31588;
 	private static final int ANDREI = 31292;
 	private static final int MOB_BLOODY_VEIN = 27481;
+	
 	// Misc
 	private static final int MIN_LEVEL = 80;
+	
 	// Reward
 	private static final int EXP_REWARD = 121297500;
 	private static final int SP_REWARD = 29111;
+	
 	// Items
 	private static final ItemHolder REWARD_MAGIC_RUNE_CLIP = new ItemHolder(32700, 1);
+	
 	// Location
 	private static final Location RETURN_LOC = new Location(178648, -84903, -7216);
 	
@@ -77,6 +81,7 @@ public class Q10376_BloodyGoodTime extends Quest
 		{
 			return null;
 		}
+		
 		String htmltext = null;
 		switch (event)
 		{
@@ -140,6 +145,7 @@ public class Q10376_BloodyGoodTime extends Quest
 			}
 				break;
 		}
+		
 		return htmltext;
 	}
 	
@@ -152,6 +158,7 @@ public class Q10376_BloodyGoodTime extends Quest
 		{
 			htmltext = getAlreadyCompletedMsg(player);
 		}
+		
 		switch (npc.getId())
 		{
 			case ZENYA:
@@ -231,6 +238,7 @@ public class Q10376_BloodyGoodTime extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

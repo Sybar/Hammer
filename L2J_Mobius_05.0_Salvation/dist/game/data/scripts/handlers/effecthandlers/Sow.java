@@ -110,6 +110,7 @@ public class Sow extends AbstractEffect
 		{
 			basicSuccess -= 5 * (minlevelSeed - levelTarget);
 		}
+		
 		if (levelTarget > maxlevelSeed)
 		{
 			basicSuccess -= 5 * (levelTarget - maxlevelSeed);
@@ -122,6 +123,7 @@ public class Sow extends AbstractEffect
 		{
 			diff = -diff;
 		}
+		
 		if (diff > 5)
 		{
 			basicSuccess -= 5 * (diff - 5);

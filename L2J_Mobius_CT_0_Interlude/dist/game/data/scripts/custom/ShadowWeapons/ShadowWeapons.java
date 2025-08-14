@@ -72,6 +72,7 @@ public class ShadowWeapons extends AbstractNpcAI
 		{
 			htmltext = "exchange_no.html";
 		}
+		
 		return htmltext;
 	}
 	

@@ -52,6 +52,7 @@ public class ExPledgeBonusList extends ServerPacket
 							buffer.writeInt(0);
 							return;
 						}
+						
 						buffer.writeInt(bonus.getSkillReward().getSkillId());
 						break;
 					}
@@ -63,6 +64,7 @@ public class ExPledgeBonusList extends ServerPacket
 							buffer.writeInt(0);
 							return;
 						}
+						
 						buffer.writeInt(bonus.getItemReward().getId());
 						break;
 					}

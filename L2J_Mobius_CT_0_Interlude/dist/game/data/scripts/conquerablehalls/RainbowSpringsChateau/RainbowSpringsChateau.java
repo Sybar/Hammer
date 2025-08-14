@@ -160,7 +160,7 @@ public class RainbowSpringsChateau extends ClanHallSiegeEngine
 		35599
 	};
 	
-	//@formatter:off
+	// @formatter:off
 	private static final int[][] ARENAS =
 	{
 		{151562, -127080, -2214},
@@ -202,7 +202,7 @@ public class RainbowSpringsChateau extends ClanHallSiegeEngine
 		new Word("RAINBOW", new int[] {ITEM_R, 1}, new int[] {ITEM_A, 1}, new int[] {ITEM_I, 1}, new int[] {ITEM_N, 1}, new int[] {ITEM_B, 1}, new int[] {ITEM_O, 1}, new int[] {ITEM_W, 1}),
 		new Word("SPRING", new int[] {ITEM_S, 1}, new int[] {ITEM_P, 1}, new int[] {ITEM_R, 1}, new int[] {ITEM_I, 1}, new int[] {ITEM_N, 1}, new int[] {ITEM_G, 1})
 	};
-	//@formatter:on
+	// @formatter:on
 	
 	public RainbowSpringsChateau()
 	{
@@ -220,6 +220,7 @@ public class RainbowSpringsChateau extends ClanHallSiegeEngine
 			addSpawnId(squashes);
 			addKillId(squashes);
 		}
+		
 		addSpawnId(ENRAGED_YETI);
 		
 		addSkillSeeId(YETIS);
@@ -380,6 +381,7 @@ public class RainbowSpringsChateau extends ClanHallSiegeEngine
 							{
 								htmltext = "35603-06.htm";
 							}
+							
 							if ((clan.getCastleId() > 0) || (clan.getHideoutId() > 0))
 							{
 								htmltext = "35603-08.htm";
@@ -396,6 +398,7 @@ public class RainbowSpringsChateau extends ClanHallSiegeEngine
 							{
 								portToArena(player, _acceptedClans.indexOf(clan));
 							}
+							
 							return null;
 						}
 						break;
@@ -516,8 +519,10 @@ public class RainbowSpringsChateau extends ClanHallSiegeEngine
 				{
 					html.setFile(player, "data/scripts/conquerablehalls/RainbowSpringsChateau/35596-04.htm");
 				}
+				
 				player.sendPacket(html);
 			}
+			
 			return null;
 		}
 		else if (event.startsWith("seeItem"))
@@ -532,9 +537,11 @@ public class RainbowSpringsChateau extends ClanHallSiegeEngine
 			{
 				html.replace("%word%", WORLD_LIST[_generated].getName());
 			}
+			
 			player.sendPacket(html);
 			return null;
 		}
+		
 		return htmltext;
 	}
 	
@@ -553,6 +560,7 @@ public class RainbowSpringsChateau extends ClanHallSiegeEngine
 			{
 				html.replace("%owner%", ClanTable.getInstance().getClan(_hall.getOwnerId()).getName());
 			}
+			
 			player.sendPacket(html);
 		}
 		else if (npcId == CARETAKER)
@@ -587,8 +595,10 @@ public class RainbowSpringsChateau extends ClanHallSiegeEngine
 			{
 				html.setFile(player, "data/scripts/conquerablehalls/RainbowSpringsChateau/35596-06.htm");
 			}
+			
 			player.sendPacket(html);
 		}
+		
 		player.setLastQuestNpcObject(npc.getObjectId());
 		return "";
 	}
@@ -617,6 +627,7 @@ public class RainbowSpringsChateau extends ClanHallSiegeEngine
 						{
 							addSpawn(ENRAGED_YETI, caster.getX() + 10, caster.getY() + 10, caster.getZ(), 0, false, 0, false);
 						}
+						
 						reduceGourdHp(index, caster);
 						break;
 					}
@@ -779,6 +790,7 @@ public class RainbowSpringsChateau extends ClanHallSiegeEngine
 							pl.teleToLocation(TeleportWhereType.TOWN);
 						}
 					}
+					
 					_playersOnArena = new ArrayList<>();
 				}, 120 * 1000);
 			}
@@ -825,6 +837,7 @@ public class RainbowSpringsChateau extends ClanHallSiegeEngine
 		{
 			registerClan(ClanTable.getInstance().getClan(_hall.getOwnerId()), 10000, true);
 		}
+		
 		_hall.banishForeigners();
 		final SystemMessage msg = new SystemMessage(SystemMessageId.THE_REGISTRATION_TERM_FOR_S1_HAS_ENDED);
 		msg.addString(ClanHallTable.getInstance().getClanHallById(_hall.getId()).getName());
@@ -842,6 +855,7 @@ public class RainbowSpringsChateau extends ClanHallSiegeEngine
 			clan.setHideoutId(0);
 			_hall.free();
 		}
+		
 		super.endSiege();
 	}
 	
@@ -871,6 +885,7 @@ public class RainbowSpringsChateau extends ClanHallSiegeEngine
 				{
 					pc.getSummon().unSummon(pc);
 				}
+				
 				_playersOnArena.add(pc.getObjectId());
 				pc.teleToLocation(ARENAS[arena][0], ARENAS[arena][1], ARENAS[arena][2], true);
 			}
@@ -921,6 +936,7 @@ public class RainbowSpringsChateau extends ClanHallSiegeEngine
 				LOGGER.warning(getClass().getSimpleName() + ": Problem with spawnGourds: " + e.getMessage());
 			}
 		}
+		
 		_chesttask = ThreadPool.scheduleAtFixedRate(new ChestsSpawn(), 5000, 5000);
 	}
 	
@@ -1074,11 +1090,13 @@ public class RainbowSpringsChateau extends ClanHallSiegeEngine
 						fightclan = actingClan;
 					}
 				}
+				
 				if ((fightclan != null) && (_acceptedClans.size() < 4))
 				{
 					_acceptedClans.add(clan);
 				}
 			}
+			
 			updateAttacker(clan.getId(), count, false);
 		}
 		else
@@ -1103,6 +1121,7 @@ public class RainbowSpringsChateau extends ClanHallSiegeEngine
 				statement.setInt(1, clanId);
 				statement.setInt(2, count);
 			}
+			
 			statement.execute();
 			statement.close();
 		}
@@ -1130,6 +1149,7 @@ public class RainbowSpringsChateau extends ClanHallSiegeEngine
 					_acceptedClans.add(loadClan);
 				}
 			}
+			
 			rset.close();
 			statement.close();
 		}
@@ -1167,6 +1187,7 @@ public class RainbowSpringsChateau extends ClanHallSiegeEngine
 					{
 						chests.add(chest);
 					}
+					
 					arenaChestsCnt[i]++;
 				}
 				
@@ -1177,6 +1198,7 @@ public class RainbowSpringsChateau extends ClanHallSiegeEngine
 					{
 						chests.add(chest);
 					}
+					
 					arenaChestsCnt[i]++;
 				}
 				
@@ -1187,6 +1209,7 @@ public class RainbowSpringsChateau extends ClanHallSiegeEngine
 					{
 						chests.add(chest);
 					}
+					
 					arenaChestsCnt[i]++;
 				}
 				
@@ -1197,6 +1220,7 @@ public class RainbowSpringsChateau extends ClanHallSiegeEngine
 					{
 						chests.add(chest);
 					}
+					
 					arenaChestsCnt[i]++;
 				}
 			}
@@ -1248,6 +1272,7 @@ public class RainbowSpringsChateau extends ClanHallSiegeEngine
 				break;
 			}
 		}
+		
 		return rnd;
 	}
 	

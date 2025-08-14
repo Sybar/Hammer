@@ -43,7 +43,7 @@ public class SupportMagic implements IBypassHandler
 	private static final int HIGHEST_LEVEL = 24;
 	
 	@Override
-	public boolean useBypass(String command, Player player, Creature target)
+	public boolean onCommand(String command, Player player, Creature target)
 	{
 		if (!target.isNpc())
 		{
@@ -81,24 +81,29 @@ public class SupportMagic implements IBypassHandler
 			{
 				npc.doCast(SkillData.getInstance().getSkill(4322, 1)); // WindWalk
 			}
+			
 			if ((player.getLevel() >= 11) && (player.getLevel() <= 24))
 			{
 				npc.doCast(SkillData.getInstance().getSkill(4323, 1)); // Shield
 			}
+			
 			if (player.isInCategory(CategoryType.BEGINNER_MAGE))
 			{
 				if ((player.getLevel() >= 12) && (player.getLevel() <= 23))
 				{
 					npc.doCast(SkillData.getInstance().getSkill(4328, 1)); // Bless the Soul
 				}
+				
 				if ((player.getLevel() >= 13) && (player.getLevel() <= 22))
 				{
 					npc.doCast(SkillData.getInstance().getSkill(4329, 1)); // Acumen
 				}
+				
 				if ((player.getLevel() >= 14) && (player.getLevel() <= 21))
 				{
 					npc.doCast(SkillData.getInstance().getSkill(4330, 1)); // Concentration
 				}
+				
 				if ((player.getLevel() >= 15) && (player.getLevel() <= 20))
 				{
 					npc.doCast(SkillData.getInstance().getSkill(4331, 1)); // Empower
@@ -110,19 +115,23 @@ public class SupportMagic implements IBypassHandler
 				{
 					npc.doCast(SkillData.getInstance().getSkill(4324, 1)); // Bless the Body
 				}
+				
 				if ((player.getLevel() >= 13) && (player.getLevel() <= 22))
 				{
 					npc.doCast(SkillData.getInstance().getSkill(4325, 1)); // Vampiric Rage
 				}
+				
 				if ((player.getLevel() >= 14) && (player.getLevel() <= 21))
 				{
 					npc.doCast(SkillData.getInstance().getSkill(4326, 1)); // Regeneration
 				}
+				
 				if ((player.getLevel() >= 15) && (player.getLevel() <= 20))
 				{
 					npc.doCast(SkillData.getInstance().getSkill(4327, 1)); // Haste
 				}
 			}
+			
 			if ((player.getLevel() >= 16) && (player.getLevel() <= 19))
 			{
 				player.doSimultaneousCast(SkillData.getInstance().getSkill(4338, 1)); // Life Cubic
@@ -133,7 +142,7 @@ public class SupportMagic implements IBypassHandler
 	}
 	
 	@Override
-	public String[] getBypassList()
+	public String[] getCommandList()
 	{
 		return COMMANDS;
 	}

@@ -39,6 +39,7 @@ public class Q00405_PathOfTheCleric extends Quest
 	private static final int TRADER_SIMPLON = 30253;
 	private static final int GUARD_PRAGA = 30333;
 	private static final int LIONEL = 30408;
+	
 	// Items
 	private static final int LETTER_OF_ORDER_1ST = 1191;
 	private static final int LETTER_OF_ORDER_2ND = 1192;
@@ -50,11 +51,14 @@ public class Q00405_PathOfTheCleric extends Quest
 	private static final int PENDANT_OF_MOTHER = 1198;
 	private static final int NECKLACE_OF_MOTHER = 1199;
 	private static final int LEMONIELLS_COVENANT = 1200;
+	
 	// Reward
 	private static final int MARK_OF_FAITH = 1201;
+	
 	// Monster
 	private static final int RUIN_ZOMBIE = 20026;
 	private static final int RUIN_ZOMBIE_LEADER = 20029;
+	
 	// Misc
 	private static final int MIN_LEVEL = 19;
 	
@@ -112,6 +116,7 @@ public class Q00405_PathOfTheCleric extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -180,6 +185,7 @@ public class Q00405_PathOfTheCleric extends Quest
 						{
 							addExpAndSp(player, 80314, 5087);
 						}
+						
 						qs.exitQuest(false, true);
 						player.sendPacket(new SocialAction(player.getObjectId(), 3));
 						htmltext = "30022-09.html";
@@ -232,6 +238,7 @@ public class Q00405_PathOfTheCleric extends Quest
 							{
 								qs.setCond(2, true);
 							}
+							
 							htmltext = "30030-01.html";
 						}
 						else
@@ -252,6 +259,7 @@ public class Q00405_PathOfTheCleric extends Quest
 							{
 								qs.setCond(2, true);
 							}
+							
 							htmltext = "30253-01.html";
 						}
 						else
@@ -283,6 +291,7 @@ public class Q00405_PathOfTheCleric extends Quest
 							{
 								qs.setCond(2, true);
 							}
+							
 							htmltext = "30333-03.html";
 						}
 						else if (hasQuestItems(player, BOOK_OF_PRAGA))
@@ -323,6 +332,7 @@ public class Q00405_PathOfTheCleric extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 }

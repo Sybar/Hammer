@@ -148,8 +148,7 @@ public class SummonNpc extends AbstractEffect
 			case "Decoy":
 			{
 				final Decoy decoy = new Decoy(npcTemplate, player, _despawnDelay > 0 ? _despawnDelay : 20000, _isAggressive);
-				decoy.setCurrentHp(decoy.getMaxHp());
-				decoy.setCurrentMp(decoy.getMaxMp());
+				decoy.fullRestore();
 				decoy.setHeading(player.getHeading());
 				decoy.setInstance(player.getInstanceWorld());
 				decoy.setSummoner(player);
@@ -159,12 +158,13 @@ public class SummonNpc extends AbstractEffect
 			case "EffectPoint":
 			{
 				final EffectPoint effectPoint = new EffectPoint(npcTemplate, player);
-				effectPoint.setCurrentHp(effectPoint.getMaxHp());
-				effectPoint.setCurrentMp(effectPoint.getMaxMp());
+				
+				effectPoint.fullRestore();
 				effectPoint.setInvul(true);
 				effectPoint.setSummoner(player);
 				effectPoint.setTitle(player.getName());
 				effectPoint.spawnMe(x, y, z);
+				
 				// First consider NPC template despawn_time parameter.
 				final long despawnTime = (long) (effectPoint.getParameters().getFloat("despawn_time", 0) * 1000);
 				if (despawnTime > 0)
@@ -202,6 +202,7 @@ public class SummonNpc extends AbstractEffect
 				{
 					npc.scheduleDespawn(_despawnDelay);
 				}
+				
 				npc.broadcastInfo();
 			}
 		}

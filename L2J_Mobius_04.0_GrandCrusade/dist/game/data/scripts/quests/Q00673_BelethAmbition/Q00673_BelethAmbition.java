@@ -39,12 +39,14 @@ public class Q00673_BelethAmbition extends Quest
 	// NPCs
 	private static final int ARCTURUS = 34267;
 	private static final int COLIN = 30703;
+	
 	// Monsters
 	private static final int[] BOSES =
 	{
 		29218, // Balok
 		29250, // Beleth
 	};
+	
 	// Misc
 	private static final int MIN_LEVEL = 85;
 	
@@ -67,6 +69,7 @@ public class Q00673_BelethAmbition extends Quest
 		{
 			return htmltext;
 		}
+		
 		switch (event)
 		{
 			case "30703-02.htm":
@@ -93,6 +96,7 @@ public class Q00673_BelethAmbition extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -110,6 +114,7 @@ public class Q00673_BelethAmbition extends Quest
 					htmltext = getAlreadyCompletedMsg(player, QuestType.DAILY);
 					break;
 				}
+				
 				qs.setState(State.CREATED);
 				// Fallthrought.
 			}
@@ -147,6 +152,7 @@ public class Q00673_BelethAmbition extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	

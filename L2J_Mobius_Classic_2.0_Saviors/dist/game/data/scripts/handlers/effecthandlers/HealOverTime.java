@@ -89,6 +89,7 @@ public class HealOverTime extends AbstractEffect
 		{
 			hp = Math.max(hp, 1);
 		}
+		
 		effected.setCurrentHp(hp, false);
 		effected.broadcastStatusUpdate(effector);
 		return skill.isToggle();

@@ -66,6 +66,7 @@ public class PullBack extends AbstractEffect
 		{
 			return;
 		}
+		
 		// Prevent pulling debuff blocked characters.
 		if ((effected.isDebuffBlocked()))
 		{

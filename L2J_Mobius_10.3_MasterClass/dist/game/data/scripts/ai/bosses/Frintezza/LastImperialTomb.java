@@ -86,10 +86,12 @@ public class LastImperialTomb extends AbstractInstance
 		18338,
 		18339
 	};
+	
 	// Items
 	private static final int DEWDROP_OF_DESTRUCTION_ITEM_ID = 8556;
 	private static final int FIRST_SCARLET_WEAPON = 8204;
 	private static final int SECOND_SCARLET_WEAPON = 7903; // 8222?
+	
 	// Doors
 	private static final int[] FIRST_ROOM_DOORS =
 	{
@@ -125,6 +127,7 @@ public class LastImperialTomb extends AbstractInstance
 		17130045,
 		17130046
 	};
+	
 	// Skills
 	private static final int DEWDROP_OF_DESTRUCTION_SKILL_ID = 2276;
 	private static final SkillHolder INTRO_SKILL = new SkillHolder(5004, 1);
@@ -138,6 +141,7 @@ public class LastImperialTomb extends AbstractInstance
 		SKILL_MSG.put(4, NpcStringId.FUGUE_OF_RAPTURE);
 		SKILL_MSG.put(5, NpcStringId.HYPNOTIC_MAZURKA);
 	}
+	
 	// Spawns
 	// @formatter:off
 	static final int[][] PORTRAIT_SPAWNS =
@@ -148,6 +152,7 @@ public class LastImperialTomb extends AbstractInstance
 		{29049, -86189, -153968, -9168, 29456, -86217, -153956, -9168, 29456},
 	};
 	// @formatter:on
+	
 	// Misc
 	private static final int TEMPLATE_ID = 302;
 	private static final int FRINTEZZA_WAIT_TIME = 1; // minutes
@@ -188,18 +193,22 @@ public class LastImperialTomb extends AbstractInstance
 				{
 					world.openCloseDoor(doorId, false);
 				}
+				
 				for (int doorId : FIRST_ROUTE_DOORS)
 				{
 					world.openCloseDoor(doorId, false);
 				}
+				
 				for (int doorId : SECOND_ROOM_DOORS)
 				{
 					world.openCloseDoor(doorId, false);
 				}
+				
 				for (int doorId : SECOND_ROUTE_DOORS)
 				{
 					world.openCloseDoor(doorId, false);
 				}
+				
 				addSpawn(CUBE, -87904, -141296, -9168, 0, false, 0, false, world.getId());
 				break;
 			}
@@ -242,6 +251,7 @@ public class LastImperialTomb extends AbstractInstance
 					demon.disableAllSkills();
 					demons.add(demon);
 				}
+				
 				world.setParameter("demons", demons);
 				startQuestTimer("FRINTEZZA_INTRO_3", 6500, null, player, false);
 				break;
@@ -412,6 +422,7 @@ public class LastImperialTomb extends AbstractInstance
 					final Npc portrait = addSpawn(PORTRAIT_SPAWNS[i][0], PORTRAIT_SPAWNS[i][1], PORTRAIT_SPAWNS[i][2], PORTRAIT_SPAWNS[i][3], PORTRAIT_SPAWNS[i][4], false, 0, false, world.getId());
 					portraits.put(portrait, i);
 				}
+				
 				world.setParameter("portraits", portraits);
 				final Npc overheadDummy = world.getParameters().getObject("overheadDummy", Npc.class);
 				final Npc scarletDummy = world.getParameters().getObject("scarletDummy", Npc.class);
@@ -431,6 +442,7 @@ public class LastImperialTomb extends AbstractInstance
 					demon.setImmobilized(false);
 					demon.enableAllSkills();
 				}
+				
 				activeScarlet.setInvul(false);
 				activeScarlet.setImmobilized(false);
 				activeScarlet.enableAllSkills();
@@ -459,9 +471,11 @@ public class LastImperialTomb extends AbstractInstance
 							{
 								break;
 							}
+							
 							final Monster demon = addSpawn(PORTRAIT_SPAWNS[i][0] + 2, PORTRAIT_SPAWNS[i][5], PORTRAIT_SPAWNS[i][6], PORTRAIT_SPAWNS[i][7], PORTRAIT_SPAWNS[i][8], false, 0, false, world.getId()).asMonster();
 							demons.add(demon);
 						}
+						
 						world.setParameter("demons", demons);
 						startQuestTimer("SPAWN_DEMONS", TIME_BETWEEN_DEMON_SPAWNS * 1000, null, player, false);
 					}
@@ -540,6 +554,7 @@ public class LastImperialTomb extends AbstractInstance
 				{
 					newHeading = Math.abs(540 - (int) (scarletLocation.getHeading() / 182.044444444));
 				}
+				
 				world.setParameter("scarletLocation", scarletLocation);
 				world.setParameter("newHeading", newHeading);
 				broadcastPacket(world, new SpecialCamera(activeScarlet, 250, newHeading, 12, 0, 1000, 0, 0, 1, 0, 0));
@@ -638,22 +653,27 @@ public class LastImperialTomb extends AbstractInstance
 				{
 					world.openCloseDoor(doorId, true);
 				}
+				
 				for (int doorId : FIRST_ROUTE_DOORS)
 				{
 					world.openCloseDoor(doorId, true);
 				}
+				
 				for (int doorId : SECOND_ROOM_DOORS)
 				{
 					world.openCloseDoor(doorId, true);
 				}
+				
 				for (int doorId : SECOND_ROUTE_DOORS)
 				{
 					world.openCloseDoor(doorId, true);
 				}
+				
 				enablePlayers(world);
 				break;
 			}
 		}
+		
 		return null;
 	}
 	
@@ -678,6 +698,7 @@ public class LastImperialTomb extends AbstractInstance
 				teleportPlayerOut(player, world);
 			}
 		}
+		
 		return null;
 	}
 	
@@ -706,12 +727,14 @@ public class LastImperialTomb extends AbstractInstance
 				npc.setScriptValue(1);
 				startQuestTimer("SCARLET_FIRST_MORPH", 1000, npc, null, false);
 			}
+			
 			if (npc.isScriptValue(1) && (npc.getCurrentHp() < (npc.getMaxHp() * 0.20)))
 			{
 				npc.setScriptValue(2);
 				startQuestTimer("SCARLET_SECOND_MORPH", 1000, null, attacker, false);
 			}
 		}
+		
 		if (skill != null)
 		{
 			// When Dewdrop of Destruction is used on Portraits they suicide.
@@ -790,6 +813,7 @@ public class LastImperialTomb extends AbstractInstance
 						{
 							world.openCloseDoor(doorId, true);
 						}
+						
 						for (Npc monster : monsters)
 						{
 							monster.reduceCurrentHp(1, killer, null); // TODO: Find better way for attack
@@ -803,11 +827,13 @@ public class LastImperialTomb extends AbstractInstance
 						{
 							world.openCloseDoor(doorId, true);
 						}
+						
 						startQuestTimer("FRINTEZZA_INTRO_START", FRINTEZZA_WAIT_TIME * 60 * 1000, null, killer, false);
 						break;
 					}
 				}
 			}
+			
 			if (getRandom(100) < 5)
 			{
 				npc.dropItem(killer, DEWDROP_OF_DESTRUCTION_ITEM_ID, 1);
@@ -838,6 +864,7 @@ public class LastImperialTomb extends AbstractInstance
 				frintezza.doCast(skillEffect.getSkill());
 			}
 		}
+		
 		world.setParameter("isPlayingSong", false);
 	}
 	

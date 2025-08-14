@@ -54,6 +54,7 @@ public class ExRequestStartMultiEnchantScroll extends ClientPacket
 		{
 			player.addRequest(new EnchantItemRequest(player, _scrollObjectId));
 		}
+		
 		final EnchantItemRequest request = player.getRequest(EnchantItemRequest.class);
 		
 		final Item scroll = player.getInventory().getItemByObjectId(_scrollObjectId);

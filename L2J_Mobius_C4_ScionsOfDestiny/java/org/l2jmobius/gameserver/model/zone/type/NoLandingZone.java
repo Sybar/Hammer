@@ -57,6 +57,13 @@ public class NoLandingZone extends ZoneType
 			creature.setInsideZone(ZoneId.NO_LANDING, true);
 			
 			final Player player = creature.asPlayer();
+			
+			if (player.isGM())
+			{
+				player.sendMessage("You have entered a no-landing zone. Dismount restrictions are ignored for GMs.");
+				return;
+			}
+			
 			if (player.getMountType() == MountType.WYVERN)
 			{
 				player.sendPacket(SystemMessageId.YOU_CANNOT_ENTER_THIS_AREA_WHILE_RIDING_ON_A_WYVERN_IF_YOU_CONTINUE_TO_REMAIN_IN_THIS_AREA_WHILE_MOUNTED_ON_A_WYVERN_YOUR_RIDING_STATUS_WILL_BE_CANCELLED_BY_FORCE);

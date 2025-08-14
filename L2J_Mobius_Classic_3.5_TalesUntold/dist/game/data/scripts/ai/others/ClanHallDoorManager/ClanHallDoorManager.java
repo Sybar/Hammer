@@ -88,6 +88,7 @@ public class ClanHallDoorManager extends AbstractNpcAI
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -111,6 +112,7 @@ public class ClanHallDoorManager extends AbstractNpcAI
 			htmltext = htmltext.replace("%ownerName%", clanHall.getOwner().getLeaderName());
 			htmltext = htmltext.replace("%ownerClanName%", clanHall.getOwner().getName());
 		}
+		
 		return htmltext;
 	}
 	

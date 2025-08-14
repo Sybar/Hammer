@@ -59,15 +59,18 @@ public class BeeHive extends AbstractNpcAI
 		LV_80_MONSTERS.add(22300);
 		LV_80_MONSTERS.add(22301);
 	}
+	
 	// Skills
 	private static final SkillHolder[] SKILLS =
 	{
 		new SkillHolder(48197, 1), // (Lv. 1) Pet Growth Effect
 		new SkillHolder(48198, 1) // (Lv. 1) Improved Pet Skills
 	};
+	
 	// Items
 	private static final int TAG_PET_BOX = 94634;
 	private static final int LOW_PET_XP_CRYSTAL = 94635;
+	
 	// Misc
 	private static final long DESPAWN_TIME = 2 * 60 * 1000; // 2 minutes
 	
@@ -136,6 +139,7 @@ public class BeeHive extends AbstractNpcAI
 				{
 					spawn = addSpawn(isLow ? PLAYER_70_MONSTER : PLAYER_80_MONSTER, npc.getLocation(), false, DESPAWN_TIME);
 				}
+				
 				spawn.setScriptValue(killer.getObjectId());
 				spawn.setShowSummonAnimation(true);
 				addAttackPlayerDesire(spawn, killer.hasPet() ? killer.getPet() : killer);

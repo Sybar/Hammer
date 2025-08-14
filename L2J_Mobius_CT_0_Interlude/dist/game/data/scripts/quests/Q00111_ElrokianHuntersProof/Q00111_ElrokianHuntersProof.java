@@ -38,6 +38,7 @@ public class Q00111_ElrokianHuntersProof extends Quest
 	private static final int MUSHIKA = 32114;
 	private static final int ASAMAH = 32115;
 	private static final int KIRIKASHIN = 32116;
+	
 	// Items
 	private static final int DIARY_FRAGMENT = 8768;
 	private static final int EXPEDITION_MEMBERS_LETTER = 8769;
@@ -45,6 +46,7 @@ public class Q00111_ElrokianHuntersProof extends Quest
 	private static final int DEINONYCHUS_BONE = 8771;
 	private static final int PACHYCEPHALOSAURUS_SKIN = 8772;
 	private static final int PRACTICE_ELROKIAN_TRAP = 8773;
+	
 	// Mobs
 	private static final Map<Integer, ItemChanceHolder> MOBS_DROP_CHANCES = new HashMap<>();
 	static
@@ -189,6 +191,7 @@ public class Q00111_ElrokianHuntersProof extends Quest
 						{
 							st.setCond(2, true);
 						}
+						
 						htmltext = "32114-001.htm";
 						break;
 					}

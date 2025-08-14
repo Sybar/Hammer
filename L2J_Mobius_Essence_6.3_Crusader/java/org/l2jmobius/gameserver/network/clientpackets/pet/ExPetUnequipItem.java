@@ -59,6 +59,7 @@ public class ExPetUnequipItem extends ClientPacket
 		{
 			return;
 		}
+		
 		final Pet pet = player.getPet();
 		if (pet == null)
 		{
@@ -128,6 +129,7 @@ public class ExPetUnequipItem extends ClientPacket
 				player.sendPacket(SystemMessageId.YOU_DO_NOT_MEET_THE_REQUIRED_CONDITION_TO_EQUIP_THAT_ITEM);
 				return;
 			}
+			
 			// Prevent players to equip weapon while wearing combat flag
 			// Don't allow weapon/shield equipment if a cursed weapon is equipped.
 			if ((item.getTemplate().getBodyPart() == ItemTemplate.SLOT_LR_HAND) || (item.getTemplate().getBodyPart() == ItemTemplate.SLOT_L_HAND) || (item.getTemplate().getBodyPart() == ItemTemplate.SLOT_R_HAND))

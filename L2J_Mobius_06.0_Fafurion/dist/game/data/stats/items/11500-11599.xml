@@ -245,9 +245,9 @@
 		<set name="commissionItemType" val="PET_EQUIPMENT" />
 		<set name="isAppearanceable" val="true" />
 		<set name="weight" val="160" />
-		<cond msgId="600">
+		<conditions msgId="600">
 			<player categoryType="GROWN_UP_WOLF_GROUP" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="mDef">14</stat>
 			<stat type="pDef">171</stat>
@@ -407,9 +407,9 @@
 		<set name="commissionItemType" val="ARMOR_TOP" />
 		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player categoryType="DAGGER_MASTER" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">170</stat>
 		</stats>
@@ -430,9 +430,9 @@
 		<set name="commissionItemType" val="ARMOR_TOP" />
 		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player categoryType="BOW_MASTER" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">170</stat>
 		</stats>
@@ -453,12 +453,12 @@
 		<set name="commissionItemType" val="ARMOR_TOP" />
 		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 				<player categoryType="FORCE_MASTER" />
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">170</stat>
 		</stats>
@@ -479,12 +479,12 @@
 		<set name="commissionItemType" val="ARMOR_TOP" />
 		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player races="KAMAEL" />
 				<player categoryType="WEAPON_MASTER" />
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">170</stat>
 		</stats>
@@ -505,9 +505,9 @@
 		<set name="commissionItemType" val="ARMOR_TOP" />
 		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player categoryType="BUFF_MASTER" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">170</stat>
 		</stats>
@@ -528,9 +528,9 @@
 		<set name="commissionItemType" val="ARMOR_TOP" />
 		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player categoryType="SUMMON_MASTER" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">170</stat>
 		</stats>
@@ -641,12 +641,12 @@
 		<set name="commissionItemType" val="ARMOR_TOP" />
 		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 				<player categoryType="SHIELD_MASTER" />
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">226</stat>
 		</stats>
@@ -667,12 +667,12 @@
 		<set name="commissionItemType" val="ARMOR_TOP" />
 		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 				<player categoryType="WEAPON_MASTER" />
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">226</stat>
 		</stats>
@@ -693,12 +693,12 @@
 		<set name="commissionItemType" val="ARMOR_TOP" />
 		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 				<player categoryType="FORCE_MASTER" />
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">226</stat>
 		</stats>
@@ -719,12 +719,12 @@
 		<set name="commissionItemType" val="ARMOR_TOP" />
 		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 				<player categoryType="BARD" />
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">226</stat>
 		</stats>
@@ -816,12 +816,12 @@
 		<set name="commissionItemType" val="ARMOR_TOP" />
 		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 				<player categoryType="HEAL_MASTER" />
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">113</stat>
 			<stat type="maxMp">592</stat>
@@ -843,12 +843,12 @@
 		<set name="commissionItemType" val="ARMOR_TOP" />
 		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 				<player categoryType="BUFF_MASTER" />
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">113</stat>
 			<stat type="maxMp">592</stat>
@@ -870,12 +870,12 @@
 		<set name="commissionItemType" val="ARMOR_TOP" />
 		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 				<player categoryType="SUMMON_MASTER" />
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">113</stat>
 			<stat type="maxMp">592</stat>
@@ -897,12 +897,12 @@
 		<set name="commissionItemType" val="ARMOR_TOP" />
 		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 				<player categoryType="WIZARD_MASTER" />
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">113</stat>
 			<stat type="maxMp">592</stat>
@@ -968,9 +968,9 @@
 		<set name="commissionItemType" val="ARMOR_TOP" />
 		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player categoryType="DAGGER_MASTER" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">170</stat>
 		</stats>
@@ -991,9 +991,9 @@
 		<set name="commissionItemType" val="ARMOR_TOP" />
 		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player categoryType="BOW_MASTER" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">170</stat>
 		</stats>
@@ -1014,9 +1014,9 @@
 		<set name="commissionItemType" val="ARMOR_TOP" />
 		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player categoryType="FORCE_MASTER" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">170</stat>
 		</stats>
@@ -1037,9 +1037,9 @@
 		<set name="commissionItemType" val="ARMOR_TOP" />
 		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player categoryType="WEAPON_MASTER" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">170</stat>
 		</stats>
@@ -1060,9 +1060,9 @@
 		<set name="commissionItemType" val="ARMOR_TOP" />
 		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player categoryType="BUFF_MASTER" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">170</stat>
 		</stats>
@@ -1083,9 +1083,9 @@
 		<set name="commissionItemType" val="ARMOR_TOP" />
 		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player categoryType="SUMMON_MASTER" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">170</stat>
 		</stats>
@@ -1129,12 +1129,12 @@
 		<set name="commissionItemType" val="ARMOR_TOP" />
 		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 				<player categoryType="HEAL_MASTER" />
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">113</stat>
 			<stat type="maxMp">592</stat>
@@ -1155,12 +1155,12 @@
 		<set name="commissionItemType" val="ARMOR_TOP" />
 		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 				<player categoryType="BUFF_MASTER" />
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">113</stat>
 			<stat type="maxMp">592</stat>
@@ -1181,12 +1181,12 @@
 		<set name="commissionItemType" val="ARMOR_TOP" />
 		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 				<player categoryType="SUMMON_MASTER" />
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">113</stat>
 			<stat type="maxMp">592</stat>
@@ -1207,12 +1207,12 @@
 		<set name="commissionItemType" val="ARMOR_TOP" />
 		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 				<player categoryType="WIZARD_MASTER" />
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">113</stat>
 			<stat type="maxMp">592</stat>
@@ -1257,12 +1257,12 @@
 		<set name="commissionItemType" val="ARMOR_TOP" />
 		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 				<player categoryType="SHIELD_MASTER" />
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">226</stat>
 		</stats>
@@ -1283,12 +1283,12 @@
 		<set name="commissionItemType" val="ARMOR_TOP" />
 		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 				<player categoryType="WEAPON_MASTER" />
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">226</stat>
 		</stats>
@@ -1309,12 +1309,12 @@
 		<set name="commissionItemType" val="ARMOR_TOP" />
 		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 				<player categoryType="FORCE_MASTER" />
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">226</stat>
 		</stats>
@@ -1335,12 +1335,12 @@
 		<set name="commissionItemType" val="ARMOR_TOP" />
 		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 				<player categoryType="BARD" />
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">226</stat>
 		</stats>

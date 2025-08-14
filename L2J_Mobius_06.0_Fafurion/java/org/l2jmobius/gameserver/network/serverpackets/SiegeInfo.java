@@ -87,6 +87,7 @@ public class SiegeInfo extends ServerPacket
 				buffer.writeInt(0); // Ally ID
 				buffer.writeString(""); // Ally Name
 			}
+			
 			buffer.writeInt((int) (System.currentTimeMillis() / 1000));
 			if (!_castle.isTimeRegistrationOver() && _player.isClanLeader() && (_player.getClanId() == _castle.getOwnerId()))
 			{

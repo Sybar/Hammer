@@ -37,13 +37,16 @@ public class Q00181_DevilsStrikeBackAdventOfBalok extends Quest
 {
 	// NPC
 	private static final int FIOREN = 33044;
+	
 	// Monster
 	private static final int BALOK = 29218;
+	
 	// Items
 	private static final int CONTRACT = 17592;
 	private static final int EAR = 17527;
 	private static final int EWR = 17526;
 	private static final int POUCH = 34861;
+	
 	// Misc
 	private static final int MIN_LEVEL = 97;
 	
@@ -101,6 +104,7 @@ public class Q00181_DevilsStrikeBackAdventOfBalok extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -135,6 +139,7 @@ public class Q00181_DevilsStrikeBackAdventOfBalok extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

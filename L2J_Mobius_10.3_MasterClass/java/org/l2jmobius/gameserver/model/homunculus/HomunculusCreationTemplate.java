@@ -119,6 +119,7 @@ public class HomunculusCreationTemplate
 			Double[] chance = _createChances.get(i);
 			result = result + chance[1];
 		}
+		
 		return result;
 	}
 	
@@ -131,6 +132,7 @@ public class HomunculusCreationTemplate
 				return true;
 			}
 		}
+		
 		return false;
 	}
 	

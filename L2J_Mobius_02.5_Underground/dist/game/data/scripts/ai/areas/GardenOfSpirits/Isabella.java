@@ -40,9 +40,11 @@ public class Isabella extends AbstractNpcAI
 	private static final int CROA = 26132;
 	private static final int AMIS = 26133;
 	private static final int CROAMIS = 23563;
+	
 	// Doors
 	private static final int DOOR1 = 18200101;
 	private static final int DOOR2 = 18200102;
+	
 	// Location
 	private static final Location CROAMIS_SPAWN_LOCATION = new Location(-51033, 82405, -4882, 44107);
 	
@@ -71,6 +73,7 @@ public class Isabella extends AbstractNpcAI
 			final Npc minion6 = addSpawn(AMIS, -51157, 83298, -5112, 64987, true, 300000, false);
 			addAttackPlayerDesire(minion6, player);
 		}
+		
 		return null;
 	}
 	

@@ -32,14 +32,17 @@ public class Q00042_HelpTheUncle extends Quest
 	// NPCs
 	private static final int WATERS = 30828;
 	private static final int SOPHYA = 30735;
+	
 	// Monsters
 	private static final int MONSTER_EYE_DESTROYER = 20068;
 	private static final int MONSTER_EYE_GAZER = 20266;
+	
 	// Items
 	private static final int TRIDENT = 291;
 	private static final int MAP_PIECE = 7548;
 	private static final int MAP = 7549;
 	private static final int PET_TICKET = 7583;
+	
 	// Misc
 	private static final int MIN_LEVEL = 25;
 	
@@ -120,6 +123,7 @@ public class Q00042_HelpTheUncle extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -214,6 +218,7 @@ public class Q00042_HelpTheUncle extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

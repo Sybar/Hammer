@@ -136,6 +136,7 @@ public class RequestRefine extends AbstractRefinePacket
 			{
 				augment = new VariationInstance(augment.getMineralId(), option1, option2);
 			}
+			
 			targetItem.removeAugmentation();
 		}
 		else

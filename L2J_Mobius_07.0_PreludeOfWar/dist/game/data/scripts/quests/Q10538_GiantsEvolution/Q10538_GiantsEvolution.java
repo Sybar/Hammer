@@ -20,6 +20,8 @@
  */
 package quests.Q10538_GiantsEvolution;
 
+import java.util.Collection;
+
 import org.l2jmobius.gameserver.model.WorldObject;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
@@ -38,16 +40,21 @@ public class Q10538_GiantsEvolution extends Quest
 {
 	// NPCs
 	private static final int RETBACH = 34218;
+	
 	// Monsters
 	private static final int LESSER_GIANT_SOLDIER = 23748;
 	private static final int ESSENCE_LASSER_GIANTS = 23754;
 	private static final int ROOT_LASSER_GIANTS = 23749;
+	
 	// Items
 	private static final int DEMON_TRACE = 46755; // Demon's Trace
+	
 	// Reward
 	private static final int GINATS_ENERGY = 35563; // item: Giant's Energy
+	
 	// skill
 	private static final int INJECT_SHINE_ENERGY = 18583;
+	
 	// Misc
 	private static final int MIN_LEVEL = 100;
 	
@@ -72,6 +79,7 @@ public class Q10538_GiantsEvolution extends Quest
 		{
 			return null;
 		}
+		
 		switch (event)
 		{
 			case "34218-02.htm":
@@ -105,6 +113,7 @@ public class Q10538_GiantsEvolution extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -141,11 +150,12 @@ public class Q10538_GiantsEvolution extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
 	@Override
-	public void onSkillSee(Npc npc, Player caster, Skill skill, WorldObject[] targets, boolean isSummon)
+	public void onSkillSee(Npc npc, Player caster, Skill skill, Collection<WorldObject> targets, boolean isSummon)
 	{
 		final QuestState qs = getQuestState(caster, false);
 		if ((qs != null) && qs.isCond(1) && (skill.getId() == INJECT_SHINE_ENERGY))

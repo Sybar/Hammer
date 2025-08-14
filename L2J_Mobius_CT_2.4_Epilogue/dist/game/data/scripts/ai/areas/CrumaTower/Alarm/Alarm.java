@@ -34,6 +34,7 @@ public class Alarm extends AbstractNpcAI
 {
 	// NPC
 	private static final int ALARM = 32367;
+	
 	// Misc
 	private static final int ART_OF_PERSUASION_ID = 184;
 	private static final int NIKOLAS_COOPERATION_ID = 185;
@@ -90,6 +91,7 @@ public class Alarm extends AbstractNpcAI
 						}
 					}
 				}
+				
 				npc.deleteMe();
 				break;
 			}
@@ -167,6 +169,7 @@ public class Alarm extends AbstractNpcAI
 						{
 							npc0.getVariables().set("SPAWNED", false);
 						}
+						
 						setMemoState(player, ART_OF_PERSUASION_ID, 4);
 						htmltext = "32367-184_09.html";
 						npc.deleteMe();
@@ -185,6 +188,7 @@ public class Alarm extends AbstractNpcAI
 						{
 							npc0.getVariables().set("SPAWNED", false);
 						}
+						
 						setMemoState(player, NIKOLAS_COOPERATION_ID, 4);
 						htmltext = "32367-185_09.html";
 						npc.deleteMe();
@@ -198,6 +202,7 @@ public class Alarm extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -216,6 +221,7 @@ public class Alarm extends AbstractNpcAI
 				htmltext = "32367-02.html";
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -255,6 +261,7 @@ public class Alarm extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return (qs != null) && ((memoState < 0) || qs.isMemoState(memoState));
 	}
 	
@@ -280,6 +287,7 @@ public class Alarm extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		if (qs != null)
 		{
 			qs.setMemoState(memoState);
@@ -309,6 +317,7 @@ public class Alarm extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return (qs != null) ? qs.getMemoStateEx(slot) : -1;
 	}
 	
@@ -335,6 +344,7 @@ public class Alarm extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		if (qs != null)
 		{
 			qs.setMemoStateEx(slot, memoStateEx);

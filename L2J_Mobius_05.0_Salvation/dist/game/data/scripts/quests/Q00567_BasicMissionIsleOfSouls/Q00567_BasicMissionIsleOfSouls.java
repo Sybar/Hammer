@@ -40,12 +40,15 @@ public class Q00567_BasicMissionIsleOfSouls extends Quest
 	private static final int PENNY = 34413;
 	private static final int HESET = 33780;
 	private static final int TAPOY = 30499;
+	
 	// Rewards
 	private static final int SCROLL_OF_ESCAPE_SOUL_ISLAND = 47059;
 	private static final int SCROLL_OF_ESCAPE_TOWN_OF_ADEN = 48413;
+	
 	// Misc
 	private static final int MIN_LEVEL = 93;
 	private static final int MAX_LEVEL = 94;
+	
 	// Location
 	private static final Location TOWN_OF_ADEN = new Location(146632, 26760, -2213);
 	
@@ -136,6 +139,7 @@ public class Q00567_BasicMissionIsleOfSouls extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -238,6 +242,7 @@ public class Q00567_BasicMissionIsleOfSouls extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -251,12 +256,14 @@ public class Q00567_BasicMissionIsleOfSouls extends Quest
 			index = 0;
 			string.setCharAt(index, ch);
 		}
+		
 		final QuestState st2 = player.getQuestState("Q00587_MoreAggressiveOperation");
 		if ((st2 != null) && st2.isCompleted())
 		{
 			index = 1;
 			string.setCharAt(index, ch);
 		}
+		
 		return string;
 	}
 }

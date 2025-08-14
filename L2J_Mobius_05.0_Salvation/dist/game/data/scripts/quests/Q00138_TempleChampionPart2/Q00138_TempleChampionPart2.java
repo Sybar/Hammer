@@ -47,11 +47,13 @@ public class Q00138_TempleChampionPart2 extends Quest
 		20551, // Road Scavenger
 		20552, // Fettered Soul
 	};
+	
 	// Items
 	private static final int TEMPLE_MANIFESTO = 10341;
 	private static final int RELICS_OF_THE_DARK_ELF_TRAINEE = 10342;
 	private static final int ANGUS_RECOMMENDATION = 10343;
 	private static final int PUPINAS_RECOMMENDATION = 10344;
+	
 	// Misc
 	private static final int MIN_LEVEL = 36;
 	private static final int MAX_LEVEL = 42;
@@ -95,6 +97,7 @@ public class Q00138_TempleChampionPart2 extends Quest
 					{
 						addExpAndSp(player, 187062, 20);
 					}
+					
 					qs.exitQuest(false, true);
 				}
 				else
@@ -164,6 +167,7 @@ public class Q00138_TempleChampionPart2 extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -318,6 +322,7 @@ public class Q00138_TempleChampionPart2 extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

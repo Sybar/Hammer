@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list enabled="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/zones.xsd">
 	<!-- Cleft Zones -->
-	<!-- TODO: Require Support -->
+	<!-- Not used in Classic -->
 	<!-- Cleft Territory Zone -->
 	<!-- <zone name="cleft_zone_territory" type="CleftZone" shape="NPoly" minZ="-4274" maxZ="15796"> -->
 	<!-- <node X="-217824" Y="235786" /> -->

@@ -19,7 +19,7 @@
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="true" />
 		<set name="item_skill" val="3037-2" /> <!-- Special Ability: Haste -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="148" />
 			<set stat="mAtk" val="68" />
 			<set stat="critRate" val="4" />
@@ -27,7 +27,7 @@
 			<set stat="pAtkSpd" val="325" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4801" type="Weapon" name="Arthro Nail">
 		<!-- 7% chance that target will be poisoned during critical attack Effect 6 -->
@@ -49,7 +49,7 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="oncrit_chance" val="14" />
 		<set name="oncrit_skill" val="3040-5" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="213" />
 			<set stat="mAtk" val="91" />
 			<set stat="critRate" val="4" />
@@ -57,7 +57,7 @@
 			<set stat="pAtkSpd" val="325" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4802" type="Weapon" name="Arthro Nail">
 		<!-- Increases Evasion by 6 when HP becomes 60% or lower. -->
@@ -78,7 +78,7 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="true" />
 		<set name="item_skill" val="3030-5" /> <!-- Special Ability: Rsk. Evasion -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="213" />
 			<set stat="mAtk" val="91" />
 			<set stat="critRate" val="4" />
@@ -86,7 +86,7 @@
 			<set stat="pAtkSpd" val="325" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4803" type="Weapon" name="Arthro Nail">
 		<!-- Increases Atk. Spd. by 10% when HP drops to 60% or lower. -->
@@ -107,7 +107,7 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="true" />
 		<set name="item_skill" val="3034-5" /> <!-- Special Ability: Rsk. Haste -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="213" />
 			<set stat="mAtk" val="91" />
 			<set stat="critRate" val="4" />
@@ -115,7 +115,7 @@
 			<set stat="pAtkSpd" val="325" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4804" type="Weapon" name="Bellion Cestus">
 		<!-- User absorbs 14 HP from target during critical attack. -->
@@ -137,7 +137,7 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="oncrit_chance" val="10" />
 		<set name="oncrit_skill" val="3039-6" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="236" />
 			<set stat="mAtk" val="99" />
 			<set stat="critRate" val="4" />
@@ -145,7 +145,7 @@
 			<set stat="pAtkSpd" val="325" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4805" type="Weapon" name="Bellion Cestus">
 		<!-- 6% chance that target will be poisoned during critical attack Effect 7 -->
@@ -167,7 +167,7 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="oncrit_chance" val="12" />
 		<set name="oncrit_skill" val="3040-6" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="236" />
 			<set stat="mAtk" val="99" />
 			<set stat="critRate" val="4" />
@@ -175,7 +175,7 @@
 			<set stat="pAtkSpd" val="325" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4806" type="Weapon" name="Bellion Cestus">
 		<!-- Increases Atk. Spd. by 9% when HP drops to 60% or lower. -->
@@ -196,7 +196,7 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="true" />
 		<set name="item_skill" val="3034-6" /> <!-- Special Ability: Rsk. Haste -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="236" />
 			<set stat="mAtk" val="99" />
 			<set stat="critRate" val="4" />
@@ -204,7 +204,7 @@
 			<set stat="pAtkSpd" val="325" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4807" type="Weapon" name="Blood Tornado - Critical Drain">
 		<!-- Absorbs a target's HP during a critical attack. -->
@@ -224,7 +224,7 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="true" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="259" />
 			<set stat="mAtk" val="107" />
 			<set stat="critRate" val="4" />
@@ -232,7 +232,7 @@
 			<set stat="pAtkSpd" val="325" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4808" type="Weapon" name="Blood Tornado - Rsk. Evasion">
 		<!-- Increases Evasion when HP becomes 60% or lower. -->
@@ -252,7 +252,7 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="true" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="259" />
 			<set stat="mAtk" val="107" />
 			<set stat="critRate" val="4" />
@@ -260,7 +260,7 @@
 			<set stat="pAtkSpd" val="325" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4809" type="Weapon" name="Blood Tornado - Haste">
 		<!-- Increases Atk. Spd. -->
@@ -280,7 +280,7 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="true" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="259" />
 			<set stat="mAtk" val="107" />
 			<set stat="critRate" val="4" />
@@ -288,7 +288,7 @@
 			<set stat="pAtkSpd" val="325" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4810" type="Weapon" name="Crystallized Ice Bow">
 		<!-- Increases Accuracy by 5. -->
@@ -311,7 +311,7 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="reuse_delay" val="1500" />
 		<set name="item_skill" val="3008-1" /> <!-- Special Ability: Guidance -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="220" />
 			<set stat="mAtk" val="61" />
 			<set stat="critRate" val="12" />
@@ -319,7 +319,7 @@
 			<set stat="pAtkSpd" val="293" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4811" type="Weapon" name="Crystallized Ice Bow">
 		<!-- Increases Evasion by 2. -->
@@ -342,7 +342,7 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="reuse_delay" val="1500" />
 		<set name="item_skill" val="3009-1" /> <!-- Special Ability: Evasion -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="220" />
 			<set stat="mAtk" val="61" />
 			<set stat="critRate" val="12" />
@@ -350,7 +350,7 @@
 			<set stat="pAtkSpd" val="293" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4812" type="Weapon" name="Crystallized Ice Bow">
 		<!-- Reduces re-use delay by approximately 17%. -->
@@ -372,7 +372,7 @@
 		<set name="mp_consume" val="6" />
 		<set name="enchant_enabled" val="true" />
 		<set name="reuse_delay" val="1248" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="220" />
 			<set stat="mAtk" val="61" />
 			<set stat="critRate" val="12" />
@@ -380,7 +380,7 @@
 			<set stat="pAtkSpd" val="293" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4813" type="Weapon" name="Elemental Bow">
 		<!-- Increases Accuracy by 5. -->
@@ -403,7 +403,7 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="reuse_delay" val="820" />
 		<set name="item_skill" val="3008-2" /> <!-- Special Ability: Guidance -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="277" />
 			<set stat="mAtk" val="75" />
 			<set stat="critRate" val="12" />
@@ -411,7 +411,7 @@
 			<set stat="pAtkSpd" val="227" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4814" type="Weapon" name="Elemental Bow">
 		<!-- There is a 30% rate of probability the number of soulshots consumed is reduced to 7. -->
@@ -434,7 +434,7 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="reuse_delay" val="820" />
 		<set name="reduced_soulshot" val="59,7" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="277" />
 			<set stat="mAtk" val="75" />
 			<set stat="critRate" val="12" />
@@ -442,7 +442,7 @@
 			<set stat="pAtkSpd" val="227" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4815" type="Weapon" name="Elemental Bow">
 		<!-- Reduces re-use delay by approximately 20%. -->
@@ -464,7 +464,7 @@
 		<set name="mp_consume" val="7" />
 		<set name="enchant_enabled" val="true" />
 		<set name="reuse_delay" val="639" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="277" />
 			<set stat="mAtk" val="75" />
 			<set stat="critRate" val="12" />
@@ -472,7 +472,7 @@
 			<set stat="pAtkSpd" val="227" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4816" type="Weapon" name="Elven Bow of Nobility">
 		<!-- Increases Evasion by 2. -->
@@ -495,7 +495,7 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="reuse_delay" val="1500" />
 		<set name="item_skill" val="3009-2" /> <!-- Special Ability: Evasion -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="252" />
 			<set stat="mAtk" val="68" />
 			<set stat="critRate" val="12" />
@@ -503,7 +503,7 @@
 			<set stat="pAtkSpd" val="293" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4817" type="Weapon" name="Elven Bow of Nobility">
 		<!-- There is a 30% rate of probability the number of soulshots consumed is reduced to 7. -->
@@ -526,7 +526,7 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="reuse_delay" val="1500" />
 		<set name="reduced_soulshot" val="59,7" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="252" />
 			<set stat="mAtk" val="68" />
 			<set stat="critRate" val="12" />
@@ -534,7 +534,7 @@
 			<set stat="pAtkSpd" val="293" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4818" type="Weapon" name="Elven Bow of Nobility">
 		<!-- When launching a general attack, there is a 46% probability that MP consumption will be decreased to 2. -->
@@ -557,7 +557,7 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="reuse_delay" val="1500" />
 		<set name="reduced_mp_consume" val="47,1" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="252" />
 			<set stat="mAtk" val="68" />
 			<set stat="critRate" val="12" />
@@ -565,7 +565,7 @@
 			<set stat="pAtkSpd" val="293" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4819" type="Weapon" name="Akat Long Bow">
 		<!-- Increases Accuracy by 4. -->
@@ -588,7 +588,7 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="reuse_delay" val="820" />
 		<set name="item_skill" val="3008-3" /> <!-- Special Ability: Guidance -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="316" />
 			<set stat="mAtk" val="84" />
 			<set stat="critRate" val="12" />
@@ -596,7 +596,7 @@
 			<set stat="pAtkSpd" val="227" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4820" type="Weapon" name="Akat Long Bow">
 		<!-- Increases Evasion by 2. -->
@@ -619,7 +619,7 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="reuse_delay" val="820" />
 		<set name="item_skill" val="3009-3" /> <!-- Special Ability: Evasion -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="316" />
 			<set stat="mAtk" val="84" />
 			<set stat="critRate" val="12" />
@@ -627,7 +627,7 @@
 			<set stat="pAtkSpd" val="227" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4821" type="Weapon" name="Akat Long Bow">
 		<!-- There is a 30% rate of probability the number of soulshots consumed is reduced to 8. -->
@@ -650,7 +650,7 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="reuse_delay" val="820" />
 		<set name="reduced_soulshot" val="60,8" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="316" />
 			<set stat="mAtk" val="84" />
 			<set stat="critRate" val="12" />
@@ -658,7 +658,7 @@
 			<set stat="pAtkSpd" val="227" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4822" type="Weapon" name="Eminence Bow">
 		<!-- Increases Accuracy by 4. -->
@@ -681,7 +681,7 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="reuse_delay" val="1500" />
 		<set name="item_skill" val="3008-4" /> <!-- Special Ability: Guidance -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="323" />
 			<set stat="mAtk" val="83" />
 			<set stat="critRate" val="12" />
@@ -689,7 +689,7 @@
 			<set stat="pAtkSpd" val="293" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4823" type="Weapon" name="Eminence Bow">
 		<!-- There is a 30% rate of probability the number of soulshots consumed is reduced to 9. -->
@@ -712,7 +712,7 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="reuse_delay" val="1500" />
 		<set name="reduced_soulshot" val="61,9" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="323" />
 			<set stat="mAtk" val="83" />
 			<set stat="critRate" val="12" />
@@ -720,7 +720,7 @@
 			<set stat="pAtkSpd" val="293" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4824" type="Weapon" name="Eminence Bow">
 		<!-- When launching a general attack, there is a 34% probability that MP consumption will be decreased to 1. -->
@@ -743,7 +743,7 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="reuse_delay" val="1500" />
 		<set name="reduced_mp_consume" val="42,1" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="323" />
 			<set stat="mAtk" val="83" />
 			<set stat="critRate" val="12" />
@@ -751,7 +751,7 @@
 			<set stat="pAtkSpd" val="293" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4825" type="Weapon" name="Dark Elven Long Bow">
 		<!-- Increases Evasion by 2. -->
@@ -774,7 +774,7 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="reuse_delay" val="820" />
 		<set name="item_skill" val="3009-5" /> <!-- Special Ability: Evasion -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="397" />
 			<set stat="mAtk" val="100" />
 			<set stat="critRate" val="12" />
@@ -782,7 +782,7 @@
 			<set stat="pAtkSpd" val="227" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4826" type="Weapon" name="Dark Elven Long Bow">
 		<!-- 30% chance that target will bleed during critical attack. Effect 6. -->
@@ -806,7 +806,7 @@
 		<set name="reuse_delay" val="820" />
 		<set name="oncrit_chance" val="41" />
 		<set name="oncrit_skill" val="3021-5" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="397" />
 			<set stat="mAtk" val="100" />
 			<set stat="critRate" val="12" />
@@ -814,7 +814,7 @@
 			<set stat="pAtkSpd" val="227" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4827" type="Weapon" name="Dark Elven Long Bow">
 		<!-- There is a 30% rate of probability the number of soulshots consumed is reduced to 2. -->
@@ -837,7 +837,7 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="reuse_delay" val="820" />
 		<set name="reduced_soulshot" val="19,2" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="397" />
 			<set stat="mAtk" val="100" />
 			<set stat="critRate" val="12" />
@@ -845,7 +845,7 @@
 			<set stat="pAtkSpd" val="227" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4828" type="Weapon" name="Bow of Peril">
 		<!-- Increases Accuracy by 3. -->
@@ -868,7 +868,7 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="reuse_delay" val="1500" />
 		<set name="item_skill" val="3008-6" /> <!-- Special Ability: Guidance -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="400" />
 			<set stat="mAtk" val="99" />
 			<set stat="critRate" val="12" />
@@ -876,7 +876,7 @@
 			<set stat="pAtkSpd" val="293" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4829" type="Weapon" name="Bow of Peril">
 		<!-- Reduces re-use delay by approximately 13%. -->
@@ -898,7 +898,7 @@
 		<set name="mp_consume" val="9" />
 		<set name="enchant_enabled" val="true" />
 		<set name="reuse_delay" val="1310" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="400" />
 			<set stat="mAtk" val="99" />
 			<set stat="critRate" val="12" />
@@ -906,7 +906,7 @@
 			<set stat="pAtkSpd" val="293" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4830" type="Weapon" name="Bow of Peril">
 		<!-- When launching a general attack, there is a 42% probability that MP consumption will be decreased to 2. -->
@@ -929,7 +929,7 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="reuse_delay" val="1500" />
 		<set name="reduced_mp_consume" val="42,2" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="400" />
 			<set stat="mAtk" val="99" />
 			<set stat="critRate" val="12" />
@@ -937,7 +937,7 @@
 			<set stat="pAtkSpd" val="293" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4831" type="Weapon" name="Carnage Bow">
 		<!-- 30% chance that target will bleed during critical attack. Effect 6. -->
@@ -959,7 +959,7 @@
 		<set name="mp_consume" val="9" />
 		<set name="enchant_enabled" val="true" />
 		<set name="reuse_delay" val="1500" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="440" />
 			<set stat="mAtk" val="107" />
 			<set stat="critRate" val="12" />
@@ -967,7 +967,7 @@
 			<set stat="pAtkSpd" val="293" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4832" type="Weapon" name="Carnage Bow">
 		<!-- Increases maximum MP by 30% -->
@@ -989,7 +989,7 @@
 		<set name="mp_consume" val="9" />
 		<set name="enchant_enabled" val="true" />
 		<set name="reuse_delay" val="1500" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="440" />
 			<set stat="mAtk" val="107" />
 			<set stat="critRate" val="12" />
@@ -997,7 +997,7 @@
 			<set stat="pAtkSpd" val="293" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4833" type="Weapon" name="Carnage Bow">
 		<!-- Reduces re-use delay by approximately 10%. -->
@@ -1019,7 +1019,7 @@
 		<set name="mp_consume" val="9" />
 		<set name="enchant_enabled" val="true" />
 		<set name="reuse_delay" val="1500" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="440" />
 			<set stat="mAtk" val="107" />
 			<set stat="critRate" val="12" />
@@ -1027,7 +1027,7 @@
 			<set stat="pAtkSpd" val="293" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4834" type="Weapon" name="Scythe">
 		<!-- Increases P. Atk. by 20 while reducing maximum HP by 15%. -->
@@ -1048,7 +1048,7 @@
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="true" />
 		<set name="item_skill" val="3600-1" /> <!-- Special Ability: Anger -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="107" />
 			<set stat="mAtk" val="61" />
 			<set stat="critRate" val="8" />
@@ -1056,7 +1056,7 @@
 			<set stat="pAtkSpd" val="325" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4835" type="Weapon" name="Scythe">
 		<!-- 18% chance of stun effect during a critical attack. -->
@@ -1079,7 +1079,7 @@
 		<set name="oncrit_chance" val="34" />
 		<set name="oncrit_skill" val="3016-1" />
 		<set name="item_skill" val="3599-1" /> <!-- Polearm Multi-attack -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="107" />
 			<set stat="mAtk" val="61" />
 			<set stat="critRate" val="8" />
@@ -1087,7 +1087,7 @@
 			<set stat="pAtkSpd" val="325" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4836" type="Weapon" name="Scythe">
 		<!-- Reduces a weapon's weight by half. -->
@@ -1108,7 +1108,7 @@
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="true" />
 		<set name="item_skill" val="3599-1;3498-1" /> <!-- Polearm Multi-attack -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="107" />
 			<set stat="mAtk" val="61" />
 			<set stat="critRate" val="8" />
@@ -1116,7 +1116,7 @@
 			<set stat="pAtkSpd" val="325" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4837" type="Weapon" name="Orcish Glaive">
 		<!-- Increases P. Atk. by 20 while reducing maximum HP by 15%. -->
@@ -1137,7 +1137,7 @@
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="true" />
 		<set name="item_skill" val="3600-1" /> <!-- Special Ability: Anger -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="107" />
 			<set stat="mAtk" val="61" />
 			<set stat="critRate" val="8" />
@@ -1145,7 +1145,7 @@
 			<set stat="pAtkSpd" val="325" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4838" type="Weapon" name="Orcish Glaive">
 		<!-- 18% chance of stun effect during a critical attack. -->
@@ -1168,7 +1168,7 @@
 		<set name="oncrit_chance" val="34" />
 		<set name="oncrit_skill" val="3016-1" />
 		<set name="item_skill" val="3599-1" /> <!-- Polearm Multi-attack -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="107" />
 			<set stat="mAtk" val="61" />
 			<set stat="critRate" val="8" />
@@ -1176,7 +1176,7 @@
 			<set stat="pAtkSpd" val="325" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4839" type="Weapon" name="Orcish Glaive">
 		<!-- Increases the effect area of the weapon. -->
@@ -1197,7 +1197,7 @@
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="true" />
 		<set name="item_skill" val="3599-1" /> <!-- Polearm Multi-attack -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="107" />
 			<set stat="mAtk" val="61" />
 			<set stat="critRate" val="8" />
@@ -1206,7 +1206,7 @@
 			<set val="80" stat="pAtkRange" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4840" type="Weapon" name="Body Slasher">
 		<!-- 18% chance of stun effect during a critical attack. -->
@@ -1229,7 +1229,7 @@
 		<set name="oncrit_chance" val="34" />
 		<set name="oncrit_skill" val="3016-1" />
 		<set name="item_skill" val="3599-1" /> <!-- Polearm Multi-attack -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="107" />
 			<set stat="mAtk" val="61" />
 			<set stat="critRate" val="8" />
@@ -1237,7 +1237,7 @@
 			<set stat="pAtkSpd" val="325" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4841" type="Weapon" name="Body Slasher">
 		<!-- Increases the effect area of the weapon. -->
@@ -1258,7 +1258,7 @@
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="true" />
 		<set name="item_skill" val="3599-1" /> <!-- Polearm Multi-attack -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="107" />
 			<set stat="mAtk" val="61" />
 			<set stat="critRate" val="8" />
@@ -1267,7 +1267,7 @@
 			<set val="80" stat="pAtkRange" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4842" type="Weapon" name="Body Slasher">
 		<!-- Broadens angle of attack. -->
@@ -1288,7 +1288,7 @@
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="true" />
 		<set name="item_skill" val="3599-1" /> <!-- Polearm Multi-attack -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="107" />
 			<set stat="mAtk" val="61" />
 			<set stat="critRate" val="8" />
@@ -1296,7 +1296,7 @@
 			<set stat="pAtkSpd" val="325" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4843" type="Weapon" name="Bec de Corbin">
 		<!-- 17% chance of stun effect during a critical attack. -->
@@ -1319,7 +1319,7 @@
 		<set name="oncrit_chance" val="32" />
 		<set name="oncrit_skill" val="3016-2" />
 		<set name="item_skill" val="3599-1" /> <!-- Polearm Multi-attack -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="122" />
 			<set stat="mAtk" val="68" />
 			<set stat="critRate" val="8" />
@@ -1327,7 +1327,7 @@
 			<set stat="pAtkSpd" val="325" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4844" type="Weapon" name="Bec de Corbin">
 		<!-- Increases the effect area of the weapon. -->
@@ -1348,7 +1348,7 @@
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="true" />
 		<set name="item_skill" val="3599-1" /> <!-- Polearm Multi-attack -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="122" />
 			<set stat="mAtk" val="68" />
 			<set stat="critRate" val="8" />
@@ -1357,7 +1357,7 @@
 			<set val="80" stat="pAtkRange" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4845" type="Weapon" name="Bec de Corbin">
 		<!-- Reduces a weapon's weight by half. -->
@@ -1378,7 +1378,7 @@
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="true" />
 		<set name="item_skill" val="3599-1;3498-1" /> <!-- Polearm Multi-attack -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="122" />
 			<set stat="mAtk" val="68" />
 			<set stat="critRate" val="8" />
@@ -1386,7 +1386,7 @@
 			<set stat="pAtkSpd" val="325" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4846" type="Weapon" name="Scorpion">
 		<!-- Increases P. Atk. by 24 while reducing maximum HP by 15%. -->
@@ -1407,7 +1407,7 @@
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="true" />
 		<set name="item_skill" val="3600-3" /> <!-- Special Ability: Anger -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="144" />
 			<set stat="mAtk" val="78" />
 			<set stat="critRate" val="8" />
@@ -1415,7 +1415,7 @@
 			<set stat="pAtkSpd" val="325" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4847" type="Weapon" name="Scorpion">
 		<!-- 16% chance of stun effect during a critical attack. -->
@@ -1438,7 +1438,7 @@
 		<set name="oncrit_chance" val="31" />
 		<set name="oncrit_skill" val="3016-3" />
 		<set name="item_skill" val="3599-1" /> <!-- Polearm Multi-attack -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="144" />
 			<set stat="mAtk" val="78" />
 			<set stat="critRate" val="8" />
@@ -1446,7 +1446,7 @@
 			<set stat="pAtkSpd" val="325" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4848" type="Weapon" name="Scorpion">
 		<!-- Increases the effect area of the weapon. -->
@@ -1467,7 +1467,7 @@
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="true" />
 		<set name="item_skill" val="3599-1" /> <!-- Polearm Multi-attack -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="144" />
 			<set stat="mAtk" val="78" />
 			<set stat="critRate" val="8" />
@@ -1476,7 +1476,7 @@
 			<set val="80" stat="pAtkRange" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4849" type="Weapon" name="Widow Maker">
 		<!-- 16% chance of stun effect during a critical attack. -->
@@ -1499,7 +1499,7 @@
 		<set name="oncrit_chance" val="31" />
 		<set name="oncrit_skill" val="3016-3" />
 		<set name="item_skill" val="3599-1" /> <!-- Polearm Multi-attack -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="144" />
 			<set stat="mAtk" val="78" />
 			<set stat="critRate" val="8" />
@@ -1507,7 +1507,7 @@
 			<set stat="pAtkSpd" val="325" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4850" type="Weapon" name="Widow Maker">
 		<!-- Increases the effect area of the weapon. -->
@@ -1528,7 +1528,7 @@
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="true" />
 		<set name="item_skill" val="3599-1" /> <!-- Polearm Multi-attack -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="144" />
 			<set stat="mAtk" val="78" />
 			<set stat="critRate" val="8" />
@@ -1537,7 +1537,7 @@
 			<set val="80" stat="pAtkRange" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4851" type="Weapon" name="Widow Maker">
 		<!-- Broadens angle of attack. -->
@@ -1558,7 +1558,7 @@
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="true" />
 		<set name="item_skill" val="3599-1" /> <!-- Polearm Multi-attack -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="144" />
 			<set stat="mAtk" val="78" />
 			<set stat="critRate" val="8" />
@@ -1566,7 +1566,7 @@
 			<set stat="pAtkSpd" val="325" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4852" type="Weapon" name="Orcish Poleaxe">
 		<!-- 15% chance of stun effect during a critical attack. -->
@@ -1589,7 +1589,7 @@
 		<set name="oncrit_chance" val="29" />
 		<set name="oncrit_skill" val="3016-4" />
 		<set name="item_skill" val="3599-1" /> <!-- Polearm Multi-attack -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="156" />
 			<set stat="mAtk" val="83" />
 			<set stat="critRate" val="8" />
@@ -1597,7 +1597,7 @@
 			<set stat="pAtkSpd" val="325" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4853" type="Weapon" name="Orcish Poleaxe">
 		<!-- Increases the effect area of the weapon. -->
@@ -1618,7 +1618,7 @@
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="true" />
 		<set name="item_skill" val="3599-1" /> <!-- Polearm Multi-attack -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="156" />
 			<set stat="mAtk" val="83" />
 			<set stat="critRate" val="8" />
@@ -1627,7 +1627,7 @@
 			<set val="80" stat="pAtkRange" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4854" type="Weapon" name="Orcish Poleaxe">
 		<!-- Broadens angle of attack. -->
@@ -1648,7 +1648,7 @@
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="true" />
 		<set name="item_skill" val="3599-1" /> <!-- Polearm Multi-attack -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="156" />
 			<set stat="mAtk" val="83" />
 			<set stat="critRate" val="8" />
@@ -1656,7 +1656,7 @@
 			<set stat="pAtkSpd" val="325" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4855" type="Weapon" name="Great Axe">
 		<!-- Increases P. Atk. by 28 while reducing maximum HP by 15%. -->
@@ -1677,7 +1677,7 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="true" />
 		<set name="item_skill" val="3600-5" /> <!-- Special Ability: Anger -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="175" />
 			<set stat="mAtk" val="91" />
 			<set stat="critRate" val="8" />
@@ -1685,7 +1685,7 @@
 			<set stat="pAtkSpd" val="325" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4856" type="Weapon" name="Great Axe">
 		<!-- 14% chance of stun effect during a critical attack. -->
@@ -1708,7 +1708,7 @@
 		<set name="oncrit_chance" val="27" />
 		<set name="oncrit_skill" val="3016-5" />
 		<set name="item_skill" val="3599-1" /> <!-- Polearm Multi-attack -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="175" />
 			<set stat="mAtk" val="91" />
 			<set stat="critRate" val="8" />
@@ -1716,7 +1716,7 @@
 			<set stat="pAtkSpd" val="325" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4857" type="Weapon" name="Great Axe">
 		<!-- Reduces a weapon's weight by half. -->
@@ -1737,7 +1737,7 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="true" />
 		<set name="item_skill" val="3599-1;3498-1" /> <!-- Polearm Multi-attack -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="175" />
 			<set stat="mAtk" val="91" />
 			<set stat="critRate" val="8" />
@@ -1745,7 +1745,7 @@
 			<set stat="pAtkSpd" val="325" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4858" type="Weapon" name="Lance">
 		<!-- Increases P. Atk. by 30 while reducing maximum HP by 15%. -->
@@ -1766,7 +1766,7 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="true" />
 		<set name="item_skill" val="3600-6" /> <!-- Special Ability: Anger -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="194" />
 			<set stat="mAtk" val="99" />
 			<set stat="critRate" val="8" />
@@ -1774,7 +1774,7 @@
 			<set stat="pAtkSpd" val="325" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4859" type="Weapon" name="Lance">
 		<!-- 13% chance of stun effect during a critical attack. -->
@@ -1797,7 +1797,7 @@
 		<set name="oncrit_chance" val="25" />
 		<set name="oncrit_skill" val="3016-6" />
 		<set name="item_skill" val="3599-1" /> <!-- Polearm Multi-attack -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="194" />
 			<set stat="mAtk" val="99" />
 			<set stat="critRate" val="8" />
@@ -1805,7 +1805,7 @@
 			<set stat="pAtkSpd" val="325" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4860" type="Weapon" name="Lance">
 		<!-- Increases the effect area of the weapon. -->
@@ -1826,7 +1826,7 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="true" />
 		<set name="item_skill" val="3599-1" /> <!-- Polearm Multi-attack -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="194" />
 			<set stat="mAtk" val="99" />
 			<set stat="critRate" val="8" />
@@ -1835,7 +1835,7 @@
 			<set val="80" stat="pAtkRange" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4861" type="Weapon" name="Halberd">
 		<!-- 15% chance of stun effect during a critical attack. -->
@@ -1856,7 +1856,7 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="true" />
 		<set name="item_skill" val="3599-1" /> <!-- Polearm Multi-attack -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="213" />
 			<set stat="mAtk" val="107" />
 			<set stat="critRate" val="8" />
@@ -1864,7 +1864,7 @@
 			<set stat="pAtkSpd" val="325" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4862" type="Weapon" name="Halberd">
 		<!-- Increases the effect area of the weapon. -->
@@ -1885,7 +1885,7 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="true" />
 		<set name="item_skill" val="3599-1" /> <!-- Polearm Multi-attack -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="213" />
 			<set stat="mAtk" val="107" />
 			<set stat="critRate" val="8" />
@@ -1894,7 +1894,7 @@
 			<set val="80" stat="pAtkRange" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4863" type="Weapon" name="Halberd">
 		<!-- Broadens angle of attack. -->
@@ -1915,7 +1915,7 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="true" />
 		<set name="item_skill" val="3599-1" /> <!-- Polearm Multi-attack -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="213" />
 			<set stat="mAtk" val="107" />
 			<set stat="critRate" val="8" />
@@ -1923,7 +1923,7 @@
 			<set stat="pAtkSpd" val="325" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4864" type="Weapon" name="Heavy Doom Hammer">
 		<!-- Regenerates target's HP with a 30% chance of success when using good magic. Effect 1. -->
@@ -1946,7 +1946,7 @@
 		<set name="is_magic_weapon" val="true" />
 		<set name="onmagic_chance" val="30" />
 		<set name="onmagic_skill" val="1044-1" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="103" />
 			<set stat="mAtk" val="89" />
 			<set stat="critRate" val="4" />
@@ -1954,7 +1954,7 @@
 			<set stat="pAtkSpd" val="325" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4865" type="Weapon" name="Heavy Doom Hammer">
 		<!-- Casts Mental Shield magic upon the target with a 50% chance of success when using good magic. Effect 2. -->
@@ -1977,7 +1977,7 @@
 		<set name="is_magic_weapon" val="true" />
 		<set name="onmagic_chance" val="50" />
 		<set name="onmagic_skill" val="1035-2" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="103" />
 			<set stat="mAtk" val="89" />
 			<set stat="critRate" val="4" />
@@ -1985,7 +1985,7 @@
 			<set stat="pAtkSpd" val="325" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4866" type="Weapon" name="Heavy Doom Hammer">
 		<!-- Casts Dryad Root magic against the target with a 10% chance of success when using bad magic. Effect 1. -->
@@ -2008,7 +2008,7 @@
 		<set name="is_magic_weapon" val="true" />
 		<set name="onmagic_chance" val="10" />
 		<set name="onmagic_skill" val="1201-16" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="103" />
 			<set stat="mAtk" val="89" />
 			<set stat="critRate" val="4" />
@@ -2016,7 +2016,7 @@
 			<set stat="pAtkSpd" val="325" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4867" type="Weapon" name="Crystal Staff">
 		<!-- Increases Evasion by 7 when HP becomes 60% or lower. -->
@@ -2038,7 +2038,7 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="is_magic_weapon" val="true" />
 		<set name="item_skill" val="3031-1" /> <!-- Special Ability: Rsk. Evasion -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="103" />
 			<set stat="mAtk" val="89" />
 			<set stat="critRate" val="4" />
@@ -2046,7 +2046,7 @@
 			<set stat="pAtkSpd" val="325" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4868" type="Weapon" name="Crystal Staff">
 		<!-- Increases base MP by 30%. This bonus does not apply to MP gained through passive skills. -->
@@ -2068,7 +2068,7 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="is_magic_weapon" val="true" />
 		<set name="item_skill" val="3014-1" /> <!-- Special Ability: Mana Up -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="103" />
 			<set stat="mAtk" val="89" />
 			<set stat="critRate" val="4" />
@@ -2076,7 +2076,7 @@
 			<set stat="pAtkSpd" val="325" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4869" type="Weapon" name="Crystal Staff">
 		<!-- Casts Bless the Body upon the target with a 20% chance of success when using good magic. Effect 2. -->
@@ -2099,7 +2099,7 @@
 		<set name="is_magic_weapon" val="true" />
 		<set name="onmagic_chance" val="20" />
 		<set name="onmagic_skill" val="1045-2" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="103" />
 			<set stat="mAtk" val="89" />
 			<set stat="critRate" val="4" />
@@ -2107,7 +2107,7 @@
 			<set stat="pAtkSpd" val="325" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4870" type="Weapon" name="Heavy Doom Axe">
 		<!-- Casts Curse Poison against the target with a 8% chance of success when using bad magic. Effect 7. -->
@@ -2130,7 +2130,7 @@
 		<set name="is_magic_weapon" val="true" />
 		<set name="onmagic_chance" val="8" />
 		<set name="onmagic_skill" val="1168-6" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="103" />
 			<set stat="mAtk" val="89" />
 			<set stat="critRate" val="4" />
@@ -2138,7 +2138,7 @@
 			<set stat="pAtkSpd" val="325" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4871" type="Weapon" name="Heavy Doom Axe">
 		<!-- Casts Curse Weakness against the target with a 8% chance of success when using bad magic. Effect 3. -->
@@ -2161,7 +2161,7 @@
 		<set name="is_magic_weapon" val="true" />
 		<set name="onmagic_chance" val="8" />
 		<set name="onmagic_skill" val="1164-7" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="103" />
 			<set stat="mAtk" val="89" />
 			<set stat="critRate" val="4" />
@@ -2169,7 +2169,7 @@
 			<set stat="pAtkSpd" val="325" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4872" type="Weapon" name="Heavy Doom Axe">
 		<!-- Casts Curse of Chaos against the target with a 8% chance of success when using bad magic. Effect 3. -->
@@ -2192,7 +2192,7 @@
 		<set name="is_magic_weapon" val="true" />
 		<set name="onmagic_chance" val="8" />
 		<set name="onmagic_skill" val="1222-4" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="103" />
 			<set stat="mAtk" val="89" />
 			<set stat="critRate" val="4" />
@@ -2200,7 +2200,7 @@
 			<set stat="pAtkSpd" val="325" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4873" type="Weapon" name="Cursed Staff">
 		<!-- Casts Dryad Root magic against the target with a 10% chance of success when using bad magic. Effect 1. -->
@@ -2223,7 +2223,7 @@
 		<set name="is_magic_weapon" val="true" />
 		<set name="onmagic_chance" val="10" />
 		<set name="onmagic_skill" val="1201-18" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="119" />
 			<set stat="mAtk" val="100" />
 			<set stat="critRate" val="4" />
@@ -2231,7 +2231,7 @@
 			<set stat="pAtkSpd" val="325" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4874" type="Weapon" name="Cursed Staff">
 		<!-- Casts Curse Poison against the target with a 8% chance of success when using bad magic. Effect 7. -->
@@ -2254,7 +2254,7 @@
 		<set name="is_magic_weapon" val="true" />
 		<set name="onmagic_chance" val="8" />
 		<set name="onmagic_skill" val="1168-6" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="119" />
 			<set stat="mAtk" val="100" />
 			<set stat="critRate" val="4" />
@@ -2262,7 +2262,7 @@
 			<set stat="pAtkSpd" val="325" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4875" type="Weapon" name="Cursed Staff">
 		<!-- Casts Curse Weakness against the target with a 8% chance of success when using bad magic. Effect 3. -->
@@ -2285,7 +2285,7 @@
 		<set name="is_magic_weapon" val="true" />
 		<set name="onmagic_chance" val="8" />
 		<set name="onmagic_skill" val="1164-8" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="119" />
 			<set stat="mAtk" val="100" />
 			<set stat="critRate" val="4" />
@@ -2293,7 +2293,7 @@
 			<set stat="pAtkSpd" val="325" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4876" type="Weapon" name="Paradia Staff">
 		<!-- Casts HP Regeneration magic upon the target with a 30% chance of success when using good magic. Effect 2. -->
@@ -2316,7 +2316,7 @@
 		<set name="is_magic_weapon" val="true" />
 		<set name="onmagic_chance" val="30" />
 		<set name="onmagic_skill" val="1044-2" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="135" />
 			<set stat="mAtk" val="111" />
 			<set stat="critRate" val="4" />
@@ -2324,7 +2324,7 @@
 			<set stat="pAtkSpd" val="325" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4877" type="Weapon" name="Paradia Staff">
 		<!-- Casts Mental Shield magic upon the target with a 50% chance of success when using good magic. Effect 3. -->
@@ -2347,7 +2347,7 @@
 		<set name="is_magic_weapon" val="true" />
 		<set name="onmagic_chance" val="50" />
 		<set name="onmagic_skill" val="1035-3" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="135" />
 			<set stat="mAtk" val="111" />
 			<set stat="critRate" val="4" />
@@ -2355,7 +2355,7 @@
 			<set stat="pAtkSpd" val="325" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4878" type="Weapon" name="Paradia Staff">
 		<!-- Casts Dryad Root magic against the target with a 10% chance of success when using bad magic. Effect 1. -->
@@ -2378,7 +2378,7 @@
 		<set name="is_magic_weapon" val="true" />
 		<set name="onmagic_chance" val="10" />
 		<set name="onmagic_skill" val="1201-21" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="135" />
 			<set stat="mAtk" val="111" />
 			<set stat="critRate" val="4" />
@@ -2386,7 +2386,7 @@
 			<set stat="pAtkSpd" val="325" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4879" type="Weapon" name="Paagrio Hammer">
 		<!-- Increases Evasion by 6 when HP becomes 60% or lower. -->
@@ -2408,7 +2408,7 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="is_magic_weapon" val="true" />
 		<set name="item_skill" val="3031-3" /> <!-- Special Ability: Rsk. Evasion -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="135" />
 			<set stat="mAtk" val="111" />
 			<set stat="critRate" val="4" />
@@ -2416,7 +2416,7 @@
 			<set stat="pAtkSpd" val="325" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4880" type="Weapon" name="Paagrio Hammer">
 		<!-- Casts Curse Poison against the target with a 7% chance of success when using bad magic. Effect 7. -->
@@ -2439,7 +2439,7 @@
 		<set name="is_magic_weapon" val="true" />
 		<set name="onmagic_chance" val="7" />
 		<set name="onmagic_skill" val="1168-6" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="135" />
 			<set stat="mAtk" val="111" />
 			<set stat="critRate" val="4" />
@@ -2447,7 +2447,7 @@
 			<set stat="pAtkSpd" val="325" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4881" type="Weapon" name="Paagrio Hammer">
 		<!-- Casts Curse Weakness against the target with a 7% chance of success when using bad magic. Effect 3. -->
@@ -2470,7 +2470,7 @@
 		<set name="is_magic_weapon" val="true" />
 		<set name="onmagic_chance" val="7" />
 		<set name="onmagic_skill" val="1164-9" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="135" />
 			<set stat="mAtk" val="111" />
 			<set stat="critRate" val="4" />
@@ -2478,7 +2478,7 @@
 			<set stat="pAtkSpd" val="325" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4882" type="Weapon" name="Sage's Staff">
 		<!-- Casts Dryad Root magic against the target with a 10% chance of success when using bad magic. Effect 1. -->
@@ -2501,7 +2501,7 @@
 		<set name="is_magic_weapon" val="true" />
 		<set name="onmagic_chance" val="10" />
 		<set name="onmagic_skill" val="1201-21" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="135" />
 			<set stat="mAtk" val="111" />
 			<set stat="critRate" val="4" />
@@ -2509,7 +2509,7 @@
 			<set stat="pAtkSpd" val="325" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4883" type="Weapon" name="Sage's Staff">
 		<!-- Casts Curse Poison against the target with a 7% chance of success when using bad magic. Effect 7. -->
@@ -2532,7 +2532,7 @@
 		<set name="is_magic_weapon" val="true" />
 		<set name="onmagic_chance" val="7" />
 		<set name="onmagic_skill" val="1168-6" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="135" />
 			<set stat="mAtk" val="111" />
 			<set stat="critRate" val="4" />
@@ -2540,7 +2540,7 @@
 			<set stat="pAtkSpd" val="325" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4884" type="Weapon" name="Sage's Staff">
 		<!-- Casts Curse Weakness against the target with a 7% chance of success when using bad magic. Effect 3. -->
@@ -2563,7 +2563,7 @@
 		<set name="is_magic_weapon" val="true" />
 		<set name="onmagic_chance" val="7" />
 		<set name="onmagic_skill" val="1164-9" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="135" />
 			<set stat="mAtk" val="111" />
 			<set stat="critRate" val="4" />
@@ -2571,7 +2571,7 @@
 			<set stat="pAtkSpd" val="325" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4885" type="Weapon" name="Paagrio Axe">
 		<!-- Increases maximum MP by 30% -->
@@ -2593,7 +2593,7 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="is_magic_weapon" val="true" />
 		<set name="item_skill" val="3014-1" /> <!-- Special Ability: Mana Up -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="141" />
 			<set stat="mAtk" val="114" />
 			<set stat="critRate" val="4" />
@@ -2601,7 +2601,7 @@
 			<set stat="pAtkSpd" val="325" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4886" type="Weapon" name="Paagrio Axe">
 		<!-- Casts Curse Weakness against the target with a 7% chance of success when using bad magic. Effect 3. -->
@@ -2624,7 +2624,7 @@
 		<set name="is_magic_weapon" val="true" />
 		<set name="onmagic_chance" val="7" />
 		<set name="onmagic_skill" val="1164-9" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="141" />
 			<set stat="mAtk" val="114" />
 			<set stat="critRate" val="4" />
@@ -2632,7 +2632,7 @@
 			<set stat="pAtkSpd" val="325" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4887" type="Weapon" name="Paagrio Axe">
 		<!-- Casts Curse of Chaos against the target with a 7% chance of success when using bad magic. Effect 3. -->
@@ -2655,7 +2655,7 @@
 		<set name="is_magic_weapon" val="true" />
 		<set name="onmagic_chance" val="7" />
 		<set name="onmagic_skill" val="1222-5" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="141" />
 			<set stat="mAtk" val="114" />
 			<set stat="critRate" val="4" />
@@ -2663,7 +2663,7 @@
 			<set stat="pAtkSpd" val="325" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4888" type="Weapon" name="Deadman's Staff">
 		<!-- Regenerates target's HP with a 30% chance of success when using good magic. Effect 2. -->
@@ -2686,7 +2686,7 @@
 		<set name="is_magic_weapon" val="true" />
 		<set name="onmagic_chance" val="30" />
 		<set name="onmagic_skill" val="1044-2" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="152" />
 			<set stat="mAtk" val="122" />
 			<set stat="critRate" val="4" />
@@ -2694,7 +2694,7 @@
 			<set stat="pAtkSpd" val="325" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4889" type="Weapon" name="Deadman's Staff">
 		<!-- Casts Mental Shield magic upon the target with a 50% chance of success when using good magic. Effect 3. -->
@@ -2717,7 +2717,7 @@
 		<set name="is_magic_weapon" val="true" />
 		<set name="onmagic_chance" val="50" />
 		<set name="onmagic_skill" val="1035-3" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="152" />
 			<set stat="mAtk" val="122" />
 			<set stat="critRate" val="4" />
@@ -2725,7 +2725,7 @@
 			<set stat="pAtkSpd" val="325" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4890" type="Weapon" name="Deadman's Staff">
 		<!-- Casts Dryad Root magic against the target with a 10% chance of success when using bad magic. Effect 1. -->
@@ -2748,7 +2748,7 @@
 		<set name="is_magic_weapon" val="true" />
 		<set name="onmagic_chance" val="10" />
 		<set name="onmagic_skill" val="1201-23" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="152" />
 			<set stat="mAtk" val="122" />
 			<set stat="critRate" val="4" />
@@ -2756,7 +2756,7 @@
 			<set stat="pAtkSpd" val="325" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4891" type="Weapon" name="Ghoul's Staff">
 		<!-- Increases Evasion by 6 when HP becomes 60% or lower. -->
@@ -2778,7 +2778,7 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="is_magic_weapon" val="true" />
 		<set name="item_skill" val="3031-4" /> <!-- Special Ability: Rsk. Evasion -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="152" />
 			<set stat="mAtk" val="122" />
 			<set stat="critRate" val="4" />
@@ -2786,7 +2786,7 @@
 			<set stat="pAtkSpd" val="325" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4892" type="Weapon" name="Ghoul's Staff">
 		<!-- Increases maximum MP by 30% -->
@@ -2808,7 +2808,7 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="is_magic_weapon" val="true" />
 		<set name="item_skill" val="3014-1" /> <!-- Special Ability: Mana Up -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="152" />
 			<set stat="mAtk" val="122" />
 			<set stat="critRate" val="4" />
@@ -2816,7 +2816,7 @@
 			<set stat="pAtkSpd" val="325" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4893" type="Weapon" name="Ghoul's Staff">
 		<!-- Casts Bless the Body magic upon the target with a 20% chance of success when using good magic. Effect 4. -->
@@ -2839,7 +2839,7 @@
 		<set name="is_magic_weapon" val="true" />
 		<set name="onmagic_chance" val="20" />
 		<set name="onmagic_skill" val="1045-4" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="152" />
 			<set stat="mAtk" val="122" />
 			<set stat="critRate" val="4" />
@@ -2847,7 +2847,7 @@
 			<set stat="pAtkSpd" val="325" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4894" type="Weapon" name="Demon's Staff">
 		<!-- Casts Curse Poison against the target with a 7% chance of success when using bad magic. Effect 7. -->
@@ -2870,7 +2870,7 @@
 		<set name="is_magic_weapon" val="true" />
 		<set name="onmagic_chance" val="7" />
 		<set name="onmagic_skill" val="1168-6" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="152" />
 			<set stat="mAtk" val="122" />
 			<set stat="critRate" val="4" />
@@ -2878,7 +2878,7 @@
 			<set stat="pAtkSpd" val="325" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4895" type="Weapon" name="Demon's Staff">
 		<!-- Casts Curse Weakness against the target with a 7% chance of success when using bad magic. Effect 3. -->
@@ -2901,7 +2901,7 @@
 		<set name="is_magic_weapon" val="true" />
 		<set name="onmagic_chance" val="7" />
 		<set name="onmagic_skill" val="1164-10" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="152" />
 			<set stat="mAtk" val="122" />
 			<set stat="critRate" val="4" />
@@ -2909,7 +2909,7 @@
 			<set stat="pAtkSpd" val="325" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4896" type="Weapon" name="Demon's Staff">
 		<!-- Casts Curse of Chaos against the target with a 7% chance of success when using bad magic. Effect 3. -->
@@ -2932,7 +2932,7 @@
 		<set name="is_magic_weapon" val="true" />
 		<set name="onmagic_chance" val="7" />
 		<set name="onmagic_skill" val="1222-5" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="152" />
 			<set stat="mAtk" val="122" />
 			<set stat="critRate" val="4" />
@@ -2940,7 +2940,7 @@
 			<set stat="pAtkSpd" val="325" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4897" type="Weapon" name="Sprite's Staff">
 		<!-- Casts HP Regeneration magic upon the target with a 30% chance of success when using good magic. Effect 3. -->
@@ -2963,7 +2963,7 @@
 		<set name="is_magic_weapon" val="true" />
 		<set name="onmagic_chance" val="30" />
 		<set name="onmagic_skill" val="1044-3" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="170" />
 			<set stat="mAtk" val="134" />
 			<set stat="critRate" val="4" />
@@ -2971,7 +2971,7 @@
 			<set stat="pAtkSpd" val="325" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4898" type="Weapon" name="Sprite's Staff">
 		<!-- Casts Mental Shield magic upon the target with a 50% chance of success when using good magic. Effect 4. -->
@@ -2994,7 +2994,7 @@
 		<set name="is_magic_weapon" val="true" />
 		<set name="onmagic_chance" val="50" />
 		<set name="onmagic_skill" val="1035-4" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="170" />
 			<set stat="mAtk" val="134" />
 			<set stat="critRate" val="4" />
@@ -3002,7 +3002,7 @@
 			<set stat="pAtkSpd" val="325" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4899" type="Weapon" name="Sprite's Staff">
 		<!-- Casts Dryad Root magic against the target with a 10% chance of success when using bad magic. Effect 1. -->
@@ -3025,7 +3025,7 @@
 		<set name="is_magic_weapon" val="true" />
 		<set name="onmagic_chance" val="10" />
 		<set name="onmagic_skill" val="1201-25" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="170" />
 			<set stat="mAtk" val="134" />
 			<set stat="critRate" val="4" />
@@ -3033,6 +3033,6 @@
 			<set stat="pAtkSpd" val="325" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 </list>

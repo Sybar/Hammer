@@ -27,7 +27,6 @@ import org.l2jmobius.gameserver.geoengine.GeoEngine;
 import org.l2jmobius.gameserver.managers.ZoneManager;
 import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.actor.enums.player.PlayerCondOverride;
 import org.l2jmobius.gameserver.model.actor.stat.PlayerStat;
 import org.l2jmobius.gameserver.model.events.EventDispatcher;
 import org.l2jmobius.gameserver.model.events.EventType;
@@ -82,6 +81,7 @@ public class Fishing
 		// {
 		// return false;
 		// }
+		
 		return _player.isInsideZone(ZoneId.FISHING);
 	}
 	
@@ -117,13 +117,14 @@ public class Fishing
 		{
 			return;
 		}
+		
 		_isFishing = true;
 		castLine();
 	}
 	
 	private void castLine()
 	{
-		if (!Config.ALLOW_FISHING && !_player.canOverrideCond(PlayerCondOverride.ZONE_CONDITIONS))
+		if (!Config.ALLOW_FISHING && !_player.isGM())
 		{
 			_player.sendMessage("Fishing is disabled.");
 			_player.sendPacket(ActionFailed.STATIC_PACKET);
@@ -139,6 +140,7 @@ public class Fishing
 			{
 				_player.sendPacket(SystemMessageId.YOUR_ATTEMPT_AT_FISHING_HAS_BEEN_CANCELLED);
 			}
+			
 			stopFishing(FishingEndType.ERROR);
 			return;
 		}
@@ -236,6 +238,7 @@ public class Fishing
 				_player.sendPacket(SystemMessageId.YOU_CAN_T_FISH_HERE_YOUR_CHARACTER_IS_NOT_FACING_WATER_OR_YOU_ARE_NOT_IN_A_FISHING_GROUND);
 				_player.sendPacket(ActionFailed.STATIC_PACKET);
 			}
+			
 			stopFishing(FishingEndType.ERROR);
 			return;
 		}
@@ -334,6 +337,7 @@ public class Fishing
 					{
 						_player.unchargeShot(ShotType.FISH_SOULSHOTS);
 					}
+					
 					_player.rechargeShots(false, false, true);
 				}
 				else
@@ -413,6 +417,7 @@ public class Fishing
 				break;
 			}
 		}
+		
 		// search for water zone
 		WaterZone waterZone = null;
 		for (ZoneType zone : ZoneManager.getInstance().getZones(baitX, baitY))
@@ -462,6 +467,7 @@ public class Fishing
 		//
 		// return Integer.MIN_VALUE;
 		// }
+		
 		if (GeoEngine.getInstance().hasGeo(baitX, baitY))
 		{
 			if (GeoEngine.getInstance().getHeight(baitX, baitY, baitZ) > baitZ)

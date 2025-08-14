@@ -93,6 +93,7 @@ public class SpiritDailyMissionHandler extends AbstractDailyMissionHandler
 		{
 			missionData.setStatus(DailyMissionStatus.AVAILABLE);
 		}
+		
 		storePlayerEntry(missionData);
 	}
 	

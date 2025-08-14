@@ -69,6 +69,7 @@ public class RequestTryEnSoulExtraction extends ClientPacket
 		if (_type == 1)
 		{
 			option = item.getSpecialAbility(_position);
+			
 			// If position is invalid, check the other one.
 			if ((option == null) && (_position == 0))
 			{
@@ -79,10 +80,12 @@ public class RequestTryEnSoulExtraction extends ClientPacket
 				}
 			}
 		}
+		
 		if (_type == 2)
 		{
 			option = item.getAdditionalSpecialAbility(_position);
 		}
+		
 		if (option == null)
 		{
 			return;
@@ -122,6 +125,7 @@ public class RequestTryEnSoulExtraction extends ClientPacket
 		{
 			iu.addItem(player.addItem(ItemProcessType.REWARD, runeId, 1, player, true));
 		}
+		
 		player.sendInventoryUpdate(iu);
 		player.sendItemList();
 		

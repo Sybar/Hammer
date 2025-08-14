@@ -1312,9 +1312,9 @@
 		<set name="material" val="PAPER" />
 		<set name="reuse_delay" val="3600000" />
 		<set name="immediate_effect" val="true" />
-		<cond>
+		<conditions>
 			<player MaximumVitalityPoints="140000" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="22597" level="1" /> <!-- Scroll: Replenish Vitality -->
 		</skills>
@@ -1333,9 +1333,9 @@
 		<set name="material" val="PAPER" />
 		<set name="reuse_delay" val="3600000" />
 		<set name="immediate_effect" val="true" />
-		<cond>
+		<conditions>
 			<player MaximumVitalityPoints="140000" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="22597" level="2" /> <!-- Scroll: Replenish Vitality -->
 		</skills>
@@ -1354,9 +1354,9 @@
 		<set name="material" val="PAPER" />
 		<set name="reuse_delay" val="3600000" />
 		<set name="immediate_effect" val="true" />
-		<cond>
+		<conditions>
 			<player MaximumVitalityPoints="140000" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="22597" level="3" /> <!-- Scroll: Replenish Vitality -->
 		</skills>

@@ -16,6 +16,8 @@
  */
 package ai.others;
 
+import java.util.Collection;
+
 import org.l2jmobius.gameserver.model.WorldObject;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
@@ -38,6 +40,7 @@ public class StarStones extends AbstractNpcAI
 		18684, 18685, 18686, 18687, 18688, 18689, 18690, 18691, 18692
 	};
 	// @formatter:on
+	
 	// Misc
 	private static final int COLLECTION_RATE = 1;
 	
@@ -47,7 +50,7 @@ public class StarStones extends AbstractNpcAI
 	}
 	
 	@Override
-	public void onSkillSee(Npc npc, Player caster, Skill skill, WorldObject[] targets, boolean isSummon)
+	public void onSkillSee(Npc npc, Player caster, Skill skill, Collection<WorldObject> targets, boolean isSummon)
 	{
 		if (skill.getId() == 932)
 		{
@@ -85,6 +88,7 @@ public class StarStones extends AbstractNpcAI
 					return;
 				}
 			}
+			
 			if (getRandom(100) < 33)
 			{
 				caster.sendPacket(SystemMessageId.YOUR_COLLECTION_HAS_SUCCEEDED);
@@ -99,6 +103,7 @@ public class StarStones extends AbstractNpcAI
 			{
 				caster.sendPacket(SystemMessageId.THE_COLLECTION_HAS_FAILED);
 			}
+			
 			npc.deleteMe();
 		}
 	}

@@ -34,6 +34,7 @@ public class AntharasEntrance extends AbstractNpcAI
 {
 	// Zone
 	private static final ZoneType ANTHARAS_ENTRANCE_ZONE = ZoneManager.getInstance().getZoneByName("giran_2321_001");
+	
 	// Other
 	private static final int ANTHARAS_ENTRANCE_EMITTER_ID = 23210002;
 	

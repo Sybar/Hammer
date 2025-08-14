@@ -39,23 +39,27 @@ public class Q11020_BlacksmithsRequest extends Quest
 	// NPCs
 	private static final int TIKU = 30582;
 	private static final int SUMARI = 30564;
+	
 	// Items
 	private static final int BLACKWING_BAT_WING = 90269;
 	private static final int GRAVE_ROBBERS_BELT = 90270;
 	private static final int GOLEM_ORE = 90271;
 	private static final int EVIL_EYE_PATROL_HIDE = 90272;
 	private static final int REQUIRED_MATERIALS = 90268;
+	
 	// Rewards
 	private static final int WARRIORS_ARMOR = 90306;
 	private static final int WARRIORS_GAITERS = 90307;
 	private static final int MEDIUMS_TUNIC = 90308;
 	private static final int MEDIUMS_STOCKINGS = 90309;
 	private static final int EARRING_NOVICE = 29486;
+	
 	// Monsters
 	private static final int BLACKWING_BAT = 20316;
 	private static final int TOMB_RAIDER_LEADER = 20320;
 	private static final int GREYSTONE_GOLEM = 20333;
 	private static final int EVIL_EYE_PATROL = 20428;
+	
 	// Misc
 	private static final int MIN_LEVEL = 11;
 	private static final int MAX_LEVEL = 20;
@@ -127,6 +131,7 @@ public class Q11020_BlacksmithsRequest extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -187,6 +192,7 @@ public class Q11020_BlacksmithsRequest extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

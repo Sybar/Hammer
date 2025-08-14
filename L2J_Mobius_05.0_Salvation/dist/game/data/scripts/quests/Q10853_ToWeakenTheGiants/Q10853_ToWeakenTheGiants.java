@@ -38,6 +38,7 @@ public final class Q10853_ToWeakenTheGiants extends Quest
 	// NPCs
 	private static final int KRENAHT = 34237;
 	private static final int KEKROPUS = 34222;
+	
 	// Monster
 	private static final int MIMILLION_BATHUS = 26138;
 	private static final int MIMILLION_CARCASS = 26139;
@@ -46,6 +47,7 @@ public final class Q10853_ToWeakenTheGiants extends Quest
 	private static final int DELTA_BATHUS = 23774;
 	private static final int DELTA_CARCASS = 23775;
 	private static final int DELTA_KSHANA = 23776;
+	
 	// Items
 	private static final int SPELLBOOK_GRIFFIN = 47151;
 	private static final int RUNE_STONE = 39738;
@@ -99,12 +101,14 @@ public final class Q10853_ToWeakenTheGiants extends Quest
 						addExpAndSp(player, 3364697600L, 265771800);
 						break;
 					}
+					
 					htmltext = getNoQuestLevelRewardMsg(player);
 					break;
 				}
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -125,6 +129,7 @@ public final class Q10853_ToWeakenTheGiants extends Quest
 						htmltext = "giantchaser_officer_q10853_01.htm";
 						break;
 					}
+					
 					htmltext = "giantchaser_officer_q10853_03.htm";
 					break;
 				}
@@ -190,6 +195,7 @@ public final class Q10853_ToWeakenTheGiants extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

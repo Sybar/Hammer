@@ -120,6 +120,7 @@ public enum CommissionItemType
 				return value;
 			}
 		}
+		
 		return null;
 	}
 }

@@ -83,8 +83,10 @@ public class ChallengePoint
 					ps1.setInt(3, entry.getValue());
 					ps1.addBatch();
 				}
+				
 				ps1.executeBatch();
 			}
+			
 			try (PreparedStatement ps2 = conn.prepareStatement(INSERT_CHALLENGE_POINTS_RECHARGES))
 			{
 				for (Entry<Integer, Map<Integer, Integer>> entry : _challengePointsRecharges.entrySet())
@@ -98,6 +100,7 @@ public class ChallengePoint
 						ps2.addBatch();
 					}
 				}
+				
 				ps2.executeBatch();
 			}
 		}
@@ -143,6 +146,7 @@ public class ChallengePoint
 							options = new HashMap<>();
 							_challengePointsRecharges.put(groupId, options);
 						}
+						
 						options.put(optionIndex, count);
 					}
 				}
@@ -193,6 +197,7 @@ public class ChallengePoint
 		{
 			return options.getOrDefault(optionIndex, 0);
 		}
+		
 		return 0;
 	}
 	
@@ -204,6 +209,7 @@ public class ChallengePoint
 			options = new HashMap<>();
 			_challengePointsRecharges.put(groupId, options);
 		}
+		
 		options.compute(optionIndex, (_, v) -> v == null ? amount : v + amount);
 	}
 	
@@ -235,6 +241,7 @@ public class ChallengePoint
 				getChallengePointsRecharges(groupId, 5));
 			i++;
 		}
+		
 		return info;
 	}
 	

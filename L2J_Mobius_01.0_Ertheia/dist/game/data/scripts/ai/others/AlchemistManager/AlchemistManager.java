@@ -42,6 +42,7 @@ public class AlchemistManager extends AbstractNpcAI
 		33978, // Zephyra
 		33977, // Veruti
 	};
+	
 	// Misc
 	private static final String TUTORIAL_LINK = "..\\L2text\\QT_026_alchemy_01.htm";
 	
@@ -91,6 +92,7 @@ public class AlchemistManager extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

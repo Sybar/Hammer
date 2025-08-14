@@ -39,6 +39,7 @@ public class Q00668_ABattleWithTheGiants extends Quest
 	// NPCs
 	private static final int ARCTURUS = 34267;
 	private static final int COLIN = 30703;
+	
 	// BOSS
 	private static final int[] BOSES =
 	{
@@ -48,6 +49,7 @@ public class Q00668_ABattleWithTheGiants extends Quest
 		26157, // Enhanced Harnak's Wraith
 		26152 // Enhanced Core
 	};
+	
 	// Misc
 	private static final int MIN_LEVEL = 85;
 	
@@ -70,6 +72,7 @@ public class Q00668_ABattleWithTheGiants extends Quest
 		{
 			return htmltext;
 		}
+		
 		switch (event)
 		{
 			case "30703-02.htm":
@@ -96,6 +99,7 @@ public class Q00668_ABattleWithTheGiants extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -147,9 +151,11 @@ public class Q00668_ABattleWithTheGiants extends Quest
 					htmltext = getAlreadyCompletedMsg(player, QuestType.DAILY);
 					break;
 				}
+				
 				qs.setState(State.CREATED);
 			}
 		}
+		
 		return htmltext;
 	}
 	

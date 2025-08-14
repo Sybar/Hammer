@@ -48,6 +48,7 @@ public class Q00094_SagaOfTheSoultaker extends Quest
 	private static final int TABLET_OF_VISION_3 = 31651;
 	private static final int TABLET_OF_VISION_4 = 31654;
 	private static final int HINDEMITH_TRUEVOICE = 31645;
+	
 	// Monsters
 	private static final int ICE_MONSTER = 27316;
 	private static final int SPIRIT_OF_A_DROWNED = 27317;
@@ -63,6 +64,7 @@ public class Q00094_SagaOfTheSoultaker extends Quest
 	private static final int ARCHANGEL_ICONOCLASSIS = 27257;
 	private static final int HALISHA_ARCHON = 27219;
 	private static final int LICH_KING_ICARUS = 27265;
+	
 	// Items
 	private static final int ICE_CRYSTAL_FRAGMENT = 49828;
 	private static final int HALISHA_BADGE = 7509;
@@ -71,8 +73,10 @@ public class Q00094_SagaOfTheSoultaker extends Quest
 	private static final int RESONANCE_AMULET_3 = 7354;
 	private static final int RESONANCE_AMULET_4 = 7385;
 	private static final int INVESTIGATIVE_REPORT = 7533;
+	
 	// Reward
 	private static final int BOOK_GOLD_LION = 90038;
+	
 	// Misc
 	private static final String KILL_COUNT_VAR = "KillCount";
 	
@@ -95,6 +99,7 @@ public class Q00094_SagaOfTheSoultaker extends Quest
 		{
 			return null;
 		}
+		
 		String htmltext = event;
 		switch (event)
 		{
@@ -242,6 +247,7 @@ public class Q00094_SagaOfTheSoultaker extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -430,6 +436,7 @@ public class Q00094_SagaOfTheSoultaker extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -500,6 +507,7 @@ public class Q00094_SagaOfTheSoultaker extends Quest
 						{
 							qs.set(KILL_COUNT_VAR, count + 1);
 						}
+						
 						if (count >= 20)
 						{
 							qs.setCond(8, true);
@@ -526,8 +534,10 @@ public class Q00094_SagaOfTheSoultaker extends Quest
 			{
 				holder.add(new NpcLogListHolder(KEEPER_OF_THE_HOLY_EDICT, false, guardiancount));
 			}
+			
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

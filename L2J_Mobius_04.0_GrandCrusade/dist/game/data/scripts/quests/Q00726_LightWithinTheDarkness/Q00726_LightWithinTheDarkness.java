@@ -59,8 +59,10 @@ public class Q00726_LightWithinTheDarkness extends Quest
 		36326, // Demon
 		36364, // Monastic
 	};
+	
 	// Items
 	private static final int KNIGHT_EPALUETTE = 9912;
+	
 	// Misc
 	private static final int MIN_LEVEL = 85;
 	
@@ -99,6 +101,7 @@ public class Q00726_LightWithinTheDarkness extends Quest
 				htmltext = null;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -127,6 +130,7 @@ public class Q00726_LightWithinTheDarkness extends Quest
 				htmltext = "Warden-05.html";
 			}
 		}
+		
 		return htmltext;
 	}
 }

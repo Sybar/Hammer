@@ -55,8 +55,10 @@ public class Q10380_TheExecutionersExecution extends Quest
 	private static final int KALLBERA = 23209;
 	private static final int HAKAL_THE_BUTTCHERED = 23202;
 	private static final int SAMMITA = 23206;
+	
 	// Item's
 	private static final int GLORIOUS_T_SHIRT = 35291;
+	
 	// Misc
 	private static final int MIN_LEVEL = 95;
 	
@@ -106,6 +108,7 @@ public class Q10380_TheExecutionersExecution extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -133,6 +136,7 @@ public class Q10380_TheExecutionersExecution extends Quest
 		{
 			htmltext = "warden_endrigo_q10380_03.html";
 		}
+		
 		return htmltext;
 	}
 	
@@ -171,6 +175,7 @@ public class Q10380_TheExecutionersExecution extends Quest
 						kills++;
 						qs.set(Integer.toString(GUILLOTINE_OF_DEATH), kills);
 					}
+					
 					final ExQuestNpcLogList log = new ExQuestNpcLogList(getId());
 					log.addNpc(GUILLOTINE_OF_DEATH, qs.getInt("GUILLOTINE_OF_DEATH"));
 					player.sendPacket(log);

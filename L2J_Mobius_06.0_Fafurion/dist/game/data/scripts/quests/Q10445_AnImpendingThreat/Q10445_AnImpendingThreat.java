@@ -32,6 +32,7 @@ public class Q10445_AnImpendingThreat extends Quest
 	private static final int MATHIAS = 31340;
 	private static final int TUSKA = 33839;
 	private static final int BRUENER = 33840;
+	
 	// Items
 	private static final int LETTER = 36681; // Curious Letter
 	private static final int BADGE = 36685; // Reinforcements' Badge
@@ -40,6 +41,7 @@ public class Q10445_AnImpendingThreat extends Quest
 	private static final int SSR = 34609; // Mysterious Soulshot (R-grade) - Event
 	private static final int BSSR = 34616; // Mysterious Blessed Spiritshot (R-grade) - Event
 	private static final int SOE = 37017; // Scroll of Escape: Raider's Crossroads
+	
 	// Misc
 	private static final int MIN_LEVEL = 97;
 	
@@ -102,12 +104,14 @@ public class Q10445_AnImpendingThreat extends Quest
 					{
 						addExpAndSp(player, 100_506_183, 241_212);
 					}
+					
 					qs.exitQuest(false, true);
 					htmltext = event;
 				}
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -171,6 +175,7 @@ public class Q10445_AnImpendingThreat extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

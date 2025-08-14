@@ -48,6 +48,7 @@ public class ExPledgeBonusOpen extends ServerPacket
 			PacketLogger.warning("Player: " + _player + " attempting to write to a null clan!");
 			return;
 		}
+		
 		final ClanRewardBonus highestMembersOnlineBonus = ClanRewardData.getInstance().getHighestReward(ClanRewardType.MEMBERS_ONLINE);
 		final ClanRewardBonus highestHuntingBonus = ClanRewardData.getInstance().getHighestReward(ClanRewardType.HUNTING_MONSTERS);
 		final ClanRewardBonus membersOnlineBonus = ClanRewardType.MEMBERS_ONLINE.getAvailableBonus(clan);
@@ -75,12 +76,14 @@ public class ExPledgeBonusOpen extends ServerPacket
 		
 		// General OP Code
 		ServerPackets.EX_PLEDGE_BONUS_OPEN.writeId(this, buffer);
+		
 		// Members online bonus
 		buffer.writeInt(highestMembersOnlineBonus.getRequiredAmount());
 		buffer.writeInt(clan.getMaxOnlineMembers());
 		buffer.writeInt(membersOnlineBonus != null ? highestMembersOnlineBonus.getSkillReward().getSkillId() : 0);
 		buffer.writeByte(membersOnlineBonus != null ? membersOnlineBonus.getLevel() : 0);
 		buffer.writeByte(clan.canClaimBonusReward(_player, ClanRewardType.MEMBERS_ONLINE));
+		
 		// Hunting bonus
 		buffer.writeInt(highestHuntingBonus.getRequiredAmount());
 		buffer.writeInt(clan.getHuntingPoints());

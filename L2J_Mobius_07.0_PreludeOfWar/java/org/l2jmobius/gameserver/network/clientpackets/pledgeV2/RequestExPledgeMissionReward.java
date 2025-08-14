@@ -25,7 +25,7 @@ import java.util.Collection;
 import org.l2jmobius.commons.threads.ThreadPool;
 import org.l2jmobius.gameserver.data.xml.DailyMissionData;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.actor.enums.player.DailyMissionDataHolder;
+import org.l2jmobius.gameserver.model.actor.holders.player.DailyMissionDataHolder;
 import org.l2jmobius.gameserver.model.actor.request.RewardRequest;
 import org.l2jmobius.gameserver.model.variables.PlayerVariables;
 import org.l2jmobius.gameserver.network.clientpackets.ClientPacket;
@@ -63,6 +63,7 @@ public class RequestExPledgeMissionReward extends ClientPacket
 		{
 			return;
 		}
+		
 		player.addRequest(new RewardRequest(player));
 		
 		final Collection<DailyMissionDataHolder> reward = DailyMissionData.getInstance().getDailyMissionData(_id);
@@ -76,6 +77,7 @@ public class RequestExPledgeMissionReward extends ClientPacket
 					player.sendPacket(new ExPledgeMissionInfo(player, holder));
 				}
 			}
+			
 			player.sendPacket(new ExPledgeMissionRewardCount(player));
 		}
 		

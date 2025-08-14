@@ -91,6 +91,7 @@ public class HuntPass
 					setUsedSayhaTime(rset.getInt("sayha_points_used"));
 					setRewardAlert(rset.getBoolean("unclaimed_reward"));
 				}
+				
 				rset.close();
 				statement.close();
 			}
@@ -318,6 +319,7 @@ public class HuntPass
 				_sayhasSustentionTask.cancel(true);
 				_sayhasSustentionTask = null;
 			}
+			
 			_user.sendPacket(SystemMessageId.VITALITY_SUSTENTION_EFFECT_OF_THE_SEASON_PASS_IS_ACTIVATED_AVAILABLE_VITALITY_SUSTENTION_TIME_IS_BEING_CONSUMED);
 			_sayhasSustentionTask = ThreadPool.schedule(this::onSayhaEndTime, Math.max(0, getAvailableSayhaTime() - getUsedSayhaTime()) * 1000L);
 		}

@@ -57,6 +57,7 @@ public class ExAcquireAPSkillList extends ServerPacket
 				_skills.add(knownSkill);
 			}
 		}
+		
 		_enable = (!player.isSubClassActive() || player.isDualClassActive()) && (player.getLevel() >= 85);
 	}
 	

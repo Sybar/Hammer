@@ -80,6 +80,7 @@ public class PetSummonInfo extends ServerPacket
 			_curFed = sum.getLifeTimeRemaining();
 			_maxFed = sum.getLifeTime();
 		}
+		
 		_abnormalVisualEffects = summon.getEffectList().getCurrentAbnormalVisualEffects();
 		_team = (Config.BLUE_TEAM_ABNORMAL_EFFECT != null) && (Config.RED_TEAM_ABNORMAL_EFFECT != null) ? _summon.getTeam() : Team.NONE;
 		
@@ -87,19 +88,23 @@ public class PetSummonInfo extends ServerPacket
 		{
 			_statusMask |= 0x01; // Auto attackable status
 		}
+		
 		_statusMask |= 0x02; // can be chatted with
 		if (summon.isRunning())
 		{
 			_statusMask |= 0x04;
 		}
+		
 		if (AttackStanceTaskManager.getInstance().hasAttackStanceTask(summon))
 		{
 			_statusMask |= 0x08;
 		}
+		
 		if (summon.isDead())
 		{
 			_statusMask |= 0x10;
 		}
+		
 		if (summon.isMountable())
 		{
 			_statusMask |= 0x20;
@@ -144,6 +149,7 @@ public class PetSummonInfo extends ServerPacket
 		{
 			buffer.writeString(_summon.getTemplate().isUsingServerSideName() ? _summon.getName() : ""); // Summon name.
 		}
+		
 		buffer.writeInt(-1); // High Five NPCString ID
 		buffer.writeString(_summon.getTitle()); // owner name
 		buffer.writeByte(_summon.getPvpFlag()); // confirmed
@@ -187,10 +193,12 @@ public class PetSummonInfo extends ServerPacket
 		{
 			buffer.writeShort(abnormalVisualEffect.getClientId()); // Confirmed
 		}
+		
 		if (_summon.isInvisible())
 		{
 			buffer.writeShort(AbnormalVisualEffect.STEALTH.getClientId());
 		}
+		
 		if (_team == Team.BLUE)
 		{
 			if (Config.BLUE_TEAM_ABNORMAL_EFFECT != null)
@@ -202,6 +210,7 @@ public class PetSummonInfo extends ServerPacket
 		{
 			buffer.writeShort(Config.RED_TEAM_ABNORMAL_EFFECT.getClientId());
 		}
+		
 		buffer.writeByte(_statusMask);
 		if (_summon.isPet())
 		{

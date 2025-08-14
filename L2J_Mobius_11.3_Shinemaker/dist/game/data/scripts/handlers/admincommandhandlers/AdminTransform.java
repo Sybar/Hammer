@@ -39,7 +39,7 @@ public class AdminTransform implements IAdminCommandHandler
 	};
 	
 	@Override
-	public boolean useAdminCommand(String command, Player activeChar)
+	public boolean onCommand(String command, Player activeChar)
 	{
 		if (command.equals("admin_transform_menu"))
 		{
@@ -80,6 +80,7 @@ public class AdminTransform implements IAdminCommandHandler
 					player.untransform();
 					return true;
 				}
+				
 				activeChar.sendPacket(SystemMessageId.YOU_ALREADY_POLYMORPHED_AND_CANNOT_POLYMORPH_AGAIN);
 				return false;
 			}
@@ -115,7 +116,7 @@ public class AdminTransform implements IAdminCommandHandler
 	}
 	
 	@Override
-	public String[] getAdminCommandList()
+	public String[] getCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}

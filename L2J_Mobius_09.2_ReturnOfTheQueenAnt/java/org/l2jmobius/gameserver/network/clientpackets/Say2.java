@@ -118,7 +118,7 @@ public class Say2 extends ClientPacket
 		{
 			PacketLogger.warning("Say2: Invalid type: " + _type + " Player : " + player.getName() + " text: " + _text);
 			player.sendPacket(ActionFailed.STATIC_PACKET);
-			Disconnection.of(player).defaultSequence(LeaveWorld.STATIC_PACKET);
+			Disconnection.of(player).storeAndDeleteWith(LeaveWorld.STATIC_PACKET);
 			return;
 		}
 		
@@ -126,7 +126,7 @@ public class Say2 extends ClientPacket
 		{
 			PacketLogger.warning(player.getName() + ": sending empty text. Possible packet hack!");
 			player.sendPacket(ActionFailed.STATIC_PACKET);
-			Disconnection.of(player).defaultSequence(LeaveWorld.STATIC_PACKET);
+			Disconnection.of(player).storeAndDeleteWith(LeaveWorld.STATIC_PACKET);
 			return;
 		}
 		
@@ -227,7 +227,7 @@ public class Say2 extends ClientPacket
 		final IChatHandler handler = ChatHandler.getInstance().getHandler(chatType);
 		if (handler != null)
 		{
-			handler.handleChat(chatType, player, _target, _text);
+			handler.onChat(chatType, player, _target, _text);
 		}
 		else
 		{
@@ -244,6 +244,7 @@ public class Say2 extends ClientPacket
 				return true;
 			}
 		}
+		
 		return false;
 	}
 	
@@ -254,6 +255,7 @@ public class Say2 extends ClientPacket
 		{
 			filteredText = filteredText.replaceAll("(?i)" + pattern, Config.CHAT_FILTER_CHARS);
 		}
+		
 		_text = filteredText;
 	}
 	
@@ -267,12 +269,14 @@ public class Say2 extends ClientPacket
 			{
 				return false;
 			}
+			
 			final StringBuilder result = new StringBuilder(9);
 			pos += 3;
 			while (Character.isDigit(_text.charAt(pos)))
 			{
 				result.append(_text.charAt(pos++));
 			}
+			
 			final int id = Integer.parseInt(result.toString());
 			final Item item = owner.getInventory().getItemByObjectId(id);
 			if (item == null)
@@ -280,6 +284,7 @@ public class Say2 extends ClientPacket
 				PacketLogger.info(client + " trying publish item which does not own! ID:" + id);
 				return false;
 			}
+			
 			item.publish();
 			
 			pos1 = _text.indexOf(8, pos) + 1;
@@ -289,6 +294,7 @@ public class Say2 extends ClientPacket
 				return false;
 			}
 		}
+		
 		return true;
 	}
 }

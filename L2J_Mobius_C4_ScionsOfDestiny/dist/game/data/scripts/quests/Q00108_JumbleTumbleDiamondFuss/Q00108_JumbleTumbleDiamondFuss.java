@@ -45,10 +45,12 @@ public class Q00108_JumbleTumbleDiamondFuss extends Quest
 	private static final int BRUNON = 30526;
 	private static final int MARON = 30529;
 	private static final int TOROCCO = 30555;
+	
 	// Monsters
 	private static final int GOBLIN_BRIGAND_LEADER = 20323;
 	private static final int GOBLIN_BRIGAND_LIEUTENANT = 20324;
 	private static final int BLADE_BAT = 20480;
+	
 	// Items
 	private static final int GOUPH_CONTRACT = 1559;
 	private static final int REEP_CONTRACT = 1560;
@@ -63,6 +65,7 @@ public class Q00108_JumbleTumbleDiamondFuss extends Quest
 	private static final int BERRY_TART = 1569;
 	private static final int BAT_DIAGRAM = 1570;
 	private static final int STAR_DIAMOND = 1571;
+	
 	// Rewards
 	private static final int SILVERSMITH_HAMMER = 1511;
 	private static final int SPIRITSHOT_FOR_BEGINNERS = 5790;
@@ -73,6 +76,7 @@ public class Q00108_JumbleTumbleDiamondFuss extends Quest
 	private static final int ECHO_FEAST = 4415;
 	private static final int ECHO_CELEBRATION = 4416;
 	private static final int LESSER_HEALING_POTION = 1060;
+	
 	// Misc
 	private static final int MAX_GEM_COUNT = 10;
 	private static final Map<Integer, Double> GOBLIN_DROP_CHANCES = new HashMap<>();
@@ -358,6 +362,7 @@ public class Q00108_JumbleTumbleDiamondFuss extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -386,6 +391,7 @@ public class Q00108_JumbleTumbleDiamondFuss extends Quest
 							
 							playSound = true;
 						}
+						
 						if (giveItemRandomly(killer, npc, CHRYSOBERYL, 1, MAX_GEM_COUNT, dropChance, false))
 						{
 							if (getQuestItemsCount(killer, AQUAMARINE) >= MAX_GEM_COUNT)

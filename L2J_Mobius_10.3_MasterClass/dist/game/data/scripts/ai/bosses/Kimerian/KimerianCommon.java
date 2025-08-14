@@ -54,11 +54,14 @@ public class KimerianCommon extends AbstractInstance
 	private static final int FAIRY_WARRIOR = 25735;
 	private static final int SATYR_WITCH = 25740;
 	private static final int FAIRY_ROGUE = 25736;
+	
 	// Skills
 	private static final SkillHolder INVUL_SKILL = new SkillHolder(14190, 1);
+	
 	// Items
 	private static final int GLIMMER = 17374;
 	private static final int FLUTE = 17378; // Fairy's Leaf Flute
+	
 	// Misc
 	private static final NpcStringId[] KIMERIAN_MSG =
 	{
@@ -203,6 +206,7 @@ public class KimerianCommon extends AbstractInstance
 				enterInstance(player, npc, TEMPLATE_ID);
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -323,6 +327,7 @@ public class KimerianCommon extends AbstractInstance
 					giveItems(player, GLIMMER, 10);
 					npc.getVariables().set("CAN_GET_GLIMMER", false);
 				}
+				
 				htmltext = "33098-01.html";
 				break;
 			}
@@ -332,6 +337,7 @@ public class KimerianCommon extends AbstractInstance
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -436,6 +442,7 @@ public class KimerianCommon extends AbstractInstance
 				getTimers().addTimer("KIMERIAN_HOLLOW_SAY_2", 3000, n -> kimerian.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.HA_HA_HA_HA));
 				getTimers().addTimer("KIMERIAN_HOLLOW_DELETE", 6000, n -> kimerian.deleteMe());
 			}
+			
 			npc.setScriptValue(1);
 		}
 	}

@@ -60,6 +60,7 @@ public class CharacterBirthday extends AbstractNpcAI
 		31964,
 		32163
 	};
+	
 	// Misc
 	private static boolean HAS_SPAWNED = false;
 	
@@ -87,10 +88,12 @@ public class CharacterBirthday extends AbstractNpcAI
 			HAS_SPAWNED = false;
 			htmltext = null;
 		}
+		
 		if (event.equalsIgnoreCase("receive_reward"))
 		{
 			final Calendar now = Calendar.getInstance();
 			now.setTimeInMillis(System.currentTimeMillis());
+			
 			// Check if already received reward
 			final String nextBirthday = st.get("Birthday");
 			if ((nextBirthday != null) && (Integer.parseInt(nextBirthday) > now.get(Calendar.YEAR)))
@@ -109,6 +112,7 @@ public class CharacterBirthday extends AbstractNpcAI
 				{
 					skill.applyEffects(npc, player);
 				}
+				
 				npc.setTarget(player);
 				npc.broadcastPacket(new MagicSkillUse(player, 5950, 1, 1000, 0));
 				
@@ -121,6 +125,7 @@ public class CharacterBirthday extends AbstractNpcAI
 				htmltext = "32600-ok.htm";
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -159,6 +164,7 @@ public class CharacterBirthday extends AbstractNpcAI
 			final Quest q = QuestManager.getInstance().getQuest(getName());
 			st = q.newQuestState(player);
 		}
+		
 		if (player.checkBirthDay() == 0)
 		{
 			htmltext = "32600.htm";
@@ -167,6 +173,7 @@ public class CharacterBirthday extends AbstractNpcAI
 		{
 			htmltext = "32600-no.htm";
 		}
+		
 		return htmltext;
 	}
 	

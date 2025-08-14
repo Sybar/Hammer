@@ -32,8 +32,10 @@ public class Q00644_GraveRobberAnnihilation extends Quest
 {
 	// NPC
 	private static final int KARUDA = 32017;
+	
 	// Item
 	private static final int ORC_GRAVE_GOODS = 8088;
+	
 	// Rewards
 	private static final int[][] REWARDS =
 	{

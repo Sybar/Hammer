@@ -64,6 +64,7 @@ public class RequestExDethroneEnter extends ClientPacket
 			return;
 		}
 		
+		final PlayerVariables variables = player.getVariables();
 		if (player.isInsideZone(ZoneId.CONQUEST))
 		{
 			player.sendPacket(new SystemMessage(SystemMessageId.YOU_LL_BE_TAKEN_TO_THE_MAIN_SERVER_IN_3_SEC));
@@ -71,17 +72,17 @@ public class RequestExDethroneEnter extends ClientPacket
 			
 			ThreadPool.schedule(() ->
 			{
-				final PlayerVariables vars = player.getVariables();
-				Location location = new Location(147458, 26903, -2206); // Aden center if no location stored.
-				if (vars.contains(PlayerVariables.CONQUEST_ORIGIN))
+				Location location = new Location(146783, 25808, -2008); // Aden
+				if (variables.contains(PlayerVariables.CONQUEST_ORIGIN))
 				{
-					final int[] loc = vars.getIntArray(PlayerVariables.CONQUEST_ORIGIN, ";");
+					final int[] loc = variables.getIntArray(PlayerVariables.CONQUEST_ORIGIN, ";");
 					if ((loc != null) && (loc.length == 3))
 					{
 						location = new Location(loc[0], loc[1], loc[2]);
 					}
+					
 					player.teleToLocation(location);
-					vars.remove(PlayerVariables.CONQUEST_ORIGIN);
+					variables.remove(PlayerVariables.CONQUEST_ORIGIN);
 				}
 				else
 				{
@@ -90,7 +91,7 @@ public class RequestExDethroneEnter extends ClientPacket
 			}, 3000);
 			return;
 		}
-		else if (!Config.CONQUEST_SYSTEM_ENABLED || (Config.CONQUEST_SYSTEM_ENABLED && (GlobalVariablesManager.getInstance().hasVariable("CONQUEST_AVAILABLE") && (GlobalVariablesManager.getInstance().getBoolean("CONQUEST_AVAILABLE", false) == false))))
+		else if (!Config.CONQUEST_SYSTEM_ENABLED || (Config.CONQUEST_SYSTEM_ENABLED && (GlobalVariablesManager.getInstance().hasVariable("CONQUEST_AVAILABLE") && !GlobalVariablesManager.getInstance().getBoolean("CONQUEST_AVAILABLE", false))))
 		{
 			player.sendPacket(SystemMessageId.THE_PATH_TO_THE_CONQUEST_WORLD_IS_CLOSED_YOU_CAN_GET_THERE_ON_MONDAYS_TUESDAYS_WEDNESDAYS_AND_THURSDAYS_FROM_10_00_TILL_14_00_AND_FROM_22_00_TILL_00_00_AND_ON_FRIDAYS_SATURDAYS_AND_SUNDAYS_FROM_20_00_TILL_01_00_OF_THE_FOLLOWING_DAY_SERVER_TIME_PVP_IS_DISABLED_FROM_20_00_TILL_22_00_FOR_2_HOURS_BECAUSE_THE_NEW_WORLD_EXPLORATION_IS_UNDER_WAY);
 			return;
@@ -119,56 +120,54 @@ public class RequestExDethroneEnter extends ClientPacket
 		player.sendPacket(new SystemMessage(SystemMessageId.YOU_LL_BE_TAKEN_TO_THE_WORLD_HUNTING_ZONE_IN_3_SEC));
 		player.stopMove(null);
 		
-		// Save player last location when he leaves conquest zone.
-		player.getVariables().set(PlayerVariables.CONQUEST_ORIGIN, player.getX() + ";" + player.getY() + ";" + player.getZ());
+		// Save player location for conquest leave request.
+		variables.set(PlayerVariables.CONQUEST_ORIGIN, player.getX() + ";" + player.getY() + ";" + player.getZ());
 		
-		ThreadPool.schedule(() -> teleToConquest(player), 3000);
-	}
-	
-	private void teleToConquest(Player player)
-	{
-		if (player.getVariables().hasVariable(PlayerVariables.CONQUEST_INTRO))
+		ThreadPool.schedule(() ->
 		{
-			player.getVariables().remove(PlayerVariables.CONQUEST_INTRO);
-			player.sendPacket(ExShowUsm.CONQUEST_INTRO);
-			switch (player.getRace())
+			if (variables.hasVariable(PlayerVariables.CONQUEST_INTRO))
 			{
-				case ELF:
+				variables.remove(PlayerVariables.CONQUEST_INTRO);
+				player.sendPacket(ExShowUsm.CONQUEST_INTRO);
+				switch (player.getRace())
 				{
-					player.teleToLocation(ENTRY_LOCS[0], 0, player.getInstanceWorld());
-					break;
-				}
-				case DARK_ELF:
-				{
-					player.teleToLocation(ENTRY_LOCS[1], 0, player.getInstanceWorld());
-					break;
-				}
-				case KAMAEL:
-				{
-					player.teleToLocation(ENTRY_LOCS[2], 0, player.getInstanceWorld());
-					break;
-				}
-				case DWARF:
-				{
-					player.teleToLocation(ENTRY_LOCS[3], 0, player.getInstanceWorld());
-					break;
-				}
-				case HUMAN:
-				case ERTHEIA:
-				{
-					player.teleToLocation(ENTRY_LOCS[4], 0, player.getInstanceWorld());
-					break;
-				}
-				case ORC:
-				{
-					player.teleToLocation(ENTRY_LOCS[5], 0, player.getInstanceWorld());
-					break;
+					case ELF:
+					{
+						player.teleToLocation(ENTRY_LOCS[0], 0, player.getInstanceWorld());
+						break;
+					}
+					case DARK_ELF:
+					{
+						player.teleToLocation(ENTRY_LOCS[1], 0, player.getInstanceWorld());
+						break;
+					}
+					case KAMAEL:
+					{
+						player.teleToLocation(ENTRY_LOCS[2], 0, player.getInstanceWorld());
+						break;
+					}
+					case DWARF:
+					{
+						player.teleToLocation(ENTRY_LOCS[3], 0, player.getInstanceWorld());
+						break;
+					}
+					case HUMAN:
+					case ERTHEIA:
+					{
+						player.teleToLocation(ENTRY_LOCS[4], 0, player.getInstanceWorld());
+						break;
+					}
+					case ORC:
+					{
+						player.teleToLocation(ENTRY_LOCS[5], 0, player.getInstanceWorld());
+						break;
+					}
 				}
 			}
-		}
-		else
-		{
-			player.teleToLocation(CONQUEST_ENTER_LOC);
-		}
+			else
+			{
+				player.teleToLocation(CONQUEST_ENTER_LOC);
+			}
+		}, 3000);
 	}
 }

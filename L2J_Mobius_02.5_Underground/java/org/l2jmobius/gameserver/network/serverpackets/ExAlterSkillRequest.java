@@ -52,6 +52,7 @@ public class ExAlterSkillRequest extends ServerPacket
 		{
 			return;
 		}
+		
 		ServerPackets.EX_ALTER_SKILL_REQUEST.writeId(this, buffer);
 		buffer.writeInt(_nextSkillId);
 		buffer.writeInt(_currentSkillId);

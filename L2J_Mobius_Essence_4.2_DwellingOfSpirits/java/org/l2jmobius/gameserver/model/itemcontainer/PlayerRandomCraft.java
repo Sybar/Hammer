@@ -136,6 +136,7 @@ public class PlayerRandomCraft
 					ps.setInt(7 + (i * 4), 20);
 				}
 			}
+			
 			ps.setInt(24, _player.getObjectId());
 			ps.execute();
 		}
@@ -161,6 +162,7 @@ public class PlayerRandomCraft
 				ps.setBoolean(7 + (i * 4), false);
 				ps.setInt(8 + (i * 4), 0);
 			}
+			
 			ps.executeUpdate();
 		}
 		catch (Exception e)
@@ -175,6 +177,7 @@ public class PlayerRandomCraft
 		{
 			return;
 		}
+		
 		_player.addRequest(new RandomCraftRequest(_player));
 		
 		if ((_fullCraftPoints > 0) && _player.reduceAdena(ItemProcessType.FEE, Config.RANDOM_CRAFT_REFRESH_FEE, _player, true))
@@ -187,6 +190,7 @@ public class PlayerRandomCraft
 				_player.addItem(ItemProcessType.REWARD, 91641, 2, _player, true);
 				_isSayhaRoll = false;
 			}
+			
 			_player.sendPacket(new ExCraftInfo(_player));
 			
 			for (int i = 0; i < 5; i++)
@@ -214,6 +218,7 @@ public class PlayerRandomCraft
 					holder.decLock();
 				}
 			}
+			
 			_player.sendPacket(new ExCraftRandomInfo(_player));
 		}
 		
@@ -240,6 +245,7 @@ public class PlayerRandomCraft
 				}
 			}
 		}
+		
 		return result;
 	}
 	
@@ -249,6 +255,7 @@ public class PlayerRandomCraft
 		{
 			return;
 		}
+		
 		_player.addRequest(new RandomCraftRequest(_player));
 		
 		if (_player.reduceAdena(ItemProcessType.FEE, Config.RANDOM_CRAFT_CREATE_FEE, _player, true))
@@ -294,10 +301,12 @@ public class PlayerRandomCraft
 		{
 			_craftPoints = 0;
 		}
+		
 		if (value > 0)
 		{
 			_isSayhaRoll = true;
 		}
+		
 		if (broadcast)
 		{
 			_player.sendPacket(new ExCraftInfo(_player));
@@ -358,6 +367,7 @@ public class PlayerRandomCraft
 				count++;
 			}
 		}
+		
 		return count;
 	}
 }

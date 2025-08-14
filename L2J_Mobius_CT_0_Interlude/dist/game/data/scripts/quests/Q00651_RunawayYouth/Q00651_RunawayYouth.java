@@ -33,8 +33,10 @@ public class Q00651_RunawayYouth extends Quest
 	// NPCs
 	private static final int IVAN = 32014;
 	private static final int BATIDAE = 31989;
+	
 	// Item
 	private static final int SCROLL_OF_ESCAPE = 736;
+	
 	// Table of possible spawns
 	private static final Location[] SPAWNS =
 	{
@@ -42,6 +44,7 @@ public class Q00651_RunawayYouth extends Quest
 		new Location(108380, -150268, -2376, 0),
 		new Location(123254, -148126, -3425, 0)
 	};
+	
 	// Current position
 	private int _currentPosition = 0;
 	

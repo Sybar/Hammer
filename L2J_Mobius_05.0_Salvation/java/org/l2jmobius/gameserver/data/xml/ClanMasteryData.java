@@ -70,6 +70,7 @@ public class ClanMasteryData implements IXmlReader
 				LOGGER.info(getClass().getSimpleName() + ": Could not create clan mastery, skill id " + skill1Id + " with level " + skill1Level + " does not exist.");
 				return;
 			}
+			
 			final int skill2Id = set.getInt("skill2Id", 0);
 			final int skill2Level = set.getInt("skill2Level", 0);
 			Skill skill2 = null;
@@ -82,6 +83,7 @@ public class ClanMasteryData implements IXmlReader
 					return;
 				}
 			}
+			
 			final int skill3Id = set.getInt("skill3Id", 0);
 			final int skill3Level = set.getInt("skill3Level", 0);
 			Skill skill3 = null;
@@ -94,6 +96,7 @@ public class ClanMasteryData implements IXmlReader
 					return;
 				}
 			}
+			
 			final int skill4Id = set.getInt("skill4Id", 0);
 			final int skill4Level = set.getInt("skill4Level", 0);
 			Skill skill4 = null;
@@ -106,6 +109,7 @@ public class ClanMasteryData implements IXmlReader
 					return;
 				}
 			}
+			
 			final int clanLevel = set.getInt("clanLevel");
 			final int clanReputation = set.getInt("clanReputation");
 			final int previousMastery = set.getInt("previousMastery", 0);

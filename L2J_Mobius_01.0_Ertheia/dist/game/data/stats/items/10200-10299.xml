@@ -243,9 +243,9 @@
 		<set name="commissionItemType" val="ARMOR_TOP" />
 		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player categoryType="SUMMON_MASTER" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">170</stat>
 		</stats>
@@ -538,9 +538,9 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="commissionItemType" val="RAPIER" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">329</stat>
 			<stat type="mAtk">163</stat>
@@ -574,9 +574,9 @@
 		<set name="commissionItemType" val="ANCIENT_SWORD" />
 		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">393</stat>
 			<stat type="mAtk">163</stat>
@@ -608,9 +608,9 @@
 		<set name="commissionItemType" val="CROSSBOW" />
 		<set name="isAppearanceable" val="true" />
 		<set name="reuse_delay" val="400" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">422</stat>
 			<stat type="mAtk">163</stat>
@@ -656,12 +656,12 @@
 		<set name="commissionItemType" val="ARMOR_TOP" />
 		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 				<player categoryType="SHIELD_MASTER" />
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">226</stat>
 		</stats>
@@ -682,12 +682,12 @@
 		<set name="commissionItemType" val="ARMOR_TOP" />
 		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 				<player categoryType="WEAPON_MASTER" />
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">226</stat>
 		</stats>
@@ -708,12 +708,12 @@
 		<set name="commissionItemType" val="ARMOR_TOP" />
 		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 				<player categoryType="FORCE_MASTER" />
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">226</stat>
 		</stats>
@@ -734,12 +734,12 @@
 		<set name="commissionItemType" val="ARMOR_TOP" />
 		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 				<player categoryType="BARD" />
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">226</stat>
 		</stats>
@@ -779,9 +779,9 @@
 		<set name="commissionItemType" val="ARMOR_TOP" />
 		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player categoryType="DAGGER_MASTER" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">170</stat>
 		</stats>
@@ -802,9 +802,9 @@
 		<set name="commissionItemType" val="ARMOR_TOP" />
 		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player categoryType="BOW_MASTER" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">170</stat>
 		</stats>
@@ -845,12 +845,12 @@
 		<set name="commissionItemType" val="ARMOR_TOP" />
 		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 				<player categoryType="HEAL_MASTER" />
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">113</stat>
 			<stat type="maxMp">592</stat>
@@ -872,12 +872,12 @@
 		<set name="commissionItemType" val="ARMOR_TOP" />
 		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 				<player categoryType="BUFF_MASTER" />
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">113</stat>
 			<stat type="maxMp">592</stat>
@@ -899,12 +899,12 @@
 		<set name="commissionItemType" val="ARMOR_TOP" />
 		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 				<player categoryType="SUMMON_MASTER" />
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">113</stat>
 			<stat type="maxMp">592</stat>
@@ -926,12 +926,12 @@
 		<set name="commissionItemType" val="ARMOR_TOP" />
 		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 				<player categoryType="WIZARD_MASTER" />
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">113</stat>
 			<stat type="maxMp">592</stat>
@@ -1244,9 +1244,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="for_npc" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2429" level="1" /> <!-- Haste Potion -->
 		</skills>
@@ -1264,9 +1264,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="for_npc" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2430" level="1" /> <!-- Accuracy Juice -->
 		</skills>
@@ -1284,9 +1284,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="for_npc" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2431" level="1" /> <!-- Critical Damage Juice -->
 		</skills>
@@ -1304,9 +1304,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="for_npc" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2432" level="1" /> <!-- Critical Rate Juice -->
 		</skills>
@@ -1324,9 +1324,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="for_npc" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2433" level="1" /> <!-- Casting Spd. Juice -->
 		</skills>
@@ -1344,9 +1344,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="for_npc" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2434" level="1" /> <!-- Evasion Juice -->
 		</skills>
@@ -1364,9 +1364,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="for_npc" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2435" level="1" /> <!-- M. Atk. Juice -->
 		</skills>
@@ -1384,9 +1384,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="for_npc" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2436" level="1" /> <!-- P. Atk. Potion -->
 		</skills>
@@ -1404,9 +1404,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="for_npc" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2437" level="1" /> <!-- Wind Walk Juice -->
 		</skills>
@@ -1424,9 +1424,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="for_npc" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2438" level="1" /> <!-- P. Def. Juice -->
 		</skills>
@@ -1443,9 +1443,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="for_npc" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2439" level="1" /> <!-- MP Consumption Juice -->
 		</skills>
@@ -1500,9 +1500,9 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2428" level="1" /> <!-- Transformation Scroll: Rabbit -->
 		</skills>

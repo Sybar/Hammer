@@ -40,10 +40,13 @@ public class Q00437_DangerousLizardmen extends Quest
 {
 	// NPC
 	private static final int GENIE_LAMP = 34369;
+	
 	// Monster
 	private static final int TANTA_LIZARDMAN_BERSERKER = 22153;
+	
 	// Item
 	private static final ItemHolder BOOST_ATK_SCROLL = new ItemHolder(94269, 3);
+	
 	// Misc
 	private static final int MIN_LEVEL = 76;
 	private static final int MAX_LEVEL = 85;
@@ -98,6 +101,7 @@ public class Q00437_DangerousLizardmen extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -136,6 +140,7 @@ public class Q00437_DangerousLizardmen extends Quest
 				htmltext = getAlreadyCompletedMsg(player);
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -171,6 +176,7 @@ public class Q00437_DangerousLizardmen extends Quest
 			holder.add(new NpcLogListHolder(NpcStringId.DEFEAT_MONSTERS_32.getId(), true, qs.getInt(KILL_COUNT_VAR)));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

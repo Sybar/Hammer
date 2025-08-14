@@ -39,8 +39,10 @@ public class Q10316_UndecayingMemoryOfThePast extends Quest
 	// NPCs
 	private static final int OPERA = 32946;
 	private static final int SPEZION = 25779;
+	
 	// Misc
 	private static final int MIN_LEVEL = 90;
+	
 	// Item's
 	private static final int EAR = 17527;
 	private static final int CORRODED_GIANTS_WARSMITH_HOLDER = 19305;
@@ -113,6 +115,7 @@ public class Q10316_UndecayingMemoryOfThePast extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -146,6 +149,7 @@ public class Q10316_UndecayingMemoryOfThePast extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

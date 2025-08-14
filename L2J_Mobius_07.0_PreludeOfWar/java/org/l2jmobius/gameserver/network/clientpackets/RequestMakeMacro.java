@@ -25,9 +25,9 @@ import java.util.Collection;
 import java.util.List;
 
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.actor.enums.player.Macro;
-import org.l2jmobius.gameserver.model.actor.enums.player.MacroCmd;
 import org.l2jmobius.gameserver.model.actor.enums.player.MacroType;
+import org.l2jmobius.gameserver.model.actor.holders.player.Macro;
+import org.l2jmobius.gameserver.model.actor.holders.player.MacroCmd;
 import org.l2jmobius.gameserver.network.SystemMessageId;
 
 /**
@@ -65,6 +65,7 @@ public class RequestMakeMacro extends ClientPacket
 			_commandsLength += command.length();
 			commands.add(new MacroCmd(entry, MacroType.values()[(type < 1) || (type > 6) ? 0 : type], d1, d2, command));
 		}
+		
 		_macro = new Macro(id, icon, name, desc, acronym, commands);
 	}
 	

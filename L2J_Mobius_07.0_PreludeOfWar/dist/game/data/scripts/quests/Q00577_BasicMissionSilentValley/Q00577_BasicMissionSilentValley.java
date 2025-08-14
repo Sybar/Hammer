@@ -39,11 +39,14 @@ public class Q00577_BasicMissionSilentValley extends Quest
 	// NPCs
 	private static final int PENNY = 34413;
 	private static final int CORZET = 34424;
+	
 	// Rewards
 	private static final int SCROLL_OF_ESCAPE_TOWN_OF_ADEN = 48413;
+	
 	// Misc
 	private static final int MIN_LEVEL = 95;
 	private static final int MAX_LEVEL = 97;
+	
 	// Location
 	private static final Location TOWN_OF_ADEN = new Location(146632, 26760, -2213);
 	
@@ -117,6 +120,7 @@ public class Q00577_BasicMissionSilentValley extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -190,6 +194,7 @@ public class Q00577_BasicMissionSilentValley extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -203,12 +208,14 @@ public class Q00577_BasicMissionSilentValley extends Quest
 			index = 0;
 			string.setCharAt(index, ch);
 		}
+		
 		final QuestState st2 = player.getQuestState("Q00590_ToEachTheirOwn");
 		if ((st2 != null) && st2.isCompleted())
 		{
 			index = 1;
 			string.setCharAt(index, ch);
 		}
+		
 		return string;
 	}
 }

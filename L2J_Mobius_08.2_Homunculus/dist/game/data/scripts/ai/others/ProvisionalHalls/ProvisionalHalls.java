@@ -45,6 +45,7 @@ public class ProvisionalHalls extends AbstractNpcAI
 	// NPCs
 	private static final int KERRY = 33359;
 	private static final int MAID = 33360;
+	
 	// Misc
 	private static final int CURRENCY = 57;
 	private static final int HALL_PRICE = 50000000;
@@ -127,6 +128,7 @@ public class ProvisionalHalls extends AbstractNpcAI
 					{
 						calendar.add(Calendar.DAY_OF_WEEK, -1);
 					}
+					
 					calendar.set(Calendar.HOUR_OF_DAY, 0);
 					calendar.set(Calendar.MINUTE, 1);
 					calendar.set(Calendar.SECOND, 0);
@@ -144,11 +146,13 @@ public class ProvisionalHalls extends AbstractNpcAI
 							{
 								clanHall.setOwner(clan);
 							}
+							
 							player.sendMessage("Congratulations! You now own a provisional clan hall!");
 							startQuestTimer("RESET_ORCHID_HALL", TWO_WEEKS - (System.currentTimeMillis() - calendar.getTimeInMillis()), null, null);
 							return null;
 						}
 					}
+					
 					player.sendMessage("I am sorry, all halls have been taken.");
 				}
 			}
@@ -170,6 +174,7 @@ public class ProvisionalHalls extends AbstractNpcAI
 					return null;
 				}
 			}
+			
 			htmltext = "33359-02.html";
 		}
 		else if (event.equals("leave"))
@@ -196,6 +201,7 @@ public class ProvisionalHalls extends AbstractNpcAI
 						clanHall.setOwner(null);
 					}
 				}
+				
 				GlobalVariablesManager.getInstance().remove(HALL_TIME_VAR + id);
 				GlobalVariablesManager.getInstance().remove(HALL_OWNER_VAR + id);
 			}
@@ -213,6 +219,7 @@ public class ProvisionalHalls extends AbstractNpcAI
 		{
 			return "33359-01.html";
 		}
+		
 		return "33359-01b.html";
 	}
 	

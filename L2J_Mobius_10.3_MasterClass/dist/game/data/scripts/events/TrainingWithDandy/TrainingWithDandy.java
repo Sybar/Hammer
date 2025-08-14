@@ -36,8 +36,10 @@ public class TrainingWithDandy extends LongTimeEvent
 {
 	// NPC
 	private static final int DANDY = 33894;
+	
 	// Skill
 	private static final SkillHolder DANDY_CH = new SkillHolder(17186, 1); // Dandy's Cheers
+	
 	// Misc
 	private static final String GIVE_DANDI_BUFF_VAR = "GIVE_DANDI_BUFF";
 	
@@ -75,10 +77,12 @@ public class TrainingWithDandy extends LongTimeEvent
 					htmltext = "33894-2.htm";
 					break;
 				}
+				
 				htmltext = "33894-3.htm";
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

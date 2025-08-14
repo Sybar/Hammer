@@ -39,6 +39,7 @@ public class Q00416_PathOfTheOrcShaman extends Quest
 	private static final int TATARU_ZU_HESTUI = 30585;
 	private static final int HESTUI_TOTEM_SPIRIT = 30592;
 	private static final int DUDA_MARA_TOTEM_SPIRIT = 30593;
+	
 	// Items
 	private static final int FIRE_CHARM = 1616;
 	private static final int KASHA_BEAR_PELT = 1617;
@@ -56,12 +57,15 @@ public class Q00416_PathOfTheOrcShaman extends Quest
 	private static final int DURKA_PARASITE = 1629;
 	private static final int TOTEM_SPIRIT_BLOOD = 1630;
 	private static final int MASK_OF_MEDIUM = 1631;
+	
 	// Quest Monsters
 	private static final int DURKA_SPIRIT = 27056;
+	
 	// Does not exist in client.
 	// private static final int BLACK_LEOPARD = 27319;
 	// Misc
 	private static final int MIN_LEVEL = 19;
+	
 	// Mobs
 	private static final Map<Integer, ItemChanceHolder> MOBS = new HashMap<>();
 	static
@@ -81,6 +85,7 @@ public class Q00416_PathOfTheOrcShaman extends Quest
 		addStartNpc(TATARU_ZU_HESTUI);
 		addTalkId(TATARU_ZU_HESTUI, UMOS, DUDA_MARA_TOTEM_SPIRIT, HESTUI_TOTEM_SPIRIT);
 		addKillId(MOBS.keySet());
+		
 		// Does not exist in client.
 		// addKillId(BLACK_LEOPARD);
 		registerQuestItems(FIRE_CHARM, KASHA_BEAR_PELT, KASHA_BLADE_SPIDER_HUSK, FIRST_FIERY_EGG, HESTUI_MASK, SECOND_FIERY_EGG, TOTEM_SPIRIT_CLAW, TATARUS_LETTER, FLAME_CHARM, GRIZZLY_BLOOD, BLOOD_CAULDRON, SPIRIT_NET, BOUND_DURKA_SPIRIT, DURKA_PARASITE, TOTEM_SPIRIT_BLOOD);
@@ -182,6 +187,7 @@ public class Q00416_PathOfTheOrcShaman extends Quest
 					{
 						addExpAndSp(player, 80314, 5087);
 					}
+					
 					qs.exitQuest(false, true);
 					player.sendPacket(new SocialAction(player.getObjectId(), 3));
 					htmltext = event;
@@ -270,6 +276,7 @@ public class Q00416_PathOfTheOrcShaman extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -524,6 +531,7 @@ public class Q00416_PathOfTheOrcShaman extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 }

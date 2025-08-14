@@ -34,18 +34,22 @@ public class Q00375_WhisperOfDreamsPart2 extends Quest
 {
 	// NPCs
 	private static final int VANUTU = 30938;
+	
 	// Monsters
 	private static final int LIMAL_KARINNESS = 20628;
 	private static final int KARIK = 20629;
+	
 	// Items
 	private static final int KARIK_HORN = 5888;
 	private static final int LIMAL_KARINESS_BLOOD = 5889;
 	private static final int MYSTERIOUS_STONE = 5887;
+	
 	// Rewards
 	private static final int SCROLL_PART_EW = 49474;
 	private static final int REFINED_SCROLL_PART_EW = 49476;
 	private static final int ENCHANT_WEAPON_B = 947;
 	private static final int IMPROVED_ENCHANT_WEAPON_B = 33808;
+	
 	// Misc
 	private static final int MIN_LEVEL = 68;
 	private static final int MAX_LEVEL = 82;
@@ -136,6 +140,7 @@ public class Q00375_WhisperOfDreamsPart2 extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -172,6 +177,7 @@ public class Q00375_WhisperOfDreamsPart2 extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -200,6 +206,7 @@ public class Q00375_WhisperOfDreamsPart2 extends Quest
 					break;
 				}
 			}
+			
 			if (qs.isCond(1) && (getQuestItemsCount(killer, LIMAL_KARINESS_BLOOD) >= 325) && (getQuestItemsCount(killer, KARIK_HORN) >= 325))
 			{
 				qs.setCond(2, true);

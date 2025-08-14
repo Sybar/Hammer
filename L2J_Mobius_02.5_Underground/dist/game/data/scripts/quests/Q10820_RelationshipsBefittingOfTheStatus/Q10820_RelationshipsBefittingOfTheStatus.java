@@ -38,6 +38,7 @@ public class Q10820_RelationshipsBefittingOfTheStatus extends Quest
 {
 	// NPC
 	private static final int ISHUMA = 32615;
+	
 	// Items
 	private static final int CITRINE_PENDANT = 45640;
 	private static final int CITRINE_PENDANT_FRAGMENT = 45639;
@@ -45,9 +46,11 @@ public class Q10820_RelationshipsBefittingOfTheStatus extends Quest
 	private static final int DAICHIR_SERTIFICATE = 45628;
 	private static final int OLYMPIAD_MANAGER_CERTIFICATE = 45629;
 	private static final int SIR_KRISTOF_RODEMAI_CERTIFICATE = 45631;
+	
 	// Rewards
 	private static final int ISHUMA_CERTIFICATE = 45630;
 	private static final int ETERNAL_ARMOR_CRAFTING_PACK = 39324;
+	
 	// Misc
 	private static final int MIN_LEVEL = 99;
 	
@@ -133,6 +136,7 @@ public class Q10820_RelationshipsBefittingOfTheStatus extends Quest
 						{
 							htmltext = event;
 						}
+						
 						takeItems(player, CITRINE_PENDANT, -1);
 						giveItems(player, ETERNAL_ARMOR_CRAFTING_PACK, 1);
 						giveItems(player, ISHUMA_CERTIFICATE, 1);
@@ -146,6 +150,7 @@ public class Q10820_RelationshipsBefittingOfTheStatus extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -179,6 +184,7 @@ public class Q10820_RelationshipsBefittingOfTheStatus extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

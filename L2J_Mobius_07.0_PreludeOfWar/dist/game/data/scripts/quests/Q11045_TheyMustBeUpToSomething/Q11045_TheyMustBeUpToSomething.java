@@ -45,11 +45,14 @@ public class Q11045_TheyMustBeUpToSomething extends Quest
 	private static final int RECLOUS = 30648;
 	private static final int KETRA_ORC_SCOUT = 24411;
 	private static final int KETRA_ORC_SEER = 24412;
+	
 	// Items
 	private static final int KETRA_ORDER = 80676;
 	private static final ItemHolder SOE_RECLOUS = new ItemHolder(80682, 1);
+	
 	// Location
 	private static final Location TRAINING_GROUNDS_TELEPORT = new Location(-94258, 102141, -3472);
+	
 	// Misc
 	private static final int MIN_LEVEL = 82;
 	
@@ -115,6 +118,7 @@ public class Q11045_TheyMustBeUpToSomething extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -158,6 +162,7 @@ public class Q11045_TheyMustBeUpToSomething extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

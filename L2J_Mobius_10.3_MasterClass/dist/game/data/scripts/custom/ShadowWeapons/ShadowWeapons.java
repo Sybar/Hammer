@@ -60,6 +60,7 @@ public class ShadowWeapons extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -89,6 +90,7 @@ public class ShadowWeapons extends AbstractNpcAI
 		{
 			htmltext = "exchange_no.html";
 		}
+		
 		return htmltext;
 	}
 	

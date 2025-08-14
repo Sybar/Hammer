@@ -42,6 +42,7 @@ public class Q10356_BlacksmithsSoul2 extends Quest
 	private static final int BLACKSMITH_MAMMON = 31126;
 	private static final int SHADAI = 32347;
 	private static final int ISHUMA = 32615;
+	
 	// Items
 	private static final int Improved_SHADOW_Ingot = 47896;
 	private static final int RESEARCH_SHADOW_WEAPON = 47890;
@@ -77,6 +78,7 @@ public class Q10356_BlacksmithsSoul2 extends Quest
 		{
 			return getNoQuestMsg(player);
 		}
+		
 		switch (event)
 		{
 			case "31126-01.htm":
@@ -220,6 +222,7 @@ public class Q10356_BlacksmithsSoul2 extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -336,6 +339,7 @@ public class Q10356_BlacksmithsSoul2 extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -359,6 +363,7 @@ public class Q10356_BlacksmithsSoul2 extends Quest
 			}
 			
 		}
+		
 		if ((qs != null) && qs.isCond(4))
 		{
 			if ((getEnchantLevel(player, RESEARCH_SHADOW_WEAPON) >= 7))
@@ -369,6 +374,7 @@ public class Q10356_BlacksmithsSoul2 extends Quest
 			}
 			
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

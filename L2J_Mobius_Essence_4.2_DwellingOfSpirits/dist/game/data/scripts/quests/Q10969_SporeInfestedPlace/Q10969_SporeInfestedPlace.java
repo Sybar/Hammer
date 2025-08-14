@@ -40,6 +40,7 @@ public class Q10969_SporeInfestedPlace extends Quest
 	// NPC
 	private static final int MAXIMILLIAN = 30120;
 	private static final int ORVEN = 30857;
+	
 	// Monsters
 	private static final int GIANT_FUNGUS = 20555;
 	private static final int GIANT_MONSTER_EYE = 20556;
@@ -50,10 +51,12 @@ public class Q10969_SporeInfestedPlace extends Quest
 	private static final int TRISALIM_TARANTULA = 20561;
 	private static final int SPORE_ZOMBIE = 20562;
 	private static final int EARTH_GUARDIAN_WYRM = 20176;
+	
 	// Items
 	private static final ItemHolder SPIRIT_ORE = new ItemHolder(3031, 500);
 	private static final ItemHolder SOULSHOT_TICKET = new ItemHolder(90907, 50);
 	private static final ItemHolder HP_POTS = new ItemHolder(91912, 100);
+	
 	// Misc
 	private static final String KILL_COUNT_VAR = "KillCount";
 	private static final int MIN_LEVEL = 40;
@@ -128,6 +131,7 @@ public class Q10969_SporeInfestedPlace extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -174,6 +178,7 @@ public class Q10969_SporeInfestedPlace extends Quest
 				htmltext = getAlreadyCompletedMsg(player);
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -209,6 +214,7 @@ public class Q10969_SporeInfestedPlace extends Quest
 			holder.add(new NpcLogListHolder(NpcStringId.REACH_LV_45, player.getLevel() > 44 ? 1 : 0));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

@@ -36,8 +36,10 @@ public class Q00510_AClansPrestige extends Quest
 {
 	// NPC
 	private static final int VALDIS = 31331;
+	
 	// Quest Item
 	private static final int CLAW = 8767;
+	
 	// Reward
 	private static final int CLAN_POINTS_REWARD = 50; // Quantity of points
 	

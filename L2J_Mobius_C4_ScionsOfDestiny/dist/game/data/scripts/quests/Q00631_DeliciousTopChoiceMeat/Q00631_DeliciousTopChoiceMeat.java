@@ -35,8 +35,10 @@ public class Q00631_DeliciousTopChoiceMeat extends Quest
 {
 	// NPC
 	private static final int TUNATUN = 31537;
+	
 	// Item
 	private static final int TOP_QUALITY_MEAT = 7546;
+	
 	// Drop chances
 	private static final Map<Integer, Integer> CHANCES = new HashMap<>();
 	static
@@ -66,6 +68,7 @@ public class Q00631_DeliciousTopChoiceMeat extends Quest
 		CHANCES.put(21504, 509000);
 		CHANCES.put(21505, 920000);
 	}
+	
 	// Rewards
 	private static final int[][] REWARDS =
 	{

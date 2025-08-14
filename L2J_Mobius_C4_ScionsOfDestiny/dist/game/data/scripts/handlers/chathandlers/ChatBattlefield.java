@@ -36,7 +36,7 @@ public class ChatBattlefield implements IChatHandler
 	};
 	
 	@Override
-	public void handleChat(ChatType type, Player activeChar, String target, String text)
+	public void onChat(ChatType type, Player activeChar, String target, String text)
 	{
 		if (activeChar.getSiegeSide() > 0)
 		{

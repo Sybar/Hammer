@@ -44,6 +44,7 @@ public class El extends AbstractNpcAI
 		{
 			npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.YOU_CAN_USE_THE_JUMP_BOARD_TO_GET_STRAIGHT_TO_THE_2ND_FLOOR, 1000);
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	

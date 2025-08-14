@@ -54,6 +54,7 @@ public class GameAssistant extends AbstractNpcAI
 {
 	// NPC
 	private static final int MERCHANT = 32478;
+	
 	// Items
 	private static final int BLACK_SAYHA_CLOAK = 91210;
 	private static final int WHITE_SAYHA_CLOAK = 91211;
@@ -65,6 +66,7 @@ public class GameAssistant extends AbstractNpcAI
 	private static final int ADVENTURER_MARK_LV_3 = 91656;
 	private static final int ADVENTURER_MARK_LV_4 = 91657;
 	private static final int ADVENTURER_MARK_LV_5 = 91931;
+	
 	// Multisells
 	private static final int ATTENDANCE_REWARD_MULTISELL = 3247801;
 	private static final int EX_BOSS_WEAPON_SHOP = 3247813;
@@ -88,6 +90,7 @@ public class GameAssistant extends AbstractNpcAI
 	private static final int EX_DYES2 = 3247844;
 	private static final int EX_DYES3 = 3247845;
 	private static final int EX_DYES4 = 3247846;
+	
 	// Others
 	private static final String COMMAND_BYPASS = "Quest GameAssistant ";
 	
@@ -129,6 +132,7 @@ public class GameAssistant extends AbstractNpcAI
 							player.getActiveWarehouse().destroyItem(ItemProcessType.DESTROY, i, player, null);
 						}
 					}
+					
 					player.sendPacket(new WareHouseWithdrawalList(1, player, WareHouseWithdrawalList.FREIGHT));
 					player.sendPacket(new WareHouseWithdrawalList(2, player, WareHouseWithdrawalList.FREIGHT));
 				}
@@ -347,6 +351,7 @@ public class GameAssistant extends AbstractNpcAI
 					
 					player.addItem(ItemProcessType.QUEST, ADVENTURER_MARK_LV_1, 1, null, false);
 				}
+				
 				if ((player.getLevel() >= 30) || (player.getLevel() <= 40))
 				{
 					final long itemCount = getQuestItemsCount(player, ADVENTURER_MARK_LV_2);
@@ -359,6 +364,7 @@ public class GameAssistant extends AbstractNpcAI
 					
 					player.addItem(ItemProcessType.QUEST, ADVENTURER_MARK_LV_2, 1, null, false);
 				}
+				
 				if ((player.getLevel() >= 40) || (player.getLevel() <= 60))
 				{
 					final long itemCount = getQuestItemsCount(player, ADVENTURER_MARK_LV_3);
@@ -371,6 +377,7 @@ public class GameAssistant extends AbstractNpcAI
 					
 					player.addItem(ItemProcessType.QUEST, ADVENTURER_MARK_LV_3, 1, null, false);
 				}
+				
 				if ((player.getLevel() >= 60) || (player.getLevel() <= 75))
 				{
 					final long itemCount = getQuestItemsCount(player, ADVENTURER_MARK_LV_4);
@@ -383,6 +390,7 @@ public class GameAssistant extends AbstractNpcAI
 					
 					player.addItem(ItemProcessType.QUEST, ADVENTURER_MARK_LV_4, 1, null, false);
 				}
+				
 				if ((player.getLevel() >= 76) || (player.getLevel() <= 99))
 				{
 					final long itemCount = getQuestItemsCount(player, ADVENTURER_MARK_LV_5);
@@ -429,6 +437,7 @@ public class GameAssistant extends AbstractNpcAI
 					player.sendPacket(new ExPremiumManagerShowHtml(HtmCache.getInstance().getHtm(player, "data/scripts/ai/others/GameAssistant/no_cloak.html")));
 					return null;
 				}
+				
 				takeItems(player, SAYHA_CLOAK_COUPON, 1);
 				giveItems(player, BLACK_SAYHA_CLOAK, 1);
 				break;
@@ -443,6 +452,7 @@ public class GameAssistant extends AbstractNpcAI
 						cloaks.add(item);
 					}
 				}
+				
 				if (cloaks.isEmpty())
 				{
 					player.sendPacket(new ExPremiumManagerShowHtml(HtmCache.getInstance().getHtm(player, "data/scripts/ai/others/GameAssistant/no_cloak.html")));
@@ -481,6 +491,7 @@ public class GameAssistant extends AbstractNpcAI
 						cloaks.add(item);
 					}
 				}
+				
 				if (cloaks.isEmpty())
 				{
 					player.sendPacket(new ExPremiumManagerShowHtml(HtmCache.getInstance().getHtm(player, "data/scripts/ai/others/GameAssistant/no_cloak.html")));
@@ -519,6 +530,7 @@ public class GameAssistant extends AbstractNpcAI
 						cloaks.add(item);
 					}
 				}
+				
 				if (cloaks.isEmpty())
 				{
 					player.sendPacket(new ExPremiumManagerShowHtml(HtmCache.getInstance().getHtm(player, "data/scripts/ai/others/GameAssistant/no_cloak.html")));
@@ -557,6 +569,7 @@ public class GameAssistant extends AbstractNpcAI
 						cloaks.add(item);
 					}
 				}
+				
 				if (cloaks.isEmpty())
 				{
 					player.sendPacket(new ExPremiumManagerShowHtml(HtmCache.getInstance().getHtm(player, "data/scripts/ai/others/GameAssistant/no_cloak.html")));
@@ -595,6 +608,7 @@ public class GameAssistant extends AbstractNpcAI
 						cloaks.add(item);
 					}
 				}
+				
 				if (cloaks.isEmpty())
 				{
 					player.sendPacket(new ExPremiumManagerShowHtml(HtmCache.getInstance().getHtm(player, "data/scripts/ai/others/GameAssistant/no_cloak.html")));
@@ -633,6 +647,7 @@ public class GameAssistant extends AbstractNpcAI
 						cloaks.add(item);
 					}
 				}
+				
 				if (cloaks.isEmpty())
 				{
 					player.sendPacket(new ExPremiumManagerShowHtml(HtmCache.getInstance().getHtm(player, "data/scripts/ai/others/GameAssistant/no_cloak.html")));
@@ -671,6 +686,7 @@ public class GameAssistant extends AbstractNpcAI
 						cloaks.add(item);
 					}
 				}
+				
 				if (cloaks.isEmpty())
 				{
 					player.sendPacket(new ExPremiumManagerShowHtml(HtmCache.getInstance().getHtm(player, "data/scripts/ai/others/GameAssistant/no_cloak.html")));
@@ -709,6 +725,7 @@ public class GameAssistant extends AbstractNpcAI
 						cloaks.add(item);
 					}
 				}
+				
 				if (cloaks.isEmpty())
 				{
 					player.sendPacket(new ExPremiumManagerShowHtml(HtmCache.getInstance().getHtm(player, "data/scripts/ai/others/GameAssistant/no_cloak.html")));
@@ -747,6 +764,7 @@ public class GameAssistant extends AbstractNpcAI
 						cloaks.add(item);
 					}
 				}
+				
 				if (cloaks.isEmpty())
 				{
 					player.sendPacket(new ExPremiumManagerShowHtml(HtmCache.getInstance().getHtm(player, "data/scripts/ai/others/GameAssistant/no_cloak.html")));
@@ -785,6 +803,7 @@ public class GameAssistant extends AbstractNpcAI
 						cloaks.add(item);
 					}
 				}
+				
 				if (cloaks.isEmpty())
 				{
 					player.sendPacket(new ExPremiumManagerShowHtml(HtmCache.getInstance().getHtm(player, "data/scripts/ai/others/GameAssistant/no_cloak.html")));
@@ -821,6 +840,7 @@ public class GameAssistant extends AbstractNpcAI
 					player.sendPacket(new ExPremiumManagerShowHtml(HtmCache.getInstance().getHtm(player, "data/scripts/ai/others/GameAssistant/no_cloak.html")));
 					return null;
 				}
+				
 				takeItems(player, SAYHA_CLOAK_COUPON, 1);
 				giveItems(player, WHITE_SAYHA_CLOAK, 1);
 				break;
@@ -835,6 +855,7 @@ public class GameAssistant extends AbstractNpcAI
 						cloaks.add(item);
 					}
 				}
+				
 				if (cloaks.isEmpty())
 				{
 					player.sendPacket(new ExPremiumManagerShowHtml(HtmCache.getInstance().getHtm(player, "data/scripts/ai/others/GameAssistant/no_cloak.html")));
@@ -873,6 +894,7 @@ public class GameAssistant extends AbstractNpcAI
 						cloaks.add(item);
 					}
 				}
+				
 				if (cloaks.isEmpty())
 				{
 					player.sendPacket(new ExPremiumManagerShowHtml(HtmCache.getInstance().getHtm(player, "data/scripts/ai/others/GameAssistant/no_cloak.html")));
@@ -911,6 +933,7 @@ public class GameAssistant extends AbstractNpcAI
 						cloaks.add(item);
 					}
 				}
+				
 				if (cloaks.isEmpty())
 				{
 					player.sendPacket(new ExPremiumManagerShowHtml(HtmCache.getInstance().getHtm(player, "data/scripts/ai/others/GameAssistant/no_cloak.html")));
@@ -949,6 +972,7 @@ public class GameAssistant extends AbstractNpcAI
 						cloaks.add(item);
 					}
 				}
+				
 				if (cloaks.isEmpty())
 				{
 					player.sendPacket(new ExPremiumManagerShowHtml(HtmCache.getInstance().getHtm(player, "data/scripts/ai/others/GameAssistant/no_cloak.html")));
@@ -987,6 +1011,7 @@ public class GameAssistant extends AbstractNpcAI
 						cloaks.add(item);
 					}
 				}
+				
 				if (cloaks.isEmpty())
 				{
 					player.sendPacket(new ExPremiumManagerShowHtml(HtmCache.getInstance().getHtm(player, "data/scripts/ai/others/GameAssistant/no_cloak.html")));
@@ -1025,6 +1050,7 @@ public class GameAssistant extends AbstractNpcAI
 						cloaks.add(item);
 					}
 				}
+				
 				if (cloaks.isEmpty())
 				{
 					player.sendPacket(new ExPremiumManagerShowHtml(HtmCache.getInstance().getHtm(player, "data/scripts/ai/others/GameAssistant/no_cloak.html")));
@@ -1063,6 +1089,7 @@ public class GameAssistant extends AbstractNpcAI
 						cloaks.add(item);
 					}
 				}
+				
 				if (cloaks.isEmpty())
 				{
 					player.sendPacket(new ExPremiumManagerShowHtml(HtmCache.getInstance().getHtm(player, "data/scripts/ai/others/GameAssistant/no_cloak.html")));
@@ -1101,6 +1128,7 @@ public class GameAssistant extends AbstractNpcAI
 						cloaks.add(item);
 					}
 				}
+				
 				if (cloaks.isEmpty())
 				{
 					player.sendPacket(new ExPremiumManagerShowHtml(HtmCache.getInstance().getHtm(player, "data/scripts/ai/others/GameAssistant/no_cloak.html")));
@@ -1139,6 +1167,7 @@ public class GameAssistant extends AbstractNpcAI
 						cloaks.add(item);
 					}
 				}
+				
 				if (cloaks.isEmpty())
 				{
 					player.sendPacket(new ExPremiumManagerShowHtml(HtmCache.getInstance().getHtm(player, "data/scripts/ai/others/GameAssistant/no_cloak.html")));
@@ -1177,6 +1206,7 @@ public class GameAssistant extends AbstractNpcAI
 						cloaks.add(item);
 					}
 				}
+				
 				if (cloaks.isEmpty())
 				{
 					player.sendPacket(new ExPremiumManagerShowHtml(HtmCache.getInstance().getHtm(player, "data/scripts/ai/others/GameAssistant/no_cloak.html")));
@@ -1213,6 +1243,7 @@ public class GameAssistant extends AbstractNpcAI
 					player.sendPacket(new ExPremiumManagerShowHtml(HtmCache.getInstance().getHtm(player, "data/scripts/ai/others/GameAssistant/no_cloak.html")));
 					return null;
 				}
+				
 				takeItems(player, SAYHA_CLOAK_COUPON, 1);
 				giveItems(player, RED_SAYHA_CLOAK, 1);
 				break;
@@ -1227,6 +1258,7 @@ public class GameAssistant extends AbstractNpcAI
 						cloaks.add(item);
 					}
 				}
+				
 				if (cloaks.isEmpty())
 				{
 					player.sendPacket(new ExPremiumManagerShowHtml(HtmCache.getInstance().getHtm(player, "data/scripts/ai/others/GameAssistant/no_cloak.html")));
@@ -1265,6 +1297,7 @@ public class GameAssistant extends AbstractNpcAI
 						cloaks.add(item);
 					}
 				}
+				
 				if (cloaks.isEmpty())
 				{
 					player.sendPacket(new ExPremiumManagerShowHtml(HtmCache.getInstance().getHtm(player, "data/scripts/ai/others/GameAssistant/no_cloak.html")));
@@ -1303,6 +1336,7 @@ public class GameAssistant extends AbstractNpcAI
 						cloaks.add(item);
 					}
 				}
+				
 				if (cloaks.isEmpty())
 				{
 					player.sendPacket(new ExPremiumManagerShowHtml(HtmCache.getInstance().getHtm(player, "data/scripts/ai/others/GameAssistant/no_cloak.html")));
@@ -1341,6 +1375,7 @@ public class GameAssistant extends AbstractNpcAI
 						cloaks.add(item);
 					}
 				}
+				
 				if (cloaks.isEmpty())
 				{
 					player.sendPacket(new ExPremiumManagerShowHtml(HtmCache.getInstance().getHtm(player, "data/scripts/ai/others/GameAssistant/no_cloak.html")));
@@ -1379,6 +1414,7 @@ public class GameAssistant extends AbstractNpcAI
 						cloaks.add(item);
 					}
 				}
+				
 				if (cloaks.isEmpty())
 				{
 					player.sendPacket(new ExPremiumManagerShowHtml(HtmCache.getInstance().getHtm(player, "data/scripts/ai/others/GameAssistant/no_cloak.html")));
@@ -1417,6 +1453,7 @@ public class GameAssistant extends AbstractNpcAI
 						cloaks.add(item);
 					}
 				}
+				
 				if (cloaks.isEmpty())
 				{
 					player.sendPacket(new ExPremiumManagerShowHtml(HtmCache.getInstance().getHtm(player, "data/scripts/ai/others/GameAssistant/no_cloak.html")));
@@ -1455,6 +1492,7 @@ public class GameAssistant extends AbstractNpcAI
 						cloaks.add(item);
 					}
 				}
+				
 				if (cloaks.isEmpty())
 				{
 					player.sendPacket(new ExPremiumManagerShowHtml(HtmCache.getInstance().getHtm(player, "data/scripts/ai/others/GameAssistant/no_cloak.html")));
@@ -1493,6 +1531,7 @@ public class GameAssistant extends AbstractNpcAI
 						cloaks.add(item);
 					}
 				}
+				
 				if (cloaks.isEmpty())
 				{
 					player.sendPacket(new ExPremiumManagerShowHtml(HtmCache.getInstance().getHtm(player, "data/scripts/ai/others/GameAssistant/no_cloak.html")));
@@ -1531,6 +1570,7 @@ public class GameAssistant extends AbstractNpcAI
 						cloaks.add(item);
 					}
 				}
+				
 				if (cloaks.isEmpty())
 				{
 					player.sendPacket(new ExPremiumManagerShowHtml(HtmCache.getInstance().getHtm(player, "data/scripts/ai/others/GameAssistant/no_cloak.html")));
@@ -1569,6 +1609,7 @@ public class GameAssistant extends AbstractNpcAI
 						cloaks.add(item);
 					}
 				}
+				
 				if (cloaks.isEmpty())
 				{
 					player.sendPacket(new ExPremiumManagerShowHtml(HtmCache.getInstance().getHtm(player, "data/scripts/ai/others/GameAssistant/no_cloak.html")));
@@ -1598,6 +1639,7 @@ public class GameAssistant extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

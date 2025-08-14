@@ -83,11 +83,13 @@ public class CallPc extends AbstractEffect
 						}
 						return;
 					}
+					
 					target.getInventory().destroyItemByItemId(null, _itemId, _itemCount, player, target);
 					final SystemMessage sm = new SystemMessage(SystemMessageId.S1_HAS_DISAPPEARED);
 					sm.addItemName(_itemId);
 					target.sendPacket(sm);
 				}
+				
 				target.addScript(new SummonRequestHolder(player));
 				
 				// final ConfirmDlg confirm = new ConfirmDlg(SystemMessageId.S1_WISHES_TO_SUMMON_YOU_FROM_S2_DO_YOU_ACCEPT.getId());
@@ -183,6 +185,7 @@ public class CallPc extends AbstractEffect
 				return false;
 			}
 		}
+		
 		return true;
 	}
 }

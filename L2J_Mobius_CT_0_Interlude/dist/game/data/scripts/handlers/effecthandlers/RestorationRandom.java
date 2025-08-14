@@ -105,6 +105,7 @@ public class RestorationRandom extends AbstractEffect
 				creationList.addAll(expi.getItems());
 				break;
 			}
+			
 			chanceFrom += chance;
 		}
 		

@@ -62,6 +62,7 @@ public class RemainHpPerSkillCondition implements ISkillCondition
 				break;
 			}
 		}
+		
 		return false;
 	}
 }

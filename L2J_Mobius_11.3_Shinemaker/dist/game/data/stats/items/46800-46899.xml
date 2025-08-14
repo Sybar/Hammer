@@ -1335,9 +1335,9 @@
 		<set name="immediate_effect" val="true" />
 		<set name="handler" val="PaulinasSupportBox" />
 		<set name="material" val="PAPER" />
-		<cond msgId="1902">
+		<conditions msgId="1902">
 			<player levelRange="20;39" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="18597" level="1" /> <!-- Paulina's D-grade Equipment Set -->
 		</skills>
@@ -1353,9 +1353,9 @@
 		<set name="immediate_effect" val="true" />
 		<set name="handler" val="PaulinasSupportBox" />
 		<set name="material" val="PAPER" />
-		<cond msgId="1902">
+		<conditions msgId="1902">
 			<player levelRange="40;60" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="18597" level="2" /> <!-- Paulina's C-grade Equipment Set -->
 		</skills>
@@ -1371,9 +1371,9 @@
 		<set name="immediate_effect" val="true" />
 		<set name="handler" val="PaulinasSupportBox" />
 		<set name="material" val="PAPER" />
-		<cond msgId="1902">
+		<conditions msgId="1902">
 			<player levelRange="61;75" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="18597" level="3" /> <!-- Paulina's A-grade Equipment Set -->
 		</skills>
@@ -1389,9 +1389,9 @@
 		<set name="immediate_effect" val="true" />
 		<set name="handler" val="PaulinasSupportBox" />
 		<set name="material" val="PAPER" />
-		<cond msgId="1902">
+		<conditions msgId="1902">
 			<player levelRange="76;84" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="18597" level="4" /> <!-- Paulina's S-grade Equipment Set -->
 		</skills>

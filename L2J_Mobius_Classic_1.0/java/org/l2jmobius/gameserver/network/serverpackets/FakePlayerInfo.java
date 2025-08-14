@@ -111,12 +111,14 @@ public class FakePlayerInfo extends ServerPacket
 		{
 			buffer.writeInt(0);
 		}
+		
 		buffer.writeByte(_fpcHolder.getArmorEnchantLevel());
 		for (@SuppressWarnings("unused")
 		final int slot : getPaperdollOrderVisualId())
 		{
 			buffer.writeInt(0);
 		}
+		
 		buffer.writeByte(_npc.getScriptValue()); // getPvpFlag()
 		buffer.writeInt(_npc.getReputation());
 		buffer.writeInt(_mAtkSpd);
@@ -151,6 +153,7 @@ public class FakePlayerInfo extends ServerPacket
 			buffer.writeInt(0);
 			buffer.writeInt(0);
 		}
+		
 		buffer.writeByte(!_fpcHolder.isSitting());
 		buffer.writeByte(_npc.isRunning());
 		buffer.writeByte(_npc.isInCombat());
@@ -159,6 +162,7 @@ public class FakePlayerInfo extends ServerPacket
 		buffer.writeByte(0); // 1-on Strider, 2-on Wyvern, 3-on Great Wolf, 0-no mount
 		buffer.writeByte(_fpcHolder.getPrivateStoreType());
 		buffer.writeShort(0); // getCubics().size()
+		
 		// getCubics().keySet().forEach(packet::writeH);
 		buffer.writeByte(0);
 		buffer.writeByte(_npc.isInsideZone(ZoneId.WATER));
@@ -196,10 +200,12 @@ public class FakePlayerInfo extends ServerPacket
 		{
 			buffer.writeShort(abnormalVisualEffect.getClientId());
 		}
+		
 		if (_npc.isInvisible())
 		{
 			buffer.writeShort(AbnormalVisualEffect.STEALTH.getClientId());
 		}
+		
 		buffer.writeByte(0); // cocPlayer.getPosition()
 		buffer.writeByte((_fpcHolder.getHair() > 0) || (_fpcHolder.getEquipHair2() > 0));
 		buffer.writeByte(0); // Used Ability Points

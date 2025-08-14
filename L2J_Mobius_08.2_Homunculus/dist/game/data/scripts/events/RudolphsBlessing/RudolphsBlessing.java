@@ -72,8 +72,10 @@ public class RudolphsBlessing extends LongTimeEvent
 				final Skill rudolphsBlessing = SkillData.getInstance().getSkill(23297, 1);
 				rudolphsBlessing.applyEffects(player, player);
 			}
+			
 			startQuestTimer("rudolph_eat", 10 * 60 * 1000, null, player);
 		}
+		
 		if (player == null)
 		{
 			return null;
@@ -119,6 +121,7 @@ public class RudolphsBlessing extends LongTimeEvent
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -128,6 +131,7 @@ public class RudolphsBlessing extends LongTimeEvent
 		{
 			return;
 		}
+		
 		final Player player = event.getPlayer();
 		if (player == null)
 		{
@@ -143,6 +147,7 @@ public class RudolphsBlessing extends LongTimeEvent
 		{
 			return;
 		}
+		
 		final Player player = event.getPlayer();
 		if (player == null)
 		{

@@ -40,6 +40,7 @@ public class Q00462_ExploringTheSelMahumBase extends Quest
 {
 	// NPC
 	private static final int GENIE_LAMP = 34369;
+	
 	// Monsters
 	private static final int SEL_MAHUM_WIZARD = 22242;
 	private static final int SEL_MAHUM_BOWMAN = 22245;
@@ -48,8 +49,10 @@ public class Q00462_ExploringTheSelMahumBase extends Quest
 	private static final int SEL_MAHUM_SNIPER = 22237;
 	private static final int SEL_MAHUM_FOOTMAN = 22276;
 	private static final int SEL_MAHUM_MAGE = 22240;
+	
 	// Item
 	private static final ItemHolder SOULSHOT_TICKET = new ItemHolder(90907, 3);
+	
 	// Misc
 	private static final int MIN_LEVEL = 83;
 	private static final String KILL_COUNT_VAR = "KillCount";
@@ -103,6 +106,7 @@ public class Q00462_ExploringTheSelMahumBase extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -141,6 +145,7 @@ public class Q00462_ExploringTheSelMahumBase extends Quest
 				htmltext = getAlreadyCompletedMsg(player);
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -176,6 +181,7 @@ public class Q00462_ExploringTheSelMahumBase extends Quest
 			holder.add(new NpcLogListHolder(NpcStringId.DEFEAT_MONSTERS_54.getId(), true, qs.getInt(KILL_COUNT_VAR)));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

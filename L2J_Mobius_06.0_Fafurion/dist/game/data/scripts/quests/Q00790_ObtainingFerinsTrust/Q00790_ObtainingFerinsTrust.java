@@ -38,6 +38,7 @@ public class Q00790_ObtainingFerinsTrust extends Quest
 {
 	// NPCs
 	private static final int CYPHONA = 34055;
+	
 	// Monsters
 	private static final int[] MONSTERS =
 	{
@@ -58,8 +59,10 @@ public class Q00790_ObtainingFerinsTrust extends Quest
 		23549, // Fury Kerberos Nero
 		23558 // Fury Kerberos Nero (night)
 	};
+	
 	// Misc
 	private static final int MIN_LEVEL = 102;
+	
 	// Item's
 	private static final int MUTATED_SPIRITS_SOUL = 45849;
 	private static final int UNWORLDLY_VISITORS_BASIC_SUPPLY_BOX = 47181;
@@ -113,6 +116,7 @@ public class Q00790_ObtainingFerinsTrust extends Quest
 					htmltext = "34055-04b.htm";
 					break;
 				}
+				
 				htmltext = "34055-04.htm";
 				break;
 			}
@@ -128,6 +132,7 @@ public class Q00790_ObtainingFerinsTrust extends Quest
 					htmltext = "34055-04b.htm";
 					break;
 				}
+				
 				htmltext = "34055-04.htm";
 				break;
 			}
@@ -170,6 +175,7 @@ public class Q00790_ObtainingFerinsTrust extends Quest
 							{
 								giveItems(player, UNWORLDLY_VISITORS_BASIC_SUPPLY_BOX, 1);
 							}
+							
 							addExpAndSp(player, 22_221_427_950L, 22_221_360);
 							addFactionPoints(player, Faction.UNWORLDLY_VISITORS, 100);
 							qs.exitQuest(QuestType.DAILY, true);
@@ -197,6 +203,7 @@ public class Q00790_ObtainingFerinsTrust extends Quest
 							{
 								giveItems(player, UNWORLDLY_VISITORS_INTERMEDIATE_SUPPLY_BOX, 1);
 							}
+							
 							addExpAndSp(player, 44_442_855_900L, 44_442_720);
 							addFactionPoints(player, Faction.UNWORLDLY_VISITORS, 200);
 							qs.exitQuest(QuestType.DAILY, true);
@@ -224,6 +231,7 @@ public class Q00790_ObtainingFerinsTrust extends Quest
 							{
 								giveItems(player, UNWORLDLY_VISITORS_ADVANCED_SUPPLY_BOX, 1);
 							}
+							
 							addExpAndSp(player, 66_664_283_850L, 66_664_080);
 							addFactionPoints(player, Faction.UNWORLDLY_VISITORS, 300);
 							qs.exitQuest(QuestType.DAILY, true);
@@ -239,6 +247,7 @@ public class Q00790_ObtainingFerinsTrust extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -270,6 +279,7 @@ public class Q00790_ObtainingFerinsTrust extends Quest
 							htmltext = "34055-04b.htm";
 							break;
 						}
+						
 						htmltext = "34055-04.htm";
 						break;
 					}
@@ -312,6 +322,7 @@ public class Q00790_ObtainingFerinsTrust extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

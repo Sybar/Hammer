@@ -48,6 +48,7 @@ public class Q10290_ATripBegins extends Quest
 	private static final int MATHORN = 34139;
 	private static final int BELLA = 30256;
 	private static final int EVIA = 34211;
+	
 	// Items
 	private static final ItemHolder SOE_TO_CAPTAIN_BATHIS = new ItemHolder(91651, 1);
 	private static final ItemHolder SOE_TO_RUIN_OF_AGONY = new ItemHolder(91727, 1);
@@ -56,14 +57,17 @@ public class Q10290_ATripBegins extends Quest
 	private static final ItemHolder SCROLL_OF_ENCHANT_ADVENTURERS_TALISMAN = new ItemHolder(95688, 1);
 	private static final ItemHolder ADVENTURERS_BRACELET = new ItemHolder(91934, 1);
 	private static final ItemHolder SCROLL_OF_ENCHANT_ADEN_WEAPON = new ItemHolder(93038, 2);
+	
 	// Monsters
 	private static final int SKELETON_BOWMAN = 20051;
 	private static final int RUIN_SPARTOI = 20054;
 	private static final int RAGING_SPARTOI = 20060;
 	private static final int TUMRAN_BUGBEAR = 20062;
 	private static final int TUMRAN_BUGBEAR_WARRIOR = 20064;
+	
 	// Location
 	private static final Location TELEPORT_GLUDIO = new Location(-14489, 123974, -3128);
+	
 	// Misc
 	private static final int MIN_LEVEL = 20;
 	private static final int MAX_LEVEL = 25;
@@ -131,6 +135,7 @@ public class Q10290_ATripBegins extends Quest
 				{
 					htmltext = "34211-03.html";
 				}
+				
 				qs.startQuest();
 				npc.broadcastPacket(new NpcSay(npc, ChatType.NPC_GENERAL, NpcStringId.USING_THE_GATEKEEPER));
 				break;
@@ -156,28 +161,34 @@ public class Q10290_ATripBegins extends Quest
 				{
 					showOnScreenMsg(player, NpcStringId.YOU_VE_GOT_ADVENTURER_S_BRACELET_AND_ADVENTURER_S_TALISMAN_NCOMPLETE_THE_TUTORIAL_AND_TRY_TO_USE_THE_TALISMAN, ExShowScreenMessage.TOP_CENTER, 10000);
 					addExpAndSp(player, player.getLevel() < MAX_LEVEL ? (ExperienceData.getInstance().getExpForLevel(MAX_LEVEL) + 100) - player.getExp() : 0, 42000);
+					
 					// TODO: find a better way to do this: Tempfix for not giving items when already have them in inventory (bugging abort and re-accepting).
 					if (player.getInventory().getAllItemsByItemId(BSOE_EVENT.getId()).size() <= 20)
 					{
 						// 20 due other quest rewards? Need to see for a possible to add a variable here.
 						giveItems(player, BSOE_EVENT);
 					}
+					
 					if (player.getInventory().getAllItemsByItemId(ADVENTURERS_BRACELET.getId()).isEmpty())
 					{
 						giveItems(player, ADVENTURERS_BRACELET);
 					}
+					
 					if (player.getInventory().getAllItemsByItemId(ADVENTURERS_TALISMAN.getId()).isEmpty())
 					{
 						giveItems(player, ADVENTURERS_TALISMAN);
 					}
+					
 					if (player.getInventory().getAllItemsByItemId(SCROLL_OF_ENCHANT_ADVENTURERS_TALISMAN.getId()).isEmpty())
 					{
 						giveItems(player, SCROLL_OF_ENCHANT_ADVENTURERS_TALISMAN);
 					}
+					
 					if (player.getInventory().getAllItemsByItemId(SCROLL_OF_ENCHANT_ADEN_WEAPON.getId()).isEmpty())
 					{
 						giveItems(player, SCROLL_OF_ENCHANT_ADEN_WEAPON);
 					}
+					
 					qs.exitQuest(false, true);
 					htmltext = "30332-03.html";
 				}
@@ -192,6 +203,7 @@ public class Q10290_ATripBegins extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -280,6 +292,7 @@ public class Q10290_ATripBegins extends Quest
 		{
 			htmltext = getAlreadyCompletedMsg(player);
 		}
+		
 		return htmltext;
 	}
 	
@@ -316,6 +329,7 @@ public class Q10290_ATripBegins extends Quest
 			holder.add(new NpcLogListHolder(NpcStringId.KILL_MONSTERS_IN_THE_RUINS_OF_AGONY.getId(), true, qs.getInt(KILL_COUNT_VAR)));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

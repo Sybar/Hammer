@@ -63,6 +63,7 @@ public class Pledge implements IAffectScopeHandler
 				{
 					return false;
 				}
+				
 				if (p != player)
 				{
 					final int pClanId = p.getClanId();
@@ -71,6 +72,7 @@ public class Pledge implements IAffectScopeHandler
 						return false;
 					}
 				}
+				
 				if ((affectObject != null) && !affectObject.checkAffectedObject(creature, p))
 				{
 					return false;

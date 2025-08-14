@@ -33,6 +33,7 @@ public class Q00755_InNeedOfPetras extends Quest
 {
 	// NPCs
 	private static final int AKU = 33671;
+	
 	// Monsters
 	private static final int[] MONSTERS =
 	{
@@ -53,10 +54,12 @@ public class Q00755_InNeedOfPetras extends Quest
 		23237,
 		23219
 	};
+	
 	// Items
 	private static final int AKUS_SUPPLY_BOX = 35550;
 	private static final int ENERGY_OF_DESTRUCTION = 35562;
 	private static final int PETRA = 34959;
+	
 	// Other
 	private static final int MIN_LEVEL = 97;
 	
@@ -84,6 +87,7 @@ public class Q00755_InNeedOfPetras extends Quest
 		{
 			qs.startQuest();
 		}
+		
 		return htmltext;
 	}
 	
@@ -116,6 +120,7 @@ public class Q00755_InNeedOfPetras extends Quest
 		{
 			htmltext = "sofa_aku_q0755_06.html";
 		}
+		
 		return htmltext;
 	}
 	

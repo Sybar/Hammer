@@ -41,14 +41,17 @@ public class Q10954_SayhaChildren extends Quest
 	// NPCs
 	private static final int ANDRA = 34209;
 	private static final int KERKIN = 34210;
+	
 	// Monsters
 	private static final int TRAINING_DUMMY = 22324;
+	
 	// Items
 	private static final ItemHolder SOULSHOT_REWARD_1 = new ItemHolder(91927, 200);
 	private static final ItemHolder SOULSHOT_REWARD_2 = new ItemHolder(91927, 400);
 	private static final ItemHolder SOE_REWARD = new ItemHolder(10650, 5);
 	private static final ItemHolder WW_POTION_REWARD = new ItemHolder(49036, 5);
 	private static final ItemHolder HP_POTION_REWARD = new ItemHolder(91912, 50);
+	
 	// Misc
 	private static final int MIN_LEVEL = 1;
 	private static final int MAX_LEVEL = 2;
@@ -112,6 +115,7 @@ public class Q10954_SayhaChildren extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -186,6 +190,7 @@ public class Q10954_SayhaChildren extends Quest
 		{
 			htmltext = getAlreadyCompletedMsg(player);
 		}
+		
 		return htmltext;
 	}
 	
@@ -244,6 +249,7 @@ public class Q10954_SayhaChildren extends Quest
 			holder.add(new NpcLogListHolder(NpcStringId.ATTACK_THE_TRAINING_DUMMY.getId(), true, qs.getInt(KILL_COUNT_VAR)));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

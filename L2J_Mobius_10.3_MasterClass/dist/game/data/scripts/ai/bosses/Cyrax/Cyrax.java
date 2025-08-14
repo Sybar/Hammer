@@ -39,9 +39,11 @@ public class Cyrax extends AbstractNpcAI
 {
 	// NPC
 	private static final int CYRAX = 29374;
+	
 	// Skills
 	private static final SkillHolder AQUA_WAVE = new SkillHolder(32742, 1);
 	private static final SkillHolder SURGE_WAVE = new SkillHolder(32743, 1);
+	
 	// Item
 	private static final int FONDUS_STONE = 80322;
 	
@@ -64,6 +66,7 @@ public class Cyrax extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	
@@ -92,6 +95,7 @@ public class Cyrax extends AbstractNpcAI
 			{
 				refreshAiParams(attacker, npc, ((damage / 3) * 20));
 			}
+			
 			manageSkills(npc);
 		}
 	}
@@ -117,6 +121,7 @@ public class Cyrax extends AbstractNpcAI
 				return;
 			}
 		}
+		
 		final int index = MathUtil.getIndexOfMinValue(vars.getInt("i_quest0"), vars.getInt("i_quest1"), vars.getInt("i_quest2"));
 		vars.set("i_quest" + index, newAggroVal);
 		vars.set("c_quest" + index, attacker);
@@ -144,6 +149,7 @@ public class Cyrax extends AbstractNpcAI
 				vars.set("i_quest" + i, 0);
 			}
 		}
+		
 		final int index = MathUtil.getIndexOfMaxValue(vars.getInt("i_quest0"), vars.getInt("i_quest1"), vars.getInt("i_quest2"));
 		final Creature player = vars.getObject("c_quest" + index, Creature.class);
 		final int i2 = vars.getInt("i_quest" + index);

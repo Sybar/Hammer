@@ -37,6 +37,7 @@ public class Q10866_PunitiveOperationOnTheDevilIsle extends Quest
 	private static final int EIN = 34017;
 	private static final int FETHIN = 34019;
 	private static final int NIKIA = 34020;
+	
 	// Misc
 	private static final int MIN_LEVEL = 70;
 	
@@ -97,6 +98,7 @@ public class Q10866_PunitiveOperationOnTheDevilIsle extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -162,6 +164,7 @@ public class Q10866_PunitiveOperationOnTheDevilIsle extends Quest
 				htmltext = getAlreadyCompletedMsg(player);
 			}
 		}
+		
 		return htmltext;
 	}
 }

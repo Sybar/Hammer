@@ -77,6 +77,7 @@ public class AlchemyCraftData
 		{
 			_ingredients = new HashSet<>();
 		}
+		
 		_ingredients.add(ingredient);
 	}
 	

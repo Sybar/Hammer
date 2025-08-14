@@ -24,9 +24,9 @@ import java.util.Calendar;
 
 import org.l2jmobius.gameserver.handler.AbstractDailyMissionHandler;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.actor.enums.player.DailyMissionDataHolder;
-import org.l2jmobius.gameserver.model.actor.enums.player.DailyMissionPlayerEntry;
 import org.l2jmobius.gameserver.model.actor.enums.player.DailyMissionStatus;
+import org.l2jmobius.gameserver.model.actor.holders.player.DailyMissionDataHolder;
+import org.l2jmobius.gameserver.model.actor.holders.player.DailyMissionPlayerEntry;
 import org.l2jmobius.gameserver.model.events.Containers;
 import org.l2jmobius.gameserver.model.events.EventType;
 import org.l2jmobius.gameserver.model.events.holders.actor.player.OnPlayerLogin;
@@ -68,6 +68,7 @@ public class LoginWeekendDailyMissionHandler extends AbstractDailyMissionHandler
 				entry.setStatus(DailyMissionStatus.AVAILABLE);
 			}
 		}
+		
 		storePlayerEntry(entry);
 	}
 }

@@ -83,6 +83,7 @@ public class BalrogWarBossInfo extends ServerPacket
 				bossId4 = 25959 + 1000000;
 				bossId5 = 25960 + 1000000;
 			}
+			
 			buffer.writeInt(bossId1);
 			buffer.writeInt(bossId2);
 			buffer.writeInt(bossId3);

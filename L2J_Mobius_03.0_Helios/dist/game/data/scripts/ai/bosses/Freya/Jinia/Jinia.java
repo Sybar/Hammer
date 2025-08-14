@@ -31,9 +31,11 @@ public class Jinia extends AbstractNpcAI
 {
 	// NPC
 	private static final int JINIA = 32781;
+	
 	// Items
 	private static final int FROZEN_CORE = 15469;
 	private static final int BLACK_FROZEN_CORE = 15470;
+	
 	// Misc
 	private static final int MIN_LEVEL = 82;
 	
@@ -67,11 +69,13 @@ public class Jinia extends AbstractNpcAI
 					{
 						giveItems(player, BLACK_FROZEN_CORE, 1);
 					}
+					
 					htmltext = "32781-04.html";
 				}
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -90,6 +94,7 @@ public class Jinia extends AbstractNpcAI
 				return "32781-01.html";
 			}
 		}
+		
 		return "32781-02.html";
 	}
 	

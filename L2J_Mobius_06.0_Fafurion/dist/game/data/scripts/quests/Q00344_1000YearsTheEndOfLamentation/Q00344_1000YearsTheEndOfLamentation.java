@@ -41,12 +41,14 @@ public class Q00344_1000YearsTheEndOfLamentation extends Quest
 	private static final int GILMORE = 30754;
 	private static final int RODEMAI = 30756;
 	private static final int ORVEN = 30857;
+	
 	// Items
 	private static final int ARTICLES = 4269;
 	private static final ItemHolder OLD_KEY = new ItemHolder(4270, 1);
 	private static final ItemHolder OLD_HILT = new ItemHolder(4271, 1);
 	private static final ItemHolder TOTEM_NECKLACE = new ItemHolder(4272, 1);
 	private static final ItemHolder CRUCIFIX = new ItemHolder(4273, 1);
+	
 	// Monsters
 	private static final Map<Integer, Double> MONSTER_CHANCES = new HashMap<>();
 	static
@@ -76,6 +78,7 @@ public class Q00344_1000YearsTheEndOfLamentation extends Quest
 	private static final ItemHolder STONE_OF_PURITY = new ItemHolder(1875, 19);
 	private static final ItemHolder SCROLL_EAC = new ItemHolder(952, 5);
 	private static final ItemHolder DRAKE_LEATHER_BOOTS = new ItemHolder(2437, 1);
+	
 	// Misc
 	private static final int MIN_LEVEL = 48;
 	private static final int MAX_LEVEL = 55;
@@ -164,6 +167,7 @@ public class Q00344_1000YearsTheEndOfLamentation extends Quest
 									break;
 								}
 							}
+							
 							htmltext = "30754-09.html";
 						}
 					}
@@ -207,6 +211,7 @@ public class Q00344_1000YearsTheEndOfLamentation extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -269,6 +274,7 @@ public class Q00344_1000YearsTheEndOfLamentation extends Quest
 						{
 							rewardItems(talker, RAID_SWORD);
 						}
+						
 						qs.setCond(1);
 						htmltext = "30623-01.html";
 					}
@@ -299,6 +305,7 @@ public class Q00344_1000YearsTheEndOfLamentation extends Quest
 						{
 							rewardItems(talker, RING_OF_AGES);
 						}
+						
 						qs.setCond(1);
 						htmltext = "30756-01.html";
 					}
@@ -329,6 +336,7 @@ public class Q00344_1000YearsTheEndOfLamentation extends Quest
 						{
 							rewardItems(talker, HEAVY_DOOM_HAMMER);
 						}
+						
 						qs.setCond(1);
 						htmltext = "30704-01.html";
 					}
@@ -359,6 +367,7 @@ public class Q00344_1000YearsTheEndOfLamentation extends Quest
 						{
 							rewardItems(talker, DRAKE_LEATHER_BOOTS);
 						}
+						
 						qs.setCond(1);
 						htmltext = "30857-01.html";
 					}
@@ -370,6 +379,7 @@ public class Q00344_1000YearsTheEndOfLamentation extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

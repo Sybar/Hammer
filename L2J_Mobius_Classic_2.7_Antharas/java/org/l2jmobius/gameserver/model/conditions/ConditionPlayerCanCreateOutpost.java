@@ -82,6 +82,7 @@ public class ConditionPlayerCanCreateOutpost extends Condition
 			player.sendPacket(SystemMessageId.YOU_CAN_T_BUILD_HEADQUARTERS_HERE);
 			canCreateOutpost = false;
 		}
+		
 		return _value == canCreateOutpost;
 	}
 }

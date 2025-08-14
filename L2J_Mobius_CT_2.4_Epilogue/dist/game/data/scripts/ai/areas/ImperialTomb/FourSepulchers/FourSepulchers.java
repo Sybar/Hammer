@@ -103,11 +103,13 @@ public class FourSepulchers extends AbstractNpcAI implements IXmlReader
 		18177, // room 4
 		18212, // room 5 - wave 2
 	};
+	
 	// Items
 	private static final int ENTRANCE_PASS = 7075;
 	private static final int USED_PASS = 7261;
 	private static final int CHAPEL_KEY = 7260;
 	private static final int ANTIQUE_BROOCH = 7262;
+	
 	// Locations
 	private static final Map<Integer, Location> START_HALL_SPAWNS = new HashMap<>();
 	static
@@ -117,6 +119,7 @@ public class FourSepulchers extends AbstractNpcAI implements IXmlReader
 		START_HALL_SPAWNS.put(GREAT_SAGES_MANAGER, new Location(173217, -86132, -7218));
 		START_HALL_SPAWNS.put(JUDGE_MANAGER, new Location(175608, -82296, -7218));
 	}
+	
 	// Zones
 	private static final int CONQUEROR_ZONE = 200221;
 	private static final int EMPEROR_ZONE = 200222;
@@ -130,6 +133,7 @@ public class FourSepulchers extends AbstractNpcAI implements IXmlReader
 		MANAGER_ZONES.put(GREAT_SAGES_MANAGER, GREAT_SAGES_ZONE);
 		MANAGER_ZONES.put(JUDGE_MANAGER, JUDGE_ZONE);
 	}
+	
 	// Spawns
 	private static List<int[]> ROOM_SPAWN_DATA = new ArrayList<>();
 	private static final Map<Integer, List<Npc>> STORED_MONSTER_SPAWNS = new HashMap<>();
@@ -165,6 +169,7 @@ public class FourSepulchers extends AbstractNpcAI implements IXmlReader
 		{4, 4, 175588, -76472, -7216, 49152},
 		{4, 5, 175594, -74655, -7216, 49152},
 	};
+	
 	// Doors
 	private static final int[][] DOORS =
 	{
@@ -175,6 +180,7 @@ public class FourSepulchers extends AbstractNpcAI implements IXmlReader
 		{4, 2, 25150022}, {4, 3, 25150023}, {4, 4, 25150024}, {4, 5, 25150025}, {4, 7, 25150026},
 	};
 	// @formatter:on
+	
 	// Skill
 	private static final SkillHolder PETRIFY = new SkillHolder(4616, 1);
 	private static final Map<Integer, Integer> CHARM_SKILLS = new HashMap<>();
@@ -185,6 +191,7 @@ public class FourSepulchers extends AbstractNpcAI implements IXmlReader
 		CHARM_SKILLS.put(ROOM_4_CHARM_3, 4148);
 		CHARM_SKILLS.put(ROOM_4_CHARM_4, 4624);
 	}
+	
 	// Misc
 	private static final Map<Integer, String> CHARM_MSG = new HashMap<>();
 	static
@@ -235,6 +242,7 @@ public class FourSepulchers extends AbstractNpcAI implements IXmlReader
 		{
 			calendar.add(Calendar.HOUR_OF_DAY, 1);
 		}
+		
 		calendar.set(Calendar.MINUTE, ENTRY_TIME);
 		startQuestTimer("ANNOUNCE", calendar.getTimeInMillis() - System.currentTimeMillis(), null, null);
 	}
@@ -246,13 +254,14 @@ public class FourSepulchers extends AbstractNpcAI implements IXmlReader
 		
 		switch (event)
 		{
-			case "Enter":
+			case "ENTER":
 			{
 				final QuestState qs = player.getQuestState(Q00620_FourGoblets.class.getSimpleName());
 				if (qs == null)
 				{
 					return getNoQuestMsg(player);
 				}
+				
 				if (qs.isStarted())
 				{
 					tryEnter(npc, player);
@@ -260,13 +269,14 @@ public class FourSepulchers extends AbstractNpcAI implements IXmlReader
 				}
 				break;
 			}
-			case "OpenGate":
+			case "OPEN_GATE":
 			{
 				final QuestState qs = player.getQuestState(Q00620_FourGoblets.class.getSimpleName());
 				if (qs == null)
 				{
 					return getNoQuestMsg(player);
 				}
+				
 				if (qs.isStarted() && npc.isScriptValue(0))
 				{
 					if (hasQuestItems(player, CHAPEL_KEY))
@@ -285,6 +295,7 @@ public class FourSepulchers extends AbstractNpcAI implements IXmlReader
 								break;
 							}
 						}
+						
 						if (currentWave < 7)
 						{
 							spawnMysteriousChest(player);
@@ -293,6 +304,7 @@ public class FourSepulchers extends AbstractNpcAI implements IXmlReader
 						{
 							spawnNextWave(player);
 						}
+						
 						npc.broadcastSay(ChatType.NPC_GENERAL, "The monsters have spawned!");
 					}
 					else
@@ -302,8 +314,10 @@ public class FourSepulchers extends AbstractNpcAI implements IXmlReader
 						html.replace("%npcname%", npc.getName());
 						player.sendPacket(html);
 					}
+					
 					return null;
 				}
+				
 				htmltext = getNoQuestMsg(player); // TODO: Replace with proper html?
 				break;
 			}
@@ -321,9 +335,11 @@ public class FourSepulchers extends AbstractNpcAI implements IXmlReader
 					{
 						npc.getAI().setIntention(Intention.MOVE_TO, destination);
 					}
+					
 					npc.broadcastSay(ChatType.NPC_GENERAL, getRandomEntry(VICTIM_MSG));
 					startQuestTimer("VICTIM_FLEE", 3000, npc, null, false);
 				}
+				
 				return null;
 			}
 			case "REMOVE_PETRIFY":
@@ -346,6 +362,7 @@ public class FourSepulchers extends AbstractNpcAI implements IXmlReader
 						STORED_MONSTER_SPAWNS.get(sepulcherId).remove(spawn);
 					}
 				}
+				
 				if (STORED_MONSTER_SPAWNS.get(sepulcherId).isEmpty())
 				{
 					if (currentWave == 2)
@@ -369,6 +386,7 @@ public class FourSepulchers extends AbstractNpcAI implements IXmlReader
 				{
 					startQuestTimer("WAVE_DEFEATED_CHECK", 5000, null, player, false);
 				}
+				
 				return null;
 			}
 			case "ANNOUNCE":
@@ -396,11 +414,13 @@ public class FourSepulchers extends AbstractNpcAI implements IXmlReader
 				{
 					calendar.add(Calendar.HOUR_OF_DAY, 1);
 				}
+				
 				calendar.set(Calendar.MINUTE, ENTRY_TIME);
 				startQuestTimer("ANNOUNCE", calendar.getTimeInMillis() - System.currentTimeMillis(), null, null);
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -411,6 +431,7 @@ public class FourSepulchers extends AbstractNpcAI implements IXmlReader
 		{
 			return null;
 		}
+		
 		if (npc.getId() == MYSTERIOUS_CHEST)
 		{
 			if (npc.isScriptValue(0))
@@ -419,8 +440,10 @@ public class FourSepulchers extends AbstractNpcAI implements IXmlReader
 				npc.deleteMe();
 				spawnNextWave(player);
 			}
+			
 			return null;
 		}
+		
 		if (npc.getId() == KEY_CHEST)
 		{
 			if (npc.isScriptValue(0))
@@ -429,8 +452,10 @@ public class FourSepulchers extends AbstractNpcAI implements IXmlReader
 				npc.deleteMe();
 				giveItems(player, CHAPEL_KEY, 1);
 			}
+			
 			return null;
 		}
+		
 		return npc.getId() + ".html";
 	}
 	
@@ -444,6 +469,7 @@ public class FourSepulchers extends AbstractNpcAI implements IXmlReader
 			npc.setRunning();
 			startQuestTimer("VICTIM_FLEE", 1000, npc, null, false);
 		}
+		
 		if (npc.getId() == ROOM_5_STATUE_GUARD)
 		{
 			npc.setTarget(npc);
@@ -479,6 +505,7 @@ public class FourSepulchers extends AbstractNpcAI implements IXmlReader
 						break;
 					}
 				}
+				
 				npc.broadcastSay(ChatType.NPC_GENERAL, CHARM_MSG.get(npc.getId()));
 				break;
 			}
@@ -632,6 +659,7 @@ public class FourSepulchers extends AbstractNpcAI implements IXmlReader
 				members.add(mem);
 			}
 		}
+		
 		for (Player mem : members)
 		{
 			mem.teleToLocation(START_HALL_SPAWNS.get(npcId), 80);
@@ -642,6 +670,7 @@ public class FourSepulchers extends AbstractNpcAI implements IXmlReader
 				giveItems(mem, USED_PASS, 1);
 			}
 		}
+		
 		showHtmlFile(player, npcId + "-OK.html", npc, null);
 		
 		// Kick all players when/if time is over.
@@ -662,6 +691,7 @@ public class FourSepulchers extends AbstractNpcAI implements IXmlReader
 				STORED_MONSTER_SPAWNS.get(sepulcherId).add(addSpawn(spawnInfo[2], spawnInfo[3], spawnInfo[4], spawnInfo[5], spawnInfo[6], false, 0));
 			}
 		}
+		
 		if (currentWave == 4)
 		{
 			for (ZoneType zone : ZoneManager.getInstance().getZones(player))
@@ -672,6 +702,7 @@ public class FourSepulchers extends AbstractNpcAI implements IXmlReader
 				}
 			}
 		}
+		
 		if ((currentWave == 2) || (currentWave == 5))
 		{
 			startQuestTimer("WAVE_DEFEATED_CHECK", 5000, null, player, false);
@@ -707,18 +738,22 @@ public class FourSepulchers extends AbstractNpcAI implements IXmlReader
 		{
 			return 1;
 		}
+		
 		if (ZoneManager.getInstance().getZoneById(EMPEROR_ZONE).getPlayersInside().contains(player))
 		{
 			return 2;
 		}
+		
 		if (ZoneManager.getInstance().getZoneById(GREAT_SAGES_ZONE).getPlayersInside().contains(player))
 		{
 			return 3;
 		}
+		
 		if (ZoneManager.getInstance().getZoneById(JUDGE_ZONE).getPlayersInside().contains(player))
 		{
 			return 4;
 		}
+		
 		return 0;
 	}
 	
@@ -730,6 +765,7 @@ public class FourSepulchers extends AbstractNpcAI implements IXmlReader
 		{
 			html.replace("%member%", member.getName());
 		}
+		
 		player.sendPacket(html);
 	}
 	

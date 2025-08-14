@@ -39,6 +39,7 @@ public class MercenaryTeleport extends AbstractNpcAI
 	private static final int NAMO = 33973;
 	private static final int MERCENARY = 33971;
 	private static final int MERCENARY_CAPTAIN = 33970;
+	
 	// Locations
 	private static final Map<String, Location> LOCATIONS = new HashMap<>();
 	static

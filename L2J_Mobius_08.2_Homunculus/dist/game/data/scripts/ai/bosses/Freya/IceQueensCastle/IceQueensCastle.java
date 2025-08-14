@@ -44,10 +44,13 @@ public class IceQueensCastle extends AbstractInstance
 	private static final int MERCENARY_ARCHER = 18926;
 	private static final int ARCHERY_KNIGHT = 22767;
 	private static final int JINIA = 32781;
+	
 	// Locations
 	private static final Location FREYA_LOC = new Location(114730, -114805, -11200, 50);
+	
 	// Skill
 	private static final SkillHolder ETHERNAL_BLIZZARD = new SkillHolder(6276, 1);
+	
 	// Misc
 	private static final int TEMPLATE_ID = 137;
 	
@@ -112,6 +115,7 @@ public class IceQueensCastle extends AbstractInstance
 				break;
 			}
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	

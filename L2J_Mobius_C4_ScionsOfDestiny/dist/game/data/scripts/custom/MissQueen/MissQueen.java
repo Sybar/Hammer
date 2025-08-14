@@ -32,9 +32,11 @@ public class MissQueen extends AbstractNpcAI
 {
 	// NPC
 	private static final int MISS_QUEEN = 31760;
+	
 	// Rewards
 	private static final int COUPON_ONE = 7832;
 	private static final int COUPON_TWO = 7833;
+	
 	// Locations
 	private static final Location[] LOCATIONS =
 	{
@@ -112,6 +114,7 @@ public class MissQueen extends AbstractNpcAI
 				htmltext = "31760-06.htm";
 			}
 		}
+		
 		return htmltext;
 	}
 	

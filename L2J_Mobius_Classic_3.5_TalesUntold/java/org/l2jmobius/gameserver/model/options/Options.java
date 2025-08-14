@@ -56,6 +56,7 @@ public class Options
 		{
 			_effects = new ArrayList<>();
 		}
+		
 		_effects.add(effect);
 	}
 	
@@ -85,6 +86,7 @@ public class Options
 		{
 			_activeSkill = new ArrayList<>();
 		}
+		
 		_activeSkill.add(holder);
 	}
 	
@@ -104,6 +106,7 @@ public class Options
 		{
 			_passiveSkill = new ArrayList<>();
 		}
+		
 		_passiveSkill.add(holder);
 	}
 	
@@ -124,6 +127,7 @@ public class Options
 				}
 			}
 		}
+		
 		return false;
 	}
 	
@@ -145,6 +149,7 @@ public class Options
 				}
 			}
 		}
+		
 		return temp;
 	}
 	
@@ -154,6 +159,7 @@ public class Options
 		{
 			_activationSkills = new ArrayList<>();
 		}
+		
 		_activationSkills.add(holder);
 	}
 	
@@ -181,11 +187,13 @@ public class Options
 					}
 				}
 			}
+			
 			if (!info.getEffects().isEmpty())
 			{
 				player.getEffectList().add(info);
 			}
 		}
+		
 		if (hasActiveSkills())
 		{
 			for (Skill skill : _activeSkill)
@@ -193,6 +201,7 @@ public class Options
 				addSkill(player, skill);
 			}
 		}
+		
 		if (hasPassiveSkills())
 		{
 			for (Skill skill : _passiveSkill)
@@ -200,6 +209,7 @@ public class Options
 				addSkill(player, skill);
 			}
 		}
+		
 		if (hasActivationSkills())
 		{
 			for (OptionSkillHolder holder : _activationSkills)
@@ -224,6 +234,7 @@ public class Options
 				}
 			}
 		}
+		
 		if (hasActiveSkills())
 		{
 			for (Skill skill : _activeSkill)
@@ -231,6 +242,7 @@ public class Options
 				player.removeSkill(skill, false, false);
 			}
 		}
+		
 		if (hasPassiveSkills())
 		{
 			for (Skill skill : _passiveSkill)
@@ -238,6 +250,7 @@ public class Options
 				player.removeSkill(skill, false, true);
 			}
 		}
+		
 		if (hasActivationSkills())
 		{
 			for (OptionSkillHolder holder : _activationSkills)
@@ -262,8 +275,10 @@ public class Options
 				player.addTimeStamp(skill, remainingTime);
 				player.disableSkill(skill, remainingTime);
 			}
+			
 			updateTimeStamp = true;
 		}
+		
 		if (updateTimeStamp)
 		{
 			player.sendPacket(new SkillCoolTime(player));

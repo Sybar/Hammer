@@ -40,6 +40,7 @@ import org.l2jmobius.gameserver.model.item.ItemTemplate;
 import org.l2jmobius.gameserver.model.item.Weapon;
 import org.l2jmobius.gameserver.model.item.enums.ItemProcessType;
 import org.l2jmobius.gameserver.model.item.instance.Item;
+import org.l2jmobius.gameserver.model.item.type.EtcItemType;
 import org.l2jmobius.gameserver.model.item.type.WeaponType;
 import org.l2jmobius.gameserver.model.itemcontainer.Inventory;
 import org.l2jmobius.gameserver.model.skill.Skill;
@@ -74,34 +75,37 @@ public class UseItem extends ClientPacket
 			return;
 		}
 		
-		// Flood protect UseItem
+		// Flood protect UseItem.
 		if (!getClient().getFloodProtectors().canUseItem())
 		{
 			return;
 		}
 		
+		// Jail restriction.
 		if (player.isInsideZone(ZoneId.JAIL))
 		{
 			player.sendMessage("You cannot use items while jailed.");
 			return;
 		}
 		
-		if (player.getActiveTradeList() != null)
+		final Item item = player.getInventory().getItemByObjectId(_objectId);
+		if (item == null)
+		{
+			return;
+		}
+		
+		// Pet Collar exclusion. This is handled in SummonItems handler.
+		final boolean isPetCollar = (item.getEtcItem() != null) && (item.getEtcItem().getItemType() == EtcItemType.PET_COLLAR);
+		if ((player.getActiveTradeList() != null) && !isPetCollar)
 		{
 			player.sendPacket(SystemMessageId.YOU_CANNOT_PICK_UP_OR_USE_ITEMS_WHILE_TRADING);
 			return;
 		}
 		
-		if (player.isInStoreMode())
+		if (player.isInStoreMode() && !isPetCollar)
 		{
 			player.sendPacket(SystemMessageId.YOU_MAY_NOT_USE_ITEMS_IN_A_PRIVATE_STORE_OR_PRIVATE_WORK_SHOP);
 			player.sendPacket(ActionFailed.STATIC_PACKET);
-			return;
-		}
-		
-		final Item item = player.getInventory().getItemByObjectId(_objectId);
-		if (item == null)
-		{
 			return;
 		}
 		
@@ -215,6 +219,7 @@ public class UseItem extends ClientPacket
 						player.sendPacket(SystemMessageId.YOU_DO_NOT_MEET_THE_REQUIRED_CONDITION_TO_EQUIP_THAT_ITEM);
 						return;
 					}
+					
 					if (player.isDisarmed())
 					{
 						player.sendPacket(SystemMessageId.YOU_DO_NOT_MEET_THE_REQUIRED_CONDITION_TO_EQUIP_THAT_ITEM);
@@ -226,7 +231,6 @@ public class UseItem extends ClientPacket
 					{
 						return;
 					}
-					
 					break;
 				}
 			}
@@ -280,6 +284,7 @@ public class UseItem extends ClientPacket
 			{
 				player.getInventory().setPaperdollItem(Inventory.PAPERDOLL_LHAND, item);
 				player.broadcastUserInfo();
+				
 				// Send a Server->Client packet ItemList to this Player to update left hand equipment.
 				player.sendItemList(false);
 				return;
@@ -298,7 +303,7 @@ public class UseItem extends ClientPacket
 			
 			// Item reuse time should be added if the item is successfully used.
 			// Skill reuse delay is done at handlers.itemhandlers.ItemSkillsTemplate;
-			if (handler.useItem(player, item, _ctrlPressed) && (reuseDelay > 0))
+			if (handler.onItemUse(player, item, _ctrlPressed) && (reuseDelay > 0))
 			{
 				player.addTimeStampItem(item, reuseDelay);
 				sendSharedGroupUpdate(player, sharedReuseGroup, reuseDelay, reuseDelay);
@@ -324,6 +329,7 @@ public class UseItem extends ClientPacket
 		{
 			sm = "There are " + seconds + " second(s) remaining in " + item.getName() + "'s re-use time.";
 		}
+		
 		player.sendMessage(sm);
 	}
 	

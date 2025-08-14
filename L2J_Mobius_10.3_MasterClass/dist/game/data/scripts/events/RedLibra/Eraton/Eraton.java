@@ -42,6 +42,7 @@ import org.l2jmobius.gameserver.model.events.holders.actor.npc.OnNpcMenuSelect;
 import org.l2jmobius.gameserver.model.item.enums.ItemProcessType;
 import org.l2jmobius.gameserver.model.item.holders.ItemHolder;
 import org.l2jmobius.gameserver.model.item.instance.Item;
+import org.l2jmobius.gameserver.model.olympiad.Hero;
 import org.l2jmobius.gameserver.model.olympiad.Olympiad;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.network.Disconnection;
@@ -69,6 +70,7 @@ public class Eraton extends AbstractNpcAI
 {
 	// NPC
 	private static final int ERATON = 34584;
+	
 	// Items
 	private static final ItemHolder STONE_OF_DESTINY = new ItemHolder(17722, 1);
 	private static final ItemHolder CHAOS_POMANDER = new ItemHolder(37374, 2);
@@ -82,6 +84,7 @@ public class Eraton extends AbstractNpcAI
 	private static final ItemHolder CLASS_CLOAK_AEORE = new ItemHolder(30317, 1);
 	private static final ItemHolder CLASS_CLOAK_EVISCERATOR = new ItemHolder(40200, 1);
 	private static final ItemHolder CLASS_CLOAK_SAYHA_SEER = new ItemHolder(40201, 1);
+	
 	// Misc
 	private static final String ITEM_NAME_PATTERN = "&#" + STONE_OF_DESTINY.getId() + ";";
 	
@@ -130,6 +133,7 @@ public class Eraton extends AbstractNpcAI
 				sb.append("<button align=\"LEFT\" icon=\"NORMAL\" action=\"bypass -h Quest Eraton ERATON_" + PlayerClass.SIGEL_HELL_KNIGHT + "\">Sigel Hell Knight</button>");
 				sb.append("<button align=\"LEFT\" icon=\"NORMAL\" action=\"bypass -h Quest Eraton ERATON_" + PlayerClass.SIGEL_EVA_TEMPLAR + "\">Sigel Eva Templar</button>");
 				sb.append("<button align=\"LEFT\" icon=\"NORMAL\" action=\"bypass -h Quest Eraton ERATON_" + PlayerClass.SIGEL_SHILLIEN_TEMPLAR + "\">Sigel Shillien Templar</button>");
+				
 				// Death Knights cannot use the Stone of Destiny.
 				// sb.append("<button align=\"LEFT\" icon=\"NORMAL\" action=\"bypass -h Quest Eraton ERATON_" + ClassId.SIGEL_DEATH_KNIGHT + "\">Sigel Death Knight</button>");
 				htmltext = getHtm(player, "34584-2.html").replace("%CLASS_LIST%", sb.toString());
@@ -146,14 +150,17 @@ public class Eraton extends AbstractNpcAI
 				{
 					sb.append("<button align=\"LEFT\" icon=\"NORMAL\" action=\"bypass -h Quest Eraton ERATON_" + PlayerClass.TYRR_MAESTRO + "\">Tyrr Maestro</button>");
 				}
+				
 				if ((player.getRace() == Race.KAMAEL) && !player.getAppearance().isFemale())
 				{
 					sb.append("<button align=\"LEFT\" icon=\"NORMAL\" action=\"bypass -h Quest Eraton ERATON_" + PlayerClass.TYRR_DOOMBRINGER + "\">Tyrr Doombringer</button>");
 				}
+				
 				if (player.getRace() == Race.ERTHEIA)
 				{
 					sb.append("<button align=\"LEFT\" icon=\"NORMAL\" action=\"bypass -h Quest Eraton ERATON_" + PlayerClass.EVISCERATOR + "\">Eviscerator</button>");
 				}
+				
 				htmltext = getHtm(player, "34584-2.html").replace("%CLASS_LIST%", sb.toString());
 				break;
 			}
@@ -167,6 +174,7 @@ public class Eraton extends AbstractNpcAI
 				{
 					sb.append("<button align=\"LEFT\" icon=\"NORMAL\" action=\"bypass -h Quest Eraton ERATON_" + PlayerClass.OTHELL_FORTUNE_SEEKER + "\">Othell Fortune Seeker</button>");
 				}
+				
 				htmltext = getHtm(player, "34584-2.html").replace("%CLASS_LIST%", sb.toString());
 				break;
 			}
@@ -180,6 +188,7 @@ public class Eraton extends AbstractNpcAI
 				{
 					sb.append("<button align=\"LEFT\" icon=\"NORMAL\" action=\"bypass -h Quest Eraton ERATON_" + PlayerClass.YUL_TRICKSTER + "\">Yul Trickster</button>");
 				}
+				
 				htmltext = getHtm(player, "34584-2.html").replace("%CLASS_LIST%", sb.toString());
 				break;
 			}
@@ -195,6 +204,7 @@ public class Eraton extends AbstractNpcAI
 				{
 					sb.append("<button align=\"LEFT\" icon=\"NORMAL\" action=\"bypass -h Quest Eraton ERATON_" + PlayerClass.SAYHA_SEER + "\">Sayha's Seer</button>");
 				}
+				
 				htmltext = getHtm(player, "34584-2.html").replace("%CLASS_LIST%", sb.toString());
 				break;
 			}
@@ -209,6 +219,7 @@ public class Eraton extends AbstractNpcAI
 				{
 					sb.append("<button align=\"LEFT\" icon=\"NORMAL\" action=\"bypass -h Quest Eraton ERATON_" + PlayerClass.ISS_DOMINATOR + "\">Iss Dominator</button>");
 				}
+				
 				htmltext = getHtm(player, "34584-2.html").replace("%CLASS_LIST%", sb.toString());
 				break;
 			}
@@ -241,6 +252,7 @@ public class Eraton extends AbstractNpcAI
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -269,32 +281,38 @@ public class Eraton extends AbstractNpcAI
 					player.sendPacket(new NpcHtmlMessage(getHtm(player, "34584-7.html")));
 					return;
 				}
+				
 				if (!hasQuestItems(player, STONE_OF_DESTINY.getId()) || !hasAtLeastOneQuestItem(player, CLASS_CLOAK_SIGEL.getId(), CLASS_CLOAK_TYRR.getId(), CLASS_CLOAK_OTHELL.getId(), CLASS_CLOAK_YUL.getId(), CLASS_CLOAK_FEOH.getId(), CLASS_CLOAK_WYNN.getId(), CLASS_CLOAK_ISS.getId(), CLASS_CLOAK_AEORE.getId(), CLASS_CLOAK_EVISCERATOR.getId(), CLASS_CLOAK_SAYHA_SEER.getId()))
 				{
 					player.sendPacket(new NpcHtmlMessage(getHtm(player, "34584-4.html").replace("%required_item%", ITEM_NAME_PATTERN).replace("%required_item_count%", String.valueOf(STONE_OF_DESTINY.getCount()))));
 					return;
 				}
+				
 				if ((player.getDualClass() != null) && (player.getDualClass().getId() == classId))
 				{
 					player.sendPacket(new NpcHtmlMessage(getHtm(player, "34584-6.html").replace("%s1%", "Main").replace("%s2%", "Dual")));
 					return;
 				}
+				
 				if ((player.getClass() != null) && (player.getBaseClass() == classId))
 				{
 					player.sendPacket(new NpcHtmlMessage(getHtm(player, "34584-6.html").replace("%s1%", "Main").replace("%s2%", "Current")));
 					return;
 				}
+				
 				if (player.isTransformed() || player.hasSummon() || player.isDualClassActive())
 				{
 					player.sendPacket(new NpcHtmlMessage(getHtm(player, "34584-5.html")));
 					return;
 				}
+				
 				if (player.isDeathKnight())
 				{
 					player.sendPacket(new NpcHtmlMessage(getHtm(player, "34584-8.html")));
 					return;
 				}
-				if (player.isHero() || player.isTrueHero())
+				
+				if (player.isHero() || player.isTrueHero() || Hero.getInstance().isUnclaimedHero(player.getObjectId()))
 				{
 					player.sendPacket(SystemMessageId.YOU_CANNOT_AWAKEN_WHEN_YOU_ARE_A_HERO_OR_ON_THE_WAIT_LIST_FOR_HERO_STATUS);
 					return;
@@ -306,6 +324,7 @@ public class Eraton extends AbstractNpcAI
 				{
 					player.setOriginalClass(player.getPlayerClass());
 				}
+				
 				takeItem(player, STONE_OF_DESTINY);
 				takeItem(player, getCloakItemId(player));
 				
@@ -328,6 +347,7 @@ public class Eraton extends AbstractNpcAI
 						}
 					}
 				}
+				
 				player.getEffectList().stopAllEffectsWithoutExclusions(false, false); // After removal of skills.
 				
 				// Stop auto use.
@@ -345,7 +365,7 @@ public class Eraton extends AbstractNpcAI
 						final Skill knownSkill = player.getKnownSkill(shortcut.getId());
 						if (knownSkill != null)
 						{
-							if (knownSkill.isBad())
+							if (knownSkill.hasNegativeEffect())
 							{
 								AutoUseTaskManager.getInstance().removeAutoSkill(player, shortcut.getId());
 							}
@@ -381,6 +401,7 @@ public class Eraton extends AbstractNpcAI
 				{
 					player.addSkill(SkillData.getInstance().getSkill(skill.getSkillId(), skill.getSkillLevel()), true);
 				}
+				
 				final List<Integer> removedSkillIds = Config.HARDIN_REMOVED_SKILLS.get(classId);
 				if (removedSkillIds != null)
 				{
@@ -393,6 +414,10 @@ public class Eraton extends AbstractNpcAI
 						}
 					}
 				}
+				
+				// Disarm unusable equipment.
+				player.disarmUnusableEquipment();
+				
 				if (player.getWarehouse().getItemByItemId(CHAOS_POMANDER.getId()) != null)
 				{
 					final long warehouseCount = (player.getWarehouse().getItemByItemId(CHAOS_POMANDER.getId())).getCount();
@@ -401,6 +426,7 @@ public class Eraton extends AbstractNpcAI
 						player.getWarehouse().destroyItemByItemId(ItemProcessType.FEE, CHAOS_POMANDER.getId(), warehouseCount, player, null);
 					}
 				}
+				
 				if (hasAtLeastOneQuestItem(player, CHAOS_POMANDER.getId()))
 				{
 					takeItems(player, CHAOS_POMANDER.getId(), -1);
@@ -419,7 +445,7 @@ public class Eraton extends AbstractNpcAI
 				giveItems(player, getCloakItemId(player));
 				giveItems(player, CHAOS_POMANDER);
 				player.sendPacket(new SocialAction(player.getObjectId(), 20));
-				Disconnection.of(player).defaultSequence(LeaveWorld.STATIC_PACKET);
+				Disconnection.of(player).storeAndDeleteWith(LeaveWorld.STATIC_PACKET);
 				break;
 			}
 		}
@@ -497,6 +523,7 @@ public class Eraton extends AbstractNpcAI
 				return CLASS_CLOAK_SAYHA_SEER;
 			}
 		}
+		
 		return null;
 	}
 	

@@ -30,13 +30,13 @@ import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.Summon;
 import org.l2jmobius.gameserver.model.clan.Clan;
-import org.l2jmobius.gameserver.model.events.AbstractScript;
 import org.l2jmobius.gameserver.model.groups.Party;
 import org.l2jmobius.gameserver.model.groups.PartyMessageType;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
 import org.l2jmobius.gameserver.model.item.enums.ItemProcessType;
 import org.l2jmobius.gameserver.model.item.holders.ItemHolder;
 import org.l2jmobius.gameserver.model.item.instance.Item;
+import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestSound;
 import org.l2jmobius.gameserver.model.quest.QuestState;
 import org.l2jmobius.gameserver.model.siege.Castle;
@@ -141,6 +141,7 @@ public abstract class AbstractOlympiadGame
 			player.sendPacket(sm);
 			return new SystemMessage(SystemMessageId.YOUR_OPPONENT_DOES_NOT_MEET_THE_REQUIREMENTS_TO_DO_BATTLE_THE_MATCH_HAS_BEEN_CANCELLED);
 		}
+		
 		if (player.isSubClassActive())
 		{
 			sm = new SystemMessage(SystemMessageId.C1_DOES_NOT_MEET_THE_PARTICIPATION_REQUIREMENTS_YOU_CANNOT_PARTICIPATE_IN_THE_OLYMPIAD_BECAUSE_YOU_HAVE_CHANGED_YOUR_CLASS_TO_SUBCLASS);
@@ -148,6 +149,7 @@ public abstract class AbstractOlympiadGame
 			player.sendPacket(sm);
 			return new SystemMessage(SystemMessageId.YOUR_OPPONENT_DOES_NOT_MEET_THE_REQUIREMENTS_TO_DO_BATTLE_THE_MATCH_HAS_BEEN_CANCELLED);
 		}
+		
 		if (player.isCursedWeaponEquipped())
 		{
 			sm = new SystemMessage(SystemMessageId.C1_DOES_NOT_MEET_THE_PARTICIPATION_REQUIREMENTS_THE_OWNER_OF_S2_CANNOT_PARTICIPATE_IN_THE_OLYMPIAD);
@@ -156,6 +158,7 @@ public abstract class AbstractOlympiadGame
 			player.sendPacket(sm);
 			return new SystemMessage(SystemMessageId.YOUR_OPPONENT_DOES_NOT_MEET_THE_REQUIREMENTS_TO_DO_BATTLE_THE_MATCH_HAS_BEEN_CANCELLED);
 		}
+		
 		if (!player.isInventoryUnder90(true))
 		{
 			sm = new SystemMessage(SystemMessageId.C1_DOES_NOT_MEET_THE_PARTICIPATION_REQUIREMENTS_AS_THE_INVENTORY_WEIGHT_SLOT_IS_FILLED_BEYOND_80);
@@ -182,6 +185,7 @@ public abstract class AbstractOlympiadGame
 			{
 				player.standUp();
 			}
+			
 			player.setTarget(null);
 			
 			player.setOlympiadGameId(id);
@@ -196,6 +200,7 @@ public abstract class AbstractOlympiadGame
 			LOGGER.log(Level.WARNING, e.getMessage(), e);
 			return false;
 		}
+		
 		return true;
 	}
 	
@@ -225,6 +230,7 @@ public abstract class AbstractOlympiadGame
 						castle.removeResidentialSkills(player);
 					}
 				}
+				
 				if (clan.getFortId() > 0)
 				{
 					final Fort fort = FortManager.getInstance().getFortByOwner(clan);
@@ -234,6 +240,7 @@ public abstract class AbstractOlympiadGame
 					}
 				}
 			}
+			
 			// Abort casting if player casting
 			player.abortAttack();
 			player.abortCast();
@@ -276,6 +283,7 @@ public abstract class AbstractOlympiadGame
 					party.removePartyMember(player, PartyMessageType.EXPELLED);
 				}
 			}
+			
 			// Remove Agathion
 			if (player.getAgathionId() > 0)
 			{
@@ -327,6 +335,7 @@ public abstract class AbstractOlympiadGame
 			{
 				player.setAgathionId(0);
 			}
+			
 			final Summon pet = player.getPet();
 			if ((pet != null) && !pet.isDead())
 			{
@@ -390,6 +399,7 @@ public abstract class AbstractOlympiadGame
 						castle.giveResidentialSkills(player);
 					}
 				}
+				
 				if (clan.getFortId() > 0)
 				{
 					final Fort fort = FortManager.getInstance().getFortByOwner(clan);
@@ -398,6 +408,7 @@ public abstract class AbstractOlympiadGame
 						fort.giveResidentialSkills(player);
 					}
 				}
+				
 				player.sendSkillList();
 			}
 			
@@ -424,6 +435,7 @@ public abstract class AbstractOlympiadGame
 		{
 			return;
 		}
+		
 		final Location loc = player.getLastLocation();
 		if (loc != null)
 		{
@@ -440,18 +452,18 @@ public abstract class AbstractOlympiadGame
 		final QuestState qs1 = player.getQuestState("Q10819_ForHonor");
 		if ((qs != null) && !qs.isCompleted() && qs.isCond(1))
 		{
-			AbstractScript.giveItems(player, Config.EXALTED_FOR_GLORY_ITEM_MAX.getId(), 1);
-			AbstractScript.playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-			if (AbstractScript.getQuestItemsCount(player, Config.EXALTED_FOR_GLORY_ITEM_MAX.getId()) >= Config.EXALTED_FOR_GLORY_ITEM_MAX.getCount())
+			Quest.giveItems(player, Config.EXALTED_FOR_GLORY_ITEM_MAX.getId(), 1);
+			Quest.playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+			if (Quest.getQuestItemsCount(player, Config.EXALTED_FOR_GLORY_ITEM_MAX.getId()) >= Config.EXALTED_FOR_GLORY_ITEM_MAX.getCount())
 			{
 				qs.setCond(2, true);
 			}
 		}
 		else if ((qs1 != null) && !qs1.isCompleted() && qs1.isCond(1))
 		{
-			AbstractScript.giveItems(player, Config.EXALTED_FOR_HONOR_ITEM_MAX.getId(), 1);
-			AbstractScript.playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-			if (AbstractScript.getQuestItemsCount(player, Config.EXALTED_FOR_HONOR_ITEM_MAX.getId()) >= Config.EXALTED_FOR_HONOR_ITEM_MAX.getCount())
+			Quest.giveItems(player, Config.EXALTED_FOR_HONOR_ITEM_MAX.getId(), 1);
+			Quest.playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+			if (Quest.getQuestItemsCount(player, Config.EXALTED_FOR_HONOR_ITEM_MAX.getId()) >= Config.EXALTED_FOR_HONOR_ITEM_MAX.getCount())
 			{
 				qs1.setCond(2, true);
 			}

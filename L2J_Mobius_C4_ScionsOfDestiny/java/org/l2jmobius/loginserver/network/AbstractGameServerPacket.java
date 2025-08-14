@@ -43,6 +43,7 @@ public abstract class AbstractGameServerPacket
 		{
 			e.printStackTrace();
 		}
+		
 		return result;
 	}
 	
@@ -53,6 +54,7 @@ public abstract class AbstractGameServerPacket
 		{
 			result[i] = _decrypt[_off + i];
 		}
+		
 		_off += length;
 		return result;
 	}

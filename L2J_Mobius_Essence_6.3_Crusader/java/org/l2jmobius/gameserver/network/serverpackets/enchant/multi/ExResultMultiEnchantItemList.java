@@ -151,11 +151,13 @@ public class ExResultMultiEnchantItemList extends ServerPacket
 				buffer.writeInt(failure.getId());
 				buffer.writeInt((int) failure.getCount());
 			}
+			
 			if (_isResult)
 			{
 				request.clearMultiSuccessEnchantList();
 				request.clearMultiFailureEnchantList();
 			}
+			
 			request.clearMultiFailReward();
 		}
 		else

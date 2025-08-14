@@ -62,6 +62,7 @@ public class Q00632_NecromancersRequest extends Quest
 		21577,
 		21579
 	};
+	
 	// Items
 	private static final int VAMPIRE_HEART = 7542;
 	private static final int ZOMBIE_BRAIN = 7543;

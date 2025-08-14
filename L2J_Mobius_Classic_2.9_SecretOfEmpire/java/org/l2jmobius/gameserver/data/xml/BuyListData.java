@@ -81,6 +81,7 @@ public class BuyListData implements IXmlReader
 					LOGGER.warning("BuyList found in database but not loaded from xml! BuyListId: " + buyListId);
 					continue;
 				}
+				
 				final Product product = buyList.getProductByItemId(itemId);
 				if (product == null)
 				{

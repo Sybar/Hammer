@@ -30,6 +30,7 @@ public class SSQHideoutOfTheDawn extends AbstractInstance
 	// NPCs
 	private static final int WOOD = 32593;
 	private static final int JAINA = 32617;
+	
 	// Misc
 	private static final int TEMPLATE_ID = 113;
 	
@@ -48,6 +49,7 @@ public class SSQHideoutOfTheDawn extends AbstractInstance
 			enterInstance(talker, npc, TEMPLATE_ID);
 			return "32593-01.htm";
 		}
+		
 		finishInstance(talker, 0);
 		return "32617-01.htm";
 	}

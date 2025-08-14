@@ -82,11 +82,13 @@ public class RequestMagicSkillUse extends ClientPacket
 						}
 					}
 				}
+				
 				if ((skill == null) && player.hasPet())
 				{
 					pet = player.getPet();
 					skill = pet.getKnownSkill(_magicId);
 				}
+				
 				if ((skill != null) && (pet != null))
 				{
 					player.onActionRequest();

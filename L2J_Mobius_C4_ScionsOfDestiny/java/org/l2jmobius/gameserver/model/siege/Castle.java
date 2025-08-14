@@ -157,6 +157,7 @@ public class Castle extends AbstractResidence
 			{
 				return;
 			}
+			
 			final long currentTime = System.currentTimeMillis();
 			if (_endDate > currentTime)
 			{
@@ -184,6 +185,7 @@ public class Castle extends AbstractResidence
 					{
 						return;
 					}
+					
 					if ((ClanTable.getInstance().getClan(getOwnerId()).getWarehouse().getAdena() >= _fee) || !_cwh)
 					{
 						int fee = _fee;
@@ -198,6 +200,7 @@ public class Castle extends AbstractResidence
 						{
 							ClanTable.getInstance().getClan(getOwnerId()).getWarehouse().destroyItemByItemId(ItemProcessType.FEE, Inventory.ADENA_ID, fee, null, null);
 						}
+						
 						ThreadPool.schedule(new FunctionTask(true), _rate);
 					}
 					else
@@ -260,6 +263,7 @@ public class Castle extends AbstractResidence
 		{
 			return;
 		}
+		
 		setOwner(clan);
 		final SystemMessage msg = new SystemMessage(SystemMessageId.CLAN_S1_HAS_SUCCEEDED_IN_ENGRAVING_THE_RULER);
 		msg.addString(clan.getName());
@@ -290,9 +294,11 @@ public class Castle extends AbstractResidence
 				{
 					rune.addToTreasury(runeTax);
 				}
+				
 				amount -= runeTax;
 			}
 		}
+		
 		if (!getName().equalsIgnoreCase("aden") && !getName().equalsIgnoreCase("Rune") && !getName().equalsIgnoreCase("Goddard")) // If current castle instance is not Aden, Rune, Goddard or Schuttgart.
 		{
 			final Castle aden = CastleManager.getInstance().getCastle("aden");
@@ -331,6 +337,7 @@ public class Castle extends AbstractResidence
 			{
 				return false;
 			}
+			
 			_treasury -= amount;
 		}
 		else if ((_treasury + amount) > Inventory.MAX_ADENA)
@@ -391,6 +398,7 @@ public class Castle extends AbstractResidence
 				}
 			}
 		}
+		
 		return _zone;
 	}
 	
@@ -423,6 +431,7 @@ public class Castle extends AbstractResidence
 				}
 			}
 		}
+		
 		return _teleZone;
 	}
 	
@@ -481,6 +490,7 @@ public class Castle extends AbstractResidence
 		{
 			removeFunction(fc);
 		}
+		
 		_function.clear();
 	}
 	
@@ -501,6 +511,7 @@ public class Castle extends AbstractResidence
 						CastleManager.getInstance().removeCirclet(_formerOwner, getResidenceId());
 					}
 				}
+				
 				try
 				{
 					final Player oldleader = oldOwner.getLeader().getPlayer();
@@ -513,6 +524,7 @@ public class Castle extends AbstractResidence
 				{
 					LOGGER.log(Level.WARNING, "Exception in setOwner: " + e.getMessage(), e);
 				}
+				
 				oldOwner.setCastleId(0); // Unset has castle flag for old owner
 			}
 		}
@@ -535,6 +547,7 @@ public class Castle extends AbstractResidence
 			{
 				CastleManager.getInstance().removeCirclet(_formerOwner, getResidenceId());
 			}
+			
 			clan.setCastleId(0);
 			clan.broadcastToOnlineMembers(new PledgeShowInfoUpdate(clan));
 		}
@@ -549,6 +562,7 @@ public class Castle extends AbstractResidence
 		{
 			removeFunction(fc);
 		}
+		
 		_function.clear();
 	}
 	
@@ -625,6 +639,7 @@ public class Castle extends AbstractResidence
 					_ticketBuyCount = rs.getInt("ticketBuyCount");
 				}
 			}
+			
 			_taxRate = _taxPercent / 100.0;
 			ps2.setInt(1, getResidenceId());
 			try (ResultSet rs = ps2.executeQuery())
@@ -688,10 +703,12 @@ public class Castle extends AbstractResidence
 		{
 			return false;
 		}
+		
 		if ((lease > 0) && !player.destroyItemByItemId(null, Inventory.ADENA_ID, lease, null, true))
 		{
 			return false;
 		}
+		
 		if (addNew)
 		{
 			_function.put(type, new CastleFunction(type, lvl, lease, 0, rate, 0, false));
@@ -715,6 +732,7 @@ public class Castle extends AbstractResidence
 				_function.get(type).dbSave();
 			}
 		}
+		
 		return true;
 	}
 	
@@ -860,6 +878,7 @@ public class Castle extends AbstractResidence
 				return door;
 			}
 		}
+		
 		return null;
 	}
 	
@@ -884,6 +903,7 @@ public class Castle extends AbstractResidence
 		{
 			_siege = new Siege(this);
 		}
+		
 		return _siege;
 	}
 	
@@ -908,6 +928,7 @@ public class Castle extends AbstractResidence
 		{
 			_siegeTimeRegistrationEndDate = Calendar.getInstance();
 		}
+		
 		return _siegeTimeRegistrationEndDate;
 	}
 	
@@ -1022,6 +1043,7 @@ public class Castle extends AbstractResidence
 				LOGGER.log(Level.WARNING, "Exception: setTrapUpgradeLevel(int towerIndex, int level, int castleId): " + e.getMessage(), e);
 			}
 		}
+		
 		final TowerSpawn spawn = SiegeManager.getInstance().getFlameTowers(getResidenceId()).get(towerIndex);
 		if (spawn != null)
 		{

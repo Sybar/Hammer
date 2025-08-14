@@ -99,6 +99,7 @@ public class OrcChange1 extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -135,6 +136,7 @@ public class OrcChange1 extends AbstractNpcAI
 				takeItems(player, MARK_OF_RAIDER, -1);
 				player.setPlayerClass(45);
 				player.setBaseClass(45);
+				
 				// SystemMessage and cast skill is done by setClassId
 				player.broadcastUserInfo();
 				htmltext = npc.getId() + "-14.htm"; // fnAfterClassChange11
@@ -162,6 +164,7 @@ public class OrcChange1 extends AbstractNpcAI
 				takeItems(player, KHAVATARI_TOTEM, -1);
 				player.setPlayerClass(47);
 				player.setBaseClass(47);
+				
 				// SystemMessage and cast skill is done by setClassId
 				player.broadcastUserInfo();
 				htmltext = npc.getId() + "-18.htm"; // fnAfterClassChange12
@@ -189,6 +192,7 @@ public class OrcChange1 extends AbstractNpcAI
 				takeItems(player, MASK_OF_MEDIUM, -1);
 				player.setPlayerClass(50);
 				player.setBaseClass(50);
+				
 				// SystemMessage and cast skill is done by setClassId
 				player.broadcastUserInfo();
 				htmltext = npc.getId() + "-22.htm"; // fnAfterClassChange21
@@ -198,6 +202,7 @@ public class OrcChange1 extends AbstractNpcAI
 				htmltext = npc.getId() + "-21.htm"; // fnNoProof21
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -220,6 +225,7 @@ public class OrcChange1 extends AbstractNpcAI
 		{
 			htmltext = npc.getId() + "-23.htm"; // fnClassMismatch
 		}
+		
 		return htmltext;
 	}
 	

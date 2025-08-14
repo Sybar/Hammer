@@ -42,9 +42,11 @@ public class Q10362_CertificationOfTheSeeker extends Quest
 	private static final int NAGEL = 33450;
 	private static final int STALKER = 22992;
 	private static final int CRAWLER = 22991;
+	
 	// Items
 	private static final int GLOVES = 49;
 	private static final int HEALING_POTION = 1060;
+	
 	// Misc
 	private static final int MIN_LEVEL = 10;
 	private static final int MAX_LEVEL = 20;
@@ -100,6 +102,7 @@ public class Q10362_CertificationOfTheSeeker extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -193,6 +196,7 @@ public class Q10362_CertificationOfTheSeeker extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -207,6 +211,7 @@ public class Q10362_CertificationOfTheSeeker extends Quest
 			npcLogList.add(new NpcLogListHolder(CRAWLER, false, qs.getMemoStateEx(CRAWLER)));
 			return npcLogList;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

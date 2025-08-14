@@ -47,10 +47,12 @@ public class Q10984_CollectSpiderweb extends Quest
 	// NPCs
 	private static final int HERBIEL = 30150;
 	private static final int CAPTAIN_BATHIS = 30332;
+	
 	// Monsters
 	private static final int HOOK_SPIDER = 20308;
 	private static final int CRIMSON_SPIDER = 20460;
 	private static final int PINCER_SPIDER = 20466;
+	
 	// Items
 	private static final int GIANT_COBWEB = 91652;
 	private static final ItemHolder SOE_TO_CAPTAIN_BATHIS = new ItemHolder(91651, 1);
@@ -58,20 +60,25 @@ public class Q10984_CollectSpiderweb extends Quest
 	private static final ItemHolder SPIRIT_ORE = new ItemHolder(3031, 50);
 	private static final ItemHolder HP_POTS = new ItemHolder(91912, 50);
 	private static final ItemHolder RICE_CAKE_OF_FLAMING_FIGHTING_SPIRIT_EVENT = new ItemHolder(91840, 1);
+	
 	// HELMET FOR ALL ARMORS
 	private static final ItemHolder MOON_HELMET = new ItemHolder(7850, 1);
+	
 	// HEAVY
 	private static final ItemHolder MOON_ARMOR = new ItemHolder(7851, 1);
 	private static final ItemHolder MOON_GAUNTLETS = new ItemHolder(7852, 1);
 	private static final ItemHolder MOON_BOOTS = new ItemHolder(7853, 1);
+	
 	// LIGHT
 	private static final ItemHolder MOON_SHELL = new ItemHolder(7854, 1);
 	private static final ItemHolder MOON_LEATHER_GLOVES = new ItemHolder(7855, 1);
 	private static final ItemHolder MOON_SHOES = new ItemHolder(7856, 1);
+	
 	// ROBE
 	private static final ItemHolder MOON_CAPE = new ItemHolder(7857, 1);
 	private static final ItemHolder MOON_SILK = new ItemHolder(7858, 1);
 	private static final ItemHolder MOON_SANDALS = new ItemHolder(7859, 1);
+	
 	// Misc
 	private static final int MAX_LEVEL = 20;
 	
@@ -160,6 +167,7 @@ public class Q10984_CollectSpiderweb extends Quest
 						showOnScreenMsg(player, NpcStringId.COMPLETED_THE_TUTORIAL_NOW_TRY_THE_FIRST_CLASS_TRANSFER_AND_AS_INSTRUCTED_BY_BATHIS_CARRY_OUT_THE_ADVENTURER_S_JOURNEY_MISSIONS_TO_GROW_YOUR_CHARACTER, ExShowScreenMessage.TOP_CENTER, 10000);
 						player.sendPacket(ExClassChangeSetAlarm.STATIC_PACKET);
 					}
+					
 					qs.exitQuest(false, true);
 					htmltext = event;
 				}
@@ -183,6 +191,7 @@ public class Q10984_CollectSpiderweb extends Quest
 						showOnScreenMsg(player, NpcStringId.COMPLETED_THE_TUTORIAL_NOW_TRY_THE_FIRST_CLASS_TRANSFER_AND_AS_INSTRUCTED_BY_BATHIS_CARRY_OUT_THE_ADVENTURER_S_JOURNEY_MISSIONS_TO_GROW_YOUR_CHARACTER, ExShowScreenMessage.TOP_CENTER, 10000);
 						player.sendPacket(ExClassChangeSetAlarm.STATIC_PACKET);
 					}
+					
 					qs.exitQuest(false, true);
 					htmltext = event;
 				}
@@ -206,12 +215,14 @@ public class Q10984_CollectSpiderweb extends Quest
 						showOnScreenMsg(player, NpcStringId.COMPLETED_THE_TUTORIAL_NOW_TRY_THE_FIRST_CLASS_TRANSFER_AND_AS_INSTRUCTED_BY_BATHIS_CARRY_OUT_THE_ADVENTURER_S_JOURNEY_MISSIONS_TO_GROW_YOUR_CHARACTER, ExShowScreenMessage.TOP_CENTER, 10000);
 						player.sendPacket(ExClassChangeSetAlarm.STATIC_PACKET);
 					}
+					
 					qs.exitQuest(false, true);
 					htmltext = event;
 				}
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -253,6 +264,7 @@ public class Q10984_CollectSpiderweb extends Quest
 				htmltext = getAlreadyCompletedMsg(player);
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -266,6 +278,7 @@ public class Q10984_CollectSpiderweb extends Quest
 			{
 				giveItems(killer, GIANT_COBWEB, 1, true);
 			}
+			
 			if (getQuestItemsCount(killer, GIANT_COBWEB) >= 30)
 			{
 				qs.setCond(2, true);

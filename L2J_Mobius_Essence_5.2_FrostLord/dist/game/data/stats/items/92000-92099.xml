@@ -47,9 +47,9 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ExtractableItems" />
-		<cond msgId="1902">
+		<conditions msgId="1902">
 			<player levelRange="1;75" />
-		</cond>
+		</conditions>
 		<capsuled_items>
 			<item id="91910" min="10" max="10" chance="100" /> <!-- Sayha's Blessing - Lv. 1-75 - Sealed -->
 			<item id="90907" min="30" max="30" chance="100" /> <!-- Soulshot Ticket - Sealed -->
@@ -529,9 +529,9 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<cond msgId="1902">
+		<conditions msgId="1902">
 			<player levelRange="1;75" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="54069" level="1" /> <!-- Magic Fire (Event) -->
 		</skills>

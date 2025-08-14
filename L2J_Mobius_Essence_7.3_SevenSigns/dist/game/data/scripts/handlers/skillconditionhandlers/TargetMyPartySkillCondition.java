@@ -61,6 +61,7 @@ public class TargetMyPartySkillCondition implements ISkillCondition
 				return ((party == null) ? (_includeMe && (caster == summonOwner)) : (_includeMe ? party == targetParty : (party == targetParty) && (caster != summonOwner)));
 			}
 		}
+		
 		return false;
 	}
 }

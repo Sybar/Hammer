@@ -134,6 +134,7 @@ public class ExRequestTeleport extends ClientPacket
 					player.sendPacket(SystemMessageId.NOT_ENOUGH_ADENA);
 					return;
 				}
+				
 				// Reduce items.
 				if (teleport.isSpecial())
 				{

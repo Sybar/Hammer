@@ -49,6 +49,7 @@ public class Veron extends AbstractNpcAI
 			npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.SHILEN);
 			startQuestTimer("NPC_SHOUT", (10 + getRandom(5)) * 1000, npc, null);
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	

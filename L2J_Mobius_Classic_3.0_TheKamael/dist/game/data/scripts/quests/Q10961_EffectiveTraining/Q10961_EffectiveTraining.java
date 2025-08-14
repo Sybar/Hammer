@@ -43,17 +43,20 @@ public class Q10961_EffectiveTraining extends Quest
 	// NPCs
 	private static final int NEWBIE_GUIDE = 34110;
 	private static final int REAHEN = 34111;
+	
 	// Monsters
 	private static final int GREY_KELTIR = 21981;
 	private static final int ELDER_GREY_KELTIR = 21982;
 	private static final int BLACK_WOLF = 21983;
 	private static final int ELDER_BLACK_WOLF = 21984;
+	
 	// Items
 	private static final ItemHolder SOE_TO_REAHEN = new ItemHolder(91917, 1);
 	private static final ItemHolder SOE_NOVICE = new ItemHolder(10650, 10);
 	private static final ItemHolder RING_NOVICE = new ItemHolder(49041, 2);
 	private static final ItemHolder EARRING_NOVICE = new ItemHolder(49040, 2);
 	private static final ItemHolder NECKLACE_NOVICE = new ItemHolder(49039, 1);
+	
 	// Misc
 	private static final int MAX_LEVEL = 20;
 	private static final String KILL_COUNT_VAR = "KillCount";
@@ -114,6 +117,7 @@ public class Q10961_EffectiveTraining extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -151,6 +155,7 @@ public class Q10961_EffectiveTraining extends Quest
 			holder.add(new NpcLogListHolder(NpcStringId.DEFEAT_THE_MONSTERS_ON_THE_HILL_OF_HOPE.getId(), true, qs.getInt(KILL_COUNT_VAR)));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 	
@@ -192,6 +197,7 @@ public class Q10961_EffectiveTraining extends Quest
 				htmltext = getAlreadyCompletedMsg(player);
 			}
 		}
+		
 		return htmltext;
 	}
 }

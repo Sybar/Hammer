@@ -323,7 +323,7 @@ public class Servitor extends Summon implements Runnable
 						final Skill skill = info.getSkill();
 						
 						// Do not store those effects.
-						if (skill.isDeleteAbnormalOnLeave())
+						if (skill.isDeleteAbnormalOnLeave() || !skill.isSharedWithSummon())
 						{
 							continue;
 						}
@@ -367,10 +367,12 @@ public class Servitor extends Summon implements Runnable
 						{
 							SummonEffectTable.getInstance().getServitorEffectsOwner().put(getOwner().getObjectId(), new HashMap<>());
 						}
+						
 						if (!SummonEffectTable.getInstance().getServitorEffectsOwner().get(getOwner().getObjectId()).containsKey(getOwner().getClassIndex()))
 						{
 							SummonEffectTable.getInstance().getServitorEffectsOwner().get(getOwner().getObjectId()).put(getOwner().getClassIndex(), new HashMap<>());
 						}
+						
 						if (!SummonEffectTable.getInstance().getServitorEffects(getOwner()).containsKey(getReferenceSkill()))
 						{
 							SummonEffectTable.getInstance().getServitorEffects(getOwner()).put(getReferenceSkill(), ConcurrentHashMap.newKeySet());
@@ -378,6 +380,7 @@ public class Servitor extends Summon implements Runnable
 						
 						SummonEffectTable.getInstance().getServitorEffects(getOwner()).get(getReferenceSkill()).add(new SummonEffect(skill, info.getTime()));
 					}
+					
 					ps2.executeBatch();
 				}
 			}
@@ -423,10 +426,12 @@ public class Servitor extends Summon implements Runnable
 								{
 									SummonEffectTable.getInstance().getServitorEffectsOwner().put(getOwner().getObjectId(), new HashMap<>());
 								}
+								
 								if (!SummonEffectTable.getInstance().getServitorEffectsOwner().get(getOwner().getObjectId()).containsKey(getOwner().getClassIndex()))
 								{
 									SummonEffectTable.getInstance().getServitorEffectsOwner().get(getOwner().getObjectId()).put(getOwner().getClassIndex(), new HashMap<>());
 								}
+								
 								if (!SummonEffectTable.getInstance().getServitorEffects(getOwner()).containsKey(getReferenceSkill()))
 								{
 									SummonEffectTable.getInstance().getServitorEffects(getOwner()).put(getReferenceSkill(), ConcurrentHashMap.newKeySet());
@@ -501,6 +506,7 @@ public class Servitor extends Summon implements Runnable
 		{
 			return getOwner().getAttackElement();
 		}
+		
 		return super.getAttackElement();
 	}
 	
@@ -511,6 +517,7 @@ public class Servitor extends Summon implements Runnable
 		{
 			return (getOwner().getAttackElementValue(attackAttribute));
 		}
+		
 		return super.getAttackElementValue(attackAttribute);
 	}
 	
@@ -521,6 +528,7 @@ public class Servitor extends Summon implements Runnable
 		{
 			return (getOwner().getDefenseElementValue(defenseAttribute));
 		}
+		
 		return super.getDefenseElementValue(defenseAttribute);
 	}
 	
@@ -545,6 +553,7 @@ public class Servitor extends Summon implements Runnable
 		{
 			_lifeTimeRemaining -= usedtime;
 		}
+		
 		if (isDead() || !isSpawned())
 		{
 			if (_summonLifeTask != null)

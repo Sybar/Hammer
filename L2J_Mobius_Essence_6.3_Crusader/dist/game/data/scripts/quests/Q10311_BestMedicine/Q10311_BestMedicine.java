@@ -40,15 +40,18 @@ public class Q10311_BestMedicine extends Quest
 {
 	// NPC
 	private static final int GRILL = 34319;
+	
 	// Monsters
 	private static final int TAILED_WARRIOR = 22426;
 	private static final int TAILED_HUNTER = 22427;
 	private static final int TAILED_BERSERKER = 22428;
 	private static final int TAILED_WIZARD = 22429;
+	
 	// Items
 	private static final ItemHolder SAYHA_COOKIE = new ItemHolder(93274, 20);
 	private static final ItemHolder SAYHA_STORM = new ItemHolder(91712, 12);
 	private static final ItemHolder MAGIC_LAMP_CHARGING_POTION = new ItemHolder(91757, 2);
+	
 	// Misc
 	private static final int MIN_LEVEL = 85;
 	private static final String KILL_COUNT_VAR = "KillCount";
@@ -99,6 +102,7 @@ public class Q10311_BestMedicine extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -112,6 +116,7 @@ public class Q10311_BestMedicine extends Quest
 			htmltext = "noreq.htm";
 			return htmltext;
 		}
+		
 		if (qs.isCreated())
 		{
 			htmltext = "34319-01.htm";
@@ -131,6 +136,7 @@ public class Q10311_BestMedicine extends Quest
 		{
 			htmltext = getAlreadyCompletedMsg(player);
 		}
+		
 		return htmltext;
 	}
 	
@@ -175,6 +181,7 @@ public class Q10311_BestMedicine extends Quest
 				return holder;
 			}
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

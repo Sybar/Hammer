@@ -110,6 +110,7 @@ public class PrimeShopData implements IXmlReader
 									items.add(new PrimeShopItem(itemId, count, item.getWeight(), item.isTradeable() ? 1 : 0));
 								}
 							}
+							
 							PrimeShopGroup group = new PrimeShopGroup(set, items);
 							if (group.isVipGift())
 							{
@@ -144,6 +145,7 @@ public class PrimeShopData implements IXmlReader
 		{
 			item = _vipGifts.get(brId);
 		}
+		
 		return item;
 	}
 	

@@ -64,8 +64,10 @@ public class Q10591_NobleMaterial extends Quest
 		23503, // Flame Drake
 		23504, // Flame Votis
 	};
+	
 	// Item
 	private static final int FLAME_ENERGY = 80856; // Flame Energy - monster drop
+	
 	// Rewards
 	private static final int ADENA_AMOUNT = 5050;
 	private static final int ACHIEVEMENT_BOX_LV_100 = 80910;
@@ -73,9 +75,11 @@ public class Q10591_NobleMaterial extends Quest
 	private static final int WARRIOR_CICLET_BOX_LV5 = 80911;
 	private static final int WIZARD_CICLET_BOX_LV5 = 80912;
 	private static final int KNIGHT_CICLET_BOX_LV5 = 80913;
+	
 	// Misc
 	private static final int MIN_LEVEL = 100;
 	private static final SkillHolder NOBLESSE_PRESENTATION = new SkillHolder(18176, 1);
+	
 	// Location
 	private static final Location BURNING_MARSH = new Location(152754, -15142, -4400);
 	private static final Location HEIN = new Location(111257, 221071, -3550);
@@ -214,6 +218,7 @@ public class Q10591_NobleMaterial extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -310,6 +315,7 @@ public class Q10591_NobleMaterial extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -324,6 +330,7 @@ public class Q10591_NobleMaterial extends Quest
 				giveItems(player, FLAME_ENERGY, 1);
 				playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 			}
+			
 			if ((getQuestItemsCount(player, FLAME_ENERGY) >= 1000) && (player.getLevel() >= MIN_LEVEL))
 			{
 				qs.setCond(3, true);

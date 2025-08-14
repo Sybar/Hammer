@@ -59,6 +59,7 @@ public enum AcquireSkillType
 				return type;
 			}
 		}
+		
 		return null;
 	}
 }

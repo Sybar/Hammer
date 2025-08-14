@@ -73,6 +73,7 @@ public class RequestSellItem extends ClientPacket
 				_items = null;
 				return;
 			}
+			
 			_items.add(new UniqueItemHolder(itemId, objectId, count));
 		}
 	}
@@ -114,6 +115,7 @@ public class RequestSellItem extends ClientPacket
 				player.sendPacket(ActionFailed.STATIC_PACKET);
 				return;
 			}
+			
 			if (target instanceof Merchant)
 			{
 				merchant = (Merchant) target;
@@ -145,6 +147,7 @@ public class RequestSellItem extends ClientPacket
 		}
 		
 		long totalPrice = 0;
+		
 		// Proceed the sell
 		for (UniqueItemHolder i : _items)
 		{

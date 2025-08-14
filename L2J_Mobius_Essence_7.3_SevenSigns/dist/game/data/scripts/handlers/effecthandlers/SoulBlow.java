@@ -93,15 +93,16 @@ public class SoulBlow extends AbstractEffect
 		{
 			if (skill.getMaxLightSoulConsumeCount() > 0)
 			{
-				// Souls Formula (each soul increase +4%)
+				// Souls Formula (each soul increase +4.8%)
 				final int chargedSouls = (effector.asPlayer().getChargedSouls(SoulType.LIGHT) <= skill.getMaxLightSoulConsumeCount()) ? effector.asPlayer().getChargedSouls(SoulType.LIGHT) : skill.getMaxLightSoulConsumeCount();
-				damage *= 1 + (chargedSouls * 0.04);
+				damage *= 1 + (chargedSouls * 0.048);
 			}
+			
 			if (skill.getMaxShadowSoulConsumeCount() > 0)
 			{
-				// Souls Formula (each soul increase +4%)
+				// Souls Formula (each soul increase +4.8%)
 				final int chargedSouls = (effector.asPlayer().getChargedSouls(SoulType.SHADOW) <= skill.getMaxShadowSoulConsumeCount()) ? effector.asPlayer().getChargedSouls(SoulType.SHADOW) : skill.getMaxShadowSoulConsumeCount();
-				damage *= 1 + (chargedSouls * 0.04);
+				damage *= 1 + (chargedSouls * 0.048);
 			}
 		}
 		

@@ -36,13 +36,16 @@ public class GlakiasEasy extends AbstractNpcAI
 	// NPCs
 	private static final int GLAKIAS = 29136;
 	private static final int GLAKIAS2 = 29137;
+	
 	// Skills
 	private static final SkillHolder GLAKIAS_ENCHANCEMENT_LV_1 = new SkillHolder(48372, 1);
+	
 	// Skills Glakias (29136)
 	private static final SkillHolder EMPEROR_THUNDER_LV_1 = new SkillHolder(48378, 1);
 	private static final SkillHolder EMPEROR_THUNDER_LV_2 = new SkillHolder(48378, 2);
 	private static final SkillHolder EMPEROR_SMASH_LV_1 = new SkillHolder(48377, 1);
 	private static final SkillHolder EMPEROR_SMASH_LV_2 = new SkillHolder(48377, 2);
+	
 	// Skills Glakias (29137)
 	private static final SkillHolder EMPEROR_TORNADO_LV_1 = new SkillHolder(48382, 1);
 	private static final SkillHolder EMPEROR_TORNADO_LV_2 = new SkillHolder(48382, 2);

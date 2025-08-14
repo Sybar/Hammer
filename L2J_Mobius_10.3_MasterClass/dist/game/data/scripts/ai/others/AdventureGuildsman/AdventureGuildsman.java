@@ -39,6 +39,7 @@ public class AdventureGuildsman extends AbstractNpcAI
 {
 	// NPC
 	private static final int ADVENTURE_GUILDSMAN = 33946;
+	
 	// Items
 	private static final int PCCAFE_LOTTERY_TICKET_30DAYS = 15358;
 	private static final int PCCAFE_1ST_LOTTERY_TICKET_30DAYS = 15359;
@@ -54,14 +55,16 @@ public class AdventureGuildsman extends AbstractNpcAI
 	private static final int SEAL_LEV_90 = 17744;
 	private static final int SEAL_LEV_95 = 17745;
 	private static final int SEAL_LEV_97 = 17746;
+	
 	// Skills
 	private static final SkillHolder KNIGHT = new SkillHolder(32840, 1); // Fantasia Harmony - Adventurer
 	private static final SkillHolder WARRIOR = new SkillHolder(32840, 1); // Fantasia Harmony - Adventurer
 	private static final SkillHolder WIZARD = new SkillHolder(32840, 1); // Fantasia Harmony - Adventurer
 	private static final SkillHolder MELODY = new SkillHolder(34243, 1); // Musician's Melody (Adventurer)
 	private static final SkillHolder SONATA = new SkillHolder(34254, 1); // Sonate Performance (Adventurer)
+	
 	// Misc
-	//@formatter:off
+	// @formatter:off
 	private static final Map<CategoryType, Integer> R_CLASS_TALISMAN = new EnumMap<>(CategoryType.class);
 	static
 	{
@@ -118,7 +121,7 @@ public class AdventureGuildsman extends AbstractNpcAI
 		R99_CLASS_TALISMAN.put(CategoryType.ERTHEIA_FIGHTER_GROUP, 760);
 		R99_CLASS_TALISMAN.put(CategoryType.ERTHEIA_WIZARD_GROUP, 765);
 	}
-	//@formatter:on
+	// @formatter:on
 	private static final String USED_PC_LOTTERY_TICKET = "USED_PC_LOTTERY_TICKET";
 	
 	private AdventureGuildsman()
@@ -406,6 +409,7 @@ public class AdventureGuildsman extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		if (event.startsWith("melody"))
 		{
 			if (player.getPcCafePoints() >= 20)
@@ -420,6 +424,7 @@ public class AdventureGuildsman extends AbstractNpcAI
 				htmltext = "pccafe_notpoint001.htm";
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -451,6 +456,7 @@ public class AdventureGuildsman extends AbstractNpcAI
 			player.setPcCafePoints(player.getPcCafePoints() + points);
 			return "pccafe_help_lottery003.htm";
 		}
+		
 		return "pccafe_help_lottery_fail.htm";
 	}
 	

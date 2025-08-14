@@ -82,8 +82,10 @@ public class Q10353_CertificationOfValue extends Quest
 		23111, // Heaven's Palace Seraphim
 		23112 // Heaven's Palace Seraphim Escort
 	};
+	
 	// Item
 	private static final int TOKEN_OF_INSOLENCE_TOWER = 17624;
+	
 	// Misc
 	private static final int MIN_LEVEL = 48;
 	private static final String KILL_COUNT_VAR = "KillCount";
@@ -106,6 +108,7 @@ public class Q10353_CertificationOfValue extends Quest
 		{
 			return htmltext;
 		}
+		
 		switch (event)
 		{
 			case "33155-02.htm":
@@ -140,6 +143,7 @@ public class Q10353_CertificationOfValue extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -206,6 +210,7 @@ public class Q10353_CertificationOfValue extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -243,6 +248,7 @@ public class Q10353_CertificationOfValue extends Quest
 				return holder;
 			}
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

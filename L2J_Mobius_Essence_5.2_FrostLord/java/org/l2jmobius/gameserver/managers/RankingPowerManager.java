@@ -32,7 +32,7 @@ import org.l2jmobius.gameserver.model.World;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.instance.Decoy;
 import org.l2jmobius.gameserver.model.actor.templates.NpcTemplate;
-import org.l2jmobius.gameserver.model.events.AbstractScript;
+import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.skill.BuffInfo;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
 import org.l2jmobius.gameserver.network.SystemMessageId;
@@ -87,7 +87,7 @@ public class RankingPowerManager
 		_decoyInstance.setHeading(location.getHeading());
 		_decoyInstance.broadcastStatusUpdate();
 		
-		AbstractScript.addSpawn(null, LEADER_STATUE, location, false, COOLDOWN);
+		Quest.addSpawn(null, LEADER_STATUE, location, false, COOLDOWN);
 	}
 	
 	private void cloneTask()
@@ -119,10 +119,12 @@ public class RankingPowerManager
 			_decoyTask.cancel(false);
 			_decoyTask = null;
 		}
+		
 		if (_decoyInstance != null)
 		{
 			_decoyInstance.deleteMe();
 		}
+		
 		GlobalVariablesManager.getInstance().remove(GlobalVariablesManager.RANKING_POWER_COOLDOWN);
 		GlobalVariablesManager.getInstance().remove(GlobalVariablesManager.RANKING_POWER_LOCATION);
 	}

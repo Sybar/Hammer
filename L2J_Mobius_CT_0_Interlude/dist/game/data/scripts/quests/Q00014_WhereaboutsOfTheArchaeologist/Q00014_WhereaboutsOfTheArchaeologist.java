@@ -31,6 +31,7 @@ public class Q00014_WhereaboutsOfTheArchaeologist extends Quest
 	// NPCs
 	private static final int LIESEL = 31263;
 	private static final int GHOST_OF_ADVENTURER = 31538;
+	
 	// Items
 	private static final int LETTER = 7253;
 	

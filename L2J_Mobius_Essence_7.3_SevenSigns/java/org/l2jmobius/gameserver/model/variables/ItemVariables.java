@@ -74,6 +74,7 @@ public class ItemVariables extends AbstractVariables
 			LOGGER.log(Level.WARNING, ItemVariables.class.getSimpleName() + ": Couldn't select variables count for: " + objectId, e);
 			return false;
 		}
+		
 		return true;
 	}
 	
@@ -101,6 +102,7 @@ public class ItemVariables extends AbstractVariables
 		{
 			compareAndSetChanges(true, false);
 		}
+		
 		return true;
 	}
 	
@@ -131,6 +133,7 @@ public class ItemVariables extends AbstractVariables
 					st.setString(3, String.valueOf(entry.getValue()));
 					st.addBatch();
 				}
+				
 				st.executeBatch();
 			}
 		}
@@ -143,6 +146,7 @@ public class ItemVariables extends AbstractVariables
 		{
 			compareAndSetChanges(true, false);
 		}
+		
 		return true;
 	}
 	
@@ -165,6 +169,7 @@ public class ItemVariables extends AbstractVariables
 			LOGGER.log(Level.WARNING, getClass().getSimpleName() + ": Couldn't delete variables for: " + _objectId, e);
 			return false;
 		}
+		
 		return true;
 	}
 }

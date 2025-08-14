@@ -48,8 +48,10 @@ public class Q10402_NowhereToTurn extends Quest
 		21021, // Sharp Talon Tiger
 		21022, // Fallen Orc Captain
 	};
+	
 	// Items
 	private static final int EAB = 948; // Scroll: Enchant Armor (B-grade)
+	
 	// Misc
 	private static final int MIN_LEVEL = 58;
 	private static final int MAX_LEVEL = 61;
@@ -99,11 +101,13 @@ public class Q10402_NowhereToTurn extends Quest
 					{
 						addExpAndSp(player, 5_482_574, 1_315);
 					}
+					
 					htmltext = event;
 				}
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -131,6 +135,7 @@ public class Q10402_NowhereToTurn extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -165,6 +170,7 @@ public class Q10402_NowhereToTurn extends Quest
 			npcLogList.add(new NpcLogListHolder(NpcStringId.ELIMINATE_MONSTERS_IN_THE_FORSAKEN_PLAINS, qs.getInt("KILLED_COUNT")));
 			return npcLogList;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

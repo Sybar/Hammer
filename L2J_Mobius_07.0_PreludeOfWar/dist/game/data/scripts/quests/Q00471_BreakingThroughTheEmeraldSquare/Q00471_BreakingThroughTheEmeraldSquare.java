@@ -37,10 +37,13 @@ public class Q00471_BreakingThroughTheEmeraldSquare extends Quest
 {
 	// NPC
 	private static final int FIOREN = 33044;
+	
 	// Monster
 	private static final int EMABIFI = 25881;
+	
 	// Misc
 	private static final int MIN_LEVEL = 97;
+	
 	// Items
 	private static final int CERTIFICATE = 30387;
 	
@@ -77,6 +80,7 @@ public class Q00471_BreakingThroughTheEmeraldSquare extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -104,6 +108,7 @@ public class Q00471_BreakingThroughTheEmeraldSquare extends Quest
 		{
 			htmltext = "33044-08.html";
 		}
+		
 		return htmltext;
 	}
 	

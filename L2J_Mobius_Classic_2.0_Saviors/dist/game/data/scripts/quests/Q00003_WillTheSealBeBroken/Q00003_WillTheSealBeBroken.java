@@ -32,6 +32,7 @@ public class Q00003_WillTheSealBeBroken extends Quest
 {
 	// NPC
 	private static final int TALLOTH = 30141;
+	
 	// Monsters
 	private static final int OMEN_BEAST = 20031;
 	private static final int TAINTED_ZOMBIE = 20041;
@@ -39,10 +40,12 @@ public class Q00003_WillTheSealBeBroken extends Quest
 	private static final int LESSER_SUCCUBUS = 20048;
 	private static final int LESSER_SUCCUBUS_TUREN = 20052;
 	private static final int LESSER_SUCCUBUS_TILFO = 20057;
+	
 	// Items
 	private static final int OMEN_BEAST_EYE = 1081;
 	private static final int TAINT_STONE = 1082;
 	private static final int SUCCUBUS_BLOOD = 1083;
+	
 	// Misc
 	private static final int MIN_LEVEL = 16;
 	private static final int MAX_LEVEL = 26;
@@ -84,6 +87,7 @@ public class Q00003_WillTheSealBeBroken extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -152,6 +156,7 @@ public class Q00003_WillTheSealBeBroken extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

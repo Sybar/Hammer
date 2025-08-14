@@ -22,7 +22,7 @@ import org.l2jmobius.gameserver.managers.MapRegionManager;
 import org.l2jmobius.gameserver.model.BlockList;
 import org.l2jmobius.gameserver.model.World;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.actor.enums.player.PlayerCondOverride;
+import org.l2jmobius.gameserver.model.actor.enums.player.ChatBroadcastType;
 import org.l2jmobius.gameserver.model.item.enums.ItemProcessType;
 import org.l2jmobius.gameserver.model.itemcontainer.Inventory;
 import org.l2jmobius.gameserver.model.zone.ZoneId;
@@ -43,19 +43,21 @@ public class ChatShout implements IChatHandler
 	};
 	
 	@Override
-	public void handleChat(ChatType type, Player activeChar, String target, String text, boolean shareLocation)
+	public void onChat(ChatType type, Player activeChar, String target, String text, boolean shareLocation)
 	{
 		if (activeChar.isChatBanned() && Config.BAN_CHAT_CHANNELS.contains(type))
 		{
 			activeChar.sendPacket(SystemMessageId.CHATTING_IS_CURRENTLY_PROHIBITED_IF_YOU_TRY_TO_CHAT_BEFORE_THE_PROHIBITION_IS_REMOVED_THE_PROHIBITION_TIME_WILL_INCREASE_EVEN_FURTHER);
 			return;
 		}
-		if (Config.JAIL_DISABLE_CHAT && activeChar.isJailed() && !activeChar.canOverrideCond(PlayerCondOverride.CHAT_CONDITIONS))
+		
+		if (Config.JAIL_DISABLE_CHAT && activeChar.isJailed() && !activeChar.isGM())
 		{
 			activeChar.sendPacket(SystemMessageId.CHATTING_IS_CURRENTLY_PROHIBITED);
 			return;
 		}
-		if ((activeChar.getLevel() < Config.MINIMUM_CHAT_LEVEL) && !activeChar.canOverrideCond(PlayerCondOverride.CHAT_CONDITIONS))
+		
+		if ((activeChar.getLevel() < Config.MINIMUM_CHAT_LEVEL) && !activeChar.isGM())
 		{
 			activeChar.sendPacket(new SystemMessage(SystemMessageId.SHOUT_CHAT_CANNOT_BE_USED_BY_NON_PREMIUM_USERS_LV_S1_OR_LOWER).addInt(Config.MINIMUM_CHAT_LEVEL));
 			return;
@@ -79,7 +81,7 @@ public class ChatShout implements IChatHandler
 		}
 		
 		final CreatureSay cs = new CreatureSay(activeChar, type, activeChar.getName(), text, shareLocation);
-		if (Config.DEFAULT_GLOBAL_CHAT.equalsIgnoreCase("on") || (Config.DEFAULT_GLOBAL_CHAT.equalsIgnoreCase("gm") && activeChar.canOverrideCond(PlayerCondOverride.CHAT_CONDITIONS)))
+		if ((Config.DEFAULT_GLOBAL_CHAT == ChatBroadcastType.ON) || ((Config.DEFAULT_GLOBAL_CHAT == ChatBroadcastType.GM) && activeChar.isGM()))
 		{
 			final int region = MapRegionManager.getInstance().getMapRegionLocId(activeChar);
 			for (Player player : World.getInstance().getPlayers())
@@ -107,9 +109,9 @@ public class ChatShout implements IChatHandler
 				}
 			}
 		}
-		else if (Config.DEFAULT_GLOBAL_CHAT.equalsIgnoreCase("global"))
+		else if (Config.DEFAULT_GLOBAL_CHAT == ChatBroadcastType.GLOBAL)
 		{
-			if (!activeChar.canOverrideCond(PlayerCondOverride.CHAT_CONDITIONS) && !activeChar.getClient().getFloodProtectors().canUseGlobalChat())
+			if (!activeChar.isGM() && !activeChar.getClient().getFloodProtectors().canUseGlobalChat())
 			{
 				activeChar.sendMessage("Do not spam shout channel.");
 				return;

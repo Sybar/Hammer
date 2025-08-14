@@ -80,19 +80,19 @@ public class RegionBoard implements IWriteBoardHandler
 	}
 	
 	@Override
-	public String[] getCommunityBoardCommands()
+	public String[] getCommandList()
 	{
 		return COMMANDS;
 	}
 	
 	@Override
-	public boolean parseCommunityBoardCommand(String command, Player player)
+	public boolean onCommand(String command, Player player)
 	{
 		if (command.equals("_bbsloc"))
 		{
 			CommunityBoardHandler.getInstance().addBypass(player, "Region", command);
 			
-			final String list = HtmCache.getInstance().getHtm(player, "data/html/CommunityBoard/region_list.html");
+			final String list = HtmCache.getInstance().getHtm(player, "data/html/CommunityBoard/region/region_list.html");
 			final StringBuilder sb = new StringBuilder();
 			final List<Castle> castles = CastleManager.getInstance().getCastles();
 			
@@ -105,7 +105,7 @@ public class RegionBoard implements IWriteBoardHandler
 				sb.append(link);
 			}
 			
-			String html = HtmCache.getInstance().getHtm(player, "data/html/CommunityBoard/region.html");
+			String html = HtmCache.getInstance().getHtm(player, "data/html/CommunityBoard/region/region.html");
 			html = html.replace("%region_list%", sb.toString());
 			CommunityBoardHandler.separateAndSend(html, player);
 		}
@@ -130,22 +130,22 @@ public class RegionBoard implements IWriteBoardHandler
 			
 			final Castle castle = castles.get(regionId);
 			final Clan clan = ClanTable.getInstance().getClan(castle.getOwnerId());
-			String html = HtmCache.getInstance().getHtm(player, "data/html/CommunityBoard/region_show.html");
+			String html = HtmCache.getInstance().getHtm(player, "data/html/CommunityBoard/region/region_show.html");
 			html = html.replace("%regionName%", castle.getName()).replace("%tax%", (castle.getTaxRate() * 100) + "%").replace("%lord%", clan != null ? clan.getLeaderName() : "NPC").replace("%clanName%", (clan != null ? "<a action=\"bypass _bbsclan_clanhome;" + clan.getId() + "\">" + clan.getName() + "</a>" : "NPC")).replace("%allyName%", ((clan != null) && (clan.getAllyName() != null) ? clan.getAllyName() : "None")).replace("%siegeDate%", new SimpleDateFormat("dd-MM-yyyy HH:mm").format(castle.getSiegeDate().getTimeInMillis()));
 			
 			final StringBuilder hallsList = new StringBuilder();
-			hallsList.append("<br><br><table width=610 bgcolor=A7A19A><tr><td width=5></td><td width=200>Clan Hall Name</td><td width=200>Owning Clan</td><td width=200>Clan Leader Name</td><td width=5></td></tr></table><br1>");
+			hallsList.append("<br><br><table width=625 bgcolor=000000><tr><td width=5></td><td width=200>Clan Hall Name</td><td width=200>Owning Clan</td><td width=200>Clan Leader Name</td><td width=5></td></tr></table>");
 			final Map<Integer, ClanHall> clanHalls = getClanHallsByLocation(castle.getName());
 			if (clanHalls.isEmpty())
 			{
-				hallsList.append("<table width=610><tr><td align=\"left\">There are no clan halls in this region.</td></tr></table>");
+				hallsList.append("<br><table width=610><tr><td align=\"center\">There are no clan halls in this region.</td></tr></table>");
 			}
 			else
 			{
 				for (ClanHall hall : clanHalls.values())
 				{
 					Clan hallOwner = ClanTable.getInstance().getClan(hall.getOwnerId());
-					hallsList.append("<table><tr><td width=5></td><td width=200>").append(hall.getName()).append("</td><td width=200>").append(hallOwner != null ? "<a action=\"bypass _bbsclan_clanhome;" + hallOwner.getId() + "\">" + hallOwner.getName() + "</a>" : "None").append("</td><td width=200>").append(hallOwner != null ? hallOwner.getLeaderName() : "None").append("</td><td width=5></td></tr></table><br1><img src=\"L2UI.Squaregray\" width=605 height=1><br1>");
+					hallsList.append("<table><tr><td width=5></td><td width=200>").append(hall.getName()).append("</td><td width=200>").append(hallOwner != null ? "<a action=\"bypass _bbsclan_clanhome;" + hallOwner.getId() + "\">" + hallOwner.getName() + "</a>" : "None").append("</td><td width=200>").append(hallOwner != null ? hallOwner.getLeaderName() : "None").append("</td><td width=5></td></tr></table><br1><img src=\"L2UI.Squaregray\" width=630 height=1><br1>");
 				}
 			}
 			

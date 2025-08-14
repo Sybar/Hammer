@@ -20,6 +20,7 @@
  */
 package quests.Q10537_KamaelDisarray;
 
+import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -54,19 +55,24 @@ public class Q10537_KamaelDisarray extends Quest
 	private static final int RETBACH = 34218;
 	private static final int STHOR = 34224;
 	private static final int VETLE = 34225;
+	
 	// Monsters
 	private static final int LESSER_GIANT_SOLDIER = 23748;
 	private static final int ESSENCE_LASSER_GIANTS = 23754;
 	private static final int ROOT_LASSER_GIANTS = 23749;
+	
 	// Items
 	private static final int MINIONS_SHINE_STONE = 46748;
 	private static final int MINIONS_REPOT = 46756;
+	
 	// Reward
 	private static final int ELEXIR_OF_LIFE = 37097;
 	private static final int ELEXIR_OF_MIND = 37098;
 	private static final int ELEXIR_OF_CP = 37099;
+	
 	// skill
 	private static final int INJECT_SHINE_ENERGY = 18583;
+	
 	// Misc
 	private static final int KILLING_NPCSTRING_ID = NpcStringId.HELPING_THE_EVOLUTION_OF_THE_LESSER_GIANT.getId();
 	private static final boolean PARTY_QUEST = false;
@@ -80,6 +86,7 @@ public class Q10537_KamaelDisarray extends Quest
 		addKillId(LESSER_GIANT_SOLDIER);
 		addSkillSeeId(ESSENCE_LASSER_GIANTS, ROOT_LASSER_GIANTS);
 		registerQuestItems(MINIONS_REPOT);
+		
 		// addCreatureSeeId(RETBACH, STHOR, VETLE);
 		addFactionLevel(Faction.GIANT_TRACKERS, 2, "34237-00.htm");
 		addCondMinLevel(MIN_LEVEL, "34237-00.htm");
@@ -94,6 +101,7 @@ public class Q10537_KamaelDisarray extends Quest
 		{
 			return null;
 		}
+		
 		switch (event)
 		{
 			case "34237-02.htm":
@@ -175,6 +183,7 @@ public class Q10537_KamaelDisarray extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -215,6 +224,7 @@ public class Q10537_KamaelDisarray extends Quest
 				}
 			}
 		}
+		
 		if (npc.getId() == RETBACH)
 		{
 			final QuestState qs10538 = player.getQuestState(Q10538_GiantsEvolution.class.getSimpleName());
@@ -259,6 +269,7 @@ public class Q10537_KamaelDisarray extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -296,7 +307,7 @@ public class Q10537_KamaelDisarray extends Quest
 	// }
 	
 	@Override
-	public void onSkillSee(Npc npc, Player caster, Skill skill, WorldObject[] targets, boolean isSummon)
+	public void onSkillSee(Npc npc, Player caster, Skill skill, Collection<WorldObject> targets, boolean isSummon)
 	{
 		final QuestState qs = getQuestState(caster, false);
 		if ((qs != null) && qs.isCond(2) && (skill.getId() == INJECT_SHINE_ENERGY))
@@ -331,6 +342,7 @@ public class Q10537_KamaelDisarray extends Quest
 			{
 				qs.setCond(3, true);
 			}
+			
 			sendNpcLogList(killer);
 		}
 	}
@@ -345,6 +357,7 @@ public class Q10537_KamaelDisarray extends Quest
 			holder.add(new NpcLogListHolder(KILLING_NPCSTRING_ID, true, qs.getInt("AncientGhosts")));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 	

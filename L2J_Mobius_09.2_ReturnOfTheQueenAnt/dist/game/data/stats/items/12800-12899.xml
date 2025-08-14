@@ -457,9 +457,9 @@
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player SiegeZone="126" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2530" level="1" /> <!-- Recovery Item (Battleground) -->
 		</skills>
@@ -483,9 +483,9 @@
 		<set name="price" val="28800" />
 		<set name="is_stackable" val="true" />
 		<set name="commissionItemType" val="LIFE_STONE" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="80" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="12822" name="Life Stone: Accessory Lv. 82" type="EtcItem">
 		<!-- A mineral formed inside a monster under immense impact. Outdated and almost no longer used. Can be exchanged for Spirit Stones through a blacksmith in any town. -->
@@ -496,9 +496,9 @@
 		<set name="price" val="34560" />
 		<set name="commissionItemType" val="LIFE_STONE" />
 		<set name="is_stackable" val="true" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="82" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="12823" name="Casian's Blue Crystal" type="EtcItem">
 		<!-- Gift that Casian received as a child from the Water Dragon. Take it to Galate. -->
@@ -764,9 +764,9 @@
 		<set name="price" val="5000" />
 		<set name="commissionItemType" val="LIFE_STONE" />
 		<set name="is_stackable" val="true" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="46" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="12841" name="Life Stone: Accessory Lv. 49" type="EtcItem">
 		<!-- Mineral that has been petrified by a creature's physical or magical damage. Usable by characters level 49 or above when augmenting items. -->
@@ -777,9 +777,9 @@
 		<set name="price" val="6000" />
 		<set name="commissionItemType" val="LIFE_STONE" />
 		<set name="is_stackable" val="true" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="49" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="12842" name="Life Stone: Accessory Lv. 52" type="EtcItem">
 		<!-- Mineral that has been petrified by a creature's physical or magical damage. Usable by characters level 52 or above when augmenting items. -->
@@ -790,9 +790,9 @@
 		<set name="price" val="7200" />
 		<set name="commissionItemType" val="LIFE_STONE" />
 		<set name="is_stackable" val="true" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="52" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="12843" name="Life Stone: Accessory Lv. 55" type="EtcItem">
 		<!-- Mineral that has been petrified by a creature's physical or magical damage. Usable by characters level 55 or above when augmenting items. -->
@@ -803,9 +803,9 @@
 		<set name="price" val="8640" />
 		<set name="commissionItemType" val="LIFE_STONE" />
 		<set name="is_stackable" val="true" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="55" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="12844" name="Life Stone: Accessory Lv. 58" type="EtcItem">
 		<!-- Mineral that has been petrified by a creature's physical or magical damage. Usable by characters level 58 or above when augmenting items. -->
@@ -816,9 +816,9 @@
 		<set name="price" val="10000" />
 		<set name="commissionItemType" val="LIFE_STONE" />
 		<set name="is_stackable" val="true" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="58" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="12845" name="Life Stone: Accessory Lv. 61" type="EtcItem">
 		<!-- Mineral that has been petrified by a creature's physical or magical damage. Usable by characters level 61 or above when augmenting items. -->
@@ -829,9 +829,9 @@
 		<set name="price" val="12000" />
 		<set name="commissionItemType" val="LIFE_STONE" />
 		<set name="is_stackable" val="true" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="61" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="12846" name="Life Stone: Accessory Lv. 64" type="EtcItem">
 		<!-- Mineral that has been petrified by a creature's physical or magical damage. Usable by characters level 64 or above when augmenting items. -->
@@ -842,9 +842,9 @@
 		<set name="price" val="15000" />
 		<set name="commissionItemType" val="LIFE_STONE" />
 		<set name="is_stackable" val="true" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="64" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="12847" name="Life Stone: Accessory Lv. 67" type="EtcItem">
 		<!-- Mineral that has been petrified by a creature's physical or magical damage. Usable by characters level 67 or above when augmenting items. -->
@@ -855,9 +855,9 @@
 		<set name="price" val="18000" />
 		<set name="commissionItemType" val="LIFE_STONE" />
 		<set name="is_stackable" val="true" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="67" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="12848" name="Life Stone: Accessory Lv. 70" type="EtcItem">
 		<!-- Mineral that has been petrified by a creature's physical or magical damage. Usable by characters level 70 or above when augmenting items. -->
@@ -868,9 +868,9 @@
 		<set name="price" val="21600" />
 		<set name="commissionItemType" val="LIFE_STONE" />
 		<set name="is_stackable" val="true" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="70" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="12849" name="Life Stone: Accessory Lv. 76" type="EtcItem">
 		<!-- Mineral that has been petrified by a creature's physical or magical damage. Usable by characters level 76 or above when augmenting items. -->
@@ -881,9 +881,9 @@
 		<set name="price" val="24000" />
 		<set name="commissionItemType" val="LIFE_STONE" />
 		<set name="is_stackable" val="true" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="75" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="12850" name="Life Stone: Accessory Lv. 80" type="EtcItem">
 		<!-- Mineral that has been petrified by a creature's physical or magical damage. Usable by characters level 80 or above when augmenting items. -->
@@ -894,9 +894,9 @@
 		<set name="price" val="21600" />
 		<set name="commissionItemType" val="LIFE_STONE" />
 		<set name="is_stackable" val="true" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="80" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="12851" name="Life Stone: Accessory Lv. 82" type="EtcItem">
 		<!-- Mineral that has been petrified by a creature's physical or magical damage. Usable by characters level 82 or above when augmenting items. -->
@@ -907,9 +907,9 @@
 		<set name="price" val="24000" />
 		<set name="commissionItemType" val="LIFE_STONE" />
 		<set name="is_stackable" val="true" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="80" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="12852" name="Naga's Storm - Molar {PvP} - Focus" type="Weapon">
 		<!-- Masterwork Item that has a chance to poison enemy after an attack. <Special Option>. P. Critical Rate +67. Inflicts additional PvP Damage. Has a chance of recovering CP when the character is attacked. No Soul Crystal option. -->
@@ -1252,9 +1252,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">318</stat>
 			<stat type="mAtk">121</stat>
@@ -1291,9 +1291,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">318</stat>
 			<stat type="mAtk">121</stat>
@@ -1330,9 +1330,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">318</stat>
 			<stat type="mAtk">121</stat>
@@ -1472,9 +1472,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">272</stat>
 			<stat type="mAtk">121</stat>
@@ -1510,9 +1510,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">272</stat>
 			<stat type="mAtk">121</stat>
@@ -1548,9 +1548,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">272</stat>
 			<stat type="mAtk">121</stat>
@@ -2008,9 +2008,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">228</stat>
 			<stat type="mAtk">121</stat>
@@ -2047,9 +2047,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">228</stat>
 			<stat type="mAtk">121</stat>
@@ -2086,9 +2086,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">228</stat>
 			<stat type="mAtk">121</stat>
@@ -2475,9 +2475,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">304</stat>
 			<stat type="mAtk">132</stat>
@@ -2513,9 +2513,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">304</stat>
 			<stat type="mAtk">132</stat>
@@ -2551,9 +2551,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">304</stat>
 			<stat type="mAtk">132</stat>

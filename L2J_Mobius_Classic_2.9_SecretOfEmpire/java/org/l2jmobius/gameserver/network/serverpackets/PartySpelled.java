@@ -71,6 +71,7 @@ public class PartySpelled extends ServerPacket
 				writeOptionalInt(info.getTime(), buffer);
 			}
 		}
+		
 		for (Skill skill : _effects2)
 		{
 			if (skill != null)

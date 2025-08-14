@@ -44,6 +44,7 @@ public class CastleCourtMagician extends AbstractNpcAI
 		35655, // Rune
 		35656, // Schuttgard
 	};
+	
 	// Skills
 	private static final int CLAN_GATE = 3632; // Clan Gate
 	private static final SkillHolder DISPLAY_CLAN_GATE = new SkillHolder(5109, 1); // Production - Clan Gate
@@ -147,6 +148,7 @@ public class CastleCourtMagician extends AbstractNpcAI
 					htmltext = "courtmagician-06.html";
 					break;
 				}
+				
 				if (player.getInventory().getSize() == player.getInventoryLimit())
 				{
 					player.sendPacket(SystemMessageId.YOUR_INVENTORY_IS_FULL);
@@ -246,6 +248,7 @@ public class CastleCourtMagician extends AbstractNpcAI
 						itemId = WHITE_FIRE;
 					}
 				}
+				
 				takeItems(player, EPAULETTE, 10);
 				giveItems(player, itemId, 1);
 				htmltext = "courtmagician-04.html";
@@ -260,6 +263,7 @@ public class CastleCourtMagician extends AbstractNpcAI
 				// else
 				// {
 				htmltext = "courtmagician-05.html";
+				
 				// }
 				break;
 			}
@@ -285,6 +289,7 @@ public class CastleCourtMagician extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

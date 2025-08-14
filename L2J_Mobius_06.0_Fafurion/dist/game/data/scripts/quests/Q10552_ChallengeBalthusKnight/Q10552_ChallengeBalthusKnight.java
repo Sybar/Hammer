@@ -51,14 +51,19 @@ public final class Q10552_ChallengeBalthusKnight extends Quest
 	// NPCs
 	private static final int TARTI = 34359;
 	private static final int STIG = 34361;
+	
 	// Items
 	private static final int HATCHLING_SCALE = 48192;
+	
 	// Monster
 	private static final int HATCHLING = 24089;
+	
 	// Skills
 	private static final SkillHolder SKILL_BALTHUS_KNIGHT_MEMBER = new SkillHolder(32130, 1);
+	
 	// Misc
 	private static final int ITEM_COUNT = 3;
+	
 	// TODO: Adding for retail way.
 	// private static boolean _firstDrop = true;
 	
@@ -86,6 +91,7 @@ public final class Q10552_ChallengeBalthusKnight extends Quest
 			qs.startQuest();
 			final ServerPacket packet = new ExTutorialShowId(13);
 			player.sendPacket(packet);
+			
 			// TODO: Adding for retail way.
 			// _firstDrop = true;
 			final Quest instance = QuestManager.getInstance().getQuest(HatchlingNest.class.getSimpleName());
@@ -93,6 +99,7 @@ public final class Q10552_ChallengeBalthusKnight extends Quest
 			{
 				instance.onEvent("enterInstance", npc, player);
 			}
+			
 			htmltext = "tarti_balthus_q10552_03.htm";
 		}
 		
@@ -131,6 +138,7 @@ public final class Q10552_ChallengeBalthusKnight extends Quest
 							{
 								instance.onEvent("enterInstance", npc, player);
 							}
+							
 							htmltext = "tarti_balthus_q10552_04.htm";
 							break;
 						}
@@ -163,6 +171,7 @@ public final class Q10552_ChallengeBalthusKnight extends Quest
 				htmltext = getAlreadyCompletedMsg(player);
 				break;
 		}
+		
 		return htmltext;
 	}
 	

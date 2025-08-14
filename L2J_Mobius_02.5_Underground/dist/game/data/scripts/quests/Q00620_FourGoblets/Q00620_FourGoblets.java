@@ -53,6 +53,7 @@ public class Q00620_FourGoblets extends Quest
 	
 	// Reward
 	private static final int ANTIQUE_BROOCH = 7262;
+	
 	// Items
 	private static final int ENTRANCE_PASS = 7075;
 	private static final int GRAVE_PASS = 7261;
@@ -81,6 +82,7 @@ public class Q00620_FourGoblets extends Quest
 		GRAVE_PASS,
 		ENTRANCE_PASS
 	};
+	
 	// Misc
 	private static final int MIN_LEVEL = 74;
 	private static final int MAX_LEVEL = 80;
@@ -104,6 +106,7 @@ public class Q00620_FourGoblets extends Quest
 		{
 			addKillId(id, BOSS_1, BOSS_2, BOSS_3, BOSS_4);
 		}
+		
 		addCondLevel(MIN_LEVEL, MAX_LEVEL, "31453-12.htm");
 	}
 	
@@ -492,6 +495,7 @@ public class Q00620_FourGoblets extends Quest
 					{
 						giveItems(player, ANTIQUE_BROOCH, 1);
 					}
+					
 					qs.setCond(2, true);
 					htmltext = "31453-16.htm";
 				}
@@ -780,6 +784,7 @@ public class Q00620_FourGoblets extends Quest
 					{
 						reward = 1;
 					}
+					
 					final int i = getRandom(1000);
 					if (i < 202)
 					{
@@ -915,6 +920,7 @@ public class Q00620_FourGoblets extends Quest
 						}
 					}
 				}
+				
 				if (reward == 0)
 				{
 					if (getRandomBoolean())
@@ -999,6 +1005,7 @@ public class Q00620_FourGoblets extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -1146,6 +1153,7 @@ public class Q00620_FourGoblets extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -1162,10 +1170,12 @@ public class Q00620_FourGoblets extends Quest
 				giveItems(killer, SEALED_BOX, 1);
 				playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 			}
+			
 			if (getQuestItemsCount(killer, GRAVE_PASS) < 1)
 			{
 				giveItems(killer, GRAVE_PASS, 1);
 			}
+			
 			if (getQuestItemsCount(killer, RELIC) < 1000)
 			{
 				giveItems(killer, RELIC, 1);

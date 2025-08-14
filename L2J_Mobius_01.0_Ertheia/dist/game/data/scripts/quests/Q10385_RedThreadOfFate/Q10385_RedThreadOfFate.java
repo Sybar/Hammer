@@ -16,6 +16,8 @@
  */
 package quests.Q10385_RedThreadOfFate;
 
+import java.util.Collection;
+
 import org.l2jmobius.gameserver.managers.QuestManager;
 import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.WorldObject;
@@ -38,7 +40,6 @@ import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.enums.ChatType;
 import org.l2jmobius.gameserver.network.enums.Movie;
 import org.l2jmobius.gameserver.network.serverpackets.ExShowScreenMessage;
-import org.l2jmobius.gameserver.util.ArrayUtil;
 
 import instances.TalkingIslandPast.TalkingIslandPast;
 
@@ -71,6 +72,7 @@ public class Q10385_RedThreadOfFate extends Quest
 	private static final int BIOTIN = 30031;
 	private static final int INVISIBLE_ANGHEL_WATERFALL_NPC = 19544;
 	private static final int SHILEN_MESSENGER = 27492;
+	
 	// Items
 	private static final int MYSTERIOUS_LETTER = 36072;
 	private static final int HEINE_FROM_THE_GARDEN_OF_EVA = 36066;
@@ -87,11 +89,13 @@ public class Q10385_RedThreadOfFate extends Quest
 	private static final int FIERCEST_FLAME = 36070;
 	private static final int FONDEST_HEART = 36071;
 	private static final int DIMENSIONAL_DIAMOND = 7562;
+	
 	// Location
 	private static final Location LANYA_TELEPORT = new Location(80732, 254670, -10360);
 	private static final Location LADY_OF_THE_LAKE_TELEPORT = new Location(143218, 43916, -3024);
 	private static final Location ANGHEL_WATERFALL = new Location(172458, 90314, -1984);
 	private static final Location VULCUN_TELEPORT = new Location(180162, -111760, -5824);
+	
 	// Skills
 	private static final SkillHolder FONDEST_HEART_SKILL = new SkillHolder(9583, 1);
 	private static final SkillHolder FIERCEST_FLAME_SKILL = new SkillHolder(9582, 1);
@@ -99,6 +103,7 @@ public class Q10385_RedThreadOfFate extends Quest
 	private static final SkillHolder BRIGHTEST_LIGHT_SKILL = new SkillHolder(9580, 1);
 	private static final SkillHolder CLEAREST_WATER_SKILL = new SkillHolder(9579, 1);
 	private static final SkillHolder SUB_PRESENTATION = new SkillHolder(18177, 1);
+	
 	// Misc
 	private static final int MIN_LEVEL = 85;
 	private static final int SOCIAL_BOW = 7;
@@ -127,6 +132,7 @@ public class Q10385_RedThreadOfFate extends Quest
 		{
 			return null;
 		}
+		
 		String htmltext = null;
 		switch (event)
 		{
@@ -399,6 +405,7 @@ public class Q10385_RedThreadOfFate extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -675,6 +682,7 @@ public class Q10385_RedThreadOfFate extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -703,10 +711,10 @@ public class Q10385_RedThreadOfFate extends Quest
 	}
 	
 	@Override
-	public void onSkillSee(Npc npc, Player player, Skill skill, WorldObject[] targets, boolean isSummon)
+	public void onSkillSee(Npc npc, Player player, Skill skill, Collection<WorldObject> targets, boolean isSummon)
 	{
 		final QuestState qs = getQuestState(player, false);
-		if ((qs != null) && qs.isStarted() && ArrayUtil.contains(targets, npc))
+		if ((qs != null) && qs.isStarted() && targets.contains(npc))
 		{
 			switch (npc.getId())
 			{
@@ -857,6 +865,7 @@ public class Q10385_RedThreadOfFate extends Quest
 		{
 			npc.showChatWindow(player);
 		}
+		
 		return htmltext;
 	}
 }

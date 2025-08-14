@@ -32,6 +32,7 @@ public class RequestCommissionDelete extends ClientPacket
 	protected void readImpl()
 	{
 		_commissionId = readLong();
+		
 		// readInt(); // CommissionItemType
 		// readInt(); // CommissionDurationType
 	}

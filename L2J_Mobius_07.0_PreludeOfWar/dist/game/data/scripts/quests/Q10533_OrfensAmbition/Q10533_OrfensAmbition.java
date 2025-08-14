@@ -41,10 +41,13 @@ public final class Q10533_OrfensAmbition extends Quest
 	// NPCs
 	private static final int BACON = 33846;
 	private static final int JAMON = 34449;
+	
 	// Items
 	private static final int SUPERIOR_GIANTS_CODEX_CHAPTER_1 = 46151;
+	
 	// Monster
 	private static final int ORFEN = 29325;
+	
 	// Misc
 	private static final int MIN_LEVEL = 106;
 	
@@ -133,6 +136,7 @@ public final class Q10533_OrfensAmbition extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

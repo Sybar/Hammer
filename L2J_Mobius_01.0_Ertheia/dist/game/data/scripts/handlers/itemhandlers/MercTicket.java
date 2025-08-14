@@ -49,7 +49,7 @@ public class MercTicket extends AbstractNpcAI implements IItemHandler
 	private final Map<Integer, Item> _items = new ConcurrentHashMap<>();
 	
 	@Override
-	public boolean useItem(Playable playable, Item item, boolean forceUse)
+	public boolean onItemUse(Playable playable, Item item, boolean forceUse)
 	{
 		if (!playable.isPlayer())
 		{
@@ -116,6 +116,7 @@ public class MercTicket extends AbstractNpcAI implements IItemHandler
 				SiegeGuardManager.getInstance().addTicket(item.getId(), player);
 				player.destroyItem(ItemProcessType.NONE, item.getObjectId(), 1, null, false); // Remove item from char's inventory
 			}
+			
 			_items.remove(player.getObjectId());
 		}
 	}

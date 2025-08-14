@@ -249,9 +249,9 @@
 		<set name="duration" val="180" />
 		<set name="time" val="21600" />
 		<set name="useSkillDisTime" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">176</stat>
 			<stat type="mAtk">99</stat>
@@ -286,9 +286,9 @@
 		<set name="duration" val="180" />
 		<set name="time" val="21600" />
 		<set name="useSkillDisTime" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">210</stat>
 			<stat type="mAtk">99</stat>
@@ -323,9 +323,9 @@
 		<set name="duration" val="180" />
 		<set name="time" val="21600" />
 		<set name="useSkillDisTime" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">245</stat>
 			<stat type="mAtk">99</stat>
@@ -756,9 +756,9 @@
 		<set name="duration" val="180" />
 		<set name="time" val="21600" />
 		<set name="useSkillDisTime" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">228</stat>
 			<stat type="mAtk">121</stat>
@@ -793,9 +793,9 @@
 		<set name="duration" val="180" />
 		<set name="time" val="21600" />
 		<set name="useSkillDisTime" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">272</stat>
 			<stat type="mAtk">121</stat>
@@ -830,9 +830,9 @@
 		<set name="duration" val="180" />
 		<set name="time" val="21600" />
 		<set name="useSkillDisTime" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">318</stat>
 			<stat type="mAtk">121</stat>

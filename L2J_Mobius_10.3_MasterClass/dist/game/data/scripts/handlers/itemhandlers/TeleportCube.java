@@ -75,7 +75,7 @@ public class TeleportCube implements IItemHandler
 	private static final Location QS6_TELEPORT1 = new Location(111257, 221071, -3550);
 	
 	@Override
-	public boolean useItem(Playable playable, Item item, boolean forceUse)
+	public boolean onItemUse(Playable playable, Item item, boolean forceUse)
 	{
 		final Player player = playable.asPlayer();
 		if (player == null)

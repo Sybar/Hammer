@@ -37,10 +37,12 @@ public class Q00149_PrimalMotherIstina extends Quest
 	// NPCs
 	private static final int RUMIESE = 33293;
 	private static final int ISTHINA_NORMAL = 29195;
+	
 	// Item
 	private static final int SHILENS_MARK = 17589;
 	private static final int ISTHINA_BRACELET = 19455;
 	private static final int EAR = 17527;
+	
 	// Misc
 	private static final int MIN_LEVEL = 90;
 	
@@ -94,10 +96,12 @@ public class Q00149_PrimalMotherIstina extends Quest
 					giveItems(player, stoneId, 15);
 					qs.exitQuest(false, true);
 				}
+				
 				htmltext = "33293-07.html";
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -134,6 +138,7 @@ public class Q00149_PrimalMotherIstina extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

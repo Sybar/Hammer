@@ -31,6 +31,7 @@ public class Q00113_StatusOfTheBeaconTower extends Quest
 	// NPCs
 	private static final int MOIRA = 31979;
 	private static final int TORRANT = 32016;
+	
 	// Item
 	private static final int BOX = 8086;
 	

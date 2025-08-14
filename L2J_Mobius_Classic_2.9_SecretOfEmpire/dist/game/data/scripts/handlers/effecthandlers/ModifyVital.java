@@ -100,10 +100,12 @@ public class ModifyVital extends AbstractEffect
 				{
 					effected.setCurrentCp(_cp);
 				}
+				
 				if (_hp >= 0)
 				{
 					effected.setCurrentHp(_hp);
 				}
+				
 				if (_mp >= 0)
 				{
 					effected.setCurrentMp(_mp);

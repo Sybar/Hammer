@@ -45,6 +45,7 @@ public class RoAGuard extends AbstractNpcAI
 			npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.THIS_IS_RUINS_OF_AGONY_WHERE_KANILOV_IS);
 			startQuestTimer("NPC_SHOUT", (10 + getRandom(5)) * 1000, npc, null);
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	

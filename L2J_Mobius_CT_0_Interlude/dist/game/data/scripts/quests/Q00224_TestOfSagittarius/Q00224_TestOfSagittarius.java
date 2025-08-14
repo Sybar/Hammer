@@ -38,6 +38,7 @@ public class Q00224_TestOfSagittarius extends Quest
 	private static final int SIR_ARON_TANFORD = 30653;
 	private static final int VOKIAN = 30514;
 	private static final int GAUEN = 30717;
+	
 	// Monsters
 	private static final int ANT = 20079;
 	private static final int ANT_CAPTAIN = 20080;
@@ -62,6 +63,7 @@ public class Q00224_TestOfSagittarius extends Quest
 	private static final int LETO_LIZARDMAN_SHAMAN = 20581;
 	private static final int LETO_LIZARDMAN_OVERLORD = 20582;
 	private static final int SERPENT_DEMON_KADESH = 27090;
+	
 	// Items
 	private static final int BERNARD_INTRODUCTION = 3294;
 	private static final int HAMIL_LETTER_1 = 3295;
@@ -78,6 +80,7 @@ public class Q00224_TestOfSagittarius extends Quest
 	private static final int BLOOD_OF_LIZARDMAN = 3306;
 	private static final int CRESCENT_MOON_BOW = 3028;
 	private static final int WOODEN_ARROW = 17;
+	
 	// Rewards
 	private static final int MARK_OF_SAGITTARIUS = 3293;
 	private static final int DIMENSIONAL_DIAMOND = 7562;

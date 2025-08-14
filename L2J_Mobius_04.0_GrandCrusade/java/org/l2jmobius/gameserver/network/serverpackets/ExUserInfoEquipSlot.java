@@ -34,7 +34,7 @@ import org.l2jmobius.gameserver.network.enums.InventorySlot;
 public class ExUserInfoEquipSlot extends AbstractMaskPacket<InventorySlot>
 {
 	private final Player _player;
-	private final byte[] _masks = new byte[]
+	private final byte[] _masks =
 	{
 		(byte) 0x00,
 		(byte) 0x00,

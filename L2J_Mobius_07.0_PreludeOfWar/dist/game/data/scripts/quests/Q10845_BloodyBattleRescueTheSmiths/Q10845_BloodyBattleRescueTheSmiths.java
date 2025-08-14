@@ -52,6 +52,7 @@ public final class Q10845_BloodyBattleRescueTheSmiths extends Quest
 	private static final int CAPTIVE_BLACKSMITH_BRUNON = 34142;
 	private static final int CAPTIVE_BLACKSMITH_SUMARI = 34143;
 	private static final int CAPTIVE_BLACKSMITH_TRAINEE_LANSIA = 34144;
+	
 	// Misc
 	private static final int MIN_LEVEL = 101;
 	
@@ -99,6 +100,7 @@ public final class Q10845_BloodyBattleRescueTheSmiths extends Quest
 					htmltext = "blackbird_hurak_q10845_01.htm";
 					break;
 				}
+				
 				htmltext = "blackbird_hurak_q10845_02.htm";
 				break;
 			}
@@ -125,6 +127,7 @@ public final class Q10845_BloodyBattleRescueTheSmiths extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -173,6 +176,7 @@ public final class Q10845_BloodyBattleRescueTheSmiths extends Quest
 								qs.set(Integer.toString(CAPTIVE_BLACKSMITH_AIOS), resAios);
 								playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 							}
+							
 							final ExQuestNpcLogList log = new ExQuestNpcLogList(getId());
 							log.addNpcString(NpcStringId.RESCUING_AIOS, qs.getInt(Integer.toString(CAPTIVE_BLACKSMITH_AIOS))); // Rescuing Aios
 							qs.getPlayer().sendPacket(log);
@@ -190,6 +194,7 @@ public final class Q10845_BloodyBattleRescueTheSmiths extends Quest
 								qs.set(Integer.toString(CAPTIVE_BLACKSMITH_BRUNON), resBrunon);
 								playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 							}
+							
 							final ExQuestNpcLogList log = new ExQuestNpcLogList(getId());
 							log.addNpcString(NpcStringId.RESCUING_BRUNON, qs.getInt(Integer.toString(CAPTIVE_BLACKSMITH_BRUNON))); // Rescuing Brunon
 							qs.getPlayer().sendPacket(log);
@@ -207,6 +212,7 @@ public final class Q10845_BloodyBattleRescueTheSmiths extends Quest
 								qs.set(Integer.toString(CAPTIVE_BLACKSMITH_SUMARI), resSumari);
 								playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 							}
+							
 							final ExQuestNpcLogList log = new ExQuestNpcLogList(getId());
 							log.addNpcString(NpcStringId.RESCUING_SUMARI, qs.getInt(Integer.toString(CAPTIVE_BLACKSMITH_SUMARI))); // Rescuing Sumari
 							qs.getPlayer().sendPacket(log);
@@ -224,6 +230,7 @@ public final class Q10845_BloodyBattleRescueTheSmiths extends Quest
 								qs.set(Integer.toString(CAPTIVE_BLACKSMITH_TRAINEE_LANSIA), resLansia);
 								playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 							}
+							
 							final ExQuestNpcLogList log = new ExQuestNpcLogList(getId());
 							log.addNpcString(NpcStringId.RESCUING_LANSIA, qs.getInt(Integer.toString(CAPTIVE_BLACKSMITH_TRAINEE_LANSIA))); // Rescuing Lansia
 							qs.getPlayer().sendPacket(log);
@@ -241,6 +248,7 @@ public final class Q10845_BloodyBattleRescueTheSmiths extends Quest
 								qs.set(Integer.toString(CAPTIVE_BLACKSMITH_KARROD), resKarrod);
 								playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 							}
+							
 							final ExQuestNpcLogList log = new ExQuestNpcLogList(getId());
 							log.addNpcString(NpcStringId.RESCUING_KARROD, qs.getInt(Integer.toString(CAPTIVE_BLACKSMITH_KARROD))); // Rescuing Karrod
 							qs.getPlayer().sendPacket(log);

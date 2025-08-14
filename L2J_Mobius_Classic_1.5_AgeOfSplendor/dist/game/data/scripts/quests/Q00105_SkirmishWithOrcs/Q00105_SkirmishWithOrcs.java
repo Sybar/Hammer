@@ -41,6 +41,7 @@ public class Q00105_SkirmishWithOrcs extends Quest
 {
 	// NPC
 	private static final int KENDNELL = 30218;
+	
 	// Items
 	private static final int KENDELLS_1ST_ORDER = 1836;
 	private static final int KENDELLS_2ND_ORDER = 1837;
@@ -75,9 +76,11 @@ public class Q00105_SkirmishWithOrcs extends Quest
 		KENDELLS_7TH_ORDER,
 		KENDELLS_8TH_ORDER
 	};
+	
 	// Rewards
 	private static final int SWORD_OF_SUNSET = 49046;
 	private static final int STAFF_OF_SUNSET = 49045;
+	
 	// Misc
 	private static final int MIN_LEVEL = 10;
 	private static final int MAX_LEVEL = 15;
@@ -101,6 +104,7 @@ public class Q00105_SkirmishWithOrcs extends Quest
 		{
 			return htmltext;
 		}
+		
 		switch (event)
 		{
 			case "30218-04.html":
@@ -119,6 +123,7 @@ public class Q00105_SkirmishWithOrcs extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -184,21 +189,25 @@ public class Q00105_SkirmishWithOrcs extends Quest
 				{
 					htmltext = "30218-06.html";
 				}
+				
 				if (qs.isCond(2) && hasQuestItems(talker, KABOO_CHIEFS_1ST_TORQUE))
 				{
 					for (int i = 0; i < 4; i++)
 					{
 						takeItems(talker, KENDNELLS_ORDERS[i], -1);
 					}
+					
 					takeItems(talker, KABOO_CHIEFS_1ST_TORQUE, 1);
 					giveItems(talker, KENDNELLS_ORDERS[getRandom(4, 7)], 1);
 					qs.setCond(3, true);
 					htmltext = "30218-07.html";
 				}
+				
 				if (hasAtLeastOneQuestItem(talker, KENDELLS_5TH_ORDER, KENDELLS_6TH_ORDER, KENDELLS_7TH_ORDER, KENDELLS_8TH_ORDER))
 				{
 					htmltext = "30218-08.html";
 				}
+				
 				if (qs.isCond(4) && hasQuestItems(talker, KABOO_CHIEFS_2ST_TORQUE))
 				{
 					// Q00281_HeadForTheHills.giveNewbieReward(talker);
@@ -210,6 +219,7 @@ public class Q00105_SkirmishWithOrcs extends Quest
 					{
 						giveItems(talker, SWORD_OF_SUNSET, 1);
 					}
+					
 					talker.sendPacket(new SocialAction(talker.getObjectId(), 3));
 					qs.exitQuest(false, true);
 					htmltext = "30218-09.html";
@@ -222,6 +232,7 @@ public class Q00105_SkirmishWithOrcs extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

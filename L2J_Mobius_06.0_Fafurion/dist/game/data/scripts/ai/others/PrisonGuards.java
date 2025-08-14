@@ -16,6 +16,8 @@
  */
 package ai.others;
 
+import java.util.Collection;
+
 import org.l2jmobius.gameserver.model.WorldObject;
 import org.l2jmobius.gameserver.model.actor.Attackable;
 import org.l2jmobius.gameserver.model.actor.Npc;
@@ -36,8 +38,10 @@ public class PrisonGuards extends AbstractNpcAI
 	// NPCs
 	private static final int GUARD_HEAD = 18367; // Prison Guard
 	private static final int GUARD = 18368; // Prison Guard
+	
 	// Item
 	private static final int STAMP = 10013; // Race Stamp
+	
 	// Skills
 	private static final int TIMER = 5239; // Event Timer
 	private static final SkillHolder STONE = new SkillHolder(4578, 1); // Petrification
@@ -65,8 +69,10 @@ public class PrisonGuards extends AbstractNpcAI
 			{
 				npc.teleToLocation(npc.getSpawn().getLocation());
 			}
+			
 			startQuestTimer("CHECK_HOME", 30000, npc, null);
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	
@@ -100,7 +106,7 @@ public class PrisonGuards extends AbstractNpcAI
 	}
 	
 	@Override
-	public void onSkillSee(Npc npc, Player caster, Skill skill, WorldObject[] targets, boolean isSummon)
+	public void onSkillSee(Npc npc, Player caster, Skill skill, Collection<WorldObject> targets, boolean isSummon)
 	{
 		if (!caster.isAffectedBySkill(TIMER))
 		{

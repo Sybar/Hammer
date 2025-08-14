@@ -696,9 +696,9 @@
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="time" val="129600" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">304</stat>
 			<stat type="mAtk">132</stat>
@@ -1094,9 +1094,9 @@
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="time" val="129600" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">361</stat>
 			<stat type="mAtk">151</stat>
@@ -2035,9 +2035,9 @@
 		<set name="is_sellable" val="false" />
 		<set name="etcitem_type" val="SCROLL" />
 		<set name="is_depositable" val="false" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="22290" level="1" /> <!-- Scroll: Valakas Call -->
 		</skills>
@@ -2057,9 +2057,9 @@
 		<set name="etcitem_type" val="SCROLL" />
 		<set name="is_depositable" val="false" />
 		<set name="reuse_delay" val="3600000" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="22291" level="1" /> <!-- Jewel of Valakas -->
 		</skills>
@@ -2078,9 +2078,9 @@
 		<set name="is_sellable" val="false" />
 		<set name="etcitem_type" val="SCROLL" />
 		<set name="is_depositable" val="false" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="22292" level="1" /> <!-- Scroll: Antharas Call -->
 		</skills>
@@ -2100,9 +2100,9 @@
 		<set name="etcitem_type" val="SCROLL" />
 		<set name="is_depositable" val="false" />
 		<set name="reuse_delay" val="3600000" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="22293" level="1" /> <!-- Jewel of Antharas -->
 		</skills>
@@ -2121,9 +2121,9 @@
 		<set name="is_questitem" val="true" />
 		<set name="is_depositable" val="false" />
 		<set name="reuse_delay" val="600000" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player insideZoneId="12010, 12001" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="22294" level="1" /> <!-- Totem of Body -->
 		</skills>

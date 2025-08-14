@@ -74,6 +74,7 @@ public class EnchantItemOptionsData implements IXmlReader
 							LOGGER.warning(getClass().getSimpleName() + ": Could not find item template for id " + itemId);
 							continue ITEM;
 						}
+						
 						for (Node cd = d.getFirstChild(); cd != null; cd = cd.getNextSibling())
 						{
 							if ("options".equalsIgnoreCase(cd.getNodeName()))
@@ -97,6 +98,7 @@ public class EnchantItemOptionsData implements IXmlReader
 											data = new HashMap<>();
 											_data.put(itemId, data);
 										}
+										
 										if (!data.containsKey(op.getLevel()))
 										{
 											data.put(op.getLevel(), op);
@@ -105,6 +107,7 @@ public class EnchantItemOptionsData implements IXmlReader
 										op.setOption(i, id);
 									}
 								}
+								
 								counter++;
 							}
 						}
@@ -112,6 +115,7 @@ public class EnchantItemOptionsData implements IXmlReader
 				}
 			}
 		}
+		
 		LOGGER.info(getClass().getSimpleName() + ": Loaded " + _data.size() + " items and " + counter + " options.");
 	}
 	
@@ -137,6 +141,7 @@ public class EnchantItemOptionsData implements IXmlReader
 		{
 			return null;
 		}
+		
 		return _data.get(itemId).get(enchantLevel);
 	}
 	

@@ -36,11 +36,14 @@ public class Q00616_MagicalPowerOfFirePart2 extends Quest
 	// NPCs
 	private static final int UDAN = 31379;
 	private static final int KETRA_TOTEM = 31558;
+	
 	// Monster
 	private static final int NASTRON = 25306;
+	
 	// Items
 	private static final int RED_TOTEM = 7243;
 	private static final int NASTRON_HEART = 7244;
+	
 	// Misc
 	private static final int MIN_LEVEL = 75;
 	
@@ -85,6 +88,7 @@ public class Q00616_MagicalPowerOfFirePart2 extends Quest
 						{
 							giveItems(player, NASTRON_HEART, 1);
 						}
+						
 						qs.setCond(3, true);
 						break;
 					}
@@ -147,6 +151,7 @@ public class Q00616_MagicalPowerOfFirePart2 extends Quest
 				addSpawn(KETRA_TOTEM, 142368, -82512, -6487, 58000, false, 0, true);
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -212,6 +217,7 @@ public class Q00616_MagicalPowerOfFirePart2 extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -221,11 +227,13 @@ public class Q00616_MagicalPowerOfFirePart2 extends Quest
 		{
 			return "31558-03.html";
 		}
+		
 		if (qs.isCond(1))
 		{
 			takeItems(qs.getPlayer(), RED_TOTEM, 1);
 			qs.setCond(2, true);
 		}
+		
 		npc.deleteMe();
 		final Npc nastron = addSpawn(NASTRON, 142528, -82528, -6496, 0, false, 0);
 		nastron.broadcastPacket(new NpcSay(nastron, ChatType.NPC_GENERAL, "The magical power of fire is also the power of flames and lava! If you dare to confront it, only death will await you!"));

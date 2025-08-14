@@ -40,13 +40,16 @@ public class Q00459_SelMahumHorde extends Quest
 {
 	// NPC
 	private static final int GENIE_LAMP = 34369;
+	
 	// Monsters
 	private static final int SEL_MAHUM_RAIDER = 22238;
 	private static final int SEL_MAHUM_SNIPER = 22237;
 	private static final int SEL_MAHUM_KNIGHT = 22254;
 	private static final int SEL_MAHUM_FOOTMAN = 22276;
+	
 	// Item
 	private static final ItemHolder BOOST_DEF_SCROLL = new ItemHolder(94271, 6);
+	
 	// Misc
 	private static final int MIN_LEVEL = 83;
 	private static final String KILL_COUNT_VAR = "KillCount";
@@ -99,6 +102,7 @@ public class Q00459_SelMahumHorde extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -137,6 +141,7 @@ public class Q00459_SelMahumHorde extends Quest
 				htmltext = getAlreadyCompletedMsg(player);
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -172,6 +177,7 @@ public class Q00459_SelMahumHorde extends Quest
 			holder.add(new NpcLogListHolder(NpcStringId.DEFEAT_MONSTERS_51.getId(), true, qs.getInt(KILL_COUNT_VAR)));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

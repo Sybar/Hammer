@@ -43,12 +43,14 @@ public class Q00114_ResurrectionOfAnOldManager extends Quest
 	private static final int STONES = 32046;
 	private static final int WENDY = 32047;
 	private static final int BOX = 32050;
+	
 	// Items
 	private static final int STARSTONE = 8287;
 	private static final int LETTER = 8288;
 	private static final int STARSTONE2 = 8289;
 	private static final int DETCTOR = 8090;
 	private static final int DETCTOR2 = 8091;
+	
 	// Monster
 	private static final int GUARDIAN = 27318;
 	
@@ -390,6 +392,7 @@ public class Q00114_ResurrectionOfAnOldManager extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -755,6 +758,7 @@ public class Q00114_ResurrectionOfAnOldManager extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

@@ -89,8 +89,10 @@ public class MultiSellList extends AbstractItemPacket
 					}
 				}
 			}
+			
 			buffer.writeInt(_index); // Entry ID. Start from 1.
 			buffer.writeByte(entry.isStackable());
+			
 			// Those values will be passed down to MultiSellChoose packet.
 			buffer.writeShort(itemEnchantment != null ? itemEnchantment.getEnchantLevel() : 0); // enchant level
 			writeItemAugment(itemEnchantment, buffer);
@@ -114,6 +116,7 @@ public class MultiSellList extends AbstractItemPacket
 					buffer.writeLong(0);
 					buffer.writeShort(65535);
 				}
+				
 				buffer.writeLong(_list.getProductCount(product));
 				buffer.writeShort(product.getEnchantmentLevel() > 0 ? product.getEnchantmentLevel() : displayItemEnchantment != null ? displayItemEnchantment.getEnchantLevel() : 0); // enchant level
 				buffer.writeInt((int) Math.ceil(product.getChance())); // chance
@@ -121,6 +124,7 @@ public class MultiSellList extends AbstractItemPacket
 				writeItemElemental(displayItemEnchantment, buffer);
 				writeItemEnsoulOptions(displayItemEnchantment, buffer);
 			}
+			
 			for (ItemChanceHolder ingredient : entry.getIngredients())
 			{
 				final ItemTemplate template = ItemData.getInstance().getTemplate(ingredient.getId());
@@ -135,6 +139,7 @@ public class MultiSellList extends AbstractItemPacket
 					buffer.writeInt(ingredient.getId());
 					buffer.writeShort(65535);
 				}
+				
 				buffer.writeLong(_list.getIngredientCount(ingredient));
 				buffer.writeShort(ingredient.getEnchantmentLevel() > 0 ? ingredient.getEnchantmentLevel() : displayItemEnchantment != null ? displayItemEnchantment.getEnchantLevel() : 0); // enchant level
 				writeItemAugment(displayItemEnchantment, buffer);

@@ -291,7 +291,7 @@ public class Weapon extends ItemTemplate
 			if (type == ItemSkillType.ON_MAGIC_SKILL)
 			{
 				// Trigger only if both are good or bad magic.
-				if (trigger.isBad() != skill.isBad())
+				if (trigger.hasNegativeEffect() != skill.hasNegativeEffect())
 				{
 					return;
 				}
@@ -308,7 +308,7 @@ public class Weapon extends ItemTemplate
 					return;
 				}
 				
-				if (skill.isBad() && (Formulas.calcShldUse(caster, target) == Formulas.SHIELD_DEFENSE_PERFECT_BLOCK))
+				if (skill.hasNegativeEffect() && (Formulas.calcShldUse(caster, target) == Formulas.SHIELD_DEFENSE_PERFECT_BLOCK))
 				{
 					return;
 				}
@@ -336,6 +336,7 @@ public class Weapon extends ItemTemplate
 						}
 					});
 				}
+				
 				if (caster.isPlayer())
 				{
 					final SystemMessage sm = new SystemMessage(SystemMessageId.S1_HAS_BEEN_ACTIVATED);

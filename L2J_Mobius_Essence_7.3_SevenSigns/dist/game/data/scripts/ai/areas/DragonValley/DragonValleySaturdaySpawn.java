@@ -59,6 +59,7 @@ public class DragonValleySaturdaySpawn extends AbstractNpcAI
 		{
 			return;
 		}
+		
 		_isScheduling = true;
 		
 		final long currentMillis = System.currentTimeMillis();

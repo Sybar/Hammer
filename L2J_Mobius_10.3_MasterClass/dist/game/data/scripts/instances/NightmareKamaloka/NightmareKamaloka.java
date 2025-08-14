@@ -46,10 +46,12 @@ public class NightmareKamaloka extends AbstractInstance
 	private static final int DARK_RIDER = 26102;
 	private static final int SIONE_ULAF = 26465;
 	private static final int INVISIBLE_NPC = 18919;
+	
 	// Items
 	private static final ItemHolder BENUSTAS_REWARD_BOX = new ItemHolder(81151, 1);
 	private static final ItemHolder BENUSTAS_SHINING_REWARD_BOX = new ItemHolder(81452, 1);
 	private static final ItemHolder BENUSTAS_REWARD_BOX_110 = new ItemHolder(81741, 1);
+	
 	// Misc
 	private static final Map<Integer, Integer> BOSS_MAP = new HashMap<>();
 	static
@@ -150,6 +152,7 @@ public class NightmareKamaloka extends AbstractInstance
 				instance.spawnGroup("BOSSES");
 			}
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	
@@ -182,12 +185,14 @@ public class NightmareKamaloka extends AbstractInstance
 				{
 					giveItems(member, world.getTemplateId() == TEMPLATE_IDS[0] ? BENUSTAS_REWARD_BOX : BENUSTAS_REWARD_BOX_110);
 				}
+				
 				final Party party = world.getFirstPlayer().getParty();
 				final Player randomPlayer = party != null ? party.getRandomPlayer() : null;
 				if ((randomPlayer != null) && (getRandom(100) < 80) && (world.getPlayersCount() == world.getParameters().getInt("INITIAL_PARTY_MEMBERS", 0)))
 				{
 					giveItems(randomPlayer, BENUSTAS_SHINING_REWARD_BOX);
 				}
+				
 				world.finishInstance();
 			}
 			else

@@ -63,6 +63,7 @@ public class RequestJoinParty extends ClientPacket
 			{
 				player.sendPacket(SystemMessageId.THE_PLAYER_DECLINED_TO_JOIN_YOUR_PARTY);
 			}
+			
 			player.onTransactionResponse();
 		}
 	}
@@ -155,12 +156,14 @@ public class RequestJoinParty extends ClientPacket
 			requestor.sendPacket(SystemMessageId.THE_TARGET_CANNOT_BE_INVITED);
 			return;
 		}
+		
 		if (checkInviteByIgnoredSettings(target, requestor))
 		{
 			requestor.sendPacket(new SystemMessage(SystemMessageId.C1_IS_SET_TO_REFUSE_PARTY_REQUESTS_AND_CANNOT_RECEIVE_A_PARTY_REQUEST).addPcName(target));
 			target.sendPacket(new SystemMessage(SystemMessageId.PARTY_INVITATION_IS_SET_UP_TO_BE_REJECTED_AT_PREFERENCES_THE_PARTY_INVITATION_OF_C1_IS_AUTOMATICALLY_REJECTED).addPcName(requestor));
 			return;
 		}
+		
 		if (target.isCursedWeaponEquipped() || requestor.isCursedWeaponEquipped())
 		{
 			requestor.sendPacket(SystemMessageId.INVALID_TARGET);
@@ -289,6 +292,7 @@ public class RequestJoinParty extends ClientPacket
 		{
 			condition = false;
 		}
+		
 		return condition;
 	}
 }

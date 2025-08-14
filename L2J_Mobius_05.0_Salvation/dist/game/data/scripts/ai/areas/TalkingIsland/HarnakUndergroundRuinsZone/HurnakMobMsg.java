@@ -65,6 +65,7 @@ public class HurnakMobMsg extends AbstractNpcAI
 		{
 			npc.broadcastSay(ChatType.NPC_GENERAL, getRandomEntry(ON_ATTACK_MSG));
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	

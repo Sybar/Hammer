@@ -96,6 +96,7 @@ public class RequestExPledgeItemBuy extends ClientPacket
 		{
 			player.reduceAdena(ItemProcessType.FEE, product.getAdena() * _count, player, true);
 		}
+		
 		if (product.getFame() > 0)
 		{
 			player.setFame(player.getFame() - (product.getFame() * _count));

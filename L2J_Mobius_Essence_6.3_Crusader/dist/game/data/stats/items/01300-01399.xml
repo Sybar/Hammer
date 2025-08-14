@@ -1151,9 +1151,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="POTION" />
 		<set name="for_npc" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2034" level="1" /> <!-- Greater Wind Walk Potion -->
 		</skills>
@@ -1173,9 +1173,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="POTION" />
 		<set name="for_npc" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2035" level="1" /> <!-- Greater Haste Potion -->
 		</skills>

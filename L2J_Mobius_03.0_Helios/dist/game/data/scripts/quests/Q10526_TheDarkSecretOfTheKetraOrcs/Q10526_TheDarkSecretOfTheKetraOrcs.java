@@ -46,6 +46,7 @@ public class Q10526_TheDarkSecretOfTheKetraOrcs extends Quest
 {
 	// NPCs
 	private static final int LUGONNES = 33852;
+	
 	// Monsters
 	private static final int KETRA_ORC_ELITE_SOLDIER = 21335;
 	private static final int KETRA_ORC_CENTURION = 21336;
@@ -89,6 +90,7 @@ public class Q10526_TheDarkSecretOfTheKetraOrcs extends Quest
 		{
 			return null;
 		}
+		
 		String htmltext = null;
 		switch (event)
 		{
@@ -122,6 +124,7 @@ public class Q10526_TheDarkSecretOfTheKetraOrcs extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -155,6 +158,7 @@ public class Q10526_TheDarkSecretOfTheKetraOrcs extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -235,6 +239,7 @@ public class Q10526_TheDarkSecretOfTheKetraOrcs extends Quest
 			holder.add(new NpcLogListHolder(KETRA_BACKUP_WIZARD, false, qs.getInt("killed_" + KETRA_BACKUP_WIZARD)));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

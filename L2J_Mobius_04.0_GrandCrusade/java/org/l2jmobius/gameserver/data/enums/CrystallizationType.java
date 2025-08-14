@@ -36,10 +36,12 @@ public enum CrystallizationType
 		{
 			return WEAPON;
 		}
+		
 		if (item instanceof Armor)
 		{
 			return ARMOR;
 		}
+		
 		switch (item.getBodyPart())
 		{
 			case ItemTemplate.SLOT_R_EAR:

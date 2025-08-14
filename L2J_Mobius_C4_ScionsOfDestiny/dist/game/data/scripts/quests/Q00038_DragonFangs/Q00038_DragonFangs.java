@@ -35,12 +35,14 @@ public class Q00038_DragonFangs extends Quest
 	private static final int LUIS = 30386;
 	private static final int IRIS = 30034;
 	private static final int ROHMER = 30344;
+	
 	// Items
 	private static final int FEATHER_ORNAMENT = 7173;
 	private static final int TOOTH_OF_TOTEM = 7174;
 	private static final int TOOTH_OF_DRAGON = 7175;
 	private static final int LETTER_OF_IRIS = 7176;
 	private static final int LETTER_OF_ROHMER = 7177;
+	
 	// Reward { item, adena }
 	private static final int[][] REWARD =
 	{
@@ -51,6 +53,7 @@ public class Q00038_DragonFangs extends Quest
 		{605, 3200}
 		// @formatter:on
 	};
+	
 	// Droplist
 	private static final Map<Integer, int[]> DROPLIST = new HashMap<>();
 	static

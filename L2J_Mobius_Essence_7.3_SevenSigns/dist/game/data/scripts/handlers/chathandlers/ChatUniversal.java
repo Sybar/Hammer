@@ -29,7 +29,6 @@ import org.l2jmobius.Config;
 import org.l2jmobius.gameserver.handler.IChatHandler;
 import org.l2jmobius.gameserver.model.World;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.actor.enums.player.PlayerCondOverride;
 import org.l2jmobius.gameserver.model.item.enums.ItemProcessType;
 import org.l2jmobius.gameserver.model.itemcontainer.Inventory;
 import org.l2jmobius.gameserver.model.zone.ZoneId;
@@ -52,7 +51,7 @@ public class ChatUniversal implements IChatHandler
 	};
 	
 	@Override
-	public void handleChat(ChatType type, Player activeChar, String target, String text, boolean shareLocation)
+	public void onChat(ChatType type, Player activeChar, String target, String text, boolean shareLocation)
 	{
 		if (!activeChar.hasPremiumStatus())
 		{
@@ -66,7 +65,7 @@ public class ChatUniversal implements IChatHandler
 			REUSE.values().removeIf(now::isAfter);
 		}
 		
-		if (Config.JAIL_DISABLE_CHAT && activeChar.isJailed() && !activeChar.canOverrideCond(PlayerCondOverride.CHAT_CONDITIONS))
+		if (Config.JAIL_DISABLE_CHAT && activeChar.isJailed() && !activeChar.isGM())
 		{
 			activeChar.sendPacket(SystemMessageId.CHATTING_IS_CURRENTLY_PROHIBITED);
 		}

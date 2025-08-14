@@ -40,10 +40,13 @@ public class Q10286_ReunionWithSirra extends Quest
 	private static final int JINIA = 32760;
 	private static final int SIRRA = 32762;
 	private static final int JINIA2 = 32781;
+	
 	// Item
 	private static final int BLACK_FROZEN_CORE = 15470;
+	
 	// Misc
 	private static final int MIN_LEVEL = 82;
+	
 	// Location
 	private static final Location EXIT_LOC = new Location(113793, -109342, -845, 0);
 	
@@ -108,6 +111,7 @@ public class Q10286_ReunionWithSirra extends Quest
 					{
 						world.finishInstance(0);
 					}
+					
 					htmltext = event;
 				}
 				break;
@@ -139,6 +143,7 @@ public class Q10286_ReunionWithSirra extends Quest
 					{
 						giveItems(player, BLACK_FROZEN_CORE, 5);
 					}
+					
 					qs.set("ex", 2);
 					qs.setCond(4, true);
 					htmltext = event;
@@ -155,6 +160,7 @@ public class Q10286_ReunionWithSirra extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -254,6 +260,7 @@ public class Q10286_ReunionWithSirra extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

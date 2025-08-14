@@ -37,6 +37,7 @@ public final class BalthusKnights extends AbstractNpcAI
 {
 	// NPCs
 	private static final int BALTHUS_KNIGHT = 34372;
+	
 	// Monsters
 	private static final int HATCHLING = 24090;
 	private static final int GEM_DRAGON_ANTHARAS = 24091;

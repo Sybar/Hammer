@@ -112,6 +112,7 @@ public class Door extends Creature
 		{
 			delay += Rnd.get(getTemplate().getRandomTime());
 		}
+		
 		ThreadPool.schedule(new TimerOpen(), delay * 1000);
 	}
 	
@@ -255,15 +256,18 @@ public class Door extends Creature
 		{
 			return 0;
 		}
+		
 		final int dmg = 6 - (int) Math.ceil((getCurrentHp() / getMaxHp()) * 6);
 		if (dmg > 6)
 		{
 			return 6;
 		}
+		
 		if (dmg < 0)
 		{
 			return 0;
 		}
+		
 		return dmg;
 	}
 	
@@ -287,6 +291,7 @@ public class Door extends Creature
 		{
 			return true;
 		}
+		
 		return false;
 	}
 	
@@ -328,6 +333,7 @@ public class Door extends Creature
 				return false;
 			}
 		}
+		
 		return (isCastle || isFort);
 	}
 	
@@ -444,6 +450,7 @@ public class Door extends Creature
 			_autoCloseTask = null;
 			oldTask.cancel(false);
 		}
+		
 		if (getGroupName() != null)
 		{
 			manageGroupOpen(false, getGroupName());
@@ -475,6 +482,7 @@ public class Door extends Creature
 				door.broadcastStatusUpdate();
 			}
 		}
+		
 		if ((first != null) && open)
 		{
 			first.startAutoCloseTask(); // only one from group
@@ -569,6 +577,7 @@ public class Door extends Creature
 				return;
 			}
 		}
+		
 		super.reduceCurrentHp(value, attacker, skill, isDOT, directlyToHp, critical, reflect);
 	}
 	
@@ -651,6 +660,7 @@ public class Door extends Creature
 			_autoCloseTask = null;
 			oldTask.cancel(false);
 		}
+		
 		_autoCloseTask = ThreadPool.schedule(new AutoClose(), getTemplate().getCloseTime() * 1000);
 	}
 	
@@ -685,6 +695,7 @@ public class Door extends Creature
 			{
 				delay += Rnd.get(getTemplate().getRandomTime());
 			}
+			
 			ThreadPool.schedule(this, delay * 1000);
 		}
 	}

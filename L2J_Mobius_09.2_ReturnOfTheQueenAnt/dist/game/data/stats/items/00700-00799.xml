@@ -394,9 +394,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="is_event_restricted" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2002" level="1" /> <!-- Adjuvant HP Recovery Potion -->
 		</skills>
@@ -416,9 +416,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="POTION" />
 		<set name="for_npc" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2003" level="1" /> <!-- Squash Seed -->
 		</skills>
@@ -437,9 +437,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="is_event_restricted" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="728" name="MP Pot" type="EtcItem">
 		<!-- Magical medicine that recovers MP over time. -->
@@ -456,9 +456,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="POTION" />
 		<set name="for_npc" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="26030" level="1" /> <!-- Mana Potion -->
 		</skills>
@@ -558,9 +558,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="POTION" />
 		<set name="for_npc" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2011" level="1" /> <!-- Wind Walk Potion -->
 		</skills>
@@ -581,9 +581,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="POTION" />
 		<set name="for_npc" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2012" level="1" /> <!-- Haste Potion -->
 		</skills>

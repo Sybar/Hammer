@@ -35,6 +35,7 @@ public class Q00101_SwordOfSolidarity extends Quest
 	// NPCs
 	private static final int ROIEN = 30008;
 	private static final int ALTRAN = 30283;
+	
 	// Items
 	private static final int BROKEN_SWORD_HANDLE = 739;
 	private static final int BROKEN_BLADE_BOTTOM = 740;
@@ -91,6 +92,7 @@ public class Q00101_SwordOfSolidarity extends Quest
 				takeItems(player, BROKEN_SWORD_HANDLE, 1);
 				giveItems(player, SWORD_OF_SOLIDARITY, 1);
 				giveItems(player, LESSER_HEALING_POT, 100);
+				
 				// Give newbie reward if player is eligible
 				if (player.isNewbie())
 				{
@@ -112,6 +114,7 @@ public class Q00101_SwordOfSolidarity extends Quest
 						}
 					}
 				}
+				
 				giveItems(player, ECHO_BATTLE, 10);
 				giveItems(player, ECHO_LOVE, 10);
 				giveItems(player, ECHO_SOLITUDE, 10);

@@ -35,7 +35,7 @@ import org.l2jmobius.gameserver.network.serverpackets.ChairSit;
 public class SitStand implements IPlayerActionHandler
 {
 	@Override
-	public void useAction(Player player, ActionDataHolder data, boolean ctrlPressed, boolean shiftPressed)
+	public void onAction(Player player, ActionDataHolder data, boolean ctrlPressed, boolean shiftPressed)
 	{
 		if (player.isSitting() || !player.isMoving() || player.isFakeDeath())
 		{
@@ -86,6 +86,7 @@ public class SitStand implements IPlayerActionHandler
 		{
 			player.sitDown();
 		}
+		
 		return true;
 	}
 }

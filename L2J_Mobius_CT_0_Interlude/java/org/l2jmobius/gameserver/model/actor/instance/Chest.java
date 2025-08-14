@@ -105,6 +105,7 @@ public class Chest extends Monster
 				id = 21786;
 			}
 		}
+		
 		super.doItemDrop(NpcData.getInstance().getTemplate(id), lastAttacker);
 	}
 	
@@ -222,6 +223,7 @@ public class Chest extends Monster
 			broadcastPacket(new MagicSkillUse(this, player, skillId, skillLevel, skill.getHitTime(), 0));
 			return true;
 		}
+		
 		return false;
 	}
 	

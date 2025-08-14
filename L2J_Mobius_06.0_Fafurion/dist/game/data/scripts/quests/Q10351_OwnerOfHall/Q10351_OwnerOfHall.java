@@ -39,8 +39,10 @@ public class Q10351_OwnerOfHall extends Quest
 	// NPCs
 	private static final int LYDIA = 32892;
 	private static final int OCTAVIS = 29194; // Octavis common mode
+	
 	// Item
 	private static final int OCTAVIS_BRACELET = 19461;
+	
 	// Misc
 	private static final int MIN_LEVEL = 95;
 	
@@ -92,6 +94,7 @@ public class Q10351_OwnerOfHall extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -125,6 +128,7 @@ public class Q10351_OwnerOfHall extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

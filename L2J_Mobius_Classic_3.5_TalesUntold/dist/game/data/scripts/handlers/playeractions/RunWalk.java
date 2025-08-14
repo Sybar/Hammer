@@ -31,7 +31,7 @@ import org.l2jmobius.gameserver.model.actor.Player;
 public class RunWalk implements IPlayerActionHandler
 {
 	@Override
-	public void useAction(Player player, ActionDataHolder data, boolean ctrlPressed, boolean shiftPressed)
+	public void onAction(Player player, ActionDataHolder data, boolean ctrlPressed, boolean shiftPressed)
 	{
 		if (player.isRunning())
 		{

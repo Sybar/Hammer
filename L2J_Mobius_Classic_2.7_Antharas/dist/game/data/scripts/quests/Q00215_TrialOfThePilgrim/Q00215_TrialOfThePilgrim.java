@@ -44,6 +44,7 @@ public class Q00215_TrialOfThePilgrim extends Quest
 	private static final int PRIEST_OF_THE_EARTH_GERALD = 30650;
 	private static final int WANDERER_DORF = 30651;
 	private static final int URUHA = 30652;
+	
 	// Items
 	private static final int ADENA = 57;
 	private static final int BOOK_OF_SAGE = 2722;
@@ -58,12 +59,15 @@ public class Q00215_TrialOfThePilgrim extends Quest
 	private static final int BOOK_OF_DARKNESS = 2731;
 	private static final int DEBRIS_OF_WILLOW = 2732;
 	private static final int TAG_OF_RUMOR = 2733;
+	
 	// Reward
 	private static final int MARK_OF_PILGRIM = 2721;
+	
 	// Quest Monster
 	private static final int LAVA_SALAMANDER = 27116;
 	private static final int NAHIR = 27117;
 	private static final int BLACK_WILLOW = 27118;
+	
 	// Misc
 	private static final int MIN_LEVEL = 35;
 	
@@ -179,6 +183,7 @@ public class Q00215_TrialOfThePilgrim extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -412,6 +417,7 @@ public class Q00215_TrialOfThePilgrim extends Quest
 						{
 							giveItems(player, BOOK_OF_SAGE, 1);
 						}
+						
 						takeItems(player, GREY_BADGE, 1);
 						takeItems(player, SPIRIT_OF_FLAME, 1);
 						takeItems(player, STATUE_OF_EINHASAD, 1);
@@ -420,6 +426,7 @@ public class Q00215_TrialOfThePilgrim extends Quest
 							addExpAndSp(player, 5000, 500);
 							takeItems(player, BOOK_OF_DARKNESS, 1);
 						}
+						
 						htmltext = "30612-01.html";
 					}
 					else if (memoState == 17)
@@ -523,6 +530,7 @@ public class Q00215_TrialOfThePilgrim extends Quest
 				htmltext = getAlreadyCompletedMsg(player);
 			}
 		}
+		
 		return htmltext;
 	}
 }

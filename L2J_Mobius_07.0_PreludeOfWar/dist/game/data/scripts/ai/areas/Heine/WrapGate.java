@@ -37,6 +37,7 @@ public class WrapGate extends AbstractNpcAI
 {
 	// NPC
 	private static final int WRAP_GATE = 33900;
+	
 	// Location
 	private static final Location TELEPORT_LOC = new Location(-28575, 255984, -2195);
 	
@@ -56,8 +57,10 @@ public class WrapGate extends AbstractNpcAI
 			{
 				playMovie(player, Movie.SC_HELLBOUND);
 			}
+			
 			player.teleToLocation(TELEPORT_LOC);
 		}
+		
 		return null;
 	}
 	

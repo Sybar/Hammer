@@ -118,6 +118,7 @@ public class ArenaParticipantsHolder
 		{
 			p.sendPacket(packet);
 		}
+		
 		for (Player p : _bluePlayers)
 		{
 			p.sendPacket(packet);
@@ -155,6 +156,7 @@ public class ArenaParticipantsHolder
 				{
 					continue;
 				}
+				
 				HandysBlockCheckerManager.getInstance().changePlayerToTeam(plr, _arena);
 			}
 		}
@@ -169,6 +171,7 @@ public class ArenaParticipantsHolder
 				{
 					continue;
 				}
+				
 				HandysBlockCheckerManager.getInstance().changePlayerToTeam(plr, _arena);
 			}
 		}

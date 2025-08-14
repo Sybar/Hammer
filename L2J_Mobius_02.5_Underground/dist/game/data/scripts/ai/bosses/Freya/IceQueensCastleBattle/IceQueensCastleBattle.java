@@ -75,6 +75,7 @@ public class IceQueensCastleBattle extends AbstractInstance
 	private static final int JINIA = 32781; // Jinia
 	private static final int SUPP_JINIA = 18850; // Jinia
 	private static final int SUPP_KEGOR = 18851; // Kegor
+	
 	// Skills
 	private static final SkillHolder BLIZZARD_EASY = new SkillHolder(6274, 1); // Eternal Blizzard
 	private static final SkillHolder BLIZZARD_HARD = new SkillHolder(6275, 1); // Eternal Blizzard
@@ -133,6 +134,7 @@ public class IceQueensCastleBattle extends AbstractInstance
 		new Location(114937, -115323, -11205, 18106),
 		new Location(114722, -115185, -11205, 16437),
 	};
+	
 	// Misc
 	private static final int TEMPLATE_ID_EASY = 139; // Ice Queen's Castle
 	private static final int TEMPLATE_ID_HARD = 144; // Ice Queen's Castle (Epic)
@@ -209,6 +211,7 @@ public class IceQueensCastleBattle extends AbstractInstance
 									}
 								}
 							}
+							
 							startQuestTimer("STAGE_1_MOVIE", 60000, control, null);
 							world.setParameter("controller", control);
 						}
@@ -227,6 +230,7 @@ public class IceQueensCastleBattle extends AbstractInstance
 							qs.setMemoState(10);
 							qs.setCond(7, true);
 						}
+						
 						world.getNpc(SUPP_KEGOR).deleteMe();
 						freya.decayMe();
 						manageMovie(world, Movie.SC_BOSS_FREYA_ENDING_B);
@@ -355,6 +359,7 @@ public class IceQueensCastleBattle extends AbstractInstance
 								players.sendPacket(new OnEventTrigger(emmiterId, true));
 							}
 						}
+						
 						final GrandBoss frey = (GrandBoss) addSpawn((isHardMode ? FREYA_STAND_HARD : FREYA_STAND_EASY), FREYA_SPAWN, false, 0, true, world.getId());
 						world.setStatus(4);
 						world.setParameter("canSpawnMobs", true);
@@ -430,6 +435,7 @@ public class IceQueensCastleBattle extends AbstractInstance
 						{
 							players.setInvul(false);
 						}
+						
 						freya.setInvul(false);
 						freya.disableCoreAI(false);
 						manageScreenMsg(world, NpcStringId.BEGIN_STAGE_4);
@@ -570,6 +576,7 @@ public class IceQueensCastleBattle extends AbstractInstance
 									npc.setTarget(npc);
 									npc.doCast(BLIZZARD_BREATH.getSkill());
 								}
+								
 								startQuestTimer("BLIZZARD", 20000, npc, null);
 							}
 						}
@@ -601,6 +608,7 @@ public class IceQueensCastleBattle extends AbstractInstance
 						{
 							players.broadcastPacket(ExChangeClientEffectInfo.STATIC_FREYA_DEFAULT);
 						}
+						
 						world.destroy();
 						break;
 					}
@@ -634,6 +642,7 @@ public class IceQueensCastleBattle extends AbstractInstance
 							npc.setTarget(mostHated);
 							npc.doCast(LEADER_RUSH.getSkill());
 						}
+						
 						startQuestTimer("LEADER_DASH", 10000, npc, null);
 						break;
 					}
@@ -700,6 +709,7 @@ public class IceQueensCastleBattle extends AbstractInstance
 				}
 			}
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	
@@ -721,9 +731,11 @@ public class IceQueensCastleBattle extends AbstractInstance
 					player.sendPacket(ActionFailed.STATIC_PACKET);
 					return null;
 				}
+				
 				return "18851.html";
 			}
 		}
+		
 		player.sendPacket(ActionFailed.STATIC_PACKET);
 		return null;
 	}
@@ -836,6 +848,7 @@ public class IceQueensCastleBattle extends AbstractInstance
 							players.setInvul(true);
 							players.abortAttack();
 						}
+						
 						manageMovie(world, Movie.SC_BOSS_KEGOR_INTRUSION);
 						startQuestTimer("SPAWN_SUPPORT", 27000, controller, null);
 					}
@@ -1043,8 +1056,10 @@ public class IceQueensCastleBattle extends AbstractInstance
 							{
 								manageRandomAttack(world, breath);
 							}
+							
 							startQuestTimer("BLIZZARD", 20000, breath, null);
 						}
+						
 						notifyEvent("SUICIDE", npc, null);
 					}
 					break;
@@ -1091,10 +1106,12 @@ public class IceQueensCastleBattle extends AbstractInstance
 					{
 						world.getNpc(SUPP_JINIA).deleteMe();
 					}
+					
 					if (kegor != null)
 					{
 						world.getNpc(SUPP_KEGOR).teleToLocation(KEGOR_FINISH);
 					}
+					
 					manageMovie(world, Movie.SC_BOSS_FREYA_ENDING_A);
 					manageDespawnMinions(world);
 					world.finishInstance();

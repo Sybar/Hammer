@@ -115,6 +115,7 @@ public class ExRelicsSummonResult extends ServerPacket
 						Broadcast.toAllOnlinePlayers(new ExRelicsAnnounce(_player, newRelic.getRelicId()));
 					}
 				}
+				
 				storedRelics.add(newRelic);
 				
 				_player.storeRelics();
@@ -127,6 +128,7 @@ public class ExRelicsSummonResult extends ServerPacket
 		
 		// Obtained relics by scroll type.
 		int obtainedRelicId = 0;
+		final List<PlayerRelicData> updatedRelics = new ArrayList<>();
 		for (int i = 1; i <= _relicSummonCount; i++)
 		{
 			if (Config.RELIC_SYSTEM_DEBUG_ENABLED)
@@ -347,14 +349,17 @@ public class ExRelicsSummonResult extends ServerPacket
 								unconfirmedRelics.add(relic2.getRelicIndex());
 							}
 						}
+						
 						if (Config.RELIC_SYSTEM_DEBUG_ENABLED)
 						{
 							_player.sendMessage("0.Duplicate relic indexes list: " + unconfirmedRelics);
 						}
+						
 						newRelic.setRelicCount(1);
 						newRelic.setRelicIndex(300 + unconfirmedRelics.size());
 						newRelic.setRelicSummonTime(System.currentTimeMillis());
 						storedRelics.add(newRelic);
+						
 						// Increase the unconfirmed relics variable count.
 						_player.getAccountVariables().set(AccountVariables.UNCONFIRMED_RELICS_COUNT, _player.getAccountVariables().getInt(AccountVariables.UNCONFIRMED_RELICS_COUNT, 0) + 1);
 						_player.getAccountVariables().storeMe();
@@ -364,6 +369,7 @@ public class ExRelicsSummonResult extends ServerPacket
 						{
 							_player.sendMessage("1.Duplicate relic id: " + newRelic.getRelicId() + " was added to confirmation list.");
 						}
+						
 						if (Config.RELIC_SUMMON_ANNOUNCE)
 						{
 							// Announce new the obtained relic.
@@ -375,16 +381,18 @@ public class ExRelicsSummonResult extends ServerPacket
 					{
 						existingRelic.setRelicCount(existingRelic.getRelicCount() + 1);
 						_player.storeRelics();
-						_player.sendPacket(new ExRelicsUpdateList(1, existingRelic.getRelicId(), 0, 1)); // Update confirmed relic list with new relic.
+						updatedRelics.add(existingRelic);
 						if (Config.RELIC_SYSTEM_DEBUG_ENABLED)
 						{
 							_player.sendMessage("2.Existing relic id: " + existingRelic.getRelicId() + " count was updated.");
 						}
+						
 						// Announce the existing obtained relic.
 						if (Config.RELIC_SUMMON_ANNOUNCE && !Config.RELIC_ANNOUNCE_ONLY_A_B_GRADE)
 						{
 							Broadcast.toAllOnlinePlayers(new ExRelicsAnnounce(_player, existingRelic.getRelicId()));
 						}
+						
 						// Check if relic is already registered in some collection.
 						if (!_player.isRelicRegistered(existingRelic.getRelicId(), existingRelic.getRelicLevel()))
 						{
@@ -411,6 +419,7 @@ public class ExRelicsSummonResult extends ServerPacket
 						{
 							_player.sendMessage("1.New relic id: " + newRelic.getRelicId() + " was added to confirmation list.");
 						}
+						
 						if (Config.RELIC_SUMMON_ANNOUNCE)
 						{
 							// Announce the new obtained relic.
@@ -421,16 +430,18 @@ public class ExRelicsSummonResult extends ServerPacket
 					{
 						storedRelics.add(newRelic);
 						_player.storeRelics();
-						_player.sendPacket(new ExRelicsUpdateList(1, newRelic.getRelicId(), 0, 0)); // Update confirmed relic list with new relic.
+						updatedRelics.add(newRelic);
 						if (Config.RELIC_SYSTEM_DEBUG_ENABLED)
 						{
 							_player.sendMessage("2.New relic id: " + newRelic.getRelicId() + " was added to relic list.");
 						}
+						
 						if (Config.RELIC_SUMMON_ANNOUNCE && !Config.RELIC_ANNOUNCE_ONLY_A_B_GRADE)
 						{
 							// Announce the new obtained relic
 							Broadcast.toAllOnlinePlayers(new ExRelicsAnnounce(_player, newRelic.getRelicId()));
 						}
+						
 						if (!_player.isRelicRegistered(newRelic.getRelicId(), newRelic.getRelicLevel()))
 						{
 							// Auto-Add to relic collections on summon.
@@ -438,6 +449,7 @@ public class ExRelicsSummonResult extends ServerPacket
 						}
 					}
 				}
+				
 				_player.storeRelics();
 				// _player.giveRelicSkill(obtainedRelicTemplate);
 			}
@@ -445,8 +457,14 @@ public class ExRelicsSummonResult extends ServerPacket
 			{
 				PacketLogger.warning("ExRelicsSummonResult: Relic coupon " + _relicCouponItemId + " is probably not registred in configs.");
 			}
-			_player.sendPacket(new ExRelicsList(_player)); // Update confirmed relic list relics count.
-			_player.sendPacket(new ExRelicsExchangeList(_player)); // Update relic exchange/confirm list.
 		}
+		
+		if (!updatedRelics.isEmpty())
+		{
+			_player.sendPacket(new ExRelicsUpdateList(updatedRelics));
+		}
+		
+		_player.sendPacket(new ExRelicsList(_player)); // Update confirmed relic list relics count.
+		_player.sendPacket(new ExRelicsExchangeList(_player)); // Update relic exchange/confirm list.
 	}
 }

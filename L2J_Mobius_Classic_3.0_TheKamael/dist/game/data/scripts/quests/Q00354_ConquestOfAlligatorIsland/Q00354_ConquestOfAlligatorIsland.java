@@ -32,10 +32,13 @@ public class Q00354_ConquestOfAlligatorIsland extends Quest
 {
 	// NPC
 	private static final int KLUCK = 30895;
+	
 	// Items
 	private static final int ALLIGATOR_TOOTH = 5863;
+	
 	// Misc
 	private static final int MIN_LEVEL = 38;
+	
 	// Mobs
 	private static final Map<Integer, Double> MOB1 = new HashMap<>();
 	private static final Map<Integer, Integer> MOB2 = new HashMap<>();
@@ -106,6 +109,7 @@ public class Q00354_ConquestOfAlligatorIsland extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -141,6 +145,7 @@ public class Q00354_ConquestOfAlligatorIsland extends Quest
 		{
 			htmltext = "30895-04.html";
 		}
+		
 		return htmltext;
 	}
 }

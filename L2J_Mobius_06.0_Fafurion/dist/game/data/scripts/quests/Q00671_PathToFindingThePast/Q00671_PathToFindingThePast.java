@@ -39,6 +39,7 @@ public class Q00671_PathToFindingThePast extends Quest
 	// NPCs
 	private static final int ARCTURUS = 34267;
 	private static final int COLIN = 30703;
+	
 	// Monsters
 	private static final int[] BOSSES =
 	{
@@ -59,6 +60,7 @@ public class Q00671_PathToFindingThePast extends Quest
 		23663, // Unit Commander 8
 		23664, // Unit Commander 8
 	};
+	
 	// Misc
 	private static final int MIN_LEVEL = 85;
 	
@@ -81,6 +83,7 @@ public class Q00671_PathToFindingThePast extends Quest
 		{
 			return htmltext;
 		}
+		
 		switch (event)
 		{
 			case "30703-02.htm":
@@ -107,6 +110,7 @@ public class Q00671_PathToFindingThePast extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -124,6 +128,7 @@ public class Q00671_PathToFindingThePast extends Quest
 					htmltext = getAlreadyCompletedMsg(player, QuestType.DAILY);
 					break;
 				}
+				
 				qs.setState(State.CREATED);
 				// Fallthrough.
 			}
@@ -161,6 +166,7 @@ public class Q00671_PathToFindingThePast extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	

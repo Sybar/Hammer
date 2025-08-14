@@ -79,6 +79,7 @@ public class HomunculusList
 				return homunculus;
 			}
 		}
+		
 		return null;
 	}
 	
@@ -91,6 +92,7 @@ public class HomunculusList
 				return true;
 			}
 		}
+		
 		return false;
 	}
 	
@@ -123,6 +125,7 @@ public class HomunculusList
 			{
 				_owner.sendSkillList();
 			}
+			
 			return true;
 		}
 		
@@ -232,6 +235,7 @@ public class HomunculusList
 							_skills.put(skillEntry.getSkillId(), skillEntry);
 						}
 					}
+					
 					if (homunculus.getSkillLevel2() > 0)
 					{
 						final SkillHolder skillEntry = new SkillHolder(homunculus.getTemplate().getSkillId2(), homunculus.getSkillLevel2());
@@ -257,6 +261,7 @@ public class HomunculusList
 							_skills.put(skillEntry.getSkillId(), skillEntry);
 						}
 					}
+					
 					if (homunculus.getSkillLevel2() > 0)
 					{
 						final SkillHolder skillEntry = new SkillHolder(homunculus.getTemplate().getSkillId2(), homunculus.getSkillLevel2());
@@ -266,6 +271,7 @@ public class HomunculusList
 							_skills.put(skillEntry.getSkillId(), skillEntry);
 						}
 					}
+					
 					if (homunculus.getSkillLevel3() > 0)
 					{
 						final SkillHolder skillEntry = new SkillHolder(homunculus.getTemplate().getSkillId3(), homunculus.getSkillLevel3());
@@ -291,6 +297,7 @@ public class HomunculusList
 							_skills.put(skillEntry.getSkillId(), skillEntry);
 						}
 					}
+					
 					if (homunculus.getSkillLevel2() > 0)
 					{
 						final SkillHolder skillEntry = new SkillHolder(homunculus.getTemplate().getSkillId2(), homunculus.getSkillLevel2());
@@ -300,6 +307,7 @@ public class HomunculusList
 							_skills.put(skillEntry.getSkillId(), skillEntry);
 						}
 					}
+					
 					if (homunculus.getSkillLevel3() > 0)
 					{
 						final SkillHolder skillEntry = new SkillHolder(homunculus.getTemplate().getSkillId3(), homunculus.getSkillLevel3());
@@ -309,6 +317,7 @@ public class HomunculusList
 							_skills.put(skillEntry.getSkillId(), skillEntry);
 						}
 					}
+					
 					if (homunculus.getSkillLevel4() > 0)
 					{
 						final SkillHolder skillEntry = new SkillHolder(homunculus.getTemplate().getSkillId4(), homunculus.getSkillLevel4());
@@ -334,6 +343,7 @@ public class HomunculusList
 							_skills.put(skillEntry.getSkillId(), skillEntry);
 						}
 					}
+					
 					if (homunculus.getSkillLevel2() > 0)
 					{
 						final SkillHolder skillEntry = new SkillHolder(homunculus.getTemplate().getSkillId2(), homunculus.getSkillLevel2());
@@ -343,6 +353,7 @@ public class HomunculusList
 							_skills.put(skillEntry.getSkillId(), skillEntry);
 						}
 					}
+					
 					if (homunculus.getSkillLevel3() > 0)
 					{
 						final SkillHolder skillEntry = new SkillHolder(homunculus.getTemplate().getSkillId3(), homunculus.getSkillLevel3());
@@ -352,6 +363,7 @@ public class HomunculusList
 							_skills.put(skillEntry.getSkillId(), skillEntry);
 						}
 					}
+					
 					if (homunculus.getSkillLevel4() > 0)
 					{
 						final SkillHolder skillEntry = new SkillHolder(homunculus.getTemplate().getSkillId4(), homunculus.getSkillLevel4());
@@ -361,6 +373,7 @@ public class HomunculusList
 							_skills.put(skillEntry.getSkillId(), skillEntry);
 						}
 					}
+					
 					if (homunculus.getSkillLevel5() > 0)
 					{
 						final SkillHolder skillEntry = new SkillHolder(homunculus.getTemplate().getSkillId5(), homunculus.getSkillLevel5());

@@ -34,11 +34,13 @@ public class Q00160_NerupasRequest extends Quest
 	private static final int UNOREN = 30147;
 	private static final int CREAMEES = 30149;
 	private static final int JULIA = 30152;
+	
 	// Items
 	private static final int SILVERY_SPIDERSILK = 1026;
 	private static final int UNOREN_RECEIPT = 1027;
 	private static final int CREAMEES_TICKET = 1028;
 	private static final int NIGHTSHADE_LEAF = 1029;
+	
 	// Reward
 	private static final int LESSER_HEALING_POTION = 1060;
 	

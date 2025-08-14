@@ -67,6 +67,7 @@ public class ExResponseBeautyList extends ServerPacket
 			buffer.writeInt(item.getId());
 			buffer.writeInt(1); // Limit
 		}
+		
 		buffer.writeInt(0);
 	}
 }

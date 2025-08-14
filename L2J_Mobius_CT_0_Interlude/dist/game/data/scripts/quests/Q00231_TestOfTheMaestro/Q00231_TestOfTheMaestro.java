@@ -44,12 +44,14 @@ public class Q00231_TestOfTheMaestro extends Quest
 	private static final int CROTO = 30671;
 	private static final int DUBABAH = 30672;
 	private static final int LORAIN = 30673;
+	
 	// Monsters
 	private static final int KING_BUGBEAR = 20150;
 	private static final int GIANT_MIST_LEECH = 20225;
 	private static final int STINGER_WASP = 20229;
 	private static final int MARSH_SPIDER = 20233;
 	private static final int EVIL_EYE_LORD = 27133;
+	
 	// Items
 	private static final int RECOMMENDATION_OF_BALANKI = 2864;
 	private static final int RECOMMENDATION_OF_FILAUR = 2865;
@@ -66,6 +68,7 @@ public class Q00231_TestOfTheMaestro extends Quest
 	private static final int MARSH_SPIDER_WEB = 2877;
 	private static final int BLOOD_OF_LEECH = 2878;
 	private static final int BROKEN_TELEPORT_DEVICE = 2916;
+	
 	// Rewards
 	private static final int MARK_OF_MAESTRO = 2867;
 	private static final int DIMENSIONAL_DIAMOND = 7562;
@@ -113,7 +116,7 @@ public class Q00231_TestOfTheMaestro extends Quest
 				giveItems(player, PAINT_OF_KAMURU, 1);
 				break;
 			}
-			case "30556-05.htm":
+			case "TELEPORT":
 			{
 				playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 				takeItems(player, PAINT_OF_TELEPORT_DEVICE, 1);

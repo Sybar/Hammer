@@ -36,7 +36,6 @@ public class GateOfUnlimitedSummoning extends AbstractNpcAI
 {
 	// NPCs
 	private static final Map<Integer, Integer> DEATH_GATE = new HashMap<>();
-	
 	static
 	{
 		DEATH_GATE.put(14927, 1); // Death Gate
@@ -82,6 +81,7 @@ public class GateOfUnlimitedSummoning extends AbstractNpcAI
 						npc.doCast(skill);
 					}
 				}
+				
 				getTimers().addTimer("SKILL_CAST_SLOW", 3000, npc, null);
 				break;
 			}

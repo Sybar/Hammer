@@ -149,6 +149,7 @@ public class RequestNewEnchantTry extends ClientPacket
 			{
 				iu.addRemovedItem(itemOne);
 			}
+			
 			if (itemTwo.isStackable() && (itemTwo.getCount() > 0))
 			{
 				iu.addModifiedItem(itemTwo);
@@ -157,6 +158,7 @@ public class RequestNewEnchantTry extends ClientPacket
 			{
 				iu.addRemovedItem(itemTwo);
 			}
+			
 			player.sendInventoryUpdate(iu);
 		}
 		

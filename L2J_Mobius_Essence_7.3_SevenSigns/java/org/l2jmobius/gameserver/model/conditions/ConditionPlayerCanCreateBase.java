@@ -103,6 +103,7 @@ public class ConditionPlayerCanCreateBase extends Condition
 			player.sendPacket(SystemMessageId.YOU_CAN_T_BUILD_HEADQUARTERS_HERE);
 			canCreateBase = false;
 		}
+		
 		return _value == canCreateBase;
 	}
 }

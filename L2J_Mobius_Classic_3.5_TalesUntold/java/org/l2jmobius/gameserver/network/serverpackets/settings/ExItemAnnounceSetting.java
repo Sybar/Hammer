@@ -30,17 +30,17 @@ import org.l2jmobius.gameserver.network.serverpackets.ServerPacket;
  */
 public class ExItemAnnounceSetting extends ServerPacket
 {
-	private final boolean _announceEnabled;
+	private final boolean _announceDisabled;
 	
-	public ExItemAnnounceSetting(boolean announceEnabled)
+	public ExItemAnnounceSetting(boolean announceDisabled)
 	{
-		_announceEnabled = announceEnabled;
+		_announceDisabled = announceDisabled;
 	}
 	
 	@Override
 	public void writeImpl(GameClient client, WritableBuffer buffer)
 	{
 		ServerPackets.EX_ITEM_ANNOUNCE_SETTING.writeId(this, buffer);
-		buffer.writeByte(_announceEnabled);
+		buffer.writeByte(_announceDisabled);
 	}
 }

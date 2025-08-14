@@ -34,9 +34,11 @@ public class Q00633_InTheForgottenVillage extends Quest
 {
 	// NPCs
 	private static final int MINA = 31388;
+	
 	// Items
 	private static final int RIB_BONE = 7544;
 	private static final int ZOMBIE_LIVER = 7545;
+	
 	// Monsters / Drop chances
 	private static final Map<Integer, Integer> MOBS = new HashMap<>();
 	static
@@ -115,6 +117,7 @@ public class Q00633_InTheForgottenVillage extends Quest
 					giveAdena(player, 25000, true);
 					addExpAndSp(player, 305235, 0);
 				}
+				
 				st.setCond(1, true);
 				break;
 			}

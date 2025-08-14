@@ -34,13 +34,14 @@ public class Q00298_LizardmensConspiracy extends Quest
 	// NPCs
 	private static final int GUARD_PRAGA = 30333;
 	private static final int MAGISTER_ROHMER = 30344;
+	
 	// Items
 	private static final int PATROLS_REPORT = 7182;
 	private static final int SHINING_GEM = 7183;
 	private static final int SHINING_RED_GEM = 7184;
+	
 	// Monsters
 	private static final Map<Integer, ItemChanceHolder> MONSTERS = new HashMap<>();
-	
 	static
 	{
 		MONSTERS.put(20922, new ItemChanceHolder(SHINING_GEM, 0.49, 1));
@@ -110,6 +111,7 @@ public class Q00298_LizardmensConspiracy extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -166,6 +168,7 @@ public class Q00298_LizardmensConspiracy extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 }

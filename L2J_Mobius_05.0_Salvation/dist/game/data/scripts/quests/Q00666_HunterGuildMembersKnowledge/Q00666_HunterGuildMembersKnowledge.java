@@ -39,8 +39,9 @@ public class Q00666_HunterGuildMembersKnowledge extends Quest
 	// NPCs
 	private static final int ARCTURUS = 34267;
 	private static final int COLIN = 30703;
+	
 	// BOSS
-	//@formatter:off
+	// @formatter:off
 	private static final int[] BOSES =
 	{ // BOSS LVL 86-97
 		25932, 25875, 25879, 26077, 26078,
@@ -58,7 +59,8 @@ public class Q00666_HunterGuildMembersKnowledge extends Quest
 		25967, 25968, 25969, 25970, 25971,
 		25972
 	};
-	//@formatter:on
+	// @formatter:on
+	
 	// Misc
 	private static final int MIN_LEVEL = 85;
 	
@@ -81,6 +83,7 @@ public class Q00666_HunterGuildMembersKnowledge extends Quest
 		{
 			return htmltext;
 		}
+		
 		switch (event)
 		{
 			case "30703-02.htm":
@@ -107,6 +110,7 @@ public class Q00666_HunterGuildMembersKnowledge extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -158,9 +162,11 @@ public class Q00666_HunterGuildMembersKnowledge extends Quest
 					htmltext = getAlreadyCompletedMsg(player, QuestType.DAILY);
 					break;
 				}
+				
 				qs.setState(State.CREATED);
 			}
 		}
+		
 		return htmltext;
 	}
 	

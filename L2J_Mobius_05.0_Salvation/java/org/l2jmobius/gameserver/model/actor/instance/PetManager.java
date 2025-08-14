@@ -65,6 +65,7 @@ public class PetManager extends Merchant
 		{
 			pom = npcId + "-" + value;
 		}
+		
 		return "data/html/petmanager/" + pom + ".htm";
 	}
 	
@@ -145,6 +146,7 @@ public class PetManager extends Merchant
 					break;
 				}
 			}
+			
 			if (!ok)
 			{
 				final NpcHtmlMessage html = new NpcHtmlMessage(getObjectId());
@@ -186,6 +188,7 @@ public class PetManager extends Merchant
 					break;
 				}
 			}
+			
 			if (!ok)
 			{
 				final NpcHtmlMessage html = new NpcHtmlMessage(getObjectId());
@@ -416,6 +419,7 @@ public class PetManager extends Merchant
 		{
 			// Ignore.
 		}
+		
 		return true;
 	}
 	

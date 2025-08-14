@@ -65,23 +65,23 @@ public class ClanEntryManager
 	private static final String UPDATE_CLAN_RECRUIT = "UPDATE pledge_recruit SET karma = ?, information = ?, detailed_information = ?, application_type = ?, recruit_type = ? WHERE clan_id = ?";
 	private static final String DELETE_CLAN_RECRUIT = "DELETE FROM pledge_recruit WHERE clan_id = ?";
 	
-	//@formatter:off
+	// @formatter:off
 	private static final List<Comparator<PledgeWaitingInfo>> PLAYER_COMPARATOR = Arrays.asList(
 		null,
 		Comparator.comparing(PledgeWaitingInfo::getPlayerName), 
 		Comparator.comparingInt(PledgeWaitingInfo::getKarma), 
 		Comparator.comparingInt(PledgeWaitingInfo::getPlayerLvl), 
 		Comparator.comparingInt(PledgeWaitingInfo::getPlayerClassId));
-	//@formatter:on
+	// @formatter:on
 	
-	//@formatter:off
+	// @formatter:off
 	private static final List<Comparator<PledgeRecruitInfo>> CLAN_COMPARATOR = Arrays.asList(
 		null,
 		Comparator.comparing(PledgeRecruitInfo::getClanName),
 		Comparator.comparing(PledgeRecruitInfo::getClanLeaderName),
 		Comparator.comparingInt(PledgeRecruitInfo::getClanLevel),
 		Comparator.comparingInt(PledgeRecruitInfo::getKarma));
-	//@formatter:on
+	// @formatter:on
 	
 	private static final long LOCK_TIME = TimeUnit.MINUTES.toMillis(5);
 	
@@ -100,12 +100,14 @@ public class ClanEntryManager
 			{
 				final int clanId = rs.getInt("clan_id");
 				_clanList.put(clanId, new PledgeRecruitInfo(clanId, rs.getInt("karma"), rs.getString("information"), rs.getString("detailed_information"), rs.getInt("application_type"), rs.getInt("recruit_type")));
+				
 				// Remove non existing clan data.
 				if (ClanTable.getInstance().getClan(clanId) == null)
 				{
 					removeFromClanList(clanId);
 				}
 			}
+			
 			LOGGER.info(getClass().getSimpleName() + ": Loaded " + _clanList.size() + " clan entries.");
 		}
 		catch (Exception e)
@@ -186,6 +188,7 @@ public class ClanEntryManager
 		{
 			LOGGER.log(Level.WARNING, e.getMessage(), e);
 		}
+		
 		return (clanApplicantList != null) && (clanApplicantList.remove(playerId) != null);
 	}
 	
@@ -208,8 +211,10 @@ public class ClanEntryManager
 			{
 				LOGGER.log(Level.WARNING, e.getMessage(), e);
 			}
+			
 			return true;
 		}
+		
 		return false;
 	}
 	
@@ -222,6 +227,7 @@ public class ClanEntryManager
 				return entry.getKey();
 			}
 		}
+		
 		return 0;
 	}
 	
@@ -240,9 +246,11 @@ public class ClanEntryManager
 			{
 				LOGGER.log(Level.WARNING, e.getMessage(), e);
 			}
+			
 			_waitingList.put(playerId, info);
 			return true;
 		}
+		
 		return false;
 	}
 	
@@ -260,10 +268,12 @@ public class ClanEntryManager
 			{
 				LOGGER.log(Level.WARNING, e.getMessage(), e);
 			}
+			
 			_waitingList.remove(playerId);
 			lockPlayer(playerId);
 			return true;
 		}
+		
 		return false;
 	}
 	
@@ -286,9 +296,11 @@ public class ClanEntryManager
 			{
 				LOGGER.log(Level.WARNING, e.getMessage(), e);
 			}
+			
 			_clanList.put(clanId, info);
 			return true;
 		}
+		
 		return false;
 	}
 	
@@ -311,8 +323,10 @@ public class ClanEntryManager
 			{
 				LOGGER.log(Level.WARNING, e.getMessage(), e);
 			}
+			
 			return _clanList.replace(clanId, info) != null;
 		}
+		
 		return false;
 	}
 	
@@ -330,10 +344,12 @@ public class ClanEntryManager
 			{
 				LOGGER.log(Level.WARNING, e.getMessage(), e);
 			}
+			
 			_clanList.remove(clanId);
 			lockClan(clanId);
 			return true;
 		}
+		
 		return false;
 	}
 	
@@ -349,6 +365,7 @@ public class ClanEntryManager
 				result.add(p);
 			}
 		}
+		
 		result.sort(descending ? PLAYER_COMPARATOR.get(sortBy).reversed() : PLAYER_COMPARATOR.get(sortBy));
 		return result;
 	}
@@ -363,6 +380,7 @@ public class ClanEntryManager
 				result.add(p);
 			}
 		}
+		
 		return result;
 	}
 	
@@ -389,6 +407,7 @@ public class ClanEntryManager
 				}
 			}
 		}
+		
 		return result;
 	}
 	
@@ -424,6 +443,7 @@ public class ClanEntryManager
 				sortedList.remove(i--);
 			}
 		}
+		
 		Collections.sort(sortedList, descending ? CLAN_COMPARATOR.get(sortBy).reversed() : CLAN_COMPARATOR.get(sortBy));
 		return sortedList;
 	}

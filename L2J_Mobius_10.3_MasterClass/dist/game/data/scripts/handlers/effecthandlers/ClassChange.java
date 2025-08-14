@@ -30,14 +30,12 @@ import org.l2jmobius.gameserver.model.actor.holders.player.Shortcut;
 import org.l2jmobius.gameserver.model.effects.AbstractEffect;
 import org.l2jmobius.gameserver.model.groups.Party;
 import org.l2jmobius.gameserver.model.item.instance.Item;
-import org.l2jmobius.gameserver.model.itemcontainer.Inventory;
 import org.l2jmobius.gameserver.model.olympiad.OlympiadManager;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.network.SystemMessageId;
 import org.l2jmobius.gameserver.network.serverpackets.AcquireSkillDone;
 import org.l2jmobius.gameserver.network.serverpackets.AcquireSkillList;
 import org.l2jmobius.gameserver.network.serverpackets.ExSubjobInfo;
-import org.l2jmobius.gameserver.network.serverpackets.InventoryUpdate;
 import org.l2jmobius.gameserver.network.serverpackets.PartySmallWindowAll;
 import org.l2jmobius.gameserver.network.serverpackets.PartySmallWindowDeleteAll;
 import org.l2jmobius.gameserver.network.serverpackets.SystemMessage;
@@ -139,7 +137,7 @@ public class ClassChange extends AbstractEffect
 					final Skill knownSkill = player.getKnownSkill(shortcut.getId());
 					if (knownSkill != null)
 					{
-						if (knownSkill.isBad())
+						if (knownSkill.hasNegativeEffect())
 						{
 							AutoUseTaskManager.getInstance().removeAutoSkill(player, shortcut.getId());
 						}
@@ -166,21 +164,11 @@ public class ClassChange extends AbstractEffect
 				}
 			}
 			
+			// Disarm unusable equipment.
+			player.disarmUnusableEquipment();
+			
 			if (player.isDeathKnight())
 			{
-				// Fix for Death Knight keep other than sword on class change.
-				final Item itemToDisarm = player.getInventory().getPaperdollItem(Inventory.PAPERDOLL_RHAND);
-				if (itemToDisarm != null)
-				{
-					final long slot = player.getInventory().getSlotFromItem(itemToDisarm);
-					player.getInventory().unEquipItemInBodySlot(slot);
-					
-					final InventoryUpdate iu = new InventoryUpdate();
-					iu.addModifiedItem(itemToDisarm);
-					player.sendInventoryUpdate(iu);
-					player.broadcastUserInfo();
-				}
-				
 				// Fix Death Knight model animation.
 				player.transform(101, false);
 				ThreadPool.schedule(() -> player.stopTransformation(false), 50);

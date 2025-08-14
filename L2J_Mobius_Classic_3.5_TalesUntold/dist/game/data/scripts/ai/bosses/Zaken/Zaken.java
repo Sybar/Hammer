@@ -40,10 +40,12 @@ public class Zaken extends AbstractNpcAI
 {
 	// NPC
 	private static final int ZAKEN = 29022;
+	
 	// Location
 	private static final int ZAKEN_X = 52207;
 	private static final int ZAKEN_Y = 217230;
 	private static final int ZAKEN_Z = -3341;
+	
 	// Misc
 	private static final byte ALIVE = 0;
 	private static final byte DEAD = 1;
@@ -80,6 +82,7 @@ public class Zaken extends AbstractNpcAI
 		{
 			spawnBoss();
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	
@@ -101,6 +104,7 @@ public class Zaken extends AbstractNpcAI
 		final long randomRangeMillis = Config.ZAKEN_SPAWN_RANDOM * 3600000;
 		final long respawnTime = baseIntervalMillis + getRandom(-randomRangeMillis, randomRangeMillis);
 		startQuestTimer("zaken_unlock", respawnTime, null, null);
+		
 		// also save the respawn time so that the info is maintained past reboots
 		final StatSet info = GrandBossManager.getInstance().getStatSet(ZAKEN);
 		info.set("respawn_time", System.currentTimeMillis() + respawnTime);

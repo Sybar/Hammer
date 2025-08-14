@@ -42,6 +42,7 @@ public class Q00227_TestOfTheReformer extends Quest
 	private static final int KAKAN = 30669;
 	private static final int NYAKURI = 30670;
 	private static final int OL_MAHUM_PILGRIM = 30732;
+	
 	// Monsters
 	private static final int MISERY_SKELETON = 20022;
 	private static final int SKELETON_ARCHER = 20100;
@@ -54,6 +55,7 @@ public class Q00227_TestOfTheReformer extends Quest
 	private static final int OL_MAHUM_BETRAYER = 27130;
 	private static final int CRIMSON_WEREWOLF = 27131;
 	private static final int KRUDEL_LIZARDMAN = 27132;
+	
 	// Items
 	private static final int BOOK_OF_REFORM = 2822;
 	private static final int LETTER_OF_INTRODUCTION = 2823;
@@ -74,11 +76,14 @@ public class Q00227_TestOfTheReformer extends Quest
 	private static final int BONE_FRAGMENT_8 = 2838;
 	private static final int BONE_FRAGMENT_9 = 2839;
 	private static final int KAKAN_LETTER = 3037;
+	
 	// Rewards
 	private static final int MARK_OF_REFORMER = 2821;
 	private static final int DIMENSIONAL_DIAMOND = 7562;
+	
 	// Checks & Instances
 	private static long _timer;
+	
 	// Misc
 	private static Npc _olMahumInspector;
 	private static Npc _olMahumPilgrim;
@@ -144,6 +149,7 @@ public class Q00227_TestOfTheReformer extends Quest
 				{
 					st.setCond(12, true);
 				}
+				
 				if (!_crimsonWerewolf)
 				{
 					addSpawn(CRIMSON_WEREWOLF, -9382, -89852, -2333, 0, false, 299000);
@@ -192,9 +198,11 @@ public class Q00227_TestOfTheReformer extends Quest
 						_olMahumInspector.deleteMe();
 						_olMahumInspector = null;
 					}
+					
 					cancelQuestTimer("ol_mahums_despawn", null, player);
 					_timer = 0;
 				}
+				
 				return null;
 			}
 			case "betrayer_despawn":
@@ -204,6 +212,7 @@ public class Q00227_TestOfTheReformer extends Quest
 					_olMahumBetrayer.deleteMe();
 					_olMahumBetrayer = null;
 				}
+				
 				return null;
 			}
 			case "werewolf_cleanup":
@@ -483,6 +492,7 @@ public class Q00227_TestOfTheReformer extends Quest
 				if ((cond == 12) && !npc.isScriptValue(1))
 				{
 					npc.setScriptValue(1);
+					
 					// TODO: Proper skill check.
 					// startQuestTimer("werewolf_despawn", 1000, npc, attacker, false);
 				}

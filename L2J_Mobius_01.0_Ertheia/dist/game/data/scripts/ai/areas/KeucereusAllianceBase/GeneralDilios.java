@@ -73,6 +73,7 @@ public class GeneralDilios extends AbstractNpcAI
 				value = -1;
 				_general.broadcastSay(ChatType.NPC_SHOUT, getRandomEntry(DILIOS_TEXT));
 			}
+			
 			startQuestTimer("command_" + (value + 1), 60000, null, null);
 		}
 		else if (event.startsWith("guard_animation_"))
@@ -82,11 +83,13 @@ public class GeneralDilios extends AbstractNpcAI
 			{
 				guard.getLastSpawn().broadcastSocialAction(4);
 			}
+			
 			if (value < 2)
 			{
 				startQuestTimer("guard_animation_" + (value + 1), 1500, null, null);
 			}
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	

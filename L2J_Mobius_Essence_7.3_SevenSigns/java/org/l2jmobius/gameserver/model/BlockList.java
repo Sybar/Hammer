@@ -90,6 +90,7 @@ public class BlockList
 					{
 						continue;
 					}
+					
 					list.add(friendId);
 				}
 			}
@@ -98,6 +99,7 @@ public class BlockList
 		{
 			LOGGER.log(Level.WARNING, "Error found in " + objId + " FriendList while loading BlockList: " + e.getMessage(), e);
 		}
+		
 		return list;
 	}
 	
@@ -259,10 +261,12 @@ public class BlockList
 		{
 			return isBlocked(player, targetId);
 		}
+		
 		if (!OFFLINE_LIST.containsKey(ownerId))
 		{
 			OFFLINE_LIST.put(ownerId, loadList(ownerId));
 		}
+		
 		return OFFLINE_LIST.get(ownerId).contains(targetId);
 	}
 }

@@ -26,6 +26,7 @@ import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.enums.creature.Race;
 import org.l2jmobius.gameserver.model.actor.enums.player.MountType;
 import org.l2jmobius.gameserver.model.actor.enums.player.TeleportWhereType;
+import org.l2jmobius.gameserver.model.actor.transform.Transform;
 import org.l2jmobius.gameserver.model.item.enums.ItemProcessType;
 import org.l2jmobius.gameserver.model.siege.Fort;
 import org.l2jmobius.gameserver.model.siege.FortSiege;
@@ -53,6 +54,7 @@ public class SiegeZone extends ZoneType
 		{
 			settings = new Settings();
 		}
+		
 		setSettings(settings);
 	}
 	
@@ -120,6 +122,7 @@ public class SiegeZone extends ZoneType
 			{
 				throw new IllegalArgumentException("Siege object already defined!");
 			}
+			
 			getSettings().setSiegeableId(Integer.parseInt(value));
 		}
 		else if (name.equals("fortId"))
@@ -128,6 +131,7 @@ public class SiegeZone extends ZoneType
 			{
 				throw new IllegalArgumentException("Siege object already defined!");
 			}
+			
 			getSettings().setSiegeableId(Integer.parseInt(value));
 		}
 		else
@@ -164,14 +168,18 @@ public class SiegeZone extends ZoneType
 					player.enteredNoLanding(DISMOUNT_DELAY);
 				}
 				
-				if (!Config.ALLOW_MOUNTS_DURING_SIEGE && player.isMounted())
+				if (!Config.ALLOW_MOUNTS_DURING_SIEGE && player.isMounted() && (player.getMountType() != MountType.WYVERN))
 				{
 					player.dismount();
 				}
 				
-				if (!Config.ALLOW_MOUNTS_DURING_SIEGE && player.isTransformed() && player.getTransformation().get().isRiding())
+				if (!Config.ALLOW_MOUNTS_DURING_SIEGE && player.isTransformed() && player.getTransformation().isRiding())
 				{
-					player.untransform();
+					final Transform transform = player.getTransformation();
+					if ((transform != null) && transform.isRiding())
+					{
+						player.untransform();
+					}
 				}
 			}
 		}
@@ -353,6 +361,7 @@ public class SiegeZone extends ZoneType
 			{
 				continue;
 			}
+			
 			temp.teleToLocation(TeleportWhereType.TOWN);
 		}
 	}

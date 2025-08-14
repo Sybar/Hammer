@@ -94,9 +94,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="POTION" />
 		<set name="for_npc" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2169" level="2" /> <!-- Greater Magic Haste Potion -->
 		</skills>

@@ -26,7 +26,6 @@ import org.l2jmobius.Config;
 import org.l2jmobius.commons.network.WritableBuffer;
 import org.l2jmobius.gameserver.managers.MentorManager;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.actor.enums.player.PlayerCondOverride;
 import org.l2jmobius.gameserver.model.item.instance.Item;
 import org.l2jmobius.gameserver.network.GameClient;
 import org.l2jmobius.gameserver.network.ServerPackets;
@@ -45,25 +44,29 @@ public class TradeStart extends AbstractItemPacket
 	{
 		_player = player;
 		_partner = player.getActiveTradeList().getPartner();
-		_itemList = _player.getInventory().getAvailableItems(true, (_player.canOverrideCond(PlayerCondOverride.ITEM_CONDITIONS) && Config.GM_TRADE_RESTRICTED_ITEMS), false);
+		_itemList = _player.getInventory().getAvailableItems(true, (_player.isGM() && Config.GM_TRADE_RESTRICTED_ITEMS), false);
 		if (_partner != null)
 		{
 			if (player.getFriendList().contains(_partner.getObjectId()))
 			{
 				_mask |= 0x01;
 			}
-			if ((player.getClanId() > 0) && (_partner.getClanId() == _partner.getClanId()))
+			
+			if ((player.getClanId() > 0) && (player.getClanId() == _partner.getClanId()))
 			{
 				_mask |= 0x02;
 			}
+			
 			if ((MentorManager.getInstance().getMentee(player.getObjectId(), _partner.getObjectId()) != null) || (MentorManager.getInstance().getMentee(_partner.getObjectId(), player.getObjectId()) != null))
 			{
 				_mask |= 0x04;
 			}
+			
 			if ((player.getAllyId() > 0) && (player.getAllyId() == _partner.getAllyId()))
 			{
 				_mask |= 0x08;
 			}
+			
 			// Does not shows level
 			if (_partner.isGM())
 			{
@@ -87,6 +90,7 @@ public class TradeStart extends AbstractItemPacket
 		{
 			buffer.writeByte(_partner.getLevel());
 		}
+		
 		buffer.writeShort(_itemList.size());
 		for (Item item : _itemList)
 		{

@@ -34,6 +34,7 @@ public class Q00324_SweetestVenom extends Quest
 {
 	// Item
 	private static final int VENOM_SAC = 1077;
+	
 	// Drop chances
 	private static final Map<Integer, Integer> CHANCES = new HashMap<>();
 	static

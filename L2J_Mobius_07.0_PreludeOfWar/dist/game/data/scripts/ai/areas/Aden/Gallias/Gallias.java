@@ -49,12 +49,15 @@ public class Gallias extends AbstractNpcAI
 {
 	// NPC
 	private static final int NPC_ID = 34514;
+	
 	// Items
 	private static final int SUB_CERTIFICATE = 10280;
 	private static final int DUAL_CERTIFICATE = 36078;
 	private static final int ENERGY_OF_POWER = 80924;
+	
 	// Skills
 	private static final int DUAL_CLASS_RENEWED_ENERGY_OF_POWER = 30820;
+	
 	// Misc @formatter:off
 	private static final int[] SUB_SKILL_LEVELS = {65, 70, 75, 80};
 	private static final int[] DUAL_SKILL_LEVELS = {85, 90, 95, 99, 101, 103, 105};
@@ -77,6 +80,7 @@ public class Gallias extends AbstractNpcAI
 		{
 			return null;
 		}
+		
 		String htmltext = substrings[0];
 		switch (htmltext)
 		{
@@ -183,6 +187,7 @@ public class Gallias extends AbstractNpcAI
 						vars.set(getSubSkillVariableName(player, level), true);
 						giveItems(player, SUB_CERTIFICATE, 1);
 					}
+					
 					htmltext = "34514-20.html";
 				}
 				break;
@@ -233,6 +238,7 @@ public class Gallias extends AbstractNpcAI
 							vars.remove("SubSkill-" + i + "-" + lv);
 						}
 					}
+					
 					takeSkills(player, "SubSkillList");
 				}
 				break;
@@ -282,8 +288,10 @@ public class Gallias extends AbstractNpcAI
 						vars.set(getDualSkillVariableName(level), true);
 						giveItems(player, DUAL_CERTIFICATE, 1);
 					}
+					
 					htmltext = getHtm(player, "34514-29.html");
 				}
+				
 				htmltext = htmltext.replace("%level%", String.valueOf(level));
 				break;
 			}
@@ -337,6 +345,7 @@ public class Gallias extends AbstractNpcAI
 					{
 						vars.remove(getDualSkillVariableName(lv));
 					}
+					
 					takeSkills(player, "DualSkillList");
 				}
 				break;
@@ -346,6 +355,7 @@ public class Gallias extends AbstractNpcAI
 				htmltext = null;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -359,6 +369,7 @@ public class Gallias extends AbstractNpcAI
 		{
 			giveSkills(player, "DualSkillList");
 		}
+		
 		giveSkills(player, "SubSkillList");
 	}
 	
@@ -371,6 +382,7 @@ public class Gallias extends AbstractNpcAI
 		{
 			giveSkills(player, "DualSkillList");
 		}
+		
 		giveSkills(player, "SubSkillList");
 	}
 	
@@ -393,6 +405,7 @@ public class Gallias extends AbstractNpcAI
 				}
 			}
 		}
+		
 		return false;
 	}
 	
@@ -411,6 +424,7 @@ public class Gallias extends AbstractNpcAI
 				return true;
 			}
 		}
+		
 		return false;
 	}
 	
@@ -437,6 +451,7 @@ public class Gallias extends AbstractNpcAI
 				final Skill sk = SkillData.getInstance().getSkill(Integer.parseInt(str[0]), Integer.parseInt(str[1]));
 				player.removeSkill(sk);
 			}
+			
 			vars.remove(type);
 			player.sendSkillList();
 		}

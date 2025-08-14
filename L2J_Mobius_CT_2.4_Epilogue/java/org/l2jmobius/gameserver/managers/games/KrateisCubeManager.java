@@ -241,9 +241,11 @@ public class KrateisCubeManager implements IXmlReader
 										params.set(c.getAttributes().getNamedItem("name").getNodeValue(), c.getAttributes().getNamedItem("value").getNodeValue());
 									}
 								}
+								
 								arena.addParam(params);
 							}
 						}
+						
 						_arenas.put(arena.getId(), arena);
 					}
 				}
@@ -304,6 +306,7 @@ public class KrateisCubeManager implements IXmlReader
 						arena.removePlayer(pl);
 					}
 				}
+				
 				invalidPlayers.clear();
 				
 				if (count > 1)
@@ -342,6 +345,7 @@ public class KrateisCubeManager implements IXmlReader
 				_state = EventState.STARTED;
 			}
 		}
+		
 		_periodTask = ThreadPool.schedule(this::recalcEventTime, 180000);
 	}
 	
@@ -459,6 +463,7 @@ public class KrateisCubeManager implements IXmlReader
 		{
 			_periodTask.cancel(false);
 		}
+		
 		_registerActive = false;
 		getManagerMessage(KrateiMsgType.PREPATING);
 		_state = EventState.PREPARING;
@@ -478,30 +483,30 @@ public class KrateisCubeManager implements IXmlReader
 			}
 			case REGISTRATION_5:
 			{
-				_manager.broadcastPacket(new CreatureSay(_manager, ChatType.NPC_SHOUT, "There are 5 minutes remaining to register for Kratei's cube match."), 1500);
+				_manager.broadcastPacket(new CreatureSay(_manager, ChatType.NPC_SHOUT, "There are 5 minutes remaining to register for Kratei's cube match."));
 				_msgTask = ThreadPool.schedule(() -> getManagerMessage(KrateiMsgType.REGISTRATION_3), lastTime - 180000);
 				break;
 			}
 			case REGISTRATION_3:
 			{
-				_manager.broadcastPacket(new CreatureSay(_manager, ChatType.NPC_SHOUT, "There are 3 minutes remaining to register for Kratei's cube match."), 1500);
+				_manager.broadcastPacket(new CreatureSay(_manager, ChatType.NPC_SHOUT, "There are 3 minutes remaining to register for Kratei's cube match."));
 				_msgTask = ThreadPool.schedule(() -> getManagerMessage(KrateiMsgType.REGISTRATION_1), lastTime - 60000);
 				break;
 			}
 			case REGISTRATION_1:
 			{
-				_manager.broadcastPacket(new CreatureSay(_manager, ChatType.NPC_SHOUT, "There are 1 minutes remaining to register for Kratei's cube match."), 1500);
+				_manager.broadcastPacket(new CreatureSay(_manager, ChatType.NPC_SHOUT, "There are 1 minutes remaining to register for Kratei's cube match."));
 				break;
 			}
 			case PREPATING:
 			{
 				final CreatureSay msg3 = new CreatureSay(_manager, ChatType.NPC_SHOUT, "The match will begin in 3 minute(s).");
-				_manager.broadcastPacket(msg3, 1500);
+				_manager.broadcastPacket(msg3);
 				break;
 			}
 			case STARTED:
 			{
-				_manager.broadcastPacket(new CreatureSay(_manager, ChatType.NPC_SHOUT, "The match will begin shortly."), 1500);
+				_manager.broadcastPacket(new CreatureSay(_manager, ChatType.NPC_SHOUT, "The match will begin shortly."));
 				break;
 			}
 		}

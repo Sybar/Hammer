@@ -35,6 +35,7 @@ public class Q00005_MinersFavor extends Quest
 	private static final int GARITA = 30518;
 	private static final int REED = 30520;
 	private static final int BRUNON = 30526;
+	
 	// Items
 	private static final int BOLTERS_LIST = 1547;
 	private static final int MINING_BOOTS = 1548;
@@ -42,6 +43,7 @@ public class Q00005_MinersFavor extends Quest
 	private static final int BOOMBOOM_POWDER = 1550;
 	private static final int REDSTONE_BEER = 1551;
 	private static final int BOLTERS_SMELLY_SOCKS = 1552;
+	
 	// Reward
 	private static final int NECKLACE = 906;
 	

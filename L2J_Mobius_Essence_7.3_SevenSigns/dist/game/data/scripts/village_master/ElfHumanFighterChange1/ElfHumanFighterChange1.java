@@ -45,6 +45,7 @@ public class ElfHumanFighterChange1 extends AbstractNpcAI
 	private static final int BEZIQUES_RECOMMENDATION = 1190;
 	private static final int ELVEN_KNIGHT_BROOCH = 1204;
 	private static final int REISAS_RECOMMENDATION = 1217;
+	
 	// Classes
 	private static final int WARRIOR = 1;
 	private static final int KNIGHT = 4;
@@ -146,6 +147,7 @@ public class ElfHumanFighterChange1 extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -182,6 +184,7 @@ public class ElfHumanFighterChange1 extends AbstractNpcAI
 				takeItems(player, MEDALLION_OF_WARRIOR, -1);
 				player.setPlayerClass(WARRIOR);
 				player.setBaseClass(WARRIOR);
+				
 				// SystemMessage and cast skill is done by setClassId
 				player.broadcastUserInfo();
 				giveItems(player, SHADOW_ITEM_EXCHANGE_COUPON_D_GRADE, 15);
@@ -210,6 +213,7 @@ public class ElfHumanFighterChange1 extends AbstractNpcAI
 				takeItems(player, SWORD_OF_RITUAL, -1);
 				player.setPlayerClass(KNIGHT);
 				player.setBaseClass(KNIGHT);
+				
 				// SystemMessage and cast skill is done by setClassId
 				player.broadcastUserInfo();
 				giveItems(player, SHADOW_ITEM_EXCHANGE_COUPON_D_GRADE, 15);
@@ -238,6 +242,7 @@ public class ElfHumanFighterChange1 extends AbstractNpcAI
 				takeItems(player, BEZIQUES_RECOMMENDATION, -1);
 				player.setPlayerClass(ROGUE);
 				player.setBaseClass(ROGUE);
+				
 				// SystemMessage and cast skill is done by setClassId
 				player.broadcastUserInfo();
 				giveItems(player, SHADOW_ITEM_EXCHANGE_COUPON_D_GRADE, 15);
@@ -266,6 +271,7 @@ public class ElfHumanFighterChange1 extends AbstractNpcAI
 				takeItems(player, ELVEN_KNIGHT_BROOCH, -1);
 				player.setPlayerClass(ELVEN_KNIGHT);
 				player.setBaseClass(ELVEN_KNIGHT);
+				
 				// SystemMessage and cast skill is done by setClassId
 				player.broadcastUserInfo();
 				giveItems(player, SHADOW_ITEM_EXCHANGE_COUPON_D_GRADE, 15);
@@ -294,6 +300,7 @@ public class ElfHumanFighterChange1 extends AbstractNpcAI
 				takeItems(player, REISAS_RECOMMENDATION, -1);
 				player.setPlayerClass(ELVEN_SCOUT);
 				player.setBaseClass(ELVEN_SCOUT);
+				
 				// SystemMessage and cast skill is done by setClassId
 				player.broadcastUserInfo();
 				giveItems(player, SHADOW_ITEM_EXCHANGE_COUPON_D_GRADE, 15);
@@ -304,6 +311,7 @@ public class ElfHumanFighterChange1 extends AbstractNpcAI
 				htmltext = npc.getId() + "-40.htm"; // fnNoProof22
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -327,6 +335,7 @@ public class ElfHumanFighterChange1 extends AbstractNpcAI
 		{
 			htmltext = npc.getId() + "-18.htm"; // fnClassMismatch
 		}
+		
 		return htmltext;
 	}
 	

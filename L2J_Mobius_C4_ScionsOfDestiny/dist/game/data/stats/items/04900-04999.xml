@@ -21,7 +21,7 @@
 		<set name="is_magic_weapon" val="true" />
 		<set name="onmagic_chance" val="20" />
 		<set name="onmagic_skill" val="1077-3" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="189" />
 			<set stat="mAtk" val="145" />
 			<set stat="critRate" val="4" />
@@ -29,7 +29,7 @@
 			<set stat="pAtkSpd" val="325" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4901" type="Weapon" name="Staff of Evil Spirit">
 		<!-- Casts Bless the Body magic upon the target with a 20% chance of success when using good magic. Effect 5. -->
@@ -52,7 +52,7 @@
 		<set name="is_magic_weapon" val="true" />
 		<set name="onmagic_chance" val="20" />
 		<set name="onmagic_skill" val="1045-5" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="189" />
 			<set stat="mAtk" val="145" />
 			<set stat="critRate" val="4" />
@@ -60,7 +60,7 @@
 			<set stat="pAtkSpd" val="325" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4902" type="Weapon" name="Staff of Evil Spirit">
 		<!-- Casts Curse Poison against the target with a 6% chance of success when using bad magic. Effect 7. -->
@@ -83,7 +83,7 @@
 		<set name="is_magic_weapon" val="true" />
 		<set name="onmagic_chance" val="6" />
 		<set name="onmagic_skill" val="1168-6" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="189" />
 			<set stat="mAtk" val="145" />
 			<set stat="critRate" val="4" />
@@ -91,7 +91,7 @@
 			<set stat="pAtkSpd" val="325" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4903" type="Weapon" name="Dasparion's Staff">
 		<!-- Increases maximum HP. -->
@@ -112,7 +112,7 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="true" />
 		<set name="is_magic_weapon" val="true" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="207" />
 			<set stat="mAtk" val="143" />
 			<set stat="critRate" val="4" />
@@ -120,7 +120,7 @@
 			<set stat="pAtkSpd" val="325" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4904" type="Weapon" name="Dasparion's Staff">
 		<!-- When using bad magic, casts Curse: Weakness magic against the target. -->
@@ -143,7 +143,7 @@
 		<set name="is_magic_weapon" val="true" />
 		<set name="onmagic_chance" val="4" />
 		<set name="onmagic_skill" val="1164-14" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="207" />
 			<set stat="mAtk" val="143" />
 			<set stat="critRate" val="4" />
@@ -151,7 +151,7 @@
 			<set stat="pAtkSpd" val="325" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4905" type="Weapon" name="Dasparion's Staff">
 		<!-- When using bad magic, casts Curse: Chaos magic against the target. -->
@@ -174,7 +174,7 @@
 		<set name="is_magic_weapon" val="true" />
 		<set name="onmagic_chance" val="4" />
 		<set name="onmagic_skill" val="1222-10" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="207" />
 			<set stat="mAtk" val="143" />
 			<set stat="critRate" val="4" />
@@ -182,7 +182,7 @@
 			<set stat="pAtkSpd" val="325" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4906" type="EtcItem" name="Spellbook: Solar Spark">
 		<!-- Spellbook required for Solar Spark magic. Used by Elven Wizards. -->

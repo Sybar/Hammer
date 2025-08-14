@@ -100,6 +100,7 @@ public class SkillChannelizer implements Runnable
 			{
 				creature.getSkillChannelized().removeChannelizer(_skill.getChannelingSkillId(), _channelizer);
 			}
+			
 			_channelized = null;
 		}
 		
@@ -139,6 +140,7 @@ public class SkillChannelizer implements Runnable
 					{
 						_channelizer.sendPacket(SystemMessageId.YOUR_SKILL_WAS_DEACTIVATED_DUE_TO_LACK_OF_MP);
 					}
+					
 					_channelizer.abortCast();
 					return;
 				}
@@ -166,6 +168,7 @@ public class SkillChannelizer implements Runnable
 			{
 				return;
 			}
+			
 			channelized = targetList;
 			for (Creature creature : channelized)
 			{
@@ -207,9 +210,10 @@ public class SkillChannelizer implements Runnable
 						// Be warned, this method has the possibility to call doDie->abortCast->stopChanneling method. Variable cache above try{} is used in this case to avoid NPEs.
 						channeledSkill.applyEffects(_channelizer, creature);
 					}
+					
 					if (!skill.isToggle())
 					{
-						_channelizer.broadcastPacket(new MagicSkillLaunched(_channelizer, skill.getId(), skill.getLevel(), SkillCastingType.NORMAL, creature));
+						_channelizer.broadcastSkillPacket(new MagicSkillLaunched(_channelizer, skill.getId(), skill.getLevel(), SkillCastingType.NORMAL, creature), creature);
 					}
 				}
 				else

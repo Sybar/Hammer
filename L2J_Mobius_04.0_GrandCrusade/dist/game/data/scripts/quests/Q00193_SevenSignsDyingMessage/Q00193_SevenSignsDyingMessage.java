@@ -44,13 +44,16 @@ public class Q00193_SevenSignsDyingMessage extends Quest
 	private static final int SIR_GUSTAV_ATHEBALDT = 30760;
 	private static final int CAIN = 32569;
 	private static final int ERIC = 32570;
+	
 	// Items
 	private static final int JACOBS_NECKLACE = 13814;
 	private static final int DEADMANS_HERB = 13816;
 	private static final int SCULPTURE_OF_DOUBT = 14353;
+	
 	// Misc
 	private static final int MIN_LEVEL = 79;
 	private boolean isBusy = false;
+	
 	// Skill
 	private static final SkillHolder NPC_HEAL = new SkillHolder(4065, 8);
 	
@@ -76,6 +79,7 @@ public class Q00193_SevenSignsDyingMessage extends Quest
 				npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.NEXT_TIME_YOU_WILL_NOT_ESCAPE);
 				npc.deleteMe();
 			}
+			
 			return super.onEvent(event, npc, player);
 		}
 		
@@ -183,6 +187,7 @@ public class Q00193_SevenSignsDyingMessage extends Quest
 					npc.setTarget(player);
 					npc.doCast(NPC_HEAL.getSkill());
 				}
+				
 				startQuestTimer("heal", 30000 - getRandom(20000), npc, player);
 				break;
 			}
@@ -204,6 +209,7 @@ public class Q00193_SevenSignsDyingMessage extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -339,6 +345,7 @@ public class Q00193_SevenSignsDyingMessage extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

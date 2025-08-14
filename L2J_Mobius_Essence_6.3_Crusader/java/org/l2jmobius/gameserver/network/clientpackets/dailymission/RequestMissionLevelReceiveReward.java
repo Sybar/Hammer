@@ -60,6 +60,7 @@ public class RequestMissionLevelReceiveReward extends ClientPacket
 		{
 			return;
 		}
+		
 		player.addRequest(new RewardRequest(player));
 		
 		final MissionLevelPlayerDataHolder info = player.getMissionLevelProgress();
@@ -127,6 +128,7 @@ public class RequestMissionLevelReceiveReward extends ClientPacket
 							break;
 						}
 					}
+					
 					if (availableReward != -1)
 					{
 						info.addToListOfCollectedBonusRewards(availableReward);

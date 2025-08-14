@@ -39,6 +39,7 @@ public class Q10416_InSearchOfTheEyeOfArgos extends Quest
 	// NPCs
 	private static final int JANITT = 33851;
 	private static final int EYE_OF_ARGOS = 31683;
+	
 	// Monsters
 	private static final int[] MONSTERS =
 	{
@@ -51,6 +52,7 @@ public class Q10416_InSearchOfTheEyeOfArgos extends Quest
 		21299, // Valley Buffalo Slave
 		21304 // Valley Grendel Slave
 	};
+	
 	// Misc
 	private static final int MIN_LEVEL = 70;
 	private static final int MAX_LEVEL = 75;
@@ -109,6 +111,7 @@ public class Q10416_InSearchOfTheEyeOfArgos extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -133,6 +136,7 @@ public class Q10416_InSearchOfTheEyeOfArgos extends Quest
 				{
 					htmltext = "33851-05.html";
 				}
+				
 				if (qs.isCond(2) && (npc.getId() == EYE_OF_ARGOS))
 				{
 					htmltext = "31683-01.html";
@@ -148,6 +152,7 @@ public class Q10416_InSearchOfTheEyeOfArgos extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -184,6 +189,7 @@ public class Q10416_InSearchOfTheEyeOfArgos extends Quest
 				return holder;
 			}
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

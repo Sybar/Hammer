@@ -1144,9 +1144,9 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<cond>
+		<conditions>
 			<player MaximumVitalityPoints="140000" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="39621" level="1" /> <!-- Honey Rice Cakes -->
 		</skills>

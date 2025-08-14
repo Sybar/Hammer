@@ -35,15 +35,18 @@ public class Q10745_TheSecretIngredients extends Quest
 	private static final int DOLKIN = 33954;
 	private static final int KARLA = 33933;
 	private static final int DOLKIN_INSTANCE = 34002;
+	
 	// Mobs
 	private static final int KARAPHON = 23459;
 	private static final int KEEN_HONEYBEE = 23460;
 	private static final int KEEN_GROWLER = 23461;
+	
 	// Items
 	private static final ItemHolder DOLKIN_REPORT = new ItemHolder(39534, 1);
 	private static final ItemHolder SECRET_INGREDIENTS = new ItemHolder(39533, 1);
 	private static final ItemHolder FAERON_SUPPORT_BOX_MAGE = new ItemHolder(40263, 1);
 	private static final ItemHolder FAERON_SUPPORT_BOX = new ItemHolder(40262, 1);
+	
 	// Misc
 	private static final int MIN_LEVEL = 17;
 	private static final int MAX_LEVEL = 25;
@@ -100,6 +103,7 @@ public class Q10745_TheSecretIngredients extends Quest
 					{
 						giveItems(player, FAERON_SUPPORT_BOX);
 					}
+					
 					showOnScreenMsg(player, NpcStringId.CHECK_YOUR_EQUIPMENT_IN_YOUR_INVENTORY, ExShowScreenMessage.TOP_CENTER, 10000);
 					qs.exitQuest(false, true);
 				}
@@ -117,6 +121,7 @@ public class Q10745_TheSecretIngredients extends Quest
 				htmltext = null;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -160,6 +165,7 @@ public class Q10745_TheSecretIngredients extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -175,6 +181,7 @@ public class Q10745_TheSecretIngredients extends Quest
 				giveItems(killer, SECRET_INGREDIENTS);
 				qs.setCond(2, true);
 			}
+			
 			if ((++killedMobs) == 3)
 			{
 				startQuestTimer("SPAWN_DOLKIN", 5000, npc, killer);

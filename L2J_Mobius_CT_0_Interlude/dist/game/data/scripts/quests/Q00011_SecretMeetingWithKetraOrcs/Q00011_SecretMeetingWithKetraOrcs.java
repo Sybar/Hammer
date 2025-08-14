@@ -32,6 +32,7 @@ public class Q00011_SecretMeetingWithKetraOrcs extends Quest
 	private static final int CADMON = 31296;
 	private static final int LEON = 31256;
 	private static final int WAHKAN = 31371;
+	
 	// Items
 	private static final int MUNITIONS_BOX = 7231;
 	

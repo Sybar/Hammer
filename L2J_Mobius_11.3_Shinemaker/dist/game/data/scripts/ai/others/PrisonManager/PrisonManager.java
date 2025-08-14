@@ -50,6 +50,7 @@ public class PrisonManager extends AbstractNpcAI
 	private static final int AMOROSO = 34642;
 	private static final int DELICATO = 34643;
 	private static final int COMODO = 34644;
+	
 	// Misc
 	private static final ScriptZone PRISON_ZONE_1 = ZoneManager.getInstance().getZoneById(26010, ScriptZone.class);
 	private static final ScriptZone PRISON_ZONE_2 = ZoneManager.getInstance().getZoneById(26011, ScriptZone.class);
@@ -202,6 +203,7 @@ public class PrisonManager extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

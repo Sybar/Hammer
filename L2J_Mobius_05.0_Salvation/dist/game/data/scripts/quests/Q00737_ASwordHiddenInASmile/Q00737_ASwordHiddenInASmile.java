@@ -38,14 +38,17 @@ public class Q00737_ASwordHiddenInASmile extends Quest
 {
 	// NPCs
 	private static final int HISTY = 34243;
+	
 	// Monsters
 	private static final int[] MONSTERS =
 	{
 		23816, // Batus Ohm
 		23817, // Kshana Oma
 	};
+	
 	// Misc
 	private static final int MIN_LEVEL = 102;
+	
 	// Items
 	private static final int FIGHTER_STONE_SHARD = 48166;
 	private static final int PROOF_OF_LIBERTY = 48165;
@@ -101,6 +104,7 @@ public class Q00737_ASwordHiddenInASmile extends Quest
 					htmltext = "34243-04b.htm";
 					break;
 				}
+				
 				htmltext = "34243-04.htm";
 				break;
 			}
@@ -116,6 +120,7 @@ public class Q00737_ASwordHiddenInASmile extends Quest
 					htmltext = "34243-04b.htm";
 					break;
 				}
+				
 				htmltext = "34243-04.htm";
 				break;
 			}
@@ -158,6 +163,7 @@ public class Q00737_ASwordHiddenInASmile extends Quest
 							{
 								giveItems(player, BASIC_SUPPLY_BOX, 1);
 							}
+							
 							addExpAndSp(player, 22_221_427_950L, 22_221_360);
 							giveItems(player, FIGHTER_STONE_SHARD, 1);
 							addFactionPoints(player, Faction.GIANT_TRACKERS, 100);
@@ -186,6 +192,7 @@ public class Q00737_ASwordHiddenInASmile extends Quest
 							{
 								giveItems(player, INTERMEDIATE_SUPPLY_BOX, 1);
 							}
+							
 							addExpAndSp(player, 44_442_855_900L, 44_442_720);
 							giveItems(player, FIGHTER_STONE_SHARD, 3);
 							addFactionPoints(player, Faction.GIANT_TRACKERS, 200);
@@ -214,6 +221,7 @@ public class Q00737_ASwordHiddenInASmile extends Quest
 							{
 								giveItems(player, ADVANCED_SUPPLY_BOX, 1);
 							}
+							
 							addExpAndSp(player, 66_664_283_850L, 66_664_080);
 							giveItems(player, FIGHTER_STONE_SHARD, 5);
 							addFactionPoints(player, Faction.GIANT_TRACKERS, 300);
@@ -230,6 +238,7 @@ public class Q00737_ASwordHiddenInASmile extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -261,6 +270,7 @@ public class Q00737_ASwordHiddenInASmile extends Quest
 							htmltext = "34243-04b.htm";
 							break;
 						}
+						
 						htmltext = "34243-04.htm";
 						break;
 					}
@@ -303,6 +313,7 @@ public class Q00737_ASwordHiddenInASmile extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

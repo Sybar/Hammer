@@ -38,12 +38,14 @@ public class Aizen extends AbstractNpcAI
 {
 	// NPC
 	private static final int AIZEN = 25937;
+	
 	// Locations
 	private static final Location[] SPAWNS =
 	{
 		new Location(15741, 248760, -1586),
 		new Location(13811, 250138, -1693),
 	};
+	
 	// Misc
 	private static final int ALIVE_MILLISECONDS = 3600000;
 	private static final String AIZEN_RESPAWN_PATTERN = "0 13 * * 6";
@@ -98,6 +100,7 @@ public class Aizen extends AbstractNpcAI
 				{
 					_startTask.cancel(true);
 				}
+				
 				_startTask = ThreadPool.schedule(new ScheduleAiTask(), (getNextRespawn() - System.currentTimeMillis()));
 			}
 		}

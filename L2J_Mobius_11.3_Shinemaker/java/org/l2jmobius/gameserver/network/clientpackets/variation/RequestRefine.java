@@ -159,6 +159,7 @@ public class RequestRefine extends AbstractRefinePacket
 		{
 			player.addRequest(new VariationRequest(player));
 		}
+		
 		final VariationRequest request = player.getRequest(VariationRequest.class);
 		request.setAugmentedItem(_targetItemObjId);
 		request.setAugment(augment);

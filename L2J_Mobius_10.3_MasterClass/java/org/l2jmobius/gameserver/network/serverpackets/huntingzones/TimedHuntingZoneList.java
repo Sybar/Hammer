@@ -65,6 +65,7 @@ public class TimedHuntingZoneList extends ServerPacket
 			{
 				remainingTime = holder.getInitialTime();
 			}
+			
 			buffer.writeInt(remainingTime / 1000); // remain time
 			buffer.writeInt(holder.getMaximumAddedTime() / 1000);
 			buffer.writeInt(_player.getVariables().getInt(PlayerVariables.HUNTING_ZONE_REMAIN_REFILL + holder.getZoneId(), holder.getRemainRefillTime()));

@@ -37,6 +37,7 @@ public class Q10383_FergasonsOffer extends Quest
 	private static final int SIZRAK = 33669;
 	private static final int AKU = 33671;
 	private static final int FERGASON = 33681;
+	
 	// Monsters
 	private static final int[] MONSTERS =
 	{
@@ -48,8 +49,10 @@ public class Q10383_FergasonsOffer extends Quest
 		23218,
 		23219
 	};
+	
 	// Item
 	private static final int UNSTABLE_PETRA = 34958;
+	
 	// Misc
 	private static final int MIN_LEVEL = 97;
 	
@@ -105,6 +108,7 @@ public class Q10383_FergasonsOffer extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -156,6 +160,7 @@ public class Q10383_FergasonsOffer extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

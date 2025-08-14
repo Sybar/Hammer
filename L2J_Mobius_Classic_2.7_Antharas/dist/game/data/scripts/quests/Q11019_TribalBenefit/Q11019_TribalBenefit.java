@@ -39,6 +39,7 @@ public class Q11019_TribalBenefit extends Quest
 	// NPCs
 	private static final int NEWBIE_GUIDE = 30602;
 	private static final int TIKU = 30582;
+	
 	// Items
 	private static final int KASHA_WOLF_FUR = 90262;
 	private static final int ASHES_OF_ANCESTORS = 90263;
@@ -47,10 +48,12 @@ public class Q11019_TribalBenefit extends Quest
 	private static final int MARAKU_WEREWOLF_CLAW = 90266;
 	private static final int EYE_OF_SEER_TEARS = 90267;
 	private static final int TRIBAL_CHRONICLE = 90261;
+	
 	// Rewards
 	private static final int BUTCHERS_SWORD = 49052;
 	private static final int RING_NOVICE = 29497;
 	private static final int NECKLACE_NOVICE = 49039;
+	
 	// Monsters
 	private static final int KASHA_WOLF = 20475;
 	private static final int KASHA_FOREST_WOLF = 20477;
@@ -59,6 +62,7 @@ public class Q11019_TribalBenefit extends Quest
 	private static final int MOUNTAIN_FUNGUS = 20365;
 	private static final int MARAKU_WEREWOLF = 20363;
 	private static final int EYE_OF_SEER = 20426;
+	
 	// Misc
 	private static final int MIN_LEVEL = 2;
 	private static final int MAX_LEVEL = 20;
@@ -113,6 +117,7 @@ public class Q11019_TribalBenefit extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -294,6 +299,7 @@ public class Q11019_TribalBenefit extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

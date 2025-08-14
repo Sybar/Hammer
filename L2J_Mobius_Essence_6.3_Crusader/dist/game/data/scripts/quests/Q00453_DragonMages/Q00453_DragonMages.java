@@ -40,9 +40,11 @@ public class Q00453_DragonMages extends Quest
 {
 	// NPC
 	private static final int GENIE_LAMP = 34369;
+	
 	// Monsters
 	private static final int DRAGONTROOP_WIZARD = 22309;
 	private static final int DRAGONTROOP_ELITE_WIZARD = 22310;
+	
 	// Item
 	private static final ItemHolder HP_RECOVERY_POTION = new ItemHolder(91690, 30); // Special
 	// Misc
@@ -99,6 +101,7 @@ public class Q00453_DragonMages extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -137,6 +140,7 @@ public class Q00453_DragonMages extends Quest
 				htmltext = getAlreadyCompletedMsg(player);
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -172,6 +176,7 @@ public class Q00453_DragonMages extends Quest
 			holder.add(new NpcLogListHolder(NpcStringId.DEFEAT_MONSTERS_46.getId(), true, qs.getInt(KILL_COUNT_VAR)));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

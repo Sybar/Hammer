@@ -98,22 +98,27 @@ public abstract class AbstractItemPacket extends AbstractMaskPacket<ItemListType
 		{
 			writeItemAugment(item, buffer);
 		}
+		
 		if (containsMask(mask, ItemListType.ELEMENTAL_ATTRIBUTE))
 		{
 			writeItemElemental(item, buffer);
 		}
+		
 		if (containsMask(mask, ItemListType.ENCHANT_EFFECT))
 		{
 			writeItemEnchantEffect(item, buffer);
 		}
+		
 		if (containsMask(mask, ItemListType.VISUAL_ID))
 		{
 			buffer.writeInt(item.getVisualId()); // Item remodel visual ID
 		}
+		
 		if (containsMask(mask, ItemListType.SOUL_CRYSTAL))
 		{
 			writeItemEnsoulOptions(item, buffer);
 		}
+		
 		if (containsMask(mask, ItemListType.PET_EVOLVE))
 		{
 			final PetEvolveHolder petData = item.getPetData();
@@ -136,6 +141,7 @@ public abstract class AbstractItemPacket extends AbstractMaskPacket<ItemListType
 				buffer.writeLong(0);
 			}
 		}
+		
 		if (containsMask(mask, ItemListType.BLESSED))
 		{
 			buffer.writeByte(1);
@@ -165,22 +171,27 @@ public abstract class AbstractItemPacket extends AbstractMaskPacket<ItemListType
 		{
 			writeItemAugment(item, buffer);
 		}
+		
 		if (containsMask(mask, ItemListType.ELEMENTAL_ATTRIBUTE))
 		{
 			writeItemElemental(item, buffer);
 		}
+		
 		if (containsMask(mask, ItemListType.ENCHANT_EFFECT))
 		{
 			writeItemEnchantEffect(item, buffer);
 		}
+		
 		if (containsMask(mask, ItemListType.VISUAL_ID))
 		{
 			buffer.writeInt(item.getVisualId()); // Item remodel visual ID
 		}
+		
 		if (containsMask(mask, ItemListType.SOUL_CRYSTAL))
 		{
 			writeItemEnsoulOptions(item, buffer);
 		}
+		
 		if (containsMask(mask, ItemListType.PET_EVOLVE))
 		{
 			final PetEvolveHolder petData = item.getPetData();
@@ -203,6 +214,7 @@ public abstract class AbstractItemPacket extends AbstractMaskPacket<ItemListType
 				buffer.writeLong(0);
 			}
 		}
+		
 		if (containsMask(mask, ItemListType.BLESSED))
 		{
 			buffer.writeByte(1);
@@ -216,10 +228,12 @@ public abstract class AbstractItemPacket extends AbstractMaskPacket<ItemListType
 		{
 			mask |= ItemListType.AUGMENT_BONUS.getMask();
 		}
+		
 		if ((item.getAttackElementType() >= 0) || (item.getAttributeDefence(AttributeType.FIRE) > 0) || (item.getAttributeDefence(AttributeType.WATER) > 0) || (item.getAttributeDefence(AttributeType.WIND) > 0) || (item.getAttributeDefence(AttributeType.EARTH) > 0) || (item.getAttributeDefence(AttributeType.HOLY) > 0) || (item.getAttributeDefence(AttributeType.DARK) > 0))
 		{
 			mask |= ItemListType.ELEMENTAL_ATTRIBUTE.getMask();
 		}
+		
 		if (item.getEnchantOptions() != null)
 		{
 			for (int id : item.getEnchantOptions())
@@ -231,22 +245,27 @@ public abstract class AbstractItemPacket extends AbstractMaskPacket<ItemListType
 				}
 			}
 		}
+		
 		if (item.getVisualId() > 0)
 		{
 			mask |= ItemListType.VISUAL_ID.getMask();
 		}
+		
 		if (((item.getSoulCrystalOptions() != null) && !item.getSoulCrystalOptions().isEmpty()) || ((item.getSoulCrystalSpecialOptions() != null) && !item.getSoulCrystalSpecialOptions().isEmpty()))
 		{
 			mask |= ItemListType.SOUL_CRYSTAL.getMask();
 		}
+		
 		if (item.getItem().isPetItem() && (item.getPetData() != null))
 		{
 			mask |= ItemListType.PET_EVOLVE.getMask();
 		}
+		
 		if (item.isBlessed())
 		{
 			mask |= ItemListType.BLESSED.getMask();
 		}
+		
 		return mask;
 	}
 	
@@ -314,6 +333,7 @@ public abstract class AbstractItemPacket extends AbstractMaskPacket<ItemListType
 			{
 				buffer.writeInt(option.getId()); // Regular Soul Crystal Ability ID.
 			}
+			
 			buffer.writeByte(item.getSoulCrystalSpecialOptions().size()); // Size of special soul crystal options.
 			for (EnsoulOption option : item.getSoulCrystalSpecialOptions())
 			{

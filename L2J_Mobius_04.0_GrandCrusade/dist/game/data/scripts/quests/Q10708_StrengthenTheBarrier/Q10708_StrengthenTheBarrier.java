@@ -35,8 +35,10 @@ public class Q10708_StrengthenTheBarrier extends Quest
 	private static final int BARRIER_ENFORCER = 33960;
 	private static final int LAIKEL = 27519;
 	private static final int SEALBREAKER = 27523;
+	
 	// Items
 	private static final int KEY = 39509; // Barrier Enforcer Key
+	
 	// Misc
 	private static final int MIN_LEVEL = 52;
 	private static final int MAX_LEVEL = 57;
@@ -103,11 +105,13 @@ public class Q10708_StrengthenTheBarrier extends Quest
 					{
 						addExpAndSp(player, 20881876, 152);
 					}
+					
 					htmltext = event;
 				}
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -151,6 +155,7 @@ public class Q10708_StrengthenTheBarrier extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

@@ -78,6 +78,7 @@ public class ClanLevelData implements IXmlReader
 						{
 							MAX_CLAN_LEVEL = level;
 						}
+						
 						if (MAX_CLAN_EXP < exp)
 						{
 							MAX_CLAN_EXP = exp;

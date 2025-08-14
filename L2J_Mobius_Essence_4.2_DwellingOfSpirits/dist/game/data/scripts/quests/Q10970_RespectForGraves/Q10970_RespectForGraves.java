@@ -40,6 +40,7 @@ public class Q10970_RespectForGraves extends Quest
 {
 	// NPC
 	private static final int ORVEN = 30857;
+	
 	// Monsters
 	private static final int TAIK_ORC_WATCHMAN = 20666;
 	private static final int GRAVE_GUARD = 20668;
@@ -51,8 +52,10 @@ public class Q10970_RespectForGraves extends Quest
 	private static final int CRUEL_PUNISHER = 20998;
 	private static final int ROVING_SOUL = 20999;
 	private static final int SOUL_OF_RUNIS = 21000;
+	
 	// Reward
 	private static final ItemHolder ASOFE = new ItemHolder(92994, 1);
+	
 	// Misc
 	private static final String KILL_COUNT_VAR = "KillCount";
 	private static final int MIN_LEVEL = 45;
@@ -112,6 +115,7 @@ public class Q10970_RespectForGraves extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -139,6 +143,7 @@ public class Q10970_RespectForGraves extends Quest
 		{
 			htmltext = getAlreadyCompletedMsg(player);
 		}
+		
 		return htmltext;
 	}
 	
@@ -173,6 +178,7 @@ public class Q10970_RespectForGraves extends Quest
 			holder.add(new NpcLogListHolder(NpcStringId.KILL_MONSTERS_IN_THE_CEMETERY.getId(), true, qs.getInt(KILL_COUNT_VAR)));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

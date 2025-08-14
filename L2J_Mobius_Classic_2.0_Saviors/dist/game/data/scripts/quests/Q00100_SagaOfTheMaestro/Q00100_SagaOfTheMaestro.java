@@ -48,6 +48,7 @@ public class Q00100_SagaOfTheMaestro extends Quest
 	private static final int TABLET_OF_VISION_3 = 31652;
 	private static final int TABLET_OF_VISION_4 = 31658;
 	private static final int TOBALD_1 = 31596;
+	
 	// Monsters
 	private static final int ICE_MONSTER = 27316;
 	private static final int SPIRIT_OF_A_DROWNED = 27317;
@@ -63,6 +64,7 @@ public class Q00100_SagaOfTheMaestro extends Quest
 	private static final int ARCHANGEL_ICONOCLASSIS = 27257;
 	private static final int HALISHA_ARCHON = 27219;
 	private static final int ASSASSIN_FROST = 27308;
+	
 	// Items
 	private static final int ICE_CRYSTAL_FRAGMENT = 49834;
 	private static final int HALISHA_BADGE = 7515;
@@ -71,8 +73,10 @@ public class Q00100_SagaOfTheMaestro extends Quest
 	private static final int RESONANCE_AMULET_3 = 7360;
 	private static final int RESONANCE_AMULET_4 = 7391;
 	private static final int COOLANT_REPAIR = 7607;
+	
 	// Reward
 	private static final int BOOK_KUKURU = 90041;
+	
 	// Misc
 	private static final String KILL_COUNT_VAR = "KillCount";
 	
@@ -95,6 +99,7 @@ public class Q00100_SagaOfTheMaestro extends Quest
 		{
 			return null;
 		}
+		
 		String htmltext = event;
 		switch (event)
 		{
@@ -242,6 +247,7 @@ public class Q00100_SagaOfTheMaestro extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -430,6 +436,7 @@ public class Q00100_SagaOfTheMaestro extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -500,6 +507,7 @@ public class Q00100_SagaOfTheMaestro extends Quest
 						{
 							qs.set(KILL_COUNT_VAR, count + 1);
 						}
+						
 						if (count >= 20)
 						{
 							qs.setCond(8, true);
@@ -526,8 +534,10 @@ public class Q00100_SagaOfTheMaestro extends Quest
 			{
 				holder.add(new NpcLogListHolder(KEEPER_OF_THE_HOLY_EDICT, false, guardiancount));
 			}
+			
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

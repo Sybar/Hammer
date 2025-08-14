@@ -23,7 +23,7 @@ package org.l2jmobius.gameserver.network.serverpackets;
 import org.l2jmobius.commons.network.WritableBuffer;
 import org.l2jmobius.gameserver.model.VariationInstance;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.actor.enums.player.Shortcut;
+import org.l2jmobius.gameserver.model.actor.holders.player.Shortcut;
 import org.l2jmobius.gameserver.model.item.instance.Item;
 import org.l2jmobius.gameserver.network.GameClient;
 import org.l2jmobius.gameserver.network.ServerPackets;
@@ -77,6 +77,7 @@ public class ShortcutRegister extends ServerPacket
 						buffer.writeInt(0);
 						buffer.writeInt(0);
 					}
+					
 					buffer.writeInt(item.getVisualId());
 				}
 				else

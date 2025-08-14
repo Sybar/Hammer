@@ -47,10 +47,12 @@ public class PAttackFinalizer implements IStatFunction
 		{
 			baseValue *= Config.CHAMPION_ATK;
 		}
+		
 		if (creature.isRaid())
 		{
 			baseValue *= Config.RAID_PATTACK_MULTIPLIER;
 		}
+		
 		baseValue *= BaseStat.STR.calcBonus(creature) * creature.getLevelMod();
 		return validateValue(creature, Stat.defaultValue(creature, stat, baseValue), 0, creature.isPlayable() ? Config.MAX_PATK : Double.MAX_VALUE);
 	}
@@ -62,6 +64,7 @@ public class PAttackFinalizer implements IStatFunction
 		{
 			return (3 * Math.max(enchantLevel - 3, 0)) + (3 * Math.max(enchantLevel - 6, 0));
 		}
+		
 		return (2 * Math.max(enchantLevel - 3, 0)) + (2 * Math.max(enchantLevel - 6, 0));
 	}
 }

@@ -40,9 +40,11 @@ public class Q10459_ASickAmbition extends Quest
 	// NPCs
 	private static final int LEONA_BLACKBIRD = 31595;
 	private static final int LEONA_BLACKBIRD_2 = 33899;
+	
 	// Boss
 	private static final int DARION = 25603;
 	private static final int BELETH = 29118;
+	
 	// Misc
 	private static final int MIN_LEVEL = 99;
 	private static final int SP_RUNE_PACK = 37903;
@@ -93,6 +95,7 @@ public class Q10459_ASickAmbition extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -138,6 +141,7 @@ public class Q10459_ASickAmbition extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

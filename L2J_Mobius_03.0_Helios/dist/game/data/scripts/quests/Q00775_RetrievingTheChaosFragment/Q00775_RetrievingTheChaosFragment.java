@@ -39,6 +39,7 @@ public class Q00775_RetrievingTheChaosFragment extends Quest
 {
 	// NPCs
 	private static final int LEONA_BLACKBIRD = 31595;
+	
 	// Monsters
 	private static final int[] MONSTERS =
 	{
@@ -66,8 +67,10 @@ public class Q00775_RetrievingTheChaosFragment extends Quest
 		23362, // Amos Soldier
 		23365, // Ailith Hunter
 	};
+	
 	// Misc
 	private static final int MIN_LEVEL = 99;
+	
 	// Item
 	private static final int CHAOS_FRAGMENT = 37766;
 	private static final int BASIC_SUPPLY_BOX = 47172;
@@ -130,12 +133,14 @@ public class Q00775_RetrievingTheChaosFragment extends Quest
 						giveItems(player, ADVANCED_SUPPLY_BOX, 1);
 						addExpAndSp(player, 13567108500L, 32560920);
 					}
+					
 					qs.exitQuest(QuestType.DAILY, true);
 					htmltext = event;
 					break;
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -155,6 +160,7 @@ public class Q00775_RetrievingTheChaosFragment extends Quest
 						htmltext = "31595-08.html";
 						break;
 					}
+					
 					qs.setState(State.CREATED);
 				}
 				case State.CREATED:
@@ -187,6 +193,7 @@ public class Q00775_RetrievingTheChaosFragment extends Quest
 		{
 			htmltext = "31595-08.html";
 		}
+		
 		return htmltext;
 	}
 	

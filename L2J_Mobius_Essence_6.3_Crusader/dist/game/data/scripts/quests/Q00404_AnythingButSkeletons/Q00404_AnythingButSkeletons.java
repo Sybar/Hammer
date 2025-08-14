@@ -40,14 +40,17 @@ public class Q00404_AnythingButSkeletons extends Quest
 {
 	// NPC
 	private static final int GENIE_LAMP = 34369;
+	
 	// Monsters
 	private static final int DOOM_SERVANT = 21006;
 	private static final int DOOM_GUARD = 21007;
 	private static final int GRAVEYARD_LICH = 21003;
 	private static final int DISMAL_OAK = 21004;
 	private static final int GRAVEYARD_PREDATOR = 21005;
+	
 	// Item
 	private static final ItemHolder SAYHA_SCROLL = new ItemHolder(93274, 4);
+	
 	// Misc
 	private static final int MIN_LEVEL = 52;
 	private static final int MAX_LEVEL = 56;
@@ -102,6 +105,7 @@ public class Q00404_AnythingButSkeletons extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -140,6 +144,7 @@ public class Q00404_AnythingButSkeletons extends Quest
 				htmltext = getAlreadyCompletedMsg(player);
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -175,6 +180,7 @@ public class Q00404_AnythingButSkeletons extends Quest
 			holder.add(new NpcLogListHolder(NpcStringId.DEFEAT_MONSTERS_4.getId(), true, qs.getInt(KILL_COUNT_VAR)));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

@@ -753,9 +753,9 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_freightable" val="true" />
 		<set name="for_npc" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="49452" level="1" /> <!-- Scroll: Boost Pet's Attack -->
 		</skills>
@@ -777,9 +777,9 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_freightable" val="true" />
 		<set name="for_npc" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="49453" level="1" /> <!-- Scroll: Boost Pet's Defense -->
 		</skills>

@@ -48,6 +48,7 @@ public class Q10966_ATripBegins extends Quest
 	private static final int CAPTAIN_BATHIS = 30332;
 	private static final int MATHORN = 34139;
 	private static final int BELLA = 30256;
+	
 	// Items
 	private static final ItemHolder SOE_TO_CAPTAIN_BATHIS = new ItemHolder(91651, 1);
 	private static final ItemHolder SOE_NOVICE = new ItemHolder(10650, 10);
@@ -55,6 +56,7 @@ public class Q10966_ATripBegins extends Quest
 	private static final ItemHolder SCROLL_OF_ENCHANT_TALISMAN_OF_ADEN = new ItemHolder(91756, 1);
 	private static final ItemHolder ADVENTURERS_BRACELET = new ItemHolder(91934, 1);
 	private static final ItemHolder SCROLL_OF_ENCHANT_ADEN_WEAPON = new ItemHolder(93038, 2);
+	
 	// Monsters
 	private static final int ARACHNID_PREDATOR = 20926;
 	private static final int SKELETON_BOWMAN = 20051;
@@ -62,8 +64,10 @@ public class Q10966_ATripBegins extends Quest
 	private static final int RAGING_SPARTOI = 20060;
 	private static final int TUMRAN_BUGBEAR = 20062;
 	private static final int TUMRAN_BUGBEAR_WARRIOR = 20064;
+	
 	// Location
 	private static final Location TELEPORT_LOCATION = new Location(-14443, 123984, -3120);
+	
 	// Misc
 	private static final int MIN_LEVEL = 20;
 	private static final int MAX_LEVEL = 25;
@@ -172,6 +176,7 @@ public class Q10966_ATripBegins extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -258,6 +263,7 @@ public class Q10966_ATripBegins extends Quest
 		{
 			htmltext = getAlreadyCompletedMsg(player);
 		}
+		
 		return htmltext;
 	}
 	
@@ -294,6 +300,7 @@ public class Q10966_ATripBegins extends Quest
 			holder.add(new NpcLogListHolder(NpcStringId.KILL_MONSTERS_IN_THE_RUINS_OF_AGONY.getId(), true, qs.getInt(KILL_COUNT_VAR)));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

@@ -41,7 +41,7 @@ import org.l2jmobius.gameserver.network.SystemMessageId;
 public class ExtractableItems implements IItemHandler
 {
 	@Override
-	public boolean useItem(Playable playable, Item item, boolean forceUse)
+	public boolean onItemUse(Playable playable, Item item, boolean forceUse)
 	{
 		if (!playable.isPlayer())
 		{
@@ -94,6 +94,7 @@ public class ExtractableItems implements IItemHandler
 						createItemAmount--;
 					}
 				}
+				
 				created = true;
 			}
 		}
@@ -102,6 +103,7 @@ public class ExtractableItems implements IItemHandler
 		{
 			player.sendPacket(SystemMessageId.THE_ATTEMPT_FOR_ITEM_CONVERSION_HAS_FAILED);
 		}
+		
 		return true;
 	}
 }

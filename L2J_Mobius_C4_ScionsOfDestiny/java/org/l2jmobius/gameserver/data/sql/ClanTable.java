@@ -147,6 +147,7 @@ public class ClanTable
 				return clan;
 			}
 		}
+		
 		return null;
 	}
 	
@@ -168,21 +169,25 @@ public class ClanTable
 			player.sendPacket(SystemMessageId.YOU_ARE_NOT_QUALIFIED_TO_CREATE_A_CLAN);
 			return null;
 		}
+		
 		if (0 != player.getClanId())
 		{
 			player.sendPacket(SystemMessageId.YOU_HAVE_FAILED_TO_CREATE_A_CLAN);
 			return null;
 		}
+		
 		if (System.currentTimeMillis() < player.getClanCreateExpiryTime())
 		{
 			player.sendPacket(SystemMessageId.YOU_CANNOT_CREATE_A_NEW_CLAN_WITHIN_10_DAYS_OF_DISPERSION);
 			return null;
 		}
+		
 		if (!StringUtil.isAlphaNumeric(clanName) || (2 > clanName.length()))
 		{
 			player.sendPacket(SystemMessageId.CLAN_NAME_IS_INCORRECT);
 			return null;
 		}
+		
 		if (16 < clanName.length())
 		{
 			player.sendPacket(SystemMessageId.CLAN_NAME_S_LENGTH_IS_INCORRECT);
@@ -337,6 +342,7 @@ public class ClanTable
 			{
 				return;
 			}
+			
 			if (getClan(clanId).getDissolvingExpiryTime() != 0)
 			{
 				destroyClan(clanId);
@@ -353,6 +359,7 @@ public class ClanTable
 				return true;
 			}
 		}
+		
 		return false;
 	}
 	
@@ -389,6 +396,7 @@ public class ClanTable
 		SystemMessage msg = new SystemMessage(SystemMessageId.CLAN_WAR_HAS_BEEN_DECLARED_AGAINST_S1_CLAN_IF_YOU_ARE_KILLED_DURING_THE_CLAN_WAR_BY_MEMBERS_OF_THE_OPPOSING_CLAN_THE_EXPERIENCE_PENALTY_WILL_BE_REDUCED_TO_1_4_OF_NORMAL);
 		msg.addString(clan2.getName());
 		clan1.broadcastToOnlineMembers(msg);
+		
 		// msg = new SystemMessage(SystemMessageId.WAR_WITH_THE_S1_CLAN_HAS_BEGUN);
 		// msg.addString(clan1.getName());
 		// clan2.broadcastToOnlineMembers(msg);
@@ -444,7 +452,8 @@ public class ClanTable
 				count++;
 			}
 		}
-		if (count == (clan1.getMembers().length - 1))
+		
+		if (count == (clan1.getMembers().size() - 1))
 		{
 			clan1.deleteEnemyClan(clan2);
 			clan2.deleteEnemyClan(clan1);
@@ -513,6 +522,7 @@ public class ClanTable
 				}
 			}
 		}
+		
 		return clanAllies;
 	}
 	

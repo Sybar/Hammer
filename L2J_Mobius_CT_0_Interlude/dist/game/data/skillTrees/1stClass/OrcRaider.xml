@@ -21,6 +21,7 @@
 		<skill skillName="Two-handed Weapon Mastery" skillId="293" skillLevel="1" getLevel="20" levelUpSp="3400" learnedByNpc="true" />
 		<skill skillName="Boost HP" skillId="211" skillLevel="1" getLevel="20" levelUpSp="3400" learnedByNpc="true" />
 		<skill skillName="Bandage" skillId="34" skillLevel="1" getLevel="20" levelUpSp="3400" learnedByNpc="true" />
+
 		<skill skillName="Sword Blunt Mastery" skillId="257" skillLevel="2" getLevel="24" levelUpSp="5300" learnedByNpc="true" />
 		<skill skillName="Polearm Mastery" skillId="216" skillLevel="2" getLevel="24" levelUpSp="5300" learnedByNpc="true" />
 		<skill skillName="Light Armor Mastery" skillId="227" skillLevel="3" getLevel="24" levelUpSp="2700" learnedByNpc="true" />
@@ -42,6 +43,7 @@
 		<skill skillName="Vital Force" skillId="148" skillLevel="1" getLevel="24" levelUpSp="5300" learnedByNpc="true" />
 		<skill skillName="Rage" skillId="94" skillLevel="1" getLevel="24" levelUpSp="5300" learnedByNpc="true" />
 		<skill skillName="Accuracy" skillId="256" skillLevel="1" getLevel="24" levelUpSp="5300" learnedByNpc="true" />
+
 		<skill skillName="Sword Blunt Mastery" skillId="257" skillLevel="3" getLevel="28" levelUpSp="5500" learnedByNpc="true" />
 		<skill skillName="Sword Blunt Mastery" skillId="257" skillLevel="4" getLevel="28" levelUpSp="5500" learnedByNpc="true" />
 		<skill skillName="Polearm Mastery" skillId="216" skillLevel="3" getLevel="28" levelUpSp="5500" learnedByNpc="true" />
@@ -65,6 +67,7 @@
 		<skill skillName="Two-handed Weapon Mastery" skillId="293" skillLevel="3" getLevel="28" levelUpSp="11000" learnedByNpc="true" />
 		<skill skillName="Boost HP" skillId="211" skillLevel="2" getLevel="28" levelUpSp="11000" learnedByNpc="true" />
 		<skill skillName="Battle Roar" skillId="121" skillLevel="1" getLevel="28" levelUpSp="11000" learnedByNpc="true" />
+
 		<skill skillName="Sword Blunt Mastery" skillId="257" skillLevel="5" getLevel="32" levelUpSp="8300" learnedByNpc="true" />
 		<skill skillName="Sword Blunt Mastery" skillId="257" skillLevel="6" getLevel="32" levelUpSp="8300" learnedByNpc="true" />
 		<skill skillName="Polearm Mastery" skillId="216" skillLevel="5" getLevel="32" levelUpSp="8300" learnedByNpc="true" />
@@ -89,6 +92,7 @@
 		<skill skillName="Fast HP Recovery" skillId="212" skillLevel="2" getLevel="32" levelUpSp="17000" learnedByNpc="true" />
 		<skill skillName="Vital Force" skillId="148" skillLevel="2" getLevel="32" levelUpSp="17000" learnedByNpc="true" />
 		<skill skillName="Frenzy" skillId="176" skillLevel="1" getLevel="32" levelUpSp="17000" learnedByNpc="true" />
+
 		<skill skillName="Sword Blunt Mastery" skillId="257" skillLevel="7" getLevel="36" levelUpSp="13000" learnedByNpc="true" />
 		<skill skillName="Sword Blunt Mastery" skillId="257" skillLevel="8" getLevel="36" levelUpSp="13000" learnedByNpc="true" />
 		<skill skillName="Polearm Mastery" skillId="216" skillLevel="7" getLevel="36" levelUpSp="13000" learnedByNpc="true" />

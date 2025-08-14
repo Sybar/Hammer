@@ -87,6 +87,7 @@ public class DailyMissionData implements IXmlReader
 				{
 					return;
 				}
+				
 				items.add(new ItemHolder(itemId, itemCount));
 			}));
 			
@@ -130,6 +131,7 @@ public class DailyMissionData implements IXmlReader
 				missionData.add(mission);
 			}
 		}
+		
 		return missionData;
 	}
 	

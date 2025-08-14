@@ -259,6 +259,7 @@ public class LimitShopCraftData implements IXmlReader
 											LOGGER.warning(getClass().getSimpleName() + ": Item template for itemId: " + productionId + " should be stackable!");
 										}
 									}
+									
 									if (productionId2 > 0)
 									{
 										final ItemTemplate template = ItemData.getInstance().getTemplate(productionId2);
@@ -273,6 +274,7 @@ public class LimitShopCraftData implements IXmlReader
 											LOGGER.warning(getClass().getSimpleName() + ": Item template for itemId: " + productionId2 + " should be stackable!");
 										}
 									}
+									
 									if (productionId3 > 0)
 									{
 										final ItemTemplate template = ItemData.getInstance().getTemplate(productionId3);
@@ -287,6 +289,7 @@ public class LimitShopCraftData implements IXmlReader
 											LOGGER.warning(getClass().getSimpleName() + ": Item template for itemId: " + productionId3 + " should be stackable!");
 										}
 									}
+									
 									if (productionId4 > 0)
 									{
 										final ItemTemplate template = ItemData.getInstance().getTemplate(productionId4);
@@ -301,6 +304,7 @@ public class LimitShopCraftData implements IXmlReader
 											LOGGER.warning(getClass().getSimpleName() + ": Item template for itemId: " + productionId4 + " should be stackable!");
 										}
 									}
+									
 									if (productionId5 > 0)
 									{
 										final ItemTemplate template = ItemData.getInstance().getTemplate(productionId5);
@@ -320,14 +324,17 @@ public class LimitShopCraftData implements IXmlReader
 									{
 										chance = 100;
 									}
+									
 									if (productionId3 == 0)
 									{
 										chance2 = 100;
 									}
+									
 									if (productionId4 == 0)
 									{
 										chance3 = 100;
 									}
+									
 									if (productionId5 == 0)
 									{
 										chance4 = 100;
@@ -352,6 +359,7 @@ public class LimitShopCraftData implements IXmlReader
 				return product;
 			}
 		}
+		
 		return null;
 	}
 	

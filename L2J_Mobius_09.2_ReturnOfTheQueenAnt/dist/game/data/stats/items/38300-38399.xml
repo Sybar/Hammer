@@ -11,9 +11,9 @@
 		<set name="price" val="50000" />
 		<set name="commissionItemType" val="HAIR_ACCESSORY" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player sex="1" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="17465" level="1" /> <!-- Daisy Hairpin: CON -->
 		</skills>
@@ -29,9 +29,9 @@
 		<set name="price" val="50000" />
 		<set name="commissionItemType" val="HAIR_ACCESSORY" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player sex="1" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="17466" level="1" /> <!-- Daisy Hairpin: MEN -->
 		</skills>
@@ -47,9 +47,9 @@
 		<set name="price" val="50000" />
 		<set name="commissionItemType" val="HAIR_ACCESSORY" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player sex="1" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="17467" level="1" /> <!-- Daisy Hairpin: INT -->
 		</skills>
@@ -65,9 +65,9 @@
 		<set name="price" val="50000" />
 		<set name="commissionItemType" val="HAIR_ACCESSORY" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player sex="1" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="17468" level="1" /> <!-- Daisy Hairpin: WIT -->
 		</skills>
@@ -83,9 +83,9 @@
 		<set name="price" val="50000" />
 		<set name="commissionItemType" val="HAIR_ACCESSORY" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player sex="1" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="17469" level="1" /> <!-- Daisy Hairpin: Critical Rate -->
 		</skills>
@@ -101,9 +101,9 @@
 		<set name="price" val="50000" />
 		<set name="commissionItemType" val="HAIR_ACCESSORY" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player sex="1" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="17470" level="1" /> <!-- Daisy Hairpin: Critical Damage -->
 		</skills>
@@ -119,9 +119,9 @@
 		<set name="price" val="50000" />
 		<set name="commissionItemType" val="HAIR_ACCESSORY" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player sex="1" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="17471" level="1" /> <!-- Daisy Hairpin: P. Def. -->
 		</skills>
@@ -137,9 +137,9 @@
 		<set name="price" val="50000" />
 		<set name="commissionItemType" val="HAIR_ACCESSORY" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player sex="1" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="17472" level="1" /> <!-- Daisy Hairpin: M. Def. -->
 		</skills>
@@ -155,9 +155,9 @@
 		<set name="price" val="50000" />
 		<set name="commissionItemType" val="HAIR_ACCESSORY" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player sex="1" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="17473" level="1" /> <!-- Daisy Hairpin: Evasion -->
 		</skills>
@@ -173,9 +173,9 @@
 		<set name="price" val="50000" />
 		<set name="commissionItemType" val="HAIR_ACCESSORY" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player sex="1" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="17474" level="1" /> <!-- Daisy Hairpin: P. Atk. -->
 		</skills>
@@ -191,9 +191,9 @@
 		<set name="price" val="50000" />
 		<set name="commissionItemType" val="HAIR_ACCESSORY" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player sex="1" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="17475" level="1" /> <!-- Daisy Hairpin: M. Atk. -->
 		</skills>
@@ -209,9 +209,9 @@
 		<set name="price" val="50000" />
 		<set name="commissionItemType" val="HAIR_ACCESSORY" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player sex="1" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="17476" level="1" /> <!-- Daisy Hairpin: Accuracy -->
 		</skills>

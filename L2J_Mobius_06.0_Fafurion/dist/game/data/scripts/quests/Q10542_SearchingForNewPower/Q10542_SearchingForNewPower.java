@@ -48,10 +48,12 @@ public class Q10542_SearchingForNewPower extends Quest
 	private static final int SHANNON = 32974;
 	private static final int TOYRON = 33004;
 	private static final int THIEF = 23121;
+	
 	// Items
 	private static final int THE_WAR_OF_GODS_AND_GIANTS = 17575;
 	private static final int SOULSHOTS = 5789;
 	private static final int SPIRITSHOTS = 5790;
+	
 	// Misc
 	public static final int KILL_COUNT_VAR = 0;
 	private static final int MAX_LEVEL = 20;
@@ -122,6 +124,7 @@ public class Q10542_SearchingForNewPower extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -216,6 +219,7 @@ public class Q10542_SearchingForNewPower extends Quest
 								break;
 							}
 						}
+						
 						if (npcStringId != null)
 						{
 							showOnScreenMsg(player, npcStringId, ExShowScreenMessage.TOP_CENTER, 4500);
@@ -234,6 +238,7 @@ public class Q10542_SearchingForNewPower extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -246,6 +251,7 @@ public class Q10542_SearchingForNewPower extends Quest
 		{
 			holder.add(new NpcLogListHolder(THIEF, false, qs.getMemoStateEx(KILL_COUNT_VAR)));
 		}
+		
 		return holder;
 	}
 }

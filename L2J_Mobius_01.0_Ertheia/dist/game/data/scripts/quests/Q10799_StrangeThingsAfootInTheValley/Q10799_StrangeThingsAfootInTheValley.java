@@ -42,6 +42,7 @@ public class Q10799_StrangeThingsAfootInTheValley extends Quest
 {
 	// NPCs
 	private static final int NAMO = 33973;
+	
 	// Monsters
 	private static final int[] MONSTERS =
 	{
@@ -58,8 +59,10 @@ public class Q10799_StrangeThingsAfootInTheValley extends Quest
 		23440, // Headless Knight
 		23447 // Gust Spiral
 	};
+	
 	// Items
 	private static final int EAS = 960;
+	
 	// Misc
 	private static final int MIN_LEVEL = 76;
 	private static final int MAX_LEVEL = 85;
@@ -113,6 +116,7 @@ public class Q10799_StrangeThingsAfootInTheValley extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -139,6 +143,7 @@ public class Q10799_StrangeThingsAfootInTheValley extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -175,6 +180,7 @@ public class Q10799_StrangeThingsAfootInTheValley extends Quest
 				return holder;
 			}
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

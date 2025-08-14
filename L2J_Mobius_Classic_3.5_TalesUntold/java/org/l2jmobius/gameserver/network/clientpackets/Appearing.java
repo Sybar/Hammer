@@ -46,6 +46,7 @@ public class Appearing extends ClientPacket
 		{
 			return;
 		}
+		
 		if (player.isTeleporting())
 		{
 			player.onTeleported();

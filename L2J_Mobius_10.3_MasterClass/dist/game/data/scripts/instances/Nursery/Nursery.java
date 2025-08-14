@@ -54,17 +54,21 @@ public class Nursery extends AbstractInstance
 		23036, // Failed Creation
 		23037, // Failed Creation
 	};
+	
 	// Items
 	private static final int SCORE_ITEM = 17610; // Tissue Energy Residue
 	private static final int REWARD_ITEM = 17602; // Tissue Energy Crystal
+	
 	// Skill
 	private static final SkillHolder ENERGY_SKILL_1 = new SkillHolder(14228, 1);
 	private static final SkillHolder ENERGY_SKILL_2 = new SkillHolder(14229, 1);
 	private static final SkillHolder ENERGY_SKILL_3 = new SkillHolder(14230, 1);
 	private static final SkillHolder MAGUEN_STEAL_SKILL = new SkillHolder(14235, 1);
+	
 	// Zones
 	private static final ScriptZone ENTER_ZONE_1 = ZoneManager.getInstance().getZoneById(23601, ScriptZone.class);
 	private static final ScriptZone ENTER_ZONE_2 = ZoneManager.getInstance().getZoneById(23602, ScriptZone.class);
+	
 	// Misc
 	private static final int TEMPLATE_ID = 171;
 	
@@ -106,6 +110,7 @@ public class Nursery extends AbstractInstance
 								takeItems(firstPlayer, SCORE_ITEM, itemCount);
 								npcVars.increaseInt("GAME_POINTS", 0, itemCount);
 							}
+							
 							instance.despawnGroup("GAME_MONSTERS");
 							npcVars.set("GAME_STAGE", 2);
 						}
@@ -188,6 +193,7 @@ public class Nursery extends AbstractInstance
 				player.getEffectList().stopSkillEffects(SkillFinishType.REMOVED, ENERGY_SKILL_3.getSkill());
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -269,6 +275,7 @@ public class Nursery extends AbstractInstance
 				}
 			}
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	
@@ -299,6 +306,7 @@ public class Nursery extends AbstractInstance
 						{
 							gameManager.getVariables().increaseInt("GAME_POINTS", returnPoint);
 						}
+						
 						showOnScreenMsg(instance, NpcStringId.MAGUEN_IS_SURPRISED_AND_LOSES_S1_PIECES_OF_BIO_ENERGY_RESIDUE, ExShowScreenMessage.MIDDLE_CENTER, 3000, String.valueOf(returnPoint));
 						npc.setTargetable(false);
 						npc.doDie(null);
@@ -340,6 +348,7 @@ public class Nursery extends AbstractInstance
 						break;
 					}
 				}
+				
 				instance.broadcastPacket(new Earthquake(npc, 50, 3));
 				showOnScreenMsg(instance, NpcStringId.RECEIVED_REGENERATION_ENERGY, ExShowScreenMessage.MIDDLE_CENTER, 2000);
 			}
@@ -414,6 +423,7 @@ public class Nursery extends AbstractInstance
 					{
 						decreasePoints = getRandom(gamePoints) + 1;
 					}
+					
 					npc.setTargetable(true);
 					managerVars.increaseInt("GAME_POINTS", decreasePoints * -1);
 					showOnScreenMsg(instance, NpcStringId.MAGUEN_HAS_STOLEN_S1_PIECES_OF_BIO_ENERGY_RESIDUE, ExShowScreenMessage.MIDDLE_CENTER, 4000, String.valueOf(decreasePoints));

@@ -34,8 +34,10 @@ public class Q00368_TrespassingIntoTheHolyGround extends Quest
 {
 	// NPC
 	private static final int RESTINA = 30926;
+	
 	// Item
 	private static final int FANG = 5881;
+	
 	// Drop chances
 	private static final Map<Integer, Integer> CHANCES = new HashMap<>();
 	static

@@ -29,6 +29,7 @@ import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Collectors;
 
+import org.l2jmobius.Config;
 import org.l2jmobius.commons.threads.ThreadPool;
 import org.l2jmobius.gameserver.data.enums.CategoryType;
 import org.l2jmobius.gameserver.managers.GlobalVariablesManager;
@@ -79,7 +80,7 @@ import org.l2jmobius.gameserver.network.serverpackets.ceremonyofchaos.ExCuriousH
 import ai.AbstractNpcAI;
 
 /**
- * @author Sdw, Mobius
+ * @author Sdw, Mobius, CostyKiller
  */
 public class CeremonyOfChaos extends AbstractNpcAI
 {
@@ -90,6 +91,7 @@ public class CeremonyOfChaos extends AbstractNpcAI
 		new ItemHolder(35992, 1), // Ceremony of Chaos - Magic
 		new ItemHolder(35993, 1), // Ceremony of Chaos - Defense
 	};
+	
 	// Skills
 	private static final SkillHolder[] INITIAL_BUFFS =
 	{
@@ -101,6 +103,7 @@ public class CeremonyOfChaos extends AbstractNpcAI
 		new SkillHolder(9541, 1), // Mysterious Herb of Magic
 		new SkillHolder(19102, 1) // Chaos Sympathy
 	};
+	
 	// Templates
 	private static final int[] TEMPLATES =
 	{
@@ -109,13 +112,11 @@ public class CeremonyOfChaos extends AbstractNpcAI
 		226,
 		227
 	};
+	
 	// Misc
 	private static final Set<Player> REGISTERED_PLAYERS = ConcurrentHashMap.newKeySet();
 	private static final Set<Player> PARTICIPANT_PLAYERS = ConcurrentHashMap.newKeySet();
 	private static final String COC_DEFEATED_VAR = "COC_DEFEATED";
-	private static final int MIN_PLAYERS = 2;
-	private static final int MAX_PLAYERS = 18;
-	private static final int MAX_ARENAS = 5;
 	private boolean _registrationOpen = false;
 	
 	private CeremonyOfChaos()
@@ -127,13 +128,13 @@ public class CeremonyOfChaos extends AbstractNpcAI
 		// Enabled Tuesday, Wednesday, Thursday
 		final Calendar calendar = Calendar.getInstance();
 		final int day = calendar.get(Calendar.DAY_OF_WEEK);
-		if ((day != Calendar.TUESDAY) && (day != Calendar.WEDNESDAY) && (day != Calendar.THURSDAY))
+		if (!Config.COC_COMPETITION_DAYS.contains(day))
 		{
 			return;
 		}
 		
 		// Event starts at 18, should stop if past 00:00.
-		if (calendar.get(Calendar.HOUR_OF_DAY) < 18)
+		if (calendar.get(Calendar.HOUR_OF_DAY) < Config.COC_START_TIME)
 		{
 			return;
 		}
@@ -163,7 +164,7 @@ public class CeremonyOfChaos extends AbstractNpcAI
 	
 	private void registrationEnd()
 	{
-		if (REGISTERED_PLAYERS.size() >= MIN_PLAYERS)
+		if (REGISTERED_PLAYERS.size() >= Config.COC_MIN_PLAYERS)
 		{
 			_registrationOpen = false;
 			
@@ -216,7 +217,7 @@ public class CeremonyOfChaos extends AbstractNpcAI
 	
 	public void preparePlayers()
 	{
-		final ExCuriousHouseMemberList membersList = new ExCuriousHouseMemberList(0, MAX_PLAYERS, PARTICIPANT_PLAYERS);
+		final ExCuriousHouseMemberList membersList = new ExCuriousHouseMemberList(0, Config.COC_MAX_PLAYERS, PARTICIPANT_PLAYERS);
 		final NpcHtmlMessage msg = new NpcHtmlMessage(0);
 		int index = 0;
 		int position = 1;
@@ -375,6 +376,7 @@ public class CeremonyOfChaos extends AbstractNpcAI
 			{
 				index = 0;
 			}
+			
 			player.teleToLocation(enterLocations.get(index++), 0, world);
 		}
 		
@@ -405,6 +407,7 @@ public class CeremonyOfChaos extends AbstractNpcAI
 				});
 			}
 		}
+		
 		getTimers().addRepeatingTimer("update", 1000, null, null);
 	}
 	
@@ -447,7 +450,7 @@ public class CeremonyOfChaos extends AbstractNpcAI
 					break;
 				}
 				
-				if (REGISTERED_PLAYERS.size() >= MAX_PLAYERS)
+				if (REGISTERED_PLAYERS.size() >= Config.COC_MAX_PLAYERS)
 				{
 					player.sendPacket(SystemMessageId.THERE_ARE_TOO_MANY_CHALLENGERS_YOU_CANNOT_PARTICIPATE_NOW);
 					break;
@@ -499,6 +502,7 @@ public class CeremonyOfChaos extends AbstractNpcAI
 			}
 			
 		}
+		
 		return null;
 	}
 	
@@ -571,6 +575,7 @@ public class CeremonyOfChaos extends AbstractNpcAI
 						count++;
 					}
 				}
+				
 				if (count <= 1)
 				{
 					stopFight();
@@ -656,6 +661,7 @@ public class CeremonyOfChaos extends AbstractNpcAI
 	public void stopFight()
 	{
 		final List<Player> winners = getWinners();
+		final List<Player> bestKillers = getBestKillers();
 		final List<Player> memberList = new ArrayList<>(PARTICIPANT_PLAYERS.size());
 		SystemMessage msg = null;
 		if (winners.isEmpty() || (winners.size() > 1))
@@ -664,97 +670,34 @@ public class CeremonyOfChaos extends AbstractNpcAI
 		}
 		else
 		{
+			// Rewards according to https://l2wiki.com/main/locations/activity/ceremony_of_chaos/
 			final Player winner = winners.get(0);
+			final Player bestKiller = bestKillers.get(0);
+			
+			// Reward for the winner
 			if (winner != null)
 			{
 				msg = new SystemMessage(SystemMessageId.CONGRATULATIONS_C1_YOU_WIN_THE_MATCH);
 				msg.addString(winner.getName());
-				
-				// Rewards according to https://l2wiki.com/Ceremony_of_Chaos
-				final int marksRewarded = getRandom(2, 5); // Guessed
-				final int boxs = getRandom(1, 5);
-				winner.addItem(ItemProcessType.REWARD, 45584, marksRewarded, winner, true); // Mark of battle
-				winner.addItem(ItemProcessType.REWARD, 36333, boxs, winner, true); // Mysterious Box
-				// Possible additional rewards
-				
-				// Improved Life Stone
-				if (getRandom(10) < 3) // Chance to get reward (30%)
+				for (ItemHolder reward : Config.COC_WINNER_REWARDS)
 				{
-					switch (getRandom(4))
-					{
-						case 0:
-						{
-							winner.addItem(ItemProcessType.REWARD, 18570, 1, winner, true); // Improved Life Stone (R95-grade)
-							break;
-						}
-						case 1:
-						{
-							winner.addItem(ItemProcessType.REWARD, 18571, 1, winner, true); // Improved Life Stone (R95-grade)
-							break;
-						}
-						case 2:
-						{
-							winner.addItem(ItemProcessType.REWARD, 18575, 1, winner, true); // Improved Life Stone (R99-grade)
-							break;
-						}
-						case 3:
-						{
-							winner.addItem(ItemProcessType.REWARD, 18576, 1, winner, true); // Improved Life Stone (R99-grade)
-							break;
-						}
-					}
-				}
-				// Soul Crystal Fragment
-				else if (getRandom(10) < 3) // Chance to get reward (30%)
-				{
-					switch (getRandom(6))
-					{
-						case 0:
-						{
-							winner.addItem(ItemProcessType.REWARD, 19467, 1, winner, true); // Yellow Soul Crystal Fragment (R99-Grade)
-							break;
-						}
-						case 1:
-						{
-							winner.addItem(ItemProcessType.REWARD, 19468, 1, winner, true); // Teal Soul Crystal Fragment (R99-Grade)
-							break;
-						}
-						case 2:
-						{
-							winner.addItem(ItemProcessType.REWARD, 19469, 1, winner, true); // Purple Soul Crystal Fragment (R99-Grade)
-							break;
-						}
-						case 3:
-						{
-							winner.addItem(ItemProcessType.REWARD, 19511, 1, winner, true); // Yellow Soul Crystal Fragment (R95-Grade)
-							break;
-						}
-						case 4:
-						{
-							winner.addItem(ItemProcessType.REWARD, 19512, 1, winner, true); // Teal Soul Crystal Fragment (R95-Grade)
-							break;
-						}
-						case 5:
-						{
-							winner.addItem(ItemProcessType.REWARD, 19513, 1, winner, true); // Purple Soul Crystal Fragment (R95-Grade)
-							break;
-						}
-					}
-				}
-				// Mysterious Belt
-				else if (getRandom(10) < 1) // Chance to get reward (10%)
-				{
-					winner.addItem(ItemProcessType.REWARD, 35565, 1, winner, true); // Mysterious Belt
+					winner.addItem(ItemProcessType.REWARD, reward.getId(), reward.getCount(), winner, true);
 				}
 				
 				// Save monthly progress.
-				final int totalMarks = winner.getVariables().getInt(PlayerVariables.CEREMONY_OF_CHAOS_MARKS, 0) + marksRewarded;
+				final int totalMarks = winner.getVariables().getInt(PlayerVariables.CEREMONY_OF_CHAOS_MARKS, 0) + (int) (Config.COC_WINNER_REWARDS.get(1).getCount());
 				winner.getVariables().set(PlayerVariables.CEREMONY_OF_CHAOS_MARKS, totalMarks);
 				if (totalMarks > GlobalVariablesManager.getInstance().getInt(GlobalVariablesManager.COC_TOP_MARKS, 0))
 				{
 					GlobalVariablesManager.getInstance().set(GlobalVariablesManager.COC_TOP_MARKS, totalMarks);
 					GlobalVariablesManager.getInstance().set(GlobalVariablesManager.COC_TOP_MEMBER, winner.getObjectId());
 				}
+			}
+			
+			// Reward for the best killer
+			if (bestKiller != null)
+			{
+				bestKiller.addItem(ItemProcessType.REWARD, 45584, 123, bestKiller, true); // Ruler's Consideration
 			}
 		}
 		
@@ -893,7 +836,42 @@ public class CeremonyOfChaos extends AbstractNpcAI
 				winners.add(player);
 			}
 		}
+		
 		return winners;
+	}
+	
+	public List<Player> getBestKillers()
+	{
+		int topScore = -1;
+		int secondTopScore = -1;
+		
+		// First pass: determine top and second top scores
+		for (Player player : PARTICIPANT_PLAYERS)
+		{
+			int score = player.getVariables().getInt(PlayerVariables.CEREMONY_OF_CHAOS_SCORE, 0);
+			if (score > topScore)
+			{
+				secondTopScore = topScore;
+				topScore = score;
+			}
+			else if ((score > secondTopScore) && (score < topScore))
+			{
+				secondTopScore = score;
+			}
+		}
+		
+		// Second pass: collect players with second top score
+		List<Player> bestKillers = new ArrayList<>();
+		for (Player player : PARTICIPANT_PLAYERS)
+		{
+			int score = player.getVariables().getInt(PlayerVariables.CEREMONY_OF_CHAOS_SCORE, 0);
+			if (score == secondTopScore)
+			{
+				bestKillers.add(player);
+			}
+		}
+		
+		return bestKillers;
 	}
 	
 	private void addLogoutListener(Player player)
@@ -915,6 +893,7 @@ public class CeremonyOfChaos extends AbstractNpcAI
 				listener.unregisterMe();
 			}
 		}
+		
 		for (AbstractEventListener listener : player.getListeners(EventType.ON_CREATURE_DEATH))
 		{
 			if (listener.getOwner() == this)
@@ -939,6 +918,7 @@ public class CeremonyOfChaos extends AbstractNpcAI
 					stopFight();
 				}
 			}
+			
 			removeListeners(player);
 		}
 	}
@@ -1007,7 +987,7 @@ public class CeremonyOfChaos extends AbstractNpcAI
 			sm = SystemMessageId.ONLY_CHARACTERS_WHO_ARE_A_PART_OF_A_CLAN_OF_LEVEL_6_OR_ABOVE_MAY_PARTICIPATE;
 			canRegister = false;
 		}
-		else if ((REGISTERED_PLAYERS.size() >= (MAX_ARENAS * MAX_PLAYERS)) && !PARTICIPANT_PLAYERS.contains(player))
+		else if ((REGISTERED_PLAYERS.size() >= (Config.COC_MAX_ARENAS * Config.COC_MAX_PLAYERS)) && !PARTICIPANT_PLAYERS.contains(player))
 		{
 			sm = SystemMessageId.THERE_ARE_TOO_MANY_CHALLENGERS_YOU_CANNOT_PARTICIPATE_NOW;
 			canRegister = false;

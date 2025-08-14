@@ -70,6 +70,7 @@ public class WarehouseItem
 		{
 			_isAugmented = false;
 		}
+		
 		_mana = item.getMana();
 		_time = item.isTimeLimitedItem() ? (int) (item.getRemainingTime() / 1000) : -1;
 	}

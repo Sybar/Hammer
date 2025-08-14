@@ -67,6 +67,7 @@ import org.l2jmobius.commons.util.IXmlReader;
 import org.l2jmobius.commons.util.StringUtil;
 import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.actor.enums.npc.DropType;
+import org.l2jmobius.gameserver.model.actor.enums.player.ChatBroadcastType;
 import org.l2jmobius.gameserver.model.actor.enums.player.IllegalActionPunishmentType;
 import org.l2jmobius.gameserver.model.actor.enums.player.PlayerClass;
 import org.l2jmobius.gameserver.model.actor.holders.npc.DropHolder;
@@ -97,9 +98,10 @@ public class Config
 	// --------------------------------------------------
 	private static final String SERVER_CONFIG_FILE = "./config/Server.ini";
 	private static final String ATTENDANCE_CONFIG_FILE = "./config/AttendanceRewards.ini";
-	private static final String ATTRIBUTE_SYSTEM_FILE = "./config/AttributeSystem.ini";
+	private static final String ATTRIBUTE_SYSTEM_CONFIG_FILE = "./config/AttributeSystem.ini";
 	private static final String CHARACTER_CONFIG_FILE = "./config/Character.ini";
 	private static final String DATABASE_CONFIG_FILE = "./config/Database.ini";
+	private static final String DEVELOPMENT_CONFIG_FILE = "./config/Development.ini";
 	private static final String FEATURE_CONFIG_FILE = "./config/Feature.ini";
 	private static final String FLOOD_PROTECTOR_CONFIG_FILE = "./config/FloodProtector.ini";
 	private static final String GENERAL_CONFIG_FILE = "./config/General.ini";
@@ -152,9 +154,11 @@ public class Config
 	private static final String CUSTOM_SELL_BUFFS_CONFIG_FILE = "./config/Custom/SellBuffs.ini";
 	private static final String CUSTOM_SERVER_TIME_CONFIG_FILE = "./config/Custom/ServerTime.ini";
 	private static final String CUSTOM_STARTING_LOCATION_CONFIG_FILE = "./config/Custom/StartingLocation.ini";
+	private static final String CUSTOM_STARTING_TITLE_CONFIG_FILE = "./config/Custom/StartingTitle.ini";
 	private static final String CUSTOM_TRANSMOG_CONFIG_FILE = "./config/Custom/Transmog.ini";
 	private static final String CUSTOM_VIP_CONFIG_FILE = "./config/Custom/VipSystem.ini";
 	private static final String CUSTOM_WALKER_BOT_PROTECTION_CONFIG_FILE = "./config/Custom/WalkerBotProtection.ini";
+	private static final String CUSTOM_WEDDING_CONFIG_FILE = "./config/Custom/Wedding.ini";
 	
 	// --------------------------------------------------
 	// Login Files
@@ -502,6 +506,20 @@ public class Config
 	public static int BACKUP_DAYS;
 	
 	// --------------------------------------------------
+	// Development
+	// --------------------------------------------------
+	public static boolean HTML_ACTION_CACHE_DEBUG;
+	public static boolean NO_QUESTS;
+	public static boolean NO_SPAWNS;
+	public static boolean SHOW_QUEST_LOAD_IN_LOGS;
+	public static boolean SHOW_SCRIPT_LOAD_IN_LOGS;
+	public static boolean DEBUG_CLIENT_PACKETS;
+	public static boolean DEBUG_EX_CLIENT_PACKETS;
+	public static boolean DEBUG_SERVER_PACKETS;
+	public static boolean DEBUG_UNKNOWN_PACKETS;
+	public static Set<String> EXCLUDED_DEBUG_PACKETS;
+	
+	// --------------------------------------------------
 	// Feature
 	// --------------------------------------------------
 	public static List<Integer> SIEGE_HOUR_LIST;
@@ -657,17 +675,6 @@ public class Config
 	public static boolean SKILL_CHECK_ENABLE;
 	public static boolean SKILL_CHECK_REMOVE;
 	public static boolean SKILL_CHECK_GM;
-	public static boolean HTML_ACTION_CACHE_DEBUG;
-	public static boolean DEVELOPER;
-	public static boolean ALT_DEV_NO_QUESTS;
-	public static boolean ALT_DEV_NO_SPAWNS;
-	public static boolean ALT_DEV_SHOW_QUESTS_LOAD_IN_LOGS;
-	public static boolean ALT_DEV_SHOW_SCRIPTS_LOAD_IN_LOGS;
-	public static boolean DEBUG_CLIENT_PACKETS;
-	public static boolean DEBUG_EX_CLIENT_PACKETS;
-	public static boolean DEBUG_SERVER_PACKETS;
-	public static boolean DEBUG_UNKNOWN_PACKETS;
-	public static Set<String> ALT_DEV_EXCLUDED_PACKETS;
 	public static boolean ALLOW_DISCARDITEM;
 	public static int AUTODESTROY_ITEM_AFTER;
 	public static int HERB_AUTO_DESTROY_TIME;
@@ -689,7 +696,6 @@ public class Config
 	public static boolean MULTIPLE_ITEM_DROP;
 	public static boolean HTM_CACHE;
 	public static boolean CHECK_HTML_ENCODING;
-	public static boolean HIDE_BYPASS_REMOVAL;
 	public static int MIN_NPC_ANIMATION;
 	public static int MAX_NPC_ANIMATION;
 	public static int MIN_MONSTER_ANIMATION;
@@ -701,8 +707,8 @@ public class Config
 	public static long MULTISELL_AMOUNT_LIMIT;
 	public static boolean ENABLE_FALLING_DAMAGE;
 	public static int PEACE_ZONE_MODE;
-	public static String DEFAULT_GLOBAL_CHAT;
-	public static String DEFAULT_TRADE_CHAT;
+	public static ChatBroadcastType DEFAULT_GLOBAL_CHAT;
+	public static ChatBroadcastType DEFAULT_TRADE_CHAT;
 	public static boolean ENABLE_WORLD_CHAT;
 	public static int MINIMUM_CHAT_LEVEL;
 	public static boolean ALLOW_WAREHOUSE;
@@ -773,7 +779,7 @@ public class Config
 	public static float MEDIUM_WEIGHT;
 	public static float HIGH_WEIGHT;
 	public static boolean ADVANCED_DIAGONAL_STRATEGY;
-	public static boolean AVOID_ABSTRUCTED_PATH_NODES;
+	public static boolean AVOID_OBSTRUCTED_PATH_NODES;
 	public static float DIAGONAL_WEIGHT;
 	public static int MAX_POSTFILTER_PASSES;
 	
@@ -927,7 +933,7 @@ public class Config
 	public static float RATE_INSTANCE_PARTY_SP;
 	public static float RATE_EXTRACTABLE;
 	public static int RATE_DROP_MANOR;
-	public static float RATE_QUEST_DROP;
+	public static float QUEST_ITEM_DROP_AMOUNT_MULTIPLIER;
 	public static float RATE_QUEST_REWARD;
 	public static float RATE_QUEST_REWARD_XP;
 	public static float RATE_QUEST_REWARD_SP;
@@ -1251,6 +1257,8 @@ public class Config
 	public static boolean NOBLESS_MASTER_ENABLED;
 	public static int NOBLESS_MASTER_NPCID;
 	public static int NOBLESS_MASTER_LEVEL_REQUIREMENT;
+	public static int NOBLESS_MASTER_ITEM_ID;
+	public static long NOBLESS_MASTER_ITEM_COUNT;
 	public static boolean NOBLESS_MASTER_REWARD_TIARA;
 	
 	// --------------------------------------------------
@@ -1458,6 +1466,12 @@ public class Config
 	public static int CUSTOM_STARTING_LOC_Z;
 	
 	// --------------------------------------------------
+	// Custom - Starting title
+	// --------------------------------------------------
+	public static boolean ENABLE_CUSTOM_STARTING_TITLE;
+	public static String CUSTOM_STARTING_TITLE;
+	
+	// --------------------------------------------------
 	// Custom - Transmog
 	// --------------------------------------------------
 	public static boolean ENABLE_TRANSMOG;
@@ -1481,6 +1495,19 @@ public class Config
 	// Custom - Walker Bot Protection
 	// --------------------------------------------------
 	public static boolean L2WALKER_PROTECTION;
+	
+	// --------------------------------------------------
+	// Custom - Wedding
+	// --------------------------------------------------
+	public static boolean ALLOW_WEDDING;
+	public static int WEDDING_PRICE;
+	public static boolean WEDDING_PUNISH_INFIDELITY;
+	public static boolean WEDDING_TELEPORT;
+	public static int WEDDING_TELEPORT_PRICE;
+	public static int WEDDING_TELEPORT_DURATION;
+	public static boolean WEDDING_SAMESEX;
+	public static boolean WEDDING_FORMALWEAR;
+	public static int WEDDING_DIVORCE_COSTS;
 	
 	// --------------------------------------------------
 	// Login Server
@@ -1642,7 +1669,7 @@ public class Config
 			// --------------------------------------------------
 			// Attribute System
 			// --------------------------------------------------
-			final ConfigReader attributeConfig = new ConfigReader(ATTRIBUTE_SYSTEM_FILE);
+			final ConfigReader attributeConfig = new ConfigReader(ATTRIBUTE_SYSTEM_CONFIG_FILE);
 			S_WEAPON_STONE = attributeConfig.getInt("SWeaponStone", 50);
 			S80_WEAPON_STONE = attributeConfig.getInt("S80WeaponStone", 50);
 			S84_WEAPON_STONE = attributeConfig.getInt("S84WeaponStone", 50);
@@ -2016,6 +2043,26 @@ public class Config
 			BACKUP_DAYS = databaseConfig.getInt("BackupDays", 30);
 			
 			// --------------------------------------------------
+			// Development
+			// --------------------------------------------------
+			final ConfigReader developmentConfig = new ConfigReader(DEVELOPMENT_CONFIG_FILE);
+			HTML_ACTION_CACHE_DEBUG = developmentConfig.getBoolean("HtmlActionCacheDebug", false);
+			NO_QUESTS = developmentConfig.getBoolean("NoQuests", false);
+			NO_SPAWNS = developmentConfig.getBoolean("NoSpawns", false);
+			SHOW_QUEST_LOAD_IN_LOGS = developmentConfig.getBoolean("ShowQuestLoadInLogs", false);
+			SHOW_SCRIPT_LOAD_IN_LOGS = developmentConfig.getBoolean("ShowScriptLoadInLogs", false);
+			DEBUG_CLIENT_PACKETS = developmentConfig.getBoolean("DebugClientPackets", false);
+			DEBUG_EX_CLIENT_PACKETS = developmentConfig.getBoolean("DebugExClientPackets", false);
+			DEBUG_SERVER_PACKETS = developmentConfig.getBoolean("DebugServerPackets", false);
+			DEBUG_UNKNOWN_PACKETS = developmentConfig.getBoolean("DebugUnknownPackets", true);
+			final String[] packets = developmentConfig.getString("ExcludedPacketList", "").trim().split(",");
+			EXCLUDED_DEBUG_PACKETS = new HashSet<>(packets.length);
+			for (String packet : packets)
+			{
+				EXCLUDED_DEBUG_PACKETS.add(packet.trim());
+			}
+			
+			// --------------------------------------------------
 			// Feature
 			// --------------------------------------------------
 			final ConfigReader featureConfig = new ConfigReader(FEATURE_CONFIG_FILE);
@@ -2187,22 +2234,6 @@ public class Config
 			SKILL_CHECK_ENABLE = generalConfig.getBoolean("SkillCheckEnable", false);
 			SKILL_CHECK_REMOVE = generalConfig.getBoolean("SkillCheckRemove", false);
 			SKILL_CHECK_GM = generalConfig.getBoolean("SkillCheckGM", true);
-			HTML_ACTION_CACHE_DEBUG = generalConfig.getBoolean("HtmlActionCacheDebug", false);
-			DEVELOPER = generalConfig.getBoolean("Developer", false);
-			ALT_DEV_NO_QUESTS = generalConfig.getBoolean("AltDevNoQuests", false) || Boolean.getBoolean("noquests");
-			ALT_DEV_NO_SPAWNS = generalConfig.getBoolean("AltDevNoSpawns", false) || Boolean.getBoolean("nospawns");
-			ALT_DEV_SHOW_QUESTS_LOAD_IN_LOGS = generalConfig.getBoolean("AltDevShowQuestsLoadInLogs", false);
-			ALT_DEV_SHOW_SCRIPTS_LOAD_IN_LOGS = generalConfig.getBoolean("AltDevShowScriptsLoadInLogs", false);
-			DEBUG_CLIENT_PACKETS = generalConfig.getBoolean("DebugClientPackets", false);
-			DEBUG_EX_CLIENT_PACKETS = generalConfig.getBoolean("DebugExClientPackets", false);
-			DEBUG_SERVER_PACKETS = generalConfig.getBoolean("DebugServerPackets", false);
-			DEBUG_UNKNOWN_PACKETS = generalConfig.getBoolean("DebugUnknownPackets", true);
-			final String[] packets = generalConfig.getString("ExcludedPacketList", "").trim().split(",");
-			ALT_DEV_EXCLUDED_PACKETS = new HashSet<>(packets.length);
-			for (String packet : packets)
-			{
-				ALT_DEV_EXCLUDED_PACKETS.add(packet.trim());
-			}
 			ALLOW_DISCARDITEM = generalConfig.getBoolean("AllowDiscardItem", true);
 			AUTODESTROY_ITEM_AFTER = generalConfig.getInt("AutoDestroyDroppedItemAfter", 600);
 			HERB_AUTO_DESTROY_TIME = generalConfig.getInt("AutoDestroyHerbTime", 60) * 1000;
@@ -2229,7 +2260,6 @@ public class Config
 			MULTIPLE_ITEM_DROP = generalConfig.getBoolean("MultipleItemDrop", true);
 			HTM_CACHE = generalConfig.getBoolean("HtmCache", true);
 			CHECK_HTML_ENCODING = generalConfig.getBoolean("CheckHtmlEncoding", true);
-			HIDE_BYPASS_REMOVAL = generalConfig.getBoolean("HideBypassRemoval", true);
 			MIN_NPC_ANIMATION = generalConfig.getInt("MinNpcAnimation", 5);
 			MAX_NPC_ANIMATION = generalConfig.getInt("MaxNpcAnimation", 60);
 			MIN_MONSTER_ANIMATION = generalConfig.getInt("MinMonsterAnimation", 5);
@@ -2241,8 +2271,8 @@ public class Config
 			MULTISELL_AMOUNT_LIMIT = generalConfig.getLong("MultisellAmountLimit", 10000);
 			ENABLE_FALLING_DAMAGE = generalConfig.getBoolean("EnableFallingDamage", true);
 			PEACE_ZONE_MODE = generalConfig.getInt("PeaceZoneMode", 0);
-			DEFAULT_GLOBAL_CHAT = generalConfig.getString("GlobalChat", "ON");
-			DEFAULT_TRADE_CHAT = generalConfig.getString("TradeChat", "ON");
+			DEFAULT_GLOBAL_CHAT = Enum.valueOf(ChatBroadcastType.class, generalConfig.getString("GlobalChat", "ON"));
+			DEFAULT_TRADE_CHAT = Enum.valueOf(ChatBroadcastType.class, generalConfig.getString("TradeChat", "ON"));
 			ENABLE_WORLD_CHAT = generalConfig.getBoolean("WorldChatEnabled", true);
 			MINIMUM_CHAT_LEVEL = generalConfig.getInt("MinimumChatLevel", 20);
 			ALLOW_WAREHOUSE = generalConfig.getBoolean("AllowWarehouse", true);
@@ -2330,7 +2360,7 @@ public class Config
 			MEDIUM_WEIGHT = geoEngineConfig.getFloat("MediumWeight", 2);
 			HIGH_WEIGHT = geoEngineConfig.getFloat("HighWeight", 3);
 			ADVANCED_DIAGONAL_STRATEGY = geoEngineConfig.getBoolean("AdvancedDiagonalStrategy", true);
-			AVOID_ABSTRUCTED_PATH_NODES = geoEngineConfig.getBoolean("AvoidAbstructedPathNodes", true);
+			AVOID_OBSTRUCTED_PATH_NODES = geoEngineConfig.getBoolean("AvoidObstructedPathNodes", true);
 			DIAGONAL_WEIGHT = geoEngineConfig.getFloat("DiagonalWeight", 0.707f);
 			MAX_POSTFILTER_PASSES = geoEngineConfig.getInt("MaxPostfilterPasses", 3);
 			
@@ -2555,7 +2585,7 @@ public class Config
 			}
 			RATE_EXTRACTABLE = ratesConfig.getFloat("RateExtractable", 1);
 			RATE_DROP_MANOR = ratesConfig.getInt("RateDropManor", 1);
-			RATE_QUEST_DROP = ratesConfig.getFloat("RateQuestDrop", 1);
+			QUEST_ITEM_DROP_AMOUNT_MULTIPLIER = ratesConfig.getFloat("QuestItemDropAmountMultiplier", 1);
 			RATE_QUEST_REWARD = ratesConfig.getFloat("RateQuestReward", 1);
 			RATE_QUEST_REWARD_XP = ratesConfig.getFloat("RateQuestRewardXP", 1);
 			RATE_QUEST_REWARD_SP = ratesConfig.getFloat("RateQuestRewardSP", 1);
@@ -3537,6 +3567,8 @@ public class Config
 			NOBLESS_MASTER_ENABLED = noblessMasterConfig.getBoolean("Enabled", false);
 			NOBLESS_MASTER_NPCID = noblessMasterConfig.getInt("NpcId", 1003000);
 			NOBLESS_MASTER_LEVEL_REQUIREMENT = noblessMasterConfig.getInt("LevelRequirement", 80);
+			NOBLESS_MASTER_ITEM_ID = noblessMasterConfig.getInt("ItemId", 57);
+			NOBLESS_MASTER_ITEM_COUNT = noblessMasterConfig.getLong("ItemCount", 0);
 			NOBLESS_MASTER_REWARD_TIARA = noblessMasterConfig.getBoolean("RewardTiara", false);
 			
 			// --------------------------------------------------
@@ -3857,6 +3889,13 @@ public class Config
 			CUSTOM_STARTING_LOC_Z = startingLocationConfig.getInt("CustomStartingLocZ", -3625);
 			
 			// --------------------------------------------------
+			// Custom - Starting title
+			// --------------------------------------------------
+			final ConfigReader startingTitleConfig = new ConfigReader(CUSTOM_STARTING_TITLE_CONFIG_FILE);
+			ENABLE_CUSTOM_STARTING_TITLE = startingTitleConfig.getBoolean("EnableStartingTitle", false);
+			CUSTOM_STARTING_TITLE = startingTitleConfig.getString("StartingTitle", "Newbie");
+			
+			// --------------------------------------------------
 			// Custom - Transmog
 			// --------------------------------------------------
 			final ConfigReader transmogConfig = new ConfigReader(CUSTOM_TRANSMOG_CONFIG_FILE);
@@ -3898,6 +3937,20 @@ public class Config
 			// --------------------------------------------------
 			final ConfigReader walkerBotProtectionConfig = new ConfigReader(CUSTOM_WALKER_BOT_PROTECTION_CONFIG_FILE);
 			L2WALKER_PROTECTION = walkerBotProtectionConfig.getBoolean("L2WalkerProtection", false);
+			
+			// --------------------------------------------------
+			// Custom - Wedding
+			// --------------------------------------------------
+			final ConfigReader weddingConfig = new ConfigReader(CUSTOM_WEDDING_CONFIG_FILE);
+			ALLOW_WEDDING = weddingConfig.getBoolean("AllowWedding", false);
+			WEDDING_PRICE = weddingConfig.getInt("WeddingPrice", 250000000);
+			WEDDING_PUNISH_INFIDELITY = weddingConfig.getBoolean("WeddingPunishInfidelity", true);
+			WEDDING_TELEPORT = weddingConfig.getBoolean("WeddingTeleport", true);
+			WEDDING_TELEPORT_PRICE = weddingConfig.getInt("WeddingTeleportPrice", 50000);
+			WEDDING_TELEPORT_DURATION = weddingConfig.getInt("WeddingTeleportDuration", 60);
+			WEDDING_SAMESEX = weddingConfig.getBoolean("WeddingAllowSameSex", false);
+			WEDDING_FORMALWEAR = weddingConfig.getBoolean("WeddingFormalWear", true);
+			WEDDING_DIVORCE_COSTS = weddingConfig.getInt("WeddingDivorceCosts", 20);
 			
 			// Load chatfilter.txt file.
 			loadChatFilter();
@@ -4016,6 +4069,7 @@ public class Config
 				}
 			}
 		}
+		
 		if (HEX_ID == null)
 		{
 			LOGGER.warning("Could not load HexID file (" + HEXID_FILE + "). Hopefully login will give us one.");
@@ -4045,6 +4099,7 @@ public class Config
 		{
 			final Properties hexSetting = new Properties();
 			final File file = new File(fileName);
+			
 			// Create a new empty file only if it doesn't exist.
 			if (!file.exists())
 			{
@@ -4167,6 +4222,7 @@ public class Config
 				}
 			}
 		}
+		
 		return serverType;
 	}
 	
@@ -4184,6 +4240,7 @@ public class Config
 		{
 			ret[i++] = Float.parseFloat(value);
 		}
+		
 		return ret;
 	}
 	
@@ -4227,6 +4284,7 @@ public class Config
 				LOGGER.warning("parseItemsList[Config.load()]: invalid itemId -> " + valueSplit[0] + ", value must be an integer. Skipping to the next entry in the list.");
 				continue;
 			}
+			
 			int count = -1;
 			try
 			{
@@ -4237,11 +4295,13 @@ public class Config
 				LOGGER.warning("parseItemsList[Config.load()]: invalid item number -> " + valueSplit[1] + ", value must be an integer. Skipping to the next entry in the list.");
 				continue;
 			}
+			
 			if ((itemId > 0) && (count > 0))
 			{
 				result.add(new ItemHolder(itemId, count));
 			}
 		}
+		
 		return result;
 	}
 	
@@ -4310,6 +4370,7 @@ public class Config
 					{
 						_hosts.add(att.getNodeValue());
 					}
+					
 					_subnets.add("0.0.0.0/0");
 				}
 			}
@@ -4392,6 +4453,7 @@ public class Config
 			{
 				return Arrays.asList("0.0.0.0/0");
 			}
+			
 			return _subnets;
 		}
 		
@@ -4401,6 +4463,7 @@ public class Config
 			{
 				return Arrays.asList("127.0.0.1");
 			}
+			
 			return _hosts;
 		}
 	}

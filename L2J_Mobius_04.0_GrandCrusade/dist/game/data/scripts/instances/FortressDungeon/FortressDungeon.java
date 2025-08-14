@@ -90,10 +90,13 @@ public class FortressDungeon extends AbstractInstance
 		25592,
 		25593
 	};
+	
 	// Item
 	private static final int MARK = 9797;
+	
 	// Locations
 	private static final Location SPAWN_LOC = new Location(53319, 245814, -6576);
+	
 	// Misc
 	private static final int MARK_COUNT = 2520;
 	private static final long REENTER = 24 * 3600000; // 24 hours
@@ -102,13 +105,16 @@ public class FortressDungeon extends AbstractInstance
 	public FortressDungeon()
 	{
 		super(NPCS.values().stream().mapToInt(Integer::valueOf).toArray());
+		
 		// NPCs
 		addStartNpc(NPCS.keySet());
 		addTalkId(NPCS.keySet());
+		
 		// Monsters
 		addKillId(RAIDS1);
 		addKillId(RAIDS2);
 		addKillId(RAIDS3);
+		
 		// Instance
 		addInstanceCreatedId(NPCS.values());
 		addInstanceDestroyId(NPCS.values());
@@ -122,6 +128,7 @@ public class FortressDungeon extends AbstractInstance
 		{
 			enterInstance(player, npc, NPCS.get(npcId));
 		}
+		
 		return null;
 	}
 	
@@ -154,6 +161,7 @@ public class FortressDungeon extends AbstractInstance
 						playSound(member, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 					}
 				}
+				
 				world.finishInstance();
 			}
 			else
@@ -169,6 +177,7 @@ public class FortressDungeon extends AbstractInstance
 	{
 		// Put re-enter for instance
 		REENETER_HOLDER.put(instance.getTemplateId(), System.currentTimeMillis() + REENTER);
+		
 		// Schedule spawn of first raid
 		spawnRaid(instance);
 	}
@@ -201,8 +210,10 @@ public class FortressDungeon extends AbstractInstance
 				showHtmlFile(groupLeader, "enterRestricted.html");
 				return false;
 			}
+			
 			REENETER_HOLDER.remove(template.getId());
 		}
+		
 		return true;
 	}
 	
@@ -215,6 +226,7 @@ public class FortressDungeon extends AbstractInstance
 		{
 			task.cancel(true);
 		}
+		
 		instance.setParameter("spawnTask", null);
 	}
 	

@@ -31,6 +31,7 @@ public class Q00151_CureForFever extends Quest
 	// NPCs
 	private static final int ELIAS = 30050;
 	private static final int YOHANES = 30032;
+	
 	// Items
 	private static final int POISON_SAC = 703;
 	private static final int FEVER_MEDICINE = 704;

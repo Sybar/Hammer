@@ -54,6 +54,7 @@ public class SSQMonasteryOfSilence extends AbstractInstance
 	private static final int GUARDIAN_SWORD = 18953;
 	private static final int GUARDIAN_SHIELD = 18954;
 	private static final int GUARDIAN_SCROLL = 18955;
+	
 	// Skills
 	private static final SkillHolder[] BUFFS =
 	{
@@ -61,6 +62,7 @@ public class SSQMonasteryOfSilence extends AbstractInstance
 		new SkillHolder(6728, 1), // Recharge of Elcadia
 		new SkillHolder(6730, 1), // Greater Battle Heal of Elcadia
 	};
+	
 	// Locations
 	private static final Location CENTRAL_ROOM_LOC = new Location(85794, -249788, -8320);
 	private static final Location SOUTH_WATCHERS_ROOM_LOC = new Location(85798, -246566, -8320);
@@ -68,6 +70,7 @@ public class SSQMonasteryOfSilence extends AbstractInstance
 	private static final Location EAST_WATCHERS_ROOM_LOC = new Location(88665, -249784, -8320);
 	private static final Location NORTH_WATCHERS_ROOM_LOC = new Location(85792, -252336, -8320);
 	private static final Location BACK_LOC = new Location(120710, -86971, -3392);
+	
 	// NpcString
 	private static final NpcStringId[] ELCADIA_DIALOGS =
 	{
@@ -79,6 +82,7 @@ public class SSQMonasteryOfSilence extends AbstractInstance
 	{
 		NpcStringId.TO_REMOVE_THE_BARRIER_YOU_MUST_FIND_THE_RELICS_THAT_FIT_THE_BARRIER_AND_ACTIVATE_THE_DEVICE,
 	};
+	
 	// Misc
 	private static final int TEMPLATE_ID = 151;
 	
@@ -194,6 +198,7 @@ public class SSQMonasteryOfSilence extends AbstractInstance
 					{
 						return null;
 					}
+					
 					npc.setRunning();
 					npc.getAI().startFollow(player);
 					if (player.isInCombat())
@@ -213,11 +218,13 @@ public class SSQMonasteryOfSilence extends AbstractInstance
 							npc.broadcastSay(ChatType.NPC_GENERAL, getRandomEntry(ELCADIA_DIALOGS));
 						}
 					}
+					
 					startQuestTimer("FOLLOW", 10000, npc, player);
 					break;
 				}
 			}
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	
@@ -228,6 +235,7 @@ public class SSQMonasteryOfSilence extends AbstractInstance
 		{
 			enterInstance(talker, npc, TEMPLATE_ID);
 		}
+		
 		return super.onTalk(npc, talker);
 	}
 	

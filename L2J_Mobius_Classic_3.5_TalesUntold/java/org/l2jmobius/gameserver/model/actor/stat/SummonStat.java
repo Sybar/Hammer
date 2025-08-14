@@ -46,6 +46,7 @@ public class SummonStat extends PlayableStat
 		{
 			return Config.MAX_RUN_SPEED_SUMMON;
 		}
+		
 		return val;
 	}
 	
@@ -59,6 +60,7 @@ public class SummonStat extends PlayableStat
 		{
 			return Config.MAX_RUN_SPEED_SUMMON;
 		}
+		
 		return val;
 	}
 }

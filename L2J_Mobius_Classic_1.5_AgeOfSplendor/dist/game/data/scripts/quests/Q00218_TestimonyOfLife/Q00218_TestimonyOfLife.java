@@ -41,6 +41,7 @@ public class Q00218_TestimonyOfLife extends Quest
 	private static final int ARKENIA = 30419;
 	private static final int MASTER_CARDIEN = 30460;
 	private static final int ISAEL_SILVERSHADOW = 30655;
+	
 	// Items
 	private static final int TALINS_SPEAR = 3026;
 	private static final int CARDIENS_LETTER = 3141;
@@ -74,8 +75,10 @@ public class Q00218_TestimonyOfLife extends Quest
 	private static final int TALINS_AQUAMARINE = 3169;
 	private static final int TALINS_AMETHYST = 3170;
 	private static final int TALINS_PERIDOT = 3171;
+	
 	// Reward
 	private static final int MARK_OF_LIFE = 3140;
+	
 	// Monster
 	private static final int ANT_RECRUIT = 20082;
 	private static final int ANT_PATROL = 20084;
@@ -88,8 +91,10 @@ public class Q00218_TestimonyOfLife extends Quest
 	private static final int GUARDIAN_BASILISK = 20550;
 	private static final int LETO_LIZARDMAN_SHAMAN = 20581;
 	private static final int LETO_LIZARDMAN_OVERLORD = 20582;
+	
 	// Quest Monster
 	private static final int UNICORN_OF_EVA = 27077;
+	
 	// Misc
 	private static final int MIN_LEVEL = 37;
 	private static final int LEVEL = 38;
@@ -124,6 +129,7 @@ public class Q00218_TestimonyOfLife extends Quest
 					{
 						giveItems(player, CARDIENS_LETTER, 1);
 					}
+					
 					playSound(player, QuestSound.ITEMSOUND_QUEST_MIDDLE);
 					htmltext = "30460-04.htm";
 				}
@@ -242,6 +248,7 @@ public class Q00218_TestimonyOfLife extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -719,6 +726,7 @@ public class Q00218_TestimonyOfLife extends Quest
 				htmltext = getAlreadyCompletedMsg(player);
 			}
 		}
+		
 		return htmltext;
 	}
 }

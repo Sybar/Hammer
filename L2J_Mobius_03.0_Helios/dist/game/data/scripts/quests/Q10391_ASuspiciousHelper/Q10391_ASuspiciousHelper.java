@@ -33,10 +33,12 @@ public class Q10391_ASuspiciousHelper extends Quest
 	private static final int ELI = 33858;
 	private static final int CHEL = 33861;
 	private static final int IASON = 33859;
+	
 	// Items
 	private static final int CARD = 36707; // Forged Identification Card
 	private static final int EXP_MATERTIAL = 36708; // Experimental Material
 	private static final int EAC = 952; // Scroll: Enchant Armor (C-grade)
+	
 	// Misc
 	private static final int MIN_LEVEL = 40;
 	private static final int MAX_LEVEL = 46;
@@ -102,6 +104,7 @@ public class Q10391_ASuspiciousHelper extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -165,6 +168,7 @@ public class Q10391_ASuspiciousHelper extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

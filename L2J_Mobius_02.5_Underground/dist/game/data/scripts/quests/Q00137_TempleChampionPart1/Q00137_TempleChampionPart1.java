@@ -45,6 +45,7 @@ public class Q00137_TempleChampionPart1 extends Quest
 		20291, // Enku Orc Hero
 		20292, // Enku Orc Shaman
 	};
+	
 	// Items
 	private static final int FRAGMENT = 10340;
 	private static final int EXECUTOR = 10334;
@@ -67,6 +68,7 @@ public class Q00137_TempleChampionPart1 extends Quest
 		{
 			return getNoQuestMsg(player);
 		}
+		
 		switch (event)
 		{
 			case "30070-02.htm":
@@ -101,11 +103,13 @@ public class Q00137_TempleChampionPart1 extends Quest
 					{
 						addExpAndSp(player, 219975, 13047);
 					}
+					
 					qs.exitQuest(false, true);
 				}
 				break;
 			}
 		}
+		
 		return event;
 	}
 	
@@ -136,6 +140,7 @@ public class Q00137_TempleChampionPart1 extends Quest
 		{
 			return getAlreadyCompletedMsg(player);
 		}
+		
 		switch (qs.getCond())
 		{
 			case 1:
@@ -185,6 +190,7 @@ public class Q00137_TempleChampionPart1 extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

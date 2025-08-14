@@ -48,12 +48,15 @@ public class AncientArcanCity extends AbstractNpcAI
 {
 	// NPC
 	private static final int CEREMONIAL_CAT = 33093;
+	
 	// Location
 	private static final Location ANCIENT_ARCAN_CITY = new Location(207559, 86429, -1000);
 	private static final Location EARTHQUAKE = new Location(207088, 88720, -1128);
+	
 	// Zones
 	private static final ScriptZone BROADCAST_ZONE = ZoneManager.getInstance().getZoneById(23600, ScriptZone.class); // Ancient Arcan City zone
 	private static final ScriptZone TELEPORT_ZONE = ZoneManager.getInstance().getZoneById(12015, ScriptZone.class); // Anghel Waterfall teleport zone
+	
 	// Misc
 	private static final SpawnGroup CEREMONY_SPAWNS = SpawnData.getInstance().getSpawnGroupByName("ArcanCeremony");
 	private static final Set<Npc> CEREMONIAL_CATS = ConcurrentHashMap.newKeySet();
@@ -106,6 +109,7 @@ public class AncientArcanCity extends AbstractNpcAI
 				cat.broadcastSocialAction(2);
 			}
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	

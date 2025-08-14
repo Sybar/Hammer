@@ -78,26 +78,30 @@ public class EvilIncubator extends AbstractInstance
 		33414, // Van Archer
 		33415, // Van Infantry
 	};
+	
 	// Items
 	private static final int SOE = 736; // Scroll of Escape
+	
 	// Locations
 	private static final Location PLAYER_BATTLE_LOC = new Location(56167, -175615, -7944);
 	private static final Location BATTLE_LOC_2 = new Location(56005, -175536, -7952);
 	private static final Location BATTLE_LOC_3 = new Location(56325, -175536, -7952);
 	private static final Location BOSS_LOC = new Location(56165, -177550, -7944);
+	
 	// Misc
 	private static final int TEMPLATE_ID = 185;
-	//@formatter:off
-	//private static final EnumMap<Race, String> RACE_QUESTS = new EnumMap<>(Race.class);
-	//static
-	//{
-	//	RACE_QUESTS.put(Race.HUMAN, Q10341_DayOfDestinyHumansFate.class.getSimpleName());
-	//	RACE_QUESTS.put(Race.ELF, Q10342_DayOfDestinyElvenFate.class.getSimpleName());
-	//	RACE_QUESTS.put(Race.DARK_ELF, Q10343_DayOfDestinyDarkElfsFate.class.getSimpleName());
-	//	RACE_QUESTS.put(Race.ORC, Q10344_DayOfDestinyOrcsFate.class.getSimpleName());
-	//	RACE_QUESTS.put(Race.DWARF, Q10345_DayOfDestinyDwarfsFate.class.getSimpleName());
-	//	RACE_QUESTS.put(Race.KAMAEL, Q10346_DayOfDestinyKamaelsFate.class.getSimpleName());
-	//}
+	// @formatter:off
+	// private static final EnumMap<Race, String> RACE_QUESTS = new EnumMap<>(Race.class);
+	// static
+	// {
+	// 	RACE_QUESTS.put(Race.HUMAN, Q10341_DayOfDestinyHumansFate.class.getSimpleName());
+	// 	RACE_QUESTS.put(Race.ELF, Q10342_DayOfDestinyElvenFate.class.getSimpleName());
+	// 	RACE_QUESTS.put(Race.DARK_ELF, Q10343_DayOfDestinyDarkElfsFate.class.getSimpleName());
+	// 	RACE_QUESTS.put(Race.ORC, Q10344_DayOfDestinyOrcsFate.class.getSimpleName());
+	// 	RACE_QUESTS.put(Race.DWARF, Q10345_DayOfDestinyDwarfsFate.class.getSimpleName());
+	// 	RACE_QUESTS.put(Race.KAMAEL, Q10346_DayOfDestinyKamaelsFate.class.getSimpleName());
+	// }
+	
 	private static final EnumMap<PlayerClass, Integer> CLASS_BOSS = new EnumMap<>(PlayerClass.class);
 	static
 	{
@@ -176,7 +180,7 @@ public class EvilIncubator extends AbstractInstance
 		CLASS_ITEMS.put(PlayerClass.FEMALE_SOULBREAKER, 17516);
 		CLASS_ITEMS.put(PlayerClass.ARBALESTER, 17517);
 	}
-	//@formatter:on
+	// @formatter:on
 	
 	public EvilIncubator()
 	{
@@ -196,6 +200,7 @@ public class EvilIncubator extends AbstractInstance
 		{
 			return super.onEvent(event, npc, player);
 		}
+		
 		String htmltext = null;
 		if (event.equals("enterInstance"))
 		{
@@ -262,6 +267,7 @@ public class EvilIncubator extends AbstractInstance
 									giveItems(player, classItemId, 1);
 								}
 							}
+							
 							npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.THE_CRY_OF_DESTINY_PENDANT_WILL_BE_HELPFUL_TO_YOU_PLEASE_EQUIP_IT_AND_BRING_OUT_THE_POWER_OF_THE_PENDANT_TO_PREPARE_FOR_THE_NEXT_FIGHT);
 							htmltext = "33170-06.html";
 						}
@@ -279,6 +285,7 @@ public class EvilIncubator extends AbstractInstance
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -361,6 +368,7 @@ public class EvilIncubator extends AbstractInstance
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -407,6 +415,7 @@ public class EvilIncubator extends AbstractInstance
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -434,6 +443,7 @@ public class EvilIncubator extends AbstractInstance
 					getTimers().addTimer("SPAWN_WAVE", 5000, e -> manageWaveSpawn(world));
 				}
 			}
+			
 			getTimers().addTimer("WORLD_ATTACK", 1000, e -> managerWorldAttack(world, null));
 		}
 	}
@@ -503,6 +513,7 @@ public class EvilIncubator extends AbstractInstance
 				break;
 			}
 		}
+		
 		managerWorldAttack(world, spawnedNpcs);
 	}
 	
@@ -545,6 +556,7 @@ public class EvilIncubator extends AbstractInstance
 		{
 			return null;
 		}
+		
 		// return RACE_QUESTS.containsKey(player.getRace()) ? player.getQuestState(RACE_QUESTS.get(player.getRace())) : null;
 		return null;
 	}

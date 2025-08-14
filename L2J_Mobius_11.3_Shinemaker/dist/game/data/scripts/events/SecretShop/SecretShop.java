@@ -112,6 +112,7 @@ public class SecretShop extends LongTimeEvent implements IXmlReader
 						rewardList = new ArrayList<>();
 						rewardData.put(day, rewardList);
 					}
+					
 					rewardList.add(new SecretShopRewardHolder(itemId, itemCount, grade, totalAmount, totalAmount, chance));
 				});
 			});
@@ -129,6 +130,7 @@ public class SecretShop extends LongTimeEvent implements IXmlReader
 		{
 			load();
 		}
+		
 		SecretShopEventManager.getInstance().startEvent();
 	}
 	

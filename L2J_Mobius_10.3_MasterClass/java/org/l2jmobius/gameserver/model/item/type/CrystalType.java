@@ -94,10 +94,12 @@ public enum CrystalType
 		{
 			return CrystalType.R110;
 		}
+		
 		if (level <= CrystalType.NONE.getLevel())
 		{
 			return CrystalType.NONE;
 		}
+		
 		return getByLevel(level);
 	}
 	
@@ -110,6 +112,7 @@ public enum CrystalType
 				return crystalType;
 			}
 		}
+		
 		return null;
 	}
 }

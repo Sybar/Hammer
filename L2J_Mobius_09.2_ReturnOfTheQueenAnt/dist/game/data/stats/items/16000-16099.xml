@@ -576,9 +576,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">396</stat>
 			<stat type="mAtk">192</stat>
@@ -614,9 +614,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">396</stat>
 			<stat type="mAtk">192</stat>
@@ -652,9 +652,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">396</stat>
 			<stat type="mAtk">192</stat>
@@ -690,9 +690,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">473</stat>
 			<stat type="mAtk">192</stat>
@@ -727,9 +727,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">473</stat>
 			<stat type="mAtk">192</stat>
@@ -764,9 +764,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">473</stat>
 			<stat type="mAtk">192</stat>
@@ -802,9 +802,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">487</stat>
 			<stat type="mAtk">192</stat>
@@ -840,9 +840,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">487</stat>
 			<stat type="mAtk">192</stat>
@@ -878,9 +878,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">487</stat>
 			<stat type="mAtk">192</stat>
@@ -960,9 +960,9 @@
 		<set name="crystal_type" val="S80" />
 		<set name="commissionItemType" val="ONE_HAND_SWORD" />
 		<set name="spiritshots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">361</stat>
 			<stat type="mAtk">151</stat>
@@ -983,9 +983,9 @@
 		<set name="crystal_type" val="S80" />
 		<set name="commissionItemType" val="TWO_HAND_SWORD" />
 		<set name="spiritshots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">361</stat>
 			<stat type="mAtk">151</stat>
@@ -1006,9 +1006,9 @@
 		<set name="crystal_type" val="S80" />
 		<set name="commissionItemType" val="ONE_HAND_MAGIC_SWORD" />
 		<set name="spiritshots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">361</stat>
 			<stat type="mAtk">151</stat>
@@ -1029,9 +1029,9 @@
 		<set name="crystal_type" val="S80" />
 		<set name="commissionItemType" val="DAGGER" />
 		<set name="spiritshots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">361</stat>
 			<stat type="mAtk">151</stat>
@@ -1052,9 +1052,9 @@
 		<set name="crystal_type" val="S80" />
 		<set name="commissionItemType" val="FIST_WEAPON" />
 		<set name="spiritshots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">361</stat>
 			<stat type="mAtk">151</stat>
@@ -1075,9 +1075,9 @@
 		<set name="crystal_type" val="S80" />
 		<set name="commissionItemType" val="SPEAR" />
 		<set name="spiritshots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">361</stat>
 			<stat type="mAtk">151</stat>
@@ -1098,9 +1098,9 @@
 		<set name="crystal_type" val="S80" />
 		<set name="commissionItemType" val="BLUNT_WEAPON" />
 		<set name="spiritshots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">361</stat>
 			<stat type="mAtk">151</stat>
@@ -1121,9 +1121,9 @@
 		<set name="crystal_type" val="S80" />
 		<set name="commissionItemType" val="TWO_HAND_BLUNT_WEAPON" />
 		<set name="spiritshots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">361</stat>
 			<stat type="mAtk">151</stat>
@@ -1144,9 +1144,9 @@
 		<set name="crystal_type" val="S80" />
 		<set name="commissionItemType" val="ONE_HAND_MAGIC_BLUNT_WEAPON" />
 		<set name="spiritshots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">361</stat>
 			<stat type="mAtk">151</stat>
@@ -1167,9 +1167,9 @@
 		<set name="crystal_type" val="S80" />
 		<set name="commissionItemType" val="TWO_HAND_MAGIC_BLUNT_WEAPON" />
 		<set name="spiritshots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">361</stat>
 			<stat type="mAtk">151</stat>
@@ -1190,9 +1190,9 @@
 		<set name="crystal_type" val="S80" />
 		<set name="commissionItemType" val="BOW" />
 		<set name="spiritshots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">361</stat>
 			<stat type="mAtk">151</stat>
@@ -1213,9 +1213,9 @@
 		<set name="crystal_type" val="S80" />
 		<set name="commissionItemType" val="RAPIER" />
 		<set name="spiritshots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">361</stat>
 			<stat type="mAtk">151</stat>
@@ -1239,9 +1239,9 @@
 		<set name="crystal_type" val="S80" />
 		<set name="commissionItemType" val="CROSSBOW" />
 		<set name="spiritshots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">361</stat>
 			<stat type="mAtk">151</stat>
@@ -1262,9 +1262,9 @@
 		<set name="crystal_type" val="S80" />
 		<set name="commissionItemType" val="ANCIENT_SWORD" />
 		<set name="spiritshots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">361</stat>
 			<stat type="mAtk">151</stat>
@@ -1676,9 +1676,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="ensoulNormalSlots" val="1" />
 		<set name="ensoulSpecialSlots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">359</stat>
 			<stat type="mAtk">176</stat>
@@ -1716,9 +1716,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="ensoulNormalSlots" val="1" />
 		<set name="ensoulSpecialSlots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">444</stat>
 			<stat type="mAtk">176</stat>
@@ -1754,9 +1754,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="ensoulNormalSlots" val="1" />
 		<set name="ensoulSpecialSlots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">429</stat>
 			<stat type="mAtk">176</stat>
@@ -2967,9 +2967,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="ensoulNormalSlots" val="1" />
 		<set name="ensoulSpecialSlots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">359</stat>
 			<stat type="mAtk">176</stat>
@@ -3007,9 +3007,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="ensoulNormalSlots" val="1" />
 		<set name="ensoulSpecialSlots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">359</stat>
 			<stat type="mAtk">176</stat>
@@ -3047,9 +3047,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="ensoulNormalSlots" val="1" />
 		<set name="ensoulSpecialSlots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">359</stat>
 			<stat type="mAtk">176</stat>
@@ -3088,9 +3088,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="ensoulNormalSlots" val="1" />
 		<set name="ensoulSpecialSlots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">444</stat>
 			<stat type="mAtk">176</stat>
@@ -3129,9 +3129,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="ensoulNormalSlots" val="1" />
 		<set name="ensoulSpecialSlots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">444</stat>
 			<stat type="mAtk">176</stat>
@@ -3169,9 +3169,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="ensoulNormalSlots" val="1" />
 		<set name="ensoulSpecialSlots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">444</stat>
 			<stat type="mAtk">176</stat>
@@ -3209,9 +3209,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="ensoulNormalSlots" val="1" />
 		<set name="ensoulSpecialSlots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">429</stat>
 			<stat type="mAtk">176</stat>
@@ -3248,9 +3248,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="ensoulNormalSlots" val="1" />
 		<set name="ensoulSpecialSlots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">429</stat>
 			<stat type="mAtk">176</stat>
@@ -3287,9 +3287,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="ensoulNormalSlots" val="1" />
 		<set name="ensoulSpecialSlots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">429</stat>
 			<stat type="mAtk">176</stat>

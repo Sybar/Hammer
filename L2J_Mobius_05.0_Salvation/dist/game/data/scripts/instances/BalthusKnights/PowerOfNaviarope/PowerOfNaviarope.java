@@ -36,6 +36,7 @@ public final class PowerOfNaviarope extends AbstractInstance
 {
 	// NPCs
 	private static final int MASTER_SUMMONER = 34392;
+	
 	// Misc
 	private static final int TEMPLATE_ID = 276;
 	
@@ -67,6 +68,7 @@ public final class PowerOfNaviarope extends AbstractInstance
 				}
 			}
 		}
+		
 		return null;
 	}
 	
@@ -82,6 +84,7 @@ public final class PowerOfNaviarope extends AbstractInstance
 				enterInstance(player, npc, TEMPLATE_ID);
 			}
 		}
+		
 		return htmltext;
 	}
 	

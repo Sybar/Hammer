@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
 	<item id="6800" name="Greater Mercenary Posting Ticket (Cleric/Mobile)" type="EtcItem">
 		<!-- Goddard/Cleric/Mobile. -->
@@ -390,12 +390,12 @@
 		<set name="commissionItemType" val="HAIR_ACCESSORY" />
 		<set name="isAppearanceable" val="true" />
 		<set name="equip_condition" val="{{ec_castle;1};{ec_castle_num;{6}}}" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player castle="6" />
 				<player pledgeClass="2" /> <!-- Heir -->
 			</and>
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="3633" level="1" /> <!-- Residential Stun Immunity -->
 		</skills>
@@ -416,12 +416,12 @@
 		<set name="commissionItemType" val="HAIR_ACCESSORY" />
 		<set name="isAppearanceable" val="true" />
 		<set name="equip_condition" val="{{ec_castle;1};{ec_castle_num;{2}}}" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player castle="2" />
 				<player pledgeClass="2" /> <!-- Heir -->
 			</and>
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="3633" level="1" /> <!-- Residential Stun Immunity -->
 		</skills>
@@ -442,12 +442,12 @@
 		<set name="commissionItemType" val="HAIR_ACCESSORY" />
 		<set name="isAppearanceable" val="true" />
 		<set name="equip_condition" val="{{ec_castle;1};{ec_castle_num;{7}}}" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player castle="7" />
 				<player pledgeClass="2" /> <!-- Heir -->
 			</and>
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="3633" level="1" /> <!-- Residential Stun Immunity -->
 		</skills>
@@ -468,12 +468,12 @@
 		<set name="commissionItemType" val="HAIR_ACCESSORY" />
 		<set name="isAppearanceable" val="true" />
 		<set name="equip_condition" val="{{ec_castle;1};{ec_castle_num;{4}}}" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player castle="4" />
 				<player pledgeClass="2" /> <!-- Heir -->
 			</and>
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="3633" level="1" /> <!-- Residential Stun Immunity -->
 		</skills>
@@ -494,12 +494,12 @@
 		<set name="commissionItemType" val="HAIR_ACCESSORY" />
 		<set name="isAppearanceable" val="true" />
 		<set name="equip_condition" val="{{ec_castle;1};{ec_castle_num;{1}}}" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player castle="1" />
 				<player pledgeClass="2" /> <!-- Heir -->
 			</and>
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="3633" level="1" /> <!-- Residential Stun Immunity -->
 		</skills>
@@ -520,12 +520,12 @@
 		<set name="commissionItemType" val="HAIR_ACCESSORY" />
 		<set name="isAppearanceable" val="true" />
 		<set name="equip_condition" val="{{ec_castle;1};{ec_castle_num;{3}}}" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player castle="3" />
 				<player pledgeClass="2" /> <!-- Heir -->
 			</and>
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="3633" level="1" /> <!-- Residential Stun Immunity -->
 		</skills>
@@ -546,12 +546,12 @@
 		<set name="commissionItemType" val="HAIR_ACCESSORY" />
 		<set name="isAppearanceable" val="true" />
 		<set name="equip_condition" val="{{ec_castle;1};{ec_castle_num;{5}}}" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player castle="5" />
 				<player pledgeClass="2" /> <!-- Heir -->
 			</and>
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="3633" level="2" /> <!-- Residential Stun Immunity -->
 		</skills>
@@ -571,12 +571,12 @@
 		<set name="commissionItemType" val="HAIR_ACCESSORY" />
 		<set name="isAppearanceable" val="true" />
 		<set name="equip_condition" val="{{ec_castle;1};{ec_clan_leader;1}}" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player castle="-1" />
 				<player pledgeClass="-1" /> <!-- Clan Leader -->
 			</and>
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="3632" level="1" /> <!-- Clan Gate -->
 		</skills>
@@ -595,9 +595,9 @@
 		<set name="commissionItemType" val="HAIR_ACCESSORY" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player isHero="true" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="6843" name="Cat Ears" type="Armor">
 		<!-- Cat-ear shaped hair accessory -->
@@ -624,9 +624,9 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
 		<set name="commissionItemType" val="HAIR_ACCESSORY" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player sex="1" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="6845" name="Pirate's Eyepatch" type="Armor">
 		<!-- Eyepatch accessory. When you use the pendant, slots change. -->

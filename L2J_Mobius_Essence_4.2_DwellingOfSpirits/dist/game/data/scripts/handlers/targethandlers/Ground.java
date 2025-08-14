@@ -58,16 +58,18 @@ public class Ground implements ITargetTypeHandler
 					{
 						creature.sendPacket(SystemMessageId.CANNOT_SEE_TARGET);
 					}
+					
 					return null;
 				}
 				
 				final ZoneRegion zoneRegion = ZoneManager.getInstance().getRegion(creature);
-				if (skill.isBad() && !creature.isInInstance() && !zoneRegion.checkEffectRangeInsidePeaceZone(skill, worldPosition.getX(), worldPosition.getY(), worldPosition.getZ()))
+				if (skill.hasNegativeEffect() && !creature.isInInstance() && !zoneRegion.checkEffectRangeInsidePeaceZone(skill, worldPosition.getX(), worldPosition.getY(), worldPosition.getZ()))
 				{
 					if (sendMessage)
 					{
 						creature.sendPacket(SystemMessageId.YOU_CANNOT_USE_SKILLS_THAT_MAY_HARM_OTHER_PLAYERS_IN_HERE);
 					}
+					
 					return null;
 				}
 				

@@ -39,18 +39,22 @@ public class Q00276_TotemOfTheHestui extends Quest
 {
 	// Npc
 	private static final int TANAPI = 30571;
+	
 	// Items
 	private static final int KASHA_PARASITE = 1480;
 	private static final int KASHA_CRYSTAL = 1481;
+	
 	// Monsters
 	private static final int KASHA_BEAR = 20479;
 	private static final int KASHA_BEAR_TOTEM = 27044;
+	
 	// Rewards
-	private static final int[] REWARDS = new int[]
+	private static final int[] REWARDS =
 	{
 		29,
 		1500,
 	};
+	
 	// Misc
 	private static final List<ItemHolder> SPAWN_CHANCES = new ArrayList<>();
 	private static final int MIN_LEVEL = 15;
@@ -82,6 +86,7 @@ public class Q00276_TotemOfTheHestui extends Quest
 			qs.startQuest();
 			return event;
 		}
+		
 		return null;
 	}
 	
@@ -108,6 +113,7 @@ public class Q00276_TotemOfTheHestui extends Quest
 							break;
 						}
 					}
+					
 					if (chance3)
 					{
 						giveItemRandomly(killer, KASHA_PARASITE, 1, 0, 1, true);
@@ -156,6 +162,7 @@ public class Q00276_TotemOfTheHestui extends Quest
 							{
 								rewardItems(player, reward, 1);
 							}
+							
 							qs.exitQuest(true, true);
 							htmltext = "30571-05.html";
 						}
@@ -165,6 +172,7 @@ public class Q00276_TotemOfTheHestui extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

@@ -16,7 +16,11 @@
  */
 package org.l2jmobius.gameserver.model.events.holders.actor.npc;
 
+import java.util.Collection;
+import java.util.Collections;
+
 import org.l2jmobius.gameserver.model.WorldObject;
+import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.events.EventType;
@@ -24,23 +28,32 @@ import org.l2jmobius.gameserver.model.events.holders.IBaseEvent;
 import org.l2jmobius.gameserver.model.skill.Skill;
 
 /**
- * @author UnAfraid
+ * @author UnAfraid, Mobius
  */
 public class OnNpcSkillSee implements IBaseEvent
 {
 	private final Npc _npc;
 	private final Player _caster;
 	private final Skill _skill;
-	private final WorldObject[] _targets;
+	private final Collection<WorldObject> _targets;
 	private final boolean _isSummon;
 	
-	public OnNpcSkillSee(Npc npc, Player caster, Skill skill, boolean isSummon, WorldObject... targets)
+	public OnNpcSkillSee(Npc npc, Player caster, Skill skill, boolean isSummon, Collection<WorldObject> targets)
 	{
 		_npc = npc;
 		_caster = caster;
 		_skill = skill;
 		_isSummon = isSummon;
 		_targets = targets;
+	}
+	
+	public OnNpcSkillSee(Npc npc, Player caster, Skill skill, boolean isSummon, Creature target)
+	{
+		_npc = npc;
+		_caster = caster;
+		_skill = skill;
+		_isSummon = isSummon;
+		_targets = Collections.singleton(target);
 	}
 	
 	public Npc getTarget()
@@ -58,7 +71,7 @@ public class OnNpcSkillSee implements IBaseEvent
 		return _skill;
 	}
 	
-	public WorldObject[] getTargets()
+	public Collection<WorldObject> getTargets()
 	{
 		return _targets;
 	}

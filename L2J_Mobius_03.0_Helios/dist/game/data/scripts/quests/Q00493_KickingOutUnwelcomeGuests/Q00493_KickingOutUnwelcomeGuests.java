@@ -40,6 +40,7 @@ public class Q00493_KickingOutUnwelcomeGuests extends Quest
 	private static final int UNDEAD_CREATURE = 23149;
 	private static final int SHILEN_MESSENGER = 23151;
 	private static final int HELLISH_CREATURE = 23150;
+	
 	// Misc
 	private static final int MIN_LEVEL = 95;
 	
@@ -88,6 +89,7 @@ public class Q00493_KickingOutUnwelcomeGuests extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -132,6 +134,7 @@ public class Q00493_KickingOutUnwelcomeGuests extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -179,6 +182,7 @@ public class Q00493_KickingOutUnwelcomeGuests extends Quest
 			npcLogList.add(new NpcLogListHolder(HELLISH_CREATURE, false, qs.getInt(Integer.toString(HELLISH_CREATURE))));
 			return npcLogList;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

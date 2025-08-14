@@ -50,6 +50,7 @@ public class Rakun extends AbstractNpcAI
 		{
 			npc.broadcastPacket(new NpcSay(npc.getObjectId(), ChatType.NPC_GENERAL, npc.getId(), NpcStringId.THIS_PLACE_SWARMS_WITH_DRAGONS_BY_DAY_AND_UNDEAD_BY_NIGHT));
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	

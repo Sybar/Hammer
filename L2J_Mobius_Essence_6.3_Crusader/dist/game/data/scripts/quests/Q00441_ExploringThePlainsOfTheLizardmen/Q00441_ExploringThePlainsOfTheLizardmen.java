@@ -40,6 +40,7 @@ public class Q00441_ExploringThePlainsOfTheLizardmen extends Quest
 {
 	// NPC
 	private static final int GENIE_LAMP = 34369;
+	
 	// Monsters
 	private static final int GUARD_OF_THE_PLAINS = 22182;
 	private static final int TANTA_LIZARDMAN_SUMMONER = 22155;
@@ -47,8 +48,10 @@ public class Q00441_ExploringThePlainsOfTheLizardmen extends Quest
 	private static final int TANTA_LIZARDMAN_BERSERKER = 22153;
 	private static final int TANTA_LIZARDMAN = 22151;
 	private static final int TANTA_LIZARDMAN_WARRIOR = 22152;
+	
 	// Item
 	private static final ItemHolder SPIRIT_ORE = new ItemHolder(3031, 50);
+	
 	// Misc
 	private static final int MIN_LEVEL = 76;
 	private static final int MAX_LEVEL = 85;
@@ -105,6 +108,7 @@ public class Q00441_ExploringThePlainsOfTheLizardmen extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -143,6 +147,7 @@ public class Q00441_ExploringThePlainsOfTheLizardmen extends Quest
 				htmltext = getAlreadyCompletedMsg(player);
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -178,6 +183,7 @@ public class Q00441_ExploringThePlainsOfTheLizardmen extends Quest
 			holder.add(new NpcLogListHolder(NpcStringId.DEFEAT_MONSTERS_36.getId(), true, qs.getInt(KILL_COUNT_VAR)));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

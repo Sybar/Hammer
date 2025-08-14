@@ -40,6 +40,7 @@ public class EinhasadStore extends AbstractNpcAI
 {
 	// NPC
 	private static final int MERCHANT = 34487;
+	
 	// Multisells
 	private static final int JEWELS_STONE = 34487001;
 	private static final int ACCESSORIES = 34487002;
@@ -47,6 +48,7 @@ public class EinhasadStore extends AbstractNpcAI
 	private static final int ENHANCEMENT = 34487004;
 	private static final int OTHER = 34487005;
 	private static final int CLOAK = 34487006;
+	
 	// Others
 	private static final String COMMAND_BYPASS = "Quest EinhasadStore ";
 	
@@ -101,6 +103,7 @@ public class EinhasadStore extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

@@ -35,11 +35,14 @@ public class Q10454_FinalEmbryoApostle extends Quest
 {
 	// NPCs
 	private static final int ERDA = 34319;
+	
 	// Boss
 	private static final int CAMILLE = 26236; // Camille - Inner Messiahs Castle
+	
 	// Item
 	private static final int SCROLL_ENCHANT_R_GRADE_WEAPON = 19447;
 	private static final int SCROLL_ENCHANT_R_GRADE_ARMOR = 19448;
+	
 	// Misc
 	private static final int MIN_LEVEL = 102;
 	
@@ -90,6 +93,7 @@ public class Q10454_FinalEmbryoApostle extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -123,6 +127,7 @@ public class Q10454_FinalEmbryoApostle extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

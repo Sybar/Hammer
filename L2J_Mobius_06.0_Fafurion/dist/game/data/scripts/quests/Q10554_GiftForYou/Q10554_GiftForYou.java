@@ -51,6 +51,7 @@ public final class Q10554_GiftForYou extends Quest
 	private static final int SIBIS = 34384;
 	private static final int TARTI = 34359;
 	private static final int STIG = 34361;
+	
 	// ITEMs
 	private static final int BK_REWARD_FIGHTER = 48218;
 	private static final int BK_REWARD_MYSTIC = 48219;
@@ -206,6 +207,7 @@ public final class Q10554_GiftForYou extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -301,6 +303,7 @@ public final class Q10554_GiftForYou extends Quest
 						showOnScreenMsg(player, NpcStringId.OPEN_YOUR_INVENTORY_AND_DOUBLE_CLICK_THE_BALTHUS_KNIGHT_SUPPLY_BOX_NTO_CHECK_THE_SOULSHOTS, ExShowScreenMessage.TOP_CENTER, 10000, false);
 						giveItems(player, BK_REWARD_FIGHTER, 1);
 					}
+					
 					player.addExpAndSp(643_615_638L, 200_000L);
 					showHtmlFile(player, "stig_q10554_03.htm");
 					break;

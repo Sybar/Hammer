@@ -86,6 +86,7 @@ public class PrisonManager
 			{
 				OlympiadManager.getInstance().unRegisterNoble(player);
 			}
+			
 			player.teleToLocation(entrance, 250);
 		}
 		else
@@ -139,6 +140,7 @@ public class PrisonManager
 		{
 			LOGGER.log(Level.SEVERE, "Error restoring prisoner.", e);
 		}
+		
 		return output;
 	}
 	
@@ -187,6 +189,7 @@ public class PrisonManager
 					ips.setLong(4, entry.getValue().getZoneId());
 					ips.addBatch();
 				}
+				
 				ips.executeBatch();
 			}
 			catch (Exception e)

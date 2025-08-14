@@ -34,6 +34,7 @@ public class Q00409_PathOfTheElvenOracle extends Quest
 	private static final int MANUEL = 30293;
 	private static final int ALLANA = 30424;
 	private static final int PERRIN = 30428;
+	
 	// Items
 	private static final int CRYSTAL_MEDALLION = 1231;
 	private static final int SWINDLER_MONEY = 1232;

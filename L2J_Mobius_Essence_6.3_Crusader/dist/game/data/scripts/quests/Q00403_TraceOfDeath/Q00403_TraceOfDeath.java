@@ -40,11 +40,14 @@ public class Q00403_TraceOfDeath extends Quest
 {
 	// NPC
 	private static final int GENIE_LAMP = 34369;
+	
 	// Monsters
 	private static final int DISMAL_OAK = 21004;
 	private static final int GRAVEYANRD_PREDATOR = 21005;
+	
 	// Item
 	private static final ItemHolder BOOST_DEF_SCROLL = new ItemHolder(94271, 2);
+	
 	// Misc
 	private static final int MIN_LEVEL = 52;
 	private static final int MAX_LEVEL = 56;
@@ -99,6 +102,7 @@ public class Q00403_TraceOfDeath extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -137,6 +141,7 @@ public class Q00403_TraceOfDeath extends Quest
 				htmltext = getAlreadyCompletedMsg(player);
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -172,6 +177,7 @@ public class Q00403_TraceOfDeath extends Quest
 			holder.add(new NpcLogListHolder(NpcStringId.DEFEAT_MONSTERS_3.getId(), true, qs.getInt(KILL_COUNT_VAR)));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

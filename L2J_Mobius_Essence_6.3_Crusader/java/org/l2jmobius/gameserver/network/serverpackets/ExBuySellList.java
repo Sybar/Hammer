@@ -97,11 +97,13 @@ public class ExBuySellList extends AbstractItemPacket
 				_sellList.add(item);
 			}
 		}
+		
 		_inventorySlots = player.getInventory().getNonQuestSize();
 		if (player.hasRefund())
 		{
 			_refundList.addAll(player.getRefund().getItems());
 		}
+		
 		_done = done;
 	}
 	
@@ -185,6 +187,7 @@ public class ExBuySellList extends AbstractItemPacket
 		{
 			buffer.writeShort(0);
 		}
+		
 		if (!_refundList.isEmpty())
 		{
 			buffer.writeShort(_refundList.size());
@@ -200,6 +203,7 @@ public class ExBuySellList extends AbstractItemPacket
 		{
 			buffer.writeShort(0);
 		}
+		
 		buffer.writeByte(_done ? 1 : 0);
 	}
 	

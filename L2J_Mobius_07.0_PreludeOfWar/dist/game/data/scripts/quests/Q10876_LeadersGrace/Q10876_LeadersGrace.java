@@ -39,13 +39,16 @@ public class Q10876_LeadersGrace extends Quest
 {
 	// NPC
 	private static final int SANTIAGO = 34138;
+	
 	// Items
 	private static final int SPECIAL_FISH_STEW = 47887;
 	private static final int R_GRADE_GEMSTONE = 19440;
 	private static final ItemHolder LIONEL_HUNTERS_LIST_PART_4 = new ItemHolder(47829, 1);
+	
 	// Rewards
 	private static final int SANTIAGO_CERTIFICATE = 47832;
 	private static final int ELCYUM_CRYSTAL = 36514;
+	
 	// Misc
 	private static final int MIN_LEVEL = 103;
 	
@@ -68,6 +71,7 @@ public class Q10876_LeadersGrace extends Quest
 		{
 			return htmltext;
 		}
+		
 		switch (event)
 		{
 			case "34138-02.htm":
@@ -100,6 +104,7 @@ public class Q10876_LeadersGrace extends Quest
 					{
 						mainQ.notifyEvent("SUBQUEST_FINISHED_NOTIFY", npc, player);
 					}
+					
 					htmltext = event;
 				}
 				else
@@ -109,6 +114,7 @@ public class Q10876_LeadersGrace extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -152,6 +158,7 @@ public class Q10876_LeadersGrace extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

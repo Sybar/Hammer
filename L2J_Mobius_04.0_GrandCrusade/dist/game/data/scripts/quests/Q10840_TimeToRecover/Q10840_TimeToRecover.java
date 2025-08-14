@@ -50,9 +50,11 @@ public class Q10840_TimeToRecover extends Quest
 		23510, // Atelia Flame Master
 		23511 // Fortress Archon
 	};
+	
 	// Items
 	private static final int BLACKBIRD_REPORT_SHERRY = 46137;
 	private static final int BLACKBIRD_SEAL = 46132;
+	
 	// Misc
 	private static final int MIN_LEVEL = 101;
 	private static final String KILL_COUNT_VAR = "KillCount";
@@ -99,6 +101,7 @@ public class Q10840_TimeToRecover extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -116,6 +119,7 @@ public class Q10840_TimeToRecover extends Quest
 					htmltext = "34066-03.htm";
 					break;
 				}
+				
 				htmltext = "34066-01.htm";
 				break;
 			}
@@ -137,6 +141,7 @@ public class Q10840_TimeToRecover extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -173,6 +178,7 @@ public class Q10840_TimeToRecover extends Quest
 				return holder;
 			}
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

@@ -113,6 +113,7 @@ public class EnchantChallengePointData implements IXmlReader
 									options = new HashMap<>();
 									_groupOptions.put(groupId, options);
 								}
+								
 								for (Node e = d.getFirstChild(); e != null; e = e.getNextSibling())
 								{
 									if ("option".equalsIgnoreCase(e.getNodeName()))
@@ -139,6 +140,7 @@ public class EnchantChallengePointData implements IXmlReader
 												enchantLevels.put(enchantLevel, points);
 											}
 										}
+										
 										for (String itemIdStr : itemIdsStr)
 										{
 											final int itemId = Integer.parseInt(itemIdStr);

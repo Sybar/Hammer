@@ -65,6 +65,7 @@ public class ReceiveVipProductList extends ServerPacket
 		{
 			buffer.writeInt(products.size());
 		}
+		
 		for (PrimeShopGroup product : products)
 		{
 			writeProduct(product, buffer);

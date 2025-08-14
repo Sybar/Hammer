@@ -96,13 +96,14 @@ public class HomeBoard implements IParseBoardHandler
 				break;
 			}
 		}
+		
 		return commandCheck && (player.isCastingNow() || player.isCastingSimultaneouslyNow() || player.isInCombat() || player.isInDuel() || player.isInOlympiadMode() || player.isInsideZone(ZoneId.SIEGE) || player.isInsideZone(ZoneId.PVP) || (player.getPvpFlag() > 0) || player.isAlikeDead() || player.isOnEvent() || player.isInStoreMode());
 	};
 	
 	private static final Predicate<Player> KARMA_CHECK = player -> Config.COMMUNITYBOARD_KARMA_DISABLED && (player.getKarma() > 0);
 	
 	@Override
-	public String[] getCommunityBoardCommands()
+	public String[] getCommandList()
 	{
 		final List<String> commands = new ArrayList<>();
 		commands.addAll(Arrays.asList(COMMANDS));
@@ -111,7 +112,7 @@ public class HomeBoard implements IParseBoardHandler
 	}
 	
 	@Override
-	public boolean parseCommunityBoardCommand(String command, Player player)
+	public boolean onCommand(String command, Player player)
 	{
 		// Old custom conditions check move to here
 		if (Config.COMMUNITYBOARD_COMBAT_DISABLED && COMBAT_CHECK.test(command, player))
@@ -133,7 +134,13 @@ public class HomeBoard implements IParseBoardHandler
 		}
 		
 		String returnHtml = null;
-		final String navigation = HtmCache.getInstance().getHtm(player, NAVIGATION_PATH);
+		String navigation = null;
+		
+		if (Config.CUSTOM_CB_ENABLED)
+		{
+			navigation = HtmCache.getInstance().getHtm(player, NAVIGATION_PATH);
+		}
+		
 		if (command.equals("_bbshome") || command.equals("_bbstop"))
 		{
 			final String customPath = Config.CUSTOM_CB_ENABLED ? "Custom/" : "";
@@ -227,12 +234,14 @@ public class HomeBoard implements IParseBoardHandler
 					{
 						continue;
 					}
+					
 					for (Creature target : targets)
 					{
 						skill.applyEffects(player, target);
 						if (Config.COMMUNITYBOARD_CAST_ANIMATIONS)
 						{
 							player.sendPacket(new MagicSkillUse(player, target, skill.getId(), skill.getLevel(), skill.getHitTime(), skill.getReuseDelay()));
+							
 							// not recommend broadcast
 							// player.broadcastPacket(new MagicSkillUse(player, target, skill.getId(), skill.getLevel(), skill.getHitTime(), skill.getReuseDelay()));
 						}
@@ -261,6 +270,7 @@ public class HomeBoard implements IParseBoardHandler
 					player.getSummon().setCurrentMp(player.getSummon().getMaxMp());
 					player.getSummon().setCurrentCp(player.getSummon().getMaxCp());
 				}
+				
 				player.updateUserInfo();
 				player.sendMessage("You used heal!");
 			}
@@ -308,6 +318,7 @@ public class HomeBoard implements IParseBoardHandler
 				{
 					PcCafePointsManager.getInstance().run(player);
 				}
+				
 				returnHtml = HtmCache.getInstance().getHtm(player, "data/html/CommunityBoard/Custom/premium/thankyou.html");
 			}
 		}
@@ -318,8 +329,10 @@ public class HomeBoard implements IParseBoardHandler
 			{
 				returnHtml = returnHtml.replace("%navigation%", navigation);
 			}
+			
 			CommunityBoardHandler.separateAndSend(returnHtml, player);
 		}
+		
 		return false;
 	}
 	
@@ -347,6 +360,7 @@ public class HomeBoard implements IParseBoardHandler
 		{
 			LOG.warning(FavoriteBoard.class.getSimpleName() + ": Coudn't load favorites count for " + player);
 		}
+		
 		return count;
 	}
 	

@@ -57,7 +57,7 @@ public class UserInfo extends AbstractMaskPacket<UserInfoType>
 	private String _title;
 	private PlayerAppearance _appearance;
 	private Inventory _inventory;
-	private final byte[] _masks = new byte[]
+	private final byte[] _masks =
 	{
 		(byte) 0x00,
 		(byte) 0x00,
@@ -152,6 +152,7 @@ public class UserInfo extends AbstractMaskPacket<UserInfoType>
 		{
 			buffer.writeInt(_relation);
 		}
+		
 		if (containsMask(UserInfoType.BASIC_INFO))
 		{
 			buffer.writeShort(16 + (_appearance.getVisibleName().length() * 2));
@@ -163,6 +164,7 @@ public class UserInfo extends AbstractMaskPacket<UserInfoType>
 			buffer.writeInt(_player.getPlayerClass().getId());
 			buffer.writeByte(_player.getLevel());
 		}
+		
 		if (containsMask(UserInfoType.BASE_STATS))
 		{
 			buffer.writeShort(18);
@@ -175,6 +177,7 @@ public class UserInfo extends AbstractMaskPacket<UserInfoType>
 			buffer.writeShort(_player.getLUC());
 			buffer.writeShort(_player.getCHA());
 		}
+		
 		if (containsMask(UserInfoType.MAX_HPCPMP))
 		{
 			buffer.writeShort(14);
@@ -182,6 +185,7 @@ public class UserInfo extends AbstractMaskPacket<UserInfoType>
 			buffer.writeInt(_player.getMaxMp());
 			buffer.writeInt(_player.getMaxCp());
 		}
+		
 		if (containsMask(UserInfoType.CURRENT_HPMPCP_EXP_SP))
 		{
 			buffer.writeShort(38);
@@ -192,12 +196,14 @@ public class UserInfo extends AbstractMaskPacket<UserInfoType>
 			buffer.writeLong(_player.getExp());
 			buffer.writeDouble((float) (_player.getExp() - ExperienceData.getInstance().getExpForLevel(_player.getLevel())) / (ExperienceData.getInstance().getExpForLevel(_player.getLevel() + 1) - ExperienceData.getInstance().getExpForLevel(_player.getLevel())));
 		}
+		
 		if (containsMask(UserInfoType.ENCHANTLEVEL))
 		{
 			buffer.writeShort(4);
 			buffer.writeByte(_enchantLevel);
 			buffer.writeByte(_armorEnchant);
 		}
+		
 		if (containsMask(UserInfoType.APPAREANCE))
 		{
 			buffer.writeShort(15);
@@ -206,6 +212,7 @@ public class UserInfo extends AbstractMaskPacket<UserInfoType>
 			buffer.writeInt(_player.getVisualFace());
 			buffer.writeByte(_player.isHairAccessoryEnabled());
 		}
+		
 		if (containsMask(UserInfoType.STATUS))
 		{
 			buffer.writeShort(6);
@@ -214,6 +221,7 @@ public class UserInfo extends AbstractMaskPacket<UserInfoType>
 			buffer.writeByte(_player.getCrystallizeGrade() != ItemGrade.NONE);
 			buffer.writeByte(_player.getAbilityPoints() - _player.getAbilityPointsUsed());
 		}
+		
 		if (containsMask(UserInfoType.STATS))
 		{
 			buffer.writeShort(56);
@@ -232,6 +240,7 @@ public class UserInfo extends AbstractMaskPacket<UserInfoType>
 			buffer.writeInt(_player.getMagicAccuracy());
 			buffer.writeInt(_player.getMCriticalHit());
 		}
+		
 		if (containsMask(UserInfoType.ELEMENTALS))
 		{
 			buffer.writeShort(14);
@@ -242,6 +251,7 @@ public class UserInfo extends AbstractMaskPacket<UserInfoType>
 			buffer.writeShort(_player.getDefenseElementValue(AttributeType.HOLY));
 			buffer.writeShort(_player.getDefenseElementValue(AttributeType.DARK));
 		}
+		
 		if (containsMask(UserInfoType.POSITION))
 		{
 			buffer.writeShort(18);
@@ -250,6 +260,7 @@ public class UserInfo extends AbstractMaskPacket<UserInfoType>
 			buffer.writeInt(_player.getZ());
 			buffer.writeInt(_player.isInVehicle() ? _player.getVehicle().getObjectId() : 0);
 		}
+		
 		if (containsMask(UserInfoType.SPEED))
 		{
 			buffer.writeShort(18);
@@ -262,18 +273,21 @@ public class UserInfo extends AbstractMaskPacket<UserInfoType>
 			buffer.writeShort(_flyRunSpd);
 			buffer.writeShort(_flyWalkSpd);
 		}
+		
 		if (containsMask(UserInfoType.MULTIPLIER))
 		{
 			buffer.writeShort(18);
 			buffer.writeDouble(_moveMultiplier);
 			buffer.writeDouble(_player.getAttackSpeedMultiplier());
 		}
+		
 		if (containsMask(UserInfoType.COL_RADIUS_HEIGHT))
 		{
 			buffer.writeShort(18);
 			buffer.writeDouble(_player.getCollisionRadius());
 			buffer.writeDouble(_player.getCollisionHeight());
 		}
+		
 		if (containsMask(UserInfoType.ATK_ELEMENTAL))
 		{
 			buffer.writeShort(5);
@@ -281,6 +295,7 @@ public class UserInfo extends AbstractMaskPacket<UserInfoType>
 			buffer.writeByte(attackAttribute.getClientId());
 			buffer.writeShort(_player.getAttackElementValue(attackAttribute));
 		}
+		
 		if (containsMask(UserInfoType.CLAN))
 		{
 			buffer.writeShort(32 + (_title.length() * 2));
@@ -295,6 +310,7 @@ public class UserInfo extends AbstractMaskPacket<UserInfoType>
 			buffer.writeInt(_player.getAllyCrestId());
 			buffer.writeByte(_player.isInMatchingRoom());
 		}
+		
 		if (containsMask(UserInfoType.SOCIAL))
 		{
 			buffer.writeShort(22);
@@ -308,6 +324,7 @@ public class UserInfo extends AbstractMaskPacket<UserInfoType>
 			buffer.writeShort(_player.getRecomLeft());
 			buffer.writeShort(_player.getRecomHave());
 		}
+		
 		if (containsMask(UserInfoType.VITA_FAME))
 		{
 			buffer.writeShort(15);
@@ -316,6 +333,7 @@ public class UserInfo extends AbstractMaskPacket<UserInfoType>
 			buffer.writeInt(_player.getFame());
 			buffer.writeInt(_player.getRaidbossPoints());
 		}
+		
 		if (containsMask(UserInfoType.SLOTS))
 		{
 			buffer.writeShort(11); // 140
@@ -334,18 +352,21 @@ public class UserInfo extends AbstractMaskPacket<UserInfoType>
 				buffer.writeByte(0);
 			}
 		}
+		
 		if (containsMask(UserInfoType.MOVEMENTS))
 		{
 			buffer.writeShort(4);
 			buffer.writeByte(_player.isInsideZone(ZoneId.WATER) ? 1 : _player.isFlyingMounted() ? 2 : 0);
 			buffer.writeByte(_player.isRunning());
 		}
+		
 		if (containsMask(UserInfoType.COLOR))
 		{
 			buffer.writeShort(10);
 			buffer.writeInt(_appearance.getNameColor());
 			buffer.writeInt(_appearance.getTitleColor());
 		}
+		
 		if (containsMask(UserInfoType.INVENTORY_LIMIT))
 		{
 			buffer.writeShort(9);
@@ -354,6 +375,7 @@ public class UserInfo extends AbstractMaskPacket<UserInfoType>
 			buffer.writeShort(_player.getInventoryLimit());
 			buffer.writeByte(_player.isCursedWeaponEquipped() ? CursedWeaponsManager.getInstance().getLevel(_player.getCursedWeaponEquippedId()) : 0);
 		}
+		
 		if (containsMask(UserInfoType.TRUE_HERO))
 		{
 			buffer.writeShort(9);
@@ -376,6 +398,7 @@ public class UserInfo extends AbstractMaskPacket<UserInfoType>
 				relation |= 0x10; // Party leader
 			}
 		}
+		
 		if (clan != null)
 		{
 			relation |= 0x20; // Clan member
@@ -384,10 +407,12 @@ public class UserInfo extends AbstractMaskPacket<UserInfoType>
 				relation |= 0x40; // Clan leader
 			}
 		}
+		
 		if (player.isInSiege())
 		{
 			relation |= 0x80; // In siege
 		}
+		
 		return relation;
 	}
 }

@@ -32,6 +32,7 @@ public class Q00474_WaitingForTheSummer extends Quest
 	// NPCs
 	private static final int ADVENTURER = 32327;
 	private static final int VISHOTSKY = 31981;
+	
 	// Monsters
 	private static final int LOST_BUFFALO = 22093;
 	private static final int FROST_BUFFALO = 22094;
@@ -39,10 +40,12 @@ public class Q00474_WaitingForTheSummer extends Quest
 	private static final int URSUS = 22096;
 	private static final int LOST_YETI = 22097;
 	private static final int FROST_YETI = 22098;
+	
 	// Items
 	private static final int BUFFALO_MEAT = 19490;
 	private static final int URSUS_MEAT = 19491;
 	private static final int YETI_MEAT = 19492;
+	
 	// Misc
 	private static final int MIN_LEVEL = 60;
 	private static final int MAX_LEVEL = 64;
@@ -85,6 +88,7 @@ public class Q00474_WaitingForTheSummer extends Quest
 				htmltext = null;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -103,6 +107,7 @@ public class Q00474_WaitingForTheSummer extends Quest
 					{
 						break;
 					}
+					
 					qs.setState(State.CREATED);
 					// fallthrough
 				}
@@ -125,6 +130,7 @@ public class Q00474_WaitingForTheSummer extends Quest
 			{
 				addExpAndSp(player, 1879400, 451);
 			}
+			
 			qs.exitQuest(QuestType.DAILY, true);
 			htmltext = "31981-01.html";
 		}
@@ -132,6 +138,7 @@ public class Q00474_WaitingForTheSummer extends Quest
 		{
 			htmltext = "31981-02.html";
 		}
+		
 		return htmltext;
 	}
 	

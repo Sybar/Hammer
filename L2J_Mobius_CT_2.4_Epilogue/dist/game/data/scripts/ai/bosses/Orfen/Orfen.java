@@ -93,6 +93,7 @@ public class Orfen extends AbstractNpcAI
 		{
 			// load the unlock date and time for Orfen from DB
 			final long temp = info.getLong("respawn_time") - System.currentTimeMillis();
+			
 			// if Orfen is locked until a certain time, mark it so and start the unlock timer
 			// the unlock time has not yet expired.
 			if (temp > 0)
@@ -116,6 +117,7 @@ public class Orfen extends AbstractNpcAI
 				{
 					loc = POS[3];
 				}
+				
 				final GrandBoss orfen = (GrandBoss) addSpawn(ORFEN, loc, false, 0);
 				GrandBossManager.getInstance().setStatus(ORFEN, ALIVE);
 				spawnBoss(orfen);
@@ -149,6 +151,7 @@ public class Orfen extends AbstractNpcAI
 		GrandBossManager.getInstance().addBoss(npc);
 		npc.broadcastPacket(new PlaySound(1, "BS01_A", 1, npc.getObjectId(), npc.getX(), npc.getY(), npc.getZ()));
 		startQuestTimer("check_orfen_pos", 10000, npc, null, true);
+		
 		// Spawn minions
 		final int x = npc.getX();
 		final int y = npc.getY();
@@ -187,6 +190,7 @@ public class Orfen extends AbstractNpcAI
 			{
 				loc = POS[3];
 			}
+			
 			final GrandBoss orfen = (GrandBoss) addSpawn(ORFEN, loc, false, 0);
 			GrandBossManager.getInstance().setStatus(ORFEN, ALIVE);
 			spawnBoss(orfen);
@@ -224,6 +228,7 @@ public class Orfen extends AbstractNpcAI
 					mob.decayMe();
 				}
 			}
+			
 			MINIONS.clear();
 		}
 		else if (event.equalsIgnoreCase("spawn_minion"))
@@ -232,6 +237,7 @@ public class Orfen extends AbstractNpcAI
 			mob.setIsRaidMinion(true);
 			MINIONS.add(mob);
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	
@@ -274,6 +280,7 @@ public class Orfen extends AbstractNpcAI
 			{
 				chance = 9;
 			}
+			
 			if ((callerId != RIBA_IREN) && (caller.getCurrentHp() < (caller.getMaxHp() / 2.0)) && (getRandom(10) < chance))
 			{
 				npc.getAI().setIntention(Intention.IDLE, null, null);
@@ -327,6 +334,7 @@ public class Orfen extends AbstractNpcAI
 			LOGGER.info("Orfen will respawn at: " + TimeUtil.getDateTimeString(nextRespawnTime));
 			
 			startQuestTimer("orfen_unlock", respawnTime, null, null);
+			
 			// also save the respawn time so that the info is maintained past reboots
 			final StatSet info = GrandBossManager.getInstance().getStatSet(ORFEN);
 			info.set("respawn_time", System.currentTimeMillis() + respawnTime);

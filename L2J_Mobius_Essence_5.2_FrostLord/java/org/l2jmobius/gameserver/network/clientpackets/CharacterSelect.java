@@ -115,7 +115,7 @@ public class CharacterSelect extends ClientPacket
 					final Player player = World.getInstance().getPlayer(info.getObjectId());
 					if (player != null)
 					{
-						Disconnection.of(player).storeMe().deleteMe();
+						Disconnection.of(player).storeAndDelete();
 					}
 					
 					// Banned?
@@ -165,6 +165,7 @@ public class CharacterSelect extends ClientPacket
 							client.sendPacket(msg);
 							return;
 						}
+						
 						if (info.isEvil() && (World.getInstance().getAllEvilPlayers().size() >= (World.getInstance().getAllGoodPlayers().size() + Config.FACTION_BALANCE_PLAYER_EXCEED_LIMIT)))
 						{
 							final NpcHtmlMessage msg = new NpcHtmlMessage();
@@ -220,7 +221,7 @@ public class CharacterSelect extends ClientPacket
 						final TerminateReturn terminate = EventDispatcher.getInstance().notifyEvent(new OnPlayerSelect(cha, cha.getObjectId(), cha.getName(), client), Containers.Players(), TerminateReturn.class);
 						if ((terminate != null) && terminate.terminate())
 						{
-							Disconnection.of(cha).defaultSequence(LeaveWorld.STATIC_PACKET);
+							Disconnection.of(cha).storeAndDeleteWith(LeaveWorld.STATIC_PACKET);
 							return;
 						}
 					}

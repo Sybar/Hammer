@@ -37,7 +37,6 @@ import org.l2jmobius.gameserver.util.HtmlUtil;
  * Clan board.
  * @author Zoey76, Skache
  */
-
 public class ClanBoard implements IWriteBoardHandler
 {
 	private static final Logger LOGGER = Logger.getLogger(ClanBoard.class.getName());
@@ -49,13 +48,13 @@ public class ClanBoard implements IWriteBoardHandler
 	};
 	
 	@Override
-	public String[] getCommunityBoardCommands()
+	public String[] getCommandList()
 	{
 		return COMMANDS;
 	}
 	
 	@Override
-	public boolean parseCommunityBoardCommand(String command, Player player)
+	public boolean onCommand(String command, Player player)
 	{
 		if (command.equals("_bbsclan"))
 		{
@@ -123,6 +122,7 @@ public class ClanBoard implements IWriteBoardHandler
 			{
 				clan.setNoticeEnabled(true);
 			}
+			
 			clanNotice(player, player.getClanId());
 		}
 		else if (command.startsWith("_bbsclan_clannotice_disable"))
@@ -133,6 +133,7 @@ public class ClanBoard implements IWriteBoardHandler
 			{
 				clan.setNoticeEnabled(false);
 			}
+			
 			clanNotice(player, player.getClanId());
 		}
 		else if (command.startsWith("_bbsclan;mail"))
@@ -148,6 +149,7 @@ public class ClanBoard implements IWriteBoardHandler
 		{
 			CommunityBoardHandler.separateAndSend("<html><body><br><br><center>Command " + command + " needs development.</center><br><br></body></html>", player);
 		}
+		
 		return true;
 	}
 	
@@ -159,17 +161,17 @@ public class ClanBoard implements IWriteBoardHandler
 			if (cl.getLevel() < 2)
 			{
 				player.sendPacket(SystemMessageId.THERE_ARE_NO_COMMUNITIES_IN_MY_CLAN_CLAN_COMMUNITIES_ARE_ALLOWED_FOR_CLANS_WITH_SKILL_LEVELS_OF_2_AND_HIGHER);
-				parseCommunityBoardCommand("_bbsclan_clanlist", player);
+				onCommand("_bbsclan_clanlist", player);
 			}
 			else
 			{
 				StringBuilder html = new StringBuilder();
-				html.append("<html><body><br><table><tr><td FIXWIDTH=15>&nbsp;</td><td width=610 height=30 align=left><a action=\"bypass _bbshome\">HOME</a>&nbsp;&gt;<a action=\"bypass _bbsclan_clanlist\"> CLAN COMMUNITY </a>&nbsp;&gt;<a action=\"bypass _bbsclan_clanhome;");
+				html.append("<html><body><br><table><tr><td FIXWIDTH=15>&nbsp;</td><td width=630 height=30 align=left><a action=\"bypass _bbshome\">Home</a>&nbsp;&gt;<a action=\"bypass _bbsclan_clanlist\">&nbsp;&amp;$809;</a>&nbsp;&gt;<a action=\"bypass _bbsclan_clanhome;");
 				html.append(clanId);
-				html.append("\"> &amp;$802;</a></td></tr></table>");
-				html.append("<table border=0 cellspacing=0 cellpadding=0 width=610 bgcolor=434343>");
+				html.append("\">&amp;$802;</a></td></tr></table>");
+				html.append("<table border=0 cellspacing=0 cellpadding=0 width=625 bgcolor=000000>");
 				html.append("<tr><td height=10></td></tr>");
-				html.append("<tr><td fixWIDTH=5></td><td fixWIDTH=600>");
+				html.append("<tr><td fixWIDTH=5></td><td fixWIDTH=630>");
 				html.append("<a action=\"bypass _bbsclan_clanhome;");
 				html.append(clanId);
 				html.append(";announce\">[Clan Announcement]</a>&nbsp;&nbsp;");
@@ -190,11 +192,11 @@ public class ClanBoard implements IWriteBoardHandler
 					final Clan clan = player.getClan();
 					if (clan.isNoticeEnabled())
 					{
-						html.append("<tr><td fixwidth=610> Clan Notice Function:&nbsp;&nbsp;&nbsp;on&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;<a action=\"bypass _bbsclan_clannotice_disable\">off</a>");
+						html.append("<tr><td fixwidth=610> Clan Notice Function:&nbsp;&nbsp;&$227;&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;<a action=\"bypass _bbsclan_clannotice_disable\">&$228;</a>");
 					}
 					else
 					{
-						html.append("<tr><td fixwidth=610> Clan Notice Function:&nbsp;&nbsp;&nbsp;<a action=\"bypass _bbsclan_clannotice_enable\">on</a>&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;off");
+						html.append("<tr><td fixwidth=610> Clan Notice Function:&nbsp;&nbsp;<a action=\"bypass _bbsclan_clannotice_enable\">&$227;</a>&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;&$228;");
 					}
 					
 					html.append("</td></tr></table><img src=\"L2UI.Squaregray\" width=\"610\" height=\"1\"><br> <br><table width=610 border=0 cellspacing=2 cellpadding=0><tr><td>Edit Notice: </td></tr><tr><td height=5></td></tr><tr><td><MultiEdit var =\"Content\" width=610 height=100></td></tr></table><br><table width=610 border=0 cellspacing=0 cellpadding=0><tr><td height=5></td></tr><tr><td align=center FIXWIDTH=65><button value=\"&$140;\" action=\"Write Notice Set _ Content Content Content\" back=\"l2ui_ch3.smallbutton2_down\" width=65 height=20 fore=\"l2ui_ch3.smallbutton2\" ></td><td align=center FIXWIDTH=45></td><td align=center FIXWIDTH=500></td></tr></table></center></body></html>");
@@ -206,7 +208,7 @@ public class ClanBoard implements IWriteBoardHandler
 					final Clan clan = player.getClan();
 					if (clan.isNoticeEnabled())
 					{
-						html.append("<table border=0 cellspacing=0 cellpadding=0><tr><td>The current clan notice:</td></tr><tr><td fixwidth=5></td><td FIXWIDTH=600 align=left>" + clan.getNotice() + "</td><td fixqqwidth=5></td></tr></table>");
+						html.append("<table border=0 cellspacing=0 cellpadding=0><tr><td>The current clan notice:</td></tr><tr><td fixwidth=5></td><td FIXWIDTH=630 align=left>" + clan.getNotice() + "</td><td fixqqwidth=5></td></tr></table>");
 					}
 					html.append("</center></body></html>");
 					CommunityBoardHandler.separateAndSend(html.toString(), player);
@@ -224,10 +226,10 @@ public class ClanBoard implements IWriteBoardHandler
 		}
 		
 		final StringBuilder html = new StringBuilder(2048);
-		html.append("<html><body><br><center><table><tr><td FIXWIDTH=15>&nbsp;</td><td width=610 height=30 align=left><a action=\"bypass _bbshome\">HOME</a>&nbsp;>&nbsp;Clan Community</td></tr></table>");
-		html.append("<table border=0 cellspacing=0 cellpadding=0 width=610 bgcolor=434343>");
+		html.append("<html><body><br><center><table><tr><td FIXWIDTH=15>&nbsp;</td><td width=630 height=30 align=left><a action=\"bypass _bbshome\">Home</a>&nbsp;>&nbsp;&amp;$809;</td></tr></table>");
+		html.append("<table border=0 cellspacing=0 cellpadding=0 width=625 bgcolor=000000>");
 		html.append("<tr><td height=10></td></tr>");
-		html.append("<tr><td fixWIDTH=5></td><td fixWIDTH=600>");
+		html.append("<tr><td fixWIDTH=5></td><td fixWIDTH=630>");
 		
 		// Show "GO TO MY CLAN" button if player has a clan.
 		if (player.getClan() != null)
@@ -243,7 +245,7 @@ public class ClanBoard implements IWriteBoardHandler
 		html.append("</td><td fixWIDTH=5></td></tr>");
 		html.append("<tr><td height=10></td></tr>");
 		html.append("</table><br>");
-		html.append("<table border=0 cellspacing=0 cellpadding=2 bgcolor=5A5A5A width=610>");
+		html.append("<table border=0 cellspacing=0 cellpadding=2 bgcolor=000000 width=625>");
 		html.append("<tr><td FIXWIDTH=5></td><td FIXWIDTH=200 align=center>CLAN NAME</td><td FIXWIDTH=200 align=center>CLAN LEADER</td>");
 		html.append("<td FIXWIDTH=100 align=center>CLAN LEVEL</td><td FIXWIDTH=100 align=center>CLAN MEMBERS</td><td FIXWIDTH=5></td></tr>");
 		html.append("</table><img src=\"L2UI.Squareblank\" width=\"1\" height=\"5\">");
@@ -269,6 +271,7 @@ public class ClanBoard implements IWriteBoardHandler
 				html.append(cl.getMembersCount());
 				html.append("</td><td FIXWIDTH=5></td></tr><tr><td height=5></td></tr></table><img src=\"L2UI.SquareBlank\" width=\"610\" height=\"3\"><img src=\"L2UI.SquareGray\" width=\"610\" height=\"1\">");
 			}
+			
 			currentIndex++;
 			if (currentIndex >= endIndex)
 			{
@@ -306,6 +309,7 @@ public class ClanBoard implements IWriteBoardHandler
 				html.append(" </a></td>");
 			}
 		}
+		
 		if (index == nbp)
 		{
 			html.append("<td><button action=\"\" back=\"l2ui_ch3.next1_down\" fore=\"l2ui_ch3.next1\" width=16 height=16 ></td>");
@@ -333,17 +337,19 @@ public class ClanBoard implements IWriteBoardHandler
 			if (cl.getLevel() < 2)
 			{
 				player.sendPacket(SystemMessageId.THERE_ARE_NO_COMMUNITIES_IN_MY_CLAN_CLAN_COMMUNITIES_ARE_ALLOWED_FOR_CLANS_WITH_SKILL_LEVELS_OF_2_AND_HIGHER);
-				parseCommunityBoardCommand("_bbsclan_clanlist", player);
+				onCommand("_bbsclan_clanlist", player);
 			}
 			else
 			{
 				StringBuilder html = new StringBuilder();
-				html.append("<html><body><br><table><tr><td FIXWIDTH=15>&nbsp;</td><td width=610 height=30 align=left><a action=\"bypass _bbshome\">HOME</a> &nbsp;&gt; <a action=\"bypass _bbsclan_clanlist\"> CLAN COMMUNITY </a>&nbsp;&gt;");
+				html.append("<html><body><br><table><tr><td FIXWIDTH=15>&nbsp;</td><td width=630 height=30 align=left><a action=\"bypass _bbshome\">Home</a> &nbsp;&gt; <a action=\"bypass _bbsclan_clanlist\">&nbsp;&amp;$809;</a>&nbsp;&gt;");
 				html.append("&amp;$802; </a></td></tr></table>");
+				
 				// Add the background table (without buttons) for everyone.
-				html.append("<table border=0 cellspacing=0 cellpadding=0 width=610 bgcolor=434343>");
+				html.append("<table border=0 cellspacing=0 cellpadding=0 width=625 bgcolor=000000>");
 				html.append("<tr><td height=10></td></tr>");
-				html.append("<tr><td fixWIDTH=5></td><td fixwidth=600>");
+				html.append("<tr><td fixWIDTH=5></td><td fixwidth=630>");
+				
 				// Show the buttons only if the player is the clan leader.
 				if (player.getObjectId() == cl.getLeaderId())
 				{
@@ -438,6 +444,7 @@ public class ClanBoard implements IWriteBoardHandler
 				}
 			}
 		}
+		
 		return clans;
 	}
 	
@@ -445,14 +452,14 @@ public class ClanBoard implements IWriteBoardHandler
 	{
 		StringBuilder html = new StringBuilder(2048);
 		html.append("<html><body><br><br><center><br1><br1><table border=0 cellspacing=0 cellpadding=0><tr><td FIXWIDTH=15>&nbsp;</td><td width=610 height=30 align=left>");
-		html.append("<a action=\"bypass _bbshome\">HOME</a> &nbsp;&gt; <a action=\"bypass _bbsclan_clanlist\"> CLAN COMMUNITY </a>");
+		html.append("<a action=\"bypass _bbshome\">Home</a> &nbsp;&gt; <a action=\"bypass _bbsclan_clanlist\">&nbsp;&amp;$809;</a>");
 		if (!searchKeyword.isEmpty())
 		{
 			html.append("&nbsp;&gt; <a action=\"bypass _bbsclan_clanlist\"> Search </a>");
 		}
-		html.append("</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width=610 bgcolor=434343><tr><td height=10></td></tr><tr><td fixWIDTH=5></td><td fixWIDTH=600><a action=\"bypass _bbsclan_clanhome;");
+		html.append("</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width=625 bgcolor=000000><tr><td height=10></td></tr><tr><td fixWIDTH=5></td><td fixWIDTH=630><a action=\"bypass _bbsclan_clanhome;");
 		html.append(player.getClan() != null ? player.getClan().getId() : 0);
-		html.append("\">[GO TO MY CLAN]</a>&nbsp;&nbsp;</td><td fixWIDTH=5></td></tr><tr><td height=10></td></tr></table><br><table border=0 cellspacing=0 cellpadding=2 bgcolor=5A5A5A width=610><tr><td FIXWIDTH=5></td><td FIXWIDTH=200 align=center>CLAN NAME</td><td FIXWIDTH=200 align=center>CLAN LEADER</td><td FIXWIDTH=100 align=center>CLAN LEVEL</td><td FIXWIDTH=100 align=center>CLAN MEMBERS</td><td FIXWIDTH=5></td></tr></table><img src=\"L2UI.Squareblank\" width=\"1\" height=\"5\">");
+		html.append("\">[GO TO MY CLAN]</a>&nbsp;&nbsp;</td><td fixWIDTH=5></td></tr><tr><td height=10></td></tr></table><br><table border=0 cellspacing=0 cellpadding=2 bgcolor=000000 width=625><tr><td FIXWIDTH=5></td><td FIXWIDTH=200 align=center>CLAN NAME</td><td FIXWIDTH=200 align=center>CLAN LEADER</td><td FIXWIDTH=100 align=center>CLAN LEVEL</td><td FIXWIDTH=100 align=center>CLAN MEMBERS</td><td FIXWIDTH=5></td></tr></table><img src=\"L2UI.Squareblank\" width=\"1\" height=\"5\">");
 		
 		if (!clans.isEmpty())
 		{
@@ -493,8 +500,8 @@ public class ClanBoard implements IWriteBoardHandler
 		html.append("<tr>");
 		html.append("<td width=15>&nbsp;</td>");
 		html.append("<td width=595 height=30>");
-		html.append("<a action=\"bypass _bbshome\">HOME</a>&nbsp;>&nbsp;");
-		html.append("<a action=\"bypass _bbsclan_clanlist\"> CLAN COMMUNITY </a>&nbsp;>&nbsp;");
+		html.append("<a action=\"bypass _bbshome\">Home</a>&nbsp;>&nbsp;");
+		html.append("<a action=\"bypass _bbsclan_clanlist\">&nbsp;&amp;$809;</a>&nbsp;>&nbsp;");
 		html.append("<a action=\"bypass _bbsclan_clanhome;");
 		html.append(clanId);
 		html.append("\">&$802;</a>");
@@ -545,6 +552,7 @@ public class ClanBoard implements IWriteBoardHandler
 			clanList(player, 1);
 			return;
 		}
+		
 		String content = generateClanMailHtml(player, clanId, clan.getName());
 		CommunityBoardHandler.separateAndSend(content, player);
 	}
@@ -574,6 +582,7 @@ public class ClanBoard implements IWriteBoardHandler
 			{
 				return true;
 			}
+			
 			final StringBuilder membersList = new StringBuilder();
 			for (ClanMember players : clan.getMembers())
 			{
@@ -587,6 +596,7 @@ public class ClanBoard implements IWriteBoardHandler
 					membersList.append(players.getName());
 				}
 			}
+			
 			MailBoard.getInstance().sendMail(membersList.toString(), arg4, arg5, player);
 			clanHome(player, player.getClanId());
 		}
@@ -597,6 +607,7 @@ public class ClanBoard implements IWriteBoardHandler
 			clanSearch(player, searchType, searchKeyword);
 			return true;
 		}
+		
 		return false;
 	}
 }

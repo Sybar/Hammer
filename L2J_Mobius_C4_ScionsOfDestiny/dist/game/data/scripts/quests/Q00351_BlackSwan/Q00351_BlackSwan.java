@@ -33,6 +33,7 @@ public class Q00351_BlackSwan extends Quest
 	private static final int GOSTA = 30916;
 	private static final int IASON_HEINE = 30969;
 	private static final int ROMAN = 30897;
+	
 	// Items
 	private static final int ORDER_OF_GOSTA = 4296;
 	private static final int LIZARD_FANG = 4297;

@@ -35,6 +35,7 @@ public class Q00403_PathOfTheRogue extends Quest
 	// NPCs
 	private static final int BEZIQUE = 30379;
 	private static final int NETI = 30425;
+	
 	// Items
 	private static final int BEZIQUE_LETTER = 1180;
 	private static final int NETI_BOW = 1181;

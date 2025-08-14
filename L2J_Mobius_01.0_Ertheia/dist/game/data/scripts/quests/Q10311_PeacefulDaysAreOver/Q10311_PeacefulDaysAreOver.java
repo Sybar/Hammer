@@ -37,6 +37,7 @@ public class Q10311_PeacefulDaysAreOver extends Quest
 	// npc
 	private static final int SELINA = 33032;
 	private static final int SLASKI = 32893;
+	
 	// Misc
 	private static final int MIN_LEVEL = 90;
 	
@@ -58,6 +59,7 @@ public class Q10311_PeacefulDaysAreOver extends Quest
 		{
 			return htmltext;
 		}
+		
 		switch (event)
 		{
 			case "33032-02.htm":
@@ -84,6 +86,7 @@ public class Q10311_PeacefulDaysAreOver extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -123,6 +126,7 @@ public class Q10311_PeacefulDaysAreOver extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

@@ -43,8 +43,10 @@ public class Q10403_TheGuardianGiant extends Quest
 		20647, // Yintzu
 		20649, // Hamrut
 	};
+	
 	// Items
 	private static final int FRAGMENT = 36713; // Guardian Giant's Nucleus Fragment
+	
 	// Misc
 	private static final int MIN_LEVEL = 58;
 	private static final int MAX_LEVEL = 61;
@@ -96,11 +98,13 @@ public class Q10403_TheGuardianGiant extends Quest
 					{
 						addExpAndSp(player, 9579090, 1578);
 					}
+					
 					htmltext = event;
 				}
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -141,6 +145,7 @@ public class Q10403_TheGuardianGiant extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

@@ -42,6 +42,7 @@ public class ResidenceOfKingPetram extends AbstractInstance
 	private static final int PETRAM = 29108;
 	private static final int PETRAM_PIECE = 29116;
 	private static final int PETRAM_FRAGMENT = 29117;
+	
 	// Skills
 	private static final SkillHolder EARTH_ENERGY = new SkillHolder(50066, 1); // When spawn Minion.
 	private static final SkillHolder EARTH_FURY = new SkillHolder(50059, 1); // When change invul state.
@@ -122,16 +123,19 @@ public class ResidenceOfKingPetram extends AbstractInstance
 						m1.setTarget(world.getNpc(PETRAM));
 						m1.doCast(TEST.getSkill());
 					}
+					
 					if (!m2.isDead())
 					{
 						m2.setTarget(world.getNpc(PETRAM));
 						m2.doCast(TEST.getSkill());
 					}
+					
 					if (!m3.isDead())
 					{
 						m3.setTarget(world.getNpc(PETRAM));
 						m3.doCast(TEST.getSkill());
 					}
+					
 					if (!m4.isDead())
 					{
 						m4.setTarget(world.getNpc(PETRAM));
@@ -152,6 +156,7 @@ public class ResidenceOfKingPetram extends AbstractInstance
 				break;
 			}
 		}
+		
 		return null;
 	}
 	

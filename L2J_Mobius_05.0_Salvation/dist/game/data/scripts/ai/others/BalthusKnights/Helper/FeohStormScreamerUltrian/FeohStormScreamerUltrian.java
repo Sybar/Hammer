@@ -41,13 +41,16 @@ public final class FeohStormScreamerUltrian extends AbstractNpcAI
 {
 	// NPCs
 	private static final int ULTRIAN = 34380;
+	
 	// Monsters
 	private static final int ANTHARAS = 24087;
 	private static final int INVISIBLE_NPC = 18918;
+	
 	// Skills
 	private static final SkillHolder ElementalSpikeSkill = new SkillHolder(32152, 1);
 	private static final SkillHolder UpdraftDestructionSkill = new SkillHolder(32153, 1);
 	private static final SkillHolder QuadrupleBlasterSkill = new SkillHolder(32154, 1);
+	
 	// Misc
 	private static final int p_CheckInterval = 4000;
 	private static final int p_TalkInterval = 15000;

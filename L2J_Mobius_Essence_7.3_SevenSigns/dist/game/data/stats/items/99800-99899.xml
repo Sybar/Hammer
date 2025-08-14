@@ -1636,11 +1636,11 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<cond>
+		<conditions>
 			<not>
 				<player active_effect_id="48400" /> <!-- Red's Blessing Lv. 1 -->
 			</not>
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="48400" level="1" /> <!-- Red's Blessing Lv. 1 -->
 		</skills>

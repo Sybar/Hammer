@@ -23,7 +23,6 @@ package org.l2jmobius.gameserver.network.clientpackets;
 import org.l2jmobius.Config;
 import org.l2jmobius.gameserver.model.World;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.actor.enums.player.PlayerCondOverride;
 import org.l2jmobius.gameserver.model.clan.Clan;
 import org.l2jmobius.gameserver.model.groups.Party;
 import org.l2jmobius.gameserver.network.SystemMessageId;
@@ -98,7 +97,7 @@ public class RequestNewInvitePartyInquiry extends ClientPacket
 			return;
 		}
 		
-		if (Config.JAIL_DISABLE_CHAT && player.isJailed() && !player.canOverrideCond(PlayerCondOverride.CHAT_CONDITIONS))
+		if (Config.JAIL_DISABLE_CHAT && player.isJailed() && !player.isGM())
 		{
 			player.sendPacket(SystemMessageId.CHATTING_IS_CURRENTLY_PROHIBITED);
 			return;

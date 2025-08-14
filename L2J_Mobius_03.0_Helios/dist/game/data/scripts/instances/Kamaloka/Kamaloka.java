@@ -63,22 +63,26 @@ public class Kamaloka extends AbstractInstance
 	 * If true shaman in the first room will have same npcId as other mobs, making radar useless Default: true (but not retail like)
 	 */
 	private static final boolean STEALTH_SHAMAN = true;
+	
 	// Template IDs for Kamaloka
 	// @formatter:off
 	private static final int[] TEMPLATE_IDS =
 	{
 		57, 58, 73, 60, 61, 74, 63, 64, 75, 66, 67, 76, 69, 70, 77, 72, 78, 79, 134
 	};
+	
 	// Level of the Kamaloka
 	private static final int[] LEVEL =
 	{
 		23, 26, 29, 33, 36, 39, 43, 46, 49, 53, 56, 59, 63, 66, 69, 73, 78, 81, 83
 	};
+	
 	// Duration of the instance, minutes
 	private static final int[] DURATION =
 	{
 		30, 30, 45, 30, 30, 45, 30, 30, 45, 30, 30, 45, 30, 30, 45, 30, 45, 45, 45
 	};
+	
 	// Maximum party size for the instance
 	private static final int[] MAX_PARTY_SIZE =
 	{
@@ -375,6 +379,7 @@ public class Kamaloka extends AbstractInstance
 			addStartNpc(cap);
 			addTalkId(cap);
 		}
+		
 		for (int[] mob : FIRST_ROOM)
 		{
 			if (mob != null)
@@ -389,6 +394,7 @@ public class Kamaloka extends AbstractInstance
 				}
 			}
 		}
+		
 		for (int[] mob : SECOND_ROOM)
 		{
 			if (mob != null)
@@ -396,6 +402,7 @@ public class Kamaloka extends AbstractInstance
 				addKillId(mob[0]);
 			}
 		}
+		
 		for (int[] mob : MINIBOSS)
 		{
 			if (mob != null)
@@ -403,6 +410,7 @@ public class Kamaloka extends AbstractInstance
 				addKillId(mob[0]);
 			}
 		}
+		
 		for (int[] mob : BOSS)
 		{
 			addKillId(mob[0]);
@@ -418,18 +426,21 @@ public class Kamaloka extends AbstractInstance
 	private static boolean checkPartyConditions(Player player, int index)
 	{
 		final Party party = player.getParty();
+		
 		// player must be in party
 		if (party == null)
 		{
 			player.sendPacket(SystemMessageId.YOU_ARE_NOT_CURRENTLY_IN_A_PARTY_SO_YOU_CANNOT_ENTER);
 			return false;
 		}
+		
 		// ...and be party leader
 		if (party.getLeader() != player)
 		{
 			player.sendPacket(SystemMessageId.ONLY_A_PARTY_LEADER_CAN_MAKE_THE_REQUEST_TO_ENTER);
 			return false;
 		}
+		
 		// party must not exceed max size for selected instance
 		if (party.getMemberCount() > MAX_PARTY_SIZE[index])
 		{
@@ -439,9 +450,11 @@ public class Kamaloka extends AbstractInstance
 		
 		// get level of the instance
 		final int level = LEVEL[index];
+		
 		// and client name
 		final String instanceName = InstanceManager.getInstance().getInstanceName(TEMPLATE_IDS[index]);
 		Map<Integer, Long> instanceTimes;
+		
 		// for each party member
 		for (Player partyMember : party.getMembers())
 		{
@@ -453,6 +466,7 @@ public class Kamaloka extends AbstractInstance
 				player.sendPacket(sm);
 				return false;
 			}
+			
 			// player must be near party leader
 			if (!partyMember.isInsideRadius3D(player, 1000))
 			{
@@ -461,6 +475,7 @@ public class Kamaloka extends AbstractInstance
 				player.sendPacket(sm);
 				return false;
 			}
+			
 			// get instances reenter times for player
 			instanceTimes = InstanceManager.getInstance().getAllInstanceTimes(partyMember);
 			if (instanceTimes != null)
@@ -472,6 +487,7 @@ public class Kamaloka extends AbstractInstance
 					{
 						continue;
 					}
+					
 					// if found instance still can't be reentered - exit
 					if (System.currentTimeMillis() < entry.getValue().longValue())
 					{
@@ -483,6 +499,7 @@ public class Kamaloka extends AbstractInstance
 				}
 			}
 		}
+		
 		return true;
 	}
 	
@@ -516,6 +533,7 @@ public class Kamaloka extends AbstractInstance
 		
 		// check for existing instances for this player
 		Instance world = player.getInstanceWorld();
+		
 		// player already in the instance
 		if (world != null)
 		{
@@ -525,6 +543,7 @@ public class Kamaloka extends AbstractInstance
 				player.sendPacket(SystemMessageId.YOU_HAVE_ENTERED_ANOTHER_INSTANT_ZONE_THEREFORE_YOU_CANNOT_ENTER_CORRESPONDING_DUNGEON);
 				return;
 			}
+			
 			// check for level difference again on reenter
 			if (Math.abs(player.getLevel() - LEVEL[world.getParameters().getInt("index", 0)]) > MAX_LEVEL_DIFFERENCE)
 			{
@@ -533,6 +552,7 @@ public class Kamaloka extends AbstractInstance
 				player.sendPacket(sm);
 				return;
 			}
+			
 			// check what instance still exist
 			final Instance inst = InstanceManager.getInstance().getInstance(world.getId());
 			if (inst != null)
@@ -542,6 +562,7 @@ public class Kamaloka extends AbstractInstance
 			}
 			return;
 		}
+		
 		// Creating new kamaloka instance
 		if (!checkPartyConditions(player, index))
 		{
@@ -550,11 +571,14 @@ public class Kamaloka extends AbstractInstance
 		
 		// Creating instance
 		world = InstanceManager.getInstance().createInstance(templateId, player);
+		
 		// set duration and empty destroy time
 		world.setDuration(DURATION[index] * 60000);
+		
 		// set index for easy access to the arrays
 		world.setParameter("index", index);
 		world.setStatus(0);
+		
 		// spawn npcs
 		spawnKama(world);
 		
@@ -603,6 +627,7 @@ public class Kamaloka extends AbstractInstance
 					spawn.startRespawn();
 					firstRoom.add(spawn); // store mobs spawns
 				}
+				
 				world.setParameter("firstRoom", firstRoom);
 				npc.setRandomWalking(true);
 			}
@@ -620,6 +645,7 @@ public class Kamaloka extends AbstractInstance
 				npc.setRandomWalking(true);
 				secondRoom.add(npc.getObjectId());
 			}
+			
 			world.setParameter("secondRoom", secondRoom);
 		}
 		
@@ -659,6 +685,7 @@ public class Kamaloka extends AbstractInstance
 				LOGGER.log(Level.WARNING, "", e);
 			}
 		}
+		
 		return null;
 	}
 	
@@ -675,6 +702,7 @@ public class Kamaloka extends AbstractInstance
 			if (world != null)
 			{
 				final Party party = player.getParty();
+				
 				// only party leader can talk with escape teleporter
 				if ((party != null) && party.isLeader(player))
 				{
@@ -697,6 +725,7 @@ public class Kamaloka extends AbstractInstance
 		{
 			return npcId + ".htm";
 		}
+		
 		return null;
 	}
 	
@@ -712,8 +741,10 @@ public class Kamaloka extends AbstractInstance
 			{
 				return "32496.htm";
 			}
+			
 			return "32496-no.htm";
 		}
+		
 		return null;
 	}
 	
@@ -732,6 +763,7 @@ public class Kamaloka extends AbstractInstance
 				if ((world.getParameters().getInt("shaman", 0) != 0) && (world.getParameters().getInt("shaman", 0) == objectId))
 				{
 					world.setParameter("shaman", 0);
+					
 					// stop respawn of the minions
 					for (Spawn spawn : world.getParameters().getList("firstRoom", Spawn.class))
 					{
@@ -740,6 +772,7 @@ public class Kamaloka extends AbstractInstance
 							spawn.stopRespawn();
 						}
 					}
+					
 					world.getParameters().remove("firstRoom");
 					
 					if (world.getParameters().getObject("boss", Npc.class) != null)
@@ -764,6 +797,7 @@ public class Kamaloka extends AbstractInstance
 			if (world.getParameters().getList("secondRoom", Integer.class) != null)
 			{
 				boolean all = true;
+				
 				// check for all mobs in the second room
 				for (int i = 0; i < world.getParameters().getList("secondRoom", Integer.class).size(); i++)
 				{
@@ -777,6 +811,7 @@ public class Kamaloka extends AbstractInstance
 						all = false;
 					}
 				}
+				
 				// all mobs killed ?
 				if (all)
 				{
@@ -828,11 +863,13 @@ public class Kamaloka extends AbstractInstance
 				
 				final Calendar reenter = Calendar.getInstance();
 				reenter.set(Calendar.MINUTE, RESET_MIN);
+				
 				// if time is >= RESET_HOUR - roll to the next day
 				if (reenter.get(Calendar.HOUR_OF_DAY) >= RESET_HOUR)
 				{
 					reenter.add(Calendar.DATE, 1);
 				}
+				
 				reenter.set(Calendar.HOUR_OF_DAY, RESET_HOUR);
 				
 				final SystemMessage sm = new SystemMessage(SystemMessageId.INSTANT_ZONE_S1_S_ENTRY_HAS_BEEN_RESTRICTED_YOU_CAN_CHECK_THE_NEXT_POSSIBLE_ENTRY_TIME_BY_USING_THE_COMMAND_INSTANCEZONE);
@@ -850,6 +887,7 @@ public class Kamaloka extends AbstractInstance
 						}
 					}
 				}
+				
 				world.finishInstance();
 			}
 		}

@@ -74,6 +74,7 @@ public class ExOlympiadMatchResult extends ServerPacket
 			buffer.writeInt(info.getDiffPoints());
 			buffer.writeInt(0); // Helios
 		}
+		
 		buffer.writeInt(_loseTeam);
 		buffer.writeInt(_loserList.size());
 		for (OlympiadInfo info : _loserList)

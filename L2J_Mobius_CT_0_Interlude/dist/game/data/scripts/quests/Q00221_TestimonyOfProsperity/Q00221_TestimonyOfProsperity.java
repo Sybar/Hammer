@@ -52,6 +52,7 @@ public class Q00221_TestimonyOfProsperity extends Quest
 	private static final int EMILY = 30620;
 	private static final int NIKOLA = 30621;
 	private static final int BOX_OF_TITAN = 30622;
+	
 	// Monsters
 	private static final int MANDRAGORA_SPROUT_1 = 20223;
 	private static final int MANDRAGORA_SPROUT_2 = 20154;
@@ -64,6 +65,7 @@ public class Q00221_TestimonyOfProsperity extends Quest
 	private static final int MARSH_STAKATO_SOLDIER = 20232;
 	private static final int MARSH_SPIDER = 20233;
 	private static final int MARSH_STAKATO_DRONE = 20234;
+	
 	// Items
 	private static final int ADENA = 57;
 	private static final int ANIMAL_SKIN = 1867;
@@ -107,6 +109,7 @@ public class Q00221_TestimonyOfProsperity extends Quest
 	private static final int TOAD_LORD_SAC = 3274;
 	private static final int SPIDER_THORN = 3275;
 	private static final int CRYSTAL_BROOCH = 3428;
+	
 	// Rewards
 	private static final int MARK_OF_PROSPERITY = 3238;
 	private static final int DIMENSIONAL_DIAMOND = 7562;

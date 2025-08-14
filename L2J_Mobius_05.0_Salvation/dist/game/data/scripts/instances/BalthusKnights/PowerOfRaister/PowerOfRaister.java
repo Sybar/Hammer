@@ -36,6 +36,7 @@ public final class PowerOfRaister extends AbstractInstance
 {
 	// NPCs
 	private static final int BUFF_MASTER = 34391;
+	
 	// Misc
 	private static final int TEMPLATE_ID = 277;
 	
@@ -71,6 +72,7 @@ public final class PowerOfRaister extends AbstractInstance
 				}
 			}
 		}
+		
 		return null;
 	}
 	
@@ -96,6 +98,7 @@ public final class PowerOfRaister extends AbstractInstance
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	

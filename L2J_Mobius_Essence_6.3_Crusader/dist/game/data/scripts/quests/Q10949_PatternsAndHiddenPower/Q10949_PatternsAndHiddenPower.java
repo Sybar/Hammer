@@ -34,9 +34,11 @@ public class Q10949_PatternsAndHiddenPower extends Quest
 {
 	// NPC
 	private static final int ORVEN = 30857;
+	
 	// Items
 	private static final ItemHolder ADVENTURE_DYE = new ItemHolder(97878, 1);
 	private static final ItemHolder ADVENTURE_DYE_POWDER = new ItemHolder(97982, 1);
+	
 	// Misc
 	private static final int MIN_LEVEL = 40;
 	
@@ -90,6 +92,7 @@ public class Q10949_PatternsAndHiddenPower extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -110,6 +113,7 @@ public class Q10949_PatternsAndHiddenPower extends Quest
 		{
 			htmltext = getAlreadyCompletedMsg(player);
 		}
+		
 		return htmltext;
 	}
 }

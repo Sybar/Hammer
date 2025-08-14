@@ -38,10 +38,13 @@ public class Q00824_AttackTheCommandPost extends Quest
 	// NPCs
 	private static final int DEVIANNE = 34089;
 	private static final int ELIKIA = 34057;
+	
 	// RaidBosses
 	private static final int BURNSTEIN = 26136;
+	
 	// Rewards
 	private static final int ADEN_VANGUARD_SUPPLY_BOX = 46283;
+	
 	// Misc
 	private static final int MIN_LEVEL = 100;
 	
@@ -63,6 +66,7 @@ public class Q00824_AttackTheCommandPost extends Quest
 		{
 			return htmltext;
 		}
+		
 		switch (event)
 		{
 			case "34089-02.htm":
@@ -87,6 +91,7 @@ public class Q00824_AttackTheCommandPost extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -143,6 +148,7 @@ public class Q00824_AttackTheCommandPost extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

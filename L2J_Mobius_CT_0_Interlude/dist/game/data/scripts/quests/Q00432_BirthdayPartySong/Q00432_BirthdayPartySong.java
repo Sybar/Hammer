@@ -31,6 +31,7 @@ public class Q00432_BirthdayPartySong extends Quest
 {
 	// NPC
 	private static final int OCTAVIA = 31043;
+	
 	// Item
 	private static final int RED_CRYSTAL = 7541;
 	

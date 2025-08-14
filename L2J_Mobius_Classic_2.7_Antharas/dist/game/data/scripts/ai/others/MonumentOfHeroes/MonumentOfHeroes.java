@@ -40,6 +40,7 @@ public class MonumentOfHeroes extends AbstractNpcAI
 {
 	// NPC
 	private static final int MONUMENT = 31690;
+	
 	// Items
 	private static final int HERO_CLOAK = 30372;
 	// private static final int GLORIOUS_CLOAK = 30373;
@@ -223,6 +224,7 @@ public class MonumentOfHeroes extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -233,6 +235,7 @@ public class MonumentOfHeroes extends AbstractNpcAI
 		{
 			return "MonumentOfHeroes-noNoblesse.html";
 		}
+		
 		return "MonumentOfHeroes-noblesse.html";
 	}
 	
@@ -253,6 +256,7 @@ public class MonumentOfHeroes extends AbstractNpcAI
 		{
 			return -1;
 		}
+		
 		return -1;
 	}
 	

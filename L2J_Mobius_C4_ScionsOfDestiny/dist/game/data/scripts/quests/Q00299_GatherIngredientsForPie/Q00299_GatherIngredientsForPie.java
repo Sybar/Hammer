@@ -33,10 +33,12 @@ public class Q00299_GatherIngredientsForPie extends Quest
 	private static final int LARA = 30063;
 	private static final int BRIGHT = 30466;
 	private static final int EMILY = 30620;
+	
 	// Items
 	private static final int FRUIT_BASKET = 7136;
 	private static final int AVELLAN_SPICE = 7137;
 	private static final int HONEY_POUCH = 7138;
+	
 	// Reward resources
 	private static final int VARNISH = 1865;
 	
@@ -104,6 +106,7 @@ public class Q00299_GatherIngredientsForPie extends Quest
 					{
 						giveItems(player, VARNISH, 50);
 					}
+					
 					st.exitQuest(true, true);
 				}
 				else

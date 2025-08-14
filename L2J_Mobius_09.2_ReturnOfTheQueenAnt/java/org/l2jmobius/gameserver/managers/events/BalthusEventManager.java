@@ -125,6 +125,7 @@ public class BalthusEventManager
 			_currProgress = 100;
 			_avoidMinutesIssue = 5;
 		}
+		
 		if (((hours > 11) && (hours < 23)) || (hours == 23))
 		{
 			_currState = (int) hours - 11;
@@ -133,6 +134,7 @@ public class BalthusEventManager
 		{
 			_currState = (int) hours + 13;
 		}
+		
 		getNewRewardItem();
 		ThreadPool.scheduleAtFixedRate(this::tryToGetWinner, startDelay, 720000);
 	}
@@ -241,6 +243,7 @@ public class BalthusEventManager
 					_winner = player;
 				}
 			}
+			
 			if (_winner != null)
 			{
 				LOGGER.info(getClass().getSimpleName() + ": New winner for " + _currState + " of Balthus Event is " + _winner.getName() + " - " + _winner.getObjectId() + ". Player win " + ItemData.getInstance().getTemplate(_rewardItem.getId()).getName() + " - " + _rewardItem.getId() + " count: " + _rewardItem.getCount() + ".");
@@ -259,10 +262,12 @@ public class BalthusEventManager
 		{
 			_currProgress += 20;
 		}
+		
 		if (_avoidMinutesIssue == 6)
 		{
 			resetCurrentStage();
 		}
+		
 		for (Player player : World.getInstance().getPlayers())
 		{
 			player.sendPacket(new ExBalthusEvent(player));
@@ -277,11 +282,13 @@ public class BalthusEventManager
 		{
 			_currState = 1;
 		}
+		
 		_currProgress = 20;
 		if (!_isRunning && _isEasyMode)
 		{
 			sendConsolationItemsToAll();
 		}
+		
 		_isRunning = false;
 		_rewardItem = null;
 		_avoidMinutesIssue = 1;
@@ -296,6 +303,7 @@ public class BalthusEventManager
 			{
 				continue;
 			}
+			
 			player.getVariables().set(PlayerVariables.BALTHUS_REWARD, player.getVariables().getInt(PlayerVariables.BALTHUS_REWARD, 0) + _consolation.getCount());
 			player.sendPacket(new SystemMessage(SystemMessageId.YOU_VE_OBTAINED_S1_LUCKY_COINS).addInt((int) _consolation.getCount()));
 		}
@@ -331,6 +339,7 @@ public class BalthusEventManager
 								break;
 							}
 						}
+						
 						if (_rewardItem != null)
 						{
 							break;
@@ -358,6 +367,7 @@ public class BalthusEventManager
 	{
 		// From hour to hour.
 		private final Map<Integer, Integer> _rewardTime;
+		
 		// Time reward - Reward item, chance to put in lottery.
 		private final Map<Integer, Map<ItemChanceHolder, Double>> _rewardList;
 		

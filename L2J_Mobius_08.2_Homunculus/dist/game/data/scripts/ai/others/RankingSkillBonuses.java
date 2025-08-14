@@ -164,6 +164,7 @@ public class RankingSkillBonuses extends AbstractNpcAI
 					break;
 				}
 			}
+			
 			player.addSkill(RACE_RANKING_BENEFIT, false);
 		}
 		
@@ -203,6 +204,7 @@ public class RankingSkillBonuses extends AbstractNpcAI
 			{
 				HEALER_RANK_BENEFIT.applyEffects(player, player);
 			}
+			
 			player.addSkill(CLASS_RANKING_BENEFIT, false);
 		}
 	}

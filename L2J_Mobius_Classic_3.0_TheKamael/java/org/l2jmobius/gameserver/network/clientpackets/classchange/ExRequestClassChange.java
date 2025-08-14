@@ -66,6 +66,7 @@ public class ExRequestClassChange extends ClientPacket
 				break;
 			}
 		}
+		
 		if (!canChange)
 		{
 			PacketLogger.warning(player + " tried to change class from " + player.getPlayerClass() + " to " + PlayerClass.getPlayerClass(_classId) + "!");
@@ -108,6 +109,7 @@ public class ExRequestClassChange extends ClientPacket
 				{
 					player.initElementalSpirits();
 				}
+				
 				for (ElementalSpirit spirit : player.getSpirits())
 				{
 					if (spirit.getStage() == 0)
@@ -115,6 +117,7 @@ public class ExRequestClassChange extends ClientPacket
 						spirit.upgrade();
 					}
 				}
+				
 				final UserInfo userInfo = new UserInfo(player);
 				userInfo.addComponentType(UserInfoType.ATT_SPIRITS);
 				player.sendPacket(userInfo);

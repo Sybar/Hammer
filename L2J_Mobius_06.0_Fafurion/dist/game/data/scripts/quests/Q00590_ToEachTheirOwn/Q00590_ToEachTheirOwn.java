@@ -36,6 +36,7 @@ public class Q00590_ToEachTheirOwn extends Quest
 {
 	// NPCs
 	private static final int CORZET = 34424;
+	
 	// Monsters
 	private static final int[] MONSTERS =
 	{
@@ -43,9 +44,11 @@ public class Q00590_ToEachTheirOwn extends Quest
 		24205, // Silence Phantom
 		24206, // Silence Preacle
 	};
+	
 	// Misc
 	private static final int MIN_LEVEL = 95;
 	private static final int MAX_LEVEL = 105;
+	
 	// Items
 	private static final int DUST_OF_DESTROYED_DEMON = 48534; // Quest item: Dust of Destroyed Demon
 	
@@ -95,6 +98,7 @@ public class Q00590_ToEachTheirOwn extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -132,11 +136,13 @@ public class Q00590_ToEachTheirOwn extends Quest
 						htmltext = "34424-00.htm";
 						break;
 					}
+					
 					qs.setState(State.CREATED);
 					// fallthrough
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	

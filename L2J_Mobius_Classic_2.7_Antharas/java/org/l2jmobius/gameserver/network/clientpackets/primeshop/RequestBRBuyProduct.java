@@ -76,6 +76,7 @@ public class RequestBRBuyProduct extends ClientPacket
 		{
 			
 			boolean hasItems = true;
+			
 			// First loop to validate all items.
 			for (ItemHolder itemHolder : validatePaymentId(item))
 			{
@@ -136,6 +137,7 @@ public class RequestBRBuyProduct extends ClientPacket
 			{
 				player.addItem(ItemProcessType.BUY, subItem.getId(), subItem.getCount() * _count, player, true);
 			}
+			
 			if (item.isVipGift())
 			{
 				player.getAccountVariables().set(AccountVariables.VIP_ITEM_BOUGHT, System.currentTimeMillis());
@@ -270,6 +272,7 @@ public class RequestBRBuyProduct extends ClientPacket
 		{
 			return false;
 		}
+		
 		if (player.getVipTier() <= 0)
 		{
 			return false;
@@ -299,6 +302,7 @@ public class RequestBRBuyProduct extends ClientPacket
 					{
 						temp.add(new ItemHolder(Inventory.GOLD_COIN, item.getPrice()));
 					}
+					
 					if (item.getSilverCoin() > 0)
 					{
 						temp.add(new ItemHolder(Inventory.SILVER_COIN, item.getSilverCoin()));
@@ -308,6 +312,7 @@ public class RequestBRBuyProduct extends ClientPacket
 				{
 					temp.add(new ItemHolder(0, item.getPrice())); // prime points
 				}
+				
 				return temp;
 			}
 			case 1: // Adenas
@@ -321,6 +326,7 @@ public class RequestBRBuyProduct extends ClientPacket
 				return temp;
 			}
 		}
+		
 		temp.add(new ItemHolder(-1, -1));
 		return temp;
 	}

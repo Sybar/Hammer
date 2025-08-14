@@ -37,6 +37,7 @@ public class Q10317_OrbisWitch extends Quest
 	// NPCs
 	private static final int OPERA = 32946;
 	private static final int LYDIA = 32892;
+	
 	// Misc
 	private static final int MIN_LEVEL = 95;
 	
@@ -84,6 +85,7 @@ public class Q10317_OrbisWitch extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -119,6 +121,7 @@ public class Q10317_OrbisWitch extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 }

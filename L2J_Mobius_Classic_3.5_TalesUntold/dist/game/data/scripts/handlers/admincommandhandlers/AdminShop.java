@@ -51,7 +51,7 @@ public class AdminShop implements IAdminCommandHandler
 	};
 	
 	@Override
-	public boolean useAdminCommand(String command, Player activeChar)
+	public boolean onCommand(String command, Player activeChar)
 	{
 		if (command.startsWith("admin_buy"))
 		{
@@ -92,11 +92,12 @@ public class AdminShop implements IAdminCommandHandler
 				activeChar.sendSysMessage("Please specify multisell list ID.");
 			}
 		}
+		
 		return true;
 	}
 	
 	@Override
-	public String[] getAdminCommandList()
+	public String[] getCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}

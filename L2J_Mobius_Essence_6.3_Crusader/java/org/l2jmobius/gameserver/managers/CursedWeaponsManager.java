@@ -320,6 +320,7 @@ public class CursedWeaponsManager implements IXmlReader
 				return cw.getItemId();
 			}
 		}
+		
 		return -1;
 	}
 	

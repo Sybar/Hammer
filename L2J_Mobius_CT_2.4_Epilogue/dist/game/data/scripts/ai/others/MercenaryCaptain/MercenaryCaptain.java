@@ -52,6 +52,7 @@ public class MercenaryCaptain extends AbstractNpcAI
 		NPCS.put(36488, 13764); // Mercenary Captain (Rune)
 		NPCS.put(36489, 13765); // Mercenary Captain (Schuttgart)
 	}
+	
 	// Items
 	private static final int STRIDER_WIND = 4422;
 	private static final int STRIDER_STAR = 4423;
@@ -59,6 +60,7 @@ public class MercenaryCaptain extends AbstractNpcAI
 	private static final int GUARDIAN_STRIDER = 14819;
 	private static final int ELITE_MERCENARY_CERTIFICATE = 13767;
 	private static final int TOP_ELITE_MERCENARY_CERTIFICATE = 13768;
+	
 	// Misc
 	private static final int DELAY = 3600000; // 1 hour
 	private static final int MIN_LEVEL = 40;
@@ -152,6 +154,7 @@ public class MercenaryCaptain extends AbstractNpcAI
 							return null;
 						}
 					}
+					
 					takeItems(player, badgeId, price);
 					giveItems(player, striderId, 1);
 					htmltext = "36481-09.html";
@@ -200,6 +203,7 @@ public class MercenaryCaptain extends AbstractNpcAI
 				npc.broadcastSay(ChatType.NPC_SHOUT, "Do you wish to fight? Are you afraid? No matter how hard you try, you have nowhere to run. But if you face it head on, our mercenary troop will help you out!");
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -219,6 +223,7 @@ public class MercenaryCaptain extends AbstractNpcAI
 		{
 			htmltext = (npc.getCastle().getSiege().isInProgress() || TerritoryWarManager.getInstance().isTWInProgress()) ? "36481-06.html" : npc.getId() + "-01.html";
 		}
+		
 		return htmltext;
 	}
 	

@@ -33,8 +33,10 @@ public class Q00006_StepIntoTheFuture extends Quest
 	private static final int ROXXY = 30006;
 	private static final int BAULRO = 30033;
 	private static final int SIR_COLLIN = 30311;
+	
 	// Items
 	private static final int BAULRO_LETTER = 7571;
+	
 	// Rewards
 	private static final int MARK_TRAVELER = 7570;
 	private static final int SOE_GIRAN = 7559;

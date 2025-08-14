@@ -89,6 +89,7 @@ public class HennaPoten
 			_enchantExp = HennaPatternPotentialData.getInstance().getMaxPotenExp();
 			return _enchantExp;
 		}
+		
 		return _enchantExp;
 	}
 	

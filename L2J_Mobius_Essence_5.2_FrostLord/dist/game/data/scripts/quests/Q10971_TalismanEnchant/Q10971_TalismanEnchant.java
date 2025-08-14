@@ -36,6 +36,7 @@ public class Q10971_TalismanEnchant extends Quest
 {
 	// NPC
 	private static final int CAPTAIN_BATHIS = 30332;
+	
 	// Item
 	private static final ItemHolder ADVENTURERS_TALISMAN = new ItemHolder(91937, 1);
 	private static final ItemHolder SCROLL_OF_ENCHANT_ADVENTURERS_TALISMAN = new ItemHolder(95688, 1);
@@ -76,19 +77,23 @@ public class Q10971_TalismanEnchant extends Quest
 			{
 				qs.startQuest();
 				player.sendPacket(new ExTutorialShowId(47));
+				
 				// TODO: Find a better way to do this: Tempfix for not giving items when already have them in inventory (bugging abort and re-accepting).
 				if (player.getInventory().getAllItemsByItemId(ADVENTURERS_TALISMAN.getId()).isEmpty())
 				{
 					giveItems(player, ADVENTURERS_TALISMAN);
 				}
+				
 				if (player.getInventory().getAllItemsByItemId(SCROLL_OF_ENCHANT_ADVENTURERS_TALISMAN.getId()).isEmpty())
 				{
 					giveItems(player, SCROLL_OF_ENCHANT_ADVENTURERS_TALISMAN);
 				}
+				
 				htmltext = event;
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -112,6 +117,7 @@ public class Q10971_TalismanEnchant extends Quest
 					break SEARCH;
 				}
 			}
+			
 			if (foundEnchant)
 			{
 				addExpAndSp(player, 100000, 0);
@@ -128,6 +134,7 @@ public class Q10971_TalismanEnchant extends Quest
 		{
 			htmltext = getAlreadyCompletedMsg(player);
 		}
+		
 		return htmltext;
 	}
 }

@@ -48,14 +48,18 @@ public class Q00500_BrothersBoundInChains extends Quest
 {
 	// NPC
 	private static final int DARK_JUDGE = 30981;
+	
 	// Items
 	private static final int GEMSTONE_B = 2132;
 	private static final int PENITENT_MANACLES = 36060;
 	private static final int CRUMBS_OF_PENITENCE = 36077;
+	
 	// Skill
 	private static final int HOUR_OF_PENITENCE = 15325;
+	
 	// Agathion
 	private static final int SIN_EATER = 16098;
+	
 	// Others
 	private static final int DROP_CHANCE = 5;
 	private static final int MIN_LEVEL = 85;
@@ -91,6 +95,7 @@ public class Q00500_BrothersBoundInChains extends Quest
 					skill.activateSkill(player, player);
 					startQuestTimer("buff", 270000, null, player); // Rebuff every 4min30 (retail like)
 				}
+				
 				return null;
 			}
 			case "30981-02.htm":
@@ -181,6 +186,7 @@ public class Q00500_BrothersBoundInChains extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -190,11 +196,13 @@ public class Q00500_BrothersBoundInChains extends Quest
 		{
 			return;
 		}
+		
 		final Player player = event.getPlayer();
 		if (player == null)
 		{
 			return;
 		}
+		
 		final QuestState qs = getQuestState(player, false);
 		if (qs == null)
 		{
@@ -210,11 +218,13 @@ public class Q00500_BrothersBoundInChains extends Quest
 		{
 			return;
 		}
+		
 		final Player player = event.getPlayer();
 		if (player == null)
 		{
 			return;
 		}
+		
 		final QuestState qs = getQuestState(player, false);
 		if (qs == null)
 		{
@@ -234,6 +244,7 @@ public class Q00500_BrothersBoundInChains extends Quest
 		{
 			return;
 		}
+		
 		final QuestState qs = getQuestState(player, false);
 		if (qs == null)
 		{

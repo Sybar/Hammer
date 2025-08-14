@@ -40,6 +40,7 @@ public class WarTornPlains extends AbstractNpcAI
 	private static final int HATAR_HANISHEE = 20663;
 	private static final int DEPRIVE = 20664;
 	private static final int TAIK_ORC_SUPPLY = 20665;
+	
 	// Guard
 	private static final int FIERCE_GUARD = 22103;
 	

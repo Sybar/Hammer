@@ -58,6 +58,7 @@ public class Rascal extends AbstractNpcAI
 			case GustavsManor.CREATED:
 			{
 				instance.setStatus(GustavsManor.GO_TO_GATES_AND_KILL_GIRL);
+				
 				// Master Gustav took my horsie.
 				instance.broadcastPacket(new ExShowScreenMessage(STRING_ID_01, ExShowScreenMessage.TOP_CENTER, 10000, true));
 				break;
@@ -69,6 +70,7 @@ public class Rascal extends AbstractNpcAI
 			case GustavsManor.TALK_WITH_RASCAL:
 			{
 				instance.setStatus(GustavsManor.KILL_FOUR_DREAM_WATCHERS_INSIDE);
+				
 				// The horsie is in the manor. I will open the doors and we'll go in and play.
 				instance.broadcastPacket(new ExShowScreenMessage(STRING_ID_02, ExShowScreenMessage.TOP_CENTER, 10000, true));
 				break;

@@ -43,6 +43,7 @@ public class Q10326_RespectYourElders extends Quest
 	private static final int GALLINT = 32980;
 	private static final int PANTHEON = 32972;
 	private static final int HANDERMONKEY = 32971;
+	
 	// Locations
 	private static final Location HANDERMONKEY_SPAWN = new Location(-116617, 255497, -1432);
 	private static final Location[] HANDERMONKEY_LOC =
@@ -57,6 +58,7 @@ public class Q10326_RespectYourElders extends Quest
 		new Location(-114637, 257349, -1142),
 		new Location(-114414, 257318, -1136),
 	};
+	
 	// Misc
 	private static final int MAX_LEVEL = 20;
 	
@@ -124,6 +126,7 @@ public class Q10326_RespectYourElders extends Quest
 								startQuestTimer("DELETE_NPC", 2000, npc, owner);
 								break;
 							}
+							
 							npc.getVariables().set("MOVE_INDEX", loc_index);
 							addMoveToDesire(npc, HANDERMONKEY_LOC[loc_index], 0);
 						}
@@ -167,6 +170,7 @@ public class Q10326_RespectYourElders extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -210,6 +214,7 @@ public class Q10326_RespectYourElders extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

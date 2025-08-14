@@ -65,6 +65,7 @@ public class FortManager
 				}
 			}
 		}
+		
 		return nearestFort;
 	}
 	
@@ -77,6 +78,7 @@ public class FortManager
 				return fort;
 			}
 		}
+		
 		return null;
 	}
 	
@@ -107,6 +109,7 @@ public class FortManager
 				return fort;
 			}
 		}
+		
 		return null;
 	}
 	
@@ -119,6 +122,7 @@ public class FortManager
 				return fort;
 			}
 		}
+		
 		return null;
 	}
 	

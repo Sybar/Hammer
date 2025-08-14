@@ -76,6 +76,7 @@ public class TownManager
 				return castle.getSiege().isInProgress();
 			}
 		}
+		
 		return false;
 	}
 	
@@ -93,6 +94,7 @@ public class TownManager
 				return temp;
 			}
 		}
+		
 		return null;
 	}
 	
@@ -112,6 +114,7 @@ public class TownManager
 				return (TownZone) temp;
 			}
 		}
+		
 		return null;
 	}
 }

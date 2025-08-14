@@ -44,6 +44,7 @@ public class Q10832_EnergyOfSadnessAndAnger extends Quest
 {
 	// NPC
 	private static final int BELAS = 34056;
+	
 	// Monsters
 	private static final int HARPE = 23561;
 	private static final int HARPE1 = 23562;
@@ -63,10 +64,12 @@ public class Q10832_EnergyOfSadnessAndAnger extends Quest
 	private static final int FURY_KERBEROS_LEGER = 23545;
 	private static final int FURY_KERBEROS_NERO_N = 23558; // (night)
 	private static final int FURY_KERBEROS_NERO = 23549;
+	
 	// Items
 	private static final int SAD_ENERGY = 45837;
 	private static final int ANGRY_ENERGY = 45838;
 	private static final int SOE = 46158;
+	
 	// Misc
 	private static final int MIN_LEVEL = 102;
 	
@@ -115,6 +118,7 @@ public class Q10832_EnergyOfSadnessAndAnger extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -148,6 +152,7 @@ public class Q10832_EnergyOfSadnessAndAnger extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

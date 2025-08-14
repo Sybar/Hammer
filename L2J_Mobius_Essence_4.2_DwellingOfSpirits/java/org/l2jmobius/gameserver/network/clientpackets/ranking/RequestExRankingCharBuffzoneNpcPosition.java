@@ -50,6 +50,7 @@ public class RequestExRankingCharBuffzoneNpcPosition extends ClientPacket
 		{
 			player.sendPacket(new ExRankingBuffZoneNpcInfo());
 		}
+		
 		player.sendPacket(new ExRankingBuffZoneNpcPosition());
 	}
 }

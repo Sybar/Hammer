@@ -49,6 +49,7 @@ public class RequestStopPledgeWar extends ClientPacket
 		{
 			return;
 		}
+		
 		final Clan playerClan = player.getClan();
 		if (playerClan == null)
 		{
@@ -92,6 +93,7 @@ public class RequestStopPledgeWar extends ClientPacket
 			{
 				continue;
 			}
+			
 			if (AttackStanceTaskManager.getInstance().hasAttackStanceTask(member.getPlayer()))
 			{
 				final SystemMessage sm = new SystemMessage(SystemMessageId.THE_CLAN_WAR_CANNOT_BE_STOPPED_BECAUSE_SOMEONE_FROM_YOUR_CLAN_IS_STILL_ENGAGED_IN_BATTLE_CLAN_MEMBERS_IN_BATTLE_S1);

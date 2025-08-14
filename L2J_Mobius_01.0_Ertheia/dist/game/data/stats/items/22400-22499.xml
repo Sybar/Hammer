@@ -1312,9 +1312,9 @@
 		<set name="immediate_effect" val="true" />
 		<set name="time" val="1440" />
 		<set name="material" val="CLOTH" />
-		<cond>
+		<conditions>
 			<player level="80" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">20</stat>
 		</stats>
@@ -1338,9 +1338,9 @@
 		<set name="time" val="10080" />
 		<set name="etcitem_type" val="ENCHT_ATTR_RUNE" />
 		<set name="material" val="CLOTH" />
-		<cond>
+		<conditions>
 			<player level="80" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">20</stat>
 		</stats>
@@ -1363,9 +1363,9 @@
 		<set name="immediate_effect" val="true" />
 		<set name="time" val="43200" />
 		<set name="material" val="CLOTH" />
-		<cond>
+		<conditions>
 			<player level="80" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">20</stat>
 		</stats>
@@ -1387,9 +1387,9 @@
 		<set name="immediate_effect" val="true" />
 		<set name="weight" val="220" />
 		<set name="material" val="CLOTH" />
-		<cond>
+		<conditions>
 			<player level="80" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">20</stat>
 		</stats>

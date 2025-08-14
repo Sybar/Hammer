@@ -53,12 +53,12 @@ public class EnergyOfInsolence extends AbstractNpcAI
 	private static final int ENERGY_OF_INSOLENCE_DROP_COUNT = 1;
 	private static final int UNIDENTIFIED_STONE_DROP_RATE = 4;
 	private static final int UNIDENTIFIED_STONE_ITEM_ID = 49766;
-	private static final int[] ENERGY_OF_INSOLENCE_NPC_IDS = new int[]
+	private static final int[] ENERGY_OF_INSOLENCE_NPC_IDS =
 	{
 		ELMOREDEN_LADY,
 		POWER_ANGEL_AMON
 	};
-	private static final int[] ENERGY_OF_INSOLENCE_MINIONS = new int[]
+	private static final int[] ENERGY_OF_INSOLENCE_MINIONS =
 	{
 		20978,
 		20979,
@@ -66,7 +66,7 @@ public class EnergyOfInsolence extends AbstractNpcAI
 		21082,
 		21083
 	};
-	private static final int[] UNIDENTIFIED_STONE_NPC_IDS = new int[]
+	private static final int[] UNIDENTIFIED_STONE_NPC_IDS =
 	{
 		20980,
 		20981,
@@ -126,6 +126,7 @@ public class EnergyOfInsolence extends AbstractNpcAI
 				npcStringId = spawning ? NpcStringId.I_WONDER_WHO_IT_IS_THAT_IS_LURKING_ABOUT : NpcStringId.WHY_WOULD_YOU_BUILD_A_TOWER_IN_OUR_TERRITORY;
 			}
 		}
+		
 		npc.broadcastSay(ChatType.NPC_SHOUT, npcStringId);
 	}
 	
@@ -158,6 +159,7 @@ public class EnergyOfInsolence extends AbstractNpcAI
 		{
 			npc.dropItem(killer, UNIDENTIFIED_STONE_ITEM_ID, ENERGY_OF_INSOLENCE_DROP_COUNT);
 		}
+		
 		if (ArrayUtil.contains(ENERGY_OF_INSOLENCE_NPC_IDS, npc.getId()))
 		{
 			makeTalk(npc, false);
@@ -175,11 +177,13 @@ public class EnergyOfInsolence extends AbstractNpcAI
 					_scheduleTaskAmon = ThreadPool.schedule(new ScheduleAITask(null, POWER_ANGEL_AMON), TIME_UNTIL_MOVE);
 				}
 			}
+			
 			if (((killer.getLevel() - npc.getLevel()) <= LEVEL_MAX_DIFF) && (getRandom(100) <= ENERGY_OF_INSOLENCE_DROP_RATE))
 			{
 				npc.dropItem(killer, ENERGY_OF_INSOLENCE_ITEM_ID, ENERGY_OF_INSOLENCE_DROP_COUNT);
 			}
 		}
+		
 		if (ArrayUtil.contains(ENERGY_OF_INSOLENCE_MINIONS, npc.getId()))
 		{
 			final Monster leader = npc.asMonster().getLeader();

@@ -55,6 +55,7 @@ public class ExListPartyMatchingWaitingRoom extends ServerPacket
 		{
 			chunkSize = NUM_PER_PAGE;
 		}
+		
 		for (int i = startIndex; i < (startIndex + chunkSize); i++)
 		{
 			_players.add(players.get(i));

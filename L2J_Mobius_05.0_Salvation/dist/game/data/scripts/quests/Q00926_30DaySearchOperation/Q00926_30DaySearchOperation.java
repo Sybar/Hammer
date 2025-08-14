@@ -37,14 +37,17 @@ public class Q00926_30DaySearchOperation extends Quest
 {
 	// NPC
 	private static final int BELOA = 34227;
+	
 	// Monsters
 	private static final int WANDERING_OF_DIMENSION = 23755;
 	private static final int LOST_SOUL_DIMENSION = 23757;
 	private static final int ROAMING_VENGEANCE = 23759;
+	
 	// Items
 	private static final int SPIRIT_FRAGMENTS = 46785;
 	private static final int BELOAS_SUPPLY_ITEMS = 47043;
 	private static final int REMNANT_OF_THE_RIFT = 46787;
+	
 	// Misc
 	private static final QuestType QUEST_TYPE = QuestType.DAILY; // REPEATABLE, ONE_TIME, DAILY
 	private static final int MIN_LEVEL = 95;
@@ -94,6 +97,7 @@ public class Q00926_30DaySearchOperation extends Quest
 						qs.exitQuest(QUEST_TYPE, true);
 						break;
 					}
+					
 					addExpAndSp(player, 1507592779L, 3618222);
 					giveItems(player, REMNANT_OF_THE_RIFT, 1);
 					giveItems(player, BELOAS_SUPPLY_ITEMS, 1);
@@ -106,6 +110,7 @@ public class Q00926_30DaySearchOperation extends Quest
 				return null;
 			}
 		}
+		
 		return event;
 	}
 	
@@ -123,6 +128,7 @@ public class Q00926_30DaySearchOperation extends Quest
 					htmltext = getAlreadyCompletedMsg(player, QUEST_TYPE);
 					break;
 				}
+				
 				qs.setState(State.CREATED);
 				// fallthrough
 			}
@@ -137,6 +143,7 @@ public class Q00926_30DaySearchOperation extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

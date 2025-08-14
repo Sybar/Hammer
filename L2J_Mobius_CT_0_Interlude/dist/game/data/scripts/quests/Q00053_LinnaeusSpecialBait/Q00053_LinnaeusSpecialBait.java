@@ -20,7 +20,6 @@
  */
 package quests.Q00053_LinnaeusSpecialBait;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.quest.Quest;
@@ -32,6 +31,7 @@ public class Q00053_LinnaeusSpecialBait extends Quest
 {
 	// Item
 	private static final int CRIMSON_DRAKE_HEART = 7624;
+	
 	// Reward
 	private static final int FLAMING_FISHING_LURE = 7613;
 	
@@ -109,8 +109,7 @@ public class Q00053_LinnaeusSpecialBait extends Quest
 		final QuestState qs = getQuestState(partyMember, false);
 		if (getQuestItemsCount(partyMember, CRIMSON_DRAKE_HEART) < 100)
 		{
-			final float chance = 33 * Config.RATE_QUEST_DROP;
-			if (getRandom(100) < chance)
+			if (getRandom(100) < 33)
 			{
 				giveItems(partyMember, CRIMSON_DRAKE_HEART, 1);
 				playSound(partyMember, QuestSound.ITEMSOUND_QUEST_ITEMGET);

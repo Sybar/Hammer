@@ -41,6 +41,7 @@ public class Q10818_ConfrontingAGiantMonster extends Quest
 	// NPCs
 	private static final int DAICHIR = 30537;
 	private static final int JAEDIN = 33915;
+	
 	// Monsters
 	private static final int ISTINA = 29196; // Extreme
 	private static final int OCTAVIS = 29212; // Extreme
@@ -81,6 +82,7 @@ public class Q10818_ConfrontingAGiantMonster extends Quest
 		23578, // Nymph Sentinel
 		23581 // Afros
 	};
+	
 	// Items
 	private static final int DARK_SOUL_STONE = 46055;
 	private static final int OLYMPIAD_MANAGER_CERTIFICATE = 45629;
@@ -90,9 +92,11 @@ public class Q10818_ConfrontingAGiantMonster extends Quest
 	private static final int VERIDAN_SOUL_STONE = 46052;
 	private static final int KECHI_SOUL_STONE = 46053;
 	private static final int MICHAELA_SOUL_STONE = 46054;
+	
 	// Rewards
 	private static final long EXP_AMOUNT = 193815839115L;
 	private static final int DAICHIR_CERTIFICATE = 45628;
+	
 	// Misc
 	private static final int MIN_LEVEL = 99;
 	private static final int PROOF_OF_RESISTANCE_NEEDED = 10000;
@@ -157,6 +161,7 @@ public class Q10818_ConfrontingAGiantMonster extends Quest
 						{
 							htmltext = "30537-10.html";
 						}
+						
 						if (qs.isCond(2))
 						{
 							takeItems(player, DARK_SOUL_STONE, 1);
@@ -165,6 +170,7 @@ public class Q10818_ConfrontingAGiantMonster extends Quest
 							qs.unset(Integer.toString(TAUTI));
 							qs.unset(Integer.toString(EKIMUS));
 						}
+						
 						htmltext = event;
 						giveItems(player, DAICHIR_CERTIFICATE, 1);
 						addExpAndSp(player, EXP_AMOUNT, 0);
@@ -178,6 +184,7 @@ public class Q10818_ConfrontingAGiantMonster extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -239,6 +246,7 @@ public class Q10818_ConfrontingAGiantMonster extends Quest
 					}
 						break;
 				}
+				
 				return htmltext;
 			}
 			case State.COMPLETED:
@@ -247,6 +255,7 @@ public class Q10818_ConfrontingAGiantMonster extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -299,6 +308,7 @@ public class Q10818_ConfrontingAGiantMonster extends Quest
 				}
 				
 				playSound(player, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+				
 				// notifyKill(npc, player, isSummon);
 				sendNpcLogList(player);
 			}

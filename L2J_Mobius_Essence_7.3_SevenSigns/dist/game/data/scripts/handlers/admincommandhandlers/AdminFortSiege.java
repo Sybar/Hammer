@@ -52,7 +52,7 @@ public class AdminFortSiege implements IAdminCommandHandler
 	};
 	
 	@Override
-	public boolean useAdminCommand(String commandValue, Player activeChar)
+	public boolean onCommand(String commandValue, Player activeChar)
 	{
 		String command = commandValue;
 		final StringTokenizer st = new StringTokenizer(command, " ");
@@ -66,6 +66,7 @@ public class AdminFortSiege implements IAdminCommandHandler
 			fortId = Integer.parseInt(st.nextToken());
 			fort = FortManager.getInstance().getFortById(fortId);
 		}
+		
 		// Get fort
 		if (((fort == null) || (fortId == 0)))
 		{
@@ -144,6 +145,7 @@ public class AdminFortSiege implements IAdminCommandHandler
 			
 			showFortSiegePage(activeChar, fort);
 		}
+		
 		return true;
 	}
 	
@@ -184,7 +186,7 @@ public class AdminFortSiege implements IAdminCommandHandler
 	}
 	
 	@Override
-	public String[] getAdminCommandList()
+	public String[] getCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}

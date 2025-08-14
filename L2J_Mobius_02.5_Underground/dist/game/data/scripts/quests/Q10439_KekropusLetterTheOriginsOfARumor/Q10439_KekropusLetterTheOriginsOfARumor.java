@@ -42,14 +42,17 @@ public class Q10439_KekropusLetterTheOriginsOfARumor extends LetterQuest
 	private static final int HELVETICA = 32641;
 	private static final int ATHENIA = 32643;
 	private static final int INVISIBLE_NPC = 19543;
+	
 	// Items
 	private static final int SOE_HEINE = 37112; // Scroll of Escape: Heine
 	private static final int SOE_FIELD_OF_SILENCE = 37039; // Scroll of Escape: Field of Silence
 	private static final int SOE_FIELD_OF_WISPERS = 37040; // Scroll of Escape: Field of Wispers
 	private static final int EWS = 959; // Scroll: Enchant Weapon (S-grade)
 	private static final int EAS = 960; // Scroll: Enchant Armor (S-grade)
+	
 	// Location
 	private static final Location TELEPORT_LOC = new Location(108457, 221649, -3598);
+	
 	// Misc
 	private static final int MIN_LEVEL = 81;
 	private static final int MAX_LEVEL = 84;
@@ -117,6 +120,7 @@ public class Q10439_KekropusLetterTheOriginsOfARumor extends LetterQuest
 					{
 						addExpAndSp(player, 1_412_040, 338);
 					}
+					
 					htmltext = event;
 				}
 				break;
@@ -133,11 +137,13 @@ public class Q10439_KekropusLetterTheOriginsOfARumor extends LetterQuest
 					{
 						addExpAndSp(player, 1_412_040, 338);
 					}
+					
 					htmltext = event;
 				}
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -167,6 +173,7 @@ public class Q10439_KekropusLetterTheOriginsOfARumor extends LetterQuest
 				htmltext = npc.getId() == GOSTA ? "30917-07.html" : "32642-01.html";
 			}
 		}
+		
 		return htmltext;
 	}
 	

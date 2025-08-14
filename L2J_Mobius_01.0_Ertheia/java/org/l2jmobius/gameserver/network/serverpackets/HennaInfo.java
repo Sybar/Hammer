@@ -70,6 +70,7 @@ public class HennaInfo extends ServerPacket
 			buffer.writeInt(henna.getDyeId());
 			buffer.writeInt(henna.isAllowedClass(_player.getPlayerClass()));
 		}
+		
 		final Henna premium = _player.getHenna(4);
 		if (premium != null)
 		{
@@ -79,6 +80,7 @@ public class HennaInfo extends ServerPacket
 				final long currentTime = System.currentTimeMillis();
 				duration = (int) Math.max(0, _player.getVariables().getLong("HennaDuration4", currentTime) - currentTime) / 1000;
 			}
+			
 			buffer.writeInt(premium.getDyeId());
 			buffer.writeInt(duration); // Premium Slot Dye Time Left
 			buffer.writeInt(premium.isAllowedClass(_player.getPlayerClass()));

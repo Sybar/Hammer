@@ -139,6 +139,7 @@ public class ExTeleportToRaidPosition extends ClientPacket
 				player.sendMessage("There are not enough LCoins");
 				return;
 			}
+			
 			player.destroyItemByItemId(ItemProcessType.FEE, Inventory.LCOIN_ID, price, player, true);
 		}
 		

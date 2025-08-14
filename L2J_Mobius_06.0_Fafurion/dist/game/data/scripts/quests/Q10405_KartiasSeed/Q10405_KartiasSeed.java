@@ -48,8 +48,10 @@ public class Q10405_KartiasSeed extends Quest
 		20975, // Spiteful Soul Wizard
 		20976, // Spiteful Soul Warrior
 	};
+	
 	// Items
 	private static final int KARTIA_SEED = 36714; // Kartia's Mutated Seed
+	
 	// Misc
 	private static final int MIN_LEVEL = 61;
 	private static final int MAX_LEVEL = 65;
@@ -99,11 +101,13 @@ public class Q10405_KartiasSeed extends Quest
 					{
 						addExpAndSp(player, 31303665, 1500);
 					}
+					
 					htmltext = event;
 				}
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -131,6 +135,7 @@ public class Q10405_KartiasSeed extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

@@ -31,10 +31,12 @@ public class Q00623_TheFinestFood extends Quest
 {
 	// NPC
 	private static final int JEREMY = 31521;
+	
 	// Monsters
 	private static final int FLAVA = 21316;
 	private static final int BUFFALO = 21315;
 	private static final int ANTELOPE = 21318;
+	
 	// Items
 	private static final int LEAF_OF_FLAVA = 7199;
 	private static final int BUFFALO_MEAT = 7200;

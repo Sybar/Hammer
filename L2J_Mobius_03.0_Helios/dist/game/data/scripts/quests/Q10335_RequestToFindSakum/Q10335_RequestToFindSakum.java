@@ -43,6 +43,7 @@ public class Q10335_RequestToFindSakum extends Quest
 	private static final int RUIN_SPARTOI = 20054;
 	private static final int RUIN_ZOMBIE = 20026;
 	private static final int RUIN_ZOMBIE_LEADER = 20029;
+	
 	// Misc
 	private static final int MIN_LEVEL = 23;
 	private static final int MAX_LEVEL = 40;
@@ -102,6 +103,7 @@ public class Q10335_RequestToFindSakum extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -196,6 +198,7 @@ public class Q10335_RequestToFindSakum extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -275,6 +278,7 @@ public class Q10335_RequestToFindSakum extends Quest
 			npcLogList.add(new NpcLogListHolder(RUIN_ZOMBIE, false, qs.getInt("killed_" + RUIN_ZOMBIE)));
 			return npcLogList;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

@@ -58,6 +58,7 @@ public class ExSubjugationRanking extends ServerPacket
 			buffer.writeInt(data.getValue());
 			buffer.writeInt(counter++);
 		}
+		
 		buffer.writeInt(_category);
 		buffer.writeInt(_playerPoints.getValue());
 		buffer.writeInt(_playerPoints.getKey());

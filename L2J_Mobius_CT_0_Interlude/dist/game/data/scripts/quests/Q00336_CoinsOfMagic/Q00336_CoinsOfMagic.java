@@ -142,6 +142,7 @@ public class Q00336_CoinsOfMagic extends Quest
 		{
 			addKillId(mob[0]);
 		}
+		
 		addKillId(MONSTERS);
 		addKillId(HARIT_LIZARDMAN_MATRIARCH);
 		addKillId(HARIT_LIZARDMAN_SHAMAN);
@@ -199,6 +200,7 @@ public class Q00336_CoinsOfMagic extends Quest
 		{
 			htmltext = promote(st);
 		}
+		
 		return htmltext;
 	}
 	
@@ -220,6 +222,7 @@ public class Q00336_CoinsOfMagic extends Quest
 					++h;
 				}
 			}
+			
 			if (h == 6)
 			{
 				final Player player = st.getPlayer();
@@ -227,6 +230,7 @@ public class Q00336_CoinsOfMagic extends Quest
 				{
 					takeItems(player, i, 1);
 				}
+				
 				html = "30232-" + (19 - grade) + ".htm";
 				takeItems(player, KALDIS_COIN + grade, -1);
 				giveItems(player, COIN_DIAGRAM + grade, 1);
@@ -239,6 +243,7 @@ public class Q00336_CoinsOfMagic extends Quest
 				{
 					st.setCond(11);
 				}
+				
 				playSound(player, QuestSound.ITEMSOUND_QUEST_FANFARE_MIDDLE);
 			}
 			else
@@ -254,6 +259,7 @@ public class Q00336_CoinsOfMagic extends Quest
 				}
 			}
 		}
+		
 		return html;
 	}
 	
@@ -337,6 +343,7 @@ public class Q00336_CoinsOfMagic extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

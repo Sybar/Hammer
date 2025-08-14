@@ -34,6 +34,7 @@ public class Q00047_IntoTheDarkElvenForest extends Quest
 	private static final int GENTLER = 30094;
 	private static final int SANDRA = 30090;
 	private static final int DUSTIN = 30116;
+	
 	// Items
 	private static final int ORDER_DOCUMENT_1 = 7563;
 	private static final int ORDER_DOCUMENT_2 = 7564;

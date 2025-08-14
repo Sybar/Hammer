@@ -33,6 +33,7 @@ public class Q10342_DayOfDestinyElvenFate extends ThirdClassTransferQuest
 {
 	// NPC
 	private static final int WINONIN = 30856;
+	
 	// Misc
 	private static final int MIN_LEVEL = 76;
 	private static final Race START_RACE = Race.ELF;
@@ -79,6 +80,7 @@ public class Q10342_DayOfDestinyElvenFate extends ThirdClassTransferQuest
 				htmltext = super.onEvent(event, npc, player);
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -105,6 +107,7 @@ public class Q10342_DayOfDestinyElvenFate extends ThirdClassTransferQuest
 				}
 			}
 		}
+		
 		return (!htmltext.equals(getNoQuestMsg(player)) ? htmltext : super.onTalk(npc, player));
 	}
 }

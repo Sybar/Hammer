@@ -1681,9 +1681,9 @@
 		<set name="material" val="PAPER" />
 		<set name="handler" val="ItemSkills" />
 		<set name="reuse_delay" val="1800000" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="17320" level="1" /> <!-- Leona's Scroll: Buffs -->
 		</skills>

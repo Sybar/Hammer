@@ -70,12 +70,14 @@ public class ExUpgradeSystemNormalRequest extends ClientPacket
 		{
 			return;
 		}
+		
 		final Item requestedItem = player.getInventory().getItemByObjectId(_objectId);
 		if (requestedItem == null)
 		{
 			player.sendPacket(ExUpgradeSystemNormalResult.FAIL);
 			return;
 		}
+		
 		final EquipmentUpgradeNormalHolder upgradeHolder = EquipmentUpgradeNormalData.getInstance().getUpgrade(_upgradeId);
 		if ((upgradeHolder == null) || (upgradeHolder.getType() != _typeId))
 		{
@@ -89,6 +91,7 @@ public class ExUpgradeSystemNormalRequest extends ClientPacket
 			player.sendPacket(ExUpgradeSystemNormalResult.FAIL);
 			return;
 		}
+		
 		if (upgradeHolder.isHasCategory(UpgradeDataType.MATERIAL))
 		{
 			for (ItemEnchantHolder material : upgradeHolder.getItems(UpgradeDataType.MATERIAL))
@@ -99,6 +102,7 @@ public class ExUpgradeSystemNormalRequest extends ClientPacket
 					PacketLogger.warning(getClass().getSimpleName() + ": material -> item -> count in file EquipmentUpgradeNormalData.xml for upgrade id " + upgradeHolder.getId() + " cannot be less than 0! Aborting current request!");
 					return;
 				}
+				
 				if (inventory.getInventoryItemCount(material.getId(), material.getEnchantLevel()) < material.getCount())
 				{
 					player.sendPacket(ExUpgradeSystemNormalResult.FAIL);
@@ -115,6 +119,7 @@ public class ExUpgradeSystemNormalRequest extends ClientPacket
 				}
 			}
 		}
+		
 		final long adena = upgradeHolder.getCommission();
 		if ((adena > 0) && (inventory.getAdena() < adena))
 		{
@@ -131,6 +136,7 @@ public class ExUpgradeSystemNormalRequest extends ClientPacket
 				player.destroyItemByItemId(ItemProcessType.FEE, material.getId(), material.getCount() - (_discount.isEmpty() ? 0 : _discount.get(material.getId())), player, true);
 			}
 		}
+		
 		if (adena > 0)
 		{
 			player.reduceAdena(ItemProcessType.FEE, adena, player, true);
@@ -146,9 +152,11 @@ public class ExUpgradeSystemNormalRequest extends ClientPacket
 					isNeedToSendUpdate = true;
 					addedSuccessItem.setEnchantLevel(successItem.getEnchantLevel());
 				}
+				
 				addedSuccessItem.updateDatabase(true);
 				_resultItems.add(new UniqueItemEnchantHolder(successItem, addedSuccessItem.getObjectId()));
 			}
+			
 			if (upgradeHolder.isHasCategory(UpgradeDataType.BONUS_TYPE) && (Rnd.get(100d) < upgradeHolder.getChanceToReceiveBonusItems()))
 			{
 				for (ItemEnchantHolder bonusItem : upgradeHolder.getItems(UpgradeDataType.BONUS_TYPE))
@@ -159,6 +167,7 @@ public class ExUpgradeSystemNormalRequest extends ClientPacket
 						isNeedToSendUpdate = true;
 						addedBonusItem.setEnchantLevel(bonusItem.getEnchantLevel());
 					}
+					
 					addedBonusItem.updateDatabase(true);
 					_bonusItems.add(new UniqueItemEnchantHolder(bonusItem, addedBonusItem.getObjectId()));
 				}
@@ -176,6 +185,7 @@ public class ExUpgradeSystemNormalRequest extends ClientPacket
 						isNeedToSendUpdate = true;
 						addedFailureItem.setEnchantLevel(failureItem.getEnchantLevel());
 					}
+					
 					addedFailureItem.updateDatabase(true);
 					_resultItems.add(new UniqueItemEnchantHolder(failureItem, addedFailureItem.getObjectId()));
 				}
@@ -185,10 +195,12 @@ public class ExUpgradeSystemNormalRequest extends ClientPacket
 				player.sendPacket(ExUpgradeSystemNormalResult.FAIL);
 			}
 		}
+		
 		if (isNeedToSendUpdate)
 		{
 			player.sendItemList(); // for see enchant level in Upgrade UI
 		}
+		
 		// Why need map of item and count? because method "addItem" return item, and if it exists in result will be count of all items, not of obtained.
 		player.sendPacket(new ExUpgradeSystemNormalResult(1, _typeId, true, _resultItems, _bonusItems));
 	}

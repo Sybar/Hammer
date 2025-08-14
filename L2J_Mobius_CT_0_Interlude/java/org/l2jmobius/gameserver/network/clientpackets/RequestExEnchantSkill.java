@@ -141,6 +141,7 @@ public class RequestExEnchantSkill extends ClientPacket
 						player.sendPacket(SystemMessageId.YOU_DO_NOT_HAVE_ALL_OF_THE_ITEMS_NEEDED_TO_ENCHANT_THAT_SKILL);
 						return;
 					}
+					
 					// ok
 					player.destroyItem(ItemProcessType.FEE, spb, 1, trainer, true);
 				}
@@ -184,6 +185,7 @@ public class RequestExEnchantSkill extends ClientPacket
 				player.addSkill(SkillData.getInstance().getSkill(_skillId, _skillLevel), true);
 				player.sendSkillList();
 			}
+			
 			player.sendPacket(SystemMessageId.SKILL_ENCHANT_FAILED_THE_SKILL_WILL_BE_INITIALIZED);
 			
 			if (Config.LOG_SKILL_ENCHANTS)
@@ -192,6 +194,7 @@ public class RequestExEnchantSkill extends ClientPacket
 				LOGGER_ENCHANT.info(sb.append("Failed, Character:").append(player.getName()).append(" [").append(player.getObjectId()).append("] Account:").append(player.getAccountName()).append(" IP:").append(player.getIPAddress()).append(", Skill:").append(skill).append(", SPB:").append(spb).append(", Rate:").append(rate).toString());
 			}
 		}
+		
 		((Folk) trainer).showEnchantSkillList(player);
 		player.updateUserInfo();
 		player.sendSkillList();

@@ -174,6 +174,7 @@ public class DwellingOfSpirits extends AbstractInstance
 						{
 							player.sendMessage("Player " + member.getName() + " must go closer to Jay.");
 						}
+						
 						enterInstance(member, npc, TEMPLATE_ID);
 					}
 				}
@@ -188,6 +189,7 @@ public class DwellingOfSpirits extends AbstractInstance
 					{
 						player.sendMessage("You must go closer to Jay.");
 					}
+					
 					enterInstance(player, npc, TEMPLATE_ID);
 				}
 				break;
@@ -201,6 +203,7 @@ public class DwellingOfSpirits extends AbstractInstance
 					instance.finishInstance();
 					player.teleToLocation(TeleportWhereType.TOWN, null);
 				}
+				break;
 			}
 		}
 		
@@ -212,9 +215,7 @@ public class DwellingOfSpirits extends AbstractInstance
 	{
 		final Instance instance = npc.getInstanceWorld();
 		final StatSet worldParameters = instance.getParameters();
-		
-		int totalBossDefeatCount = worldParameters.getInt("totalBossDefeatCount", 0);
-		
+		final int totalBossDefeatCount = worldParameters.getInt("totalBossDefeatCount", 0);
 		switch (npc.getId())
 		{
 			case RUIP:
@@ -240,15 +241,13 @@ public class DwellingOfSpirits extends AbstractInstance
 				}
 				break;
 			}
-			
 			case KING_PETRAM:
 			case KING_PROCELLA:
 			case KING_IGNIS:
 			case KING_NEBULA:
 			{
 				spawnExitPortal(instance, player, npc.getId());
-				CheckGeneralResidenceStages(npc, instance);
-				
+				checkGeneralResidenceStages(npc, instance);
 				break;
 			}
 		}
@@ -257,39 +256,34 @@ public class DwellingOfSpirits extends AbstractInstance
 	@Override
 	public void onEnterZone(Creature creature, ZoneType zone)
 	{
-		Instance instance = creature.getInstanceWorld();
+		final Instance instance = creature.getInstanceWorld();
 		if ((instance != null) && creature.isPlayer())
 		{
-			
 			final StatSet worldParameters = instance.getParameters();
-			
 			if (zone.getId() == DWELLING_CENTRAL)
 			{
 				worldParameters.set("InsideResidence", true);
 				handleCentralZone(instance, worldParameters);
 			}
 			
-			int portalId = getPortalIdByZone(zone.getId());
-			Location[] locations = getLocationsForPortal(portalId);
-			
+			final int portalId = getPortalIdByZone(zone.getId());
+			final Location[] locations = getLocationsForPortal(portalId);
 			if ((portalId >= 0) && (locations[0] != null))
 			{
-				boolean isPortalOpened = worldParameters.getBoolean("portal" + portalId + "Opened", false);
-				boolean isPortalExitOpened = worldParameters.getBoolean("portalExit" + portalId, false);
-				boolean InsideResidence = worldParameters.getBoolean("InsideResidence", false);
-				
-				if (isPortalOpened && (InsideResidence))
+				final boolean isPortalOpened = worldParameters.getBoolean("portal" + portalId + "Opened", false);
+				final boolean isPortalExitOpened = worldParameters.getBoolean("portalExit" + portalId, false);
+				final boolean insideResidence = worldParameters.getBoolean("InsideResidence", false);
+				if (isPortalOpened && (insideResidence))
 				{
 					creature.teleToLocation(locations[0], instance);
 					worldParameters.set("InsideResidence", false);
 				}
 				
-				if (isPortalExitOpened && (!InsideResidence))
+				if (isPortalExitOpened && (!insideResidence))
 				{
 					creature.teleToLocation(locations[1], instance);
 				}
 			}
-			
 		}
 	}
 	
@@ -313,19 +307,19 @@ public class DwellingOfSpirits extends AbstractInstance
 	
 	private void openPortal(Player player, int id, Instance instance)
 	{
-		
 		if ((id >= 0) && (id < portalSpawnCoordinates.length))
 		{
-			int[] coordinates = portalSpawnCoordinates[id];
-			int trigger1 = portalConfigs[id][0][0];
-			int trigger2 = portalConfigs[id][0][1];
-			int kingId = portalConfigs[id][0][2];
+			final int[] coordinates = portalSpawnCoordinates[id];
+			final int trigger1 = portalConfigs[id][0][0];
+			final int trigger2 = portalConfigs[id][0][1];
+			final int kingId = portalConfigs[id][0][2];
 			
 			if ((id >= 0) && (id < PORTAL_MSG.size()))
 			{
 				NpcStringId portalMessage = PORTAL_MSG.get(id);
 				player.sendPacket(new ExShowScreenMessage(2, -1, 2, 0, 0, 0, 0, true, 8000, false, null, portalMessage, null));
 			}
+			
 			addSpawn(kingId, coordinates[0], coordinates[1], coordinates[2], coordinates[3], false, 0, false, instance.getId());
 			
 			instance.setParameter("TRIGGER_1_" + id, trigger1);
@@ -333,15 +327,14 @@ public class DwellingOfSpirits extends AbstractInstance
 			
 			instance.broadcastPacket(new OnEventTrigger(trigger1, true));
 			instance.broadcastPacket(new OnEventTrigger(trigger2, true));
-			
 		}
 	}
 	
 	private void spawnExitPortal(Instance instance, Player player, int bossId)
 	{
-		Npc portal;
-		int portalId;
-		Location portalLocation;
+		final Npc portal;
+		final int portalId;
+		final Location portalLocation;
 		
 		final StatSet worldParameters = instance.getParameters();
 		worldParameters.set("portalExit" + getPortalByBossId(bossId), true);
@@ -377,13 +370,12 @@ public class DwellingOfSpirits extends AbstractInstance
 				return;
 			}
 		}
-		portal = addSpawn(portalId, portalLocation, false, 0, false, instance.getId());
 		
+		portal = addSpawn(portalId, portalLocation, false, 0, false, instance.getId());
 		if (portal != null)
 		{
 			portal.setDisplayEffect(1);
 		}
-		
 	}
 	
 	private int getPortalByBossId(int bossId)
@@ -407,7 +399,9 @@ public class DwellingOfSpirits extends AbstractInstance
 				return 3;
 			}
 			default:
+			{
 				return -1;
+			}
 		}
 	}
 	
@@ -444,7 +438,7 @@ public class DwellingOfSpirits extends AbstractInstance
 	
 	private Location[] getLocationsForPortal(int portalId)
 	{
-		Location[] locations = new Location[2];
+		final Location[] locations = new Location[2];
 		
 		switch (portalId)
 		{
@@ -477,26 +471,22 @@ public class DwellingOfSpirits extends AbstractInstance
 		return locations;
 	}
 	
-	private void CheckGeneralResidenceStages(Npc npc, Instance instance)
+	private void checkGeneralResidenceStages(Npc npc, Instance instance)
 	{
 		final StatSet worldParameters = instance.getParameters();
-		
-		int portalId = getPortalByBossId(npc.getId());
-		
+		final int portalId = getPortalByBossId(npc.getId());
 		if ((portalId >= 0) && (portalId < portalConfigs.length))
 		{
-			String bossDefeatCountKey = "bossOfPortal_" + portalId + "_defeat_count";
-			int currentDefeatCount = worldParameters.getInt(bossDefeatCountKey, 0);
-			int newDefeatCount = currentDefeatCount + 1;
-			
+			final String bossDefeatCountKey = "bossOfPortal_" + portalId + "_defeat_count";
+			final int currentDefeatCount = worldParameters.getInt(bossDefeatCountKey, 0);
+			final int newDefeatCount = currentDefeatCount + 1;
 			worldParameters.set(bossDefeatCountKey, newDefeatCount);
 		}
 		
 		int totalBossDefeatCount = 0;
-		
 		for (int i = 0; i < portalConfigs.length; i++)
 		{
-			String bossDefeatCountKey = "bossOfPortal_" + i + "_defeat_count";
+			final String bossDefeatCountKey = "bossOfPortal_" + i + "_defeat_count";
 			totalBossDefeatCount += worldParameters.getInt(bossDefeatCountKey, 0);
 		}
 		
@@ -514,9 +504,8 @@ public class DwellingOfSpirits extends AbstractInstance
 	{
 		for (int id = 0; id < PORTAL_TRIGGER_IDS.length; id++)
 		{
-			int trigger1 = worldParameters.getInt("TRIGGER_1_" + id, -1);
-			int trigger2 = worldParameters.getInt("TRIGGER_2_" + id, -1);
-			
+			final int trigger1 = worldParameters.getInt("TRIGGER_1_" + id, -1);
+			final int trigger2 = worldParameters.getInt("TRIGGER_2_" + id, -1);
 			if ((trigger1 != -1) && (trigger2 != -1))
 			{
 				instance.broadcastPacket(new OnEventTrigger(trigger1, true));
@@ -544,8 +533,7 @@ public class DwellingOfSpirits extends AbstractInstance
 	@Override
 	public void onInstanceEnter(Player player, Instance instance)
 	{
-		boolean Running = instance.getParameters().getBoolean("Running", false);
-		if ((instance.getRemainingTime() > 0) && Running)
+		if ((instance.getRemainingTime() > 0) && instance.getParameters().getBoolean("Running", false))
 		{
 			player.sendPacket(new ExSendUIEvent(player, false, false, (int) (instance.getRemainingTime() / 1000), 0, NpcStringId.TIME_LEFT));
 		}

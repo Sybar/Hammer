@@ -45,6 +45,7 @@ public final class Q10516_UnveiledFafurionTemple extends Quest
 	private static final int LUPICIA = 34489;
 	private static final int OKAYTI = 34490;
 	private static final int FREDERICK = 34491;
+	
 	// Misc
 	private static final int MIN_LEVEL = 110;
 	
@@ -108,6 +109,7 @@ public final class Q10516_UnveiledFafurionTemple extends Quest
 							htmltext = "frederic_q10516_01.htm";
 							break;
 						}
+						
 						htmltext = "frederic_q10516_04.htm";
 						break;
 					}
@@ -133,6 +135,7 @@ public final class Q10516_UnveiledFafurionTemple extends Quest
 						{
 							htmltext = "okayti_q10516_02.htm";
 						}
+						
 						htmltext = "okayti_q10516_03.htm";
 						break;
 					}
@@ -145,6 +148,7 @@ public final class Q10516_UnveiledFafurionTemple extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -230,6 +234,7 @@ public final class Q10516_UnveiledFafurionTemple extends Quest
 						}
 						break;
 					}
+					
 					getNoQuestLevelRewardMsg(player);
 					break;
 				}

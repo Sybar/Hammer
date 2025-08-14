@@ -38,6 +38,7 @@ public class TeleportToFantasy extends AbstractNpcAI
 {
 	// NPC
 	private static final int PADDIES = 32378;
+	
 	// Locations
 	private static final Location[] ISLE_LOCATIONS =
 	{
@@ -61,6 +62,7 @@ public class TeleportToFantasy extends AbstractNpcAI
 		TELEPORTER_LOCATIONS.put(31275, new Location(147930, -55281, -2728)); // Tatiana
 		TELEPORTER_LOCATIONS.put(31964, new Location(87386, -143246, -1293)); // Bilia
 	}
+	
 	// Other
 	private static final String FANTASY_RETURN = "FANTASY_RETURN";
 	
@@ -73,28 +75,32 @@ public class TeleportToFantasy extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onTalk(Npc npc, Player player)
+	public String onEvent(String event, Npc npc, Player player)
 	{
-		if (npc.getId() == PADDIES)
+		if (event.equalsIgnoreCase("TELEPORT"))
 		{
-			final int returnId = player.getVariables().getInt(FANTASY_RETURN, -1);
-			if (returnId > 30000) // Old script compatibility.
+			if (npc.getId() == PADDIES)
 			{
-				player.teleToLocation(TELEPORTER_LOCATIONS.get(returnId));
-				player.getVariables().remove(FANTASY_RETURN);
+				final int returnId = player.getVariables().getInt(FANTASY_RETURN, -1);
+				if (returnId > 30000)
+				{
+					player.teleToLocation(TELEPORTER_LOCATIONS.get(returnId));
+					player.getVariables().remove(FANTASY_RETURN);
+				}
+				else
+				{
+					npc.broadcastSay(ChatType.GENERAL, "If your means of arrival was a bit unconventional, then I'll be sending you back to Rune Township, which is the nearest town.");
+					player.teleToLocation(TELEPORTER_LOCATIONS.get(31320)); // Rune
+				}
 			}
 			else
 			{
-				npc.broadcastSay(ChatType.GENERAL, "If your means of arrival was a bit unconventional, then I'll be sending you back to Rune Township, which is the nearest town.");
-				player.teleToLocation(TELEPORTER_LOCATIONS.get(31320)); // Rune
+				player.teleToLocation(getRandomEntry(ISLE_LOCATIONS));
+				player.getVariables().set(FANTASY_RETURN, npc.getId());
 			}
 		}
-		else
-		{
-			player.teleToLocation(getRandomEntry(ISLE_LOCATIONS));
-			player.getVariables().set(FANTASY_RETURN, npc.getId());
-		}
-		return super.onTalk(npc, player);
+		
+		return null;
 	}
 	
 	public static void main(String[] args)

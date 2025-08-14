@@ -54,6 +54,7 @@ public final class Q00841_ContaminationContainment extends Quest
 {
 	// NPCs
 	private static final int IRENE = 34233;
+	
 	// Monster
 	private static final int[] MONSTERS =
 	{
@@ -62,12 +63,14 @@ public final class Q00841_ContaminationContainment extends Quest
 		23788, // Nymph Tulip - Contaminated
 		23789, // Nymph Cosmos - Contaminated
 	};
+	
 	// Items
 	private static final int PURIFIED_WATER = 47170;
 	private static final int SUPPLY_BOX_BASIC = 47178;
 	private static final int SUPPLY_BOX_INTERMEDIATE = 47179;
 	private static final int SUPPLY_BOX_ADVANCED = 47180;
 	private static final int FACTION_AMITY_TOKEN = 48030;
+	
 	// Misc
 	private static final int MIN_LEVEL = 102;
 	private static final int COUNT_BASIC = 100;
@@ -126,6 +129,7 @@ public final class Q00841_ContaminationContainment extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -144,6 +148,7 @@ public final class Q00841_ContaminationContainment extends Quest
 					htmltext = getAlreadyCompletedMsg(player);
 					break;
 				}
+				
 				qs.setState(State.CREATED);
 				// fallthrough
 			}
@@ -206,6 +211,7 @@ public final class Q00841_ContaminationContainment extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -313,6 +319,7 @@ public final class Q00841_ContaminationContainment extends Quest
 								giveItems(player, SUPPLY_BOX_ADVANCED, 1);
 							}
 						}
+						
 						addExpAndSp(player, 5536944000L, 13288590);
 						addFactionPoints(player, Faction.MOTHER_TREE_GUARDIANS, REWARD_BASIC);
 						showHtmlFile(player, "guardian_leader_q0841_13.htm", npc);
@@ -349,11 +356,13 @@ public final class Q00841_ContaminationContainment extends Quest
 									giveItems(player, SUPPLY_BOX_ADVANCED, 1);
 								}
 							}
+							
 							addExpAndSp(player, 5536944000L * 2, 13288590 * 2);
 							addFactionPoints(player, Faction.MOTHER_TREE_GUARDIANS, REWARD_BASIC * 2);
 							showHtmlFile(player, "guardian_leader_q0841_13.htm", npc);
 							break;
 						}
+						
 						showHtmlFile(player, "guardian_leader_q0841_14.htm", npc);
 					}
 					break;
@@ -385,6 +394,7 @@ public final class Q00841_ContaminationContainment extends Quest
 								giveItems(player, SUPPLY_BOX_ADVANCED, 1);
 							}
 						}
+						
 						addExpAndSp(player, 11073888000L, 26577180);
 						addFactionPoints(player, Faction.MOTHER_TREE_GUARDIANS, REWARD_INTERMEDIATE);
 						showHtmlFile(player, "guardian_leader_q0841_13a.htm", npc);
@@ -421,11 +431,13 @@ public final class Q00841_ContaminationContainment extends Quest
 									giveItems(player, SUPPLY_BOX_ADVANCED, 1);
 								}
 							}
+							
 							addExpAndSp(player, 11073888000L * 2, 26577180 * 2);
 							addFactionPoints(player, Faction.MOTHER_TREE_GUARDIANS, REWARD_INTERMEDIATE * 2);
 							showHtmlFile(player, "guardian_leader_q0841_13a.htm", npc);
 							break;
 						}
+						
 						showHtmlFile(player, "guardian_leader_q0841_14a.htm", npc);
 					}
 					break;
@@ -457,6 +469,7 @@ public final class Q00841_ContaminationContainment extends Quest
 								giveItems(player, SUPPLY_BOX_BASIC, 1);
 							}
 						}
+						
 						addExpAndSp(player, 16610832000L, 39865770);
 						addFactionPoints(player, Faction.MOTHER_TREE_GUARDIANS, REWARD_ADVANCED);
 						showHtmlFile(player, "guardian_leader_q0841_13b.htm", npc);
@@ -493,11 +506,13 @@ public final class Q00841_ContaminationContainment extends Quest
 									giveItems(player, SUPPLY_BOX_BASIC, 1);
 								}
 							}
+							
 							addExpAndSp(player, 16610832000L * 2, 39865770 * 2);
 							addFactionPoints(player, Faction.MOTHER_TREE_GUARDIANS, REWARD_ADVANCED * 2);
 							showHtmlFile(player, "guardian_leader_q0841_13b.htm", npc);
 							break;
 						}
+						
 						showHtmlFile(player, "guardian_leader_q0841_14b.htm", npc);
 					}
 					break;
@@ -522,6 +537,7 @@ public final class Q00841_ContaminationContainment extends Quest
 						qs.setCond(5, true);
 						break;
 					}
+					
 					qs.set("killed_Nymphs", ++killedNymphs);
 					playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 					sendNpcLogList(player);
@@ -534,6 +550,7 @@ public final class Q00841_ContaminationContainment extends Quest
 						qs.setCond(6, true);
 						break;
 					}
+					
 					qs.set("killed_Nymphs", ++killedNymphs);
 					playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 					sendNpcLogList(player);
@@ -546,6 +563,7 @@ public final class Q00841_ContaminationContainment extends Quest
 						qs.setCond(7, true);
 						break;
 					}
+					
 					qs.set("killed_Nymphs", ++killedNymphs);
 					playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 					sendNpcLogList(player);
@@ -565,6 +583,7 @@ public final class Q00841_ContaminationContainment extends Quest
 			holder.add(new NpcLogListHolder(NpcStringId.DEFEAT_THE_ENRAGED_NYMPH, qs.getInt("killed_Nymphs"))); // Defeat the Enraged Nymph
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 	

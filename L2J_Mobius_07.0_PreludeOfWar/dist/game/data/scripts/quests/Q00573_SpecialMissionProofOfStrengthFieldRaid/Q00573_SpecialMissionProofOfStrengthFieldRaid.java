@@ -44,6 +44,7 @@ public class Q00573_SpecialMissionProofOfStrengthFieldRaid extends Quest
 {
 	// NPCs
 	private static final int PENNY = 34413;
+	
 	// Raidbosses
 	private static final int[] BOSSES =
 	{
@@ -67,6 +68,7 @@ public class Q00573_SpecialMissionProofOfStrengthFieldRaid extends Quest
 		26070, // Tiverga
 		26071, // Enhanced Mahum Supercium
 	};
+	
 	// Misc
 	private static final int MIN_LEVEL = 92;
 	private static final int MAX_LEVEL = 95;
@@ -91,6 +93,7 @@ public class Q00573_SpecialMissionProofOfStrengthFieldRaid extends Quest
 		{
 			return htmltext;
 		}
+		
 		switch (event)
 		{
 			case "34413-02.htm":
@@ -115,6 +118,7 @@ public class Q00573_SpecialMissionProofOfStrengthFieldRaid extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -149,6 +153,7 @@ public class Q00573_SpecialMissionProofOfStrengthFieldRaid extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -186,6 +191,7 @@ public class Q00573_SpecialMissionProofOfStrengthFieldRaid extends Quest
 				return holder;
 			}
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

@@ -41,6 +41,7 @@ public class Q00233_TestOfTheWarSpirit extends Quest
 	private static final int ORIM = 30630;
 	private static final int ANCESTOR_MARTANKUS = 30649;
 	private static final int PEKIRON = 30682;
+	
 	// Monsters
 	private static final int NOBLE_ANT = 20089;
 	private static final int NOBLE_ANT_LEADER = 20090;
@@ -53,6 +54,7 @@ public class Q00233_TestOfTheWarSpirit extends Quest
 	private static final int TAMLIN_ORC = 20601;
 	private static final int TAMLIN_ORC_ARCHER = 20602;
 	private static final int STENOA_GORGON_QUEEN = 27108;
+	
 	// Items
 	private static final int VENDETTA_TOTEM = 2880;
 	private static final int TAMLIN_ORC_HEAD = 2881;
@@ -89,6 +91,7 @@ public class Q00233_TestOfTheWarSpirit extends Quest
 	private static final int TONAR_REMAINS_2 = 2912;
 	private static final int HERMODT_REMAINS_2 = 2913;
 	private static final int KIRUNA_REMAINS_2 = 2914;
+	
 	// Rewards
 	private static final int MARK_OF_WARSPIRIT = 2879;
 	private static final int DIMENSIONAL_DIAMOND = 7562;

@@ -144,6 +144,7 @@ public class FeedableBeasts extends AbstractNpcAI
 			{
 				return _spiceToMob.get(spice)[mobType][classType];
 			}
+			
 			return null;
 		}
 		
@@ -345,6 +346,7 @@ public class FeedableBeasts extends AbstractNpcAI
 		{
 			return;
 		}
+		
 		npc.setScriptValue(1);
 		
 		if (!npc.isSpawned())

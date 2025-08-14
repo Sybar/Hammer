@@ -32,11 +32,13 @@ public class Q00001_LettersOfLove extends Quest
 	private static final int DARIN = 30048;
 	private static final int ROXXY = 30006;
 	private static final int BAULRO = 30033;
+	
 	// Items
 	private static final int DARIN_LETTER = 687;
 	private static final int ROXXY_KERCHIEF = 688;
 	private static final int DARIN_RECEIPT = 1079;
 	private static final int BAULRO_POTION = 1080;
+	
 	// Reward
 	private static final int NECKLACE = 906;
 	

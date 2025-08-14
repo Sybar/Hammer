@@ -31,8 +31,10 @@ public class Q00431_WeddingMarch extends Quest
 {
 	// NPC
 	private static final int KANTABILON = 31042;
+	
 	// Item
 	private static final int SILVER_CRYSTAL = 7540;
+	
 	// Reward
 	private static final int WEDDING_ECHO_CRYSTAL = 7062;
 	

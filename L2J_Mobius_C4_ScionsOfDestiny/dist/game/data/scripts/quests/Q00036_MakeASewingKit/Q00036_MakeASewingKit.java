@@ -35,6 +35,7 @@ public class Q00036_MakeASewingKit extends Quest
 	private static final int REINFORCED_STEEL = 7163;
 	private static final int ARTISANS_FRAME = 1891;
 	private static final int ORIHARUKON = 1893;
+	
 	// Reward
 	private static final int SEWING_KIT = 7078;
 	

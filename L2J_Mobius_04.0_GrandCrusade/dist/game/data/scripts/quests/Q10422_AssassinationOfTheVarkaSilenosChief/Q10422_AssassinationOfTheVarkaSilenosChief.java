@@ -40,6 +40,7 @@ public class Q10422_AssassinationOfTheVarkaSilenosChief extends Quest
 	private static final int HANSEN = 33853;
 	private static final int CHIEF_HORUS = 27503;
 	private static final int KAMPF = 27516;
+	
 	// Misc
 	private static final int MIN_LEVEL = 76;
 	private static final int MAX_LEVEL = 80;
@@ -99,11 +100,13 @@ public class Q10422_AssassinationOfTheVarkaSilenosChief extends Quest
 					{
 						addExpAndSp(player, 351479151, 1839);
 					}
+					
 					htmltext = "33853-07.html";
 				}
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -130,6 +133,7 @@ public class Q10422_AssassinationOfTheVarkaSilenosChief extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -141,6 +145,7 @@ public class Q10422_AssassinationOfTheVarkaSilenosChief extends Quest
 		{
 			qs.setCond(2, true);
 		}
+		
 		if ((qs != null) && qs.isCond(2))
 		{
 			addSpawn(KAMPF, 105626, -43053, -1721, 0, true, 60000);

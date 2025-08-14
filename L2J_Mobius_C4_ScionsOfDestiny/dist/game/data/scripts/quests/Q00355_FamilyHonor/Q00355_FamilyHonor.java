@@ -58,11 +58,13 @@ public class Q00355_FamilyHonor extends Quest
 	// NPCs
 	private static final int GALIBREDO = 30181;
 	private static final int PATRIN = 30929;
+	
 	// Monsters
 	private static final int TIMAK_ORC_TROOP_LEADER = 20767;
 	private static final int TIMAK_ORC_TROOP_SHAMAN = 20768;
 	private static final int TIMAK_ORC_TROOP_WARRIOR = 20769;
 	private static final int TIMAK_ORC_TROOP_ARCHER = 20770;
+	
 	// Items
 	private static final int GALIBREDO_BUST = 4252;
 	private static final int WORK_OF_BERONA = 4350;
@@ -70,6 +72,7 @@ public class Q00355_FamilyHonor extends Quest
 	private static final int STATUE_ORIGINAL = 4352;
 	private static final int STATUE_REPLICA = 4353;
 	private static final int STATUE_FORGERY = 4354;
+	
 	// Drop chances
 	private static final Map<Integer, DropInfo> MOBS = new HashMap<>();
 	static

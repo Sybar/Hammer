@@ -51,6 +51,7 @@ public class Q00773_ToCalmTheFlood extends Quest
 {
 	// NPCs
 	private static final int FAIRY = 32921;
+	
 	// Monster
 	private static final int[] FAIRY_MONSTERS =
 	{
@@ -76,6 +77,7 @@ public class Q00773_ToCalmTheFlood extends Quest
 		22907, // Satyr Witch - Violent
 		22908, // Satyr Witch - Brutal
 	};
+	
 	// Misc
 	private static final int MIN_LEVEL = 88;
 	private static final int MAX_LEVEL = 98;
@@ -140,11 +142,13 @@ public class Q00773_ToCalmTheFlood extends Quest
 						}
 						break;
 					}
+					
 					htmltext = getNoQuestLevelRewardMsg(player);
 					break;
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -163,6 +167,7 @@ public class Q00773_ToCalmTheFlood extends Quest
 					htmltext = getAlreadyCompletedMsg(player);
 					break;
 				}
+				
 				qs.setState(State.CREATED);
 				// fallthrough
 			}
@@ -189,6 +194,7 @@ public class Q00773_ToCalmTheFlood extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -221,6 +227,7 @@ public class Q00773_ToCalmTheFlood extends Quest
 					qs.set("killed_" + ID_FAIRY, ++killedFairy);
 					playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 				}
+				
 				sendNpcLogList(killer);
 			}
 			
@@ -231,6 +238,7 @@ public class Q00773_ToCalmTheFlood extends Quest
 					qs.set("killed_" + ID_SATYR, ++killedSatyr);
 					playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 				}
+				
 				sendNpcLogList(killer);
 			}
 			
@@ -252,6 +260,7 @@ public class Q00773_ToCalmTheFlood extends Quest
 			holder.add(new NpcLogListHolder(ID_SATYR, false, qs.getInt("killed_" + ID_SATYR)));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 	

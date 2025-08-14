@@ -20,7 +20,6 @@ import java.util.StringTokenizer;
 
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.actor.enums.player.PlayerCondOverride;
 import org.l2jmobius.gameserver.model.clan.ClanAccess;
 import org.l2jmobius.gameserver.model.siege.Castle;
 import org.l2jmobius.gameserver.util.ArrayUtil;
@@ -130,6 +129,7 @@ public class CastleDoorManager extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -146,7 +146,7 @@ public class CastleDoorManager extends AbstractNpcAI
 	
 	private boolean isOwningClan(Player player, Npc npc)
 	{
-		return player.canOverrideCond(PlayerCondOverride.CASTLE_CONDITIONS) || ((npc.getCastle().getOwnerId() == player.getClanId()) && (player.getClanId() != 0));
+		return player.isGM() || ((npc.getCastle().getOwnerId() == player.getClanId()) && (player.getClanId() != 0));
 	}
 	
 	public static void main(String[] args)

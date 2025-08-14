@@ -40,11 +40,14 @@ public class Q00431_TracesOfAncientCreatures extends Quest
 {
 	// NPC
 	private static final int GENIE_LAMP = 34369;
+	
 	// Monsters
 	private static final int WARRIOR_OF_ANCIENT_TIMES = 20971;
 	private static final int SHAMAN_OF_ANCIENT_TIMES = 20972;
+	
 	// Item
 	private static final ItemHolder BOOST_DEF_SCROLL = new ItemHolder(94271, 3);
+	
 	// Misc
 	private static final int MIN_LEVEL = 64;
 	private static final int MAX_LEVEL = 75;
@@ -99,6 +102,7 @@ public class Q00431_TracesOfAncientCreatures extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -137,6 +141,7 @@ public class Q00431_TracesOfAncientCreatures extends Quest
 				htmltext = getAlreadyCompletedMsg(player);
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -172,6 +177,7 @@ public class Q00431_TracesOfAncientCreatures extends Quest
 			holder.add(new NpcLogListHolder(NpcStringId.DEFEAT_MONSTERS_27.getId(), true, qs.getInt(KILL_COUNT_VAR)));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

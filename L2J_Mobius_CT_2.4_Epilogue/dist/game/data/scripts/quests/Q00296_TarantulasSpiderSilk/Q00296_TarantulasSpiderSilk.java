@@ -36,16 +36,19 @@ public class Q00296_TarantulasSpiderSilk extends Quest
 	// NPCs
 	private static final int TRADER_MION = 30519;
 	private static final int DEFENDER_NATHAN = 30548;
+	
 	// Monsters
-	private static final int[] MONSTERS = new int[]
+	private static final int[] MONSTERS =
 	{
 		20394,
 		20403,
 		20508,
 	};
+	
 	// Items
 	private static final int TARANTULA_SPIDER_SILK = 1493;
 	private static final int TARANTULA_SPINNERETTE = 1494;
+	
 	// Misc
 	private static final int MIN_LEVEL = 15;
 	private static final int GUIDE_MISSION = 41;
@@ -115,6 +118,7 @@ public class Q00296_TarantulasSpiderSilk extends Quest
 				break;
 			}
 		}
+		
 		return html;
 	}
 	
@@ -172,6 +176,7 @@ public class Q00296_TarantulasSpiderSilk extends Quest
 							setNRMemoState(newbieGuideQs, GUIDE_MISSION, getNRMemoState(newbieGuideQs, GUIDE_MISSION) + 10000000);
 							showOnScreenMsg(talker, "Last duty complete. \\n Go find the Newbie Guide.", 2, 5000);
 						}
+						
 						newbieGuideQs.setState(State.COMPLETED);
 					}
 					
@@ -187,6 +192,7 @@ public class Q00296_TarantulasSpiderSilk extends Quest
 				html = "30548-01.html";
 			}
 		}
+		
 		return html;
 	}
 }

@@ -43,7 +43,7 @@ import org.l2jmobius.loginserver.network.serverpackets.LoginOk;
  */
 public class RequestAuthLogin extends AbstractClientPacket
 {
-	private final static Logger LOGGER = Logger.getLogger(RequestAuthLogin.class.getName());
+	private static final Logger LOGGER = Logger.getLogger(RequestAuthLogin.class.getName());
 	
 	private String _account;
 	private String _password;

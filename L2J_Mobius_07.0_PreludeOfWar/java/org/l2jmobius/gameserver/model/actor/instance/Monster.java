@@ -177,6 +177,7 @@ public class Monster extends Attackable
 				}
 			}
 		}
+		
 		return _minionList;
 	}
 	
@@ -214,11 +215,12 @@ public class Monster extends Attackable
 	public synchronized void doCast(Skill skill, Item item, boolean ctrlPressed, boolean shiftPressed)
 	{
 		// Might need some exceptions here, but it will prevent the monster buffing player bug.
-		if (!skill.isBad() && (getTarget() != null) && getTarget().isPlayer())
+		if (!skill.hasNegativeEffect() && (getTarget() != null) && getTarget().isPlayer())
 		{
 			abortAllSkillCasters();
 			return;
 		}
+		
 		super.doCast(skill, item, ctrlPressed, shiftPressed);
 	}
 }

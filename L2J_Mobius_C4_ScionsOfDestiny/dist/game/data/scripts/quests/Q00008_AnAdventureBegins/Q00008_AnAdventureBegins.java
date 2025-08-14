@@ -33,8 +33,10 @@ public class Q00008_AnAdventureBegins extends Quest
 	private static final int JASMINE = 30134;
 	private static final int ROSELYN = 30355;
 	private static final int HARNE = 30144;
+	
 	// Items
 	private static final int ROSELYN_NOTE = 7573;
+	
 	// Rewards
 	private static final int SOE_GIRAN = 7559;
 	private static final int MARK_TRAVELER = 7570;

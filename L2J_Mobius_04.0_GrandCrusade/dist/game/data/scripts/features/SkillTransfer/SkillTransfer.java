@@ -23,7 +23,6 @@ import org.l2jmobius.gameserver.managers.PunishmentManager;
 import org.l2jmobius.gameserver.model.SkillLearn;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.enums.player.IllegalActionPunishmentType;
-import org.l2jmobius.gameserver.model.actor.enums.player.PlayerCondOverride;
 import org.l2jmobius.gameserver.model.actor.transform.Transform;
 import org.l2jmobius.gameserver.model.events.holders.actor.player.OnPlayerProfessionCancel;
 import org.l2jmobius.gameserver.model.events.holders.actor.player.OnPlayerProfessionChange;
@@ -88,12 +87,14 @@ public class SkillTransfer extends AbstractNpcAI
 		}
 		
 		final int pomanderId = PORMANDERS[index].getId();
+		
 		// remove unsused HolyPomander
 		final PlayerInventory inv = player.getInventory();
 		for (Item itemI : inv.getAllItemsByItemId(pomanderId))
 		{
 			inv.destroyItem(ItemProcessType.DESTROY, itemI, player, null);
 		}
+		
 		// remove holy pomander variable
 		final String name = HOLY_POMANDER + event.getClassId();
 		player.getVariables().remove(name);
@@ -102,13 +103,14 @@ public class SkillTransfer extends AbstractNpcAI
 	@Override
 	public void onEnterWorld(Player player)
 	{
-		if (!player.canOverrideCond(PlayerCondOverride.SKILL_CONDITIONS) || Config.SKILL_CHECK_GM)
+		if (!player.isGM() || Config.SKILL_CHECK_GM)
 		{
 			final int index = getTransferClassIndex(player);
 			if (index < 0)
 			{
 				return;
 			}
+			
 			long count = PORMANDERS[index].getCount() - player.getInventory().getInventoryItemCount(PORMANDERS[index].getId(), -1, false);
 			for (Skill sk : player.getAllSkills())
 			{
@@ -117,9 +119,13 @@ public class SkillTransfer extends AbstractNpcAI
 					if (s.getSkillId() == sk.getId())
 					{
 						// Holy Weapon allowed for Shilien Saint/Inquisitor stance
-						if ((sk.getId() == 1043) && (index == 2) && player.checkTransformed(Transform::isStance))
+						if ((sk.getId() == 1043) && (index == 2))
 						{
-							continue;
+							final Transform transform = player.getTransformation();
+							if ((transform != null) && transform.isStance())
+							{
+								continue;
+							}
 						}
 						
 						count--;
@@ -135,6 +141,7 @@ public class SkillTransfer extends AbstractNpcAI
 					}
 				}
 			}
+			
 			// SkillTransfer or HolyPomander missing
 			if (count > 0)
 			{

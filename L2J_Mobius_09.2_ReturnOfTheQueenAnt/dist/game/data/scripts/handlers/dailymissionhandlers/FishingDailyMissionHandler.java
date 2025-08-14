@@ -73,6 +73,7 @@ public class FishingDailyMissionHandler extends AbstractDailyMissionHandler
 				}
 			}
 		}
+		
 		return false;
 	}
 	
@@ -93,6 +94,7 @@ public class FishingDailyMissionHandler extends AbstractDailyMissionHandler
 				{
 					entry.setStatus(DailyMissionStatus.AVAILABLE);
 				}
+				
 				storePlayerEntry(entry);
 			}
 		}

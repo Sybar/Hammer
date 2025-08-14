@@ -32,9 +32,11 @@ public class Q00618_IntoTheFlame extends Quest
 	// NPCs
 	private static final int KLEIN = 31540;
 	private static final int HILDA = 31271;
+	
 	// Items
 	private static final int VACUALITE_ORE = 7265;
 	private static final int VACUALITE = 7266;
+	
 	// Reward
 	private static final int FLOATING_STONE = 7267;
 	
@@ -44,6 +46,7 @@ public class Q00618_IntoTheFlame extends Quest
 		registerQuestItems(VACUALITE_ORE, VACUALITE);
 		addStartNpc(KLEIN);
 		addTalkId(KLEIN, HILDA);
+		
 		// Kookaburras, Bandersnatches, Grendels
 		addKillId(21274, 21275, 21276, 21277, 21282, 21283, 21284, 21285, 21290, 21291, 21292, 21293);
 	}

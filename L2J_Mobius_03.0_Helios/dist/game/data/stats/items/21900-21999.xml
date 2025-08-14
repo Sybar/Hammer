@@ -14,9 +14,9 @@
 		<set name="is_questitem" val="true" />
 		<set name="is_depositable" val="false" />
 		<set name="reuse_delay" val="600000" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player insideZoneId="12010, 12001" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="22295" level="1" /> <!-- Totem of Spirit -->
 		</skills>
@@ -35,9 +35,9 @@
 		<set name="is_questitem" val="true" />
 		<set name="is_depositable" val="false" />
 		<set name="reuse_delay" val="600000" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player insideZoneId="12010, 12001" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="22296" level="1" /> <!-- Totem of Courage -->
 		</skills>
@@ -56,9 +56,9 @@
 		<set name="is_questitem" val="true" />
 		<set name="is_depositable" val="false" />
 		<set name="reuse_delay" val="600000" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player insideZoneId="12010, 12001" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="22297" level="1" /> <!-- Totem of Fortitude -->
 		</skills>
@@ -79,9 +79,9 @@
 		<set name="is_questitem" val="true" />
 		<set name="is_depositable" val="false" />
 		<set name="reuse_delay" val="300000" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player insideZoneId="12010, 12001" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="22298" level="1" /> <!-- Refined Red Dragon Blood -->
 		</skills>
@@ -102,9 +102,9 @@
 		<set name="commissionItemType" val="POTION" />
 		<set name="is_depositable" val="false" />
 		<set name="reuse_delay" val="300000" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player insideZoneId="12010, 12001" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="22299" level="1" /> <!-- Refined Blue Dragon Blood -->
 		</skills>
@@ -863,12 +863,12 @@
 		<set name="commissionItemType" val="DUAL_DAGGER" />
 		<set name="ensoulNormalSlots" val="1" />
 		<set name="ensoulSpecialSlots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player level="81" />
 				<player categoryType="DAGGER_MASTER" />
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">332</stat>
 			<stat type="mAtk">169</stat>
@@ -904,12 +904,12 @@
 		<set name="element_enabled" val="false" />
 		<set name="enchant_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player level="81" />
 				<player categoryType="DAGGER_MASTER" />
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">332</stat>
 			<stat type="mAtk">169</stat>
@@ -948,12 +948,12 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="ensoulNormalSlots" val="1" />
 		<set name="ensoulSpecialSlots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player level="81" />
 				<player categoryType="DAGGER_MASTER" />
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">332</stat>
 			<stat type="mAtk">169</stat>
@@ -990,12 +990,12 @@
 		<set name="element_enabled" val="false" />
 		<set name="enchant_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player level="81" />
 				<player categoryType="DAGGER_MASTER" />
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">332</stat>
 			<stat type="mAtk">169</stat>

@@ -42,6 +42,7 @@ public class Q00420_LittleWing extends Quest
 	private static final int SUZET = 30751;
 	private static final int SHAMHAI = 30752;
 	private static final int COOPER = 30829;
+	
 	// Items
 	private static final int FAIRY_DUST = 3499;
 	private static final int FAIRY_STONE = 3816;
@@ -60,6 +61,7 @@ public class Q00420_LittleWing extends Quest
 	private static final int EGG_OF_WYVERN_SUZET = 3829;
 	private static final int SCALE_OF_WYVERN_SHAMHAI = 3830;
 	private static final int EGG_OF_WYVERN_SHAMHAI = 3831;
+	
 	// Needed items
 	private static final int COAL = 1870;
 	private static final int CHARCOAL = 1871;
@@ -67,12 +69,14 @@ public class Q00420_LittleWing extends Quest
 	private static final int STONE_OF_PURITY = 1875;
 	private static final int GEMSTONE_D = 2130;
 	private static final int GEMSTONE_C = 2131;
+	
 	// Rewards
 	private static final int DRAGONFLUTE_OF_WIND = 3500;
 	private static final int DRAGONFLUTE_OF_STAR = 3501;
 	private static final int DRAGONFLUTE_OF_TWILIGHT = 3502;
 	private static final int HATCHLING_SOFT_LEATHER = 3912;
 	private static final int FOOD_FOR_HATCHLING = 4038;
+	
 	// Spawn Points
 	private static final Location[] LOCATIONS =
 	{
@@ -80,6 +84,7 @@ public class Q00420_LittleWing extends Quest
 		new Location(108940, 41615, -4643, 0),
 		new Location(110395, 41625, -4642, 0)
 	};
+	
 	// Misc
 	private static int _counter = 0;
 	
@@ -231,6 +236,7 @@ public class Q00420_LittleWing extends Quest
 						htmltext = "30747-14t.htm";
 						giveItems(player, FOOD_FOR_HATCHLING, 20);
 					}
+					
 					st.exitQuest(true, true);
 				}
 				else
@@ -787,6 +793,7 @@ public class Q00420_LittleWing extends Quest
 				return true;
 			}
 		}
+		
 		return false;
 	}
 	

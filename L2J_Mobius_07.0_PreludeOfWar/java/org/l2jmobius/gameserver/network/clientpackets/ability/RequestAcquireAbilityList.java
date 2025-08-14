@@ -65,6 +65,7 @@ public class RequestAcquireAbilityList extends ClientPacket
 					PacketLogger.warning("Player is trying to learn skill " + holder + " by sending packet with level 0!");
 					return;
 				}
+				
 				if (_skills.putIfAbsent(holder.getSkillId(), holder) != null)
 				{
 					_skills = null;

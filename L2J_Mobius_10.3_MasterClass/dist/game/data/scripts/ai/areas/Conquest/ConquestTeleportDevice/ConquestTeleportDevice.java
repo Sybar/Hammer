@@ -84,6 +84,7 @@ public class ConquestTeleportDevice extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -94,6 +95,7 @@ public class ConquestTeleportDevice extends AbstractNpcAI
 		{
 			return "34597.htm";
 		}
+		
 		return null;
 	}
 	

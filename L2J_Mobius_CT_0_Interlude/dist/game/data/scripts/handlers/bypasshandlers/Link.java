@@ -68,13 +68,12 @@ public class Link implements IBypassHandler
 		VALID_LINKS.add("seven_signs/mammmerch_1.htm");
 		VALID_LINKS.add("seven_signs/mammmerch_1a.htm");
 		VALID_LINKS.add("seven_signs/mammmerch_1b.htm");
-		VALID_LINKS.add("teleporter/separatedsoul.htm");
 		VALID_LINKS.add("warehouse/clanwh.htm");
 		VALID_LINKS.add("warehouse/privatewh.htm");
 	}
 	
 	@Override
-	public boolean useBypass(String command, Player player, Creature target)
+	public boolean onCommand(String command, Player player, Creature target)
 	{
 		final String htmlPath = command.substring(4).trim();
 		if (htmlPath.isEmpty())
@@ -90,6 +89,7 @@ public class Link implements IBypassHandler
 		}
 		
 		String content = VALID_LINKS.contains(htmlPath) ? HtmCache.getInstance().getHtm(player, "data/html/" + htmlPath) : null;
+		
 		// Precaution.
 		if (htmlPath.startsWith("teleporter/") && !(player.getTarget() instanceof Teleporter))
 		{
@@ -101,12 +101,13 @@ public class Link implements IBypassHandler
 		{
 			html.setHtml(content.replace("%objectId%", String.valueOf(target != null ? target.getObjectId() : 0)));
 		}
+		
 		player.sendPacket(html);
 		return true;
 	}
 	
 	@Override
-	public String[] getBypassList()
+	public String[] getCommandList()
 	{
 		return COMMANDS;
 	}

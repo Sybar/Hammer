@@ -105,6 +105,7 @@ public class ClanMaster extends AbstractNpcAI
 		{
 			return LEADER_REQUIRED.get(event);
 		}
+		
 		return event;
 	}
 	
@@ -169,6 +170,7 @@ public class ClanMaster extends AbstractNpcAI
 					break;
 				}
 			}
+			
 			if (removing)
 			{
 				final Skill advent = getAdventSkill(clan);

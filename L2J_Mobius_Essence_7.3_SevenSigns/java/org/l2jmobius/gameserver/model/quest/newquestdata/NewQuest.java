@@ -82,12 +82,14 @@ public class NewQuest
 				{
 					LOGGER.warning(getClass().getSimpleName() + _id + ": Item template with id " + goalItemId + " should be stackable.");
 				}
+				
 				if (!template.isQuestItem())
 				{
 					LOGGER.warning(getClass().getSimpleName() + _id + ": Item template with id " + goalItemId + " should be quest item.");
 				}
 			}
 		}
+		
 		_goal = new NewQuestGoal(goalItemId, goalCount, set.getString("goalString", ""));
 		
 		_rewards = new NewQuestReward(set.getLong("rewardExp", -1), set.getLong("rewardSp", -1), set.getInt("rewardLevel", -1), set.getList("rewardItems", ItemHolder.class));

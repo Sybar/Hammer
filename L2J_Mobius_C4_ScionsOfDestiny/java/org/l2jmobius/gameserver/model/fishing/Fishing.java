@@ -27,8 +27,8 @@ import org.l2jmobius.commons.util.Rnd;
 import org.l2jmobius.gameserver.data.xml.FishingMonstersData;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.events.AbstractScript;
 import org.l2jmobius.gameserver.model.item.enums.ItemProcessType;
+import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.network.SystemMessageId;
 import org.l2jmobius.gameserver.network.serverpackets.ExFishingHpRegen;
 import org.l2jmobius.gameserver.network.serverpackets.ExFishingStartCombat;
@@ -46,6 +46,7 @@ public class Fishing implements Runnable
 	private int _deceptiveMode = 0;
 	private Future<?> _fishAiTask;
 	private boolean _thinking;
+	
 	// Fish datas
 	private final int _fishId;
 	private final int _fishMaxHp;
@@ -99,9 +100,11 @@ public class Fishing implements Runnable
 			_deceptiveMode = 0;
 			lureType = isNoob ? 0 : 1;
 		}
+		
 		_mode = (Rnd.get(100) >= 80) ? 1 : 0;
 		_fisher.broadcastPacket(new ExFishingStartCombat(_fisher, _time, _fishMaxHp, _mode, lureType, _deceptiveMode));
 		_fisher.sendPacket(new PlaySound(1, "SF_S_01", 0, 0, 0, 0, 0));
+		
 		// Succeeded in getting a bite
 		_fisher.sendPacket(SystemMessageId.SUCCEEDED_IN_GETTING_A_BITE);
 		
@@ -153,7 +156,7 @@ public class Fishing implements Runnable
 				if (Rnd.get(100) <= fishingMonster.getProbability())
 				{
 					_fisher.sendPacket(SystemMessageId.YOU_HAVE_CAUGHT_A_MONSTER);
-					final Npc monster = AbstractScript.addSpawn(fishingMonster.getFishingMonsterId(), _fisher);
+					final Npc monster = Quest.addSpawn(fishingMonster.getFishingMonsterId(), _fisher);
 					monster.setTarget(_fisher);
 				}
 				else
@@ -163,6 +166,7 @@ public class Fishing implements Runnable
 				}
 			}
 		}
+		
 		_fisher.endFishing(win);
 		_fisher = null;
 	}
@@ -173,6 +177,7 @@ public class Fishing implements Runnable
 		{
 			return;
 		}
+		
 		_thinking = true;
 		_time--;
 		
@@ -189,6 +194,7 @@ public class Fishing implements Runnable
 			{
 				_fishCurHp += (int) _regenHp;
 			}
+			
 			if (_stop == 0)
 			{
 				_stop = 1;
@@ -197,6 +203,7 @@ public class Fishing implements Runnable
 				{
 					_mode = _mode == 0 ? 1 : 0;
 				}
+				
 				if (_isUpperGrade)
 				{
 					check = Rnd.get(100);
@@ -236,10 +243,12 @@ public class Fishing implements Runnable
 			changeHp(0, pen);
 			return;
 		}
+		
 		if (_fisher == null)
 		{
 			return;
 		}
+		
 		if (_mode == 1)
 		{
 			if (_deceptiveMode == 0)
@@ -254,6 +263,7 @@ public class Fishing implements Runnable
 					sm.addInt(pen);
 					_fisher.sendPacket(sm);
 				}
+				
 				_goodUse = 1;
 				changeHp(dmg, pen);
 			}
@@ -288,6 +298,7 @@ public class Fishing implements Runnable
 				sm.addInt(pen);
 				_fisher.sendPacket(sm);
 			}
+			
 			_goodUse = 1;
 			changeHp(dmg, pen);
 		}
@@ -303,10 +314,12 @@ public class Fishing implements Runnable
 			changeHp(0, pen);
 			return;
 		}
+		
 		if (_fisher == null)
 		{
 			return;
 		}
+		
 		if (_mode == 0)
 		{
 			if (_deceptiveMode == 0)
@@ -321,6 +334,7 @@ public class Fishing implements Runnable
 					sm.addInt(pen);
 					_fisher.sendPacket(sm);
 				}
+				
 				_goodUse = 1;
 				changeHp(dmg, pen);
 			}
@@ -355,6 +369,7 @@ public class Fishing implements Runnable
 				sm.addInt(pen);
 				_fisher.sendPacket(sm);
 			}
+			
 			_goodUse = 1;
 			changeHp(dmg, pen);
 		}

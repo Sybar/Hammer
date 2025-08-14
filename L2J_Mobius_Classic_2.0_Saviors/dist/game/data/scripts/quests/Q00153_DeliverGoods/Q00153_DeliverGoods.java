@@ -34,6 +34,7 @@ public class Q00153_DeliverGoods extends Quest
 	private static final int SILVIA_ID = 30003;
 	private static final int ARNOLD_ID = 30041;
 	private static final int RANT_ID = 30054;
+	
 	// Items
 	private static final int DELIVERY_LIST_ID = 1012;
 	private static final int HEAVY_WOOD_BOX_ID = 1013;
@@ -42,6 +43,7 @@ public class Q00153_DeliverGoods extends Quest
 	private static final int JACKSONS_RECEIPT_ID = 1016;
 	private static final int SILVIAS_RECEIPT_ID = 1017;
 	private static final int RANTS_RECEIPT_ID = 1018;
+	
 	// Rewards
 	private static final int RING_OF_KNOWLEDGE_ID = 49041;
 	
@@ -65,6 +67,7 @@ public class Q00153_DeliverGoods extends Quest
 			giveItems(player, CLOTH_BUNDLE_ID, 1);
 			giveItems(player, CLAY_POT_ID, 1);
 		}
+		
 		return event;
 	}
 	
@@ -154,6 +157,7 @@ public class Q00153_DeliverGoods extends Quest
 				qs.setCond(2, true);
 			}
 		}
+		
 		return htmltext;
 	}
 }

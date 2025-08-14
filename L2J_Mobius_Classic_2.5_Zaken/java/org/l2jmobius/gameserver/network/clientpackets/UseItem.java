@@ -114,7 +114,7 @@ public class UseItem extends ClientPacket
 				final WorldObject obj = World.getInstance().findObject(_objectId);
 				if ((obj != null) && obj.isItem())
 				{
-					AdminCommandHandler.getInstance().useAdminCommand(player, "admin_use_item " + _objectId, true);
+					AdminCommandHandler.getInstance().onCommand(player, "admin_use_item " + _objectId, true);
 				}
 			}
 			return;
@@ -320,7 +320,7 @@ public class UseItem extends ClientPacket
 					PacketLogger.warning("Unmanaged Item handler: " + etcItem.getHandlerName() + " for Item Id: " + _itemId + "!");
 				}
 			}
-			else if (handler.useItem(player, item, _ctrlPressed))
+			else if (handler.onItemUse(player, item, _ctrlPressed))
 			{
 				// Item reuse time should be added if the item is successfully used.
 				// Skill reuse delay is done at handlers.itemhandlers.ItemSkillsTemplate;
@@ -363,6 +363,7 @@ public class UseItem extends ClientPacket
 			sm = new SystemMessage(SystemMessageId.THERE_ARE_S2_SECOND_S_REMAINING_IN_S1_S_RE_USE_TIME);
 			sm.addItemName(item);
 		}
+		
 		sm.addInt(seconds);
 		player.sendPacket(sm);
 	}

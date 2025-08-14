@@ -39,6 +39,7 @@ public class UndergroundLabyrinthMonsters extends AbstractNpcAI
 		22543, // Labyrinth Leader
 		22544, // Herald of Purification
 	};
+	
 	// Item
 	private static final int MARK_OF_REPENTANCE = 97783;
 	

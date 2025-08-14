@@ -44,14 +44,17 @@ public class Q10819_ForHonor extends Quest
 {
 	// NPC
 	private static final int OLYMPIAD_MANAGER = 31688;
+	
 	// Items
 	private static final int PROOF_OF_BATTLE = 45872;
 	private static final int ISHUMA_CERTIFICATE = 45630;
 	private static final int SIR_KRISTOF_RODEMAI_CERTIFICATE = 45631;
 	private static final int DAICHIR_SERTIFICATE = 45628;
+	
 	// Rewards
 	private static final int OLYMPIAD_MANAGER_CERTIFICATE = 45629;
 	private static final int BATTLE_QUICK_HEALING_POTION = 45945;
+	
 	// Misc
 	private static final int MIN_LEVEL = 99;
 	
@@ -103,6 +106,7 @@ public class Q10819_ForHonor extends Quest
 						{
 							htmltext = event;
 						}
+						
 						takeItems(player, PROOF_OF_BATTLE, -1);
 						giveItems(player, BATTLE_QUICK_HEALING_POTION, 180);
 						giveItems(player, OLYMPIAD_MANAGER_CERTIFICATE, 1);
@@ -116,6 +120,7 @@ public class Q10819_ForHonor extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -149,6 +154,7 @@ public class Q10819_ForHonor extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

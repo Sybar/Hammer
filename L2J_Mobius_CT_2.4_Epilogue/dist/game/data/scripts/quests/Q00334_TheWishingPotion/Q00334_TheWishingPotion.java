@@ -143,24 +143,30 @@ public class Q00334_TheWishingPotion extends Quest
 					{
 						return "30738-01.htm";
 					}
+					
 					return "30738-02.html";
 				}
+				
 				if (!hasQuestItems(player, Q_SECRET_BOOK_OF_POTION) && hasQuestItems(player, Q_ALCHEMY_TEXT))
 				{
 					return "30738-05.html";
 				}
+				
 				if (hasQuestItems(player, Q_SECRET_BOOK_OF_POTION) && hasQuestItems(player, Q_ALCHEMY_TEXT))
 				{
 					return "30738-06.html";
 				}
+				
 				if (hasQuestItems(player, Q_POTION_RECIPE_1, Q_POTION_RECIPE_2) && (!hasQuestItems(player, Q_AMBER_SCALE) || (hasQuestItems(player, Q_WIND_SOULSTONE) && !hasQuestItems(player, Q_GLASS_EYE)) || (!hasQuestItems(player, Q_HORROR_ECTOPLASM) || !hasQuestItems(player, Q_SILENOS_HORN) || !hasQuestItems(player, Q_ANT_SOLDIER_APHID) || !hasQuestItems(player, Q_TYRANTS_CHITIN) || !hasQuestItems(player, Q_BUGBEAR_BLOOD))))
 				{
 					return "30738-08.html";
 				}
+				
 				if (hasQuestItems(player, Q_POTION_RECIPE_1, Q_POTION_RECIPE_2, Q_AMBER_SCALE, Q_WIND_SOULSTONE, Q_WIND_SOULSTONE, Q_GLASS_EYE, Q_GLASS_EYE, Q_HORROR_ECTOPLASM, Q_SILENOS_HORN, Q_ANT_SOLDIER_APHID, Q_TYRANTS_CHITIN, Q_BUGBEAR_BLOOD))
 				{
 					return "30738-09.html";
 				}
+				
 				if (hasQuestItems(player, Q_MATILDS_ORB) && !hasQuestItems(player, Q_POTION_RECIPE_1) && !hasQuestItems(player, Q_POTION_RECIPE_2) && (!hasQuestItems(player, Q_AMBER_SCALE) || (hasQuestItems(player, Q_WIND_SOULSTONE) && !hasQuestItems(player, Q_GLASS_EYE)) || !hasQuestItems(player, Q_HORROR_ECTOPLASM) || !hasQuestItems(player, Q_SILENOS_HORN) || !hasQuestItems(player, Q_ANT_SOLDIER_APHID) || !hasQuestItems(player, Q_TYRANTS_CHITIN) || !hasQuestItems(player, Q_BUGBEAR_BLOOD)))
 				{
 					return "30738-12.html";
@@ -202,8 +208,10 @@ public class Q00334_TheWishingPotion extends Quest
 								giveItems(player, DEMONS_GLOVES_FABRIC, 1);
 							}
 						}
+						
 						html = "30742-02.html";
 					}
+					
 					qs.set(FLAG, 0);
 					npc.deleteMe();
 					return html;
@@ -246,6 +254,7 @@ public class Q00334_TheWishingPotion extends Quest
 								break;
 							}
 						}
+						
 						html = "30743-03.html";
 					}
 					else if ((random >= 50) && (random < 100))
@@ -263,6 +272,7 @@ public class Q00334_TheWishingPotion extends Quest
 								break;
 							}
 						}
+						
 						html = "30743-04.html";
 					}
 					else if ((random >= 85) && (random < 95))
@@ -290,6 +300,7 @@ public class Q00334_TheWishingPotion extends Quest
 								break;
 							}
 						}
+						
 						html = "30743-05.html";
 					}
 					else if (random >= 95)
@@ -306,8 +317,10 @@ public class Q00334_TheWishingPotion extends Quest
 								giveItems(player, Q_SILVER_CIRCLET, 1);
 							}
 						}
+						
 						html = "30743-06.htm";
 					}
+					
 					qs.set(FLAG, 0);
 					npc.deleteMe();
 					return html;
@@ -315,6 +328,7 @@ public class Q00334_TheWishingPotion extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -426,6 +440,7 @@ public class Q00334_TheWishingPotion extends Quest
 					{
 						giveItems(player, Q_ALCHEMY_TEXT, 1);
 					}
+					
 					playSound(player, QuestSound.ITEMSOUND_QUEST_MIDDLE);
 					return "30738-04.htm";
 				}
@@ -460,6 +475,7 @@ public class Q00334_TheWishingPotion extends Quest
 							{
 								giveItems(player, Q_MATILDS_ORB, 1);
 							}
+							
 							takeItems(player, Q_AMBER_SCALE, 1);
 							takeItems(player, Q_GLASS_EYE, 1);
 							takeItems(player, Q_HORROR_ECTOPLASM, 1);
@@ -486,8 +502,10 @@ public class Q00334_TheWishingPotion extends Quest
 							{
 								qs.set(I_QUEST0, 0);
 							}
+							
 							return "30738-13.html";
 						}
+						
 						return "30738-14.html";
 					}
 					case 6:
@@ -496,6 +514,7 @@ public class Q00334_TheWishingPotion extends Quest
 						{
 							return "30738-15a.html";
 						}
+						
 						giveItems(player, Q_POTION_RECIPE_1, 1);
 						giveItems(player, Q_POTION_RECIPE_2, 1);
 						return "30738-15.html";
@@ -512,8 +531,10 @@ public class Q00334_TheWishingPotion extends Quest
 								startQuestTimer("2336008", 3 * 1000, npc, player);
 								return "30738-16.html";
 							}
+							
 							return "30738-20.html";
 						}
+						
 						return "30738-14.html";
 					}
 					case 8:
@@ -528,8 +549,10 @@ public class Q00334_TheWishingPotion extends Quest
 								startQuestTimer("2336008", 3 * 1000, npc, player);
 								return "30738-17.html";
 							}
+							
 							return "30738-20.html";
 						}
+						
 						return "30738-14.html";
 					}
 					case 9:
@@ -544,8 +567,10 @@ public class Q00334_TheWishingPotion extends Quest
 								startQuestTimer("2336008", 3 * 1000, npc, player);
 								return "30738-18.html";
 							}
+							
 							return "30738-20.html";
 						}
+						
 						return "30738-14.html";
 					}
 					case 10:
@@ -560,8 +585,10 @@ public class Q00334_TheWishingPotion extends Quest
 								startQuestTimer("2336008", 3 * 1000, npc, player);
 								return "30738-19.html";
 							}
+							
 							return "30738-20.html";
 						}
+						
 						return "30738-14.html";
 					}
 					case 2336008:
@@ -595,6 +622,7 @@ public class Q00334_TheWishingPotion extends Quest
 								break;
 							}
 						}
+						
 						switch (i0)
 						{
 							case 0:
@@ -696,6 +724,7 @@ public class Q00334_TheWishingPotion extends Quest
 				break;
 			}
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	
@@ -866,6 +895,7 @@ public class Q00334_TheWishingPotion extends Quest
 						{
 							giveAdena(killer, 900_000, true);
 						}
+						
 						playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 						qs.set(FLAG, 0);
 					}
@@ -1042,6 +1072,7 @@ public class Q00334_TheWishingPotion extends Quest
 				}
 			});
 		}
+		
 		return candidates.isEmpty() ? null : candidates.get(getRandom(candidates.size()));
 	}
 }

@@ -54,37 +54,44 @@ public class RequestFriendInvite extends ClientPacket
 			player.sendPacket(SystemMessageId.THE_USER_WHO_REQUESTED_TO_BECOME_FRIENDS_IS_NOT_FOUND_IN_THE_GAME);
 			return;
 		}
+		
 		// You cannot add yourself to your own friend list.
 		if (friend == player)
 		{
 			player.sendPacket(SystemMessageId.YOU_CANNOT_ADD_YOURSELF_TO_YOUR_OWN_FRIEND_LIST);
 			return;
 		}
+		
 		// Target is in olympiad.
 		if (player.isInOlympiadMode() || friend.isInOlympiadMode())
 		{
 			player.sendMessage("A user currently participating in the Olympiad cannot send party and friend invitations.");
 			return;
 		}
+		
 		// Target blocked active player.
 		if (BlockList.isBlocked(friend, player))
 		{
 			player.sendMessage("You are in " + _name + "'s block list.");
 			return;
 		}
+		
 		SystemMessage sm;
+		
 		// Target is blocked.
 		if (BlockList.isBlocked(player, friend))
 		{
 			player.sendMessage("You have blocked " + friend.getName() + ".");
 			return;
 		}
+		
 		// Target already in friend list.
 		if (player.getFriendList().contains(friend.getObjectId()))
 		{
 			player.sendPacket(SystemMessageId.ALREADY_REGISTERED_ON_THE_FRIENDS_LIST);
 			return;
 		}
+		
 		// Target is busy.
 		if (friend.isProcessingRequest())
 		{
@@ -93,10 +100,12 @@ public class RequestFriendInvite extends ClientPacket
 			player.sendPacket(sm);
 			return;
 		}
+		
 		// Friend request sent.
 		player.onTransactionRequest(friend);
 		friend.sendPacket(new FriendAddRequest(player.getName()));
 		player.sendMessage("You've requested " + _name + " to be on your Friends List.");
+		
 		// Notify the friend about the request.
 		sm = new SystemMessage(SystemMessageId.S1_HAS_REQUESTED_TO_BECOME_FRIENDS);
 		sm.addString(player.getName());

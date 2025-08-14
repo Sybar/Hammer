@@ -36,6 +36,7 @@ public class Q00772_PurifyingSouls extends Quest
 {
 	// NPC
 	private static final int QUINCY = 33838;
+	
 	// Monsters
 	private static final int[] MONSTERS =
 	{
@@ -48,9 +49,11 @@ public class Q00772_PurifyingSouls extends Quest
 		23335, // Poras
 		23336 // Death Worm
 	};
+	
 	// Items
 	private static final int SOUL_OF_DARKNESS = 36680;
 	private static final int FAINT_SOUL_OF_LIGHT = 36696;
+	
 	// Reward
 	private static final int ELEXIR_OF_LIFE = 30357;
 	private static final int ELEXIR_OF_MIND = 30358;
@@ -59,6 +62,7 @@ public class Q00772_PurifyingSouls extends Quest
 	private static final int ELMORES_MYSTERIUS_BOX = 37021;
 	private static final int ELMORES_NOBLE_BOX = 37022;
 	private static final int ENERGY_OF_DESTRUCTION = 35562;
+	
 	// Misc
 	private static final int MIN_LEVEL = 99;
 	
@@ -111,6 +115,7 @@ public class Q00772_PurifyingSouls extends Quest
 						giveItems(player, ELMORES_NOBLE_BOX, 1);
 						giveItems(player, ENERGY_OF_DESTRUCTION, 1);
 					}
+					
 					giveItems(player, ELEXIR_OF_LIFE, 5);
 					giveItems(player, ELEXIR_OF_MIND, 5);
 					giveItems(player, ELEXIR_OF_BLESSING, 5);
@@ -121,6 +126,7 @@ public class Q00772_PurifyingSouls extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -140,6 +146,7 @@ public class Q00772_PurifyingSouls extends Quest
 						htmltext = "33838-10.htm";
 						break;
 					}
+					
 					qs.setState(State.CREATED);
 				}
 				case State.CREATED:
@@ -165,6 +172,7 @@ public class Q00772_PurifyingSouls extends Quest
 		{
 			htmltext = "33838-10.htm";
 		}
+		
 		return htmltext;
 	}
 	
@@ -176,6 +184,7 @@ public class Q00772_PurifyingSouls extends Quest
 		{
 			qs.setCond(2, true);
 		}
+		
 		if ((qs != null) && (qs.getCond() > 0) && (getRandom(100) < 40))
 		{
 			giveItems(killer, FAINT_SOUL_OF_LIGHT, 1);

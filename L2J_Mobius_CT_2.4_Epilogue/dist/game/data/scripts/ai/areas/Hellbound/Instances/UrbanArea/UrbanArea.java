@@ -23,7 +23,6 @@ import org.l2jmobius.gameserver.managers.InstanceManager;
 import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.actor.enums.player.PlayerCondOverride;
 import org.l2jmobius.gameserver.model.actor.instance.QuestGuard;
 import org.l2jmobius.gameserver.model.groups.Party;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
@@ -55,14 +54,18 @@ public class UrbanArea extends AbstractInstance
 	private static final int DOWNTOWN_NATIVE = 32358;
 	private static final int TOWN_GUARD = 22359;
 	private static final int TOWN_PATROL = 22360;
+	
 	// Items
 	private static final int KEY = 9714;
+	
 	// Skills
 	private static final SkillHolder STONE = new SkillHolder(4616, 1);
+	
 	// Locations
 	private static final Location AMASKARI_SPAWN_POINT = new Location(19424, 253360, -2032, 16860);
 	private static final Location ENTRY_POINT = new Location(14117, 255434, -2016);
 	protected static final Location EXIT_POINT = new Location(16262, 283651, -9700);
+	
 	// Misc
 	private static final int MIN_LV = 78;
 	private static final int TEMPLATE_ID = 2;
@@ -98,6 +101,7 @@ public class UrbanArea extends AbstractInstance
 		{
 			return "32358-02.htm";
 		}
+		
 		return "32358-01.htm";
 	}
 	
@@ -107,7 +111,7 @@ public class UrbanArea extends AbstractInstance
 		String htmltext = null;
 		if (npc.getId() == KANAF)
 		{
-			if (!player.canOverrideCond(PlayerCondOverride.INSTANCE_CONDITIONS))
+			if (!player.isGM())
 			{
 				if (HellboundEngine.getInstance().getLevel() < 10)
 				{
@@ -152,6 +156,7 @@ public class UrbanArea extends AbstractInstance
 					if (player.destroyItemByItemId(ItemProcessType.QUEST, KEY, 1, npc, true))
 					{
 						npc.setBusy(true);
+						
 						// destroy instance after 5 min
 						final Instance inst = InstanceManager.getInstance().getInstance(world.getInstanceId());
 						inst.setDuration(5 * 60000);
@@ -166,6 +171,7 @@ public class UrbanArea extends AbstractInstance
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -198,6 +204,7 @@ public class UrbanArea extends AbstractInstance
 					npc.broadcastSay(ChatType.NPC_GENERAL, NATIVES_NPCSTRING_ID[1]);
 					HellboundEngine.getInstance().updateTrust(10, true);
 					npc.scheduleDespawn(3000);
+					
 					// Try to call Amaskari
 					final Npc spawnedAmaskari = world.getParameters().getObject("spawnedAmaskari", Npc.class);
 					if ((spawnedAmaskari != null) && !spawnedAmaskari.isDead() && (getRandom(1000) < 25) && LocationUtil.checkIfInRange(5000, npc, spawnedAmaskari, false))
@@ -207,11 +214,13 @@ public class UrbanArea extends AbstractInstance
 						{
 							activeAmaskariCall.cancel(true);
 						}
+						
 						world.setParameter("activeAmaskariCall", ThreadPool.schedule(new CallAmaskari(npc), 25000));
 					}
 				}
 			}
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	
@@ -249,6 +258,7 @@ public class UrbanArea extends AbstractInstance
 				{
 					activeAmaskariCall.cancel(true);
 				}
+				
 				world.setParameter("activeAmaskariCall", ThreadPool.schedule(new CallAmaskari(npc), 25000));
 			}
 		}
@@ -282,10 +292,12 @@ public class UrbanArea extends AbstractInstance
 					range = 0;
 				}
 			}
+			
 			if (msgId >= 0)
 			{
 				npc.broadcastSay(ChatType.NPC_GENERAL, NPCSTRING_ID[msgId], range);
 			}
+			
 			npc.setBusy(true);
 			npc.setBusyMessage("atk");
 			
@@ -297,6 +309,7 @@ public class UrbanArea extends AbstractInstance
 				{
 					activeAmaskariCall.cancel(true);
 				}
+				
 				world.setParameter("activeAmaskariCall", ThreadPool.schedule(new CallAmaskari(npc), 25000));
 			}
 		}
@@ -315,7 +328,7 @@ public class UrbanArea extends AbstractInstance
 	@Override
 	protected boolean checkConditions(Player player)
 	{
-		if (player.canOverrideCond(PlayerCondOverride.INSTANCE_CONDITIONS))
+		if (player.isGM())
 		{
 			return true;
 		}
@@ -347,6 +360,7 @@ public class UrbanArea extends AbstractInstance
 				return false;
 			}
 		}
+		
 		return true;
 	}
 	
@@ -369,6 +383,7 @@ public class UrbanArea extends AbstractInstance
 					world.addAllowed(partyMember);
 				}
 			}
+			
 			world.setParameter("spawnedAmaskari", addSpawn(AMASKARI, AMASKARI_SPAWN_POINT, false, 0, false, world.getInstanceId()));
 		}
 		else

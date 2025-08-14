@@ -37,8 +37,10 @@ public class Q10704_BottleOfOctavisSoul extends Quest
 {
 	// NPCs
 	private static final int LYDIA = 32892;
+	
 	// Item
 	private static final int OCTAVIS_SOUL_BOTTLE = 34884;
+	
 	// Misc
 	private static final int MIN_LEVEL = 95;
 	
@@ -93,6 +95,7 @@ public class Q10704_BottleOfOctavisSoul extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -129,6 +132,7 @@ public class Q10704_BottleOfOctavisSoul extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

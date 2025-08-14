@@ -37,6 +37,7 @@ public class Q00943_FillingTheEnergyOfDestruction extends Quest
 {
 	// NPC
 	private static final int SEED_TALISMAN_MANAGER = 33715;
+	
 	// Raids
 	private static final int ISTINA_EASY = 29195;
 	private static final int ISTINA_HARD = 29196;
@@ -50,8 +51,10 @@ public class Q00943_FillingTheEnergyOfDestruction extends Quest
 	private static final int TAUTI_1 = 29236;
 	private static final int TAUTI_2 = 29237;
 	private static final int TAUTI_3 = 29238;
+	
 	// Item
 	private static final int CORE_OF_TWISTED_MAGIC = 35668;
+	
 	// Rewards
 	private static final int ENERGY_OF_DESTRUCTION = 35562;
 	
@@ -101,10 +104,12 @@ public class Q00943_FillingTheEnergyOfDestruction extends Quest
 				{
 					addExpAndSp(player, 0, 5371901);
 				}
+				
 				qs.exitQuest(QuestType.DAILY, true);
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -159,6 +164,7 @@ public class Q00943_FillingTheEnergyOfDestruction extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

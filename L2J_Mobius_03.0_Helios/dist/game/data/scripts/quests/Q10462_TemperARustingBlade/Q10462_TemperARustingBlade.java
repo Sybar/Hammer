@@ -42,10 +42,12 @@ public class Q10462_TemperARustingBlade extends Quest
 {
 	// NPCs
 	private static final int FLUTTER = 30677;
+	
 	// quest_items
 	private static final int PRACTICE_WEAPON = 36717;
 	private static final int PRACTICE_LIFE_STONE = 36718;
 	private static final int PRACTICE_LIFE_GEMSTONE = 36719;
+	
 	// Misc
 	private static final int MIN_LEVEL = 85;
 	private static final int MAX_LEVEL = 105;
@@ -95,6 +97,7 @@ public class Q10462_TemperARustingBlade extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -128,6 +131,7 @@ public class Q10462_TemperARustingBlade extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

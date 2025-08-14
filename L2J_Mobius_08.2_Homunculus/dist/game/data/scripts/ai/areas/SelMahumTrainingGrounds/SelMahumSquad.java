@@ -20,6 +20,8 @@
  */
 package ai.areas.SelMahumTrainingGrounds;
 
+import java.util.Collection;
+
 import org.l2jmobius.gameserver.ai.Intention;
 import org.l2jmobius.gameserver.data.xml.SkillData;
 import org.l2jmobius.gameserver.model.Location;
@@ -149,8 +151,10 @@ public class SelMahumSquad extends AbstractNpcAI
 					{
 						npc.doCast(skill);
 					}
+					
 					npc.setDisplayEffect(MAHUM_EFFECT_SLEEP);
 				}
+				
 				if (npc.getVariables().getInt("BUSY_STATE") == 1) // Eating
 				{
 					final Skill skill = SkillData.getInstance().getSkill(6332, 1);
@@ -158,6 +162,7 @@ public class SelMahumSquad extends AbstractNpcAI
 					{
 						npc.doCast(skill);
 					}
+					
 					npc.setDisplayEffect(MAHUM_EFFECT_EAT);
 				}
 				
@@ -190,6 +195,7 @@ public class SelMahumSquad extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	
@@ -204,6 +210,7 @@ public class SelMahumSquad extends AbstractNpcAI
 				startQuestTimer("chef_disable_reward", 60000, npc, null);
 				npc.getVariables().set("INVUL_REMOVE_TIMER_STARTED", 1);
 			}
+			
 			startQuestTimer("chef_heal_player", 1000, npc, attacker);
 			startQuestTimer("chef_set_invul", 60000, npc, null);
 			npc.getVariables().set("BUSY_STATE", 1);
@@ -275,6 +282,7 @@ public class SelMahumSquad extends AbstractNpcAI
 					{
 						receiver.setRHandId(THS_Weapon);
 					}
+					
 					receiver.setRandomWalking(false); // Moving to fire - i_ai0 = 1
 					receiver.getVariables().set("BUSY_STATE", 1); // Eating - i_ai3 = 1
 					receiver.setRunning();
@@ -298,6 +306,7 @@ public class SelMahumSquad extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return super.onEventReceived(eventName, sender, receiver, reference);
 	}
 	
@@ -308,6 +317,7 @@ public class SelMahumSquad extends AbstractNpcAI
 		{
 			npc.dropItem(killer, 15492, 1);
 		}
+		
 		cancelQuestTimer("chef_remove_invul", npc, null);
 		cancelQuestTimer("chef_disable_reward", npc, null);
 		cancelQuestTimer("chef_heal_player", npc, null);
@@ -332,9 +342,9 @@ public class SelMahumSquad extends AbstractNpcAI
 	}
 	
 	@Override
-	public void onSkillSee(Npc npc, Player caster, Skill skill, WorldObject[] targets, boolean isSummon)
+	public void onSkillSee(Npc npc, Player caster, Skill skill, Collection<WorldObject> targets, boolean isSummon)
 	{
-		if ((npc.getId() == STOVE) && (skill.getId() == 9075) && ArrayUtil.contains(targets, npc))
+		if ((npc.getId() == STOVE) && (skill.getId() == 9075) && targets.contains(npc))
 		{
 			npc.doCast(SkillData.getInstance().getSkill(6688, 1));
 			npc.broadcastEvent("SCE_SOUP_FAILURE", 600, caster);
@@ -395,6 +405,7 @@ public class SelMahumSquad extends AbstractNpcAI
 		{
 			attacked.setRHandId(THS_Weapon);
 		}
+		
 		// TODO: Check about i_quest0
 	}
 	

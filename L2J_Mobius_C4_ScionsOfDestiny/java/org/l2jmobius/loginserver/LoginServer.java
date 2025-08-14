@@ -157,6 +157,7 @@ public class LoginServer extends FloodProtectedListener
 			{
 				LOGGER.log(Level.WARNING, "Error while reading the bans file (" + bannedFile.getName() + "). Details: " + e.getMessage(), e);
 			}
+			
 			LOGGER.info("Loaded " + LoginController.getInstance().getBannedIps().size() + " IP Bans.");
 		}
 		else

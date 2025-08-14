@@ -88,8 +88,10 @@ public class ExDethroneRankingInfo extends ServerPacket
 			{
 				break;
 			}
+			
 			rankInfoList.add(new RankInfo(entry.getKey(), entry.getValue()));
 		}
+		
 		return rankInfoList;
 	}
 	
@@ -110,6 +112,7 @@ public class ExDethroneRankingInfo extends ServerPacket
 				break;
 			}
 		}
+		
 		return rankInfoList;
 	}
 	

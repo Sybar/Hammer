@@ -50,6 +50,7 @@ public class OlyManager extends AbstractNpcAI implements IBypassHandler
 	
 	// NPC
 	private static final int MANAGER = 31688;
+	
 	// Misc
 	private static final int EQUIPMENT_MULTISELL = 3168801;
 	
@@ -256,6 +257,7 @@ public class OlyManager extends AbstractNpcAI implements IBypassHandler
 						break;
 					}
 				}
+				
 				for (; index <= 15; index++)
 				{
 					htmltext = htmltext.replace("%Rank" + index + "%", "");
@@ -264,6 +266,7 @@ public class OlyManager extends AbstractNpcAI implements IBypassHandler
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -279,11 +282,12 @@ public class OlyManager extends AbstractNpcAI implements IBypassHandler
 		{
 			htmltext = "OlyManager-noCursed.html";
 		}
+		
 		return htmltext;
 	}
 	
 	@Override
-	public boolean useBypass(String command, Player player, Creature bypassOrigin)
+	public boolean onCommand(String command, Player player, Creature bypassOrigin)
 	{
 		try
 		{
@@ -334,17 +338,19 @@ public class OlyManager extends AbstractNpcAI implements IBypassHandler
 					player.enterOlympiadObserverMode(loc, arenaId);
 				}
 			}
+			
 			return true;
 		}
 		catch (Exception e)
 		{
 			LOGGER.log(Level.WARNING, "Exception in " + getClass().getSimpleName(), e);
 		}
+		
 		return false;
 	}
 	
 	@Override
-	public String[] getBypassList()
+	public String[] getCommandList()
 	{
 		return BYPASSES;
 	}

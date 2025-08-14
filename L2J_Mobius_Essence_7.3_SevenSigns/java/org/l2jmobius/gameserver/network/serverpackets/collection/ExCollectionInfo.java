@@ -55,6 +55,7 @@ public class ExCollectionInfo extends ServerPacket
 				_collectionIds.add(collection.getCollectionId());
 			}
 		}
+		
 		_favoriteIds = player.getCollectionFavorites();
 		
 		for (int id : _collectionIds)
@@ -67,6 +68,7 @@ public class ExCollectionInfo extends ServerPacket
 					holder.addCollectionData(collection, CollectionData.getInstance().getCollection(id).getItems().get(collection.getIndex()).getEnchantLevel());
 				}
 			}
+			
 			_collectionHolders.add(holder);
 		}
 	}
@@ -92,6 +94,7 @@ public class ExCollectionInfo extends ServerPacket
 				buffer.writeByte(0); // bless Condition
 				buffer.writeInt(1); // amount
 			}
+			
 			buffer.writeShort(holder.getCollectionId());
 		}
 		

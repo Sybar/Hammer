@@ -42,9 +42,11 @@ public class Q10363_RequestOfTheSeeker extends Quest
 		22991, // Crawler
 		22996 // Krapher
 	};
+	
 	// Items
 	private static final int WOODEN_HELMET = 43;
 	private static final int HUSK_DISTRIBUTION_REPORT = 47606;
+	
 	// Misc
 	private static final int MIN_LEVEL = 11;
 	private static final int MAX_LEVEL = 20;
@@ -99,6 +101,7 @@ public class Q10363_RequestOfTheSeeker extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -152,6 +155,7 @@ public class Q10363_RequestOfTheSeeker extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

@@ -50,6 +50,7 @@ public class MultisellEntryHolder
 				return;
 			}
 		}
+		
 		_stackable = true;
 	}
 	

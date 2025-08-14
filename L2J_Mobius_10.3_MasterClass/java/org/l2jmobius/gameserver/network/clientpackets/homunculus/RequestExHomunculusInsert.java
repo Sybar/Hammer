@@ -49,6 +49,7 @@ public class RequestExHomunculusInsert extends ClientPacket
 		{
 			return;
 		}
+		
 		int hpPoints = player.getVariables().getInt(PlayerVariables.HOMUNCULUS_HP_POINTS, 0);
 		int spPoints = player.getVariables().getInt(PlayerVariables.HOMUNCULUS_SP_POINTS, 0);
 		int vpPoints = player.getVariables().getInt(PlayerVariables.HOMUNCULUS_VP_POINTS, 0);
@@ -99,6 +100,7 @@ public class RequestExHomunculusInsert extends ClientPacket
 				break;
 			}
 		}
+		
 		player.getHomunculusList().refreshStats(true);
 		
 		player.sendPacket(new ExShowHomunculusBirthInfo(player));

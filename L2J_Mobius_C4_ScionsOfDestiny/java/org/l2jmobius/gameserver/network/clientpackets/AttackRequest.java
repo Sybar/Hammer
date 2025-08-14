@@ -23,7 +23,6 @@ package org.l2jmobius.gameserver.network.clientpackets;
 import org.l2jmobius.gameserver.model.World;
 import org.l2jmobius.gameserver.model.WorldObject;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.actor.enums.player.PlayerCondOverride;
 import org.l2jmobius.gameserver.network.SystemMessageId;
 import org.l2jmobius.gameserver.network.serverpackets.ActionFailed;
 
@@ -89,7 +88,7 @@ public class AttackRequest extends ClientPacket
 			return;
 		}
 		
-		if (!target.isTargetable() && !player.canOverrideCond(PlayerCondOverride.TARGET_ALL))
+		if (!target.isTargetable() && !player.isGM())
 		{
 			player.sendPacket(ActionFailed.STATIC_PACKET);
 			return;

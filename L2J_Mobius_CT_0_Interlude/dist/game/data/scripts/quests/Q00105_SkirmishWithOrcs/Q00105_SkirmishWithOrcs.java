@@ -40,6 +40,7 @@ public class Q00105_SkirmishWithOrcs extends Quest
 	private static final int KABOO_CHIEF_ROKO = 27065;
 	private static final int KABOO_CHIEF_KAMUT = 27067;
 	private static final int KABOO_CHIEF_MURTIKA = 27068;
+	
 	// Item
 	private static final int KENDELL_ORDER_1 = 1836;
 	private static final int KENDELL_ORDER_2 = 1837;
@@ -51,6 +52,7 @@ public class Q00105_SkirmishWithOrcs extends Quest
 	private static final int KENDELL_ORDER_8 = 1843;
 	private static final int KABOO_CHIEF_TORC_1 = 1844;
 	private static final int KABOO_CHIEF_TORC_2 = 1845;
+	
 	// Rewards
 	private static final int SPIRITSHOT_FOR_BEGINNERS = 5790;
 	private static final int SOULSHOT_FOR_BEGINNERS = 5789;
@@ -194,6 +196,7 @@ public class Q00105_SkirmishWithOrcs extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

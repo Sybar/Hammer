@@ -44,13 +44,17 @@ public class Q10375_SuccubusDisciples extends Quest
 {
 	// NPCs
 	private static final int ZENYA = 32140;
+	
 	// Items
 	private static final ItemHolder ADENA = new ItemHolder(57, 498700);
+	
 	// Reward
 	private static final int EXP_REWARD = 24782300;
 	private static final int SP_REWARD = 5947;
+	
 	// Misc
 	private static final int MIN_LEVEL = 80;
+	
 	// Monsters
 	private static final int SUCCUBUS_OF_DEATH = 23191;
 	private static final int SUCCUBUS_OF_DARKNESS = 23192;
@@ -75,6 +79,7 @@ public class Q10375_SuccubusDisciples extends Quest
 		{
 			return null;
 		}
+		
 		String htmltext = null;
 		switch (event)
 		{
@@ -97,6 +102,7 @@ public class Q10375_SuccubusDisciples extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -155,6 +161,7 @@ public class Q10375_SuccubusDisciples extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

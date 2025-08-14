@@ -79,6 +79,7 @@ public class RecipeShopManageList extends ServerPacket
 				buffer.writeInt(count++);
 			}
 		}
+		
 		if ((_manufacture == null) || _manufacture.isEmpty())
 		{
 			buffer.writeInt(0);

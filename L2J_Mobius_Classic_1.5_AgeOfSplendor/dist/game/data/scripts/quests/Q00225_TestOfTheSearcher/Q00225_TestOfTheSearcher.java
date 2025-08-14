@@ -41,6 +41,7 @@ public class Q00225_TestOfTheSearcher extends Quest
 	private static final int MILITIAMAN_LEIRYNN = 30728;
 	private static final int DRUNKARD_BORYS = 30729;
 	private static final int BODYGUARD_JAX = 30730;
+	
 	// Items
 	private static final int LUTHERS_LETTER = 2784;
 	private static final int ALEXS_WARRANT = 2785;
@@ -67,16 +68,20 @@ public class Q00225_TestOfTheSearcher extends Quest
 	private static final int RUSTED_KEY = 2806;
 	private static final int GOLD_BAR = 2807;
 	private static final int ALEXS_RECOMMEND = 2808;
+	
 	// Reward
 	private static final int MARK_OF_SEARCHER = 2809;
+	
 	// Monster
 	private static final int HANGMAN_TREE = 20144;
 	private static final int ROAD_SCAVENGER = 20551;
 	private static final int GIANT_FUNGUS = 20555;
 	private static final int DELU_LIZARDMAN_SHAMAN = 20781;
+	
 	// Quest Monster
 	private static final int NEER_BODYGUARD = 27092;
 	private static final int DELU_CHIEF_KALKIS = 27093;
+	
 	// Misc
 	private static final int MIN_LEVEL = 39;
 	
@@ -183,6 +188,7 @@ public class Q00225_TestOfTheSearcher extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -578,6 +584,7 @@ public class Q00225_TestOfTheSearcher extends Quest
 				htmltext = getAlreadyCompletedMsg(player);
 			}
 		}
+		
 		return htmltext;
 	}
 }

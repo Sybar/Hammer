@@ -34,6 +34,7 @@ public class Q00340_SubjugationOfLizardmen extends Quest
 	private static final int ADONIUS = 30375;
 	private static final int LEVIAN = 30037;
 	private static final int CHEST = 30989;
+	
 	// Items
 	private static final int CARGO = 4255;
 	private static final int HOLY = 4256;

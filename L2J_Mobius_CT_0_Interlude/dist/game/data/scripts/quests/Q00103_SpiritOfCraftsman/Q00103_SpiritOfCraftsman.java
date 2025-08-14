@@ -37,6 +37,7 @@ public class Q00103_SpiritOfCraftsman extends Quest
 	private static final int KARROD = 30307;
 	private static final int CECKTINON = 30132;
 	private static final int HARNE = 30144;
+	
 	// Items
 	private static final int KARROD_LETTER = 968;
 	private static final int CECKTINON_VOUCHER_1 = 969;
@@ -46,6 +47,7 @@ public class Q00103_SpiritOfCraftsman extends Quest
 	private static final int ZOMBIE_HEAD = 973;
 	private static final int STEELBENDER_HEAD = 974;
 	private static final int BONE_FRAGMENT = 1107;
+	
 	// Rewards
 	private static final int SPIRITSHOT_NO_GRADE = 2509;
 	private static final int SOULSHOT_NO_GRADE = 1835;

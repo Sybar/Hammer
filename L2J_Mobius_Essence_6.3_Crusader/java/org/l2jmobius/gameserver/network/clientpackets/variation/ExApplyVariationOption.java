@@ -68,6 +68,7 @@ public class ExApplyVariationOption extends ClientPacket
 			{
 				iu.addModifiedItem(itm);
 			}
+			
 			player.broadcastUserInfo();
 		}
 		

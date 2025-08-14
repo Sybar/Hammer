@@ -39,20 +39,24 @@ public class Q10818_ConfrontingAGiantMonster extends Quest
 {
 	// NPC
 	private static final int DAICHIR = 30537;
+	
 	// Monsters
 	private static final int ISTINA = 29196; // Extreme
 	private static final int OCTAVIS = 29212; // Extreme
 	private static final int TAUTI = 29233; // correct id?
 	private static final int EKIMUS = 29251; // correct id?
 	private static final int TRASKEN = 29197; // correct id?
+	
 	// Items
 	private static final int DARK_SOUL_STONE = 46055;
 	private static final int OLYMPIAD_MANAGER_CERTIFICATE = 45629;
 	private static final int ISHUMA_CERTIFICATE = 45630;
 	private static final int SIR_KRISTOF_RODEMAI_CERTIFICATE = 45631;
+	
 	// Rewards
 	private static final int EXP_AMOUNT = 542310795;
 	private static final int DAICHIR_SERTIFICATE = 45628;
+	
 	// Misc
 	private static final int MIN_LEVEL = 99;
 	
@@ -92,6 +96,7 @@ public class Q10818_ConfrontingAGiantMonster extends Quest
 				{
 					qs.startQuest();
 				}
+				
 				htmltext = event;
 				break;
 			}
@@ -109,6 +114,7 @@ public class Q10818_ConfrontingAGiantMonster extends Quest
 						{
 							htmltext = event;
 						}
+						
 						takeItems(player, DARK_SOUL_STONE, -1);
 						giveItems(player, DAICHIR_SERTIFICATE, 1);
 						addExpAndSp(player, EXP_AMOUNT, 0);
@@ -126,6 +132,7 @@ public class Q10818_ConfrontingAGiantMonster extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -159,6 +166,7 @@ public class Q10818_ConfrontingAGiantMonster extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

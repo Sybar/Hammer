@@ -68,6 +68,7 @@ public class QuestList extends ServerPacket
 			buffer.writeInt(qs.getQuest().getId());
 			buffer.writeInt(qs.getCondBitSet());
 		}
+		
 		buffer.writeBytes(_oneTimeQuestMask);
 	}
 }

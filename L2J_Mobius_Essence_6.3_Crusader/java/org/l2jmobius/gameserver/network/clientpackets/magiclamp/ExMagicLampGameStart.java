@@ -118,10 +118,12 @@ public class ExMagicLampGameStart extends ClientPacket
 		{
 			return null;
 		}
+		
 		if (list.size() == 1)
 		{
 			return list.get(0);
 		}
+		
 		return list.get(Rnd.get(list.size()));
 	}
 	

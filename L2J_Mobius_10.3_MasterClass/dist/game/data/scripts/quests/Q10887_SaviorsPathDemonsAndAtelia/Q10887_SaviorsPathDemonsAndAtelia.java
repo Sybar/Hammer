@@ -44,6 +44,7 @@ public class Q10887_SaviorsPathDemonsAndAtelia extends Quest
 {
 	// NPC
 	private static final int DEVIANNE = 34427;
+	
 	// Monsters
 	private static final int[] MONSTERS =
 	{
@@ -64,6 +65,7 @@ public class Q10887_SaviorsPathDemonsAndAtelia extends Quest
 		24157, // Demonic Keras
 		24156, // Demonic Archer
 	};
+	
 	// Misc
 	private static final int MIN_LEVEL = 103;
 	private static final int DEMONS_KILLS_NEEDED = 500;
@@ -127,6 +129,7 @@ public class Q10887_SaviorsPathDemonsAndAtelia extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -160,6 +163,7 @@ public class Q10887_SaviorsPathDemonsAndAtelia extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -205,6 +209,7 @@ public class Q10887_SaviorsPathDemonsAndAtelia extends Quest
 			holder.add(new NpcLogListHolder(1019725, true, qs.getInt("DemonsKilled")));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

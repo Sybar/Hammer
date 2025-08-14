@@ -40,21 +40,25 @@ public class Q11022_RedGemNecklace2 extends Quest
 {
 	// NPCs
 	private static final int USKA = 30560;
+	
 	// Items
 	private static final int BEARS_SHIN_BONE = 90278;
 	private static final int SHARP_SPIDER_LEG = 90279;
 	private static final int LIST_OF_MATERIALS = 90277;
+	
 	// Rewards
 	private static final int SCROLL_OF_ESCAPE = 10650;
 	private static final int HEALING_POTION = 1073;
 	private static final int MP_RECOVERY_POTION = 90310;
 	private static final int SOULSHOTS_NO_GRADE = 5789;
 	private static final int SPIRITSHOT_NO_GRADE = 5790;
+	
 	// Monsters
 	private static final int KASHA_BEAR = 20479;
 	private static final int KASHA_SPIDER = 20474;
 	private static final int KASHA_FANG_SPIDER = 20476;
 	private static final int KASHA_BLADE_SPIDER = 20478;
+	
 	// Misc
 	private static final int MIN_LEVEL = 15;
 	private static final int MAX_LEVEL = 20;
@@ -133,6 +137,7 @@ public class Q11022_RedGemNecklace2 extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -167,6 +172,7 @@ public class Q11022_RedGemNecklace2 extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

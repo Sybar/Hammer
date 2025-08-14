@@ -37,15 +37,18 @@ public class Q10879_ExaltedGuideToPower extends Quest
 {
 	// NPC
 	private static final int LIONEL = 33907;
+	
 	// Items
 	private static final int MASTER_CYPHONA_CERTIFICATE = 47835;
 	private static final int DINFORD_CERTIFICATE = 47836;
 	private static final int SETTLEN_SERTIFICATE = 47837;
 	private static final int ADMIRAL_KEUCEREUS_CERTIFICATE = 47838;
 	private static final int LIONEL_MISSION_LIST_5 = 47834;
+	
 	// Rewards
 	private static final int VITALITY_OF_THE_EXALTED = 47855;
 	private static final int DIGNITY_OF_THE_EXALTED = 47853;
+	
 	// Misc
 	private static final int MIN_LEVEL = 105;
 	private static final int MIN_COMPLETE_LEVEL = 104;
@@ -69,6 +72,7 @@ public class Q10879_ExaltedGuideToPower extends Quest
 		{
 			return htmltext;
 		}
+		
 		switch (event)
 		{
 			case "33907-03.htm":
@@ -99,6 +103,7 @@ public class Q10879_ExaltedGuideToPower extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -132,6 +137,7 @@ public class Q10879_ExaltedGuideToPower extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

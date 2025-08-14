@@ -40,6 +40,7 @@ public class Q00469_ExploringTheTurekOrcBarracks extends Quest
 {
 	// NPC
 	private static final int GENIE_LAMP = 34369;
+	
 	// Monsters
 	private static final int TUREK_ORC = 22135;
 	private static final int TUREK_ORC_FOOTMAN = 22136;
@@ -56,6 +57,7 @@ public class Q00469_ExploringTheTurekOrcBarracks extends Quest
 	
 	// Items
 	private static final ItemHolder SOULSHOT_TICKET = new ItemHolder(90907, 3);
+	
 	// Misc
 	private static final int MIN_LEVEL = 83;
 	private static final String KILL_COUNT_VAR = "KillCount";
@@ -110,6 +112,7 @@ public class Q00469_ExploringTheTurekOrcBarracks extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -148,6 +151,7 @@ public class Q00469_ExploringTheTurekOrcBarracks extends Quest
 				htmltext = getAlreadyCompletedMsg(player);
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -183,6 +187,7 @@ public class Q00469_ExploringTheTurekOrcBarracks extends Quest
 			holder.add(new NpcLogListHolder(NpcStringId.DEFEAT_MONSTERS_59.getId(), true, qs.getInt(KILL_COUNT_VAR)));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

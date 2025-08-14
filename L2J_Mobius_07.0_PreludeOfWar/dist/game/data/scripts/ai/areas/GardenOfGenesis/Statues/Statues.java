@@ -37,6 +37,7 @@ public class Statues extends AbstractNpcAI
 	private static final int STATUE_KEEPER_2 = 23039; // Fountain Keeper
 	private static final int STATUE_KEEPER_3 = 23040; // Goddess Statue Keeper
 	private static final int BUFF_NPC = 19073; // Genesis Transparent
+	
 	// Skills
 	private static final SkillHolder REWARD_BUFF = new SkillHolder(14200, 1); // Blessing of Garden
 	// Locations
@@ -101,6 +102,7 @@ public class Statues extends AbstractNpcAI
 		{
 			npc.setScriptValue(0);
 		}
+		
 		return htmltext;
 	}
 	

@@ -139,6 +139,7 @@ public class ExPetRankingList extends ServerPacket
 				limited = Collections.emptyList();
 			}
 		}
+		
 		buffer.writeInt(limited.size());
 		int rank = 1;
 		for (Entry<Integer, StatSet> data : limited.stream().sorted(Entry.comparingByKey()).collect(Collectors.toList()))

@@ -36,7 +36,7 @@ public class GreedyTreasureChests extends AbstractNpcAI
 	// NPCs
 	private static final int CHEST_LV110 = 8710;
 	private static final int CHEST_LV120 = 8711;
-	//@formatter:off
+	// @formatter:off
 	private static final int[] MONSTERS = 
 	{
 		// Silent Valley
@@ -76,7 +76,7 @@ public class GreedyTreasureChests extends AbstractNpcAI
 		// Wastelands
 		24500, 24501, 24502, 24503, 24504, 24505,
 	};
-	//@formatter:on
+	// @formatter:on
 	
 	// Misc
 	private static final int TREASURE_CHEST_CHANCE = 15; // 15% chance to spawn

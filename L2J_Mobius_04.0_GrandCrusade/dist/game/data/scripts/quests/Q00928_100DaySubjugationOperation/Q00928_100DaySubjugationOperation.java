@@ -38,6 +38,7 @@ public class Q00928_100DaySubjugationOperation extends Quest
 {
 	// Npc
 	private static final int LIAS = 34265;
+	
 	// Monsters
 	private static final int LILLIM_ROYAL_KNIGHT = 23801;
 	private static final int LILLIM_SLAYER = 23802;
@@ -50,10 +51,12 @@ public class Q00928_100DaySubjugationOperation extends Quest
 	private static final int LOST_SOUL_DIMENSION = 23808;
 	private static final int LOST_DIMENSION_EVIL = 23809;
 	private static final int ROAMING_VENGEANCE = 23810;
+	
 	// Items
 	private static final int ATTACKERS_SOUL = 47512;
 	private static final int LIAS_SUPPLY_ITEMS = 47504;
 	private static final int DIMENSIONAL_TRACES = 47511;
+	
 	// Misc
 	private static final int MIN_LEVEL = 100;
 	
@@ -105,6 +108,7 @@ public class Q00928_100DaySubjugationOperation extends Quest
 						htmltext = event;
 						break;
 					}
+					
 					addExpAndSp(player, 11_028_245_723L, 26_467_790);
 					giveItems(player, DIMENSIONAL_TRACES, 1);
 					giveItems(player, LIAS_SUPPLY_ITEMS, 1);
@@ -118,6 +122,7 @@ public class Q00928_100DaySubjugationOperation extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -135,6 +140,7 @@ public class Q00928_100DaySubjugationOperation extends Quest
 					htmltext = getAlreadyCompletedMsg(player);
 					break;
 				}
+				
 				qs.setState(State.CREATED);
 				// fallthrough
 			}
@@ -149,6 +155,7 @@ public class Q00928_100DaySubjugationOperation extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

@@ -66,6 +66,7 @@ public class RedLibra extends LongTimeEvent
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

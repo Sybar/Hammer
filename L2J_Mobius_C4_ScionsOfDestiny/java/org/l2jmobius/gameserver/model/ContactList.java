@@ -133,6 +133,7 @@ public class ContactList
 		{
 			LOGGER.log(Level.WARNING, "Error found in " + _player.getName() + "'s ContactsList: " + e.getMessage(), e);
 		}
+		
 		return true;
 	}
 	

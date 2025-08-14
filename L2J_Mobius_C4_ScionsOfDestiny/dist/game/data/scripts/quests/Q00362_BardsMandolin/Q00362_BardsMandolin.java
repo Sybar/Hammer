@@ -34,6 +34,7 @@ public class Q00362_BardsMandolin extends Quest
 	private static final int NANARIN = 30956;
 	private static final int GALION = 30958;
 	private static final int WOODROW = 30837;
+	
 	// Items
 	private static final int SWAN_FLUTE = 4316;
 	private static final int SWAN_LETTER = 4317;

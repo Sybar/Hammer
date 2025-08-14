@@ -57,9 +57,9 @@
 			<item id="29603" min="1" max="1" chance="100" /> <!-- Beginner's Pack - Stage 3 -->
 			<item id="29654" min="30" max="30" chance="100" /> <!-- 1st Class Transfer Buff Scroll -->
 		</capsuled_items>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="10" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="29603" name="Newbie Kit - Lvl 3" type="EtcItem">
 		<!-- Double-click to get the following: 1 Timed Weapon Exchange Coupon (D-grade), 4500 Soulshots, 1000 Blessed Spiritshots, and a Beginner's Pack - Stage 4. Lv. 20 or above. -->
@@ -78,9 +78,9 @@
 			<item id="34604" min="9000" max="9000" chance="100" /> <!-- Mysterious Soulshot (D-grade) - Not Available -->
 			<item id="34611" min="2000" max="2000" chance="100" /> <!-- Mysterious Blessed Spiritshot (D-grade) - Not Available -->
 		</capsuled_items>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="20" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="29604" name="Newbie Kit - Lvl 4" type="EtcItem">
 		<!-- Double-click to get the following: 1 Magic Necklace Crafting Pack, 4500 Soulshots, 1000 Blessed Spiritshots, and a Beginner's Pack - Stage 5. Lv. 25 or above. -->
@@ -99,9 +99,9 @@
 			<item id="34611" min="2000" max="2000" chance="100" /> <!-- Mysterious Blessed Spiritshot (D-grade) - Not Available -->
 			<item id="29605" min="1" max="1" chance="100" /> <!-- Beginner's Pack - Stage 5 -->
 		</capsuled_items>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="25" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="29605" name="Newbie Kit - Lvl 5" type="EtcItem">
 		<!-- Double-click to get the following: 1 Elven Ring Crafting Pack, 4500 Soulshots, 1000 Blessed Spiritshots, and a Beginner's Pack - Stage 6. Lv. 30 or above. -->
@@ -120,9 +120,9 @@
 			<item id="34611" min="2000" max="2000" chance="100" /> <!-- Mysterious Blessed Spiritshot (D-grade) - Not Available -->
 			<item id="29606" min="1" max="1" chance="100" /> <!-- Beginner's Pack - Stage 6 -->
 		</capsuled_items>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="30" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="29606" name="Newbie Kit - Lvl 6" type="EtcItem">
 		<!-- Double-click to get the following: 20 XP/SP Boost Scrolls (40%), 4500 Soulshots, 1000 Blessed Spiritshots, and a Beginner's Pack - Stage 7. Lv. 35 or above. -->
@@ -141,9 +141,9 @@
 			<item id="34611" min="2000" max="2000" chance="100" /> <!-- Mysterious Blessed Spiritshot (D-grade) - Not Available -->
 			<item id="29607" min="1" max="1" chance="100" /> <!-- Beginner's Pack - Stage 7 -->
 		</capsuled_items>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="35" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="29607" name="Newbie Kit - Lvl 7" type="EtcItem">
 		<!-- Double-click to get a Timed Weapon Exchange Coupon (C-grade). Lv. 40 or above. -->
@@ -159,9 +159,9 @@
 		<capsuled_items>
 			<item id="29609" min="1" max="1" chance="100" /> <!-- Timed Weapon Exchange Coupon (C-grade) -->
 		</capsuled_items>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="40" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="29608" name="Ticket: Temporary Weapon (D-grade)" type="EtcItem">
 		<!-- Exchange for a 30-day D-grade weapon through the Store Manager. Exchanged weapons cannot be enchanted. -->
@@ -834,9 +834,9 @@
 			<item id="29654" min="30" max="30" chance="100" /> <!-- 1st Class Transfer Buff Scroll -->
 			<item id="29636" min="1" max="1" chance="100" /> <!-- Beginner's Pack - Stage 3 -->
 		</capsuled_items>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="10" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="29636" name="Newbie Kit - Lv. 3" type="EtcItem">
 		<!-- Double-click to get the following: 1 Saber*Elven Sword (30-day), 4500 Soulshots, 1000 Blessed Spiritshots, and a Beginner's Pack - Stage 4. Lv. 20 or above. -->
@@ -855,9 +855,9 @@
 			<item id="29637" min="1" max="1" chance="100" /> <!-- Beginner's Pack - Stage 4 -->
 			<item id="29527" min="1" max="1" chance="100" /> <!-- Saber*Elven Sword - 30 days -->
 		</capsuled_items>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="20" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="29637" name="Newbie Kit - Lv. 4" type="EtcItem">
 		<!-- Double-click to get the following: 4500 Soulshots, 1000 Blessed Spiritshots, and a Beginner's Pack - Stage 5. Lv. 25 or above. -->
@@ -875,9 +875,9 @@
 			<item id="34604" min="9000" max="9000" chance="100" /> <!-- Mysterious Soulshot (D-grade) - Not Available -->
 			<item id="29638" min="1" max="1" chance="100" /> <!-- Beginner's Pack - Stage 5 -->
 		</capsuled_items>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="25" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="29638" name="Newbie Kit - Lv. 5" type="EtcItem">
 		<!-- Double-click to get the following: 4500 Soulshots, 1000 Blessed Spiritshots, and a Beginner's Pack - Stage 6. Lv. 30 or above. -->
@@ -895,9 +895,9 @@
 			<item id="34604" min="9000" max="9000" chance="100" /> <!-- Mysterious Soulshot (D-grade) - Not Available -->
 			<item id="29639" min="1" max="1" chance="100" /> <!-- Beginner's Pack - Stage 6 -->
 		</capsuled_items>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="30" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="29639" name="Newbie Kit - Lv. 6" type="EtcItem">
 		<!-- Double-click to get the following: 20 XP/SP Boost Scrolls (40%), 4500 Soulshots, 1000 Spiritshots, and a Beginner's Pack - Stage 7. Lv. 35 or above. -->
@@ -916,9 +916,9 @@
 			<item id="29640" min="1" max="1" chance="100" /> <!-- Beginner's Pack - Stage 7 -->
 			<item id="29649" min="20" max="20" chance="100" /> <!-- Scroll: Mid-grade XP/SP Boost -->
 		</capsuled_items>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="35" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="29640" name="Newbie Kit - Lv. 7" type="EtcItem">
 		<!-- Double-click to get 1 Black Samurai Long Sword (30-day). Lv. 40 or above. -->
@@ -934,9 +934,9 @@
 		<capsuled_items>
 			<item id="49573" min="1" max="1" chance="100" /> <!-- Samurai Black Long Sword - 30 days -->
 		</capsuled_items>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="40" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="29641" name="Mysterious No-grade Soulshot" additionalName="Not in Use" type="EtcItem">
 		<!-- The power of a higher-level spirit is bestowed upon a weapon, temporarily increasing power of attack. Used with a No-grade weapon. Exchange for a new Soulshot through the Store Manager. -->
@@ -1091,9 +1091,9 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2031" level="1" /> <!-- HP Potion -->
 		</skills>
@@ -1117,9 +1117,9 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2032" level="1" /> <!-- Greater HP Potion -->
 		</skills>
@@ -1140,9 +1140,9 @@
 		<set name="commissionItemType" val="POTION" />
 		<set name="is_event_restricted" val="true" />
 		<set name="for_npc" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2012" level="1" /> <!-- Haste Potion -->
 		</skills>
@@ -1207,9 +1207,9 @@
 			<item id="70102" min="30" max="30" chance="100" /> <!-- Adventurer's Potion - Atk. Spd. -->
 			<item id="29657" min="1" max="1" chance="100" /> <!-- Intermediate Pack - Stage 2 -->
 		</capsuled_items>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="24" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="29657" name="Traveler's Package - Lvl 2" type="EtcItem">
 		<!-- Double-click to get the following: 1 Timed Weapon Exchange Coupon (D-grade), and an Intermediate Pack - Stage 3. Lv. 25 or above. -->
@@ -1226,9 +1226,9 @@
 			<item id="29643" min="1" max="1" chance="100" /> <!-- Mysterious Soulshot (D-grade) - Not Available -->
 			<item id="29608" min="1" max="1" chance="100" /> <!-- Timed Weapon Exchange Coupon (D-grade) -->
 		</capsuled_items>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="25" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="29658" name="Traveler's Package - Lvl 3" type="EtcItem">
 		<!-- Double-click to get the following: 30 1st Class Transfer Buff Scrolls, and an Intermediate Pack - Stage 4. Lv. 28 or above. -->
@@ -1245,9 +1245,9 @@
 			<item id="29654" min="30" max="30" chance="100" /> <!-- 1st Class Transfer Buff Scroll -->
 			<item id="29659" min="1" max="1" chance="100" /> <!-- Intermediate Pack - Stage 4 -->
 		</capsuled_items>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="28" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="29659" name="Traveler's Package - Lvl 4" type="EtcItem">
 		<!-- Double-click to get the following: 1 Chronicles Box, 2250 Soulshots, 500 Blessed Spiritshots, and an Intermediate Pack - Stage 5. Lv. 30 or above. -->
@@ -1266,9 +1266,9 @@
 			<item id="29026" min="1000" max="1000" chance="100" /> <!-- Mysterious Blessed Spiritshot (D-grade) - Not Available -->
 			<item id="29660" min="1" max="1" chance="100" /> <!-- Intermediate Pack - Stage 5 -->
 		</capsuled_items>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="30" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="29660" name="Traveler's Package - Lvl 5" type="EtcItem">
 		<!-- Double-click to get the following: 1 Chronicles Box, 2250 Soulshots, 500 Blessed Spiritshots, 30 Scrolls of Escape, and an Intermediate Pack - Stage 6. Lv. 32 or above. -->
@@ -1288,9 +1288,9 @@
 			<item id="736" min="30" max="30" chance="100" /> <!-- Scroll of Escape -->
 			<item id="29661" min="1" max="1" chance="100" /> <!-- Intermediate Pack - Stage 6 -->
 		</capsuled_items>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="32" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="29661" name="Traveler's Package - Lvl 6" type="EtcItem">
 		<!-- Double-click to get the following: 1 Chronicles Box, 2250 Soulshots, 500 Blessed Spiritshots, 50 Healing Potions, and an Intermediate Pack - Stage 7. Lv. 35 or above. -->
@@ -1310,9 +1310,9 @@
 			<item id="29651" min="50" max="50" chance="100" /> <!-- Healing Potion - Event -->
 			<item id="29662" min="1" max="1" chance="100" /> <!-- Intermediate Pack - Stage 7 -->
 		</capsuled_items>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="35" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="29662" name="Traveler's Package - Lvl 7" type="EtcItem">
 		<!-- Double-click to get the following: 20 XP/SP Boost Scrolls (Mid-grade), 2250 Soulshots, 500 Blessed Spiritshots, and an Intermediate Pack - Stage 8. Lv. 38 or above. -->
@@ -1331,9 +1331,9 @@
 			<item id="29026" min="1000" max="1000" chance="100" /> <!-- Mysterious Blessed Spiritshot (D-grade) - Not Available -->
 			<item id="29662" min="1" max="1" chance="100" /> <!-- Intermediate Pack - Stage 7 -->
 		</capsuled_items>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="38" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="29663" name="Traveler's Package - Lvl 8" type="EtcItem">
 		<!-- Double-click to obtain the following items: 9000 Soulshots, 2000 Blessed Spiritshot , C-grade Timed Weapon Coupon (1), Traveler's Package - Lvl 9. For characters of Lvl 40 and above. Cannot be traded/dropped/sold in a private store. Can be stored in a warehouse. -->
@@ -1352,9 +1352,9 @@
 			<item id="29609" min="1" max="1" chance="100" /> <!-- Timed Weapon Exchange Coupon (C-grade) -->
 			<item id="29664" min="1" max="1" chance="100" /> <!-- Intermediate Pack - Stage 9 -->
 		</capsuled_items>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="40" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="29664" name="Traveler's Package - Lvl 9" type="EtcItem">
 		<!-- Double-click to get the following: 3 Quick Healing Potions, 20 XP/SP Boost Scrolls (Mid-grade), 1 Chronicles Box, and an Intermediate Pack - Stage 10. Lv. 42 or above. -->
@@ -1373,9 +1373,9 @@
 			<item id="29693" min="1" max="1" chance="100" /> <!-- Chronicle Box -->
 			<item id="29665" min="1" max="1" chance="100" /> <!-- Intermediate Pack - Stage 10 -->
 		</capsuled_items>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="42" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="29665" name="Traveler's Package - Lvl 10" type="EtcItem">
 		<!-- Double-click to get the following: 20 XP/SP Boost Scrolls (Mid-grade), 9000 Soulshots, 2000 Blessed Spiritshots, and an Intermediate Pack - Stage 11. Lv. 45 or above. -->
@@ -1394,9 +1394,9 @@
 			<item id="29026" min="2000" max="2000" chance="100" /> <!-- Mysterious Blessed Spiritshot (D-grade) - Not Available -->
 			<item id="29666" min="1" max="1" chance="100" /> <!-- Intermediate Pack - Stage 11 -->
 		</capsuled_items>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="45" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="29666" name="Traveler's Package - Lvl 11" type="EtcItem">
 		<!-- Double-click to obtain an Agathion - Griffin (30-day). Lv. 49 or above. -->
@@ -1412,9 +1412,9 @@
 		<capsuled_items>
 			<item id="29667" min="1" max="1" chance="100" /> <!-- Agathion - Griffin - 30-day -->
 		</capsuled_items>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="49" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="29667" name="Agathion - Griffin" additionalName="30-day" type="Armor">
 		<!-- Can summon a Griffin Agathion. STR + 1, INT + 1. -->

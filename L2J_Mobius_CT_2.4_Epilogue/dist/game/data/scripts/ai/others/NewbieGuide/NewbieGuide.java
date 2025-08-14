@@ -280,10 +280,12 @@ public final class NewbieGuide extends AbstractNpcAI
 								{
 									npc.doCast(HASTE_FOR_BEGINNERS.getSkill());
 								}
+								
 								if ((talker.getLevel() >= 40) && (talker.getLevel() <= 75))
 								{
 									npc.doCast(ADVENTURERS_HASTE.getSkill());
 								}
+								
 								if ((talker.getLevel() >= 16) && (talker.getLevel() <= 34))
 								{
 									npc.doCast(LIFE_CUBIC_FOR_BEGINNERS.getSkill());
@@ -350,6 +352,7 @@ public final class NewbieGuide extends AbstractNpcAI
 								{
 									npc.doCast(HASTE_FOR_BEGINNERS.getSkill());
 								}
+								
 								if ((talker.getLevel() >= 40) && (talker.getLevel() <= 75))
 								{
 									npc.doCast(ADVENTURERS_HASTE.getSkill());
@@ -561,6 +564,7 @@ public final class NewbieGuide extends AbstractNpcAI
 		{
 			talker.teleToLocation(TELEPORT_MAP.get(npc.getId()).get(teleportId), false);
 		}
+		
 		return htmltext;
 	}
 	
@@ -585,6 +589,7 @@ public final class NewbieGuide extends AbstractNpcAI
 					addExpAndSp(qs.getPlayer(), 0, 50);
 				}
 			}
+			
 			if (talker.isMageClass())
 			{
 				if (talker.getPlayerClass() == PlayerClass.ORC_MAGE)
@@ -597,6 +602,7 @@ public final class NewbieGuide extends AbstractNpcAI
 					playSound(qs.getPlayer(), "tutorial_voice_027");
 					giveItems(qs.getPlayer(), SPIRITSHOT_NO_GRADE_FOR_BEGINNERS, 100);
 				}
+				
 				giveItems(qs.getPlayer(), SCROLL_RECOVERY_NO_GRADE, 2);
 				tutorialQS.setMemoStateEx(1, 5);
 				if (talker.getLevel() <= 1)
@@ -608,6 +614,7 @@ public final class NewbieGuide extends AbstractNpcAI
 					addExpAndSp(qs.getPlayer(), 0, 50);
 				}
 			}
+			
 			if (talker.getLevel() < 6)
 			{
 				if ((getNRMemoState(qs, GUIDE_MISSION) % 10) == 1)
@@ -632,6 +639,7 @@ public final class NewbieGuide extends AbstractNpcAI
 						giveAdena(talker, 1240, true);
 						addExpAndSp(qs.getPlayer(), 5970, 239);
 					}
+					
 					if (!haveNRMemo(qs, GUIDE_MISSION))
 					{
 						setNRMemo(qs, GUIDE_MISSION);
@@ -641,6 +649,7 @@ public final class NewbieGuide extends AbstractNpcAI
 					{
 						setNRMemoState(qs, GUIDE_MISSION, getNRMemoState(qs, GUIDE_MISSION) + 10);
 					}
+					
 					hmltext = "newbie-guide-02.htm";
 				}
 				else
@@ -772,6 +781,7 @@ public final class NewbieGuide extends AbstractNpcAI
 						giveAdena(talker, 12928, true);
 						addExpAndSp(qs.getPlayer(), 42191, 1753);
 					}
+					
 					if (!haveNRMemo(qs, GUIDE_MISSION))
 					{
 						setNRMemo(qs, GUIDE_MISSION);
@@ -837,6 +847,7 @@ public final class NewbieGuide extends AbstractNpcAI
 						setNRMemo(qs, GUIDE_MISSION);
 						setNRMemoState(qs, GUIDE_MISSION, 0);
 					}
+					
 					hmltext = "newbie-guide-03.htm";
 				}
 			}
@@ -848,6 +859,7 @@ public final class NewbieGuide extends AbstractNpcAI
 					setNRMemo(qs, GUIDE_MISSION);
 					setNRMemoState(qs, GUIDE_MISSION, 0);
 				}
+				
 				hmltext = "newbie-guide-06.htm";
 			}
 		}
@@ -877,6 +889,7 @@ public final class NewbieGuide extends AbstractNpcAI
 						giveAdena(talker, 1240, true);
 						addExpAndSp(qs.getPlayer(), 5970, 239);
 					}
+					
 					if (!haveNRMemo(qs, GUIDE_MISSION))
 					{
 						setNRMemo(qs, GUIDE_MISSION);
@@ -886,6 +899,7 @@ public final class NewbieGuide extends AbstractNpcAI
 					{
 						setNRMemoState(qs, GUIDE_MISSION, getNRMemoState(qs, GUIDE_MISSION) + 10);
 					}
+					
 					hmltext = "newbie-guide-08.htm";
 				}
 				else
@@ -1021,6 +1035,7 @@ public final class NewbieGuide extends AbstractNpcAI
 						giveAdena(talker, 12928, true);
 						addExpAndSp(qs.getPlayer(), 42191, 1753);
 					}
+					
 					if (!haveNRMemo(qs, GUIDE_MISSION))
 					{
 						setNRMemo(qs, GUIDE_MISSION);
@@ -1086,6 +1101,7 @@ public final class NewbieGuide extends AbstractNpcAI
 						setNRMemo(qs, GUIDE_MISSION);
 						setNRMemoState(qs, GUIDE_MISSION, 0);
 					}
+					
 					hmltext = "newbie-guide-08.htm";
 				}
 			}
@@ -1162,6 +1178,7 @@ public final class NewbieGuide extends AbstractNpcAI
 						giveAdena(talker, 43054, true);
 						addExpAndSp(qs.getPlayer(), 206101, 9227);
 					}
+					
 					if (!haveNRMemo(qs, GUIDE_MISSION))
 					{
 						setNRMemo(qs, GUIDE_MISSION);
@@ -1261,6 +1278,7 @@ public final class NewbieGuide extends AbstractNpcAI
 						giveAdena(talker, 13648, true);
 						addExpAndSp(qs.getPlayer(), 285670, 58155);
 					}
+					
 					if (!haveNRMemo(qs, GUIDE_MISSION))
 					{
 						setNRMemo(qs, GUIDE_MISSION);
@@ -1270,6 +1288,7 @@ public final class NewbieGuide extends AbstractNpcAI
 					{
 						setNRMemoState(qs, GUIDE_MISSION, getNRMemoState(qs, GUIDE_MISSION) + 100000000);
 					}
+					
 					setOneTimeQuestFlag(talker, GUIDE_MISSION, 1);
 					hmltext = "newbie-guide-12.htm";
 				}
@@ -1330,6 +1349,7 @@ public final class NewbieGuide extends AbstractNpcAI
 					setNRMemo(qs, GUIDE_MISSION);
 					setNRMemoState(qs, GUIDE_MISSION, 0);
 				}
+				
 				hmltext = "newbie-guide-13.htm";
 			}
 			else
@@ -1340,6 +1360,7 @@ public final class NewbieGuide extends AbstractNpcAI
 					setNRMemo(qs, GUIDE_MISSION);
 					setNRMemoState(qs, GUIDE_MISSION, 0);
 				}
+				
 				hmltext = "newbie-guide-14.htm";
 			}
 		}
@@ -1602,6 +1623,7 @@ public final class NewbieGuide extends AbstractNpcAI
 				return "30598-05.htm";
 			}
 		}
+		
 		return "";
 	}
 	
@@ -1832,6 +1854,7 @@ public final class NewbieGuide extends AbstractNpcAI
 				return "30599-05.htm";
 			}
 		}
+		
 		return "";
 	}
 	
@@ -2086,6 +2109,7 @@ public final class NewbieGuide extends AbstractNpcAI
 				return "30600-05.htm";
 			}
 		}
+		
 		return "";
 	}
 	
@@ -2346,6 +2370,7 @@ public final class NewbieGuide extends AbstractNpcAI
 				return "30601-05.htm";
 			}
 		}
+		
 		return "";
 	}
 	
@@ -2550,6 +2575,7 @@ public final class NewbieGuide extends AbstractNpcAI
 				return "30602-05.htm";
 			}
 		}
+		
 		return "";
 	}
 	
@@ -2868,6 +2894,7 @@ public final class NewbieGuide extends AbstractNpcAI
 				return "32135-05.htm";
 			}
 		}
+		
 		return "";
 	}
 	

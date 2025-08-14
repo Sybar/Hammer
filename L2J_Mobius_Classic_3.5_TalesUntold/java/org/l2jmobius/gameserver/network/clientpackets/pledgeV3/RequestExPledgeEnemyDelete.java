@@ -86,6 +86,7 @@ public class RequestExPledgeEnemyDelete extends ClientPacket
 			{
 				continue;
 			}
+			
 			if (AttackStanceTaskManager.getInstance().hasAttackStanceTask(member.getPlayer()))
 			{
 				player.sendPacket(SystemMessageId.A_CEASE_FIRE_DURING_A_CLAN_WAR_CAN_NOT_BE_CALLED_WHILE_MEMBERS_OF_YOUR_CLAN_ARE_ENGAGED_IN_BATTLE);
@@ -110,6 +111,7 @@ public class RequestExPledgeEnemyDelete extends ClientPacket
 				member.getPlayer().broadcastUserInfo();
 			}
 		}
+		
 		for (ClanMember member : enemyClan.getMembers())
 		{
 			if ((member != null) && member.isOnline())

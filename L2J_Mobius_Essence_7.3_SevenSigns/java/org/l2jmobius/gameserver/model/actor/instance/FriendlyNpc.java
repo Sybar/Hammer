@@ -101,6 +101,7 @@ public class FriendlyNpc extends Attackable
 		{
 			EventDispatcher.getInstance().notifyEventAsync(new OnAttackableKill(null, this, false), this);
 		}
+		
 		return true;
 	}
 	
@@ -146,6 +147,7 @@ public class FriendlyNpc extends Attackable
 				}
 			}
 		}
+		
 		// Send a Server->Client ActionFailed to the Player in order to avoid that the client wait another packet
 		player.sendPacket(ActionFailed.STATIC_PACKET);
 	}
@@ -162,6 +164,7 @@ public class FriendlyNpc extends Attackable
 		{
 			pom = npcId + "-" + value;
 		}
+		
 		return "data/html/default/" + pom + ".htm";
 	}
 	

@@ -81,6 +81,7 @@ public class RewardItemsOnFailure
 		{
 			count += rewards.size();
 		}
+		
 		return count;
 	}
 }

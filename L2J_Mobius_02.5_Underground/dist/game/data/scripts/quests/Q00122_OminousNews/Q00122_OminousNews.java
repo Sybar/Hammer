@@ -31,6 +31,7 @@ public class Q00122_OminousNews extends Quest
 	// NPCs
 	private static final int MOIRA = 31979;
 	private static final int KARUDA = 32017;
+	
 	// Misc
 	private static final int MIN_LEVEL = 20;
 	
@@ -66,6 +67,7 @@ public class Q00122_OminousNews extends Quest
 				break;
 			}
 		}
+		
 		return event;
 	}
 	
@@ -108,6 +110,7 @@ public class Q00122_OminousNews extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

@@ -187,6 +187,7 @@ public class ExShowScreenMessage extends ServerPacket
 		{
 			_parameters = new ArrayList<>();
 		}
+		
 		for (String param : params)
 		{
 			_parameters.add(param);

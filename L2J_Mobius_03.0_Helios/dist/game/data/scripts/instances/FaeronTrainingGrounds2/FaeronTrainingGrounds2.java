@@ -16,6 +16,8 @@
  */
 package instances.FaeronTrainingGrounds2;
 
+import java.util.Collection;
+
 import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.StatSet;
 import org.l2jmobius.gameserver.model.WorldObject;
@@ -42,18 +44,22 @@ public class FaeronTrainingGrounds2 extends AbstractInstance
 	// NPCs
 	private static final int KATALIN = 33943;
 	private static final int KATALIN_2 = 33945;
+	
 	// Monsters
 	private static final int FLOATO = 27526;
 	private static final int FLOATO2 = 27531;
 	private static final int RATEL = 27527;
+	
 	// Item
 	private static final ItemHolder SOULSHOTS_TRAINING = new ItemHolder(1835, 150);
+	
 	// Locations
 	private static final Location[] MOB_SPAWNS =
 	{
 		new Location(-74760, 240773, -3560),
 		new Location(-74721, 240513, -3584)
 	};
+	
 	// Misc
 	private static final int TEMPLATE_ID = 252;
 	private static final double DAMAGE_BY_SKILL = 0.5d; // Percent
@@ -102,6 +108,7 @@ public class FaeronTrainingGrounds2 extends AbstractInstance
 					spawnMonsters(npcId, player);
 					showOnScreenMsg(player, NpcStringId.ATTACK_THE_MONSTER, ExShowScreenMessage.TOP_CENTER, 10000);
 				}
+				
 				htmltext = event;
 				break;
 			}
@@ -117,6 +124,7 @@ public class FaeronTrainingGrounds2 extends AbstractInstance
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -179,6 +187,7 @@ public class FaeronTrainingGrounds2 extends AbstractInstance
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -228,7 +237,7 @@ public class FaeronTrainingGrounds2 extends AbstractInstance
 	}
 	
 	@Override
-	public void onSkillSee(Npc npc, Player player, Skill skill, WorldObject[] targets, boolean isSummon)
+	public void onSkillSee(Npc npc, Player player, Skill skill, Collection<WorldObject> targets, boolean isSummon)
 	{
 		if (!npc.isDead() && (player.getTarget() == npc))
 		{
@@ -252,6 +261,7 @@ public class FaeronTrainingGrounds2 extends AbstractInstance
 			qs.setMemoStateEx(Q10736_ASpecialPower.KILL_COUNT_VAR, 0);
 			return true;
 		}
+		
 		playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 		qs.setMemoStateEx(Q10736_ASpecialPower.KILL_COUNT_VAR, value);
 		qs.getQuest().sendNpcLogList(killer);

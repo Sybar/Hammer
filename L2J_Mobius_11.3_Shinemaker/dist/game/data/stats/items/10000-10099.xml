@@ -70,9 +70,9 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="commissionItemType" val="RAPIER" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">46</stat>
 			<stat type="mAtk">32</stat>
@@ -136,9 +136,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="90" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">46</stat>
 			<stat type="mAtk">32</stat>
@@ -169,9 +169,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="90" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">55</stat>
 			<stat type="mAtk">32</stat>
@@ -200,9 +200,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="90" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">64</stat>
 			<stat type="mAtk">32</stat>
@@ -230,9 +230,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="120" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">126</stat>
 			<stat type="mAtk">76</stat>
@@ -263,9 +263,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="120" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">151</stat>
 			<stat type="mAtk">76</stat>
@@ -294,9 +294,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="120" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">176</stat>
 			<stat type="mAtk">76</stat>
@@ -415,9 +415,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="equip_condition" val="{{ec_fortress;1}}" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player fort="-1" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="5458" level="1" /> <!-- Agathion's Cute Trick - Fortress -->
 			<skill id="3361" level="1" /> <!-- Summon Agathion - Fortress -->

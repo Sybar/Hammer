@@ -74,6 +74,7 @@ public class ExUserBoostStat extends ServerPacket
 				break;
 			}
 		}
+		
 		buffer.writeByte(_type.getId());
 		buffer.writeByte(count);
 		buffer.writeShort(bonus);

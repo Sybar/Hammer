@@ -45,6 +45,7 @@ public class Fioren extends AbstractNpcAI
 		{
 			playMovie(player, Movie.SI_BARLOG_STORY);
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	

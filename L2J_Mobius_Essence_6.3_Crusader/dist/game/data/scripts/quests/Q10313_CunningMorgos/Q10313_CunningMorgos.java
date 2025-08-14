@@ -40,6 +40,7 @@ public class Q10313_CunningMorgos extends Quest
 {
 	// NPC
 	private static final int MUSS = 34320;
+	
 	// Monsters
 	private static final int MORGOS_SENTRY = 22462;
 	private static final int MORGOS_ELITE_GUARD = 22463;
@@ -47,10 +48,12 @@ public class Q10313_CunningMorgos extends Quest
 	private static final int BLOODHOUND = 22465;
 	private static final int MORGOS_GUARD = 22453;
 	private static final int MORGOS_WIZARD = 22456;
+	
 	// Items
 	private static final ItemHolder SAYHA_COOKIE = new ItemHolder(93274, 20);
 	private static final ItemHolder SAYHA_STORM = new ItemHolder(91712, 12);
 	private static final ItemHolder MAGIC_LAMP_CHARGING_POTION = new ItemHolder(91757, 2);
+	
 	// Misc
 	private static final int MIN_LEVEL = 90;
 	private static final String KILL_COUNT_VAR = "KillCount";
@@ -101,6 +104,7 @@ public class Q10313_CunningMorgos extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -114,6 +118,7 @@ public class Q10313_CunningMorgos extends Quest
 			htmltext = "noreq.htm";
 			return htmltext;
 		}
+		
 		if (qs.isCreated())
 		{
 			htmltext = "34320-01.htm";
@@ -133,6 +138,7 @@ public class Q10313_CunningMorgos extends Quest
 		{
 			htmltext = getAlreadyCompletedMsg(player);
 		}
+		
 		return htmltext;
 	}
 	
@@ -177,6 +183,7 @@ public class Q10313_CunningMorgos extends Quest
 				return holder;
 			}
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

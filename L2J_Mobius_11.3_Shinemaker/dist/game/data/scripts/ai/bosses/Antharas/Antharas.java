@@ -48,17 +48,22 @@ public class Antharas extends AbstractInstance
 	private static final int GUIDE = 34543;
 	private static final int ANTHARAS_SYMBOL = 29390;
 	private static final int CLONE_FIGHT_ANTHARAS = 29388;
+	
 	// Skill Summon Antharas' Avatar
 	private static final int CLONE_EFFECT_SKILL = 34312;
+	
 	// Skills
 	private static final int ATTACK_SKILL_ID = 34309;
 	private static final SkillHolder ATTACK_SKILL = new SkillHolder(ATTACK_SKILL_ID, 1);
+	
 	// Buff Antharas' Earth Guard
 	private static final int BUFF_ID = 34315;
+	
 	// Reward
 	private static final int BELLRA_GREEN_CHEST = 82939;
 	private static final int REWARD_COUNT = 1;
 	private static final String INSTANCE_COMPLETED = "instance_completed";
+	
 	// Locations AntharasSymbol
 	private static final Location[] SYMBOL_LOCATIONS_1 =
 	{
@@ -76,6 +81,7 @@ public class Antharas extends AbstractInstance
 	};
 	private static final Location BOSS_SPAWN_LOC = new Location(178684, 114619, -7733);
 	private static final Location CLONE_SPAWN_LOC = new Location(178454, 114819, -7735);
+	
 	// Misc
 	private static final int TEMPLATE_ID = 316;
 	private static final long SYMBOL_RESPAWN_DELAY = 5000; // 15 seconds
@@ -184,6 +190,7 @@ public class Antharas extends AbstractInstance
 							}
 						}
 					}
+					
 					if (npc != null)
 					{
 						npc.broadcastSay(ChatType.NPC_GENERAL, "Not bad, I can show you my abilities. My clones will show you my true power.");
@@ -226,9 +233,11 @@ public class Antharas extends AbstractInstance
 					final List<Npc> symbols = world.getParameters().getList("SYMBOLS", Npc.class, new ArrayList<>());
 					symbols.add(symbol);
 				}
+				
 				world.setParameter("symbols_spawned", true);
 				mainBoss.broadcastSay(ChatType.NPC_GENERAL, "It's been a while since I face worthy adversaries. I'll show you my power. I will receive the power of the earth once again.");
 			}
+			
 			if ((currentHPPercentage <= 15) && !world.getParameters().getBoolean("symbolsSpawned15", false))
 			{
 				world.setParameter("symbolsSpawned15", true);
@@ -238,9 +247,11 @@ public class Antharas extends AbstractInstance
 					final List<Npc> symbols = world.getParameters().getList("SYMBOLS", Npc.class, new ArrayList<>());
 					symbols.add(symbol);
 				}
+				
 				world.setParameter("symbols_spawned", true);
 				mainBoss.broadcastSay(ChatType.NPC_GENERAL, "It's been a while since I face worthy adversaries. I'll show you my power. I will receive the power of the earth once again.");
 			}
+			
 			checkSymbols(world);
 			if ((currentHPPercentage <= 50) && !world.getParameters().getBoolean("clonesSpawned", false))
 			{
@@ -316,6 +327,7 @@ public class Antharas extends AbstractInstance
 				{
 					fightAntharas.broadcastSay(ChatType.NPC_GENERAL, "All my symbols were destroyed!");
 				}
+				
 				if ((fightAntharas != null) && world.getParameters().getBoolean("buffApplied", false))
 				{
 					fightAntharas.getEffectList().stopSkillEffects(null, BUFF_ID);
@@ -333,10 +345,12 @@ public class Antharas extends AbstractInstance
 					player.addItem(ItemProcessType.REWARD, BELLRA_GREEN_CHEST, REWARD_COUNT, player, true);
 				}
 			}
+			
 			for (Npc symbol : world.getNpcs(ANTHARAS_SYMBOL))
 			{
 				symbol.deleteMe();
 			}
+			
 			for (Npc clone : world.getNpcs(CLONE_FIGHT_ANTHARAS))
 			{
 				clone.deleteMe();

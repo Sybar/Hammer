@@ -76,9 +76,11 @@ public class Q00827_EinhasadsOrder extends Quest
 		23646, // Unit 7 Elite Soldier
 		23647, // Unit 8 Elite Soldier
 	};
+	
 	// Items
 	private static final int REVOLUTIONARIES_MARK_PIECE = 46372;
 	private static final int GLUDIN_HERO_REWARD = 46375;
+	
 	// Misc
 	private static final int MIN_LEVEL = 100;
 	
@@ -129,6 +131,7 @@ public class Q00827_EinhasadsOrder extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -173,6 +176,7 @@ public class Q00827_EinhasadsOrder extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -188,6 +192,7 @@ public class Q00827_EinhasadsOrder extends Quest
 		{
 			members.add(player);
 		}
+		
 		for (Player member : members)
 		{
 			final QuestState qs = getQuestState(member, false);

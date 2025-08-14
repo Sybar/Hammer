@@ -70,12 +70,14 @@ public class QuestDailyMissionHandler extends AbstractDailyMissionHandler
 				}
 			}
 		}
+		
 		return false;
 	}
 	
 	private void onQuestComplete(OnPlayerQuestComplete event)
 	{
 		final Player player = event.getPlayer();
+		
 		// Check if player has active quest the quest id specified
 		if ((_questId == event.getQuestId()) && player.getQuestState(event.getQuestName()).isCompleted())
 		{
@@ -92,6 +94,7 @@ public class QuestDailyMissionHandler extends AbstractDailyMissionHandler
 			{
 				entry.setStatus(DailyMissionStatus.AVAILABLE);
 			}
+			
 			storePlayerEntry(entry);
 		}
 	}

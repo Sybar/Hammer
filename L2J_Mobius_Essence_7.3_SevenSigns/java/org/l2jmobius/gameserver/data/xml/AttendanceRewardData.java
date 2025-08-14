@@ -29,8 +29,8 @@ import org.w3c.dom.Document;
 
 import org.l2jmobius.Config;
 import org.l2jmobius.commons.util.IXmlReader;
+import org.l2jmobius.gameserver.data.holders.AttendanceItemHolder;
 import org.l2jmobius.gameserver.model.StatSet;
-import org.l2jmobius.gameserver.model.item.holders.ItemHolder;
 
 /**
  * @author Mobius
@@ -38,7 +38,7 @@ import org.l2jmobius.gameserver.model.item.holders.ItemHolder;
 public class AttendanceRewardData implements IXmlReader
 {
 	private static final Logger LOGGER = Logger.getLogger(AttendanceRewardData.class.getName());
-	private final List<ItemHolder> _rewards = new ArrayList<>();
+	private final List<AttendanceItemHolder> _rewards = new ArrayList<>();
 	private int _rewardsCount = 0;
 	
 	protected AttendanceRewardData()
@@ -73,6 +73,7 @@ public class AttendanceRewardData implements IXmlReader
 			// Extract item ID and count.
 			final int itemId = set.getInt("id");
 			final int itemCount = set.getInt("count");
+			final int highlight = set.getInt("highlight", 0);
 			
 			// Validate item existence.
 			if (ItemData.getInstance().getTemplate(itemId) == null)
@@ -81,12 +82,12 @@ public class AttendanceRewardData implements IXmlReader
 			}
 			else // Add valid item to rewards.
 			{
-				_rewards.add(new ItemHolder(itemId, itemCount));
+				_rewards.add(new AttendanceItemHolder(itemId, itemCount, highlight));
 			}
 		}));
 	}
 	
-	public List<ItemHolder> getRewards()
+	public List<AttendanceItemHolder> getRewards()
 	{
 		return _rewards;
 	}

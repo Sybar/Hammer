@@ -34,9 +34,11 @@ public class Valleria extends AbstractNpcAI
 {
 	// NPC
 	private static final int VALLERIA = 34435;
+	
 	// Items
 	private static final int MEDAL = 48516; // Medal of Honor
 	private static final int GRAND_MEDAL = 48517; // Grand Medal of Honor
+	
 	// Misc
 	private static final int MEDAL_POINTS = 100;
 	private static final int GRAND_MEDAL_POINTS = 1000;
@@ -275,6 +277,7 @@ public class Valleria extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

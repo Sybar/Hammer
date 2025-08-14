@@ -63,14 +63,17 @@ public class Q00466_PlacingMySmallPower extends Quest
 		22894, // Satyr Wizard
 		22878 // Fairy Rogue
 	};
+	
 	// Items
 	private static final int FAIRY_WING = 17597;
 	private static final int COCOON_FRAGMENT = 17598;
 	private static final int KIMERIANS_BREATH = 17599;
 	private static final int TEMINIELS_TONIC = 17596;
 	private static final int TONIC_RECIPE = 17603;
+	
 	// Reward
 	private static final int CERTIFICATE_OF_PROMISE = 30384;
+	
 	// Misc
 	private static final int MIN_LEVEL = 90;
 	
@@ -95,6 +98,7 @@ public class Q00466_PlacingMySmallPower extends Quest
 		{
 			return getNoQuestMsg(player);
 		}
+		
 		switch (event)
 		{
 			case "30154-02.htm":
@@ -128,9 +132,11 @@ public class Q00466_PlacingMySmallPower extends Quest
 				{
 					qs.setCond(5);
 				}
+				
 				htmltext = event;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -148,6 +154,7 @@ public class Q00466_PlacingMySmallPower extends Quest
 					htmltext = "30154-00a.htm";
 					break;
 				}
+				
 				qs.setState(State.CREATED);
 				// fallthrough
 			}
@@ -202,6 +209,7 @@ public class Q00466_PlacingMySmallPower extends Quest
 								else
 								{
 									htmltext = "32895-07.html";
+									
 									// TODO: Remove timer.
 									startQuestTimer("32895-07.html", 100, npc, player, false);
 								}
@@ -214,6 +222,7 @@ public class Q00466_PlacingMySmallPower extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -225,6 +234,7 @@ public class Q00466_PlacingMySmallPower extends Quest
 		{
 			return;
 		}
+		
 		if (qs.isCond(2))
 		{
 			if (ArrayUtil.contains(COCON, npc.getId()) && (getQuestItemsCount(player, COCOON_FRAGMENT) < 5) && (getRandom(100) < 7))
@@ -232,17 +242,20 @@ public class Q00466_PlacingMySmallPower extends Quest
 				giveItems(player, COCOON_FRAGMENT, 1);
 				playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 			}
+			
 			if (ArrayUtil.contains(WING, npc.getId()) && (getQuestItemsCount(player, FAIRY_WING) < 5) && (getRandom(100) < 10))
 			{
 				giveItems(player, FAIRY_WING, 1);
 				playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 			}
+			
 			if (ArrayUtil.contains(BREATH, npc.getId()) && (getQuestItemsCount(player, KIMERIANS_BREATH) < 5) && (getRandom(100) < 12))
 			{
 				giveItems(player, KIMERIANS_BREATH, 1);
 				playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 			}
 		}
+		
 		if ((getQuestItemsCount(player, COCOON_FRAGMENT) == 5) && (getQuestItemsCount(player, FAIRY_WING) == 5) && (getQuestItemsCount(player, KIMERIANS_BREATH) == 5))
 		{
 			qs.setCond(1);

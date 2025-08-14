@@ -42,8 +42,10 @@ public class Q00468_BeLostInTheMysteriousScent extends Quest
 	private static final int GARDEN_PROTECTOR = 22959;
 	private static final int GARDEN_COMMANDER = 22962;
 	private static final int MOON_GARDENER = 22960;
+	
 	// Item
 	private static final int CERTIFICATE_OF_LIFE = 30385;
+	
 	// Misc
 	private static final int MIN_LEVEL = 90;
 	
@@ -65,6 +67,7 @@ public class Q00468_BeLostInTheMysteriousScent extends Quest
 		{
 			return getNoQuestMsg(player);
 		}
+		
 		switch (event)
 		{
 			case "33032-02.htm":
@@ -85,10 +88,12 @@ public class Q00468_BeLostInTheMysteriousScent extends Quest
 					giveItems(player, CERTIFICATE_OF_LIFE, 2);
 					qs.exitQuest(QuestType.DAILY, true);
 				}
+				
 				htmltext = event;
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -108,6 +113,7 @@ public class Q00468_BeLostInTheMysteriousScent extends Quest
 						htmltext = "32892-00.html";
 						break;
 					}
+					
 					qs.setState(State.CREATED);
 					// fallthrough
 				}
@@ -131,6 +137,7 @@ public class Q00468_BeLostInTheMysteriousScent extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	

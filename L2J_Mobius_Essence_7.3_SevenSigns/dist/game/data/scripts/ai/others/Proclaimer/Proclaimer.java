@@ -47,6 +47,7 @@ public class Proclaimer extends AbstractNpcAI
 		36616, // Rune
 		36617, // Schuttgart
 	};
+	
 	// Skills
 	private static final SkillHolder XP_BUFF = new SkillHolder(19036, 1); // Blessing of Light
 	
@@ -80,6 +81,7 @@ public class Proclaimer extends AbstractNpcAI
 		{
 			htmltext = "proclaimer-01.html";
 		}
+		
 		return htmltext;
 	}
 	
@@ -98,6 +100,7 @@ public class Proclaimer extends AbstractNpcAI
 				htmltext = "proclaimer-01.html";
 			}
 		}
+		
 		return htmltext;
 	}
 	

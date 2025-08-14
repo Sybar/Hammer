@@ -52,8 +52,10 @@ public class Q10417_DaimonTheWhiteEyed extends Quest
 		21299, // Valley Buffalo Slave
 		21304, // Valley Grendel Slave
 	};
+	
 	// Items
 	private static final int EAA = 730; // Scroll: Enchant Armor (A-grade)
+	
 	// Misc
 	private static final int MIN_LEVEL = 70;
 	private static final int MAX_LEVEL = 75;
@@ -120,11 +122,13 @@ public class Q10417_DaimonTheWhiteEyed extends Quest
 					{
 						addExpAndSp(player, 2_721_600, 653);
 					}
+					
 					htmltext = event;
 				}
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -166,6 +170,7 @@ public class Q10417_DaimonTheWhiteEyed extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -216,6 +221,7 @@ public class Q10417_DaimonTheWhiteEyed extends Quest
 				return holder;
 			}
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

@@ -86,6 +86,7 @@ public class RequestExPledgeEnemyDelete extends ClientPacket
 			{
 				continue;
 			}
+			
 			if (AttackStanceTaskManager.getInstance().hasAttackStanceTask(member.getPlayer()))
 			{
 				player.sendPacket(SystemMessageId.THE_CLAN_WAR_CANNOT_BE_STOPPED_BECAUSE_SOMEONE_FROM_YOUR_CLAN_IS_STILL_ENGAGED_IN_BATTLE);
@@ -110,6 +111,7 @@ public class RequestExPledgeEnemyDelete extends ClientPacket
 				member.getPlayer().broadcastUserInfo();
 			}
 		}
+		
 		for (ClanMember member : enemyClan.getMembers())
 		{
 			if ((member != null) && member.isOnline())

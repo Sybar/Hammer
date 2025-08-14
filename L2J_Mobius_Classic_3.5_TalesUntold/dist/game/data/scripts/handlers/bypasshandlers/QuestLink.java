@@ -51,7 +51,7 @@ public class QuestLink implements IBypassHandler
 	};
 	
 	@Override
-	public boolean useBypass(String command, Player player, Creature target)
+	public boolean onCommand(String command, Player player, Creature target)
 	{
 		String quest = "";
 		try
@@ -61,6 +61,7 @@ public class QuestLink implements IBypassHandler
 		catch (IndexOutOfBoundsException ioobe)
 		{
 		}
+		
 		if (quest.isEmpty())
 		{
 			showQuestWindow(player, target.asNpc());
@@ -77,6 +78,7 @@ public class QuestLink implements IBypassHandler
 				player.processQuestEvent(quest.substring(0, questNameEnd), quest.substring(questNameEnd).trim());
 			}
 		}
+		
 		return true;
 	}
 	
@@ -114,6 +116,7 @@ public class QuestLink implements IBypassHandler
 			{
 				orderedQuests.put(q.getId(), q);
 			}
+			
 			questList = orderedQuests.values();
 		}
 		
@@ -121,7 +124,7 @@ public class QuestLink implements IBypassHandler
 		String startQuest = null;
 		for (Quest quest : questList)
 		{
-			final QuestState qs = player.getQuestState(quest.getScriptName());
+			final QuestState qs = player.getQuestState(quest.getName());
 			if ((qs == null) || qs.isCreated() || (qs.isCompleted() && qs.isNowAvailable()))
 			{
 				final String startConditionHtml = quest.getStartConditionHtml(player, npc);
@@ -149,6 +152,7 @@ public class QuestLink implements IBypassHandler
 							}
 						}
 					}
+					
 					sbCanStart.append(localisation);
 					sbCanStart.append("</button></font>");
 				}
@@ -169,6 +173,7 @@ public class QuestLink implements IBypassHandler
 							}
 						}
 					}
+					
 					sbCantStart.append(localisation);
 					sbCantStart.append("</button></font>");
 				}
@@ -197,6 +202,7 @@ public class QuestLink implements IBypassHandler
 						}
 					}
 				}
+				
 				sbStarted.append(localisation);
 				sbStarted.append("</button></font>");
 			}
@@ -217,6 +223,7 @@ public class QuestLink implements IBypassHandler
 						}
 					}
 				}
+				
 				sbCompleted.append(localisation);
 				sbCompleted.append("</button></font>");
 			}
@@ -341,7 +348,7 @@ public class QuestLink implements IBypassHandler
 	}
 	
 	@Override
-	public String[] getBypassList()
+	public String[] getCommandList()
 	{
 		return COMMANDS;
 	}

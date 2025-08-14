@@ -48,9 +48,11 @@ public class Q10839_BlackbirdsNameValue extends Quest
 		23507, // Atelia Passionate Soldier
 		23508 // Atelia Elite Captain
 	};
+	
 	// Items
 	private static final int BLACKBIRD_REPORT_LAFFIAN = 46136;
 	private static final int BLACKBIRD_SEAL = 46132;
+	
 	// Misc
 	private static final int MIN_LEVEL = 101;
 	private static final String KILL_COUNT_VAR = "KillCount";
@@ -98,6 +100,7 @@ public class Q10839_BlackbirdsNameValue extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -115,6 +118,7 @@ public class Q10839_BlackbirdsNameValue extends Quest
 					htmltext = "34065-03.htm";
 					break;
 				}
+				
 				htmltext = "34065-01.htm";
 				break;
 			}
@@ -136,6 +140,7 @@ public class Q10839_BlackbirdsNameValue extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -172,6 +177,7 @@ public class Q10839_BlackbirdsNameValue extends Quest
 				return holder;
 			}
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

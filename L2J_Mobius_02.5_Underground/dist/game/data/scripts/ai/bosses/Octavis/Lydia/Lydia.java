@@ -31,6 +31,7 @@ public class Lydia extends AbstractNpcAI
 {
 	// NPCs
 	private static final int LYDIA = 32892;
+	
 	// Misc
 	private static final int OCTAVIS_TEMPLATE_ID = 180;
 	private static final int OCTAVIS_EXTREME_TEMPLATE_ID = 181;
@@ -55,6 +56,7 @@ public class Lydia extends AbstractNpcAI
 		{
 			htmltext = "Lydia-01.html";
 		}
+		
 		return htmltext;
 	}
 	
@@ -72,6 +74,7 @@ public class Lydia extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

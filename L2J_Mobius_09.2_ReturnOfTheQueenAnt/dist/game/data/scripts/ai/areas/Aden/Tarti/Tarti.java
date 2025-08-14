@@ -35,6 +35,7 @@ public class Tarti extends AbstractNpcAI
 {
 	// NPC
 	private static final int TARTI = 34360;
+	
 	// Misc
 	private static final String[] TARTI_VOICE =
 	{

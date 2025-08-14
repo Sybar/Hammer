@@ -66,6 +66,7 @@ public class ExUpgradeSystemNormalResult extends AbstractItemPacket
 			buffer.writeInt(item.getEnchantLevel());
 			buffer.writeInt(Math.toIntExact(item.getCount()));
 		}
+		
 		buffer.writeByte(0); // Is bonus? Do not see any effect.
 		buffer.writeInt(_bonusItems.size()); // Array of bonus items start.
 		for (UniqueItemEnchantHolder bonus : _bonusItems)

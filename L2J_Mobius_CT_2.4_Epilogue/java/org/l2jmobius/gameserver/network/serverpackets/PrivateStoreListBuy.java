@@ -61,6 +61,7 @@ public class PrivateStoreListBuy extends ServerPacket
 			buffer.writeShort(item.getItem().getType2());
 			buffer.writeLong(item.getPrice()); // buyers price
 			buffer.writeLong(item.getStoreCount()); // maximum possible tradecount
+			
 			// T1
 			buffer.writeShort(item.getAttackElementType());
 			buffer.writeShort(item.getAttackElementPower());
@@ -68,6 +69,7 @@ public class PrivateStoreListBuy extends ServerPacket
 			{
 				buffer.writeShort(item.getElementDefAttr(i));
 			}
+			
 			for (int op : item.getEnchantOptions())
 			{
 				buffer.writeShort(op);

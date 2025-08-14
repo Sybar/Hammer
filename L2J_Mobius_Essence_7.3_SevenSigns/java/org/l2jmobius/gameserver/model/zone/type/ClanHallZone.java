@@ -72,6 +72,7 @@ public class ClanHallZone extends ResidenceZone
 		{
 			return null;
 		}
+		
 		return clanHall.getBanishLocation();
 	}
 }

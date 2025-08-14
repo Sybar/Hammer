@@ -23,6 +23,7 @@ package org.l2jmobius.gameserver.model.zone.type;
 import org.l2jmobius.gameserver.model.World;
 import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.model.actor.transform.Transform;
 import org.l2jmobius.gameserver.model.zone.ZoneId;
 import org.l2jmobius.gameserver.model.zone.ZoneType;
 import org.l2jmobius.gameserver.network.serverpackets.FakePlayerInfo;
@@ -49,7 +50,8 @@ public class WaterZone extends ZoneType
 		if (creature.isPlayer())
 		{
 			final Player player = creature.asPlayer();
-			if (player.checkTransformed(transform -> !transform.canSwim()))
+			final Transform transform = player.getTransformation();
+			if ((transform != null) && !transform.canSwim())
 			{
 				creature.stopTransformation(true);
 			}
@@ -96,6 +98,7 @@ public class WaterZone extends ZoneType
 			{
 				player.stopWaterTask();
 			}
+			
 			if (!player.isTeleporting())
 			{
 				player.broadcastUserInfo();

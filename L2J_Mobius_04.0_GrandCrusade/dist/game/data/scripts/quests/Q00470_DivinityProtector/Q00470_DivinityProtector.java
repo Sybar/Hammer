@@ -55,8 +55,10 @@ public class Q00470_DivinityProtector extends Quest
 		21539, // Wailing of Splendor
 		21544, // Judge of Splendor
 	};
+	
 	// Items
 	private static final int ASH = 19489; // Remnant Ash
+	
 	// Misc
 	private static final int MIN_LEVEL = 60;
 	private static final int MAX_LEVEL = 64;
@@ -96,6 +98,7 @@ public class Q00470_DivinityProtector extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -135,6 +138,7 @@ public class Q00470_DivinityProtector extends Quest
 						{
 							addExpAndSp(player, 1_879_400, 451);
 						}
+						
 						htmltext = "31348-02.html";
 					}
 				}
@@ -150,6 +154,7 @@ public class Q00470_DivinityProtector extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

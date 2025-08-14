@@ -48,7 +48,6 @@ import org.l2jmobius.gameserver.model.VariationInstance;
 import org.l2jmobius.gameserver.model.World;
 import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.actor.enums.player.PlayerCondOverride;
 import org.l2jmobius.gameserver.model.events.EventDispatcher;
 import org.l2jmobius.gameserver.model.events.EventType;
 import org.l2jmobius.gameserver.model.events.holders.actor.player.OnPlayerItemUnequip;
@@ -446,8 +445,10 @@ public abstract class Inventory extends ItemContainer
 									player.addTimeStamp(skill, equipDelay);
 									player.disableSkill(skill, equipDelay);
 								}
+								
 								updateTimestamp = true;
 							}
+							
 							update = true;
 						}
 					}
@@ -603,7 +604,7 @@ public abstract class Inventory extends ItemContainer
 						}
 						
 						// Active, non offensive, skills start with reuse on equip.
-						if (skill.isActive() && !skill.isBad() && !skill.isTransformation() && (Config.ITEM_EQUIP_ACTIVE_SKILL_REUSE > 0) && player.hasEnteredWorld())
+						if (skill.isActive() && !skill.hasNegativeEffect() && !skill.isTransformation() && (Config.ITEM_EQUIP_ACTIVE_SKILL_REUSE > 0) && player.hasEnteredWorld())
 						{
 							player.addTimeStamp(skill, skill.getReuseDelay() > 0 ? skill.getReuseDelay() : Config.ITEM_EQUIP_ACTIVE_SKILL_REUSE);
 							updateTimestamp = true;
@@ -659,7 +660,7 @@ public abstract class Inventory extends ItemContainer
 							}
 							
 							// Active, non offensive, skills start with reuse on equip.
-							if (!skill.isBad() && !skill.isTransformation() && (Config.ITEM_EQUIP_ACTIVE_SKILL_REUSE > 0) && player.hasEnteredWorld())
+							if (!skill.hasNegativeEffect() && !skill.isTransformation() && (Config.ITEM_EQUIP_ACTIVE_SKILL_REUSE > 0) && player.hasEnteredWorld())
 							{
 								player.addTimeStamp(skill, skill.getReuseDelay() > 0 ? skill.getReuseDelay() : Config.ITEM_EQUIP_ACTIVE_SKILL_REUSE);
 							}
@@ -722,7 +723,7 @@ public abstract class Inventory extends ItemContainer
 					}
 					
 					// Active, non offensive, skills start with reuse on equip.
-					if (skill.isActive() && !skill.isBad() && !skill.isTransformation() && (Config.ITEM_EQUIP_ACTIVE_SKILL_REUSE > 0) && player.hasEnteredWorld())
+					if (skill.isActive() && !skill.hasNegativeEffect() && !skill.isTransformation() && (Config.ITEM_EQUIP_ACTIVE_SKILL_REUSE > 0) && player.hasEnteredWorld())
 					{
 						player.addTimeStamp(skill, skill.getReuseDelay() > 0 ? skill.getReuseDelay() : Config.ITEM_EQUIP_ACTIVE_SKILL_REUSE);
 						updateTimestamp = true;
@@ -845,7 +846,7 @@ public abstract class Inventory extends ItemContainer
 							}
 							
 							// Active, non offensive, skills start with reuse on equip.
-							if (!itemSkill.isBad() && !itemSkill.isTransformation() && (Config.ARMOR_SET_EQUIP_ACTIVE_SKILL_REUSE > 0) && player.hasEnteredWorld())
+							if (!itemSkill.hasNegativeEffect() && !itemSkill.isTransformation() && (Config.ARMOR_SET_EQUIP_ACTIVE_SKILL_REUSE > 0) && player.hasEnteredWorld())
 							{
 								player.addTimeStamp(itemSkill, itemSkill.getReuseDelay() > 0 ? itemSkill.getReuseDelay() : Config.ARMOR_SET_EQUIP_ACTIVE_SKILL_REUSE);
 							}
@@ -856,12 +857,15 @@ public abstract class Inventory extends ItemContainer
 						update = true;
 					}
 				}
+				
 				if (updateTimeStamp)
 				{
 					player.sendPacket(new SkillCoolTime(player));
 				}
+				
 				return update;
 			}
+			
 			return false;
 		}
 		
@@ -876,6 +880,7 @@ public abstract class Inventory extends ItemContainer
 					update = true;
 				}
 			}
+			
 			return update;
 		}
 		
@@ -1176,6 +1181,7 @@ public abstract class Inventory extends ItemContainer
 			item.updateDatabase();
 			refreshWeight();
 		}
+		
 		return item;
 	}
 	
@@ -1250,6 +1256,7 @@ public abstract class Inventory extends ItemContainer
 				unEquipItemInSlot(i);
 			}
 		}
+		
 		return super.removeItem(item);
 	}
 	
@@ -1285,6 +1292,7 @@ public abstract class Inventory extends ItemContainer
 				return true;
 			}
 		}
+		
 		return false;
 	}
 	
@@ -1390,6 +1398,7 @@ public abstract class Inventory extends ItemContainer
 		{
 			return PAPERDOLL_ARTIFACT1;
 		}
+		
 		return -1;
 	}
 	
@@ -1405,6 +1414,7 @@ public abstract class Inventory extends ItemContainer
 		{
 			return null;
 		}
+		
 		return _paperdoll[index];
 	}
 	
@@ -1448,6 +1458,7 @@ public abstract class Inventory extends ItemContainer
 				return item;
 			}
 		}
+		
 		return null;
 	}
 	
@@ -1557,6 +1568,7 @@ public abstract class Inventory extends ItemContainer
 						mask |= pi.getTemplate().getItemMask();
 					}
 				}
+				
 				_wearedMask = mask;
 				
 				// Notify all paperdoll listener in order to unequip old item in slot
@@ -1569,6 +1581,7 @@ public abstract class Inventory extends ItemContainer
 					
 					listener.notifyUnequiped(slot, old, this);
 				}
+				
 				old.updateDatabase();
 				
 				// Remove agathion skills.
@@ -1584,11 +1597,13 @@ public abstract class Inventory extends ItemContainer
 							player.removeSkill(skill, false, skill.isPassive());
 							update = true;
 						}
+						
 						for (Skill skill : agathionSkills.getSubSkills(old.getEnchantLevel()))
 						{
 							player.removeSkill(skill, false, skill.isPassive());
 							update = true;
 						}
+						
 						if (update)
 						{
 							player.sendSkillList();
@@ -1618,6 +1633,7 @@ public abstract class Inventory extends ItemContainer
 					
 					listener.notifyEquiped(slot, item, this);
 				}
+				
 				item.updateDatabase();
 				
 				// Add agathion skills.
@@ -1636,19 +1652,23 @@ public abstract class Inventory extends ItemContainer
 								{
 									continue;
 								}
+								
 								player.addSkill(skill, false);
 								update = true;
 							}
 						}
+						
 						for (Skill skill : agathionSkills.getSubSkills(item.getEnchantLevel()))
 						{
 							if (skill.isPassive() && !skill.checkConditions(SkillConditionScope.PASSIVE, player, player))
 							{
 								continue;
 							}
+							
 							player.addSkill(skill, false);
 							update = true;
 						}
+						
 						if (update)
 						{
 							player.sendSkillList();
@@ -1864,6 +1884,7 @@ public abstract class Inventory extends ItemContainer
 				slot = ItemTemplate.SLOT_ARTIFACT;
 			}
 		}
+		
 		return slot;
 	}
 	
@@ -1884,6 +1905,7 @@ public abstract class Inventory extends ItemContainer
 		{
 			removePaperdollListener(recorder);
 		}
+		
 		return recorder.getChangedItems();
 	}
 	
@@ -1914,6 +1936,7 @@ public abstract class Inventory extends ItemContainer
 		{
 			removePaperdollListener(recorder);
 		}
+		
 		return recorder.getChangedItems();
 	}
 	
@@ -2035,10 +2058,12 @@ public abstract class Inventory extends ItemContainer
 			LOGGER.info("Unhandled slot type: " + slot);
 			LOGGER.info(TraceUtil.getTraceString(Thread.currentThread().getStackTrace()));
 		}
+		
 		if (pdollSlot >= 0)
 		{
 			return setPaperdollItem(pdollSlot, null);
 		}
+		
 		return null;
 	}
 	
@@ -2059,6 +2084,7 @@ public abstract class Inventory extends ItemContainer
 		{
 			removePaperdollListener(recorder);
 		}
+		
 		return recorder.getChangedItems();
 	}
 	
@@ -2094,7 +2120,7 @@ public abstract class Inventory extends ItemContainer
 			}
 			
 			final Player player = getOwner().asPlayer();
-			if (!player.canOverrideCond(PlayerCondOverride.ITEM_CONDITIONS) && !player.isHero() && item.isHeroItem())
+			if (!player.isGM() && !player.isHero() && item.isHeroItem())
 			{
 				return;
 			}
@@ -2128,6 +2154,7 @@ public abstract class Inventory extends ItemContainer
 			{
 				setPaperdollItem(PAPERDOLL_RHAND, null);
 			}
+			
 			setPaperdollItem(PAPERDOLL_LHAND, item);
 		}
 		else if (targetSlot == ItemTemplate.SLOT_R_HAND)
@@ -2184,6 +2211,7 @@ public abstract class Inventory extends ItemContainer
 			{
 				setPaperdollItem(PAPERDOLL_CHEST, null);
 			}
+			
 			setPaperdollItem(PAPERDOLL_LEGS, item);
 		}
 		else if (targetSlot == ItemTemplate.SLOT_FEET)
@@ -2209,6 +2237,7 @@ public abstract class Inventory extends ItemContainer
 			{
 				setPaperdollItem(PAPERDOLL_HAIR, null);
 			}
+			
 			setPaperdollItem(PAPERDOLL_HAIR, item);
 		}
 		else if (targetSlot == ItemTemplate.SLOT_HAIR2)
@@ -2222,6 +2251,7 @@ public abstract class Inventory extends ItemContainer
 			{
 				setPaperdollItem(PAPERDOLL_HAIR2, null);
 			}
+			
 			setPaperdollItem(PAPERDOLL_HAIR2, item);
 		}
 		else if (targetSlot == ItemTemplate.SLOT_HAIRALL)
@@ -2303,6 +2333,7 @@ public abstract class Inventory extends ItemContainer
 				weight += item.getTemplate().getWeight() * item.getCount();
 			}
 		}
+		
 		_totalWeight = (int) Math.min(weight, Integer.MAX_VALUE);
 	}
 	
@@ -2383,7 +2414,7 @@ public abstract class Inventory extends ItemContainer
 						if (getOwner().isPlayer())
 						{
 							final Player player = getOwner().asPlayer();
-							if (!player.canOverrideCond(PlayerCondOverride.ITEM_CONDITIONS) && !player.isHero() && item.isHeroItem())
+							if (!player.isGM() && !player.isHero() && item.isHeroItem())
 							{
 								item.setItemLocation(ItemLocation.INVENTORY);
 							}
@@ -2407,6 +2438,7 @@ public abstract class Inventory extends ItemContainer
 					}
 				}
 			}
+			
 			refreshWeight();
 		}
 		catch (Exception e)
@@ -2725,6 +2757,7 @@ public abstract class Inventory extends ItemContainer
 				items.add(item);
 			}
 		}
+		
 		return items;
 	}
 	
@@ -2750,6 +2783,7 @@ public abstract class Inventory extends ItemContainer
 				count++;
 			}
 		}
+		
 		return count;
 	}
 	

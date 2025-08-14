@@ -33,6 +33,7 @@ public class Q00276_TotemOfTheHestui extends Quest
 	// Items
 	private static final int KASHA_PARASITE = 1480;
 	private static final int KASHA_CRYSTAL = 1481;
+	
 	// Rewards
 	private static final int HESTUI_TOTEM = 1500;
 	private static final int LEATHER_PANTS = 29;

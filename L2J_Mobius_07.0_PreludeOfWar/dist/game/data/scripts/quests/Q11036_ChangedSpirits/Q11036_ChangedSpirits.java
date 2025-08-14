@@ -52,10 +52,13 @@ public class Q11036_ChangedSpirits extends Quest
 	private static final int SOBBING_BREEZE = 24391;
 	private static final int WHISPERING_BREEZE = 24392;
 	private static final int LAUGHING_BREEZE = 24393;
+	
 	// Items
 	private static final ItemHolder SOE_PIO = new ItemHolder(80681, 1);
+	
 	// Location
 	private static final Location TRAINING_GROUNDS_TELEPORT = new Location(-74631, 94630, -3736);
+	
 	// Misc
 	private static final String KILL_COUNT_VAR = "KillCount";
 	private static final int MIN_LEVEL = 40;
@@ -123,6 +126,7 @@ public class Q11036_ChangedSpirits extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -170,6 +174,7 @@ public class Q11036_ChangedSpirits extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -206,6 +211,7 @@ public class Q11036_ChangedSpirits extends Quest
 			holder.add(new NpcLogListHolder(NpcStringId.DEFEAT_THE_PACK_OF_WINDRA_2.getId(), true, qs.getInt(KILL_COUNT_VAR)));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

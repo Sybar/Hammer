@@ -87,9 +87,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<cond>
+		<conditions>
 			<player MaximumVitalityPoints="140000" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="39796" level="1" /> <!-- Beora's Ancient Energy -->
 		</skills>
@@ -890,9 +890,9 @@
 		<set name="is_dropable" val="true" />
 		<set name="is_sellable" val="false" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="2453">
+		<conditions msgId="2453">
 			<player cloakStatus="true" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">200</stat>
 			<stat type="mDef">160</stat>

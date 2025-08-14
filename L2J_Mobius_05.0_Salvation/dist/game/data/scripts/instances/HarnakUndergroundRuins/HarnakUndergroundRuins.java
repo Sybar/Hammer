@@ -67,13 +67,16 @@ public class HarnakUndergroundRuins extends AbstractInstance
 		33556,
 		33557
 	};
+	
 	// Locations
 	private static final Location NPC_ROOM1_LOC = new Location(-107930, 206328, -10872);
+	
 	// Skills
 	private static final SkillHolder RELEASE_OF_POWER = new SkillHolder(14625, 1);
 	private static final SkillHolder MAXIMUM_DEFENSE = new SkillHolder(14700, 1);
 	private static final SkillHolder LIGHT_HEAL = new SkillHolder(14736, 1);
 	private static final SkillHolder ULTIMATE_BUFF = new SkillHolder(4318, 1);
+	
 	// Misc
 	private static final int TEMPLATE_ID = 195;
 	private static final int ZONE_ROOM_2 = 200032;
@@ -269,6 +272,7 @@ public class HarnakUndergroundRuins extends AbstractInstance
 					{
 						addAttackPlayerDesire(n, player);
 					}
+					
 					world.setParameter("wave", 2);
 				}
 				break;
@@ -293,6 +297,7 @@ public class HarnakUndergroundRuins extends AbstractInstance
 						n.setTarget(player);
 						startQuestTimer("cast_defense_maximum", 1, n, player);
 					}
+					
 					world.setParameter("wave", 3);
 				}
 				break;
@@ -335,6 +340,7 @@ public class HarnakUndergroundRuins extends AbstractInstance
 						{
 							npc.doCast(LIGHT_HEAL.getSkill());
 						}
+						
 						startQuestTimer("cast_light_heal", 3000, npc, player);
 					}
 				}
@@ -393,6 +399,7 @@ public class HarnakUndergroundRuins extends AbstractInstance
 						{
 							qs.setCond(3, true);
 						}
+						
 						cancelQuestTimer("fail_instance", null, player);
 						world.removeNpcs();
 						playMovie(player, Movie.SC_AWAKENING_BOSS_ENDING_A);
@@ -460,6 +467,7 @@ public class HarnakUndergroundRuins extends AbstractInstance
 							break;
 						}
 					}
+					
 					if (timerCount <= 4)
 					{
 						startQuestTimer("seal_say", 10000, npc, player);
@@ -468,6 +476,7 @@ public class HarnakUndergroundRuins extends AbstractInstance
 					{
 						startQuestTimer("seal_say", 1000, npc, player);
 					}
+					
 					world.setParameter("timerCount", timerCount);
 				}
 				break;
@@ -495,6 +504,7 @@ public class HarnakUndergroundRuins extends AbstractInstance
 				startQuestTimer("message4", 3000, npc, player);
 			}
 		}
+		
 		return null;
 	}
 	

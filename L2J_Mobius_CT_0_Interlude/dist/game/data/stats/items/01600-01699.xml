@@ -732,7 +732,7 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="oncrit_chance" val="50" />
 		<set name="oncrit_skill" val="3005-1" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="62" />
 			<set stat="mAtk" val="42" />
 			<set stat="critRate" val="12" />
@@ -740,7 +740,7 @@
 			<set stat="pAtkSpd" val="433" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="1661" type="EtcItem" name="Thief Key">
 		<set name="icon" val="icon.etc_key_i00" />

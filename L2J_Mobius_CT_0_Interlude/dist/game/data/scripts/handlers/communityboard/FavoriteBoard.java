@@ -1,18 +1,22 @@
 /*
- * This file is part of the L2J Mobius project.
+ * Copyright (c) 2013 L2jMobius
  * 
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
  * 
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
+ * The above copyright notice and this permission notice shall be
+ * included in all copies or substantial portions of the Software.
  * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+ * WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR
+ * IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 package handlers.communityboard;
 
@@ -30,7 +34,7 @@ import org.l2jmobius.gameserver.model.actor.Player;
 
 /**
  * Favorite board.
- * @author Zoey76
+ * @author Zoey76, Skache
  */
 public class FavoriteBoard implements IParseBoardHandler
 {
@@ -47,19 +51,13 @@ public class FavoriteBoard implements IParseBoardHandler
 	};
 	
 	@Override
-	public String[] getCommunityBoardCommands()
-	{
-		return COMMANDS;
-	}
-	
-	@Override
-	public boolean parseCommunityBoardCommand(String command, Player player)
+	public boolean onCommand(String command, Player player)
 	{
 		// None of this commands can be added to favorites.
 		if (command.startsWith("_bbsgetfav"))
 		{
 			// Load Favorite links
-			final String list = HtmCache.getInstance().getHtm(player, "data/html/CommunityBoard/favorite_list.html");
+			final String list = HtmCache.getInstance().getHtm(player, "data/html/CommunityBoard/favorite/favorite_list.html");
 			final StringBuilder sb = new StringBuilder();
 			try (Connection con = DatabaseFactory.getConnection();
 				PreparedStatement ps = con.prepareStatement(SELECT_FAVORITES))
@@ -71,13 +69,14 @@ public class FavoriteBoard implements IParseBoardHandler
 					{
 						String link = list.replace("%fav_bypass%", rs.getString("favBypass"));
 						link = link.replace("%fav_title%", rs.getString("favTitle"));
-						final SimpleDateFormat date = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+						final SimpleDateFormat date = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
 						link = link.replace("%fav_add_date%", date.format(rs.getTimestamp("favAddDate")));
 						link = link.replace("%fav_id%", String.valueOf(rs.getInt("favId")));
 						sb.append(link);
 					}
 				}
-				String html = HtmCache.getInstance().getHtm(player, "data/html/CommunityBoard/favorite.html");
+				
+				String html = HtmCache.getInstance().getHtm(player, "data/html/CommunityBoard/favorite/favorite.html");
 				html = html.replace("%fav_list%", sb.toString());
 				CommunityBoardHandler.separateAndSend(html, player);
 			}
@@ -105,8 +104,9 @@ public class FavoriteBoard implements IParseBoardHandler
 					ps.setString(2, parts[0].trim());
 					ps.setString(3, parts[1].trim());
 					ps.execute();
+					
 					// Callback
-					parseCommunityBoardCommand("_bbsgetfav", player);
+					onCommand("_bbsgetfav", player);
 				}
 				catch (Exception e)
 				{
@@ -129,14 +129,22 @@ public class FavoriteBoard implements IParseBoardHandler
 				ps.setInt(1, player.getObjectId());
 				ps.setInt(2, Integer.parseInt(favId));
 				ps.execute();
+				
 				// Callback
-				parseCommunityBoardCommand("_bbsgetfav", player);
+				onCommand("_bbsgetfav", player);
 			}
 			catch (Exception e)
 			{
 				LOG.warning(FavoriteBoard.class.getSimpleName() + ": Couldn't delete favorite link ID " + favId + " for " + player);
 			}
 		}
+		
 		return true;
+	}
+	
+	@Override
+	public String[] getCommandList()
+	{
+		return COMMANDS;
 	}
 }

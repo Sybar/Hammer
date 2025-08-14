@@ -25,6 +25,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -212,6 +213,7 @@ public class Clan
 			{
 				SiegeManager.getInstance().removeSiegeSkills(exLeader);
 			}
+			
 			exLeader.getClanPrivileges().disableAll();
 			exLeader.broadcastUserInfo();
 		}
@@ -235,6 +237,7 @@ public class Clan
 		{
 			setNewLeaderId(0, true);
 		}
+		
 		updateClanInDB();
 		
 		if (exLeader != null)
@@ -253,6 +256,7 @@ public class Clan
 			{
 				SiegeManager.getInstance().addSiegeSkills(newLeader);
 			}
+			
 			newLeader.broadcastUserInfo();
 		}
 		else
@@ -286,6 +290,7 @@ public class Clan
 			LOGGER.warning(Clan.class.getName() + ": Clan " + getName() + " without clan leader!");
 			return "";
 		}
+		
 		return _leader.getName();
 	}
 	
@@ -364,6 +369,7 @@ public class Clan
 				return temp;
 			}
 		}
+		
 		return null;
 	}
 	
@@ -419,6 +425,7 @@ public class Clan
 			
 			player.setPledgeClass(ClanMember.calculatePledgeClass(player));
 			player.broadcastUserInfo();
+			
 			// disable clan tab
 			player.sendPacket(PledgeShowMemberListDeleteAll.STATIC_PACKET);
 		}
@@ -434,9 +441,9 @@ public class Clan
 		}
 	}
 	
-	public ClanMember[] getMembers()
+	public Collection<ClanMember> getMembers()
 	{
-		return _members.values().toArray(new ClanMember[_members.size()]);
+		return _members.values();
 	}
 	
 	public List<Integer> getOfflineMembersIds()
@@ -449,6 +456,7 @@ public class Clan
 				list.add(temp.getObjectId());
 			}
 		}
+		
 		return list;
 	}
 	
@@ -467,6 +475,7 @@ public class Clan
 				result++;
 			}
 		}
+		
 		return result;
 	}
 	
@@ -562,6 +571,7 @@ public class Clan
 				break;
 			}
 		}
+		
 		return limit;
 	}
 	
@@ -579,6 +589,7 @@ public class Clan
 				onlineMembers.add(temp.getPlayer());
 			}
 		}
+		
 		return onlineMembers;
 	}
 	
@@ -594,8 +605,10 @@ public class Clan
 			{
 				continue;
 			}
+			
 			count++;
 		}
+		
 		return count;
 	}
 	
@@ -961,11 +974,13 @@ public class Clan
 					{
 						setAllyPenaltyExpiryTime(0, 0);
 					}
+					
 					setCharPenaltyExpiryTime(clanData.getLong("char_penalty_expiry_time"));
 					if ((_charPenaltyExpiryTime + (Config.ALT_CLAN_JOIN_DAYS * 86400000)) < System.currentTimeMillis()) // 24*60*60*1000 = 86400000
 					{
 						setCharPenaltyExpiryTime(0);
 					}
+					
 					setDissolvingExpiryTime(clanData.getLong("dissolving_expiry_time"));
 					
 					setCrestId(clanData.getInt("crest_id"));
@@ -1057,6 +1072,7 @@ public class Clan
 			{
 				ps.setString(3, "false");
 			}
+			
 			ps.setString(4, notice);
 			if (enabled)
 			{
@@ -1066,6 +1082,7 @@ public class Clan
 			{
 				ps.setString(5, "false");
 			}
+			
 			ps.execute();
 		}
 		catch (Exception e)
@@ -1307,8 +1324,10 @@ public class Clan
 				while (rset.next())
 				{
 					final int rank = rset.getInt("rank");
+					
 					// int party = rset.getInt("party");
 					final int privileges = rset.getInt("privs");
+					
 					// Create a SubPledge object for each record
 					if (rank == -1)
 					{
@@ -1367,6 +1386,7 @@ public class Clan
 					cm.getPlayer().updateUserInfo();
 				}
 			}
+			
 			broadcastClanStatus();
 		}
 		else
@@ -1393,9 +1413,9 @@ public class Clan
 	/**
 	 * @return all RankPrivs.
 	 */
-	public RankPrivs[] getAllRankPrivs()
+	public Collection<RankPrivs> getAllRankPrivs()
 	{
-		return _privs.values().toArray(new RankPrivs[_privs.values().size()]);
+		return _privs.values();
 	}
 	
 	public synchronized void setRank(int rank)
@@ -1444,26 +1464,31 @@ public class Clan
 		{
 			return false;
 		}
+		
 		if (!player.hasAccess(ClanAccess.INVITE_MEMBER))
 		{
 			player.sendPacket(SystemMessageId.YOU_ARE_NOT_AUTHORIZED_TO_DO_THAT);
 			return false;
 		}
+		
 		if (target == null)
 		{
 			player.sendPacket(SystemMessageId.WRONG_TARGET_HAS_BEEN_INVITED);
 			return false;
 		}
+		
 		if (player.getObjectId() == target.getObjectId())
 		{
 			player.sendPacket(SystemMessageId.YOU_CANNOT_ASK_YOURSELF_TO_APPLY_TO_A_CLAN);
 			return false;
 		}
+		
 		if (_charPenaltyExpiryTime > System.currentTimeMillis())
 		{
 			player.sendPacket(SystemMessageId.A_NEW_MEMBER_CANNOT_JOIN_WITHIN_5_DAYS_OF_A_CLAN_MEMBER_S_EXPULSION);
 			return false;
 		}
+		
 		if (target.getClanId() != 0)
 		{
 			final SystemMessage sm = new SystemMessage(SystemMessageId.S1_IS_WORKING_WITH_ANOTHER_CLAN);
@@ -1471,6 +1496,7 @@ public class Clan
 			player.sendPacket(sm);
 			return false;
 		}
+		
 		if (target.getClanJoinExpiryTime() > System.currentTimeMillis())
 		{
 			final SystemMessage sm = new SystemMessage(SystemMessageId.S1_CANNOT_JOIN_THE_CLAN_BECAUSE_FIVE_DAYS_HAVE_NOT_YET_PASSED_SINCE_HE_SHE_LEFT_ANOTHER_CLAN);
@@ -1478,6 +1504,7 @@ public class Clan
 			player.sendPacket(sm);
 			return false;
 		}
+		
 		if (getSubPledgeMembersCount(pledgeType) >= getMaxNrOfMembers(pledgeType))
 		{
 			if (pledgeType == 0)
@@ -1488,8 +1515,10 @@ public class Clan
 			{
 				player.sendPacket(SystemMessageId.THE_CLAN_IS_FULL_AND_CANNOT_ACCEPT_NEW_MEMBERS);
 			}
+			
 			return false;
 		}
+		
 		return true;
 	}
 	
@@ -1504,32 +1533,38 @@ public class Clan
 		{
 			return false;
 		}
+		
 		if ((player.getAllyId() == 0) || !player.isClanLeader() || (player.getClanId() != player.getAllyId()))
 		{
 			player.sendPacket(SystemMessageId.FEATURE_AVAILABLE_TO_ALLIANCE_LEADERS_ONLY);
 			return false;
 		}
+		
 		final Clan leaderClan = player.getClan();
 		if ((leaderClan.getAllyPenaltyExpiryTime() > System.currentTimeMillis()) && (leaderClan.getAllyPenaltyType() == PENALTY_TYPE_DISMISS_CLAN))
 		{
 			player.sendPacket(SystemMessageId.YOU_MAY_NOT_ACCEPT_ANY_CLAN_WITHIN_A_DAY_AFTER_EXPELLING_ANOTHER_CLAN);
 			return false;
 		}
+		
 		if (target == null)
 		{
 			player.sendPacket(SystemMessageId.WRONG_TARGET_HAS_BEEN_INVITED);
 			return false;
 		}
+		
 		if (player.getObjectId() == target.getObjectId())
 		{
 			player.sendPacket(SystemMessageId.YOU_CANNOT_ASK_YOURSELF_TO_APPLY_TO_A_CLAN);
 			return false;
 		}
+		
 		if (target.getClan() == null)
 		{
 			player.sendPacket(SystemMessageId.THE_TARGET_MUST_BE_A_CLAN_MEMBER);
 			return false;
 		}
+		
 		if (!target.isClanLeader())
 		{
 			final SystemMessage sm = new SystemMessage(SystemMessageId.S1_IS_NOT_A_CLAN_LEADER);
@@ -1537,6 +1572,7 @@ public class Clan
 			player.sendPacket(sm);
 			return false;
 		}
+		
 		final Clan targetClan = target.getClan();
 		if (target.getAllyId() != 0)
 		{
@@ -1546,6 +1582,7 @@ public class Clan
 			player.sendPacket(sm);
 			return false;
 		}
+		
 		if (targetClan.getAllyPenaltyExpiryTime() > System.currentTimeMillis())
 		{
 			if (targetClan.getAllyPenaltyType() == PENALTY_TYPE_CLAN_LEAVED)
@@ -1556,17 +1593,20 @@ public class Clan
 				player.sendPacket(sm);
 				return false;
 			}
+			
 			if (targetClan.getAllyPenaltyType() == PENALTY_TYPE_CLAN_DISMISSED)
 			{
 				player.sendPacket(SystemMessageId.A_CLAN_THAT_HAS_WITHDRAWN_OR_BEEN_EXPELLED_CANNOT_ENTER_INTO_AN_ALLIANCE_WITHIN_ONE_DAY_OF_WITHDRAWAL_OR_EXPULSION);
 				return false;
 			}
 		}
+		
 		if (player.isInsideZone(ZoneId.SIEGE) && target.isInsideZone(ZoneId.SIEGE))
 		{
 			player.sendPacket(SystemMessageId.THE_OPPOSING_CLAN_IS_PARTICIPATING_IN_A_SIEGE_BATTLE);
 			return false;
 		}
+		
 		if (leaderClan.isAtWarWith(targetClan.getId()))
 		{
 			player.sendPacket(SystemMessageId.YOU_MAY_NOT_ALLY_WITH_A_CLAN_YOU_ARE_AT_BATTLE_WITH);
@@ -1630,36 +1670,43 @@ public class Clan
 			player.sendPacket(SystemMessageId.ONLY_CLAN_LEADERS_MAY_CREATE_ALLIANCES);
 			return;
 		}
+		
 		if (_allyId != 0)
 		{
 			player.sendPacket(SystemMessageId.YOU_HAVE_ALREADY_JOINED_AN_ALLIANCE);
 			return;
 		}
+		
 		if (_level < 5)
 		{
 			player.sendPacket(SystemMessageId.TO_CREATE_AN_ALLIANCE_YOUR_CLAN_MUST_BE_LEVEL_5_OR_HIGHER);
 			return;
 		}
+		
 		if ((_allyPenaltyExpiryTime > System.currentTimeMillis()) && (_allyPenaltyType == PENALTY_TYPE_DISSOLVE_ALLY))
 		{
 			player.sendPacket(SystemMessageId.YOU_CANNOT_CREATE_A_NEW_ALLIANCE_WITHIN_10_DAYS_AFTER_DISSOLUTION);
 			return;
 		}
+		
 		if (_dissolvingExpiryTime > System.currentTimeMillis())
 		{
 			player.sendPacket(SystemMessageId.YOU_CANNOT_CREATE_AN_ALLIANCE_DURING_THE_TERM_OF_DISSOLUTION_POSTPONEMENT);
 			return;
 		}
+		
 		if (!StringUtil.isAlphaNumeric(allyName))
 		{
 			player.sendPacket(SystemMessageId.INCORRECT_ALLIANCE_NAME);
 			return;
 		}
+		
 		if ((allyName.length() > 16) || (allyName.length() < 2))
 		{
 			player.sendPacket(SystemMessageId.INCORRECT_LENGTH_FOR_AN_ALLIANCE_NAME);
 			return;
 		}
+		
 		if (ClanTable.getInstance().isAllyExists(allyName))
 		{
 			player.sendPacket(SystemMessageId.THE_FOLLOWING_ALLIANCE_ALREADY_EXISTS);
@@ -1684,11 +1731,13 @@ public class Clan
 			player.sendPacket(SystemMessageId.NO_CURRENT_ALLIANCES);
 			return;
 		}
+		
 		if (!player.isClanLeader() || (_clanId != _allyId))
 		{
 			player.sendPacket(SystemMessageId.FEATURE_AVAILABLE_TO_ALLIANCE_LEADERS_ONLY);
 			return;
 		}
+		
 		if (player.isInsideZone(ZoneId.SIEGE))
 		{
 			player.sendPacket(SystemMessageId.YOU_CANNOT_DISSOLVE_AN_ALLIANCE_WHILE_AN_AFFILIATED_CLAN_IS_PARTICIPATING_IN_A_SIEGE_BATTLE);
@@ -1723,6 +1772,7 @@ public class Clan
 			player.sendPacket(SystemMessageId.YOU_ARE_NOT_AUTHORIZED_TO_DO_THAT);
 			return false;
 		}
+		
 		if (System.currentTimeMillis() < _dissolvingExpiryTime)
 		{
 			player.sendPacket(SystemMessageId.YOU_CANNOT_RAISE_YOUR_CLAN_LEVEL_DURING_THE_TERM_OF_DISPERSION_POSTPONEMENT);
@@ -1918,6 +1968,7 @@ public class Clan
 			{
 				CrestTable.getInstance().removeCrest(getAllyCrestId());
 			}
+			
 			sqlStatement = "UPDATE clan_data SET ally_crest_id = ? WHERE ally_id = ?";
 			allyId = _allyId;
 		}

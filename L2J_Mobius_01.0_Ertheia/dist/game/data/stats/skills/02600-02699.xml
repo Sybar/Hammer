@@ -2145,12 +2145,12 @@
 		<reuseDelay>14400000</reuseDelay>
 		<specialLevel>-2</specialLevel>
 		<staticReuse>true</staticReuse>
-		<cond msgId="2955">
+		<conditions msgId="2955">
 			<and>
 				<player siegeZone="147" />
 				<player siegeSide="81" />
 			</and>
-		</cond>
+		</conditions>
 		<conditions>
 			<condition name="CanTransform">
 				<transformId>10</transformId>
@@ -2184,12 +2184,12 @@
 		<reuseDelay>14400000</reuseDelay>
 		<specialLevel>-2</specialLevel>
 		<staticReuse>true</staticReuse>
-		<cond msgId="2955">
+		<conditions msgId="2955">
 			<and>
 				<player siegeZone="147" />
 				<player siegeSide="81" />
 			</and>
-		</cond>
+		</conditions>
 		<conditions>
 			<condition name="CanTransform">
 				<transformId>11</transformId>
@@ -2223,12 +2223,12 @@
 		<reuseDelay>14400000</reuseDelay>
 		<specialLevel>-2</specialLevel>
 		<staticReuse>true</staticReuse>
-		<cond msgId="2955">
+		<conditions msgId="2955">
 			<and>
 				<player siegeZone="147" />
 				<player siegeSide="81" />
 			</and>
-		</cond>
+		</conditions>
 		<conditions>
 			<condition name="CanTransform">
 				<transformId>12</transformId>
@@ -2262,12 +2262,12 @@
 		<reuseDelay>14400000</reuseDelay>
 		<specialLevel>-2</specialLevel>
 		<staticReuse>true</staticReuse>
-		<cond msgId="2955">
+		<conditions msgId="2955">
 			<and>
 				<player siegeZone="147" />
 				<player siegeSide="81" />
 			</and>
-		</cond>
+		</conditions>
 		<conditions>
 			<condition name="CanTransform">
 				<transformId>13</transformId>
@@ -2301,12 +2301,12 @@
 		<reuseDelay>14400000</reuseDelay>
 		<specialLevel>-2</specialLevel>
 		<staticReuse>true</staticReuse>
-		<cond msgId="2955">
+		<conditions msgId="2955">
 			<and>
 				<player siegeZone="147" />
 				<player siegeSide="81" />
 			</and>
-		</cond>
+		</conditions>
 		<conditions>
 			<condition name="CanTransform">
 				<transformId>14</transformId>
@@ -2340,12 +2340,12 @@
 		<reuseDelay>14400000</reuseDelay>
 		<specialLevel>-2</specialLevel>
 		<staticReuse>true</staticReuse>
-		<cond msgId="2955">
+		<conditions msgId="2955">
 			<and>
 				<player siegeZone="147" />
 				<player siegeSide="81" />
 			</and>
-		</cond>
+		</conditions>
 		<conditions>
 			<condition name="CanTransform">
 				<transformId>15</transformId>
@@ -2379,12 +2379,12 @@
 		<reuseDelay>14400000</reuseDelay>
 		<specialLevel>-2</specialLevel>
 		<staticReuse>true</staticReuse>
-		<cond msgId="2955">
+		<conditions msgId="2955">
 			<and>
 				<player siegeZone="147" />
 				<player siegeSide="81" />
 			</and>
-		</cond>
+		</conditions>
 		<conditions>
 			<condition name="CanTransform">
 				<transformId>16</transformId>
@@ -2418,12 +2418,12 @@
 		<reuseDelay>14400000</reuseDelay>
 		<specialLevel>-2</specialLevel>
 		<staticReuse>true</staticReuse>
-		<cond msgId="2955">
+		<conditions msgId="2955">
 			<and>
 				<player siegeZone="147" />
 				<player siegeSide="81" />
 			</and>
-		</cond>
+		</conditions>
 		<conditions>
 			<condition name="CanTransform">
 				<transformId>17</transformId>
@@ -2457,12 +2457,12 @@
 		<reuseDelay>14400000</reuseDelay>
 		<specialLevel>-2</specialLevel>
 		<staticReuse>true</staticReuse>
-		<cond msgId="2955">
+		<conditions msgId="2955">
 			<and>
 				<player siegeZone="147" />
 				<player siegeSide="81" />
 			</and>
-		</cond>
+		</conditions>
 		<conditions>
 			<condition name="CanTransform">
 				<transformId>18</transformId>
@@ -2496,12 +2496,12 @@
 		<reuseDelay>14400000</reuseDelay>
 		<specialLevel>-2</specialLevel>
 		<staticReuse>true</staticReuse>
-		<cond msgId="2955">
+		<conditions msgId="2955">
 			<and>
 				<player siegeZone="147" />
 				<player siegeSide="81" />
 			</and>
-		</cond>
+		</conditions>
 		<conditions>
 			<condition name="CanTransform">
 				<transformId>19</transformId>
@@ -2535,12 +2535,12 @@
 		<reuseDelay>14400000</reuseDelay>
 		<specialLevel>-2</specialLevel>
 		<staticReuse>true</staticReuse>
-		<cond msgId="2955">
+		<conditions msgId="2955">
 			<and>
 				<player siegeZone="147" />
 				<player siegeSide="81" />
 			</and>
-		</cond>
+		</conditions>
 		<conditions>
 			<condition name="CanTransform">
 				<transformId>20</transformId>
@@ -2574,12 +2574,12 @@
 		<reuseDelay>14400000</reuseDelay>
 		<specialLevel>-2</specialLevel>
 		<staticReuse>true</staticReuse>
-		<cond msgId="2955">
+		<conditions msgId="2955">
 			<and>
 				<player siegeZone="147" />
 				<player siegeSide="81" />
 			</and>
-		</cond>
+		</conditions>
 		<conditions>
 			<condition name="CanTransform">
 				<transformId>21</transformId>
@@ -2613,12 +2613,12 @@
 		<reuseDelay>14400000</reuseDelay>
 		<specialLevel>-2</specialLevel>
 		<staticReuse>true</staticReuse>
-		<cond msgId="2955">
+		<conditions msgId="2955">
 			<and>
 				<player siegeZone="147" />
 				<player siegeSide="82" />
 			</and>
-		</cond>
+		</conditions>
 		<conditions>
 			<condition name="CanTransform">
 				<transformId>10</transformId>
@@ -2652,12 +2652,12 @@
 		<reuseDelay>14400000</reuseDelay>
 		<specialLevel>-2</specialLevel>
 		<staticReuse>true</staticReuse>
-		<cond msgId="2955">
+		<conditions msgId="2955">
 			<and>
 				<player siegeZone="147" />
 				<player siegeSide="82" />
 			</and>
-		</cond>
+		</conditions>
 		<conditions>
 			<condition name="CanTransform">
 				<transformId>11</transformId>
@@ -2691,12 +2691,12 @@
 		<reuseDelay>14400000</reuseDelay>
 		<specialLevel>-2</specialLevel>
 		<staticReuse>true</staticReuse>
-		<cond msgId="2955">
+		<conditions msgId="2955">
 			<and>
 				<player siegeZone="147" />
 				<player siegeSide="82" />
 			</and>
-		</cond>
+		</conditions>
 		<conditions>
 			<condition name="CanTransform">
 				<transformId>12</transformId>
@@ -2730,12 +2730,12 @@
 		<reuseDelay>14400000</reuseDelay>
 		<specialLevel>-2</specialLevel>
 		<staticReuse>true</staticReuse>
-		<cond msgId="2955">
+		<conditions msgId="2955">
 			<and>
 				<player siegeZone="147" />
 				<player siegeSide="82" />
 			</and>
-		</cond>
+		</conditions>
 		<conditions>
 			<condition name="CanTransform">
 				<transformId>13</transformId>
@@ -2769,12 +2769,12 @@
 		<reuseDelay>14400000</reuseDelay>
 		<specialLevel>-2</specialLevel>
 		<staticReuse>true</staticReuse>
-		<cond msgId="2955">
+		<conditions msgId="2955">
 			<and>
 				<player siegeZone="147" />
 				<player siegeSide="82" />
 			</and>
-		</cond>
+		</conditions>
 		<conditions>
 			<condition name="CanTransform">
 				<transformId>14</transformId>
@@ -2808,12 +2808,12 @@
 		<reuseDelay>14400000</reuseDelay>
 		<specialLevel>-2</specialLevel>
 		<staticReuse>true</staticReuse>
-		<cond msgId="2955">
+		<conditions msgId="2955">
 			<and>
 				<player siegeZone="147" />
 				<player siegeSide="82" />
 			</and>
-		</cond>
+		</conditions>
 		<conditions>
 			<condition name="CanTransform">
 				<transformId>15</transformId>
@@ -2847,12 +2847,12 @@
 		<reuseDelay>14400000</reuseDelay>
 		<specialLevel>-2</specialLevel>
 		<staticReuse>true</staticReuse>
-		<cond msgId="2955">
+		<conditions msgId="2955">
 			<and>
 				<player siegeZone="147" />
 				<player siegeSide="82" />
 			</and>
-		</cond>
+		</conditions>
 		<conditions>
 			<condition name="CanTransform">
 				<transformId>16</transformId>
@@ -2886,12 +2886,12 @@
 		<reuseDelay>14400000</reuseDelay>
 		<specialLevel>-2</specialLevel>
 		<staticReuse>true</staticReuse>
-		<cond msgId="2955">
+		<conditions msgId="2955">
 			<and>
 				<player siegeZone="147" />
 				<player siegeSide="82" />
 			</and>
-		</cond>
+		</conditions>
 		<conditions>
 			<condition name="CanTransform">
 				<transformId>17</transformId>
@@ -2925,12 +2925,12 @@
 		<reuseDelay>14400000</reuseDelay>
 		<specialLevel>-2</specialLevel>
 		<staticReuse>true</staticReuse>
-		<cond msgId="2955">
+		<conditions msgId="2955">
 			<and>
 				<player siegeZone="147" />
 				<player siegeSide="82" />
 			</and>
-		</cond>
+		</conditions>
 		<conditions>
 			<condition name="CanTransform">
 				<transformId>18</transformId>
@@ -2964,12 +2964,12 @@
 		<reuseDelay>14400000</reuseDelay>
 		<specialLevel>-2</specialLevel>
 		<staticReuse>true</staticReuse>
-		<cond msgId="2955">
+		<conditions msgId="2955">
 			<and>
 				<player siegeZone="147" />
 				<player siegeSide="82" />
 			</and>
-		</cond>
+		</conditions>
 		<conditions>
 			<condition name="CanTransform">
 				<transformId>19</transformId>
@@ -3003,12 +3003,12 @@
 		<reuseDelay>14400000</reuseDelay>
 		<specialLevel>-2</specialLevel>
 		<staticReuse>true</staticReuse>
-		<cond msgId="2955">
+		<conditions msgId="2955">
 			<and>
 				<player siegeZone="147" />
 				<player siegeSide="82" />
 			</and>
-		</cond>
+		</conditions>
 		<conditions>
 			<condition name="CanTransform">
 				<transformId>20</transformId>
@@ -3042,12 +3042,12 @@
 		<reuseDelay>14400000</reuseDelay>
 		<specialLevel>-2</specialLevel>
 		<staticReuse>true</staticReuse>
-		<cond msgId="2955">
+		<conditions msgId="2955">
 			<and>
 				<player siegeZone="147" />
 				<player siegeSide="82" />
 			</and>
-		</cond>
+		</conditions>
 		<conditions>
 			<condition name="CanTransform">
 				<transformId>21</transformId>
@@ -3081,12 +3081,12 @@
 		<reuseDelay>14400000</reuseDelay>
 		<specialLevel>-2</specialLevel>
 		<staticReuse>true</staticReuse>
-		<cond msgId="2955">
+		<conditions msgId="2955">
 			<and>
 				<player siegeZone="147" />
 				<player siegeSide="83" />
 			</and>
-		</cond>
+		</conditions>
 		<conditions>
 			<condition name="CanTransform">
 				<transformId>10</transformId>
@@ -3120,12 +3120,12 @@
 		<reuseDelay>14400000</reuseDelay>
 		<specialLevel>-2</specialLevel>
 		<staticReuse>true</staticReuse>
-		<cond msgId="2955">
+		<conditions msgId="2955">
 			<and>
 				<player siegeZone="147" />
 				<player siegeSide="83" />
 			</and>
-		</cond>
+		</conditions>
 		<conditions>
 			<condition name="CanTransform">
 				<transformId>11</transformId>
@@ -3159,12 +3159,12 @@
 		<reuseDelay>14400000</reuseDelay>
 		<specialLevel>-2</specialLevel>
 		<staticReuse>true</staticReuse>
-		<cond msgId="2955">
+		<conditions msgId="2955">
 			<and>
 				<player siegeZone="147" />
 				<player siegeSide="83" />
 			</and>
-		</cond>
+		</conditions>
 		<conditions>
 			<condition name="CanTransform">
 				<transformId>12</transformId>
@@ -3198,12 +3198,12 @@
 		<reuseDelay>14400000</reuseDelay>
 		<specialLevel>-2</specialLevel>
 		<staticReuse>true</staticReuse>
-		<cond msgId="2955">
+		<conditions msgId="2955">
 			<and>
 				<player siegeZone="147" />
 				<player siegeSide="83" />
 			</and>
-		</cond>
+		</conditions>
 		<conditions>
 			<condition name="CanTransform">
 				<transformId>13</transformId>

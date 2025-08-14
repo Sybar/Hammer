@@ -20,6 +20,8 @@
  */
 package quests.Q00753_ReactingToACrisis;
 
+import java.util.Collection;
+
 import org.l2jmobius.gameserver.model.WorldObject;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
@@ -45,6 +47,7 @@ public class Q00753_ReactingToACrisis extends Quest
 {
 	// Npc
 	private static final int BERNA = 33796;
+	
 	// Monster's
 	private static final int GOLEM_GENERATOR = 19296;
 	private static final int BATTLE_GOLEM = 23269;
@@ -58,13 +61,16 @@ public class Q00753_ReactingToACrisis extends Quest
 		23275, // Spicula Captain
 		23276 // Cheif Scout
 	};
+	
 	// Items
 	private static final int RED_GATE_KEY = 36054;
 	private static final int VERNAS_VACCINE = 36065;
 	private static final int SCROLL = 36082;
+	
 	// Skills;
 	private static final int VACCINE = 9584;
 	private static final double DAMAGE_BY_SKILL = 0.5d; // Percent
+	
 	// Misc
 	private static final int MIN_LEVEL = 93;
 	
@@ -109,6 +115,7 @@ public class Q00753_ReactingToACrisis extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -128,6 +135,7 @@ public class Q00753_ReactingToACrisis extends Quest
 						htmltext = "33796-00.htm";
 						break;
 					}
+					
 					qs.setState(State.CREATED);
 					// fallthrough
 				}
@@ -150,11 +158,12 @@ public class Q00753_ReactingToACrisis extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
 	@Override
-	public void onSkillSee(Npc npc, Player player, Skill skill, WorldObject[] targets, boolean isSummon)
+	public void onSkillSee(Npc npc, Player player, Skill skill, Collection<WorldObject> targets, boolean isSummon)
 	{
 		if (!npc.isDead() && (player.getTarget() == npc) && (skill.getId() == VACCINE))
 		{
@@ -171,11 +180,13 @@ public class Q00753_ReactingToACrisis extends Quest
 		{
 			qs.setMemoState(1);
 		}
+		
 		if (((npc.getId() == 23275) || (npc.getId() == 23276) || (npc.getId() == 23274)) && (getRandom(100) < 10))
 		{
 			addSpawn(GOLEM_GENERATOR, npc.getX() + 30, npc.getY() + 30, npc.getZ(), 0, false, 60000);
 			showOnScreenMsg(killer, NpcStringId.THE_GOLEM_GENERATOR_HAS_APPEARED, ExShowScreenMessage.TOP_CENTER, 6000);
 		}
+		
 		if ((qs != null) && qs.isCond(1) && (npc.getId() == GOLEM_GENERATOR))
 		{
 			int kills = qs.getInt(Integer.toString(GOLEM_GENERATOR));
@@ -184,6 +195,7 @@ public class Q00753_ReactingToACrisis extends Quest
 				kills++;
 				qs.set(Integer.toString(GOLEM_GENERATOR), kills);
 			}
+			
 			final ExQuestNpcLogList log = new ExQuestNpcLogList(getId());
 			log.addNpcString(NpcStringId.USE_VACCINE_ON_GOLEM_GENERATOR, kills);
 			killer.sendPacket(log);
@@ -193,6 +205,7 @@ public class Q00753_ReactingToACrisis extends Quest
 				addAttackPlayerDesire(mob, killer);
 			}
 		}
+		
 		if ((qs != null) && (qs.getInt(Integer.toString(GOLEM_GENERATOR)) >= 5) && (qs.isMemoState(1)))
 		{
 			takeItems(killer, VERNAS_VACCINE, -1);

@@ -32,6 +32,7 @@ public class Apprentice extends AbstractNpcAI
 {
 	// NPCs
 	private static final int APPRENTICE = 33124;
+	
 	// Skill
 	private static final SkillHolder KUKURU = new SkillHolder(9204, 1); // Kukuru
 	
@@ -61,6 +62,7 @@ public class Apprentice extends AbstractNpcAI
 		{
 			npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.TRY_RIDING_A_KUKURI, 1000);
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	

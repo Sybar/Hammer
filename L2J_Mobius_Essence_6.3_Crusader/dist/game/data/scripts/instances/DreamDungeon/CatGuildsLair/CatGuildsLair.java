@@ -179,9 +179,11 @@ public class CatGuildsLair extends AbstractInstance
 	private void spawnBoss(Instance instance)
 	{
 		final boolean random = Rnd.nextBoolean();
+		
 		// show text
 		final NpcStringId bossText = random ? STRING_ID_04 : STRING_ID_05;
 		sendScreenMessage(instance, bossText);
+		
 		// spawn boss
 		final String bossTemplate = random ? "catLair_Boss_FelineKing" : "catLair_Boss_FelineQueen";
 		spawnNpcFromGroup(instance, bossTemplate);
@@ -211,12 +213,14 @@ public class CatGuildsLair extends AbstractInstance
 				selectedMonsters.add(monster);
 				monsterNpc1.remove(monster);
 			}
+			
 			for (int index = 0; index < 2; index++)
 			{
 				final Npc monster = monsterNpc2.stream().findAny().orElse(null);
 				selectedMonsters.add(monster);
 				monsterNpc2.remove(monster);
 			}
+			
 			for (int index = 0; index < 2; index++)
 			{
 				final Npc monster = monsterNpc4.stream().findAny().orElse(null);
@@ -224,6 +228,7 @@ public class CatGuildsLair extends AbstractInstance
 				monsterNpc4.remove(monster);
 			}
 		}
+		
 		for (Npc monster : selectedMonsters)
 		{
 			monster.setTitleString(DREAM_WATCHER);
@@ -241,6 +246,7 @@ public class CatGuildsLair extends AbstractInstance
 				newList.add(monster);
 			}
 		}
+		
 		return newList;
 	}
 	

@@ -49,6 +49,7 @@ public class GuardSoldier extends AbstractNpcAI
 		{
 			npc.broadcastSocialAction(2);
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	

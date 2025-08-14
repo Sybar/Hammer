@@ -39,6 +39,7 @@ public class Q00783_VestigeOfTheMagicPower extends Quest
 {
 	// NPC's
 	private static final int LEONA_BLACKBIRD = 31595;
+	
 	// Monster's
 	private static final int[] MONSTERS =
 	{
@@ -53,6 +54,7 @@ public class Q00783_VestigeOfTheMagicPower extends Quest
 		23398, // Koraza
 		23399 // Bend Beetle
 	};
+	
 	// Misc
 	private static final int MIN_LEVEL = 99;
 	private static final int HIGH_GRADE_FRAGMENT_OF_CHAOS = 46557;
@@ -79,6 +81,7 @@ public class Q00783_VestigeOfTheMagicPower extends Quest
 		{
 			return getNoQuestMsg(player);
 		}
+		
 		switch (event)
 		{
 			case "31595-02.htm":
@@ -137,6 +140,7 @@ public class Q00783_VestigeOfTheMagicPower extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -168,6 +172,7 @@ public class Q00783_VestigeOfTheMagicPower extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	

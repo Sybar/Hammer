@@ -121,6 +121,7 @@ public class PrivateStoreHistoryManager
 					uniqueItemIds.put(itemId, 0);
 				}
 			}
+			
 			tempList.sort(new SortByDate());
 			
 			final List<ItemHistoryTransaction> finalList = new ArrayList<>();
@@ -133,8 +134,10 @@ public class PrivateStoreHistoryManager
 					uniqueItemIds.put(itemId, uniqueItemIds.get(itemId) + 1);
 				}
 			}
+			
 			return finalList;
 		}
+		
 		return _items;
 	}
 	

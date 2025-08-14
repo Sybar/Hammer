@@ -21,6 +21,7 @@
 package quests.Q00350_EnhanceYourWeapon;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -63,6 +64,7 @@ public class Q00350_EnhanceYourWeapon extends Quest
 		30856,
 		30194
 	};
+	
 	// Items
 	private static final int RED_SOUL_CRYSTAL0_ID = 4629;
 	private static final int GREEN_SOUL_CRYSTAL0_ID = 4640;
@@ -129,7 +131,7 @@ public class Q00350_EnhanceYourWeapon extends Quest
 	}
 	
 	@Override
-	public void onSkillSee(Npc npc, Player caster, Skill skill, WorldObject[] targets, boolean isSummon)
+	public void onSkillSee(Npc npc, Player caster, Skill skill, Collection<WorldObject> targets, boolean isSummon)
 	{
 		super.onSkillSee(npc, caster, skill, targets, isSummon);
 		
@@ -182,6 +184,7 @@ public class Q00350_EnhanceYourWeapon extends Quest
 		{
 			htmltext = npc.getId() + "-21.htm";
 		}
+		
 		return htmltext;
 	}
 	
@@ -194,6 +197,7 @@ public class Q00350_EnhanceYourWeapon extends Quest
 				return true;
 			}
 		}
+		
 		return false;
 	}
 	
@@ -251,8 +255,10 @@ public class Q00350_EnhanceYourWeapon extends Quest
 			{
 				return null;
 			}
+			
 			ret = LevelUpCrystalData.getInstance().getSoulCrystals().get(itemId);
 		}
+		
 		return ret;
 	}
 	
@@ -265,6 +271,7 @@ public class Q00350_EnhanceYourWeapon extends Quest
 				return true;
 			}
 		}
+		
 		return false;
 	}
 	

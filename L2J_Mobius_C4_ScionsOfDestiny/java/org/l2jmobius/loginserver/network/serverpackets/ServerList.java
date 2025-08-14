@@ -132,6 +132,7 @@ public class ServerList extends AbstractServerPacket
 				writeInt(bits);
 				writeByte(server._brackets ? 0x01 : 0x00);
 			}
+			
 			_listDone = true;
 		}
 		

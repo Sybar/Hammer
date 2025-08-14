@@ -83,6 +83,7 @@ public class KartiaHelperGuardian extends AbstractNpcAI
 		33629, // Eliyah's Guardian Spirit (Kartia 90)
 		33640, // Eliyah's Guardian Spirit (Kartia 95)
 	};
+	
 	// Misc
 	private static final int[] KARTIA_SOLO_INSTANCES =
 	{
@@ -126,6 +127,7 @@ public class KartiaHelperGuardian extends AbstractNpcAI
 					{
 						npc.setRunning();
 					}
+					
 					addMoveToDesire(npc, randLoc, 23);
 				}
 				else if (!npc.isInCombat() || (npc.getTarget() == null))

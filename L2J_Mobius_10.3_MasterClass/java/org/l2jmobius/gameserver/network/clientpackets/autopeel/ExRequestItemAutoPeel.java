@@ -78,6 +78,7 @@ public class ExRequestItemAutoPeel extends ClientPacket
 		{
 			return;
 		}
+		
 		request.setProcessing(true);
 		
 		final Item item = request.getItem();
@@ -101,7 +102,7 @@ public class ExRequestItemAutoPeel extends ClientPacket
 		if ((etcItem.getExtractableItems() != null) && !etcItem.getExtractableItems().isEmpty())
 		{
 			final IItemHandler handler = ItemHandler.getInstance().getHandler(item.getEtcItem());
-			if ((handler != null) && !handler.useItem(player, item, false))
+			if ((handler != null) && !handler.onItemUse(player, item, false))
 			{
 				request.setProcessing(false);
 				player.sendPacket(new ExResultItemAutoPeel(false, _totalPeelCount, _remainingPeelCount, Collections.emptyList()));

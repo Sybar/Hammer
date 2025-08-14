@@ -116,6 +116,7 @@ public class GainakSiege extends AbstractNpcAI
 				{
 					addSpawn(getRandomEntry(ASSASSIN_IDS), loc, true, 1800000);
 				}
+				
 				_isInSiege = true;
 				GAINAK_TOWN_ZONE.broadcastPacket(new OnEventTrigger(SIEGE_EFFECT, true));
 				GAINAK_TOWN_ZONE.broadcastPacket(new ExShowScreenMessage(NpcStringId.GAINAK_IN_WAR, ExShowScreenMessage.TOP_CENTER, 5000, true));
@@ -129,9 +130,11 @@ public class GainakSiege extends AbstractNpcAI
 					s.addString("Gainak is now under siege.");
 					Broadcast.toAllOnlinePlayers(s);
 				}
+				
 				ZoneManager.getInstance().getZoneById(GAINAK_TOWN_ZONE.getId(), PeaceZone.class).setEnabled(false);
 			}
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	

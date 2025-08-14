@@ -138,9 +138,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">64</stat>
 			<stat type="mAtk">32</stat>
@@ -170,9 +170,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">36</stat>
 			<stat type="mAtk">26</stat>
@@ -203,12 +203,12 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player level="81" />
 				<player categoryType="DAGGER_MASTER" />
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">304</stat>
 			<stat type="mAtk">157</stat>
@@ -266,9 +266,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="time" val="7200" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player instanceId="112" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">7</stat>
 			<stat type="mAtk">5</stat>
@@ -660,9 +660,9 @@
 		<set name="duration" val="180" />
 		<set name="time" val="21600" />
 		<set name="useSkillDisTime" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">255</stat>
 			<stat type="mAtk">132</stat>
@@ -697,9 +697,9 @@
 		<set name="duration" val="180" />
 		<set name="time" val="21600" />
 		<set name="useSkillDisTime" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">304</stat>
 			<stat type="mAtk">132</stat>
@@ -734,9 +734,9 @@
 		<set name="duration" val="180" />
 		<set name="time" val="21600" />
 		<set name="useSkillDisTime" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">356</stat>
 			<stat type="mAtk">132</stat>

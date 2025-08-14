@@ -38,12 +38,14 @@ public class Q00344_1000YearsTheEndOfLamentation extends Quest
 	private static final int ORVEN = 30857;
 	private static final int KAIEN = 30623;
 	private static final int GARVARENTZ = 30704;
+	
 	// Items
 	private static final int ARTICLE_DEAD_HERO = 4269;
 	private static final int OLD_KEY = 4270;
 	private static final int OLD_HILT = 4271;
 	private static final int OLD_TOTEM = 4272;
 	private static final int CRUCIFIX = 4273;
+	
 	// Drop chances
 	private static final Map<Integer, Integer> CHANCES = new HashMap<>();
 	static
@@ -143,6 +145,7 @@ public class Q00344_1000YearsTheEndOfLamentation extends Quest
 				{
 					giveItems(player, CRUCIFIX, 1);
 				}
+				
 				st.setCond(2, true);
 				break;
 			}
@@ -201,6 +204,7 @@ public class Q00344_1000YearsTheEndOfLamentation extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

@@ -100,6 +100,7 @@ public class RequestLuckyGamePlay extends ClientPacket
 					break;
 				}
 			}
+			
 			playCount++;
 			if ((playCount >= holder.getMinModifyRewardGame()) && (playCount <= holder.getMaxModifyRewardGame()) && !blackCat)
 			{
@@ -160,7 +161,7 @@ public class RequestLuckyGamePlay extends ClientPacket
 					sm.addPcName(player);
 					sm.addLong(r.getCount());
 					sm.addItemName(item);
-					player.broadcastPacket(sm, 1000);
+					player.broadcastPacket(sm);
 					break;
 				}
 			}

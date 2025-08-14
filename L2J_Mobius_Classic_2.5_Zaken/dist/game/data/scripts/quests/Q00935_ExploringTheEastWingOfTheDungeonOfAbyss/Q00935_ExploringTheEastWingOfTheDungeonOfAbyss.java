@@ -36,11 +36,13 @@ public class Q00935_ExploringTheEastWingOfTheDungeonOfAbyss extends Quest
 	// NPCs
 	private static final int IRIS = 31776;
 	private static final int ROSAMMY = 31777;
+	
 	// Monsters
 	public int MERTT = 21644;
 	public int DUHT = 21645;
 	public int PRIZT = 21646;
 	public int KOVART = 21647;
+	
 	// Items
 	public ItemHolder OSKZLA = new ItemHolder(90009, 1);
 	public ItemHolder POD = new ItemHolder(90136, 1);
@@ -206,6 +208,7 @@ public class Q00935_ExploringTheEastWingOfTheDungeonOfAbyss extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -219,6 +222,7 @@ public class Q00935_ExploringTheEastWingOfTheDungeonOfAbyss extends Quest
 			{
 				giveItems(killer, OSKZLA);
 			}
+			
 			if (getQuestItemsCount(killer, OSKZLA.getId()) >= 50)
 			{
 				qs.setCond(2);

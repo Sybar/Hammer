@@ -44,6 +44,7 @@ public class Q00482_RecertificationOfValue extends Quest
 	// NPCs
 	private static final int RIEYI = 33406;
 	private static final int KYUORI = 33358;
+	
 	// Monsters
 	private static final int[] TOI_MONSTERS =
 	{
@@ -85,6 +86,7 @@ public class Q00482_RecertificationOfValue extends Quest
 		23111,
 		23112
 	};
+	
 	// Buffs
 	private static final SkillHolder[] WARRIOR_BUFFS =
 	{
@@ -189,6 +191,7 @@ public class Q00482_RecertificationOfValue extends Quest
 					{
 						SkillCaster.triggerCast(npc, npc, skill.getSkill());
 					}
+					
 					if ((player.getLevel() >= 16) && (player.getLevel() <= 34))
 					{
 						SkillCaster.triggerCast(npc, npc, CUBIC.getSkill());
@@ -200,6 +203,7 @@ public class Q00482_RecertificationOfValue extends Quest
 					{
 						SkillCaster.triggerCast(npc, npc, skill.getSkill());
 					}
+					
 					if ((player.getLevel() >= 6) && (player.getLevel() <= 39))
 					{
 						SkillCaster.triggerCast(npc, npc, HASTE.getSkill());
@@ -223,6 +227,7 @@ public class Q00482_RecertificationOfValue extends Quest
 					{
 						SkillCaster.triggerCast(npc, servitors, skill.getSkill());
 					}
+					
 					if ((player.getLevel() >= 6) && (player.getLevel() <= 39))
 					{
 						SkillCaster.triggerCast(npc, servitors, HASTE.getSkill());
@@ -235,6 +240,7 @@ public class Q00482_RecertificationOfValue extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -273,6 +279,7 @@ public class Q00482_RecertificationOfValue extends Quest
 				{
 					htmltext = "oman_cuori_q0482_03.htm";
 				}
+				
 				switch (qs.getCond())
 				{
 					case 1:
@@ -301,6 +308,7 @@ public class Q00482_RecertificationOfValue extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

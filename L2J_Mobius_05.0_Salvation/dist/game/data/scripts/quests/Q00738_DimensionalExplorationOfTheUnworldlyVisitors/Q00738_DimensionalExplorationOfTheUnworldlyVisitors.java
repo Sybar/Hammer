@@ -41,6 +41,7 @@ public class Q00738_DimensionalExplorationOfTheUnworldlyVisitors extends Quest
 {
 	// NPCs
 	private static final int TARTI = 34360;
+	
 	// Monsters
 	private static final int[] MONSTERS =
 	{
@@ -57,9 +58,11 @@ public class Q00738_DimensionalExplorationOfTheUnworldlyVisitors extends Quest
 		23809, // Lost Dimensional Evil Thoughts
 		23810 // Roaming Vengeance of the Dimension
 	};
+	
 	// Items
 	private static final int DIMENSIONAL_ENERGY_FRAGMENT = 48163;
 	private static final int DIMENSIONAL_EXPLORATION_REPORT = 48164;
+	
 	// Misc
 	private static final int MIN_LEVEL = 95;
 	private static final int MAX_LEVEL = 106;
@@ -112,6 +115,7 @@ public class Q00738_DimensionalExplorationOfTheUnworldlyVisitors extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -130,6 +134,7 @@ public class Q00738_DimensionalExplorationOfTheUnworldlyVisitors extends Quest
 					htmltext = getAlreadyCompletedMsg(player, QuestType.DAILY);
 					break;
 				}
+				
 				qs.setState(State.CREATED);
 				// fallthrough
 			}
@@ -140,6 +145,7 @@ public class Q00738_DimensionalExplorationOfTheUnworldlyVisitors extends Quest
 					htmltext = "34360-08.html";
 					break;
 				}
+				
 				htmltext = "34360-01.htm";
 				break;
 			}
@@ -149,6 +155,7 @@ public class Q00738_DimensionalExplorationOfTheUnworldlyVisitors extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

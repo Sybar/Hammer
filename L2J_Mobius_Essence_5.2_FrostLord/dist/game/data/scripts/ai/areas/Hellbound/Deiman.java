@@ -41,14 +41,17 @@ public class Deiman extends AbstractNpcAI
 {
 	// NPC
 	private static final int DEIMAN = 25933;
+	
 	// Locations
 	private static final Location[] SPAWNS =
 	{
 		new Location(2149, 237500, -3326),
 		new Location(1752, 233508, -3313),
 	};
+	
 	// Zone
 	private static final ScriptZone ZONE = ZoneManager.getInstance().getZoneByName("hellboud_island1", ScriptZone.class);
+	
 	// Misc
 	private static final int ALIVE_MILLISECONDS = 3600000;
 	private static final String DEIMAN_RESPAWN_PATTERN = "0 11 * * 6";
@@ -104,6 +107,7 @@ public class Deiman extends AbstractNpcAI
 				{
 					_startTask.cancel(true);
 				}
+				
 				_startTask = ThreadPool.schedule(new ScheduleAiTask(), (getNextRespawn() - System.currentTimeMillis()));
 			}
 		}

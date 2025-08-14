@@ -123,6 +123,7 @@ public class KartiaHelperHayuk extends AbstractNpcAI
 					{
 						npc.setRunning();
 					}
+					
 					addMoveToDesire(npc, randLoc, 23);
 				}
 				else if (!npc.isInCombat() || (npc.getTarget() == null))

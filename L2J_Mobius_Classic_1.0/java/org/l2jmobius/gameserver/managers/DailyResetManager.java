@@ -41,6 +41,9 @@ import org.l2jmobius.gameserver.model.actor.holders.player.SubClassHolder;
 import org.l2jmobius.gameserver.model.actor.stat.PlayerStat;
 import org.l2jmobius.gameserver.model.clan.Clan;
 import org.l2jmobius.gameserver.model.clan.ClanMember;
+import org.l2jmobius.gameserver.model.events.EventDispatcher;
+import org.l2jmobius.gameserver.model.events.EventType;
+import org.l2jmobius.gameserver.model.events.holders.OnDailyReset;
 import org.l2jmobius.gameserver.model.item.instance.Item;
 import org.l2jmobius.gameserver.model.olympiad.Olympiad;
 import org.l2jmobius.gameserver.model.primeshop.PrimeShopGroup;
@@ -74,8 +77,16 @@ public class DailyResetManager
 		final long nextResetTime = TimeUtil.getNextTime(6, 30).getTimeInMillis();
 		final long currentTime = System.currentTimeMillis();
 		
+		// Get today's 6:30 AM timestamp.
+		final Calendar calendar = Calendar.getInstance();
+		calendar.set(Calendar.HOUR_OF_DAY, 6);
+		calendar.set(Calendar.MINUTE, 30);
+		calendar.set(Calendar.SECOND, 0);
+		calendar.set(Calendar.MILLISECOND, 0);
+		final long currentResetTime = calendar.getTimeInMillis();
+		
 		// Check if 24 hours have passed since the last daily reset.
-		if (GlobalVariablesManager.getInstance().getLong(GlobalVariablesManager.DAILY_TASK_RESET, 0) < nextResetTime)
+		if ((currentTime < currentResetTime) || (GlobalVariablesManager.getInstance().getLong(GlobalVariablesManager.DAILY_TASK_RESET, 0) > currentResetTime))
 		{
 			LOGGER.info(getClass().getSimpleName() + ": Next schedule at " + TimeUtil.getDateTimeString(nextResetTime) + ".");
 		}
@@ -119,6 +130,12 @@ public class DailyResetManager
 		resetRecommends();
 		resetTrainingCamp();
 		
+		// Trigger daily reset event.
+		if (EventDispatcher.getInstance().hasListener(EventType.ON_DAILY_RESET))
+		{
+			EventDispatcher.getInstance().notifyEvent(new OnDailyReset());
+		}
+		
 		// Store player variables.
 		for (Player player : World.getInstance().getPlayers())
 		{
@@ -155,6 +172,7 @@ public class DailyResetManager
 				clan.setNewLeader(member);
 			}
 		}
+		
 		LOGGER.info("Clan leaders have been updated.");
 	}
 	
@@ -197,6 +215,7 @@ public class DailyResetManager
 		{
 			LOGGER.log(Level.WARNING, "Error while updating vitality", e);
 		}
+		
 		LOGGER.info("Daily vitality added successfully.");
 	}
 	
@@ -234,6 +253,7 @@ public class DailyResetManager
 		{
 			LOGGER.log(Level.WARNING, "Error while updating vitality", e);
 		}
+		
 		LOGGER.info("Vitality points have been reset.");
 	}
 	
@@ -273,6 +293,7 @@ public class DailyResetManager
 				}
 			}
 		}
+		
 		// for (Player player : updates)
 		// {
 		// player.sendSkillList();
@@ -313,6 +334,7 @@ public class DailyResetManager
 					update = true;
 				}
 			}
+			
 			if (update)
 			{
 				player.sendItemList(false);
@@ -430,6 +452,7 @@ public class DailyResetManager
 				player.getAccountVariables().remove(AccountVariables.PRIME_SHOP_PRODUCT_DAILY_COUNT + holder.getBrId());
 			}
 		}
+		
 		LOGGER.info("PrimeShopData have been reset.");
 	}
 	

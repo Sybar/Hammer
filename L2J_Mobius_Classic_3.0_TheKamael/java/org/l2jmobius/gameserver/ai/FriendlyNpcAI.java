@@ -122,6 +122,7 @@ public class FriendlyNpcAI extends AttackableAI
 					{
 						newX = originalAttackTarget.getX() - newX;
 					}
+					
 					int newY = combinedCollision + Rnd.get(40);
 					if (Rnd.nextBoolean())
 					{
@@ -198,10 +199,12 @@ public class FriendlyNpcAI extends AttackableAI
 			{
 				range -= 100;
 			}
+			
 			if (range < 5)
 			{
 				range = 5;
 			}
+			
 			moveToPawn(originalAttackTarget, range);
 			return;
 		}

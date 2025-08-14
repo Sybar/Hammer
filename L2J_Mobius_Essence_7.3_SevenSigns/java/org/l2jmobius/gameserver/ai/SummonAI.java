@@ -163,7 +163,7 @@ public class SummonAI extends PlayableAI implements Runnable
 		summon.setFollowStatus(false);
 		setIntention(Intention.IDLE);
 		_startFollow = val;
-		_actor.doCast(_skill, _item, _skill.isBad(), _dontMove);
+		_actor.doCast(_skill, _item, _skill.hasNegativeEffect(), _dontMove);
 	}
 	
 	private void thinkPickUp()
@@ -313,6 +313,7 @@ public class SummonAI extends PlayableAI implements Runnable
 		}
 		
 		final Creature owner = getActor().getOwner();
+		
 		// trying to avoid if summon near owner
 		if ((owner != null) && (owner != attacker) && owner.isInsideRadius3D(_actor, 2 * AVOID_RADIUS))
 		{
@@ -396,6 +397,7 @@ public class SummonAI extends PlayableAI implements Runnable
 		{
 			_lastAttack = null;
 		}
+		
 		super.onIntentionCast(skill, target, item, forceUse, dontMove);
 	}
 	

@@ -38,12 +38,15 @@ public class Q10465_SoulFrostSword extends Quest
 {
 	// NPC
 	private static final int RUPIO = 30471;
+	
 	// Items
 	private static final ItemHolder ADENA = new ItemHolder(57, 700000);
 	private static final int PRACTICE_STORMBRINGER = 46629;
 	private static final int PRACTICE_SOUL_CRYSTAL = 46526;
+	
 	// Misc
 	private static final int MIN_LEVEL = 40;
+	
 	// Reward
 	private static final int EXP_REWARD = 336000;
 	private static final int SP_REWARD = 403;
@@ -65,6 +68,7 @@ public class Q10465_SoulFrostSword extends Quest
 		{
 			return null;
 		}
+		
 		String htmltext = null;
 		switch (event)
 		{
@@ -99,6 +103,7 @@ public class Q10465_SoulFrostSword extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -142,6 +147,7 @@ public class Q10465_SoulFrostSword extends Quest
 		{
 			htmltext = getAlreadyCompletedMsg(player);
 		}
+		
 		return htmltext;
 	}
 }

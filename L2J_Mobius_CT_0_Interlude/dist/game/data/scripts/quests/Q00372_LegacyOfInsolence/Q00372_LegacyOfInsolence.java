@@ -35,6 +35,7 @@ public class Q00372_LegacyOfInsolence extends Quest
 	private static final int HOLLY = 30839;
 	private static final int CLAUDIA = 31001;
 	private static final int DESMOND = 30855;
+	
 	// Monsters
 	private static final int[][] MONSTERS_DROPS =
 	{
@@ -43,6 +44,7 @@ public class Q00372_LegacyOfInsolence extends Quest
 		{5966, 5966, 5966, 5967, 5968, 5969}, // parchment (red, blue, black, white)
 		{300000, 400000, 460000, 400000, 250000, 250000} // rate
 	};
+	
 	// Items
 	private static final int[][] SCROLLS =
 	{
@@ -52,6 +54,7 @@ public class Q00372_LegacyOfInsolence extends Quest
 		{5972, 5978}, // Claudia -> 7x Revelation of the Seals -> Nightmare parts/Adena
 		{5972, 5978}, // Desmond -> 7x Revelation of the Seals -> Majestic parts/Adena
 	};
+	
 	// Rewards matrice.
 	private static final int[][][] REWARDS_MATRICE =
 	{

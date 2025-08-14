@@ -38,10 +38,12 @@ public class Q10364_ObligationsOfTheSeeker extends Quest
 	private static final int DEP = 33453;
 	private static final int KRAPHER = 22996;
 	private static final int AVIAN = 22994;
+	
 	// Items
 	private static final int DIRTY_PAPER_PIECES = 17578;
 	private static final int LEATHER_SHOES = 37;
 	private static final int HEALING_POTION = 1060;
+	
 	// Misc
 	private static final int MIN_LEVEL = 14;
 	private static final int MAX_LEVEL = 25;
@@ -110,6 +112,7 @@ public class Q10364_ObligationsOfTheSeeker extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -213,6 +216,7 @@ public class Q10364_ObligationsOfTheSeeker extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

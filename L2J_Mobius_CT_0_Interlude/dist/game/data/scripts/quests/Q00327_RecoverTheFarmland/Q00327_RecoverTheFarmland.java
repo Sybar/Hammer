@@ -38,6 +38,7 @@ public class Q00327_RecoverTheFarmland extends Quest
 	private static final int IRIS = 30034;
 	private static final int ASHA = 30313;
 	private static final int NESTLE = 30314;
+	
 	// Monsters
 	private static final int TUREK_ORC_WARLORD = 20495;
 	private static final int TUREK_ORC_ARCHER = 20496;
@@ -46,6 +47,7 @@ public class Q00327_RecoverTheFarmland extends Quest
 	private static final int TUREK_ORC_FOOTMAN = 20499;
 	private static final int TUREK_ORC_SENTINEL = 20500;
 	private static final int TUREK_ORC_SHAMAN = 20501;
+	
 	// Items
 	private static final int LEIKAN_LETTER = 5012;
 	private static final int TUREK_DOGTAG = 1846;
@@ -58,6 +60,7 @@ public class Q00327_RecoverTheFarmland extends Quest
 	private static final int ANCIENT_BRASS_TIARA = 1853;
 	private static final int ANCIENT_BRONZE_MIRROR = 1854;
 	private static final int ANCIENT_JADE_NECKLACE = 1855;
+	
 	// Rewards
 	private static final int ADENA = 57;
 	private static final int SOULSHOT_D = 1463;
@@ -67,6 +70,7 @@ public class Q00327_RecoverTheFarmland extends Quest
 	private static final int POTION_OF_ALACRITY = 735;
 	private static final int SCROLL_OF_ESCAPE = 736;
 	private static final int SCROLL_OF_RESURRECTION = 737;
+	
 	// Chances
 	private static final int[][] DROPLIST =
 	{
@@ -80,6 +84,7 @@ public class Q00327_RecoverTheFarmland extends Quest
 		{TUREK_ORC_WARLORD, 180000, TUREK_MEDALLION}
 		// @formatter:on
 	};
+	
 	// Exp
 	private static final Map<Integer, Integer> EXP_REWARD = new HashMap<>();
 	static
@@ -272,6 +277,7 @@ public class Q00327_RecoverTheFarmland extends Quest
 						isRewarded = true;
 					}
 				}
+				
 				if (!isRewarded)
 				{
 					htmltext = "30034-02.htm";

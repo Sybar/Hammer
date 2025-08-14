@@ -32,13 +32,16 @@ public class Q00358_IllegitimateChildOfTheGoddess extends Quest
 {
 	// NPC
 	private static final int OLTRAN = 30862;
+	
 	// Item
 	private static final int SNAKE_SCALE = 5868;
+	
 	// Misc
 	private static final int MIN_LEVEL = 63;
 	private static final int SNAKE_SCALE_COUNT = 108;
+	
 	// Rewards
-	private static final int[] REWARDS = new int[]
+	private static final int[] REWARDS =
 	{
 		4975, // Recipe: BlackOrc Neckalce
 		4973, // Recipe: BlackOrc Earring
@@ -49,6 +52,7 @@ public class Q00358_IllegitimateChildOfTheGoddess extends Quest
 		4936, // Recipe: Avadon Shield
 		4980, // Recipe: Doom Shield
 	};
+	
 	// Mobs
 	private static final Map<Integer, Double> MOBS = new HashMap<>();
 	static
@@ -92,6 +96,7 @@ public class Q00358_IllegitimateChildOfTheGoddess extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -127,6 +132,7 @@ public class Q00358_IllegitimateChildOfTheGoddess extends Quest
 				htmltext = "30862-07.html";
 			}
 		}
+		
 		return htmltext;
 	}
 }

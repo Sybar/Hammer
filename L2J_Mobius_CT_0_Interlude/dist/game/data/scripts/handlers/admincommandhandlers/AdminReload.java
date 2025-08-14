@@ -26,7 +26,6 @@ import org.l2jmobius.commons.enums.ServerMode;
 import org.l2jmobius.commons.util.StringUtil;
 import org.l2jmobius.gameserver.cache.HtmCache;
 import org.l2jmobius.gameserver.data.sql.CrestTable;
-import org.l2jmobius.gameserver.data.sql.TeleportLocationTable;
 import org.l2jmobius.gameserver.data.xml.AdminData;
 import org.l2jmobius.gameserver.data.xml.BuyListData;
 import org.l2jmobius.gameserver.data.xml.DoorData;
@@ -38,6 +37,7 @@ import org.l2jmobius.gameserver.data.xml.NpcData;
 import org.l2jmobius.gameserver.data.xml.NpcNameLocalisationData;
 import org.l2jmobius.gameserver.data.xml.SendMessageLocalisationData;
 import org.l2jmobius.gameserver.data.xml.SkillData;
+import org.l2jmobius.gameserver.data.xml.TeleporterData;
 import org.l2jmobius.gameserver.handler.IAdminCommandHandler;
 import org.l2jmobius.gameserver.managers.CursedWeaponsManager;
 import org.l2jmobius.gameserver.managers.FakePlayerChatManager;
@@ -46,7 +46,7 @@ import org.l2jmobius.gameserver.managers.WalkingManager;
 import org.l2jmobius.gameserver.managers.ZoneManager;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.network.SystemMessageId;
-import org.l2jmobius.gameserver.scripting.ScriptEngineManager;
+import org.l2jmobius.gameserver.scripting.ScriptManager;
 
 /**
  * @author NosBit
@@ -63,7 +63,7 @@ public class AdminReload implements IAdminCommandHandler
 	private static final String RELOAD_USAGE = "Usage: //reload <config|access|npc|quest [quest_id|quest_name]|walker|htm[l] [file|directory]|multisell|buylist|teleport|skill|item|door|effect|handler|enchant>";
 	
 	@Override
-	public boolean useAdminCommand(String command, Player activeChar)
+	public boolean onCommand(String command, Player activeChar)
 	{
 		final StringTokenizer st = new StringTokenizer(command, " ");
 		final String actualCommand = st.nextToken();
@@ -168,7 +168,7 @@ public class AdminReload implements IAdminCommandHandler
 				}
 				case "teleport":
 				{
-					TeleportLocationTable.getInstance().reloadAll();
+					TeleporterData.getInstance().load();
 					AdminData.getInstance().broadcastMessageToGMs(activeChar.getName() + ": Reloaded Teleports.");
 					break;
 				}
@@ -212,7 +212,7 @@ public class AdminReload implements IAdminCommandHandler
 				{
 					try
 					{
-						ScriptEngineManager.getInstance().executeScript(ScriptEngineManager.EFFECT_MASTER_HANDLER_FILE);
+						ScriptManager.getInstance().executeScript(ScriptManager.EFFECT_MASTER_HANDLER_FILE);
 						AdminData.getInstance().broadcastMessageToGMs(activeChar.getName() + ": Reloaded effect master handler.");
 					}
 					catch (Exception e)
@@ -226,7 +226,7 @@ public class AdminReload implements IAdminCommandHandler
 				{
 					try
 					{
-						ScriptEngineManager.getInstance().executeScript(ScriptEngineManager.MASTER_HANDLER_FILE);
+						ScriptManager.getInstance().executeScript(ScriptManager.MASTER_HANDLER_FILE);
 						AdminData.getInstance().broadcastMessageToGMs(activeChar.getName() + ": Reloaded master handler.");
 					}
 					catch (Exception e)
@@ -263,13 +263,15 @@ public class AdminReload implements IAdminCommandHandler
 					return true;
 				}
 			}
+			
 			activeChar.sendSysMessage("WARNING: There are several known issues regarding this feature. Reloading server data during runtime is STRONGLY NOT RECOMMENDED for live servers, just for developing environments.");
 		}
+		
 		return true;
 	}
 	
 	@Override
-	public String[] getAdminCommandList()
+	public String[] getCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}

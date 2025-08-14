@@ -19,9 +19,6 @@ package handlers.admincommandhandlers;
 import org.l2jmobius.gameserver.handler.IAdminCommandHandler;
 import org.l2jmobius.gameserver.model.actor.Player;
 
-/**
- * @author
- */
 public class AdminRide implements IAdminCommandHandler
 {
 	private static final String[] ADMIN_COMMANDS =
@@ -34,7 +31,7 @@ public class AdminRide implements IAdminCommandHandler
 	};
 	
 	@Override
-	public boolean useAdminCommand(String command, Player activeChar)
+	public boolean onCommand(String command, Player activeChar)
 	{
 		final Player player = getRideTarget(activeChar);
 		if (player == null)
@@ -72,6 +69,7 @@ public class AdminRide implements IAdminCommandHandler
 		{
 			player.dismount();
 		}
+		
 		return true;
 	}
 	
@@ -86,11 +84,12 @@ public class AdminRide implements IAdminCommandHandler
 		{
 			player = activeChar.getTarget().asPlayer();
 		}
+		
 		return player;
 	}
 	
 	@Override
-	public String[] getAdminCommandList()
+	public String[] getCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}

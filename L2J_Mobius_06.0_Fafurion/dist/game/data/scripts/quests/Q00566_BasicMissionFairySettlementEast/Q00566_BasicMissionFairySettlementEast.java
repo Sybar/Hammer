@@ -42,15 +42,18 @@ public class Q00566_BasicMissionFairySettlementEast extends Quest
 	private static final int ELISA = 30848;
 	private static final int RADA = 33100;
 	private static final int DE_VILLAGE_TELEPORT_DEVICE = 30134;
+	
 	// Rewards
 	private static final long EXP = 793414440;
 	private static final int SP = 793410;
 	private static final int FP = 250; // Faction points
 	private static final int SCROLL_OF_ESCAPE_FAIRY_COLONY = 39498;
 	private static final int SCROLL_OF_ESCAPE_TOWN_OF_ADEN = 48413;
+	
 	// Misc
 	private static final int MIN_LEVEL = 90;
 	private static final int MAX_LEVEL = 94;
+	
 	// Location
 	private static final Location TOWN_OF_ADEN = new Location(146632, 26760, -2213);
 	
@@ -152,6 +155,7 @@ public class Q00566_BasicMissionFairySettlementEast extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -252,6 +256,7 @@ public class Q00566_BasicMissionFairySettlementEast extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -265,12 +270,14 @@ public class Q00566_BasicMissionFairySettlementEast extends Quest
 			index = 0;
 			string.setCharAt(index, ch);
 		}
+		
 		final QuestState st2 = player.getQuestState("Q00586_MutatedCreatures");
 		if ((st2 != null) && st2.isCompleted())
 		{
 			index = 1;
 			string.setCharAt(index, ch);
 		}
+		
 		return string;
 	}
 }

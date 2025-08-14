@@ -63,6 +63,7 @@ public class NewbieHelper extends AbstractNpcAI
 				}
 			}
 		}
+		
 		npc.showChatWindow(player);
 		return null;
 	}

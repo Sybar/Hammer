@@ -38,6 +38,7 @@ public class Q00844_GiantsTreasure extends Quest
 {
 	// NPCs
 	private static final int KRENAHT = 34237;
+	
 	// Monsters
 	private static final int[] MONSTERS =
 	{
@@ -46,10 +47,13 @@ public class Q00844_GiantsTreasure extends Quest
 		23732, // Om Kshana
 		23751 // Om Lucas
 	};
+	
 	// Misc
 	private static final int MIN_LEVEL = 100;
+	
 	// Items
 	private static final int OLD_BOX = 47212; // Quest item: Old Box
+	
 	// Reward
 	private static final int GIANT_TRACKERS_BASIC_SUPPLY_BOX = 47359;
 	private static final int GIANT_TRACKERS_INTERMEDIATE_SUPPLY_BOX = 47360;
@@ -96,6 +100,7 @@ public class Q00844_GiantsTreasure extends Quest
 					htmltext = "34237-04a.htm";
 					break;
 				}
+				
 				htmltext = "34237-04.htm";
 				break;
 			}
@@ -106,6 +111,7 @@ public class Q00844_GiantsTreasure extends Quest
 					htmltext = "34237-04a.htm";
 					break;
 				}
+				
 				htmltext = "34237-04.htm";
 				break;
 			}
@@ -142,6 +148,7 @@ public class Q00844_GiantsTreasure extends Quest
 							{
 								giveItems(player, GIANT_TRACKERS_BASIC_SUPPLY_BOX, 1);
 							}
+							
 							addExpAndSp(player, 5_932_440_000L, 14_237_820);
 							addFactionPoints(player, Faction.GIANT_TRACKERS, 100);
 							qs.exitQuest(QuestType.DAILY, true);
@@ -169,6 +176,7 @@ public class Q00844_GiantsTreasure extends Quest
 							{
 								giveItems(player, GIANT_TRACKERS_INTERMEDIATE_SUPPLY_BOX, 1);
 							}
+							
 							addExpAndSp(player, 11_864_880_000L, 28_475_640);
 							addFactionPoints(player, Faction.GIANT_TRACKERS, 200);
 							qs.exitQuest(QuestType.DAILY, true);
@@ -184,6 +192,7 @@ public class Q00844_GiantsTreasure extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -210,6 +219,7 @@ public class Q00844_GiantsTreasure extends Quest
 							htmltext = "34237-04a.htm";
 							break;
 						}
+						
 						htmltext = "34237-04.htm";
 						break;
 					}
@@ -246,6 +256,7 @@ public class Q00844_GiantsTreasure extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

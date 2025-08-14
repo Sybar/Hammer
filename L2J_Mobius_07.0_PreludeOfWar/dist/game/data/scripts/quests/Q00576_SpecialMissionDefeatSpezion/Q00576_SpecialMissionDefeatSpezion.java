@@ -37,10 +37,13 @@ public class Q00576_SpecialMissionDefeatSpezion extends Quest
 {
 	// NPC
 	private static final int PENNY = 34413;
+	
 	// Monster
 	private static final int SPEZION = 25779;
+	
 	// Reward
 	private static final int SCROLL_OF_ESCAPE_PRISON_OF_DARKNESS = 39500;
+	
 	// Misc
 	private static final int MIN_LEVEL = 90;
 	private static final int MAX_LEVEL = 94;
@@ -64,6 +67,7 @@ public class Q00576_SpecialMissionDefeatSpezion extends Quest
 		{
 			return htmltext;
 		}
+		
 		switch (event)
 		{
 			case "34413-02.htm":
@@ -89,6 +93,7 @@ public class Q00576_SpecialMissionDefeatSpezion extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -115,6 +120,7 @@ public class Q00576_SpecialMissionDefeatSpezion extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

@@ -62,6 +62,7 @@ public class Q11025_PathOfDestinyProving extends Quest
 	private static final int KALLESIN = 33177;
 	private static final int ZENATH = 33509;
 	private static final int MYSTERIOUS_WIZARD = 1033980;
+	
 	// Monsters
 	private static final int VAMPIRE = 24385;
 	private static final int CARCASS_BAT = 24384;
@@ -72,10 +73,12 @@ public class Q11025_PathOfDestinyProving extends Quest
 	private static final int RAGING_SPARTOI = 24390;
 	private static final int SKELETON_WARRIOR_2 = 27528;
 	private static final int SKELETON_SCOUT_2 = 27529;
+	
 	// Quest Item
 	private static final int WIND_SPIRIT_REALM_RELIC = 39535;
 	private static final int SECRET_MATERIAL = 80671;
 	private static final int BREATH_OF_DEATH = 80672;
+	
 	// Class change rewards
 	private static final int SS_R = 33780;
 	private static final int BSS_R = 33794;
@@ -98,12 +101,14 @@ public class Q11025_PathOfDestinyProving extends Quest
 	private static final int WEAPON_SIGIL_R = 47037;
 	private static final int ORICHALCUM_BOLT_R = 19443;
 	private static final int ORICHALCUM_ARROW_R = 18550;
+	
 	// Locations
 	private static final Location TRAINING_GROUNDS_TELEPORT1 = new Location(-43688, 117592, -3560);
 	private static final Location TRAINING_GROUNDS_TELEPORT2 = new Location(-46450, 110273, -3808);
 	private static final Location TRAINING_GROUNDS_TELEPORT3 = new Location(-51637, 108721, -3720);
 	private static final Location TRAINING_GROUNDS_TELEPORT4 = new Location(-4983, 116607, -3344);
 	private static final Location TRAINING_GROUNDS_TELEPORT5 = new Location(-12877, 121710, -2960);
+	
 	// Misc
 	private static final String R_GRADE_ITEMS_REWARDED_VAR = "R_GRADE_ITEMS_REWARDED";
 	private static final String KILL_COUNT_VAR = "KillCount";
@@ -123,6 +128,7 @@ public class Q11025_PathOfDestinyProving extends Quest
 		addTalkId(TARTI, RAYMOND, TELESHA, MYSTERIOUS_WIZARD, KALLESIN, ZENATH);
 		addKillId(VAMPIRE, CARCASS_BAT, SKELETON_SCOUT, SKELETON_ARCHER, SKELETON_WARRIOR, SPARTOI_SOLDIER, RAGING_SPARTOI, SKELETON_WARRIOR_2, SKELETON_SCOUT_2);
 		registerQuestItems(WIND_SPIRIT_REALM_RELIC, SECRET_MATERIAL, BREATH_OF_DEATH);
+		
 		// addCondMinLevel(LEVEL_20, "34505-16.html");
 		addCondCompletedQuest(Q11024_PathOfDestinyBeginning.class.getSimpleName(), "34505-16.html");
 		setQuestNameNpcStringId(NpcStringId.LV_20_PATH_OF_DESTINY_PROVING);
@@ -184,6 +190,7 @@ public class Q11025_PathOfDestinyProving extends Quest
 						player.getVariables().set(REWARD_CHECK_VAR1, true);
 						addExpAndSp(player, 1640083, 1476);
 					}
+					
 					htmltext = event;
 				}
 				break;
@@ -209,6 +216,7 @@ public class Q11025_PathOfDestinyProving extends Quest
 						player.getVariables().set(REWARD_CHECK_VAR2, true);
 						addExpAndSp(player, 913551, 822);
 					}
+					
 					htmltext = event;
 				}
 				break;
@@ -241,8 +249,10 @@ public class Q11025_PathOfDestinyProving extends Quest
 						{
 							addExpAndSp(player, 4952686, 4457);
 						}
+						
 						giveAdena(player, 165000, true);
 					}
+					
 					htmltext = event;
 					showOnScreenMsg(player, NpcStringId.SECOND_CLASS_TRANSFER_IS_AVAILABLE_NGO_SEE_TARTI_IN_THE_TOWN_OF_GLUDIO_TO_START_THE_CLASS_TRANSFER, ExShowScreenMessage.TOP_CENTER, 10000);
 				}
@@ -258,6 +268,7 @@ public class Q11025_PathOfDestinyProving extends Quest
 						htmltext = event;
 						break;
 					}
+					
 					qs.setCond(10, true);
 					htmltext = event;
 				}
@@ -293,6 +304,7 @@ public class Q11025_PathOfDestinyProving extends Quest
 						showOnScreenMsg(player, NpcStringId.CLASS_TRANSFER_IS_AVAILABLE_NCLICK_THE_CLASS_TRANSFER_ICON_IN_THE_NOTIFICATION_WINDOW_TO_TRANSFER_YOUR_CLASS, ExShowScreenMessage.TOP_CENTER, 10000);
 						player.sendPacket(ExClassChangeSetAlarm.STATIC_PACKET);
 					}
+					
 					htmltext = event;
 				}
 				break;
@@ -352,6 +364,7 @@ public class Q11025_PathOfDestinyProving extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -499,6 +512,7 @@ public class Q11025_PathOfDestinyProving extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -510,6 +524,7 @@ public class Q11025_PathOfDestinyProving extends Quest
 		{
 			qs.setCond(13, true);
 		}
+		
 		return npc.getId() + "-01.html";
 	}
 	
@@ -624,6 +639,7 @@ public class Q11025_PathOfDestinyProving extends Quest
 				return holder;
 			}
 		}
+		
 		return super.getNpcLogList(player);
 	}
 	

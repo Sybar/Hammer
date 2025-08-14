@@ -135,6 +135,7 @@ public class Q00254_LegendaryTales extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -223,6 +224,7 @@ public class Q00254_LegendaryTales extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

@@ -41,6 +41,7 @@ public class Q10963_ExploringTheAntNest extends Quest
 {
 	// NPC
 	private static final int RAYMOND = 30289;
+	
 	// Monsters
 	private static final int ANT_LARVA = 20075;
 	private static final int ANT = 20079;
@@ -53,6 +54,7 @@ public class Q10963_ExploringTheAntNest extends Quest
 	private static final int ANT_WARRIOR_CAPTAIN = 20088;
 	private static final int ANT_NOBLE = 20089;
 	private static final int ANT_NOBLE_CAPTAIN = 20090;
+	
 	// Misc
 	private static final String KILL_COUNT_VAR = "KillCount";
 	private static final int MIN_LEVEL = 34;
@@ -115,6 +117,7 @@ public class Q10963_ExploringTheAntNest extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -150,6 +153,7 @@ public class Q10963_ExploringTheAntNest extends Quest
 			holder.add(new NpcLogListHolder(NpcStringId.DEFEAT_MONSTERS_IN_ANT_NEST.getId(), true, qs.getInt(KILL_COUNT_VAR)));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 	
@@ -183,6 +187,7 @@ public class Q10963_ExploringTheAntNest extends Quest
 				htmltext = getAlreadyCompletedMsg(player);
 			}
 		}
+		
 		return htmltext;
 	}
 }

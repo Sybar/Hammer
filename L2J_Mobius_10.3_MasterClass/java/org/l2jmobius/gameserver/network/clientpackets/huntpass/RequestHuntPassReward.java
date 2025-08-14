@@ -71,6 +71,7 @@ public class RequestHuntPassReward extends ClientPacket
 					sameAccountPlayers++;
 				}
 			}
+			
 			if (sameAccountPlayers > 1)
 			{
 				player.sendMessage("Hunting rewards are shared across the account and cannot be received if more than one character is online simultaneously.");
@@ -82,6 +83,7 @@ public class RequestHuntPassReward extends ClientPacket
 		{
 			return;
 		}
+		
 		player.addRequest(new RewardRequest(player));
 		
 		final HuntPass huntPass = player.getHuntPass();
@@ -118,6 +120,7 @@ public class RequestHuntPassReward extends ClientPacket
 				}
 			}
 		}
+		
 		if (reward == null)
 		{
 			player.removeRequest(RewardRequest.class);

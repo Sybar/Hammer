@@ -321,6 +321,7 @@ public class CharSelectInfoPackage
 		{
 			return _paperdoll[Inventory.PAPERDOLL_RHAND][2];
 		}
+		
 		return _paperdoll[Inventory.PAPERDOLL_RHAND][2];
 	}
 	

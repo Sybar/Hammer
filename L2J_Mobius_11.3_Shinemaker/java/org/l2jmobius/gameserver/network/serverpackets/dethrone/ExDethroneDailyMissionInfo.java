@@ -73,6 +73,7 @@ public class ExDethroneDailyMissionInfo extends ServerPacket
 			{
 				status = 2; // mission complete status
 			}
+			
 			buffer.writeInt(reward.getId()); // mission name (only can use is 1)
 			buffer.writeInt(progress); // current item count/300
 			buffer.writeByte(status); // 1 - receive, 0 - no receive

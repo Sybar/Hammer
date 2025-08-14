@@ -38,6 +38,7 @@ public class AnakimElitePriest extends AbstractNpcAI
 {
 	// Npc
 	private static final int ANAKIM_ELITE_PRIEST = 29351;
+	
 	// Skills
 	private static final SkillHolder ENERGY_SHOT = new SkillHolder(32576, 1);
 	private static final SkillHolder MAGIC_BLAST = new SkillHolder(32577, 1);
@@ -63,6 +64,7 @@ public class AnakimElitePriest extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	
@@ -91,6 +93,7 @@ public class AnakimElitePriest extends AbstractNpcAI
 			{
 				refreshAiParams(attacker, npc, ((damage / 3) * 20));
 			}
+			
 			manageSkills(npc);
 		}
 	}
@@ -116,6 +119,7 @@ public class AnakimElitePriest extends AbstractNpcAI
 				return;
 			}
 		}
+		
 		final int index = MathUtil.getIndexOfMinValue(vars.getInt("i_quest0"), vars.getInt("i_quest1"), vars.getInt("i_quest2"));
 		vars.set("i_quest" + index, newAggroVal);
 		vars.set("c_quest" + index, attacker);
@@ -143,6 +147,7 @@ public class AnakimElitePriest extends AbstractNpcAI
 				vars.set("i_quest" + i, 0);
 			}
 		}
+		
 		final int index = MathUtil.getIndexOfMaxValue(vars.getInt("i_quest0"), vars.getInt("i_quest1"), vars.getInt("i_quest2"));
 		final Creature player = vars.getObject("c_quest" + index, Creature.class);
 		final int i2 = vars.getInt("i_quest" + index);

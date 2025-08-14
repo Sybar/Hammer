@@ -2259,9 +2259,9 @@
 		<set name="material" val="LIQUID" />
 		<set name="price" val="59616" />
 		<set name="weight" val="2" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="85" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="19167" name="Life Stone: Accessory (R95-grade)" type="EtcItem">
 		<!-- A mineral formed inside a monster under immense impact. Outdated and almost no longer used. Can be exchanged for Spirit Stones through a blacksmith in any town. -->
@@ -2272,9 +2272,9 @@
 		<set name="material" val="LIQUID" />
 		<set name="price" val="119232" />
 		<set name="weight" val="2" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="95" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="19168" name="Life Stone: Accessory (R99-grade)" type="EtcItem">
 		<!-- A mineral formed inside a monster under immense impact. Outdated and almost no longer used. Can be exchanged for Spirit Stones through a blacksmith in any town. -->
@@ -2285,9 +2285,9 @@
 		<set name="material" val="LIQUID" />
 		<set name="price" val="238464" />
 		<set name="weight" val="2" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="99" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="19169" name="Unidentified Requiem Shaper Fragment" type="EtcItem">
 		<!-- Key material for making Unidentified Requiem Shaper. -->

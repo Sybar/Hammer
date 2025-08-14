@@ -47,6 +47,7 @@ public class ValakasTeleporters extends AbstractNpcAI
 		31687, // Gatekeeper of Fire Dragon : Opens doors to Heart of Volcano
 		31759, // Teleportation Cubic : Teleport out of Lair of Valakas
 	};
+	
 	// Items
 	private static final int VACUALITE_FLOATING_STONE = 7267;
 	private static final Location ENTER_HALL_OF_FLAMES = new Location(183813, -115157, -3303);
@@ -75,6 +76,7 @@ public class ValakasTeleporters extends AbstractNpcAI
 		{
 			htmltext = "31540-06.htm";
 		}
+		
 		return htmltext;
 	}
 	
@@ -175,6 +177,7 @@ public class ValakasTeleporters extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

@@ -44,12 +44,14 @@ public class Q00211_TrialOfTheChallenger extends Quest
 	private static final int MARTIAN = 30645;
 	private static final int RALDO = 30646;
 	private static final int CHEST_OF_SHYSLASSYS = 30647;
+	
 	// Monsters
 	private static final int SHYSLASSYS = 27110;
 	private static final int CAVEBASILISK = 27111;
 	private static final int GORR = 27112;
 	private static final int BARAHAM = 27113;
 	private static final int QUEEN_OF_SUCCUBUS = 27114;
+	
 	// Items
 	private static final int LETTER_OF_KASH = 2628;
 	private static final int WATCHERS_EYE1 = 2629;
@@ -67,6 +69,7 @@ public class Q00211_TrialOfTheChallenger extends Quest
 	private static final int BRIGAMDINE_GAUNTLET_PATTERN = 2927;
 	private static final int TOME_OF_BLOOD_PAGE = 2030;
 	private static final int MARK_OF_CHALLENGER = 2627;
+	
 	// Misc
 	private static final int MIN_LEVEL = 35;
 	
@@ -143,6 +146,7 @@ public class Q00211_TrialOfTheChallenger extends Quest
 						{
 							rewardItems(player, IRON_BOOTS_DESIGN, 1);
 						}
+						
 						htmltext = "30647-03.html";
 					}
 					else
@@ -178,6 +182,7 @@ public class Q00211_TrialOfTheChallenger extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -357,6 +362,7 @@ public class Q00211_TrialOfTheChallenger extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -379,6 +385,7 @@ public class Q00211_TrialOfTheChallenger extends Quest
 					{
 						addSpawn(CHEST_OF_SHYSLASSYS, npc, false, 200000);
 					}
+					
 					giveItems(killer, SCROLL_OF_SHYSLASSYS, 1);
 					giveItems(killer, BROKEN_KEY, 1);
 					qs.setCond(2, true);
@@ -402,6 +409,7 @@ public class Q00211_TrialOfTheChallenger extends Quest
 					{
 						addSpawn(RALDO, npc, false, 100000);
 					}
+					
 					giveItems(killer, WATCHERS_EYE2, 1);
 					qs.setCond(7, true);
 				}
@@ -415,6 +423,7 @@ public class Q00211_TrialOfTheChallenger extends Quest
 					{
 						addSpawn(RALDO, npc, false, 100000);
 					}
+					
 					qs.setCond(10, true);
 				}
 				break;

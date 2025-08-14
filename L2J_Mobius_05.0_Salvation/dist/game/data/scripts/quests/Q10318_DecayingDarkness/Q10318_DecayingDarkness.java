@@ -37,6 +37,7 @@ public class Q10318_DecayingDarkness extends Quest
 {
 	// NPC
 	private static final int LYDIA = 32892;
+	
 	// Summoners
 	private static final int ORBIS_VICTIM = 22911;
 	private static final int ORBIS_CURATOR = 22921;
@@ -44,6 +45,7 @@ public class Q10318_DecayingDarkness extends Quest
 	private static final int ORBIS_ANCIENT_HERO = 22924;
 	private static final int ORBIS_GUARD = 22915;
 	private static final int ORBIS_CHIEF = 22927;
+	
 	// Monsters
 	private static final int[] MONSTERS =
 	{
@@ -54,8 +56,10 @@ public class Q10318_DecayingDarkness extends Quest
 		18982, // Orbis' Ancient Hero Cursed
 		18983 // Orbis' Chief Curator Cursed
 	};
+	
 	// Item
 	private static final int CURSE_RESIDUE = 17733;
+	
 	// Misc
 	private static final int MIN_LEVEL = 95;
 	
@@ -108,6 +112,7 @@ public class Q10318_DecayingDarkness extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -146,6 +151,7 @@ public class Q10318_DecayingDarkness extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

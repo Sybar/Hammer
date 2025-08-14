@@ -58,6 +58,7 @@ public class StatBonusSkillCritical extends AbstractEffect
 				}
 			}
 		}
+		
 		_armorTypeCondition = armorTypesMask != 0 ? new ConditionUsingItemType(armorTypesMask) : null;
 	}
 	

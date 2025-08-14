@@ -695,9 +695,9 @@
 		<set name="time" val="43200" />
 		<set name="material" val="PAPER" />
 		<set name="handler" val="ItemSkills" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player chaotic="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="39370" level="1" /> <!-- Lucky Charm -->
 		</skills>
@@ -956,9 +956,9 @@
 		<set name="time" val="10080" />
 		<set name="material" val="PAPER" />
 		<set name="handler" val="ItemSkills" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player chaotic="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="51050" level="1" /> <!-- Raid Lucky Charm -->
 		</skills>

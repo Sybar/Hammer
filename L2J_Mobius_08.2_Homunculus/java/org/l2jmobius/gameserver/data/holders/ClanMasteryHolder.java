@@ -49,10 +49,12 @@ public class ClanMasteryHolder
 		{
 			_skills.add(skill2);
 		}
+		
 		if (skill3 != null)
 		{
 			_skills.add(skill3);
 		}
+		
 		if (skill4 != null)
 		{
 			_skills.add(skill4);

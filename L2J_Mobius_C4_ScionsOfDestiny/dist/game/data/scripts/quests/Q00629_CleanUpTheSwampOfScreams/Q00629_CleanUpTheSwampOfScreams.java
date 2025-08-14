@@ -34,9 +34,11 @@ public class Q00629_CleanUpTheSwampOfScreams extends Quest
 {
 	// NPC
 	private static final int PIERCE = 31553;
+	
 	// Items
 	private static final int TALON_OF_STAKATO = 7250;
 	private static final int GOLDEN_RAM_COIN = 7251;
+	
 	// Drop chances
 	private static final Map<Integer, Integer> CHANCES = new HashMap<>();
 	static

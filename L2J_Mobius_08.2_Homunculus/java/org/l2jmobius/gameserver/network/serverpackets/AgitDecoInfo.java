@@ -41,6 +41,7 @@ public class AgitDecoInfo extends ServerPacket
 	{
 		ServerPackets.AGIT_DECO_INFO.writeId(this, buffer);
 		buffer.writeInt(_residense.getResidenceId());
+		
 		// Fireplace
 		ResidenceFunction function = _residense.getFunction(ResidenceFunctionType.HP_REGEN);
 		if ((function == null) || (function.getLevel() == 0))
@@ -55,6 +56,7 @@ public class AgitDecoInfo extends ServerPacket
 		{
 			buffer.writeByte(2);
 		}
+		
 		// Carpet - Statue
 		function = _residense.getFunction(ResidenceFunctionType.MP_REGEN);
 		if ((function == null) || (function.getLevel() == 0))
@@ -72,6 +74,7 @@ public class AgitDecoInfo extends ServerPacket
 			buffer.writeByte(2);
 			buffer.writeByte(2);
 		}
+		
 		// Chandelier
 		function = _residense.getFunction(ResidenceFunctionType.EXP_RESTORE);
 		if ((function == null) || (function.getLevel() == 0))
@@ -86,6 +89,7 @@ public class AgitDecoInfo extends ServerPacket
 		{
 			buffer.writeByte(2);
 		}
+		
 		// Mirror
 		function = _residense.getFunction(ResidenceFunctionType.TELEPORT);
 		if ((function == null) || (function.getLevel() == 0))
@@ -100,8 +104,10 @@ public class AgitDecoInfo extends ServerPacket
 		{
 			buffer.writeByte(2);
 		}
+		
 		// Crystal
 		buffer.writeByte(0);
+		
 		// Curtain
 		function = _residense.getFunction(ResidenceFunctionType.CURTAIN);
 		if ((function == null) || (function.getLevel() == 0))
@@ -116,6 +122,7 @@ public class AgitDecoInfo extends ServerPacket
 		{
 			buffer.writeByte(2);
 		}
+		
 		// Magic Curtain
 		function = _residense.getFunction(ResidenceFunctionType.ITEM);
 		if ((function == null) || (function.getLevel() == 0))
@@ -130,6 +137,7 @@ public class AgitDecoInfo extends ServerPacket
 		{
 			buffer.writeByte(2);
 		}
+		
 		// Support
 		function = _residense.getFunction(ResidenceFunctionType.BUFF);
 		if ((function == null) || (function.getLevel() == 0))
@@ -144,6 +152,7 @@ public class AgitDecoInfo extends ServerPacket
 		{
 			buffer.writeByte(2);
 		}
+		
 		// Flag
 		function = _residense.getFunction(ResidenceFunctionType.OUTERFLAG);
 		if ((function == null) || (function.getLevel() == 0))
@@ -158,6 +167,7 @@ public class AgitDecoInfo extends ServerPacket
 		{
 			buffer.writeByte(2);
 		}
+		
 		// Front platform
 		function = _residense.getFunction(ResidenceFunctionType.PLATFORM);
 		if ((function == null) || (function.getLevel() == 0))
@@ -172,6 +182,7 @@ public class AgitDecoInfo extends ServerPacket
 		{
 			buffer.writeByte(2);
 		}
+		
 		// Item create?
 		function = _residense.getFunction(ResidenceFunctionType.ITEM);
 		if ((function == null) || (function.getLevel() == 0))

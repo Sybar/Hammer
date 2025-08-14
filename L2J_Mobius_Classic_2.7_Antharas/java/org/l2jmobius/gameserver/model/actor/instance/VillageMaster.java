@@ -120,6 +120,7 @@ public class VillageMaster extends Folk
 		{
 			return true;
 		}
+		
 		return super.isAutoAttackable(attacker);
 	}
 	
@@ -135,6 +136,7 @@ public class VillageMaster extends Folk
 		{
 			pom = npcId + "-" + value;
 		}
+		
 		return "data/html/villagemaster/" + pom + ".htm";
 	}
 	
@@ -149,6 +151,7 @@ public class VillageMaster extends Folk
 		{
 			cmdParams = commandStr[1];
 		}
+		
 		if (commandStr.length >= 3)
 		{
 			cmdParams2 = commandStr[2];
@@ -296,6 +299,7 @@ public class VillageMaster extends Folk
 				{
 					msg.setFile(player, "data/scripts/village_master/ClanMaster/9000-07-in-progress.htm");
 				}
+				
 				player.sendPacket(msg);
 			}
 		}
@@ -329,8 +333,8 @@ public class VillageMaster extends Folk
 		{
 			if (player.getClan().levelUpClan(player))
 			{
-				player.broadcastPacket(new MagicSkillUse(player, 5103, 1, 0, 0));
-				player.broadcastPacket(new MagicSkillLaunched(player, 5103, 1));
+				player.broadcastSkillPacket(new MagicSkillUse(player, 5103, 1, 0, 0), player);
+				player.broadcastSkillPacket(new MagicSkillLaunched(player, 5103, 1), player);
 			}
 		}
 		else if (actualCommand.equalsIgnoreCase("learn_clan_skills"))
@@ -345,7 +349,9 @@ public class VillageMaster extends Folk
 				player.sendPacket(SystemMessageId.SUBCLASSES_MAY_NOT_BE_CREATED_OR_CHANGED_WHILE_A_SKILL_IS_IN_USE);
 				return;
 			}
+			
 			final NpcHtmlMessage html = new NpcHtmlMessage(getObjectId());
+			
 			// Subclasses may not be changed while a transformated state.
 			if (player.isTransformed())
 			{
@@ -353,6 +359,7 @@ public class VillageMaster extends Folk
 				player.sendPacket(html);
 				return;
 			}
+			
 			// Subclasses may not be changed while a summon is active.
 			if (player.hasSummon())
 			{
@@ -360,12 +367,14 @@ public class VillageMaster extends Folk
 				player.sendPacket(html);
 				return;
 			}
+			
 			// Subclasses may not be changed while you have exceeded your inventory limit.
 			if (!player.isInventoryUnder90(true))
 			{
 				player.sendPacket(SystemMessageId.A_SUBCLASS_CANNOT_BE_CREATED_OR_CHANGED_BECAUSE_YOU_HAVE_EXCEEDED_YOUR_INVENTORY_LIMIT);
 				return;
 			}
+			
 			// Subclasses may not be changed while a you are over your weight limit.
 			if (player.getWeightPenalty() >= 2)
 			{
@@ -420,8 +429,9 @@ public class VillageMaster extends Folk
 						final StringBuilder content1 = new StringBuilder(200);
 						for (PlayerClass subClass : subsAvailable)
 						{
-							content1.append("<a action=\"bypass npc_%objectId%_Subclass 4 " + subClass.getId() + "\" msg=\"1268;" + ClassListData.getInstance().getClass(subClass.getId()).getClassName() + "\">" + ClassListData.getInstance().getClass(subClass.getId()).getClientCode() + "</a><br>");
+							content1.append("<a action=\"bypass npc_%objectId%_Subclass 4 " + subClass.getId() + "\" msg=\"1268;" + ClassListData.getInstance().getClass(subClass.getId()).getClassName() + "\">" + ClassListData.getInstance().getClass(subClass.getId()).getClassName() + "</a><br>");
 						}
+						
 						html.replace("%list%", content1.toString());
 					}
 					else
@@ -454,7 +464,7 @@ public class VillageMaster extends Folk
 						final StringBuilder content2 = new StringBuilder(200);
 						if (checkVillageMaster(player.getBaseClass()))
 						{
-							content2.append("<a action=\"bypass -h npc_%objectId%_Subclass 5 0\">" + ClassListData.getInstance().getClass(player.getBaseClass()).getClientCode() + "</a><br>");
+							content2.append("<a action=\"bypass -h npc_%objectId%_Subclass 5 0\">" + ClassListData.getInstance().getClass(player.getBaseClass()).getClassName() + "</a><br>");
 						}
 						
 						for (Iterator<SubClassHolder> subList = iterSubClasses(player); subList.hasNext();)
@@ -462,7 +472,7 @@ public class VillageMaster extends Folk
 							final SubClassHolder subClass = subList.next();
 							if (checkVillageMaster(subClass.getPlayerClass()))
 							{
-								content2.append("<a action=\"bypass -h npc_%objectId%_Subclass 5 " + subClass.getClassIndex() + "\">" + ClassListData.getInstance().getClass(subClass.getId()).getClientCode() + "</a><br>");
+								content2.append("<a action=\"bypass -h npc_%objectId%_Subclass 5 " + subClass.getClassIndex() + "\">" + ClassListData.getInstance().getClass(subClass.getId()).getClassName() + "</a><br>");
 							}
 						}
 						
@@ -493,8 +503,9 @@ public class VillageMaster extends Folk
 						for (Iterator<SubClassHolder> subList = iterSubClasses(player); subList.hasNext();)
 						{
 							final SubClassHolder subClass = subList.next();
-							content3.append("Sub-class " + classIndex++ + "<br><a action=\"bypass -h npc_%objectId%_Subclass 6 " + subClass.getClassIndex() + "\">" + ClassListData.getInstance().getClass(subClass.getId()).getClientCode() + "</a><br>");
+							content3.append("Sub-class " + classIndex++ + "<br><a action=\"bypass -h npc_%objectId%_Subclass 6 " + subClass.getClassIndex() + "\">" + ClassListData.getInstance().getClass(subClass.getId()).getClassName() + "</a><br>");
 						}
+						
 						html.replace("%list%", content3.toString());
 					}
 					else
@@ -503,7 +514,7 @@ public class VillageMaster extends Folk
 						html.setFile(player, "data/html/villagemaster/SubClass_Modify.htm");
 						if (player.getSubClasses().containsKey(1))
 						{
-							html.replace("%sub1%", ClassListData.getInstance().getClass(player.getSubClasses().get(1).getId()).getClientCode());
+							html.replace("%sub1%", ClassListData.getInstance().getClass(player.getSubClasses().get(1).getId()).getClassName());
 						}
 						else
 						{
@@ -512,7 +523,7 @@ public class VillageMaster extends Folk
 						
 						if (player.getSubClasses().containsKey(2))
 						{
-							html.replace("%sub2%", ClassListData.getInstance().getClass(player.getSubClasses().get(2).getId()).getClientCode());
+							html.replace("%sub2%", ClassListData.getInstance().getClass(player.getSubClasses().get(2).getId()).getClassName());
 						}
 						else
 						{
@@ -521,7 +532,7 @@ public class VillageMaster extends Folk
 						
 						if (player.getSubClasses().containsKey(3))
 						{
-							html.replace("%sub3%", ClassListData.getInstance().getClass(player.getSubClasses().get(3).getId()).getClientCode());
+							html.replace("%sub3%", ClassListData.getInstance().getClass(player.getSubClasses().get(3).getId()).getClassName());
 						}
 						else
 						{
@@ -631,6 +642,7 @@ public class VillageMaster extends Folk
 					}
 					
 					player.setActiveClass(paramOne);
+					
 					// TODO: Retail message YOU_HAVE_SUCCESSFULLY_SWITCHED_S1_TO_S2
 					player.sendMessage("You have successfully switched to your subclass.");
 					return;
@@ -642,6 +654,7 @@ public class VillageMaster extends Folk
 					}
 					
 					subsAvailable = getAvailableSubClasses(player);
+					
 					// another validity check
 					if ((subsAvailable == null) || subsAvailable.isEmpty())
 					{
@@ -653,7 +666,7 @@ public class VillageMaster extends Folk
 					final StringBuilder content6 = new StringBuilder(200);
 					for (PlayerClass subClass : subsAvailable)
 					{
-						content6.append("<a action=\"bypass npc_%objectId%_Subclass 7 " + paramOne + " " + subClass.getId() + "\" msg=\"1445;\">" + ClassListData.getInstance().getClass(subClass.getId()).getClientCode() + "</a><br>");
+						content6.append("<a action=\"bypass npc_%objectId%_Subclass 7 " + paramOne + " " + subClass.getId() + "\" msg=\"1445;\">" + ClassListData.getInstance().getClass(subClass.getId()).getClassName() + "</a><br>");
 					}
 					
 					switch (paramOne)
@@ -670,6 +683,7 @@ public class VillageMaster extends Folk
 						default:
 							html.setFile(player, "data/html/villagemaster/SubClass_ModifyChoice.htm");
 					}
+					
 					html.replace("%list%", content6.toString());
 					break;
 				case 7: // Change Subclass - Action
@@ -696,7 +710,7 @@ public class VillageMaster extends Folk
 						player.setActiveClass(paramOne);
 						
 						html.setFile(player, "data/html/villagemaster/SubClass_ModifyOk.htm");
-						html.replace("%name%", ClassListData.getInstance().getClass(paramTwo).getClientCode());
+						html.replace("%name%", ClassListData.getInstance().getClass(paramTwo).getClassName());
 						
 						final SystemMessage msg = new SystemMessage(SystemMessageId.THE_NEW_SUBCLASS_HAS_BEEN_ADDED);
 						msg.addClassId(player.getPlayerClass().getId());
@@ -713,6 +727,7 @@ public class VillageMaster extends Folk
 					}
 					break;
 			}
+			
 			html.replace("%objectId%", String.valueOf(getObjectId()));
 			player.sendPacket(html);
 		}
@@ -728,6 +743,7 @@ public class VillageMaster extends Folk
 		{
 			return "data/html/villagemaster/SubClass.htm";
 		}
+		
 		return "data/html/villagemaster/SubClass_NoOther.htm";
 	}
 	
@@ -905,6 +921,7 @@ public class VillageMaster extends Folk
 				}
 			}
 		}
+		
 		return subclasses;
 	}
 	
@@ -964,6 +981,7 @@ public class VillageMaster extends Folk
 				break;
 			}
 		}
+		
 		return found;
 	}
 	
@@ -998,6 +1016,7 @@ public class VillageMaster extends Folk
 		{
 			return true;
 		}
+		
 		return checkVillageMasterRace(pclass) && checkVillageMasterTeachType(pclass);
 	}
 	
@@ -1020,11 +1039,13 @@ public class VillageMaster extends Folk
 			player.sendPacket(SystemMessageId.YOU_CANNOT_DISPERSE_THE_CLANS_IN_YOUR_ALLIANCE);
 			return;
 		}
+		
 		if (clan.isAtWar())
 		{
 			player.sendPacket(SystemMessageId.YOU_CANNOT_DISSOLVE_A_CLAN_WHILE_ENGAGED_IN_A_WAR);
 			return;
 		}
+		
 		if ((clan.getCastleId() != 0) || (clan.getHideoutId() != 0) || (clan.getFortId() != 0))
 		{
 			player.sendPacket(SystemMessageId.YOU_CANNOT_DISSOLVE_A_CLAN_WHILE_OWNING_A_CLAN_HALL_OR_CASTLE);
@@ -1039,6 +1060,7 @@ public class VillageMaster extends Folk
 				return;
 			}
 		}
+		
 		for (Fort fort : FortManager.getInstance().getForts())
 		{
 			if (FortSiegeManager.getInstance().checkIsRegistered(clan, fort.getResidenceId()))
@@ -1053,6 +1075,7 @@ public class VillageMaster extends Folk
 			player.sendPacket(SystemMessageId.YOU_CANNOT_DISSOLVE_A_CLAN_DURING_A_SIEGE_OR_WHILE_PROTECTING_A_CASTLE);
 			return;
 		}
+		
 		if (clan.getDissolvingExpiryTime() > System.currentTimeMillis())
 		{
 			player.sendPacket(SystemMessageId.YOU_HAVE_ALREADY_REQUESTED_THE_DISSOLUTION_OF_YOUR_CLAN);
@@ -1102,11 +1125,13 @@ public class VillageMaster extends Folk
 			
 			return;
 		}
+		
 		if (!StringUtil.isAlphaNumeric(clanName) || !isValidName(clanName) || (2 > clanName.length()))
 		{
 			player.sendPacket(SystemMessageId.CLAN_NAME_IS_INVALID);
 			return;
 		}
+		
 		if (clanName.length() > 16)
 		{
 			player.sendPacket(SystemMessageId.CLAN_NAME_S_LENGTH_IS_INCORRECT);
@@ -1176,6 +1201,7 @@ public class VillageMaster extends Folk
 		{
 			sm = new SystemMessage(SystemMessageId.YOUR_CLAN_HAS_BEEN_CREATED);
 		}
+		
 		player.sendPacket(sm);
 		
 		if (pledgeType != Clan.SUBUNIT_ACADEMY)
@@ -1205,11 +1231,13 @@ public class VillageMaster extends Folk
 			player.sendMessage("Pledge don't exists.");
 			return;
 		}
+		
 		if (!StringUtil.isAlphaNumeric(pledgeName) || !isValidName(pledgeName) || (2 > pledgeName.length()))
 		{
 			player.sendPacket(SystemMessageId.CLAN_NAME_IS_INVALID);
 			return;
 		}
+		
 		if (pledgeName.length() > 16)
 		{
 			player.sendPacket(SystemMessageId.CLAN_NAME_S_LENGTH_IS_INCORRECT);
@@ -1229,11 +1257,13 @@ public class VillageMaster extends Folk
 			player.sendPacket(SystemMessageId.YOU_ARE_NOT_AUTHORIZED_TO_DO_THAT);
 			return;
 		}
+		
 		if (leaderName.length() > 16)
 		{
 			player.sendPacket(SystemMessageId.YOUR_TITLE_CANNOT_EXCEED_16_CHARACTERS_IN_LENGTH_PLEASE_TRY_AGAIN);
 			return;
 		}
+		
 		if (player.getName().equals(leaderName))
 		{
 			player.sendPacket(SystemMessageId.THE_ROYAL_GUARD_CAPTAIN_CANNOT_BE_APPOINTED);
@@ -1310,6 +1340,7 @@ public class VillageMaster extends Folk
 				{
 					sm.addInt(clan.getLevel() + 1);
 				}
+				
 				player.sendPacket(sm);
 			}
 			else
@@ -1323,6 +1354,7 @@ public class VillageMaster extends Folk
 		{
 			player.sendPacket(new ExAcquirableSkillListByClass(skills, AcquireSkillType.PLEDGE));
 		}
+		
 		player.sendPacket(ActionFailed.STATIC_PACKET);
 	}
 	
@@ -1338,6 +1370,7 @@ public class VillageMaster extends Folk
 			LOGGER.warning("ERROR: Wrong pattern for clan name!");
 			pattern = Pattern.compile(".*");
 		}
+		
 		return pattern.matcher(name).matches();
 	}
 }

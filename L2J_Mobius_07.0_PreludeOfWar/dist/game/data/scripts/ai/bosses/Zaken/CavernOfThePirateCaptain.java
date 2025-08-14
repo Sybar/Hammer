@@ -42,9 +42,11 @@ public class CavernOfThePirateCaptain extends AbstractInstance
 	private static final int ZAKEN_60 = 29176; // Zaken
 	private static final int ZAKEN_83 = 29181; // Zaken
 	private static final int CANDLE = 32705; // Zaken's Candle
+	
 	// Items
 	private static final int VORPAL_RING = 15763; // Sealed Vorpal Ring
 	private static final int VORPAL_EARRING = 15764; // Sealed Vorpal Earring
+	
 	// Reward - Zaken level 83 @formatter:off
 	private static final int[][] VORPAL_JEWELS = 
 	{
@@ -53,6 +55,7 @@ public class CavernOfThePirateCaptain extends AbstractInstance
 		{600000, VORPAL_EARRING, 30}, // 10 minutes
 		{900000, VORPAL_RING, 25}, // 15 minutes
 	};
+	
 	// Locations @formatter:on
 	private static final Location[] CANDLE_LOC =
 	{
@@ -96,10 +99,11 @@ public class CavernOfThePirateCaptain extends AbstractInstance
 		new Location(57215, 220133, -2954),
 		new Location(57215, 218079, -2954),
 	};
+	
 	// Misc
 	private static final int TEMPLATE_ID_60 = 133;
 	private static final int TEMPLATE_ID_83 = 135;
-	//@formatter:off
+	// @formatter:off
 	private static final int[][] ROOM_DATA =
 	{
 		// Floor 1
@@ -121,7 +125,7 @@ public class CavernOfThePirateCaptain extends AbstractInstance
 		{56289, 220133, -2954, 32, 35, 30, 33},
 		{56289, 218073, -2954, 34, 36, 31, 33}
 	};
-	//@formatter:on
+	// @formatter:on
 	
 	public CavernOfThePirateCaptain()
 	{
@@ -146,10 +150,12 @@ public class CavernOfThePirateCaptain extends AbstractInstance
 			candle.getVariables().set("candleId", i + 1);
 			candles.add(candle);
 		}
+		
 		for (int i = 3; i < 7; i++)
 		{
 			candles.get(ROOM_DATA[zakenRoom - 1][i] - 1).getVariables().set("isBlue", 1);
 		}
+		
 		final Npc zaken = spawnNpc(instance.getTemplateParameters().getInt("Zaken"), zakenRoom, null, instance);
 		zaken.setInvisible(true);
 		zaken.setBlockActions(true);
@@ -254,6 +260,7 @@ public class CavernOfThePirateCaptain extends AbstractInstance
 				}
 			}
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	
@@ -281,6 +288,7 @@ public class CavernOfThePirateCaptain extends AbstractInstance
 					}
 				}
 			}
+			
 			world.finishInstance();
 		}
 	}
@@ -303,6 +311,7 @@ public class CavernOfThePirateCaptain extends AbstractInstance
 				startQuestTimer("BURN_RED", 500, npc, player);
 			}
 		}
+		
 		return null;
 	}
 	
@@ -329,6 +338,7 @@ public class CavernOfThePirateCaptain extends AbstractInstance
 		{
 			return 13;
 		}
+		
 		return 0;
 	}
 	
@@ -340,6 +350,7 @@ public class CavernOfThePirateCaptain extends AbstractInstance
 			addAttackPlayerDesire(mob, player);
 			return mob;
 		}
+		
 		return addSpawn(npcId, ROOM_DATA[roomId - 1][0], ROOM_DATA[roomId - 1][1], ROOM_DATA[roomId - 1][2], 0, false, 0, false, world.getId());
 	}
 	

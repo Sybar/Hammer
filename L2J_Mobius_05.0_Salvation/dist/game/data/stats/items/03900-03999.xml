@@ -13,9 +13,9 @@
 		<set name="commissionItemType" val="PET_EQUIPMENT" />
 		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
-		<cond msgId="600">
+		<conditions msgId="600">
 			<player categoryType="ALL_WOLF_GROUP" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="mDef">38</stat>
 			<stat type="pDef">43</stat>
@@ -34,9 +34,9 @@
 		<set name="commissionItemType" val="PET_EQUIPMENT" />
 		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
-		<cond msgId="600">
+		<conditions msgId="600">
 			<player categoryType="ALL_WOLF_GROUP" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="mDef">41</stat>
 			<stat type="pDef">47</stat>
@@ -56,9 +56,9 @@
 		<set name="commissionItemType" val="PET_EQUIPMENT" />
 		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
-		<cond msgId="600">
+		<conditions msgId="600">
 			<player categoryType="ALL_WOLF_GROUP" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">11</stat>
 			<stat type="mAtk">10</stat>
@@ -82,9 +82,9 @@
 		<set name="commissionItemType" val="PET_EQUIPMENT" />
 		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
-		<cond msgId="600">
+		<conditions msgId="600">
 			<player categoryType="ALL_WOLF_GROUP" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">16</stat>
 			<stat type="mAtk">14</stat>
@@ -108,9 +108,9 @@
 		<set name="commissionItemType" val="PET_EQUIPMENT" />
 		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
-		<cond msgId="600">
+		<conditions msgId="600">
 			<player categoryType="ALL_WOLF_GROUP" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">23</stat>
 			<stat type="mAtk">18</stat>
@@ -134,9 +134,9 @@
 		<set name="commissionItemType" val="PET_EQUIPMENT" />
 		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
-		<cond msgId="600">
+		<conditions msgId="600">
 			<player categoryType="ALL_WOLF_GROUP" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">31</stat>
 			<stat type="mAtk">24</stat>
@@ -160,9 +160,9 @@
 		<set name="commissionItemType" val="PET_EQUIPMENT" />
 		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
-		<cond msgId="600">
+		<conditions msgId="600">
 			<player categoryType="ALL_WOLF_GROUP" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">40</stat>
 			<stat type="mAtk">30</stat>
@@ -186,9 +186,9 @@
 		<set name="commissionItemType" val="PET_EQUIPMENT" />
 		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
-		<cond msgId="600">
+		<conditions msgId="600">
 			<player categoryType="ALL_WOLF_GROUP" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">49</stat>
 			<stat type="mAtk">36</stat>
@@ -212,9 +212,9 @@
 		<set name="commissionItemType" val="PET_EQUIPMENT" />
 		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
-		<cond msgId="600">
+		<conditions msgId="600">
 			<player categoryType="ALL_WOLF_GROUP" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">58</stat>
 			<stat type="mAtk">42</stat>
@@ -238,9 +238,9 @@
 		<set name="commissionItemType" val="PET_EQUIPMENT" />
 		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
-		<cond msgId="600">
+		<conditions msgId="600">
 			<player categoryType="ALL_WOLF_GROUP" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">69</stat>
 			<stat type="mAtk">50</stat>
@@ -264,9 +264,9 @@
 		<set name="commissionItemType" val="PET_EQUIPMENT" />
 		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
-		<cond msgId="600">
+		<conditions msgId="600">
 			<player categoryType="ALL_WOLF_GROUP" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">80</stat>
 			<stat type="mAtk">58</stat>
@@ -290,9 +290,9 @@
 		<set name="commissionItemType" val="PET_EQUIPMENT" />
 		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
-		<cond msgId="600">
+		<conditions msgId="600">
 			<player categoryType="ALL_WOLF_GROUP" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">93</stat>
 			<stat type="mAtk">66</stat>
@@ -315,9 +315,9 @@
 		<set name="commissionItemType" val="PET_EQUIPMENT" />
 		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
-		<cond msgId="600">
+		<conditions msgId="600">
 			<player categoryType="HATCHLING_GROUP" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="mDef">26</stat>
 			<stat type="pDef">26</stat>
@@ -336,9 +336,9 @@
 		<set name="commissionItemType" val="PET_EQUIPMENT" />
 		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
-		<cond msgId="600">
+		<conditions msgId="600">
 			<player categoryType="HATCHLING_GROUP" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="mDef">29</stat>
 			<stat type="pDef">29</stat>
@@ -357,9 +357,9 @@
 		<set name="commissionItemType" val="PET_EQUIPMENT" />
 		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
-		<cond msgId="600">
+		<conditions msgId="600">
 			<player categoryType="HATCHLING_GROUP" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="mDef">31</stat>
 			<stat type="pDef">31</stat>
@@ -378,9 +378,9 @@
 		<set name="commissionItemType" val="PET_EQUIPMENT" />
 		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
-		<cond msgId="600">
+		<conditions msgId="600">
 			<player categoryType="HATCHLING_GROUP" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="mDef">33</stat>
 			<stat type="pDef">33</stat>
@@ -399,9 +399,9 @@
 		<set name="commissionItemType" val="PET_EQUIPMENT" />
 		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
-		<cond msgId="600">
+		<conditions msgId="600">
 			<player categoryType="HATCHLING_GROUP" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="mDef">36</stat>
 			<stat type="pDef">36</stat>
@@ -420,9 +420,9 @@
 		<set name="commissionItemType" val="PET_EQUIPMENT" />
 		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
-		<cond msgId="600">
+		<conditions msgId="600">
 			<player categoryType="HATCHLING_GROUP" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="mDef">38</stat>
 			<stat type="pDef">38</stat>
@@ -441,9 +441,9 @@
 		<set name="commissionItemType" val="PET_EQUIPMENT" />
 		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
-		<cond msgId="600">
+		<conditions msgId="600">
 			<player categoryType="HATCHLING_GROUP" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="mDef">41</stat>
 			<stat type="pDef">41</stat>
@@ -463,9 +463,9 @@
 		<set name="commissionItemType" val="PET_EQUIPMENT" />
 		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
-		<cond msgId="600">
+		<conditions msgId="600">
 			<player categoryType="HATCHLING_GROUP" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">8</stat>
 			<stat type="mAtk">7</stat>
@@ -489,9 +489,9 @@
 		<set name="commissionItemType" val="PET_EQUIPMENT" />
 		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
-		<cond msgId="600">
+		<conditions msgId="600">
 			<player categoryType="HATCHLING_GROUP" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">9</stat>
 			<stat type="mAtk">10</stat>
@@ -515,9 +515,9 @@
 		<set name="commissionItemType" val="PET_EQUIPMENT" />
 		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
-		<cond msgId="600">
+		<conditions msgId="600">
 			<player categoryType="HATCHLING_GROUP" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">10</stat>
 			<stat type="mAtk">11</stat>
@@ -541,9 +541,9 @@
 		<set name="commissionItemType" val="PET_EQUIPMENT" />
 		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
-		<cond msgId="600">
+		<conditions msgId="600">
 			<player categoryType="HATCHLING_GROUP" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">12</stat>
 			<stat type="mAtk">13</stat>
@@ -567,9 +567,9 @@
 		<set name="commissionItemType" val="PET_EQUIPMENT" />
 		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
-		<cond msgId="600">
+		<conditions msgId="600">
 			<player categoryType="HATCHLING_GROUP" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">13</stat>
 			<stat type="mAtk">16</stat>
@@ -593,9 +593,9 @@
 		<set name="commissionItemType" val="PET_EQUIPMENT" />
 		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
-		<cond msgId="600">
+		<conditions msgId="600">
 			<player categoryType="HATCHLING_GROUP" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">15</stat>
 			<stat type="mAtk">18</stat>
@@ -619,9 +619,9 @@
 		<set name="commissionItemType" val="PET_EQUIPMENT" />
 		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
-		<cond msgId="600">
+		<conditions msgId="600">
 			<player categoryType="HATCHLING_GROUP" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">17</stat>
 			<stat type="mAtk">21</stat>
@@ -643,9 +643,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="for_npc" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2050" level="1" /> <!-- Scroll: Guidance -->
 		</skills>
@@ -662,9 +662,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="for_npc" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2051" level="1" /> <!-- Scroll: Death Whisper -->
 		</skills>
@@ -681,9 +681,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="for_npc" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2052" level="1" /> <!-- Scroll: Focus -->
 		</skills>
@@ -700,9 +700,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="for_npc" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2053" level="1" /> <!-- Scroll: Acumen -->
 		</skills>
@@ -719,9 +719,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="for_npc" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2054" level="1" /> <!-- Scroll: Haste -->
 		</skills>
@@ -738,9 +738,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="for_npc" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2055" level="1" /> <!-- Scroll: Agility -->
 		</skills>
@@ -757,9 +757,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="for_npc" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2056" level="1" /> <!-- Scroll: Empower -->
 		</skills>
@@ -776,9 +776,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="for_npc" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2057" level="1" /> <!-- Scroll: Might -->
 		</skills>
@@ -795,9 +795,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="for_npc" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2058" level="1" /> <!-- Scroll: Wind Walk -->
 		</skills>
@@ -814,9 +814,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="for_npc" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2059" level="1" /> <!-- Scroll: Shield -->
 		</skills>

@@ -47,6 +47,7 @@ public class SiegeZone extends ZoneType
 		{
 			settings = new Settings();
 		}
+		
 		setSettings(settings);
 	}
 	
@@ -114,6 +115,7 @@ public class SiegeZone extends ZoneType
 			{
 				throw new IllegalArgumentException("Siege object already defined!");
 			}
+			
 			getSettings().setSiegeableId(Integer.parseInt(value));
 		}
 		else if (name.equals("fortId"))
@@ -122,6 +124,7 @@ public class SiegeZone extends ZoneType
 			{
 				throw new IllegalArgumentException("Siege object already defined!");
 			}
+			
 			getSettings().setSiegeableId(Integer.parseInt(value));
 		}
 		else if (name.equals("clanHallId"))
@@ -130,6 +133,7 @@ public class SiegeZone extends ZoneType
 			{
 				throw new IllegalArgumentException("Siege object already defined!");
 			}
+			
 			getSettings().setSiegeableId(Integer.parseInt(value));
 			final SiegableHall hall = CHSiegeManager.getInstance().getConquerableHalls().get(getSettings().getSiegeableId());
 			if (hall != null)
@@ -181,7 +185,7 @@ public class SiegeZone extends ZoneType
 			player.enteredNoLanding(DISMOUNT_DELAY);
 		}
 		
-		if (!Config.ALLOW_MOUNTS_DURING_SIEGE && player.isMounted())
+		if (!Config.ALLOW_MOUNTS_DURING_SIEGE && player.isMounted() && (player.getMountType() != MountType.WYVERN))
 		{
 			player.dismount();
 		}
@@ -201,6 +205,7 @@ public class SiegeZone extends ZoneType
 			{
 				player.exitedNoLanding();
 			}
+			
 			// Set pvp flag
 			if (player.getPvpFlag() == 0)
 			{
@@ -323,6 +328,7 @@ public class SiegeZone extends ZoneType
 			{
 				continue;
 			}
+			
 			temp.teleToLocation(TeleportWhereType.TOWN);
 		}
 	}

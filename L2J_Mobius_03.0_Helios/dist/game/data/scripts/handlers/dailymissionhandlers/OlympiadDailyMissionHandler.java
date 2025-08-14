@@ -70,6 +70,7 @@ public class OlympiadDailyMissionHandler extends AbstractDailyMissionHandler
 				}
 			}
 		}
+		
 		return false;
 	}
 	
@@ -84,6 +85,7 @@ public class OlympiadDailyMissionHandler extends AbstractDailyMissionHandler
 				{
 					winnerEntry.setStatus(DailyMissionStatus.AVAILABLE);
 				}
+				
 				storePlayerEntry(winnerEntry);
 			}
 		}
@@ -97,6 +99,7 @@ public class OlympiadDailyMissionHandler extends AbstractDailyMissionHandler
 				{
 					loseEntry.setStatus(DailyMissionStatus.AVAILABLE);
 				}
+				
 				storePlayerEntry(loseEntry);
 			}
 		}

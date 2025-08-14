@@ -77,12 +77,14 @@ public class Prisoner
 			{
 				World.getInstance().getPlayer(_charId).sendMessage("Time left in Underground Labyrinth: " + ((_sentenceTime - _timeSpent) / 60000) + " minutes.");
 			}
+			
 			if (_timeSpent >= _sentenceTime)
 			{
 				if ((player != null) && player.isOnline())
 				{
 					World.getInstance().getPlayer(_charId).sendMessage("Your time in Underground Labyrinth is over, next time be careful!");
 				}
+				
 				processFreedom(true);
 				sentenceTask.cancel(false);
 			}

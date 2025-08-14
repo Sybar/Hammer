@@ -40,17 +40,19 @@ public class Hide extends AbstractEffect
 	{
 		if (effected.isPlayer())
 		{
-			effected.setInvisible(true);
+			final Player player = effected.asPlayer();
+			player.setInvisible(true);
 			
-			if ((effected.getAI().getNextIntention() != null) && (effected.getAI().getNextIntention().getIntention() == Intention.ATTACK))
+			if ((player.getAI().getNextIntention() != null) && (player.getAI().getNextIntention().getIntention() == Intention.ATTACK))
 			{
-				effected.getAI().setIntention(Intention.IDLE);
+				player.getAI().setIntention(Intention.IDLE);
 			}
 			
-			World.getInstance().forEachVisibleObject(effected, Creature.class, target ->
+			World.getInstance().forEachVisibleObject(player, Creature.class, target ->
 			{
-				if ((target.getTarget() == effected))
+				if ((target != null) && (target.getTarget() == player))
 				{
+					target.asAttackable().clearAggroList();
 					target.setTarget(null);
 					target.abortAttack();
 					target.abortCast();

@@ -93,6 +93,7 @@ public class CallSkillOnActionTime extends AbstractEffect
 		{
 			LOGGER.warning("Skill not found effect called from " + skill);
 		}
+		
 		return skill.isToggle();
 	}
 }

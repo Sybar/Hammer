@@ -38,6 +38,7 @@ public class Relics extends AbstractNpcAI
 	private static final int ARTIFACT_GIRAN = 35147;
 	private static final int ARTIFACT_GODDART_1 = 35323;
 	private static final int ARTIFACT_GODDART_2 = 35322;
+	
 	// Zone
 	private static final SiegeZone GIRAN_SIEGE_ZONE = ZoneManager.getInstance().getZoneByName("giran_castle_battlefield_territory", SiegeZone.class);
 	

@@ -75,9 +75,11 @@ public class ExReplyReceivedPost extends AbstractItemPacket
 			{
 				buffer.writeInt(_msg.getElementals()[i]);
 			}
+			
 			buffer.writeInt(SystemMessageId.THE_ITEM_YOU_REGISTERED_HAS_BEEN_SOLD.getId());
 			buffer.writeInt(SystemMessageId.S1_SOLD.getId());
 		}
+		
 		buffer.writeInt(_msg.getId());
 		buffer.writeInt(_msg.isLocked());
 		buffer.writeInt(0); // Unknown
@@ -97,6 +99,7 @@ public class ExReplyReceivedPost extends AbstractItemPacket
 		{
 			buffer.writeInt(0);
 		}
+		
 		buffer.writeLong(_msg.getReqAdena());
 		buffer.writeInt(_msg.hasAttachments());
 		buffer.writeInt(_msg.isReturned());

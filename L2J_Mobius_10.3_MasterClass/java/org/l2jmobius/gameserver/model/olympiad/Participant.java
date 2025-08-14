@@ -78,6 +78,7 @@ public class Participant
 		{
 			_player = World.getInstance().getPlayer(getObjectId());
 		}
+		
 		return (_player != null);
 	}
 	

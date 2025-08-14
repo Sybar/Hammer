@@ -228,6 +228,7 @@ public class LimitShopClanData implements IXmlReader
 				return product;
 			}
 		}
+		
 		return null;
 	}
 	

@@ -36,7 +36,7 @@ import org.l2jmobius.gameserver.network.SystemMessageId;
 public class PetAttack implements IPlayerActionHandler
 {
 	@Override
-	public void useAction(Player player, ActionDataHolder data, boolean ctrlPressed, boolean shiftPressed)
+	public void onAction(Player player, ActionDataHolder data, boolean ctrlPressed, boolean shiftPressed)
 	{
 		final Pet pet = player.getPet();
 		if ((pet == null) || !pet.isPet())

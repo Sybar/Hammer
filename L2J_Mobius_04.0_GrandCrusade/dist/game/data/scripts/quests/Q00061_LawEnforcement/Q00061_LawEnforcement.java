@@ -38,8 +38,10 @@ public class Q00061_LawEnforcement extends Quest
 	private static final int PANTHEON = 32972;
 	private static final int KEKROPUS = 32138;
 	private static final int EINDBURGH = 32469;
+	
 	// Location
 	private static final Location MUSEUM = new Location(-114711, 243911, -7968);
+	
 	// Misc
 	private static final int MIN_LEVEL = 76;
 	private static final int JUDICATOR = 136;
@@ -122,6 +124,7 @@ public class Q00061_LawEnforcement extends Quest
 							{
 								PunishmentManager.handleIllegalPlayerAction(player, "Player " + player.getName() + " tried to cheat class transfer for Judicator!", Config.DEFAULT_PUNISH);
 							}
+							
 							player.setPlayerClass(JUDICATOR);
 							player.broadcastUserInfo();
 							giveAdena(player, 26000, true);
@@ -137,6 +140,7 @@ public class Q00061_LawEnforcement extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -204,6 +208,7 @@ public class Q00061_LawEnforcement extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

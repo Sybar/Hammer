@@ -1099,9 +1099,9 @@
 		<set name="material" val="GOLD" />
 		<set name="weight" val="120" />
 		<set name="is_sellable" val="false" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="60" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="35019" level="1" type="ON_UNEQUIP" /> <!-- Remove Talisman of Insolence Lv. 6 -->
 			<skill id="35018" level="1" type="ON_EQUIP" /> <!-- Insert Talisman of Insolence Lv. 6 -->
@@ -1123,9 +1123,9 @@
 		<set name="material" val="GOLD" />
 		<set name="weight" val="120" />
 		<set name="is_sellable" val="false" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="60" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="35020" level="1" type="ON_EQUIP" /> <!-- Talisman of Baium -->
 			<skill id="35021" level="1" type="ON_UNEQUIP" /> <!-- Talisman of Baium - Removal -->

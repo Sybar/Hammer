@@ -43,15 +43,18 @@ public class Q10967_CulturedAdventurer extends Quest
 {
 	// NPCs
 	private static final int CAPTAIN_BATHIS = 30332;
+	
 	// Monsters
 	private static final int OL_MAHUM_SHOOTER = 20063;
 	private static final int OL_MAHUM_SERGEANT = 20439;
 	private static final int OL_MAHUM_OFFICER = 20066;
 	private static final int OL_MAHUM_GENERAL = 20438;
 	private static final int OL_MAHUM_COMMANDER = 20076;
+	
 	// Items
 	private static final ItemHolder ADVENTURERS_BROOCH = new ItemHolder(91932, 1);
 	private static final ItemHolder ADVENTURERS_BROOCH_GEMS = new ItemHolder(91936, 1);
+	
 	// Misc
 	private static final String KILL_COUNT_VAR = "KillCount";
 	private static final int MAX_LEVEL = 30;
@@ -110,6 +113,7 @@ public class Q10967_CulturedAdventurer extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -143,6 +147,7 @@ public class Q10967_CulturedAdventurer extends Quest
 				htmltext = getAlreadyCompletedMsg(player);
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -178,6 +183,7 @@ public class Q10967_CulturedAdventurer extends Quest
 			holder.add(new NpcLogListHolder(NpcStringId.CLEAR_ABANDONED_CAMP.getId(), true, qs.getInt(KILL_COUNT_VAR)));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 	

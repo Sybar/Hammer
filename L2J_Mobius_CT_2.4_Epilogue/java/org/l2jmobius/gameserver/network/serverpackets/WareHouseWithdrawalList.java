@@ -55,6 +55,7 @@ public class WareHouseWithdrawalList extends ServerPacket
 			PacketLogger.warning("Error while sending withdraw request to: " + player.getName());
 			return;
 		}
+		
 		_playerAdena = player.getAdena();
 		_items = player.getActiveWarehouse().getItems();
 		_whType = type;
@@ -89,13 +90,16 @@ public class WareHouseWithdrawalList extends ServerPacket
 			{
 				buffer.writeLong(0);
 			}
+			
 			buffer.writeShort(item.getAttackElementType());
 			buffer.writeShort(item.getAttackElementPower());
 			for (byte i = 0; i < 6; i++)
 			{
 				buffer.writeShort(item.getElementDefAttr(i));
 			}
+			
 			buffer.writeInt(item.getMana());
+			
 			// T2
 			buffer.writeInt(item.isTimeLimitedItem() ? (int) (item.getRemainingTime() / 1000) : -1);
 			for (int op : item.getEnchantOptions())

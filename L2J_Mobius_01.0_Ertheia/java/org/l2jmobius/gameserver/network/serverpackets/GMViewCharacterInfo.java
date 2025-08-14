@@ -92,17 +92,21 @@ public class GMViewCharacterInfo extends ServerPacket
 		{
 			buffer.writeInt(_player.getInventory().getPaperdollObjectId(slot));
 		}
+		
 		for (int slot : getPaperdollOrder())
 		{
 			buffer.writeInt(_player.getInventory().getPaperdollItemDisplayId(slot));
 		}
+		
 		for (int slot : getPaperdollOrder())
 		{
 			final VariationInstance augment = _player.getInventory().getPaperdollAugmentation(slot);
 			buffer.writeInt(augment != null ? augment.getOption1Id() : 0); // Confirmed
+			
 			// Mobius: Maybe use 2x writeH?
 			// buffer.writeInt(augment != null ? augment.getOption2Id() : 0); // Confirmed
 		}
+		
 		buffer.writeInt(0);
 		buffer.writeInt(0);
 		buffer.writeInt(0);
@@ -170,6 +174,7 @@ public class GMViewCharacterInfo extends ServerPacket
 		{
 			buffer.writeShort(_player.getDefenseElementValue(type));
 		}
+		
 		buffer.writeInt(_player.getFame());
 		buffer.writeInt(_player.getVitalityPoints());
 		buffer.writeInt(0);

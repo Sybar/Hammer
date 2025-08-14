@@ -97,6 +97,7 @@ public class RequestResetAbilityPoint extends ClientPacket
 					player.getEffectList().stopSkillEffects(SkillFinishType.SILENT, skill); // TODO: Check if retail shows system message.
 				}
 			}
+			
 			player.setAbilityPointsUsed(0);
 			player.sendPacket(new ExAcquireAPSkillList(player));
 		}

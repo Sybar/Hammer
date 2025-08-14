@@ -39,6 +39,7 @@ public class Q00415_PathOfTheOrcMonk extends Quest
 	private static final int GANTAKI_ZU_URUTU = 30587;
 	private static final int KHAVATARI_ROSHEEK = 30590;
 	private static final int KHAVATARI_TORUKU = 30591;
+	
 	// Items
 	private static final int POMEGRANATE = 1593;
 	private static final int LEATHER_POUCH_1ST = 1594;
@@ -64,8 +65,10 @@ public class Q00415_PathOfTheOrcMonk extends Quest
 	private static final int TORUKUS_LETTER = 1614;
 	private static final int KASHA_SPIDERS_TOOTH = 8545;
 	private static final int HORN_OF_BAAR_DRE_VANUL = 8546;
+	
 	// Reward
 	private static final int KHAVATARI_TOTEM = 1615;
+	
 	// Monster
 	private static final int FELIM_LIZARDMAN_WARRIOR = 20014;
 	private static final int VUKU_ORC_FIGHTER = 20017;
@@ -76,6 +79,7 @@ public class Q00415_PathOfTheOrcMonk extends Quest
 	private static final int KASHA_BLADE_SPIDER = 20478;
 	private static final int KASHA_BEAR = 20479;
 	private static final int BAAR_DRE_VANUL = 21118;
+	
 	// Misc
 	private static final int MIN_LEVEL = 19;
 	
@@ -186,6 +190,7 @@ public class Q00415_PathOfTheOrcMonk extends Quest
 					{
 						addExpAndSp(player, 80314, 5087);
 					}
+					
 					qs.exitQuest(false, true);
 					player.sendPacket(new SocialAction(player.getObjectId(), 3));
 					htmltext = event;
@@ -231,6 +236,7 @@ public class Q00415_PathOfTheOrcMonk extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -551,6 +557,7 @@ public class Q00415_PathOfTheOrcMonk extends Quest
 						{
 							addExpAndSp(player, 80314, 5087);
 						}
+						
 						qs.exitQuest(false, true);
 						player.sendPacket(new SocialAction(player.getObjectId(), 3));
 						htmltext = "30501-04.html";
@@ -639,6 +646,7 @@ public class Q00415_PathOfTheOrcMonk extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	

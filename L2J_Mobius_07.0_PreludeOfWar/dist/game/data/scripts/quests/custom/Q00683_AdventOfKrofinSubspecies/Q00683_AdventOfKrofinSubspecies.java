@@ -54,6 +54,7 @@ public class Q00683_AdventOfKrofinSubspecies extends Quest
 		24315,
 		24316,
 	};
+	
 	// Misc
 	private static final int REQUIRED_KILL_COUNT = 250;
 	private static final String KILL_COUNT_VAR = "KillCount";
@@ -111,6 +112,7 @@ public class Q00683_AdventOfKrofinSubspecies extends Quest
 				return null;
 			}
 		}
+		
 		return event;
 	}
 	
@@ -192,6 +194,7 @@ public class Q00683_AdventOfKrofinSubspecies extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -229,6 +232,7 @@ public class Q00683_AdventOfKrofinSubspecies extends Quest
 			holder.add(new NpcLogListHolder(KILLING_NPCSTRING_ID, true, qs.getInt(KILL_COUNT_VAR)));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

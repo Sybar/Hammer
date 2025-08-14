@@ -39,6 +39,7 @@ public class Q00491_InNominePatris extends Quest
 {
 	// NPCs
 	private static final int SIRIK = 33649;
+	
 	// Monster's
 	private static final int[] MONSTERS =
 	{
@@ -47,11 +48,14 @@ public class Q00491_InNominePatris extends Quest
 		23183, // Succubus Archer
 		23184 // Succubus Shaman
 	};
+	
 	// Items
 	private static final int DIMENSIONAL_FRAGMENT = 34768;
+	
 	// Others
 	private static final int MIN_LEVEL = 76;
 	private static final int MAX_LEVEL = 81;
+	
 	// Reward
 	private static final int EXP_REWARD = 184210;
 	private static final int SP_REWARD = 45;
@@ -75,6 +79,7 @@ public class Q00491_InNominePatris extends Quest
 		{
 			return getNoQuestMsg(player);
 		}
+		
 		switch (event)
 		{
 			case "33649-02.htm":
@@ -99,6 +104,7 @@ public class Q00491_InNominePatris extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -118,6 +124,7 @@ public class Q00491_InNominePatris extends Quest
 						htmltext = "complete.htm";
 						break;
 					}
+					
 					qs.setState(State.CREATED);
 				}
 				case State.CREATED:
@@ -139,6 +146,7 @@ public class Q00491_InNominePatris extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	

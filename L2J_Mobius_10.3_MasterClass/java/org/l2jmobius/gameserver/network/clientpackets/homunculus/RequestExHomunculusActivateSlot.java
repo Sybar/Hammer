@@ -66,6 +66,7 @@ public class RequestExHomunculusActivateSlot extends ClientPacket
 			player.sendPacket(new ExActivateHomunculusResult(false));
 			return;
 		}
+		
 		if (!template.getSlotEnabled())
 		{
 			Logger.getLogger(getClass().getSimpleName() + " player " + player.getName() + " " + player.getObjectId() + " trying unlock disabled slot!");
@@ -82,6 +83,7 @@ public class RequestExHomunculusActivateSlot extends ClientPacket
 				return;
 			}
 		}
+		
 		for (ItemHolder feeHolder : fee)
 		{
 			if (!player.destroyItemByItemId(ItemProcessType.FEE, feeHolder.getId(), feeHolder.getCount(), player, true))

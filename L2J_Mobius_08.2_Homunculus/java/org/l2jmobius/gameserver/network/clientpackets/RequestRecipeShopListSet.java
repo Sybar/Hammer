@@ -68,6 +68,7 @@ public class RequestRecipeShopListSet extends ClientPacket
 				_manufactureRecipes = null;
 				return;
 			}
+			
 			_manufactureRecipes.put(id, cost);
 		}
 	}
@@ -125,11 +126,13 @@ public class RequestRecipeShopListSet extends ClientPacket
 				player.sendPacket(SystemMessageId.THE_RECIPE_IS_INCORRECT);
 				return;
 			}
+			
 			if (ItemData.getInstance().getTemplate(recipe.getItemId()).isQuestItem())
 			{
 				player.sendPacket(SystemMessageId.QUEST_RECIPES_CAN_NOT_BE_REGISTERED);
 				return;
 			}
+			
 			if (!player.hasRecipeList(recipe.getId()))
 			{
 				PunishmentManager.handleIllegalPlayerAction(player, "Warning!! " + player + " of account " + player.getAccountName() + " tried to set recipe which he does not have.", Config.DEFAULT_PUNISH);

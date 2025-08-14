@@ -38,8 +38,10 @@ public class Q10399_TheAlphabetOfTheGiants extends Quest
 		23309, // Corpse Looter Stakato
 		23310, // Lesser Laikel
 	};
+	
 	// Items
 	private static final int TABLET = 36667; // Giant's Alphabet
+	
 	// Misc
 	private static final int MIN_LEVEL = 52;
 	private static final int MAX_LEVEL = 58;
@@ -89,11 +91,13 @@ public class Q10399_TheAlphabetOfTheGiants extends Quest
 					{
 						addExpAndSp(player, 8779765, 914);
 					}
+					
 					htmltext = event;
 				}
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -128,6 +132,7 @@ public class Q10399_TheAlphabetOfTheGiants extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

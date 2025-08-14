@@ -34,6 +34,7 @@ public class Q10324_FindingMagisterGallint extends Quest
 	// NPCs
 	private static final int SHANNON = 32974;
 	private static final int GALLINT = 32980;
+	
 	// Misc
 	private static final int MAX_LEVEL = 20;
 	
@@ -82,6 +83,7 @@ public class Q10324_FindingMagisterGallint extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -108,6 +110,7 @@ public class Q10324_FindingMagisterGallint extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

@@ -95,6 +95,7 @@ public class EnchantSkillHolder
 				return item;
 			}
 		}
+		
 		return null;
 	}
 	
@@ -107,6 +108,7 @@ public class EnchantSkillHolder
 				return item;
 			}
 		}
+		
 		return new ItemHolder(Inventory.ADENA_ID, 0);
 	}
 }

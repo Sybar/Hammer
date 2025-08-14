@@ -98,6 +98,7 @@ public class ExOlympiadRankingInfo extends ServerPacket
 							{
 								buffer.writeInt(id);
 							}
+							
 							buffer.writeInt(Config.SERVER_ID); // server id
 							buffer.writeInt(player.getInt("level")); // level
 							buffer.writeInt(player.getInt("classId")); // class id
@@ -128,6 +129,7 @@ public class ExOlympiadRankingInfo extends ServerPacket
 								{
 									buffer.writeInt(last - first);
 								}
+								
 								for (int id2 = first; id2 <= last; id2++)
 								{
 									final StatSet plr = _playerList.get(id2);
@@ -149,6 +151,7 @@ public class ExOlympiadRankingInfo extends ServerPacket
 									{
 										buffer.writeInt(id2);
 									}
+									
 									buffer.writeInt(Config.SERVER_ID);
 									buffer.writeInt(plr.getInt("level"));
 									buffer.writeInt(plr.getInt("classId"));
@@ -161,6 +164,7 @@ public class ExOlympiadRankingInfo extends ServerPacket
 								}
 							}
 						}
+						
 						if (!found)
 						{
 							buffer.writeInt(0);
@@ -181,6 +185,7 @@ public class ExOlympiadRankingInfo extends ServerPacket
 								count++;
 							}
 						}
+						
 						buffer.writeInt(count > 50 ? 50 : count);
 						int i = 1;
 						for (Integer id : _playerList.keySet())
@@ -204,6 +209,7 @@ public class ExOlympiadRankingInfo extends ServerPacket
 											j++;
 										}
 									}
+									
 									for (Integer id2 : snapshotRaceList.keySet())
 									{
 										final StatSet snapshot = snapshotRaceList.get(id2);
@@ -217,6 +223,7 @@ public class ExOlympiadRankingInfo extends ServerPacket
 								{
 									buffer.writeInt(i);
 								}
+								
 								buffer.writeInt(Config.SERVER_ID);
 								buffer.writeInt(player.getInt("level"));
 								buffer.writeInt(player.getInt("classId"));
@@ -244,6 +251,7 @@ public class ExOlympiadRankingInfo extends ServerPacket
 								i++;
 							}
 						}
+						
 						for (Integer id : classList.keySet())
 						{
 							final StatSet player = classList.get(id);
@@ -260,6 +268,7 @@ public class ExOlympiadRankingInfo extends ServerPacket
 								{
 									buffer.writeInt(last - first);
 								}
+								
 								for (int id2 = first; id2 <= last; id2++)
 								{
 									final StatSet plr = classList.get(id2);
@@ -279,6 +288,7 @@ public class ExOlympiadRankingInfo extends ServerPacket
 								}
 							}
 						}
+						
 						if (!found)
 						{
 							buffer.writeInt(0);

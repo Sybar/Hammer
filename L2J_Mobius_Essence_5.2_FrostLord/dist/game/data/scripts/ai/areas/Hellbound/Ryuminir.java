@@ -38,12 +38,14 @@ public class Ryuminir extends AbstractNpcAI
 {
 	// NPC
 	private static final int RYUMINIR = 25936;
+	
 	// Locations
 	private static final Location[] SPAWNS =
 	{
 		new Location(20970, 256781, -1350),
 		new Location(21537, 251284, -1458),
 	};
+	
 	// Misc
 	private static final int ALIVE_MILLISECONDS = 3600000;
 	private static final String RYUMINIR_RESPAWN_PATTERN = "0 12 * * 6";
@@ -98,6 +100,7 @@ public class Ryuminir extends AbstractNpcAI
 				{
 					_startTask.cancel(true);
 				}
+				
 				_startTask = ThreadPool.schedule(new ScheduleAiTask(), (getNextRespawn() - System.currentTimeMillis()));
 			}
 		}

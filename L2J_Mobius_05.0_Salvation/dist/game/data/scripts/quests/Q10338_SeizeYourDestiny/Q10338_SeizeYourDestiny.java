@@ -45,13 +45,17 @@ public class Q10338_SeizeYourDestiny extends Quest
 	private static final int CELLPHINE = 33477;
 	private static final int HADEL = 33344;
 	private static final int HERMUNCUS = 33340;
+	
 	// Monsters
 	private static final int HARNAKS_WRAITH = 27445;
+	
 	// Items
 	private static final ItemHolder SCROLL_OF_AFTERLIFE = new ItemHolder(17600, 1);
 	private static final ItemHolder STEEL_DOOR_GUILD_COIN = new ItemHolder(37045, 400);
+	
 	// Locations
 	private static final Location RELIQUARY_OF_THE_GIANT = new Location(-114962, 226564, -2864);
+	
 	// Misc
 	private static final String STARTED_CLASS_VAR = "STARTED_CLASS";
 	private static final int MIN_LV = 85;
@@ -88,6 +92,7 @@ public class Q10338_SeizeYourDestiny extends Quest
 					htmltext = "";
 					break;
 				}
+				
 				player.teleToLocation(RELIQUARY_OF_THE_GIANT, null);
 				playMovie(player, Movie.SC_AWAKENING_VIEW);
 				break;
@@ -225,6 +230,7 @@ public class Q10338_SeizeYourDestiny extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

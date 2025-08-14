@@ -48,10 +48,13 @@ public class Chests extends AbstractNpcAI
 	};
 	// @formatter:on
 	private static final int SKILL_DELUXE_KEY = 2229;
+	
 	// Base chance for BOX to be opened
 	private static final int BASE_CHANCE = 100;
+	
 	// Percent to decrease base chance when grade of DELUXE key not match
 	private static final int LEVEL_DECREASE = 40;
+	
 	// Chance for a chest to actually be a BOX (as opposed to being a mimic).
 	private static final int IS_BOX = 40;
 	
@@ -77,10 +80,12 @@ public class Chests extends AbstractNpcAI
 					break;
 				}
 			}
+			
 			if (!found)
 			{
 				return;
 			}
+			
 			final Chest chest = ((Chest) npc);
 			
 			// if this has already been interacted, no further ai decisions are needed
@@ -88,6 +93,7 @@ public class Chests extends AbstractNpcAI
 			if (!chest.isInteracted())
 			{
 				chest.setInteracted();
+				
 				// if openned by a deluxe key
 				if (skill.getId() == SKILL_DELUXE_KEY)
 				{
@@ -98,6 +104,7 @@ public class Chests extends AbstractNpcAI
 					{
 						keyLevelNeeded *= -1;
 					}
+					
 					final int chance = BASE_CHANCE - (keyLevelNeeded * LEVEL_DECREASE);
 					
 					// success, pretend-death with rewards: chest.reduceCurrentHp(99999999, player)
@@ -109,6 +116,7 @@ public class Chests extends AbstractNpcAI
 						chest.reduceCurrentHp(99999999, caster, null);
 						return;
 					}
+					
 					caster.broadcastSocialAction(13);
 				}
 				else
@@ -128,6 +136,7 @@ public class Chests extends AbstractNpcAI
 		if (npc instanceof Chest)
 		{
 			final Chest chest = ((Chest) npc);
+			
 			// if this was a mimic, set the target, start the skills and become agro
 			if (!chest.isInteracted())
 			{
@@ -144,6 +153,7 @@ public class Chests extends AbstractNpcAI
 					chest.setRunning();
 					chest.addDamageHate(originalAttacker, 0, (damage * 100) / (chest.getLevel() + 7));
 					chest.getAI().setIntention(Intention.ATTACK, originalAttacker);
+					
 					// Maybe here?
 					if (getRandomBoolean())
 					{

@@ -37,6 +37,7 @@ public class Q10793_SaveTheSouls extends Quest
 {
 	// NPC
 	private static final int HATUBA = 33849;
+	
 	// Monsters
 	private static final int[] MONSTERS =
 	{
@@ -52,6 +53,7 @@ public class Q10793_SaveTheSouls extends Quest
 		21560, // Bone Shaper
 		21561, // Sacrificed Man
 	};
+	
 	// Misc
 	private static final int MIN_LEVEL = 65;
 	private static final int MAX_LEVEL = 70;
@@ -100,6 +102,7 @@ public class Q10793_SaveTheSouls extends Quest
 					{
 						addExpAndSp(player, 86636593, 226);
 					}
+					
 					qs.exitQuest(false, true);
 				}
 				break;
@@ -109,6 +112,7 @@ public class Q10793_SaveTheSouls extends Quest
 				htmltext = null;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -135,6 +139,7 @@ public class Q10793_SaveTheSouls extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -171,6 +176,7 @@ public class Q10793_SaveTheSouls extends Quest
 				return holder;
 			}
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

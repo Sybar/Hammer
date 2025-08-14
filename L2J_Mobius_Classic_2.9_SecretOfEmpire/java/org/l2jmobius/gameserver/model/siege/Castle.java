@@ -50,7 +50,6 @@ import org.l2jmobius.gameserver.model.WorldObject;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.enums.player.MountType;
-import org.l2jmobius.gameserver.model.actor.enums.player.PlayerCondOverride;
 import org.l2jmobius.gameserver.model.actor.instance.Artefact;
 import org.l2jmobius.gameserver.model.actor.instance.Door;
 import org.l2jmobius.gameserver.model.clan.Clan;
@@ -166,6 +165,7 @@ public class Castle extends AbstractResidence
 			{
 				return;
 			}
+			
 			final long currentTime = System.currentTimeMillis();
 			if (_endDate > currentTime)
 			{
@@ -193,6 +193,7 @@ public class Castle extends AbstractResidence
 					{
 						return;
 					}
+					
 					if ((ClanTable.getInstance().getClan(getOwnerId()).getWarehouse().getAdena() >= _fee) || !_cwh)
 					{
 						int fee = _fee;
@@ -207,6 +208,7 @@ public class Castle extends AbstractResidence
 						{
 							ClanTable.getInstance().getClan(getOwnerId()).getWarehouse().destroyItemByItemId(ItemProcessType.FEE, Inventory.ADENA_ID, fee, null, null);
 						}
+						
 						ThreadPool.schedule(new FunctionTask(true), _rate);
 					}
 					else
@@ -246,6 +248,7 @@ public class Castle extends AbstractResidence
 		super(castleId);
 		load();
 		initResidenceZone();
+		
 		// initFunctions();
 		spawnSideNpcs();
 		if (_ownerId != 0)
@@ -266,6 +269,7 @@ public class Castle extends AbstractResidence
 		{
 			return _function.get(type);
 		}
+		
 		return null;
 	}
 	
@@ -275,6 +279,7 @@ public class Castle extends AbstractResidence
 		{
 			return;
 		}
+		
 		setSide(side);
 		setOwner(clan);
 		final SystemMessage msg = new SystemMessage(SystemMessageId.CLAN_S1_HAS_SUCCEEDED_IN_S2);
@@ -310,6 +315,7 @@ public class Castle extends AbstractResidence
 					{
 						rune.addToTreasury(runeTax);
 					}
+					
 					amount -= runeTax;
 				}
 				break;
@@ -328,6 +334,7 @@ public class Castle extends AbstractResidence
 					{
 						aden.addToTreasury(adenTax); // Only bother to really add the tax to the treasury if not npc owned
 					}
+					
 					amount -= adenTax; // Subtract Aden's income from current castle instance's income
 				}
 				break;
@@ -357,6 +364,7 @@ public class Castle extends AbstractResidence
 			{
 				return false;
 			}
+			
 			_treasury -= amount;
 		}
 		else if ((_treasury + amount) > Inventory.MAX_ADENA)
@@ -417,6 +425,7 @@ public class Castle extends AbstractResidence
 				}
 			}
 		}
+		
 		return _zone;
 	}
 	
@@ -439,6 +448,7 @@ public class Castle extends AbstractResidence
 				}
 			}
 		}
+		
 		return _teleZone;
 	}
 	
@@ -469,7 +479,7 @@ public class Castle extends AbstractResidence
 	
 	public void openCloseDoor(Player player, int doorId, boolean open)
 	{
-		if ((player.getClanId() != _ownerId) && !player.canOverrideCond(PlayerCondOverride.CASTLE_CONDITIONS))
+		if ((player.getClanId() != _ownerId) && !player.isGM())
 		{
 			return;
 		}
@@ -490,7 +500,7 @@ public class Castle extends AbstractResidence
 	
 	public void openCloseDoor(Player player, String doorName, boolean open)
 	{
-		if ((player.getClanId() != _ownerId) && !player.canOverrideCond(PlayerCondOverride.CASTLE_CONDITIONS))
+		if ((player.getClanId() != _ownerId) && !player.isGM())
 		{
 			return;
 		}
@@ -518,6 +528,7 @@ public class Castle extends AbstractResidence
 		{
 			removeFunction(fc);
 		}
+		
 		_function.clear();
 	}
 	
@@ -538,6 +549,7 @@ public class Castle extends AbstractResidence
 						CastleManager.getInstance().removeCirclet(_formerOwner, getResidenceId());
 					}
 				}
+				
 				try
 				{
 					final Player oldleader = oldOwner.getLeader().getPlayer();
@@ -550,6 +562,7 @@ public class Castle extends AbstractResidence
 				{
 					LOGGER.log(Level.WARNING, "Exception in setOwner: " + e.getMessage(), e);
 				}
+				
 				oldOwner.setCastleId(0); // Unset has castle flag for old owner
 				for (Player member : oldOwner.getOnlineMembers(0))
 				{
@@ -593,11 +606,13 @@ public class Castle extends AbstractResidence
 			{
 				CastleManager.getInstance().removeCirclet(_formerOwner, getResidenceId());
 			}
+			
 			for (Player member : clan.getOnlineMembers(0))
 			{
 				removeResidentialSkills(member);
 				member.sendSkillList();
 			}
+			
 			clan.setCastleId(0);
 			clan.broadcastToOnlineMembers(new PledgeShowInfoUpdate(clan));
 		}
@@ -613,6 +628,7 @@ public class Castle extends AbstractResidence
 		{
 			removeFunction(fc);
 		}
+		
 		_function.clear();
 	}
 	
@@ -734,10 +750,12 @@ public class Castle extends AbstractResidence
 		{
 			return false;
 		}
+		
 		if ((lease > 0) && !player.destroyItemByItemId(null, Inventory.ADENA_ID, lease, null, true))
 		{
 			return false;
 		}
+		
 		if (addNew)
 		{
 			_function.put(type, new CastleFunction(type, lvl, lease, 0, rate, 0, false));
@@ -761,6 +779,7 @@ public class Castle extends AbstractResidence
 				_function.get(type).dbSave();
 			}
 		}
+		
 		return true;
 	}
 	
@@ -901,6 +920,7 @@ public class Castle extends AbstractResidence
 				return door;
 			}
 		}
+		
 		return null;
 	}
 	
@@ -913,6 +933,7 @@ public class Castle extends AbstractResidence
 				return door;
 			}
 		}
+		
 		return null;
 	}
 	
@@ -948,6 +969,7 @@ public class Castle extends AbstractResidence
 		{
 			_siege = new Siege(this);
 		}
+		
 		return _siege;
 	}
 	
@@ -972,6 +994,7 @@ public class Castle extends AbstractResidence
 		{
 			_siegeTimeRegistrationEndDate = Calendar.getInstance();
 		}
+		
 		return _siegeTimeRegistrationEndDate;
 	}
 	
@@ -996,6 +1019,7 @@ public class Castle extends AbstractResidence
 				break;
 			}
 		}
+		
 		return taxPercent;
 	}
 	
@@ -1037,6 +1061,7 @@ public class Castle extends AbstractResidence
 					owner.addReputationScore(Math.min(Config.TAKE_CASTLE_POINTS, maxreward));
 					owner.broadcastToOnlineMembers(new SystemMessage(SystemMessageId.SINCE_YOUR_CLAN_EMERGED_VICTORIOUS_FROM_THE_SIEGE_S1_POINT_S_HAVE_BEEN_ADDED_TO_YOUR_CLAN_REPUTATION).addInt(Math.min(Config.TAKE_CASTLE_POINTS, maxreward)));
 				}
+				
 				_formerOwner.broadcastToOnlineMembers(new SystemMessage(SystemMessageId.SINCE_YOUR_CLAN_WAS_DEFEATED_IN_A_SIEGE_S1_POINT_S_HAVE_BEEN_DEDUCTED_FROM_YOUR_CLAN_REPUTATION_AND_GIVEN_TO_THE_OPPOSING_CLAN).addInt(Config.LOOSE_CASTLE_POINTS));
 			}
 			else
@@ -1134,6 +1159,7 @@ public class Castle extends AbstractResidence
 				LOGGER.log(Level.WARNING, "Exception: setTrapUpgradeLevel(int towerIndex, int level, int castleId): " + e.getMessage(), e);
 			}
 		}
+		
 		final TowerSpawn spawn = SiegeManager.getInstance().getFlameTowers(getResidenceId()).get(towerIndex);
 		if (spawn != null)
 		{
@@ -1198,6 +1224,7 @@ public class Castle extends AbstractResidence
 				npc.deleteMe();
 			}
 		}
+		
 		_sideNpcs.clear();
 		
 		for (CastleSpawnHolder holder : getSideSpawns())
@@ -1214,6 +1241,7 @@ public class Castle extends AbstractResidence
 					LOGGER.warning(Castle.class.getSimpleName() + ": " + e.getMessage());
 					return;
 				}
+				
 				spawn.setXYZ(holder);
 				spawn.setHeading(holder.getHeading());
 				final Npc npc = spawn.doSpawn(false);
@@ -1247,6 +1275,7 @@ public class Castle extends AbstractResidence
 		{
 			LOGGER.log(Level.WARNING, e.getMessage(), e);
 		}
+		
 		_castleSide = side;
 		Broadcast.toAllOnlinePlayers(new ExCastleState(this));
 		spawnSideNpcs();

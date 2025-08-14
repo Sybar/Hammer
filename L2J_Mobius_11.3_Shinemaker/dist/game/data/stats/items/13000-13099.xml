@@ -255,9 +255,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="SummonItems" />
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2046" level="1" /> <!-- Summon Pet -->
 		</skills>
@@ -276,9 +276,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="SummonItems" />
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2046" level="1" /> <!-- Summon Pet -->
 		</skills>
@@ -297,9 +297,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="SummonItems" />
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2046" level="1" /> <!-- Summon Pet -->
 		</skills>
@@ -318,9 +318,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="SummonItems" />
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2046" level="1" /> <!-- Summon Pet -->
 		</skills>
@@ -519,9 +519,9 @@
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="for_npc" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player instanceId="43,44,45" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2577" level="1" /> <!-- Instant Defense -->
 		</skills>
@@ -543,9 +543,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="is_event_restricted" val="true" />
 		<set name="for_npc" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player instanceId="43,44,45" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2592" level="1" /> <!-- Quick HP Replenishing Potion -->
 		</skills>
@@ -568,9 +568,9 @@
 		<set name="is_sellable" val="false" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_depositable" val="false" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player instanceId="43" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">148</stat>
 			<stat type="mAtk">68</stat>
@@ -598,9 +598,9 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player instanceId="43" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">190</stat>
 			<stat type="mAtk">83</stat>
@@ -631,9 +631,9 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player instanceId="43" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">236</stat>
 			<stat type="mAtk">99</stat>
@@ -680,9 +680,9 @@
 		<set name="is_depositable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="is_questitem" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player instanceId="43" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="13039" name="Essence of Flame" type="EtcItem">
 		<!-- If you bring it along with an Reinforced Spirit's Sword to the Temple Inspector, you can exchange them for a Sword of Ice and Fire. -->
@@ -697,9 +697,9 @@
 		<set name="is_depositable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="is_questitem" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player instanceId="43" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="13040" name="Fire Attribute Enhancer" type="EtcItem">
 		<!-- Temporarily increases Fire Resistance. Can only be used in the Pailaka instant zone. -->
@@ -716,9 +716,9 @@
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="is_questitem" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player instanceId="43" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2335" level="1" /> <!-- Fire Resistance Potion -->
 		</skills>
@@ -738,9 +738,9 @@
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="is_questitem" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player instanceId="43" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2336" level="1" /> <!-- Water Resistance Potion -->
 		</skills>
@@ -763,9 +763,9 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player instanceId="44" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">259</stat>
 			<stat type="mAtk">143</stat>
@@ -796,9 +796,9 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player instanceId="44" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">279</stat>
 			<stat type="mAtk">153</stat>
@@ -830,9 +830,9 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player instanceId="44" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">299</stat>
 			<stat type="mAtk">163</stat>
@@ -863,9 +863,9 @@
 		<set name="etcitem_type" val="SOULSHOT" />
 		<set name="is_questitem" val="true" />
 		<set name="is_tradable" val="false" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player instanceId="43,44,45" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2151" level="1" /> <!-- C-grade Soulshot -->
 		</skills>
@@ -883,9 +883,9 @@
 		<set name="is_depositable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="is_questitem" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player instanceId="43,44,45" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="13047" name="Pailaka Weapon Upgrade 2" type="EtcItem">
 		<!-- Take it along with Reinforced Ancient Legacy Sword to the Dwarf Adventurer to obtain Complete Ancient Legacy Sword. -->
@@ -900,9 +900,9 @@
 		<set name="is_depositable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="is_questitem" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player instanceId="43,44,45" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="13048" name="Pailaka Antidote" type="EtcItem">
 		<!-- Cures Paralysis-type Poison s. Can only be used in the Pailaka instant dungeon. -->
@@ -919,9 +919,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="is_depositable" val="false" />
 		<set name="is_questitem" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player instanceId="44" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2578" level="1" /> <!-- Cure Poison Paralyze -->
 		</skills>
@@ -940,9 +940,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="is_depositable" val="false" />
 		<set name="is_questitem" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player instanceId="44" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2340" level="1" /> <!-- Dark Attack Resistance Potion -->
 		</skills>
@@ -964,9 +964,9 @@
 		<set name="is_event_restricted" val="true" />
 		<set name="isAppearanceable" val="true" />
 		<set name="for_npc" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player instanceId="43,44,45" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="mDef">49</stat>
 			<stat type="pDef">49</stat>
@@ -1000,9 +1000,9 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player instanceId="45" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">251</stat>
 			<stat type="mAtk">161</stat>
@@ -1037,9 +1037,9 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player instanceId="45" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">271</stat>
 			<stat type="mAtk">171</stat>
@@ -1074,9 +1074,9 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player instanceId="45" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">291</stat>
 			<stat type="mAtk">181</stat>
@@ -1109,9 +1109,9 @@
 		<set name="etcitem_type" val="SOULSHOT" />
 		<set name="is_questitem" val="true" />
 		<set name="is_tradable" val="false" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player instanceId="43,44,45" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2153" level="1" /> <!-- A-grade Soulshot -->
 		</skills>
@@ -1129,9 +1129,9 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_depositable" val="false" />
 		<set name="is_questitem" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player instanceId="43,44,45" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="13057" name="Weapon Upgrade 2" type="EtcItem">
 		<!-- Take it along with Reinforced Spear of Silenos to the Ketra Orc Spy to obtain Complete Spear of Silenos. -->
@@ -1146,9 +1146,9 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_depositable" val="false" />
 		<set name="is_questitem" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player instanceId="43,44,45" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="13058" name="Silenos Hair Accessory" type="Armor">
 		<set name="icon" val="icon.accessory_barka_karm_i00" />
@@ -1182,9 +1182,9 @@
 		<set name="is_depositable" val="false" />
 		<set name="is_questitem" val="true" />
 		<set name="for_npc" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player instanceId="44" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2593" level="1" /> <!-- Bow/ Crossbow Resistance Potion -->
 		</skills>

@@ -24,7 +24,6 @@ import org.l2jmobius.Config;
 import org.l2jmobius.gameserver.data.xml.AdminData;
 import org.l2jmobius.gameserver.managers.PunishmentManager;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.actor.enums.player.PlayerCondOverride;
 import org.l2jmobius.gameserver.model.item.ItemTemplate;
 import org.l2jmobius.gameserver.model.item.enums.ItemProcessType;
 import org.l2jmobius.gameserver.model.item.instance.Item;
@@ -75,13 +74,13 @@ public class RequestDropItem extends ClientPacket
 		}
 		
 		final Item item = player.getInventory().getItemByObjectId(_objectId);
-		if ((item == null) || (_count == 0) || !player.validateItemManipulation(_objectId, "drop") || (!Config.ALLOW_DISCARDITEM && !player.canOverrideCond(PlayerCondOverride.DROP_ALL_ITEMS)) || (!item.isDropable() && !(player.canOverrideCond(PlayerCondOverride.DROP_ALL_ITEMS) && Config.GM_TRADE_RESTRICTED_ITEMS)) || ((item.getItemType() == EtcItemType.PET_COLLAR) && player.havePetInvItems()) || player.isInsideZone(ZoneId.NO_ITEM_DROP))
+		if ((item == null) || (_count == 0) || !player.validateItemManipulation(_objectId, ItemProcessType.DROP) || (!Config.ALLOW_DISCARDITEM && !player.isGM()) || (!item.isDropable() && !(player.isGM() && Config.GM_TRADE_RESTRICTED_ITEMS)) || ((item.getItemType() == EtcItemType.PET_COLLAR) && player.havePetInvItems()) || player.isInsideZone(ZoneId.NO_ITEM_DROP))
 		{
 			player.sendPacket(SystemMessageId.THIS_ITEM_CANNOT_BE_DISCARDED);
 			return;
 		}
 		
-		if (item.isQuestItem() && !(player.canOverrideCond(PlayerCondOverride.DROP_ALL_ITEMS) && Config.GM_TRADE_RESTRICTED_ITEMS))
+		if (item.isQuestItem() && !(player.isGM() && Config.GM_TRADE_RESTRICTED_ITEMS))
 		{
 			return;
 		}
@@ -183,7 +182,7 @@ public class RequestDropItem extends ClientPacket
 			}
 		}
 		
-		if ((ItemTemplate.TYPE2_QUEST == item.getTemplate().getType2()) && !player.canOverrideCond(PlayerCondOverride.DROP_ALL_ITEMS))
+		if ((ItemTemplate.TYPE2_QUEST == item.getTemplate().getType2()) && !player.isGM())
 		{
 			player.sendPacket(SystemMessageId.THAT_ITEM_CANNOT_BE_DISCARDED_OR_EXCHANGED);
 			return;
@@ -209,6 +208,7 @@ public class RequestDropItem extends ClientPacket
 				itm.unChargeAllShots();
 				iu.addModifiedItem(itm);
 			}
+			
 			player.sendInventoryUpdate(iu);
 			player.broadcastUserInfo();
 			player.sendItemList(true);

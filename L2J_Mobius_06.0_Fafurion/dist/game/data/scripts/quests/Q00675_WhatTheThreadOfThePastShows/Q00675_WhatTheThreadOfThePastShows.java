@@ -39,6 +39,7 @@ public class Q00675_WhatTheThreadOfThePastShows extends Quest
 	// NPCs
 	private static final int CERIEL = 34415;
 	private static final int NERUPA = 34412;
+	
 	// Monsters
 	private static final int[] MONSTERS =
 	{
@@ -48,11 +49,13 @@ public class Q00675_WhatTheThreadOfThePastShows extends Quest
 		24124, // Flush Teasle
 		24126 // Creeper Rampike
 	};
+	
 	// Items
 	private static final int NERUPA_BUD_PETAL = 48368;
 	private static final int BASIC_SUPPLY_BOX = 48397; // Mother Tree Guardians Basic Treasure Chest: Shadow of the Mother Tree
 	private static final int INTERMEDIATE_SUPPLY_BOX = 48398; // Mother Tree Guardians Intermediate Treasure Chest: Shadow of the Mother Tree
 	private static final int ADVANCED_SUPPLY_BOX = 48399; // Mother Tree Guardians Advanced Treasure Chest: Shadow of the Mother Tree
+	
 	// Misc
 	private static final int MIN_LEVEL = 103;
 	
@@ -104,6 +107,7 @@ public class Q00675_WhatTheThreadOfThePastShows extends Quest
 					htmltext = "34415-04b.htm";
 					break;
 				}
+				
 				htmltext = "34415-04.htm";
 				break;
 			}
@@ -119,6 +123,7 @@ public class Q00675_WhatTheThreadOfThePastShows extends Quest
 					htmltext = "34415-04b.htm";
 					break;
 				}
+				
 				htmltext = "34415-04.htm";
 				break;
 			}
@@ -161,6 +166,7 @@ public class Q00675_WhatTheThreadOfThePastShows extends Quest
 							{
 								giveItems(player, BASIC_SUPPLY_BOX, 1);
 							}
+							
 							giveAdena(player, 2495659, true);
 							addExpAndSp(player, 27_191_624_760L, 27_191_610);
 							addFactionPoints(player, Faction.MOTHER_TREE_GUARDIANS, 100);
@@ -189,6 +195,7 @@ public class Q00675_WhatTheThreadOfThePastShows extends Quest
 							{
 								giveItems(player, INTERMEDIATE_SUPPLY_BOX, 1);
 							}
+							
 							giveAdena(player, 4991318, true);
 							addExpAndSp(player, 54_383_249_520L, 54_383_220);
 							addFactionPoints(player, Faction.MOTHER_TREE_GUARDIANS, 200);
@@ -217,6 +224,7 @@ public class Q00675_WhatTheThreadOfThePastShows extends Quest
 							{
 								giveItems(player, ADVANCED_SUPPLY_BOX, 1);
 							}
+							
 							giveAdena(player, 7486978, true);
 							addExpAndSp(player, 81_574_874_280L, 81_574_830);
 							addFactionPoints(player, Faction.MOTHER_TREE_GUARDIANS, 300);
@@ -233,6 +241,7 @@ public class Q00675_WhatTheThreadOfThePastShows extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -271,6 +280,7 @@ public class Q00675_WhatTheThreadOfThePastShows extends Quest
 									htmltext = "34415-04b.htm";
 									break;
 								}
+								
 								htmltext = "34415-04.htm";
 								break;
 							}
@@ -323,6 +333,7 @@ public class Q00675_WhatTheThreadOfThePastShows extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

@@ -71,6 +71,7 @@ public class CharSelected extends ServerPacket
 		{
 			buffer.writeInt(0);
 		}
+		
 		buffer.writeInt(0);
 		buffer.writeInt(0);
 		buffer.writeInt(GameTimeTaskManager.getInstance().getGameTime() % (24 * 60)); // "reset" on 24th hour

@@ -51,6 +51,7 @@ public class Doorman extends Folk
 		{
 			return true;
 		}
+		
 		return super.isAutoAttackable(attacker);
 	}
 	
@@ -105,6 +106,7 @@ public class Doorman extends Folk
 			}
 			return;
 		}
+		
 		super.onBypassFeedback(player, command);
 	}
 	

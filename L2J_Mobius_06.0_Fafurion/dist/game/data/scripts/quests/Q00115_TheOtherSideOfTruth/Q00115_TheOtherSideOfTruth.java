@@ -37,11 +37,13 @@ public class Q00115_TheOtherSideOfTruth extends Quest
 	private static final int ICE_SCULPTURE2 = 32077;
 	private static final int ICE_SCULPTURE3 = 32078;
 	private static final int ICE_SCULPTURE4 = 32079;
+	
 	// Items
 	private static final int MISAS_LETTER = 8079;
 	private static final int RAFFORTYS_LETTER = 8080;
 	private static final int PIECE_OF_TABLET = 8081;
 	private static final int REPORT_PIECE = 8082;
+	
 	// Misc
 	private static final int MIN_LEVEL = 53;
 	
@@ -394,6 +396,7 @@ public class Q00115_TheOtherSideOfTruth extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -509,6 +512,7 @@ public class Q00115_TheOtherSideOfTruth extends Quest
 										htmltext = getNoQuestLevelRewardMsg(player);
 										break;
 									}
+									
 									htmltext = "32020-30.html";
 								}
 								break;
@@ -799,6 +803,7 @@ public class Q00115_TheOtherSideOfTruth extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

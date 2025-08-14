@@ -33,8 +33,10 @@ public class KaraphonHabitat extends AbstractInstance
 	// NPCs
 	private static final int DOLKIN = 33954;
 	private static final int DOLKIN_INSTANCE = 34002;
+	
 	// Monsters
 	private static final int KARAPHON = 23459;
+	
 	// Instance
 	private static final int TEMPLATE_ID = 253;
 	
@@ -67,6 +69,7 @@ public class KaraphonHabitat extends AbstractInstance
 				}
 			}
 		}
+		
 		return null;
 	}
 	

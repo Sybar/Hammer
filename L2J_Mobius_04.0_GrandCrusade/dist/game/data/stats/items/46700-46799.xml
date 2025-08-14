@@ -541,9 +541,9 @@
 		<set name="etcitem_type" val="SCROLL" />
 		<set name="material" val="PAPER" />
 		<set name="handler" val="ItemSkills" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="18582" level="1" /> <!-- Teleport to the Town of Goddard -->
 		</skills>
@@ -560,9 +560,9 @@
 		<set name="etcitem_type" val="SCROLL" />
 		<set name="material" val="PAPER" />
 		<set name="handler" val="ItemSkills" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="18582" level="2" /> <!-- Teleport to the Varka Silenos Barracks -->
 		</skills>
@@ -579,9 +579,9 @@
 		<set name="etcitem_type" val="SCROLL" />
 		<set name="material" val="PAPER" />
 		<set name="handler" val="ItemSkills" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="18582" level="4" /> <!-- Teleport to the Town of Giran -->
 		</skills>
@@ -598,9 +598,9 @@
 		<set name="etcitem_type" val="SCROLL" />
 		<set name="material" val="PAPER" />
 		<set name="handler" val="ItemSkills" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="18582" level="3" /> <!-- Teleport to the Ketra Orc Outpost -->
 		</skills>
@@ -617,9 +617,9 @@
 		<set name="etcitem_type" val="SCROLL" />
 		<set name="material" val="PAPER" />
 		<set name="handler" val="ItemSkills" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="18582" level="5" /> <!-- Teleport to the Town of Goddard -->
 		</skills>
@@ -636,9 +636,9 @@
 		<set name="etcitem_type" val="SCROLL" />
 		<set name="material" val="PAPER" />
 		<set name="handler" val="ItemSkills" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="18582" level="6" /> <!-- Teleport to Dragon Valley -->
 		</skills>
@@ -988,9 +988,9 @@
 		<set name="etcitem_type" val="SCROLL" />
 		<set name="material" val="PAPER" />
 		<set name="handler" val="ItemSkills" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="18582" level="7" /> <!-- Teleport to the Giant's Cave -->
 		</skills>

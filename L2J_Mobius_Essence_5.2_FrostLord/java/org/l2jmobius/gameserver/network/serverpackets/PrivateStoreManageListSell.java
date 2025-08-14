@@ -77,6 +77,7 @@ public class PrivateStoreManageListSell extends AbstractItemPacket
 				writeItem(item, buffer);
 				buffer.writeLong(item.getItem().getReferencePrice() * 2);
 			}
+			
 			buffer.writeInt(0);
 			for (TradeItem item : _sellList)
 			{

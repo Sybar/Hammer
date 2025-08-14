@@ -5,27 +5,35 @@
 	</npcs>
 	<item>
 		<!-- Adena -->
-		<ingredient id="57" count="12000000" />
+		<ingredient id="57" count="160000" />
 		<!-- Mark of Battle -->
-		<ingredient id="45584" count="2037" />
-		<!-- Ancient Book: Divine Inspiration (Modern Language Version) -->
-		<production id="8618" count="1" />
+		<ingredient id="45584" count="38" />
+		<!-- Scroll: Enchant Armor (B-grade) -->
+		<production id="948" count="1" />
 	</item>
 	<item>
 		<!-- Adena -->
-		<ingredient id="57" count="15000000" />
+		<ingredient id="57" count="1500000" />
 		<!-- Mark of Battle -->
-		<ingredient id="45584" count="3961" />
-		<!-- Ancient Book: Divine Inspiration (Original Language Version) -->
-		<production id="8619" count="1" />
+		<ingredient id="45584" count="236" />
+		<!-- Scroll: Enchant Weapon (B-grade) -->
+		<production id="947" count="1" />
 	</item>
 	<item>
 		<!-- Adena -->
-		<ingredient id="57" count="50000" />
+		<ingredient id="57" count="480000" />
 		<!-- Mark of Battle -->
-		<ingredient id="45584" count="57" />
-		<!-- Clan Reputation Score - 10 -->
-		<production id="70280" count="1" />
+		<ingredient id="45584" count="113" />
+		<!-- Scroll: Enchant Armor (A-grade) -->
+		<production id="730" count="1" />
+	</item>
+	<item>
+		<!-- Adena -->
+		<ingredient id="57" count="2700000" />
+		<!-- Mark of Battle -->
+		<ingredient id="45584" count="850" />
+		<!-- Scroll: Enchant Weapon (A-grade) -->
+		<production id="729" count="1" />
 	</item>
 	<item>
 		<!-- Mark of Battle -->
@@ -54,38 +62,6 @@
 		<ingredient id="45584" count="787" />
 		<!-- Hero's Talisman - Defense -->
 		<production id="90037" count="1" />
-	</item>
-	<item>
-		<!-- Adena -->
-		<ingredient id="57" count="600000" />
-		<!-- Mark of Battle -->
-		<ingredient id="45584" count="272" />
-		<!-- Scroll: Enchant Armor (A-grade) -->
-		<production id="730" count="1" />
-	</item>
-	<item>
-		<!-- Adena -->
-		<ingredient id="57" count="200000" />
-		<!-- Mark of Battle -->
-		<ingredient id="45584" count="92" />
-		<!-- Scroll: Enchant Armor (B-grade) -->
-		<production id="948" count="1" />
-	</item>
-	<item>
-		<!-- Adena -->
-		<ingredient id="57" count="4500000" />
-		<!-- Mark of Battle -->
-		<ingredient id="45584" count="1019" />
-		<!-- Scroll: Enchant Weapon (A-grade) -->
-		<production id="729" count="1" />
-	</item>
-	<item>
-		<!-- Adena -->
-		<ingredient id="57" count="1250000" />
-		<!-- Mark of Battle -->
-		<ingredient id="45584" count="283" />
-		<!-- Scroll: Enchant Weapon (B-grade) -->
-		<production id="947" count="1" />
 	</item>
 	<item>
 		<!-- Adena -->

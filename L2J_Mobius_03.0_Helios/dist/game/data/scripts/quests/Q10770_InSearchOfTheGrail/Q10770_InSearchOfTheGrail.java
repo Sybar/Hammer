@@ -32,6 +32,7 @@ public class Q10770_InSearchOfTheGrail extends Quest
 	// NPCs
 	private static final int LORAIN = 30673;
 	private static final int JANSSEN = 30484;
+	
 	// Monsters
 	private static final int[] MONSTERS =
 	{
@@ -41,10 +42,12 @@ public class Q10770_InSearchOfTheGrail extends Quest
 		20217, // Krator
 		21036, // Shindebarn
 	};
+	
 	// Items
 	private static final int MYSTERIOUS_FRAGMENT = 39711;
 	private static final int ENCHANT_WEAPON_C = 951;
 	private static final int ENCHANT_ARMOR_C = 952;
+	
 	// Misc
 	private static final int MIN_LEVEL = 40;
 	private static final double DROP_RATE = 0.4;
@@ -110,6 +113,7 @@ public class Q10770_InSearchOfTheGrail extends Quest
 				htmltext = null;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -157,6 +161,7 @@ public class Q10770_InSearchOfTheGrail extends Quest
 				htmltext = "30484-03.html";
 			}
 		}
+		
 		return htmltext;
 	}
 	

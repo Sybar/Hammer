@@ -64,6 +64,7 @@ public class SetPrivateStoreListSell extends ClientPacket
 				_items = null;
 				return;
 			}
+			
 			_items[i] = new Item(itemId, cnt, price);
 		}
 	}

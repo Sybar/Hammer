@@ -37,6 +37,7 @@ public class Q00757_TriolsMovement extends Quest
 {
 	// NPC
 	private static final int RADZEN = 33803;
+	
 	// Monsters
 	private static final int[] MOBS =
 	{
@@ -53,14 +54,17 @@ public class Q00757_TriolsMovement extends Quest
 		23278, // Triol's Layperson
 		23283 // Triol's Believer
 	};
+	
 	// Items
 	private static final int PAGAN_TOTEM = 36230;
 	private static final int PAGAN_SOUL = 36231;
 	private static final int TOTEM_COUNT = 100;
 	private static final int SOUL_COUNT = 300;
+	
 	// Reward
 	private static final int DIVINE_BOX = 36232;
 	private static final int ADENA = 57;
+	
 	// Misc
 	private static final int MIN_LEVEL = 97;
 	
@@ -83,6 +87,7 @@ public class Q00757_TriolsMovement extends Quest
 		{
 			return getNoQuestMsg(player);
 		}
+		
 		switch (event)
 		{
 			case "start1.htm":
@@ -136,6 +141,7 @@ public class Q00757_TriolsMovement extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -155,6 +161,7 @@ public class Q00757_TriolsMovement extends Quest
 						htmltext = "restart.htm";
 						break;
 					}
+					
 					qs.setState(State.CREATED);
 					// fallthrough
 				}
@@ -177,6 +184,7 @@ public class Q00757_TriolsMovement extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -190,10 +198,12 @@ public class Q00757_TriolsMovement extends Quest
 			{
 				giveItemRandomly(killer, npc, PAGAN_TOTEM, 1, 100, 0.5, true);
 			}
+			
 			if ((ArrayUtil.contains(MOBS, npc.getId())) && (getQuestItemsCount(killer, PAGAN_SOUL) < SOUL_COUNT))
 			{
 				giveItemRandomly(killer, npc, PAGAN_SOUL, 1, 300, 0.3, true);
 			}
+			
 			if (getQuestItemsCount(killer, PAGAN_TOTEM) >= TOTEM_COUNT)
 			{
 				qs.setCond(2, true);

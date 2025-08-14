@@ -547,6 +547,7 @@ public class TullyWorkshop extends AbstractNpcAI
 			{
 				return "doorman-01c.htm";
 			}
+			
 			return "doorman-01.htm";
 		}
 		else if (npcId == INGENIOUS_CONTRAPTION)
@@ -561,8 +562,10 @@ public class TullyWorkshop extends AbstractNpcAI
 				{
 					return "32371-01a.htm";
 				}
+				
 				return "32371-01.htm";
 			}
+			
 			return "32371-04.htm";
 		}
 		else if (npcId == DWARVEN_GHOST)
@@ -599,6 +602,7 @@ public class TullyWorkshop extends AbstractNpcAI
 			{
 				return "32372-02.htm";
 			}
+			
 			return "32372-01.htm";
 		}
 		else if (npcId == CUBE_68)
@@ -611,6 +615,7 @@ public class TullyWorkshop extends AbstractNpcAI
 			{
 				return "32467-02.htm";
 			}
+			
 			return "32467-03.htm";
 		}
 		else if (npcId == TOMBSTONE)
@@ -622,8 +627,10 @@ public class TullyWorkshop extends AbstractNpcAI
 					return "32344-01.htm";
 				}
 			}
+			
 			return "32344-01a.htm";
 		}
+		
 		return null;
 	}
 	
@@ -646,6 +653,7 @@ public class TullyWorkshop extends AbstractNpcAI
 				false,
 				false
 			};
+			
 			// For teleportation party should have all 5 medals
 			for (Player pl : party.getMembers())
 			{
@@ -690,6 +698,7 @@ public class TullyWorkshop extends AbstractNpcAI
 				}
 			}
 		}
+		
 		return super.onTalk(npc, player);
 	}
 	
@@ -813,6 +822,7 @@ public class TullyWorkshop extends AbstractNpcAI
 				{
 					partyMember.teleToLocation(-13400, 272827, -15300, true);
 				}
+				
 				htmltext = null;
 			}
 			else
@@ -864,6 +874,7 @@ public class TullyWorkshop extends AbstractNpcAI
 					}
 				}
 			}
+			
 			htmltext = null;
 		}
 		else if (npcId == INGENIOUS_CONTRAPTION)
@@ -908,6 +919,7 @@ public class TullyWorkshop extends AbstractNpcAI
 							npc.deleteMe();
 						}
 					}
+					
 					htmltext = null;
 				}
 				else
@@ -931,6 +943,7 @@ public class TullyWorkshop extends AbstractNpcAI
 						{
 							spawnedAgent.deleteMe();
 						}
+						
 						spawnedAgent = addSpawn(AGENT, -12527, 279714, -11622, 16384, false, 0, false);
 						allowAgentSpawn_7th = false;
 					}
@@ -957,6 +970,7 @@ public class TullyWorkshop extends AbstractNpcAI
 							{
 								spawnedAgent.deleteMe();
 							}
+							
 							spawnedAgent = addSpawn(AGENT, -12527, 279714, -11622, 16384, false, 0, false);
 							allowAgentSpawn_7th = false;
 						}
@@ -977,6 +991,7 @@ public class TullyWorkshop extends AbstractNpcAI
 					{
 						npc.setTarget(player);
 					}
+					
 					npc.doCast(SkillData.getInstance().getSkill(5526, 1));
 				}
 				else
@@ -994,6 +1009,7 @@ public class TullyWorkshop extends AbstractNpcAI
 						npc.setTarget(partyMember);
 						npc.doCast(SkillData.getInstance().getSkill(5526, 1));
 					}
+					
 					startQuestTimer("despawn_agent_7", 60000, npc, null);
 				}
 			}
@@ -1093,6 +1109,7 @@ public class TullyWorkshop extends AbstractNpcAI
 				player.teleToLocation(CUBE_68_TELEPORTS[tpId][0], CUBE_68_TELEPORTS[tpId][1], CUBE_68_TELEPORTS[tpId][2]);
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -1195,6 +1212,7 @@ public class TullyWorkshop extends AbstractNpcAI
 				{
 					npcSpawn = postMortemSpawn.get(0);
 				}
+				
 				if (countdownTime > 60000)
 				{
 					if (((countdownTime % 60000) == 0) && (npcSpawn != null) && (npcSpawn.getId() == INGENIOUS_CONTRAPTION))
@@ -1226,6 +1244,7 @@ public class TullyWorkshop extends AbstractNpcAI
 					{
 						dmgZone.setEnabled(true);
 					}
+					
 					startQuestTimer("disable_zone", 300000, null, null);
 				}
 				else
@@ -1383,6 +1402,7 @@ public class TullyWorkshop extends AbstractNpcAI
 					spawnedNpc.deleteMe();
 				}
 			}
+			
 			postMortemSpawn.clear();
 		}
 		else if (npc.getId() == DARION)
@@ -1391,6 +1411,7 @@ public class TullyWorkshop extends AbstractNpcAI
 			{
 				pillarSpawn.getLastSpawn().setInvul(true);
 			}
+			
 			handleDoorsOnRespawn();
 		}
 		else if (npc.getId() == PILLAR)
@@ -1453,6 +1474,7 @@ public class TullyWorkshop extends AbstractNpcAI
 				}
 			}
 		}
+		
 		return ret;
 	}
 	

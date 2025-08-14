@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
 	<item id="6600" type="Weapon" name="Saint Spear - Guidance">
 		<!-- <Soul Crystal Enhancement>. Increases Accuracy by 5. Increases damage inflicted during PvP. -->
@@ -20,7 +20,7 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="true" />
 		<set name="item_skill" val="3602-9" /> <!-- Special Ability: Guidance -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="281" />
 			<set stat="mAtk" val="132" />
 			<set stat="critRate" val="8" />
@@ -28,7 +28,7 @@
 			<set stat="pAtkSpd" val="325" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="6601" type="Weapon" name="Saint Spear - Haste">
 		<!-- <Soul Crystal Enhancement>. Increases Atk. Spd. by about 7%. Increases damage inflicted during PvP. -->
@@ -50,7 +50,7 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="true" />
 		<set name="item_skill" val="3601-9" /> <!-- Special Ability: Haste -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="281" />
 			<set stat="mAtk" val="132" />
 			<set stat="critRate" val="8" />
@@ -58,7 +58,7 @@
 			<set stat="pAtkSpd" val="325" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="6602" type="Weapon" name="Demon Splinter - Focus">
 		<!-- <Soul Crystal Enhancement>. Increases critical chance by 80. Increases damage inflicted during PvP. -->
@@ -80,7 +80,7 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="true" />
 		<set name="item_skill" val="3565-1" /> <!-- Special Ability: Focus -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="342" />
 			<set stat="mAtk" val="132" />
 			<set stat="critRate" val="4" />
@@ -88,7 +88,7 @@
 			<set stat="pAtkSpd" val="325" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="6603" type="Weapon" name="Demon Splinter - Health">
 		<!-- <Soul Crystal Enhancement>. Increases Max HP by 25%. Increases damage inflicted during PvP. -->
@@ -110,7 +110,7 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="true" />
 		<set name="item_skill" val="3013-3" /> <!-- Special Ability: Health -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="342" />
 			<set stat="mAtk" val="132" />
 			<set stat="critRate" val="4" />
@@ -118,7 +118,7 @@
 			<set stat="pAtkSpd" val="325" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="6604" type="Weapon" name="Demon Splinter - Critical Stun">
 		<!-- <Soul Crystal Option>. Has a 27% chance of casting Stun on a critical attack. Increases damage inflicted during PvP. -->
@@ -142,7 +142,7 @@
 		<set name="oncrit_chance" val="27" />
 		<set name="oncrit_skill" val="3571-1" />
 		<set name="item_skill" val="3552-1" /> <!-- Special Ability: PvP Damage -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="342" />
 			<set stat="mAtk" val="132" />
 			<set stat="critRate" val="4" />
@@ -150,7 +150,7 @@
 			<set stat="pAtkSpd" val="325" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="6605" type="Weapon" name="Heavens Divider - Haste">
 		<!-- <Soul Crystal Enhancement>. Increases Atk. Spd. by about 7%. Increases damage inflicted during PvP. -->
@@ -173,14 +173,14 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="true" />
 		<set name="item_skill" val="3564-1" /> <!-- Special Ability: Haste -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="342" />
 			<set stat="mAtk" val="132" />
 			<set stat="critRate" val="8" />
 			<set stat="pAtkSpd" val="325" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="6606" type="Weapon" name="Heavens Divider - Health">
 		<!-- <Soul Crystal Enhancement>. Increases Max HP by 25%. Increases damage inflicted during PvP. -->
@@ -203,14 +203,14 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="true" />
 		<set name="item_skill" val="3013-3" /> <!-- Special Ability: Health -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="342" />
 			<set stat="mAtk" val="132" />
 			<set stat="critRate" val="8" />
 			<set stat="pAtkSpd" val="325" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="6607" type="Weapon" name="Heavens Divider - Focus">
 		<!-- <Soul Crystal Enhancement>. Increases critical chance by 84. Increases damage inflicted during PvP. -->
@@ -233,14 +233,14 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="true" />
 		<set name="item_skill" val="3566-1" /> <!-- Special Ability: Focus -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="342" />
 			<set stat="mAtk" val="132" />
 			<set stat="critRate" val="8" />
 			<set stat="pAtkSpd" val="325" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="6608" type="Weapon" name="Arcana Mace - Acumen">
 		<!-- <Soul Crystal Enhancement>. Increases Casting Spd. by 15%. Increases damage inflicted during PvP. -->
@@ -263,7 +263,7 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="is_magic_weapon" val="true" />
 		<set name="item_skill" val="3047-2" /> <!-- Special Ability: Acumen -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="225" />
 			<set stat="mAtk" val="175" />
 			<set stat="critRate" val="4" />
@@ -271,7 +271,7 @@
 			<set stat="pAtkSpd" val="379" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="6609" type="Weapon" name="Arcana Mace - MP Regeneration">
 		<!-- <Soul Crystal Enhancement>. Increases MP regeneration rate. Increases damage inflicted during PvP. -->
@@ -294,7 +294,7 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="is_magic_weapon" val="true" />
 		<set name="item_skill" val="3576-1" /> <!-- Special Ability: MP Regeneration -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="225" />
 			<set stat="mAtk" val="175" />
 			<set stat="critRate" val="4" />
@@ -302,7 +302,7 @@
 			<set stat="pAtkSpd" val="379" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="6610" type="Weapon" name="Arcana Mace - Mana Up">
 		<!-- <Soul Crystal Enhancement>. Increases Max MP by 30%. Increases damage inflicted during PvP. -->
@@ -325,7 +325,7 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="is_magic_weapon" val="true" />
 		<set name="item_skill" val="3014-2" /> <!-- Special Ability: Mana Up -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="225" />
 			<set stat="mAtk" val="175" />
 			<set stat="critRate" val="4" />
@@ -333,7 +333,7 @@
 			<set stat="pAtkSpd" val="379" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="6611" type="Weapon" name="Infinity Blade">
 		<!-- on a critical attack, decreases one's P. Def. and increases de-buff casting ability, damage shield effect, Max HP, Max MP, Max CP, and shield defense power. Enhances damage to target during PvP. -->
@@ -358,15 +358,15 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="oncrit_skill" val="3579-1" />
 		<set name="item_skill" val="3578-1" /> <!-- Special Ability: Infinity Blade -->
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player isHero="true" />
-		</cond>
-		<for>
+		</conditions>
+		<stats>
 			<set stat="pAtk" val="379" />
 			<set stat="mAtk" val="169" />
 			<set stat="critRate" val="8" />
 			<set stat="pAtkSpd" val="379" />
-		</for>
+		</stats>
 	</item>
 	<item id="6612" type="Weapon" name="Infinity Cleaver">
 		<!-- Increases critical attack success rate/power, MaxHP, MaxCP and damage inflicted during PvP. Inflicts extra damage on critical attack. Reflects debuff attack back on enemy. -->
@@ -390,15 +390,15 @@
 		<set name="is_depositable" val="false" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="item_skill" val="3582-1" /> <!-- Special Ability: Infinity Cleaver -->
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player isHero="true" />
-		</cond>
-		<for>
+		</conditions>
+		<stats>
 			<set stat="pAtk" val="461" />
 			<set stat="mAtk" val="169" />
 			<set stat="critRate" val="8" />
 			<set stat="pAtkSpd" val="325" />
-		</for>
+		</stats>
 	</item>
 	<item id="6613" type="Weapon" name="Infinity Axe">
 		<!-- on a critical attack, it bestows one the ability to cause internal conflict to one's opponent. Damage shield function, Max HP, Max MP, Max CP as well as one's shield defense rate are increased. It also enhances damage to target during PvP. -->
@@ -423,16 +423,16 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="oncrit_skill" val="3581-1" />
 		<set name="item_skill" val="3580-1" /> <!-- Special Ability: Infinity Axe -->
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player isHero="true" />
-		</cond>
-		<for>
+		</conditions>
+		<stats>
 			<set stat="pAtk" val="379" />
 			<set stat="mAtk" val="169" />
 			<set stat="critRate" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-		</for>
+		</stats>
 	</item>
 	<item id="6614" type="Weapon" name="Infinity Rod">
 		<!-- Recovers HP 100%, increases Max MP/Max CP, increases casting speed and increases MP recovery speed during magic skill use. Increases damage inflicted during PvP. -->
@@ -458,16 +458,16 @@
 		<set name="onmagic_chance" val="3" />
 		<set name="onmagic_skill" val="3598-1" />
 		<set name="item_skill" val="3597-1" /> <!-- Special Ability: Infinity Rod -->
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player isHero="true" />
-		</cond>
-		<for>
+		</conditions>
+		<stats>
 			<set stat="pAtk" val="303" />
 			<set stat="mAtk" val="226" />
 			<set stat="critRate" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-		</for>
+		</stats>
 	</item>
 	<item id="6615" type="Weapon" name="Infinity Crusher">
 		<!-- Increases Max HP, Max CP, and Atk. Spd. Stuns a target when a critical attack occurs and has possibility of reflecting the skill back on the player. Enhances damage to target during PvP. -->
@@ -492,16 +492,16 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="oncrit_skill" val="3584-1" />
 		<set name="item_skill" val="3583-1" /> <!-- Special Ability: Infinity Crusher -->
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player isHero="true" />
-		</cond>
-		<for>
+		</conditions>
+		<stats>
 			<set stat="pAtk" val="461" />
 			<set stat="mAtk" val="169" />
 			<set stat="critRate" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="325" />
-		</for>
+		</stats>
 	</item>
 	<item id="6616" type="Weapon" name="Infinity Scepter">
 		<!-- Recovers HP 100%, increases Max MP/Max CP, increases M. Atk., decreases MP consumption, increases magic critical rate, and decreases chance of magic cancel during magic skill use. Increases damage inflicted during PvP. -->
@@ -527,16 +527,16 @@
 		<set name="onmagic_chance" val="3" />
 		<set name="onmagic_skill" val="3596-1" />
 		<set name="item_skill" val="3595-1" /> <!-- Special Ability: Infinity Scepter -->
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player isHero="true" />
-		</cond>
-		<for>
+		</conditions>
+		<stats>
 			<set stat="pAtk" val="369" />
 			<set stat="mAtk" val="249" />
 			<set stat="critRate" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="325" />
-		</for>
+		</stats>
 	</item>
 	<item id="6617" type="Weapon" name="Infinity Stinger">
 		<!-- Increases Max MP, Max CP, Atk. Spd., MP regen rate, and the success rate of Mortal and Deadly Blow from the back of the target. Silences the target when a critical attack occurs and has Vampiric Rage effect. Enhances damage to target during PvP. -->
@@ -561,16 +561,16 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="oncrit_skill" val="3590-1" />
 		<set name="item_skill" val="3589-1" /> <!-- Special Ability: Infinity Stinger -->
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player isHero="true" />
-		</cond>
-		<for>
+		</conditions>
+		<stats>
 			<set stat="pAtk" val="332" />
 			<set stat="mAtk" val="169" />
 			<set stat="critRate" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="433" />
-		</for>
+		</stats>
 	</item>
 	<item id="6618" type="Weapon" name="Infinity Fang">
 		<!-- Increases Max HP, Max MP, Max CP and evasion. Stuns a target when a critical attack occurs and has possibility of reflecting the skill back on the player at a certain probability rate. Enhances damage to target during PvP. -->
@@ -595,16 +595,16 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="oncrit_skill" val="3588-1" />
 		<set name="item_skill" val="3587-1" /> <!-- Special Ability: Infinity Fang -->
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player isHero="true" />
-		</cond>
-		<for>
+		</conditions>
+		<stats>
 			<set stat="pAtk" val="461" />
 			<set stat="mAtk" val="169" />
 			<set stat="critRate" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="325" />
-		</for>
+		</stats>
 	</item>
 	<item id="6619" type="Weapon" name="Infinity Bow">
 		<!-- Increases Max MP/Max CP and decreases re-use delay of a bow. Slows target when a critical attack occurs and has Cheap Shot effect. Enhances damage to target during PvP. -->
@@ -631,16 +631,16 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="oncrit_skill" val="3594-1" />
 		<set name="item_skill" val="3593-1" /> <!-- Special Ability: Infinity Bow -->
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player isHero="true" />
-		</cond>
-		<for>
+		</conditions>
+		<stats>
 			<set stat="pAtk" val="707" />
 			<set stat="mAtk" val="169" />
 			<set stat="critRate" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="293" />
-		</for>
+		</stats>
 	</item>
 	<item id="6620" type="Weapon" name="Infinity Wing">
 		<!-- When a critical attack occurs, increases Max HP, Max MP, Max CP and critical chance. Silences the target and has possibility of reflecting the skill back on the target. Enhances damage to target during PvP. -->
@@ -665,15 +665,15 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="oncrit_skill" val="3586-1" />
 		<set name="item_skill" val="3585-1" /> <!-- Infinity Wing -->
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player isHero="true" />
-		</cond>
-		<for>
+		</conditions>
+		<stats>
 			<set stat="pAtk" val="461" />
 			<set stat="mAtk" val="169" />
 			<set stat="critRate" val="8" />
 			<set stat="pAtkSpd" val="325" />
-		</for>
+		</stats>
 	</item>
 	<item id="6621" type="Weapon" name="Infinity Spear">
 		<!-- on a critical attack, increases Max HP, Max CP, Atk. Spd. and Accuracy. Casts dispel on a target and has possibility of reflecting the skill back on the target. Enhances damage to target during PvP. -->
@@ -698,16 +698,16 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="oncrit_skill" val="3592-1" />
 		<set name="item_skill" val="3591-1" /> <!-- Special Ability: Infinity Spear -->
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player isHero="true" />
-		</cond>
-		<for>
+		</conditions>
+		<stats>
 			<set stat="pAtk" val="379" />
 			<set stat="mAtk" val="169" />
 			<set stat="critRate" val="8" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="325" />
-		</for>
+		</stats>
 	</item>
 	<item id="6622" type="EtcItem" name="Giant's Codex">
 		<!-- An item required for skill enchanting. -->
@@ -983,9 +983,9 @@
 		<set name="handler" val="SummonItems" />
 		<set name="item_skill" val="2046-1" /> <!-- Wolf's Necklace -->
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="6649" type="EtcItem" name="Baby Cougar Chime">
 		<!-- A chime that is used to call a baby cougar. The baby cougar will take away 5 percent of the Exp that its master acquires. -->
@@ -999,9 +999,9 @@
 		<set name="handler" val="SummonItems" />
 		<set name="item_skill" val="2046-1" /> <!-- Wolf's Necklace -->
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="6650" type="EtcItem" name="Baby Kookaburra Ocarina">
 		<!-- An ocarina that is used to call a baby Kookaburra. The baby Kookaburra will take away 5 percent of the Exp that its master acquires. -->
@@ -1015,9 +1015,9 @@
 		<set name="handler" val="SummonItems" />
 		<set name="item_skill" val="2046-1" /> <!-- Wolf's Necklace -->
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="6651" type="EtcItem" name="Noblesse Gate Pass">
 		<set name="icon" val="icon.etc_nobless_teleport_coupon_i00" />
@@ -1086,11 +1086,11 @@
 		<set name="price" val="3700000" />
 		<set name="enchant_enabled" val="true" />
 		<set name="item_skill" val="3558-1" /> <!-- Earring of Antharas -->
-		<for>
+		<stats>
 			<add order="0" stat="mDef" val="71" />
 			<add stat="maxMp" val="31" />
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="6657" type="Armor" name="Necklace of Valakas">
 		<!-- Produces the following effects: MP +42, HP +445, increase resistance to sleep by 40%, increase sleep attack chance by 40%, decrease in skill re-use delay, increase P. Atk. and M. Atk., Wild Magic effect, Damage Shield effect and increase resistance to Fire attacks. -->
@@ -1105,11 +1105,11 @@
 		<set name="price" val="4940000" />
 		<set name="enchant_enabled" val="true" />
 		<set name="item_skill" val="3557-1" /> <!-- Necklace of Valakas -->
-		<for>
+		<stats>
 			<add order="0" stat="mDef" val="95" />
 			<add stat="maxMp" val="42" />
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="6658" type="Armor" name="Ring of Baium">
 		<!-- Produces the following effects: MP +21, increase resistance to poison by 40%, increase poison attack chance by 40%, increase accuracy, increase critical damage, increase resistance to hold by 30%, increase hold attack chance by 30%, increase Atk. Spd. and Casting Spd. If a character wears two identical rings, the effect of only one ring will be applied. -->
@@ -1124,11 +1124,11 @@
 		<set name="price" val="1730000" />
 		<set name="enchant_enabled" val="true" />
 		<set name="item_skill" val="3561-1" /> <!-- Ring of Baium -->
-		<for>
+		<stats>
 			<add order="0" stat="mDef" val="48" />
 			<add stat="maxMp" val="21" />
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="6659" type="Armor" name="Earring of Zaken">
 		<!-- Produces the following effects: MP +31, increase resistance to bleed by 30%, increase bleed attack chance by 30%, vampiric rage effect, increase healing effects, increase resistance to stun/abnormal mental state attack by 20%, and increase stun/abnormal mental state attack chance by 20%. If a character wears two identical earrings, the effect of only one earring will be applied. -->
@@ -1143,11 +1143,11 @@
 		<set name="price" val="2590000" />
 		<set name="enchant_enabled" val="true" />
 		<set name="item_skill" val="3559-1" /> <!-- Earring of Zaken -->
-		<for>
+		<stats>
 			<add order="0" stat="mDef" val="71" />
 			<add stat="maxMp" val="31" />
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="6660" type="Armor" name="Ring of Queen Ant">
 		<!-- Produces the following effects: MP +21, increase resistance to poison by 30%, increase poison attack chance by 30%, increase accuracy, increase critical damage, increase resistance to hold by 20%, and increase hold attack chance by 20%. If a character wears two identical rings, the effect of only one ring will be applied -->
@@ -1162,11 +1162,11 @@
 		<set name="price" val="616000" />
 		<set name="enchant_enabled" val="true" />
 		<set name="item_skill" val="3562-1" /> <!-- Ring of Ant Queen -->
-		<for>
+		<stats>
 			<add order="0" stat="mDef" val="48" />
 			<add stat="maxMp" val="21" />
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="6661" type="Armor" name="Earring of Orfen">
 		<!-- Produces the following effects: MP +31, increase resistance to bleed by 20%, increase bleed attack chance by 20%, and increase healing effects. If a character wears two identical earrings, the effect of only one earring will be applied -->
@@ -1181,11 +1181,11 @@
 		<set name="price" val="1300000" />
 		<set name="enchant_enabled" val="true" />
 		<set name="item_skill" val="3560-1" /> <!-- Earring of Orfen -->
-		<for>
+		<stats>
 			<add order="0" stat="mDef" val="71" />
 			<add stat="maxMp" val="31" />
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="6662" type="Armor" name="Ring of Core">
 		<!-- Produces the following effects: MP +21, increase resistance to poison by 20%, increase poison attack chance by 20%, and increase accuracy. If a character wears two identical rings, the effect of only one ring will be applied -->
@@ -1200,11 +1200,11 @@
 		<set name="price" val="870000" />
 		<set name="enchant_enabled" val="true" />
 		<set name="item_skill" val="3563-1" /> <!-- Ring of Core -->
-		<for>
+		<stats>
 			<add order="0" stat="mDef" val="48" />
 			<add stat="maxMp" val="21" />
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="6663" type="EtcItem" name="Scroll of Escape: Orc Village">
 		<set name="icon" val="icon.etc_scroll_of_return_agit_i00" />
@@ -1335,13 +1335,13 @@
 		<set name="price" val="12781000" />
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
-		<for>
+		</conditions>
+		<stats>
 			<add order="0" stat="pDef" val="193" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="6675" type="Armor" name="Sealed Imperial Crusader Gaiters">
 		<!-- Sealed Imperial Crusader Gaiters. Its seal can be broken with the help of the Blacksmith of Mammon. -->
@@ -1357,13 +1357,13 @@
 		<set name="price" val="7988000" />
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
-		<for>
+		</conditions>
+		<stats>
 			<add order="0" stat="pDef" val="121" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="6676" type="Armor" name="Sealed Imperial Crusader Gauntlet">
 		<!-- Sealed Imperial Crusader Gauntlets. Its seal can be broken with the help of the Blacksmith of Mammon. -->
@@ -1378,13 +1378,13 @@
 		<set name="price" val="3195000" />
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
-		<for>
+		</conditions>
+		<stats>
 			<add order="0" stat="pDef" val="55" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="6677" type="Armor" name="Sealed Imperial Crusader Boots">
 		<!-- Sealed Imperial Crusader Boots. Its seal can be broken with the help of the Blacksmith of Mammon. -->
@@ -1399,13 +1399,13 @@
 		<set name="price" val="3195000" />
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
-		<for>
+		</conditions>
+		<stats>
 			<add order="0" stat="pDef" val="55" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="6678" type="Armor" name="Sealed Imperial Crusader Shield">
 		<!-- Sealed Imperial Crusader Shield. Its seal can be broken with the help of the Blacksmith of Mammon. -->
@@ -1419,15 +1419,15 @@
 		<set name="weight" val="1170" />
 		<set name="price" val="3355000" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
-		<for>
+		</conditions>
+		<stats>
 			<sub stat="rEvas" val="8" />
 			<set stat="rShld" val="20" />
 			<set stat="sDef" val="276" />
 			<enchant val="0" stat="sDef" />
-		</for>
+		</stats>
 	</item>
 	<item id="6679" type="Armor" name="Sealed Imperial Crusader Helmet">
 		<!-- Sealed Imperial Crusader Helmet. Its seal can be broken with the help of the Blacksmith of Mammon. -->
@@ -1442,13 +1442,13 @@
 		<set name="price" val="4793000" />
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
-		<for>
+		</conditions>
+		<stats>
 			<add order="0" stat="pDef" val="83" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="6680" type="Armor" name="Sealed Draconic Leather Armor">
 		<!-- Sealed Draconic Leather Armor. Its seal can be broken with the help of the Blacksmith of Mammon. -->
@@ -1464,10 +1464,10 @@
 		<set name="price" val="15577000" />
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="true" />
-		<for>
+		<stats>
 			<add order="0" stat="pDef" val="236" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="6681" type="Armor" name="Sealed Draconic Leather Glove">
 		<!-- Sealed Draconic Leather Gloves. Its seal can be broken with the help of the Blacksmith of Mammon. -->
@@ -1482,10 +1482,10 @@
 		<set name="price" val="3195000" />
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="true" />
-		<for>
+		<stats>
 			<add order="0" stat="pDef" val="55" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="6682" type="Armor" name="Sealed Draconic Leather Boots">
 		<!-- Sealed Draconic Leather Boots. Its seal can be broken with the help of the Blacksmith of Mammon. -->
@@ -1500,10 +1500,10 @@
 		<set name="price" val="3195000" />
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="true" />
-		<for>
+		<stats>
 			<add order="0" stat="pDef" val="55" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="6683" type="Armor" name="Sealed Draconic Leather Helmet">
 		<!-- Sealed Draconic Leather Helmet. Its seal can be broken with the help of the Blacksmith of Mammon. -->
@@ -1518,10 +1518,10 @@
 		<set name="price" val="4793000" />
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="true" />
-		<for>
+		<stats>
 			<add order="0" stat="pDef" val="83" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="6684" type="Armor" name="Sealed Major Arcana Robe">
 		<!-- Sealed Major Arcana Robe. Its seal can be broken with the help of the Blacksmith of Mammon. -->
@@ -1537,14 +1537,14 @@
 		<set name="price" val="15577000" />
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
-		<for>
+		</conditions>
+		<stats>
 			<add order="0" stat="pDef" val="157" />
 			<add stat="maxMp" val="866" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="6685" type="Armor" name="Sealed Major Arcana Glove">
 		<!-- Sealed Major Arcana Gloves. Its seal can be broken with the help of the Blacksmith of Mammon. -->
@@ -1559,13 +1559,13 @@
 		<set name="price" val="3195000" />
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
-		<for>
+		</conditions>
+		<stats>
 			<add order="0" stat="pDef" val="55" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="6686" type="Armor" name="Sealed Major Arcana Boots">
 		<!-- Sealed Major Arcana Boots. Its seal can be broken with the help of the Blacksmith of Mammon. -->
@@ -1580,13 +1580,13 @@
 		<set name="price" val="3195000" />
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
-		<for>
+		</conditions>
+		<stats>
 			<add order="0" stat="pDef" val="55" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="6687" type="Armor" name="Sealed Major Arcana Circlet">
 		<!-- Sealed Major Arcana Circlets. Its seal can be broken with the help of the Blacksmith of Mammon. -->
@@ -1601,13 +1601,13 @@
 		<set name="price" val="4793000" />
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
-		<for>
+		</conditions>
+		<stats>
 			<add order="0" stat="pDef" val="83" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="6688" type="EtcItem" name="Forgotten Blade Edge">
 		<!-- Main ingredient required for a Dwarf to make a Forgotten Blade. Can also be sold at ordinary shops. -->

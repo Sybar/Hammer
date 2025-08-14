@@ -46,10 +46,13 @@ public class Q10296_SevenSignsOneWhoSeeksThePowerOfTheSeal extends Quest
 	private static final int HARDIN = 30832;
 	private static final int WOOD = 32593;
 	private static final int FRANZ = 32597;
+	
 	// Location
 	private static final Location UNKNOWN_LOC = new Location(76707, -241022, -10832);
+	
 	// Reward
 	private static final int CERTIFICATE_OF_DAWN = 17265;
+	
 	// Misc
 	private static final int MIN_LEVEL = 81;
 	
@@ -102,6 +105,7 @@ public class Q10296_SevenSignsOneWhoSeeksThePowerOfTheSeal extends Quest
 				{
 					etis.deleteMe();
 				}
+				
 				player.teleToLocation(UNKNOWN_LOC);
 				final Npc elcadia = player.getInstanceWorld().getNpc(ELCADIA_INSTANCE);
 				elcadia.teleToLocation(player, true);
@@ -116,6 +120,7 @@ public class Q10296_SevenSignsOneWhoSeeksThePowerOfTheSeal extends Quest
 				{
 					addSpawn(ETIS_VAN_ETINA, UNKNOWN_LOC, false, 0, false, player.getInstanceId());
 				}
+				
 				return null;
 			}
 			case "respawn_elcadia":
@@ -129,6 +134,7 @@ public class Q10296_SevenSignsOneWhoSeeksThePowerOfTheSeal extends Quest
 				{
 					qs.setCond(3, true);
 				}
+				
 				final Instance world = player.getInstanceWorld();
 				world.ejectPlayer(player);
 				world.destroy();
@@ -165,6 +171,7 @@ public class Q10296_SevenSignsOneWhoSeeksThePowerOfTheSeal extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -252,6 +259,7 @@ public class Q10296_SevenSignsOneWhoSeeksThePowerOfTheSeal extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

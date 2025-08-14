@@ -42,6 +42,7 @@ public final class HatchlingNest extends AbstractInstance
 {
 	// MOBs
 	private static final int HATCHLING = 24089;
+	
 	// Misc
 	private static final int TEMPLATE_ID = 269;
 	
@@ -65,6 +66,7 @@ public final class HatchlingNest extends AbstractInstance
 				player.refreshExpertisePenalty();
 			}
 		}
+		
 		return htmltext;
 	}
 	

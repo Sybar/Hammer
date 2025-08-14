@@ -51,6 +51,7 @@ public class Hardin extends AbstractNpcAI
 {
 	// NPC
 	private static final int HARDIN = 33870;
+	
 	// Items
 	private static final int CHAOS_ESSENCE = 36949;
 	private static final int CHAOS_ESSENCE_DUAL_CLASS = 37494;
@@ -93,10 +94,12 @@ public class Hardin extends AbstractNpcAI
 					{
 						continue;
 					}
+					
 					if (!Config.HARDIN_ENABLE_ALL_SPECS && (c.isMage() != player.isMageClass()))
 					{
 						continue;
 					}
+					
 					if (Config.HARDIN_SAME_AWAKEN_GROUP)
 					{
 						final String original = c.toString().contains("_") ? c.toString().substring(0, c.toString().indexOf('_') - 1) : c.toString();
@@ -106,18 +109,21 @@ public class Hardin extends AbstractNpcAI
 							continue;
 						}
 					}
+					
 					if (Config.HARDIN_RETAIL_LIMITATIONS)
 					{
 						if ((c == PlayerClass.TYRR_MAESTRO) && (player.getRace() != Race.DWARF))
 						{
 							continue;
 						}
+						
 						if ((c == PlayerClass.ISS_DOMINATOR) && (player.getRace() != Race.ORC))
 						{
 							continue;
 						}
 					}
 				}
+				
 				classes.append("<button value=\"");
 				classes.append(ClassListData.getInstance().getClass(c.getId()).getClassName());
 				classes.append("\" action=\"bypass -h Quest Hardin try_");
@@ -134,19 +140,23 @@ public class Hardin extends AbstractNpcAI
 		{
 			// Take item
 			takeItems(player, player.isDualClassActive() ? CHAOS_ESSENCE_DUAL_CLASS : CHAOS_ESSENCE, 1);
+			
 			// Give item
 			giveItems(player, player.isDualClassActive() ? CHAOS_POMANDER_DUAL_CLASS : CHAOS_POMANDER, 2);
+			
 			// Save original ClassId
 			if (!player.isDualClassActive() && (player.getOriginalClass() == null))
 			{
 				player.setOriginalClass(player.getPlayerClass());
 			}
+			
 			// Ertheias can only be female
 			final PlayerClass newClass = PlayerClass.getPlayerClass(Integer.parseInt(event.replace("try_", "")));
 			if ((newClass.getRace() == Race.ERTHEIA) && (player.getPlayerClass().getRace() != Race.ERTHEIA) && !player.getAppearance().isFemale())
 			{
 				player.getAppearance().setFemale();
 			}
+			
 			// Change class
 			player.setPlayerClass(newClass.getId());
 			if (player.isDualClassActive())
@@ -157,12 +167,14 @@ public class Hardin extends AbstractNpcAI
 			{
 				player.setBaseClass(player.getActiveClass());
 			}
+			
 			// Adjustments
 			SkillTreeData.getInstance().cleanSkillUponAwakening(player);
 			for (SkillLearn skill : SkillTreeData.getInstance().getRaceSkillTree(player.getRace()))
 			{
 				player.addSkill(SkillData.getInstance().getSkill(skill.getSkillId(), skill.getSkillLevel()), true);
 			}
+			
 			final List<Integer> removedSkillIds = Config.HARDIN_REMOVED_SKILLS.get(newClass.getId());
 			if (removedSkillIds != null)
 			{
@@ -175,6 +187,7 @@ public class Hardin extends AbstractNpcAI
 					}
 				}
 			}
+			
 			player.restoreDualSkills();
 			player.store(false);
 			player.broadcastUserInfo();
@@ -182,6 +195,7 @@ public class Hardin extends AbstractNpcAI
 			player.sendPacket(new ExSubjobInfo(player, SubclassInfoType.CLASS_CHANGED));
 			player.sendPacket(new ExUserInfoInvenWeight(player));
 		}
+		
 		return htmltext;
 	}
 	
@@ -201,15 +215,18 @@ public class Hardin extends AbstractNpcAI
 			{
 				return "33870-03.html";
 			}
+			
 			if (!Config.HARDIN_ENABLE_ERTHEIAS)
 			{
 				return "33870-02.html";
 			}
 		}
+		
 		if (!player.isInCategory(CategoryType.SIXTH_CLASS_GROUP))
 		{
 			return "33870-no.html";
 		}
+		
 		if (player.isDualClassActive()) // dual class
 		{
 			if (!ownsAtLeastOneItem(player, CHAOS_ESSENCE_DUAL_CLASS))
@@ -225,14 +242,17 @@ public class Hardin extends AbstractNpcAI
 		{
 			return "33870-no_already_reawakened.html";
 		}
+		
 		if (player.hasSummon())
 		{
 			return "33870-no_summon.html";
 		}
+		
 		if (player.isInOlympiadMode() || (Olympiad.getInstance().getCompetitionDone(player.getObjectId()) > 0))
 		{
 			return "33870-no_olympiad.html";
 		}
+		
 		return null;
 	}
 	

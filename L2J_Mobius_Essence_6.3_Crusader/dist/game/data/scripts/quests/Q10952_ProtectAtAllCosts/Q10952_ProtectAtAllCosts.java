@@ -42,17 +42,20 @@ public class Q10952_ProtectAtAllCosts extends Quest
 {
 	// NPC
 	private static final int TANAI = 30602;
+	
 	// Monsters
 	private static final int KASHA_WOLF = 20475;
 	private static final int KASHA_TIMBER_WOLF = 20477; // NOTE: Kasha Forest Wolf in old client
 	private static final int GOBLIN_TOMB_RAIDER = 20319;
 	private static final int RAKECLAW_IMP_HUNTER = 20312;
+	
 	// Items
 	private static final ItemHolder SOE_TO_TANAI = new ItemHolder(97230, 1);
 	private static final ItemHolder SOE_NOVICE = new ItemHolder(10650, 10);
 	private static final ItemHolder RING_NOVICE = new ItemHolder(49041, 2);
 	private static final ItemHolder EARRING_NOVICE = new ItemHolder(49040, 2);
 	private static final ItemHolder NECKLACE_NOVICE = new ItemHolder(49039, 1);
+	
 	// Misc
 	private static final int MIN_LEVEL = 2;
 	private static final int MAX_LEVEL = 15;
@@ -115,6 +118,7 @@ public class Q10952_ProtectAtAllCosts extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -142,6 +146,7 @@ public class Q10952_ProtectAtAllCosts extends Quest
 		{
 			htmltext = getAlreadyCompletedMsg(player);
 		}
+		
 		return htmltext;
 	}
 	
@@ -179,6 +184,7 @@ public class Q10952_ProtectAtAllCosts extends Quest
 			holder.add(new NpcLogListHolder(NpcStringId.SUBJUGATION_IN_THE_VALLEY_OF_HEROES.getId(), true, qs.getInt(KILL_COUNT_VAR)));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

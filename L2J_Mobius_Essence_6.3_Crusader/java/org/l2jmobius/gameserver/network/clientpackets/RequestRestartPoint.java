@@ -163,6 +163,7 @@ public class RequestRestartPoint extends ClientPacket
 					PacketLogger.warning("Player [" + player.getName() + "] called RestartPointPacket - To Clanhall and he doesn't have Clanhall!");
 					return;
 				}
+				
 				loc = MapRegionManager.getInstance().getTeleToLocation(player, TeleportWhereType.CLANHALL);
 				final ClanHall residense = ClanHallData.getInstance().getClanHallByClan(player.getClan());
 				if ((residense != null) && (residense.hasFunction(ResidenceFunctionType.EXP_RESTORE)))
@@ -198,6 +199,7 @@ public class RequestRestartPoint extends ClientPacket
 					{
 						return;
 					}
+					
 					loc = MapRegionManager.getInstance().getTeleToLocation(player, TeleportWhereType.CASTLE);
 				}
 				
@@ -223,6 +225,7 @@ public class RequestRestartPoint extends ClientPacket
 					PacketLogger.warning("Player [" + player.getName() + "] called RestartPointPacket - To Fortress and he doesn't have Fortress!");
 					return;
 				}
+				
 				loc = MapRegionManager.getInstance().getTeleToLocation(player, TeleportWhereType.FORTRESS);
 				
 				final Fort fort = FortManager.getInstance().getFortByOwner(clan);
@@ -255,6 +258,7 @@ public class RequestRestartPoint extends ClientPacket
 					PacketLogger.warning("Player [" + player.getName() + "] called RestartPointPacket - To Siege HQ and he doesn't have Siege HQ!");
 					return;
 				}
+				
 				loc = MapRegionManager.getInstance().getTeleToLocation(player, TeleportWhereType.SIEGEFLAG);
 				break;
 			}
@@ -265,6 +269,7 @@ public class RequestRestartPoint extends ClientPacket
 					PacketLogger.warning("Player [" + player.getName() + "] called RestartPointPacket - Fixed and he isn't festival participant!");
 					return;
 				}
+				
 				if (player.isGM())
 				{
 					player.doRevive(100);
@@ -322,6 +327,7 @@ public class RequestRestartPoint extends ClientPacket
 						resMAP = Config.RESURRECT_BY_PAYMENT_SECOND_RESURRECT_VALUES;
 						item = player.getInventory().getItemByItemId(Config.RESURRECT_BY_PAYMENT_SECOND_RESURRECT_ITEM);
 					}
+					
 					if ((resMAP == null) || (item == null))
 					{
 						break;

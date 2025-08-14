@@ -111,6 +111,7 @@ public class FenceData implements IXmlReader
 		{
 			fence.setInstanceById(instanceId);
 		}
+		
 		fence.spawnMe(x, y, z);
 		addFence(fence);
 		
@@ -206,27 +207,33 @@ public class FenceData implements IXmlReader
 			{
 				continue;
 			}
+			
 			if ((x > xMax) && (tx > xMax))
 			{
 				continue;
 			}
+			
 			if ((y < yMin) && (ty < yMin))
 			{
 				continue;
 			}
+			
 			if ((y > yMax) && (ty > yMax))
 			{
 				continue;
 			}
+			
 			if ((x > xMin) && (tx > xMin) && (x < xMax) && (tx < xMax) && (y > yMin) && (ty > yMin) && (y < yMax) && (ty < yMax))
 			{
 				continue;
 			}
+			
 			if ((crossLinePart(xMin, yMin, xMax, yMin, x, y, tx, ty, xMin, yMin, xMax, yMax) || crossLinePart(xMax, yMin, xMax, yMax, x, y, tx, ty, xMin, yMin, xMax, yMax) || crossLinePart(xMax, yMax, xMin, yMax, x, y, tx, ty, xMin, yMin, xMax, yMax) || crossLinePart(xMin, yMax, xMin, yMin, x, y, tx, ty, xMin, yMin, xMax, yMax)) && (z > (fence.getZ() - MAX_Z_DIFF)) && (z < (fence.getZ() + MAX_Z_DIFF)))
 			{
 				return true;
 			}
 		}
+		
 		return false;
 	}
 	
@@ -260,6 +267,7 @@ public class FenceData implements IXmlReader
 		{
 			return true;
 		}
+		
 		if ((yCross <= yMax) && (yCross >= yMin))
 		{
 			return true;

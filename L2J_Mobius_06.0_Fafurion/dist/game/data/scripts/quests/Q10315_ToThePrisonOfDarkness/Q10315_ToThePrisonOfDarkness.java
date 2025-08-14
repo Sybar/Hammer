@@ -39,8 +39,10 @@ public class Q10315_ToThePrisonOfDarkness extends Quest
 	// NPCs
 	private static final int SLASKI = 32893;
 	private static final int OPERA = 32946;
+	
 	// Misc
 	private static final int MIN_LEVEL = 90;
+	
 	// Item's
 	private static final int EWR = 17526;
 	
@@ -87,6 +89,7 @@ public class Q10315_ToThePrisonOfDarkness extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -108,6 +111,7 @@ public class Q10315_ToThePrisonOfDarkness extends Quest
 						htmltext = "32893-01.htm";
 						break;
 					}
+					
 					htmltext = "32893-00.htm";
 					break;
 				}
@@ -153,6 +157,7 @@ public class Q10315_ToThePrisonOfDarkness extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 }

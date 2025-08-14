@@ -34,12 +34,14 @@ public class Q00002_WhatWomenWant extends Quest
 	private static final int MIRABEL = 30146;
 	private static final int HERBIEL = 30150;
 	private static final int GREENIS = 30157;
+	
 	// Items
 	private static final int ARUJIEN_LETTER_1 = 1092;
 	private static final int ARUJIEN_LETTER_2 = 1093;
 	private static final int ARUJIEN_LETTER_3 = 1094;
 	private static final int POETRY_BOOK = 689;
 	private static final int GREENIS_LETTER = 693;
+	
 	// Rewards
 	private static final int MYSTICS_EARRING = 113;
 	

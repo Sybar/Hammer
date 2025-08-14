@@ -89,6 +89,7 @@ public class Duel
 			{
 				member.setStartingDuel();
 			}
+			
 			for (Player member : _playerB.getParty().getMembers())
 			{
 				member.setStartingDuel();
@@ -111,6 +112,7 @@ public class Duel
 			broadcastToTeam1(sm);
 			broadcastToTeam2(sm);
 		}
+		
 		// Schedule duel start
 		ThreadPool.schedule(new ScheduleStartDuelTask(this), 3000);
 	}
@@ -133,6 +135,7 @@ public class Duel
 			{
 				return;
 			}
+			
 			_player = player;
 			_hp = _player.getCurrentHp();
 			_mp = _player.getCurrentMp();
@@ -152,6 +155,7 @@ public class Duel
 			{
 				return;
 			}
+			
 			_player.setCurrentHp(_hp);
 			_player.setCurrentMp(_mp);
 			_player.setCurrentCp(_cp);
@@ -160,6 +164,7 @@ public class Duel
 			{
 				teleportBack();
 			}
+			
 			if (_debuffs != null) // Debuff removal
 			{
 				for (Skill skill : _debuffs)
@@ -337,6 +342,7 @@ public class Duel
 					temp.getSummon().sendPacket(af);
 				}
 			}
+			
 			for (Player temp : _playerB.getParty().getMembers())
 			{
 				temp.abortCast();
@@ -369,6 +375,7 @@ public class Duel
 				_playerA.getSummon().setTarget(null);
 				_playerA.getSummon().sendPacket(af);
 			}
+			
 			if (_playerB.hasSummon() && (_playerB.getSummon() != null) && !_playerB.getSummon().isDead())
 			{
 				_playerB.getSummon().abortCast();
@@ -399,8 +406,10 @@ public class Duel
 				_playerA.sendMessage(engagedInPvP);
 				_playerB.sendMessage(engagedInPvP);
 			}
+			
 			return true;
 		}
+		
 		return false;
 	}
 	
@@ -427,6 +436,7 @@ public class Duel
 				temp.broadcastUserInfo();
 				broadcastToTeam2(new ExDuelUpdateUserInfo(temp));
 			}
+			
 			for (Player temp : _playerB.getParty().getMembers())
 			{
 				temp.cancelActiveTrade();
@@ -490,6 +500,7 @@ public class Duel
 			{
 				_playerConditions.put(player.getObjectId(), new PlayerCondition(player, _partyDuel));
 			}
+			
 			for (Player player : _playerB.getParty().getMembers())
 			{
 				_playerConditions.put(player.getObjectId(), new PlayerCondition(player, _partyDuel));
@@ -517,6 +528,7 @@ public class Duel
 				temp.setTeam(Team.NONE);
 				temp.broadcastUserInfo();
 			}
+			
 			for (Player temp : _playerB.getParty().getMembers())
 			{
 				temp.setInDuel(0);
@@ -612,12 +624,14 @@ public class Duel
 		{
 			return;
 		}
+		
 		int offset = 0;
 		for (Player temp : _playerA.getParty().getMembers())
 		{
 			temp.teleToLocation(new Location((x + offset) - 180, y - 150, z));
 			offset += 40;
 		}
+		
 		offset = 0;
 		for (Player temp : _playerB.getParty().getMembers())
 		{
@@ -684,14 +698,17 @@ public class Duel
 		{
 			return null;
 		}
+		
 		if (_playerA.getDuelState() == DUELSTATE_WINNER)
 		{
 			return _playerA;
 		}
+		
 		if (_playerB.getDuelState() == DUELSTATE_WINNER)
 		{
 			return _playerB;
 		}
+		
 		return null;
 	}
 	
@@ -705,6 +722,7 @@ public class Duel
 		{
 			return null;
 		}
+		
 		if (_playerA.getDuelState() == DUELSTATE_WINNER)
 		{
 			return _playerB;
@@ -713,6 +731,7 @@ public class Duel
 		{
 			return _playerA;
 		}
+		
 		return null;
 	}
 	
@@ -814,8 +833,10 @@ public class Duel
 			case CANCELED:
 			{
 				stopFighting();
+				
 				// Don't restore hp, mp, cp
 				restorePlayerConditions(true);
+				
 				// TODO: is there no other message for a canceled duel?
 				// send SystemMessage
 				sm = new SystemMessage(SystemMessageId.THE_DUEL_HAS_ENDED_IN_A_TIE);
@@ -826,8 +847,10 @@ public class Duel
 			case TIMEOUT:
 			{
 				stopFighting();
+				
 				// hp,mp,cp seem to be restored in a timeout too...
 				restorePlayerConditions(false);
+				
 				// send SystemMessage
 				sm = new SystemMessage(SystemMessageId.THE_DUEL_HAS_ENDED_IN_A_TIE);
 				broadcastToTeam1(sm);
@@ -904,7 +927,7 @@ public class Duel
 			}
 			
 			// is one of the players in a Siege, Peace or PvP zone?
-			if (_playerA.isInsideZone(ZoneId.PEACE) || _playerB.isInsideZone(ZoneId.PEACE) || _playerA.isInsideZone(ZoneId.SIEGE) || _playerB.isInsideZone(ZoneId.SIEGE) || _playerA.isInsideZone(ZoneId.PVP) || _playerB.isInsideZone(ZoneId.PVP))
+			if (_playerA.isInsideZone(ZoneId.PEACE) || _playerB.isInsideZone(ZoneId.PEACE) || _playerA.isInsideZone(ZoneId.NO_PVP) || _playerB.isInsideZone(ZoneId.NO_PVP) || _playerA.isInsideZone(ZoneId.SIEGE) || _playerB.isInsideZone(ZoneId.SIEGE) || _playerA.isInsideZone(ZoneId.PVP) || _playerB.isInsideZone(ZoneId.PVP))
 			{
 				return DuelResult.CANCELED;
 			}
@@ -938,6 +961,7 @@ public class Duel
 				{
 					temp.setDuelState(DUELSTATE_DEAD);
 				}
+				
 				for (Player temp : _playerB.getParty().getMembers())
 				{
 					temp.setDuelState(DUELSTATE_WINNER);
@@ -950,6 +974,7 @@ public class Duel
 				{
 					temp.setDuelState(DUELSTATE_DEAD);
 				}
+				
 				for (Player temp : _playerA.getParty().getMembers())
 				{
 					temp.setDuelState(DUELSTATE_WINNER);
@@ -1051,6 +1076,7 @@ public class Duel
 			{
 				cond.teleportBack();
 			}
+			
 			player.setInDuel(0);
 		}
 	}

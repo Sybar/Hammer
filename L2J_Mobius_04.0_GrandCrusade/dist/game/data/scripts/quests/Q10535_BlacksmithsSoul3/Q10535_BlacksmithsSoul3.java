@@ -42,6 +42,7 @@ public class Q10535_BlacksmithsSoul3 extends Quest
 	private static final int BLACKSMITH_MAMMON = 31126;
 	private static final int SHADAI = 32347;
 	private static final int ISHUMA = 32615;
+	
 	// Monsters
 	private static final int[] HELL_MONSTERS =
 	{
@@ -62,10 +63,12 @@ public class Q10535_BlacksmithsSoul3 extends Quest
 		23728, // Shaqrima Carcass
 		23729, // Kshana
 	};
+	
 	// Items
 	private static final int OREWITH_GIANTS_ENERGY = 47892;
 	private static final int CRYSTAL_WITH_MAGOCAL_POWER = 47891;
 	private static final int ENCHANTED_SHADOW_INGOT = 47886;
+	
 	// Misc
 	private static final int MAIN_LEVEL = 99;
 	
@@ -170,6 +173,7 @@ public class Q10535_BlacksmithsSoul3 extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -194,6 +198,7 @@ public class Q10535_BlacksmithsSoul3 extends Quest
 							playSound(singleMember, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
+					
 					if (qsPartyMember.isCond(1))
 					{
 						if (ArrayUtil.contains(CAVE_MONSTERS, npc.getId()) && (getQuestItemsCount(singleMember, OREWITH_GIANTS_ENERGY) < 500))
@@ -202,6 +207,7 @@ public class Q10535_BlacksmithsSoul3 extends Quest
 							playSound(singleMember, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 						}
 					}
+					
 					if (qsPartyMember.isCond(1) && (getQuestItemsCount(singleMember, OREWITH_GIANTS_ENERGY) >= 500) && (getQuestItemsCount(singleMember, CRYSTAL_WITH_MAGOCAL_POWER) >= 500))
 					{
 						qsPartyMember.setCond(7);
@@ -223,6 +229,7 @@ public class Q10535_BlacksmithsSoul3 extends Quest
 						
 					}
 				}
+				
 				if (qs.isCond(1))
 				{
 					if (ArrayUtil.contains(CAVE_MONSTERS, npc.getId()) && (getQuestItemsCount(killer, OREWITH_GIANTS_ENERGY) < 500))
@@ -231,6 +238,7 @@ public class Q10535_BlacksmithsSoul3 extends Quest
 						playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 					}
 				}
+				
 				if (qs.isCond(1) && (getQuestItemsCount(killer, OREWITH_GIANTS_ENERGY) >= 500) && (getQuestItemsCount(killer, CRYSTAL_WITH_MAGOCAL_POWER) >= 500))
 				{
 					qs.setCond(7);

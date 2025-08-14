@@ -73,6 +73,7 @@ public enum WorldExchangeItemSubType
 				return type;
 			}
 		}
+		
 		return null;
 	}
 }

@@ -66,6 +66,7 @@ public class ItemHolder
 		{
 			return true;
 		}
+		
 		final ItemHolder objInstance = (ItemHolder) obj;
 		return (_id == objInstance.getId()) && (_count == objInstance.getCount());
 	}

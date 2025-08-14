@@ -33,8 +33,10 @@ public class Allada extends AbstractNpcAI
 	// NPC
 	private static final int RINNE = 33234;
 	private static final int ALLADA = 33220;
+	
 	// Items
 	private static final int WEAPON = 15304;
+	
 	// Distances
 	private static final int MIN_DISTANCE = 70;
 	private static final int MAX_DISTANCE = 200;

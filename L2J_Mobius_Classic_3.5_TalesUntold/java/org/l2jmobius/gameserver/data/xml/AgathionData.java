@@ -98,6 +98,7 @@ public class AgathionData implements IXmlReader
 				
 				mainSkillList.add(skill);
 			}
+			
 			mainSkills.put(enchant, mainSkillList);
 			
 			// Process sub skills.
@@ -125,6 +126,7 @@ public class AgathionData implements IXmlReader
 				
 				subSkillList.add(skill);
 			}
+			
 			subSkills.put(enchant, subSkillList);
 			
 			// Add agathion skills to AGATHION_SKILLS map.

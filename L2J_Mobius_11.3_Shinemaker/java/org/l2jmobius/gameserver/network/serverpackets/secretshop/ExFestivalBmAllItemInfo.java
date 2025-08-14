@@ -56,6 +56,7 @@ public class ExFestivalBmAllItemInfo extends ServerPacket
 				buffer.writeInt((int) reward.getTotalAmount());
 			}
 		}
+		
 		for (SecretShopRewardHolder reward : _activeRewards)
 		{
 			if (reward.isMiddleGrade())
@@ -66,6 +67,7 @@ public class ExFestivalBmAllItemInfo extends ServerPacket
 				buffer.writeInt((int) reward.getTotalAmount());
 			}
 		}
+		
 		for (SecretShopRewardHolder reward : _activeRewards)
 		{
 			if (reward.isLowGrade())

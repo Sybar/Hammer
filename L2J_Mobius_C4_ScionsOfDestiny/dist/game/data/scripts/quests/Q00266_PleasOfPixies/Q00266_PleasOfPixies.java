@@ -32,6 +32,7 @@ public class Q00266_PleasOfPixies extends Quest
 {
 	// Items
 	private static final int PREDATOR_FANG = 1334;
+	
 	// Rewards
 	private static final int GLASS_SHARD = 1336;
 	private static final int EMERALD = 1337;

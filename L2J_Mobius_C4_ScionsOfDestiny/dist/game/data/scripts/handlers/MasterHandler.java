@@ -55,7 +55,6 @@ import handlers.actionshifthandlers.StaticObjectActionShift;
 import handlers.actionshifthandlers.SummonActionShift;
 import handlers.admincommandhandlers.AdminAdmin;
 import handlers.admincommandhandlers.AdminAnnouncements;
-import handlers.admincommandhandlers.AdminBBS;
 import handlers.admincommandhandlers.AdminBuffs;
 import handlers.admincommandhandlers.AdminCHSiege;
 import handlers.admincommandhandlers.AdminCamera;
@@ -82,6 +81,7 @@ import handlers.admincommandhandlers.AdminGmChat;
 import handlers.admincommandhandlers.AdminGmSpeed;
 import handlers.admincommandhandlers.AdminGrandBoss;
 import handlers.admincommandhandlers.AdminHeal;
+import handlers.admincommandhandlers.AdminHelp;
 import handlers.admincommandhandlers.AdminHide;
 import handlers.admincommandhandlers.AdminHtml;
 import handlers.admincommandhandlers.AdminInstance;
@@ -100,7 +100,6 @@ import handlers.admincommandhandlers.AdminOnline;
 import handlers.admincommandhandlers.AdminPForge;
 import handlers.admincommandhandlers.AdminPathNode;
 import handlers.admincommandhandlers.AdminPcCafePoints;
-import handlers.admincommandhandlers.AdminPcCondOverride;
 import handlers.admincommandhandlers.AdminPetition;
 import handlers.admincommandhandlers.AdminPledge;
 import handlers.admincommandhandlers.AdminPremium;
@@ -127,7 +126,7 @@ import handlers.admincommandhandlers.AdminTeleport;
 import handlers.admincommandhandlers.AdminTest;
 import handlers.admincommandhandlers.AdminVitality;
 import handlers.admincommandhandlers.AdminZone;
-import handlers.admincommandhandlers.AdminZones;
+import handlers.admincommandhandlers.AdminZoneBuild;
 import handlers.bypasshandlers.Buy;
 import handlers.bypasshandlers.ChatLink;
 import handlers.bypasshandlers.ClanWarehouse;
@@ -312,13 +311,11 @@ public class MasterHandler
 			// Admin Command Handlers
 			AdminAdmin.class,
 			AdminAnnouncements.class,
-			AdminBBS.class,
 			AdminBuffs.class,
 			AdminCamera.class,
 			AdminChangeAccessLevel.class,
 			AdminCHSiege.class,
 			AdminClan.class,
-			AdminPcCondOverride.class,
 			AdminCreateItem.class,
 			AdminDebug.class,
 			AdminDelete.class,
@@ -340,6 +337,7 @@ public class MasterHandler
 			AdminGmSpeed.class,
 			AdminGrandBoss.class,
 			AdminHeal.class,
+			AdminHelp.class,
 			AdminHide.class,
 			AdminHtml.class,
 			AdminInstance.class,
@@ -360,7 +358,6 @@ public class MasterHandler
 			AdminPetition.class,
 			AdminPForge.class,
 			AdminPledge.class,
-			AdminZones.class,
 			AdminPremium.class,
 			AdminPunishment.class,
 			AdminQuest.class,
@@ -385,6 +382,7 @@ public class MasterHandler
 			AdminTest.class,
 			AdminVitality.class,
 			AdminZone.class,
+			AdminZoneBuild.class,
 		},
 		{
 			// Bypass Handlers

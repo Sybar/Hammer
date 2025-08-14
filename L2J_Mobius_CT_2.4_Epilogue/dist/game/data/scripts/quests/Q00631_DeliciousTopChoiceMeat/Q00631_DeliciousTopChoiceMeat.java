@@ -188,6 +188,7 @@ public class Q00631_DeliciousTopChoiceMeat extends Quest
 				}
 				break;
 		}
+		
 		return htmltext;
 	}
 	

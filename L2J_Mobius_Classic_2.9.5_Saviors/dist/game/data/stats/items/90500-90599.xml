@@ -328,9 +328,9 @@
 		<set name="is_sellable" val="false" />
 		<set name="bodypart" val="talisman" />
 		<set name="time" val="43200" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="60" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="35020" level="1" type="ON_EQUIP" /> <!-- Talisman of Baium -->
 			<skill id="35021" level="1" type="ON_UNEQUIP" /> <!-- Talisman of Baium - Removal -->

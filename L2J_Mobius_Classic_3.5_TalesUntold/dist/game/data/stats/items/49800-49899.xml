@@ -612,9 +612,9 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<cond msgId="1902">
+		<conditions msgId="1902">
 			<player levelRange="1;75" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="54068" level="1" /> <!-- Sayha's Gust - Event -->
 		</skills>

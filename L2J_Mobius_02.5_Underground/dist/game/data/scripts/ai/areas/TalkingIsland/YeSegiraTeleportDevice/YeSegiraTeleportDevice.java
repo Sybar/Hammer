@@ -60,9 +60,9 @@ public class YeSegiraTeleportDevice extends AbstractNpcAI
 		33192,
 		33197,
 	};
+	
 	// Locations
 	private static final Map<String, Location> LOCATIONS = new HashMap<>();
-	
 	static
 	{
 		LOCATIONS.put("village", new Location(-114413, 252159, -1592));
@@ -111,6 +111,7 @@ public class YeSegiraTeleportDevice extends AbstractNpcAI
 				}
 			}
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	

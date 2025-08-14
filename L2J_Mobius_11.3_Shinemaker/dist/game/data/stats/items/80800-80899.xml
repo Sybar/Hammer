@@ -101,9 +101,9 @@
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="immediate_effect" val="true" />
-		<cond>
+		<conditions>
 			<player MaximumVitalityPoints="140000" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="39510" level="1" /> <!-- Lakfi-Lakfi's Special Energy -->
 		</skills>
@@ -338,9 +338,9 @@
 		<set name="etcitem_type" val="ELIXIR" />
 		<set name="handler" val="ItemSkills" />
 		<set name="immediate_effect" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player instanceId="224,225,226,227" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="39762" level="1" /> <!-- Musician's Melody - Ceremony of Chaos -->
 			<skill id="39515" level="1" /> <!-- Fantasia Harmony - Chaos Arena -->
@@ -495,9 +495,9 @@
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="immediate_effect" val="true" />
-		<cond>
+		<conditions>
 			<player MaximumVitalityPoints="140000" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="39523" level="1" /> <!-- Golden Pig's Medium Vitality Tonic -->
 		</skills>

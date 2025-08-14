@@ -43,6 +43,7 @@ public class Q00774_DreamingOfPeace extends Quest
 {
 	// NPC
 	private static final int NERUPA = 30370;
+	
 	// Monsters
 	private static final int[] MONSTERS =
 	{
@@ -77,6 +78,7 @@ public class Q00774_DreamingOfPeace extends Quest
 		23771, // Satyr Witch-Enraged
 		23773, // Satyr Wizard-Enraged
 	};
+	
 	// Misc
 	private static final int MIN_LEVEL = 90;
 	private static final int MAX_LEVEL = 100;
@@ -100,6 +102,7 @@ public class Q00774_DreamingOfPeace extends Quest
 		{
 			return htmltext;
 		}
+		
 		switch (event)
 		{
 			case "30370-02.htm":
@@ -124,6 +127,7 @@ public class Q00774_DreamingOfPeace extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -159,6 +163,7 @@ public class Q00774_DreamingOfPeace extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -195,6 +200,7 @@ public class Q00774_DreamingOfPeace extends Quest
 				return holder;
 			}
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

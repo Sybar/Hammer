@@ -79,6 +79,7 @@ public class ShortcutInit extends ServerPacket
 							buffer.writeInt(0);
 							buffer.writeInt(0);
 						}
+						
 						buffer.writeInt(item.getVisualId());
 					}
 					else

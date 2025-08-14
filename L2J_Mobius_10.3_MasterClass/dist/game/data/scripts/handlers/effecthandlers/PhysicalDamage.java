@@ -81,6 +81,7 @@ public class PhysicalDamage extends AbstractEffect
 		{
 			_abnormals = Collections.emptySet();
 		}
+		
 		_abnormalDamageMod = params.getDouble("damageModifier", 1);
 		_abnormalPowerMod = params.getDouble("powerModifier", 1);
 		
@@ -151,6 +152,7 @@ public class PhysicalDamage extends AbstractEffect
 		{
 			ignoredPDef = Math.max(0, ignoredPDef - defenceIgnoreRemovalAdd);
 		}
+		
 		double defence = effected.getPDef() - ignoredPDef;
 		
 		final double shieldDefenceIgnoreRemoval = effected.getStat().getValue(Stat.SHIELD_DEFENCE_IGNORE_REMOVAL, 1);
@@ -171,6 +173,7 @@ public class PhysicalDamage extends AbstractEffect
 						{
 							ignoredShieldDef = Math.max(0, ignoredShieldDef - shieldDefenceIgnoreRemovalAdd);
 						}
+						
 						defence += shieldDef - ignoredShieldDef;
 					}
 					else
@@ -213,6 +216,7 @@ public class PhysicalDamage extends AbstractEffect
 					}
 				}
 			}
+			
 			final double power = ((_power * (hasAbnormalType ? _abnormalPowerMod : 1)) + effector.getStat().getValue(Stat.SKILL_POWER_ADD, 0));
 			final double weaponMod = effector.getAttackType().isRanged() ? 70 : 77;
 			final double rangedBonus = effector.getAttackType().isRanged() ? attack + power : 0;
@@ -235,6 +239,7 @@ public class PhysicalDamage extends AbstractEffect
 			// ATTACK CALCULATION 77 * ((pAtk * lvlMod) + power) / pdef            RANGED ATTACK CALCULATION 70 * ((pAtk * lvlMod) + power + patk + power) / pdef
 			// ```````````````````^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^``````````````````````````````````````^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 			final double baseMod = (weaponMod * ((attack * effector.getLevelMod()) + power + rangedBonus)) / defence;
+			
 			// NasSeKa rev. 10200: generalTraitMod == 0 ? 1 : generalTraitMod (no invulnerable traits).
 			damage = baseMod * (hasAbnormalType ? _abnormalDamageMod : 1) * ssmod * critMod * weaponTraitMod * (generalTraitMod == 0 ? 1 : generalTraitMod) * weaknessMod * attributeMod * pvpPveMod * randomMod;
 			damage *= effector.getStat().getValue(Stat.PHYSICAL_SKILL_POWER, 1);
@@ -248,7 +253,7 @@ public class PhysicalDamage extends AbstractEffect
 			damage += critPSkillAdd;
 			
 			// AoE modifiers.
-			if (skill.isBad() && (skill.getAffectLimit() > 0))
+			if (skill.hasNegativeEffect() && (skill.getAffectLimit() > 0))
 			{
 				damage *= Math.max((effector.getStat().getMulValue(Stat.AREA_OF_EFFECT_DAMAGE_MODIFY, 1) - effected.getStat().getValue(Stat.AREA_OF_EFFECT_DAMAGE_DEFENCE, 0)), 0.01);
 			}

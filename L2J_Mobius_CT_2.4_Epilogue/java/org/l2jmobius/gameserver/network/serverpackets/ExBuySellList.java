@@ -53,13 +53,16 @@ public class ExBuySellList extends ServerPacket
 			{
 				continue;
 			}
+			
 			_buyList.add(item);
 		}
+		
 		_sellList = player.getInventory().getAvailableItems(false, false, false);
 		if (player.hasRefund())
 		{
 			_refundList = player.getRefund().getItems();
 		}
+		
 		_done = done;
 	}
 	
@@ -74,13 +77,16 @@ public class ExBuySellList extends ServerPacket
 			{
 				continue;
 			}
+			
 			_buyList.add(item);
 		}
+		
 		_sellList = player.getInventory().getAvailableItems(false, false, false);
 		if (player.hasRefund())
 		{
 			_refundList = player.getRefund().getItems();
 		}
+		
 		_done = done;
 	}
 	
@@ -113,6 +119,7 @@ public class ExBuySellList extends ServerPacket
 				buffer.writeShort(0);
 				buffer.writeShort(0);
 			}
+			
 			if ((item.getItemId() >= 3960) && (item.getItemId() <= 4026))
 			{
 				buffer.writeLong((long) (item.getPrice() * Config.RATE_SIEGE_GUARDS_PRICE));
@@ -121,15 +128,18 @@ public class ExBuySellList extends ServerPacket
 			{
 				buffer.writeLong((long) (item.getPrice() * (1 + (_taxRate / 2))));
 			}
+			
 			// T1
 			for (byte i = 0; i < 8; i++)
 			{
 				buffer.writeShort(0);
 			}
+			
 			buffer.writeShort(0); // Enchant effect 1
 			buffer.writeShort(0); // Enchant effect 2
 			buffer.writeShort(0); // Enchant effect 3
 		}
+		
 		if ((_sellList != null) && !_sellList.isEmpty())
 		{
 			buffer.writeShort(_sellList.size());
@@ -146,6 +156,7 @@ public class ExBuySellList extends ServerPacket
 				buffer.writeShort(0);
 				buffer.writeShort(0);
 				buffer.writeLong(Config.MERCHANT_ZERO_SELL_PRICE ? 0 : item.getTemplate().getReferencePrice() / 2);
+				
 				// T1
 				buffer.writeShort(item.getAttackElementType());
 				buffer.writeShort(item.getAttackElementPower());
@@ -153,6 +164,7 @@ public class ExBuySellList extends ServerPacket
 				{
 					buffer.writeShort(item.getElementDefAttr(i));
 				}
+				
 				buffer.writeShort(0); // Enchant effect 1
 				buffer.writeShort(0); // Enchant effect 2
 				buffer.writeShort(0); // Enchant effect 3
@@ -162,6 +174,7 @@ public class ExBuySellList extends ServerPacket
 		{
 			buffer.writeShort(0);
 		}
+		
 		if ((_refundList != null) && !_refundList.isEmpty())
 		{
 			buffer.writeShort(_refundList.size());
@@ -176,6 +189,7 @@ public class ExBuySellList extends ServerPacket
 				buffer.writeShort(item.getEnchantLevel());
 				buffer.writeShort(0); // ?
 				buffer.writeLong(Config.MERCHANT_ZERO_SELL_PRICE ? 0 : (item.getTemplate().getReferencePrice() / 2) * item.getCount());
+				
 				// T1
 				buffer.writeShort(item.getAttackElementType());
 				buffer.writeShort(item.getAttackElementPower());
@@ -183,6 +197,7 @@ public class ExBuySellList extends ServerPacket
 				{
 					buffer.writeShort(item.getElementDefAttr(i));
 				}
+				
 				buffer.writeShort(0); // Enchant effect 1
 				buffer.writeShort(0); // Enchant effect 2
 				buffer.writeShort(0); // Enchant effect 3
@@ -192,6 +207,7 @@ public class ExBuySellList extends ServerPacket
 		{
 			buffer.writeShort(0);
 		}
+		
 		buffer.writeByte(_done);
 	}
 }

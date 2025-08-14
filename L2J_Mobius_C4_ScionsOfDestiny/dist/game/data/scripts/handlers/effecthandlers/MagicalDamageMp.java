@@ -45,18 +45,22 @@ public class MagicalDamageMp extends AbstractEffect
 		{
 			return false;
 		}
+		
 		if (!Formulas.calcMagicAffected(effector, effected, skill))
 		{
 			if (effector.isPlayer())
 			{
 				effector.sendPacket(SystemMessageId.ATTACK_FAILED);
 			}
+			
 			if (effected.isPlayer())
 			{
 				effected.sendMessage(effected.getName() + " resisted " + effector.getName() + "'s magic.");
 			}
+			
 			return false;
 		}
+		
 		return true;
 	}
 	

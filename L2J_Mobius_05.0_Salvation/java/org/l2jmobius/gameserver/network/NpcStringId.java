@@ -4733,7 +4733,7 @@ public class NpcStringId
 	@ClientString(id = 22936, message = "No! I haven't completely finished the command for destruction and slaughter yet!!!")
 	public static NpcStringId NO_I_HAVEN_T_COMPLETELY_FINISHED_THE_COMMAND_FOR_DESTRUCTION_AND_SLAUGHTER_YET;
 	
-	@ClientString(id = 22937, message = "How dare you wake me! Now you shall die!")
+	@ClientString(id = 22937, message = "$s1! How dare you wake me! Now you shall die!")
 	public static NpcStringId HOW_DARE_YOU_WAKE_ME_NOW_YOU_SHALL_DIE;
 	
 	@ClientString(id = 23001, message = "Test of the Summoner")
@@ -42059,6 +42059,7 @@ public class NpcStringId
 				}
 			}
 		}
+		
 		return paramCount;
 	}
 	
@@ -42203,6 +42204,21 @@ public class NpcStringId
 		return _name;
 	}
 	
+	public String getText()
+	{
+		String text = "";
+		try
+		{
+			text = getClass().getField(_name).getAnnotation(ClientString.class).message();
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+		
+		return text;
+	}
+	
 	public int getParamCount()
 	{
 		return _params;
@@ -42214,14 +42230,17 @@ public class NpcStringId
 		{
 			throw new IllegalArgumentException("Invalid negative param count: " + params);
 		}
+		
 		if (params > 10)
 		{
 			throw new IllegalArgumentException("Maximum param count exceeded: " + params);
 		}
+		
 		if (params != 0)
 		{
 			_staticScreenMessage = null;
 		}
+		
 		_params = (byte) params;
 	}
 	

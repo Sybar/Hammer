@@ -1939,9 +1939,9 @@
 		<set name="immediate_effect" val="true" />
 		<set name="time" val="1440" />
 		<set name="material" val="CLOTH" />
-		<cond msgId="2453">
+		<conditions msgId="2453">
 			<player cloakStatus="true" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">50</stat>
 			<stat type="mDef">40</stat>
@@ -1965,9 +1965,9 @@
 		<set name="immediate_effect" val="true" />
 		<set name="time" val="4320" />
 		<set name="material" val="CLOTH" />
-		<cond msgId="2453">
+		<conditions msgId="2453">
 			<player cloakStatus="true" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">50</stat>
 			<stat type="mDef">40</stat>

@@ -41,10 +41,12 @@ public final class Q10529_IvoryTowersResearchSeaOfSporesJournal extends Quest
 {
 	// NPCs
 	private static final int BACON = 33846;
+	
 	// Items
 	private static final int BLESSED_SCROLL_ARMOR_R_GRADE = 19448;
 	private static final int FLOATING_SEA_JOURNAL = 48836;
 	private static final int DISPERSING_ENERGY_OF_THE_FLOATING_SEA = 48837;
+	
 	// Monster
 	private static final int[] MONSTERS_PART_1 =
 	{
@@ -62,6 +64,7 @@ public final class Q10529_IvoryTowersResearchSeaOfSporesJournal extends Quest
 	};
 	private static final int ARMINUS = 29327;
 	private static final int ARIMA = 29326;
+	
 	// Misc
 	private static final int MIN_LEVEL = 106;
 	private static final int ITEM_COUNT_PART_1 = 100;
@@ -97,6 +100,7 @@ public final class Q10529_IvoryTowersResearchSeaOfSporesJournal extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -135,6 +139,7 @@ public final class Q10529_IvoryTowersResearchSeaOfSporesJournal extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

@@ -41,23 +41,27 @@ public class Q11015_PrepareForTrade1 extends Quest
 	// NPCs
 	private static final int PAYNE = 30136;
 	private static final int VOLLODOS = 30137;
+	
 	// Items
 	private static final int STONE_GIANTS_GUARDIANS_CORE = 90250;
 	private static final int CRYSTALLINE_BEASTS_SHINEDUST = 90251;
 	private static final int GIANT_SPIDER_SKIN_FRAGMENT = 90252;
 	private static final int SUPPLIES_CERTIFICATE = 90249;
+	
 	// Rewards
 	private static final int SCROLL_OF_ESCAPE = 10650;
 	private static final int HEALING_POTION = 1073;
 	private static final int MP_RECOVERY_POTION = 90310;
 	private static final int SOULSHOTS_NO_GRADE = 5789;
 	private static final int SPIRITSHOT_NO_GRADE = 5790;
+	
 	// Monsters
 	private static final int STONE_GIANT_GUARDIANS = 20380;
 	private static final int CRYSTALLINE_BEAST = 20418;
 	private static final int PROWLER = 20034;
 	private static final int GIANT_VENOMOUS_SPIDER = 20038;
 	private static final int ARACHNID_TRACKER = 20043;
+	
 	// Misc
 	private static final int MIN_LEVEL = 15;
 	private static final int MAX_LEVEL = 20;
@@ -130,6 +134,7 @@ public class Q11015_PrepareForTrade1 extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -190,6 +195,7 @@ public class Q11015_PrepareForTrade1 extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

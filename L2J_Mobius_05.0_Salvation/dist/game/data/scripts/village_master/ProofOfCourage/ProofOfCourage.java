@@ -36,7 +36,6 @@ public class ProofOfCourage extends AbstractNpcAI
 {
 	// Misc
 	private static final Map<Integer, List<PlayerClass>> CLASSLIST = new HashMap<>();
-	
 	static
 	{
 		CLASSLIST.put(32146, Arrays.asList(PlayerClass.TROOPER, PlayerClass.WARDER));
@@ -64,6 +63,7 @@ public class ProofOfCourage extends AbstractNpcAI
 		{
 			return npc.getId() + "-no.html";
 		}
+		
 		MultisellData.getInstance().separateAndSend(717, talker, npc, false);
 		return super.onTalk(npc, talker);
 	}

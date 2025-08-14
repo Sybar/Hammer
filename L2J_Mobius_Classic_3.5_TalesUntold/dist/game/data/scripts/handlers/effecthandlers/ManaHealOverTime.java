@@ -87,6 +87,7 @@ public class ManaHealOverTime extends AbstractEffect
 		{
 			mp = Math.max(mp, 1);
 		}
+		
 		effected.setCurrentMp(mp, false);
 		effected.broadcastStatusUpdate(effector);
 		return skill.isToggle();

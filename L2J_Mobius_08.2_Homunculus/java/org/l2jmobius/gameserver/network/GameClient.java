@@ -102,6 +102,7 @@ public class GameClient extends Client<org.l2jmobius.commons.network.Connection<
 		{
 			Disconnection.of(this).onDisconnection();
 		}
+		
 		_connectionState = ConnectionState.DISCONNECTED;
 	}
 	
@@ -112,6 +113,7 @@ public class GameClient extends Client<org.l2jmobius.commons.network.Connection<
 		{
 			_encryption.encrypt(data, offset, size);
 		}
+		
 		return true;
 	}
 	
@@ -122,6 +124,7 @@ public class GameClient extends Client<org.l2jmobius.commons.network.Connection<
 		{
 			_encryption.decrypt(data, offset, size);
 		}
+		
 		return true;
 	}
 	
@@ -154,6 +157,7 @@ public class GameClient extends Client<org.l2jmobius.commons.network.Connection<
 			_encryption = new Encryption();
 			_encryption.setKey(key);
 		}
+		
 		return key;
 	}
 	
@@ -298,6 +302,7 @@ public class GameClient extends Client<org.l2jmobius.commons.network.Connection<
 					{
 						return CharacterDeleteFailType.PLEDGE_MASTER;
 					}
+					
 					return CharacterDeleteFailType.PLEDGE_MEMBER;
 				}
 			}
@@ -518,7 +523,7 @@ public class GameClient extends Client<org.l2jmobius.commons.network.Connection<
 			
 			if (player.getClient() != null)
 			{
-				Disconnection.of(player).defaultSequence(LeaveWorld.STATIC_PACKET);
+				Disconnection.of(player).storeAndDeleteWith(LeaveWorld.STATIC_PACKET);
 			}
 			else
 			{
@@ -549,6 +554,7 @@ public class GameClient extends Client<org.l2jmobius.commons.network.Connection<
 		{
 			return null;
 		}
+		
 		return _charSlotMapping.get(charslot);
 	}
 	
@@ -569,6 +575,7 @@ public class GameClient extends Client<org.l2jmobius.commons.network.Connection<
 			LOGGER.warning(toString() + " tried to delete Character in slot " + characterSlot + " but no characters exits at that slot.");
 			return -1;
 		}
+		
 		return info.getObjectId();
 	}
 	
@@ -651,6 +658,7 @@ public class GameClient extends Client<org.l2jmobius.commons.network.Connection<
 					{
 						return "[Account: " + _accountName + " - IP: " + (ip == null ? "disconnected" : ip) + "]";
 					}
+					
 					return "[IP: " + (ip == null ? "disconnected" : ip) + "]";
 				}
 				case CONNECTED:

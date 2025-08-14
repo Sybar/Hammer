@@ -44,12 +44,14 @@ public final class Q10563_ControlOfPower extends Quest
 	// NPCs
 	private static final int HERPHAH = 34362;
 	private static final int PENNY = 34413;
+	
 	// Items
 	private static final int SOULSHOT_R_GRADE = 33780;
 	private static final int B_SPIRITSHOT_R_GRADE = 33794;
 	private static final int PA_ART_OF_DESUCTION = 37928;
 	private static final int PEARL_LV_1 = 38895;
 	private static final int DIAMOND_LV_1 = 38890;
+	
 	// Misc
 	private static final int MIN_LEVEL = 85;
 	private static final int MAX_LEVEL = 99;
@@ -137,6 +139,7 @@ public final class Q10563_ControlOfPower extends Quest
 									htmltext = "adventurer_penny_q10563_03.htm";
 									break;
 								}
+								
 								htmltext = "adventurer_penny_q10563_04.htm";
 								break;
 							}
@@ -157,6 +160,7 @@ public final class Q10563_ControlOfPower extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

@@ -114,6 +114,7 @@ public abstract class AbstractDailyMissionHandler extends ListenersContainer
 			
 			return true;
 		}
+		
 		return false;
 	}
 	
@@ -145,10 +146,10 @@ public abstract class AbstractDailyMissionHandler extends ListenersContainer
 	
 	protected DailyMissionPlayerEntry getPlayerEntry(int objectId, boolean createIfNone)
 	{
-		final DailyMissionPlayerEntry existingEntry = _entries.get(objectId);
-		if (existingEntry != null)
+		DailyMissionPlayerEntry entry = _entries.get(objectId);
+		if (entry != null)
 		{
-			return existingEntry;
+			return entry;
 		}
 		
 		try (Connection con = DatabaseFactory.getConnection();
@@ -160,7 +161,7 @@ public abstract class AbstractDailyMissionHandler extends ListenersContainer
 			{
 				if (rs.next())
 				{
-					final DailyMissionPlayerEntry entry = new DailyMissionPlayerEntry(rs.getInt("charId"), rs.getInt("rewardId"), rs.getInt("status"), rs.getInt("progress"), rs.getLong("lastCompleted"));
+					entry = new DailyMissionPlayerEntry(rs.getInt("charId"), rs.getInt("rewardId"), rs.getInt("status"), rs.getInt("progress"), rs.getLong("lastCompleted"));
 					_entries.put(objectId, entry);
 				}
 			}
@@ -170,12 +171,12 @@ public abstract class AbstractDailyMissionHandler extends ListenersContainer
 			LOGGER.log(Level.WARNING, "Error while loading reward " + _holder.getId() + " for player: " + objectId + " in database: ", e);
 		}
 		
-		if (createIfNone)
+		if ((entry == null) && createIfNone)
 		{
-			final DailyMissionPlayerEntry entry = new DailyMissionPlayerEntry(objectId, _holder.getId());
+			entry = new DailyMissionPlayerEntry(objectId, _holder.getId());
 			_entries.put(objectId, entry);
-			return entry;
 		}
-		return null;
+		
+		return entry;
 	}
 }

@@ -97,6 +97,7 @@ public class TreasureManager
 			{
 				days += 7;
 			}
+			
 			calendar.add(Calendar.DAY_OF_YEAR, days);
 			GlobalVariablesManager.getInstance().set(TREASURE_MANAGER_NEXT_RUN_VAR, calendar.getTimeInMillis());
 			ThreadPool.schedule(this::updateTreasure, 15000);

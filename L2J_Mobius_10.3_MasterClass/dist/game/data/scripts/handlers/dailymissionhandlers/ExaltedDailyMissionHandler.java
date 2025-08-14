@@ -76,6 +76,7 @@ public class ExaltedDailyMissionHandler extends AbstractDailyMissionHandler
 				}
 			}
 		}
+		
 		return false;
 	}
 	
@@ -86,6 +87,7 @@ public class ExaltedDailyMissionHandler extends AbstractDailyMissionHandler
 		{
 			return;
 		}
+		
 		// Check if player is belonging to a clan and is exalted
 		if ((player.getClan() != null) && (player.getNobleLevel() > 0))
 		{
@@ -105,6 +107,7 @@ public class ExaltedDailyMissionHandler extends AbstractDailyMissionHandler
 			{
 				entry.setStatus(DailyMissionStatus.AVAILABLE);
 			}
+			
 			storePlayerEntry(entry);
 		}
 	}

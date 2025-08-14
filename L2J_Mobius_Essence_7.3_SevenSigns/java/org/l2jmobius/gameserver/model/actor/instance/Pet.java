@@ -163,6 +163,7 @@ public class Pet extends Summon
 		{
 			LOGGER.log(Level.WARNING, "Could not store evolved pets: ", e);
 		}
+		
 		getOwner().setPetEvolve(controlItemObjId, new PetEvolveHolder(index, evolveLevel, getName(), getLevel(), getExpForThisLevel()));
 	}
 	
@@ -198,6 +199,7 @@ public class Pet extends Summon
 					{
 						continue;
 					}
+					
 					addSkill(skill);
 				}
 			}
@@ -217,6 +219,7 @@ public class Pet extends Summon
 		{
 			_leveldata = PetDataTable.getInstance().getPetLevelData(getTemplate().getId(), getStat().getLevel());
 		}
+		
 		return _leveldata;
 	}
 	
@@ -226,6 +229,7 @@ public class Pet extends Summon
 		{
 			_data = PetDataTable.getInstance().getPetData(getTemplate().getId());
 		}
+		
 		setPetType(_data.getDefaultPetType());
 		return _data;
 	}
@@ -278,6 +282,7 @@ public class Pet extends Summon
 						{
 							getOwner().setPkKills(Math.max(0, getOwner().getPkKills() - Rnd.get(1, 6)));
 						}
+						
 						sendPacket(SystemMessageId.THE_PET_IS_NOW_LEAVING);
 						deleteMe(getOwner());
 					}
@@ -306,7 +311,7 @@ public class Pet extends Summon
 						final SystemMessage sm = new SystemMessage(SystemMessageId.YOUR_PET_WAS_HUNGRY_SO_IT_ATE_S1);
 						sm.addItemName(food.getId());
 						sendPacket(sm);
-						handler.useItem(getOwner(), food, false);
+						handler.onItemUse(getOwner(), food, false);
 					}
 				}
 				
@@ -328,6 +333,7 @@ public class Pet extends Summon
 			{
 				return getPetLevelData().getPetFeedBattle();
 			}
+			
 			return getPetLevelData().getPetFeedNormal();
 		}
 	}
@@ -341,6 +347,7 @@ public class Pet extends Summon
 		}
 		
 		final Pet pet = restore(control, template, owner);
+		
 		// add the pet instance to world
 		if (pet != null)
 		{
@@ -349,6 +356,7 @@ public class Pet extends Summon
 			pet.setTitle(owner.getName());
 			World.getInstance().addPet(owner.getObjectId(), pet);
 		}
+		
 		return pet;
 	}
 	
@@ -356,6 +364,7 @@ public class Pet extends Summon
 	{
 		unSummon(getOwner());
 		final Pet pet = restore(getControlItem(), template, getOwner());
+		
 		// add the pet instance to world
 		if (pet != null)
 		{
@@ -364,6 +373,7 @@ public class Pet extends Summon
 			pet.setTitle(getOwner().getName());
 			World.getInstance().addPet(getOwner().getObjectId(), pet);
 		}
+		
 		return pet;
 	}
 	
@@ -450,6 +460,7 @@ public class Pet extends Summon
 		{
 			sendPacket(new ExChangeNpcState(getObjectId(), 0x65));
 		}
+		
 		_curFed = num > getMaxFed() ? getMaxFed() : num;
 	}
 	
@@ -469,6 +480,7 @@ public class Pet extends Summon
 				}
 			}
 		}
+		
 		return null;
 	}
 	
@@ -483,6 +495,7 @@ public class Pet extends Summon
 		{
 			return null;
 		}
+		
 		return (Weapon) weapon.getTemplate();
 	}
 	
@@ -525,6 +538,7 @@ public class Pet extends Summon
 			{
 				sendPacket(SystemMessageId.INCORRECT_ITEM_COUNT_2);
 			}
+			
 			return false;
 		}
 		
@@ -549,6 +563,7 @@ public class Pet extends Summon
 				sendPacket(sm);
 			}
 		}
+		
 		return true;
 	}
 	
@@ -571,6 +586,7 @@ public class Pet extends Summon
 			{
 				sendPacket(SystemMessageId.INCORRECT_ITEM_COUNT_2);
 			}
+			
 			return false;
 		}
 		
@@ -678,6 +694,7 @@ public class Pet extends Summon
 					smsg = new SystemMessage(SystemMessageId.YOU_HAVE_FAILED_TO_PICK_UP_S1);
 					smsg.addItemName(target);
 				}
+				
 				sendPacket(ActionFailed.STATIC_PACKET);
 				sendPacket(smsg);
 				return;
@@ -707,7 +724,7 @@ public class Pet extends Summon
 			}
 			else
 			{
-				handler.useItem(this, target, false);
+				handler.onItemUse(this, target, false);
 			}
 			
 			ItemManager.destroyItem(ItemProcessType.NONE, target, getOwner(), null);
@@ -786,10 +803,12 @@ public class Pet extends Summon
 		{
 			deathPenalty();
 		}
+		
 		if (!super.doDie(killer, true))
 		{
 			return false;
 		}
+		
 		stopFeed();
 		
 		// Pet related - Removed on Essence.
@@ -807,6 +826,7 @@ public class Pet extends Summon
 			final BuffInfo buffInfo = owner.getEffectList().getBuffInfoBySkillId(49300);
 			owner.getEffectList().add(new BuffInfo(owner, owner, SkillData.getInstance().getSkill(49300, buffInfo == null ? 1 : Math.min(buffInfo.getSkill().getLevel() + 1, 10)), false, null, null));
 		}
+		
 		// do not decrease exp if is in duel, arena
 		return true;
 	}
@@ -825,6 +845,7 @@ public class Pet extends Summon
 		{
 			setRunning();
 		}
+		
 		getAI().setIntention(Intention.ACTIVE);
 	}
 	
@@ -867,6 +888,7 @@ public class Pet extends Summon
 		{
 			petIU.addRemovedItem(oldItem);
 		}
+		
 		sendInventoryUpdate(petIU);
 		
 		// Send target update packet
@@ -964,6 +986,7 @@ public class Pet extends Summon
 			{
 				dropit.getDropProtection().protect(getOwner());
 			}
+			
 			LOGGER_PET.finer("Item id to drop: " + dropit.getId() + " amount: " + dropit.getCount());
 			dropit.dropMe(this, getX(), getY(), getZ() + 100);
 		}
@@ -1003,6 +1026,7 @@ public class Pet extends Summon
 				
 				long exp = rset.getLong("exp");
 				final PetLevelData info = PetDataTable.getInstance().getPetLevelData(pet.getId(), pet.getLevel());
+				
 				// DS: update experience based by level
 				// Avoiding pet delevels due to exp per level values changed.
 				if ((info != null) && (exp < info.getPetMaxExp()))
@@ -1025,15 +1049,18 @@ public class Pet extends Summon
 					// Pet related - Added the following.
 					pet.setCurrentHpMp(pet.getMaxHp(), pet.getMaxMp());
 				}
+				
 				pet.setEvolveLevel(pet.getPetData().getEvolveLevel());
 				pet.setCurrentFed(rset.getInt("fed"));
 			}
+			
 			return pet;
 		}
 		catch (Exception e)
 		{
 			LOGGER_PET.log(Level.WARNING, "Could not restore pet data for owner: " + owner + " - " + e.getMessage(), e);
 		}
+		
 		return null;
 	}
 	
@@ -1158,7 +1185,7 @@ public class Pet extends Summon
 					final Skill skill = info.getSkill();
 					
 					// Do not store those effects.
-					if (skill.isDeleteAbnormalOnLeave())
+					if (skill.isDeleteAbnormalOnLeave() || !skill.isSharedWithSummon())
 					{
 						continue;
 					}
@@ -1196,6 +1223,7 @@ public class Pet extends Summon
 					
 					SummonEffectTable.getInstance().getPetEffects().computeIfAbsent(getControlObjectId(), _ -> ConcurrentHashMap.newKeySet()).add(new SummonEffect(skill, info.getTime()));
 				}
+				
 				ps2.executeBatch();
 			}
 		}
@@ -1288,6 +1316,7 @@ public class Pet extends Summon
 			{
 				_inventory.deleteMe();
 			}
+			
 			World.getInstance().removePet(owner.getObjectId());
 		}
 	}
@@ -1343,6 +1372,7 @@ public class Pet extends Summon
 		{
 			return 0;
 		}
+		
 		return getStat().getExpForLevel(getLevel());
 	}
 	
@@ -1353,6 +1383,7 @@ public class Pet extends Summon
 		{
 			return 0;
 		}
+		
 		return getStat().getExpForLevel(getLevel() + 1);
 	}
 	
@@ -1486,6 +1517,7 @@ public class Pet extends Summon
 		{
 			return weapon.getId();
 		}
+		
 		return 0;
 	}
 	
@@ -1497,6 +1529,7 @@ public class Pet extends Summon
 		{
 			return weapon.getId();
 		}
+		
 		return 0;
 	}
 	
@@ -1507,6 +1540,7 @@ public class Pet extends Summon
 		{
 			return weapon.getId();
 		}
+		
 		return 0;
 	}
 	
@@ -1542,6 +1576,7 @@ public class Pet extends Summon
 		{
 			LOGGER.warning("Pet control item null, for pet: " + toString());
 		}
+		
 		super.setName(name);
 	}
 	
@@ -1587,6 +1622,7 @@ public class Pet extends Summon
 		{
 			return isRunning() ? getSwimRunSpeed() : getSwimWalkSpeed();
 		}
+		
 		return isRunning() ? getRunSpeed() : getWalkSpeed();
 	}
 	
@@ -1643,9 +1679,11 @@ public class Pet extends Summon
 				sm = new SystemMessage(SystemMessageId.S1_UNEQUIPPED);
 				sm.addItemName(item);
 			}
+			
 			sendPacket(sm);
 			
 			final long slot = _inventory.getSlotFromItem(item);
+			
 			// we can't unequip talisman by body slot
 			if ((slot == ItemTemplate.SLOT_DECO) || (slot == ItemTemplate.SLOT_BROOCH_JEWEL) || (slot == ItemTemplate.SLOT_AGATHION) || (slot == ItemTemplate.SLOT_ARTIFACT))
 			{
@@ -1672,7 +1710,9 @@ public class Pet extends Summon
 					sm = new SystemMessage(SystemMessageId.S1_EQUIPPED);
 					sm.addItemName(item);
 				}
+				
 				sendPacket(sm);
+				
 				// Consume mana - will start a task if required; returns if item is not a shadow item
 				item.decreaseMana(false);
 				

@@ -44,7 +44,7 @@ public class ArmorSet
 	private final List<ArmorsetSkillHolder> _skills;
 	private final Map<BaseStat, Double> _stats;
 	
-	private static final int[] ARMORSET_SLOTS = new int[]
+	private static final int[] ARMORSET_SLOTS =
 	{
 		Inventory.PAPERDOLL_CHEST,
 		Inventory.PAPERDOLL_LEGS,
@@ -54,7 +54,7 @@ public class ArmorSet
 		Inventory.PAPERDOLL_HAIR,
 		Inventory.PAPERDOLL_HAIR2
 	};
-	private static final int[] ARTIFACT_1_SLOTS = new int[]
+	private static final int[] ARTIFACT_1_SLOTS =
 	{
 		Inventory.PAPERDOLL_ARTIFACT1,
 		Inventory.PAPERDOLL_ARTIFACT2,
@@ -65,7 +65,7 @@ public class ArmorSet
 		Inventory.PAPERDOLL_ARTIFACT19,
 	
 	};
-	private static final int[] ARTIFACT_2_SLOTS = new int[]
+	private static final int[] ARTIFACT_2_SLOTS =
 	{
 		Inventory.PAPERDOLL_ARTIFACT5,
 		Inventory.PAPERDOLL_ARTIFACT6,
@@ -76,7 +76,7 @@ public class ArmorSet
 		Inventory.PAPERDOLL_ARTIFACT20,
 	
 	};
-	private static final int[] ARTIFACT_3_SLOTS = new int[]
+	private static final int[] ARTIFACT_3_SLOTS =
 	{
 		Inventory.PAPERDOLL_ARTIFACT9,
 		Inventory.PAPERDOLL_ARTIFACT10,
@@ -185,6 +185,7 @@ public class ArmorSet
 				enchantLevel = itemPart.getEnchantLevel();
 			}
 		}
+		
 		if (enchantLevel == Byte.MAX_VALUE)
 		{
 			enchantLevel = 0;
@@ -242,6 +243,7 @@ public class ArmorSet
 				break;
 			}
 		}
+		
 		return slotMask;
 	}
 	
@@ -254,6 +256,7 @@ public class ArmorSet
 				return true;
 			}
 		}
+		
 		return false;
 	}
 	

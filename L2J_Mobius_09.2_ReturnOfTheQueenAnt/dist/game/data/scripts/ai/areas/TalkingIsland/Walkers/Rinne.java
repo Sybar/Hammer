@@ -33,6 +33,7 @@ public class Rinne extends AbstractNpcAI
 	// NPC
 	private static final int RINNE = 33234;
 	private static final int ALLADA = 33220;
+	
 	// Items
 	private static final int WEAPON = 15302;
 	

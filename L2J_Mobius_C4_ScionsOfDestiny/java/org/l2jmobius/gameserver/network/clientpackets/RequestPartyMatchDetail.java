@@ -42,6 +42,7 @@ public class RequestPartyMatchDetail extends ClientPacket
 	protected void readImpl()
 	{
 		_roomid = readInt();
+		
 		// If player click on Room all unk are 0
 		// If player click AutoJoin values are -1 1 1
 		_unk1 = readInt();
@@ -83,6 +84,7 @@ public class RequestPartyMatchDetail extends ClientPacket
 				member.sendPacket(new ExManagePartyRoomMember(player, room, 0));
 				member.sendMessage(player.getName() + " has entered the party room.");
 			}
+			
 			room.addMember(player);
 			
 			// Info Broadcast

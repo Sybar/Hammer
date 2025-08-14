@@ -78,8 +78,10 @@ public class Q00830_TheWayOfTheGiantsPawn extends Quest
 		23646, // Unit 7 Elite Soldier
 		23647, // Unit 8 Elite Soldier
 	};
+	
 	// Items
 	private static final int GLUDIN_HERO_REWARD = 46375;
+	
 	// Misc
 	private static final int MIN_LEVEL = 100;
 	
@@ -128,6 +130,7 @@ public class Q00830_TheWayOfTheGiantsPawn extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -172,6 +175,7 @@ public class Q00830_TheWayOfTheGiantsPawn extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -187,6 +191,7 @@ public class Q00830_TheWayOfTheGiantsPawn extends Quest
 		{
 			members.add(player);
 		}
+		
 		for (Player member : members)
 		{
 			final QuestState qs = getQuestState(member, false);
@@ -201,6 +206,7 @@ public class Q00830_TheWayOfTheGiantsPawn extends Quest
 					log.addNpcString(NpcStringId.DEFEAT_THE_ELITE_SOLDIERS_OF_THE_REVOLUTIONARIES, count);
 					member.sendPacket(log);
 				}
+				
 				if (count >= 45)
 				{
 					qs.setCond(2, true);

@@ -20,8 +20,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Function;
 
-import org.l2jmobius.gameserver.model.actor.enums.player.DailyMissionDataHolder;
-import org.l2jmobius.gameserver.scripting.ScriptEngineManager;
+import org.l2jmobius.gameserver.model.actor.holders.player.DailyMissionDataHolder;
+import org.l2jmobius.gameserver.scripting.ScriptManager;
 
 /**
  * @author Sdw
@@ -49,7 +49,7 @@ public class DailyMissionHandler
 	{
 		try
 		{
-			ScriptEngineManager.getInstance().executeScript(ScriptEngineManager.ONE_DAY_REWARD_MASTER_HANDLER);
+			ScriptManager.getInstance().executeScript(ScriptManager.ONE_DAY_REWARD_MASTER_HANDLER);
 		}
 		catch (Exception e)
 		{

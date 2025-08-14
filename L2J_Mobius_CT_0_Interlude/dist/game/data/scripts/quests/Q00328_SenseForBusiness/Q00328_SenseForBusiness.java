@@ -36,6 +36,7 @@ public class Q00328_SenseForBusiness extends Quest
 	private static final int MONSTER_EYE_LENS = 1366;
 	private static final int MONSTER_EYE_CARCASS = 1347;
 	private static final int BASILISK_GIZZARD = 1348;
+	
 	// Drop chances
 	private static final Map<Integer, Integer> CHANCES = new HashMap<>();
 	static

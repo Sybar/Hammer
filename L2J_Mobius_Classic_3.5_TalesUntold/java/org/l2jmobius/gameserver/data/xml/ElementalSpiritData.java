@@ -109,6 +109,7 @@ public class ElementalSpiritData implements IXmlReader
 		{
 			return SPIRIT_DATA.get(type).get(stage);
 		}
+		
 		return null;
 	}
 	

@@ -91,11 +91,12 @@ public class Shadow extends Attackable
 			for (BuffInfo info : summoner.getEffectList().getBuffs())
 			{
 				final Skill skill = info.getSkill();
-				if ((skill != null) && !isAffectedBySkill(skill.getId()) && !skill.isBad() && skill.isContinuous())
+				if ((skill != null) && !isAffectedBySkill(skill.getId()) && !skill.hasNegativeEffect() && skill.isContinuous())
 				{
 					skill.applyEffects(this, this, false, info.getAbnormalTime());
 				}
 			}
+			
 			for (BuffInfo info : summoner.getEffectList().getPassives())
 			{
 				final Skill skill = info.getSkill();

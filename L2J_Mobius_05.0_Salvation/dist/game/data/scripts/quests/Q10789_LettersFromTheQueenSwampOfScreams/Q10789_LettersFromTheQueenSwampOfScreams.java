@@ -34,11 +34,14 @@ public class Q10789_LettersFromTheQueenSwampOfScreams extends LetterQuest
 	// NPCs
 	private static final int INNOCENTIN = 31328;
 	private static final int DOKARA = 33847;
+	
 	// Items
 	private static final int SOE_RUNE = 39580;
 	private static final int SOE_SWAMP_OF_SCREAMS = 39581;
+	
 	// Location
 	private static final Location TELEPORT_LOC = new Location(36563, -49178, -1128);
+	
 	// Misc
 	private static final int MIN_LEVEL = 65;
 	private static final int MAX_LEVEL = 69;
@@ -95,6 +98,7 @@ public class Q10789_LettersFromTheQueenSwampOfScreams extends LetterQuest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -119,6 +123,7 @@ public class Q10789_LettersFromTheQueenSwampOfScreams extends LetterQuest
 				htmltext = "33847-01.html";
 			}
 		}
+		
 		return htmltext;
 	}
 	

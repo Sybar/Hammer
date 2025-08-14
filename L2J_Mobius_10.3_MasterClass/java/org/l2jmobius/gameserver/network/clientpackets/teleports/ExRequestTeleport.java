@@ -28,6 +28,7 @@ import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.item.enums.ItemProcessType;
 import org.l2jmobius.gameserver.model.siege.Castle;
+import org.l2jmobius.gameserver.model.zone.ZoneId;
 import org.l2jmobius.gameserver.network.PacketLogger;
 import org.l2jmobius.gameserver.network.SystemMessageId;
 import org.l2jmobius.gameserver.network.clientpackets.ClientPacket;
@@ -75,6 +76,13 @@ public class ExRequestTeleport extends ClientPacket
 			return;
 		}
 		
+		// Should not teleport out from Conquest zone.
+		if (player.isInsideZone(ZoneId.CONQUEST))
+		{
+			player.sendPacket(SystemMessageId.YOU_CANNOT_TAKE_OTHER_ACTION_WHILE_ENTERING_THE_DIMENSIONAL_SPACE);
+			return;
+		}
+		
 		// Teleport in combat configuration.
 		if (!Config.TELEPORT_WHILE_PLAYER_IN_COMBAT && (player.isInCombat() || player.isCastingNow()))
 		{
@@ -117,6 +125,7 @@ public class ExRequestTeleport extends ClientPacket
 					player.sendPacket(SystemMessageId.NOT_ENOUGH_ADENA);
 					return;
 				}
+				
 				player.reduceAdena(ItemProcessType.FEE, price, player, true);
 			}
 		}

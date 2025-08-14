@@ -117,9 +117,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="SummonItems" />
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2046" level="1" /> <!-- Summon Pet -->
 		</skills>
@@ -137,9 +137,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="SummonItems" />
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2046" level="1" /> <!-- Summon Pet -->
 		</skills>
@@ -157,9 +157,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="SummonItems" />
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2046" level="1" /> <!-- Summon Pet -->
 		</skills>
@@ -177,9 +177,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="SummonItems" />
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2046" level="1" /> <!-- Summon Pet -->
 		</skills>
@@ -197,9 +197,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="SummonItems" />
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2046" level="1" /> <!-- Summon Pet -->
 		</skills>
@@ -217,9 +217,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="SummonItems" />
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2046" level="1" /> <!-- Summon Pet -->
 		</skills>
@@ -251,9 +251,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="SummonItems" />
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2046" level="1" /> <!-- Summon Pet -->
 		</skills>
@@ -272,9 +272,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="SummonItems" />
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2046" level="1" /> <!-- Summon Pet -->
 		</skills>
@@ -293,9 +293,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="SummonItems" />
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2046" level="1" /> <!-- Summon Pet -->
 		</skills>
@@ -314,9 +314,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="SummonItems" />
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2046" level="1" /> <!-- Summon Pet -->
 		</skills>
@@ -335,9 +335,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="SummonItems" />
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2046" level="1" /> <!-- Summon Pet -->
 		</skills>
@@ -356,9 +356,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="SummonItems" />
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2046" level="1" /> <!-- Summon Pet -->
 		</skills>

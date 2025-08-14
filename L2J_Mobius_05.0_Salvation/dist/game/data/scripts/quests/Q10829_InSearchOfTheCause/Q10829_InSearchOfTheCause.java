@@ -39,6 +39,7 @@ public class Q10829_InSearchOfTheCause extends Quest
 	private static final int BELAS = 34056;
 	private static final int FERIN = 34054;
 	private static final int CYPHONIA = 34055;
+	
 	// Misc
 	private static final int MIN_LEVEL = 100;
 	private static final int SOE = 46158;
@@ -93,6 +94,7 @@ public class Q10829_InSearchOfTheCause extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -168,6 +170,7 @@ public class Q10829_InSearchOfTheCause extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

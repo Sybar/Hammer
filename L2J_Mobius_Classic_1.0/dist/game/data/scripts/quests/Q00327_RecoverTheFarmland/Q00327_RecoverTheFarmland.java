@@ -182,6 +182,7 @@ public class Q00327_RecoverTheFarmland extends Quest
 						rewarded = true;
 					}
 				}
+				
 				html = rewarded ? event : "30034-02.html";
 				break;
 			}
@@ -304,6 +305,7 @@ public class Q00327_RecoverTheFarmland extends Quest
 					{
 						rewardItems(player, SWIFT_ATTACK_POTION, 1);
 					}
+					
 					takeItems(player, ANCIENT_BRASS_TIARA, 1);
 					html = event;
 				}
@@ -452,6 +454,7 @@ public class Q00327_RecoverTheFarmland extends Quest
 				break;
 			}
 		}
+		
 		return html;
 	}
 }

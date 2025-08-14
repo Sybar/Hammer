@@ -47,6 +47,7 @@ public class Q00025_HidingBehindTheTruth extends Quest
 	private static final int BOOKSHELF3 = 31535;
 	private static final int COFFIN = 31536;
 	private static final int TRIOL = 27218;
+	
 	// Items
 	private static final int CONTRACT = 7066;
 	private static final int DRESS = 7155;
@@ -401,6 +402,7 @@ public class Q00025_HidingBehindTheTruth extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	

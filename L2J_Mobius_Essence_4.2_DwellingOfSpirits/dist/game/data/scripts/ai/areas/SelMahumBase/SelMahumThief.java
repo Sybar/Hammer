@@ -44,6 +44,7 @@ public class SelMahumThief extends AbstractNpcAI
 		MONSTERS.add(22237);
 		MONSTERS.add(22254);
 	}
+	
 	// Misc
 	private static final long DESPAWN_TIME = 5 * 60 * 1000; // 5 min
 	

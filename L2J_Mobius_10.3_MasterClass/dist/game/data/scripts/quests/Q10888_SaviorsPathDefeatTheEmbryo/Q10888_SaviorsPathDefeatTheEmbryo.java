@@ -41,6 +41,7 @@ public class Q10888_SaviorsPathDefeatTheEmbryo extends Quest
 {
 	// NPC
 	private static final int DEVIANNE = 34427;
+	
 	// Monsters
 	private static final int[] MONSTERS =
 	{
@@ -61,8 +62,10 @@ public class Q10888_SaviorsPathDefeatTheEmbryo extends Quest
 		24157, // Demonic Keras
 		24156, // Demonic Archer
 	};
+	
 	// Items
 	private static final int ATELIA_IN_EXTRACTION = 48547;
+	
 	// Misc
 	private static final int MIN_LEVEL = 103;
 	private static final int ATELIA_IN_EXTRACTION_NEEDED = 200;
@@ -129,6 +132,7 @@ public class Q10888_SaviorsPathDefeatTheEmbryo extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -162,6 +166,7 @@ public class Q10888_SaviorsPathDefeatTheEmbryo extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -182,6 +187,7 @@ public class Q10888_SaviorsPathDefeatTheEmbryo extends Quest
 				giveItems(player, ATELIA_IN_EXTRACTION, 1);
 				playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 			}
+			
 			if (getQuestItemsCount(player, ATELIA_IN_EXTRACTION) >= ATELIA_IN_EXTRACTION_NEEDED)
 			{
 				qs.setCond(2, true);

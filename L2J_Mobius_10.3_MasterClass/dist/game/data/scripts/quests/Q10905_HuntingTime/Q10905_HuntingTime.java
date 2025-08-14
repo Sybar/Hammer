@@ -43,6 +43,7 @@ public class Q10905_HuntingTime extends Quest
 {
 	// NPC
 	private static final int ENTROPY = 34599;
+	
 	// Monsters
 	private static final int[] MONSTERS_OUTER_CASTLE =
 	{
@@ -143,12 +144,14 @@ public class Q10905_HuntingTime extends Quest
 		27753, // Nox Telro Blader
 		27754, // Nox Telro Guard
 	};
+	
 	// Misc
 	private static final int MIN_LEVEL = 110;
 	private static final String KILL_COUNT_VAR_OUTER_CASTLE = "KillCountOuterCastle";
 	private static final String KILL_COUNT_VAR_ASA = "KillCountAsa";
 	private static final String KILL_COUNT_VAR_ANIMA = "KillCountAnima";
 	private static final String KILL_COUNT_VAR_NOX = "KillCountNox";
+	
 	// Monsters Kill Target
 	private static final int MAX_KILLED_MOBS_OUTER_CASTLE = 600;
 	private static final int MAX_KILLED_MOBS_ASA = 600;
@@ -205,6 +208,7 @@ public class Q10905_HuntingTime extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -244,6 +248,7 @@ public class Q10905_HuntingTime extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -288,6 +293,7 @@ public class Q10905_HuntingTime extends Quest
 					checkKillProgress(killer);
 				}
 			}
+			
 			if (ArrayUtil.contains(MONSTERS_ASA, npc.getId()))
 			{
 				if (killCountAsa < MAX_KILLED_MOBS_ASA)
@@ -297,6 +303,7 @@ public class Q10905_HuntingTime extends Quest
 					checkKillProgress(killer);
 				}
 			}
+			
 			if (ArrayUtil.contains(MONSTERS_ANIMA, npc.getId()))
 			{
 				if (killCountAnima < MAX_KILLED_MOBS_ANIMA)
@@ -306,6 +313,7 @@ public class Q10905_HuntingTime extends Quest
 					checkKillProgress(killer);
 				}
 			}
+			
 			if (ArrayUtil.contains(MONSTERS_NOX, npc.getId()))
 			{
 				if (killCountNox < MAX_KILLED_MOBS_NOX)
@@ -343,6 +351,7 @@ public class Q10905_HuntingTime extends Quest
 			holder.add(new NpcLogListHolder(NpcStringId.MONSTERS_IN_THE_NOX_ZONE.getId(), true, qs.getInt(KILL_COUNT_VAR_NOX)));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

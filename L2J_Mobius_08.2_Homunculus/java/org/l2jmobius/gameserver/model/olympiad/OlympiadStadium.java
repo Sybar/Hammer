@@ -131,6 +131,7 @@ public class OlympiadStadium
 		{
 			return;
 		}
+		
 		if (value)
 		{
 			for (Player player : _instance.getPlayers())
@@ -188,6 +189,7 @@ public class OlympiadStadium
 				// player.sendPacket(sm);
 				// player.sendPacket(ExOlympiadMatchEnd.STATIC_PACKET);
 			}
+			
 			if (battleEnded)
 			{
 				player.sendPacket(ExOlympiadMatchEnd.STATIC_PACKET);

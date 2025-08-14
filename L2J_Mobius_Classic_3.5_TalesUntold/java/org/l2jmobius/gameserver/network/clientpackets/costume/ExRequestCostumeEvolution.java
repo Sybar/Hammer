@@ -124,6 +124,7 @@ public class ExRequestCostumeEvolution extends ClientPacket
 			player.sendPacket(SystemMessageId.YOU_DON_T_HAVE_NECESSARY_ITEMS);
 			return false;
 		}
+		
 		return Costumes.getInstance().checkCostumeAction(player);
 	}
 	
@@ -146,6 +147,7 @@ public class ExRequestCostumeEvolution extends ClientPacket
 			costume.reduceCount(material.amount);
 			_modifiedCostumes.add(costume);
 		}
+		
 		return true;
 	}
 	

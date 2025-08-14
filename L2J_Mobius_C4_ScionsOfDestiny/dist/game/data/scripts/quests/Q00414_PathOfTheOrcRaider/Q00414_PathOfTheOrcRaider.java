@@ -34,10 +34,12 @@ public class Q00414_PathOfTheOrcRaider extends Quest
 	// NPCs
 	private static final int KARUKIA = 30570;
 	private static final int KASMAN = 30501;
+	
 	// Monsters
 	private static final int GOBLIN_TOMB_RAIDER_LEADER = 20320;
 	private static final int KURUKA_RATMAN_LEADER = 27045;
 	private static final int UMBAR_ORC = 27054;
+	
 	// Items
 	private static final int GREEN_BLOOD = 1578;
 	private static final int GOBLIN_DWELLING_MAP = 1579;

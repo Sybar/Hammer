@@ -30,7 +30,7 @@ import org.l2jmobius.gameserver.network.serverpackets.SystemMessage;
 public class Elixir extends ItemSkills
 {
 	@Override
-	public boolean useItem(Playable playable, Item item, boolean forceUse)
+	public boolean onItemUse(Playable playable, Item item, boolean forceUse)
 	{
 		if (!playable.isPlayer())
 		{
@@ -53,13 +53,14 @@ public class Elixir extends ItemSkills
 			return false;
 		}
 		
-		if (super.useItem(player, item, forceUse))
+		if (super.onItemUse(player, item, forceUse))
 		{
 			player.getVariables().set(PlayerVariables.ELIXIRS_AVAILABLE, elixirsAvailable + 1);
 			player.sendPacket(new SystemMessage(SystemMessageId.THANKS_TO_THE_ELIXIR_CHARACTER_S_STAT_POINTS_S1).addInt(elixirsAvailable + 1));
 			player.broadcastUserInfo();
 			return true;
 		}
+		
 		return false;
 	}
 }

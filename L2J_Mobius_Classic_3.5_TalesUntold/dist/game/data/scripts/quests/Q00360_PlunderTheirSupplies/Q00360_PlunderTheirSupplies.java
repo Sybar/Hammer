@@ -36,10 +36,13 @@ public class Q00360_PlunderTheirSupplies extends Quest
 {
 	// Npc
 	private static final int COLEMAN = 30873;
+	
 	// Misc
 	private static final int MIN_LEVEL = 52;
+	
 	// Monsters
 	private static final Map<Integer, Integer> MONSTER_DROP_CHANCES = new HashMap<>();
+	
 	// Item
 	private static final int SUPPLY_ITEMS = 5872;
 	static
@@ -89,6 +92,7 @@ public class Q00360_PlunderTheirSupplies extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -136,6 +140,7 @@ public class Q00360_PlunderTheirSupplies extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

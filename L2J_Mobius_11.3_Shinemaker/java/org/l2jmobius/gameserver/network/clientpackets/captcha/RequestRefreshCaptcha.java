@@ -57,6 +57,7 @@ public class RequestRefreshCaptcha extends ClientPacket
 			request = new CaptchaRequest(player, captcha);
 			player.addRequest(request);
 		}
+		
 		player.sendPacket(new ReceiveBotCaptchaImage(captcha, request.getRemainingTime()));
 	}
 }

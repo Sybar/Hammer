@@ -41,8 +41,10 @@ public class Q10398_ASuspiciousBadge extends Quest
 		23307, // Corpse Spider
 		23308, // Explosive Spider
 	};
+	
 	// Items
 	private static final int BADGE = 36666; // Unidentified Suspicious Badge
+	
 	// Misc
 	private static final int MIN_LEVEL = 52;
 	private static final int MAX_LEVEL = 58;
@@ -95,6 +97,7 @@ public class Q10398_ASuspiciousBadge extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -135,6 +138,7 @@ public class Q10398_ASuspiciousBadge extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

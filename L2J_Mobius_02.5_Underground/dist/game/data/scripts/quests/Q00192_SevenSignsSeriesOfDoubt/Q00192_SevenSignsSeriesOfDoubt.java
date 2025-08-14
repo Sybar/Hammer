@@ -35,10 +35,12 @@ public class Q00192_SevenSignsSeriesOfDoubt extends Quest
 	private static final int STAN = 30200;
 	private static final int CROOP = 30676;
 	private static final int UNIDENTIFIED_BODY = 32568;
+	
 	// Items
 	private static final int CROOPS_INTRODUCTION = 13813;
 	private static final int JACOBS_NECKLACE = 13814;
 	private static final int CROOPS_LETTER = 13815;
+	
 	// Misc
 	private static final int MIN_LEVEL = 79;
 	
@@ -184,6 +186,7 @@ public class Q00192_SevenSignsSeriesOfDoubt extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -307,6 +310,7 @@ public class Q00192_SevenSignsSeriesOfDoubt extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

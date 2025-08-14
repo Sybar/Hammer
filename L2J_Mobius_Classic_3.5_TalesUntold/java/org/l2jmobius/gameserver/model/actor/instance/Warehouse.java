@@ -40,6 +40,7 @@ public class Warehouse extends Folk
 		{
 			return true;
 		}
+		
 		return super.isAutoAttackable(attacker);
 	}
 	
@@ -61,6 +62,7 @@ public class Warehouse extends Folk
 		{
 			pom = npcId + "-" + value;
 		}
+		
 		return "data/html/warehouse/" + pom + ".htm";
 	}
 }

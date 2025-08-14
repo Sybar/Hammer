@@ -39,6 +39,7 @@ public class Q10305_UnstoppableFutileEfforts extends Quest
 	private static final int NOETI_MIMILEAD = 32895;
 	private static final int LARGE_COCOON = 32920;
 	private static final int COCOON = 32919;
+	
 	// Misc
 	private static final int MIN_LEVEL = 88;
 	
@@ -109,6 +110,7 @@ public class Q10305_UnstoppableFutileEfforts extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -142,6 +144,7 @@ public class Q10305_UnstoppableFutileEfforts extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -155,6 +158,7 @@ public class Q10305_UnstoppableFutileEfforts extends Quest
 			npcLogList.add(new NpcLogListHolder(COCOON, false, qs.getMemoStateEx(LARGE_COCOON)));
 			return npcLogList;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

@@ -35,9 +35,11 @@ public class HungryHorse extends LongTimeEvent
 {
 	// NPC
 	private static final int GALUP = 34010;
+	
 	// Items
 	private static final int CARROT = 40363;
 	private static final int POUCH = 40365;
+	
 	// Skills
 	private static final SkillHolder[] GROUP_BUFFS =
 	{
@@ -84,6 +86,7 @@ public class HungryHorse extends LongTimeEvent
 					{
 						SkillCaster.triggerCast(npc, player, holder.getSkill());
 					}
+					
 					SkillCaster.triggerCast(npc, player, KNIGHT.getSkill());
 					SkillCaster.triggerCast(npc, player, XP_BUFF.getSkill());
 				}
@@ -102,6 +105,7 @@ public class HungryHorse extends LongTimeEvent
 					{
 						SkillCaster.triggerCast(npc, player, holder.getSkill());
 					}
+					
 					SkillCaster.triggerCast(npc, player, WARRIOR.getSkill());
 					SkillCaster.triggerCast(npc, player, XP_BUFF.getSkill());
 				}
@@ -120,6 +124,7 @@ public class HungryHorse extends LongTimeEvent
 					{
 						SkillCaster.triggerCast(npc, player, holder.getSkill());
 					}
+					
 					SkillCaster.triggerCast(npc, player, WIZARD.getSkill());
 					SkillCaster.triggerCast(npc, player, XP_BUFF.getSkill());
 				}
@@ -172,6 +177,7 @@ public class HungryHorse extends LongTimeEvent
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

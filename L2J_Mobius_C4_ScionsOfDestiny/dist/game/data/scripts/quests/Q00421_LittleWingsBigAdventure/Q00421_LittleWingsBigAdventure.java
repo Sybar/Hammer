@@ -50,6 +50,7 @@ public class Q00421_LittleWingsBigAdventure extends Quest
 	// NPCs
 	private static final int CRONOS = 30610;
 	private static final int MIMYU = 30747;
+	
 	// Item
 	private static final int FAIRY_LEAF = 4325;
 	
@@ -92,6 +93,7 @@ public class Q00421_LittleWingsBigAdventure extends Quest
 						}
 					}
 				}
+				
 				// Exit quest if you got more than one flute, or the flute level doesn't meat requirements.
 				st.exitQuest(true);
 				break;

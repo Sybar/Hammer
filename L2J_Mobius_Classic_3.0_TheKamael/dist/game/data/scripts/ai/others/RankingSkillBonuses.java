@@ -139,6 +139,7 @@ public class RankingSkillBonuses extends AbstractNpcAI
 					break;
 				}
 			}
+			
 			player.addSkill(RACE_RANKING_BENEFIT, false);
 		}
 	}

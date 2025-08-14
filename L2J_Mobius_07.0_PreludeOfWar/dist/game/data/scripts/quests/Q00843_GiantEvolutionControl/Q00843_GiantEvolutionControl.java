@@ -49,6 +49,7 @@ public final class Q00843_GiantEvolutionControl extends Quest
 {
 	// NPCs
 	private static final int KRENAHT = 34237;
+	
 	// Monster
 	private static final int[] MONSTERS =
 	{
@@ -57,12 +58,14 @@ public final class Q00843_GiantEvolutionControl extends Quest
 		23793, // Kshana - Marred
 		23794, // Lucas - Marred
 	};
+	
 	// Items
 	private static final int SHINE_STONE = 47171;
 	private static final int SUPPLY_BOX_BASIC = 47184;
 	private static final int SUPPLY_BOX_INTERMEDIATE = 47360;
 	private static final int SUPPLY_BOX_ADVANCED = 47361;
 	private static final int FACTION_AMITY_TOKEN = 48030;
+	
 	// Misc
 	private static final int MIN_LEVEL = 100;
 	private static final int COUNT_BASIC = 50;
@@ -78,6 +81,7 @@ public final class Q00843_GiantEvolutionControl extends Quest
 		addTalkId(KRENAHT);
 		addKillId(MONSTERS);
 		registerQuestItems(SHINE_STONE);
+		
 		// addCondCompletedQuest(Q10537_KamaelDisarray.class.getSimpleName(), "giantchaser_officer_q0843_02.htm"); //TODO
 		addFactionLevel(Faction.GIANT_TRACKERS, 2, "giantchaser_officer_q0843_02a.htm");
 		addCondMinLevel(MIN_LEVEL, "giantchaser_officer_q0843_02a.htm");
@@ -115,6 +119,7 @@ public final class Q00843_GiantEvolutionControl extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -133,6 +138,7 @@ public final class Q00843_GiantEvolutionControl extends Quest
 					htmltext = getAlreadyCompletedMsg(player);
 					break;
 				}
+				
 				qs.setState(State.CREATED);
 				// fallthrough
 			}
@@ -181,6 +187,7 @@ public final class Q00843_GiantEvolutionControl extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -270,6 +277,7 @@ public final class Q00843_GiantEvolutionControl extends Quest
 								giveItems(player, SUPPLY_BOX_ADVANCED, 1);
 							}
 						}
+						
 						addExpAndSp(player, 5536944000L, 13288590);
 						addFactionPoints(player, Faction.GIANT_TRACKERS, REWARD_BASIC);
 						showHtmlFile(player, "giantchaser_officer_q0843_13.htm", npc);
@@ -306,11 +314,13 @@ public final class Q00843_GiantEvolutionControl extends Quest
 									giveItems(player, SUPPLY_BOX_ADVANCED, 1);
 								}
 							}
+							
 							addExpAndSp(player, 5536944000L * 2, 13288590 * 2);
 							addFactionPoints(player, Faction.GIANT_TRACKERS, REWARD_BASIC * 2);
 							showHtmlFile(player, "giantchaser_officer_q0843_13.htm", npc);
 							break;
 						}
+						
 						showHtmlFile(player, "giantchaser_officer_q0843_14.htm", npc);
 					}
 					break;
@@ -342,6 +352,7 @@ public final class Q00843_GiantEvolutionControl extends Quest
 								giveItems(player, SUPPLY_BOX_ADVANCED, 1);
 							}
 						}
+						
 						addExpAndSp(player, 11073888000L, 26577180);
 						addFactionPoints(player, Faction.GIANT_TRACKERS, REWARD_INTERMEDIATE);
 						showHtmlFile(player, "giantchaser_officer_q0843_13a.htm", npc);
@@ -378,11 +389,13 @@ public final class Q00843_GiantEvolutionControl extends Quest
 									giveItems(player, SUPPLY_BOX_ADVANCED, 1);
 								}
 							}
+							
 							addExpAndSp(player, 11073888000L * 2, 26577180 * 2);
 							addFactionPoints(player, Faction.GIANT_TRACKERS, REWARD_INTERMEDIATE * 2);
 							showHtmlFile(player, "giantchaser_officer_q0843_13a.htm", npc);
 							break;
 						}
+						
 						showHtmlFile(player, "giantchaser_officer_q0843_14a.htm", npc);
 					}
 					break;
@@ -416,6 +429,7 @@ public final class Q00843_GiantEvolutionControl extends Quest
 							qs.setCond(4, true);
 							break;
 						}
+						
 						playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 					}
 					break;
@@ -437,6 +451,7 @@ public final class Q00843_GiantEvolutionControl extends Quest
 							qs.setCond(5, true);
 							break;
 						}
+						
 						playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 					}
 					break;

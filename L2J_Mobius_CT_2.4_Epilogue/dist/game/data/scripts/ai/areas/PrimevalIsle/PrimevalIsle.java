@@ -89,8 +89,10 @@ public class PrimevalIsle extends AbstractNpcAI
 		22224, // Ornithomimus
 		22225, // Deinonychus
 	};
+	
 	// Item
 	private static final int DEINONYCHUS = 14828; // Deinonychus Mesozoic Stone
+	
 	// Skill
 	private static final SkillHolder ANESTHESIA = new SkillHolder(5085, 1); // Anesthesia
 	private static final SkillHolder DEADLY_POISON = new SkillHolder(5086, 1); // Deadly Poison
@@ -130,6 +132,7 @@ public class PrimevalIsle extends AbstractNpcAI
 				target.doDie(npc);
 			}
 		}
+		
 		if (npc.isInCombat())
 		{
 			final Attackable mob = npc.asAttackable();
@@ -237,6 +240,7 @@ public class PrimevalIsle extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	
@@ -367,16 +371,19 @@ public class PrimevalIsle extends AbstractNpcAI
 					npc.setTarget(target);
 					npc.doCast(LONGRANGEDMAGIC1.getSkill());
 				}
+				
 				if (!npc.isSkillDisabled(PHYSICALSPECIAL1.getSkill()) && (getRandom(100) <= (5 * npc.getScriptValue())))
 				{
 					npc.setTarget(target);
 					npc.doCast(PHYSICALSPECIAL1.getSkill());
 				}
+				
 				if (!npc.isSkillDisabled(PHYSICALSPECIAL2.getSkill()) && (getRandom(100) <= (3 * npc.getScriptValue())))
 				{
 					npc.setTarget(target);
 					npc.doCast(PHYSICALSPECIAL2.getSkill());
 				}
+				
 				if (!npc.isSkillDisabled(PHYSICALSPECIAL3.getSkill()) && (getRandom(100) <= (5 * npc.getScriptValue())))
 				{
 					npc.setTarget(target);
@@ -423,6 +430,7 @@ public class PrimevalIsle extends AbstractNpcAI
 					npc.setTarget(target);
 					npc.doCast(physicalSpecial1.getSkill());
 				}
+				
 				if ((getRandom(100) <= (probPhysicalSpecial2 * npc.getVariables().getInt("SKILL_MULTIPLER"))) && !npc.isSkillDisabled(physicalSpecial2.getSkill()))
 				{
 					npc.setTarget(target);
@@ -450,8 +458,9 @@ public class PrimevalIsle extends AbstractNpcAI
 				final IItemHandler handler = ItemHandler.getInstance().getHandler(summonItem.getEtcItem());
 				if ((handler != null) && !player.hasPet())
 				{
-					handler.useItem(player, summonItem, true);
+					handler.onItemUse(player, summonItem, true);
 				}
+				
 				showOnScreenMsg(player, "Life Stone from the Beginning acquired", 2, 6000);
 			}
 			else

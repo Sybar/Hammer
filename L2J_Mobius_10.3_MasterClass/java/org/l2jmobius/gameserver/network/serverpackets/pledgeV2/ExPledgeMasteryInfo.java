@@ -79,6 +79,7 @@ public class ExPledgeMasteryInfo extends AbstractItemPacket
 						available = clan.hasMastery(previous);
 					}
 				}
+				
 				buffer.writeByte(clan.hasMastery(id) ? 2 : available ? 1 : 0); // Availability.
 			}
 		}

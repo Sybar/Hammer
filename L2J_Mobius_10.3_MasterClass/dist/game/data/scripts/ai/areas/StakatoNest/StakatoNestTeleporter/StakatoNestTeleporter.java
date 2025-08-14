@@ -38,6 +38,7 @@ public class StakatoNestTeleporter extends AbstractNpcAI
 		new Location(80848, -49426, -5128),
 		new Location(87682, -43291, -4128)
 	};
+	
 	// NPC
 	private static final int KINTAIJIN = 32640;
 	
@@ -65,8 +66,10 @@ public class StakatoNestTeleporter extends AbstractNpcAI
 					}
 				}
 			}
+			
 			player.teleToLocation(loc, false);
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	

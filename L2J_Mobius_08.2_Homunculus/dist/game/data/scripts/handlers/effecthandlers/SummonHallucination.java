@@ -93,8 +93,7 @@ public class SummonHallucination extends AbstractEffect
 			y += (Rnd.nextBoolean() ? Rnd.get(0, 20) : Rnd.get(-20, 0));
 			
 			final Doppelganger clone = new Doppelganger(npcTemplate, player);
-			clone.setCurrentHp(clone.getMaxHp());
-			clone.setCurrentMp(clone.getMaxMp());
+			clone.fullRestore();
 			clone.setSummoner(player);
 			clone.spawnMe(x, y, z);
 			clone.scheduleDespawn(_despawnDelay);

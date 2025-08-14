@@ -120,6 +120,7 @@ public class PhysicalDamageWeaponBonus extends AbstractEffect
 		{
 			ignoredPDef = Math.max(0, ignoredPDef - defenceIgnoreRemovalAdd);
 		}
+		
 		double defence = effected.getPDef() - ignoredPDef;
 		
 		final double shieldDefenceIgnoreRemoval = effected.getStat().getValue(Stat.SHIELD_DEFENCE_IGNORE_REMOVAL, 1);
@@ -140,6 +141,7 @@ public class PhysicalDamageWeaponBonus extends AbstractEffect
 						{
 							ignoredShieldDef = Math.max(0, ignoredShieldDef - shieldDefenceIgnoreRemovalAdd);
 						}
+						
 						defence += shieldDef - ignoredShieldDef;
 					}
 					else
@@ -192,6 +194,7 @@ public class PhysicalDamageWeaponBonus extends AbstractEffect
 			// ATTACK CALCULATION 77 * ((pAtk * lvlMod) + power) / pdef            RANGED ATTACK CALCULATION 70 * ((pAtk * lvlMod) + power + patk + power) / pdef
 			// ```````````````````^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^``````````````````````````````````````^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 			final double baseMod = (weaponMod * ((attack * effector.getLevelMod()) + power + rangedBonus)) / defence;
+			
 			// NasSeKa rev. 10200: generalTraitMod == 0 ? 1 : generalTraitMod (no invulnerable traits).
 			damage = baseMod * ssmod * critMod * weaponBonus * weaponTraitMod * (generalTraitMod == 0 ? 1 : generalTraitMod) * weaknessMod * attributeMod * pvpPveMod * randomMod;
 			damage *= effector.getStat().getValue(Stat.PHYSICAL_SKILL_POWER, 1);

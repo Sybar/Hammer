@@ -44,6 +44,7 @@ public class Bink extends AbstractNpcAI
 		{
 			npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.TALKING_ISLAND_VILLAGE_IS_REALLY_BEAUTIFUL, 1000);
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	

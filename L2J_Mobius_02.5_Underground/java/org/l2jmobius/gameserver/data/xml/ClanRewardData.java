@@ -143,6 +143,7 @@ public class ClanRewardData implements IXmlReader
 				selectedBonus = currentBonus;
 			}
 		}
+		
 		return selectedBonus;
 	}
 	

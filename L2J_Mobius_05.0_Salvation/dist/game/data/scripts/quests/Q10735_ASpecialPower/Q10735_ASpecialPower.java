@@ -40,12 +40,15 @@ public class Q10735_ASpecialPower extends Quest
 {
 	// NPC
 	private static final int AYANTHE = 33942;
+	
 	// Monsters
 	private static final int FLOATO = 27526;
 	private static final int FLOATO2 = 27531;
 	private static final int RATEL = 27527;
+	
 	// Reward
 	private static final ItemHolder SPIRITSHOTS_REWARD = new ItemHolder(2509, 500);
+	
 	// Misc
 	private static final int MIN_LEVEL = 4;
 	private static final int MAX_LEVEL = 20;
@@ -72,6 +75,7 @@ public class Q10735_ASpecialPower extends Quest
 			qs.startQuest();
 			return event;
 		}
+		
 		return null;
 	}
 	
@@ -123,6 +127,7 @@ public class Q10735_ASpecialPower extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -152,11 +157,13 @@ public class Q10735_ASpecialPower extends Quest
 					break;
 				}
 			}
+			
 			if (npcId != -1)
 			{
 				holder.add(new NpcLogListHolder(npcId, false, qs.getMemoStateEx(KILL_COUNT_VAR)));
 			}
 		}
+		
 		return holder;
 	}
 }

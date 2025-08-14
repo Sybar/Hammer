@@ -81,11 +81,13 @@ public class Cubic extends Creature
 		{
 			_skillUseTask.cancel(true);
 		}
+		
 		_skillUseTask = null;
 		if ((_expireTask != null) && !_expireTask.isDone())
 		{
 			_expireTask.cancel(true);
 		}
+		
 		_expireTask = null;
 		_owner.getCubics().remove(_template.getId());
 		_owner.sendPacket(new ExUserInfoCubic(_owner));
@@ -130,6 +132,7 @@ public class Cubic extends Creature
 				return cubicSkill;
 			}
 		}
+		
 		return null;
 	}
 	
@@ -250,7 +253,7 @@ public class Cubic extends Creature
 	{
 		if (!_owner.hasSkillReuse(skill.getReuseHashCode()))
 		{
-			_caster.broadcastPacket(new MagicSkillUse(_owner, target, skill.getDisplayId(), skill.getDisplayLevel(), skill.getHitTime(), skill.getReuseDelay()));
+			_caster.broadcastSkillPacket(new MagicSkillUse(_owner, target, skill.getDisplayId(), skill.getDisplayLevel(), skill.getHitTime(), skill.getReuseDelay()), target);
 			skill.activateSkill(this, target);
 			_owner.addTimeStamp(skill, skill.getReuseDelay());
 		}

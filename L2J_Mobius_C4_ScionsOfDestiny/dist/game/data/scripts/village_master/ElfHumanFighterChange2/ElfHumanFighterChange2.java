@@ -132,6 +132,7 @@ public class ElfHumanFighterChange2 extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -160,6 +161,7 @@ public class ElfHumanFighterChange2 extends AbstractNpcAI
 				takeItems(player, -1, MARK_OF_CHALLENGER, MARK_OF_TRUST, MARK_OF_DUELIST);
 				player.setPlayerClass(GLADIATOR);
 				player.setBaseClass(GLADIATOR);
+				
 				// SystemMessage and cast skill is done by setClassId
 				player.broadcastUserInfo();
 				htmltext = "30109-42.htm"; // fnAfterClassChange11
@@ -187,6 +189,7 @@ public class ElfHumanFighterChange2 extends AbstractNpcAI
 				takeItems(player, -1, MARK_OF_CHALLENGER, MARK_OF_TRUST, MARK_OF_CHAMPION);
 				player.setPlayerClass(WARLORD);
 				player.setBaseClass(WARLORD);
+				
 				// SystemMessage and cast skill is done by setClassId
 				player.broadcastUserInfo();
 				htmltext = "30109-46.htm"; // fnAfterClassChange12
@@ -214,6 +217,7 @@ public class ElfHumanFighterChange2 extends AbstractNpcAI
 				takeItems(player, -1, MARK_OF_DUTY, MARK_OF_TRUST, MARK_OF_HEALER);
 				player.setPlayerClass(PALADIN);
 				player.setBaseClass(PALADIN);
+				
 				// SystemMessage and cast skill is done by setClassId
 				player.broadcastUserInfo();
 				htmltext = "30109-50.htm"; // fnAfterClassChange21
@@ -241,6 +245,7 @@ public class ElfHumanFighterChange2 extends AbstractNpcAI
 				takeItems(player, -1, MARK_OF_DUTY, MARK_OF_TRUST, MARK_OF_WITCHCRAFT);
 				player.setPlayerClass(DARK_AVENGER);
 				player.setBaseClass(DARK_AVENGER);
+				
 				// SystemMessage and cast skill is done by setClassId
 				player.broadcastUserInfo();
 				htmltext = "30109-54.htm"; // fnAfterClassChange22
@@ -268,6 +273,7 @@ public class ElfHumanFighterChange2 extends AbstractNpcAI
 				takeItems(player, -1, MARK_OF_SEEKER, MARK_OF_TRUST, MARK_OF_SEARCHER);
 				player.setPlayerClass(TREASURE_HUNTER);
 				player.setBaseClass(TREASURE_HUNTER);
+				
 				// SystemMessage and cast skill is done by setClassId
 				player.broadcastUserInfo();
 				htmltext = "30109-58.htm"; // fnAfterClassChange31
@@ -295,6 +301,7 @@ public class ElfHumanFighterChange2 extends AbstractNpcAI
 				takeItems(player, -1, MARK_OF_SEEKER, MARK_OF_TRUST, MARK_OF_SAGITTARIUS);
 				player.setPlayerClass(HAWKEYE);
 				player.setBaseClass(HAWKEYE);
+				
 				// SystemMessage and cast skill is done by setClassId
 				player.broadcastUserInfo();
 				htmltext = "30109-62.htm"; // fnAfterClassChange32
@@ -322,6 +329,7 @@ public class ElfHumanFighterChange2 extends AbstractNpcAI
 				takeItems(player, -1, MARK_OF_DUTY, MARK_OF_LIFE, MARK_OF_HEALER);
 				player.setPlayerClass(TEMPLE_KNIGHT);
 				player.setBaseClass(TEMPLE_KNIGHT);
+				
 				// SystemMessage and cast skill is done by setClassId
 				player.broadcastUserInfo();
 				htmltext = "30109-66.htm"; // fnAfterClassChange41
@@ -349,6 +357,7 @@ public class ElfHumanFighterChange2 extends AbstractNpcAI
 				takeItems(player, -1, MARK_OF_CHALLENGER, MARK_OF_LIFE, MARK_OF_DUELIST);
 				player.setPlayerClass(SWORDSINGER);
 				player.setBaseClass(SWORDSINGER);
+				
 				// SystemMessage and cast skill is done by setClassId
 				player.broadcastUserInfo();
 				htmltext = "30109-70.htm"; // fnAfterClassChange42
@@ -376,6 +385,7 @@ public class ElfHumanFighterChange2 extends AbstractNpcAI
 				takeItems(player, -1, MARK_OF_SEEKER, MARK_OF_LIFE, MARK_OF_SEARCHER);
 				player.setPlayerClass(PLAINS_WALKER);
 				player.setBaseClass(PLAINS_WALKER);
+				
 				// SystemMessage and cast skill is done by setClassId
 				player.broadcastUserInfo();
 				htmltext = "30109-74.htm"; // fnAfterClassChange51
@@ -403,6 +413,7 @@ public class ElfHumanFighterChange2 extends AbstractNpcAI
 				takeItems(player, -1, MARK_OF_SEEKER, MARK_OF_LIFE, MARK_OF_SAGITTARIUS);
 				player.setPlayerClass(SILVER_RANGER);
 				player.setBaseClass(SILVER_RANGER);
+				
 				// SystemMessage and cast skill is done by setClassId
 				player.broadcastUserInfo();
 				htmltext = "30109-78.htm"; // fnAfterClassChange52
@@ -412,6 +423,7 @@ public class ElfHumanFighterChange2 extends AbstractNpcAI
 				htmltext = "30109-79.htm"; // fnNoProof52
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -455,6 +467,7 @@ public class ElfHumanFighterChange2 extends AbstractNpcAI
 		{
 			htmltext = "30109-38.htm"; // fnClassMismatch
 		}
+		
 		return htmltext;
 	}
 	

@@ -48,9 +48,11 @@ public class PrivateStoreManageListBuy extends ServerPacket
 	public void writeImpl(GameClient client, WritableBuffer buffer)
 	{
 		ServerPackets.PRIVATE_STORE_BUY_MANAGE_LIST.writeId(this, buffer);
+		
 		// section 1
 		buffer.writeInt(_objId);
 		buffer.writeInt(_playerAdena);
+		
 		// section2
 		buffer.writeInt(_itemList.size()); // inventory items for potential buy
 		for (Item item : _itemList)
@@ -63,6 +65,7 @@ public class PrivateStoreManageListBuy extends ServerPacket
 			buffer.writeInt(item.getTemplate().getBodyPart());
 			buffer.writeShort(item.getTemplate().getType2());
 		}
+		
 		// section 3
 		buffer.writeInt(_buyList.size()); // count for all items already added for buy
 		for (TradeItem item : _buyList)

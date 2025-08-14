@@ -81,11 +81,13 @@ class NpcBuffersData implements IXmlReader
 										attr = attrs.item(i);
 										set.set(attr.getNodeName(), attr.getNodeValue());
 									}
+									
 									npc.addSkill(new NpcBufferSkillData(set));
 									break;
 								}
 							}
 						}
+						
 						_npcBuffers.put(npcId, npc);
 					}
 				}

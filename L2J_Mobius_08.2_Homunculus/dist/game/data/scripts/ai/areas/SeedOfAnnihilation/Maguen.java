@@ -16,6 +16,8 @@
  */
 package ai.areas.SeedOfAnnihilation;
 
+import java.util.Collection;
+
 import org.l2jmobius.gameserver.ai.Intention;
 import org.l2jmobius.gameserver.managers.QuestManager;
 import org.l2jmobius.gameserver.model.WorldObject;
@@ -51,9 +53,11 @@ public class Maguen extends AbstractNpcAI
 		22764, // Elite Kiriona (Kokracon)
 		22765, // Elite Kaiona (Kokracon)
 	};
+	
 	// Item
 	private static final int MAGUEN_PET = 15488; // Maguen Pet Collar
 	private static final int ELITE_MAGUEN_PET = 15489; // Elite Maguen Pet Collar
+	
 	// Skills
 	private static final SkillHolder MACHINE = new SkillHolder(9060, 1); // Maguen Machine
 	private static final SkillHolder B_BUFF_1 = new SkillHolder(6343, 1); // Maguen Plasma - Power
@@ -159,10 +163,12 @@ public class Maguen extends AbstractNpcAI
 					player.getEffectList().stopEffects(R_PLASMA1.getSkill().getAbnormalType());
 					nemoAi().notifyEvent("DECREASE_COUNT", npc, player);
 				}
+				
 				npc.doDie(null);
 				break;
 			}
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	
@@ -235,6 +241,7 @@ public class Maguen extends AbstractNpcAI
 					npc.setTarget(player);
 					npc.doCast(skillToCast.getSkill());
 				}
+				
 				maguenPetChance(player);
 				startQuestTimer("END_TIMER", 3000, npc, player);
 			}
@@ -250,11 +257,12 @@ public class Maguen extends AbstractNpcAI
 		{
 			startQuestTimer("END_TIMER", 1000, npc, player);
 		}
+		
 		npc.setDisplayEffect(4);
 	}
 	
 	@Override
-	public void onSkillSee(Npc npc, Player caster, Skill skill, WorldObject[] targets, boolean isSummon)
+	public void onSkillSee(Npc npc, Player caster, Skill skill, Collection<WorldObject> targets, boolean isSummon)
 	{
 		if ((skill == MACHINE.getSkill()) && (caster == npc.getVariables().getObject("SUMMON_PLAYER", Player.class)) && (npc.getVariables().getInt("NPC_EFFECT") != 0) && (npc.getVariables().getInt("BLOCKED_SKILLSEE") == 0))
 		{

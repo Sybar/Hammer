@@ -70,6 +70,7 @@ public class HuntpassSayhasToggle extends ClientPacket
 		{
 			huntPass.setSayhasSustention(false);
 		}
+		
 		player.sendPacket(new HuntPassSayhasSupportInfo(player));
 	}
 }

@@ -44,6 +44,7 @@ public class Q10800_ReconnaissanceAtDragonValley extends Quest
 {
 	// NPC
 	private static final int NAMO = 33973;
+	
 	// Monsters
 	private static final int[] MONSTERS =
 	{
@@ -56,6 +57,7 @@ public class Q10800_ReconnaissanceAtDragonValley extends Quest
 		23443, // Dark Grave Wizard
 		23444, // Dark Grave Knight
 	};
+	
 	// Misc
 	private static final int MIN_LEVEL = 76;
 	private static final int MAX_LEVEL = 85;
@@ -111,6 +113,7 @@ public class Q10800_ReconnaissanceAtDragonValley extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -137,6 +140,7 @@ public class Q10800_ReconnaissanceAtDragonValley extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -173,6 +177,7 @@ public class Q10800_ReconnaissanceAtDragonValley extends Quest
 				return holder;
 			}
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

@@ -61,6 +61,7 @@ public class AshenShadowRevolutionaries extends AbstractInstance
 		34099,
 		34100
 	};
+	
 	// Monsters
 	private static final int SPY_DWARF = 23650;
 	private static final int SIGNALMAN = 23651;
@@ -119,9 +120,11 @@ public class AshenShadowRevolutionaries extends AbstractInstance
 		23652, // Unit Guard
 		34103, // Revolutionaries Altar
 	};
+	
 	// Items
 	private static final ItemHolder BENUSTAS_REWARD_BOX = new ItemHolder(81151, 1);
 	private static final ItemHolder BENUSTAS_SHINING_REWARD_BOX = new ItemHolder(81452, 1);
+	
 	// Locations
 	private static final Location QUEST_GIVER_LOCATION = new Location(-77648, 155665, -3190, 21220);
 	private static final Location COMMANDER_LOCATION_1 = new Location(-81911, 154244, -3177);
@@ -132,6 +135,7 @@ public class AshenShadowRevolutionaries extends AbstractInstance
 		new Location(-83168, 155408, -3175, 64238), // Blacksmith Shop
 		new Location(-80000, 153379, -3160, 55621), // Grocery Store
 	};
+	
 	// Misc
 	private static final NpcStringId[] DWARF_SPY_TEXT =
 	{
@@ -220,6 +224,7 @@ public class AshenShadowRevolutionaries extends AbstractInstance
 				{
 					startQuestTimer("chest_talk", 1000, player.getInstanceWorld().getNpc(TREASURE_CHEST), null);
 				}
+				
 				return null;
 			}
 			case "chest_talk":
@@ -230,6 +235,7 @@ public class AshenShadowRevolutionaries extends AbstractInstance
 					npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.OPEN_THIS_BOX);
 					startQuestTimer("chest_talk", 10000, npc, null);
 				}
+				
 				return null;
 			}
 			case "openBox":
@@ -245,10 +251,12 @@ public class AshenShadowRevolutionaries extends AbstractInstance
 					{
 						world.spawnGroup("goods");
 					}
+					
 					if (questGiver.getId() == 34100) // Yuyuria
 					{
 						world.spawnGroup("altars");
 					}
+					
 					if (questGiver.getId() == 34097) // Adonius
 					{
 						world.setParameter("CAPTIVES", world.spawnGroup("captives"));
@@ -263,8 +271,10 @@ public class AshenShadowRevolutionaries extends AbstractInstance
 					{
 						addSpawn(SPY_DWARF, getRandomEntry(SPY_DWARF_LOCATION), false, 0, false, world.getId());
 					}
+					
 					showOnScreenMsg(world, NpcStringId.ASHEN_SHADOW_REVOLUTIONARIES_KEEP_THE_FORMATION, ExShowScreenMessage.TOP_CENTER, 10000, false);
 				}
+				
 				return null;
 			}
 			case "exitInstance":
@@ -274,9 +284,11 @@ public class AshenShadowRevolutionaries extends AbstractInstance
 				{
 					world.ejectPlayer(player);
 				}
+				
 				return null;
 			}
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	
@@ -337,16 +349,19 @@ public class AshenShadowRevolutionaries extends AbstractInstance
 						captive.broadcastInfo();
 					}
 				}
+				
 				for (Player member : world.getPlayers())
 				{
 					giveItems(member, BENUSTAS_REWARD_BOX);
 				}
+				
 				final Party party = world.getFirstPlayer().getParty();
 				final Player randomPlayer = party != null ? party.getRandomPlayer() : null;
 				if ((randomPlayer != null) && (getRandom(100) < 80) && (world.getPlayersCount() == world.getParameters().getInt("INITIAL_PARTY_MEMBERS", 0)))
 				{
 					giveItems(randomPlayer, BENUSTAS_SHINING_REWARD_BOX);
 				}
+				
 				world.spawnGroup("wave_3");
 				world.finishInstance();
 			}

@@ -326,7 +326,7 @@
 		<node X="-79304" Y="113116" />
 	</zone>
 	<!-- Oracle of Dusk (SSQ Zones) -->
-	<!-- TODO: Require Support -->
+	<!-- Not used in Classic -->
 	<!-- zone name="ssq_main_pvp_1720_01" type="SSQZone" shape="NPoly" minZ="-5200" maxZ="-5000" -->
 	<!-- stat name="expPenaltyPercent" val="25" / -->
 	<!-- stat name="allowItemDrop" val="false" / -->

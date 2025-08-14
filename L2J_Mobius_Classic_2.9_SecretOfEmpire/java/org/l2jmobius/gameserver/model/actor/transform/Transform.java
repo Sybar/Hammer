@@ -50,6 +50,7 @@ public class Transform
 	private final boolean _canSwim;
 	private final int _spawnHeight;
 	private final boolean _canAttack;
+	private final boolean _isVisual;
 	private final String _name;
 	private final String _title;
 	
@@ -63,6 +64,7 @@ public class Transform
 		_type = set.getEnum("type", TransformType.class, TransformType.COMBAT);
 		_canSwim = set.getInt("can_swim", 0) == 1;
 		_canAttack = set.getInt("normal_attackable", 1) == 1;
+		_isVisual = set.getInt("is_visual", 1) == 1;
 		_spawnHeight = set.getInt("spawn_height", 0);
 		_name = set.getString("setName", null);
 		_title = set.getString("setTitle", null);
@@ -97,6 +99,11 @@ public class Transform
 		return _canAttack;
 	}
 	
+	public boolean isVisual()
+	{
+		return _isVisual;
+	}
+	
 	public int getSpawnHeight()
 	{
 		return _spawnHeight;
@@ -128,6 +135,7 @@ public class Transform
 		{
 			return creature.asNpc().getTemplate().getSex() == Sex.FEMALE ? _femaleTemplate : _maleTemplate;
 		}
+		
 		return null;
 	}
 	
@@ -199,6 +207,14 @@ public class Transform
 		return _type == TransformType.PURE_STAT;
 	}
 	
+	/**
+	 * @return {@code true} if transform uses equipped weapon stats, {@code false} otherwise
+	 */
+	public boolean canUseWeaponStats()
+	{
+		return (_type == TransformType.COMBAT) || (_type == TransformType.MODE_CHANGE);
+	}
+	
 	public float getCollisionHeight(Creature creature, float defaultCollisionHeight)
 	{
 		final TransformTemplate template = getTemplate(creature);
@@ -206,6 +222,7 @@ public class Transform
 		{
 			return template.getCollisionHeight();
 		}
+		
 		return defaultCollisionHeight;
 	}
 	
@@ -216,6 +233,7 @@ public class Transform
 		{
 			return template.getCollisionRadius();
 		}
+		
 		return defaultCollisionRadius;
 	}
 	
@@ -251,6 +269,7 @@ public class Transform
 				{
 					appearance.setVisibleName(_name);
 				}
+				
 				if (_title != null)
 				{
 					appearance.setVisibleTitle(_title);
@@ -368,6 +387,7 @@ public class Transform
 				{
 					appearance.setVisibleName(null);
 				}
+				
 				if (_title != null)
 				{
 					appearance.setVisibleTitle(null);
@@ -438,6 +458,7 @@ public class Transform
 				return weaponType;
 			}
 		}
+		
 		return defaultAttackType;
 	}
 	
@@ -454,6 +475,7 @@ public class Transform
 				val = data.getStats(stat, defaultValue);
 			}
 		}
+		
 		return val;
 	}
 	
@@ -480,6 +502,7 @@ public class Transform
 				val = data.getLevelMod();
 			}
 		}
+		
 		return val;
 	}
 }

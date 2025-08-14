@@ -67,6 +67,7 @@ public class NpcHtmlMessage extends AbstractHtmlPacket
 		{
 			throw new IllegalArgumentException();
 		}
+		
 		_itemId = itemId;
 		_size = 0;
 	}
@@ -78,6 +79,7 @@ public class NpcHtmlMessage extends AbstractHtmlPacket
 		{
 			throw new IllegalArgumentException();
 		}
+		
 		_itemId = itemId;
 		_size = 0;
 	}
@@ -95,6 +97,7 @@ public class NpcHtmlMessage extends AbstractHtmlPacket
 		{
 			throw new IllegalArgumentException();
 		}
+		
 		_itemId = itemId;
 		_size = windowSize;
 	}

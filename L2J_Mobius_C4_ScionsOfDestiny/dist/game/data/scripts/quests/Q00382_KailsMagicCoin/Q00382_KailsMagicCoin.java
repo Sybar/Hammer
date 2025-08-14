@@ -34,6 +34,7 @@ public class Q00382_KailsMagicCoin extends Quest
 	private static final int FALLEN_ORC_ARCHER = 21019;
 	private static final int FALLEN_ORC_SHAMAN = 21020;
 	private static final int FALLEN_ORC_CAPTAIN = 21022;
+	
 	// Items
 	private static final int ROYAL_MEMBERSHIP = 5898;
 	private static final int SILVER_BASILISK = 5961;

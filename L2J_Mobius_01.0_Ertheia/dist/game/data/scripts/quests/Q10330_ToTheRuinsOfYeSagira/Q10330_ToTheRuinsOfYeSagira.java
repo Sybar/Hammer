@@ -35,9 +35,11 @@ public class Q10330_ToTheRuinsOfYeSagira extends Quest
 	// NPCs
 	private static final int ATRAN = 33448;
 	private static final int LAKCIS = 32977;
+	
 	// Items
 	private static final int LEATHER_SHIRT = 22;
 	private static final int LEATHER_PANTS = 29;
+	
 	// Misc
 	private static final int MIN_LEVEL = 8;
 	private static final int MAX_LEVEL = 20;
@@ -90,6 +92,7 @@ public class Q10330_ToTheRuinsOfYeSagira extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -116,6 +119,7 @@ public class Q10330_ToTheRuinsOfYeSagira extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

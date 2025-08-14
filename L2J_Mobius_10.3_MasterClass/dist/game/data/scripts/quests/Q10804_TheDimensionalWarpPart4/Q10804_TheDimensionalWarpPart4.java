@@ -43,8 +43,10 @@ public class Q10804_TheDimensionalWarpPart4 extends Quest
 {
 	// NPC
 	private static final int RESED = 33974;
+	
 	// Monsters
 	private static final int UNWORLDLY_GOLEM = 23474;
+	
 	// Others
 	private static final int MIN_LEVEL = 99;
 	private static final int DARK_ETERNAL_ENHANCEMENT_STONE = 35567;
@@ -104,6 +106,7 @@ public class Q10804_TheDimensionalWarpPart4 extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -130,6 +133,7 @@ public class Q10804_TheDimensionalWarpPart4 extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -159,10 +163,12 @@ public class Q10804_TheDimensionalWarpPart4 extends Quest
 				qs.set("killed_" + UNWORLDLY_GOLEM, ++kills);
 				playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 			}
+			
 			if (kills >= 100)
 			{
 				qs.setCond(2, true);
 			}
+			
 			sendNpcLogList(player);
 		}
 	}
@@ -177,6 +183,7 @@ public class Q10804_TheDimensionalWarpPart4 extends Quest
 			holder.add(new NpcLogListHolder(UNWORLDLY_GOLEM, false, qs.getInt("killed_" + UNWORLDLY_GOLEM)));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

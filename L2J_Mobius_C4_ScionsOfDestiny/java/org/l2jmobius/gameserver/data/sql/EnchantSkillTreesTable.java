@@ -76,6 +76,7 @@ public class EnchantSkillTreesTable
 				{
 					prevSkillId = id;
 				}
+				
 				_enchantSkillTrees.add(new EnchantSkillLearn(id, lvl, minskillLevel, baseLevel, name, sp, exp, rate76, rate77, rate78, rate79, rate80));
 			}
 		}
@@ -114,6 +115,7 @@ public class EnchantSkillTreesTable
 				}
 			}
 		}
+		
 		return result;
 	}
 	
@@ -139,6 +141,7 @@ public class EnchantSkillTreesTable
 			
 			skillCost = enchantSkillLearn.getSpCost();
 		}
+		
 		return skillCost;
 	}
 	
@@ -164,6 +167,7 @@ public class EnchantSkillTreesTable
 			
 			skillCost = enchantSkillLearn.getExp();
 		}
+		
 		return skillCost;
 	}
 	
@@ -183,6 +187,7 @@ public class EnchantSkillTreesTable
 			
 			return enchantSkillLearn.getRate(player);
 		}
+		
 		return 0;
 	}
 	

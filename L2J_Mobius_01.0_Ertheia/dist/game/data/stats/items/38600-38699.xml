@@ -1597,9 +1597,9 @@
 		<set name="spiritshots" val="2" />
 		<set name="weight" val="660" />
 		<set name="material" val="STEEL" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">116</stat>
 			<stat type="mAtk">61</stat>

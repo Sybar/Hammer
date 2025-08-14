@@ -40,6 +40,7 @@ public class AdventureGuildsman extends AbstractNpcAI
 {
 	// NPC
 	private static final int ADVENTURE_GUILDSMAN = 33946;
+	
 	// Items
 	private static final int PCCAFE_LOTTERY_TICKET_30DAYS = 15358;
 	private static final int PCCAFE_1ST_LOTTERY_TICKET_30DAYS = 15359;
@@ -55,6 +56,7 @@ public class AdventureGuildsman extends AbstractNpcAI
 	private static final int SEAL_LEV_90 = 17744;
 	private static final int SEAL_LEV_95 = 17745;
 	private static final int SEAL_LEV_97 = 17746;
+	
 	// Skills
 	private static final SkillHolder KNIGHT = new SkillHolder(32840, 1); // Fantasia Harmony - Adventurer
 	private static final SkillHolder WARRIOR = new SkillHolder(32840, 1); // Fantasia Harmony - Adventurer
@@ -72,8 +74,9 @@ public class AdventureGuildsman extends AbstractNpcAI
 		new SkillHolder(17292, 1), // Player Commendation - Daring Sonata
 		new SkillHolder(17293, 1), // Player Commendation - Refreshing Sonata
 	};
+	
 	// Misc
-	//@formatter:off
+	// @formatter:off
 	private static final Map<CategoryType, Integer> R_CLASS_TALISMAN = new EnumMap<>(CategoryType.class);
 	static
 	{
@@ -130,7 +133,7 @@ public class AdventureGuildsman extends AbstractNpcAI
 		R99_CLASS_TALISMAN.put(CategoryType.ERTHEIA_FIGHTER_GROUP, 760);
 		R99_CLASS_TALISMAN.put(CategoryType.ERTHEIA_WIZARD_GROUP, 765);
 	}
-	//@formatter:on
+	// @formatter:on
 	private static final String USED_PC_LOTTERY_TICKET = "USED_PC_LOTTERY_TICKET";
 	
 	private AdventureGuildsman()
@@ -418,6 +421,7 @@ public class AdventureGuildsman extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		if (event.startsWith("melody"))
 		{
 			final int buffOffset = MathUtil.clamp(Integer.parseInt(event.substring(event.indexOf(' ') + 1)), 0, GROUP_MELODY.length);
@@ -433,6 +437,7 @@ public class AdventureGuildsman extends AbstractNpcAI
 				htmltext = "pccafe_notpoint001.htm";
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -442,10 +447,12 @@ public class AdventureGuildsman extends AbstractNpcAI
 		{
 			SkillCaster.triggerCast(npc, player, holder.getSkill());
 		}
+		
 		for (SkillHolder holder : GROUP_SONATA)
 		{
 			SkillCaster.triggerCast(npc, player, holder.getSkill());
 		}
+		
 		SkillCaster.triggerCast(npc, player, skill);
 		player.setPcCafePoints(player.getPcCafePoints() - 200);
 		return null;
@@ -457,6 +464,7 @@ public class AdventureGuildsman extends AbstractNpcAI
 		{
 			SkillCaster.triggerCast(npc, player, holder.getSkill());
 		}
+		
 		player.setPcCafePoints(player.getPcCafePoints() - 120);
 		return null;
 	}
@@ -473,6 +481,7 @@ public class AdventureGuildsman extends AbstractNpcAI
 			player.setPcCafePoints(player.getPcCafePoints() + points);
 			return "pccafe_help_lottery003.htm";
 		}
+		
 		return "pccafe_help_lottery_fail.htm";
 	}
 	

@@ -80,6 +80,7 @@ public class PlayerAppearance
 		{
 			return _owner.getName();
 		}
+		
 		return _visibleName;
 	}
 	
@@ -100,6 +101,7 @@ public class PlayerAppearance
 		{
 			return _owner.getTitle();
 		}
+		
 		return _visibleTitle;
 	}
 	

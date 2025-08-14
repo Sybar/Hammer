@@ -34,12 +34,15 @@ public class Q10785_LettersFromTheQueenFieldsOfMassacre extends LetterQuest
 	// NPCs
 	private static final int ORVEN = 30857;
 	private static final int SHUVANN = 33867;
+	
 	// Items
 	private static final int SOE_ADEN = 39578;
 	private static final int SOE_FIELDS_OF_MASSACRE = 39579;
 	private static final int ENCHANT_WEAPON_A = 26350;
+	
 	// Location
 	private static final Location TELEPORT_LOC = new Location(147446, 22761, -1984);
+	
 	// Misc
 	private static final int MIN_LEVEL = 61;
 	private static final int MAX_LEVEL = 64;
@@ -97,6 +100,7 @@ public class Q10785_LettersFromTheQueenFieldsOfMassacre extends LetterQuest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -121,6 +125,7 @@ public class Q10785_LettersFromTheQueenFieldsOfMassacre extends LetterQuest
 				htmltext = "33867-01.html";
 			}
 		}
+		
 		return htmltext;
 	}
 }

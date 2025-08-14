@@ -28,6 +28,7 @@ import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.request.EnchantItemRequest;
 import org.l2jmobius.gameserver.model.actor.stat.PlayerStat;
 import org.l2jmobius.gameserver.model.item.enchant.EnchantScroll;
+import org.l2jmobius.gameserver.model.item.instance.Item;
 import org.l2jmobius.gameserver.model.item.type.CrystalType;
 import org.l2jmobius.gameserver.network.GameClient;
 import org.l2jmobius.gameserver.network.ServerPackets;
@@ -84,17 +85,20 @@ public class ChangedEnchantTargetItemProbabilityList extends ServerPacket
 				baseRate = 0;
 				passiveRate = 0;
 			}
+			
 			double passiveBaseRate = 0;
 			final double supportRate = getSupportRate(request);
 			if (passiveRate != 0)
 			{
 				passiveBaseRate = (baseRate * passiveRate) / 10000;
 			}
+			
 			double totalRate = baseRate + supportRate + passiveBaseRate;
 			if (totalRate >= 10000)
 			{
 				totalRate = 10000;
 			}
+			
 			if (!_isMulti)
 			{
 				buffer.writeInt(request.getEnchantingItem().getObjectId());
@@ -103,6 +107,7 @@ public class ChangedEnchantTargetItemProbabilityList extends ServerPacket
 			{
 				buffer.writeInt(request.getMultiEnchantingItemsBySlot(i));
 			}
+			
 			buffer.writeInt((int) totalRate); // Total success.
 			buffer.writeInt((int) baseRate); // Base success.
 			buffer.writeInt((int) supportRate); // Support success.
@@ -129,6 +134,7 @@ public class ChangedEnchantTargetItemProbabilityList extends ServerPacket
 			supportRate = EnchantItemData.getInstance().getSupportItem(request.getSupportItem()).getBonusRate();
 			supportRate = supportRate * 100;
 		}
+		
 		return (int) supportRate;
 	}
 	
@@ -153,7 +159,13 @@ public class ChangedEnchantTargetItemProbabilityList extends ServerPacket
 			}
 			else
 			{
-				final int crystalLevel = _player.getInventory().getItemByObjectId(request.getMultiEnchantingItemsBySlot(iteration)).getTemplate().getCrystalType().getLevel();
+				final Item item = _player.getInventory().getItemByObjectId(request.getMultiEnchantingItemsBySlot(iteration));
+				if (item == null)
+				{
+					return 0;
+				}
+				
+				final int crystalLevel = item.getTemplate().getCrystalType().getLevel();
 				if ((crystalLevel == CrystalType.NONE.getLevel()) || (crystalLevel == CrystalType.EVENT.getLevel()))
 				{
 					passiveRate = 0;
@@ -165,6 +177,7 @@ public class ChangedEnchantTargetItemProbabilityList extends ServerPacket
 				}
 			}
 		}
+		
 		return (int) passiveRate;
 	}
 }

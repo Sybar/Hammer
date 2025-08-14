@@ -46,6 +46,7 @@ public class Q10307_TheCorruptedLeaderHisTruth extends Quest
 		25747
 	};
 	private static final int ENCHANT_ARMOR_R = 17527;
+	
 	// Misc
 	private static final int MIN_LEVEL = 90;
 	
@@ -68,6 +69,7 @@ public class Q10307_TheCorruptedLeaderHisTruth extends Quest
 		{
 			return htmltext;
 		}
+		
 		switch (event)
 		{
 			case "32896-07.html":
@@ -105,6 +107,7 @@ public class Q10307_TheCorruptedLeaderHisTruth extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -147,6 +150,7 @@ public class Q10307_TheCorruptedLeaderHisTruth extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	

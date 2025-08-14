@@ -43,8 +43,10 @@ public class Q10806_TheDimensionalWarpPart6 extends Quest
 {
 	// NPC
 	private static final int RESED = 33974;
+	
 	// Monsters
 	private static final int ABYSSAL_BERSERKER = 23478;
+	
 	// Others
 	private static final int MIN_LEVEL = 99;
 	private static final int WARP_CRYSTAL = 39597;
@@ -102,6 +104,7 @@ public class Q10806_TheDimensionalWarpPart6 extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -128,6 +131,7 @@ public class Q10806_TheDimensionalWarpPart6 extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -157,10 +161,12 @@ public class Q10806_TheDimensionalWarpPart6 extends Quest
 				qs.set("killed_" + ABYSSAL_BERSERKER, ++kills);
 				playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 			}
+			
 			if (kills >= 100)
 			{
 				qs.setCond(2, true);
 			}
+			
 			sendNpcLogList(player);
 		}
 	}
@@ -175,6 +181,7 @@ public class Q10806_TheDimensionalWarpPart6 extends Quest
 			holder.add(new NpcLogListHolder(ABYSSAL_BERSERKER, false, qs.getInt("killed_" + ABYSSAL_BERSERKER)));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

@@ -39,7 +39,6 @@ import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.Summon;
 import org.l2jmobius.gameserver.model.actor.enums.creature.TrapAction;
-import org.l2jmobius.gameserver.model.actor.enums.player.PlayerCondOverride;
 import org.l2jmobius.gameserver.model.actor.instance.Door;
 import org.l2jmobius.gameserver.model.actor.instance.Trap;
 import org.l2jmobius.gameserver.model.groups.Party;
@@ -118,6 +117,7 @@ public class CrystalCaverns extends AbstractInstance
 		public List<Npc> keyKeepers = new ArrayList<>();
 		public List<Npc> guards = new ArrayList<>();
 		public List<Npc> oracle = new ArrayList<>();
+		
 		// baylor variables
 		protected final List<Player> _raiders = new ArrayList<>();
 		protected int _raidStatus = 0;
@@ -144,6 +144,7 @@ public class CrystalCaverns extends AbstractInstance
 	private static final int BLUE_CRYSTAL = 9695;
 	private static final int RED_CRYSTAL = 9696;
 	private static final int CLEAR_CRYSTAL = 9697;
+	
 	// NPCs
 	private static final int ORACLE_GUIDE_1 = 32281;
 	private static final int ORACLE_GUIDE_2 = 32278;
@@ -220,6 +221,7 @@ public class CrystalCaverns extends AbstractInstance
 	
 	// Locations
 	private static final Location START_LOC = new Location(143348, 148707, -11972);
+	
 	// Misc
 	private static final int TEMPLATE_ID = 10;
 	private static final int MIN_LEVEL = 78;
@@ -243,6 +245,7 @@ public class CrystalCaverns extends AbstractInstance
 		{154358, 142075, -12738},
 		{152788, 142075, -12738}
 	};
+	
 	// Oracle order
 	private static final int[][] ordreOracle1 =
 	{
@@ -513,7 +516,7 @@ public class CrystalCaverns extends AbstractInstance
 	@Override
 	protected boolean checkConditions(Player player)
 	{
-		if (player.canOverrideCond(PlayerCondOverride.INSTANCE_CONDITIONS))
+		if (player.isGM())
 		{
 			return true;
 		}
@@ -524,11 +527,13 @@ public class CrystalCaverns extends AbstractInstance
 			player.sendPacket(SystemMessageId.YOU_ARE_NOT_CURRENTLY_IN_A_PARTY_SO_YOU_CANNOT_ENTER);
 			return false;
 		}
+		
 		if (party.getLeader() != player)
 		{
 			player.sendPacket(SystemMessageId.ONLY_A_PARTY_LEADER_CAN_TRY_TO_ENTER);
 			return false;
 		}
+		
 		for (Player partyMember : party.getMembers())
 		{
 			if (partyMember.getLevel() < MIN_LEVEL)
@@ -538,6 +543,7 @@ public class CrystalCaverns extends AbstractInstance
 				party.broadcastPacket(sm);
 				return false;
 			}
+			
 			final Item item = partyMember.getInventory().getItemByItemId(CONTAMINATED_CRYSTAL);
 			if (item == null)
 			{
@@ -546,6 +552,7 @@ public class CrystalCaverns extends AbstractInstance
 				party.broadcastPacket(sm);
 				return false;
 			}
+			
 			if (!LocationUtil.checkIfInRange(1000, player, partyMember, true))
 			{
 				final SystemMessage sm = new SystemMessage(SystemMessageId.C1_IS_IN_A_LOCATION_WHICH_CANNOT_BE_ENTERED_THEREFORE_IT_CANNOT_BE_PROCESSED);
@@ -553,6 +560,7 @@ public class CrystalCaverns extends AbstractInstance
 				party.broadcastPacket(sm);
 				return false;
 			}
+			
 			if (System.currentTimeMillis() < InstanceManager.getInstance().getInstanceTime(partyMember.getObjectId(), TEMPLATE_ID))
 			{
 				final SystemMessage sm = new SystemMessage(SystemMessageId.C1_MAY_NOT_RE_ENTER_YET);
@@ -561,26 +569,30 @@ public class CrystalCaverns extends AbstractInstance
 				return false;
 			}
 		}
+		
 		return true;
 	}
 	
 	private boolean checkOracleConditions(Player player)
 	{
-		if (player.canOverrideCond(PlayerCondOverride.INSTANCE_CONDITIONS))
+		if (player.isGM())
 		{
 			return true;
 		}
+		
 		final Party party = player.getParty();
 		if (party == null)
 		{
 			player.sendPacket(SystemMessageId.YOU_ARE_NOT_CURRENTLY_IN_A_PARTY_SO_YOU_CANNOT_ENTER);
 			return false;
 		}
+		
 		if (party.getLeader() != player)
 		{
 			player.sendPacket(SystemMessageId.ONLY_A_PARTY_LEADER_CAN_TRY_TO_ENTER);
 			return false;
 		}
+		
 		for (Player partyMember : party.getMembers())
 		{
 			final Item item = partyMember.getInventory().getItemByItemId(RED_CORAL);
@@ -591,6 +603,7 @@ public class CrystalCaverns extends AbstractInstance
 				party.broadcastPacket(sm);
 				return false;
 			}
+			
 			if (!LocationUtil.checkIfInRange(1000, player, partyMember, true))
 			{
 				final SystemMessage sm = new SystemMessage(SystemMessageId.C1_IS_IN_A_LOCATION_WHICH_CANNOT_BE_ENTERED_THEREFORE_IT_CANNOT_BE_PROCESSED);
@@ -599,12 +612,13 @@ public class CrystalCaverns extends AbstractInstance
 				return false;
 			}
 		}
+		
 		return true;
 	}
 	
 	private boolean checkBaylorConditions(Player player)
 	{
-		if (player.canOverrideCond(PlayerCondOverride.INSTANCE_CONDITIONS))
+		if (player.isGM())
 		{
 			return true;
 		}
@@ -615,11 +629,13 @@ public class CrystalCaverns extends AbstractInstance
 			player.sendPacket(SystemMessageId.YOU_ARE_NOT_CURRENTLY_IN_A_PARTY_SO_YOU_CANNOT_ENTER);
 			return false;
 		}
+		
 		if (party.getLeader() != player)
 		{
 			player.sendPacket(SystemMessageId.ONLY_A_PARTY_LEADER_CAN_TRY_TO_ENTER);
 			return false;
 		}
+		
 		for (Player partyMember : party.getMembers())
 		{
 			final Item item1 = partyMember.getInventory().getItemByItemId(BLUE_CRYSTAL);
@@ -632,6 +648,7 @@ public class CrystalCaverns extends AbstractInstance
 				party.broadcastPacket(sm);
 				return false;
 			}
+			
 			if (!LocationUtil.checkIfInRange(1000, player, partyMember, true))
 			{
 				final SystemMessage sm = new SystemMessage(SystemMessageId.C1_IS_IN_A_LOCATION_WHICH_CANNOT_BE_ENTERED_THEREFORE_IT_CANNOT_BE_PROCESSED);
@@ -640,6 +657,7 @@ public class CrystalCaverns extends AbstractInstance
 				return false;
 			}
 		}
+		
 		return true;
 	}
 	
@@ -672,6 +690,7 @@ public class CrystalCaverns extends AbstractInstance
 		{
 			return;
 		}
+		
 		// Calculate movement angles needed
 		sin = dy / distance;
 		cos = dx / distance;
@@ -710,6 +729,7 @@ public class CrystalCaverns extends AbstractInstance
 					world.addAllowed(partyMember);
 				}
 			}
+			
 			runOracle((CCWorld) world);
 		}
 		else
@@ -793,6 +813,7 @@ public class CrystalCaverns extends AbstractInstance
 			final Npc mob = addSpawn(spawn[0], spawn[1], spawn[2], spawn[3], spawn[4], false, 0, false, world.getInstanceId());
 			spawnList.put(mob, false);
 		}
+		
 		world.npcList2.put(0, spawnList);
 	}
 	
@@ -804,10 +825,12 @@ public class CrystalCaverns extends AbstractInstance
 			final Npc mob = addSpawn(spawn[0], spawn[1], spawn[2], spawn[3], spawn[4], false, 0, false, world.getInstanceId());
 			spawned.put(mob, false);
 		}
+		
 		if (room == 1)
 		{
 			addSpawn(32359, 142110, 139896, -11888, 8033, false, 0, false, world.getInstanceId());
 		}
+		
 		world.npcList2.put(room, spawned);
 		world.roomsStatus[room - 1] = 1;
 	}
@@ -817,6 +840,7 @@ public class CrystalCaverns extends AbstractInstance
 		world.setStatus(9);
 		
 		addSpawn(DARNEL, 152759, 145949, -12588, 21592, false, 0, false, world.getInstanceId());
+		
 		// TODO: missing traps
 		world.openDoor(24220005);
 		world.openDoor(24220006);
@@ -832,6 +856,7 @@ public class CrystalCaverns extends AbstractInstance
 			final Npc mob = addSpawn(spawn[0], spawn[1], spawn[2], spawn[3], spawn[4], false, 0, false, world.getInstanceId());
 			spawned.put(mob, false);
 		}
+		
 		world.npcList2.put(0, spawned);
 	}
 	
@@ -850,6 +875,7 @@ public class CrystalCaverns extends AbstractInstance
 		{
 			world.npcList2.get(room).put(mob, true);
 		}
+		
 		for (boolean isDead : world.npcList2.get(room).values())
 		{
 			if (!isDead)
@@ -857,6 +883,7 @@ public class CrystalCaverns extends AbstractInstance
 				return false;
 			}
 		}
+		
 		return true;
 	}
 	
@@ -874,6 +901,7 @@ public class CrystalCaverns extends AbstractInstance
 					return "32281.htm"; // TODO: Missing HTML.
 				}
 			}
+			
 			npc.showChatWindow(player);
 			return null;
 		}
@@ -887,6 +915,7 @@ public class CrystalCaverns extends AbstractInstance
 				{
 					return "no.htm"; // TODO: Missing HTML.
 				}
+				
 				npc.showChatWindow(player);
 				return null;
 			}
@@ -908,6 +937,7 @@ public class CrystalCaverns extends AbstractInstance
 		{
 			player.sendPacket(ActionFailed.STATIC_PACKET);
 		}
+		
 		return null;
 	}
 	
@@ -922,6 +952,7 @@ public class CrystalCaverns extends AbstractInstance
 				doReturn = false;
 			}
 		}
+		
 		if (doReturn)
 		{
 			return;
@@ -946,6 +977,7 @@ public class CrystalCaverns extends AbstractInstance
 				doReturn = true;
 			}
 		}
+		
 		if (doReturn)
 		{
 			return;
@@ -963,6 +995,7 @@ public class CrystalCaverns extends AbstractInstance
 						oracle.decayMe();
 					}
 				}
+				
 				((CCWorld) tmpworld).OracleTriggered[npc.getId() - 32275] = true;
 			}
 		}
@@ -986,6 +1019,7 @@ public class CrystalCaverns extends AbstractInstance
 				{
 					world._dragonClawNeed--;
 				}
+				
 				if (world._dragonClawNeed == 0)
 				{
 					npc.stopSkillEffects(SkillFinishType.SILENT, 5225);
@@ -1017,6 +1051,7 @@ public class CrystalCaverns extends AbstractInstance
 				{
 					world.dragonScaleNeed--;
 				}
+				
 				if ((world.dragonScaleNeed == 0) && (getRandom(100) < 80))
 				{
 					npc.setInvul(false);
@@ -1049,12 +1084,14 @@ public class CrystalCaverns extends AbstractInstance
 				{
 					notAOE = false;
 				}
+				
 				if (notAOE)
 				{
 					for (Npc copy : world.copys)
 					{
 						copy.onDecay();
 					}
+					
 					world.copys.clear();
 				}
 				return;
@@ -1077,6 +1114,7 @@ public class CrystalCaverns extends AbstractInstance
 				{
 					stopAttack(attacker);
 				}
+				
 				final Creature target = npc.getAI().getAttackTarget();
 				for (int i = 0; i < 10; i++)
 				{
@@ -1235,6 +1273,7 @@ public class CrystalCaverns extends AbstractInstance
 					mob.getAI().setIntention(Intention.IDLE);
 					world._animationMobs.add(mob);
 				}
+				
 				startQuestTimer("baylorEffect0", 200, npc, null);
 			}
 			else if (event.equalsIgnoreCase("RaidStart"))
@@ -1251,11 +1290,13 @@ public class CrystalCaverns extends AbstractInstance
 						Throw(npc, p.getSummon());
 					}
 				}
+				
 				world._raidStatus = 0;
 				for (Npc mob : world._animationMobs)
 				{
 					mob.doDie(mob);
 				}
+				
 				world._animationMobs.clear();
 				startQuestTimer("baylor_despawn", 60000, npc, null, true);
 				startQuestTimer("checkBaylorAttack", 1000, npc, null);
@@ -1345,6 +1386,7 @@ public class CrystalCaverns extends AbstractInstance
 				{
 					world.crystalGolems.put(npc, new CrystalGolem());
 				}
+				
 				if ((world.getStatus() != 3) || !world.crystalGolems.containsKey(npc) || (world.crystalGolems.get(npc).foodItem != null) || world.crystalGolems.get(npc).isAtDestination)
 				{
 					return null;
@@ -1377,8 +1419,10 @@ public class CrystalCaverns extends AbstractInstance
 					{
 						npc.broadcastPacket(new CreatureSay(npc, ChatType.SHOUT, "Ah - I'm hungry!"));
 					}
+					
 					startQuestTimer("autoFood", 2000, npc, null);
 				}
+				
 				return null;
 			}
 			else if (!world.crystalGolems.containsKey(npc) || world.crystalGolems.get(npc).isAtDestination)
@@ -1434,8 +1478,10 @@ public class CrystalCaverns extends AbstractInstance
 					{
 						startQuestTimer("autoFood", 2000, npc, null);
 					}
+					
 					cancelQuestTimers("reachFood");
 				}
+				
 				return null;
 			}
 			else if (event.equalsIgnoreCase("getFood"))
@@ -1448,6 +1494,7 @@ public class CrystalCaverns extends AbstractInstance
 				cancelQuestTimers("getFood");
 			}
 		}
+		
 		return null;
 	}
 	
@@ -1466,6 +1513,7 @@ public class CrystalCaverns extends AbstractInstance
 						takeItems(partyMember, CONTAMINATED_CRYSTAL, 1);
 						giveItems(partyMember, bossCry, 1);
 					}
+					
 					if (getRandom(10) < 5)
 					{
 						giveItems(partyMember, WHITE_SEED_OF_EVIL_SHARD, num);
@@ -1484,6 +1532,7 @@ public class CrystalCaverns extends AbstractInstance
 				takeItems(player, CONTAMINATED_CRYSTAL, 1);
 				giveItems(player, bossCry, 1);
 			}
+			
 			if (getRandom(10) < 5)
 			{
 				giveItems(player, WHITE_SEED_OF_EVIL_SHARD, num);
@@ -1512,6 +1561,7 @@ public class CrystalCaverns extends AbstractInstance
 						return;
 					}
 				}
+				
 				world.setStatus(3);
 				world.tears = addSpawn(TEARS, 144298, 154420, -11854, 32767, false, 0, false, world.getInstanceId()); // Tears
 				final CrystalGolem crygolem1 = new CrystalGolem();
@@ -1557,8 +1607,10 @@ public class CrystalCaverns extends AbstractInstance
 						SkillData.getInstance().getSkill(5239, 1).applyEffects(player, player);
 						startQuestTimer("Timer2", 300000, npc, player);
 					}
+					
 					startQuestTimer("Timer21", 300000, npc, null);
 				}
+				
 				for (Npc gk : world.keyKeepers)
 				{
 					if (gk != npc)
@@ -1608,6 +1660,7 @@ public class CrystalCaverns extends AbstractInstance
 				if (npc.getId() == DOLPH)
 				{
 					world.setStatus(8);
+					
 					// first door opener trap
 					final Npc trap = addTrap(DOOR_OPENING_TRAP[0], DOOR_OPENING_TRAP[1], DOOR_OPENING_TRAP[2], DOOR_OPENING_TRAP[3], DOOR_OPENING_TRAP[4], world.getInstanceId());
 					trap.broadcastSay(ChatType.NPC_SHOUT, "You have finally come here. But you will not be able to find the secret room!");
@@ -1621,6 +1674,7 @@ public class CrystalCaverns extends AbstractInstance
 					{
 						world.roomsStatus[i] = 2;
 					}
+					
 					if (world.roomsStatus[i] == 2)
 					{
 						world.cleanedRooms++;
@@ -1643,6 +1697,7 @@ public class CrystalCaverns extends AbstractInstance
 						}
 					}
 				}
+				
 				if (checkKillProgress(0, npc, world))
 				{
 					world.npcList2.clear();
@@ -1676,6 +1731,7 @@ public class CrystalCaverns extends AbstractInstance
 									partyMember.stopSkillEffects(SkillFinishType.REMOVED, 5239);
 								}
 							}
+							
 							cancelQuestTimers("Timer5");
 							cancelQuestTimers("Timer51");
 							world.openDoor(DOOR3);
@@ -1690,6 +1746,7 @@ public class CrystalCaverns extends AbstractInstance
 							return;
 						}
 					}
+					
 					runSteamOracles(world, oracleOrder);
 				}
 			}
@@ -1713,8 +1770,10 @@ public class CrystalCaverns extends AbstractInstance
 					// something is wrong
 					return;
 				}
+				
 				giveRewards(player, npc.getInstanceId(), bossCry, false);
 			}
+			
 			if (npc.getId() == ALARM)
 			{
 				world._alarm = null;
@@ -1751,6 +1810,7 @@ public class CrystalCaverns extends AbstractInstance
 		{
 			qs = newQuestState(player);
 		}
+		
 		if (npcId == ORACLE_GUIDE_1)
 		{
 			final InstanceWorld world = InstanceManager.getInstance().getPlayerWorld(player);
@@ -1761,6 +1821,7 @@ public class CrystalCaverns extends AbstractInstance
 					onEnterInstance(player, world, false);
 					return null;
 				}
+				
 				player.sendPacket(SystemMessageId.YOU_HAVE_ENTERED_ANOTHER_INSTANCE_ZONE_THEREFORE_YOU_CANNOT_ENTER_CORRESPONDING_DUNGEON);
 				return null;
 			}
@@ -1809,6 +1870,7 @@ public class CrystalCaverns extends AbstractInstance
 						{
 							runSteamRooms(world, STEAM2_SPAWNS, 23);
 						}
+						
 						loc = new Location(147529, 152587, -12169);
 						cancelQuestTimers("Timer2");
 						cancelQuestTimers("Timer21");
@@ -1830,6 +1892,7 @@ public class CrystalCaverns extends AbstractInstance
 							SkillData.getInstance().getSkill(5239, 2).applyEffects(player, player);
 							startQuestTimer("Timer3", 600000, npc, player);
 						}
+						
 						startQuestTimer("Timer31", 600000, npc, null);
 						break;
 					}
@@ -1839,6 +1902,7 @@ public class CrystalCaverns extends AbstractInstance
 						{
 							runSteamRooms(world, STEAM3_SPAWNS, 24);
 						}
+						
 						loc = new Location(150194, 152610, -12169);
 						cancelQuestTimers("Timer3");
 						cancelQuestTimers("Timer31");
@@ -1860,6 +1924,7 @@ public class CrystalCaverns extends AbstractInstance
 							SkillData.getInstance().getSkill(5239, 4).applyEffects(player, player);
 							startQuestTimer("Timer4", 1200000, npc, player);
 						}
+						
 						startQuestTimer("Timer41", 1200000, npc, null);
 						break;
 					}
@@ -1869,6 +1934,7 @@ public class CrystalCaverns extends AbstractInstance
 						{
 							runSteamRooms(world, STEAM4_SPAWNS, 25);
 						}
+						
 						loc = new Location(149743, 149986, -12141);
 						cancelQuestTimers("Timer4");
 						cancelQuestTimers("Timer41");
@@ -1890,6 +1956,7 @@ public class CrystalCaverns extends AbstractInstance
 							SkillData.getInstance().getSkill(5239, 3).applyEffects(player, player);
 							startQuestTimer("Timer5", 900000, npc, player);
 						}
+						
 						startQuestTimer("Timer51", 900000, npc, null);
 						break;
 					}
@@ -1899,6 +1966,7 @@ public class CrystalCaverns extends AbstractInstance
 						doTeleport = false;
 					}
 				}
+				
 				if (doTeleport && (loc != null))
 				{
 					if (!checkOracleConditions(player))
@@ -1943,6 +2011,7 @@ public class CrystalCaverns extends AbstractInstance
 				{
 					return null;
 				}
+				
 				world.setStatus(30);
 				final long time = world.endTime - System.currentTimeMillis();
 				final Instance baylorInstance = InstanceManager.getInstance().getInstance(world.getInstanceId());
@@ -1964,9 +2033,11 @@ public class CrystalCaverns extends AbstractInstance
 						pet.setInstanceId(world.getInstanceId());
 						pet.broadcastPacket(new ValidateLocation(pet));
 					}
+					
 					p.setParalyzed(true);
 					p.broadcastPacket(new ValidateLocation(p));
 				}
+				
 				startQuestTimer("Baylor", 30000, npc, null);
 			}
 			else if ((npc.getId() == ORACLE_GUIDE_4) && (world.getStatus() == 31))
@@ -1974,6 +2045,7 @@ public class CrystalCaverns extends AbstractInstance
 				teleportPlayer(player, new Location(153522, 144212, -9747), npc.getInstanceId());
 			}
 		}
+		
 		return null;
 	}
 	
@@ -2056,6 +2128,7 @@ public class CrystalCaverns extends AbstractInstance
 							{
 								runEmeraldRooms(world, spawns, room);
 							}
+							
 							door.openMe();
 							takeItems(creature.asPlayer(), SECRET_KEY, 1);
 							world.openedDoors.put(door, creature.asPlayer());

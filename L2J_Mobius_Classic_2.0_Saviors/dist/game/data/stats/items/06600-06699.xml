@@ -19,9 +19,9 @@
 		<set name="is_depositable" val="false" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="commissionItemType" val="ONE_HAND_SWORD" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player isHero="true" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">301</stat>
 			<stat type="mAtk">166</stat>
@@ -54,9 +54,9 @@
 		<set name="is_depositable" val="false" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="commissionItemType" val="TWO_HAND_SWORD" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player isHero="true" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">368</stat>
 			<stat type="mAtk">166</stat>
@@ -89,9 +89,9 @@
 		<set name="is_depositable" val="false" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="commissionItemType" val="BLUNT_WEAPON" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player isHero="true" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">301</stat>
 			<stat type="mAtk">166</stat>
@@ -126,9 +126,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="commissionItemType" val="ONE_HAND_MAGIC_BLUNT_WEAPON" />
 		<set name="is_magic_weapon" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player isHero="true" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">255</stat>
 			<stat type="mAtk">204</stat>
@@ -163,9 +163,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="commissionItemType" val="TWO_HAND_MAGIC_BLUNT_WEAPON" />
 		<set name="is_magic_weapon" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player isHero="true" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">295</stat>
 			<stat type="mAtk">219</stat>
@@ -199,9 +199,9 @@
 		<set name="is_depositable" val="false" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="commissionItemType" val="DAGGER" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player isHero="true" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">272</stat>
 			<stat type="mAtk">166</stat>
@@ -235,9 +235,9 @@
 		<set name="is_depositable" val="false" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="commissionItemType" val="FIST_WEAPON" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player isHero="true" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">368</stat>
 			<stat type="mAtk">166</stat>
@@ -273,9 +273,9 @@
 		<set name="is_depositable" val="false" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="commissionItemType" val="BOW" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player isHero="true" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">665</stat>
 			<stat type="mAtk">177</stat>
@@ -309,9 +309,9 @@
 		<set name="is_depositable" val="false" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="commissionItemType" val="DUALSWORD" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player isHero="true" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">361</stat>
 			<stat type="mAtk">164</stat>
@@ -344,9 +344,9 @@
 		<set name="is_depositable" val="false" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="commissionItemType" val="SPEAR" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player isHero="true" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">301</stat>
 			<stat type="mAtk">166</stat>

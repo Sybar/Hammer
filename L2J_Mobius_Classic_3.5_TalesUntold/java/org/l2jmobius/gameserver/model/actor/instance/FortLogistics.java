@@ -87,6 +87,7 @@ public class FortLogistics extends Merchant
 			{
 				html.setFile(player, "data/html/fortress/logistics-noprivs.htm");
 			}
+			
 			html.replace("%objectId%", String.valueOf(getObjectId()));
 			player.sendPacket(html);
 		}
@@ -110,6 +111,7 @@ public class FortLogistics extends Merchant
 			{
 				html.setFile(player, "data/html/fortress/logistics-noprivs.htm");
 			}
+			
 			html.replace("%objectId%", String.valueOf(getObjectId()));
 			player.sendPacket(html);
 		}
@@ -131,6 +133,7 @@ public class FortLogistics extends Merchant
 			{
 				html.setFile(player, "data/html/fortress/logistics-1.htm"); // TODO: Missing HTML?
 			}
+			
 			html.replace("%objectId%", String.valueOf(getObjectId()));
 			player.sendPacket(html);
 		}
@@ -169,6 +172,7 @@ public class FortLogistics extends Merchant
 			{
 				html.setFile(player, "data/html/fortress/logistics-noprivs.htm");
 			}
+			
 			html.replace("%objectId%", String.valueOf(getObjectId()));
 			player.sendPacket(html);
 		}
@@ -210,6 +214,7 @@ public class FortLogistics extends Merchant
 		{
 			html.replace("%clanname%", "NPC");
 		}
+		
 		player.sendPacket(html);
 	}
 	
@@ -225,6 +230,7 @@ public class FortLogistics extends Merchant
 		{
 			pom = "logistics-" + value;
 		}
+		
 		return "data/html/fortress/" + pom + ".htm";
 	}
 	

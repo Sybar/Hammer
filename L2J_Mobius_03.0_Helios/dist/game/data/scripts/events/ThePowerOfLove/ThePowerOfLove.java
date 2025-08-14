@@ -34,6 +34,7 @@ public class ThePowerOfLove extends LongTimeEvent
 {
 	// NPC
 	private static final int COCO = 33893;
+	
 	// Items
 	private static final int CT = 37705;
 	private static final int CT_TRANSORM = 37708;
@@ -44,6 +45,7 @@ public class ThePowerOfLove extends LongTimeEvent
 	private static final int CC = 37707;
 	private static final int CC_TRANSORM = 37710;
 	private static final int CC_SUMMON = 37713;
+	
 	// Skill
 	private static final SkillHolder COCO_M = new SkillHolder(17155, 1); // Coco's Magic
 	
@@ -120,6 +122,7 @@ public class ThePowerOfLove extends LongTimeEvent
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

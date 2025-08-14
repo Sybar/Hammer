@@ -36,16 +36,18 @@ public class Q00343_UnderTheShadowOfTheIvoryTower extends Quest
 	private static final int ICARUS = 30835;
 	private static final int MARSHA = 30934;
 	private static final int TRUMPIN = 30935;
-	private static final int[] MONSTERS = new int[]
+	private static final int[] MONSTERS =
 	{
 		20563,
 		20564,
 		20565,
 		20566
 	};
+	
 	// Items
 	private static final int ORB = 4364;
 	private static final int ECTOPLASM = 4365;
+	
 	// Misc
 	private static final int CHANCE = 50;
 	private static final int[] ALLOWED_CLASSES =
@@ -154,6 +156,7 @@ public class Q00343_UnderTheShadowOfTheIvoryTower extends Quest
 							break;
 						}
 					}
+					
 					st.unset("playing");
 				}
 				else
@@ -188,6 +191,7 @@ public class Q00343_UnderTheShadowOfTheIvoryTower extends Quest
 							break;
 						}
 					}
+					
 					st.unset("playing");
 				}
 				else
@@ -222,6 +226,7 @@ public class Q00343_UnderTheShadowOfTheIvoryTower extends Quest
 							break;
 						}
 					}
+					
 					st.unset("playing");
 				}
 				else
@@ -367,6 +372,7 @@ public class Q00343_UnderTheShadowOfTheIvoryTower extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -389,6 +395,7 @@ public class Q00343_UnderTheShadowOfTheIvoryTower extends Quest
 							htmltext = "30834-01.htm";
 						}
 					}
+					
 					if (!"30834-01.htm".equals(htmltext))
 					{
 						htmltext = "30834-07.htm";
@@ -421,6 +428,7 @@ public class Q00343_UnderTheShadowOfTheIvoryTower extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

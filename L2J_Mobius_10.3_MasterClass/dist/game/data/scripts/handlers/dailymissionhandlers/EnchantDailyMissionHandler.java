@@ -96,6 +96,7 @@ public class EnchantDailyMissionHandler extends AbstractDailyMissionHandler
 				}
 			}
 		}
+		
 		return false;
 	}
 	
@@ -106,6 +107,7 @@ public class EnchantDailyMissionHandler extends AbstractDailyMissionHandler
 		{
 			return;
 		}
+		
 		if ((((_requiredMissionCompleteId != 0) && checkRequiredMission(player)) || (_requiredMissionCompleteId == 0)) //
 			&& _itemIds.contains(event.getItem().getId()) && (event.getItem().getEnchantLevel() >= _targetValue))
 		{
@@ -122,6 +124,7 @@ public class EnchantDailyMissionHandler extends AbstractDailyMissionHandler
 			{
 				entry.setStatus(DailyMissionStatus.AVAILABLE);
 			}
+			
 			storePlayerEntry(entry);
 		}
 	}

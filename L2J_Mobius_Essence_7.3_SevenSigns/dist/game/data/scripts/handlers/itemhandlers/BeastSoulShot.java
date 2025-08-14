@@ -30,7 +30,6 @@ import org.l2jmobius.gameserver.model.item.instance.Item;
 import org.l2jmobius.gameserver.network.SystemMessageId;
 import org.l2jmobius.gameserver.network.enums.ItemSkillType;
 import org.l2jmobius.gameserver.network.serverpackets.MagicSkillUse;
-import org.l2jmobius.gameserver.util.Broadcast;
 
 /**
  * Beast SoulShot Handler
@@ -39,7 +38,7 @@ import org.l2jmobius.gameserver.util.Broadcast;
 public class BeastSoulShot implements IItemHandler
 {
 	@Override
-	public boolean useItem(Playable playable, Item item, boolean forceUse)
+	public boolean onItemUse(Playable playable, Item item, boolean forceUse)
 	{
 		if (!playable.isPlayer())
 		{
@@ -106,6 +105,7 @@ public class BeastSoulShot implements IItemHandler
 			{
 				activeOwner.sendPacket(SystemMessageId.YOU_DON_T_HAVE_ENOUGH_SOULSHOTS_NEEDED_FOR_A_SERVITOR);
 			}
+			
 			return false;
 		}
 		
@@ -116,6 +116,7 @@ public class BeastSoulShot implements IItemHandler
 			{
 				activeOwner.sendPacket(SystemMessageId.YOU_DON_T_HAVE_ENOUGH_SOULSHOTS_NEEDED_FOR_A_SERVITOR);
 			}
+			
 			return false;
 		}
 		
@@ -124,14 +125,15 @@ public class BeastSoulShot implements IItemHandler
 		{
 			activeOwner.sendMessage("Your pet uses soulshot."); // activeOwner.sendPacket(SystemMessageId.YOUR_PET_USES_SPIRITSHOT);
 			pet.chargeShot(ShotType.SOULSHOTS);
+			
 			// Visual effect change if player has equipped Ruby level 3 or higher
 			if (activeOwner.getActiveRubyJewel() != null)
 			{
-				Broadcast.toSelfAndKnownPlayersInRadius(activeOwner, new MagicSkillUse(pet, pet, activeOwner.getActiveRubyJewel().getSkillId(), activeOwner.getActiveRubyJewel().getSkillLevel(), 0, 0), 600);
+				activeOwner.broadcastSkillPacket(new MagicSkillUse(pet, pet, activeOwner.getActiveRubyJewel().getSkillId(), activeOwner.getActiveRubyJewel().getSkillLevel(), 0, 0), pet);
 			}
 			else
 			{
-				skills.forEach(holder -> Broadcast.toSelfAndKnownPlayersInRadius(activeOwner, new MagicSkillUse(pet, pet, holder.getSkillId(), holder.getSkillLevel(), 0, 0), 600));
+				skills.forEach(holder -> activeOwner.broadcastSkillPacket(new MagicSkillUse(pet, pet, holder.getSkillId(), holder.getSkillLevel(), 0, 0), pet));
 			}
 		}
 		
@@ -141,17 +143,19 @@ public class BeastSoulShot implements IItemHandler
 			{
 				activeOwner.sendMessage("Your servitor uses soulshot."); // activeOwner.sendPacket(SystemMessageId.YOUR_PET_USES_SPIRITSHOT);
 				s.chargeShot(ShotType.SOULSHOTS);
+				
 				// Visual effect change if player has equipped Ruby level 3 or higher
 				if (activeOwner.getActiveRubyJewel() != null)
 				{
-					Broadcast.toSelfAndKnownPlayersInRadius(activeOwner, new MagicSkillUse(s, s, activeOwner.getActiveRubyJewel().getSkillId(), activeOwner.getActiveRubyJewel().getSkillLevel(), 0, 0), 600);
+					activeOwner.broadcastSkillPacket(new MagicSkillUse(s, s, activeOwner.getActiveRubyJewel().getSkillId(), activeOwner.getActiveRubyJewel().getSkillLevel(), 0, 0), s);
 				}
 				else
 				{
-					skills.forEach(holder -> Broadcast.toSelfAndKnownPlayersInRadius(activeOwner, new MagicSkillUse(s, s, holder.getSkillId(), holder.getSkillLevel(), 0, 0), 600));
+					skills.forEach(holder -> activeOwner.broadcastSkillPacket(new MagicSkillUse(s, s, holder.getSkillId(), holder.getSkillLevel(), 0, 0), s));
 				}
 			}
 		});
+		
 		return true;
 	}
 }

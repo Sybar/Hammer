@@ -44,6 +44,7 @@ public class RequestPackageSendableItemList extends ClientPacket
 		{
 			return;
 		}
+		
 		player.sendPacket(new PackageSendableList(1, player, _objectId));
 		player.sendPacket(new PackageSendableList(2, player, _objectId));
 	}

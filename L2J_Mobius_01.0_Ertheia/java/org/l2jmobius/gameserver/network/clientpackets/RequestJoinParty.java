@@ -62,6 +62,7 @@ public class RequestJoinParty extends ClientPacket
 			{
 				player.sendPacket(SystemMessageId.THE_PLAYER_DECLINED_TO_JOIN_YOUR_PARTY);
 			}
+			
 			player.onTransactionResponse();
 		}
 	}

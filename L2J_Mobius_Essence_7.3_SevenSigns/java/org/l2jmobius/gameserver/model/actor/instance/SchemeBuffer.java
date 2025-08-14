@@ -74,6 +74,7 @@ public class SchemeBuffer extends Npc
 			{
 				summon.stopAllEffects();
 			}
+			
 			player.getServitors().values().forEach(servitor -> servitor.stopAllEffects());
 			
 			final NpcHtmlMessage html = new NpcHtmlMessage(getObjectId());
@@ -91,6 +92,7 @@ public class SchemeBuffer extends Npc
 			{
 				summon.setCurrentHpMp(summon.getMaxHp(), summon.getMaxMp());
 			}
+			
 			player.getServitors().values().forEach(servitor -> servitor.setCurrentHpMp(servitor.getMaxHp(), servitor.getMaxMp()));
 			
 			final NpcHtmlMessage html = new NpcHtmlMessage(getObjectId());
@@ -122,6 +124,7 @@ public class SchemeBuffer extends Npc
 						{
 							skill.applyEffects(this, player.getPet());
 						}
+						
 						player.getServitors().values().forEach(servitor -> skill.applyEffects(this, servitor));
 					}
 					else
@@ -185,6 +188,7 @@ public class SchemeBuffer extends Npc
 					player.sendMessage("Scheme's name must contain up to 14 chars.");
 					return;
 				}
+				
 				// Simple hack to use spaces, dots, commas, minus, plus, exclamations or question marks.
 				if (!StringUtil.isAlphaNumeric(schemeName.replace(" ", "").replace(".", "").replace(",", "").replace("-", "").replace("+", "").replace("!", "").replace("?", "")))
 				{
@@ -231,6 +235,7 @@ public class SchemeBuffer extends Npc
 			{
 				player.sendMessage("This scheme name is invalid.");
 			}
+			
 			showGiveBuffsWindow(player);
 		}
 	}
@@ -247,6 +252,7 @@ public class SchemeBuffer extends Npc
 		{
 			filename = npcId + "-" + value;
 		}
+		
 		return "data/html/mods/SchemeBuffer/" + filename + ".htm";
 	}
 	
@@ -451,6 +457,7 @@ public class SchemeBuffer extends Npc
 				count++;
 			}
 		}
+		
 		return count;
 	}
 }

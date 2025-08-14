@@ -40,7 +40,7 @@ public class UpgradeEquipment implements IBypassHandler
 	};
 	
 	@Override
-	public boolean useBypass(String command, Player player, Creature target)
+	public boolean onCommand(String command, Player player, Creature target)
 	{
 		if ((target == null) || !target.isNpc() || (target.asNpc().getId() != FERRIS))
 		{
@@ -61,7 +61,7 @@ public class UpgradeEquipment implements IBypassHandler
 	}
 	
 	@Override
-	public String[] getBypassList()
+	public String[] getCommandList()
 	{
 		return COMMANDS;
 	}

@@ -98,6 +98,7 @@ public class ElfHumanWizardChange2 extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -126,6 +127,7 @@ public class ElfHumanWizardChange2 extends AbstractNpcAI
 				takeItems(player, -1, MARK_OF_SCHOLAR, MARK_OF_TRUST, MARK_OF_MAGUS);
 				player.setPlayerClass(SORCERER);
 				player.setBaseClass(SORCERER);
+				
 				// SystemMessage and cast skill is done by setClassId
 				player.broadcastUserInfo();
 				htmltext = "30115-24.htm"; // fnAfterClassChange11
@@ -153,6 +155,7 @@ public class ElfHumanWizardChange2 extends AbstractNpcAI
 				takeItems(player, -1, MARK_OF_SCHOLAR, MARK_OF_TRUST, MARK_OF_WITCHCRAFT);
 				player.setPlayerClass(NECROMANCER);
 				player.setBaseClass(NECROMANCER);
+				
 				// SystemMessage and cast skill is done by setClassId
 				player.broadcastUserInfo();
 				htmltext = "30115-28.htm"; // fnAfterClassChange12
@@ -180,6 +183,7 @@ public class ElfHumanWizardChange2 extends AbstractNpcAI
 				takeItems(player, -1, MARK_OF_SCHOLAR, MARK_OF_TRUST, MARK_OF_SUMMONER);
 				player.setPlayerClass(WARLOCK);
 				player.setBaseClass(WARLOCK);
+				
 				// SystemMessage and cast skill is done by setClassId
 				player.broadcastUserInfo();
 				htmltext = "30115-32.htm"; // fnAfterClassChange13
@@ -207,6 +211,7 @@ public class ElfHumanWizardChange2 extends AbstractNpcAI
 				takeItems(player, -1, MARK_OF_SCHOLAR, MARK_OF_LIFE, MARK_OF_MAGUS);
 				player.setPlayerClass(SPELLSINGER);
 				player.setBaseClass(SPELLSINGER);
+				
 				// SystemMessage and cast skill is done by setClassId
 				player.broadcastUserInfo();
 				htmltext = "30115-36.htm"; // fnAfterClassChange21
@@ -234,6 +239,7 @@ public class ElfHumanWizardChange2 extends AbstractNpcAI
 				takeItems(player, -1, MARK_OF_SCHOLAR, MARK_OF_LIFE, MARK_OF_SUMMONER);
 				player.setPlayerClass(ELEMENTAL_SUMMONER);
 				player.setBaseClass(ELEMENTAL_SUMMONER);
+				
 				// SystemMessage and cast skill is done by setClassId
 				player.broadcastUserInfo();
 				htmltext = "30115-40.htm"; // fnAfterClassChange22
@@ -243,6 +249,7 @@ public class ElfHumanWizardChange2 extends AbstractNpcAI
 				htmltext = "30115-41.htm"; // fnNoProof22
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -274,6 +281,7 @@ public class ElfHumanWizardChange2 extends AbstractNpcAI
 		{
 			htmltext = "30115-20.htm"; // fnClassMismatch
 		}
+		
 		return htmltext;
 	}
 	

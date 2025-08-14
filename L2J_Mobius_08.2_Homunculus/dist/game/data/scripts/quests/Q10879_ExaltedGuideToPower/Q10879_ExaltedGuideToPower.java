@@ -43,17 +43,21 @@ public class Q10879_ExaltedGuideToPower extends Quest
 {
 	// NPC
 	private static final int LIONEL = 33907;
+	
 	// Items
 	private static final int PROOF_OF_PRIDE = 80827;
 	private static final int LIONEL_MISSION_LIST_5 = 47834;
+	
 	// Rewards
 	private static final int DIGNITY_OF_THE_EXALTED_LV5 = 47853;
 	private static final int VITALITY_OF_THE_EXALTED_LV2 = 47855;
+	
 	// Misc
 	private static final int MIN_LEVEL = 105;
 	private static final int MIN_COMPLETE_LEVEL = 107;
 	private static final int REACH_LV_107 = NpcStringId.REACH_LV_107.getId();
 	private static final int PROOF_OF_PRIDE_NEEDED = 80000;
+	
 	// Monsters
 	private static final int[] MONSTERS =
 	{
@@ -191,6 +195,7 @@ public class Q10879_ExaltedGuideToPower extends Quest
 		{
 			return htmltext;
 		}
+		
 		switch (event)
 		{
 			case "33907-03.htm":
@@ -228,6 +233,7 @@ public class Q10879_ExaltedGuideToPower extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -268,6 +274,7 @@ public class Q10879_ExaltedGuideToPower extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -287,10 +294,12 @@ public class Q10879_ExaltedGuideToPower extends Quest
 			{
 				giveItemRandomly(player, PROOF_OF_PRIDE, 1, PROOF_OF_PRIDE_NEEDED, 1, true);
 			}
+			
 			if ((getQuestItemsCount(player, PROOF_OF_PRIDE) >= PROOF_OF_PRIDE_NEEDED) && (player.getLevel() >= MIN_COMPLETE_LEVEL))
 			{
 				qs.setCond(2, true);
 			}
+			
 			sendNpcLogList(player);
 		}
 	}
@@ -306,8 +315,10 @@ public class Q10879_ExaltedGuideToPower extends Quest
 			{
 				holder.add(new NpcLogListHolder(REACH_LV_107, true, 1));
 			}
+			
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

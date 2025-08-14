@@ -63,7 +63,7 @@ public class PlayerAI extends PlayableAI
 	{
 		// do nothing unless CAST intention
 		// however, forget interrupted actions when starting to use an offensive skill
-		if ((intention != Intention.CAST) || ((Skill) args[0]).isBad())
+		if ((intention != Intention.CAST) || ((Skill) args[0]).hasNegativeEffect())
 		{
 			_nextIntention = null;
 			super.changeIntention(intention, args);
@@ -104,6 +104,7 @@ public class PlayerAI extends PlayableAI
 			setIntention(_nextIntention._intention, _nextIntention._arg0, _nextIntention._arg1);
 			_nextIntention = null;
 		}
+		
 		super.onActionReadyToAct();
 	}
 	
@@ -322,7 +323,7 @@ public class PlayerAI extends PlayableAI
 		{
 			if (checkTargetLost(target))
 			{
-				if (_skill.isBad() && (target != null))
+				if (_skill.hasNegativeEffect() && (target != null))
 				{
 					// Notify the target
 					setCastTarget(null);
@@ -330,6 +331,7 @@ public class PlayerAI extends PlayableAI
 				}
 				return;
 			}
+			
 			if ((target != null) && maybeMoveToPawn(target, _actor.getMagicalAttackRange(_skill)))
 			{
 				return;
@@ -355,15 +357,18 @@ public class PlayerAI extends PlayableAI
 		{
 			return;
 		}
+		
 		final WorldObject target = getTarget();
 		if (checkTargetLost(target))
 		{
 			return;
 		}
+		
 		if (maybeMoveToPawn(target, 36))
 		{
 			return;
 		}
+		
 		setIntention(Intention.IDLE);
 		getActor().doPickupItem(target);
 	}
@@ -374,19 +379,23 @@ public class PlayerAI extends PlayableAI
 		{
 			return;
 		}
+		
 		final WorldObject target = getTarget();
 		if (checkTargetLost(target))
 		{
 			return;
 		}
+		
 		if (maybeMoveToPawn(target, 36))
 		{
 			return;
 		}
+		
 		if (!(target instanceof StaticObject))
 		{
 			getActor().doInteract(target.asCreature());
 		}
+		
 		setIntention(Intention.IDLE);
 	}
 	

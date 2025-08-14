@@ -34,6 +34,7 @@ public class FameManager extends AbstractNpcAI
 		36479, // Rapidus
 		36480, // Scipio
 	};
+	
 	// Misc
 	private static final int MIN_LEVEL = 40;
 	private static final int DECREASE_COST = 5000;
@@ -110,6 +111,7 @@ public class FameManager extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

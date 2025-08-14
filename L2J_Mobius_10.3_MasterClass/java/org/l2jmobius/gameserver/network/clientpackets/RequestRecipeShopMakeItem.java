@@ -214,6 +214,7 @@ public class RequestRecipeShopMakeItem extends ClientPacket
 			{
 				player.sendPacket(SystemMessageId.CRITICAL_CRAFT);
 			}
+			
 			if (craftedItem.getCount() > 1)
 			{
 				SystemMessage sm = new SystemMessage(SystemMessageId.S3_S2_S_HAVE_BEEN_CREATED_FOR_C1_AT_THE_PRICE_OF_S4_ADENA);

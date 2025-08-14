@@ -336,9 +336,9 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="51441" level="1" /> <!-- Scroll of Escape: Abandoned Camp -->
 		</skills>
@@ -367,9 +367,9 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="51443" level="1" /> <!-- Scroll of Escape: Ruins of Agony -->
 		</skills>
@@ -1119,9 +1119,9 @@
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="is_freightable" val="true" />
-		<cond msgId="1902">
+		<conditions msgId="1902">
 			<player levelRange="1;75" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="54068" level="1" /> <!-- Sayha's Gust - Event -->
 		</skills>
@@ -1138,9 +1138,9 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_freightable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<cond msgId="1902">
+		<conditions msgId="1902">
 			<player levelRange="1;75" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="40057" level="1" /> <!-- Magic Fire (Event) -->
 		</skills>

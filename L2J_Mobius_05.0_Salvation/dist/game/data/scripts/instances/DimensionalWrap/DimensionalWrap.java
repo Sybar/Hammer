@@ -54,6 +54,7 @@ public class DimensionalWrap extends AbstractInstance
 	// NPCs
 	private static final int RESED = 33974;
 	private static final int EINSTER = 33975;
+	
 	// Monsters
 	private static final int DIMENSIONAL_INVISIBLE_FRAGMENT = 19564;
 	private static final int SALAMANDRA_GENERATOR = 19563;
@@ -96,12 +97,14 @@ public class DimensionalWrap extends AbstractInstance
 		19561, // Damage trap, power 3
 		19562, // Heal Trap
 	};
+	
 	// Location
 	private static final Location TELEPORTS = new Location(-76136, -216216, 4040);
 	private static final Location FIRST_TELEPORT = new Location(-219544, 248776, 3360);
 	private static final Location SECOND_TELEPORT = new Location(-206756, 242009, 6584);
 	private static final Location THIRD_TELEPORT = new Location(-219813, 248484, 9928);
 	private static final Location FOURTH_TELEPORT = new Location(-87191, -210129, 6984);
+	
 	// Misc
 	private static final int TEMPLATE_ID = 250;
 	private static final int DIMENSIONAL_DARK_FORCES = 16415;
@@ -180,6 +183,7 @@ public class DimensionalWrap extends AbstractInstance
 					player.sendPacket(SystemMessageId.ONLY_A_PARTY_LEADER_CAN_MAKE_THE_REQUEST_TO_ENTER);
 					break;
 				}
+				
 				switch (player.getParty().getMemberCount())
 				{
 					case 2:
@@ -223,6 +227,7 @@ public class DimensionalWrap extends AbstractInstance
 					player.sendPacket(SystemMessageId.ONLY_A_PARTY_LEADER_CAN_MAKE_THE_REQUEST_TO_ENTER);
 					break;
 				}
+				
 				switch (player.getParty().getMemberCount())
 				{
 					case 2:
@@ -266,6 +271,7 @@ public class DimensionalWrap extends AbstractInstance
 					player.sendPacket(SystemMessageId.ONLY_A_PARTY_LEADER_CAN_MAKE_THE_REQUEST_TO_ENTER);
 					break;
 				}
+				
 				switch (player.getParty().getMemberCount())
 				{
 					case 2:
@@ -302,11 +308,13 @@ public class DimensionalWrap extends AbstractInstance
 					htmltext = "33975-02.html";
 					break;
 				}
+				
 				if (player.getVariables().getInt("DIMENSIONAL_WRAP_LEVEL", 0) == 0)
 				{
 					htmltext = "33975-05.html";
 					break;
 				}
+				
 				if (world.getStatus() < 5)
 				{
 					world.setStatus(5);
@@ -314,10 +322,12 @@ public class DimensionalWrap extends AbstractInstance
 					cancelQuestTimer("THIRD_SPAWN", null, world.getFirstPlayer());
 					startQuestTimer("START_STAGE", 5000, null, world.getFirstPlayer());
 				}
+				
 				for (Player pl : world.getPlayers())
 				{
 					pl.teleToLocation(FIRST_TELEPORT, world.getTemplateId());
 				}
+				
 				for (Npc n : world.getAliveNpcs())
 				{
 					if (n.getId() != EINSTER)
@@ -340,11 +350,13 @@ public class DimensionalWrap extends AbstractInstance
 					htmltext = "33975-02.html";
 					break;
 				}
+				
 				if ((player.getVariables().getInt("DIMENSIONAL_WRAP_LEVEL", 0) == 0) || (player.getVariables().getInt("DIMENSIONAL_WRAP_LEVEL") < 2))
 				{
 					htmltext = "33975-05.html";
 					break;
 				}
+				
 				if (world.getStatus() < 10)
 				{
 					world.setStatus(10);
@@ -352,10 +364,12 @@ public class DimensionalWrap extends AbstractInstance
 					cancelQuestTimer("THIRD_SPAWN", null, world.getFirstPlayer());
 					startQuestTimer("START_STAGE", 5000, null, world.getFirstPlayer());
 				}
+				
 				for (Player pl : world.getPlayers())
 				{
 					pl.teleToLocation(SECOND_TELEPORT, world.getTemplateId());
 				}
+				
 				for (Npc n : world.getAliveNpcs())
 				{
 					if (n.getId() != EINSTER)
@@ -378,11 +392,13 @@ public class DimensionalWrap extends AbstractInstance
 					htmltext = "33975-02.html";
 					break;
 				}
+				
 				if ((player.getVariables().getInt("DIMENSIONAL_WRAP_LEVEL", 0) == 0) || (player.getVariables().getInt("DIMENSIONAL_WRAP_LEVEL") < 3))
 				{
 					htmltext = "33975-05.html";
 					break;
 				}
+				
 				if (world.getStatus() < 15)
 				{
 					world.setStatus(15);
@@ -390,10 +406,12 @@ public class DimensionalWrap extends AbstractInstance
 					cancelQuestTimer("THIRD_SPAWN", null, world.getFirstPlayer());
 					startQuestTimer("START_STAGE", 5000, null, world.getFirstPlayer());
 				}
+				
 				for (Player pl : world.getPlayers())
 				{
 					pl.teleToLocation(THIRD_TELEPORT, world.getTemplateId());
 				}
+				
 				for (Npc n : world.getAliveNpcs())
 				{
 					if (n.getId() != EINSTER)
@@ -416,11 +434,13 @@ public class DimensionalWrap extends AbstractInstance
 					htmltext = "33975-02.html";
 					break;
 				}
+				
 				if ((player.getVariables().getInt("DIMENSIONAL_WRAP_LEVEL", 0) == 0) || (player.getVariables().getInt("DIMENSIONAL_WRAP_LEVEL") < 4))
 				{
 					htmltext = "33975-05.html";
 					break;
 				}
+				
 				if (world.getStatus() < 20)
 				{
 					world.setStatus(20);
@@ -428,10 +448,12 @@ public class DimensionalWrap extends AbstractInstance
 					cancelQuestTimer("THIRD_SPAWN", null, world.getFirstPlayer());
 					startQuestTimer("START_STAGE", 5000, null, world.getFirstPlayer());
 				}
+				
 				for (Player pl : world.getPlayers())
 				{
 					pl.teleToLocation(TELEPORTS, world.getTemplateId());
 				}
+				
 				for (Npc n : world.getAliveNpcs())
 				{
 					if (n.getId() != EINSTER)
@@ -454,11 +476,13 @@ public class DimensionalWrap extends AbstractInstance
 					htmltext = "33975-02.html";
 					break;
 				}
+				
 				if ((player.getVariables().getInt("DIMENSIONAL_WRAP_LEVEL", 0) == 0) || (player.getVariables().getInt("DIMENSIONAL_WRAP_LEVEL") < 5))
 				{
 					htmltext = "33975-05.html";
 					break;
 				}
+				
 				if (world.getStatus() < 25)
 				{
 					world.setStatus(25);
@@ -466,10 +490,12 @@ public class DimensionalWrap extends AbstractInstance
 					cancelQuestTimer("THIRD_SPAWN", null, world.getFirstPlayer());
 					startQuestTimer("START_STAGE", 5000, null, world.getFirstPlayer());
 				}
+				
 				for (Player pl : world.getPlayers())
 				{
 					pl.teleToLocation(FOURTH_TELEPORT, world.getTemplateId());
 				}
+				
 				for (Npc n : world.getAliveNpcs())
 				{
 					if (n.getId() != EINSTER)
@@ -486,6 +512,7 @@ public class DimensionalWrap extends AbstractInstance
 				{
 					return null;
 				}
+				
 				player.teleToLocation(TELEPORTS, world.getTemplateId());
 				break;
 			}
@@ -497,6 +524,7 @@ public class DimensionalWrap extends AbstractInstance
 				{
 					return null;
 				}
+				
 				if (getRandom(100) < (world.getParameters().getInt("worldState", 0) / 2))
 				{
 					final Npc salamandra = addSpawn(world.getParameters().getInt("worldState", 0) < 17 ? DIMENSIONAL_SALAMANDRA : UNWORDLY_SALAMANDER, npc, false, 0, false, world.getId());
@@ -509,6 +537,7 @@ public class DimensionalWrap extends AbstractInstance
 						}
 					});
 				}
+				
 				startQuestTimer(event, event.equals("SALAMANDRA_SPAWN") ? 25000 : 20000, npc, player);
 				break;
 			}
@@ -518,11 +547,13 @@ public class DimensionalWrap extends AbstractInstance
 				{
 					return null;
 				}
+				
 				final Instance world = player.getInstanceWorld();
 				if (!isInInstance(world))
 				{
 					return null;
 				}
+				
 				world.incStatus();
 				world.setParameter("worldState", world.getStatus());
 				world.broadcastPacket(new ExShowScreenMessage(NpcStringId.DIMENSIONAL_WARP_LV_S1, ExShowScreenMessage.TOP_CENTER, 10000, true, String.valueOf(world.getStatus())));
@@ -535,11 +566,13 @@ public class DimensionalWrap extends AbstractInstance
 				{
 					return null;
 				}
+				
 				final Instance world = player.getInstanceWorld();
 				if (!isInInstance(world))
 				{
 					return null;
 				}
+				
 				final int worldState = world.getParameters().getInt("worldState", 0);
 				world.spawnGroup(worldState + "_first_spawn");
 				world.spawnGroup(worldState + "_trap_spawn");
@@ -554,6 +587,7 @@ public class DimensionalWrap extends AbstractInstance
 				{
 					return null;
 				}
+				
 				int skilllevel = 1;
 				final int worldState = world.getParameters().getInt("worldState", 0);
 				if ((worldState > 0) && (worldState <= 11))
@@ -572,6 +606,7 @@ public class DimensionalWrap extends AbstractInstance
 				{
 					skilllevel = 4;
 				}
+				
 				final Skill skill = SkillData.getInstance().getSkill(DIMENSIONAL_DARK_FORCES, skilllevel);
 				for (Player p : world.getPlayers())
 				{
@@ -580,6 +615,7 @@ public class DimensionalWrap extends AbstractInstance
 						skill.applyEffects(p, p);
 					}
 				}
+				
 				startQuestTimer("DEBUFF_TASK", 10000, null, world.getFirstPlayer());
 				break;
 			}
@@ -590,6 +626,7 @@ public class DimensionalWrap extends AbstractInstance
 				{
 					return null;
 				}
+				
 				world.spawnGroup(world.getParameters().getInt("worldState", 0) + "_second_spawn");
 				startQuestTimer("THIRD_SPAWN", 40000, null, world.getFirstPlayer());
 				break;
@@ -601,6 +638,7 @@ public class DimensionalWrap extends AbstractInstance
 				{
 					return null;
 				}
+				
 				world.spawnGroup(world.getParameters().getInt("worldState", 0) + "_third_spawn");
 				break;
 			}
@@ -610,11 +648,13 @@ public class DimensionalWrap extends AbstractInstance
 				{
 					return null;
 				}
+				
 				final Instance world = player.getInstanceWorld();
 				if (!isInInstance(world))
 				{
 					return null;
 				}
+				
 				world.getAliveNpcs(TRAPS).forEach(Npc::deleteMe);
 				world.spawnGroup(world.getParameters().getInt("worldState", 0) + "_trap_spawn");
 				startQuestTimer("CHANGE_LOCATION", 60000 - (world.getParameters().getInt("worldState", 0) * 1430), null, world.getFirstPlayer());
@@ -626,11 +666,13 @@ public class DimensionalWrap extends AbstractInstance
 				{
 					return null;
 				}
+				
 				final Instance world = player.getInstanceWorld();
 				if (!isInInstance(world))
 				{
 					return null;
 				}
+				
 				world.broadcastPacket(new ExShowScreenMessage(NpcStringId.S1_SECONDS_HAVE_BEEN_ADDED_TO_THE_INSTANCE_ZONE_DURATION, ExShowScreenMessage.TOP_CENTER, 5000, true, String.valueOf(180)));
 				world.setDuration((int) ((world.getRemainingTime() / 60000) + 3));
 				startQuestTimer("START_STAGE", 10000, null, world.getFirstPlayer());
@@ -644,6 +686,7 @@ public class DimensionalWrap extends AbstractInstance
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -681,6 +724,7 @@ public class DimensionalWrap extends AbstractInstance
 					{
 						world.setParameter("20thThirdWaveFinished", true);
 					}
+					
 					world.setParameter("ThirdWave", false);
 					world.broadcastPacket(new ExShowScreenMessage(NpcStringId.THE_SURROUNDING_ENERGY_HAS_DISSIPATED, ExShowScreenMessage.TOP_CENTER, 5000, true));
 					world.broadcastPacket(new Earthquake(killer, 50, 5));
@@ -710,9 +754,11 @@ public class DimensionalWrap extends AbstractInstance
 				{
 					return "33975-02.html";
 				}
+				
 				return "33975-04.html";
 			}
 		}
+		
 		return "33975.html";
 	}
 	
@@ -762,6 +808,7 @@ public class DimensionalWrap extends AbstractInstance
 				}
 			}
 		}
+		
 		if (!canStart || (world.getParameters().getInt("worldState", 0) != 0))
 		{
 			return;

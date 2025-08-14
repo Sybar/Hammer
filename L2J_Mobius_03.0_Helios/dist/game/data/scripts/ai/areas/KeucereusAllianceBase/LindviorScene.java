@@ -111,6 +111,7 @@ public class LindviorScene extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	
@@ -143,6 +144,7 @@ public class LindviorScene extends AbstractNpcAI
 		{
 			date.add(Calendar.DAY_OF_WEEK, 1 + RESET_DAY_1);
 		}
+		
 		return date.getTimeInMillis() - System.currentTimeMillis();
 	}
 	

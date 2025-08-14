@@ -76,12 +76,12 @@
 		<set name="is_dropable" val="false" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 				<player categoryType="SHIELD_MASTER" />
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">226</stat>
 		</stats>
@@ -102,12 +102,12 @@
 		<set name="is_dropable" val="false" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 				<player categoryType="WEAPON_MASTER" />
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">226</stat>
 		</stats>
@@ -128,12 +128,12 @@
 		<set name="is_dropable" val="false" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 				<player categoryType="FORCE_MASTER" />
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">226</stat>
 		</stats>
@@ -154,12 +154,12 @@
 		<set name="is_dropable" val="false" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 				<player categoryType="BARD" />
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">226</stat>
 		</stats>
@@ -199,9 +199,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player categoryType="DAGGER_MASTER" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">170</stat>
 		</stats>
@@ -222,9 +222,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player categoryType="BOW_MASTER" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">170</stat>
 		</stats>
@@ -265,12 +265,12 @@
 		<set name="is_dropable" val="false" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 				<player categoryType="HEAL_MASTER" />
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">113</stat>
 			<stat type="maxMp">592</stat>
@@ -292,12 +292,12 @@
 		<set name="is_dropable" val="false" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 				<player categoryType="BUFF_MASTER" />
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">113</stat>
 			<stat type="maxMp">592</stat>
@@ -319,12 +319,12 @@
 		<set name="is_dropable" val="false" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 				<player categoryType="SUMMON_MASTER" />
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">113</stat>
 			<stat type="maxMp">592</stat>
@@ -346,12 +346,12 @@
 		<set name="is_dropable" val="false" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 				<player categoryType="WIZARD_MASTER" />
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">113</stat>
 			<stat type="maxMp">592</stat>
@@ -373,12 +373,12 @@
 		<set name="is_dropable" val="false" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 				<player categoryType="FORCE_MASTER" />
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">170</stat>
 		</stats>
@@ -399,9 +399,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player categoryType="WEAPON_MASTER" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">170</stat>
 		</stats>
@@ -422,9 +422,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player categoryType="BUFF_MASTER" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">170</stat>
 		</stats>
@@ -445,9 +445,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player categoryType="SUMMON_MASTER" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">170</stat>
 		</stats>
@@ -487,12 +487,12 @@
 		<set name="is_dropable" val="false" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 				<player categoryType="SHIELD_MASTER" />
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">226</stat>
 		</stats>
@@ -513,12 +513,12 @@
 		<set name="is_dropable" val="false" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 				<player categoryType="WEAPON_MASTER" />
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">226</stat>
 		</stats>
@@ -539,12 +539,12 @@
 		<set name="is_dropable" val="false" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 				<player categoryType="FORCE_MASTER" />
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">226</stat>
 		</stats>
@@ -565,12 +565,12 @@
 		<set name="is_dropable" val="false" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 				<player categoryType="BARD" />
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">226</stat>
 		</stats>
@@ -610,9 +610,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player categoryType="DAGGER_MASTER" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">170</stat>
 		</stats>
@@ -633,9 +633,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player categoryType="BOW_MASTER" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">170</stat>
 		</stats>
@@ -676,12 +676,12 @@
 		<set name="is_dropable" val="false" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 				<player categoryType="HEAL_MASTER" />
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">113</stat>
 			<stat type="maxMp">592</stat>
@@ -703,12 +703,12 @@
 		<set name="is_dropable" val="false" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 				<player categoryType="BUFF_MASTER" />
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">113</stat>
 			<stat type="maxMp">592</stat>
@@ -730,12 +730,12 @@
 		<set name="is_dropable" val="false" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 				<player categoryType="SUMMON_MASTER" />
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">113</stat>
 			<stat type="maxMp">592</stat>
@@ -757,12 +757,12 @@
 		<set name="is_dropable" val="false" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 				<player categoryType="WIZARD_MASTER" />
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">113</stat>
 			<stat type="maxMp">592</stat>
@@ -784,9 +784,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player categoryType="FORCE_MASTER" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">170</stat>
 		</stats>
@@ -807,9 +807,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player categoryType="WEAPON_MASTER" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">170</stat>
 		</stats>
@@ -830,9 +830,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player categoryType="BUFF_MASTER" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">170</stat>
 		</stats>
@@ -853,9 +853,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player categoryType="SUMMON_MASTER" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">170</stat>
 		</stats>
@@ -1788,9 +1788,9 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="commissionItemType" val="ANCIENT_SWORD" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">190</stat>
 			<stat type="mAtk">91</stat>
@@ -1823,9 +1823,9 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="commissionItemType" val="ANCIENT_SWORD" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">190</stat>
 			<stat type="mAtk">91</stat>
@@ -1859,9 +1859,9 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="commissionItemType" val="ANCIENT_SWORD" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">190</stat>
 			<stat type="mAtk">91</stat>
@@ -1895,9 +1895,9 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="commissionItemType" val="ANCIENT_SWORD" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">190</stat>
 			<stat type="mAtk">91</stat>

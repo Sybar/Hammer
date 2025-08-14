@@ -1507,9 +1507,9 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="material" val="PAPER" />
-		<cond>
+		<conditions>
 			<player MinimumVitalityPoints="35000" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="39479" level="1" /> <!-- Freya's Frozen Scroll -->
 		</skills>
@@ -1541,9 +1541,9 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="material" val="PAPER" />
-		<cond msgId="1902">
+		<conditions msgId="1902">
 			<player levelRange="99;255" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="18628" level="1" /> <!-- Express Bus Pass Card -->
 		</skills>

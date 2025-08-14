@@ -65,6 +65,7 @@ public class MercenaryPledgeMemberList extends ServerPacket
 			{
 				buffer.writeInt(player.isOnline());
 			}
+			
 			buffer.writeSizedString(mercenary.getName());
 			buffer.writeInt(mercenary.getClassId());
 		}

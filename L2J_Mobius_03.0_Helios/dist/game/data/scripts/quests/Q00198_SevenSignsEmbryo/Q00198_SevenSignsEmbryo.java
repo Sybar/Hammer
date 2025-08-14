@@ -43,12 +43,15 @@ public class Q00198_SevenSignsEmbryo extends Quest
 	private static final int WOOD = 32593;
 	private static final int FRANZ = 32597;
 	private static final int JAINA = 32617;
+	
 	// Items
 	private static final int SCULPTURE_OF_DOUBT = 14355;
 	private static final int DAWNS_BRACELET = 15312;
+	
 	// Misc
 	private static final int MIN_LEVEL = 79;
 	private boolean isBusy = false;
+	
 	// Skill
 	private static final SkillHolder NPC_HEAL = new SkillHolder(4065, 8);
 	
@@ -75,6 +78,7 @@ public class Q00198_SevenSignsEmbryo extends Quest
 				npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.NEXT_TIME_YOU_WILL_NOT_ESCAPE);
 				npc.deleteMe();
 			}
+			
 			return super.onEvent(event, npc, player);
 		}
 		
@@ -131,6 +135,7 @@ public class Q00198_SevenSignsEmbryo extends Quest
 					npc.setTarget(player);
 					npc.doCast(NPC_HEAL.getSkill());
 				}
+				
 				startQuestTimer("heal", 30000 - getRandom(20000), npc, player);
 				break;
 			}
@@ -161,6 +166,7 @@ public class Q00198_SevenSignsEmbryo extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -265,6 +271,7 @@ public class Q00198_SevenSignsEmbryo extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

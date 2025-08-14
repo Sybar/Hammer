@@ -97,6 +97,7 @@ public class RequestExEnchantItemAttribute extends ClientPacket
 			player.sendPacket(SystemMessageId.ELEMENTAL_POWER_ENHANCER_USAGE_REQUIREMENT_IS_NOT_SUFFICIENT);
 			player.setActiveEnchantAttrItemId(Player.ID_NONE);
 			return;
+			
 			// old Epilogue check saved here, in case of needing it...
 			// can't enchant rods, shadow items, adventurers', PvP items, hero items, cloaks, bracelets, underwear (e.g. shirt), belt, necklace, earring, ring
 			// @formatter:off
@@ -133,11 +134,13 @@ public class RequestExEnchantItemAttribute extends ClientPacket
 		
 		final int stoneId = stone.getId();
 		byte elementToAdd = Elementals.getItemElement(stoneId);
+		
 		// Armors have the opposite element
 		if (item.isArmor())
 		{
 			elementToAdd = Elementals.getOppositeElement(elementToAdd);
 		}
+		
 		final byte opositeElement = Elementals.getOppositeElement(elementToAdd);
 		final Elementals oldElement = item.getElemental(elementToAdd);
 		final int elementValue = oldElement == null ? 0 : oldElement.getValue();
@@ -189,6 +192,7 @@ public class RequestExEnchantItemAttribute extends ClientPacket
 			player.setActiveEnchantAttrItemId(Player.ID_NONE);
 			return;
 		}
+		
 		boolean success = false;
 		switch (Elementals.getItemElemental(stoneId).getType())
 		{
@@ -214,6 +218,7 @@ public class RequestExEnchantItemAttribute extends ClientPacket
 				break;
 			}
 		}
+		
 		if (success)
 		{
 			final byte realElement = item.isArmor() ? opositeElement : elementToAdd;
@@ -231,6 +236,7 @@ public class RequestExEnchantItemAttribute extends ClientPacket
 				sm.addItemName(item);
 				sm.addElemental(realElement);
 			}
+			
 			player.sendPacket(sm);
 			
 			item.setElementAttr(elementToAdd, newPower);
@@ -266,6 +272,7 @@ public class RequestExEnchantItemAttribute extends ClientPacket
 		{
 			return Elementals.WEAPON_VALUES[elementItem.getType().getMaxLevel()];
 		}
+		
 		return Elementals.ARMOR_VALUES[elementItem.getType().getMaxLevel()];
 	}
 	
@@ -279,6 +286,7 @@ public class RequestExEnchantItemAttribute extends ClientPacket
 				{
 					return Elementals.FIRST_WEAPON_BONUS;
 				}
+				
 				return Elementals.NEXT_WEAPON_BONUS;
 			}
 			else if (item.isArmor())
@@ -286,6 +294,7 @@ public class RequestExEnchantItemAttribute extends ClientPacket
 				return Elementals.ARMOR_BONUS;
 			}
 		}
+		
 		return 0;
 	}
 }

@@ -33,7 +33,7 @@ import org.l2jmobius.gameserver.network.SystemMessageId;
 public class ServitorSkillUse implements IPlayerActionHandler
 {
 	@Override
-	public void useAction(Player player, ActionDataHolder data, boolean ctrlPressed, boolean shiftPressed)
+	public void onAction(Player player, ActionDataHolder data, boolean ctrlPressed, boolean shiftPressed)
 	{
 		final Summon summon = player.getAnyServitor();
 		if ((summon == null) || !summon.isServitor())

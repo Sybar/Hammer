@@ -77,10 +77,12 @@ public class OctavisWarzone extends AbstractInstance
 	};
 	private static final int LYDIA = 32892;
 	private static final int DOOR_MANAGER = 18984;
+	
 	// Skills
 	private static final SkillHolder STAGE_2_SKILL_1 = new SkillHolder(14026, 1);
 	private static final SkillHolder STAGE_2_SKILL_2 = new SkillHolder(14027, 1);
 	private static final SkillHolder STAGE_2_SKILL_3 = new SkillHolder(14575, 1);
+	
 	// Locations
 	private static final Location BATTLE_LOC = new Location(208720, 120576, -10000);
 	private static final Location OCTAVIS_SPAWN_LOC = new Location(207069, 120580, -9987);
@@ -94,8 +96,10 @@ public class OctavisWarzone extends AbstractInstance
 		new Location(207730, 121859, -9987),
 		new Location(206654, 121865, -9987),
 	};
+	
 	// Zones
 	private static final ScriptZone TELEPORT_ZONE = ZoneManager.getInstance().getZoneById(12042, ScriptZone.class);
+	
 	// Misc
 	private static final int TEMPLATE_ID = 180;
 	private static final int EXTREME_TEMPLATE_ID = 181;
@@ -146,6 +150,7 @@ public class OctavisWarzone extends AbstractInstance
 				}
 			}
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	
@@ -161,6 +166,7 @@ public class OctavisWarzone extends AbstractInstance
 				{
 					return;
 				}
+				
 				world.openCloseDoor(MAIN_DOOR_2, true);
 				break;
 			}
@@ -171,6 +177,7 @@ public class OctavisWarzone extends AbstractInstance
 				{
 					return;
 				}
+				
 				world.openCloseDoor(MAIN_DOOR_2, false);
 				world.openCloseDoor(MAIN_DOOR_1, false);
 				world.setParameter("TELEPORT_ACTIVE", true);
@@ -186,6 +193,7 @@ public class OctavisWarzone extends AbstractInstance
 				{
 					return;
 				}
+				
 				world.spawnGroup("STAGE_1");
 				world.getAliveNpcs(BEASTS).forEach(beasts ->
 				{
@@ -211,6 +219,7 @@ public class OctavisWarzone extends AbstractInstance
 				{
 					return;
 				}
+				
 				world.getAliveNpcs(BEASTS).forEach(beasts ->
 				{
 					addMoveToDesire(npc, beasts.getLocation(), 23);
@@ -252,6 +261,7 @@ public class OctavisWarzone extends AbstractInstance
 				{
 					return;
 				}
+				
 				playMovie(world, Movie.SC_OCTABIS_PHASECH_A);
 				getTimers().addTimer("START_STAGE_2", 12000, null, player);
 				break;
@@ -263,6 +273,7 @@ public class OctavisWarzone extends AbstractInstance
 				{
 					return;
 				}
+				
 				world.spawnGroup("STAGE_2").forEach(octavis -> octavis.asAttackable().setCanReturnToSpawnPoint(false));
 				break;
 			}
@@ -273,6 +284,7 @@ public class OctavisWarzone extends AbstractInstance
 				{
 					return;
 				}
+				
 				playMovie(world, Movie.SC_OCTABIS_PHASECH_B);
 				getTimers().addTimer("START_STAGE_3", 15000, null, player);
 				break;
@@ -284,6 +296,7 @@ public class OctavisWarzone extends AbstractInstance
 				{
 					return;
 				}
+				
 				world.spawnGroup("STAGE_3").forEach(octavis -> octavis.asAttackable().setCanReturnToSpawnPoint(false));
 				break;
 			}
@@ -294,6 +307,7 @@ public class OctavisWarzone extends AbstractInstance
 				{
 					return;
 				}
+				
 				playMovie(world, Movie.SC_OCTABIS_ENDING);
 				getTimers().addTimer("USM_SCENE_TIMER", 40000, null, player);
 				break;
@@ -305,6 +319,7 @@ public class OctavisWarzone extends AbstractInstance
 				{
 					return;
 				}
+				
 				world.broadcastPacket(ExShowUsm.OCTAVIS_INSTANCE_END);
 				break;
 			}
@@ -315,6 +330,7 @@ public class OctavisWarzone extends AbstractInstance
 				{
 					return;
 				}
+				
 				final StatSet npcVars = npc.getVariables();
 				final int spawnIndex = npcVars.getInt("SPAWN_INDEX", 1);
 				if (spawnIndex < 7)
@@ -327,6 +343,7 @@ public class OctavisWarzone extends AbstractInstance
 					{
 						world.spawnGroup("magmeld4_2621_gmo" + spawnIndex + "m1");
 					}
+					
 					npcVars.set("SPAWN_INDEX", spawnIndex + 1);
 					getTimers().addTimer("GLADIATOR_START_SPAWN", 3000, npc, null);
 				}
@@ -339,6 +356,7 @@ public class OctavisWarzone extends AbstractInstance
 				{
 					return;
 				}
+				
 				final StatSet npcParams = npc.getParameters();
 				final int moveX = npcParams.getInt("Move_to_X", 0);
 				final int moveY = npcParams.getInt("Move_to_Y", 0);
@@ -375,6 +393,7 @@ public class OctavisWarzone extends AbstractInstance
 				{
 					World.getInstance().getVisibleObjectsInRange(npc, Attackable.class, 4000, obj -> ArrayUtil.contains(BEASTS_MINIONS, obj.getId()) || ArrayUtil.contains(GLADIATORS, obj.getId())).forEach(minion -> addAttackPlayerDesire(minion, mostHated.asPlayer(), 23));
 				}
+				
 				getTimers().addTimer("MINION_CALL", 5000 + (getRandom(5) * 1000), npc, null);
 				break;
 			}
@@ -393,6 +412,7 @@ public class OctavisWarzone extends AbstractInstance
 						addSkillCastDesire(npc, mostHated, STAGE_2_SKILL_2, 23);
 					}
 				}
+				
 				getTimers().addTimer("ATTACK_TIMER", getRandom(7, 9) * 1000, npc, null);
 				break;
 			}
@@ -447,6 +467,7 @@ public class OctavisWarzone extends AbstractInstance
 					getTimers().addTimer("GLADIATOR_START_SPAWN", 6000, npc, null);
 					getTimers().addTimer("ATTACK_TIMER", 15000, npc, null);
 					getTimers().addTimer("MINION_CALL", 30000, npc, null);
+					
 					// myself->AddTimerEx(Royal_Timer, 30 * 1000);
 					// myself->AddTimerEx(Scan_Timer, 1000);
 					getTimers().addTimer("BEASTS_MINIONS_SPAWN", 1000, npc, null);
@@ -466,6 +487,7 @@ public class OctavisWarzone extends AbstractInstance
 					{
 						npc.setDisplayEffect(state);
 					}
+					
 					npcVars.set("HP_STATE", hpState + 1);
 				}
 			}
@@ -496,6 +518,7 @@ public class OctavisWarzone extends AbstractInstance
 				getTimers().cancelTimer("MINION_CALL", npc, null);
 				getTimers().cancelTimer("ATTACK_TIMER", npc, null);
 				getTimers().cancelTimer("MEDUSA_SKILL_TIMER", npc, null);
+				
 				// Despawn beasts
 				world.getAliveNpcs(BEASTS_MINIONS).forEach(beast -> beast.doDie(null));
 				
@@ -504,6 +527,7 @@ public class OctavisWarzone extends AbstractInstance
 				{
 					world.despawnGroup(isExtremeMode(world) ? ("magmeld4_2621_gro" + i + "m1") : ("magmeld4_2621_gmo" + i + "m1"));
 				}
+				
 				getTimers().addTimer("END_STAGE_2", 3000, null, killer);
 			}
 			else if (ArrayUtil.contains(OCTAVIS_STAGE_3, npc.getId()))

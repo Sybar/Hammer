@@ -3648,6 +3648,10 @@
 				<power>10</power>
 				<ticks>5</ticks>
 			</effect>
+			<effect name="AreaOfEffectDamageDefence">
+				<mode>PER</mode>
+				<amount>99</amount>
+			</effect>
 			<effect name="Heal" fromLevel="1" toLevel="3" fromSubLevel="2001" toSubLevel="2020">
 				<power>
 					<value fromLevel="1" toLevel="3" fromSubLevel="2001" toSubLevel="2001">1936</value>

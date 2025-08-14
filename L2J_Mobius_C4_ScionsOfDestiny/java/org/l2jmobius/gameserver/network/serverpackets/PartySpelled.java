@@ -50,6 +50,7 @@ public class PartySpelled extends ServerPacket
 		ServerPackets.PARTY_SPELLED.writeId(this, buffer);
 		buffer.writeInt(_creature.isServitor() ? 2 : _creature.isPet() ? 1 : 0);
 		buffer.writeInt(_creature.getObjectId());
+		
 		// C4 does not support more than 20 effects in party window, so limiting them makes no difference.
 		// This check ignores first effects, so there is space for last effects to be viewable by party members.
 		// It may also help healers be aware of cursed members.
@@ -63,6 +64,7 @@ public class PartySpelled extends ServerPacket
 		{
 			buffer.writeInt(_effects.size());
 		}
+		
 		for (; size < _effects.size(); size++)
 		{
 			final BuffInfo info = _effects.get(size);

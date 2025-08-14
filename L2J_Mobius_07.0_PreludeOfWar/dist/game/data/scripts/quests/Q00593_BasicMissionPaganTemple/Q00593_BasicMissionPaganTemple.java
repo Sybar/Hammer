@@ -40,12 +40,15 @@ public class Q00593_BasicMissionPaganTemple extends Quest
 	private static final int PENNY = 34413;
 	private static final int RAZEN = 33803;
 	private static final int ELIYAH = 31329;
+	
 	// Rewards
 	private static final int SCROLL_OF_ESCAPE_PAGAN_TEMPLE = 40225;
 	private static final int SCROLL_OF_ESCAPE_TOWN_OF_ADEN = 48413;
+	
 	// Misc
 	private static final int MIN_LEVEL = 97;
 	private static final int MAX_LEVEL = 99;
+	
 	// Location
 	private static final Location TOWN_OF_ADEN = new Location(146632, 26760, -2213);
 	
@@ -127,6 +130,7 @@ public class Q00593_BasicMissionPaganTemple extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -228,6 +232,7 @@ public class Q00593_BasicMissionPaganTemple extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

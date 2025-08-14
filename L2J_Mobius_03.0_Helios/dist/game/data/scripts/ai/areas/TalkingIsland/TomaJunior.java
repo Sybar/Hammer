@@ -49,6 +49,7 @@ public class TomaJunior extends AbstractNpcAI
 		{
 			npc.broadcastSocialAction(6);
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	

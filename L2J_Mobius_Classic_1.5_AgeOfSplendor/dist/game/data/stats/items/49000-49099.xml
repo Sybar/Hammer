@@ -279,12 +279,12 @@
 		<set name="etcitem_type" val="SCROLL" />
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<target levelRange="21;85" />
-		</cond>
-		<cond msgId="113" addName="1">
+		</conditions>
+		<conditions msgId="113" addName="1">
 			<player chaotic="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="39020" level="1" /> <!-- Scroll: PK (No-grade) -->
 		</skills>
@@ -300,12 +300,12 @@
 		<set name="etcitem_type" val="SCROLL" />
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<target levelRange="20;39" />
-		</cond>
-		<cond msgId="113" addName="1">
+		</conditions>
+		<conditions msgId="113" addName="1">
 			<player chaotic="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="39021" level="1" /> <!-- Scroll: PK (D-grade) -->
 		</skills>
@@ -321,12 +321,12 @@
 		<set name="etcitem_type" val="SCROLL" />
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<target levelRange="40;51" />
-		</cond>
-		<cond msgId="113" addName="1">
+		</conditions>
+		<conditions msgId="113" addName="1">
 			<player chaotic="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="39022" level="1" /> <!-- Scroll: PK (C-grade) -->
 		</skills>
@@ -342,12 +342,12 @@
 		<set name="etcitem_type" val="SCROLL" />
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<target levelRange="52;60" />
-		</cond>
-		<cond msgId="113" addName="1">
+		</conditions>
+		<conditions msgId="113" addName="1">
 			<player chaotic="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="39023" level="1" /> <!-- Scroll: PK (B-grade) -->
 		</skills>
@@ -363,12 +363,12 @@
 		<set name="etcitem_type" val="SCROLL" />
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<target levelRange="61;75" />
-		</cond>
-		<cond msgId="113" addName="1">
+		</conditions>
+		<conditions msgId="113" addName="1">
 			<player chaotic="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="39024" level="1" /> <!-- Scroll: PK (A-grade) -->
 		</skills>
@@ -466,9 +466,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="POTION" />
 		<set name="for_npc" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="39028" level="1" /> <!-- Newbie Wind Walk Potion -->
 		</skills>
@@ -1254,9 +1254,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="32044" level="1" /> <!-- Teleport: Entrance to Cruma Tower -->
 		</skills>
@@ -1274,9 +1274,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="32045" level="1" /> <!-- Teleport: Entrance to Dragon Valley -->
 		</skills>
@@ -1294,9 +1294,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="32046" level="1" /> <!-- Teleport: Dragon Valley Bridge -->
 		</skills>
@@ -1314,9 +1314,9 @@
 		<set name="is_freightable" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="32031" level="1" /> <!-- Scroll of Escape: Talking Island Village -->
 		</skills>
@@ -1334,9 +1334,9 @@
 		<set name="is_freightable" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="32032" level="1" /> <!-- Scroll of Escape: Elven Village -->
 		</skills>
@@ -1354,9 +1354,9 @@
 		<set name="is_freightable" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="32033" level="1" /> <!-- Scroll of Escape: Dark Elf Village -->
 		</skills>
@@ -1374,9 +1374,9 @@
 		<set name="is_freightable" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="32034" level="1" /> <!-- Scroll of Escape: Orc Village -->
 		</skills>
@@ -1394,9 +1394,9 @@
 		<set name="is_freightable" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="32035" level="1" /> <!-- Scroll of Escape: Dwarven Village -->
 		</skills>
@@ -1414,9 +1414,9 @@
 		<set name="is_freightable" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="32036" level="1" /> <!-- Scroll of Escape: Gludin Village -->
 		</skills>
@@ -1434,9 +1434,9 @@
 		<set name="is_freightable" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="32037" level="1" /> <!-- Scroll of Escape: Town of Gludio -->
 		</skills>
@@ -1454,9 +1454,9 @@
 		<set name="is_freightable" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="32038" level="1" /> <!-- Scroll of Escape: Town of Dion -->
 		</skills>

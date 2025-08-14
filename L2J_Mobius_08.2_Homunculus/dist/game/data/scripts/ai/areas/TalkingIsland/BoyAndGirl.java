@@ -35,6 +35,7 @@ public class BoyAndGirl extends AbstractNpcAI
 	// NPCs
 	private static final int BOY = 33224;
 	private static final int GIRL = 33217;
+	
 	// Items
 	private static final int WEAPON = 15304;
 	
@@ -59,6 +60,7 @@ public class BoyAndGirl extends AbstractNpcAI
 				npc.setRHandId(WEAPON);
 				npc.setScriptValue(1);
 			}
+			
 			startQuestTimer("NPC_CHANGEWEAP", 15000 + (getRandom(5) * 1000), npc, null);
 		}
 		else if (event.equals("NPC_SHOUT"))
@@ -66,6 +68,7 @@ public class BoyAndGirl extends AbstractNpcAI
 			npc.broadcastSay(ChatType.NPC_GENERAL, npc.getId() == BOY ? NpcStringId.WOW_2 : NpcStringId.BOYS_ARE_SO_ANNOYING);
 			startQuestTimer("NPC_SHOUT", 10000 + (getRandom(5) * 1000), npc, null);
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	

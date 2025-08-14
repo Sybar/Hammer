@@ -35,11 +35,14 @@ public class Q00263_OrcSubjugation extends Quest
 {
 	// NPCs
 	private static final int KAYLEEN = 30346;
+	
 	// Items
 	private static final int ORC_AMULET = 1116;
 	private static final int ORC_NECKLACE = 1117;
+	
 	// Misc
 	private static final int MIN_LEVEL = 8;
+	
 	// Monsters
 	private static final Map<Integer, Integer> MONSTERS = new HashMap<>();
 	static
@@ -90,6 +93,7 @@ public class Q00263_OrcSubjugation extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -133,6 +137,7 @@ public class Q00263_OrcSubjugation extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

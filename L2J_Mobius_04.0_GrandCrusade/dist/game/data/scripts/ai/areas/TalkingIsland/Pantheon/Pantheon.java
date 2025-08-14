@@ -35,8 +35,10 @@ public class Pantheon extends AbstractNpcAI
 {
 	// NPC
 	private static final int PANTHEON = 32972;
+	
 	// Location
 	private static final Location MUSEUM = new Location(-114711, 243911, -7968);
+	
 	// Misc
 	private static final int MIN_LEVEL = 20;
 	
@@ -77,6 +79,7 @@ public class Pantheon extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -88,6 +91,7 @@ public class Pantheon extends AbstractNpcAI
 		{
 			showOnScreenMsg(player, NpcStringId.BEGIN_TUTORIAL_QUESTS, ExShowScreenMessage.TOP_CENTER, 4500);
 		}
+		
 		return super.onFirstTalk(npc, player);
 	}
 	

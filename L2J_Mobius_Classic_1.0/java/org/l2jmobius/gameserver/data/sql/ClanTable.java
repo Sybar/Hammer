@@ -152,6 +152,7 @@ public class ClanTable
 				return clan;
 			}
 		}
+		
 		return null;
 	}
 	
@@ -173,21 +174,25 @@ public class ClanTable
 			player.sendPacket(SystemMessageId.YOU_DO_NOT_MEET_THE_CRITERIA_IN_ORDER_TO_CREATE_A_CLAN);
 			return null;
 		}
+		
 		if (player.getClanId() != 0)
 		{
 			player.sendPacket(SystemMessageId.YOU_HAVE_FAILED_TO_CREATE_A_CLAN);
 			return null;
 		}
+		
 		if (System.currentTimeMillis() < player.getClanCreateExpiryTime())
 		{
 			player.sendPacket(SystemMessageId.YOU_MUST_WAIT_10_DAYS_BEFORE_CREATING_A_NEW_CLAN);
 			return null;
 		}
+		
 		if (!StringUtil.isAlphaNumeric(clanName) || (clanName.length() < 2))
 		{
 			player.sendPacket(SystemMessageId.CLAN_NAME_IS_INVALID);
 			return null;
 		}
+		
 		if (clanName.length() > 16)
 		{
 			player.sendPacket(SystemMessageId.CLAN_NAME_S_LENGTH_IS_INCORRECT);
@@ -359,6 +364,7 @@ public class ClanTable
 			{
 				return;
 			}
+			
 			if (getClan(clanId).getDissolvingExpiryTime() != 0)
 			{
 				destroyClan(clanId);
@@ -375,6 +381,7 @@ public class ClanTable
 				return true;
 			}
 		}
+		
 		return false;
 	}
 	
@@ -488,6 +495,7 @@ public class ClanTable
 				}
 			}
 		}
+		
 		return clanAllies;
 	}
 	

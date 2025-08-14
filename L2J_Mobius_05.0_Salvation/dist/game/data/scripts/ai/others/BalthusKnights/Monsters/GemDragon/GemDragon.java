@@ -53,9 +53,11 @@ public final class GemDragon extends AbstractNpcAI
 {
 	// NPCs
 	private static final int STIG_MACH_FRIEND = 34366;
+	
 	// Monsters
 	private static final int GEM_DRAGON = 24097;
 	private static final int GEM_DRAGON_ANTHARAS = 24091;
+	
 	// Skills
 	private static final double DAMAGE_BY_SKILL = 0.5d;
 	private static final SkillHolder BALTHUS_KNIGHT_YOKE = new SkillHolder(32167, 1);
@@ -121,6 +123,7 @@ public final class GemDragon extends AbstractNpcAI
 							target.doCast(BALTHUS_KNIGHT_YOKE_RELEASE.getSkill());
 							return new DamageReturn(false, true, false, target.getMaxHp() * DAMAGE_BY_SKILL);
 						}
+						
 						return new DamageReturn(false, true, false, target.getMaxHp() * DAMAGE_BY_SKILL);
 					}
 					
@@ -130,8 +133,10 @@ public final class GemDragon extends AbstractNpcAI
 					}
 				}
 			}
+			
 			return null;
 		}
+		
 		return null;
 	}
 	

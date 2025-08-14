@@ -77,6 +77,7 @@ public class RecipeManager
 			player.sendPacket(response);
 			return;
 		}
+		
 		player.sendPacket(SystemMessageId.YOU_MAY_NOT_ALTER_YOUR_RECIPE_BOOK_WHILE_ENGAGED_IN_MANUFACTURING);
 	}
 	
@@ -337,6 +338,7 @@ public class RecipeManager
 				{
 					return; // check stat use
 				}
+				
 				updateCurMp(); // update craft window mp bar
 				grabSomeItems(); // grab (equip) some more items with a nice msg to player
 				
@@ -347,7 +349,7 @@ public class RecipeManager
 					
 					// FIXME: please fix this packet to show crafting animation (somebody)
 					final MagicSkillUse msk = new MagicSkillUse(_player, _skillId, _skillLevel, _delay, 0);
-					_player.broadcastPacket(msk);
+					_player.broadcastSkillPacket(msk, _player);
 					
 					_player.sendPacket(new SetupGauge(_player.getObjectId(), 0, _delay));
 					ThreadPool.schedule(this, 100 + _delay);
@@ -370,6 +372,7 @@ public class RecipeManager
 						finishCrafting();
 					}
 				}
+				
 			} // for old craft mode just finish
 			else
 			{
@@ -428,8 +431,10 @@ public class RecipeManager
 				{
 					_target.sendPacket(SystemMessageId.YOU_FAILED_AT_MIXING_THE_ITEM);
 				}
+				
 				updateMakeInfo(false);
 			}
+			
 			// update load and mana bar of craft window
 			updateCurMp();
 			_activeMakers.remove(_player.getObjectId());
@@ -517,6 +522,7 @@ public class RecipeManager
 					_itemGrab *= altStatChange.getValue();
 				}
 			}
+			
 			// determine number of creation passes needed
 			_creationPasses = (_totalItems / _itemGrab) + ((_totalItems % _itemGrab) != 0 ? 1 : 0);
 			if (_creationPasses < 1)
@@ -548,6 +554,7 @@ public class RecipeManager
 							_target.sendPacket(SystemMessageId.NOT_ENOUGH_HP);
 							abort();
 						}
+						
 						ret = false;
 					}
 					else if (isReduce)
@@ -570,6 +577,7 @@ public class RecipeManager
 							_target.sendPacket(SystemMessageId.NOT_ENOUGH_MP);
 							abort();
 						}
+						
 						ret = false;
 					}
 					else if (isReduce)
@@ -585,6 +593,7 @@ public class RecipeManager
 					abort();
 				}
 			}
+			
 			return ret;
 		}
 		
@@ -638,6 +647,7 @@ public class RecipeManager
 					}
 				}
 			}
+			
 			return materials;
 		}
 		
@@ -735,10 +745,12 @@ public class RecipeManager
 					_exp = template.getReferencePrice() * itemCount;
 					_exp /= recipeLevel;
 				}
+				
 				if (_sp < 0)
 				{
 					_sp = _exp / 10;
 				}
+				
 				if (itemId == rareProdId)
 				{
 					_exp *= Config.ALT_GAME_CREATION_RARE_XPSP_RATE;
@@ -749,6 +761,7 @@ public class RecipeManager
 				{
 					_exp = 0;
 				}
+				
 				if (_sp < 0)
 				{
 					_sp = 0;
@@ -764,6 +777,7 @@ public class RecipeManager
 				// faster crafting -> less XP you can use ALT_GAME_CREATION_XP_RATE/SP to modify XP/SP gained (default = 1)
 				_player.addExpAndSp((int) _player.getStat().getValue(Stat.EXPSP_RATE, _exp * Config.ALT_GAME_CREATION_XP_RATE * Config.ALT_GAME_CREATION_SPEED), (int) _player.getStat().getValue(Stat.EXPSP_RATE, _sp * Config.ALT_GAME_CREATION_SP_RATE * Config.ALT_GAME_CREATION_SPEED));
 			}
+			
 			updateMakeInfo(true); // success
 		}
 	}

@@ -37,17 +37,20 @@ public class Q00211_TrialOfTheChallenger extends Quest
 	private static final int MARTIEN = 30645;
 	private static final int RALDO = 30646;
 	private static final int CHEST_OF_SHYSLASSYS = 30647;
+	
 	// Monsters
 	private static final int SHYSLASSYS = 27110;
 	private static final int GORR = 27112;
 	private static final int BARAHAM = 27113;
 	private static final int SUCCUBUS_QUEEN = 27114;
+	
 	// Items
 	private static final int LETTER_OF_KASH = 2628;
 	private static final int WATCHER_EYE_1 = 2629;
 	private static final int WATCHER_EYE_2 = 2630;
 	private static final int SCROLL_OF_SHYSLASSYS = 2631;
 	private static final int BROKEN_KEY = 2632;
+	
 	// Rewards
 	private static final int ADENA = 57;
 	private static final int ELVEN_NECKLACE_BEADS = 1904;
@@ -336,6 +339,7 @@ public class Q00211_TrialOfTheChallenger extends Quest
 					giveItems(player, WATCHER_EYE_2, 1);
 					st.setCond(7, true);
 				}
+				
 				addSpawn(RALDO, npc, false, 100000);
 				break;
 			}
@@ -345,6 +349,7 @@ public class Q00211_TrialOfTheChallenger extends Quest
 				{
 					st.setCond(10, true);
 				}
+				
 				addSpawn(RALDO, npc, false, 100000);
 				break;
 			}

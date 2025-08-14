@@ -172,6 +172,7 @@ public abstract class DocumentBase
 		{
 			LOGGER.log(Level.SEVERE, "Error loading file " + _file, e);
 		}
+		
 		return document;
 	}
 	
@@ -202,7 +203,7 @@ public abstract class DocumentBase
 			return;
 		}
 		
-		if ("cond".equalsIgnoreCase(n.getNodeName()))
+		if ("conditions".equalsIgnoreCase(n.getNodeName()))
 		{
 			condition = parseCondition(n.getFirstChild(), template);
 			final Node msg = n.getAttributes().getNamedItem("msg");
@@ -220,8 +221,10 @@ public abstract class DocumentBase
 					condition.addName();
 				}
 			}
+			
 			n = n.getNextSibling();
 		}
+		
 		for (; n != null; n = n.getNextSibling())
 		{
 			final String name = n.getNodeName().toLowerCase();
@@ -340,10 +343,12 @@ public abstract class DocumentBase
 				cond.add(parseCondition(n, template));
 			}
 		}
+		
 		if ((cond.conditions == null) || (cond.conditions.length == 0))
 		{
 			LOGGER.severe("Empty <and> condition in " + _file);
 		}
+		
 		return cond;
 	}
 	
@@ -358,10 +363,12 @@ public abstract class DocumentBase
 				cond.add(parseCondition(n, template));
 			}
 		}
+		
 		if ((cond.conditions == null) || (cond.conditions.length == 0))
 		{
 			LOGGER.severe("Empty <or> condition in " + _file);
 		}
+		
 		return cond;
 	}
 	
@@ -375,6 +382,7 @@ public abstract class DocumentBase
 				return new ConditionLogicNot(parseCondition(n, template));
 			}
 		}
+		
 		LOGGER.severe("Empty <not> condition in " + _file);
 		return null;
 	}
@@ -399,6 +407,7 @@ public abstract class DocumentBase
 							races.add(Race.valueOf(racesVal[r]));
 						}
 					}
+					
 					cond = joinAnd(cond, new ConditionPlayerRace(races));
 					break;
 				}
@@ -573,6 +582,7 @@ public abstract class DocumentBase
 						final String item = st.nextToken().trim();
 						array.add(Integer.decode(getValue(item, template)));
 					}
+					
 					cond = joinAnd(cond, new ConditionPlayerHasClanHall(array));
 					break;
 				}
@@ -649,6 +659,7 @@ public abstract class DocumentBase
 						final String item = st.nextToken().trim();
 						array.add(Integer.decode(getValue(item, template)));
 					}
+					
 					cond = joinAnd(cond, new ConditionPlayerClassIdRestriction(array));
 					break;
 				}
@@ -678,6 +689,7 @@ public abstract class DocumentBase
 						final String item = st.nextToken().trim();
 						set.add(Integer.decode(getValue(item, template)));
 					}
+					
 					cond = joinAnd(cond, new ConditionPlayerInstanceId(set));
 					break;
 				}
@@ -708,6 +720,7 @@ public abstract class DocumentBase
 						final String item = st.nextToken().trim();
 						array.add(Integer.decode(getValue(item, template)));
 					}
+					
 					cond = joinAnd(cond, new ConditionPlayerHasPet(array));
 					break;
 				}
@@ -720,6 +733,7 @@ public abstract class DocumentBase
 						final String item = st.nextToken().trim();
 						array.add(Integer.decode(getValue(item, null)));
 					}
+					
 					cond = joinAnd(cond, new ConditionPlayerServitorNpcId(array));
 					break;
 				}
@@ -734,6 +748,7 @@ public abstract class DocumentBase
 						{
 							npcIds.add(Integer.parseInt(getValue(ids[index], template)));
 						}
+						
 						final int radius = Integer.parseInt(st.nextToken());
 						final boolean val = Boolean.parseBoolean(st.nextToken());
 						cond = joinAnd(cond, new ConditionPlayerRangeFromNpc(npcIds, radius, val));
@@ -751,6 +766,7 @@ public abstract class DocumentBase
 						{
 							npcIds.add(Integer.parseInt(getValue(ids[index], template)));
 						}
+						
 						final int radius = Integer.parseInt(st.nextToken());
 						final boolean val = Boolean.parseBoolean(st.nextToken());
 						cond = joinAnd(cond, new ConditionPlayerRangeFromSummonedNpc(npcIds, radius, val));
@@ -841,6 +857,7 @@ public abstract class DocumentBase
 						final String item = st.nextToken().trim();
 						set.add(Integer.decode(getValue(item, template)));
 					}
+					
 					cond = joinAnd(cond, new ConditionPlayerInsideZoneId(set));
 					break;
 				}
@@ -866,6 +883,7 @@ public abstract class DocumentBase
 					{
 						array.add(CategoryType.valueOf(getValue(value, template)));
 					}
+					
 					cond = joinAnd(cond, new ConditionCategoryType(array));
 					break;
 				}
@@ -908,6 +926,7 @@ public abstract class DocumentBase
 		{
 			LOGGER.severe("Unrecognized <player> condition in " + _file);
 		}
+		
 		return cond;
 	}
 	
@@ -974,6 +993,7 @@ public abstract class DocumentBase
 						final String item = st.nextToken().trim();
 						set.add(Integer.decode(getValue(item, null)));
 					}
+					
 					cond = joinAnd(cond, new ConditionTargetClassIdRestriction(set));
 					break;
 				}
@@ -1037,6 +1057,7 @@ public abstract class DocumentBase
 								break;
 							}
 						}
+						
 						for (ArmorType at : ArmorType.values())
 						{
 							if (at.name().equals(item))
@@ -1046,6 +1067,7 @@ public abstract class DocumentBase
 							}
 						}
 					}
+					
 					cond = joinAnd(cond, new ConditionTargetUsesWeaponKind(mask));
 					break;
 				}
@@ -1058,6 +1080,7 @@ public abstract class DocumentBase
 						final String item = st.nextToken().trim();
 						set.add(Integer.decode(getValue(item, null)));
 					}
+					
 					cond = joinAnd(cond, new ConditionTargetNpcId(set));
 					break;
 				}
@@ -1074,8 +1097,10 @@ public abstract class DocumentBase
 						{
 							throw new IllegalArgumentException("Instance type not recognized: " + valuesSplit[j]);
 						}
+						
 						types[j] = type;
 					}
+					
 					cond = joinAnd(cond, new ConditionTargetNpcType(types));
 					break;
 				}
@@ -1103,6 +1128,7 @@ public abstract class DocumentBase
 		{
 			LOGGER.severe("Unrecognized <target> condition in " + _file);
 		}
+		
 		return cond;
 	}
 	
@@ -1144,6 +1170,7 @@ public abstract class DocumentBase
 							LOGGER.info("[parseUsingCondition=\"kind\"] Unknown item type name: " + item);
 						}
 					}
+					
 					cond = joinAnd(cond, new ConditionUsingItemType(mask));
 					break;
 				}
@@ -1165,6 +1192,7 @@ public abstract class DocumentBase
 							LOGGER.info("[parseUsingCondition=\"slot\"] Unknown item slot name: " + item);
 						}
 					}
+					
 					cond = joinAnd(cond, new ConditionUsingSlotType(mask));
 					break;
 				}
@@ -1184,6 +1212,7 @@ public abstract class DocumentBase
 					{
 						enchant = Integer.parseInt(st.nextToken().trim());
 					}
+					
 					cond = joinAnd(cond, new ConditionSlotItemId(slot, id, enchant));
 					break;
 				}
@@ -1200,6 +1229,7 @@ public abstract class DocumentBase
 		{
 			LOGGER.severe("Unrecognized <using> condition in " + _file);
 		}
+		
 		return cond;
 	}
 	
@@ -1215,21 +1245,25 @@ public abstract class DocumentBase
 				final boolean val = Boolean.parseBoolean(a.getNodeValue());
 				cond = joinAnd(cond, new ConditionWithSkill(val));
 			}
+			
 			if ("night".equalsIgnoreCase(a.getNodeName()))
 			{
 				final boolean val = Boolean.parseBoolean(a.getNodeValue());
 				cond = joinAnd(cond, new ConditionGameTime(val));
 			}
+			
 			if ("chance".equalsIgnoreCase(a.getNodeName()))
 			{
 				final int val = Integer.decode(getValue(a.getNodeValue(), null));
 				cond = joinAnd(cond, new ConditionGameChance(val));
 			}
 		}
+		
 		if (cond == null)
 		{
 			LOGGER.severe("Unrecognized <game> condition in " + _file);
 		}
+		
 		return cond;
 	}
 	
@@ -1241,12 +1275,14 @@ public abstract class DocumentBase
 		{
 			throw new IllegalArgumentException("Table name must start with #");
 		}
+		
 		final StringTokenizer data = new StringTokenizer(n.getFirstChild().getNodeValue());
 		final List<String> array = new ArrayList<>(data.countTokens());
 		while (data.hasMoreTokens())
 		{
 			array.add(data.nextToken());
 		}
+		
 		setTable(name, array.toArray(new String[array.size()]));
 	}
 	
@@ -1288,6 +1324,7 @@ public abstract class DocumentBase
 				throw new IllegalStateException();
 			}
 		}
+		
 		return value;
 	}
 	
@@ -1297,11 +1334,13 @@ public abstract class DocumentBase
 		{
 			return c;
 		}
+		
 		if (cond instanceof ConditionLogicAnd)
 		{
 			((ConditionLogicAnd) cond).add(c);
 			return cond;
 		}
+		
 		final ConditionLogicAnd and = new ConditionLogicAnd();
 		and.add(cond);
 		and.add(c);

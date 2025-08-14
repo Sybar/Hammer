@@ -103,6 +103,7 @@ public class GustavsManor extends AbstractInstance
 				{
 					instance.openCloseDoor(doorId, true);
 				}
+				
 				instance.despawnGroup("GustavNPC_2");
 				instance.spawnGroup("GustavMonsters_2").forEach(n -> n.getSpawn().stopRespawn());
 				setRandomTitles(instance, true);
@@ -119,6 +120,7 @@ public class GustavsManor extends AbstractInstance
 						npc.getSpawn().stopRespawn();
 						npc.doDie(null);
 					}
+					
 					instance.spawnGroup("GustavNPC_3").forEach(n -> n.getSpawn().stopRespawn());
 				}, 10000);
 				break;
@@ -142,9 +144,11 @@ public class GustavsManor extends AbstractInstance
 	private void spawnBoss(Instance instance)
 	{
 		final boolean random = Rnd.nextBoolean();
+		
 		// show text
 		final NpcStringId bossText = random ? STRING_ID_01 : STRING_ID_02;
 		instance.broadcastPacket(new ExShowScreenMessage(bossText, ExShowScreenMessage.TOP_CENTER, 10000, true));
+		
 		// spawn boss
 		final String bossTemplate = random ? "GustavMonsters_Boss_Gustav" : "GustavMonsters_Boss_GustavSteward";
 		instance.spawnGroup(bossTemplate).forEach(n -> n.getSpawn().stopRespawn());

@@ -32,6 +32,7 @@ public class Q00018_MeetingWithTheGoldenRam extends Quest
 	private static final int DONAL = 31314;
 	private static final int DAISY = 31315;
 	private static final int ABERCROMBIE = 31555;
+	
 	// Items
 	private static final int SUPPLY_BOX = 7245;
 	

@@ -33,6 +33,7 @@ public class Christmas extends LongTimeEvent
 {
 	// NPC
 	private static final int SANTA = 31863;
+	
 	// Skills
 	private static final SkillHolder[] FIGHTER_BUFFS =
 	{
@@ -54,6 +55,7 @@ public class Christmas extends LongTimeEvent
 		new SkillHolder(4330, 1), // Concentration
 		new SkillHolder(4331, 1), // Empower
 	};
+	
 	// Misc
 	private static final boolean ALLOW_SANTA_BUFFS = true;
 	private static final int SANTA_BUFF_RANGE = 500;
@@ -106,9 +108,11 @@ public class Christmas extends LongTimeEvent
 						nearby.sendMessage("Santa Trainee has gifted you buffs!");
 					}
 				}
+				
 				startQuestTimer("SantaBlessings", 15000, npc, null);
 			}
 		}
+		
 		return null;
 	}
 	

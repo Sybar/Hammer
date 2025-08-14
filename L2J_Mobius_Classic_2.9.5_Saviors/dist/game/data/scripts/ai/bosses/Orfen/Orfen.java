@@ -23,6 +23,8 @@ package ai.bosses.Orfen;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
+import java.util.Collection;
+
 import org.l2jmobius.Config;
 import org.l2jmobius.gameserver.ai.Intention;
 import org.l2jmobius.gameserver.managers.GrandBossManager;
@@ -102,6 +104,7 @@ public class Orfen extends AbstractNpcAI
 		{
 			// load the unlock date and time for Orfen from DB
 			final long temp = info.getLong("respawn_time") - System.currentTimeMillis();
+			
 			// if Orfen is locked until a certain time, mark it so and start the unlock timer
 			// the unlock time has not yet expired.
 			if (temp > 0)
@@ -125,6 +128,7 @@ public class Orfen extends AbstractNpcAI
 				{
 					loc = POS[3];
 				}
+				
 				final GrandBoss orfen = (GrandBoss) addSpawn(ORFEN, loc, false, 0);
 				GrandBossManager.getInstance().setStatus(ORFEN, ALIVE);
 				spawnBoss(orfen);
@@ -164,6 +168,7 @@ public class Orfen extends AbstractNpcAI
 		GrandBossManager.getInstance().addBoss(npc);
 		npc.broadcastPacket(new PlaySound(1, "BS01_A", 1, npc.getObjectId(), npc.getX(), npc.getY(), npc.getZ()));
 		startQuestTimer("check_orfen_pos", 10000, npc, null, true);
+		
 		// Spawn minions
 		final int x = npc.getX();
 		final int y = npc.getY();
@@ -204,6 +209,7 @@ public class Orfen extends AbstractNpcAI
 				{
 					loc = POS[3];
 				}
+				
 				final GrandBoss orfen = (GrandBoss) addSpawn(ORFEN, loc, false, 0);
 				GrandBossManager.getInstance().setStatus(ORFEN, ALIVE);
 				spawnBoss(orfen);
@@ -243,6 +249,7 @@ public class Orfen extends AbstractNpcAI
 				{
 					mob.decayMe();
 				}
+				
 				_minions.clear();
 				break;
 			}
@@ -267,11 +274,12 @@ public class Orfen extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	
 	@Override
-	public void onSkillSee(Npc npc, Player caster, Skill skill, WorldObject[] targets, boolean isSummon)
+	public void onSkillSee(Npc npc, Player caster, Skill skill, Collection<WorldObject> targets, boolean isSummon)
 	{
 		if (npc.getId() == ORFEN)
 		{
@@ -308,6 +316,7 @@ public class Orfen extends AbstractNpcAI
 			{
 				chance = 9;
 			}
+			
 			if ((callerId != RIBA_IREN) && (caller.getCurrentHp() < (caller.getMaxHp() / 2.0)) && (getRandom(10) < chance))
 			{
 				npc.getAI().setIntention(Intention.IDLE, null, null);

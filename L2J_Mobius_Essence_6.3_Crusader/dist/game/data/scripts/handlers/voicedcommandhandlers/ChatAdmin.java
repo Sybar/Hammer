@@ -45,7 +45,7 @@ public class ChatAdmin implements IVoicedCommandHandler
 	};
 	
 	@Override
-	public boolean useVoicedCommand(String command, Player activeChar, String params)
+	public boolean onCommand(String command, Player activeChar, String params)
 	{
 		if (!AdminData.getInstance().hasAccess(command, activeChar.getAccessLevel()))
 		{
@@ -62,6 +62,7 @@ public class ChatAdmin implements IVoicedCommandHandler
 					activeChar.sendSysMessage("Usage: .banchat name [minutes]");
 					return true;
 				}
+				
 				final StringTokenizer st = new StringTokenizer(params);
 				if (st.hasMoreTokens())
 				{
@@ -85,21 +86,25 @@ public class ChatAdmin implements IVoicedCommandHandler
 							activeChar.sendSysMessage("Player not online!");
 							return false;
 						}
+						
 						if (player.isChatBanned())
 						{
 							activeChar.sendSysMessage("Player is already punished!");
 							return false;
 						}
+						
 						if (player == activeChar)
 						{
 							activeChar.sendSysMessage("You can't ban yourself!");
 							return false;
 						}
+						
 						if (player.isGM())
 						{
 							activeChar.sendSysMessage("You can't ban a GM!");
 							return false;
 						}
+						
 						if (AdminData.getInstance().hasAccess(command, player.getAccessLevel()))
 						{
 							activeChar.sendSysMessage("You can't ban moderator!");
@@ -115,6 +120,7 @@ public class ChatAdmin implements IVoicedCommandHandler
 						{
 							activeChar.sendSysMessage("Player " + player.getName() + " chat banned forever.");
 						}
+						
 						player.sendMessage("Chat banned by moderator " + activeChar.getName());
 						player.getEffectList().startAbnormalVisualEffect(AbnormalVisualEffect.NO_CHAT);
 					}
@@ -134,6 +140,7 @@ public class ChatAdmin implements IVoicedCommandHandler
 					activeChar.sendSysMessage("Usage: .unbanchat name");
 					return true;
 				}
+				
 				final StringTokenizer st = new StringTokenizer(params);
 				if (st.hasMoreTokens())
 				{
@@ -147,6 +154,7 @@ public class ChatAdmin implements IVoicedCommandHandler
 							activeChar.sendSysMessage("Player not online!");
 							return false;
 						}
+						
 						if (!player.isChatBanned())
 						{
 							activeChar.sendSysMessage("Player is not chat banned!");
@@ -167,11 +175,12 @@ public class ChatAdmin implements IVoicedCommandHandler
 				break;
 			}
 		}
+		
 		return true;
 	}
 	
 	@Override
-	public String[] getVoicedCommandList()
+	public String[] getCommandList()
 	{
 		return VOICED_COMMANDS;
 	}

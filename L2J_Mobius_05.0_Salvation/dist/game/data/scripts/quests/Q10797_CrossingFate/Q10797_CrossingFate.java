@@ -57,6 +57,7 @@ public class Q10797_CrossingFate extends Quest
 		21299, // Valley Buffalo Slave
 		21304 // Valley Grendel Slave
 	};
+	
 	// Misc
 	private static final int MIN_LEVEL = 70;
 	private static final int MAX_LEVEL = 75;
@@ -117,6 +118,7 @@ public class Q10797_CrossingFate extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -141,6 +143,7 @@ public class Q10797_CrossingFate extends Quest
 		{
 			htmltext = getAlreadyCompletedMsg(player);
 		}
+		
 		return htmltext;
 	}
 	
@@ -161,6 +164,7 @@ public class Q10797_CrossingFate extends Quest
 				playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 			}
 		}
+		
 		if ((qs != null) && qs.isCond(2) && (npc.getId() == DAIMON_THE_WHITE_EYED))
 		{
 			qs.setCond(3, true);
@@ -181,6 +185,7 @@ public class Q10797_CrossingFate extends Quest
 				return holder;
 			}
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

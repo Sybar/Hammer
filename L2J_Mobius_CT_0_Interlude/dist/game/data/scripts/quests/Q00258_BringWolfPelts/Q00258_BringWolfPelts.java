@@ -31,6 +31,7 @@ public class Q00258_BringWolfPelts extends Quest
 {
 	// Item
 	private static final int WOLF_PELT = 702;
+	
 	// Rewards
 	private static final int COTTON_SHIRT = 390;
 	private static final int LEATHER_PANTS = 29;

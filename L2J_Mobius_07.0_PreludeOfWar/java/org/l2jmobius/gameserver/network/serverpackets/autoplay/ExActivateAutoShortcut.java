@@ -21,8 +21,8 @@
 package org.l2jmobius.gameserver.network.serverpackets.autoplay;
 
 import org.l2jmobius.commons.network.WritableBuffer;
-import org.l2jmobius.gameserver.model.actor.enums.player.Shortcut;
-import org.l2jmobius.gameserver.model.actor.enums.player.Shortcuts;
+import org.l2jmobius.gameserver.model.actor.holders.player.Shortcut;
+import org.l2jmobius.gameserver.model.actor.holders.player.Shortcuts;
 import org.l2jmobius.gameserver.network.GameClient;
 import org.l2jmobius.gameserver.network.ServerPackets;
 import org.l2jmobius.gameserver.network.serverpackets.ServerPacket;

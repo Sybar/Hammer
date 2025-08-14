@@ -61,6 +61,7 @@ public class CastleDungeon extends AbstractInstance
 		NPCS.put(36410, 20); // Rune
 		NPCS.put(36411, 21); // Schuttgart
 	}
+	
 	// Monsters
 	private static final int[] RAIDS1 =
 	{
@@ -81,10 +82,13 @@ public class CastleDungeon extends AbstractInstance
 		25566,
 		25569
 	};
+	
 	// Item
 	private static final int MARK = 9798;
+	
 	// Locations
 	private static final Location SPAWN_LOC = new Location(12230, -49139, -3013);
+	
 	// Misc
 	private static final int MARK_COUNT = 2520;
 	private static final long REENTER = 24 * 3600000; // 24 hours
@@ -93,13 +97,16 @@ public class CastleDungeon extends AbstractInstance
 	public CastleDungeon()
 	{
 		super(NPCS.values().stream().mapToInt(Integer::valueOf).toArray());
+		
 		// NPCs
 		addStartNpc(NPCS.keySet());
 		addTalkId(NPCS.keySet());
+		
 		// Monsters
 		addKillId(RAIDS1);
 		addKillId(RAIDS2);
 		addKillId(RAIDS3);
+		
 		// Instance
 		addInstanceCreatedId(NPCS.values());
 		addInstanceDestroyId(NPCS.values());
@@ -113,6 +120,7 @@ public class CastleDungeon extends AbstractInstance
 		{
 			enterInstance(player, npc, NPCS.get(npcId));
 		}
+		
 		return null;
 	}
 	
@@ -145,6 +153,7 @@ public class CastleDungeon extends AbstractInstance
 						playSound(member, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 					}
 				}
+				
 				world.finishInstance();
 			}
 			else
@@ -160,6 +169,7 @@ public class CastleDungeon extends AbstractInstance
 	{
 		// Put re-enter for instance
 		REENETER_HOLDER.put(instance.getTemplateId(), System.currentTimeMillis() + REENTER);
+		
 		// Schedule spawn of first raid
 		spawnRaid(instance);
 	}
@@ -182,8 +192,10 @@ public class CastleDungeon extends AbstractInstance
 				showHtmlFile(groupLeader, "enterRestricted.html");
 				return false;
 			}
+			
 			REENETER_HOLDER.remove(template.getId());
 		}
+		
 		return true;
 	}
 	
@@ -196,6 +208,7 @@ public class CastleDungeon extends AbstractInstance
 		{
 			task.cancel(true);
 		}
+		
 		instance.setParameter("spawnTask", null);
 	}
 	

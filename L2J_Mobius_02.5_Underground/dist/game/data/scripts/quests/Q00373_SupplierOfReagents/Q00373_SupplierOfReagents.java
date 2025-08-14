@@ -34,6 +34,7 @@ public class Q00373_SupplierOfReagents extends Quest
 	// NPCs
 	private static final int WESLEY = 30166;
 	private static final int ALCHEMIST_MIXING_URN = 31149;
+	
 	// Mobs
 	private static final int HALLATE_MAID = 20822;
 	private static final int HALLATE_GUARDIAN = 21061;
@@ -42,6 +43,7 @@ public class Q00373_SupplierOfReagents extends Quest
 	private static final int CRENDION = 20813;
 	private static final int PLATINUM_TRIBE_SHAMAN = 20828;
 	private static final int PLATINUM_GUARDIAN_SHAMAN = 21066;
+	
 	// Items
 	private static final int REAGENT_POUNCH1 = 6007;
 	private static final int REAGENT_POUNCH2 = 6008;
@@ -74,6 +76,7 @@ public class Q00373_SupplierOfReagents extends Quest
 	private static final int PURE_SILVER = 6320;
 	private static final int MIXING_MANUAL = 6317;
 	private static final int WESLEYS_MIXING_STONE = 5904;
+	
 	// Misc
 	private static final int MIN_LEVEL = 57;
 	private static final HashMap<String, Integer> HTML_TO_MEMO_STATE = new HashMap<>(20);
@@ -161,6 +164,7 @@ public class Q00373_SupplierOfReagents extends Quest
 		{
 			return htmltext;
 		}
+		
 		switch (event)
 		{
 			case "30166-03.htm":
@@ -270,6 +274,7 @@ public class Q00373_SupplierOfReagents extends Quest
 				{
 					qs.setMemoStateEx(1, 0);
 				}
+				
 				htmltext = event;
 				break;
 			}
@@ -283,6 +288,7 @@ public class Q00373_SupplierOfReagents extends Quest
 				{
 					qs.setMemoStateEx(1, 0);
 				}
+				
 				htmltext = event;
 				break;
 			}
@@ -324,6 +330,7 @@ public class Q00373_SupplierOfReagents extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -445,6 +452,7 @@ public class Q00373_SupplierOfReagents extends Quest
 				htmltext = "31149-01.html";
 			}
 		}
+		
 		return htmltext;
 	}
 	

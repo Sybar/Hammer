@@ -63,6 +63,7 @@ public class EquipmentUpgradeNormalData implements IXmlReader
 		{
 			player.sendPacket(ExUpgradeSystemNormalResult.FAIL);
 		}
+		
 		load();
 	}
 	
@@ -94,6 +95,7 @@ public class EquipmentUpgradeNormalData implements IXmlReader
 			LOGGER.warning(getClass().getSimpleName() + ": Commission in file EquipmentUpgradeNormalData.xml not set or less than 0! Setting up default value - 100!");
 			_commission = 100;
 		}
+		
 		forEach(document, "list", listNode -> forEach(listNode, "discount", discountNode -> forEach(discountNode, "item", itemNode ->
 		{
 			final StatSet successSet = new StatSet(parseAttributes(itemNode));
@@ -120,6 +122,7 @@ public class EquipmentUpgradeNormalData implements IXmlReader
 				{
 					LOGGER.warning(getClass().getSimpleName() + ": upgradeItem in file EquipmentUpgradeNormalData.xml for upgrade id " + id + " seems like broken!");
 				}
+				
 				if (initialItem.get().getCount() < 0)
 				{
 					LOGGER.warning(getClass().getSimpleName() + ": upgradeItem -> item -> count in file EquipmentUpgradeNormalData.xml for upgrade id " + id + " cannot be less than 0!");
@@ -129,6 +132,7 @@ public class EquipmentUpgradeNormalData implements IXmlReader
 			{
 				final StatSet successSet = new StatSet(parseAttributes(itemNode));
 				materialItems.get().add(new ItemEnchantHolder(successSet.getInt("id"), successSet.getLong("count"), successSet.getInt("enchantLevel")));
+				
 				// {
 				// LOGGER.warning(getClass().getSimpleName() + ": material -> item -> count in file EquipmentUpgradeNormalData.xml for upgrade id " + id +" cannot be less than 0!");
 				// }
@@ -150,6 +154,7 @@ public class EquipmentUpgradeNormalData implements IXmlReader
 				{
 					LOGGER.warning(getClass().getSimpleName() + ": bonus_items -> chance in file EquipmentUpgradeNormalData.xml for upgrade id " + id + " cannot be less than 0!");
 				}
+				
 				forEach(bonusItemNode, "item", itemNode ->
 				{
 					final StatSet successSet = new StatSet(parseAttributes(itemNode));

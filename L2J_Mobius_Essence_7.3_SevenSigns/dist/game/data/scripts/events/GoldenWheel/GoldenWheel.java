@@ -47,6 +47,7 @@ public class GoldenWheel extends LongTimeEvent implements IXmlReader
 {
 	// Item
 	private static int GOLDEN_WHEEL_COIN = 94834;
+	
 	// Misc
 	private static final List<Long> _multisells = new ArrayList<>();
 	
@@ -69,6 +70,7 @@ public class GoldenWheel extends LongTimeEvent implements IXmlReader
 		{
 			player.sendPacket(new PaybackUILauncher(false));
 		}
+		
 		PaybackManager.getInstance().resetField();
 		load();
 		for (Player player : World.getInstance().getPlayers())
@@ -87,7 +89,7 @@ public class GoldenWheel extends LongTimeEvent implements IXmlReader
 	public void parseDocument(Document document, File file)
 	{
 		final PaybackManager manager = PaybackManager.getInstance();
-		manager.setEndTime(_eventPeriod.getEndDate().getTime());
+		manager.setEndTime(getEndDate().getTime());
 		forEach(document, "list", listNode ->
 		{
 			forEach(listNode, "params", paramNode ->
@@ -105,6 +107,7 @@ public class GoldenWheel extends LongTimeEvent implements IXmlReader
 				{
 					_multisells.add(Long.parseLong(id));
 				}
+				
 				manager.addToMultisells(_multisells);
 			});
 			forEach(listNode, "payback", paybackNode ->

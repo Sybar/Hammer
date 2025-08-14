@@ -69,6 +69,7 @@ public class Die extends ServerPacket
 				siegeClan = fort.getSiege().getAttackerClan(clan);
 				isInFortDefense = (siegeClan == null) && fort.getSiege().checkIsDefender(clan);
 			}
+			
 			_toVillage = creature.canRevive() && !creature.isPendingRevive();
 			_toClanHall = (clan != null) && (clan.getHideoutId() > 0);
 			_toCastle = ((clan != null) && (clan.getCastleId() > 0)) || isInCastleDefense;
@@ -76,6 +77,7 @@ public class Die extends ServerPacket
 			_useFeather = creature.getAccessLevel().allowFixedRes() || creature.getInventory().haveItemForSelfResurrection();
 			_toFortress = ((clan != null) && (clan.getFortId() > 0)) || isInFortDefense;
 		}
+		
 		_isSweepable = creature.isAttackable() && creature.isSweepActive();
 	}
 	
@@ -90,6 +92,7 @@ public class Die extends ServerPacket
 		{
 			_items = new ArrayList<>(8);
 		}
+		
 		if (_items.size() < 8)
 		{
 			_items.add(itemId);

@@ -67,6 +67,7 @@ public class ExFestivalBmTopItemInfo extends ServerPacket
 				}
 			}
 		}
+		
 		for (; written < 3; written++)
 		{
 			buffer.writeByte(0);

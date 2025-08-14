@@ -37,7 +37,7 @@ public class AdminHtml implements IAdminCommandHandler
 	};
 	
 	@Override
-	public boolean useAdminCommand(String command, Player activeChar)
+	public boolean onCommand(String command, Player activeChar)
 	{
 		final StringTokenizer st = new StringTokenizer(command, " ");
 		final String actualCommand = st.nextToken();
@@ -68,6 +68,7 @@ public class AdminHtml implements IAdminCommandHandler
 				break;
 			}
 		}
+		
 		return true;
 	}
 	
@@ -98,6 +99,7 @@ public class AdminHtml implements IAdminCommandHandler
 		{
 			content = HtmCache.getInstance().loadFile(new File(Config.DATAPACK_ROOT, path));
 		}
+		
 		final NpcHtmlMessage html = new NpcHtmlMessage(0, 1);
 		if (content != null)
 		{
@@ -107,11 +109,12 @@ public class AdminHtml implements IAdminCommandHandler
 		{
 			html.setHtml("<html><body>My text is missing:<br>" + path + "</body></html>");
 		}
+		
 		activeChar.sendPacket(html);
 	}
 	
 	@Override
-	public String[] getAdminCommandList()
+	public String[] getCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}

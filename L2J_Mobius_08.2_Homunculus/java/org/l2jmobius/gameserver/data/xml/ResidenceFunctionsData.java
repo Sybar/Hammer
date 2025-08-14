@@ -65,6 +65,7 @@ public class ResidenceFunctionsData implements IXmlReader
 				final Node node = attrs.item(i);
 				set.set(node.getNodeName(), node.getNodeValue());
 			}
+			
 			forEach(func, "function", levelNode ->
 			{
 				final NamedNodeMap levelAttrs = levelNode.getAttributes();
@@ -75,6 +76,7 @@ public class ResidenceFunctionsData implements IXmlReader
 					final Node node = levelAttrs.item(i);
 					levelSet.set(node.getNodeName(), node.getNodeValue());
 				}
+				
 				final ResidenceFunctionTemplate template = new ResidenceFunctionTemplate(levelSet);
 				_functions.computeIfAbsent(template.getId(), _ -> new ArrayList<>()).add(template);
 			});
@@ -98,6 +100,7 @@ public class ResidenceFunctionsData implements IXmlReader
 				}
 			}
 		}
+		
 		return null;
 	}
 	

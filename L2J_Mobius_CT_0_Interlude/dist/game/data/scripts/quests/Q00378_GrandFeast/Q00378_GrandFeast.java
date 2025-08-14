@@ -33,6 +33,7 @@ public class Q00378_GrandFeast extends Quest
 {
 	// NPC
 	private static final int RANSPO = 30594;
+	
 	// Items
 	private static final int WINE_15 = 5956;
 	private static final int WINE_30 = 5957;
@@ -42,6 +43,7 @@ public class Q00378_GrandFeast extends Quest
 	private static final int SAUCE_RECIPE = 1456;
 	private static final int STEAK_RECIPE = 1457;
 	private static final int RITRON_DESSERT = 5959;
+	
 	// Rewards
 	private static final Map<String, int[]> REWARDS = new HashMap<>();
 	static

@@ -37,8 +37,10 @@ public class Q00777_SlayDarkLordTiat extends Quest
 {
 	// NPCs
 	private static final int ALLENOS = 32526;
+	
 	// Boss
 	private static final int TIAT = 29163;
+	
 	// Misc
 	private static final int MIN_LEVEL = 93;
 	private static final int MAX_LEVEL = 97;
@@ -62,6 +64,7 @@ public class Q00777_SlayDarkLordTiat extends Quest
 		{
 			return null;
 		}
+		
 		switch (event)
 		{
 			case "32526-02.htm":
@@ -86,6 +89,7 @@ public class Q00777_SlayDarkLordTiat extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -105,6 +109,7 @@ public class Q00777_SlayDarkLordTiat extends Quest
 						htmltext = "Complete.html";
 						break;
 					}
+					
 					qs.setState(State.CREATED);
 					// fallthrough
 				}
@@ -127,6 +132,7 @@ public class Q00777_SlayDarkLordTiat extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	

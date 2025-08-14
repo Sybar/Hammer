@@ -50,6 +50,7 @@ public class Rubentis extends AbstractNpcAI
 				final Location randomLoc = LocationUtil.getRandomLocation(npc.getSpawn().getLocation(), 0, 500);
 				addMoveToDesire(npc, GeoEngine.getInstance().getValidLocation(npc.getLocation().getX(), npc.getLocation().getY(), npc.getLocation().getZ(), randomLoc.getX(), randomLoc.getY(), randomLoc.getZ(), npc.getInstanceWorld()), 23);
 			}
+			
 			startQuestTimer("NPC_MOVE", 10000 + (getRandom(5) * 1000), npc, null);
 		}
 		else if (event.equals("NPC_SHOUT"))
@@ -63,8 +64,10 @@ public class Rubentis extends AbstractNpcAI
 			{
 				npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.ONLY_THE_STRONG_SURVIVE_AT_RUINS_OF_YE_SAGIRA);
 			}
+			
 			startQuestTimer("NPC_SHOUT", 10000 + (getRandom(5) * 1000), npc, null);
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	

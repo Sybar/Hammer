@@ -54,6 +54,7 @@ public class CrystalCavernsSteamCorridor extends AbstractInstance
 	private static final int PLAYER_DETECTOR = 19075;
 	private static final int TRAP_1 = 19011;
 	private static final int TRAP_2 = 19012;
+	
 	// Skills
 	private static final SkillHolder FIRE_SKILL_1 = new SkillHolder(14373, 1);
 	private static final SkillHolder FIRE_SKILL_2 = new SkillHolder(14373, 2);
@@ -61,8 +62,10 @@ public class CrystalCavernsSteamCorridor extends AbstractInstance
 	private static final SkillHolder TRAP_SKILL_1 = new SkillHolder(14180, 1);
 	private static final SkillHolder TRAP_SKILL_2 = new SkillHolder(14181, 1);
 	private static final SkillHolder TRAP_SKILL_3 = new SkillHolder(14372, 1);
+	
 	// Location
 	private static final Location BOSS_LOC = new Location(154078, 215125, -12140);
+	
 	// Misc
 	private static final int TEMPLATE_ID = 164;
 	
@@ -127,6 +130,7 @@ public class CrystalCavernsSteamCorridor extends AbstractInstance
 							addSkillCastDesire(npc, npc, (getRandom(10) < 8 ? TRAP_SKILL_2 : TRAP_SKILL_3), 23);
 						}
 					}
+					
 					getTimers().addTimer("TRAP_REACT_TIMER", 1000, npc, null);
 					break;
 				}
@@ -141,6 +145,7 @@ public class CrystalCavernsSteamCorridor extends AbstractInstance
 		{
 			enterInstance(player, npc, TEMPLATE_ID);
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	
@@ -156,6 +161,7 @@ public class CrystalCavernsSteamCorridor extends AbstractInstance
 				zone.setEnabled(false, instance.getId());
 			}
 		}
+		
 		super.onInstanceCreated(instance, player);
 	}
 	
@@ -200,6 +206,7 @@ public class CrystalCavernsSteamCorridor extends AbstractInstance
 					{
 						getTimers().addTimer("FIRE_REGION_TIMER_1", ((timeLimit * 30) * 100), npc, null);
 					}
+					
 					npc.setTargetable(false);
 					npc.setInvul(true);
 					npc.setRandomAnimation(false);
@@ -225,6 +232,7 @@ public class CrystalCavernsSteamCorridor extends AbstractInstance
 				receiver.setInvisible(false);
 			}
 		}
+		
 		return super.onEventReceived(eventName, sender, receiver, reference);
 	}
 	
@@ -373,6 +381,7 @@ public class CrystalCavernsSteamCorridor extends AbstractInstance
 					final Npc trap = addSpawn(((npcParams.getInt("MobType", 0) == 0) ? TRAP_1 : TRAP_2), npc, true, 0, false, instance.getId());
 					trap.getVariables().set("TIMER_VAL", 4);
 				}
+				
 				npc.deleteMe();
 			}
 		}

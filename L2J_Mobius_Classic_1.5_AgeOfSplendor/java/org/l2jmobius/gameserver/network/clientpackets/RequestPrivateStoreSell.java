@@ -63,6 +63,7 @@ public class RequestPrivateStoreSell extends ClientPacket
 				_items = null;
 				return;
 			}
+			
 			_items[i] = new ItemRequest(objectId, itemId, cnt, price);
 		}
 	}

@@ -38,6 +38,7 @@ public class TempleFlameMaster extends AbstractNpcAI
 {
 	// Npc
 	private static final int TEMPLE_FLAME_MASTER = 24084;
+	
 	// Skills
 	private static final SkillHolder DARK_BREAKER = new SkillHolder(32289, 1);
 	private static final SkillHolder BLOOD_TO_FLESH = new SkillHolder(32302, 1);
@@ -61,6 +62,7 @@ public class TempleFlameMaster extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	
@@ -89,6 +91,7 @@ public class TempleFlameMaster extends AbstractNpcAI
 			{
 				refreshAiParams(attacker, npc, ((damage / 3) * 20));
 			}
+			
 			manageSkills(npc);
 		}
 	}
@@ -114,6 +117,7 @@ public class TempleFlameMaster extends AbstractNpcAI
 				return;
 			}
 		}
+		
 		final int index = MathUtil.getIndexOfMinValue(vars.getInt("i_quest0"), vars.getInt("i_quest1"), vars.getInt("i_quest2"));
 		vars.set("i_quest" + index, newAggroVal);
 		vars.set("c_quest" + index, attacker);
@@ -141,6 +145,7 @@ public class TempleFlameMaster extends AbstractNpcAI
 				vars.set("i_quest" + i, 0);
 			}
 		}
+		
 		final int index = MathUtil.getIndexOfMaxValue(vars.getInt("i_quest0"), vars.getInt("i_quest1"), vars.getInt("i_quest2"));
 		final Creature player = vars.getObject("c_quest" + index, Creature.class);
 		final int i2 = vars.getInt("i_quest" + index);

@@ -40,22 +40,26 @@ public class Q10999_LoserPriest3 extends Quest
 {
 	// NPCs
 	private static final int GERALD = 30650;
+	
 	// Items
 	private static final int BAT_BRISTLE = 90303;
 	private static final int TRIMDEN_WEB = 90304;
 	private static final int KEROPE_WEREWOLF_TWIG_CHARM = 90305;
 	private static final int NEW_CLEANING_TOOLS_LIST = 90302;
+	
 	// Rewards
 	private static final int SCROLL_OF_ESCAPE = 10650;
 	private static final int HEALING_POTION = 1073;
 	private static final int MP_RECOVERY_POTION = 90310;
 	private static final int SOULSHOTS_NO_GRADE = 5789;
 	private static final int SPIRITSHOT_NO_GRADE = 5790;
+	
 	// Monsters
 	private static final int RED_EYE_BARBED_BAT = 21124;
 	private static final int NORTHERN_TRIMDEN = 21125;
 	private static final int KEROPE_WEREWOLF = 21126;
 	private static final int KEROPE_WEREWOLF_CHIEFTAIN = 21129;
+	
 	// Misc
 	private static final int MIN_LEVEL = 15;
 	private static final int MAX_LEVEL = 20;
@@ -136,6 +140,7 @@ public class Q10999_LoserPriest3 extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -170,6 +175,7 @@ public class Q10999_LoserPriest3 extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

@@ -61,6 +61,7 @@ public class SendWareHouseWithDrawList extends ClientPacket
 				_items = null;
 				return;
 			}
+			
 			_items[i] = new ItemHolder(objId, cnt);
 		}
 	}

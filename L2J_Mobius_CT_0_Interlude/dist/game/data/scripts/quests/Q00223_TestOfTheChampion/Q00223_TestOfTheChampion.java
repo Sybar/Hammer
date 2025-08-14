@@ -39,6 +39,7 @@ public class Q00223_TestOfTheChampion extends Quest
 	private static final int GROOT = 30093;
 	private static final int MOUEN = 30196;
 	private static final int MASON = 30625;
+	
 	// Monsters
 	private static final int HARPY = 20145;
 	private static final int HARPY_MATRIARCH = 27088;
@@ -53,6 +54,7 @@ public class Q00223_TestOfTheChampion extends Quest
 	private static final int LETO_LIZARDMAN_SHAMAN = 20581;
 	private static final int LETO_LIZARDMAN_OVERLORD = 20582;
 	private static final int BLOODY_AXE_ELITE = 20780;
+	
 	// Items
 	private static final int ASCALON_LETTER_1 = 3277;
 	private static final int MASON_LETTER = 3278;
@@ -70,6 +72,7 @@ public class Q00223_TestOfTheChampion extends Quest
 	private static final int BLOODY_AXE_HEAD = 3290;
 	private static final int ROAD_RATMAN_HEAD = 3291;
 	private static final int LETO_LIZARDMAN_FANG = 3292;
+	
 	// Rewards
 	private static final int MARK_OF_CHAMPION = 3276;
 	private static final int DIMENSIONAL_DIAMOND = 7562;
@@ -360,6 +363,7 @@ public class Q00223_TestOfTheChampion extends Quest
 						collector.addDamageHate(originalKiller, 0, 999);
 						collector.getAI().setIntention(Intention.ATTACK, originalKiller);
 					}
+					
 					npc.setScriptValue(1);
 				}
 				break;
@@ -378,6 +382,7 @@ public class Q00223_TestOfTheChampion extends Quest
 						collector.addDamageHate(originalKiller, 0, 999);
 						collector.getAI().setIntention(Intention.ATTACK, originalKiller);
 					}
+					
 					npc.setScriptValue(1);
 				}
 				break;

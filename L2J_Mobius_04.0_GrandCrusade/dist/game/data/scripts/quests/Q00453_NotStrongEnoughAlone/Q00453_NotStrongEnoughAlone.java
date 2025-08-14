@@ -122,6 +122,7 @@ public class Q00453_NotStrongEnoughAlone extends Quest
 					qs.set("count_" + npcId, currValue + 1);
 					playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 				}
+				
 				checkProgress(qs, 15, MONSTER1[0], MONSTER1[1], MONSTER1[2], MONSTER1[3]);
 			}
 			else if (ArrayUtil.contains(MONSTER2, npcId) && qs.isCond(3))
@@ -145,6 +146,7 @@ public class Q00453_NotStrongEnoughAlone extends Quest
 					qs.set("count_" + npcId, currValue + 1);
 					playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 				}
+				
 				checkProgress(qs, 20, MONSTER2[0], MONSTER2[1], MONSTER2[2]);
 			}
 			else if (ArrayUtil.contains(MONSTER3, npcId) && qs.isCond(4))
@@ -168,6 +170,7 @@ public class Q00453_NotStrongEnoughAlone extends Quest
 					qs.set("count_" + npcId, currValue + 1);
 					playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 				}
+				
 				checkProgress(qs, 20, MONSTER3[0], MONSTER3[1], MONSTER3[2]);
 			}
 		}
@@ -206,6 +209,7 @@ public class Q00453_NotStrongEnoughAlone extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -337,6 +341,7 @@ public class Q00453_NotStrongEnoughAlone extends Quest
 						{
 							giveItems(player, 9551, 1); // Holy Stone
 						}
+						
 						qs.exitQuest(QuestType.DAILY, true);
 						htmltext = "32734-14.html";
 						break;
@@ -358,6 +363,7 @@ public class Q00453_NotStrongEnoughAlone extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -370,6 +376,7 @@ public class Q00453_NotStrongEnoughAlone extends Quest
 				return;
 			}
 		}
+		
 		qs.setCond(5, true);
 	}
 	
@@ -405,8 +412,10 @@ public class Q00453_NotStrongEnoughAlone extends Quest
 					break;
 				}
 			}
+			
 			return npcLogList;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

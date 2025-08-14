@@ -58,6 +58,7 @@ public class Q11026_PathOfDestinyConviction extends Quest
 	private static final int TARTI = 34505;
 	private static final int RAYMOND = 30289;
 	private static final int PIO = 33963;
+	
 	// Monsters
 	private static final int SOBBING_WINDRA = 24391;
 	private static final int WHISPERING_WINDRA = 24392;
@@ -71,19 +72,23 @@ public class Q11026_PathOfDestinyConviction extends Quest
 	private static final int FUSSY_ARBOR = 24400;
 	private static final int TINY_WINDIMA = 24401;
 	private static final int GIANT_WINDIMA = 24402;
+	
 	// Item
 	private static final int SOE_TARTI = 80677;
 	private static final int SOE_PIO = 80681;
+	
 	// Quest Item
 	private static final int KAIN_PROPHECY_MACHINE_FRAGMENT = 39538;
 	private static final int CORRUPTED_ENERGY = 80673;
 	private static final int EMBEDDED_SHARD = 80674;
+	
 	// Location
 	private static final Location TRAINING_GROUNDS_TELEPORT1 = new Location(-76775, 92186, -3688);
 	private static final Location TRAINING_GROUNDS_TELEPORT2 = new Location(-81155, 89637, -3728);
 	private static final Location TRAINING_GROUNDS_TELEPORT3 = new Location(-85476, 80753, -3048);
 	private static final Location TRAINING_GROUNDS_TELEPORT4 = new Location(-87952, 87062, -3416);
 	private static final Location TRAINING_GROUNDS_TELEPORT5 = new Location(-91374, 92270, -3360);
+	
 	// Misc
 	private static final String KILL_COUNT_VAR = "KillCount";
 	private static final String KILL_COUNT_VAR2 = "KillCount2";
@@ -186,6 +191,7 @@ public class Q11026_PathOfDestinyConviction extends Quest
 						addExpAndSp(player, 30949789, 27854);
 					}
 				}
+				
 				htmltext = event;
 				break;
 			}
@@ -265,8 +271,10 @@ public class Q11026_PathOfDestinyConviction extends Quest
 						{
 							addExpAndSp(player, 834929477, 595042);
 						}
+						
 						giveAdena(player, 240000, true);
 					}
+					
 					htmltext = event;
 				}
 				break;
@@ -296,6 +304,7 @@ public class Q11026_PathOfDestinyConviction extends Quest
 				{
 					qs.setCond(18, true);
 				}
+				
 				htmltext = event;
 				break;
 			}
@@ -309,6 +318,7 @@ public class Q11026_PathOfDestinyConviction extends Quest
 						showOnScreenMsg(player, NpcStringId.CLASS_TRANSFER_IS_AVAILABLE_NCLICK_THE_CLASS_TRANSFER_ICON_IN_THE_NOTIFICATION_WINDOW_TO_TRANSFER_YOUR_CLASS, ExShowScreenMessage.TOP_CENTER, 10000);
 						player.sendPacket(ExClassChangeSetAlarm.STATIC_PACKET);
 					}
+					
 					htmltext = event;
 				}
 				break;
@@ -354,6 +364,7 @@ public class Q11026_PathOfDestinyConviction extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -503,6 +514,7 @@ public class Q11026_PathOfDestinyConviction extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -570,6 +582,7 @@ public class Q11026_PathOfDestinyConviction extends Quest
 							giveItems(killer, CORRUPTED_ENERGY, 1);
 							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 						}
+						
 						if (getQuestItemsCount(killer, CORRUPTED_ENERGY) >= 15)
 						{
 							qs.setCond(8, true);
@@ -589,6 +602,7 @@ public class Q11026_PathOfDestinyConviction extends Quest
 							giveItems(killer, EMBEDDED_SHARD, 1);
 							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 						}
+						
 						if (getQuestItemsCount(killer, EMBEDDED_SHARD) >= 15)
 						{
 							qs.setCond(11, true);
@@ -652,6 +666,7 @@ public class Q11026_PathOfDestinyConviction extends Quest
 				}
 			}
 		}
+		
 		return super.getNpcLogList(player);
 	}
 	

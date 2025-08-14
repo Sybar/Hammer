@@ -16,6 +16,8 @@
  */
 package ai.others;
 
+import java.util.Collection;
+
 import org.l2jmobius.Config;
 import org.l2jmobius.gameserver.model.WorldObject;
 import org.l2jmobius.gameserver.model.actor.Npc;
@@ -57,6 +59,7 @@ public class Ballista extends AbstractNpcAI
 		36351, // Demon Fortress
 		36389, // Monastic Fortress
 	};
+	
 	// Skill
 	private static final SkillHolder BOMB = new SkillHolder(2342, 1); // Ballista Bomb
 	// Misc
@@ -69,7 +72,7 @@ public class Ballista extends AbstractNpcAI
 	}
 	
 	@Override
-	public void onSkillSee(Npc npc, Player caster, Skill skill, WorldObject[] targets, boolean isSummon)
+	public void onSkillSee(Npc npc, Player caster, Skill skill, Collection<WorldObject> targets, boolean isSummon)
 	{
 		if ((skill != null) && (caster.getTarget() == npc) && (getRandom(100) < 40) && (skill == BOMB.getSkill()))
 		{
@@ -78,6 +81,7 @@ public class Ballista extends AbstractNpcAI
 				caster.getClan().addReputationScore(Config.BALLISTA_POINTS);
 				caster.sendPacket(SystemMessageId.THE_BALLISTA_HAS_BEEN_SUCCESSFULLY_DESTROYED_THE_CLAN_REPUTATION_WILL_BE_INCREASED);
 			}
+			
 			npc.doDie(caster);
 		}
 	}

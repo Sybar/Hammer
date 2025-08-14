@@ -40,8 +40,10 @@ public class Q10322_SearchingForTheMysteriousPower extends Quest
 	private static final int SHANNON = 32974;
 	private static final int ADVENTURERS_GUIDE = 32981;
 	private static final int EVAIN = 33464;
+	
 	// Monster
 	private static final int SCARECROW = 27457;
+	
 	// Reward
 	private static final int WOODEN_ARROW = 17;
 	private static final int ADENA = 57;
@@ -52,8 +54,10 @@ public class Q10322_SearchingForTheMysteriousPower extends Quest
 	private static final int APPRENTICE_ADVENTURERS_CESTUS = 7819;
 	private static final int APPRENTICE_ADVENTURERS_BOW = 7820;
 	private static final int APPRENTICE_ADVENTURERS_LONG_SWORD = 7821;
+	
 	// Misc
 	private static final int MAX_LEVEL = 20;
+	
 	// Buffs
 	private static final SkillHolder[] FIGHTER_BUFFS =
 	{
@@ -121,6 +125,7 @@ public class Q10322_SearchingForTheMysteriousPower extends Quest
 							holder.getSkill().applyEffects(npc, player);
 						}
 					}
+					
 					player.sendPacket(new TutorialShowHtml(npc.getObjectId(), "..\\L2Text\\QT_002_Guide_01.htm", TutorialShowHtml.LARGE_WINDOW));
 					qs.setCond(5, true);
 					htmltext = event;
@@ -128,6 +133,7 @@ public class Q10322_SearchingForTheMysteriousPower extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -269,6 +275,7 @@ public class Q10322_SearchingForTheMysteriousPower extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 }

@@ -44,7 +44,7 @@
 										</xs:sequence>
 									</xs:complexType>
 								</xs:element>
-								<xs:element name="cond">
+								<xs:element name="conditions">
 									<xs:complexType>
 										<xs:sequence>
 											<xs:element minOccurs="0" name="target">

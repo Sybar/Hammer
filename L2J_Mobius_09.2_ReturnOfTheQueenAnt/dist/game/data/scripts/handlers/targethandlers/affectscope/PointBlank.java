@@ -54,17 +54,20 @@ public class PointBlank implements IAffectScopeHandler
 			{
 				return false;
 			}
+			
 			if (affectObject != null)
 			{
 				if (c.isDead() && (skill.getAffectObject() != AffectObject.OBJECT_DEAD_NPC_BODY))
 				{
 					return false;
 				}
+				
 				if (!affectObject.checkAffectedObject(creature, c))
 				{
 					return false;
 				}
 			}
+			
 			if (!GeoEngine.getInstance().canSeeTarget(target, c))
 			{
 				return false;
@@ -88,6 +91,7 @@ public class PointBlank implements IAffectScopeHandler
 						{
 							return;
 						}
+						
 						if (filter.test(c))
 						{
 							action.accept(c);

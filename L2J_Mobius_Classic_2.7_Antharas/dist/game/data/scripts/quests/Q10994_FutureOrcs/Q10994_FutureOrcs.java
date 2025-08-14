@@ -42,9 +42,11 @@ public class Q10994_FutureOrcs extends Quest
 	private static final int KARUKIA = 30570;
 	private static final int GANTAKAI = 30587;
 	private static final int HESTUI = 30585;
+	
 	// Items
 	private static final int FIRST_CLASS_BUFF_SCROLL = 29654;
 	private static final int IMPROVED_SOE = 49087;
+	
 	// Misc
 	private static final int MIN_LEVEL = 19;
 	
@@ -115,6 +117,7 @@ public class Q10994_FutureOrcs extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -147,6 +150,7 @@ public class Q10994_FutureOrcs extends Quest
 					}
 					break;
 				}
+				
 				if ((npc.getId() == KARUKIA) && (talker.getPlayerClass() != PlayerClass.ORC_RAIDER))
 				{
 					if (qs.isCond(2))
@@ -155,6 +159,7 @@ public class Q10994_FutureOrcs extends Quest
 					}
 					break;
 				}
+				
 				if ((npc.getId() == GANTAKAI) && (talker.getPlayerClass() != PlayerClass.ORC_MONK))
 				{
 					if (qs.isCond(3))
@@ -163,6 +168,7 @@ public class Q10994_FutureOrcs extends Quest
 					}
 					break;
 				}
+				
 				if ((npc.getId() == HESTUI) && (talker.getPlayerClass() != PlayerClass.ORC_SHAMAN))
 				{
 					if (qs.isCond(4))
@@ -179,6 +185,7 @@ public class Q10994_FutureOrcs extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

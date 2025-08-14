@@ -34,6 +34,7 @@ public class BirthOfDraco extends LongTimeEvent
 	// NPCs
 	private static final int ASLAN = 33687;
 	private static final int LYN_DRACO = 33828;
+	
 	// Items
 	private static final int SMALL_EGG = 34864;
 	private static final int LARGE_EGG = 34865;
@@ -111,6 +112,7 @@ public class BirthOfDraco extends LongTimeEvent
 			 * case "giveAgathion": { if (hasQuestItems(player, AGATHION)) { htmltext = "33687-03.htm"; } else { giveItems(player, AGATHION, 1); htmltext = "33687-02.htm"; } break; }
 			 */
 		}
+		
 		return htmltext;
 	}
 	

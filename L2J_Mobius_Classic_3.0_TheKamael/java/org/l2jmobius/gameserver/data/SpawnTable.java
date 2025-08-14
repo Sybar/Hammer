@@ -104,6 +104,7 @@ public class SpawnTable
 			{
 				_npcSpawns.remove(spawn.getId());
 			}
+			
 			set.forEach(this::notifyRemoved);
 			return;
 		}

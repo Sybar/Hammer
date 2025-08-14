@@ -139,6 +139,7 @@ public class PlayerVariables extends AbstractVariables
 		{
 			compareAndSetChanges(true, false);
 		}
+		
 		return true;
 	}
 	
@@ -169,6 +170,7 @@ public class PlayerVariables extends AbstractVariables
 					st.setString(3, String.valueOf(entry.getValue()));
 					st.addBatch();
 				}
+				
 				st.executeBatch();
 			}
 		}
@@ -181,6 +183,7 @@ public class PlayerVariables extends AbstractVariables
 		{
 			compareAndSetChanges(true, false);
 		}
+		
 		return true;
 	}
 	
@@ -203,6 +206,7 @@ public class PlayerVariables extends AbstractVariables
 			LOGGER.log(Level.WARNING, getClass().getSimpleName() + ": Couldn't delete variables for: " + _objectId, e);
 			return false;
 		}
+		
 		return true;
 	}
 }

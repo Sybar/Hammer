@@ -146,6 +146,7 @@ public class ItemInfo
 		{
 			_attributeDefence[type.getClientId()] = item.getDefenceAttribute(type);
 		}
+		
 		_option = item.getEnchantOptions();
 		_visualId = item.getVisualId();
 		_visualExpiration = item.getVisualLifeTime() > 0 ? (item.getVisualLifeTime() - System.currentTimeMillis()) / 1000 : 0;
@@ -285,6 +286,7 @@ public class ItemInfo
 		{
 			_attributeDefence[i] = item.getElementDefAttr(i);
 		}
+		
 		_option = item.getEnchantOptions();
 	}
 	

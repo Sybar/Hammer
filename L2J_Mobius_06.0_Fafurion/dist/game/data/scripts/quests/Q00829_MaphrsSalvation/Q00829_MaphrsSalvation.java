@@ -41,9 +41,11 @@ public class Q00829_MaphrsSalvation extends Quest
 	private static final int BLACKSMITH_KLUTO = 34098;
 	private static final int BLACKSMITH_KLUTO_FINISH = 34153;
 	private static final int TRANSPORT_GOODS_NPC = 34102;
+	
 	// Items
 	private static final int TRASPORT_GOODS_ITEM = 46373;
 	private static final int GLUDIN_HERO_REWARD = 46375;
+	
 	// Misc
 	private static final int MIN_LEVEL = 100;
 	
@@ -94,6 +96,7 @@ public class Q00829_MaphrsSalvation extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -138,6 +141,7 @@ public class Q00829_MaphrsSalvation extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -156,6 +160,7 @@ public class Q00829_MaphrsSalvation extends Quest
 			{
 				members.add(player);
 			}
+			
 			for (Player member : members)
 			{
 				final QuestState ms = getQuestState(member, false);
@@ -165,15 +170,18 @@ public class Q00829_MaphrsSalvation extends Quest
 					{
 						giveItems(member, TRASPORT_GOODS_ITEM, 1);
 					}
+					
 					if (getQuestItemsCount(member, TRASPORT_GOODS_ITEM) >= 1)
 					{
 						ms.setCond(2, true);
 					}
 				}
 			}
+			
 			npc.deleteMe();
 			return "34102-01.html";
 		}
+		
 		return null;
 	}
 }

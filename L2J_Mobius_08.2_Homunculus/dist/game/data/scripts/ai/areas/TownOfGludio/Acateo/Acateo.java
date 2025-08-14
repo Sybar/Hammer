@@ -29,6 +29,7 @@ public class Acateo extends AbstractNpcAI
 {
 	// NPC
 	private static final int ACATEO = 33905;
+	
 	// Item
 	private static final int ACADEMY_CIRCLET = 8181;
 	
@@ -48,9 +49,11 @@ public class Acateo extends AbstractNpcAI
 			{
 				return "33905-3.html";
 			}
+			
 			giveItems(player, ACADEMY_CIRCLET, 1);
 			return "33905-2.html";
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	

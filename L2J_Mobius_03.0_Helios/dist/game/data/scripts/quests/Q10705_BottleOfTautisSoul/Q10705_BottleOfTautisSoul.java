@@ -37,8 +37,10 @@ public class Q10705_BottleOfTautisSoul extends Quest
 {
 	// NPCs
 	private static final int FERGASON = 33681;
+	
 	// Item
 	private static final int BOTTLE_OF_TAUTIS_SOUL = 35295;
+	
 	// Misc
 	private static final int MIN_LEVEL = 97;
 	
@@ -93,6 +95,7 @@ public class Q10705_BottleOfTautisSoul extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -125,6 +128,7 @@ public class Q10705_BottleOfTautisSoul extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

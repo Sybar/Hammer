@@ -50,7 +50,7 @@ public class FatedSupportBox implements IItemHandler
 	private static final int FATED_BOX_ORC_WIZARD = 37321;
 	
 	@Override
-	public boolean useItem(Playable playable, Item item, boolean forceUse)
+	public boolean onItemUse(Playable playable, Item item, boolean forceUse)
 	{
 		if (!playable.isPlayer())
 		{
@@ -140,6 +140,7 @@ public class FatedSupportBox implements IItemHandler
 				break;
 			}
 		}
+		
 		return true;
 	}
 }

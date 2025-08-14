@@ -80,12 +80,14 @@ public class Instance
 	private final InstanceTemplate _template;
 	private final long _startTime;
 	private long _endTime;
+	
 	// Advanced instance parameters
 	private final Set<Integer> _allowed = ConcurrentHashMap.newKeySet(); // Player ids which can enter to instance
 	private final Set<Player> _players = ConcurrentHashMap.newKeySet(); // Players inside instance
 	private final Set<Npc> _npcs = ConcurrentHashMap.newKeySet(); // Spawned NPCs inside instance
 	private final Map<Integer, Door> _doors = new HashMap<>(); // Spawned doors inside instance
 	private final StatSet _parameters = new StatSet();
+	
 	// Timers
 	private final Map<Integer, ScheduledFuture<?>> _ejectDeadTasks = new ConcurrentHashMap<>();
 	private ScheduledFuture<?> _cleanUpTask = null;
@@ -272,6 +274,7 @@ public class Instance
 				allowed.add(player);
 			}
 		}
+		
 		return allowed;
 	}
 	
@@ -349,6 +352,7 @@ public class Instance
 		{
 			return player;
 		}
+		
 		return null;
 	}
 	
@@ -366,6 +370,7 @@ public class Instance
 				return player;
 			}
 		}
+		
 		return null;
 	}
 	
@@ -385,6 +390,7 @@ public class Instance
 				result.add(player);
 			}
 		}
+		
 		return result;
 	}
 	
@@ -460,6 +466,7 @@ public class Instance
 				}
 			}
 		}
+		
 		return false;
 	}
 	
@@ -475,6 +482,7 @@ public class Instance
 		{
 			spawns.addAll(spawnTemplate.getGroupsByName(name));
 		}
+		
 		return spawns;
 	}
 	
@@ -517,6 +525,7 @@ public class Instance
 				}
 			}
 		}
+		
 		return npcs;
 	}
 	
@@ -549,6 +558,7 @@ public class Instance
 				}
 			}
 		}
+		
 		return null;
 	}
 	
@@ -579,6 +589,7 @@ public class Instance
 		{
 			LOGGER.warning("Unable to spawn group " + name + " inside instance " + _template.getName() + " (" + _id + ")");
 		}
+		
 		return npcs;
 	}
 	
@@ -629,6 +640,7 @@ public class Instance
 				result.add(npc);
 			}
 		}
+		
 		return result;
 	}
 	
@@ -651,6 +663,7 @@ public class Instance
 				result.add((T) npc);
 			}
 		}
+		
 		return result;
 	}
 	
@@ -668,6 +681,7 @@ public class Instance
 				result.add(npc);
 			}
 		}
+		
 		return result;
 	}
 	
@@ -686,6 +700,7 @@ public class Instance
 				result.add(npc);
 			}
 		}
+		
 		return result;
 	}
 	
@@ -708,6 +723,7 @@ public class Instance
 				result.add((T) npc);
 			}
 		}
+		
 		return result;
 	}
 	
@@ -725,6 +741,7 @@ public class Instance
 				count++;
 			}
 		}
+		
 		return count;
 	}
 	
@@ -743,6 +760,7 @@ public class Instance
 				count++;
 			}
 		}
+		
 		return count;
 	}
 	
@@ -760,6 +778,7 @@ public class Instance
 				return npc;
 			}
 		}
+		
 		return null;
 	}
 	
@@ -794,6 +813,7 @@ public class Instance
 				door.decayMe();
 			}
 		}
+		
 		_doors.clear();
 	}
 	
@@ -998,6 +1018,7 @@ public class Instance
 				ps.setLong(3, time);
 				ps.addBatch();
 			}
+			
 			ps.executeBatch();
 			
 			// Save to memory and send message to player
@@ -1010,6 +1031,7 @@ public class Instance
 			{
 				msg.addString(_template.getName());
 			}
+			
 			_allowed.forEach(playerId ->
 			{
 				InstanceManager.getInstance().setReenterPenalty(playerId, getTemplateId(), time);
@@ -1048,6 +1070,7 @@ public class Instance
 		{
 			setReenterTime();
 		}
+		
 		// Change instance duration
 		setDuration(delay);
 	}
@@ -1160,6 +1183,7 @@ public class Instance
 				{
 					npc.getSpawn().stopRespawn();
 				}
+				
 				removeNpc(npc);
 			}
 		}
@@ -1182,6 +1206,7 @@ public class Instance
 			if (loc != null)
 			{
 				player.setLocationInvisible(loc);
+				
 				// If player has death pet, put him out of instance world
 				final Summon pet = player.getPet();
 				if (pet != null)
@@ -1336,6 +1361,7 @@ public class Instance
 		{
 			return;
 		}
+		
 		final SystemMessage sm = new SystemMessage(SystemMessageId.THE_INSTANCE_ZONE_EXPIRES_IN_S1_MIN_AFTER_THAT_YOU_WILL_BE_TELEPORTED_OUTSIDE_2);
 		sm.addInt(delay);
 		broadcastPacket(sm);

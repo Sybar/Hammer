@@ -36,6 +36,7 @@ public class Tores extends AbstractNpcAI
 {
 	// NPC
 	private static final int TORES = 31778;
+	
 	// Locations
 	private static final Map<String, Location> LOCATIONS = new HashMap<>();
 	static
@@ -90,6 +91,7 @@ public class Tores extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	

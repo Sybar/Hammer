@@ -52,6 +52,7 @@ public class Teleporter extends Merchant
 	};
 	
 	private static final Map<Integer, List<TeleporterQuestRecommendationHolder>> QUEST_RECOMENDATIONS = new HashMap<>();
+	
 	// static
 	// {
 	// @formatter:off
@@ -110,6 +111,7 @@ public class Teleporter extends Merchant
 					LOGGER.warning(player + " requested show teleports for list with name " + listName + " at NPC " + getId() + "!");
 					return;
 				}
+				
 				holder.showTeleportList(player, this);
 				break;
 			}
@@ -122,6 +124,7 @@ public class Teleporter extends Merchant
 					LOGGER.warning(player + " requested show teleports for hunting list with name " + listName + " at NPC " + getId() + "!");
 					return;
 				}
+				
 				holder.showTeleportList(player, this);
 				break;
 			}
@@ -146,6 +149,7 @@ public class Teleporter extends Merchant
 					LOGGER.warning(player + " requested unknown teleport list: " + listName + " for npc: " + getId() + "!");
 					return;
 				}
+				
 				holder.doTeleport(player, this, parseNextInt(st, -1));
 				break;
 			}
@@ -159,6 +163,7 @@ public class Teleporter extends Merchant
 				catch (IndexOutOfBoundsException | NumberFormatException ignored)
 				{
 				}
+				
 				showChatWindow(player, val);
 				break;
 			}
@@ -179,6 +184,7 @@ public class Teleporter extends Merchant
 				return Integer.parseInt(token);
 			}
 		}
+		
 		return defaultVal;
 	}
 	
@@ -212,6 +218,7 @@ public class Teleporter extends Merchant
 		{
 			pom = (npcId + "-" + value);
 		}
+		
 		return "data/html/teleporter/" + pom + ".htm";
 	}
 	
@@ -235,6 +242,7 @@ public class Teleporter extends Merchant
 		{
 			filename = "data/html/teleporter/castleteleporter-busy.htm"; // Busy because of siege
 		}
+		
 		sendHtmlMessage(player, filename);
 	}
 	

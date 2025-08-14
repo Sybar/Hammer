@@ -1937,12 +1937,12 @@
 		<set name="commissionItemType" val="HAIR_ACCESSORY" />
 		<set name="isAppearanceable" val="true" />
 		<set name="equip_condition" val="{{ec_castle;1};{ec_castle_num;{8}}}" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player castle="8" />
 				<player pledgeClass="2" /> <!-- Heir -->
 			</and>
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="3633" level="2" /> <!-- Residential Stun Immunity -->
 		</skills>
@@ -1963,12 +1963,12 @@
 		<set name="commissionItemType" val="HAIR_ACCESSORY" />
 		<set name="isAppearanceable" val="true" />
 		<set name="equip_condition" val="{{ec_castle;1};{ec_castle_num;{9}}}" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player castle="9" />
 				<player pledgeClass="2" /> <!-- Heir -->
 			</and>
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="3633" level="1" /> <!-- Residential Stun Immunity -->
 		</skills>

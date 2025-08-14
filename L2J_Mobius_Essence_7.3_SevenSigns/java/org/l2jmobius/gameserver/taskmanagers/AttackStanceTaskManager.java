@@ -53,6 +53,7 @@ public class AttackStanceTaskManager implements Runnable
 		{
 			return;
 		}
+		
 		_working = true;
 		
 		if (!CREATURE_ATTACK_STANCES.isEmpty())
@@ -82,9 +83,11 @@ public class AttackStanceTaskManager implements Runnable
 								{
 									pet.broadcastPacket(new AutoAttackStop(pet.getObjectId()));
 								}
+								
 								creature.getServitors().values().forEach(s -> s.broadcastPacket(new AutoAttackStop(s.getObjectId())));
 							}
 						}
+						
 						iterator.remove();
 					}
 				}
@@ -126,6 +129,7 @@ public class AttackStanceTaskManager implements Runnable
 			{
 				actor = actor.asPlayer();
 			}
+			
 			CREATURE_ATTACK_STANCES.remove(actor);
 		}
 	}
@@ -144,6 +148,7 @@ public class AttackStanceTaskManager implements Runnable
 			{
 				actor = actor.asPlayer();
 			}
+			
 			return CREATURE_ATTACK_STANCES.containsKey(actor);
 		}
 		

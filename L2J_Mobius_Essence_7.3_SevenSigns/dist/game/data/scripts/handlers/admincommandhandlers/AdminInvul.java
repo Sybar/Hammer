@@ -26,8 +26,7 @@ import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.Player;
 
 /**
- * This class handles following admin commands: - invul = turns invulnerability on/off
- * @version $Revision: 1.2.4.4 $ $Date: 2007/07/31 10:06:02 $
+ * @author Skache
  */
 public class AdminInvul implements IAdminCommandHandler
 {
@@ -40,73 +39,88 @@ public class AdminInvul implements IAdminCommandHandler
 	};
 	
 	@Override
-	public boolean useAdminCommand(String command, Player activeChar)
+	public boolean onCommand(String command, Player activeChar)
 	{
-		if (command.equals("admin_invul"))
+		switch (command)
 		{
-			handleInvul(activeChar);
-			AdminHtml.showAdminHtml(activeChar, "gm_menu.htm");
-		}
-		else if (command.equals("admin_undying"))
-		{
-			handleUndying(activeChar, activeChar);
-			AdminHtml.showAdminHtml(activeChar, "gm_menu.htm");
+			case "admin_invul":
+			{
+				toggleInvul(activeChar, activeChar);
+				break;
+			}
+			case "admin_setinvul":
+			{
+				final WorldObject target = activeChar.getTarget();
+				if ((target != null) && target.isPlayer())
+				{
+					toggleInvul(target.asPlayer(), activeChar);
+				}
+				else
+				{
+					activeChar.sendSysMessage("You must target a player.");
+				}
+				break;
+			}
+			case "admin_undying":
+			{
+				toggleUndying(activeChar, activeChar);
+				AdminHtml.showAdminHtml(activeChar, "gm_menu.htm");
+				break;
+			}
+			case "admin_setundying":
+			{
+				final WorldObject target = activeChar.getTarget();
+				if ((target != null) && target.isCreature())
+				{
+					toggleUndying(target.asCreature(), activeChar);
+				}
+				else
+				{
+					activeChar.sendSysMessage("You must target a creature.");
+				}
+				break;
+			}
 		}
 		
-		else if (command.equals("admin_setinvul"))
-		{
-			final WorldObject target = activeChar.getTarget();
-			if ((target != null) && target.isPlayer())
-			{
-				handleInvul(target.asPlayer());
-			}
-		}
-		else if (command.equals("admin_setundying"))
-		{
-			final WorldObject target = activeChar.getTarget();
-			if (target.isCreature())
-			{
-				handleUndying(activeChar, target.asCreature());
-			}
-		}
 		return true;
 	}
 	
+	private void toggleInvul(Player target, Player admin)
+	{
+		final boolean invul = !target.isInvul();
+		target.setInvul(invul);
+		
+		// Notify target.
+		target.sendSysMessage("You are now " + (invul ? "invulnerable." : "mortal."));
+		
+		// Notify admin.
+		if (admin != target)
+		{
+			admin.sendSysMessage("You made " + target.getName() + " " + (invul ? "invulnerable." : "mortal."));
+		}
+	}
+	
+	private void toggleUndying(Creature target, Player admin)
+	{
+		final boolean undying = !target.isUndying();
+		target.setUndying(undying);
+		
+		// Notify target if it's a player.
+		if (target.isPlayer())
+		{
+			target.asPlayer().sendSysMessage("You are now " + (undying ? "undying." : "mortal."));
+		}
+		
+		// Notify admin.
+		if (admin != target)
+		{
+			admin.sendSysMessage("You made " + target.getName() + " " + (undying ? "undying." : "mortal."));
+		}
+	}
+	
 	@Override
-	public String[] getAdminCommandList()
+	public String[] getCommandList()
 	{
 		return ADMIN_COMMANDS;
-	}
-	
-	private void handleInvul(Player activeChar)
-	{
-		String text;
-		if (activeChar.isInvul())
-		{
-			activeChar.setInvul(false);
-			text = activeChar.getName() + " is now mortal.";
-		}
-		else
-		{
-			activeChar.setInvul(true);
-			text = activeChar.getName() + " is now invulnerable.";
-		}
-		activeChar.sendSysMessage(text);
-	}
-	
-	private void handleUndying(Player activeChar, Creature target)
-	{
-		String text;
-		if (target.isUndying())
-		{
-			target.setUndying(false);
-			text = target.getName() + " is now mortal.";
-		}
-		else
-		{
-			target.setUndying(true);
-			text = target.getName() + " is now undying.";
-		}
-		activeChar.sendSysMessage(text);
 	}
 }

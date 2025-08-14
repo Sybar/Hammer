@@ -85,12 +85,15 @@ public class Q10874_AgainstTheNewEnemy extends Quest
 		23749, // Root of the Lesser Giant
 		23754, // Essence of the Lesser Giant
 	};
+	
 	// Items
 	private static final int PROOF_OF_QUALIFICATION = 47839;
 	private static final ItemHolder LIONEL_HUNTERS_LIST_PART_4 = new ItemHolder(47829, 1);
+	
 	// Rewards
 	private static final int LEONA_CERTIFICATE = 47830;
 	private static final int FP = 4500; // Faction points
+	
 	// Misc
 	private static final int MIN_LEVEL = 103;
 	private static final int PROOF_OF_QUALIFICATION_NEEDED = 10000;
@@ -115,6 +118,7 @@ public class Q10874_AgainstTheNewEnemy extends Quest
 		{
 			return htmltext;
 		}
+		
 		switch (event)
 		{
 			case "31595-02.htm":
@@ -170,6 +174,7 @@ public class Q10874_AgainstTheNewEnemy extends Quest
 					{
 						mainQ.notifyEvent("SUBQUEST_FINISHED_NOTIFY", npc, player);
 					}
+					
 					htmltext = event;
 				}
 				else
@@ -179,6 +184,7 @@ public class Q10874_AgainstTheNewEnemy extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -246,6 +252,7 @@ public class Q10874_AgainstTheNewEnemy extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -260,6 +267,7 @@ public class Q10874_AgainstTheNewEnemy extends Quest
 				giveItems(player, PROOF_OF_QUALIFICATION, 1);
 				playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 			}
+			
 			if ((getQuestItemsCount(player, PROOF_OF_QUALIFICATION) >= PROOF_OF_QUALIFICATION_NEEDED) && (player.getLevel() >= MIN_LEVEL))
 			{
 				qs.setCond(2, true);

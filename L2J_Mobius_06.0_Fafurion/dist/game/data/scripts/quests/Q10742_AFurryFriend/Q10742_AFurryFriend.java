@@ -41,10 +41,13 @@ public class Q10742_AFurryFriend extends Quest
 	private static final int LEIRA = 33952;
 	private static final int RICKY = 19552;
 	private static final int KIKU_S_CAVE = 33995;
+	
 	// Monster
 	private static final int KIKU = 23453;
+	
 	// Location
 	private static final Location RICKY_SPAWN = new Location(-78119, 237377, -3536);
+	
 	// Misc
 	private static final int MIN_LEVEL = 11;
 	private static final int MAX_LEVEL = 20;
@@ -174,6 +177,7 @@ public class Q10742_AFurryFriend extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -212,6 +216,7 @@ public class Q10742_AFurryFriend extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	

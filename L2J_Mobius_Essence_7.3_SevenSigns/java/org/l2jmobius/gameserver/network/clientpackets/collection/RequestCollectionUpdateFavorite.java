@@ -56,6 +56,7 @@ public class RequestCollectionUpdateFavorite extends ClientPacket
 		{
 			player.removeCollectionFavorite(_collectionId);
 		}
+		
 		player.sendPacket(new ExCollectionUpdateFavorite(_isAdd, _collectionId));
 	}
 }

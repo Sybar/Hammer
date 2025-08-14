@@ -61,6 +61,7 @@ public class RequestExDethroneCheckName extends ClientPacket
 		}
 		
 		int result;
+		
 		// For some reason, name is starting with a char non-alphanumeric. (SizedString?)
 		if (!StringUtil.isAlphaNumeric(_conquestName.substring(1)) || checkRestrictedNames(_conquestName.substring(1)))
 		{
@@ -79,6 +80,7 @@ public class RequestExDethroneCheckName extends ClientPacket
 		{
 			result = CHANGE_NAME;
 		}
+		
 		player.sendPacket(new ExDethroneCheckName(result));
 	}
 	
@@ -124,6 +126,7 @@ public class RequestExDethroneCheckName extends ClientPacket
 				}
 			}
 		}
+		
 		return false;
 	}
 }

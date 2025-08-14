@@ -91,6 +91,7 @@ public class Minigame extends AbstractNpcAI
 				
 				takeItems(player, UNLIT_TORCHLIGHT, 1);
 				giveItems(player, TORCHLIGHT, 1);
+				
 				// Removed with Etina's Fate.
 				// npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.I_LL_START_THE_FURNACE_MECHANISM_WATCH_FOR_THE_PATTERN);
 				room.getManager().setTarget(player);
@@ -100,6 +101,7 @@ public class Minigame extends AbstractNpcAI
 				{
 					room.getOrder()[i] = getRandom(8);
 				}
+				
 				cancelQuestTimer("hurry_up", npc, null);
 				cancelQuestTimer("hurry_up2", npc, null);
 				cancelQuestTimer("expire", npc, null);
@@ -201,6 +203,7 @@ public class Minigame extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return event;
 	}
 	
@@ -237,6 +240,7 @@ public class Minigame extends AbstractNpcAI
 		{
 			htmltext = "32758-04.html";
 		}
+		
 		return htmltext;
 	}
 	
@@ -286,6 +290,7 @@ public class Minigame extends AbstractNpcAI
 						else
 						{
 							addSpawn(TREASURE_BOX, room.getParticipant().getLocation(), true, 0);
+							
 							// Removed with Etina's Fate.
 							// room.getManager().broadcastSay(ChatType.NPC_GENERAL, NpcStringId.THAT_S_IT_YOU_VE_DONE_IT);
 							room.setCurrentPot(0);
@@ -337,6 +342,7 @@ public class Minigame extends AbstractNpcAI
 				burners[potNumber++] = lastSpawn;
 			}
 		}
+		
 		return new MinigameRoom(burners, manager);
 	}
 	
@@ -354,6 +360,7 @@ public class Minigame extends AbstractNpcAI
 				return room;
 			}
 		}
+		
 		return null;
 	}
 	
@@ -371,6 +378,7 @@ public class Minigame extends AbstractNpcAI
 				return room;
 			}
 		}
+		
 		return null;
 	}
 	
@@ -413,6 +421,7 @@ public class Minigame extends AbstractNpcAI
 					return i;
 				}
 			}
+			
 			return 0;
 		}
 		

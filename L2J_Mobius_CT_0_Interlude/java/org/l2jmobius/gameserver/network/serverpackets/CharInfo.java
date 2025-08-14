@@ -68,6 +68,7 @@ public class CharInfo extends ServerPacket
 			_y = _player.getY();
 			_z = _player.getZ();
 		}
+		
 		_heading = _player.getHeading();
 		_mAtkSpd = _player.getMAtkSpd();
 		_pAtkSpd = (int) _player.getPAtkSpd();
@@ -118,6 +119,7 @@ public class CharInfo extends ServerPacket
 		buffer.writeInt(_player.getInventory().getPaperdollItemDisplayId(Inventory.PAPERDOLL_RHAND));
 		buffer.writeInt(_player.getInventory().getPaperdollItemDisplayId(Inventory.PAPERDOLL_HAIR));
 		buffer.writeInt(_player.getInventory().getPaperdollItemDisplayId(Inventory.PAPERDOLL_HAIR2));
+		
 		// c6 new h's
 		buffer.writeShort(0);
 		buffer.writeShort(0);
@@ -177,6 +179,7 @@ public class CharInfo extends ServerPacket
 			buffer.writeInt(0);
 			buffer.writeInt(0);
 		}
+		
 		// In UserInfo leader rights and siege flags, but here found nothing??
 		// Therefore RelationChanged packet with that info is required
 		buffer.writeInt(0);

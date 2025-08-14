@@ -70,5 +70,6 @@
 		<npc id="31036" x="8193" y="-122361" z="-1864" heading="0" respawnDelay="60" /> <!-- Centurion -->
 		<npc id="31036" x="12155" y="-134292" z="-1184" heading="58775" respawnDelay="60" /> <!-- Centurion -->
 		<npc id="31036" x="13479" y="-94376" z="-2832" heading="0" respawnDelay="60" /> <!-- Centurion -->
+		<npc id="30669" x="-9563" y="-89959" z="-2320" heading="0" respawnDelay="60" /> <!-- Kakan -->
 	</spawn>
 </list>

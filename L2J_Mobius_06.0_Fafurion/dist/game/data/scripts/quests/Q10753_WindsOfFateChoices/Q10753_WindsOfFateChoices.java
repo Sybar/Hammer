@@ -78,10 +78,12 @@ public class Q10753_WindsOfFateChoices extends Quest
 	private static final int ATHREAS_BOX = 33997;
 	private static final int GERETH = 33932;
 	private static final int QUEEN_NAVARI = 33931;
+	
 	// Monsters
 	private static final int QUEST_MONSTER_NEBULITE_EYE = 27544;
 	private static final int QUEST_MONSTER_NEBULITE_WATCH = 27545;
 	private static final int QUEST_MONSTER_NEBULITE_GOLEM = 27546;
+	
 	// Item
 	private static final int PROPHECY_MACHINE = 39540;
 	private static final int CRYSTAL_EYE = 39545;
@@ -94,15 +96,18 @@ public class Q10753_WindsOfFateChoices extends Quest
 	private static final int ATHREAS_BELONGINGS = 39550;
 	private static final int CRIMSON_ROSE = 39552;
 	private static final int ATELIA = 39542;
+	
 	// Misc
 	private static final int MIN_LEVEL = 85;
 	private static final String CRYSTAL_EYE_VAR = "EyeCount";
 	private static final String BROKEN_STONE_OF_PURITY_VAR = "PurityCount";
 	private static final String EMPTY_REGEANT_FLASK_VAR = "FlaskCount";
+	
 	// Reward
 	private static final int SAYHAS_BOX_W = 40268;
 	private static final int SAYHAS_BOX_M = 40269;
 	private static final int CHAOS_POMANDER = 37374;
+	
 	// Location
 	private static final Location TELEPORT_LOC = new Location(-81948, 249635, -3371);
 	private static final Location[] BOX_SPAWNS =
@@ -208,6 +213,7 @@ public class Q10753_WindsOfFateChoices extends Quest
 					qs.unset("PurityCount");
 					qs.setCond(5, true);
 				}
+				
 				htmltext = event;
 				break;
 			}
@@ -218,6 +224,7 @@ public class Q10753_WindsOfFateChoices extends Quest
 					takeItems(player, RESTORATION_REGEANT, -1);
 					qs.setCond(6, true);
 				}
+				
 				htmltext = event;
 				break;
 			}
@@ -227,6 +234,7 @@ public class Q10753_WindsOfFateChoices extends Quest
 				{
 					qs.setCond(7, true);
 				}
+				
 				htmltext = event;
 				break;
 			}
@@ -237,6 +245,7 @@ public class Q10753_WindsOfFateChoices extends Quest
 					giveItems(player, WHITE_ROSE, 1);
 					qs.setCond(8, true);
 				}
+				
 				htmltext = event;
 				break;
 			}
@@ -262,9 +271,11 @@ public class Q10753_WindsOfFateChoices extends Quest
 					{
 						addSpawn(ATHREAS_BOX, loc, false, 180000);
 					}
+					
 					startQuestTimer("despawn", 180000, npc, player);
 					qs.setCond(9);
 				}
+				
 				htmltext = event;
 				break;
 			}
@@ -288,6 +299,7 @@ public class Q10753_WindsOfFateChoices extends Quest
 						htmltext = "33997-3.html";
 					}
 				}
+				
 				npc.setScriptValue(1);
 				break;
 			}
@@ -301,6 +313,7 @@ public class Q10753_WindsOfFateChoices extends Quest
 					npc.setScriptValue(0);
 					qs.setCond(11, true);
 				}
+				
 				htmltext = event;
 				break;
 			}
@@ -316,8 +329,10 @@ public class Q10753_WindsOfFateChoices extends Quest
 					{
 						qs.setCond(13, true);
 					}
+					
 					takeItems(player, CRIMSON_ROSE, -1);
 				}
+				
 				htmltext = event;
 				break;
 			}
@@ -327,6 +342,7 @@ public class Q10753_WindsOfFateChoices extends Quest
 				{
 					qs.setCond(14, true);
 				}
+				
 				htmltext = event;
 				break;
 			}
@@ -336,6 +352,7 @@ public class Q10753_WindsOfFateChoices extends Quest
 				{
 					qs.setCond(14, true);
 				}
+				
 				htmltext = event;
 				break;
 			}
@@ -345,6 +362,7 @@ public class Q10753_WindsOfFateChoices extends Quest
 				{
 					qs.setCond(18, true);
 				}
+				
 				htmltext = event;
 				break;
 			}
@@ -362,6 +380,7 @@ public class Q10753_WindsOfFateChoices extends Quest
 					{
 						player.setBaseClass(newClass);
 					}
+					
 					player.setPlayerClass(newClass.getId());
 					player.broadcastUserInfo();
 					player.sendSkillList();
@@ -374,6 +393,7 @@ public class Q10753_WindsOfFateChoices extends Quest
 					giveAdena(player, 2030400, false);
 					qs.exitQuest(false, true);
 				}
+				
 				htmltext = event;
 				break;
 			}
@@ -386,6 +406,7 @@ public class Q10753_WindsOfFateChoices extends Quest
 					{
 						player.setBaseClass(newClass);
 					}
+					
 					player.setPlayerClass(newClass.getId());
 					player.broadcastUserInfo();
 					player.sendSkillList();
@@ -398,10 +419,12 @@ public class Q10753_WindsOfFateChoices extends Quest
 					giveAdena(player, 2030400, false);
 					qs.exitQuest(false, true);
 				}
+				
 				htmltext = event;
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -421,6 +444,7 @@ public class Q10753_WindsOfFateChoices extends Quest
 						htmltext = !player.isMageClass() ? "33943-01.html" : "33943-00.html";
 						break;
 					}
+					
 					htmltext = "33943-00.html";
 				}
 				else if (npc.getId() == AYANTHE)
@@ -430,6 +454,7 @@ public class Q10753_WindsOfFateChoices extends Quest
 						htmltext = player.isMageClass() ? "33942-01.html" : "33942-00.html";
 						break;
 					}
+					
 					htmltext = "33942-00.html";
 				}
 				break;
@@ -615,6 +640,7 @@ public class Q10753_WindsOfFateChoices extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -661,6 +687,7 @@ public class Q10753_WindsOfFateChoices extends Quest
 					break;
 				}
 			}
+			
 			if ((eyeCount >= 3) && (purityCount >= 3) && (flaskCount >= 3))
 			{
 				qs.setCond(0);
@@ -681,18 +708,22 @@ public class Q10753_WindsOfFateChoices extends Quest
 			{
 				holder.add(new NpcLogListHolder(NpcStringId.NEBULITE_EYE_CRYSTAL_EYE, EyeCount));
 			}
+			
 			final int PurityCount = qs.getInt(BROKEN_STONE_OF_PURITY_VAR);
 			if (PurityCount > 0)
 			{
 				holder.add(new NpcLogListHolder(NpcStringId.NEBULITE_WATCH_BROKEN_STONE_OF_PURITY, PurityCount));
 			}
+			
 			final int FlaskCount = qs.getInt(EMPTY_REGEANT_FLASK_VAR);
 			if (FlaskCount > 0)
 			{
 				holder.add(new NpcLogListHolder(NpcStringId.NEBULITE_GOLEM_MIRACLE_DRUG_OF_ENCHANTMENT, FlaskCount));
 			}
+			
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 	
@@ -704,6 +735,7 @@ public class Q10753_WindsOfFateChoices extends Quest
 		{
 			return "33997.html";
 		}
+		
 		return "33997-1.html";
 	}
 	
@@ -785,6 +817,7 @@ public class Q10753_WindsOfFateChoices extends Quest
 				{
 					player.teleToLocation(TELEPORT_LOC);
 				}
+				
 				player.clearHtmlActions(HtmlActionScope.TUTORIAL_HTML);
 			}
 			else if (command.equals("Q10753_close"))
@@ -819,6 +852,7 @@ public class Q10753_WindsOfFateChoices extends Quest
 			{
 				showOnScreenMsg(player, NpcStringId.MASTER_KATALIN_HAS_SENT_A_LETTER_NCLICK_THE_QUESTION_MARK_ICON_TO_READ, ExShowScreenMessage.TOP_CENTER, 10000);
 			}
+			
 			player.sendPacket(new TutorialShowQuestionMark(getId(), 1));
 			playSound(player, QuestSound.ITEMSOUND_QUEST_TUTORIAL);
 		}
@@ -845,6 +879,7 @@ public class Q10753_WindsOfFateChoices extends Quest
 			{
 				showOnScreenMsg(player, NpcStringId.MASTER_KATALIN_HAS_SENT_A_LETTER_NCLICK_THE_QUESTION_MARK_ICON_TO_READ, ExShowScreenMessage.TOP_CENTER, 10000);
 			}
+			
 			player.sendPacket(new TutorialShowQuestionMark(getId(), 1));
 			playSound(player, QuestSound.ITEMSOUND_QUEST_TUTORIAL);
 		}

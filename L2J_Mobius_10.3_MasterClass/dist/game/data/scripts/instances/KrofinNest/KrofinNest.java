@@ -104,10 +104,12 @@ public class KrofinNest extends AbstractInstance
 		26391,
 		26392
 	};
+	
 	// Items
 	private static final ItemHolder BENUSTAS_REWARD_BOX = new ItemHolder(81151, 1);
 	private static final ItemHolder BENUSTAS_SHINING_REWARD_BOX = new ItemHolder(81452, 1);
 	private static final ItemHolder BENUSTAS_REWARD_BOX_110 = new ItemHolder(81741, 1);
+	
 	// Misc
 	private static final int[] TEMPLATE_IDS =
 	{
@@ -118,6 +120,7 @@ public class KrofinNest extends AbstractInstance
 	private static final int DOOR2 = 24250002;
 	private static final int DOOR3 = 24250004;
 	private static final int DOOR4 = 24250006;
+	
 	// Effect Triggers
 	private static final int DOOR1_CLOSED = 23227500;
 	private static final int DOOR1_OPENING = 23227502;
@@ -344,6 +347,7 @@ public class KrofinNest extends AbstractInstance
 						world.spawnGroup("SECOND_AREA");
 						startQuestTimer("door_closed_effects", 10000, null, player);
 					}
+					
 					startQuestTimer("check_status", 1000, null, player);
 					break;
 				}
@@ -359,6 +363,7 @@ public class KrofinNest extends AbstractInstance
 						world.spawnGroup("THIRD_AREA");
 						startQuestTimer("door_closed_effects", 2000, null, player);
 					}
+					
 					startQuestTimer("check_status", 10000, null, player);
 					break;
 				}
@@ -374,6 +379,7 @@ public class KrofinNest extends AbstractInstance
 						world.spawnGroup("FOURTH_AREA");
 						startQuestTimer("door_closed_effects", 2000, null, player);
 					}
+					
 					startQuestTimer("check_status", 10000, null, player);
 					break;
 				}
@@ -389,11 +395,13 @@ public class KrofinNest extends AbstractInstance
 						world.spawnGroup(world.getTemplateId() == TEMPLATE_IDS[0] ? "KROSHA_FIRST_FORM" : "KROSHA_FINAL_FORM");
 						world.broadcastPacket(new OnEventTrigger(BOSS_WATERFALL, true));
 					}
+					
 					startQuestTimer("check_status", 10000, null, player);
 					break;
 				}
 			}
 		}
+		
 		return null;
 	}
 	
@@ -477,10 +485,12 @@ public class KrofinNest extends AbstractInstance
 					{
 						giveItems(member, BENUSTAS_REWARD_BOX);
 					}
+					
 					if ((randomPlayer != null) && (getRandom(100) < 80) && (world.getPlayersCount() == world.getParameters().getInt("INITIAL_PARTY_MEMBERS", 0)))
 					{
 						giveItems(randomPlayer, BENUSTAS_SHINING_REWARD_BOX);
 					}
+					
 					showOnScreenMsg(world, NpcStringId.THE_WATER_POWER_PROTECTING_QUEEN_KROSHA_HAS_DISAPPEARED, ExShowScreenMessage.TOP_CENTER, 7000, true);
 					world.finishInstance();
 				}
@@ -490,10 +500,12 @@ public class KrofinNest extends AbstractInstance
 					{
 						giveItems(member, BENUSTAS_REWARD_BOX_110);
 					}
+					
 					if ((randomPlayer != null) && (getRandom(100) < 80) && (world.getPlayersCount() == world.getParameters().getInt("INITIAL_PARTY_MEMBERS", 0)))
 					{
 						giveItems(randomPlayer, BENUSTAS_SHINING_REWARD_BOX);
 					}
+					
 					showOnScreenMsg(world, NpcStringId.THE_WATER_POWER_PROTECTING_QUEEN_KROSHA_HAS_DISAPPEARED, ExShowScreenMessage.TOP_CENTER, 7000, true);
 					world.finishInstance();
 				}

@@ -78,6 +78,7 @@ public class Shortcuts
 			{
 				return;
 			}
+			
 			shortcut.setSharedReuseGroup(item.getSharedReuseGroup());
 		}
 		

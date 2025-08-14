@@ -35,9 +35,11 @@ public class Wisp extends AbstractNpcAI
 	// NPCs
 	private static final int WISP = 32915;
 	private static final int LARGE_WISP = 32916;
+	
 	// Skills
 	private static final SkillHolder WISP_HEAL = new SkillHolder(14064, 1);
 	private static final SkillHolder LARGE_WISP_HEAL = new SkillHolder(14065, 1);
+	
 	// Misc
 	private static final int RESPAWN_MIN = 60000;
 	private static final int RESPAWN_MAX = 120000;

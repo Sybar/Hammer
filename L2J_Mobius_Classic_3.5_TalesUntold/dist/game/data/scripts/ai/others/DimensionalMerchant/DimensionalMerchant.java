@@ -45,6 +45,7 @@ public class DimensionalMerchant extends AbstractNpcAI
 {
 	// NPC
 	private static final int MERCHANT = 32478; // Dimensional Merchant
+	
 	// Others
 	private static final int ATTENDANCE_REWARD_MULTISELL = 3247801;
 	private static final String COMMAND_BYPASS = "Quest DimensionalMerchant ";
@@ -89,6 +90,7 @@ public class DimensionalMerchant extends AbstractNpcAI
 								player.getActiveWarehouse().destroyItem(ItemProcessType.DESTROY, i, player, null);
 							}
 						}
+						
 						player.sendPacket(new WareHouseWithdrawalList(1, player, WareHouseWithdrawalList.FREIGHT));
 						player.sendPacket(new WareHouseWithdrawalList(2, player, WareHouseWithdrawalList.FREIGHT));
 					}
@@ -105,6 +107,7 @@ public class DimensionalMerchant extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

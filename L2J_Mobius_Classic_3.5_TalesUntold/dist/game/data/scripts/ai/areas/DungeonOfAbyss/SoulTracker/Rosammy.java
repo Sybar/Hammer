@@ -37,8 +37,10 @@ public class Rosammy extends AbstractNpcAI
 {
 	// NPC
 	private static final int SOUL_TRACKER_ROSAMMY = 31777;
+	
 	// Item
 	private static final int KEY_OF_EAST_WING = 90011;
+	
 	// Locations
 	private static final Map<String, Location> LOCATIONS = new HashMap<>();
 	static
@@ -93,6 +95,7 @@ public class Rosammy extends AbstractNpcAI
 					{
 						return "no_key.htm";
 					}
+					
 					player.teleToLocation(LOCATIONS.get(event), false); // Go to the Condemned of Abyss Prison
 					break;
 				}
@@ -103,6 +106,7 @@ public class Rosammy extends AbstractNpcAI
 				}
 			}
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	

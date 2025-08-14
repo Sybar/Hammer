@@ -53,14 +53,17 @@ public class BattleWithKeber extends LongTimeEvent
 	// NPCs
 	private static final int BONNIE = 34216;
 	private static final int KEBER_SEAL_STONE = 18551;
+	
 	// Locations from Bonnie teleport
 	private static final Location PLAINS_OF_GLORY_TELEPORT = new Location(133994, 7136, -4352);
 	private static final Location WAR_TORN_PLAINS_TELEPORT = new Location(161658, 21299, -3672);
 	private static final Location SILENT_VALLEY_TELEPORT = new Location(181645, 52823, -6112);
+	
 	// Spawn locations for monsters
 	private static final Location PLAINS_OF_GLORY_BOSS = new Location(132573, 7865, -4300);
 	private static final Location WAR_TORN_PLAINS_BOSS = new Location(161205, 21680, -3680);
 	private static final Location SILENT_VALLEY_BOSS = new Location(180640, 52824, -6096);
+	
 	// Monsters
 	private static final int KEBER_LOW = 18537; // 63
 	private static final int KEBER_MIDDLE = 18552; // 69
@@ -99,6 +102,7 @@ public class BattleWithKeber extends LongTimeEvent
 		BRAINWASHED_MINIONS.add(18545);
 		BRAINWASHED_MINIONS.add(18549);
 	}
+	
 	// Drop
 	private static final Set<ItemChanceHolder> KEBER_LOW_DROP = new HashSet<>();
 	static
@@ -157,6 +161,7 @@ public class BattleWithKeber extends LongTimeEvent
 		NPC_DROP.put(NOMA, NOMA_DROP);
 		NPC_DROP.put(SPALL, SPALL_DROP);
 	}
+	
 	// Misc
 	private static final int EVENT_MESSAGE_START = -1;
 	private static final int EVENT_MESSAGE_KILL = -2;
@@ -231,6 +236,7 @@ public class BattleWithKeber extends LongTimeEvent
 				{
 					return "34216-04.html";
 				}
+				
 				player.teleToLocation((requestLocation == 1 ? PLAINS_OF_GLORY_TELEPORT : requestLocation == 2 ? WAR_TORN_PLAINS_TELEPORT : SILENT_VALLEY_TELEPORT));
 				return "34216-03.html";
 			}
@@ -244,6 +250,7 @@ public class BattleWithKeber extends LongTimeEvent
 						Broadcast.toKnownPlayers((wo), new ExShowScreenMessage(BROADCAST_MESSAGES.get(EVENT_MESSAGE_START), ExShowScreenMessage.TOP_CENTER, 5000));
 					}
 				}
+				
 				MINION_KILL_COUNTER.set(0, 0);
 				MINION_KILL_COUNTER.set(1, 0);
 				MINION_KILL_COUNTER.set(2, 0);
@@ -261,6 +268,7 @@ public class BattleWithKeber extends LongTimeEvent
 					final Location spawnLoc = (fieldType == 0 ? PLAINS_OF_GLORY_BOSS : fieldType == 1 ? WAR_TORN_PLAINS_BOSS : SILENT_VALLEY_BOSS);
 					addSpawn(summonedBossId, spawnLoc, false, 5 * 60 * 1000); // 5 minutes
 				}
+				
 				cancelQuestTimer("KEBER_EVENT_BOSS_STAGE", null, null);
 				startQuestTimer("KEBER_EVENT_END", getMsTimeForEventStage(3), null, null);
 				break;
@@ -282,12 +290,14 @@ public class BattleWithKeber extends LongTimeEvent
 						}
 					}
 				}
+				
 				cancelQuestTimer("KEBER_EVENT_END", null, null);
 				startQuestTimer("KEBER_EVENT_START", getMsTimeForEventStage(1), null, null);
 				changeNpcSpawn(3, true, true);
 				break;
 			}
 		}
+		
 		return null;
 	}
 	
@@ -375,6 +385,7 @@ public class BattleWithKeber extends LongTimeEvent
 					}
 				}
 			}
+			
 			if (BOSSES.contains(npc.getId()))
 			{
 				changeNpcSpawn(getFieldType(npc.getId()), true, false);
@@ -411,10 +422,12 @@ public class BattleWithKeber extends LongTimeEvent
 		{
 			returnTime.add(Calendar.MINUTE, 5);
 		}
+		
 		if (returnTime.getTimeInMillis() < currentTime)
 		{
 			returnTime.add(Calendar.DAY_OF_YEAR, 1);
 		}
+		
 		return returnTime.getTimeInMillis() - currentTime;
 	}
 	
@@ -437,6 +450,7 @@ public class BattleWithKeber extends LongTimeEvent
 		{
 			return 2;
 		}
+		
 		return -1;
 	}
 	
@@ -462,6 +476,7 @@ public class BattleWithKeber extends LongTimeEvent
 			{
 				removeSpawn(wo, delete);
 			}
+			
 			if (((type == 1) || (type == 3)) //
 				&& ((!removeAll && (NORMAL_MINIONS.get(1) == wo.getId())) //
 					|| (ELITE_MINIONS.get(1) == wo.getId()) //
@@ -470,6 +485,7 @@ public class BattleWithKeber extends LongTimeEvent
 			{
 				removeSpawn(wo, delete);
 			}
+			
 			if (((type == 2) || (type == 3)) //
 				&& ((!removeAll && (NORMAL_MINIONS.get(2) == wo.getId())) //
 					|| (ELITE_MINIONS.get(2) == wo.getId()) //

@@ -85,6 +85,7 @@ public class Restoration extends AbstractEffect
 			{
 				newItem.setEnchantLevel(_itemEnchantmentLevel);
 			}
+			
 			target.sendPacket(new PetItemList(effected.getInventory().getItems()));
 		}
 	}

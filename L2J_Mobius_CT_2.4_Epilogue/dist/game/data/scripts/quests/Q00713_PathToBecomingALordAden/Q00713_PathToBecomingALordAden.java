@@ -85,6 +85,7 @@ public class Q00713_PathToBecomingALordAden extends Quest
 				break;
 			}
 		}
+		
 		return event;
 	}
 	
@@ -178,6 +179,7 @@ public class Q00713_PathToBecomingALordAden extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -190,6 +192,7 @@ public class Q00713_PathToBecomingALordAden extends Quest
 				return true;
 			}
 		}
+		
 		return false;
 	}
 }

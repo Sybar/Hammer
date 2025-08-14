@@ -636,9 +636,9 @@
 		<set name="weight" val="2" />
 		<set name="price" val="10030020" />
 		<set name="is_stackable" val="true" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="110" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="80131" name="Super Advanced Accessory Spirit Stone" type="EtcItem">
 		<!-- A rare mineral stone that is made from a stone inside a monster, solidified by shock from physical and magic strikes and dimensional abnormality. Can be used to augment R110 accessories. Only for Lv. 110+characters. -->
@@ -649,9 +649,9 @@
 		<set name="weight" val="2" />
 		<set name="price" val="10030020" />
 		<set name="is_stackable" val="true" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="110" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="80132" name="Weapon Attribute Change Crystal (R110-grade)" type="EtcItem">
 		<!-- Double-click to change the attribute of R110-grade weapons. It can be used when there is a R110-grade weapon bestowed in the inventory. -->

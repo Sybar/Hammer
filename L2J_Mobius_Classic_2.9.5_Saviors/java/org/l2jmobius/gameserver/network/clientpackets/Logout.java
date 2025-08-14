@@ -85,16 +85,20 @@ public class Logout extends ClientPacket
 				{
 					location = MapRegionManager.getInstance().getTeleToLocation(player, TeleportWhereType.TOWN);
 				}
+				
 				player.getVariables().set(PlayerVariables.RESTORE_LOCATION, location.getX() + ";" + location.getY() + ";" + location.getZ());
 			}
+			
 			player.setInstance(null);
 		}
 		
-		LOGGER_ACCOUNTING.info("Logged out, " + client);
-		
-		if (!OfflineTraderTable.getInstance().enteredOfflineMode(player))
+		if (OfflineTraderTable.getInstance().enteredOfflineMode(player))
 		{
-			Disconnection.of(client, player).defaultSequence(LeaveWorld.STATIC_PACKET);
+			LOGGER_ACCOUNTING.info("Entered offline mode, " + client);
+		}
+		else
+		{
+			Disconnection.of(client, player).storeAndDeleteWith(LeaveWorld.STATIC_PACKET);
 		}
 	}
 }

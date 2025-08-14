@@ -1362,9 +1362,9 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ExtractableItems" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="40" />
-		</cond>
+		</conditions>
 		<capsuled_items>
 			<item id="9589" min="1" max="1" chance="100" /> <!-- Talisman Bracelet Lv. 1 -->
 			<item id="91745" min="1" max="1" minEnchant="3" maxEnchant="3" chance="100" /> <!-- Talisman of Aden - Sealed -->
@@ -1384,9 +1384,9 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ExtractableItems" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="50" />
-		</cond>
+		</conditions>
 		<capsuled_items>
 			<item id="90311" min="1" max="1" chance="100" /> <!-- Brooch Lv. 1 -->
 			<item id="92068" min="1" max="1" chance="100" /> <!-- Onyx Lv. 3 - Sealed -->
@@ -1406,9 +1406,9 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ExtractableItems" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="60" />
-		</cond>
+		</conditions>
 		<capsuled_items>
 			<item id="90888" min="1" max="1" chance="100" /> <!-- Agathion Summon Bracelet Lv. 1 -->
 			<item id="93128" min="1" max="1" minEnchant="5" maxEnchant="5" chance="100" /> <!-- Agathion Ignis - Sealed -->
@@ -1446,9 +1446,9 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ExtractableItems" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="50" />
-		</cond>
+		</conditions>
 		<capsuled_items>
 			<item id="3031" min="2000" max="2000" chance="100" /> <!-- Spirit Ore - Sealed -->
 			<item id="90907" min="100" max="100" chance="100" /> <!-- Soulshot Ticket - Sealed -->
@@ -1469,9 +1469,9 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ExtractableItems" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="60" />
-		</cond>
+		</conditions>
 		<capsuled_items>
 			<item id="3031" min="5000" max="5000" chance="100" /> <!-- Spirit Ore - Sealed -->
 			<item id="90907" min="200" max="200" chance="100" /> <!-- Soulshot Ticket - Sealed -->
@@ -1492,9 +1492,9 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ExtractableItems" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="70" />
-		</cond>
+		</conditions>
 		<capsuled_items>
 			<item id="3031" min="10000" max="10000" chance="100" /> <!-- Spirit Ore - Sealed -->
 			<item id="90907" min="500" max="500" chance="100" /> <!-- Soulshot Ticket - Sealed -->
@@ -1515,9 +1515,9 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ExtractableItems" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="76" />
-		</cond>
+		</conditions>
 		<capsuled_items>
 			<item id="3031" min="10000" max="10000" chance="100" /> <!-- Spirit Ore - Sealed -->
 			<item id="90907" min="1000" max="1000" chance="100" /> <!-- Soulshot Ticket - Sealed -->
@@ -1538,9 +1538,9 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ExtractableItems" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="40" />
-		</cond>
+		</conditions>
 		<capsuled_items>
 			<item id="3031" min="10000" max="10000" chance="100" /> <!-- Spirit Ore - Sealed -->
 			<item id="90907" min="1000" max="1000" chance="100" /> <!-- Soulshot Ticket - Sealed -->

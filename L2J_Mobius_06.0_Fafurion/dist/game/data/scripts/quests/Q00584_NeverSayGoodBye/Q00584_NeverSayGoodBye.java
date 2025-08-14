@@ -51,8 +51,10 @@ public class Q00584_NeverSayGoodBye extends Quest
 		23170, // Swamp Watcher
 		23172, // Delegate of Blood
 	};
+	
 	// Item
 	private static final int MONSTER_DROP = 48380; // Rotten Blood
+	
 	// Misc
 	private static final int REQUIRED_DROP_COUNT = 100;
 	private static final int REQUIRED_KILL_COUNT = 100;
@@ -65,6 +67,7 @@ public class Q00584_NeverSayGoodBye extends Quest
 	private static final int FINISH_COND = 2;
 	private static final int MIN_LEVEL = 86;
 	private static final int MAX_LEVEL = 96;
+	
 	// Rewards
 	private static final int XP = 284703720;
 	private static final int SP = 284700;
@@ -109,6 +112,7 @@ public class Q00584_NeverSayGoodBye extends Quest
 				if (qs.isCond(FINISH_COND) && (getQuestItemsCount(player, MONSTER_DROP) >= REQUIRED_DROP_COUNT))
 				{
 					takeItems(player, MONSTER_DROP, -1);
+					
 					// Reward.
 					addExpAndSp(player, XP, SP);
 					rewardItems(player, REWARD_ITEM1, REWARD_ITEM1_AMOUNT);
@@ -121,6 +125,7 @@ public class Q00584_NeverSayGoodBye extends Quest
 				return null;
 			}
 		}
+		
 		return event;
 	}
 	
@@ -174,6 +179,7 @@ public class Q00584_NeverSayGoodBye extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -212,6 +218,7 @@ public class Q00584_NeverSayGoodBye extends Quest
 			holder.add(new NpcLogListHolder(KILLING_NPCSTRING_ID2, true, qs.getInt(KILL_COUNT_VAR)));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

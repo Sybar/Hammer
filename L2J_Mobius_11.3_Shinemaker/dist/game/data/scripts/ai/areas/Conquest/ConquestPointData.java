@@ -66,6 +66,7 @@ public class ConquestPointData implements IXmlReader
 		{
 			s = "-" + s;
 		}
+		
 		LOGGER.info(s);
 	}
 	
@@ -107,12 +108,14 @@ public class ConquestPointData implements IXmlReader
 				LOGGER.severe("[Conquest Points Info] Missing personal points info for NPC ID " + npcId + ", skipping record");
 				return;
 			}
+			
 			att = attrs.getNamedItem("serverPoints");
 			if (att == null)
 			{
 				LOGGER.severe("[Conquest Points Info] Missing server points info for NPC ID " + npcId + ", skipping record");
 				return;
 			}
+			
 			final int personalPoints = Integer.parseInt(att.getNodeValue());
 			final int serverPoints = Integer.parseInt(att.getNodeValue());
 			att = attrs.getNamedItem("zonePoints");
@@ -127,6 +130,7 @@ public class ConquestPointData implements IXmlReader
 				zoneId,
 			});
 		}
+		
 		if ("player".equals(d.getNodeName()))
 		{
 			final NamedNodeMap attrs = d.getAttributes();
@@ -144,12 +148,14 @@ public class ConquestPointData implements IXmlReader
 				LOGGER.severe("[Conquest Points Info] Missing personal points info for PLAYER LEVEL " + level + ", skipping record");
 				return;
 			}
+			
 			att = attrs.getNamedItem("serverPoints");
 			if (att == null)
 			{
 				LOGGER.severe("[Conquest Points Info] Missing server points info for PLAYER LEVEL " + level + ", skipping record");
 				return;
 			}
+			
 			final int personalPoints = Integer.parseInt(att.getNodeValue());
 			final int serverPoints = Integer.parseInt(att.getNodeValue());
 			final int bloodyCoins = Integer.parseInt(att.getNodeValue());

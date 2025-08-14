@@ -62,6 +62,7 @@ public class Armor extends ItemTemplate
 			{
 				_type = ArmorType.SHIELD;
 			}
+			
 			_type1 = ItemTemplate.TYPE1_SHIELD_ARMOR;
 			_type2 = ItemTemplate.TYPE2_SHIELD_ARMOR;
 		}

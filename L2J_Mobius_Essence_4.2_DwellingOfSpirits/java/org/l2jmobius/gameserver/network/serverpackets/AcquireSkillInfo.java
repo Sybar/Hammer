@@ -86,6 +86,7 @@ public class AcquireSkillInfo extends ServerPacket
 				{
 					continue;
 				}
+				
 				_reqs.add(new Req(99, item.get(0).getId(), item.get(0).getCount(), 50));
 			}
 		}

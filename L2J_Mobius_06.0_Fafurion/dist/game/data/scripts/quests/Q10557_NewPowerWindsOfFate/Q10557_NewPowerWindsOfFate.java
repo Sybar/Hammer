@@ -64,6 +64,7 @@ public final class Q10557_NewPowerWindsOfFate extends Quest
 	// NPCs
 	private static final int STIG = 34361;
 	private static final int SERENIA = 34394;
+	
 	// Items
 	private static final int AGATHION_GRIFFIN = 37374;
 	private static final int CHAOS_POMANDER = 37374;
@@ -71,6 +72,7 @@ public final class Q10557_NewPowerWindsOfFate extends Quest
 	private static final int PAULINA_EQUIPMENT_SET_R = 46919;
 	private static final int SAYHAS_BOX_EVISCERATOR = 40268;
 	private static final int SAYHAS_BOX_SAYHAS_SEER = 40269;
+	
 	// Misc
 	private static final Map<PlayerClass, Integer> AWAKE_POWER = new HashMap<>();
 	static
@@ -155,6 +157,7 @@ public final class Q10557_NewPowerWindsOfFate extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -246,6 +249,7 @@ public final class Q10557_NewPowerWindsOfFate extends Quest
 				break;
 			}
 		}
+		
 		giveItems(player, CHAOS_POMANDER, 2);
 		giveItems(player, GRADUATION_GIFT, 1);
 		giveItems(player, PAULINA_EQUIPMENT_SET_R, 1);
@@ -262,6 +266,7 @@ public final class Q10557_NewPowerWindsOfFate extends Quest
 				player.removeSkill(skill);
 			}
 		}
+		
 		player.setAbilityPointsUsed(0);
 		player.sendPacket(new ExAcquireAPSkillList(player));
 		player.broadcastUserInfo();

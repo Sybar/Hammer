@@ -21,10 +21,9 @@
 package org.l2jmobius.gameserver.ai;
 
 import java.lang.ref.WeakReference;
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
-import java.util.logging.Logger;
 
 import org.l2jmobius.Config;
 import org.l2jmobius.commons.util.Rnd;
@@ -66,25 +65,17 @@ import org.l2jmobius.gameserver.util.LocationUtil;
  */
 public class AttackableAI extends CreatureAI
 {
-	private static final Logger LOGGER = Logger.getLogger(AttackableAI.class.getName());
-	
 	private static final int RANDOM_WALK_RATE = 30; // confirmed
 	private static final int MAX_ATTACK_TIMEOUT = 1200; // int ticks, i.e. 2min
 	
-	/**
-	 * The delay after which the attacked is stopped.
-	 */
+	/** The delay after which the attacked is stopped. */
 	private int _attackTimeout;
-	/**
-	 * The Attackable aggro counter.
-	 */
+	/** The Attackable aggro counter. */
 	private int _globalAggro;
-	/**
-	 * The flag used to indicate that a thinking action is in progress, to prevent recursive thinking.
-	 */
+	/** The flag used to indicate that a thinking action is in progress, to prevent recursive thinking. */
 	private boolean _thinking;
 	
-	private int chaostime = 0;
+	private int _chaosTime = 0;
 	
 	public AttackableAI(Attackable attackable)
 	{
@@ -335,6 +326,7 @@ public class AttackableAI extends CreatureAI
 						{
 							continue;
 						}
+						
 						if ((Config.FAKE_PLAYER_AGGRO_FPC && t.isFakePlayer()) //
 							|| (Config.FAKE_PLAYER_AGGRO_MONSTERS && t.isMonster() && !t.isFakePlayer()) //
 							|| (Config.FAKE_PLAYER_AGGRO_PLAYERS && t.isPlayer()))
@@ -348,6 +340,7 @@ public class AttackableAI extends CreatureAI
 							}
 						}
 					}
+					
 					if (nearestTarget != null)
 					{
 						npc.addDamageHate(nearestTarget, 0, 1);
@@ -371,12 +364,14 @@ public class AttackableAI extends CreatureAI
 							{
 								ItemsOnGroundManager.getInstance().removeObject(droppedItem);
 							}
+							
 							if (droppedItem.getTemplate().hasExImmediateEffect())
 							{
 								for (SkillHolder skillHolder : droppedItem.getTemplate().getAllSkills())
 								{
 									SkillCaster.triggerCast(npc, null, skillHolder.getSkill(), null, false);
 								}
+								
 								npc.broadcastInfo(); // ? check if this is necessary
 							}
 						}
@@ -385,6 +380,7 @@ public class AttackableAI extends CreatureAI
 					{
 						npc.getFakePlayerDrops().remove(itemIndex);
 					}
+					
 					npc.setRunning();
 				}
 			}
@@ -426,6 +422,7 @@ public class AttackableAI extends CreatureAI
 							{
 								npc.addDamageHate(t, 0, 0);
 							}
+							
 							if (npc instanceof Guard)
 							{
 								World.getInstance().forEachVisibleObjectInRange(npc, Guard.class, 500, guard -> guard.addDamageHate(t, 0, 10));
@@ -532,6 +529,7 @@ public class AttackableAI extends CreatureAI
 				{
 					x1 = (leader.getX() - x1) + minRadius;
 				}
+				
 				if (y1 > (offset + minRadius))
 				{
 					y1 = (leader.getY() + y1) - offset;
@@ -623,6 +621,7 @@ public class AttackableAI extends CreatureAI
 						npc.setCurrentHp(npc.getMaxHp());
 						npc.setCurrentMp(npc.getMaxMp());
 					}
+					
 					npc.abortAttack();
 					npc.clearAggroList();
 					npc.getAttackByList().clear();
@@ -645,6 +644,7 @@ public class AttackableAI extends CreatureAI
 								minion.setCurrentHp(minion.getMaxHp());
 								minion.setCurrentMp(minion.getMaxMp());
 							}
+							
 							minion.abortAttack();
 							minion.clearAggroList();
 							minion.getAttackByList().clear();
@@ -661,6 +661,11 @@ public class AttackableAI extends CreatureAI
 					return;
 				}
 			}
+		}
+		
+		if (npc.isCoreAIDisabled())
+		{
+			return;
 		}
 		
 		Creature target = npc.getMostHated();
@@ -711,81 +716,9 @@ public class AttackableAI extends CreatureAI
 			return;
 		}
 		
+		// Initialize data.
 		final NpcTemplate template = npc.getTemplate();
 		final int collision = template.getCollisionRadius();
-		
-		// Handle all WorldObject of its Faction inside the Faction Range
-		
-		final Set<Integer> clans = template.getClans();
-		if ((clans != null) && !clans.isEmpty())
-		{
-			final int factionRange = template.getClanHelpRange() + collision;
-			// Go through all WorldObject that belong to its faction
-			try
-			{
-				final Creature finalTarget = target;
-				
-				// Call friendly npcs for help only if this NPC was attacked by the target creature.
-				boolean targetExistsInAttackByList = false;
-				for (WeakReference<Creature> reference : npc.getAttackByList())
-				{
-					if (reference.get() == finalTarget)
-					{
-						targetExistsInAttackByList = true;
-						break;
-					}
-				}
-				if (targetExistsInAttackByList)
-				{
-					World.getInstance().forEachVisibleObjectInRange(npc, Attackable.class, factionRange, nearby ->
-					{
-						// Don't call dead npcs, npcs without ai or npcs which are too far away.
-						if (nearby.isDead() || !nearby.hasAI() || (Math.abs(finalTarget.getZ() - nearby.getZ()) > 600))
-						{
-							return;
-						}
-						// Don't call npcs who are already doing some action (e.g. attacking, casting).
-						if ((nearby.getAI()._intention != Intention.IDLE) && (nearby.getAI()._intention != Intention.ACTIVE))
-						{
-							return;
-						}
-						// Don't call npcs who aren't in the same clan.
-						final NpcTemplate nearbytemplate = nearby.getTemplate();
-						if (!template.isClan(nearbytemplate.getClans()) || (nearbytemplate.hasIgnoreClanNpcIds() && nearbytemplate.getIgnoreClanNpcIds().contains(npc.getId())))
-						{
-							return;
-						}
-						
-						if (finalTarget.isPlayable())
-						{
-							// By default, when a faction member calls for help, attack the caller's attacker.
-							// Notify the AI with AGGRESSION
-							nearby.getAI().notifyAction(Action.AGGRESSION, finalTarget, 1);
-							
-							if (EventDispatcher.getInstance().hasListener(EventType.ON_ATTACKABLE_FACTION_CALL, nearby))
-							{
-								EventDispatcher.getInstance().notifyEventAsync(new OnAttackableFactionCall(nearby, npc, finalTarget.asPlayer(), finalTarget.isSummon()), nearby);
-							}
-						}
-						else if (nearby.getAI()._intention != Intention.ATTACK)
-						{
-							nearby.addDamageHate(finalTarget, 0, npc.getHating(finalTarget));
-							nearby.getAI().setIntention(Intention.ATTACK, finalTarget);
-						}
-					});
-				}
-			}
-			catch (NullPointerException e)
-			{
-				LOGGER.warning(getClass().getSimpleName() + ": thinkAttack() faction call failed: " + e.getMessage());
-			}
-		}
-		
-		if (npc.isCoreAIDisabled())
-		{
-			return;
-		}
-		
 		final List<Skill> aiSuicideSkills = template.getAISkills(AISkillScope.SUICIDE);
 		if (!aiSuicideSkills.isEmpty() && ((int) ((npc.getCurrentHp() / npc.getMaxHp()) * 100) < 30) && npc.hasSkillChance())
 		{
@@ -793,7 +726,6 @@ public class AttackableAI extends CreatureAI
 			if (SkillCaster.checkUseConditions(npc, skill) && checkSkillTarget(skill, target))
 			{
 				npc.doCast(skill);
-				// LOGGER.finer(this + " used suicide skill " + skill);
 				return;
 			}
 		}
@@ -818,6 +750,7 @@ public class AttackableAI extends CreatureAI
 					{
 						newX = target.getX() - newX;
 					}
+					
 					int newY = combinedCollision + Rnd.get(40);
 					if (Rnd.nextBoolean())
 					{
@@ -879,19 +812,19 @@ public class AttackableAI extends CreatureAI
 		// BOSS/Raid Minion Target Reconsider
 		if (npc.isRaid() || npc.isRaidMinion())
 		{
-			chaostime++;
+			_chaosTime++;
 			boolean changeTarget = false;
-			if ((npc instanceof RaidBoss) && (chaostime > Config.RAID_CHAOS_TIME))
+			if ((npc instanceof RaidBoss) && (_chaosTime > Config.RAID_CHAOS_TIME))
 			{
 				final double multiplier = npc.asMonster().hasMinions() ? 200 : 100;
 				changeTarget = Rnd.get(100) <= (100 - ((npc.getCurrentHp() * multiplier) / npc.getMaxHp()));
 			}
-			else if ((npc instanceof GrandBoss) && (chaostime > Config.GRAND_CHAOS_TIME))
+			else if ((npc instanceof GrandBoss) && (_chaosTime > Config.GRAND_CHAOS_TIME))
 			{
 				final double chaosRate = 100 - ((npc.getCurrentHp() * 300) / npc.getMaxHp());
 				changeTarget = ((chaosRate <= 10) && (Rnd.get(100) <= 10)) || ((chaosRate > 10) && (Rnd.get(100) <= chaosRate));
 			}
-			else if (chaostime > Config.MINION_CHAOS_TIME)
+			else if (_chaosTime > Config.MINION_CHAOS_TIME)
 			{
 				changeTarget = Rnd.get(100) <= (100 - ((npc.getCurrentHp() * 200) / npc.getMaxHp()));
 			}
@@ -902,7 +835,7 @@ public class AttackableAI extends CreatureAI
 				if (target != null)
 				{
 					setTarget(target);
-					chaostime = 0;
+					_chaosTime = 0;
 					return;
 				}
 			}
@@ -1027,6 +960,7 @@ public class AttackableAI extends CreatureAI
 		{
 			range *= 2;
 		}
+		
 		if (npc.getAiType() == AIType.ARCHER)
 		{
 			range = 850 + combinedCollision; // Base bow range for NPCs.
@@ -1082,8 +1016,8 @@ public class AttackableAI extends CreatureAI
 					return false;
 				}
 				
-				// There are cases where bad skills (negative effect points) are actually buffs and NPCs cast them on players, but they shouldn't.
-				if ((!skill.isDebuff() || !skill.isBad()) && target.isAutoAttackable(attackable))
+				// There are cases where negative effect skills (negative effect points) are actually buffs and NPCs cast them on players, but they shouldn't.
+				if ((!skill.isDebuff() || !skill.hasNegativeEffect()) && target.isAutoAttackable(attackable))
 				{
 					return false;
 				}
@@ -1092,7 +1026,7 @@ public class AttackableAI extends CreatureAI
 			// Check if target had buffs if skill is bad cancel, or debuffs if skill is good cancel.
 			if (skill.hasEffectType(EffectType.DISPEL, EffectType.DISPEL_BY_SLOT))
 			{
-				if (skill.isBad())
+				if (skill.hasNegativeEffect())
 				{
 					if (target.asCreature().getEffectList().getBuffCount() == 0)
 					{
@@ -1162,14 +1096,14 @@ public class AttackableAI extends CreatureAI
 			return null;
 		}
 		
-		// There are cases where bad skills (negative effect points) are actually buffs and NPCs cast them on players, but they shouldn't.
-		final boolean isBad = skill.isContinuous() ? skill.isDebuff() : skill.isBad();
+		// There are cases where negative effect skills (negative effect points) are actually buffs and NPCs cast them on players, but they shouldn't.
+		final boolean hasNegativeEffect = skill.isContinuous() ? skill.isDebuff() : skill.hasNegativeEffect();
 		
 		// Check current target first.
 		final int range = insideCastRange ? skill.getCastRange() + getActiveChar().getTemplate().getCollisionRadius() : 2000; // TODO need some forget range
 		
-		final List<Creature> result = new ArrayList<>();
-		if (isBad)
+		final List<Creature> result = new LinkedList<>();
+		if (hasNegativeEffect)
 		{
 			for (AggroInfo aggro : npc.getAggroList().values())
 			{
@@ -1232,7 +1166,7 @@ public class AttackableAI extends CreatureAI
 		final Attackable npc = getActiveChar();
 		if (randomTarget)
 		{
-			final List<Creature> result = new ArrayList<>();
+			final List<Creature> result = new LinkedList<>();
 			for (AggroInfo aggro : npc.getAggroList().values())
 			{
 				if (checkTarget(aggro.getAttacker()))
@@ -1361,6 +1295,7 @@ public class AttackableAI extends CreatureAI
 	{
 		final Attackable me = getActiveChar();
 		final WorldObject target = getTarget();
+		
 		// Calculate the attack timeout
 		_attackTimeout = MAX_ATTACK_TIMEOUT + GameTimeTaskManager.getInstance().getGameTicks();
 		
@@ -1382,7 +1317,7 @@ public class AttackableAI extends CreatureAI
 			me.setRunning();
 		}
 		
-		if (!getActiveChar().isCoreAIDisabled())
+		if (!me.isCoreAIDisabled())
 		{
 			// Set the Intention to ATTACK
 			if (getIntention() != Intention.ATTACK)
@@ -1410,6 +1345,82 @@ public class AttackableAI extends CreatureAI
 			}
 		}
 		
+		// Handle all WorldObject of its Faction inside the Faction Range.
+		final NpcTemplate template = me.getTemplate();
+		final Set<Integer> clans = template.getClans();
+		if ((clans != null) && !clans.isEmpty())
+		{
+			final int collision = template.getCollisionRadius();
+			final int factionRange = template.getClanHelpRange() + collision;
+			
+			// Go through all WorldObject that belong to its faction.
+			try
+			{
+				// Call friendly npcs for help only if this NPC was attacked by the target creature.
+				final Creature finalTarget = attacker;
+				boolean targetExistsInAttackByList = false;
+				for (WeakReference<Creature> reference : me.getAttackByList())
+				{
+					if (reference.get() == finalTarget)
+					{
+						targetExistsInAttackByList = true;
+						break;
+					}
+				}
+				
+				if (targetExistsInAttackByList)
+				{
+					World.getInstance().forEachVisibleObjectInRange(me, Attackable.class, factionRange, nearby ->
+					{
+						// Don't call dead npcs, npcs without ai or npcs which are too far away.
+						if (nearby.isDead() || !nearby.hasAI() || (Math.abs(finalTarget.getZ() - nearby.getZ()) > 600))
+						{
+							return;
+						}
+						
+						// Don't call npcs who are already doing some action (e.g. attacking, casting).
+						if ((nearby.getAI()._intention != Intention.IDLE) && (nearby.getAI()._intention != Intention.ACTIVE))
+						{
+							return;
+						}
+						
+						// Don't call npcs who aren't in the same clan.
+						final NpcTemplate nearbytemplate = nearby.getTemplate();
+						if (!template.isClan(nearbytemplate.getClans()) || (nearbytemplate.hasIgnoreClanNpcIds() && nearbytemplate.getIgnoreClanNpcIds().contains(me.getId())))
+						{
+							return;
+						}
+						
+						if (finalTarget.isPlayable())
+						{
+							// By default, when a faction member calls for help, attack the caller's attacker.
+							if (GeoEngine.getInstance().canSeeTarget(nearby, finalTarget))
+							{
+								nearby.getAI().notifyAction(Action.AGGRESSION, finalTarget, 1);
+							}
+							
+							if (EventDispatcher.getInstance().hasListener(EventType.ON_ATTACKABLE_FACTION_CALL, nearby))
+							{
+								EventDispatcher.getInstance().notifyEventAsync(new OnAttackableFactionCall(nearby, me, finalTarget.asPlayer(), finalTarget.isSummon()), nearby);
+							}
+						}
+						else if (nearby.getAI()._intention != Intention.ATTACK)
+						{
+							if (GeoEngine.getInstance().canSeeTarget(nearby, finalTarget))
+							{
+								nearby.addDamageHate(finalTarget, 0, me.getHating(finalTarget));
+								nearby.getAI().setIntention(Intention.ATTACK, finalTarget);
+							}
+						}
+					});
+				}
+			}
+			catch (NullPointerException e)
+			{
+				// LOGGER.warning(getClass().getSimpleName() + ": There has been a problem trying to think the attack!", e);
+			}
+		}
+		
 		super.onActionAttacked(attacker);
 	}
 	
@@ -1421,47 +1432,45 @@ public class AttackableAI extends CreatureAI
 	 * <li>Add the target to the actor _aggroList or update hate if already present</li>
 	 * <li>Set the actor Intention to ATTACK (if actor is GuardInstance check if it isn't too far from its home location)</li>
 	 * </ul>
+	 * @param target the Creature that attacks
 	 * @param aggro The value of hate to add to the actor against the target
 	 */
 	@Override
 	protected void onActionAggression(Creature target, int aggro)
 	{
 		final Attackable me = getActiveChar();
-		if (me.isDead())
+		if (me.isDead() || (target == null))
 		{
 			return;
 		}
 		
-		if (target != null)
+		// Add the target to the actor _aggroList or update hate if already present
+		me.addDamageHate(target, 0, aggro);
+		
+		// Set the actor AI Intention to ATTACK
+		if (getIntention() != Intention.ATTACK)
 		{
-			// Add the target to the actor _aggroList or update hate if already present
-			me.addDamageHate(target, 0, aggro);
-			
-			// Set the actor AI Intention to ATTACK
-			if (getIntention() != Intention.ATTACK)
+			// Set the Creature movement type to run and send Server->Client packet ChangeMoveType to all others Player
+			if (!me.isRunning())
 			{
-				// Set the Creature movement type to run and send Server->Client packet ChangeMoveType to all others Player
-				if (!me.isRunning())
-				{
-					me.setRunning();
-				}
-				
-				setIntention(Intention.ATTACK, target);
+				me.setRunning();
 			}
 			
-			if (me.isMonster())
+			setIntention(Intention.ATTACK, target);
+		}
+		
+		if (me.isMonster())
+		{
+			Monster master = me.asMonster();
+			if (master.hasMinions())
 			{
-				Monster master = me.asMonster();
-				if (master.hasMinions())
-				{
-					master.getMinionList().onAssist(me, target);
-				}
-				
-				master = master.getLeader();
-				if ((master != null) && master.hasMinions())
-				{
-					master.getMinionList().onAssist(me, target);
-				}
+				master.getMinionList().onAssist(me, target);
+			}
+			
+			master = master.getLeader();
+			if ((master != null) && master.hasMinions())
+			{
+				master.getMinionList().onAssist(me, target);
 			}
 		}
 	}

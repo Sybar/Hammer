@@ -38,6 +38,7 @@ public class Q00923_ShinedustExtraction extends Quest
 {
 	// NPCs
 	private static final int SHUMADRIBA = 34217;
+	
 	// Monsters
 	private static final int[] MONSTERS =
 	{
@@ -54,11 +55,13 @@ public class Q00923_ShinedustExtraction extends Quest
 		23744, // Kshana Nayi
 		23745, // Lucus nyei
 	};
+	
 	// Items
 	private static final int SHINING_DUST = 46747;
 	private static final int BASIC_SUPPLY_BOX = 47184;
 	private static final int INTERMEDIATE_SUPPLY_BOX = 47185;
 	private static final int ADVANCED_SUPPLY_BOX = 47186;
+	
 	// Misc
 	private static final int MIN_LEVEL = 100;
 	
@@ -109,6 +112,7 @@ public class Q00923_ShinedustExtraction extends Quest
 					htmltext = "34217-04b.htm";
 					break;
 				}
+				
 				htmltext = "34217-04.htm";
 				break;
 			}
@@ -124,6 +128,7 @@ public class Q00923_ShinedustExtraction extends Quest
 					htmltext = "34217-04b.htm";
 					break;
 				}
+				
 				htmltext = "34217-04.htm";
 				break;
 			}
@@ -166,6 +171,7 @@ public class Q00923_ShinedustExtraction extends Quest
 							{
 								giveItems(player, BASIC_SUPPLY_BOX, 1);
 							}
+							
 							addExpAndSp(player, 14_831_100_000L, 14_831_100);
 							addFactionPoints(player, Faction.GIANT_TRACKERS, 100);
 							qs.exitQuest(QuestType.DAILY, true);
@@ -193,6 +199,7 @@ public class Q00923_ShinedustExtraction extends Quest
 							{
 								giveItems(player, INTERMEDIATE_SUPPLY_BOX, 1);
 							}
+							
 							addExpAndSp(player, 29_662_200_000L, 29_662_200);
 							addFactionPoints(player, Faction.GIANT_TRACKERS, 200);
 							qs.exitQuest(QuestType.DAILY, true);
@@ -220,6 +227,7 @@ public class Q00923_ShinedustExtraction extends Quest
 							{
 								giveItems(player, ADVANCED_SUPPLY_BOX, 1);
 							}
+							
 							addExpAndSp(player, 44_493_300_000L, 44_493_300);
 							addFactionPoints(player, Faction.GIANT_TRACKERS, 300);
 							qs.exitQuest(QuestType.DAILY, true);
@@ -235,6 +243,7 @@ public class Q00923_ShinedustExtraction extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -266,6 +275,7 @@ public class Q00923_ShinedustExtraction extends Quest
 							htmltext = "34217-04b.htm";
 							break;
 						}
+						
 						htmltext = "34217-04.htm";
 						break;
 					}
@@ -308,6 +318,7 @@ public class Q00923_ShinedustExtraction extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

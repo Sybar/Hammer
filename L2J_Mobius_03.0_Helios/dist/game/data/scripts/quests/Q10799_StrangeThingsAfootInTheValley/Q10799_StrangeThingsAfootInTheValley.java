@@ -42,6 +42,7 @@ public class Q10799_StrangeThingsAfootInTheValley extends Quest
 {
 	// NPCs
 	private static final int NAMO = 33973;
+	
 	// Monsters
 	private static final int[] MONSTERS =
 	{
@@ -57,8 +58,10 @@ public class Q10799_StrangeThingsAfootInTheValley extends Quest
 		23439, // Iron Cave Servant
 		23440, // Headless Knight
 	};
+	
 	// Items
 	private static final int EAS = 960;
+	
 	// Misc
 	private static final int MIN_LEVEL = 81;
 	private static final int MAX_LEVEL = 84;
@@ -112,6 +115,7 @@ public class Q10799_StrangeThingsAfootInTheValley extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -138,6 +142,7 @@ public class Q10799_StrangeThingsAfootInTheValley extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -174,6 +179,7 @@ public class Q10799_StrangeThingsAfootInTheValley extends Quest
 				return holder;
 			}
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

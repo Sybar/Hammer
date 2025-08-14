@@ -31,9 +31,11 @@ public class Q00010_IntoTheWorld extends Quest
 {
 	// Items
 	private static final int VERY_EXPENSIVE_NECKLACE = 7574;
+	
 	// Rewards
 	private static final int SOE_GIRAN = 7559;
 	private static final int MARK_OF_TRAVELER = 7570;
+	
 	// NPCs
 	private static final int REED = 30520;
 	private static final int BALANKI = 30533;

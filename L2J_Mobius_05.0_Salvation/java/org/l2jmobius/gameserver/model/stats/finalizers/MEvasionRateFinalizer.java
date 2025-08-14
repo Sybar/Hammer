@@ -54,6 +54,7 @@ public class MEvasionRateFinalizer implements IStatFunction
 				baseValue += (level - 69) + 2;
 			}
 		}
+		
 		return validateValue(creature, Stat.defaultValue(creature, stat, baseValue), Double.NEGATIVE_INFINITY, creature.isPlayable() ? Config.MAX_EVASION : Double.MAX_VALUE);
 	}
 	
@@ -64,6 +65,7 @@ public class MEvasionRateFinalizer implements IStatFunction
 		{
 			return (0.3 * Math.max(enchantLevel - 3, 0)) + (0.3 * Math.max(enchantLevel - 6, 0));
 		}
+		
 		return (0.2 * Math.max(enchantLevel - 3, 0)) + (0.2 * Math.max(enchantLevel - 6, 0));
 	}
 }

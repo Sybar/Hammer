@@ -44,16 +44,20 @@ public class Q10370_MenacingTimes extends Quest
 	private static final int BROME = 32221; // Kamael
 	private static final int ANDREI = 31292;
 	private static final int GERKENSHTEIN = 33648;
+	
 	// Monster's
 	private static final int GRAVE_SCARAB = 21646;
 	private static final int GRAVE_ANT = 21648;
 	private static final int SHRINE_KNIGHT = 21650;
+	
 	// Items
 	private static final int REMNANT_ASHES = 34765;
 	private static final ItemHolder ADENA = new ItemHolder(57, 479620);
+	
 	// Reward
 	private static final int EXP_REWARD = 22451400;
 	private static final int SP_REWARD = 5388;
+	
 	// Misc
 	private static final int MIN_LEVEL = 76;
 	private static final int MAX_LEVEL = 81;
@@ -141,6 +145,7 @@ public class Q10370_MenacingTimes extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -285,6 +290,7 @@ public class Q10370_MenacingTimes extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	

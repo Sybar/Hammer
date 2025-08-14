@@ -70,6 +70,7 @@ public class GMHennaInfo extends ServerPacket
 			buffer.writeInt(henna.getPotenId());
 			buffer.writeInt(1);
 		}
+		
 		buffer.writeInt(0);
 		buffer.writeInt(0);
 		buffer.writeInt(0);

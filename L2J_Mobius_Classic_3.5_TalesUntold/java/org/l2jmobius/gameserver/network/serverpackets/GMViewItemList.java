@@ -76,6 +76,7 @@ public class GMViewItemList extends AbstractItemPacket
 			buffer.writeString(_playerName);
 			buffer.writeInt(_limit); // inventory limit
 		}
+		
 		buffer.writeInt(_items.size());
 		for (Item item : _items)
 		{

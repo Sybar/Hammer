@@ -39,7 +39,7 @@ import org.l2jmobius.gameserver.network.serverpackets.ActionFailed;
 public class Seed implements IItemHandler
 {
 	@Override
-	public boolean useItem(Playable playable, Item item, boolean forceUse)
+	public boolean onItemUse(Playable playable, Item item, boolean forceUse)
 	{
 		if (!Config.ALLOW_MANOR)
 		{
@@ -96,6 +96,7 @@ public class Seed implements IItemHandler
 		{
 			skills.forEach(holder -> player.useMagic(holder.getSkill(), item, false, false));
 		}
+		
 		return true;
 	}
 }

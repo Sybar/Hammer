@@ -56,6 +56,7 @@ public class ElementalSpiritEvolutionInfo extends ServerPacket
 			buffer.writeInt(0);
 			return;
 		}
+		
 		buffer.writeByte(_type);
 		buffer.writeInt(spirit.getNpcId());
 		buffer.writeInt(1); // unk

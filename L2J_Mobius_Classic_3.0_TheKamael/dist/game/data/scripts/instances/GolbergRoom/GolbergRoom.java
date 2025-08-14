@@ -42,10 +42,13 @@ public class GolbergRoom extends AbstractInstance
 	private static final int SORA = 34091;
 	private static final int GOLBERG = 18359;
 	private static final int GOLBERG_TREASURE_CHEST = 18357;
+	
 	// Items
 	private static final int GOLBERG_KEY_ROOM = 91636;
+	
 	// Misc
 	private static final int TEMPLATE_ID = 207;
+	
 	// Reward
 	private static final ItemHolder BEST_BOX_A = new ItemHolder(91012, 1);
 	private static final ItemHolder WEAPON_BOX_A = new ItemHolder(49785, 1);
@@ -152,10 +155,12 @@ public class GolbergRoom extends AbstractInstance
 				{
 					return "no_party.htm";
 				}
+				
 				if (!hasQuestItems(player, GOLBERG_KEY_ROOM))
 				{
 					return "no_item.htm";
 				}
+				
 				takeItems(player, GOLBERG_KEY_ROOM, 1);
 				enterInstance(player, npc, TEMPLATE_ID);
 				final Instance world = player.getInstanceWorld();
@@ -167,8 +172,10 @@ public class GolbergRoom extends AbstractInstance
 						{
 							continue;
 						}
+						
 						member.teleToLocation(player, 10, world);
 					}
+					
 					startQuestTimer("GOLBERG_MOVE", 5000, world.getNpc(GOLBERG), player);
 				}
 				break;
@@ -181,6 +188,7 @@ public class GolbergRoom extends AbstractInstance
 					player.sendPacket(new ExShowScreenMessage("Rats have become kings while I've been dormant.", 5000));
 					startQuestTimer("NEXT_TEXT", 7000, world.getNpc(GOLBERG), player);
 				}
+				
 				npc.moveToLocation(11711, -86508, -10928, 0);
 				break;
 			}
@@ -314,6 +322,7 @@ public class GolbergRoom extends AbstractInstance
 				break;
 			}
 		}
+		
 		return null;
 	}
 	

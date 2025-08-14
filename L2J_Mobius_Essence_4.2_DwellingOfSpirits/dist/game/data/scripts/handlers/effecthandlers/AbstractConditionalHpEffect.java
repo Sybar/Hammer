@@ -94,6 +94,7 @@ abstract class AbstractConditionalHpEffect extends AbstractStatEffect
 		{
 			return;
 		}
+		
 		if (canPump(null, creature, null))
 		{
 			if (update.get())

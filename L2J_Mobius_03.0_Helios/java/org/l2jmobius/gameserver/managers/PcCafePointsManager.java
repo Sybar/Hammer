@@ -130,10 +130,12 @@ public class PcCafePointsManager
 		{
 			message = new SystemMessage(SystemMessageId.YOU_EARNED_S1_PC_POINT_S);
 		}
+		
 		if ((player.getPcCafePoints() + points) > Config.PC_CAFE_MAX_POINTS)
 		{
 			points = Config.PC_CAFE_MAX_POINTS - player.getPcCafePoints();
 		}
+		
 		message.addLong(points);
 		player.sendPacket(message);
 		player.setPcCafePoints(player.getPcCafePoints() + points);

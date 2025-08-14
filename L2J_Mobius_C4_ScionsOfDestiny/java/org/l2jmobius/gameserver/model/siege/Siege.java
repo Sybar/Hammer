@@ -51,7 +51,6 @@ import org.l2jmobius.gameserver.model.World;
 import org.l2jmobius.gameserver.model.WorldObject;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.actor.enums.player.PlayerCondOverride;
 import org.l2jmobius.gameserver.model.actor.enums.player.TeleportWhereType;
 import org.l2jmobius.gameserver.model.actor.instance.ControlTower;
 import org.l2jmobius.gameserver.model.actor.instance.FlameTower;
@@ -64,7 +63,6 @@ import org.l2jmobius.gameserver.model.events.holders.sieges.castle.OnCastleSiege
 import org.l2jmobius.gameserver.model.events.holders.sieges.castle.OnCastleSiegeStart;
 import org.l2jmobius.gameserver.model.olympiad.Hero;
 import org.l2jmobius.gameserver.network.SystemMessageId;
-import org.l2jmobius.gameserver.network.serverpackets.PlaySound;
 import org.l2jmobius.gameserver.network.serverpackets.RelationChanged;
 import org.l2jmobius.gameserver.network.serverpackets.SiegeInfo;
 import org.l2jmobius.gameserver.network.serverpackets.SystemMessage;
@@ -206,6 +204,7 @@ public class Siege implements Siegable
 						_scheduledStartSiegeTask = ThreadPool.schedule(new ScheduleStartSiegeTask(_castleInst), regTimeRemaining);
 						return;
 					}
+					
 					endTimeRegistration(true);
 				}
 				
@@ -259,7 +258,6 @@ public class Siege implements Siegable
 			SystemMessage sm = new SystemMessage(SystemMessageId.THE_SIEGE_OF_S1_HAS_FINISHED);
 			sm.addCastleId(_castle.getResidenceId());
 			Broadcast.toAllOnlinePlayers(sm);
-			Broadcast.toAllOnlinePlayers(new PlaySound("systemmsg_e.18"));
 			if (_castle.getOwnerId() > 0)
 			{
 				final Clan clan = ClanTable.getInstance().getClan(_castle.getOwnerId());
@@ -332,6 +330,7 @@ public class Siege implements Siegable
 			{
 				_siegeGuardManager.removeMercs();
 			}
+			
 			_castle.spawnDoor(); // Respawn door to castle
 			_castle.setFirstMidVictory(false);
 			_castle.getZone().setActive(false);
@@ -368,6 +367,7 @@ public class Siege implements Siegable
 		{
 			return;
 		}
+		
 		sc.setType(type);
 		getDefenderClans().add(sc);
 	}
@@ -378,6 +378,7 @@ public class Siege implements Siegable
 		{
 			return;
 		}
+		
 		sc.setType(SiegeClanType.ATTACKER);
 		getAttackerClans().add(sc);
 	}
@@ -403,9 +404,11 @@ public class Siege implements Siegable
 				endSiege();
 				return;
 			}
+			
 			if (_castle.getOwnerId() > 0)
 			{
 				final int allyId = ClanTable.getInstance().getClan(_castle.getOwnerId()).getAllyId();
+				
 				// If defender doesn't exist (Pc vs Npc) and only an alliance attacks and the player's clan is in an alliance
 				if (getDefenderClans().isEmpty() && (allyId != 0))
 				{
@@ -417,6 +420,7 @@ public class Siege implements Siegable
 							allinsamealliance = false;
 						}
 					}
+					
 					if (allinsamealliance)
 					{
 						final SiegeClan scNewOwner = getAttackerClan(_castle.getOwnerId());
@@ -450,6 +454,7 @@ public class Siege implements Siegable
 						addDefender(sc, SiegeClanType.DEFENDER);
 					}
 				}
+				
 				_castle.setFirstMidVictory(true);
 				teleportPlayer(SiegeTeleportWhoType.Attacker, TeleportWhereType.SIEGEFLAG); // Teleport to the second closest town
 				teleportPlayer(SiegeTeleportWhoType.Spectator, TeleportWhereType.TOWN); // Teleport to the second closest town
@@ -493,6 +498,7 @@ public class Siege implements Siegable
 					final Clan ownerClan = ClanTable.getInstance().getClan(_firstOwnerClanId);
 					ownerClan.increaseBloodAllianceCount();
 				}
+				
 				sm.addCastleId(_castle.getResidenceId());
 				Broadcast.toAllOnlinePlayers(sm);
 				saveCastleSiege();
@@ -522,7 +528,6 @@ public class Siege implements Siegable
 			final SystemMessage sm = new SystemMessage(SystemMessageId.THE_SIEGE_OF_S1_HAS_STARTED);
 			sm.addCastleId(_castle.getResidenceId());
 			Broadcast.toAllOnlinePlayers(sm);
-			Broadcast.toAllOnlinePlayers(new PlaySound("systemmsg_e.17"));
 			
 			// Notify to scripts.
 			if (EventDispatcher.getInstance().hasListener(EventType.ON_CASTLE_SIEGE_START, _castle))
@@ -592,6 +597,7 @@ public class Siege implements Siegable
 						member.startFameTask(Config.CASTLE_ZONE_FAME_TASK_FREQUENCY * 1000, Config.CASTLE_ZONE_FAME_AQUIRE_POINTS);
 					}
 				}
+				
 				member.updateUserInfo();
 				World.getInstance().forEachVisibleObject(member, Player.class, player ->
 				{
@@ -608,6 +614,7 @@ public class Siege implements Siegable
 				});
 			}
 		}
+		
 		for (SiegeClan siegeclan : getDefenderClans())
 		{
 			if (siegeclan == null)
@@ -640,6 +647,7 @@ public class Siege implements Siegable
 						member.startFameTask(Config.CASTLE_ZONE_FAME_TASK_FREQUENCY * 1000, Config.CASTLE_ZONE_FAME_AQUIRE_POINTS);
 					}
 				}
+				
 				member.updateUserInfo();
 				World.getInstance().forEachVisibleObject(member, Player.class, player ->
 				{
@@ -647,6 +655,7 @@ public class Siege implements Siegable
 					{
 						return;
 					}
+					
 					player.sendPacket(new RelationChanged(member, member.getRelation(player), member.isAutoAttackable(player)));
 					if (member.hasSummon())
 					{
@@ -667,6 +676,7 @@ public class Siege implements Siegable
 		{
 			return;
 		}
+		
 		saveSiegeClan(ClanTable.getInstance().getClan(clanId), DEFENDER, true);
 		loadSiegeClan();
 	}
@@ -782,6 +792,7 @@ public class Siege implements Siegable
 				}
 			}
 		}
+		
 		return players;
 	}
 	
@@ -807,6 +818,7 @@ public class Siege implements Siegable
 			{
 				continue;
 			}
+			
 			for (Player player : clan.getOnlineMembers(0))
 			{
 				if (player.isInSiege())
@@ -815,6 +827,7 @@ public class Siege implements Siegable
 				}
 			}
 		}
+		
 		return players;
 	}
 	
@@ -836,6 +849,7 @@ public class Siege implements Siegable
 				players.add(player);
 			}
 		}
+		
 		return players;
 	}
 	
@@ -861,6 +875,7 @@ public class Siege implements Siegable
 		{
 			return;
 		}
+		
 		for (SiegeClan clan : getAttackerClans())
 		{
 			if (clan.removeFlag(flag))
@@ -894,6 +909,7 @@ public class Siege implements Siegable
 		{
 			return;
 		}
+		
 		final int allyId = getCastle().getOwnerId() != 0 ? ClanTable.getInstance().getClan(getCastle().getOwnerId()).getAllyId() : 0;
 		if ((allyId != 0) && (player.getClan().getAllyId() == allyId) && !force)
 		{
@@ -992,6 +1008,7 @@ public class Siege implements Siegable
 		{
 			return;
 		}
+		
 		removeSiegeClan(clan.getId());
 	}
 	
@@ -1019,6 +1036,7 @@ public class Siege implements Siegable
 		{
 			_scheduledStartSiegeTask.cancel(false);
 		}
+		
 		_scheduledStartSiegeTask = ThreadPool.schedule(new ScheduleStartSiegeTask(getCastle()), 1000);
 	}
 	
@@ -1069,10 +1087,11 @@ public class Siege implements Siegable
 		
 		for (Player player : players)
 		{
-			if (player.canOverrideCond(PlayerCondOverride.CASTLE_CONDITIONS) || player.isJailed())
+			if (player.isGM() || player.isJailed())
 			{
 				continue;
 			}
+			
 			player.teleToLocation(teleportWhere);
 		}
 	}
@@ -1165,6 +1184,7 @@ public class Siege implements Siegable
 		{
 			return true;
 		}
+		
 		return false;
 	}
 	
@@ -1180,22 +1200,26 @@ public class Siege implements Siegable
 			{
 				continue;
 			}
+			
 			if (siege.getSiegeDate().get(Calendar.DAY_OF_WEEK) == getSiegeDate().get(Calendar.DAY_OF_WEEK))
 			{
 				if (siege.checkIsAttacker(clan))
 				{
 					return true;
 				}
+				
 				if (siege.checkIsDefender(clan))
 				{
 					return true;
 				}
+				
 				if (siege.checkIsDefenderWaiting(clan))
 				{
 					return true;
 				}
 			}
 		}
+		
 		return false;
 	}
 	
@@ -1290,6 +1314,7 @@ public class Siege implements Siegable
 				sc.removeFlags();
 			}
 		}
+		
 		for (SiegeClan sc : getDefenderClans())
 		{
 			if (sc != null)
@@ -1315,6 +1340,7 @@ public class Siege implements Siegable
 	private void saveCastleSiege()
 	{
 		setNextSiegeDate(); // Set the next set date for 2 weeks from now
+		
 		// Schedule Time registration end
 		getTimeRegistrationOverDate().setTimeInMillis(System.currentTimeMillis());
 		getTimeRegistrationOverDate().add(Calendar.DAY_OF_MONTH, 1);
@@ -1474,6 +1500,7 @@ public class Siege implements Siegable
 				LOGGER.warning(getClass().getName() + ": Cannot spawn control tower! " + e);
 			}
 		}
+		
 		_controlTowerCount = _controlTowers.size();
 	}
 	
@@ -1532,6 +1559,7 @@ public class Siege implements Siegable
 					distanceClosest = distance;
 				}
 			}
+			
 			if (closestCt != null)
 			{
 				closestCt.registerGuard(spawn);
@@ -1555,6 +1583,7 @@ public class Siege implements Siegable
 				return sc;
 			}
 		}
+		
 		return null;
 	}
 	
@@ -1590,6 +1619,7 @@ public class Siege implements Siegable
 				return sc;
 			}
 		}
+		
 		return null;
 	}
 	
@@ -1613,6 +1643,7 @@ public class Siege implements Siegable
 				return sc;
 			}
 		}
+		
 		return null;
 	}
 	
@@ -1667,6 +1698,7 @@ public class Siege implements Siegable
 				return sc.getFlag();
 			}
 		}
+		
 		return null;
 	}
 	
@@ -1676,6 +1708,7 @@ public class Siege implements Siegable
 		{
 			_siegeGuardManager = new SiegeGuardManager(getCastle());
 		}
+		
 		return _siegeGuardManager;
 	}
 	

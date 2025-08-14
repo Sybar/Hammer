@@ -64,6 +64,7 @@ public class SiegeDailyMissionHandler extends AbstractDailyMissionHandler
 				}
 			}
 		}
+		
 		return false;
 	}
 	

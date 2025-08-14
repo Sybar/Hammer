@@ -46,6 +46,7 @@ public class RecieveAdventurerBuffs extends AbstractNpcAI
 	{
 		80000
 	};
+	
 	// Skills
 	// private static final SkillHolder KNIGHT = new SkillHolder(15648, 1); // Knight's Harmony (Adventurer)
 	private static final SkillHolder WARRIOR = new SkillHolder(15649, 1); // Warrior's Harmony (Adventurer)
@@ -86,6 +87,7 @@ public class RecieveAdventurerBuffs extends AbstractNpcAI
 						{
 							SkillCaster.triggerCast(nearby, npc, holder.getSkill());
 						}
+						
 						if (npc.getTemplate().getFakePlayerInfo().getPlayerClass().isMage())
 						{
 							SkillCaster.triggerCast(nearby, npc, WIZARD.getSkill());
@@ -98,8 +100,10 @@ public class RecieveAdventurerBuffs extends AbstractNpcAI
 					}
 				}
 			}
+			
 			startQuestTimer("AUTOBUFF", 30000, npc, null);
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	

@@ -69,6 +69,7 @@ public class MagicalDamageMp extends AbstractEffect
 			{
 				effector.sendPacket(SystemMessageId.YOUR_ATTACK_HAS_FAILED);
 			}
+			
 			if (effected.isPlayer())
 			{
 				final SystemMessage sm = new SystemMessage(SystemMessageId.C1_RESISTED_C2_S_DRAIN);
@@ -76,8 +77,10 @@ public class MagicalDamageMp extends AbstractEffect
 				sm.addString(effector.getName());
 				effected.sendPacket(sm);
 			}
+			
 			return false;
 		}
+		
 		return true;
 	}
 	

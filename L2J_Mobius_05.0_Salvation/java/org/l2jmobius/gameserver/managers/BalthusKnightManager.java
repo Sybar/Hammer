@@ -77,7 +77,7 @@ public final class BalthusKnightManager
 	 * Check spawn location on enter world
 	 * @param player
 	 */
-	public final static void checkSpawnLocation(Player player)
+	public static final void checkSpawnLocation(Player player)
 	{
 		switch (player.getVariables().getInt(PlayerVariables.BALTHUS_PHASE, 1))
 		{
@@ -97,6 +97,7 @@ public final class BalthusKnightManager
 			{
 				// Reset Phase
 				player.getVariables().set(PlayerVariables.BALTHUS_PHASE, 2);
+				
 				// Teleport to Barracks
 				player.teleToLocation(178306, 177018, -12104);
 				break;

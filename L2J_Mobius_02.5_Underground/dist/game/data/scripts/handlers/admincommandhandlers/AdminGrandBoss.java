@@ -86,7 +86,7 @@ public class AdminGrandBoss implements IAdminCommandHandler
 	};
 	
 	@Override
-	public boolean useAdminCommand(String command, Player activeChar)
+	public boolean onCommand(String command, Player activeChar)
 	{
 		final StringTokenizer st = new StringTokenizer(command, " ");
 		final String actualCommand = st.nextToken();
@@ -236,6 +236,7 @@ public class AdminGrandBoss implements IAdminCommandHandler
 			}
 				break;
 		}
+		
 		return true;
 	}
 	
@@ -428,7 +429,7 @@ public class AdminGrandBoss implements IAdminCommandHandler
 	}
 	
 	@Override
-	public String[] getAdminCommandList()
+	public String[] getCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}

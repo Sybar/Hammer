@@ -35,6 +35,7 @@ public class Q00635_IntoTheDimensionalRift extends Quest
 {
 	// Item
 	private static final int DIMENSION_FRAGMENT = 7079;
+	
 	// Locations
 	private static final Location[] COORD =
 	{
@@ -53,6 +54,7 @@ public class Q00635_IntoTheDimensionalRift extends Quest
 		new Location(-19500, 13508, -4901), // Catacomb of Dark Omens
 		new Location(113865, 84543, -6541), // Catacomb of the Forbidden Path
 	};
+	
 	// Misc
 	private static final int MAX_QUEST = 23; // How many quest slots you need to have in order to enter be able to take another quests within the Rift.
 	
@@ -64,6 +66,7 @@ public class Q00635_IntoTheDimensionalRift extends Quest
 			addTalkId(i);
 			addStartNpc(i);
 		}
+		
 		for (int i = 31488; i <= 31494; i++)
 		{
 			addTalkId(i);
@@ -82,7 +85,8 @@ public class Q00635_IntoTheDimensionalRift extends Quest
 		
 		final int id = qs.getInt("id");
 		final int count = qs.getInt("count");
-		if (event.equals("5.htm"))
+		
+		if (event.equals("TELEPORT"))
 		{
 			if (id > 0)
 			{
@@ -90,6 +94,7 @@ public class Q00635_IntoTheDimensionalRift extends Quest
 				{
 					htmltext = "5a.htm";
 				}
+				
 				qs.set("count", "" + (count + 1));
 				qs.setState(State.STARTED);
 				qs.setCond(1);

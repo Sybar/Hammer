@@ -42,6 +42,7 @@ public class Q00115_TheOtherSideOfTruth extends Quest
 	private static final int SCULPTURE2 = 32077;
 	private static final int SCULPTURE3 = 32078;
 	private static final int SCULPTURE4 = 32079;
+	
 	// Items
 	private static final int LETTER = 8079;
 	private static final int LETTER2 = 8080;

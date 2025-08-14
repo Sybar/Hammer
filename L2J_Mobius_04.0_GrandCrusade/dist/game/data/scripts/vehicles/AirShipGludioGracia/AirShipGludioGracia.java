@@ -126,6 +126,7 @@ public class AirShipGludioGracia extends AbstractNpcAI implements Runnable
 			_foundAtcGludio = true;
 			_atcGludio = findController();
 		}
+		
 		if (_atcGludio != null)
 		{
 			_atcGludio.broadcastSay(ChatType.NPC_SHOUT, npcString);
@@ -139,6 +140,7 @@ public class AirShipGludioGracia extends AbstractNpcAI implements Runnable
 			_foundAtcGracia = true;
 			_atcGracia = findController();
 		}
+		
 		if (_atcGracia != null)
 		{
 			_atcGracia.broadcastSay(ChatType.NPC_SHOUT, npcStringId);
@@ -158,6 +160,7 @@ public class AirShipGludioGracia extends AbstractNpcAI implements Runnable
 				}
 			}
 		}
+		
 		return null;
 	}
 	
@@ -223,6 +226,7 @@ public class AirShipGludioGracia extends AbstractNpcAI implements Runnable
 		{
 			_ship.addPassenger(player);
 		}
+		
 		return null;
 	}
 	
@@ -294,6 +298,7 @@ public class AirShipGludioGracia extends AbstractNpcAI implements Runnable
 					break;
 				}
 			}
+			
 			_cycle++;
 			if (_cycle > 7)
 			{
@@ -307,14 +312,15 @@ public class AirShipGludioGracia extends AbstractNpcAI implements Runnable
 	}
 	
 	@Override
-	public boolean unload(boolean removeFromList)
+	public void unload(boolean removeFromList)
 	{
 		if (_ship != null)
 		{
 			_ship.oustPlayers();
 			_ship.deleteMe();
 		}
-		return super.unload(removeFromList);
+		
+		super.unload(removeFromList);
 	}
 	
 	public static void main(String[] args)

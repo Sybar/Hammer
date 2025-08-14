@@ -38,8 +38,10 @@ public class Q10336_DividedSakumKanilov extends Quest
 	private static final int ZENATH = 33509;
 	private static final int ADVENTURE_GUILDSMAN = 31795;
 	private static final int KANILOV = 27451;
+	
 	// Items
 	private static final int SAKUM_SKETCH = 17584;
+	
 	// Misc
 	private static final int MIN_LEVEL = 27;
 	private static final int MAX_LEVEL = 40;
@@ -90,6 +92,7 @@ public class Q10336_DividedSakumKanilov extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -143,6 +146,7 @@ public class Q10336_DividedSakumKanilov extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -167,6 +171,7 @@ public class Q10336_DividedSakumKanilov extends Quest
 			npcLogList.add(new NpcLogListHolder(KANILOV, false, qs.getInt("killed_" + KANILOV)));
 			return npcLogList;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

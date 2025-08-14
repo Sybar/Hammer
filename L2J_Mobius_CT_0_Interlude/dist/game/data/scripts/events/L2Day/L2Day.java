@@ -44,6 +44,7 @@ public class L2Day extends LongTimeEvent
 		MANAGERS.put(31857, 7121); // Dwarven Village
 		MANAGERS.put(31858, 7120); // Orc Village
 	}
+	
 	// Items
 	private static final int A = 3875;
 	private static final int C = 3876;
@@ -59,6 +60,7 @@ public class L2Day extends LongTimeEvent
 	private static final int S = 3886;
 	private static final int T = 3887;
 	private static final int II = 3888;
+	
 	// Rewards
 	private static final ItemChanceHolder[] L2_REWARDS =
 	{
@@ -128,6 +130,7 @@ public class L2Day extends LongTimeEvent
 							}
 						}
 					}
+					
 					htmltext = "manager-1.htm";
 				}
 				else
@@ -157,6 +160,7 @@ public class L2Day extends LongTimeEvent
 							}
 						}
 					}
+					
 					htmltext = "manager-1.htm";
 				}
 				else
@@ -186,6 +190,7 @@ public class L2Day extends LongTimeEvent
 							}
 						}
 					}
+					
 					htmltext = "manager-1.htm";
 				}
 				else
@@ -195,6 +200,7 @@ public class L2Day extends LongTimeEvent
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

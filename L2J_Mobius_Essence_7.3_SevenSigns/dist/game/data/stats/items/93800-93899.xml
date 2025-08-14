@@ -1080,9 +1080,9 @@
 		<set name="ensoulNormalSlots" val="2" />
 		<set name="ensoulSpecialSlots" val="1" />
 		<set name="bodypart" val="rhand" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player class_id_restriction="204, 205, 206, 207" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">660</stat>
 			<stat type="mAtk">327</stat>

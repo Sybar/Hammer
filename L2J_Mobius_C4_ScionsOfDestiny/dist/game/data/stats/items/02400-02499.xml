@@ -13,14 +13,14 @@
 		<set name="weight" val="1860" />
 		<set name="price" val="3470000" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
-		<for>
+		</conditions>
+		<stats>
 			<add order="0" stat="pDef" val="86" />
 			<add stat="maxMp" val="409" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2401" type="Armor" name="Elven Mithril Stockings">
 		<set name="icon" val="icon.armor_elven_hose_i00" />
@@ -34,14 +34,14 @@
 		<set name="weight" val="2400" />
 		<set name="price" val="140000" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
-		<for>
+		</conditions>
+		<stats>
 			<add order="0" stat="pDef" val="34" />
 			<add stat="maxMp" val="105" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2402" type="Armor" name="Stockings of Zubei">
 		<!-- Part of the Zubei's robe set. -->
@@ -56,14 +56,14 @@
 		<set name="weight" val="940" />
 		<set name="price" val="973000" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
-		<for>
+		</conditions>
+		<stats>
 			<add order="0" stat="pDef" val="49" />
 			<add stat="maxMp" val="216" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2403" type="Armor" name="Blue Wolf Stockings">
 		<!-- Part of the blue wolf robe set. -->
@@ -78,14 +78,14 @@
 		<set name="weight" val="920" />
 		<set name="price" val="1510000" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
-		<for>
+		</conditions>
+		<stats>
 			<add order="0" stat="pDef" val="52" />
 			<add stat="maxMp" val="236" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2404" type="Armor" name="Stockings of Doom">
 		<!-- Part of the doom robe set. -->
@@ -100,14 +100,14 @@
 		<set name="weight" val="910" />
 		<set name="price" val="1510000" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
-		<for>
+		</conditions>
+		<stats>
 			<add order="0" stat="pDef" val="52" />
 			<add stat="maxMp" val="236" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2405" type="Armor" name="Tallum Stockings">
 		<!-- Part of the tallum robe set. -->
@@ -122,14 +122,14 @@
 		<set name="weight" val="920" />
 		<set name="price" val="2170000" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
-		<for>
+		</conditions>
+		<stats>
 			<add order="0" stat="pDef" val="53" />
 			<add stat="maxMp" val="256" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2406" type="Armor" name="Avadon Robe">
 		<!-- Produces the following effects when worn with an avadon circlet, avadon gloves and avadon boots (robe): P. Def. +5.247% and Casting Spd. +15%. -->
@@ -144,14 +144,14 @@
 		<set name="weight" val="2540" />
 		<set name="price" val="2280000" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
-		<for>
+		</conditions>
+		<stats>
 			<add order="0" stat="pDef" val="127" />
 			<add stat="maxMp" val="561" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2407" type="Armor" name="Dark Crystal Robe">
 		<!-- Upper and lower body armor. Produces the following effects when worn with a dark crystal helmet, dark crystal gloves and dark crystal boots (robe): P. Def. +8%, Casting Spd. +15%, Speed +7, small decrease in chance of spell interruption, Paralysis Resistance +50%, WIT +2, and MEN -2. -->
@@ -166,14 +166,14 @@
 		<set name="weight" val="2450" />
 		<set name="price" val="5080000" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
-		<for>
+		</conditions>
+		<stats>
 			<add order="0" stat="pDef" val="139" />
 			<add stat="maxMp" val="665" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2408" type="Armor" name="Robe of Nightmare">
 		<!-- Upper and lower body armor. Produces the following effects when worn with helm of nightmare, gloves of nightmare and boots of nightmare (robe): MP Regeneration +4%, M. Atk. +8%, Sleep and Hold Resistance +70%, INT +2 and WIT -2. -->
@@ -188,14 +188,14 @@
 		<set name="weight" val="2300" />
 		<set name="price" val="7730000" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
-		<for>
+		</conditions>
+		<stats>
 			<add order="0" stat="pDef" val="147" />
 			<add stat="maxMp" val="718" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2409" type="Armor" name="Majestic Robe">
 		<!-- Upper and lower body armor. Produces the following effects when worn with majestic circlet, majestic gloves and majestic boots (robe): MP +240, Casting Spd. +15%, MP Regeneration +8%, Stun Resistance +50%, MEN +1, and INT -1. -->
@@ -210,14 +210,14 @@
 		<set name="weight" val="2330" />
 		<set name="price" val="7730000" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
-		<for>
+		</conditions>
+		<stats>
 			<add order="0" stat="pDef" val="147" />
 			<add stat="maxMp" val="718" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2410" type="Armor" name="Nightmarish Tattoo">
 		<set name="icon" val="icon.armor_mithril_banded_mail_i00" />
@@ -231,10 +231,10 @@
 		<set name="weight" val="3600" />
 		<set name="price" val="5280000" />
 		<set name="enchant_enabled" val="true" />
-		<for>
+		<stats>
 			<add order="0" stat="pDef" val="139" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2411" type="Armor" name="Brigandine Helmet">
 		<!-- Part of the brigandine set. -->
@@ -248,10 +248,10 @@
 		<set name="weight" val="630" />
 		<set name="price" val="112000" />
 		<set name="enchant_enabled" val="true" />
-		<for>
+		<stats>
 			<add order="0" stat="pDef" val="41" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2412" type="Armor" name="Plate Helmet">
 		<set name="icon" val="icon.armor_leather_helmet_i00" />
@@ -264,10 +264,10 @@
 		<set name="weight" val="630" />
 		<set name="price" val="147000" />
 		<set name="enchant_enabled" val="true" />
-		<for>
+		<stats>
 			<add order="0" stat="pDef" val="44" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2413" type="Armor" name="Chain Hood">
 		<!-- Part of the chain mail set. -->
@@ -281,10 +281,10 @@
 		<set name="weight" val="620" />
 		<set name="price" val="189000" />
 		<set name="enchant_enabled" val="true" />
-		<for>
+		<stats>
 			<add order="0" stat="pDef" val="47" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2414" type="Armor" name="Full Plate Helmet">
 		<!-- Part of the full plate set. -->
@@ -298,10 +298,10 @@
 		<set name="weight" val="600" />
 		<set name="price" val="536000" />
 		<set name="enchant_enabled" val="true" />
-		<for>
+		<stats>
 			<add order="0" stat="pDef" val="58" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2415" type="Armor" name="Avadon Circlet">
 		<!-- Part of the heavy, light and robe avadon set. -->
@@ -315,10 +315,10 @@
 		<set name="weight" val="590" />
 		<set name="price" val="778000" />
 		<set name="enchant_enabled" val="true" />
-		<for>
+		<stats>
 			<add order="0" stat="pDef" val="62" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2416" type="Armor" name="Blue Wolf Helmet">
 		<!-- Part of the heavy, light and robe blue wolf set. -->
@@ -332,10 +332,10 @@
 		<set name="weight" val="580" />
 		<set name="price" val="1210000" />
 		<set name="enchant_enabled" val="true" />
-		<for>
+		<stats>
 			<add order="0" stat="pDef" val="66" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2417" type="Armor" name="Doom Helmet">
 		<!-- Part of the heavy. light and robe doom set. -->
@@ -349,10 +349,10 @@
 		<set name="weight" val="580" />
 		<set name="price" val="1210000" />
 		<set name="enchant_enabled" val="true" />
-		<for>
+		<stats>
 			<add order="0" stat="pDef" val="66" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2418" type="Armor" name="Helm of Nightmare">
 		<!-- Part of the heavy, light and robe nightmare set. -->
@@ -366,10 +366,10 @@
 		<set name="weight" val="560" />
 		<set name="price" val="2640000" />
 		<set name="enchant_enabled" val="true" />
-		<for>
+		<stats>
 			<add order="0" stat="pDef" val="73" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2419" type="Armor" name="Majestic Circlet">
 		<!-- Part of the heavy, light and robe majestic set. -->
@@ -383,10 +383,10 @@
 		<set name="weight" val="550" />
 		<set name="price" val="2640000" />
 		<set name="enchant_enabled" val="true" />
-		<for>
+		<stats>
 			<add order="0" stat="pDef" val="73" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2420" type="Armor" name="Dragon Headgear">
 		<set name="icon" val="icon.armor_leather_helmet_i00" />
@@ -399,10 +399,10 @@
 		<set name="weight" val="540" />
 		<set name="price" val="3590000" />
 		<set name="enchant_enabled" val="true" />
-		<for>
+		<stats>
 			<add order="0" stat="pDef" val="77" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2421" type="Armor" name="The Hood">
 		<set name="icon" val="icon.armor_leather_helmet_i00" />
@@ -415,10 +415,10 @@
 		<set name="weight" val="540" />
 		<set name="price" val="3590000" />
 		<set name="enchant_enabled" val="true" />
-		<for>
+		<stats>
 			<add order="0" stat="pDef" val="77" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2422" type="Armor" name="Reinforced Leather Boots">
 		<!-- Part of the reinforced leather set. -->
@@ -432,10 +432,10 @@
 		<set name="weight" val="1280" />
 		<set name="price" val="50800" />
 		<set name="enchant_enabled" val="true" />
-		<for>
+		<stats>
 			<add order="0" stat="pDef" val="24" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2423" type="Armor" name="Boots of Knowledge">
 		<set name="icon" val="icon.armor_t41_b_i00" />
@@ -448,10 +448,10 @@
 		<set name="weight" val="1270" />
 		<set name="price" val="50800" />
 		<set name="enchant_enabled" val="true" />
-		<for>
+		<stats>
 			<add order="0" stat="pDef" val="24" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2424" type="Armor" name="Manticore Skin Boots">
 		<!-- Part of the manticore skin set. -->
@@ -465,10 +465,10 @@
 		<set name="weight" val="1260" />
 		<set name="price" val="74700" />
 		<set name="enchant_enabled" val="true" />
-		<for>
+		<stats>
 			<add order="0" stat="pDef" val="27" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2425" type="Armor" name="Brigandine Boots">
 		<set name="icon" val="icon.armor_t43_b_i00" />
@@ -481,10 +481,10 @@
 		<set name="weight" val="1250" />
 		<set name="price" val="74700" />
 		<set name="enchant_enabled" val="true" />
-		<for>
+		<stats>
 			<add order="0" stat="pDef" val="27" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2426" type="Armor" name="Elven Mithril Boots">
 		<set name="icon" val="icon.armor_t51_b_i00" />
@@ -497,10 +497,10 @@
 		<set name="weight" val="1250" />
 		<set name="price" val="74700" />
 		<set name="enchant_enabled" val="true" />
-		<for>
+		<stats>
 			<add order="0" stat="pDef" val="27" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2427" type="Armor" name="Salamander Skin Boots">
 		<set name="icon" val="icon.armor_t45_b_i00" />
@@ -513,10 +513,10 @@
 		<set name="weight" val="1230" />
 		<set name="price" val="97800" />
 		<set name="enchant_enabled" val="true" />
-		<for>
+		<stats>
 			<add order="0" stat="pDef" val="29" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2428" type="Armor" name="Plate Boots">
 		<set name="icon" val="icon.armor_t46_b_i00" />
@@ -529,10 +529,10 @@
 		<set name="weight" val="1240" />
 		<set name="price" val="97800" />
 		<set name="enchant_enabled" val="true" />
-		<for>
+		<stats>
 			<add order="0" stat="pDef" val="29" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2429" type="Armor" name="Chain Boots">
 		<set name="icon" val="icon.armor_t48_b_i00" />
@@ -545,10 +545,10 @@
 		<set name="weight" val="1220" />
 		<set name="price" val="126000" />
 		<set name="enchant_enabled" val="true" />
-		<for>
+		<stats>
 			<add order="0" stat="pDef" val="32" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2430" type="Armor" name="Karmian Boots">
 		<set name="icon" val="icon.armor_t53_b_i00" />
@@ -561,10 +561,10 @@
 		<set name="weight" val="1230" />
 		<set name="price" val="126000" />
 		<set name="enchant_enabled" val="true" />
-		<for>
+		<stats>
 			<add order="0" stat="pDef" val="32" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2431" type="Armor" name="Plated Leather Boots">
 		<!-- Part of the plated leather set. -->
@@ -578,10 +578,10 @@
 		<set name="weight" val="1220" />
 		<set name="price" val="126000" />
 		<set name="enchant_enabled" val="true" />
-		<for>
+		<stats>
 			<add order="0" stat="pDef" val="32" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2432" type="Armor" name="Dwarven Chain Boots">
 		<set name="icon" val="icon.armor_t60_b_i00" />
@@ -594,10 +594,10 @@
 		<set name="weight" val="1210" />
 		<set name="price" val="126000" />
 		<set name="enchant_enabled" val="true" />
-		<for>
+		<stats>
 			<add order="0" stat="pDef" val="32" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2433" type="Armor" name="Boots of Seal">
 		<set name="icon" val="icon.armor_t44_b_i00" />
@@ -610,10 +610,10 @@
 		<set name="weight" val="1220" />
 		<set name="price" val="126000" />
 		<set name="enchant_enabled" val="true" />
-		<for>
+		<stats>
 			<add order="0" stat="pDef" val="32" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2434" type="Armor" name="Rind Leather Boots">
 		<set name="icon" val="icon.armor_t49_b_i00" />
@@ -626,10 +626,10 @@
 		<set name="weight" val="1220" />
 		<set name="price" val="161000" />
 		<set name="enchant_enabled" val="true" />
-		<for>
+		<stats>
 			<add order="0" stat="pDef" val="34" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2435" type="Armor" name="Demon's Boots">
 		<set name="icon" val="icon.armor_t54_b_i00" />
@@ -642,10 +642,10 @@
 		<set name="weight" val="1220" />
 		<set name="price" val="245000" />
 		<set name="enchant_enabled" val="true" />
-		<for>
+		<stats>
 			<add order="0" stat="pDef" val="36" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2436" type="Armor" name="Theca Leather Boots">
 		<!-- Part of the theca leather set. -->
@@ -659,10 +659,10 @@
 		<set name="weight" val="1210" />
 		<set name="price" val="275000" />
 		<set name="enchant_enabled" val="true" />
-		<for>
+		<stats>
 			<add order="0" stat="pDef" val="37" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2437" type="Armor" name="Drake Leather Boots">
 		<!-- Part of the drake leather set. -->
@@ -676,10 +676,10 @@
 		<set name="weight" val="1210" />
 		<set name="price" val="358000" />
 		<set name="enchant_enabled" val="true" />
-		<for>
+		<stats>
 			<add order="0" stat="pDef" val="39" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2438" type="Armor" name="Full Plate Boots">
 		<set name="icon" val="icon.armor_t62_b_i00" />
@@ -692,10 +692,10 @@
 		<set name="weight" val="1200" />
 		<set name="price" val="358000" />
 		<set name="enchant_enabled" val="true" />
-		<for>
+		<stats>
 			<add order="0" stat="pDef" val="39" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2439" type="Armor" name="Blue Wolf Boots">
 		<set name="icon" val="icon.armor_t68_b_i02" />
@@ -708,10 +708,10 @@
 		<set name="weight" val="1130" />
 		<set name="price" val="804000" />
 		<set name="enchant_enabled" val="true" />
-		<for>
+		<stats>
 			<add order="0" stat="pDef" val="44" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2440" type="Armor" name="Boots of Nightmare">
 		<set name="icon" val="icon.armor_t45_b_i00" />
@@ -724,10 +724,10 @@
 		<set name="weight" val="1110" />
 		<set name="price" val="1760000" />
 		<set name="enchant_enabled" val="true" />
-		<for>
+		<stats>
 			<add order="0" stat="pDef" val="48" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2441" type="Armor" name="Dark Legion Boots">
 		<set name="icon" val="icon.armor_t45_b_i00" />
@@ -740,10 +740,10 @@
 		<set name="weight" val="1120" />
 		<set name="price" val="1760000" />
 		<set name="enchant_enabled" val="true" />
-		<for>
+		<stats>
 			<add order="0" stat="pDef" val="48" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2442" type="Armor" name="Dasparion's Boots">
 		<set name="icon" val="icon.armor_t44_b_i00" />
@@ -756,10 +756,10 @@
 		<set name="weight" val="1100" />
 		<set name="price" val="1760000" />
 		<set name="enchant_enabled" val="true" />
-		<for>
+		<stats>
 			<add order="0" stat="pDef" val="48" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2443" type="Armor" name="Dragon Leather Boots">
 		<set name="icon" val="icon.armor_t45_b_i00" />
@@ -772,10 +772,10 @@
 		<set name="weight" val="1100" />
 		<set name="price" val="2390000" />
 		<set name="enchant_enabled" val="true" />
-		<for>
+		<stats>
 			<add order="0" stat="pDef" val="51" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2444" type="Armor" name="The Boots">
 		<set name="icon" val="icon.armor_t44_b_i00" />
@@ -788,10 +788,10 @@
 		<set name="weight" val="1100" />
 		<set name="price" val="2390000" />
 		<set name="enchant_enabled" val="true" />
-		<for>
+		<stats>
 			<add order="0" stat="pDef" val="51" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2445" type="Armor" name="Dragon Scale Boots">
 		<set name="icon" val="icon.armor_t15_b_i00" />
@@ -804,10 +804,10 @@
 		<set name="weight" val="1100" />
 		<set name="price" val="1760000" />
 		<set name="enchant_enabled" val="true" />
-		<for>
+		<stats>
 			<add order="0" stat="pDef" val="48" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2446" type="Armor" name="Reinforced Leather Gloves">
 		<set name="icon" val="icon.armor_t13_g_i00" />
@@ -820,10 +820,10 @@
 		<set name="weight" val="640" />
 		<set name="price" val="50800" />
 		<set name="enchant_enabled" val="true" />
-		<for>
+		<stats>
 			<add order="0" stat="pDef" val="24" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2447" type="Armor" name="Gloves of Knowledge">
 		<!-- Part of the knowledge set. -->
@@ -837,10 +837,10 @@
 		<set name="weight" val="640" />
 		<set name="price" val="50800" />
 		<set name="enchant_enabled" val="true" />
-		<for>
+		<stats>
 			<add order="0" stat="pDef" val="24" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2448" type="Armor" name="Manticore Skin Gloves">
 		<set name="icon" val="icon.armor_t42_g_i00" />
@@ -853,10 +853,10 @@
 		<set name="weight" val="630" />
 		<set name="price" val="74700" />
 		<set name="enchant_enabled" val="true" />
-		<for>
+		<stats>
 			<add order="0" stat="pDef" val="27" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2449" type="Armor" name="Brigandine Gauntlets">
 		<set name="icon" val="icon.armor_t43_g_i00" />
@@ -869,10 +869,10 @@
 		<set name="weight" val="630" />
 		<set name="price" val="74700" />
 		<set name="enchant_enabled" val="true" />
-		<for>
+		<stats>
 			<add order="0" stat="pDef" val="27" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2450" type="Armor" name="Elven Mithril Gloves">
 		<!-- Part of the elven mithril set. -->
@@ -886,10 +886,10 @@
 		<set name="weight" val="640" />
 		<set name="price" val="74700" />
 		<set name="enchant_enabled" val="true" />
-		<for>
+		<stats>
 			<add order="0" stat="pDef" val="27" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2451" type="Armor" name="Sage's Worn Gloves">
 		<set name="icon" val="icon.armor_t44_g_i00" />
@@ -902,10 +902,10 @@
 		<set name="weight" val="630" />
 		<set name="price" val="97800" />
 		<set name="enchant_enabled" val="true" />
-		<for>
+		<stats>
 			<add order="0" stat="pDef" val="29" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2452" type="Armor" name="Reinforced Mithril Gloves">
 		<set name="icon" val="icon.armor_t47_g_i00" />
@@ -918,10 +918,10 @@
 		<set name="weight" val="620" />
 		<set name="price" val="126000" />
 		<set name="enchant_enabled" val="true" />
-		<for>
+		<stats>
 			<add order="0" stat="pDef" val="32" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2453" type="Armor" name="Chain Gloves">
 		<set name="icon" val="icon.armor_t48_g_i00" />
@@ -934,10 +934,10 @@
 		<set name="weight" val="620" />
 		<set name="price" val="126000" />
 		<set name="enchant_enabled" val="true" />
-		<for>
+		<stats>
 			<add order="0" stat="pDef" val="32" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2454" type="Armor" name="Karmian Gloves">
 		<!-- Part of the karmian set. -->
@@ -951,10 +951,10 @@
 		<set name="weight" val="620" />
 		<set name="price" val="126000" />
 		<set name="enchant_enabled" val="true" />
-		<for>
+		<stats>
 			<add order="0" stat="pDef" val="32" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2455" type="Armor" name="Plated Leather Gloves">
 		<set name="icon" val="icon.armor_t47_g_i00" />
@@ -967,10 +967,10 @@
 		<set name="weight" val="610" />
 		<set name="price" val="149000" />
 		<set name="enchant_enabled" val="true" />
-		<for>
+		<stats>
 			<add order="0" stat="pDef" val="33" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2456" type="Armor" name="Dwarven Chain Gloves">
 		<set name="icon" val="icon.armor_t60_g_i00" />
@@ -983,10 +983,10 @@
 		<set name="weight" val="600" />
 		<set name="price" val="161000" />
 		<set name="enchant_enabled" val="true" />
-		<for>
+		<stats>
 			<add order="0" stat="pDef" val="34" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2457" type="Armor" name="Gloves of Seal">
 		<set name="icon" val="icon.armor_t44_g_i00" />
@@ -999,10 +999,10 @@
 		<set name="weight" val="620" />
 		<set name="price" val="161000" />
 		<set name="enchant_enabled" val="true" />
-		<for>
+		<stats>
 			<add order="0" stat="pDef" val="34" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2458" type="Armor" name="Rind Leather Gloves">
 		<set name="icon" val="icon.armor_t49_g_i00" />
@@ -1015,10 +1015,10 @@
 		<set name="weight" val="600" />
 		<set name="price" val="161000" />
 		<set name="enchant_enabled" val="true" />
-		<for>
+		<stats>
 			<add order="0" stat="pDef" val="34" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2459" type="Armor" name="Demon's Gloves">
 		<!-- Part of the demon set. -->
@@ -1032,10 +1032,10 @@
 		<set name="weight" val="610" />
 		<set name="price" val="245000" />
 		<set name="enchant_enabled" val="true" />
-		<for>
+		<stats>
 			<add order="0" stat="pDef" val="36" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2460" type="Armor" name="Theca Leather Gloves">
 		<set name="icon" val="icon.armor_t63_g_i00" />
@@ -1048,10 +1048,10 @@
 		<set name="weight" val="600" />
 		<set name="price" val="275000" />
 		<set name="enchant_enabled" val="true" />
-		<for>
+		<stats>
 			<add order="0" stat="pDef" val="37" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2461" type="Armor" name="Drake Leather Gloves">
 		<set name="icon" val="icon.armor_t21_g_i00" />
@@ -1064,10 +1064,10 @@
 		<set name="weight" val="600" />
 		<set name="price" val="358000" />
 		<set name="enchant_enabled" val="true" />
-		<for>
+		<stats>
 			<add order="0" stat="pDef" val="39" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2462" type="Armor" name="Full Plate Gauntlets">
 		<set name="icon" val="icon.armor_t62_g_i00" />
@@ -1080,10 +1080,10 @@
 		<set name="weight" val="600" />
 		<set name="price" val="358000" />
 		<set name="enchant_enabled" val="true" />
-		<for>
+		<stats>
 			<add order="0" stat="pDef" val="39" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2463" type="Armor" name="Divine Gloves">
 		<!-- Part of the divine set. -->
@@ -1097,10 +1097,10 @@
 		<set name="weight" val="610" />
 		<set name="price" val="358000" />
 		<set name="enchant_enabled" val="true" />
-		<for>
+		<stats>
 			<add order="0" stat="pDef" val="39" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2464" type="Armor" name="Avadon Gloves">
 		<set name="icon" val="icon.armor_t66_g_i02" />
@@ -1113,10 +1113,10 @@
 		<set name="weight" val="590" />
 		<set name="price" val="519000" />
 		<set name="enchant_enabled" val="true" />
-		<for>
+		<stats>
 			<add order="0" stat="pDef" val="41" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2465" type="Armor" name="Chain Gloves of Silence">
 		<set name="icon" val="icon.armor_t65_g_i00" />
@@ -1129,10 +1129,10 @@
 		<set name="weight" val="590" />
 		<set name="price" val="519000" />
 		<set name="enchant_enabled" val="true" />
-		<for>
+		<stats>
 			<add order="0" stat="pDef" val="41" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2466" type="Armor" name="Guardian's Gloves">
 		<set name="icon" val="icon.armor_t67_g_i00" />
@@ -1145,10 +1145,10 @@
 		<set name="weight" val="590" />
 		<set name="price" val="519000" />
 		<set name="enchant_enabled" val="true" />
-		<for>
+		<stats>
 			<add order="0" stat="pDef" val="41" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2467" type="Armor" name="Gloves of Blessing">
 		<set name="icon" val="icon.armor_t56_g_i00" />
@@ -1161,10 +1161,10 @@
 		<set name="weight" val="590" />
 		<set name="price" val="519000" />
 		<set name="enchant_enabled" val="true" />
-		<for>
+		<stats>
 			<add order="0" stat="pDef" val="41" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2468" type="Armor" name="Blessed Gloves">
 		<set name="icon" val="icon.armor_t62_g_i00" />
@@ -1177,10 +1177,10 @@
 		<set name="weight" val="600" />
 		<set name="price" val="358000" />
 		<set name="enchant_enabled" val="true" />
-		<for>
+		<stats>
 			<add order="0" stat="pDef" val="39" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2469" type="Armor" name="Gloves of The Underworld">
 		<set name="icon" val="icon.armor_t40_g_i00" />
@@ -1193,10 +1193,10 @@
 		<set name="weight" val="580" />
 		<set name="price" val="1160000" />
 		<set name="enchant_enabled" val="true" />
-		<for>
+		<stats>
 			<add order="0" stat="pDef" val="45" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2470" type="Armor" name="Gloves of Phantom">
 		<set name="icon" val="icon.armor_t45_g_i00" />
@@ -1209,10 +1209,10 @@
 		<set name="weight" val="560" />
 		<set name="price" val="1760000" />
 		<set name="enchant_enabled" val="true" />
-		<for>
+		<stats>
 			<add order="0" stat="pDef" val="48" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2471" type="Armor" name="Dark Legion Gloves">
 		<set name="icon" val="icon.armor_t45_g_i00" />
@@ -1225,10 +1225,10 @@
 		<set name="weight" val="560" />
 		<set name="price" val="1760000" />
 		<set name="enchant_enabled" val="true" />
-		<for>
+		<stats>
 			<add order="0" stat="pDef" val="48" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2472" type="Armor" name="Dark Crystal Gloves">
 		<set name="icon" val="icon.armor_t15_g_i00" />
@@ -1241,10 +1241,10 @@
 		<set name="weight" val="580" />
 		<set name="price" val="1160000" />
 		<set name="enchant_enabled" val="true" />
-		<for>
+		<stats>
 			<add order="0" stat="pDef" val="45" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2473" type="Armor" name="The Gloves">
 		<set name="icon" val="icon.armor_t44_g_i00" />
@@ -1257,10 +1257,10 @@
 		<set name="weight" val="540" />
 		<set name="price" val="2390000" />
 		<set name="enchant_enabled" val="true" />
-		<for>
+		<stats>
 			<add order="0" stat="pDef" val="51" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2474" type="Armor" name="Dasparion's Gloves">
 		<set name="icon" val="icon.armor_t44_g_i00" />
@@ -1273,10 +1273,10 @@
 		<set name="weight" val="550" />
 		<set name="price" val="1760000" />
 		<set name="enchant_enabled" val="true" />
-		<for>
+		<stats>
 			<add order="0" stat="pDef" val="48" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2475" type="Armor" name="Doom Gloves">
 		<set name="icon" val="icon.armor_t71_g_i02" />
@@ -1289,10 +1289,10 @@
 		<set name="weight" val="580" />
 		<set name="price" val="804000" />
 		<set name="enchant_enabled" val="true" />
-		<for>
+		<stats>
 			<add order="0" stat="pDef" val="44" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2476" type="Armor" name="Dragon Gauntlets">
 		<set name="icon" val="icon.armor_t15_g_i00" />
@@ -1305,10 +1305,10 @@
 		<set name="weight" val="540" />
 		<set name="price" val="2610000" />
 		<set name="enchant_enabled" val="true" />
-		<for>
+		<stats>
 			<add order="0" stat="pDef" val="52" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2477" type="Armor" name="Dragon Leather Gloves">
 		<set name="icon" val="icon.armor_t45_g_i00" />
@@ -1321,10 +1321,10 @@
 		<set name="weight" val="540" />
 		<set name="price" val="2390000" />
 		<set name="enchant_enabled" val="true" />
-		<for>
+		<stats>
 			<add order="0" stat="pDef" val="51" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2478" type="Armor" name="Tallum Gloves">
 		<set name="icon" val="icon.armor_helmet_i00" />
@@ -1337,10 +1337,10 @@
 		<set name="weight" val="580" />
 		<set name="price" val="1160000" />
 		<set name="enchant_enabled" val="true" />
-		<for>
+		<stats>
 			<add order="0" stat="pDef" val="45" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2479" type="Armor" name="Gloves of Nightmare">
 		<set name="icon" val="icon.armor_t45_g_i00" />
@@ -1353,10 +1353,10 @@
 		<set name="weight" val="550" />
 		<set name="price" val="1760000" />
 		<set name="enchant_enabled" val="true" />
-		<for>
+		<stats>
 			<add order="0" stat="pDef" val="48" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2480" type="Armor" name="Elemental Gloves">
 		<set name="icon" val="icon.armor_t71_g_i00" />
@@ -1369,10 +1369,10 @@
 		<set name="weight" val="580" />
 		<set name="price" val="804000" />
 		<set name="enchant_enabled" val="true" />
-		<for>
+		<stats>
 			<add order="0" stat="pDef" val="44" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2481" type="Armor" name="Gloves of Grace">
 		<set name="icon" val="icon.armor_t71_g_i00" />
@@ -1385,10 +1385,10 @@
 		<set name="weight" val="580" />
 		<set name="price" val="804000" />
 		<set name="enchant_enabled" val="true" />
-		<for>
+		<stats>
 			<add order="0" stat="pDef" val="44" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2482" type="Armor" name="Majestic Gloves">
 		<set name="icon" val="icon.armor_t15_g_i00" />
@@ -1401,10 +1401,10 @@
 		<set name="weight" val="540" />
 		<set name="price" val="1760000" />
 		<set name="enchant_enabled" val="true" />
-		<for>
+		<stats>
 			<add order="0" stat="pDef" val="48" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2483" type="Armor" name="Gust Bracer">
 		<set name="icon" val="icon.armor_t45_g_i00" />
@@ -1417,10 +1417,10 @@
 		<set name="weight" val="580" />
 		<set name="price" val="1160000" />
 		<set name="enchant_enabled" val="true" />
-		<for>
+		<stats>
 			<add order="0" stat="pDef" val="45" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2484" type="Armor" name="Cerberus Gloves">
 		<set name="icon" val="icon.armor_t44_g_i00" />
@@ -1433,10 +1433,10 @@
 		<set name="weight" val="540" />
 		<set name="price" val="1760000" />
 		<set name="enchant_enabled" val="true" />
-		<for>
+		<stats>
 			<add order="0" stat="pDef" val="48" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2485" type="Armor" name="Implosion Gauntlets">
 		<set name="icon" val="icon.armor_t68_g_i00" />
@@ -1449,10 +1449,10 @@
 		<set name="weight" val="580" />
 		<set name="price" val="804000" />
 		<set name="enchant_enabled" val="true" />
-		<for>
+		<stats>
 			<add order="0" stat="pDef" val="44" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2486" type="Armor" name="Paradia Gloves">
 		<set name="icon" val="icon.armor_t68_g_i00" />
@@ -1465,10 +1465,10 @@
 		<set name="weight" val="580" />
 		<set name="price" val="804000" />
 		<set name="enchant_enabled" val="true" />
-		<for>
+		<stats>
 			<add order="0" stat="pDef" val="44" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2487" type="Armor" name="Blue Wolf Gloves">
 		<set name="icon" val="icon.armor_t68_g_i02" />
@@ -1481,10 +1481,10 @@
 		<set name="weight" val="590" />
 		<set name="price" val="804000" />
 		<set name="enchant_enabled" val="true" />
-		<for>
+		<stats>
 			<add order="0" stat="pDef" val="44" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2488" type="Armor" name="Phoenix Gloves">
 		<set name="icon" val="icon.armor_t44_g_i00" />
@@ -1497,10 +1497,10 @@
 		<set name="weight" val="570" />
 		<set name="price" val="1160000" />
 		<set name="enchant_enabled" val="true" />
-		<for>
+		<stats>
 			<add order="0" stat="pDef" val="45" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2489" type="Armor" name="Gloves of Black Ore">
 		<set name="icon" val="icon.armor_t14_g_i00" />
@@ -1513,10 +1513,10 @@
 		<set name="weight" val="570" />
 		<set name="price" val="1160000" />
 		<set name="enchant_enabled" val="true" />
-		<for>
+		<stats>
 			<add order="0" stat="pDef" val="45" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2490" type="Armor" name="Cloak of Silence">
 		<set name="icon" val="icon.armor_back01" />
@@ -1526,9 +1526,9 @@
 		<set name="material" val="LEATHER" />
 		<set name="weight" val="250" />
 		<set name="price" val="6770" />
-		<for>
+		<stats>
 			<add order="0" stat="pDef" val="5" />
-		</for>
+		</stats>
 	</item>
 	<item id="2491" type="Armor" name="Golden Yarn Cloak">
 		<set name="icon" val="icon.armor_back01" />
@@ -1538,9 +1538,9 @@
 		<set name="material" val="LEATHER" />
 		<set name="weight" val="250" />
 		<set name="price" val="12300" />
-		<for>
+		<stats>
 			<add order="0" stat="pDef" val="5" />
-		</for>
+		</stats>
 	</item>
 	<item id="2492" type="Armor" name="Shadow Cloak">
 		<set name="icon" val="icon.armor_back01" />
@@ -1553,10 +1553,10 @@
 		<set name="weight" val="240" />
 		<set name="price" val="126000" />
 		<set name="enchant_enabled" val="true" />
-		<for>
+		<stats>
 			<add order="0" stat="pDef" val="12" />
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2493" type="Armor" name="Brigandine Shield">
 		<!-- Part of the brigandine set. -->
@@ -1570,15 +1570,15 @@
 		<set name="weight" val="1320" />
 		<set name="price" val="78400" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
-		<for>
+		</conditions>
+		<stats>
 			<sub stat="rEvas" val="8" />
 			<set stat="rShld" val="20" />
 			<set stat="sDef" val="142" />
 			<enchant val="0" stat="sDef" />
-		</for>
+		</stats>
 	</item>
 	<item id="2494" type="Armor" name="Plate Shield">
 		<set name="icon" val="icon.shield_plate_shield_i00" />
@@ -1591,15 +1591,15 @@
 		<set name="weight" val="1310" />
 		<set name="price" val="103000" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
-		<for>
+		</conditions>
+		<stats>
 			<sub stat="rEvas" val="8" />
 			<set stat="rShld" val="20" />
 			<set stat="sDef" val="154" />
 			<enchant val="0" stat="sDef" />
-		</for>
+		</stats>
 	</item>
 	<item id="2495" type="Armor" name="Chain Shield">
 		<!-- Part of the chain mail set. -->
@@ -1613,15 +1613,15 @@
 		<set name="weight" val="1280" />
 		<set name="price" val="133000" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
-		<for>
+		</conditions>
+		<stats>
 			<sub stat="rEvas" val="8" />
 			<set stat="rShld" val="20" />
 			<set stat="sDef" val="166" />
 			<enchant val="0" stat="sDef" />
-		</for>
+		</stats>
 	</item>
 	<item id="2496" type="Armor" name="Dwarven Chain Shield">
 		<set name="icon" val="icon.shield_dwarven_chain_shield_i00" />
@@ -1634,15 +1634,15 @@
 		<set name="weight" val="1280" />
 		<set name="price" val="156000" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
-		<for>
+		</conditions>
+		<stats>
 			<sub stat="rEvas" val="8" />
 			<set stat="rShld" val="20" />
 			<set stat="sDef" val="174" />
 			<enchant val="0" stat="sDef" />
-		</for>
+		</stats>
 	</item>
 	<item id="2497" type="Armor" name="Full Plate Shield">
 		<!-- Part of the full plate set. -->
@@ -1656,15 +1656,15 @@
 		<set name="weight" val="1220" />
 		<set name="price" val="375000" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
-		<for>
+		</conditions>
+		<stats>
 			<sub stat="rEvas" val="8" />
 			<set stat="rShld" val="20" />
 			<set stat="sDef" val="203" />
 			<enchant val="0" stat="sDef" />
-		</for>
+		</stats>
 	</item>
 	<item id="2498" type="Armor" name="Shield of Nightmare">
 		<!-- Part of the heavy nightmare set. -->
@@ -1678,15 +1678,15 @@
 		<set name="weight" val="1180" />
 		<set name="price" val="1850000" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
-		<for>
+		</conditions>
+		<stats>
 			<sub stat="rEvas" val="8" />
 			<set stat="rShld" val="20" />
 			<set stat="sDef" val="256" />
 			<enchant val="0" stat="sDef" />
-		</for>
+		</stats>
 	</item>
 	<item id="2499" type="Weapon" name="Elven Long Sword">
 		<set name="icon" val="icon.weapon_elven_long_sword_i00" />
@@ -1705,13 +1705,13 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="true" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="92" />
 			<set stat="mAtk" val="54" />
 			<set stat="critRate" val="8" />
 			<set stat="pAtkSpd" val="379" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 </list>

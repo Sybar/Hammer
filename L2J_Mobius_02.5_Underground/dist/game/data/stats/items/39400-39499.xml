@@ -901,9 +901,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_destroyable" val="false" />
 		<set name="is_stackable" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="17983" level="1" /> <!-- Scroll of Escape: Gludin Village Temple -->
 		</skills>
@@ -919,9 +919,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_destroyable" val="false" />
 		<set name="is_stackable" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="17984" level="1" /> <!-- Scroll of Escape: Orc Barracks -->
 		</skills>
@@ -973,9 +973,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_destroyable" val="false" />
 		<set name="is_stackable" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="17981" level="1" /> <!-- Scroll of Escape: Gludin Village -->
 		</skills>
@@ -991,9 +991,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_destroyable" val="false" />
 		<set name="is_stackable" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="17982" level="1" /> <!-- Scroll of Escape: Windy Hill -->
 		</skills>
@@ -1021,9 +1021,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_destroyable" val="false" />
 		<set name="is_stackable" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="17989" level="1" /> <!-- Scroll of Escape: Swamp of Screams -->
 		</skills>
@@ -1039,9 +1039,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_destroyable" val="false" />
 		<set name="is_stackable" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="17990" level="1" /> <!-- Scroll of Escape: Seed of Annihilation -->
 		</skills>
@@ -1057,9 +1057,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_destroyable" val="false" />
 		<set name="is_stackable" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="17991" level="1" /> <!-- Scroll of Escape: Harnak's Underground Ruins -->
 		</skills>
@@ -1075,9 +1075,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_destroyable" val="false" />
 		<set name="is_stackable" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="17992" level="1" /> <!-- Scroll of Escape: Kartia's Labyrinth -->
 		</skills>
@@ -1093,9 +1093,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_destroyable" val="false" />
 		<set name="is_stackable" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="17993" level="1" /> <!-- Scroll of Escape: Fairy Settlement -->
 		</skills>
@@ -1111,9 +1111,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_destroyable" val="false" />
 		<set name="is_stackable" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="17994" level="1" /> <!-- Scroll of Escape: Garden of Genesis -->
 		</skills>

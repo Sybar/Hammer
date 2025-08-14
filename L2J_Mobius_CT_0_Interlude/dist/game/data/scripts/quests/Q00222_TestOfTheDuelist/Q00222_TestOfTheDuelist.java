@@ -33,6 +33,7 @@ public class Q00222_TestOfTheDuelist extends Quest
 {
 	// NPC
 	private static final int KAIEN = 30623;
+	
 	// Monsters
 	private static final int PUNCHER = 20085;
 	private static final int NOBLE_ANT_LEADER = 20090;
@@ -49,6 +50,7 @@ public class Q00222_TestOfTheDuelist extends Quest
 	private static final int GRANDIS = 20554;
 	private static final int TIMAK_ORC_OVERLORD = 20588;
 	private static final int LAKIN = 20604;
+	
 	// Items
 	private static final int ORDER_GLUDIO = 2763;
 	private static final int ORDER_DION = 2764;
@@ -71,6 +73,7 @@ public class Q00222_TestOfTheDuelist extends Quest
 	private static final int GRANDIS_SKIN = 2781;
 	private static final int TIMAK_ORC_BELT = 2782;
 	private static final int LAKIN_MACE = 2783;
+	
 	// Rewards
 	private static final int MARK_OF_DUELIST = 2762;
 	private static final int DIMENSIONAL_DIAMOND = 7562;

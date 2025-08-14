@@ -50,6 +50,7 @@ public class ExShowSeedSetting extends ServerPacket
 			{
 				_current.put(s.getSeedId(), sp);
 			}
+			
 			// Next period
 			sp = manor.getSeedProduct(manorId, s.getSeedId(), true);
 			if (sp != null)
@@ -77,6 +78,7 @@ public class ExShowSeedSetting extends ServerPacket
 			buffer.writeInt((int) s.getSeedReferencePrice()); // price for castle to produce 1
 			buffer.writeInt((int) s.getSeedMinPrice()); // min seed price
 			buffer.writeInt((int) s.getSeedMaxPrice()); // max seed price
+			
 			// Current period
 			if (_current.containsKey(s.getSeedId()))
 			{
@@ -89,6 +91,7 @@ public class ExShowSeedSetting extends ServerPacket
 				buffer.writeLong(0);
 				buffer.writeLong(0);
 			}
+			
 			// Next period
 			if (_next.containsKey(s.getSeedId()))
 			{
@@ -102,6 +105,7 @@ public class ExShowSeedSetting extends ServerPacket
 				buffer.writeLong(0);
 			}
 		}
+		
 		_current.clear();
 		_next.clear();
 	}

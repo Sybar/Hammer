@@ -63,6 +63,7 @@ public class DimensionalArchon extends AbstractNpcAI
 		{
 			npc.broadcastPacket(new NpcSay(npc.getObjectId(), ChatType.NPC_GENERAL, npc.getId(), getRandomEntry(ARCHON_MSG)));
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	

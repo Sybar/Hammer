@@ -99,6 +99,7 @@ public class Q00647_InfluxOfMachines extends Quest
 				}
 				break;
 		}
+		
 		return htmltext;
 	}
 	

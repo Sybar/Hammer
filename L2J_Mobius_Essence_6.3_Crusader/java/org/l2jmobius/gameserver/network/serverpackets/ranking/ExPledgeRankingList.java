@@ -89,6 +89,7 @@ public class ExPledgeRankingList extends ServerPacket
 					buffer.writeInt(!isTop150 ? ssData.getKey() : curRank); // server rank snapshot
 				}
 			}
+			
 			buffer.writeSizedString(player.getString("clan_name"));
 			buffer.writeInt(player.getInt("clan_level"));
 			buffer.writeSizedString(player.getString("char_name"));

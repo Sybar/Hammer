@@ -83,6 +83,7 @@ public class MultiSellList extends ServerPacket
 					buffer.writeInt(0);
 					buffer.writeShort(65535);
 				}
+				
 				buffer.writeInt(ing.getItemCount());
 				if (ing.getItemInfo() != null)
 				{
@@ -93,6 +94,7 @@ public class MultiSellList extends ServerPacket
 					buffer.writeShort(ing.getEnchantLevel()); // enchant level
 				}
 			}
+			
 			for (Ingredient ing : ent.getIngredients())
 			{
 				buffer.writeShort(ing.getTemplate() != null ? ing.getTemplate().getDisplayId() : ing.getItemId());

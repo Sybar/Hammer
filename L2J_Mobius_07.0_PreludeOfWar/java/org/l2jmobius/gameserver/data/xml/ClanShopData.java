@@ -91,6 +91,7 @@ public class ClanShopData implements IXmlReader
 				return product;
 			}
 		}
+		
 		return null;
 	}
 	

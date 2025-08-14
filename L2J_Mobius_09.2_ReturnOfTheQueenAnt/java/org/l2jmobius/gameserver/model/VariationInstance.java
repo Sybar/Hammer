@@ -65,6 +65,7 @@ public class VariationInstance
 		{
 			_option1.apply(player);
 		}
+		
 		if (_option2 != null)
 		{
 			_option2.apply(player);
@@ -77,6 +78,7 @@ public class VariationInstance
 		{
 			_option1.remove(player);
 		}
+		
 		if (_option2 != null)
 		{
 			_option2.remove(player);

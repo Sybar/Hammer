@@ -38,10 +38,12 @@ public class Q10709_TheStolenSeed extends Quest
 	private static final int REMEMBERED_AKUM = 27524; // Remembered Giant Akum
 	private static final int REMEMBERED_EMBRYO = 27525; // Remembered Embryo
 	private static final int CURSED_AKUM = 27520; // Cursed Giant Akum
+	
 	// Items
 	private static final int FRAGMENT = 39511; // Normal Fragment
 	private static final int MEMORY_FRAGMENT = 39510; // Akum's Memory Fragment
 	private static final int EAB = 948; // Scroll: Enchant Armor (B-grade)
+	
 	// Misc
 	private static final int MIN_LEVEL = 58;
 	private static final int MAX_LEVEL = 61;
@@ -119,6 +121,7 @@ public class Q10709_TheStolenSeed extends Quest
 					{
 						addExpAndSp(player, 731_010, 175);
 					}
+					
 					htmltext = event;
 				}
 				break;
@@ -139,6 +142,7 @@ public class Q10709_TheStolenSeed extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -188,6 +192,7 @@ public class Q10709_TheStolenSeed extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

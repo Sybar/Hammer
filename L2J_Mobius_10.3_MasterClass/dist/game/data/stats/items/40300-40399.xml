@@ -140,9 +140,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="material" val="PAPER" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="18167" level="1" /> <!-- Scroll of Escape: Dwarven Village -->
 		</skills>
@@ -181,9 +181,9 @@
 		<set name="is_sellable" val="false" />
 		<set name="weight" val="220" />
 		<set name="material" val="CLOTH" />
-		<cond msgId="2453">
+		<conditions msgId="2453">
 			<player cloakStatus="true" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">20</stat>
 		</stats>

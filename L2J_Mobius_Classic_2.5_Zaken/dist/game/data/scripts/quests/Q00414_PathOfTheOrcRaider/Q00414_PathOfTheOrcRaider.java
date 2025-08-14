@@ -37,6 +37,7 @@ public class Q00414_PathOfTheOrcRaider extends Quest
 	// NPCs
 	private static final int PREFECT_KARUKIA = 30570;
 	private static final int PREFRCT_KASMAN = 30501;
+	
 	// Items
 	private static final int GREEN_BLOOD = 1578;
 	private static final int GOBLIN_DWELLING_MAP = 1579;
@@ -45,13 +46,17 @@ public class Q00414_PathOfTheOrcRaider extends Quest
 	private static final int BETRAYER_ZAKAN_REPORT = 1590;
 	private static final int HEAD_OF_BETRAYER = 1591;
 	private static final int TIMORA_ORC_HEAD = 8544;
+	
 	// Reward
 	private static final int MARK_OF_RAIDER = 1592;
+	
 	// Quest Monster
 	private static final int KURUKA_RATMAN_LEADER = 27045;
 	private static final int UMBAR_ORC = 27054;
+	
 	// Monster
 	private static final int GOBLIN_TOMB_RAIDER_LEADER = 20320;
+	
 	// Misc
 	private static final int MIN_LEVEL = 19;
 	
@@ -92,6 +97,7 @@ public class Q00414_PathOfTheOrcRaider extends Quest
 							{
 								giveItems(player, GOBLIN_DWELLING_MAP, 1);
 							}
+							
 							qs.startQuest();
 							htmltext = "30570-05.htm";
 						}
@@ -155,6 +161,7 @@ public class Q00414_PathOfTheOrcRaider extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -215,6 +222,7 @@ public class Q00414_PathOfTheOrcRaider extends Quest
 						{
 							takeItems(killer, BETRAYER_UMBAR_REPORT, 1);
 						}
+						
 						if (getQuestItemsCount(killer, HEAD_OF_BETRAYER) == 2)
 						{
 							qs.setCond(4, true);
@@ -302,6 +310,7 @@ public class Q00414_PathOfTheOrcRaider extends Quest
 						{
 							addExpAndSp(player, 80314, 5087);
 						}
+						
 						qs.exitQuest(false, true);
 						player.sendPacket(new SocialAction(player.getObjectId(), 3));
 						htmltext = "30501-03.htm";
@@ -310,6 +319,7 @@ public class Q00414_PathOfTheOrcRaider extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	

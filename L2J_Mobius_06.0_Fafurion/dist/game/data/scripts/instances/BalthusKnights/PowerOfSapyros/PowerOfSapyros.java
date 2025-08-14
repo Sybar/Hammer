@@ -36,6 +36,7 @@ public final class PowerOfSapyros extends AbstractInstance
 {
 	// NPCs
 	private static final int MEELE_DAMAGE_DEALER = 34387;
+	
 	// Misc
 	private static final int TEMPLATE_ID = 273;
 	
@@ -71,6 +72,7 @@ public final class PowerOfSapyros extends AbstractInstance
 				}
 			}
 		}
+		
 		return null;
 	}
 	
@@ -98,6 +100,7 @@ public final class PowerOfSapyros extends AbstractInstance
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	

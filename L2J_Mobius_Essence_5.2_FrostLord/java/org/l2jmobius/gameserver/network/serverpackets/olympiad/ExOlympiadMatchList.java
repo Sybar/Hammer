@@ -48,6 +48,7 @@ public class ExOlympiadMatchList extends ServerPacket
 				{
 					continue; // initial or finished state not shown
 				}
+				
 				_tasks.add(task);
 			}
 		}

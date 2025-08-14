@@ -133,6 +133,7 @@ public class TriggerSkillByDamageReceived extends AbstractEffect
 		{
 			LOGGER.log(Level.WARNING, "Exception in ITargetTypeHandler.getTarget(): " + e.getMessage(), e);
 		}
+		
 		if ((target == null) || !target.isCreature())
 		{
 			return;
@@ -175,6 +176,7 @@ public class TriggerSkillByDamageReceived extends AbstractEffect
 					return;
 				}
 			}
+			
 			if (triggerSkill == null)
 			{
 				triggerSkill = _triggerSkills.get(0).getSkill();

@@ -37,11 +37,14 @@ public class ExShowSeedMapInfo extends ServerPacket
 	{
 		ServerPackets.EX_SHOW_SEED_MAP_INFO.writeId(this, buffer);
 		buffer.writeInt(2); // seed count
+		
 		// Seed of Destruction
 		buffer.writeInt(1); // id 1? Grand Crusade
 		buffer.writeInt(2770 + 1 /* + GraciaSeedsManager.getInstance().getSoDState() */ ); // sys msg id
+		
 		// Seed of Infinity
 		buffer.writeInt(2); // id 2? Grand Crusade
+		
 		// Manager not implemented yet
 		buffer.writeInt(2766); // sys msg id
 	}

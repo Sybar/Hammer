@@ -74,6 +74,7 @@ public class HennaCombinationData implements IXmlReader
 					{
 						LOGGER.info(getClass().getSimpleName() + ": Could not find item with id " + id);
 					}
+					
 					if ((hennaId != 0) && (HennaData.getInstance().getHenna(hennaId) == null))
 					{
 						LOGGER.info(getClass().getSimpleName() + ": Could not find henna with id " + hennaId);
@@ -98,6 +99,7 @@ public class HennaCombinationData implements IXmlReader
 				return henna;
 			}
 		}
+		
 		return null;
 	}
 	

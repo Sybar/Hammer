@@ -43,6 +43,7 @@ public class Q10293_DeathMysteries extends Quest
 	// NPC
 	private static final int RAYMOND = 30289;
 	private static final int MAXIMILLIAN = 30120;
+	
 	// Monsters
 	private static final int WYRM = 20176;
 	private static final int GUARDIAN_BASILISK = 20550;
@@ -50,12 +51,14 @@ public class Q10293_DeathMysteries extends Quest
 	private static final int FETTERED_SOUL = 20552;
 	private static final int WINDUS = 20553;
 	private static final int GRANDIS = 20554;
+	
 	// Items
 	private static final ItemHolder SOE_DEATH_PASS = new ItemHolder(95589, 1);
 	private static final ItemHolder SOE_HIGH_PRIEST_MAXIMILIAN = new ItemHolder(95595, 1);
 	private static final ItemHolder SAYHA_GUST = new ItemHolder(91776, 9);
 	private static final ItemHolder MAGIC_LAMP_CHARGING_POTION = new ItemHolder(91757, 1);
 	private static final ItemHolder SCROLL_OF_ENCHANT_ADEN_WEAPON = new ItemHolder(93038, 2);
+	
 	// Misc
 	private static final String KILL_COUNT_VAR = "KillCount";
 	private static final int MIN_LEVEL = 35;
@@ -145,6 +148,7 @@ public class Q10293_DeathMysteries extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -181,6 +185,7 @@ public class Q10293_DeathMysteries extends Quest
 			holder.add(new NpcLogListHolder(NpcStringId.KILL_MONSTERS_IN_THE_DEATH_PASS.getId(), true, qs.getInt(KILL_COUNT_VAR)));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 	
@@ -226,6 +231,7 @@ public class Q10293_DeathMysteries extends Quest
 				htmltext = getAlreadyCompletedMsg(player);
 			}
 		}
+		
 		return htmltext;
 	}
 }

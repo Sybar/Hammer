@@ -495,9 +495,9 @@
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="is_depositable" val="false" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player instanceId="44" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2594" level="1" /> <!-- Scroll of Escape: Pailaka -->
 		</skills>
@@ -844,9 +844,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="is_depositable" val="false" />
 		<set name="is_questitem" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player instanceId="44" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2607" level="1" /> <!-- Pailaka Door Key -->
 		</skills>
@@ -867,9 +867,9 @@
 		<set name="shared_reuse_group" val="106" />
 		<set name="for_npc" val="true" />
 		<set name="reuse_delay" val="3600000" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player instanceId="43,44,45" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2586" level="2" /> <!-- Vitality Replenishing Potion -->
 		</skills>
@@ -890,9 +890,9 @@
 		<set name="shared_reuse_group" val="106" />
 		<set name="for_npc" val="true" />
 		<set name="reuse_delay" val="3600000" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player instanceId="43,44,45" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2586" level="1" /> <!-- Vitality Replenishing Potion -->
 		</skills>
@@ -1547,9 +1547,9 @@
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="180" />
 		<set name="time" val="21600" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">83</stat>
 			<stat type="mAtk">54</stat>
@@ -1582,9 +1582,9 @@
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="180" />
 		<set name="time" val="21600" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">100</stat>
 			<stat type="mAtk">54</stat>
@@ -1615,9 +1615,9 @@
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="180" />
 		<set name="time" val="21600" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">117</stat>
 			<stat type="mAtk">54</stat>
@@ -1979,9 +1979,9 @@
 		<set name="duration" val="180" />
 		<set name="time" val="21600" />
 		<set name="useSkillDisTime" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">141</stat>
 			<stat type="mAtk">83</stat>
@@ -2016,9 +2016,9 @@
 		<set name="duration" val="180" />
 		<set name="time" val="21600" />
 		<set name="useSkillDisTime" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">169</stat>
 			<stat type="mAtk">83</stat>
@@ -2053,9 +2053,9 @@
 		<set name="duration" val="180" />
 		<set name="time" val="21600" />
 		<set name="useSkillDisTime" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">198</stat>
 			<stat type="mAtk">83</stat>

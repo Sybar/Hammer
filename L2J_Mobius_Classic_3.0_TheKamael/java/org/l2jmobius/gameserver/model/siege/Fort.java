@@ -166,6 +166,7 @@ public class Fort extends AbstractResidence
 			{
 				return;
 			}
+			
 			final long currentTime = System.currentTimeMillis();
 			if (_endDate > currentTime)
 			{
@@ -193,6 +194,7 @@ public class Fort extends AbstractResidence
 					{
 						return;
 					}
+					
 					if ((_fortOwner.getWarehouse().getAdena() >= _fee) || !_cwh)
 					{
 						final int fee = _endDate == -1 ? _tempFee : _fee;
@@ -202,6 +204,7 @@ public class Fort extends AbstractResidence
 						{
 							_fortOwner.getWarehouse().destroyItemByItemId(ItemProcessType.FEE, Inventory.ADENA_ID, fee, null, null);
 						}
+						
 						ThreadPool.schedule(new FunctionTask(true), _rate);
 					}
 					else
@@ -246,10 +249,13 @@ public class Fort extends AbstractResidence
 			setVisibleFlag(true);
 			loadFunctions();
 		}
+		
 		initResidenceZone();
+		
 		// initFunctions();
 		initNpcs(); // load and spawn npcs (Always spawned)
 		initSiegeNpcs(); // load suspicious merchants (Despawned 10mins before siege)
+		
 		// spawnSuspiciousMerchant(); // spawn suspicious merchants
 		initNpcCommanders(); // npc Commanders (not monsters) (Spawned during siege)
 		spawnNpcCommanders(); // spawn npc Commanders
@@ -308,6 +314,7 @@ public class Fort extends AbstractResidence
 				}
 			}
 		}
+		
 		return _zone;
 	}
 	
@@ -399,12 +406,15 @@ public class Fort extends AbstractResidence
 			{
 				LOGGER.log(Level.WARNING, "Exception in setOwner: " + e.getMessage(), e);
 			}
+			
 			if (getSiege().isInProgress())
 			{
 				getSiege().updatePlayerSiegeStateFlags(true);
 			}
+			
 			removeOwner(true);
 		}
+		
 		setFortState(0, 0); // initialize fort state
 		
 		// if clan already have castle, don't store him in fortress
@@ -421,6 +431,7 @@ public class Fort extends AbstractResidence
 		}
 		
 		spawnSpecialEnvoys();
+		
 		// if clan have already fortress, remove it
 		if (clan.getFortId() > 0)
 		{
@@ -442,6 +453,7 @@ public class Fort extends AbstractResidence
 			giveResidentialSkills(member);
 			member.sendSkillList();
 		}
+		
 		return true;
 	}
 	
@@ -455,6 +467,7 @@ public class Fort extends AbstractResidence
 				removeResidentialSkills(member);
 				member.sendSkillList();
 			}
+			
 			clan.setFortId(0);
 			clan.broadcastToOnlineMembers(new PledgeShowInfoUpdate(clan));
 			setOwnerClan(null);
@@ -529,15 +542,18 @@ public class Fort extends AbstractResidence
 			{
 				door.closeMe();
 			}
+			
 			if (door.isDead())
 			{
 				door.doRevive();
 			}
+			
 			if (door.getCurrentHp() < door.getMaxHp())
 			{
 				door.setCurrentHp(door.getMaxHp());
 			}
 		}
+		
 		loadDoorUpgrade(); // Check for any upgrade the doors may have
 	}
 	
@@ -578,6 +594,7 @@ public class Fort extends AbstractResidence
 					_supplyLeveL = rs.getInt("supplyLvL");
 				}
 			}
+			
 			if (ownerId > 0)
 			{
 				final Clan clan = ClanTable.getInstance().getClan(ownerId); // Try to find clan instance
@@ -589,6 +606,7 @@ public class Fort extends AbstractResidence
 				{
 					initial -= Config.FS_UPDATE_FRQ * 60000;
 				}
+				
 				initial = (Config.FS_UPDATE_FRQ * 60000) - initial;
 				if ((Config.FS_MAX_OWN_TIME <= 0) || (getOwnedTime() < (Config.FS_MAX_OWN_TIME * 3600)))
 				{
@@ -672,10 +690,12 @@ public class Fort extends AbstractResidence
 		{
 			return false;
 		}
+		
 		if ((lease > 0) && !player.destroyItemByItemId(null, Inventory.ADENA_ID, lease, null, true))
 		{
 			return false;
 		}
+		
 		if (addNew)
 		{
 			_function.put(type, new FortFunction(type, level, lease, 0, rate, 0, false));
@@ -695,6 +715,7 @@ public class Fort extends AbstractResidence
 			_function.get(type).setLevel(level);
 			_function.get(type).dbSave();
 		}
+		
 		return true;
 	}
 	
@@ -725,6 +746,7 @@ public class Fort extends AbstractResidence
 				break;
 			}
 		}
+		
 		if (_flagPole == null)
 		{
 			throw new NullPointerException("Can't find flagpole for Fort " + this);
@@ -822,10 +844,12 @@ public class Fort extends AbstractResidence
 				{
 					_fortUpdater[0].cancel(false);
 				}
+				
 				if (_fortUpdater[1] != null)
 				{
 					_fortUpdater[1].cancel(false);
 				}
+				
 				_fortUpdater[0] = ThreadPool.scheduleAtFixedRate(new FortUpdater(this, clan, 0, FortUpdaterType.PERIODIC_UPDATE), Config.FS_UPDATE_FRQ * 60000, Config.FS_UPDATE_FRQ * 60000); // Schedule owner tasks to start running
 				if (Config.FS_MAX_OWN_TIME > 0)
 				{
@@ -838,11 +862,13 @@ public class Fort extends AbstractResidence
 				{
 					_fortUpdater[0].cancel(false);
 				}
+				
 				_fortUpdater[0] = null;
 				if (_fortUpdater[1] != null)
 				{
 					_fortUpdater[1].cancel(false);
 				}
+				
 				_fortUpdater[1] = null;
 			}
 		}
@@ -884,6 +910,7 @@ public class Fort extends AbstractResidence
 				return door;
 			}
 		}
+		
 		return null;
 	}
 	
@@ -909,6 +936,7 @@ public class Fort extends AbstractResidence
 				}
 			}
 		}
+		
 		return _siege;
 	}
 	
@@ -1033,6 +1061,7 @@ public class Fort extends AbstractResidence
 		{
 			return -1;
 		}
+		
 		return _envoyCastles.get(npcId);
 	}
 	
@@ -1099,6 +1128,7 @@ public class Fort extends AbstractResidence
 		{
 			return;
 		}
+		
 		_isSuspiciousMerchantSpawned = false;
 		for (Spawn spawnDat : _siegeNpcs)
 		{

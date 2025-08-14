@@ -45,6 +45,7 @@ public class Q10597_EscapeToTheShadowOfTheMotherTree extends Quest
 	// NPCs
 	private static final int ASTERIOS = 34411;
 	private static final int NERUPA = 34412;
+	
 	// Monsters
 	private static final int LITHRA_APRIAS = 24127;
 	private static final int NERUPA_APRIAS = 24128;
@@ -65,8 +66,10 @@ public class Q10597_EscapeToTheShadowOfTheMotherTree extends Quest
 		24141, // Blossom Child
 		24142 // Teasle Child
 	};
+	
 	// Items
 	private static final int SUPPLY_BOX = 48399; // Mother Tree Guardians Advanced Treasure Chest: Shadow of the Mother Tree
+	
 	// Misc
 	private static final int KILLING_NPCSTRING_ID = NpcStringId.ELIMINATE_THE_GIANT.getId(); // NpcStringId.1019709
 	private static final int MIN_LEVEL = 103;
@@ -132,6 +135,7 @@ public class Q10597_EscapeToTheShadowOfTheMotherTree extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -199,6 +203,7 @@ public class Q10597_EscapeToTheShadowOfTheMotherTree extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -269,6 +274,7 @@ public class Q10597_EscapeToTheShadowOfTheMotherTree extends Quest
 			// npcLogList.add(new NpcLogListHolder(NpcStringId.DEFEAT_COMMANDER_BURNSTEIN_2, qs.getInt(Integer.toString(NERUPA_APRIAS)))); // NpcStringId.1024128
 			return npcLogList;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

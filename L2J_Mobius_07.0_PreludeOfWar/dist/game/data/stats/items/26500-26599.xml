@@ -149,9 +149,9 @@
 		<set name="reuse_delay" val="3600000" />
 		<set name="material" val="LIQUID" />
 		<set name="immediate_effect" val="true" />
-		<cond>
+		<conditions>
 			<player MaximumVitalityPoints="140000" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="27445" level="1" /> <!-- Attendance Vitality Tonic -->
 		</skills>

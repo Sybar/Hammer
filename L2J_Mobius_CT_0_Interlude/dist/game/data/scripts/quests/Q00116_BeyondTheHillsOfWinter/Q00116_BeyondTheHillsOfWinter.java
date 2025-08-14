@@ -32,11 +32,13 @@ public class Q00116_BeyondTheHillsOfWinter extends Quest
 	// NPCs
 	private static final int FILAUR = 30535;
 	private static final int OBI = 32052;
+	
 	// Items
 	private static final int BANDAGE = 1833;
 	private static final int ENERGY_STONE = 5589;
 	private static final int THIEF_KEY = 1661;
 	private static final int GOODS = 8098;
+	
 	// Reward
 	private static final int SSD = 1463;
 	
@@ -149,6 +151,7 @@ public class Q00116_BeyondTheHillsOfWinter extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

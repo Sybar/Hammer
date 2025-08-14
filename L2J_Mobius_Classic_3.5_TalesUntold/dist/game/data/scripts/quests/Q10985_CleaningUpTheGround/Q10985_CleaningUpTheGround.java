@@ -43,16 +43,19 @@ public class Q10985_CleaningUpTheGround extends Quest
 	// NPCs
 	private static final int NEWBIE_GUIDE = 30600;
 	private static final int VOLODOS = 30137;
+	
 	// Monsters
 	private static final int ASHEN_WOLF = 20456;
 	private static final int GOBLIN = 20003;
 	private static final int IMP = 20004;
+	
 	// Items
 	private static final ItemHolder SOE_TO_VOLLODOS = new ItemHolder(91648, 1);
 	private static final ItemHolder SOE_NOVICE = new ItemHolder(10650, 10);
 	private static final ItemHolder RING_NOVICE = new ItemHolder(49041, 2);
 	private static final ItemHolder EARRING_NOVICE = new ItemHolder(49040, 2);
 	private static final ItemHolder NECKLACE_NOVICE = new ItemHolder(49039, 1);
+	
 	// Misc
 	private static final int MAX_LEVEL = 20;
 	private static final String KILL_COUNT_VAR = "KillCount";
@@ -113,6 +116,7 @@ public class Q10985_CleaningUpTheGround extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -150,6 +154,7 @@ public class Q10985_CleaningUpTheGround extends Quest
 			holder.add(new NpcLogListHolder(NpcStringId.DRIVE_OUT_MONSTERS_AROUND_THE_VILLAGE.getId(), true, qs.getInt(KILL_COUNT_VAR)));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 	
@@ -191,6 +196,7 @@ public class Q10985_CleaningUpTheGround extends Quest
 				htmltext = getAlreadyCompletedMsg(player);
 			}
 		}
+		
 		return htmltext;
 	}
 }

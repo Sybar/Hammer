@@ -35,14 +35,17 @@ public class Q00036_MakeASewingKit extends Quest
 {
 	// NPC
 	private static final int FERRIS = 30847;
+	
 	// Monster
 	private static final int LOST_STEEL_GOLEM = 22091;
 	private static final int FROST_STEEL_GOLEM = 22092;
+	
 	// Items
 	private static final int IRON_ORE = 36521;
 	private static final int COKES = 36561;
 	private static final int SEWING_KIT = 7078;
 	private static final int REINFORCED_IRON_PIECE = 7163;
+	
 	// Misc
 	private static final int MIN_LEVEL = 85;
 	private static final int REINFORCED_IRON_PIECE_COUNT = 5;
@@ -81,6 +84,7 @@ public class Q00036_MakeASewingKit extends Quest
 				{
 					return getNoQuestMsg(player);
 				}
+				
 				takeItems(player, REINFORCED_IRON_PIECE, -1);
 				qs.setCond(3, true);
 				break;
@@ -106,6 +110,7 @@ public class Q00036_MakeASewingKit extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -168,6 +173,7 @@ public class Q00036_MakeASewingKit extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

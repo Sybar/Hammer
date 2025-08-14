@@ -31,6 +31,7 @@ public class Q00649_ALooterAndARailroadMan extends Quest
 {
 	// NPC
 	private static final int OBI = 32052;
+	
 	// Item
 	private static final int THIEF_GUILD_MARK = 8099;
 	
@@ -101,6 +102,7 @@ public class Q00649_ALooterAndARailroadMan extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

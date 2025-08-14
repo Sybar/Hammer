@@ -53,6 +53,7 @@ public class ExRpItemLink extends ServerPacket
 		{
 			buffer.writeInt(0);
 		}
+		
 		buffer.writeInt(_item.getMana());
 		buffer.writeShort(_item.getAttackElementType());
 		buffer.writeShort(_item.getAttackElementPower());
@@ -60,6 +61,7 @@ public class ExRpItemLink extends ServerPacket
 		{
 			buffer.writeShort(_item.getElementDefAttr(i));
 		}
+		
 		// Enchant Effects
 		for (int op : _item.getEnchantOptions())
 		{

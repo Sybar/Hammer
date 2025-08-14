@@ -49,33 +49,39 @@ public class AllyDismiss extends ClientPacket
 		{
 			return;
 		}
+		
 		if (player.getClan() == null)
 		{
 			player.sendPacket(SystemMessageId.YOU_ARE_NOT_A_CLAN_MEMBER_2);
 			return;
 		}
+		
 		final Clan leaderClan = player.getClan();
 		if (leaderClan.getAllyId() == 0)
 		{
 			player.sendPacket(SystemMessageId.YOU_ARE_NOT_IN_AN_ALLIANCE);
 			return;
 		}
+		
 		if (!player.isClanLeader() || (leaderClan.getId() != leaderClan.getAllyId()))
 		{
 			player.sendPacket(SystemMessageId.ACCESS_ONLY_FOR_THE_CHANNEL_FOUNDER);
 			return;
 		}
+		
 		final Clan clan = ClanTable.getInstance().getClanByName(_clanName);
 		if (clan == null)
 		{
 			player.sendPacket(SystemMessageId.THAT_CLAN_DOES_NOT_EXIST);
 			return;
 		}
+		
 		if (clan.getId() == leaderClan.getId())
 		{
 			player.sendPacket(SystemMessageId.ALLIANCE_LEADERS_CANNOT_WITHDRAW);
 			return;
 		}
+		
 		if (clan.getAllyId() != leaderClan.getAllyId())
 		{
 			player.sendPacket(SystemMessageId.DIFFERENT_ALLIANCE);

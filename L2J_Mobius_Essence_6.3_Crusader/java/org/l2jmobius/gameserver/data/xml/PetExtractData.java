@@ -39,6 +39,7 @@ import org.l2jmobius.gameserver.model.item.holders.ItemHolder;
 public class PetExtractData implements IXmlReader
 {
 	private static final Logger LOGGER = Logger.getLogger(PetExtractData.class.getName());
+	
 	// <Pet_Id, <Pet_Level, Cost>>
 	private final Map<Integer, Map<Integer, PetExtractionHolder>> _extractionData = new HashMap<>();
 	
@@ -81,6 +82,7 @@ public class PetExtractData implements IXmlReader
 							data = new HashMap<>();
 							_extractionData.put(petId, data);
 						}
+						
 						data.put(petLevel, new PetExtractionHolder(petId, petLevel, extractExp, extractItem, new ItemHolder(defaultCostId, defaultCostCount), new ItemHolder(extractCostId, extractCostCount)));
 					}
 				}
@@ -96,6 +98,7 @@ public class PetExtractData implements IXmlReader
 			LOGGER.warning(getClass().getSimpleName() + ": Missing pet extraction data: [PetId: " + petId + "] [PetLevel: " + petLevel + "]");
 			return null;
 		}
+		
 		return map.get(petLevel);
 	}
 	

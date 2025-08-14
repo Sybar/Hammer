@@ -36,10 +36,13 @@ public class Q00586_MutatedCreatures extends Quest
 {
 	// NPC
 	private static final int NERUPA = 30370;
+	
 	// Monsters
 	private static final int COCOON_DESTROYER = 19294; // Cocoon Destroyer (Violent) 93
+	
 	// Items
 	private static final int COCOON_DESTROYER_SHELL = 48382;
+	
 	// Misc
 	private static final int MIN_LEVEL = 90;
 	private static final int MAX_LEVEL = 100;
@@ -63,6 +66,7 @@ public class Q00586_MutatedCreatures extends Quest
 		{
 			return htmltext;
 		}
+		
 		switch (event)
 		{
 			case "30370-02.htm":
@@ -86,6 +90,7 @@ public class Q00586_MutatedCreatures extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -128,6 +133,7 @@ public class Q00586_MutatedCreatures extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

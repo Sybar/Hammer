@@ -53,6 +53,7 @@ public class OpPkcountSkillCondition implements ISkillCondition
 				break;
 			}
 		}
+		
 		return false;
 	}
 }

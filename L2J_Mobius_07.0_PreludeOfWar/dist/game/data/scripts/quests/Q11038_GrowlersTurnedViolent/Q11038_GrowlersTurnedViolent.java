@@ -46,9 +46,11 @@ public class Q11038_GrowlersTurnedViolent extends Quest
 	private static final int AWESOME_SHRIKER = 24396;
 	private static final int AWESOME_DEVELOPED_SHRIKER = 24397;
 	private static final int AWESOME_STRONG_SHRIKER = 24398;
+	
 	// Items
 	private static final int CORRUPTED_ENERGY = 80673;
 	private static final ItemHolder SOE_PIO = new ItemHolder(80681, 1);
+	
 	// Location
 	private static final Location TRAINING_GROUNDS_TELEPORT = new Location(-84963, 80967, -3144);
 	
@@ -112,6 +114,7 @@ public class Q11038_GrowlersTurnedViolent extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -155,6 +158,7 @@ public class Q11038_GrowlersTurnedViolent extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

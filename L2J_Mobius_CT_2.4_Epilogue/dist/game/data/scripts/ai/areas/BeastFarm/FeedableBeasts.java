@@ -47,6 +47,7 @@ public class FeedableBeasts extends AbstractNpcAI
 	private static final int SKILL_GOLDEN_SPICE = 2188;
 	private static final int SKILL_CRYSTAL_SPICE = 2189;
 	private static final int FOODSKILLDIFF = GOLDEN_SPICE - SKILL_GOLDEN_SPICE;
+	
 	// Tamed Wild Beasts
 	private static final int TRAINED_BUFFALO1 = 16013;
 	private static final int TRAINED_BUFFALO2 = 16014;
@@ -62,6 +63,7 @@ public class FeedableBeasts extends AbstractNpcAI
 	{
 		TRAINED_BUFFALO1, TRAINED_BUFFALO2, TRAINED_COUGAR1, TRAINED_COUGAR2, TRAINED_KOOKABURRA1, TRAINED_KOOKABURRA2
 	};
+	
 	// all mobs that can eat...
 	private static final int[] FEEDABLE_BEASTS =
 	{
@@ -156,6 +158,7 @@ public class FeedableBeasts extends AbstractNpcAI
 			{
 				return _spiceToMob.get(spice)[mobType][classType];
 			}
+			
 			return null;
 		}
 		
@@ -186,7 +189,7 @@ public class FeedableBeasts extends AbstractNpcAI
 		// TODO: no grendels?
 		GrowthCapableMob temp;
 		
-		//@formatter:off
+		// @formatter:off
 		final int[][] Kookabura_0_Gold = {{ 21452, 21453, 21454, 21455 }};
 		final int[][] Kookabura_0_Crystal = {{ 21456, 21457, 21458, 21459 }};
 		final int[][] Kookabura_1_Gold_1= {{ 21460, 21462 }};
@@ -211,7 +214,7 @@ public class FeedableBeasts extends AbstractNpcAI
 		final int[][] Cougar_1_Crystal_2 = {{ 21503, 21505 }};
 		final int[][] Cougar_2_1 = {{ 21506, 21828 }, { TRAINED_COUGAR1, TRAINED_COUGAR2 }};
 		final int[][] Cougar_2_2 = {{ 21507, 21829 }, { TRAINED_COUGAR1, TRAINED_COUGAR2 }};
-		//@formatter:on
+		// @formatter:on
 		
 		// Alpen Kookabura
 		temp = new GrowthCapableMob(0, 100);
@@ -358,6 +361,7 @@ public class FeedableBeasts extends AbstractNpcAI
 		{
 			return;
 		}
+		
 		npc.setScriptValue(1);
 		
 		if (!npc.isSpawned())
@@ -421,6 +425,7 @@ public class FeedableBeasts extends AbstractNpcAI
 			{
 		 */
 		npc.deleteMe();
+		
 		// }
 		// @formatter:on
 		
@@ -490,8 +495,10 @@ public class FeedableBeasts extends AbstractNpcAI
 			{
 				FEED_INFO.remove(npc.getObjectId());
 			}
+			
 			// despawn the mad cow
 			npc.deleteMe();
+			
 			// spawn the new mob
 			final Attackable nextNpc = addSpawn(MAD_COW_POLYMORPH.get(npc.getId()), npc).asAttackable();
 			
@@ -501,6 +508,7 @@ public class FeedableBeasts extends AbstractNpcAI
 			nextNpc.addDamageHate(player, 0, 99999);
 			nextNpc.getAI().setIntention(Intention.ATTACK, player);
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	
@@ -513,9 +521,11 @@ public class FeedableBeasts extends AbstractNpcAI
 		{
 			return;
 		}
+		
 		// gather some values on local variables
 		final int npcId = npc.getId();
 		final int skillId = skill.getId();
+		
 		// check if the npc and skills used are valid for this script. Exit if invalid.
 		if ((skillId != SKILL_GOLDEN_SPICE) && (skillId != SKILL_CRYSTAL_SPICE))
 		{

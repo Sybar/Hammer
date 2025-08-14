@@ -59,7 +59,7 @@ public class SpeedFinalizer implements IStatFunction
 		final double maxSpeed;
 		if (creature.isPlayer())
 		{
-			maxSpeed = Config.MAX_RUN_SPEED + creature.getStat().getValue(Stat.SPEED_LIMIT, 0);
+			maxSpeed = creature.isGM() ? 10000 : Config.MAX_RUN_SPEED + creature.getStat().getValue(Stat.SPEED_LIMIT, 0);
 		}
 		else if (creature.isSummon())
 		{
@@ -80,6 +80,7 @@ public class SpeedFinalizer implements IStatFunction
 		{
 			return Math.max(enchantLevel - 3, 0) + Math.max(enchantLevel - 6, 0);
 		}
+		
 		return (0.6 * Math.max(enchantLevel - 3, 0)) + (0.6 * Math.max(enchantLevel - 6, 0));
 	}
 	
@@ -95,6 +96,7 @@ public class SpeedFinalizer implements IStatFunction
 				if (data != null)
 				{
 					baseValue = data.getSpeedOnRide(stat);
+					
 					// if level diff with mount >= 10, it decreases move speed by 50%
 					if ((player.getMountLevel() - creature.getLevel()) >= 10)
 					{
@@ -108,8 +110,10 @@ public class SpeedFinalizer implements IStatFunction
 					}
 				}
 			}
+			
 			baseValue += Config.RUN_SPD_BOOST;
 		}
+		
 		if (creature.isPlayable() && creature.isInsideZone(ZoneId.SWAMP))
 		{
 			final SwampZone zone = ZoneManager.getInstance().getZone(creature, SwampZone.class);
@@ -118,6 +122,7 @@ public class SpeedFinalizer implements IStatFunction
 				baseValue *= zone.getMoveBonus();
 			}
 		}
+		
 		return baseValue;
 	}
 }

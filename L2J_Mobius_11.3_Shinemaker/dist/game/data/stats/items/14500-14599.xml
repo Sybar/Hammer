@@ -405,9 +405,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">359</stat>
 			<stat type="mAtk">176</stat>
@@ -443,9 +443,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">359</stat>
 			<stat type="mAtk">176</stat>
@@ -481,9 +481,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">359</stat>
 			<stat type="mAtk">176</stat>
@@ -520,9 +520,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">444</stat>
 			<stat type="mAtk">176</stat>
@@ -558,9 +558,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">444</stat>
 			<stat type="mAtk">176</stat>
@@ -596,9 +596,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">444</stat>
 			<stat type="mAtk">176</stat>
@@ -633,9 +633,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">429</stat>
 			<stat type="mAtk">176</stat>
@@ -670,9 +670,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">429</stat>
 			<stat type="mAtk">176</stat>
@@ -707,9 +707,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">429</stat>
 			<stat type="mAtk">176</stat>
@@ -880,12 +880,12 @@
 		<set name="commissionItemType" val="DUAL_DAGGER" />
 		<set name="ensoulNormalSlots" val="1" />
 		<set name="ensoulSpecialSlots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player level="81" />
 				<player categoryType="DAGGER_MASTER" />
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">304</stat>
 			<stat type="mAtk">157</stat>
@@ -921,12 +921,12 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="ensoulNormalSlots" val="1" />
 		<set name="ensoulSpecialSlots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player level="81" />
 				<player categoryType="DAGGER_MASTER" />
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">332</stat>
 			<stat type="mAtk">169</stat>
@@ -960,12 +960,12 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player level="81" />
 				<player categoryType="DAGGER_MASTER" />
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">304</stat>
 			<stat type="mAtk">157</stat>
@@ -1002,12 +1002,12 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player level="81" />
 				<player categoryType="DAGGER_MASTER" />
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">332</stat>
 			<stat type="mAtk">169</stat>
@@ -1496,12 +1496,12 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player level="81" />
 				<player categoryType="DAGGER_MASTER" />
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">304</stat>
 			<stat type="mAtk">157</stat>
@@ -2086,9 +2086,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">334</stat>
 			<stat type="mAtk">119</stat>
@@ -2119,9 +2119,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">281</stat>
 			<stat type="mAtk">119</stat>
@@ -2152,9 +2152,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">334</stat>
 			<stat type="mAtk">119</stat>
@@ -2186,9 +2186,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">392</stat>
 			<stat type="mAtk">119</stat>
@@ -2211,9 +2211,9 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player pledgeClass="0" /> <!-- Normal member -->
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">73</stat>
 		</stats>
@@ -2233,12 +2233,12 @@
 		<set name="is_dropable" val="false" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 				<player pledgeClass="0" /> <!-- Normal member -->
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">293</stat>
 		</stats>
@@ -2257,12 +2257,12 @@
 		<set name="is_dropable" val="false" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 				<player pledgeClass="0" /> <!-- Normal member -->
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">49</stat>
 		</stats>
@@ -2281,12 +2281,12 @@
 		<set name="is_dropable" val="false" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 				<player pledgeClass="0" /> <!-- Normal member -->
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">49</stat>
 		</stats>
@@ -2306,9 +2306,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player pledgeClass="0" /> <!-- Normal member -->
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">220</stat>
 		</stats>
@@ -2327,9 +2327,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player pledgeClass="0" /> <!-- Normal member -->
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">49</stat>
 		</stats>
@@ -2348,9 +2348,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player pledgeClass="0" /> <!-- Normal member -->
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">49</stat>
 		</stats>
@@ -2370,12 +2370,12 @@
 		<set name="is_dropable" val="false" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 				<player pledgeClass="0" /> <!-- Normal member -->
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">147</stat>
 			<stat type="maxMp">718</stat>
@@ -2395,12 +2395,12 @@
 		<set name="is_dropable" val="false" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 				<player pledgeClass="0" /> <!-- Normal member -->
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">49</stat>
 		</stats>
@@ -2419,12 +2419,12 @@
 		<set name="is_dropable" val="false" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 				<player pledgeClass="0" /> <!-- Normal member -->
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">49</stat>
 		</stats>

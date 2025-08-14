@@ -84,6 +84,7 @@ public class VariationData implements IXmlReader
 				{
 					LOGGER.warning(getClass().getSimpleName() + ": Mineral with item id " + mineralId + " was not found.");
 				}
+				
 				final Variation variation = new Variation(mineralId, itemGroup);
 				
 				forEach(variationNode, "optionGroup", groupNode ->
@@ -104,6 +105,7 @@ public class VariationData implements IXmlReader
 								LOGGER.warning(getClass().getSimpleName() + ": Null option for id " + optionId + " mineral " + mineralId);
 								return;
 							}
+							
 							options.put(opt, optionChance);
 						});
 						forEach(categoryNode, "optionRange", optionNode ->
@@ -119,6 +121,7 @@ public class VariationData implements IXmlReader
 									LOGGER.warning(getClass().getSimpleName() + ": Null option for id " + id + " mineral " + mineralId);
 									return;
 								}
+								
 								options.put(op, optionChance);
 							}
 						});
@@ -151,6 +154,7 @@ public class VariationData implements IXmlReader
 				{
 					list = new ArrayList<>();
 				}
+				
 				list.add(variation);
 				
 				_variations.put(mineralId, list);
@@ -168,6 +172,7 @@ public class VariationData implements IXmlReader
 					{
 						LOGGER.warning(getClass().getSimpleName() + ": Item with id " + itemId + " was not found.");
 					}
+					
 					items.add(itemId);
 				});
 				
@@ -218,6 +223,7 @@ public class VariationData implements IXmlReader
 					{
 						fees = new HashMap<>();
 					}
+					
 					fees.putAll(feeByMinerals);
 					_fees.put(item, fees);
 				}

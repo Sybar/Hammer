@@ -31,10 +31,12 @@ public class Q00659_IdRatherBeCollectingFairyBreath extends Quest
 {
 	// NPCs
 	private static final int GALATEA = 30634;
+	
 	// Monsters
 	private static final int SOBBING_WIND = 21023;
 	private static final int BABBLING_WIND = 21024;
 	private static final int GIGGLING_WIND = 21025;
+	
 	// Item
 	private static final int FAIRY_BREATH = 8286;
 	

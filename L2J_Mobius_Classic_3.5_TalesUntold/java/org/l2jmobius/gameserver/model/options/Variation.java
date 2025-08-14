@@ -54,10 +54,12 @@ public class Variation
 			LOGGER.warning("Null effect: for mineral " + _mineralId + ", order " + order);
 			return null;
 		}
+		
 		if (_effects[order] == null)
 		{
 			return null;
 		}
+		
 		return _effects[order].getRandomEffect(targetItemId);
 	}
 }

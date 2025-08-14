@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
 	<item id="8543" name="Bead Parcel" type="EtcItem">
 		<!-- Take this parcel of woven beads to Warehouse Chief Yasheni in the Town of Schuttgart. -->
@@ -58,9 +58,9 @@
 		<set name="weight" val="10" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player sex="1" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="8560" name="Teddy Bear Hat" type="Armor">
 		<!-- Fun, bear-shaped hair accessory. -->

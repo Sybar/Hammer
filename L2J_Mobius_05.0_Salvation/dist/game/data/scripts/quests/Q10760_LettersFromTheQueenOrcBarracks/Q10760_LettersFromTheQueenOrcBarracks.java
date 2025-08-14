@@ -34,11 +34,14 @@ public class Q10760_LettersFromTheQueenOrcBarracks extends LetterQuest
 	// NPC
 	private static final int LEVIAN = 30037;
 	private static final int PIOTUR = 30597;
+	
 	// Items
 	private static final int SOE_GLUDIN_VILLAGE = 39486;
 	private static final int SOE_ORC_BARRACKS = 39487;
+	
 	// Location
 	private static final Location TELEPORT_LOC = new Location(-79816, 150828, -3040);
+	
 	// Misc
 	private static final int MIN_LEVEL = 30;
 	private static final int MAX_LEVEL = 39;
@@ -93,6 +96,7 @@ public class Q10760_LettersFromTheQueenOrcBarracks extends LetterQuest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -117,6 +121,7 @@ public class Q10760_LettersFromTheQueenOrcBarracks extends LetterQuest
 				htmltext = "30597-01.html";
 			}
 		}
+		
 		return htmltext;
 	}
 }

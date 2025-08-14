@@ -63,6 +63,7 @@ public abstract class AbstractEnchantItem
 		{
 			throw new IllegalAccessError();
 		}
+		
 		_grade = set.getEnum("targetGrade", CrystalType.class, CrystalType.NONE);
 		_maxEnchantLevel = set.getInt("maxEnchant", 65535);
 		_bonusRate = set.getDouble("bonusRate", 0);
@@ -139,6 +140,7 @@ public abstract class AbstractEnchantItem
 		{
 			return false;
 		}
+		
 		return true;
 	}
 	
@@ -156,6 +158,7 @@ public abstract class AbstractEnchantItem
 		{
 			return !isWeapon();
 		}
+		
 		return false;
 	}
 }

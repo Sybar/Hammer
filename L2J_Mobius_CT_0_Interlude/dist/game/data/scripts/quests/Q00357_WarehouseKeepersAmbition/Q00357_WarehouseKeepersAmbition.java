@@ -36,8 +36,10 @@ public class Q00357_WarehouseKeepersAmbition extends Quest
 	private static final int FLINE_ELDER = 20595;
 	private static final int LIELE_ELDER = 20596;
 	private static final int VALLEY_TREANT_ELDER = 20597;
+	
 	// Item
 	private static final int JADE_CRYSTAL = 5867;
+	
 	// Drop chances
 	private static final Map<Integer, Double> DROP_DATA = new HashMap<>();
 	static

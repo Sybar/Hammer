@@ -703,13 +703,13 @@
 		<set name="is_destroyable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="10" />
 			<set stat="mAtk" val="9" />
 			<set stat="critRate" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="433" />
-		</for>
+		</stats>
 	</item>
 	<item id="4666" type="EtcItem" name="Reiria's Soul Orb">
 		<!-- A sphere containing Reiria's Soul. Take it to Maestro Reorin. -->
@@ -925,14 +925,14 @@
 		<set name="oncrit_chance" val="10" />
 		<set name="oncrit_skill" val="3025-1" />
 		<set name="item_skill" val="3026-1" /> <!-- Special Ability: Critical Anger -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="107" />
 			<set stat="mAtk" val="61" />
 			<set stat="critRate" val="8" />
 			<set stat="pAtkSpd" val="379" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4682" type="Weapon" name="Stormbringer">
 		<!-- Increases Critical Attack by 86. -->
@@ -953,14 +953,14 @@
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="true" />
 		<set name="item_skill" val="3010-1" /> <!-- Special Ability: Focus -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="107" />
 			<set stat="mAtk" val="61" />
 			<set stat="critRate" val="8" />
 			<set stat="pAtkSpd" val="379" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4683" type="Weapon" name="Stormbringer">
 		<!-- Reduces a weapon's weight by half. -->
@@ -981,14 +981,14 @@
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="true" />
 		<set name="item_skill" val="3498-1" /> <!-- Special Ability Light -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="107" />
 			<set stat="mAtk" val="61" />
 			<set stat="critRate" val="8" />
 			<set stat="pAtkSpd" val="379" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4684" type="Weapon" name="Shamshir">
 		<!-- Increases Accuracy by 6. -->
@@ -1009,14 +1009,14 @@
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="true" />
 		<set name="item_skill" val="3007-2" /> <!-- Special Ability: Guidance -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="122" />
 			<set stat="mAtk" val="68" />
 			<set stat="critRate" val="8" />
 			<set stat="pAtkSpd" val="379" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4685" type="Weapon" name="Shamshir">
 		<!-- Increases Critical Attack by 67 when attacking the enemy from behind. -->
@@ -1037,14 +1037,14 @@
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="true" />
 		<set name="item_skill" val="3018-2" /> <!-- Special Ability: Back Blow -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="122" />
 			<set stat="mAtk" val="68" />
 			<set stat="critRate" val="8" />
 			<set stat="pAtkSpd" val="379" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4686" type="Weapon" name="Shamshir">
 		<!-- Increases Evasion by 7 when HP becomes 60% or lower. -->
@@ -1065,14 +1065,14 @@
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="true" />
 		<set name="item_skill" val="3028-2" /> <!-- Special Ability: Rsk. Evasion -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="122" />
 			<set stat="mAtk" val="68" />
 			<set stat="critRate" val="8" />
 			<set stat="pAtkSpd" val="379" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4687" type="Weapon" name="Katana">
 		<!-- Increases Critical Attack by 82. -->
@@ -1093,14 +1093,14 @@
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="true" />
 		<set name="item_skill" val="3010-2" /> <!-- Special Ability: Focus -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="122" />
 			<set stat="mAtk" val="68" />
 			<set stat="critRate" val="8" />
 			<set stat="pAtkSpd" val="379" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4688" type="Weapon" name="Katana">
 		<!-- Increases P. Atk. by 194 during a critical attack. -->
@@ -1121,14 +1121,14 @@
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="true" />
 		<set name="item_skill" val="3023-2" /> <!-- Special Ability: Critical Damage -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="122" />
 			<set stat="mAtk" val="68" />
 			<set stat="critRate" val="8" />
 			<set stat="pAtkSpd" val="379" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4689" type="Weapon" name="Katana">
 		<!-- Increases Atk. Spd. by about 7%. -->
@@ -1149,14 +1149,14 @@
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="true" />
 		<set name="item_skill" val="3036-2" /> <!-- Special Ability: Haste -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="122" />
 			<set stat="mAtk" val="68" />
 			<set stat="critRate" val="8" />
 			<set stat="pAtkSpd" val="379" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4690" type="Weapon" name="Spirit Sword">
 		<!-- Increases P. Atk. by 194 during a critical attack. -->
@@ -1177,14 +1177,14 @@
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="true" />
 		<set name="item_skill" val="3023-2" /> <!-- Special Ability: Critical Damage -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="122" />
 			<set stat="mAtk" val="68" />
 			<set stat="critRate" val="8" />
 			<set stat="pAtkSpd" val="379" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4691" type="Weapon" name="Spirit Sword">
 		<!-- 15% chance that target will be poisoned during critical attack. Effect 5 -->
@@ -1206,14 +1206,14 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="oncrit_chance" val="15" />
 		<set name="oncrit_skill" val="3024-2" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="122" />
 			<set stat="mAtk" val="68" />
 			<set stat="critRate" val="8" />
 			<set stat="pAtkSpd" val="379" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4692" type="Weapon" name="Spirit Sword">
 		<!-- Increases Atk. Spd. by about 7%. -->
@@ -1234,14 +1234,14 @@
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="true" />
 		<set name="item_skill" val="3036-2" /> <!-- Special Ability: Haste -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="122" />
 			<set stat="mAtk" val="68" />
 			<set stat="critRate" val="8" />
 			<set stat="pAtkSpd" val="379" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4693" type="Weapon" name="Raid Sword">
 		<!-- Increases Critical Attack by 82. -->
@@ -1262,14 +1262,14 @@
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="true" />
 		<set name="item_skill" val="3010-2" /> <!-- Special Ability: Focus -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="122" />
 			<set stat="mAtk" val="68" />
 			<set stat="critRate" val="8" />
 			<set stat="pAtkSpd" val="379" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4694" type="Weapon" name="Raid Sword">
 		<!-- User absorbs 9 HP from target during critical attack. -->
@@ -1291,14 +1291,14 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="oncrit_chance" val="35" />
 		<set name="oncrit_skill" val="3022-2" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="122" />
 			<set stat="mAtk" val="68" />
 			<set stat="critRate" val="8" />
 			<set stat="pAtkSpd" val="379" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4695" type="Weapon" name="Raid Sword">
 		<!-- 15% chance that target will be poisoned during critical attack. Effect 5 -->
@@ -1320,14 +1320,14 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="oncrit_chance" val="15" />
 		<set name="oncrit_skill" val="3024-2" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="122" />
 			<set stat="mAtk" val="68" />
 			<set stat="critRate" val="8" />
 			<set stat="pAtkSpd" val="379" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4696" type="Weapon" name="Caliburs">
 		<!-- Increases Accuracy by 5. -->
@@ -1348,14 +1348,14 @@
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="true" />
 		<set name="item_skill" val="3007-3" /> <!-- Special Ability: Guidance -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="139" />
 			<set stat="mAtk" val="76" />
 			<set stat="critRate" val="8" />
 			<set stat="pAtkSpd" val="379" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4697" type="Weapon" name="Caliburs">
 		<!-- Increases Critical Attack by 77. -->
@@ -1376,14 +1376,14 @@
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="true" />
 		<set name="item_skill" val="3010-3" /> <!-- Special Ability: Focus -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="139" />
 			<set stat="mAtk" val="76" />
 			<set stat="critRate" val="8" />
 			<set stat="pAtkSpd" val="379" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4698" type="Weapon" name="Caliburs">
 		<!-- Increases P. Atk. by 213 during a critical attack. -->
@@ -1404,14 +1404,14 @@
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="true" />
 		<set name="item_skill" val="3023-3" /> <!-- Special Ability: Critical Damage -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="139" />
 			<set stat="mAtk" val="76" />
 			<set stat="critRate" val="8" />
 			<set stat="pAtkSpd" val="379" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="4699" type="Weapon" name="Sword of Delusion">
 		<!-- Increases Critical Attack by 77. -->
@@ -1432,13 +1432,13 @@
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="true" />
 		<set name="item_skill" val="3010-3" /> <!-- Special Ability: Focus -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="139" />
 			<set stat="mAtk" val="76" />
 			<set stat="critRate" val="8" />
 			<set stat="pAtkSpd" val="379" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 </list>

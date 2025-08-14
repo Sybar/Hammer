@@ -100,6 +100,7 @@ public abstract class ItemContainer
 				return item;
 			}
 		}
+		
 		return null;
 	}
 	
@@ -115,6 +116,7 @@ public abstract class ItemContainer
 				return true;
 			}
 		}
+		
 		return false;
 	}
 	
@@ -132,6 +134,7 @@ public abstract class ItemContainer
 				result.add(item);
 			}
 		}
+		
 		return result;
 	}
 	
@@ -149,6 +152,7 @@ public abstract class ItemContainer
 				return item;
 			}
 		}
+		
 		return null;
 	}
 	
@@ -165,6 +169,7 @@ public abstract class ItemContainer
 				return item;
 			}
 		}
+		
 		return null;
 	}
 	
@@ -197,9 +202,11 @@ public abstract class ItemContainer
 				{
 					return item.getCount();
 				}
+				
 				count++;
 			}
 		}
+		
 		return count;
 	}
 	
@@ -384,6 +391,7 @@ public abstract class ItemContainer
 			refreshWeight();
 			target.refreshWeight();
 		}
+		
 		return targetitem;
 	}
 	
@@ -440,6 +448,7 @@ public abstract class ItemContainer
 				item.stopAllTasks();
 			}
 		}
+		
 		return item;
 	}
 	
@@ -499,6 +508,7 @@ public abstract class ItemContainer
 				return item.getCount();
 			}
 		}
+		
 		return 0;
 	}
 	
@@ -600,6 +610,7 @@ public abstract class ItemContainer
 					}
 				}
 			}
+			
 			refreshWeight();
 		}
 		catch (Exception e)

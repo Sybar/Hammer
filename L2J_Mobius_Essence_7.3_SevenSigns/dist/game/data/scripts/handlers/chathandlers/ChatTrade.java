@@ -22,7 +22,7 @@ import org.l2jmobius.gameserver.managers.MapRegionManager;
 import org.l2jmobius.gameserver.model.BlockList;
 import org.l2jmobius.gameserver.model.World;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.actor.enums.player.PlayerCondOverride;
+import org.l2jmobius.gameserver.model.actor.enums.player.ChatBroadcastType;
 import org.l2jmobius.gameserver.model.item.enums.ItemProcessType;
 import org.l2jmobius.gameserver.model.itemcontainer.Inventory;
 import org.l2jmobius.gameserver.model.zone.ZoneId;
@@ -43,18 +43,20 @@ public class ChatTrade implements IChatHandler
 	};
 	
 	@Override
-	public void handleChat(ChatType type, Player activeChar, String target, String text, boolean shareLocation)
+	public void onChat(ChatType type, Player activeChar, String target, String text, boolean shareLocation)
 	{
 		if (activeChar.isChatBanned() && Config.BAN_CHAT_CHANNELS.contains(type))
 		{
 			activeChar.sendPacket(SystemMessageId.IF_YOU_TRY_TO_CHAT_BEFORE_THE_PROHIBITION_IS_REMOVED_THE_PROHIBITION_TIME_WILL_INCREASE_EVEN_FURTHER_S1_SEC_OF_PROHIBITION_IS_LEFT);
 			return;
 		}
-		if (Config.JAIL_DISABLE_CHAT && activeChar.isJailed() && !activeChar.canOverrideCond(PlayerCondOverride.CHAT_CONDITIONS))
+		
+		if (Config.JAIL_DISABLE_CHAT && activeChar.isJailed() && !activeChar.isGM())
 		{
 			activeChar.sendPacket(SystemMessageId.CHATTING_IS_CURRENTLY_PROHIBITED);
 			return;
 		}
+		
 		if (activeChar.getLevel() < 20)
 		{
 			activeChar.sendPacket(new SystemMessage(SystemMessageId.TRADE_CHAT_CANNOT_BE_USED_BY_CHARACTERS_LV_S1_OR_LOWER).addInt(20));
@@ -79,7 +81,7 @@ public class ChatTrade implements IChatHandler
 		}
 		
 		final CreatureSay cs = new CreatureSay(activeChar, type, activeChar.getName(), text, shareLocation);
-		if (Config.DEFAULT_TRADE_CHAT.equalsIgnoreCase("on") || (Config.DEFAULT_TRADE_CHAT.equalsIgnoreCase("gm") && activeChar.canOverrideCond(PlayerCondOverride.CHAT_CONDITIONS)))
+		if ((Config.DEFAULT_GLOBAL_CHAT == ChatBroadcastType.ON) || ((Config.DEFAULT_GLOBAL_CHAT == ChatBroadcastType.GM) && activeChar.isGM()))
 		{
 			final int region = MapRegionManager.getInstance().getMapRegionLocId(activeChar);
 			for (Player player : World.getInstance().getPlayers())
@@ -107,9 +109,9 @@ public class ChatTrade implements IChatHandler
 				}
 			}
 		}
-		else if (Config.DEFAULT_TRADE_CHAT.equalsIgnoreCase("global"))
+		else if (Config.DEFAULT_TRADE_CHAT == ChatBroadcastType.GLOBAL)
 		{
-			if (!activeChar.canOverrideCond(PlayerCondOverride.CHAT_CONDITIONS) && !activeChar.getClient().getFloodProtectors().canUseGlobalChat())
+			if (!activeChar.isGM() && !activeChar.getClient().getFloodProtectors().canUseGlobalChat())
 			{
 				activeChar.sendMessage("Do not spam trade channel.");
 				return;

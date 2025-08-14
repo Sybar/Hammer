@@ -55,8 +55,10 @@ public class ApherusLookout extends AbstractNpcAI
 				npc.broadcastPacket(new ExShowScreenMessage(NpcStringId.MOVED_TO_APHERUS_DIMENSION, ExShowScreenMessage.TOP_CENTER, 3000, true));
 				giveItems(player, APERUS_KEY, 1);
 			}
+			
 			npc.deleteMe();
 		}
+		
 		return htmltext;
 	}
 	

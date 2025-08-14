@@ -37,6 +37,7 @@ public final class Q00744_TheAlligatorHunterReturns extends Quest
 	private static final int BATHIS = 30332;
 	private static final int ENRON = 33860;
 	private static final int FLUTTER = 30677;
+	
 	// Monster
 	private static final int[] MONSTERS =
 	{
@@ -50,8 +51,10 @@ public final class Q00744_TheAlligatorHunterReturns extends Quest
 		20992, // Swamp Alligator
 		20993, // Swamp Warrior
 	};
+	
 	// Items
 	private static final int ALLIGATOR_LEATHER = 47046;
+	
 	// Misc
 	private static final int MIN_LEVEL = 40;
 	private static final int MAX_LEVEL = 45;
@@ -112,12 +115,14 @@ public final class Q00744_TheAlligatorHunterReturns extends Quest
 						htmltext = event;
 						break;
 					}
+					
 					htmltext = getNoQuestLevelRewardMsg(player);
 					break;
 				}
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -138,6 +143,7 @@ public final class Q00744_TheAlligatorHunterReturns extends Quest
 						htmltext = "captain_bathia_q0744_01.htm";
 						break;
 					}
+					
 					htmltext = "captain_bathia_q0744_02.htm";
 					break;
 				}
@@ -201,6 +207,7 @@ public final class Q00744_TheAlligatorHunterReturns extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

@@ -66,6 +66,7 @@ public class ClanHallManager extends AbstractNpcAI
 		33360, // Talking Island
 	};
 	// @formatter:on
+	
 	// Misc
 	private static final int[] ALLOWED_BUFFS =
 	{
@@ -245,6 +246,7 @@ public class ClanHallManager extends AbstractNpcAI
 													castSkill(npc, player, skill);
 													htmltext = getHtm(player, "ClanHallManager-funcBuffsDone.html");
 												}
+												
 												htmltext = htmltext.replace("%manaLeft%", Integer.toString((int) npc.getCurrentMp()));
 											}
 										}
@@ -446,6 +448,7 @@ public class ClanHallManager extends AbstractNpcAI
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -474,6 +477,7 @@ public class ClanHallManager extends AbstractNpcAI
 		{
 			htmltext = "ClanHallManager-03.html";
 		}
+		
 		return htmltext;
 	}
 	
@@ -512,6 +516,7 @@ public class ClanHallManager extends AbstractNpcAI
 			htmltext = htmltext.replaceAll("%" + name + "expire%", "");
 			htmltext = htmltext.replaceAll("%" + name + "deactive%", "");
 		}
+		
 		return htmltext;
 	}
 	

@@ -93,6 +93,7 @@ public abstract class AbstractSagaQuest extends Quest
 		{
 			addKillId(archonMinion);
 		}
+		
 		addKillId(ARCHON_HALISHA_NORM);
 		for (int guardianAngel = 27214; guardianAngel < 27217; guardianAngel++)
 		{
@@ -165,6 +166,7 @@ public abstract class AbstractSagaQuest extends Quest
 					{
 						player.setBaseClass(playerClass);
 					}
+					
 					player.broadcastUserInfo();
 					cast(npc, player, 4339, 1);
 					st.exitQuest(false);
@@ -186,6 +188,7 @@ public abstract class AbstractSagaQuest extends Quest
 				{
 					takeItems(player, _items[11], 1);
 				}
+				
 				giveItems(player, _items[1], 1);
 				htmltext = "1-06.htm";
 				break;
@@ -386,6 +389,7 @@ public abstract class AbstractSagaQuest extends Quest
 					autoChat(npc, _text[14].replace("PLAYERNAME", player.getName()));
 					cancelQuestTimer("Mob_3 Timer 1", npc, player);
 				}
+				
 				return null;
 			}
 			case "Mob_3 has despawned":
@@ -403,6 +407,7 @@ public abstract class AbstractSagaQuest extends Quest
 				{
 					st.set("Quest1", "0");
 				}
+				
 				return null;
 			}
 			case "Mob_2 Timer 2":
@@ -425,6 +430,7 @@ public abstract class AbstractSagaQuest extends Quest
 						autoChat(npc, _text[10].replace("PLAYERNAME", player.getName()));
 					}
 				}
+				
 				return null;
 			}
 			case "Mob_2 has despawned":
@@ -433,6 +439,7 @@ public abstract class AbstractSagaQuest extends Quest
 				if ((st.getInt("Quest0") == 1) || (st.getInt("Quest0") == 2) || (st.getInt("Quest1") > 3))
 				{
 					st.set("Quest0", "0");
+					
 					// TODO: This "if" will never be true.
 					if (st.getInt("Quest0") == 1)
 					{
@@ -442,15 +449,18 @@ public abstract class AbstractSagaQuest extends Quest
 					{
 						autoChat(npc, _text[12].replace("PLAYERNAME", player.getName()));
 					}
+					
 					deleteSpawn(npc);
 				}
 				else
 				{
 					startQuestTimer("Mob_2 has despawned", 1000, npc, player);
 				}
+				
 				return null;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -553,10 +563,12 @@ public abstract class AbstractSagaQuest extends Quest
 				htmltext = "4-08.htm";
 			}
 		}
+		
 		if (htmltext.equals(""))
 		{
 			npc.showChatWindow(player);
 		}
+		
 		return htmltext;
 	}
 	
@@ -581,6 +593,7 @@ public abstract class AbstractSagaQuest extends Quest
 							partyQuestMembers.add(st1);
 						}
 					}
+					
 					if (!partyQuestMembers.isEmpty())
 					{
 						final QuestState st2 = partyQuestMembers.get(getRandom(partyQuestMembers.size()));
@@ -652,6 +665,7 @@ public abstract class AbstractSagaQuest extends Quest
 						giveItems(player, _items[6], 1);
 						st.setCond(9, true);
 					}
+					
 					cancelQuestTimer("Mob_1 has despawned", npc, st2.getPlayer());
 					st2.set("spawned", "0");
 					deleteSpawn(npc);
@@ -672,6 +686,7 @@ public abstract class AbstractSagaQuest extends Quest
 							autoChat(npc, _text[5].replace("PLAYERNAME", player.getName()));
 						}
 					}
+					
 					cancelQuestTimer("Archon Hellisha has despawned", npc, st2.getPlayer());
 					st2.set("spawned", "0");
 					deleteSpawn(npc);
@@ -979,6 +994,7 @@ public abstract class AbstractSagaQuest extends Quest
 								{
 									player.setBaseClass(playerClass);
 								}
+								
 								player.broadcastUserInfo();
 								cast(npc, player, 4339, 1);
 							}
@@ -992,6 +1008,7 @@ public abstract class AbstractSagaQuest extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -1015,6 +1032,7 @@ public abstract class AbstractSagaQuest extends Quest
 				return st;
 			}
 		}
+		
 		return null;
 	}
 	
@@ -1025,8 +1043,8 @@ public abstract class AbstractSagaQuest extends Quest
 	
 	private void cast(Npc npc, Creature target, int skillId, int level)
 	{
-		target.broadcastPacket(new MagicSkillUse(target, target, skillId, level, 6000, 1));
-		target.broadcastPacket(new MagicSkillUse(npc, npc, skillId, level, 6000, 1));
+		target.broadcastSkillPacket(new MagicSkillUse(target, target, skillId, level, 6000, 1), target);
+		target.broadcastSkillPacket(new MagicSkillUse(npc, npc, skillId, level, 6000, 1), npc);
 	}
 	
 	private void addSpawn(QuestState st, Npc mob)
@@ -1040,6 +1058,7 @@ public abstract class AbstractSagaQuest extends Quest
 		{
 			return npc;
 		}
+		
 		return null;
 	}
 	
@@ -1064,6 +1083,7 @@ public abstract class AbstractSagaQuest extends Quest
 				st = player.getQuestState(getName());
 			}
 		}
+		
 		return st;
 	}
 	
@@ -1073,6 +1093,7 @@ public abstract class AbstractSagaQuest extends Quest
 		{
 			return _classId[1];
 		}
+		
 		return _classId[0];
 	}
 	
@@ -1084,8 +1105,10 @@ public abstract class AbstractSagaQuest extends Quest
 			{
 				return -1;
 			}
+			
 			return _prevClass[1];
 		}
+		
 		return _prevClass[0];
 	}
 	

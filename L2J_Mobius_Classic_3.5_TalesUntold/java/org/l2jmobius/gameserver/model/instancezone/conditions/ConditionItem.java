@@ -36,10 +36,12 @@ public class ConditionItem extends Condition
 	public ConditionItem(InstanceTemplate template, StatSet parameters, boolean onlyLeader, boolean showMessageAndHtml)
 	{
 		super(template, parameters, onlyLeader, showMessageAndHtml);
+		
 		// Load params
 		_itemId = parameters.getInt("id");
 		_count = parameters.getLong("count");
 		_take = parameters.getBoolean("take", false);
+		
 		// Set message
 		setSystemMessage(SystemMessageId.C1_S_ITEM_REQUIREMENT_IS_NOT_SUFFICIENT_AND_CANNOT_BE_ENTERED, (msg, player) -> msg.addString(player.getName()));
 	}

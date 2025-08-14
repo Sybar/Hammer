@@ -44,6 +44,7 @@ public class Q00220_TestimonyOfGlory extends Quest
 	private static final int HARAK = 30618;
 	private static final int DRIKO = 30619;
 	private static final int CHIANTA = 30642;
+	
 	// Monsters
 	private static final int TYRANT = 20192;
 	private static final int MARSH_STAKATO_DRONE = 20234;
@@ -64,6 +65,7 @@ public class Q00220_TestimonyOfGlory extends Quest
 	private static final int ENKU_ORC_OVERLORD = 27082;
 	private static final int MAKUM_BUGBEAR_THUG = 27083;
 	private static final int REVENANT_OF_TANTOS_CHIEF = 27086;
+	
 	// Items
 	private static final int VOKIAN_ORDER_1 = 3204;
 	private static final int MANASHEN_SHARD = 3205;
@@ -99,9 +101,11 @@ public class Q00220_TestimonyOfGlory extends Quest
 	private static final int TANAPI_ORDER = 3235;
 	private static final int SCEPTER_OF_TANTOS = 3236;
 	private static final int RITUAL_BOX = 3237;
+	
 	// Rewards
 	private static final int MARK_OF_GLORY = 3203;
 	private static final int DIMENSIONAL_DIAMOND = 7562;
+	
 	// Checks & Instances
 	private static boolean _sonsOfVoltar = false;
 	private static boolean _enkuOrcOverlords = false;
@@ -186,6 +190,7 @@ public class Q00220_TestimonyOfGlory extends Quest
 						playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 						giveItems(player, KASMAN_LETTER_1, 1);
 					}
+					
 					addRadar(player, -2150, 124443, -3724);
 				}
 				break;
@@ -204,6 +209,7 @@ public class Q00220_TestimonyOfGlory extends Quest
 						playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 						giveItems(player, KASMAN_LETTER_2, 1);
 					}
+					
 					addRadar(player, -94294, 110818, -3563);
 				}
 				break;
@@ -222,6 +228,7 @@ public class Q00220_TestimonyOfGlory extends Quest
 						playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 						giveItems(player, KASMAN_LETTER_3, 1);
 					}
+					
 					addRadar(player, -55217, 200628, -3724);
 				}
 				break;
@@ -240,6 +247,7 @@ public class Q00220_TestimonyOfGlory extends Quest
 						playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 						giveItems(player, MANAKIA_LETTER_1, 1);
 					}
+					
 					addRadar(player, 80100, 119991, -2264);
 				}
 				break;
@@ -258,6 +266,7 @@ public class Q00220_TestimonyOfGlory extends Quest
 						playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 						giveItems(player, MANAKIA_LETTER_2, 1);
 					}
+					
 					addRadar(player, 19815, 189703, -3032);
 				}
 				break;
@@ -577,10 +586,10 @@ public class Q00220_TestimonyOfGlory extends Quest
 									startQuestTimer("enku_orcs_cleanup", 201000, null, player, false);
 								}
 							}
-							else if (getQuestItemsCount(player, ENKU_OVERLORD_HEAD) == 4)
+							else if (getQuestItemsCount(player, ENKU_OVERLORD_HEAD) >= 4)
 							{
 								htmltext = "30616-06.htm";
-								takeItems(player, ENKU_OVERLORD_HEAD, 4);
+								takeItems(player, ENKU_OVERLORD_HEAD, -1);
 								giveItems(player, SCEPTER_OF_ENKU, 1);
 								
 								if (hasQuestItems(player, SCEPTER_OF_BREKA, SCEPTER_OF_VUKU, SCEPTER_OF_TUREK, SCEPTER_OF_TUNATH))
@@ -890,6 +899,7 @@ public class Q00220_TestimonyOfGlory extends Quest
 				if (hasQuestItems(player, DRIKO_CONTRACT) && (getQuestItemsCount(player, STAKATO_DRONE_HUSK) < 30) && (getRandom(100) < 75))
 				{
 					giveItems(player, STAKATO_DRONE_HUSK, 1);
+					playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 				}
 				break;
 			}

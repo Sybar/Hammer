@@ -15,12 +15,12 @@
 		<set name="commissionItemType" val="HAIR_ACCESSORY" />
 		<set name="isAppearanceable" val="true" />
 		<set name="equip_condition" val="{{ec_castle;1};{ec_castle_num;{2}}}" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player castle="2" />
 				<player pledgeClass="2" /> <!-- Heir -->
 			</and>
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="3633" level="1" /> <!-- Residential Shock Immunity -->
 		</skills>
@@ -40,12 +40,12 @@
 		<set name="commissionItemType" val="HAIR_ACCESSORY" />
 		<set name="isAppearanceable" val="true" />
 		<set name="equip_condition" val="{{ec_castle;1};{ec_castle_num;{4}}}" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player castle="4" />
 				<player pledgeClass="2" /> <!-- Heir -->
 			</and>
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="3633" level="1" /> <!-- Residential Shock Immunity -->
 		</skills>
@@ -65,12 +65,12 @@
 		<set name="commissionItemType" val="HAIR_ACCESSORY" />
 		<set name="isAppearanceable" val="true" />
 		<set name="equip_condition" val="{{ec_castle;1};{ec_castle_num;{1}}}" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player castle="1" />
 				<player pledgeClass="2" /> <!-- Heir -->
 			</and>
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="3633" level="1" /> <!-- Residential Shock Immunity -->
 		</skills>
@@ -90,12 +90,12 @@
 		<set name="commissionItemType" val="HAIR_ACCESSORY" />
 		<set name="isAppearanceable" val="true" />
 		<set name="equip_condition" val="{{ec_castle;1};{ec_castle_num;{3}}}" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player castle="3" />
 				<player pledgeClass="2" /> <!-- Heir -->
 			</and>
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="3633" level="1" /> <!-- Residential Shock Immunity -->
 		</skills>
@@ -115,12 +115,12 @@
 		<set name="commissionItemType" val="HAIR_ACCESSORY" />
 		<set name="isAppearanceable" val="true" />
 		<set name="equip_condition" val="{{ec_castle;1};{ec_castle_num;{5}}}" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player castle="5" />
 				<player pledgeClass="2" /> <!-- Heir -->
 			</and>
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="3633" level="2" /> <!-- Residential Shock Immunity -->
 		</skills>
@@ -139,12 +139,12 @@
 		<set name="commissionItemType" val="HAIR_ACCESSORY" />
 		<set name="isAppearanceable" val="true" />
 		<set name="equip_condition" val="{{ec_castle;1};{ec_clan_leader;1}}" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player castle="-1" />
 				<player pledgeClass="-1" /> <!-- Clan Leader -->
 			</and>
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="3632" level="1" /> <!-- Clan Gate -->
 		</skills>
@@ -162,9 +162,9 @@
 		<set name="commissionItemType" val="HAIR_ACCESSORY" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player isHero="true" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="6843" name="Cat Ears" additionalName="Sealed" type="Armor">
 		<!-- A head accessory shaped like cat ears. <font color=eeaa22>Available after unlocking the right head accessory slot.</font> -->

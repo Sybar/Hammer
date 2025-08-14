@@ -34,6 +34,7 @@ public class Q00345_MethodToRaiseTheDead extends Quest
 	private static final int DOROTHY = 30970;
 	private static final int ORPHEUS = 30971;
 	private static final int MEDIUM_JAR = 30973;
+	
 	// Items
 	private static final int VICTIM_ARM_BONE = 4274;
 	private static final int VICTIM_THIGH_BONE = 4275;
@@ -42,6 +43,7 @@ public class Q00345_MethodToRaiseTheDead extends Quest
 	private static final int VICTIM_SPINE = 4278;
 	private static final int USELESS_BONE_PIECES = 4280;
 	private static final int POWDER_TO_SUMMON_DEAD_SOULS = 4281;
+	
 	// Rewards
 	private static final int BILL_OF_IASON_HEINE = 4407;
 	private static final int IMPERIAL_DIAMOND = 3456;
@@ -206,6 +208,7 @@ public class Q00345_MethodToRaiseTheDead extends Quest
 								giveAdena(player, 5390 + amount, true);
 								giveItems(player, BILL_OF_IASON_HEINE, 3);
 							}
+							
 							st.exitQuest(true, true);
 						}
 						break;

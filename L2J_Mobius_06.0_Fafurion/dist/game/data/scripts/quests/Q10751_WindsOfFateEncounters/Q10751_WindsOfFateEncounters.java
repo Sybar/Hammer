@@ -65,20 +65,24 @@ public class Q10751_WindsOfFateEncounters extends Quest
 	private static final int RAYMOND = 30289;
 	private static final int MYSTERIOUS_WIZARD = 33980;
 	private static final int TELESHA = 33981;
+	
 	// Monsters
 	private static final int[] MONSTERS =
 	{
 		27528, // Skeleton Warrior
 		27529, // Skeleton Archer
 	};
+	
 	// Items
 	private static final int WIND_SPIRIT_REALMS_RELIC = 39535;
 	private static final int MAJOR_HEALING_POTION = 1061;
 	private static final int SOULSHOT = 1464;
 	private static final int SPIRITSHOT = 3949;
 	private static final int PAULINA_EQUIPMENT_SET = 46850;
+	
 	// Location
 	private static final Location TELEPORT_LOC = new Location(-80565, 251763, -3080);
+	
 	// Misc
 	private static final int MIN_LEVEL = 38;
 	private static final String KILL_COUNT_VAR = "KillCount";
@@ -177,6 +181,7 @@ public class Q10751_WindsOfFateEncounters extends Quest
 					showOnScreenMsg(player, NpcStringId.TALK_TO_THE_MYSTERIOUS_WIZARD_2, ExShowScreenMessage.TOP_CENTER, 10000);
 					npc.deleteMe();
 				}
+				
 				htmltext = null;
 				break;
 			}
@@ -215,6 +220,7 @@ public class Q10751_WindsOfFateEncounters extends Quest
 					{
 						player.setBaseClass(newClass);
 					}
+					
 					player.setPlayerClass(newClass.getId());
 					player.broadcastUserInfo();
 					player.sendSkillList();
@@ -238,6 +244,7 @@ public class Q10751_WindsOfFateEncounters extends Quest
 					{
 						player.setBaseClass(newClass);
 					}
+					
 					player.setPlayerClass(newClass.getId());
 					player.broadcastUserInfo();
 					player.sendSkillList();
@@ -257,6 +264,7 @@ public class Q10751_WindsOfFateEncounters extends Quest
 				htmltext = null;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -268,10 +276,12 @@ public class Q10751_WindsOfFateEncounters extends Quest
 		{
 			htmltext = "33981-01.html";
 		}
+		
 		if (npc.getId() == MYSTERIOUS_WIZARD)
 		{
 			htmltext = "33980-01.html";
 		}
+		
 		return htmltext;
 	}
 	
@@ -417,6 +427,7 @@ public class Q10751_WindsOfFateEncounters extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -458,6 +469,7 @@ public class Q10751_WindsOfFateEncounters extends Quest
 				return holder;
 			}
 		}
+		
 		return super.getNpcLogList(player);
 	}
 	
@@ -518,6 +530,7 @@ public class Q10751_WindsOfFateEncounters extends Quest
 				{
 					player.teleToLocation(TELEPORT_LOC);
 				}
+				
 				player.clearHtmlActions(HtmlActionScope.TUTORIAL_HTML);
 			}
 			else if (command.equals("Q10751_close"))

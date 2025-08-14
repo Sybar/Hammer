@@ -37,12 +37,15 @@ public class Q10841_DeepInsideAteliaFortress extends Quest
 	// NPCs
 	private static final int ELIKIA = 34057;
 	private static final int KAYSIA = 34051;
+	
 	// Boss
 	private static final int KELBIM = 26124;
+	
 	// Items
 	private static final int KELBIM_ARMOR_PIECE = 46144;
 	private static final int SPIRIT_STONE_HAIR_ACCESSORY = 45937;
 	private static final int SUPERIOR_GIANTS_CODEX = 46151;
+	
 	// Misc
 	private static final int MIN_LEVEL = 101;
 	
@@ -91,6 +94,7 @@ public class Q10841_DeepInsideAteliaFortress extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -143,6 +147,7 @@ public class Q10841_DeepInsideAteliaFortress extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

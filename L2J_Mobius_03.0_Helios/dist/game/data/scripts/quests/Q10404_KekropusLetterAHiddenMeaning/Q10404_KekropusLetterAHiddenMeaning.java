@@ -36,12 +36,15 @@ public class Q10404_KekropusLetterAHiddenMeaning extends LetterQuest
 	private static final int PATERSON = 33864;
 	private static final int SHUVANN = 33867;
 	private static final int INVISIBLE_NPC = 19543;
+	
 	// Items
 	private static final int SOE_TOWN_OF_ADEN = 37116; // Scroll of Escape: Town of Aden
 	private static final int SOE_FIELDS_OF_MASSACRE = 37029; // Scroll of Escape: Fields of Massacre
 	private static final int EWA = 729; // Scroll: Enchant Weapon (A-grade)
+	
 	// Location
 	private static final Location TELEPORT_LOC = new Location(147619, 24681, -1984);
+	
 	// Misc
 	private static final int MIN_LEVEL = 61;
 	private static final int MAX_LEVEL = 64;
@@ -96,12 +99,14 @@ public class Q10404_KekropusLetterAHiddenMeaning extends LetterQuest
 					{
 						addExpAndSp(player, 807_240, 193);
 					}
+					
 					showOnScreenMsg(player, NpcStringId.GROW_STRONGER_HERE_UNTIL_YOU_RECEIVE_THE_NEXT_LETTER_FROM_KEKROPUS_AT_LV_65, ExShowScreenMessage.TOP_CENTER, 6000);
 					htmltext = event;
 				}
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -126,6 +131,7 @@ public class Q10404_KekropusLetterAHiddenMeaning extends LetterQuest
 				htmltext = npc.getId() == PATERSON ? "33864-04.html" : "33867-01.html";
 			}
 		}
+		
 		return htmltext;
 	}
 	

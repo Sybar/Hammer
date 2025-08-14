@@ -178,6 +178,7 @@ public class BoatInnadrilTour implements Runnable
 					break;
 				}
 			}
+			
 			_cycle++;
 			if (_cycle > 9)
 			{

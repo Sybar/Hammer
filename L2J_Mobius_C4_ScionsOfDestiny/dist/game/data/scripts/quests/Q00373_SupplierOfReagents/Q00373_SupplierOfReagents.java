@@ -35,6 +35,7 @@ public class Q00373_SupplierOfReagents extends Quest
 	// NPCs
 	private static final int WESLEY = 30166;
 	private static final int URN = 31149;
+	
 	// Monsters
 	private static final int CRENDION = 20813;
 	private static final int HALLATE_MAID = 20822;
@@ -43,14 +44,17 @@ public class Q00373_SupplierOfReagents extends Quest
 	private static final int PLATINUM_GUARDIAN_SHAMAN = 21066;
 	private static final int LAVA_WYRM = 21111;
 	private static final int HAMES_ORC_SHAMAN = 21115;
+	
 	// Quest items
 	private static final int MIXING_STONE = 5904;
 	private static final int MIXING_MANUAL = 6317;
+	
 	// Items - pouches
 	private static final int REAGENT_POUCH_1 = 6007;
 	private static final int REAGENT_POUCH_2 = 6008;
 	private static final int REAGENT_POUCH_3 = 6009;
 	private static final int REAGENT_BOX = 6010;
+	
 	// Items - ingredients
 	private static final int WYRMS_BLOOD = 6011;
 	private static final int LAVA_STONE = 6012;
@@ -58,6 +62,7 @@ public class Q00373_SupplierOfReagents extends Quest
 	private static final int ROTTEN_BONE = 6014;
 	private static final int DEMONS_BLOOD = 6015;
 	private static final int INFERNIUM_ORE = 6016;
+	
 	// Items - catalysts
 	private static final int BLOOD_ROOT = 6017;
 	private static final int VOLCANIC_ASH = 6018;
@@ -65,6 +70,7 @@ public class Q00373_SupplierOfReagents extends Quest
 	private static final int SULFUR = 6020;
 	private static final int DEMONIC_ESSENCE = 6031;
 	private static final int MIDNIGHT_OIL = 6030;
+	
 	// Items - products
 	private static final int DRACOPLASM = 6021;
 	private static final int MAGMA_DUST = 6022;
@@ -74,12 +80,14 @@ public class Q00373_SupplierOfReagents extends Quest
 	private static final int INFERNO_DUST = 6026;
 	private static final int FIRE_ESSENCE = 6028;
 	private static final int LUNARGENT = 6029;
+	
 	// Items - products final
 	private static final int DRACONIC_ESSENCE = 6027;
 	private static final int ABYSS_OIL = 6032;
 	private static final int HELLFIRE_OIL = 6033;
 	private static final int NIGHTMARE_OIL = 6034;
 	private static final int PURE_SILVER = 6320;
+	
 	// Variables
 	private static final String INGREDIENT = "ingredient";
 	private static final String CATALYST = "catalyst";
@@ -195,6 +203,7 @@ public class Q00373_SupplierOfReagents extends Quest
 				st.set(INGREDIENT, Integer.toString(regentId));
 				return htmltext;
 			}
+			
 			htmltext = "31149-04.htm";
 		}
 		else if (event.startsWith("31149-06-"))
@@ -248,11 +257,14 @@ public class Q00373_SupplierOfReagents extends Quest
 						giveItems(player, formula[3], temperature[2]);
 						return "31149-12-" + formula[3] + ".htm";
 					}
+					
 					return "31149-11.htm";
 				}
 			}
+			
 			htmltext = "31149-13.htm";
 		}
+		
 		return htmltext;
 	}
 	
@@ -282,6 +294,7 @@ public class Q00373_SupplierOfReagents extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

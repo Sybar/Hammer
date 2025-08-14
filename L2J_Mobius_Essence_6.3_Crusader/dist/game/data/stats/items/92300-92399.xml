@@ -312,9 +312,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="immediate_effect" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="40058" level="1" /> <!-- Giran Seal -->
 		</skills>
@@ -1732,9 +1732,9 @@
 		<set name="immediate_effect" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
-		<cond msgId="1902">
+		<conditions msgId="1902">
 			<player levelRange="1;75" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="50149" level="1" /> <!-- Sayha's Blessing (Event) -->
 		</skills>

@@ -143,6 +143,7 @@ public class Party extends AbstractPlayerGroup
 				availableMembers.add(member);
 			}
 		}
+		
 		return !availableMembers.isEmpty() ? availableMembers.get(Rnd.get(availableMembers.size())) : null;
 	}
 	
@@ -160,6 +161,7 @@ public class Party extends AbstractPlayerGroup
 			{
 				_itemLastLoot = 0;
 			}
+			
 			Player member;
 			try
 			{
@@ -174,6 +176,7 @@ public class Party extends AbstractPlayerGroup
 				// continue, take another member if this just logged off
 			}
 		}
+		
 		return null;
 	}
 	
@@ -218,6 +221,7 @@ public class Party extends AbstractPlayerGroup
 				break;
 			}
 		}
+		
 		return looter != null ? looter : player;
 	}
 	
@@ -352,6 +356,7 @@ public class Party extends AbstractPlayerGroup
 				{
 					_positionPacket.reuse(this);
 				}
+				
 				broadcastPacket(_positionPacket);
 			}, PARTY_POSITION_BROADCAST_INTERVAL.toMillis() / 2, PARTY_POSITION_BROADCAST_INTERVAL.toMillis());
 		}
@@ -433,6 +438,7 @@ public class Party extends AbstractPlayerGroup
 			player.sendPacket(PartySmallWindowDeleteAll.STATIC_PACKET);
 			player.setParty(null);
 			broadcastPacket(new PartySmallWindowDelete(player));
+			
 			// if (player.hasSummon())
 			// {
 			// broadcastPacket(new ExPartyPetWindowDelete(player.getSummon()));
@@ -448,6 +454,7 @@ public class Party extends AbstractPlayerGroup
 			{
 				player.sendPacket(new ExCloseMPCC());
 			}
+			
 			if (isLeader && (_members.size() > 1) && (Config.ALT_LEAVE_PARTY_LEADER || (type == PartyMessageType.DISCONNECTED)))
 			{
 				msg = new SystemMessage(SystemMessageId.S1_HAS_BECOME_THE_PARTY_LEADER);
@@ -479,11 +486,13 @@ public class Party extends AbstractPlayerGroup
 						DuelManager.getInstance().onRemoveFromParty(leader);
 					}
 				}
+				
 				if (_positionBroadcastTask != null)
 				{
 					_positionBroadcastTask.cancel(false);
 					_positionBroadcastTask = null;
 				}
+				
 				_members.clear();
 			}
 		}
@@ -543,6 +552,7 @@ public class Party extends AbstractPlayerGroup
 						msg.addString(_commandChannel.getLeader().getName());
 						_commandChannel.broadcastPacket(msg);
 					}
+					
 					if (player.isInPartyMatchRoom())
 					{
 						PartyMatchRoomList.getInstance().getPlayerRoom(player).changeLeader(player);
@@ -570,6 +580,7 @@ public class Party extends AbstractPlayerGroup
 				return member;
 			}
 		}
+		
 		return null;
 	}
 	
@@ -704,7 +715,7 @@ public class Party extends AbstractPlayerGroup
 	 */
 	public void distributeXpAndSp(double xpRewardValue, double spRewardValue, List<Player> rewardedMembers, int topLvl, long partyDmg, Attackable target)
 	{
-		final List<Player> validMembers = getValidMembers(rewardedMembers, topLvl);
+		final List<Player> validMembers = getValidMembers(rewardedMembers, topLvl, target);
 		double xpReward = xpRewardValue * getExpBonus(validMembers.size());
 		double spReward = spRewardValue * getSpBonus(validMembers.size());
 		int sqLevelSum = 0;
@@ -714,6 +725,7 @@ public class Party extends AbstractPlayerGroup
 			sqLevelSum += member.getLevel() * member.getLevel();
 			averagePartyMemberLevel += member.getLevel();
 		}
+		
 		averagePartyMemberLevel /= Math.max(1, validMembers.size());
 		
 		final float vitalityPoints = (target.getVitalityPoints(averagePartyMemberLevel, partyDmg) * Config.RATE_PARTY_XP) / validMembers.size();
@@ -777,6 +789,7 @@ public class Party extends AbstractPlayerGroup
 					player.addExpAndSp(xp, sp, vit);
 					break;
 				}
+				
 				i++;
 			}
 		}
@@ -784,6 +797,7 @@ public class Party extends AbstractPlayerGroup
 		{
 			player.addExpAndSp(addExp, addSp, vit);
 		}
+		
 		return xp;
 	}
 	
@@ -806,10 +820,11 @@ public class Party extends AbstractPlayerGroup
 				newLevel = member.getLevel();
 			}
 		}
+		
 		_partyLvl = newLevel;
 	}
 	
-	private List<Player> getValidMembers(List<Player> members, int topLvl)
+	private List<Player> getValidMembers(List<Player> members, int topLvl, Attackable target)
 	{
 		final List<Player> validMembers = new ArrayList<>();
 		switch (Config.PARTY_XP_CUTOFF_METHOD)
@@ -818,7 +833,7 @@ public class Party extends AbstractPlayerGroup
 			{
 				for (Player member : members)
 				{
-					if ((topLvl - member.getLevel()) <= Config.PARTY_XP_CUTOFF_LEVEL)
+					if ((target.getInstanceId() == member.getInstanceId()) && ((topLvl - member.getLevel()) <= Config.PARTY_XP_CUTOFF_LEVEL))
 					{
 						validMembers.add(member);
 					}
@@ -830,12 +845,16 @@ public class Party extends AbstractPlayerGroup
 				int sqLevelSum = 0;
 				for (Player member : members)
 				{
-					sqLevelSum += (member.getLevel() * member.getLevel());
+					if (target.getInstanceId() == member.getInstanceId())
+					{
+						sqLevelSum += (member.getLevel() * member.getLevel());
+					}
 				}
+				
 				for (Player member : members)
 				{
 					final int sqLevel = member.getLevel() * member.getLevel();
-					if ((sqLevel * 100) >= (sqLevelSum * Config.PARTY_XP_CUTOFF_PERCENT))
+					if ((target.getInstanceId() == member.getInstanceId()) && ((sqLevel * 100) >= (sqLevelSum * Config.PARTY_XP_CUTOFF_PERCENT)))
 					{
 						validMembers.add(member);
 					}
@@ -849,19 +868,22 @@ public class Party extends AbstractPlayerGroup
 				{
 					sqLevelSum += (member.getLevel() * member.getLevel());
 				}
+				
 				int i = members.size() - 1;
 				if (i < 1)
 				{
 					return members;
 				}
+				
 				if (i >= BONUS_EXP_SP.length)
 				{
 					i = BONUS_EXP_SP.length - 1;
 				}
+				
 				for (Player member : members)
 				{
 					final int sqLevel = member.getLevel() * member.getLevel();
-					if (sqLevel >= (sqLevelSum / (members.size() * members.size())))
+					if ((target.getInstanceId() == member.getInstanceId()) && (sqLevel >= (sqLevelSum / (members.size() * members.size()))))
 					{
 						validMembers.add(member);
 					}
@@ -870,15 +892,28 @@ public class Party extends AbstractPlayerGroup
 			}
 			case HIGHFIVE:
 			{
-				validMembers.addAll(members);
+				for (Player member : members)
+				{
+					if (target.getInstanceId() == member.getInstanceId())
+					{
+						validMembers.add(member);
+					}
+				}
 				break;
 			}
 			case NONE:
 			{
-				validMembers.addAll(members);
+				for (Player member : members)
+				{
+					if (target.getInstanceId() == member.getInstanceId())
+					{
+						validMembers.add(member);
+					}
+				}
 				break;
 			}
 		}
+		
 		return validMembers;
 	}
 	
@@ -889,10 +924,12 @@ public class Party extends AbstractPlayerGroup
 		{
 			return 1;
 		}
+		
 		if (i >= BONUS_EXP_SP.length)
 		{
 			i = BONUS_EXP_SP.length - 1;
 		}
+		
 		return BONUS_EXP_SP[i];
 	}
 	

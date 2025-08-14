@@ -36,8 +36,10 @@ public class Q10796_TheEyeThatDefiedTheGods extends Quest
 	// NPCs
 	private static final int HERMIT = 31616;
 	private static final int EYE_OF_ARGOS = 31683;
+	
 	// Items
 	private static final int EAA = 730;
+	
 	// Misc
 	private static final int MIN_LEVEL = 70;
 	private static final int MAX_LEVEL = 75;
@@ -85,6 +87,7 @@ public class Q10796_TheEyeThatDefiedTheGods extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -105,6 +108,7 @@ public class Q10796_TheEyeThatDefiedTheGods extends Quest
 				{
 					htmltext = "31616-05.html";
 				}
+				
 				if (qs.isCompleted())
 				{
 					htmltext = getAlreadyCompletedMsg(player);
@@ -124,6 +128,7 @@ public class Q10796_TheEyeThatDefiedTheGods extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

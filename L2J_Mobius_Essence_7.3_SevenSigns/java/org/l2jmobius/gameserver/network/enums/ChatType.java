@@ -82,6 +82,7 @@ public enum ChatType
 				return ChatType;
 			}
 		}
+		
 		return null;
 	}
 }

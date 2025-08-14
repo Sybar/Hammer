@@ -37,14 +37,17 @@ public class Q10821_HelpingOthers extends Quest
 {
 	// NPC
 	private static final int SIR_ERIC_RODEMAI = 30868;
+	
 	// Items
 	private static final int MENTEE_MARK = 33804;
 	private static final int DAICHIR_SERTIFICATE = 45628;
 	private static final int OLYMPIAD_MANAGER_CERTIFICATE = 45629;
 	private static final int ISHUMA_CERTIFICATE = 45630;
+	
 	// Rewards
 	private static final int SIR_KRISTOF_RODEMAI_CERTIFICATE = 45631;
 	private static final int SPELLBOOK_FAVOR_OF_THE_EXALTED = 45928;
+	
 	// Misc
 	private static final int MIN_LEVEL = 99;
 	
@@ -96,6 +99,7 @@ public class Q10821_HelpingOthers extends Quest
 						{
 							htmltext = event;
 						}
+						
 						takeItems(player, MENTEE_MARK, 45000);
 						giveItems(player, SIR_KRISTOF_RODEMAI_CERTIFICATE, 1);
 						giveItems(player, SPELLBOOK_FAVOR_OF_THE_EXALTED, 1);
@@ -109,6 +113,7 @@ public class Q10821_HelpingOthers extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -142,6 +147,7 @@ public class Q10821_HelpingOthers extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

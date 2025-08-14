@@ -51,8 +51,10 @@ public class Q10431_TheSealOfPunishmentDenOfEvil extends Quest
 		22701, // Varangka's Dre Vanuls
 		22702, // Varangka's Destroyers
 	};
+	
 	// Item
 	private static final int EVIL_FREED_SOUL = 36715;
+	
 	// Misc
 	private static final int MIN_LEVEL = 81;
 	private static final int MAX_LEVEL = 84;
@@ -78,6 +80,7 @@ public class Q10431_TheSealOfPunishmentDenOfEvil extends Quest
 		{
 			return getNoQuestMsg(player);
 		}
+		
 		String htmltext = event;
 		switch (event)
 		{
@@ -111,6 +114,7 @@ public class Q10431_TheSealOfPunishmentDenOfEvil extends Quest
 				{
 					break;
 				}
+				
 				final int stoneId = Integer.parseInt(event.replaceAll("reward_", ""));
 				giveItems(player, stoneId, 15);
 				giveStoryQuestReward(player, 60);
@@ -155,11 +159,13 @@ public class Q10431_TheSealOfPunishmentDenOfEvil extends Quest
 				{
 					addExpAndSp(player, 282408000, 67770);
 				}
+				
 				qs.exitQuest(false, true);
 				htmltext = "32655-06.html";
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -203,6 +209,7 @@ public class Q10431_TheSealOfPunishmentDenOfEvil extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

@@ -16,6 +16,7 @@
  */
 package ai.bosses.Beleth;
 
+import java.util.Collection;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
@@ -61,26 +62,32 @@ public class Beleth extends AbstractNpcAI
 	private static final int ALIVE = 0;
 	private static final int FIGHT = 1;
 	private static final int DEAD = 2;
+	
 	// NPCs
 	private static final int REAL_BELETH = 29118;
 	private static final int FAKE_BELETH = 29119;
 	private static final int STONE_COFFIN = 32470;
 	private static final int ELF = 29128;
 	private static final int WHIRPOOL = 29125;
+	
 	// Zones
 	private static final ZoneType ZONE = ZoneManager.getInstance().getZoneById(60022);
 	private static final Location BELETH_SPAWN = new Location(16323, 213059, -9357, 49152);
+	
 	// Skills
 	private static final SkillHolder BLEED = new SkillHolder(5495, 1);
 	private static final SkillHolder FIREBALL = new SkillHolder(5496, 1);
 	private static final SkillHolder HORN_OF_RISING = new SkillHolder(5497, 1);
 	private static final SkillHolder LIGHTENING = new SkillHolder(5499, 1);
+	
 	// Doors
 	private static final int DOOR1 = 20240001;
 	private static final int DOOR2 = 20240002;
 	private static final int DOOR3 = 20240003;
+	
 	// Items
 	private static final ItemHolder RING = new ItemHolder(10314, 1);
+	
 	// Variables
 	private Npc _camera1;
 	private Npc _camera2;
@@ -121,6 +128,7 @@ public class Beleth extends AbstractNpcAI
 		{
 			GrandBossManager.getInstance().setStatus(REAL_BELETH, ALIVE);
 		}
+		
 		DoorData.getInstance().getDoor(DOOR1).openMe();
 	}
 	
@@ -334,6 +342,7 @@ public class Beleth extends AbstractNpcAI
 				{
 					fakeBeleth.deleteMe();
 				}
+				
 				_minions.clear();
 				
 				_camera1.deleteMe();
@@ -523,6 +532,7 @@ public class Beleth extends AbstractNpcAI
 							}
 						}
 					}
+					
 					_minions.clear();
 					_killedCount = 0;
 					
@@ -535,6 +545,7 @@ public class Beleth extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	
@@ -547,6 +558,7 @@ public class Beleth extends AbstractNpcAI
 			{
 				_priest.deleteMe();
 			}
+			
 			if (_stone != null)
 			{
 				_stone.deleteMe();
@@ -558,7 +570,7 @@ public class Beleth extends AbstractNpcAI
 	}
 	
 	@Override
-	public void onSkillSee(Npc npc, Player player, Skill skill, WorldObject[] targets, boolean isSummon)
+	public void onSkillSee(Npc npc, Player player, Skill skill, Collection<WorldObject> targets, boolean isSummon)
 	{
 		if (!npc.isDead() && (npc.getId() == REAL_BELETH) && !npc.isCastingNow() && skill.hasEffectType(EffectType.HEAL) && (getRandom(100) < 80))
 		{
@@ -624,6 +636,7 @@ public class Beleth extends AbstractNpcAI
 		{
 			npc.doCast(BLEED.getSkill());
 		}
+		
 		if (npc.getId() == REAL_BELETH)
 		{
 			npc.getSpawn().setRespawnDelay(0);
@@ -644,6 +657,7 @@ public class Beleth extends AbstractNpcAI
 		{
 			html = "32470b.htm";
 		}
+		
 		return HtmCache.getInstance().getHtm(player, "data/html/default/" + html);
 	}
 	
@@ -672,6 +686,7 @@ public class Beleth extends AbstractNpcAI
 					beleth.doCast(FIREBALL.getSkill());
 				}
 			}
+			
 			if ((_beleth != null) && !_beleth.isDead() && LocationUtil.checkIfInRange(900, _beleth, attacker, false) && !_beleth.isCastingNow())
 			{
 				_beleth.setTarget(attacker);
@@ -780,6 +795,7 @@ public class Beleth extends AbstractNpcAI
 				minion.deleteMe();
 			}
 		}
+		
 		_minions.clear();
 		_allowedObjId = 0;
 	}

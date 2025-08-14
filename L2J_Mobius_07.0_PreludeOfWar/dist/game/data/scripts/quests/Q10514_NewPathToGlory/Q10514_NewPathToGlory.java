@@ -88,11 +88,14 @@ public class Q10514_NewPathToGlory extends Quest
 		20943, // Nightmare Watchman -->
 		20944 // Nightmare Lord -->
 	};
+	
 	// Items
 	private static final int PROOF_OF_REPUTATION = 80826;
 	private static final ItemHolder LIONEL_HUNTERS_LIST_PART_4 = new ItemHolder(47829, 1);
+	
 	// Rewards
 	private static final int SYLVAIN_CERTIFICATE = 80828;
+	
 	// Misc
 	private static final int MIN_LEVEL = 103;
 	private static final int PROOF_OF_REPUTATION_NEEDED = 80000;
@@ -117,6 +120,7 @@ public class Q10514_NewPathToGlory extends Quest
 		{
 			return htmltext;
 		}
+		
 		switch (event)
 		{
 			case "30070-02.htm":
@@ -149,6 +153,7 @@ public class Q10514_NewPathToGlory extends Quest
 					{
 						mainQ.notifyEvent("SUBQUEST_FINISHED_NOTIFY", npc, player);
 					}
+					
 					htmltext = event;
 				}
 				else
@@ -158,6 +163,7 @@ public class Q10514_NewPathToGlory extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -200,6 +206,7 @@ public class Q10514_NewPathToGlory extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -214,6 +221,7 @@ public class Q10514_NewPathToGlory extends Quest
 				giveItems(player, PROOF_OF_REPUTATION, 1);
 				playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 			}
+			
 			if ((getQuestItemsCount(player, PROOF_OF_REPUTATION) >= PROOF_OF_REPUTATION_NEEDED) && (player.getLevel() >= MIN_LEVEL))
 			{
 				qs.setCond(2, true);

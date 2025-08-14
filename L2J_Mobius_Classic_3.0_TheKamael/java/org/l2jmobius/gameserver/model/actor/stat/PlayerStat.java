@@ -20,9 +20,11 @@
  */
 package org.l2jmobius.gameserver.model.actor.stat;
 
+import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import org.l2jmobius.Config;
+import org.l2jmobius.commons.threads.ThreadPool;
 import org.l2jmobius.gameserver.data.sql.CharInfoTable;
 import org.l2jmobius.gameserver.data.xml.ExperienceData;
 import org.l2jmobius.gameserver.model.actor.Player;
@@ -30,6 +32,7 @@ import org.l2jmobius.gameserver.model.actor.Summon;
 import org.l2jmobius.gameserver.model.actor.enums.player.ElementalSpiritType;
 import org.l2jmobius.gameserver.model.actor.holders.player.SubClassHolder;
 import org.l2jmobius.gameserver.model.actor.instance.Pet;
+import org.l2jmobius.gameserver.model.actor.transform.Transform;
 import org.l2jmobius.gameserver.model.clan.Clan;
 import org.l2jmobius.gameserver.model.events.EventDispatcher;
 import org.l2jmobius.gameserver.model.events.EventType;
@@ -55,19 +58,19 @@ import org.l2jmobius.gameserver.network.serverpackets.SystemMessage;
 import org.l2jmobius.gameserver.network.serverpackets.dailymission.ExConnectedTimeAndGettableReward;
 import org.l2jmobius.gameserver.network.serverpackets.dailymission.ExOneDayReceiveRewardList;
 import org.l2jmobius.gameserver.network.serverpackets.friend.FriendStatus;
-import org.l2jmobius.gameserver.util.LocationUtil;
 
 public class PlayerStat extends PlayableStat
 {
-	private long _startingXp;
-	private final AtomicInteger _talismanSlots = new AtomicInteger();
-	private boolean _cloakSlot = false;
-	private int _vitalityPoints = 0;
-	
 	public static final int MAX_VITALITY_POINTS = 140000;
 	public static final int MIN_VITALITY_POINTS = 0;
 	
 	private static final int FANCY_FISHING_ROD_SKILL = 21484;
+	
+	private long _startingXp;
+	private final AtomicInteger _talismanSlots = new AtomicInteger();
+	private boolean _cloakSlot = false;
+	private int _vitalityPoints = 0;
+	private ScheduledFuture<?> _onRecalculateStatsTask;
 	
 	public PlayerStat(Player player)
 	{
@@ -153,7 +156,7 @@ public class PlayerStat extends PlayableStat
 		
 		// if this player has a pet and it is in his range he takes from the owner's Exp, give the pet Exp now
 		final Summon sPet = player.getPet();
-		if ((sPet != null) && LocationUtil.checkIfInShortRange(Config.ALT_PARTY_RANGE, player, sPet, false))
+		if ((sPet != null) && (player.calculateDistance3D(sPet) < Config.ALT_PARTY_RANGE))
 		{
 			final Pet pet = sPet.asPet();
 			ratioTakenByPlayer = pet.getPetLevelData().getOwnerExpTaken() / 100f;
@@ -231,6 +234,7 @@ public class PlayerStat extends PlayableStat
 				player.broadcastStatusUpdate();
 			}
 		}
+		
 		return true;
 	}
 	
@@ -270,13 +274,18 @@ public class PlayerStat extends PlayableStat
 			clan.updateClanMember(player);
 			clan.broadcastToOnlineMembers(new PledgeShowMemberListUpdate(player));
 		}
+		
 		if (player.isInParty())
 		{
 			player.getParty().recalculatePartyLevel(); // Recalculate the party level
 		}
 		
 		// Maybe add some skills when player levels up in transformation.
-		player.getTransformation().ifPresent(transform -> transform.onLevelUp(player));
+		final Transform transform = player.getTransformation();
+		if (transform != null)
+		{
+			transform.onLevelUp(player);
+		}
 		
 		// Synchronize level with pet if possible.
 		final Summon sPet = player.getPet();
@@ -296,10 +305,13 @@ public class PlayerStat extends PlayableStat
 		}
 		
 		player.broadcastStatusUpdate();
+		
 		// Update the overloaded status of the Player
 		player.refreshOverloaded(true);
+		
 		// Send a Server->Client packet UserInfo to the Player
 		player.updateUserInfo();
+		
 		// Send acquirable skill list
 		player.sendPacket(new AcquireSkillList(player));
 		player.sendPacket(new ExVoteSystemInfo(player));
@@ -340,6 +352,7 @@ public class PlayerStat extends PlayableStat
 		{
 			return player.getSubClasses().get(player.getClassIndex()).getExp();
 		}
+		
 		return super.getExp();
 	}
 	
@@ -412,6 +425,7 @@ public class PlayerStat extends PlayableStat
 		{
 			return player.getDualClass().getLevel();
 		}
+		
 		if (player.isSubClassActive())
 		{
 			final SubClassHolder holder = player.getSubClasses().get(player.getClassIndex());
@@ -420,6 +434,7 @@ public class PlayerStat extends PlayableStat
 				return holder.getLevel();
 			}
 		}
+		
 		return super.getLevel();
 	}
 	
@@ -458,6 +473,7 @@ public class PlayerStat extends PlayableStat
 		{
 			return player.getSubClasses().get(player.getClassIndex()).getSp();
 		}
+		
 		return super.getSp();
 	}
 	
@@ -490,6 +506,7 @@ public class PlayerStat extends PlayableStat
 		{
 			return Math.min(MAX_VITALITY_POINTS, player.getSubClasses().get(player.getClassIndex()).getVitalityPoints());
 		}
+		
 		return Math.min(Math.max(_vitalityPoints, MIN_VITALITY_POINTS), MAX_VITALITY_POINTS);
 	}
 	
@@ -511,6 +528,7 @@ public class PlayerStat extends PlayableStat
 			player.getSubClasses().get(player.getClassIndex()).setVitalityPoints(value);
 			return;
 		}
+		
 		_vitalityPoints = Math.min(Math.max(value, MIN_VITALITY_POINTS), MAX_VITALITY_POINTS);
 	}
 	
@@ -582,6 +600,7 @@ public class PlayerStat extends PlayableStat
 				{
 					return;
 				}
+				
 				points *= consumeRate;
 			}
 			
@@ -682,6 +701,11 @@ public class PlayerStat extends PlayableStat
 	 */
 	public int getBroochJewelSlots()
 	{
+		if (!getActiveChar().hasEnteredWorld())
+		{
+			return 6;
+		}
+		
 		return (int) getValue(Stat.BROOCH_JEWELS, 0);
 	}
 	
@@ -691,6 +715,11 @@ public class PlayerStat extends PlayableStat
 	 */
 	public int getAgathionSlots()
 	{
+		if (!getActiveChar().hasEnteredWorld())
+		{
+			return 5;
+		}
+		
 		return (int) getValue(Stat.AGATHION_SLOTS, 0);
 	}
 	
@@ -700,6 +729,11 @@ public class PlayerStat extends PlayableStat
 	 */
 	public int getArtifactSlots()
 	{
+		if (!getActiveChar().hasEnteredWorld())
+		{
+			return 21;
+		}
+		
 		return (int) getValue(Stat.ARTIFACT_SLOTS, 0);
 	}
 	
@@ -740,7 +774,15 @@ public class PlayerStat extends PlayableStat
 	@Override
 	protected void onRecalculateStats(boolean broadcast)
 	{
-		super.onRecalculateStats(broadcast);
+		if (_onRecalculateStatsTask == null)
+		{
+			_onRecalculateStatsTask = ThreadPool.schedule(() ->
+			{
+				super.onRecalculateStats(broadcast);
+				
+				_onRecalculateStatsTask = null;
+			}, 50);
+		}
 		
 		final Player player = getActiveChar();
 		if (player.hasAbnormalType(AbnormalType.ABILITY_CHANGE) && player.hasServitors())

@@ -70,6 +70,7 @@ public class PetManager extends Merchant
 		{
 			pom = npcId + "-" + value;
 		}
+		
 		return "data/html/petmanager/" + pom + ".htm";
 	}
 	
@@ -167,6 +168,7 @@ public class PetManager extends Merchant
 		
 		player.sendPacket(new MagicSkillUse(npc, 2046, 1, 1000, 600000));
 		player.sendPacket(SystemMessageId.SUMMON_A_PET);
+		
 		// World.getInstance().storeObject(petSummon);
 		petSummon.spawnMe(oldX, oldY, oldZ);
 		petSummon.startFeed();
@@ -248,6 +250,7 @@ public class PetManager extends Merchant
 		
 		player.sendPacket(new MagicSkillUse(npc, 2046, 1, 1000, 600000));
 		player.sendPacket(SystemMessageId.SUMMON_A_PET);
+		
 		// World.getInstance().storeObject(petSummon);
 		petSummon.spawnMe(player.getX(), player.getY(), player.getZ());
 		petSummon.startFeed();
@@ -288,6 +291,7 @@ public class PetManager extends Merchant
 		{
 			// Ignore.
 		}
+		
 		return true;
 	}
 	

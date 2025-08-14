@@ -43,8 +43,10 @@ public class Q10441_ChasingMeccadan extends Quest
 	private static final int ATHENIA = 32643;
 	private static final int DIMENSIONAL_DOOR = 33869;
 	private static final int AWAKENING_MECCADEN = 27505;
+	
 	// Reward
 	private static final int EAS = 960;
+	
 	// Misc
 	private static final int MIN_LEVEL = 81;
 	private static final int MAX_LEVEL = 84;
@@ -135,6 +137,7 @@ public class Q10441_ChasingMeccadan extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -198,6 +201,7 @@ public class Q10441_ChasingMeccadan extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

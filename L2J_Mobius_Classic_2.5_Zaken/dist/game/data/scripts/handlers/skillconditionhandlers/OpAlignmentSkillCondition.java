@@ -56,6 +56,7 @@ public class OpAlignmentSkillCondition implements ISkillCondition
 				break;
 			}
 		}
+		
 		return false;
 	}
 }

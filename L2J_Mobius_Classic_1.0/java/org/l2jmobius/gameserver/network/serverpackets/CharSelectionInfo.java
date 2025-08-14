@@ -51,7 +51,7 @@ public class CharSelectionInfo extends ServerPacket
 {
 	private static final Logger LOGGER = Logger.getLogger(CharSelectionInfo.class.getName());
 	
-	private static final int[] PAPERDOLL_ORDER_VISUAL_ID = new int[]
+	private static final int[] PAPERDOLL_ORDER_VISUAL_ID =
 	{
 		Inventory.PAPERDOLL_RHAND,
 		Inventory.PAPERDOLL_LHAND,
@@ -118,6 +118,7 @@ public class CharSelectionInfo extends ServerPacket
 				}
 			}
 		}
+		
 		for (int i = 0; i < size; i++)
 		{
 			final CharSelectInfoPackage charInfoPackage = _characterPackages.get(i);
@@ -139,6 +140,7 @@ public class CharSelectionInfo extends ServerPacket
 			buffer.writeLong(charInfoPackage.getSp());
 			buffer.writeLong(charInfoPackage.getExp());
 			buffer.writeDouble((float) (charInfoPackage.getExp() - ExperienceData.getInstance().getExpForLevel(charInfoPackage.getLevel())) / (ExperienceData.getInstance().getExpForLevel(charInfoPackage.getLevel() + 1) - ExperienceData.getInstance().getExpForLevel(charInfoPackage.getLevel()))); // High
+			
 			// Five
 			buffer.writeInt(charInfoPackage.getLevel());
 			buffer.writeInt(charInfoPackage.getReputation());
@@ -157,10 +159,12 @@ public class CharSelectionInfo extends ServerPacket
 			{
 				buffer.writeInt(charInfoPackage.getPaperdollItemId(slot));
 			}
+			
 			for (int slot : getPaperdollOrderVisualId())
 			{
 				buffer.writeInt(charInfoPackage.getPaperdollItemVisualId(slot));
 			}
+			
 			buffer.writeShort(charInfoPackage.getEnchantEffect(Inventory.PAPERDOLL_CHEST)); // Upper Body enchant level
 			buffer.writeShort(charInfoPackage.getEnchantEffect(Inventory.PAPERDOLL_LEGS)); // Lower Body enchant level
 			buffer.writeShort(charInfoPackage.getEnchantEffect(Inventory.PAPERDOLL_HEAD)); // Headgear enchant level
@@ -193,6 +197,7 @@ public class CharSelectionInfo extends ServerPacket
 			buffer.writeInt(i == _activeId);
 			buffer.writeByte(charInfoPackage.getEnchantEffect(Inventory.PAPERDOLL_RHAND) > 127 ? 127 : charInfoPackage.getEnchantEffect(Inventory.PAPERDOLL_RHAND));
 			buffer.writeInt(charInfoPackage.getAugmentation() != null ? charInfoPackage.getAugmentation().getOption1Id() : 0);
+			
 			// Mobius: Maybe use 2x writeH?
 			// buffer.writeInt(charInfoPackage.getAugmentation() != null ? charInfoPackage.getAugmentation().getOption2Id() : 0);
 			// buffer.writeInt(charInfoPackage.getTransformId()); // Used to display Transformations
@@ -236,7 +241,7 @@ public class CharSelectionInfo extends ServerPacket
 							final Player player = World.getInstance().getPlayer(charInfopackage.getObjectId());
 							if ((player != null) && player.isInStoreMode())
 							{
-								Disconnection.of(player).storeMe().deleteMe();
+								Disconnection.of(player).storeAndDelete();
 								continue;
 							}
 						}
@@ -247,7 +252,7 @@ public class CharSelectionInfo extends ServerPacket
 							final Player player = World.getInstance().getPlayer(charInfopackage.getObjectId());
 							if ((player != null) && player.isOfflinePlay())
 							{
-								Disconnection.of(player).storeMe().deleteMe();
+								Disconnection.of(player).storeAndDelete();
 							}
 						}
 					}
@@ -258,6 +263,7 @@ public class CharSelectionInfo extends ServerPacket
 		{
 			LOGGER.log(Level.WARNING, "Could not restore char info: " + e.getMessage(), e);
 		}
+		
 		return characterList;
 	}
 	
@@ -299,6 +305,7 @@ public class CharSelectionInfo extends ServerPacket
 			{
 				clan.removeClanMember(objectId, 0);
 			}
+			
 			GameClient.deleteCharByObjId(objectId);
 			return null;
 		}
@@ -332,10 +339,12 @@ public class CharSelectionInfo extends ServerPacket
 		{
 			charInfopackage.setGood();
 		}
+		
 		if (faction == 2)
 		{
 			charInfopackage.setEvil();
 		}
+		
 		if (Config.MULTILANG_ENABLE)
 		{
 			String lang = chardata.getString("language");
@@ -343,20 +352,25 @@ public class CharSelectionInfo extends ServerPacket
 			{
 				lang = Config.MULTILANG_DEFAULT;
 			}
+			
 			charInfopackage.setHtmlPrefix("data/lang/" + lang + "/");
 		}
+		
 		// if is in subclass, load subclass exp, sp, level info
 		if (baseClassId != activeClassId)
 		{
 			loadCharacterSubclassInfo(charInfopackage, objectId, activeClassId);
 		}
+		
 		charInfopackage.setClassId(activeClassId);
+		
 		// Get the augmentation id for equipped weapon
 		int weaponObjId = charInfopackage.getPaperdollObjectId(Inventory.PAPERDOLL_RHAND);
 		if (weaponObjId < 1)
 		{
 			weaponObjId = charInfopackage.getPaperdollObjectId(Inventory.PAPERDOLL_RHAND);
 		}
+		
 		if (weaponObjId > 0)
 		{
 			try (Connection con = DatabaseFactory.getConnection();
@@ -382,6 +396,7 @@ public class CharSelectionInfo extends ServerPacket
 				LOGGER.log(Level.WARNING, "Could not restore augmentation info: " + e.getMessage(), e);
 			}
 		}
+		
 		// Check if the base class is set to zero and also doesn't match with the current active class, otherwise send the base class ID. This prevents chars created before base class was introduced from being displayed incorrectly.
 		if ((baseClassId == 0) && (activeClassId > 0))
 		{
@@ -391,6 +406,7 @@ public class CharSelectionInfo extends ServerPacket
 		{
 			charInfopackage.setBaseClassId(baseClassId);
 		}
+		
 		charInfopackage.setDeleteTimer(deletetime);
 		charInfopackage.setLastAccess(chardata.getLong("lastAccess"));
 		charInfopackage.setNoble(chardata.getInt("nobless") == 1);

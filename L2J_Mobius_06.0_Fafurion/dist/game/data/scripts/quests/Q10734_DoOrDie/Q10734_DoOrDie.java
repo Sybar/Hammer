@@ -40,6 +40,7 @@ public class Q10734_DoOrDie extends Quest
 	private static final int AYANTHE = 33942;
 	private static final int ADVENTURER_S_GUIDE_APPRENTICE = 33950;
 	private static final int TRAINING_DUMMY = 19546;
+	
 	// Skills
 	private static final SkillHolder[] COMMON_BUFFS =
 	{
@@ -53,6 +54,7 @@ public class Q10734_DoOrDie extends Quest
 	};
 	private static final SkillHolder WARRIOR_HARMONY = new SkillHolder(15649, 1);
 	private static final SkillHolder WIZARD_HARMONY = new SkillHolder(15650, 1);
+	
 	// Misc
 	private static final int MAX_LEVEL = 20;
 	
@@ -112,6 +114,7 @@ public class Q10734_DoOrDie extends Quest
 				htmltext = null;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -250,6 +253,7 @@ public class Q10734_DoOrDie extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -284,6 +288,7 @@ public class Q10734_DoOrDie extends Quest
 			npc.doCast(WIZARD_HARMONY.getSkill());
 			return mage;
 		}
+		
 		npc.doCast(WARRIOR_HARMONY.getSkill());
 		return fighter;
 	}

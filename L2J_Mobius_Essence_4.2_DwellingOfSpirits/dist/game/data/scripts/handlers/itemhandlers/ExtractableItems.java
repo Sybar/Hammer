@@ -51,7 +51,7 @@ import org.l2jmobius.gameserver.network.serverpackets.SystemMessage;
 public class ExtractableItems implements IItemHandler
 {
 	@Override
-	public boolean useItem(Playable playable, Item item, boolean forceUse)
+	public boolean onItemUse(Playable playable, Item item, boolean forceUse)
 	{
 		if (!playable.isPlayer())
 		{
@@ -114,6 +114,7 @@ public class ExtractableItems implements IItemHandler
 								break;
 							}
 						}
+						
 						if (alreadyExtracted && (exitems.size() >= etcitem.getExtractableCountMax()))
 						{
 							continue;
@@ -153,6 +154,7 @@ public class ExtractableItems implements IItemHandler
 								newItem.setEnchantLevel(Rnd.get(expi.getMinEnchant(), expi.getMaxEnchant()));
 								enchantedItems.add(newItem);
 							}
+							
 							addItem(extractedItems, newItem, createItemAmount);
 						}
 						else
@@ -165,6 +167,7 @@ public class ExtractableItems implements IItemHandler
 									newItem.setEnchantLevel(Rnd.get(expi.getMinEnchant(), expi.getMaxEnchant()));
 									enchantedItems.add(newItem);
 								}
+								
 								addItem(extractedItems, newItem, 1);
 								createItemAmount--;
 							}
@@ -226,6 +229,7 @@ public class ExtractableItems implements IItemHandler
 							newItem.setEnchantLevel(Rnd.get(expi.getMinEnchant(), expi.getMaxEnchant()));
 							enchantedItems.add(newItem);
 						}
+						
 						addItem(extractedItems, newItem, createItemAmount);
 					}
 					else
@@ -238,6 +242,7 @@ public class ExtractableItems implements IItemHandler
 								newItem.setEnchantLevel(Rnd.get(expi.getMinEnchant(), expi.getMaxEnchant()));
 								enchantedItems.add(newItem);
 							}
+							
 							addItem(extractedItems, newItem, 1);
 							createItemAmount--;
 						}
@@ -250,6 +255,7 @@ public class ExtractableItems implements IItemHandler
 		{
 			player.sendPacket(SystemMessageId.FAILED_TO_CHANGE_THE_ITEM);
 		}
+		
 		if (!enchantedItems.isEmpty())
 		{
 			final InventoryUpdate playerIU = new InventoryUpdate();
@@ -257,6 +263,7 @@ public class ExtractableItems implements IItemHandler
 			{
 				playerIU.addModifiedItem(i);
 			}
+			
 			player.sendInventoryUpdate(playerIU);
 		}
 		
@@ -300,6 +307,7 @@ public class ExtractableItems implements IItemHandler
 			sm = new SystemMessage(SystemMessageId.YOU_HAVE_OBTAINED_S1);
 			sm.addItemName(item);
 		}
+		
 		player.sendPacket(sm);
 	}
 }

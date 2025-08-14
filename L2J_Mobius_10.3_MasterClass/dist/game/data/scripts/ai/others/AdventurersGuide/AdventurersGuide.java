@@ -40,9 +40,11 @@ public class AdventurersGuide extends AbstractNpcAI
 		32327,
 		33950,
 	};
+	
 	// Items
 	private static final int ADENA = 57;
 	private static final int GEMSTONE_R = 19440;
+	
 	// Skills
 	private static final SkillHolder BLESS_PROTECTION = new SkillHolder(5182, 1); // Blessing of Protection
 	private static final SkillHolder FANTASIA = new SkillHolder(32840, 1); // Fantasia Harmony - Adventurer
@@ -56,6 +58,7 @@ public class AdventurersGuide extends AbstractNpcAI
 		new SkillHolder(34243, 3), // Musician's Melody (Adventurer)
 		new SkillHolder(34254, 1), // Sonate Performance (Adventurer)
 	};
+	
 	// Misc
 	private static final int MAX_LEVEL_BUFFS = 99;
 	private static final int MIN_LEVEL_PROTECTION = 40;
@@ -97,6 +100,7 @@ public class AdventurersGuide extends AbstractNpcAI
 					htmltext = "guide-noBreath.html";
 					break;
 				}
+				
 				player.setShilensBreathDebuffLevel(2);
 				htmltext = "guide-cleanedBreath.html";
 				break;
@@ -107,10 +111,12 @@ public class AdventurersGuide extends AbstractNpcAI
 				{
 					return "guide-noBuffs.html";
 				}
+				
 				for (SkillHolder holder : GROUP_BUFFS)
 				{
 					SkillCaster.triggerCast(npc, player, holder.getSkill());
 				}
+				
 				htmltext = applyBuffs(npc, player, FANTASIA.getSkill());
 				break;
 			}
@@ -123,6 +129,7 @@ public class AdventurersGuide extends AbstractNpcAI
 					{
 						SkillCaster.triggerCast(npc, player, holder.getSkill());
 					}
+					
 					htmltext = applyBuffs(npc, player, FANTASIA.getSkill());
 				}
 				else
@@ -140,6 +147,7 @@ public class AdventurersGuide extends AbstractNpcAI
 					{
 						SkillCaster.triggerCast(npc, player, holder.getSkill());
 					}
+					
 					htmltext = applyBuffs(npc, player, FANTASIA.getSkill());
 				}
 				else
@@ -149,6 +157,7 @@ public class AdventurersGuide extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -158,11 +167,13 @@ public class AdventurersGuide extends AbstractNpcAI
 		{
 			SkillCaster.triggerCast(npc, player, holder.getSkill());
 		}
+		
 		SkillCaster.triggerCast(npc, player, skill);
 		if ((player.getLevel() < MIN_LEVEL_PROTECTION) && (player.getPlayerClass().level() <= 1))
 		{
 			SkillCaster.triggerCast(npc, player, BLESS_PROTECTION.getSkill());
 		}
+		
 		return null;
 	}
 	

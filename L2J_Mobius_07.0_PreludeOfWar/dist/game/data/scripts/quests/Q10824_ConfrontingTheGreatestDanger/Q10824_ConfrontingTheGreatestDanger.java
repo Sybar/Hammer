@@ -41,6 +41,7 @@ public class Q10824_ConfrontingTheGreatestDanger extends Quest
 {
 	// NPC
 	private static final int MERLOT = 34018;
+	
 	// Items
 	private static final int MARK_OF_ADVANCE = 46058;
 	private static final int KURTIZ_CERTIFICATE = 46057;
@@ -48,6 +49,7 @@ public class Q10824_ConfrontingTheGreatestDanger extends Quest
 	private static final int GUSTAV_CERTIFICATE = 45636;
 	private static final int PROOF_OF_PREPARATION = 80824;
 	private static final ItemHolder LIONEL_HUNTERS_LIST_PART_3 = new ItemHolder(45637, 1);
+	
 	// Boss
 	private static final int[] DIM_RAID_RBS =
 	{
@@ -76,6 +78,7 @@ public class Q10824_ConfrontingTheGreatestDanger extends Quest
 		29294, // Tebird (Gainak - West Gate)
 		29295 // Tegaffe (Gainak - North Gate)
 	};
+	
 	// Mobs
 	private static final int[] MONSTERS =
 	{
@@ -108,9 +111,11 @@ public class Q10824_ConfrontingTheGreatestDanger extends Quest
 		23578, // Nymph Sentinel
 		23581 // Afros
 	};
+	
 	// Rewards
 	private static final int MERLOT_CERTIFICATE = 46056;
 	private static final int SPELLBOOK_BLESSING_OF_THE_EXALTED = 45926;
+	
 	// Misc
 	private static final int MIN_LEVEL = 100;
 	private static final int PROOF_OF_PREPARATION_NEEDED = 20000;
@@ -135,6 +140,7 @@ public class Q10824_ConfrontingTheGreatestDanger extends Quest
 		{
 			return htmltext;
 		}
+		
 		switch (event)
 		{
 			case "34018-04.htm":
@@ -156,6 +162,7 @@ public class Q10824_ConfrontingTheGreatestDanger extends Quest
 				{
 					qs.setCond(3, true);
 				}
+				
 				htmltext = event;
 				break;
 			}
@@ -173,6 +180,7 @@ public class Q10824_ConfrontingTheGreatestDanger extends Quest
 						{
 							htmltext = event;
 						}
+						
 						takeItems(player, MARK_OF_ADVANCE, -3);
 						giveItems(player, MERLOT_CERTIFICATE, 1);
 						giveItems(player, SPELLBOOK_BLESSING_OF_THE_EXALTED, 1);
@@ -199,6 +207,7 @@ public class Q10824_ConfrontingTheGreatestDanger extends Quest
 						{
 							htmltext = event;
 						}
+						
 						takeItems(player, PROOF_OF_PREPARATION, PROOF_OF_PREPARATION_NEEDED);
 						giveItems(player, MERLOT_CERTIFICATE, 1);
 						giveItems(player, SPELLBOOK_BLESSING_OF_THE_EXALTED, 1);
@@ -212,6 +221,7 @@ public class Q10824_ConfrontingTheGreatestDanger extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -260,6 +270,7 @@ public class Q10824_ConfrontingTheGreatestDanger extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

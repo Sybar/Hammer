@@ -51,6 +51,7 @@ public class RelationChanged extends ServerPacket
 	public static final int RELATION_MUTUAL_WAR = 0x8000; // double swords
 	public static final int RELATION_ALLY_MEMBER = 0x10000; // clan is in alliance
 	public static final int RELATION_TERRITORY_WAR = 0x80000; // show Territory War icon
+	
 	// Masks
 	public static final byte SEND_DEFAULT = 0x01;
 	public static final byte SEND_ONE = 0x02;
@@ -93,6 +94,7 @@ public class RelationChanged extends ServerPacket
 		{
 			return;
 		}
+		
 		final Relation r = new Relation();
 		r._objId = activeChar.getObjectId();
 		r._relation = relation;

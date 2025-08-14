@@ -36,8 +36,10 @@ public class Q10388_ConspiracyBehindDoor extends Quest
 	private static final int KARGOS = 33821;
 	private static final int HICHEN = 33820;
 	private static final int RAZDEN = 33803;
+	
 	// Item
 	private static final int VISITORS_BADGE = 8064;
+	
 	// Misc
 	private static final int MIN_LEVEL = 97;
 	
@@ -85,6 +87,7 @@ public class Q10388_ConspiracyBehindDoor extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -142,6 +145,7 @@ public class Q10388_ConspiracyBehindDoor extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

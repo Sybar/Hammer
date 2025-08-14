@@ -86,6 +86,7 @@ public class Q00505_BloodOffering extends Quest
 				qs2.setState(State.STARTED);
 				qs2.setCond(1);
 			}
+			
 			qs.exitQuest(true, true);
 			return "guide.htm";
 		}
@@ -153,6 +154,7 @@ public class Q00505_BloodOffering extends Quest
 					{
 						qs2.unset("cond");
 					}
+					
 					return "riftpost-1.htm";
 				}
 				else if (cabal == SevenSigns.CABAL_DUSK)
@@ -163,11 +165,14 @@ public class Q00505_BloodOffering extends Quest
 					{
 						qs2.unset("cond");
 					}
+					
 					qs.getPlayer().teleToLocation(-81261, 86531, -5157);
 					return "riftpost-1.htm";
 				}
+				
 				return "riftpost-2.htm";
 			}
+			
 			return "riftpost-2.htm";
 		}
 		

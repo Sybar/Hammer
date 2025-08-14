@@ -50,6 +50,7 @@ public class Q00230_TestOfTheSummoner extends Quest
 	private static final int SUMMONER_BASILLA = 30638;
 	private static final int SUMMONER_CELESTIEL = 30639;
 	private static final int SUMMONER_BRYNTHEA = 30640;
+	
 	// Items
 	private static final int LETOLIZARDMAN_AMULET = 3337;
 	private static final int SAC_OF_REDSPORES = 3338;
@@ -104,8 +105,10 @@ public class Q00230_TestOfTheSummoner extends Quest
 	private static final int CRYSTAL_OF_FOUL_6TH = 3387;
 	private static final int CRYSTAL_OF_DEFEAT_6TH = 3388;
 	private static final int CRYSTAL_OF_VICTORY_6TH = 3389;
+	
 	// Reward
 	private static final int MARK_OF_SUMMONER = 3336;
+	
 	// Monster
 	private static final int NOBLE_ANT = 20089;
 	private static final int NOBLE_ANT_LEADER = 20090;
@@ -128,6 +131,7 @@ public class Q00230_TestOfTheSummoner extends Quest
 	private static final int LETO_LIZARDMAN_SHAMAN = 20581;
 	private static final int LETO_LIZARDMAN_OVERLORD = 20582;
 	private static final int KARUL_BUGBEAR = 20600;
+	
 	// Quest Monster
 	private static final int PAKO_THE_CAT = 27102;
 	private static final int UNICORN_RACER = 27103;
@@ -135,8 +139,10 @@ public class Q00230_TestOfTheSummoner extends Quest
 	private static final int MIMI_THE_CAT = 27105;
 	private static final int UNICORN_PHANTASM = 27106;
 	private static final int SILHOUETTE_TILFO = 27107;
+	
 	// Skill
 	private static final SkillHolder REDUCTION_IN_RECOVERY_TIME = new SkillHolder(4126, 1);
+	
 	// Misc
 	private static final int MIN_LEVEL = 39;
 	
@@ -255,6 +261,7 @@ public class Q00230_TestOfTheSummoner extends Quest
 						break;
 					}
 				}
+				
 				qs.setCond(2, true);
 				takeItems(player, GALATEAS_LETTER, 1);
 				htmltext = event;
@@ -290,6 +297,7 @@ public class Q00230_TestOfTheSummoner extends Quest
 						break;
 					}
 				}
+				
 				htmltext = event;
 				break;
 			}
@@ -426,6 +434,7 @@ public class Q00230_TestOfTheSummoner extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -471,6 +480,7 @@ public class Q00230_TestOfTheSummoner extends Quest
 								giveItems(attacker, CRYSTAL_OF_FOUL_1ST, 1);
 								takeItems(attacker, CRYSTAL_OF_STARTING_1ST, -1);
 							}
+							
 							npc.deleteMe();
 						}
 						break;
@@ -515,6 +525,7 @@ public class Q00230_TestOfTheSummoner extends Quest
 								giveItems(attacker, CRYSTAL_OF_FOUL_3RD, 1);
 								takeItems(attacker, CRYSTAL_OF_STARTING_3RD, -1);
 							}
+							
 							npc.deleteMe();
 						}
 						break;
@@ -559,6 +570,7 @@ public class Q00230_TestOfTheSummoner extends Quest
 								giveItems(attacker, CRYSTAL_OF_FOUL_5TH, 1);
 								takeItems(attacker, CRYSTAL_OF_STARTING_5TH, -1);
 							}
+							
 							npc.deleteMe();
 						}
 						break;
@@ -603,6 +615,7 @@ public class Q00230_TestOfTheSummoner extends Quest
 								giveItems(attacker, CRYSTAL_OF_FOUL_2ND, 1);
 								takeItems(attacker, CRYSTAL_OF_STARTING_2ND, -1);
 							}
+							
 							npc.deleteMe();
 						}
 						break;
@@ -647,6 +660,7 @@ public class Q00230_TestOfTheSummoner extends Quest
 								giveItems(attacker, CRYSTAL_OF_FOUL_4TH, 1);
 								takeItems(attacker, CRYSTAL_OF_STARTING_4TH, -1);
 							}
+							
 							npc.deleteMe();
 						}
 						break;
@@ -691,6 +705,7 @@ public class Q00230_TestOfTheSummoner extends Quest
 								giveItems(attacker, CRYSTAL_OF_FOUL_6TH, 1);
 								takeItems(attacker, CRYSTAL_OF_STARTING_6TH, -1);
 							}
+							
 							npc.deleteMe();
 						}
 						break;
@@ -1012,6 +1027,7 @@ public class Q00230_TestOfTheSummoner extends Quest
 							{
 								qs.setCond(4, true);
 							}
+							
 							htmltext = "30635-07.html";
 						}
 						else if (!hasAtLeastOneQuestItem(player, CRYSTAL_OF_INPROGRESS_1ST, CRYSTAL_OF_FOUL_1ST, CRYSTAL_OF_DEFEAT_1ST, CRYSTAL_OF_VICTORY_1ST) && hasQuestItems(player, CRYSTAL_OF_STARTING_1ST))
@@ -1053,6 +1069,7 @@ public class Q00230_TestOfTheSummoner extends Quest
 							{
 								qs.setCond(4, true);
 							}
+							
 							htmltext = "30636-07.html";
 						}
 						else if (!hasAtLeastOneQuestItem(player, CRYSTAL_OF_INPROGRESS_3RD, CRYSTAL_OF_FOUL_3RD, CRYSTAL_OF_DEFEAT_3RD, CRYSTAL_OF_VICTORY_3RD) && hasQuestItems(player, CRYSTAL_OF_STARTING_3RD))
@@ -1094,6 +1111,7 @@ public class Q00230_TestOfTheSummoner extends Quest
 							{
 								qs.setCond(4, true);
 							}
+							
 							htmltext = "30637-07.html";
 						}
 						else if (!hasAtLeastOneQuestItem(player, CRYSTAL_OF_INPROGRESS_5TH, CRYSTAL_OF_FOUL_5TH, CRYSTAL_OF_DEFEAT_5TH, CRYSTAL_OF_VICTORY_5TH) && hasQuestItems(player, CRYSTAL_OF_STARTING_5TH))
@@ -1135,6 +1153,7 @@ public class Q00230_TestOfTheSummoner extends Quest
 							{
 								qs.setCond(4, true);
 							}
+							
 							htmltext = "30638-07.html";
 						}
 						else if (!hasAtLeastOneQuestItem(player, CRYSTAL_OF_INPROGRESS_2ND, CRYSTAL_OF_FOUL_2ND, CRYSTAL_OF_DEFEAT_2ND, CRYSTAL_OF_VICTORY_2ND) && hasQuestItems(player, CRYSTAL_OF_STARTING_2ND))
@@ -1176,6 +1195,7 @@ public class Q00230_TestOfTheSummoner extends Quest
 							{
 								qs.setCond(4, true);
 							}
+							
 							htmltext = "30639-07.html";
 						}
 						else if (!hasAtLeastOneQuestItem(player, CRYSTAL_OF_INPROGRESS_4TH, CRYSTAL_OF_FOUL_4TH, CRYSTAL_OF_DEFEAT_4TH, CRYSTAL_OF_VICTORY_4TH) && hasQuestItems(player, CRYSTAL_OF_STARTING_4TH))
@@ -1217,6 +1237,7 @@ public class Q00230_TestOfTheSummoner extends Quest
 							{
 								qs.setCond(4, true);
 							}
+							
 							htmltext = "30640-07.html";
 						}
 						else if (!hasAtLeastOneQuestItem(player, CRYSTAL_OF_INPROGRESS_6TH, CRYSTAL_OF_FOUL_6TH, CRYSTAL_OF_DEFEAT_6TH, CRYSTAL_OF_VICTORY_6TH) && hasQuestItems(player, CRYSTAL_OF_STARTING_6TH))
@@ -1243,6 +1264,7 @@ public class Q00230_TestOfTheSummoner extends Quest
 				htmltext = getAlreadyCompletedMsg(player);
 			}
 		}
+		
 		return htmltext;
 	}
 	

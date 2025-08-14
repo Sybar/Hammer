@@ -36,9 +36,11 @@ public class Q00622_SpecialtyLiquorDelivery extends Quest
 	private static final int KUBER = 31546;
 	private static final int BEOLIN = 31547;
 	private static final int LIETTA = 31267;
+	
 	// Items
 	private static final int SPECIAL_DRINK = 7197;
 	private static final int FEE_OF_SPECIAL_DRINK = 7198;
+	
 	// Rewards
 	private static final int ADENA = 57;
 	private static final int HASTE_POTION = 1062;
@@ -127,6 +129,7 @@ public class Q00622_SpecialtyLiquorDelivery extends Quest
 					rewardItems(player, ADENA, 18800);
 					rewardItems(player, HASTE_POTION, 1);
 				}
+				
 				st.exitQuest(true, true);
 				break;
 			}

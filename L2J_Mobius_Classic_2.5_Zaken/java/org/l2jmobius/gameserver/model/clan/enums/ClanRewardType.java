@@ -64,6 +64,7 @@ public enum ClanRewardType
 				}
 			}
 		}
+		
 		return availableBonus;
 	}
 	
@@ -74,6 +75,7 @@ public enum ClanRewardType
 		{
 			mask |= type.getMask();
 		}
+		
 		return mask;
 	}
 }

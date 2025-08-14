@@ -20,6 +20,8 @@
  */
 package instances.MysticTavern.StoryOfTauti;
 
+import java.util.Collection;
+
 import org.l2jmobius.gameserver.ai.Intention;
 import org.l2jmobius.gameserver.data.xml.SkillData;
 import org.l2jmobius.gameserver.managers.ZoneManager;
@@ -60,6 +62,7 @@ public class StoryOfTauti extends AbstractInstance
 	private static final int DETON = 34170;
 	private static final int FLAME_FLOWER = 19606;
 	private static final int SEAL_DEVICE = 19608;
+	
 	// Monsters
 	private static final int FLAME_STACATO = 23681;
 	private static final int FLAME_SCORPION = 23682;
@@ -69,8 +72,10 @@ public class StoryOfTauti extends AbstractInstance
 	private static final int SEAL_ARCHANGEL = 23683;
 	private static final int SEALED_ANGEL = 23685;
 	private static final int NPC_1 = 19626;
+	
 	// Item
 	private static final int FLAME_FLOWER_BUD = 46554;
+	
 	// Misc
 	private static final int TEMPLATE_ID = 261;
 	private static final ScriptZone FLAME_FLOWER_ZONE = ZoneManager.getInstance().getZoneById(80027, ScriptZone.class);
@@ -127,6 +132,7 @@ public class StoryOfTauti extends AbstractInstance
 							instance.addAllowed(member);
 						}
 					}
+					
 					instance.setReenterTime();
 				}
 				break;
@@ -246,6 +252,7 @@ public class StoryOfTauti extends AbstractInstance
 							}
 						}
 					}
+					
 					startQuestTimer("check_flower", 3000, npc, null);
 				}
 				break;
@@ -281,6 +288,7 @@ public class StoryOfTauti extends AbstractInstance
 						addMoveToDesire(npc, new Location(pl.getX() + getRandom(-40, 40), pl.getY() + getRandom(-40, 40), pl.getZ()), 23);
 						addAttackPlayerDesire(npc, pl);
 					}
+					
 					if (!npc.isDead() && !npc.isInCombat())
 					{
 						startQuestTimer("attack_player", 5000, npc, pl);
@@ -487,8 +495,10 @@ public class StoryOfTauti extends AbstractInstance
 					{
 						npc.setClanId(player.getClanId());
 					}
+					
 					npc.broadcastStatusUpdate();
 				}
+				
 				npc.setScriptValue(1);
 				startQuestTimer("clear_player", 12000, npc, player);
 				break;
@@ -510,10 +520,12 @@ public class StoryOfTauti extends AbstractInstance
 				{
 					n.deleteMe();
 				}
+				
 				world.finishInstance(0);
 				break;
 			}
 		}
+		
 		return null;
 	}
 	
@@ -536,6 +548,7 @@ public class StoryOfTauti extends AbstractInstance
 						tombstone.setScriptValue(1);
 						break;
 					}
+					
 					if (tombstone.isScriptValue(1) && (tombstone.getCurrentHpPercent() < 60))
 					{
 						device.setDisplayEffect(1);
@@ -543,6 +556,7 @@ public class StoryOfTauti extends AbstractInstance
 						tombstone.setScriptValue(2);
 						break;
 					}
+					
 					if (tombstone.isScriptValue(2) && (tombstone.getCurrentHpPercent() < 40))
 					{
 						if (getRandom(10) < 5)
@@ -550,9 +564,11 @@ public class StoryOfTauti extends AbstractInstance
 							world.spawnGroup("arimanes");
 							world.broadcastPacket(new ExShowScreenMessage(NpcStringId.ARIMANES, ExShowScreenMessage.TOP_CENTER, 10000, true));
 						}
+						
 						tombstone.setScriptValue(3);
 						break;
 					}
+					
 					if (tombstone.isScriptValue(3) && (tombstone.getCurrentHpPercent() < 20))
 					{
 						device.setDisplayEffect(2);
@@ -568,6 +584,7 @@ public class StoryOfTauti extends AbstractInstance
 					{
 						return;
 					}
+					
 					if (world.isStatus(9) && archangel.isScriptValue(0))
 					{
 						archangel.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.DO_NOT_LUST_AFTER_WHAT_S_SEALED_HERE_IT_IS_NOT_YOURS);
@@ -576,6 +593,7 @@ public class StoryOfTauti extends AbstractInstance
 						archangel.setScriptValue(1);
 						break;
 					}
+					
 					if (world.isStatus(9) && (archangel.getCurrentHpPercent() < 50))
 					{
 						archangel.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.TAUTI_MUST_REMAIN_SEALED_HERE);
@@ -584,6 +602,7 @@ public class StoryOfTauti extends AbstractInstance
 						SEAL_ARCHANGEL_WRATH.getSkill().applyEffects(npc, attacker);
 						break;
 					}
+					
 					if (world.isStatus(10) && (archangel.getCurrentHpPercent() < 30))
 					{
 						world.spawnGroup("last_deton");
@@ -595,11 +614,13 @@ public class StoryOfTauti extends AbstractInstance
 						world.setStatus(11);
 						break;
 					}
+					
 					if (world.isStatus(11) && (archangel.getCurrentHpPercent() < 5))
 					{
 						archangel.setInvul(true);
 						SEAL_ARCHANGEL_WRATH.getSkill().applyEffects(npc, attacker);
 						world.setStatus(12);
+						
 						// World.getInstance().forEachVisibleObjectInRange(npc, Player.class, 1000, pl ->
 						// {
 						// if (pl.isInParty())
@@ -859,6 +880,7 @@ public class StoryOfTauti extends AbstractInstance
 				case FLAME_SCARAB:
 				{
 					startQuestTimer("attack_player", 2000, npc, null);
+					
 					// World.getInstance().forEachVisibleObjectInRange(npc, Player.class, 1500, player ->
 					// {
 					// if (player.isInParty())
@@ -908,7 +930,7 @@ public class StoryOfTauti extends AbstractInstance
 	}
 	
 	@Override
-	public void onSkillSee(Npc npc, Player caster, Skill skill, WorldObject[] targets, boolean isSummon)
+	public void onSkillSee(Npc npc, Player caster, Skill skill, Collection<WorldObject> targets, boolean isSummon)
 	{
 		final Instance world = npc.getInstanceWorld();
 		if (isInInstance(world))

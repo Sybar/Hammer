@@ -40,13 +40,16 @@ public class Q10378_WeedingWork extends Quest
 {
 	// NPCs
 	private static final int DADFPHYNA = 33697;
+	
 	// Monster's
 	private static final int MANDRAGORA_OF_JOY_AND_SORROW = 23210;
 	private static final int MANDRAGORA_OF_PRAYER = 23211;
+	
 	// Items
 	private static final int MANDRAGORA_ROOT = 34975;
 	private static final int MANDRAGORA_STEM = 34974;
 	private static final int SOE_GUILLOTINE_FORTRESS = 35292;
+	
 	// Misc
 	private static final int MIN_LEVEL = 95;
 	
@@ -96,6 +99,7 @@ public class Q10378_WeedingWork extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -123,6 +127,7 @@ public class Q10378_WeedingWork extends Quest
 		{
 			htmltext = getNoQuestMsg(player);
 		}
+		
 		return htmltext;
 	}
 	

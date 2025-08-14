@@ -32,6 +32,7 @@ public class Katenar extends AbstractNpcAI
 {
 	// NPC
 	private static final int KATENAR = 32242;
+	
 	// Item
 	private static final int SEALED_DOCUMENT = 9803;
 	
@@ -56,6 +57,7 @@ public class Katenar extends AbstractNpcAI
 				{
 					npc0.getVariables().set("SPAWNED", false);
 				}
+				
 				npc.deleteMe();
 				break;
 			}
@@ -69,11 +71,13 @@ public class Katenar extends AbstractNpcAI
 						npc0.getVariables().set("SPAWNED", false);
 						npc.broadcastSay(ChatType.NPC_GENERAL, "Good luck!");
 					}
+					
 					npc.deleteMe();
 				}
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -102,6 +106,7 @@ public class Katenar extends AbstractNpcAI
 				qs.setCond(13, true);
 				htmltext = "32242-03.html";
 			}
+			
 			if (!hasQuestItems(player, SEALED_DOCUMENT))
 			{
 				giveItems(player, SEALED_DOCUMENT, 1);
@@ -111,6 +116,7 @@ public class Katenar extends AbstractNpcAI
 		{
 			htmltext = "32242-04.html";
 		}
+		
 		return htmltext;
 	}
 	

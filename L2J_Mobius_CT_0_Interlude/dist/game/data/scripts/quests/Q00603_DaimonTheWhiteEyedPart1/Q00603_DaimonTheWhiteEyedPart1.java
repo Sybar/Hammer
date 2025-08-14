@@ -39,14 +39,17 @@ public class Q00603_DaimonTheWhiteEyedPart1 extends Quest
 	private static final int MYSTERIOUS_TABLET_3 = 31550;
 	private static final int MYSTERIOUS_TABLET_4 = 31551;
 	private static final int MYSTERIOUS_TABLET_5 = 31552;
+	
 	// Monsters
 	private static final int CANYON_BANDERSNATCH_SLAVE = 21297;
 	private static final int BUFFALO_SLAVE = 21299;
 	private static final int GRENDEL_SLAVE = 21304;
+	
 	// Items
 	private static final int EVIL_SPIRIT_BEADS = 7190;
 	private static final int BROKEN_CRYSTAL = 7191;
 	private static final int UNFINISHED_SUMMON_CRYSTAL = 7192;
+	
 	// Drop chances
 	private static final Map<Integer, Integer> CHANCES = new HashMap<>();
 	static

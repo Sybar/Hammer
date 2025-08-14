@@ -31,8 +31,10 @@ public class Q10702_TheRoadToInfinity extends Quest
 	// NPCs
 	private static final int KEUCEREUS = 32548;
 	private static final int TEPIOS = 32603;
+	
 	// Item
 	private static final int KEUCEREUS_INTRODUCTION_SOI = 38578;
+	
 	// Misc
 	private static final int MIN_LEVEL = 95;
 	
@@ -81,6 +83,7 @@ public class Q10702_TheRoadToInfinity extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -113,6 +116,7 @@ public class Q10702_TheRoadToInfinity extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

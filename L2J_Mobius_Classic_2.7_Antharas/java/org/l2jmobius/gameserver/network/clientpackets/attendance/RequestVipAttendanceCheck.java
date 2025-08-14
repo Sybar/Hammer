@@ -99,12 +99,15 @@ public class RequestVipAttendanceCheck extends ClientPacket
 		{
 			// Save date and index.
 			player.setAttendanceInfo(rewardIndex + 1);
+			
 			// Add items to player.
 			player.addItem(ItemProcessType.REWARD, reward, player, true);
+			
 			// Send message.
 			final SystemMessage msg = new SystemMessage(SystemMessageId.YOU_VE_RECEIVED_YOUR_VIP_ATTENDANCE_REWARD_FOR_DAY_S1);
 			msg.addInt(rewardIndex + 1);
 			player.sendPacket(msg);
+			
 			// Send confirm packet.
 			player.sendPacket(new ExConfirmVipAttendanceCheck(isRewardAvailable, rewardIndex + 1));
 		}

@@ -69,6 +69,7 @@ public class ConditionPlayerCallPc extends Condition
 			player.sendMessage("Your target is in an area which blocks summoning.");
 			canCallPlayer = false;
 		}
+		
 		return _value == canCallPlayer;
 	}
 }

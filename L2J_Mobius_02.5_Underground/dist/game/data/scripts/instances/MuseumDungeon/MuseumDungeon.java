@@ -48,8 +48,10 @@ public class MuseumDungeon extends AbstractInstance
 	private static final int TOYRON = 33004;
 	private static final int DESK = 33126;
 	private static final int THIEF = 23121;
+	
 	// Items
 	private static final int THE_WAR_OF_GODS_AND_GIANTS = 17575;
+	
 	// Misc
 	private static final int TEMPLATE_ID = 182;
 	
@@ -132,6 +134,7 @@ public class MuseumDungeon extends AbstractInstance
 							addAttackPlayerDesire(thief, player);
 							thief.broadcastSay(ChatType.NPC_GENERAL, THIEF_SHOUT[getRandom(2)]);
 						}
+						
 						final Npc toyron = world.getNpc(TOYRON);
 						toyron.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.WHEN_DID_THEY_GET_IN_HERE);
 						startQuestTimer("TOYRON_MSG_1", 2500, toyron, player);
@@ -166,6 +169,7 @@ public class MuseumDungeon extends AbstractInstance
 				}
 			}
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	
@@ -202,6 +206,7 @@ public class MuseumDungeon extends AbstractInstance
 				htmltext = "33126-02.html";
 			}
 		}
+		
 		return htmltext;
 	}
 	

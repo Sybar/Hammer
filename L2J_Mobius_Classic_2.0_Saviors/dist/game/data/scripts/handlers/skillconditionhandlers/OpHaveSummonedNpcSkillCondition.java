@@ -49,6 +49,7 @@ public class OpHaveSummonedNpcSkillCondition implements ISkillCondition
 				return true;
 			}
 		}
+		
 		return false;
 	}
 }

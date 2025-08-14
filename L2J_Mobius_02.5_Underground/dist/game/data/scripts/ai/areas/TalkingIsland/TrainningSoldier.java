@@ -58,6 +58,7 @@ public class TrainningSoldier extends AbstractNpcAI
 					}
 				}
 			}
+			
 			getTimers().addTimer("START_ATTACK_" + npc.getObjectId(), null, 10000, npc, null);
 		}
 	}

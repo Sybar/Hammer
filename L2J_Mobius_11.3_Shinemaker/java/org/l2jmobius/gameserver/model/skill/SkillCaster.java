@@ -1,18 +1,22 @@
 /*
- * This file is part of the L2J Mobius project.
+ * Copyright (c) 2013 L2jMobius
  * 
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
  * 
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
+ * The above copyright notice and this permission notice shall be
+ * included in all copies or substantial portions of the Software.
  * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+ * WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR
+ * IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 package org.l2jmobius.gameserver.model.skill;
 
@@ -41,7 +45,6 @@ import org.l2jmobius.gameserver.model.actor.Attackable;
 import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.actor.enums.player.PlayerCondOverride;
 import org.l2jmobius.gameserver.model.clan.Clan;
 import org.l2jmobius.gameserver.model.effects.AbstractEffect;
 import org.l2jmobius.gameserver.model.effects.EffectType;
@@ -84,7 +87,7 @@ import org.l2jmobius.gameserver.network.serverpackets.SystemMessage;
 import org.l2jmobius.gameserver.util.LocationUtil;
 
 /**
- * @author Nik
+ * @author Nik, Mobius
  */
 public class SkillCaster implements Runnable
 {
@@ -133,7 +136,7 @@ public class SkillCaster implements Runnable
 	public static SkillCaster castSkill(Creature caster, WorldObject target, Skill skill, Item item, SkillCastingType castingType, boolean ctrlPressed, boolean shiftPressed)
 	{
 		// Prevent players from attacking before the Olympiad countdown ends.
-		if (caster.isPlayer() && skill.isBad())
+		if (caster.isPlayer() && skill.hasNegativeEffect())
 		{
 			final Player player = caster.asPlayer();
 			if (player.isInOlympiadMode() && !player.isOlympiadStart())
@@ -289,7 +292,7 @@ public class SkillCaster implements Runnable
 			caster.getAI().clientStopMoving(null);
 			
 			// Also replace other intentions with idle. (Mainly done for MOVE_TO).
-			if (caster.isPlayer() && !_skill.isBad())
+			if (caster.isPlayer() && !_skill.hasNegativeEffect())
 			{
 				caster.getAI().setIntention(Intention.IDLE);
 			}
@@ -348,7 +351,7 @@ public class SkillCaster implements Runnable
 		final int actionId = caster.isSummon() ? ActionData.getInstance().getSkillActionId(_skill.getId()) : -1;
 		if (!_skill.isNotBroadcastable())
 		{
-			caster.broadcastPacket(new MagicSkillUse(caster, target, _skill.getDisplayId(), _skill.getDisplayLevel(), displayedCastTime, reuseDelay, _skill.getReuseDelayGroup(), actionId, _castingType));
+			caster.broadcastSkillPacket(new MagicSkillUse(caster, target, _skill.getDisplayId(), _skill.getDisplayLevel(), displayedCastTime, reuseDelay, _skill.getReuseDelayGroup(), actionId, _castingType), target);
 			if (caster.isPlayer() && (_skill.getTargetType() == TargetType.GROUND) && (_skill.getAffectScope() == AffectScope.FAN_PB))
 			{
 				final Player player = caster.asPlayer();
@@ -378,7 +381,7 @@ public class SkillCaster implements Runnable
 		{
 			// Get the Item consumed by the spell.
 			final Item requiredItem = caster.getInventory().getItemByItemId(_skill.getItemConsumeId());
-			if (_skill.isBad() || (requiredItem.getTemplate().getDefaultAction() == ActionType.NONE)) // Non reagent items are removed at finishSkill or item handler.
+			if (_skill.hasNegativeEffect() || (requiredItem.getTemplate().getDefaultAction() == ActionType.NONE)) // Non reagent items are removed at finishSkill or item handler.
 			{
 				caster.destroyItem(ItemProcessType.NONE, requiredItem.getObjectId(), _skill.getItemConsumeCount(), caster, false);
 			}
@@ -396,6 +399,7 @@ public class SkillCaster implements Runnable
 					player.sendPacket(SystemMessageId.YOU_DON_T_HAVE_ENOUGH_FAME_TO_DO_THAT);
 					return false;
 				}
+				
 				player.setFame(player.getFame() - _skill.getFamePointConsume());
 				
 				final SystemMessage msg = new SystemMessage(SystemMessageId.S1_FAME_HAS_BEEN_CONSUMED);
@@ -412,6 +416,7 @@ public class SkillCaster implements Runnable
 					player.sendPacket(SystemMessageId.THE_CLAN_REPUTATION_IS_TOO_LOW);
 					return false;
 				}
+				
 				clan.takeReputationScore(_skill.getClanRepConsume());
 				
 				final SystemMessage msg = new SystemMessage(SystemMessageId.S1_CLAN_REPUTATION_POINTS_SPENT);
@@ -436,6 +441,7 @@ public class SkillCaster implements Runnable
 					}
 				}
 			}
+			
 			_skill.applyEffectScope(EffectScope.START, new BuffInfo(caster, target.asCreature(), _skill, false, _item, null), true, false);
 		}
 		
@@ -464,6 +470,7 @@ public class SkillCaster implements Runnable
 			{
 				caster.sendPacket(SystemMessageId.THE_DISTANCE_IS_TOO_FAR_AND_SO_THE_CASTING_HAS_BEEN_CANCELLED);
 			}
+			
 			return false;
 		}
 		
@@ -479,8 +486,9 @@ public class SkillCaster implements Runnable
 		// Display animation of launching skill upon targets.
 		if (!_skill.isNotBroadcastable())
 		{
-			caster.broadcastPacket(new MagicSkillLaunched(caster, _skill.getDisplayId(), _skill.getDisplayLevel(), _castingType, _targets));
+			caster.broadcastSkillPacket(new MagicSkillLaunched(caster, _skill.getDisplayId(), _skill.getDisplayLevel(), _castingType, _targets), _targets);
 		}
+		
 		return true;
 	}
 	
@@ -563,6 +571,7 @@ public class SkillCaster implements Runnable
 			{
 				caster.onCreatureSkillFinishCast = new OnCreatureSkillFinishCast();
 			}
+			
 			caster.onCreatureSkillFinishCast.setCaster(caster);
 			caster.onCreatureSkillFinishCast.setTarget(target);
 			caster.onCreatureSkillFinishCast.setSkill(_skill);
@@ -574,7 +583,7 @@ public class SkillCaster implements Runnable
 		callSkill(caster, target, _targets, _skill, _item);
 		
 		// Start attack stance.
-		if (!_skill.isWithoutAction() && _skill.isBad() && (_skill.getTargetType() != TargetType.DOOR_TREASURE))
+		if (!_skill.isWithoutAction() && _skill.hasNegativeEffect() && (_skill.getTargetType() != TargetType.DOOR_TREASURE))
 		{
 			caster.getAI().clientStartAutoAttack();
 		}
@@ -599,8 +608,8 @@ public class SkillCaster implements Runnable
 		// Launch the magic skill in order to calculate its effects
 		try
 		{
-			// Disabled characters should not be able to finish bad skills.
-			if (skill.isBad() && caster.isDisabled())
+			// Disabled characters should not be able to finish negative effect skills.
+			if (skill.hasNegativeEffect() && caster.isDisabled())
 			{
 				return;
 			}
@@ -622,10 +631,10 @@ public class SkillCaster implements Runnable
 				final Creature creature = obj.asCreature();
 				
 				// Check raid monster/minion attack and check buffing characters who attack raid monsters. Raid is still affected by skills.
-				if (!Config.RAID_DISABLE_CURSE && creature.isRaid() && creature.giveRaidCurse() && (caster.getLevel() >= (creature.getLevel() + 9)) && (skill.isBad() || ((creature.getTarget() == caster) && creature.asAttackable().getAggroList().containsKey(caster))))
+				if (!Config.RAID_DISABLE_CURSE && creature.isRaid() && creature.giveRaidCurse() && (caster.getLevel() >= (creature.getLevel() + 9)) && (skill.hasNegativeEffect() || ((creature.getTarget() == caster) && creature.asAttackable().getAggroList().containsKey(caster))))
 				{
 					// Skills such as Summon Battle Scar too can trigger magic silence.
-					final CommonSkill curse = skill.isBad() ? CommonSkill.RAID_CURSE2 : CommonSkill.RAID_CURSE;
+					final CommonSkill curse = skill.hasNegativeEffect() ? CommonSkill.RAID_CURSE2 : CommonSkill.RAID_CURSE;
 					final Skill curseSkill = curse.getSkill();
 					if (curseSkill != null)
 					{
@@ -637,6 +646,7 @@ public class SkillCaster implements Runnable
 				if (!skill.isStatic())
 				{
 					final Weapon activeWeapon = caster.getActiveWeaponItem();
+					
 					// Launch weapon Special ability skill effect if available
 					if ((activeWeapon != null) && !creature.isDead())
 					{
@@ -657,7 +667,7 @@ public class SkillCaster implements Runnable
 			}
 			
 			// Launch the magic skill and calculate its effects
-			skill.activateSkill(caster, item, targets.toArray(new WorldObject[0]));
+			skill.activateSkill(caster, item, targets);
 			
 			final Player player = caster.asPlayer();
 			if (player != null)
@@ -669,7 +679,7 @@ public class SkillCaster implements Runnable
 						continue;
 					}
 					
-					if (skill.isBad())
+					if (skill.hasNegativeEffect())
 					{
 						if (obj.isPlayable())
 						{
@@ -724,7 +734,7 @@ public class SkillCaster implements Runnable
 				{
 					if (EventDispatcher.getInstance().hasListener(EventType.ON_NPC_SKILL_SEE, npcMob))
 					{
-						EventDispatcher.getInstance().notifyEventAsync(new OnNpcSkillSee(npcMob, player, skill, caster.isSummon(), targets.toArray(new WorldObject[0])), npcMob);
+						EventDispatcher.getInstance().notifyEventAsync(new OnNpcSkillSee(npcMob, player, skill, caster.isSummon(), targets), npcMob);
 					}
 					
 					// On Skill See logic
@@ -812,6 +822,7 @@ public class SkillCaster implements Runnable
 					currPlayer.setQueuedSkill(null, null, false, false);
 					currPlayer.useMagic(queuedSkill.getSkill(), queuedSkill.getItem(), queuedSkill.isCtrlPressed(), queuedSkill.isShiftPressed());
 				});
+				
 				return;
 			}
 		}
@@ -864,8 +875,10 @@ public class SkillCaster implements Runnable
 			{
 				_hitTime = (int) Math.max((skill.getHitTime() / timeFactor) - cancelTime, 0);
 			}
+			
 			_cancelTime = (int) cancelTime;
 		}
+		
 		_coolTime = (int) (skill.getCoolTime() / timeFactor); // cooltimeMillis / timeFactor
 	}
 	
@@ -934,14 +947,13 @@ public class SkillCaster implements Runnable
 					}
 				}
 				
-				final WorldObject[] targets = skill.getTargetsAffected(creature, currentTarget).toArray(new WorldObject[0]);
-				
+				final List<WorldObject> targets = skill.getTargetsAffected(creature, currentTarget);
 				if (!skill.isNotBroadcastable() && !creature.isChanneling())
 				{
-					creature.broadcastPacket(new MagicSkillUse(creature, currentTarget, skill.getDisplayId(), skill.getLevel(), 0, 0));
+					creature.broadcastSkillPacket(new MagicSkillUse(creature, currentTarget, skill.getDisplayId(), skill.getLevel(), 0, 0), targets);
 				}
 				
-				// Launch the magic skill and calculate its effects
+				// Launch the magic skill and calculate its effects.
 				skill.activateSkill(creature, item, targets);
 				
 				// Notify skill is casted.
@@ -951,6 +963,7 @@ public class SkillCaster implements Runnable
 					{
 						creature.onCreatureSkillFinishCast = new OnCreatureSkillFinishCast();
 					}
+					
 					creature.onCreatureSkillFinishCast.setCaster(creature);
 					creature.onCreatureSkillFinishCast.setTarget(target);
 					creature.onCreatureSkillFinishCast.setSkill(skill);
@@ -1071,6 +1084,7 @@ public class SkillCaster implements Runnable
 			{
 				caster.onCreatureSkillUse = new OnCreatureSkillUse();
 			}
+			
 			caster.onCreatureSkillUse.setCaster(caster);
 			caster.onCreatureSkillUse.setSkill(skill);
 			caster.onCreatureSkillUse.setSimultaneously(skill.isWithoutAction());
@@ -1126,7 +1140,7 @@ public class SkillCaster implements Runnable
 		
 		// Check if the caster's weapon is limited to use only its own skills
 		final Weapon weapon = caster.getActiveWeaponItem();
-		if ((weapon != null) && weapon.useWeaponSkillsOnly() && !caster.canOverrideCond(PlayerCondOverride.SKILL_CONDITIONS))
+		if ((weapon != null) && weapon.useWeaponSkillsOnly() && !caster.isGM())
 		{
 			final List<ItemSkillHolder> weaponSkills = weapon.getSkills(ItemSkillType.NORMAL);
 			if (weaponSkills != null)
@@ -1167,6 +1181,7 @@ public class SkillCaster implements Runnable
 				{
 					caster.sendPacket(new SystemMessage(SystemMessageId.THERE_ARE_NOT_ENOUGH_NECESSARY_ITEMS_TO_USE_THE_SKILL));
 				}
+				
 				return false;
 			}
 		}
@@ -1236,7 +1251,7 @@ public class SkillCaster implements Runnable
 				}
 				
 				// Commented because AOE skills like Warlord's [Thunder Storm] (44) and debuffs like Overlord's [Seal of Binding] (1208) do not work when targeting an enemy from the other team.
-				// if (skill.isBad() && !player.isOnSoloEvent())
+				// if (skill.hasNegativeEffect() && !player.isOnSoloEvent())
 				// {
 				// final WorldObject target = player.getTarget();
 				// if ((target != null) && target.isPlayable() && (player.getTeam() == target.asPlayer().getTeam()))
@@ -1246,6 +1261,7 @@ public class SkillCaster implements Runnable
 				// }
 			}
 		}
+		
 		return true;
 	}
 	
@@ -1295,6 +1311,7 @@ public class SkillCaster implements Runnable
 				{
 					nRadius += target.asCreature().getCollisionRadius();
 				}
+				
 				x = target.getX() + (int) (Math.cos(Math.PI + radian + course) * nRadius);
 				y = target.getY() + (int) (Math.sin(Math.PI + radian + course) * nRadius);
 				z = target.getZ();

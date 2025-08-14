@@ -81,6 +81,7 @@ public class AccountVariables extends AbstractVariables
 		{
 			compareAndSetChanges(true, false);
 		}
+		
 		return true;
 	}
 	
@@ -111,6 +112,7 @@ public class AccountVariables extends AbstractVariables
 					st.setString(3, String.valueOf(entry.getValue()));
 					st.addBatch();
 				}
+				
 				st.executeBatch();
 			}
 		}
@@ -123,6 +125,7 @@ public class AccountVariables extends AbstractVariables
 		{
 			compareAndSetChanges(true, false);
 		}
+		
 		return true;
 	}
 	
@@ -145,6 +148,7 @@ public class AccountVariables extends AbstractVariables
 			LOGGER.log(Level.WARNING, getClass().getSimpleName() + ": Couldn't delete variables for: " + _accountName, e);
 			return false;
 		}
+		
 		return true;
 	}
 	
@@ -169,6 +173,7 @@ public class AccountVariables extends AbstractVariables
 			LOGGER.log(Level.WARNING, "AccountVariables: Couldn't delete vip variables!", e);
 			return false;
 		}
+		
 		return true;
 	}
 }

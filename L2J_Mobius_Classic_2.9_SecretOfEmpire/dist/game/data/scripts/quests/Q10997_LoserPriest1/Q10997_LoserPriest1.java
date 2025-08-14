@@ -41,19 +41,23 @@ public class Q10997_LoserPriest1 extends Quest
 	// NPCs
 	private static final int ZIMENF = 30538;
 	private static final int GERALD = 30650;
+	
 	// Items
 	private static final int HUNTER_TARANTULA_VENOM = 90297;
 	private static final int PLUNDER_TARANTULA_KIDNEY = 90298;
 	private static final int MAINTENANCE_REQUEST = 90296;
+	
 	// Rewards
 	private static final int SCROLL_OF_ESCAPE = 10650;
 	private static final int HEALING_POTION = 1073;
 	private static final int MP_RECOVERY_POTION = 90310;
 	private static final int SOULSHOTS_NO_GRADE = 5789;
 	private static final int SPIRITSHOT_NO_GRADE = 5790;
+	
 	// Monsters
 	private static final int HUNTER_TARANTULA = 20403;
 	private static final int PLUNDER_TARANTULA = 20508;
+	
 	// Misc
 	private static final int MIN_LEVEL = 15;
 	private static final int MAX_LEVEL = 20;
@@ -124,6 +128,7 @@ public class Q10997_LoserPriest1 extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -184,6 +189,7 @@ public class Q10997_LoserPriest1 extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

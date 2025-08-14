@@ -923,12 +923,12 @@
 		<set name="is_freightable" val="true" />
 		<set name="enchant_enabled" val="true" />
 		<set name="enchant_limit" val="10" />
-		<cond msgId="2453">
+		<conditions msgId="2453">
 			<player cloakStatus="true" />
-		</cond>
-		<cond>
+		</conditions>
+		<conditions>
 			<player level="80" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="mDef">40</stat>
 			<stat type="pDef">50</stat>
@@ -962,12 +962,12 @@
 		<set name="is_freightable" val="true" />
 		<set name="enchant_enabled" val="true" />
 		<set name="enchant_limit" val="10" />
-		<cond msgId="2453">
+		<conditions msgId="2453">
 			<player cloakStatus="true" />
-		</cond>
-		<cond>
+		</conditions>
+		<conditions>
 			<player level="80" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="mDef">40</stat>
 			<stat type="pDef">50</stat>
@@ -1001,12 +1001,12 @@
 		<set name="is_freightable" val="true" />
 		<set name="enchant_enabled" val="true" />
 		<set name="enchant_limit" val="10" />
-		<cond msgId="2453">
+		<conditions msgId="2453">
 			<player cloakStatus="true" />
-		</cond>
-		<cond>
+		</conditions>
+		<conditions>
 			<player level="80" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="mDef">40</stat>
 			<stat type="pDef">50</stat>
@@ -1040,12 +1040,12 @@
 		<set name="is_freightable" val="true" />
 		<set name="enchant_enabled" val="true" />
 		<set name="enchant_limit" val="10" />
-		<cond msgId="2453">
+		<conditions msgId="2453">
 			<player cloakStatus="true" />
-		</cond>
-		<cond>
+		</conditions>
+		<conditions>
 			<player level="80" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="mDef">40</stat>
 			<stat type="pDef">50</stat>
@@ -1078,12 +1078,12 @@
 		<set name="is_freightable" val="true" />
 		<set name="enchant_enabled" val="true" />
 		<set name="enchant_limit" val="20" />
-		<cond msgId="2453">
+		<conditions msgId="2453">
 			<player cloakStatus="true" />
-		</cond>
-		<cond>
+		</conditions>
+		<conditions>
 			<player level="80" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="mDef">80</stat>
 			<stat type="pDef">50</stat>
@@ -1125,12 +1125,12 @@
 		<set name="is_freightable" val="true" />
 		<set name="enchant_enabled" val="true" />
 		<set name="enchant_limit" val="20" />
-		<cond msgId="2453">
+		<conditions msgId="2453">
 			<player cloakStatus="true" />
-		</cond>
-		<cond>
+		</conditions>
+		<conditions>
 			<player level="80" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="mDef">80</stat>
 			<stat type="pDef">50</stat>
@@ -1172,12 +1172,12 @@
 		<set name="is_freightable" val="true" />
 		<set name="enchant_enabled" val="true" />
 		<set name="enchant_limit" val="20" />
-		<cond msgId="2453">
+		<conditions msgId="2453">
 			<player cloakStatus="true" />
-		</cond>
-		<cond>
+		</conditions>
+		<conditions>
 			<player level="80" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="mDef">80</stat>
 			<stat type="pDef">50</stat>
@@ -1219,12 +1219,12 @@
 		<set name="is_freightable" val="true" />
 		<set name="enchant_enabled" val="true" />
 		<set name="enchant_limit" val="20" />
-		<cond msgId="2453">
+		<conditions msgId="2453">
 			<player cloakStatus="true" />
-		</cond>
-		<cond>
+		</conditions>
+		<conditions>
 			<player level="80" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="mDef">80</stat>
 			<stat type="pDef">50</stat>

@@ -54,16 +54,20 @@ public class ListPartyWating extends ServerPacket
 				PartyMatchRoomList.getInstance().deleteRoom(room.getId());
 				continue;
 			}
+			
 			if ((_loc > 0) && (_loc != room.getLocation()))
 			{
 				continue;
 			}
+			
 			if ((_lim == 0) && ((_player.getLevel() < room.getMinLevel()) || (_player.getLevel() > room.getMaxLevel())))
 			{
 				continue;
 			}
+			
 			_rooms.add(room);
 		}
+		
 		final int size = _rooms.size();
 		
 		ServerPackets.PARTY_MATCH_LIST.writeId(this, buffer);
@@ -75,6 +79,7 @@ public class ListPartyWating extends ServerPacket
 		{
 			buffer.writeInt(0);
 		}
+		
 		buffer.writeInt(_rooms.size());
 		for (PartyMatchRoom room : _rooms)
 		{

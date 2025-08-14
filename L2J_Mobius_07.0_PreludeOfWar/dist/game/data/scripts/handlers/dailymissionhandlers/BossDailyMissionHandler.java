@@ -22,9 +22,9 @@ import org.l2jmobius.Config;
 import org.l2jmobius.gameserver.handler.AbstractDailyMissionHandler;
 import org.l2jmobius.gameserver.model.actor.Attackable;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.actor.enums.player.DailyMissionDataHolder;
-import org.l2jmobius.gameserver.model.actor.enums.player.DailyMissionPlayerEntry;
 import org.l2jmobius.gameserver.model.actor.enums.player.DailyMissionStatus;
+import org.l2jmobius.gameserver.model.actor.holders.player.DailyMissionDataHolder;
+import org.l2jmobius.gameserver.model.actor.holders.player.DailyMissionPlayerEntry;
 import org.l2jmobius.gameserver.model.events.Containers;
 import org.l2jmobius.gameserver.model.events.EventType;
 import org.l2jmobius.gameserver.model.events.holders.actor.npc.OnAttackableKill;
@@ -74,6 +74,7 @@ public class BossDailyMissionHandler extends AbstractDailyMissionHandler
 				}
 			}
 		}
+		
 		return false;
 	}
 	
@@ -112,6 +113,7 @@ public class BossDailyMissionHandler extends AbstractDailyMissionHandler
 			{
 				entry.setStatus(DailyMissionStatus.AVAILABLE);
 			}
+			
 			storePlayerEntry(entry);
 		}
 	}

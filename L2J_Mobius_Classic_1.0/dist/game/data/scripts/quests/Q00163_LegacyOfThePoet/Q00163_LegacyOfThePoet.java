@@ -32,19 +32,23 @@ public class Q00163_LegacyOfThePoet extends Quest
 {
 	// NPC
 	private static final int STARDEN = 30220;
+	
 	// Monsters
 	private static final int[] MONSTERS =
 	{
 		20372, // Baraq Orc Fighter
 		20373, // Baraq Orc Warrior Leader
 	};
+	
 	// Items
 	private static final int RUMIELS_1ST_POEM = 1038;
 	private static final int RUMIELS_2ND_POEM = 1039;
 	private static final int RUMIELS_3RD_POEM = 1040;
 	private static final int RUMIELS_4TH_POEM = 1041;
+	
 	// Reward
 	private static final int LEATHER_SHIRT = 22;
+	
 	// Misc
 	private static final int MIN_LEVEL = 11;
 	
@@ -80,6 +84,7 @@ public class Q00163_LegacyOfThePoet extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -101,6 +106,7 @@ public class Q00163_LegacyOfThePoet extends Quest
 					playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 				}
 			}
+			
 			if ((getRandom(10) > 7) && !hasQuestItems(killer, RUMIELS_2ND_POEM))
 			{
 				giveItems(killer, RUMIELS_2ND_POEM, 1);
@@ -113,6 +119,7 @@ public class Q00163_LegacyOfThePoet extends Quest
 					playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 				}
 			}
+			
 			if ((getRandom(10) > 7) && !hasQuestItems(killer, RUMIELS_3RD_POEM))
 			{
 				giveItems(killer, RUMIELS_3RD_POEM, 1);
@@ -125,6 +132,7 @@ public class Q00163_LegacyOfThePoet extends Quest
 					playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 				}
 			}
+			
 			if ((getRandom(10) > 5) && !hasQuestItems(killer, RUMIELS_4TH_POEM))
 			{
 				giveItems(killer, RUMIELS_4TH_POEM, 1);
@@ -172,6 +180,7 @@ public class Q00163_LegacyOfThePoet extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

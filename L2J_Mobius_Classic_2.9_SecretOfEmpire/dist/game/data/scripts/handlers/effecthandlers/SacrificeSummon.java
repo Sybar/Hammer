@@ -60,6 +60,7 @@ public class SacrificeSummon extends AbstractEffect
 			
 			summon.doDie(summon);
 		}
+		
 		effector.sendPacket(SystemMessageId.YOUR_SERVITOR_HAS_VANISHED_YOU_LL_NEED_TO_SUMMON_A_NEW_ONE);
 	}
 }

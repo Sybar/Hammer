@@ -12,7 +12,7 @@
 									<xs:attribute name="val" type="xs:string" use="required" />
 								</xs:complexType>
 							</xs:element>
-							<xs:element minOccurs="0" name="cond">
+							<xs:element minOccurs="0" name="conditions">
 								<xs:complexType>
 									<xs:sequence>
 										<xs:element minOccurs="0" name="and">
@@ -46,7 +46,7 @@
 									<xs:attribute name="addName" type="xs:unsignedByte" use="optional" />
 								</xs:complexType>
 							</xs:element>
-							<xs:element minOccurs="0" name="for">
+							<xs:element minOccurs="0" name="stats">
 								<xs:complexType>
 									<xs:sequence>
 										<xs:choice maxOccurs="unbounded">

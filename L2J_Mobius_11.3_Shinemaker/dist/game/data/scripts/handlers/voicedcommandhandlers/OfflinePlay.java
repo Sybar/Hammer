@@ -79,7 +79,7 @@ public class OfflinePlay implements IVoicedCommandHandler
 	}
 	
 	@Override
-	public boolean useVoicedCommand(String command, Player player, String params)
+	public boolean onCommand(String command, Player player, String params)
 	{
 		if (!Config.ENABLE_OFFLINE_PLAY_COMMAND || (player == null))
 		{
@@ -97,6 +97,7 @@ public class OfflinePlay implements IVoicedCommandHandler
 					player.sendPacket(ActionFailed.STATIC_PACKET);
 					return false;
 				}
+				
 				if (!player.isAutoPlaying())
 				{
 					player.sendPacket(new ExShowScreenMessage("You need to enable auto play before exiting.", 5000));
@@ -104,6 +105,7 @@ public class OfflinePlay implements IVoicedCommandHandler
 					player.sendPacket(ActionFailed.STATIC_PACKET);
 					return false;
 				}
+				
 				if (player.getAutoUseSettings().getAutoBuffs().isEmpty() && player.getAutoUseSettings().getAutoSkills().isEmpty())
 				{
 					player.sendPacket(new ExShowScreenMessage("Please use .skills to select used skills.", 5000));
@@ -111,6 +113,7 @@ public class OfflinePlay implements IVoicedCommandHandler
 					player.sendPacket(ActionFailed.STATIC_PACKET);
 					return false;
 				}
+				
 				if (player.isInVehicle() || player.isInsideZone(ZoneId.PEACE))
 				{
 					player.sendPacket(new ExShowScreenMessage("You may not log out from this location.", 5000));
@@ -118,6 +121,7 @@ public class OfflinePlay implements IVoicedCommandHandler
 					player.sendPacket(ActionFailed.STATIC_PACKET);
 					return false;
 				}
+				
 				if (player.isRegisteredOnEvent())
 				{
 					player.sendPacket(new ExShowScreenMessage("Cannot use this command while registered on an event.", 5000));
@@ -142,6 +146,7 @@ public class OfflinePlay implements IVoicedCommandHandler
 						skills.add(skill);
 					}
 				}
+				
 				if (player.hasServitors())
 				{
 					for (Summon summon : player.getServitors().values())
@@ -155,6 +160,7 @@ public class OfflinePlay implements IVoicedCommandHandler
 						}
 					}
 				}
+				
 				if (player.hasPet())
 				{
 					for (Skill skill : player.getPet().getAllSkills())
@@ -279,14 +285,16 @@ public class OfflinePlay implements IVoicedCommandHandler
 								}
 							}
 						}
+						
 						if ((knownSkill == null) && player.hasPet())
 						{
 							knownSkill = player.getPet().getKnownSkill(skillId);
 						}
 					}
+					
 					if (Config.ENABLE_AUTO_SKILL && (knownSkill != null) && skills.contains(knownSkill))
 					{
-						if (knownSkill.isBad())
+						if (knownSkill.hasNegativeEffect())
 						{
 							if (player.getAutoUseSettings().getAutoSkills().contains(skillId))
 							{
@@ -380,7 +388,7 @@ public class OfflinePlay implements IVoicedCommandHandler
 	}
 	
 	@Override
-	public String[] getVoicedCommandList()
+	public String[] getCommandList()
 	{
 		return VOICED_COMMANDS;
 	}

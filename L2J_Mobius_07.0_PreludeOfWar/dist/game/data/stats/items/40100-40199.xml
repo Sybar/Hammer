@@ -1051,9 +1051,9 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="etcitem_type" val="SCROLL" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="18105" level="1" /> <!-- Scroll of Escape: Faeron Village -->
 		</skills>

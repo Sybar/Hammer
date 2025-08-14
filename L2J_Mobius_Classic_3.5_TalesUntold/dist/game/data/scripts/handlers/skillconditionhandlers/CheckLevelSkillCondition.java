@@ -59,6 +59,7 @@ public class CheckLevelSkillCondition implements ISkillCondition
 				break;
 			}
 		}
+		
 		return false;
 	}
 }

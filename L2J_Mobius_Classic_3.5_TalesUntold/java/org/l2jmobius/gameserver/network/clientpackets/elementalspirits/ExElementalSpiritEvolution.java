@@ -74,6 +74,7 @@ public class ExElementalSpiritEvolution extends ClientPacket
 			userInfo.addComponentType(UserInfoType.ATT_SPIRITS);
 			player.sendPacket(userInfo);
 		}
+		
 		player.sendPacket(new ElementalSpiritEvolution(player, _type, canEvolve));
 	}
 	
@@ -84,21 +85,25 @@ public class ExElementalSpiritEvolution extends ClientPacket
 			player.sendPacket(SystemMessageId.CANNOT_EVOLVE_ABSORB_EXTRACT_WHILE_USING_THE_PRIVATE_STORE_WORKSHOP);
 			return false;
 		}
+		
 		if (player.isInBattle())
 		{
 			player.sendPacket(SystemMessageId.CANNOT_EVOLVE_DURING_BATTLE);
 			return false;
 		}
+		
 		if (!spirit.canEvolve())
 		{
 			player.sendPacket(SystemMessageId.SPIRIT_CANNOT_BE_EVOLVED);
 			return false;
 		}
+		
 		if (!consumeEvolveItems(player, spirit))
 		{
 			player.sendPacket(SystemMessageId.YOU_DO_NOT_HAVE_THE_MATERIALS_REQUIRED_TO_EVOLVE);
 			return false;
 		}
+		
 		return true;
 	}
 	
@@ -120,6 +125,7 @@ public class ExElementalSpiritEvolution extends ClientPacket
 			{
 				player.destroyItemByItemId(ItemProcessType.FEE, itemHolder.getId(), itemHolder.getCount(), player, true);
 			}
+			
 			return true;
 		}
 		finally

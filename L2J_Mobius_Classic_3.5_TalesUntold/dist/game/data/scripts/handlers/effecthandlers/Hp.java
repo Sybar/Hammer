@@ -100,6 +100,7 @@ public class Hp extends AbstractEffect
 			{
 				sm = new SystemMessage(SystemMessageId.S1_HP_HAS_BEEN_RESTORED);
 			}
+			
 			sm.addInt((int) amount);
 			effected.sendPacket(sm);
 		}

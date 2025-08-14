@@ -37,11 +37,14 @@ public class Q10846_BloodyBattleMeetingTheCommander extends Quest
 	// NPCs
 	private static final int HURAK = 34064;
 	private static final int DEVIANNE = 34323;
+	
 	// MiniBoss
 	private static final int BURNSTEIN = 26136; // Burnstein
+	
 	// Item
 	private static final int RUNE_STONE = 39738;
 	private static final int SCROLL_OF_ESCAPE_BLACKBIRD_CAMPSITE = 46158;
+	
 	// Misc
 	private static final int MIN_LEVEL = 101;
 	
@@ -52,6 +55,7 @@ public class Q10846_BloodyBattleMeetingTheCommander extends Quest
 		addTalkId(HURAK, DEVIANNE);
 		addKillId(BURNSTEIN);
 		addCondMinLevel(MIN_LEVEL, "34064-00.htm");
+		
 		// addCondCompletedQuest(Q10845_BloodyBattleRescueTheSmiths.class.getSimpleName(), "34064-00.htm");
 		addFactionLevel(Faction.KINGDOM_ROYAL_GUARDS, 4, "34064-00.htm");
 	}
@@ -95,6 +99,7 @@ public class Q10846_BloodyBattleMeetingTheCommander extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -142,6 +147,7 @@ public class Q10846_BloodyBattleMeetingTheCommander extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

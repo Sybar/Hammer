@@ -95,6 +95,7 @@ public class Flowers extends AbstractNpcAI
 				{
 					player.setCurrentHp(player.getCurrentHp() - REQUIRED_HP);
 					player.setSp(player.getSp() - REQUIRED_SP);
+					
 					// Messages
 					SystemMessage sm = new SystemMessage(SystemMessageId.YOUR_SP_HAS_DECREASED_BY_S1);
 					sm.addLong(REQUIRED_SP);
@@ -105,6 +106,7 @@ public class Flowers extends AbstractNpcAI
 					player.sendPacket(sm2);
 					npc.onDecay();
 					htmltext = npc.getId() + "-01.html";
+					
 					// Notify to scripts.
 					if (EventDispatcher.getInstance().hasListener(EventType.ON_CONQUEST_FLOWER_COLLECT))
 					{
@@ -114,11 +116,13 @@ public class Flowers extends AbstractNpcAI
 					if (player.isInventoryUnder90(false))
 					{
 						final int random = getRandom(100);
+						
 						// Reward only from Fire Flower
 						if ((random < DIVINE_FIRE_CHANCE) && (npc.getId() == FIRE_FLOWER))
 						{
 							giveItems(player, DIVINE_FIRE, 1);
 						}
+						
 						// Rewards from all flowers
 						if (random < 5) // 5% chance
 						{
@@ -160,6 +164,7 @@ public class Flowers extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

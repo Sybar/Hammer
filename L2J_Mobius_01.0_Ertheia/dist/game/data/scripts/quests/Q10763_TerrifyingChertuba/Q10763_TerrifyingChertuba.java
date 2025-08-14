@@ -33,11 +33,14 @@ public class Q10763_TerrifyingChertuba extends Quest
 {
 	// NPC
 	private static final int VORBOS = 33966;
+	
 	// Monsters
 	private static final int CHERTUBA_MIRAGE = 23421;
 	private static final int CHERTUBA_ILLUSION = 23422;
+	
 	// Items
 	private static final int MAGIC_CHAIN_KEY = 39489;
+	
 	// Misc
 	private static final int MIN_LEVEL = 34;
 	
@@ -89,6 +92,7 @@ public class Q10763_TerrifyingChertuba extends Quest
 				htmltext = null;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -115,6 +119,7 @@ public class Q10763_TerrifyingChertuba extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

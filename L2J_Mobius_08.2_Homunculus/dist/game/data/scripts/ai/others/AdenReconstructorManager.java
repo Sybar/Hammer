@@ -67,6 +67,7 @@ public class AdenReconstructorManager extends AbstractNpcAI
 				}
 			}
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	

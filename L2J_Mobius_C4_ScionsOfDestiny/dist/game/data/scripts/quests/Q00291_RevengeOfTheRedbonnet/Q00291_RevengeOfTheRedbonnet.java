@@ -31,6 +31,7 @@ public class Q00291_RevengeOfTheRedbonnet extends Quest
 {
 	// Quest items
 	private static final int BLACK_WOLF_PELT = 1482;
+	
 	// Rewards
 	private static final int SCROLL_OF_ESCAPE = 736;
 	private static final int GRANDMA_PEARL = 1502;

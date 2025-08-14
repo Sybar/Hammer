@@ -155,6 +155,7 @@ public class EquipmentUpgradeData implements IXmlReader
 					bonusItems.add(new ItemEnchantHolder(bonusId, Integer.parseInt(bonus.split(",")[1])));
 				}
 			}
+			
 			final int bonusChance = set.getInt("chance_bonus", 0);
 			
 			if ((requiredItem != null) || !resultItems.isEmpty() || !materialList.isEmpty())

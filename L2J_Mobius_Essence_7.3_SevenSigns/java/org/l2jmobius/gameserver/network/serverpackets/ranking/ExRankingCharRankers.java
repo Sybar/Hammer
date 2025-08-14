@@ -126,6 +126,7 @@ public class ExRankingCharRankers extends ServerPacket
 								{
 									buffer.writeInt(last - first);
 								}
+								
 								for (int id2 = first; id2 <= last; id2++)
 								{
 									final StatSet plr = _playerList.get(id2);
@@ -152,6 +153,7 @@ public class ExRankingCharRankers extends ServerPacket
 								}
 							}
 						}
+						
 						if (!found)
 						{
 							buffer.writeInt(0);
@@ -172,6 +174,7 @@ public class ExRankingCharRankers extends ServerPacket
 								count++;
 							}
 						}
+						
 						buffer.writeInt(count > 100 ? 100 : count);
 						int i = 1;
 						for (Integer id : _playerList.keySet())
@@ -199,6 +202,7 @@ public class ExRankingCharRankers extends ServerPacket
 											j++;
 										}
 									}
+									
 									for (Integer id2 : snapshotRaceList.keySet())
 									{
 										final StatSet snapshot = snapshotRaceList.get(id2);
@@ -216,6 +220,7 @@ public class ExRankingCharRankers extends ServerPacket
 									buffer.writeInt(i);
 									buffer.writeInt(i); // nClassRank_Snapshot
 								}
+								
 								i++;
 							}
 						}
@@ -234,6 +239,7 @@ public class ExRankingCharRankers extends ServerPacket
 								i++;
 							}
 						}
+						
 						for (Integer id : raceList.keySet())
 						{
 							final StatSet player = raceList.get(id);
@@ -250,6 +256,7 @@ public class ExRankingCharRankers extends ServerPacket
 								{
 									buffer.writeInt(last - first);
 								}
+								
 								for (int id2 = first; id2 <= last; id2++)
 								{
 									final StatSet plr = raceList.get(id2);
@@ -266,6 +273,7 @@ public class ExRankingCharRankers extends ServerPacket
 								}
 							}
 						}
+						
 						if (!found)
 						{
 							buffer.writeInt(0);
@@ -289,6 +297,7 @@ public class ExRankingCharRankers extends ServerPacket
 								i++;
 							}
 						}
+						
 						buffer.writeInt(clanList.size());
 						for (Integer id : clanList.keySet())
 						{
@@ -345,6 +354,7 @@ public class ExRankingCharRankers extends ServerPacket
 								}
 							}
 						}
+						
 						friendList.add(_player.getObjectId());
 						buffer.writeInt(count);
 						for (int id : _playerList.keySet())
@@ -394,6 +404,7 @@ public class ExRankingCharRankers extends ServerPacket
 						{
 							buffer.writeSizedString("");
 						}
+						
 						buffer.writeInt(Config.SERVER_ID);
 						buffer.writeInt(_player.getStat().getBaseLevel());
 						buffer.writeInt(_player.getBaseClass());
@@ -434,6 +445,7 @@ public class ExRankingCharRankers extends ServerPacket
 								count++;
 							}
 						}
+						
 						buffer.writeInt(count > 100 ? 100 : count);
 						int i = 1;
 						for (Integer id : _playerList.keySet())
@@ -461,6 +473,7 @@ public class ExRankingCharRankers extends ServerPacket
 											j++;
 										}
 									}
+									
 									for (Integer id2 : snapshotClassList.keySet())
 									{
 										final StatSet snapshot = snapshotClassList.get(id2);
@@ -478,6 +491,7 @@ public class ExRankingCharRankers extends ServerPacket
 									buffer.writeInt(i);
 									buffer.writeInt(i); // nClassRank_Snapshot?
 								}
+								
 								i++;
 							}
 						}
@@ -514,6 +528,7 @@ public class ExRankingCharRankers extends ServerPacket
 								{
 									buffer.writeInt(last - first);
 								}
+								
 								for (int id2 = first; id2 <= last; id2++)
 								{
 									final StatSet plr = classList.get(id2);
@@ -530,6 +545,7 @@ public class ExRankingCharRankers extends ServerPacket
 								}
 							}
 						}
+						
 						if (!found)
 						{
 							buffer.writeInt(0);

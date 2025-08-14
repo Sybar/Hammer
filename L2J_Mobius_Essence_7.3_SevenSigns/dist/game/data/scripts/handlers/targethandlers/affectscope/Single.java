@@ -43,6 +43,7 @@ public class Single implements IAffectScopeHandler
 			{
 				action.accept(creature); // Return yourself to mark that effects can use your current skill's world position.
 			}
+			
 			if (((affectObject == null) || affectObject.checkAffectedObject(creature, target.asCreature())))
 			{
 				action.accept(target); // Return yourself to mark that effects can use your current skill's world position.

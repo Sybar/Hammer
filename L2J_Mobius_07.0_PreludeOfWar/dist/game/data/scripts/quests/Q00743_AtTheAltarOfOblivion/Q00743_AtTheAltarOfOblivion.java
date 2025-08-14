@@ -46,6 +46,7 @@ public class Q00743_AtTheAltarOfOblivion extends Quest
 {
 	// NPC
 	private static final int FERIN = 34054;
+	
 	// Monsters
 	private static final int HARPE = 23561;
 	private static final int HARPE1 = 23562;
@@ -65,10 +66,13 @@ public class Q00743_AtTheAltarOfOblivion extends Quest
 	private static final int FURY_KERBEROS_LEGER = 23545;
 	private static final int FURY_KERBEROS_NERO_N = 23558; // (night)
 	private static final int FURY_KERBEROS_NERO = 23549;
+	
 	// Items
 	private static final int ESSENCE_OF_EVIL_THOUGHTS = 48006;
+	
 	// Reward
 	private static final int WIND_CRYSTAL = 47259;
+	
 	// Misc
 	private static final int MIN_LEVEL = 102;
 	
@@ -119,6 +123,7 @@ public class Q00743_AtTheAltarOfOblivion extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -160,6 +165,7 @@ public class Q00743_AtTheAltarOfOblivion extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

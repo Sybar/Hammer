@@ -158,6 +158,7 @@ public class PlayerInventory extends Inventory
 				result.add(item);
 			}
 		}
+		
 		return result;
 	}
 	
@@ -177,6 +178,7 @@ public class PlayerInventory extends Inventory
 				result.add(item);
 			}
 		}
+		
 		return result;
 	}
 	
@@ -207,6 +209,7 @@ public class PlayerInventory extends Inventory
 				result.add(item);
 			}
 		}
+		
 		return result;
 	}
 	
@@ -233,8 +236,10 @@ public class PlayerInventory extends Inventory
 				}
 				continue;
 			}
+			
 			result.add(item);
 		}
+		
 		return result;
 	}
 	
@@ -257,6 +262,7 @@ public class PlayerInventory extends Inventory
 				}
 			}
 		}
+		
 		return result;
 	}
 	
@@ -282,6 +288,7 @@ public class PlayerInventory extends Inventory
 				break;
 			}
 		}
+		
 		if (notAllEquipped)
 		{
 			final Item adjItem = getItemByItemId(item.getItem().getId());
@@ -343,6 +350,7 @@ public class PlayerInventory extends Inventory
 		{
 			return destroyItemByItemId(process, ADENA_ID, count, actor, reference) != null;
 		}
+		
 		return false;
 	}
 	
@@ -360,6 +368,7 @@ public class PlayerInventory extends Inventory
 		{
 			return destroyItemByItemId(process, BEAUTY_TICKET_ID, count, actor, reference) != null;
 		}
+		
 		return false;
 	}
 	
@@ -432,6 +441,7 @@ public class PlayerInventory extends Inventory
 				}
 			}
 		}
+		
 		return addedItem;
 	}
 	
@@ -492,6 +502,7 @@ public class PlayerInventory extends Inventory
 					{
 						playerIU.addNewItem(item);
 					}
+					
 					actor.sendInventoryUpdate(playerIU);
 				}
 				
@@ -502,6 +513,7 @@ public class PlayerInventory extends Inventory
 				}
 			}
 		}
+		
 		return item;
 	}
 	
@@ -547,6 +559,7 @@ public class PlayerInventory extends Inventory
 		{
 			actor.sendItemList(false);
 		}
+		
 		return detachedItem;
 	}
 	
@@ -865,6 +878,7 @@ public class PlayerInventory extends Inventory
 		{
 			LOGGER.log(Level.WARNING, "Could not restore inventory: " + e.getMessage(), e);
 		}
+		
 		return paperdoll;
 	}
 	
@@ -887,6 +901,7 @@ public class PlayerInventory extends Inventory
 				{
 					requiredSlots++;
 				}
+				
 				lootWeight += item.getWeight();
 			}
 		}
@@ -900,6 +915,7 @@ public class PlayerInventory extends Inventory
 				_owner.sendPacket(SystemMessageId.WEIGHT_AND_VOLUME_LIMIT_HAVE_BEEN_EXCEEDED_THAT_SKILL_IS_CURRENTLY_UNAVAILABLE);
 			}
 		}
+		
 		return inventoryStatusOK;
 	}
 	
@@ -915,6 +931,7 @@ public class PlayerInventory extends Inventory
 		{
 			slots++;
 		}
+		
 		return validateCapacity(slots, item.isQuestItem());
 	}
 	
@@ -931,6 +948,7 @@ public class PlayerInventory extends Inventory
 		{
 			slots++;
 		}
+		
 		return validateCapacity(slots, ItemData.getInstance().getTemplate(itemId).isQuestItem());
 	}
 	
@@ -953,6 +971,7 @@ public class PlayerInventory extends Inventory
 		{
 			return true;
 		}
+		
 		return ((_totalWeight + weight) <= _owner.getMaxLoad());
 	}
 	
@@ -1039,6 +1058,7 @@ public class PlayerInventory extends Inventory
 							return true;
 						}
 					}
+					
 					return false;
 				}
 				case BLACKLIST:
@@ -1050,10 +1070,12 @@ public class PlayerInventory extends Inventory
 							return false;
 						}
 					}
+					
 					return true;
 				}
 			}
 		}
+		
 		return true;
 	}
 	
@@ -1135,6 +1157,7 @@ public class PlayerInventory extends Inventory
 					{
 						item.changeCount(ItemProcessType.NONE, -1, creator, reference);
 					}
+					
 					item.setLastChange(Item.MODIFIED);
 					refreshWeight();
 					iu.addModifiedItem(item);
@@ -1185,6 +1208,7 @@ public class PlayerInventory extends Inventory
 				}
 			}
 		}
+		
 		return false;
 	}
 }

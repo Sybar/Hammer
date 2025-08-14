@@ -36,12 +36,14 @@ public enum InstanceType
 	Door(Creature),
 	TerrainObject(Npc),
 	EffectPoint(Npc),
+	
 	// Summons, Pets, Decoys and Traps
 	Servitor(Summon),
 	Pet(Summon),
 	BabyPet(Pet),
 	Decoy(Creature),
 	Trap(Npc),
+	
 	// Attackable
 	Attackable(Npc),
 	Guard(Attackable),
@@ -55,28 +57,34 @@ public enum InstanceType
 	RiftInvader(Monster),
 	RaidBoss(Monster),
 	GrandBoss(RaidBoss),
+	
 	// FlyMobs
 	FlyNpc(Folk),
 	FlyMonster(Monster),
 	FlyRaidBoss(RaidBoss),
 	FlyTerrainObject(Npc),
+	
 	// Festival
 	FestivalGuide(Npc),
 	FestivalMonster(Monster),
+	
 	// Vehicles
 	Vehicle(Creature),
 	Boat(Vehicle),
+	
 	// Siege
 	Defender(Attackable),
 	Artefact(Folk),
 	ControlTower(Npc),
 	FlameTower(Npc),
 	SiegeFlag(Npc),
+	
 	// Seven Signs
 	SignsPriest(Npc),
 	DawnPriest(SignsPriest),
 	DuskPriest(SignsPriest),
 	DungeonGatekeeper(Npc),
+	
 	// City NPCs
 	Adventurer(Folk),
 	Auctioneer(Npc),
@@ -89,11 +97,13 @@ public enum InstanceType
 	Teleporter(Npc),
 	Trainer(Folk),
 	VillageMaster(Folk),
+	
 	// Doormen
 	Doorman(Folk),
 	CastleDoorman(Doorman),
 	FortDoorman(Doorman),
 	ClanHallDoorman(Doorman),
+	
 	// Custom
 	ClassMaster(Folk),
 	SchemeBuffer(Npc),
@@ -157,6 +167,7 @@ public enum InstanceType
 				return true;
 			}
 		}
+		
 		return false;
 	}
 }

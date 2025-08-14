@@ -61,6 +61,7 @@ class NpcBufferAI implements Runnable
 			{
 				LOGGER.warning("Requested non existing skill level: " + level + " for id: " + _skillData.getSkill().getId());
 			}
+			
 			return skill;
 		}
 		

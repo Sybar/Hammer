@@ -40,7 +40,7 @@ public class AdminAugment implements IAdminCommandHandler
 	};
 	
 	@Override
-	public boolean useAdminCommand(String command, Player activeChar)
+	public boolean onCommand(String command, Player activeChar)
 	{
 		final String[] splitCommand = command.trim().split(" ");
 		if (splitCommand.length < 4)
@@ -100,6 +100,7 @@ public class AdminAugment implements IAdminCommandHandler
 			{
 				newVariation = new VariationInstance(0, OptionData.getInstance().getOptions(oldVariation.getOption1Id()), option);
 			}
+			
 			item.removeAugmentation();
 		}
 		else if (firstSlot)
@@ -117,7 +118,7 @@ public class AdminAugment implements IAdminCommandHandler
 	}
 	
 	@Override
-	public String[] getAdminCommandList()
+	public String[] getCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}

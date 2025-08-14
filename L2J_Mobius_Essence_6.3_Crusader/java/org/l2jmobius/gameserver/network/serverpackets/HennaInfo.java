@@ -77,6 +77,7 @@ public class HennaInfo extends ServerPacket
 			buffer.writeInt(henna.getDyeId());
 			buffer.writeInt(henna.isAllowedClass(_player));
 		}
+		
 		buffer.writeInt(0); // Premium Slot Dye ID
 		buffer.writeInt(0); // Premium Slot Dye Time Left
 		buffer.writeInt(0); // Premium Slot Dye ID isValid

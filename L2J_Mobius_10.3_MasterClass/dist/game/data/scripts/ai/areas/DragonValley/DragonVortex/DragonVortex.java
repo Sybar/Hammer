@@ -29,6 +29,7 @@ public class DragonVortex extends AbstractNpcAI
 {
 	// NPC
 	private static final int VORTEX = 32871;
+	
 	// Raids
 	private static final int[] RAIDS =
 	{
@@ -40,8 +41,10 @@ public class DragonVortex extends AbstractNpcAI
 		25723, // Spike Slasher
 		25724, // Muscle Bomber
 	};
+	
 	// Item
 	private static final int LARGE_DRAGON_BONE = 17248;
+	
 	// Misc
 	private static final int DESPAWN_DELAY = 1800000; // 30min
 	
@@ -97,6 +100,7 @@ public class DragonVortex extends AbstractNpcAI
 			{
 				raid = RAIDS[0]; // Emerald Horn
 			}
+			
 			addSpawn(raid, npc.getX() + getRandom(-500, 500), npc.getY() + getRandom(-500, 500), npc.getZ() + 20, 0, false, DESPAWN_DELAY, true);
 			startQuestTimer("RESET", 60000, npc, null);
 		}
@@ -104,6 +108,7 @@ public class DragonVortex extends AbstractNpcAI
 		{
 			npc.setScriptValue(0);
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	

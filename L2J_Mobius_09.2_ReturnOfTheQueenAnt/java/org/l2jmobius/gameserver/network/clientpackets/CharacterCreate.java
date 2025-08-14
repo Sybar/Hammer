@@ -236,6 +236,7 @@ public class CharacterCreate extends ClientPacket
 						client.sendPacket(new CharCreateFail(CharCreateFail.REASON_CREATION_FAILED));
 						return;
 					}
+					
 					if (!_isFemale)
 					{
 						client.sendPacket(new CharCreateFail(CharCreateFail.REASON_CREATION_FAILED));
@@ -244,6 +245,7 @@ public class CharacterCreate extends ClientPacket
 					break;
 				}
 			}
+			
 			newChar = Player.create(template, client.getAccountName(), _name, new PlayerAppearance(_face, _hairColor, _hairStyle, _isFemale));
 		}
 		
@@ -287,16 +289,19 @@ public class CharacterCreate extends ClientPacket
 			final Location createLoc = template.getCreationPoint();
 			newChar.setXYZInvisible(createLoc.getX(), createLoc.getY(), createLoc.getZ());
 		}
-		newChar.setTitle("");
+		
+		newChar.setTitle(Config.ENABLE_CUSTOM_STARTING_TITLE ? Config.CUSTOM_STARTING_TITLE : "");
 		
 		if (Config.ENABLE_VITALITY)
 		{
 			newChar.setVitalityPoints(Math.min(Config.STARTING_VITALITY_POINTS, PlayerStat.MAX_VITALITY_POINTS), true);
 		}
+		
 		if (Config.STARTING_LEVEL > 1)
 		{
 			newChar.getStat().addLevel(Config.STARTING_LEVEL - 1);
 		}
+		
 		if (Config.STARTING_SP > 0)
 		{
 			newChar.getStat().addSp(Config.STARTING_SP);
@@ -339,7 +344,8 @@ public class CharacterCreate extends ClientPacket
 		{
 			newChar.getVariables().set(PlayerVariables.INTRO_VIDEO, true);
 		}
-		Disconnection.of(client, newChar).storeMe().deleteMe();
+		
+		Disconnection.of(client, newChar).storeAndDelete();
 		
 		final CharSelectionInfo cl = new CharSelectionInfo(client.getAccountName(), client.getSessionId().playOkID1);
 		client.setCharSelection(cl.getCharInfo());

@@ -34,6 +34,7 @@ public class Q00347_GoGetTheCalculator extends Quest
 	private static final int SILVERA = 30527;
 	private static final int SPIRON = 30532;
 	private static final int BALANKI = 30533;
+	
 	// Items
 	private static final int GEMSTONE_BEAST_CRYSTAL = 4286;
 	private static final int CALCULATOR_QUEST = 4285;

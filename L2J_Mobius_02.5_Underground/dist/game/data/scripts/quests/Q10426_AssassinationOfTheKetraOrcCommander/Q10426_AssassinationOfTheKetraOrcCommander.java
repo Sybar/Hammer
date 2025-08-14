@@ -39,8 +39,10 @@ public class Q10426_AssassinationOfTheKetraOrcCommander extends Quest
 	// NPCs
 	private static final int LUGONNES = 33852;
 	private static final int COMMANDER_TAYR = 27500;
+	
 	// Items
 	private static final int EAS = 26353; // Scroll: Enchant Armor (S-grade)
+	
 	// Misc
 	private static final int MIN_LEVEL = 76;
 	private static final int MAX_LEVEL = 80;
@@ -100,11 +102,13 @@ public class Q10426_AssassinationOfTheKetraOrcCommander extends Quest
 					{
 						addExpAndSp(player, 7_665_840, 1839);
 					}
+					
 					htmltext = "33852-07.html";
 				}
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -131,6 +135,7 @@ public class Q10426_AssassinationOfTheKetraOrcCommander extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

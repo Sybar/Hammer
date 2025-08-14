@@ -64,6 +64,7 @@ public class OpHomeSkillCondition implements ISkillCondition
 				}
 			}
 		}
+		
 		return false;
 	}
 }

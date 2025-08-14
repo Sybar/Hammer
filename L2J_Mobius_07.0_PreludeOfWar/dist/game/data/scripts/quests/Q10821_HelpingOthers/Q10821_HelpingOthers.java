@@ -47,14 +47,17 @@ public class Q10821_HelpingOthers extends Quest
 {
 	// NPC
 	private static final int SIR_KRISTOF_RODEMAI = 30756;
+	
 	// Items
 	private static final int MENTEE_MARK = 33804;
 	private static final int DAICHIR_CERTIFICATE = 45628;
 	private static final int OLYMPIAD_MANAGER_CERTIFICATE = 45629;
 	private static final int ISHUMA_CERTIFICATE = 45630;
+	
 	// Rewards
 	private static final int SIR_KRISTOF_RODEMAI_CERTIFICATE = 45631;
 	private static final int SPELLBOOK_FAVOR_OF_THE_EXALTED = 45928;
+	
 	// Misc
 	private static final int MIN_LEVEL = 99;
 	private static final int MENTEE_MARKS_NEEDED = 45000;
@@ -115,10 +118,12 @@ public class Q10821_HelpingOthers extends Quest
 						{
 							htmltext = event;
 						}
+						
 						if (qs.isCond(1))
 						{
 							takeItems(player, MENTEE_MARK, MENTEE_MARKS_NEEDED);
 						}
+						
 						giveItems(player, SIR_KRISTOF_RODEMAI_CERTIFICATE, 1);
 						giveItems(player, SPELLBOOK_FAVOR_OF_THE_EXALTED, 1);
 						qs.exitQuest(false, true);
@@ -131,6 +136,7 @@ public class Q10821_HelpingOthers extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -183,6 +189,7 @@ public class Q10821_HelpingOthers extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -195,23 +202,28 @@ public class Q10821_HelpingOthers extends Quest
 		{
 			return;
 		}
+		
 		final QuestState qs = getQuestState(player, false);
 		if (qs == null)
 		{
 			return;
 		}
+		
 		if (player.getParty() == null)
 		{
 			return;
 		}
+		
 		if (player.getParty().getLeader() != player)
 		{
 			return;
 		}
+		
 		if (!event.getTarget().isRaid())
 		{
 			return;
 		}
+		
 		if (event.getTarget().isRaidMinion())
 		{
 			return;
@@ -239,6 +251,7 @@ public class Q10821_HelpingOthers extends Quest
 			holder.add(new NpcLogListHolder(KILLING_NPCSTRING_ID, true, qs.getMemoState()));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

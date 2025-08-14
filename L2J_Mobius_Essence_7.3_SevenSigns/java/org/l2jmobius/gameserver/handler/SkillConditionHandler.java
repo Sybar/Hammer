@@ -22,7 +22,7 @@ import java.util.function.Function;
 
 import org.l2jmobius.gameserver.model.StatSet;
 import org.l2jmobius.gameserver.model.skill.ISkillCondition;
-import org.l2jmobius.gameserver.scripting.ScriptEngineManager;
+import org.l2jmobius.gameserver.scripting.ScriptManager;
 
 /**
  * @author NosBit
@@ -50,7 +50,7 @@ public class SkillConditionHandler
 	{
 		try
 		{
-			ScriptEngineManager.getInstance().executeScript(ScriptEngineManager.SKILL_CONDITION_HANDLER_FILE);
+			ScriptManager.getInstance().executeScript(ScriptManager.SKILL_CONDITION_HANDLER_FILE);
 		}
 		catch (Exception e)
 		{

@@ -80,6 +80,7 @@ public class FuryKiku extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	

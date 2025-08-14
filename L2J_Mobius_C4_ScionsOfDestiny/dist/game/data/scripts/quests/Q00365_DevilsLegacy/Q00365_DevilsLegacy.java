@@ -33,6 +33,7 @@ public class Q00365_DevilsLegacy extends Quest
 	// NPCs
 	private static final int RANDOLF = 30095;
 	private static final int COLLOB = 30092;
+	
 	// Item
 	private static final int PIRATE_TREASURE_CHEST = 5873;
 	

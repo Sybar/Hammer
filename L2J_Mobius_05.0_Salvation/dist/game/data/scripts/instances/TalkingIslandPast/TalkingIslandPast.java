@@ -40,13 +40,16 @@ public class TalkingIslandPast extends AbstractInstance
 	private static final int ROXXY = 33749;
 	private static final int MYSTERIOUS_DARK_KNIGHT = 33751;
 	private static final int INVISIBLE_TI_NPC = 18919;
+	
 	// Misc
 	private static final int TEMPLATE_ID = 241;
+	
 	// Location
 	private static final Location TOWN_TELEPORT = new Location(210799, 13426, -3720);
 	private static final Location TI_LOC_1 = new Location(210779, 15547, -3732);
 	private static final Location TI_LOC_2 = new Location(209267, 14943, -3729);
 	private static final Location TI_LOC_3 = new Location(210332, 13156, -3729);
+	
 	// Zones
 	private static final int TALKING_ISLAND_ZONE = 12035;
 	
@@ -74,6 +77,7 @@ public class TalkingIslandPast extends AbstractInstance
 				teleportPlayerOut(player, world);
 			}
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	
@@ -89,6 +93,7 @@ public class TalkingIslandPast extends AbstractInstance
 			showOnScreenMsg(player, NpcStringId.A_MYSTERIOUS_DARK_KNIGHT_IS_HERE, ExShowScreenMessage.TOP_CENTER, 5000);
 			getTimers().addTimer("MSG", null, 5000, null, player, n -> showOnScreenMsg(n.getPlayer(), NpcStringId.TALK_TO_THE_MYSTERIOUS_DARK_KNIGHT, ExShowScreenMessage.TOP_CENTER, 5000));
 		}
+		
 		super.onEnter(player, instance, firstEnter);
 	}
 	

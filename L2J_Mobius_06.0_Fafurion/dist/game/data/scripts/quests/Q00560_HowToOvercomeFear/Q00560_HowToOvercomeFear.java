@@ -45,6 +45,7 @@ public final class Q00560_HowToOvercomeFear extends Quest
 {
 	// NPC
 	private static final int LUPICIA = 34489;
+	
 	// Monsters
 	private static final int[] FF_MINIONS =
 	{
@@ -61,8 +62,10 @@ public final class Q00560_HowToOvercomeFear extends Quest
 		24328, // Temple Guardian Priest
 		24329, // Starving Water Dragon
 	};
+	
 	// Item
 	private static final int FRAGMENT_OF_POWER = 80324;
+	
 	// Misc
 	private static final int MIN_LEVEL = 110;
 	private static final int REQUIRED_DROP_COUNT = 30;
@@ -97,6 +100,7 @@ public final class Q00560_HowToOvercomeFear extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -115,6 +119,7 @@ public final class Q00560_HowToOvercomeFear extends Quest
 					htmltext = getAlreadyCompletedMsg(player);
 					break;
 				}
+				
 				qs.setState(State.CREATED);
 				// fallthrou
 			}
@@ -134,10 +139,12 @@ public final class Q00560_HowToOvercomeFear extends Quest
 					htmltext = "rupicia_q0560_06.htm";
 					break;
 				}
+				
 				htmltext = "rupicia_q0560_07.htm";
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -180,6 +187,7 @@ public final class Q00560_HowToOvercomeFear extends Quest
 						}
 						break;
 					}
+					
 					getNoQuestLevelRewardMsg(player);
 					break;
 				}

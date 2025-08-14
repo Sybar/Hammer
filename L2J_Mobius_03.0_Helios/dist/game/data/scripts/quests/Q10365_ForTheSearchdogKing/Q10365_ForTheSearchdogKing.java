@@ -39,12 +39,15 @@ public class Q10365_ForTheSearchdogKing extends Quest
 	// NPCs
 	private static final int DEP = 33453;
 	private static final int SEBION = 32978;
+	
 	// MOBs
 	private static final int EYESAROCH = 23122;
 	private static final int CRITTER = 22993;
 	private static final int RIDER = 22995;
+	
 	// Items
 	private static final int KINGS_TONIC = 47607;
+	
 	// Misc
 	private static final int MIN_LEVEL = 15;
 	private static final int MAX_LEVEL = 25;
@@ -96,6 +99,7 @@ public class Q10365_ForTheSearchdogKing extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -161,6 +165,7 @@ public class Q10365_ForTheSearchdogKing extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

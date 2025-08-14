@@ -52,6 +52,7 @@ public class HpCondition implements ICubicCondition
 				}
 			}
 		}
+		
 		return false;
 	}
 	

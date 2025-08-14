@@ -39,6 +39,7 @@ public class HealerTrainer extends AbstractNpcAI
 		30906, 30908, 30912, 31280, 31281, 31287, 31329, 31330, 31335
 	};
 	// @formatter:on
+	
 	// Misc
 	private static final int MIN_LEVEL = 76;
 	private static final int MIN_CLASS_LEVEL = 3;
@@ -114,6 +115,7 @@ public class HealerTrainer extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

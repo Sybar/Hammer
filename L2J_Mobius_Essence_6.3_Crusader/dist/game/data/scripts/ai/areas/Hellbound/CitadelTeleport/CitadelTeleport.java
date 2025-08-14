@@ -34,6 +34,7 @@ public class CitadelTeleport extends AbstractNpcAI
 	// NPCs
 	private static final int TELEPORT = 34244;
 	private static final int CAPTURE_DEVICE = 34245;
+	
 	// Locations
 	private static final Location[] LOCATIONS =
 	{

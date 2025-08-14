@@ -26,7 +26,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 import org.l2jmobius.commons.util.Rnd;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.actor.enums.player.Duel;
+import org.l2jmobius.gameserver.model.actor.holders.player.Duel;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.network.serverpackets.ServerPacket;
 
@@ -71,6 +71,7 @@ public class DuelManager
 					break;
 				}
 			}
+			
 			if (!playerInPvP)
 			{
 				for (Player temp : playerB.getParty().getMembers())
@@ -82,6 +83,7 @@ public class DuelManager
 					}
 				}
 			}
+			
 			// A player has PvP flag
 			if (playerInPvP)
 			{
@@ -89,6 +91,7 @@ public class DuelManager
 				{
 					temp.sendMessage(engagedInPvP);
 				}
+				
 				for (Player temp : playerB.getParty().getMembers())
 				{
 					temp.sendMessage(engagedInPvP);
@@ -102,6 +105,7 @@ public class DuelManager
 			playerB.sendMessage(engagedInPvP);
 			return;
 		}
+		
 		final int duelId = _currentDuelId.incrementAndGet();
 		_duels.put(duelId, new Duel(playerA, playerB, partyDuel, duelId));
 	}
@@ -117,6 +121,7 @@ public class DuelManager
 		{
 			return;
 		}
+		
 		final Duel duel = getDuel(player.getDuelId());
 		duel.doSurrender(player);
 	}
@@ -131,6 +136,7 @@ public class DuelManager
 		{
 			return;
 		}
+		
 		final Duel duel = getDuel(player.getDuelId());
 		if (duel != null)
 		{
@@ -149,6 +155,7 @@ public class DuelManager
 		{
 			return;
 		}
+		
 		final Duel duel = getDuel(player.getDuelId());
 		if (duel != null)
 		{
@@ -166,6 +173,7 @@ public class DuelManager
 		{
 			return;
 		}
+		
 		final Duel duel = getDuel(player.getDuelId());
 		if (duel != null)
 		{
@@ -184,11 +192,13 @@ public class DuelManager
 		{
 			return;
 		}
+		
 		final Duel duel = getDuel(player.getDuelId());
 		if (duel == null)
 		{
 			return;
 		}
+		
 		if ((duel.getPlayerA() == null) || (duel.getPlayerB() == null))
 		{
 			return;

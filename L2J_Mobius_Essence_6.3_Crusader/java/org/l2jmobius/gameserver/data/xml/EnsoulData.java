@@ -256,6 +256,7 @@ public class EnsoulData implements IXmlReader
 				}
 			}
 		}
+		
 		return 0;
 	}
 	

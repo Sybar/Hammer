@@ -236,6 +236,7 @@ public class FortSiegeManager
 		{
 			LOGGER.log(Level.WARNING, "Exception: checkIsRegistered(): " + e.getMessage(), e);
 		}
+		
 		return register;
 	}
 	
@@ -281,6 +282,7 @@ public class FortSiegeManager
 				{
 					break;
 				}
+				
 				final StringTokenizer st = new StringTokenizer(_spawnParams.trim(), ",");
 				
 				try
@@ -307,6 +309,7 @@ public class FortSiegeManager
 				{
 					break;
 				}
+				
 				final StringTokenizer st = new StringTokenizer(_spawnParams.trim(), ",");
 				
 				try
@@ -322,6 +325,7 @@ public class FortSiegeManager
 					LOGGER.warning("Error while loading flag(s) for " + fort.getName() + " fort.");
 				}
 			}
+			
 			_flagList.put(fort.getResidenceId(), flagSpawns);
 		}
 	}
@@ -370,6 +374,7 @@ public class FortSiegeManager
 				return fort.getSiege();
 			}
 		}
+		
 		return null;
 	}
 	
@@ -447,6 +452,7 @@ public class FortSiegeManager
 		}
 		
 		final Fort fort = FortManager.getInstance().findNearestFort(player);
+		
 		// if ((fort == null) || (fort.getResidenceId() <= 0) || (fort.getSiege().getAttackerClan(player.getClan()) == null))
 		if ((fort == null) || (fort.getResidenceId() <= 0))
 		{
@@ -493,6 +499,7 @@ public class FortSiegeManager
 			}));
 			
 		}
+		
 		fort.getSiege().addFlagCount(-1);
 	}
 	

@@ -259,9 +259,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="Elixir" />
 		<set name="commissionItemType" val="POTION" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2287" level="1" /> <!-- No-grade Elixir of Life -->
 		</skills>
@@ -282,9 +282,9 @@
 		<set name="handler" val="Elixir" />
 		<set name="crystal_type" val="D" />
 		<set name="commissionItemType" val="POTION" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2287" level="2" /> <!-- D-grade Elixir of Life -->
 		</skills>
@@ -305,9 +305,9 @@
 		<set name="handler" val="Elixir" />
 		<set name="crystal_type" val="C" />
 		<set name="commissionItemType" val="POTION" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2287" level="3" /> <!-- C-grade Elixir of Life -->
 		</skills>
@@ -328,9 +328,9 @@
 		<set name="handler" val="Elixir" />
 		<set name="crystal_type" val="B" />
 		<set name="commissionItemType" val="POTION" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2287" level="4" /> <!-- B-grade Elixir of Life -->
 		</skills>
@@ -351,9 +351,9 @@
 		<set name="handler" val="Elixir" />
 		<set name="crystal_type" val="A" />
 		<set name="commissionItemType" val="POTION" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2287" level="5" /> <!-- A-grade Elixir of Life -->
 		</skills>
@@ -375,9 +375,9 @@
 		<set name="crystal_type" val="S" />
 		<set name="commissionItemType" val="POTION" />
 		<set name="is_event_restricted" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2287" level="6" /> <!-- S-grade Elixir of Life -->
 		</skills>
@@ -397,9 +397,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="Elixir" />
 		<set name="commissionItemType" val="POTION" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2288" level="1" /> <!-- No-grade Elixir of Mind -->
 		</skills>
@@ -420,9 +420,9 @@
 		<set name="handler" val="Elixir" />
 		<set name="crystal_type" val="D" />
 		<set name="commissionItemType" val="POTION" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2288" level="2" /> <!-- D-grade Elixir of Mind -->
 		</skills>
@@ -443,9 +443,9 @@
 		<set name="handler" val="Elixir" />
 		<set name="crystal_type" val="C" />
 		<set name="commissionItemType" val="POTION" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2288" level="3" /> <!-- C-grade Elixir of Mind -->
 		</skills>
@@ -466,9 +466,9 @@
 		<set name="handler" val="Elixir" />
 		<set name="crystal_type" val="B" />
 		<set name="commissionItemType" val="POTION" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2288" level="4" /> <!-- B-grade Elixir of Mind -->
 		</skills>
@@ -489,9 +489,9 @@
 		<set name="handler" val="Elixir" />
 		<set name="crystal_type" val="A" />
 		<set name="commissionItemType" val="POTION" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2288" level="5" /> <!-- A-grade Elixir of Mind -->
 		</skills>
@@ -513,9 +513,9 @@
 		<set name="crystal_type" val="S" />
 		<set name="commissionItemType" val="POTION" />
 		<set name="is_event_restricted" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2288" level="6" /> <!-- S-grade Elixir of Mind -->
 		</skills>

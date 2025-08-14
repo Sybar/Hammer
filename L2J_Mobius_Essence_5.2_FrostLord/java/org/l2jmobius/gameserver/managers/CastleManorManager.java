@@ -146,6 +146,7 @@ public class CastleManorManager implements IXmlReader
 									att = attrs.item(i);
 									set.set(att.getNodeName(), att.getNodeValue());
 								}
+								
 								_seeds.put(set.getInt("seedId"), new Seed(set));
 							}
 						}
@@ -199,6 +200,7 @@ public class CastleManorManager implements IXmlReader
 						}
 					}
 				}
+				
 				_production.put(castleId, currentProduction);
 				_productionNext.put(castleId, nextProduction);
 				
@@ -233,9 +235,11 @@ public class CastleManorManager implements IXmlReader
 						}
 					}
 				}
+				
 				_procure.put(castleId, currentProcure);
 				_procureNext.put(castleId, nextProcure);
 			}
+			
 			LOGGER.info(getClass().getSimpleName() + ": Manor data loaded.");
 		}
 		catch (Exception e)
@@ -348,6 +352,7 @@ public class CastleManorManager implements IXmlReader
 						{
 							seed.setAmount(seed.getStartAmount());
 						}
+						
 						_productionNext.put(castleId, productionList);
 						
 						final List<CropProcure> procureList = new ArrayList<>(_procureNext.get(castleId));
@@ -355,6 +360,7 @@ public class CastleManorManager implements IXmlReader
 						{
 							crop.setAmount(crop.getStartAmount());
 						}
+						
 						_procureNext.put(castleId, procureList);
 					}
 				}
@@ -411,6 +417,7 @@ public class CastleManorManager implements IXmlReader
 					}
 					
 					final long manorCost = getManorCost(castleId, true);
+					
 					// Check if there�s enough capacity and funds.
 					if (!cwh.validateCapacity(requiredSlots) && (castle.getTreasury() < manorCost))
 					{
@@ -537,6 +544,7 @@ public class CastleManorManager implements IXmlReader
 				ps.setInt(3, sp.getId());
 				ps.addBatch();
 			}
+			
 			ps.executeBatch();
 		}
 		catch (Exception e)
@@ -557,6 +565,7 @@ public class CastleManorManager implements IXmlReader
 				ps.setInt(3, cp.getId());
 				ps.addBatch();
 			}
+			
 			ps.executeBatch();
 		}
 		catch (Exception e)
@@ -579,6 +588,7 @@ public class CastleManorManager implements IXmlReader
 				return sp;
 			}
 		}
+		
 		return null;
 	}
 	
@@ -596,6 +606,7 @@ public class CastleManorManager implements IXmlReader
 				return cp;
 			}
 		}
+		
 		return null;
 	}
 	
@@ -782,6 +793,7 @@ public class CastleManorManager implements IXmlReader
 				cropIds.add(seed.getCropId());
 			}
 		}
+		
 		cropIds.clear();
 		return seeds;
 	}
@@ -796,6 +808,7 @@ public class CastleManorManager implements IXmlReader
 				result.add(seed);
 			}
 		}
+		
 		return result;
 	}
 	
@@ -811,6 +824,7 @@ public class CastleManorManager implements IXmlReader
 		{
 			result.add(seed.getCropId());
 		}
+		
 		return result;
 	}
 	
@@ -828,6 +842,7 @@ public class CastleManorManager implements IXmlReader
 				return seed;
 			}
 		}
+		
 		return null;
 	}
 	
@@ -840,6 +855,7 @@ public class CastleManorManager implements IXmlReader
 				return seed;
 			}
 		}
+		
 		return null;
 	}
 	

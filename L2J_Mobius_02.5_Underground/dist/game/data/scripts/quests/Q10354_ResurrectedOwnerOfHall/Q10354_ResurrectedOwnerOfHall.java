@@ -39,8 +39,10 @@ public class Q10354_ResurrectedOwnerOfHall extends Quest
 	// NPCs
 	private static final int LYDIA = 32892;
 	private static final int OCTAVIS = 29212; // Octavis extreme mode
+	
 	// Item
 	private static final int OCTAVIS_SOUL_BOTTLE = 34884;
+	
 	// Misc
 	private static final int MIN_LEVEL = 95;
 	
@@ -91,6 +93,7 @@ public class Q10354_ResurrectedOwnerOfHall extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -124,6 +127,7 @@ public class Q10354_ResurrectedOwnerOfHall extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

@@ -31,9 +31,11 @@ public class Q00642_APowerfulPrimevalCreature extends Quest
 {
 	// NPC
 	private static final int ANCIENT_EGG = 18344;
+	
 	// Items
 	private static final int DINOSAUR_TISSUE = 8774;
 	private static final int DINOSAUR_EGG = 8775;
+	
 	// Rewards
 	private static final int[] REWARDS =
 	{
@@ -56,6 +58,7 @@ public class Q00642_APowerfulPrimevalCreature extends Quest
 		registerQuestItems(DINOSAUR_TISSUE, DINOSAUR_EGG);
 		addStartNpc(32105); // Dinn
 		addTalkId(32105);
+		
 		// Dinosaurs + egg
 		addKillId(22196, 22197, 22198, 22199, 22200, 22201, 22202, 22203, 22204, 22205, 22218, 22219, 22220, 22223, 22224, 22225, ANCIENT_EGG);
 	}

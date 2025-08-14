@@ -39,6 +39,7 @@ public class Q10976_MemoryOfTheGloriousPast extends Quest
 {
 	// NPCs
 	private static final int ORVEN = 30857;
+	
 	// Monsters
 	private static final int VANOR_SILENOS = 20681;
 	private static final int VANOR_SILENOS_SOLDIER = 20682;
@@ -48,11 +49,13 @@ public class Q10976_MemoryOfTheGloriousPast extends Quest
 	private static final int VANOR_SILENOS_CHIEFTAIN = 20686;
 	private static final int VANOR_MERCENARY_OF_GLORY = 24014;
 	private static final int GUARD_OF_HONOR = 22102;
+	
 	// Items
 	private static final ItemHolder MAGIC_LAMP_CHARGING_POTION = new ItemHolder(91757, 3);
 	private static final ItemHolder SOULSHOT_TICKET = new ItemHolder(90907, 10);
 	private static final ItemHolder SAYHA_GUST = new ItemHolder(91776, 9);
 	private static final ItemHolder SPIRIT_ORE = new ItemHolder(3031, 450);
+	
 	// Misc
 	private static final int MIN_LEVEL = 45;
 	private static final String KILL_COUNT_VAR = "KillCount";
@@ -113,6 +116,7 @@ public class Q10976_MemoryOfTheGloriousPast extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -151,6 +155,7 @@ public class Q10976_MemoryOfTheGloriousPast extends Quest
 				htmltext = getAlreadyCompletedMsg(player);
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -185,6 +190,7 @@ public class Q10976_MemoryOfTheGloriousPast extends Quest
 			holder.add(new NpcLogListHolder(NpcStringId.KILL_MONSTERS_ON_THE_PLAINS_OF_GLORY.getId(), true, qs.getInt(KILL_COUNT_VAR)));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

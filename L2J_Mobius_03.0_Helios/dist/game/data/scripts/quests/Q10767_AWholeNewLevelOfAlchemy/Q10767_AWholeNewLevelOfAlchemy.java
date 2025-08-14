@@ -42,14 +42,17 @@ public class Q10767_AWholeNewLevelOfAlchemy extends Quest
 {
 	// NPC
 	private static final int VERUTI = 33977;
+	
 	// Items
 	private static final int SUPERIOR_WINDY_HEALING_POTION = 39469;
 	private static final int SUPERIOR_WINDY_QUIK_HEALING_POTION = 39474;
 	private static final int HIGH_GRADE_LOVE_POTION = 39479;
+	
 	// Reward
 	private static final int EXP_REWARD = 14819175;
 	private static final int SP_REWARD = 3556;
 	private static final int ALCHEMIC_TOME_POTION = 39482;
+	
 	// Misc
 	private static final int MIN_LEVEL = 97;
 	
@@ -71,6 +74,7 @@ public class Q10767_AWholeNewLevelOfAlchemy extends Quest
 		{
 			return null;
 		}
+		
 		String htmltext = null;
 		switch (event)
 		{
@@ -97,10 +101,12 @@ public class Q10767_AWholeNewLevelOfAlchemy extends Quest
 					addExpAndSp(player, EXP_REWARD, SP_REWARD);
 					qs.exitQuest(false, true);
 				}
+				
 				htmltext = event;
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -134,6 +140,7 @@ public class Q10767_AWholeNewLevelOfAlchemy extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

@@ -357,9 +357,9 @@
 		<set name="immediate_effect" val="true" />
 		<set name="handler" val="PaulinasSupportBox" />
 		<set name="material" val="PAPER" />
-		<cond msgId="1902">
+		<conditions msgId="1902">
 			<player levelRange="85;105" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="46920" name="Paulina's Brigandine Shield" type="Armor">
 		<!-- Brigandine Shield imbued with Paulina's energy. -->

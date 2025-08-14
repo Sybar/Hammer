@@ -40,9 +40,10 @@ public class NightmareKamaloka extends AbstractInstance
 	private static final int KURTIZ = 30870;
 	private static final int DARK_RIDER = 26102;
 	private static final int INVISIBLE_NPC = 18919;
+	
 	// Skills
 	// private static final int DARK_RIDER_UD = 16574;
-	//@formatter:off
+	// @formatter:off
 	private static final Map<Integer, Integer> BOSS_MAP = new HashMap<>();
 	static
 	{
@@ -52,7 +53,8 @@ public class NightmareKamaloka extends AbstractInstance
 		BOSS_MAP.put(26099, 18170008); // Sirra
 		BOSS_MAP.put(DARK_RIDER, -1); // Dark Rider
 	}
-	//@formatter:on
+	// @formatter:on
+	
 	// Misc
 	private static final int TEMPLATE_ID = 258;
 	
@@ -62,6 +64,7 @@ public class NightmareKamaloka extends AbstractInstance
 		addStartNpc(KURTIZ);
 		addTalkId(KURTIZ);
 		addSpawnId(INVISIBLE_NPC);
+		
 		// addAttackId(DARK_RIDER_UD);
 		addKillId(BOSS_MAP.keySet());
 	}
@@ -132,6 +135,7 @@ public class NightmareKamaloka extends AbstractInstance
 				break;
 			}
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	

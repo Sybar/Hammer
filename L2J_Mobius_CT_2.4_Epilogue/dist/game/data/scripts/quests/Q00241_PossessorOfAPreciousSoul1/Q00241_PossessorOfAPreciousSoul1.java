@@ -203,6 +203,7 @@ public class Q00241_PossessorOfAPreciousSoul1 extends Quest
 				htmltext = "31272-07.htm";
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -440,6 +441,7 @@ public class Q00241_PossessorOfAPreciousSoul1 extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

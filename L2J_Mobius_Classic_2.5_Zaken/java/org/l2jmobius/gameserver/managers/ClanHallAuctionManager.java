@@ -57,6 +57,7 @@ public class ClanHallAuctionManager
 				start.add(Calendar.DAY_OF_YEAR, 1);
 			}
 		}
+		
 		final long startDelay = Math.max(0, start.getTimeInMillis() - currentTime);
 		ThreadPool.scheduleAtFixedRate(this::onStart, startDelay, 604800000); // 604800000 = 1 week
 		if (startDelay > 0)
@@ -78,6 +79,7 @@ public class ClanHallAuctionManager
 				end.add(Calendar.DAY_OF_YEAR, 1);
 			}
 		}
+		
 		final long endDelay = Math.max(0, end.getTimeInMillis() - currentTime);
 		_endTask = ThreadPool.scheduleAtFixedRate(this::onEnd, endDelay, 604800000); // 604800000 = 1 week
 	}
@@ -110,6 +112,7 @@ public class ClanHallAuctionManager
 				return auction;
 			}
 		}
+		
 		return null;
 	}
 	
@@ -122,6 +125,7 @@ public class ClanHallAuctionManager
 				return true;
 			}
 		}
+		
 		return false;
 	}
 	

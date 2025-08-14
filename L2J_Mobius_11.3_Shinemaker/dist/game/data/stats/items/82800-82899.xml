@@ -466,7 +466,6 @@
 		<set name="price" val="6062212500" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
-		<set name="enchant_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_destroyable" val="false" />
 		<set name="ensoulNormalSlots" val="2" />
@@ -505,7 +504,6 @@
 		<set name="price" val="6062212500" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
-		<set name="enchant_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_destroyable" val="false" />
 		<set name="ensoulNormalSlots" val="2" />
@@ -542,7 +540,6 @@
 		<set name="price" val="6062212500" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
-		<set name="enchant_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_destroyable" val="false" />
 		<set name="ensoulNormalSlots" val="2" />
@@ -580,7 +577,6 @@
 		<set name="price" val="6062212500" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
-		<set name="enchant_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_destroyable" val="false" />
 		<set name="ensoulNormalSlots" val="2" />
@@ -619,7 +615,6 @@
 		<set name="price" val="6062212500" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
-		<set name="enchant_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_destroyable" val="false" />
 		<set name="ensoulNormalSlots" val="2" />
@@ -658,7 +653,6 @@
 		<set name="price" val="6062212500" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
-		<set name="enchant_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_destroyable" val="false" />
 		<set name="ensoulNormalSlots" val="2" />
@@ -697,7 +691,6 @@
 		<set name="price" val="6062212500" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
-		<set name="enchant_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_destroyable" val="false" />
 		<set name="ensoulNormalSlots" val="2" />
@@ -737,7 +730,6 @@
 		<set name="price" val="6062212500" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
-		<set name="enchant_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_destroyable" val="false" />
 		<set name="ensoulNormalSlots" val="2" />
@@ -778,7 +770,6 @@
 		<set name="price" val="6062212500" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
-		<set name="enchant_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_destroyable" val="false" />
 		<set name="is_magic_weapon" val="true" />
@@ -817,7 +808,6 @@
 		<set name="price" val="6062212500" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
-		<set name="enchant_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_destroyable" val="false" />
 		<set name="is_magic_weapon" val="true" />
@@ -857,7 +847,6 @@
 		<set name="price" val="6062212500" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
-		<set name="enchant_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_destroyable" val="false" />
 		<set name="is_magic_weapon" val="true" />
@@ -897,7 +886,6 @@
 		<set name="price" val="6062212500" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
-		<set name="enchant_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_destroyable" val="false" />
 		<set name="ensoulNormalSlots" val="2" />
@@ -935,7 +923,6 @@
 		<set name="price" val="6062212500" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
-		<set name="enchant_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_destroyable" val="false" />
 		<set name="ensoulNormalSlots" val="2" />
@@ -974,7 +961,6 @@
 		<set name="price" val="6062212500" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
-		<set name="enchant_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_destroyable" val="false" />
 		<set name="ensoulNormalSlots" val="2" />
@@ -1010,6 +996,7 @@
 		<set name="material" val="BONE" />
 		<set name="weight" val="530" />
 		<set name="price" val="1187692500" />
+		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="true" />
 		<set name="is_destroyable" val="false" />
 		<set name="ensoulNormalSlots" val="2" />
@@ -1036,6 +1023,7 @@
 		<set name="material" val="BRONZE" />
 		<set name="weight" val="7520" />
 		<set name="price" val="3167190000" />
+		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_destroyable" val="false" />
@@ -1063,6 +1051,7 @@
 		<set name="material" val="SCALE_OF_DRAGON" />
 		<set name="weight" val="3170" />
 		<set name="price" val="1979497500" />
+		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_destroyable" val="false" />
@@ -1090,6 +1079,7 @@
 		<set name="material" val="LEATHER" />
 		<set name="weight" val="510" />
 		<set name="price" val="791797500" />
+		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_destroyable" val="false" />
@@ -1117,6 +1107,7 @@
 		<set name="material" val="LEATHER" />
 		<set name="weight" val="1070" />
 		<set name="price" val="791797500" />
+		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_destroyable" val="false" />
@@ -1143,6 +1134,7 @@
 		<set name="material" val="DAMASCUS" />
 		<set name="weight" val="1130" />
 		<set name="price" val="791797500" />
+		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_destroyable" val="false" />
@@ -1170,6 +1162,7 @@
 		<set name="material" val="BONE" />
 		<set name="weight" val="530" />
 		<set name="price" val="1187692500" />
+		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="true" />
 		<set name="is_destroyable" val="false" />
 		<set name="ensoulNormalSlots" val="2" />
@@ -1196,6 +1189,7 @@
 		<set name="material" val="BRONZE" />
 		<set name="weight" val="4140" />
 		<set name="price" val="3167190000" />
+		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_destroyable" val="false" />
@@ -1223,6 +1217,7 @@
 		<set name="material" val="SCALE_OF_DRAGON" />
 		<set name="weight" val="1320" />
 		<set name="price" val="1979497500" />
+		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_destroyable" val="false" />
@@ -1250,6 +1245,7 @@
 		<set name="material" val="LEATHER" />
 		<set name="weight" val="510" />
 		<set name="price" val="791797500" />
+		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_destroyable" val="false" />
@@ -1277,6 +1273,7 @@
 		<set name="material" val="LEATHER" />
 		<set name="weight" val="1070" />
 		<set name="price" val="791797500" />
+		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_destroyable" val="false" />
@@ -1304,6 +1301,7 @@
 		<set name="material" val="BONE" />
 		<set name="weight" val="530" />
 		<set name="price" val="1187692500" />
+		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="true" />
 		<set name="is_destroyable" val="false" />
 		<set name="ensoulNormalSlots" val="2" />
@@ -1330,6 +1328,7 @@
 		<set name="material" val="BRONZE" />
 		<set name="weight" val="1750" />
 		<set name="price" val="3167190000" />
+		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_destroyable" val="false" />
@@ -1359,6 +1358,7 @@
 		<set name="material" val="SCALE_OF_DRAGON" />
 		<set name="weight" val="850" />
 		<set name="price" val="1979497500" />
+		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_destroyable" val="false" />
@@ -1388,6 +1388,7 @@
 		<set name="material" val="LEATHER" />
 		<set name="weight" val="510" />
 		<set name="price" val="791797500" />
+		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_destroyable" val="false" />
@@ -1415,6 +1416,7 @@
 		<set name="material" val="LEATHER" />
 		<set name="weight" val="1070" />
 		<set name="price" val="791797500" />
+		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_destroyable" val="false" />
@@ -1442,6 +1444,7 @@
 		<set name="material" val="STEEL" />
 		<set name="weight" val="920" />
 		<set name="price" val="266043000" />
+		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_destroyable" val="false" />

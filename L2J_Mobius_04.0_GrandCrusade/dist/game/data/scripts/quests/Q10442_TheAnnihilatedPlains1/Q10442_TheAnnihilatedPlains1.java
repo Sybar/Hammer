@@ -31,6 +31,7 @@ public class Q10442_TheAnnihilatedPlains1 extends Quest
 	// NPCs
 	private static final int MATHIAS = 31340;
 	private static final int TUSKA = 33839;
+	
 	// Misc
 	private static final int MIN_LEVEL = 99;
 	
@@ -74,12 +75,14 @@ public class Q10442_TheAnnihilatedPlains1 extends Quest
 					{
 						addExpAndSp(player, 15_436_575, 3_704);
 					}
+					
 					qs.exitQuest(false, true);
 					htmltext = event;
 				}
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -116,6 +119,7 @@ public class Q10442_TheAnnihilatedPlains1 extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

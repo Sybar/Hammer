@@ -59,12 +59,14 @@ public class QueenAnt extends AbstractNpcAI
 	private static final int INVISIBLE_NPC = 18919;
 	private static final int NPC_LIFETIME = 9000;
 	private static final int REQUIRED_CC_MEMBERS = 14;
+	
 	// Skills
 	private static final SkillHolder AREA_SKILL = new SkillHolder(33918, 1);
 	private static final SkillHolder COMMON_SKILL_1 = new SkillHolder(33915, 1);
 	private static final SkillHolder COMMON_SKILL_2 = new SkillHolder(33916, 1);
 	private static final SkillHolder INITIAL_SKILL = new SkillHolder(33917, 1);
 	private static final SkillHolder LIMIT_BARRIER = new SkillHolder(29515, 1);
+	
 	// Barrier
 	private static final int BARRIER_DURATION_MILLIS = 600000; // 10 minutes.
 	private static final int HIT_COUNT = 2000; // 2000 Number of attacks needed to destroy the barrier.
@@ -73,8 +75,10 @@ public class QueenAnt extends AbstractNpcAI
 	// Locations
 	private static final Location GLUDIO_LOCATION = new Location(-14608, 123920, -3123);
 	private static final Location SPAWN_LOCATION = new Location(-7848, 183389, -3624);
+	
 	// Zone
 	private static final ArenaZone ARENA_ZONE = ZoneManager.getInstance().getZoneByName("Queen_Ants_Lair", ArenaZone.class);
+	
 	// Misc
 	private static GrandBoss _spawnedMainBoss;
 	private boolean _barrierActivated = false;
@@ -312,6 +316,7 @@ public class QueenAnt extends AbstractNpcAI
 		{
 			return;
 		}
+		
 		_isUsingAreaSkill.set(true);
 		
 		ThreadPool.schedule(() ->

@@ -55,14 +55,17 @@ public class Q10959_ChallengingYourDestiny extends Quest
 	private static final int MATHORN = 34139;
 	private static final int SKELETON_SCOUT = 22186;
 	private static final int SKELETON_HUNTER = 22187;
+	
 	// Items
 	private static final ItemHolder SOE_MATHORN = new ItemHolder(93319, 1);
 	private static final ItemHolder SOE_NOVICE = new ItemHolder(10650, 20);
 	private static final ItemHolder SPIRIT_ORE = new ItemHolder(3031, 50);
 	private static final ItemHolder XP_GROWTH_SCROLL = new ItemHolder(49674, 1);
 	private static final ItemHolder HP_POTION_REWARD = new ItemHolder(91912, 50);
+	
 	// Location
 	private static final Location TRAINING_GROUNDS = new Location(53076, 148674, -2432);
+	
 	// Misc
 	private static final String KILL_COUNT_VAR = "KillCount";
 	
@@ -127,12 +130,15 @@ public class Q10959_ChallengingYourDestiny extends Quest
 						showOnScreenMsg(player, NpcStringId.YOU_VE_FINISHED_THE_TUTORIAL_TAKE_YOUR_FIRST_CLASS_TRANSFER_AND_COMPLETE_YOUR_TRAINING_WITH_MATHORN_TO_BECOME_STRONGER, ExShowScreenMessage.TOP_CENTER, 10000);
 						player.sendPacket(ExClassChangeSetAlarm.STATIC_PACKET);
 					}
+					
 					qs.exitQuest(false, true);
 				}
+				
 				htmltext = event;
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -167,6 +173,7 @@ public class Q10959_ChallengingYourDestiny extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -203,6 +210,7 @@ public class Q10959_ChallengingYourDestiny extends Quest
 			holder.add(new NpcLogListHolder(NpcStringId.CLEAN_THE_SECOND_TRAINING_GROUNDS_UP.getId(), true, qs.getInt(KILL_COUNT_VAR)));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 	

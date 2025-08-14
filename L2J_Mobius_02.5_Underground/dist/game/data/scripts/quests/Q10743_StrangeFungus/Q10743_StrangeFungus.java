@@ -39,13 +39,16 @@ public class Q10743_StrangeFungus extends Quest
 	// NPCs
 	private static final int LEIRA = 33952;
 	private static final int MILONE = 33953;
+	
 	// Monsters
 	private static final int GROWLER = 23455;
 	private static final int ROBUST_GROWLER = 23486;
 	private static final int EVOLVED_GROWLER = 23456;
+	
 	// Items
 	private static final int PECULIAR_MUSHROOM_SPORE = 39530;
 	private static final ItemHolder LEATHER_SHOES = new ItemHolder(37, 1);
+	
 	// Misc
 	private static final int MIN_LEVEL = 13;
 	private static final int MAX_LEVEL = 20;
@@ -102,6 +105,7 @@ public class Q10743_StrangeFungus extends Quest
 				htmltext = null;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -143,6 +147,7 @@ public class Q10743_StrangeFungus extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -167,6 +172,7 @@ public class Q10743_StrangeFungus extends Quest
 					{
 						qs.set(EVOLVED_SPAWN_VAR, killCount);
 					}
+					
 					qs.set(KILL_COUNT_VAR, qs.getInt(KILL_COUNT_VAR) + 1);
 					break;
 				}
@@ -196,6 +202,7 @@ public class Q10743_StrangeFungus extends Quest
 				return holder;
 			}
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

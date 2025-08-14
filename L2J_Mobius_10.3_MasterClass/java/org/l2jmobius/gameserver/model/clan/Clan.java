@@ -175,24 +175,28 @@ public class Clan
 			final ScheduledFuture<?> task = ThreadPool.schedule(() -> removeMasterySkill(19538), masteryTime19538);
 			masterySkillTasks.add(task);
 		}
+		
 		final int masteryTime19539 = getMasterySkillRemainingTime(19539);
 		if (masteryTime19539 > 0)
 		{
 			final ScheduledFuture<?> task = ThreadPool.schedule(() -> removeMasterySkill(19539), masteryTime19539);
 			masterySkillTasks.add(task);
 		}
+		
 		final int masteryTime19540 = getMasterySkillRemainingTime(19540);
 		if (masteryTime19540 > 0)
 		{
 			final ScheduledFuture<?> task = ThreadPool.schedule(() -> removeMasterySkill(19540), masteryTime19540);
 			masterySkillTasks.add(task);
 		}
+		
 		final int masteryTime19541 = getMasterySkillRemainingTime(19541);
 		if (masteryTime19541 > 0)
 		{
 			final ScheduledFuture<?> task = ThreadPool.schedule(() -> removeMasterySkill(19541), masteryTime19541);
 			masterySkillTasks.add(task);
 		}
+		
 		final int masteryTime19542 = getMasterySkillRemainingTime(19542);
 		if (masteryTime19542 > 0)
 		{
@@ -277,6 +281,7 @@ public class Clan
 			{
 				SiegeManager.getInstance().removeSiegeSkills(exLeader);
 			}
+			
 			exLeader.getClanPrivileges().disableAll();
 			exLeader.broadcastUserInfo();
 		}
@@ -300,6 +305,7 @@ public class Clan
 		{
 			setNewLeaderId(0, true);
 		}
+		
 		updateClanInDB();
 		
 		if (exLeader != null)
@@ -318,6 +324,7 @@ public class Clan
 			{
 				SiegeManager.getInstance().addSiegeSkills(newLeader);
 			}
+			
 			newLeader.broadcastUserInfo();
 		}
 		else
@@ -351,6 +358,7 @@ public class Clan
 			LOGGER.warning("Clan " + _name + " without clan leader!");
 			return "";
 		}
+		
 		return _leader.getName();
 	}
 	
@@ -387,6 +395,7 @@ public class Clan
 	public void addClanMember(Player player)
 	{
 		final ClanMember member = new ClanMember(this, player);
+		
 		// store in memory
 		addClanMember(member);
 		member.setPlayer(player);
@@ -433,6 +442,7 @@ public class Clan
 				return temp;
 			}
 		}
+		
 		return null;
 	}
 	
@@ -484,6 +494,7 @@ public class Clan
 				apprentice.saveApprenticeAndSponsor(0, 0);
 			}
 		}
+		
 		if (exMember.getSponsor() != 0)
 		{
 			final ClanMember sponsor = getClanMember(exMember.getSponsor());
@@ -501,6 +512,7 @@ public class Clan
 				sponsor.saveApprenticeAndSponsor(0, 0);
 			}
 		}
+		
 		exMember.saveApprenticeAndSponsor(0, 0);
 		
 		if (Config.REMOVE_CASTLE_CIRCLETS)
@@ -515,6 +527,7 @@ public class Clan
 			{
 				player.setTitle("");
 			}
+			
 			player.setApprentice(0);
 			player.setSponsor(0);
 			
@@ -540,6 +553,7 @@ public class Clan
 					castle.removeResidentialSkills(player);
 				}
 			}
+			
 			if (getFortId() > 0)
 			{
 				final Fort fort = FortManager.getInstance().getFortByOwner(this);
@@ -548,6 +562,7 @@ public class Clan
 					fort.removeResidentialSkills(player);
 				}
 			}
+			
 			player.sendSkillList();
 			player.setClan(null);
 			
@@ -558,6 +573,7 @@ public class Clan
 			}
 			
 			player.broadcastUserInfo();
+			
 			// disable clan tab
 			player.sendPacket(PledgeShowMemberListDeleteAll.STATIC_PACKET);
 		}
@@ -593,6 +609,7 @@ public class Clan
 				result++;
 			}
 		}
+		
 		return result;
 	}
 	
@@ -610,6 +627,7 @@ public class Clan
 				result.add(member.getPlayer());
 			}
 		}
+		
 		return result;
 	}
 	
@@ -626,6 +644,7 @@ public class Clan
 				count++;
 			}
 		}
+		
 		return count;
 	}
 	
@@ -980,12 +999,15 @@ public class Clan
 			ps1.setLong(3, clanCreateExpiryTime);
 			ps1.setInt(4, member.getObjectId());
 			ps1.execute();
+			
 			// Remove apprentice.
 			ps2.setInt(1, member.getObjectId());
 			ps2.execute();
+			
 			// Remove sponsor.
 			ps3.setInt(1, member.getObjectId());
 			ps3.execute();
+			
 			// Clan contribution.
 			ps4.setString(1, PlayerVariables.CLAN_CONTRIBUTION);
 			ps4.execute();
@@ -1020,11 +1042,13 @@ public class Clan
 					{
 						setAllyPenaltyExpiryTime(0, 0);
 					}
+					
 					setCharPenaltyExpiryTime(clanData.getLong("char_penalty_expiry_time"));
 					if ((_charPenaltyExpiryTime + (Config.ALT_CLAN_JOIN_DAYS * 86400000)) < System.currentTimeMillis()) // 24*60*60*1000 = 86400000
 					{
 						setCharPenaltyExpiryTime(0);
 					}
+					
 					setDissolvingExpiryTime(clanData.getLong("dissolving_expiry_time"));
 					
 					setCrestId(clanData.getInt("crest_id"));
@@ -1119,6 +1143,7 @@ public class Clan
 			{
 				ps.setString(3, "false");
 			}
+			
 			ps.setString(4, notice);
 			if (enabled)
 			{
@@ -1128,6 +1153,7 @@ public class Clan
 			{
 				ps.setString(5, "false");
 			}
+			
 			ps.execute();
 		}
 		catch (Exception e)
@@ -1186,8 +1212,10 @@ public class Clan
 				{
 					final int id = rset.getInt("skill_id");
 					final int level = rset.getInt("skill_level");
+					
 					// Create a Skill object for each record
 					final Skill skill = SkillData.getInstance().getSkill(id, level);
+					
 					// Add the Skill object to the Clan _skills
 					final int subType = rset.getInt("sub_pledge_id");
 					if (subType == -2)
@@ -1248,6 +1276,7 @@ public class Clan
 			// Replace oldSkill by newSkill or Add the newSkill
 			oldSkill = _skills.put(newSkill.getId(), newSkill);
 		}
+		
 		return oldSkill;
 	}
 	
@@ -1387,6 +1416,7 @@ public class Clan
 				player.addSkill(skill, false); // Skill is not saved to player DB
 			}
 		}
+		
 		if (player.getPledgeType() == 0)
 		{
 			for (Skill skill : _subPledgeSkills.values())
@@ -1405,6 +1435,7 @@ public class Clan
 			{
 				return;
 			}
+			
 			for (Skill skill : subunit.getSkills())
 			{
 				player.addSkill(skill, false); // Skill is not saved to player DB
@@ -1443,6 +1474,7 @@ public class Clan
 			{
 				return;
 			}
+			
 			for (Skill skill : subunit.getSkills())
 			{
 				player.removeSkill(skill, false); // Skill is not saved to player DB
@@ -1593,6 +1625,7 @@ public class Clan
 		{
 			return false;
 		}
+		
 		return _atWarWith.containsKey(clan.getId());
 	}
 	
@@ -1735,6 +1768,7 @@ public class Clan
 					final int id = rset.getInt("sub_pledge_id");
 					final String name = rset.getString("name");
 					final int leaderId = rset.getInt("leader_id");
+					
 					// Create a SubPledge object for each record
 					final SubPledge pledge = new SubPledge(id, name, leaderId);
 					_subPledges.put(id, pledge);
@@ -1771,6 +1805,7 @@ public class Clan
 				return sp;
 			}
 		}
+		
 		return null;
 	}
 	
@@ -1846,8 +1881,10 @@ public class Clan
 				while (rset.next())
 				{
 					final int rank = rset.getInt("rank");
+					
 					// int party = rset.getInt("party");
 					final int privileges = rset.getInt("privs");
+					
 					// Create a SubPledge object for each record
 					if (rank == -1)
 					{
@@ -1906,6 +1943,7 @@ public class Clan
 					cm.getPlayer().updateUserInfo();
 				}
 			}
+			
 			broadcastClanStatus();
 		}
 		else
@@ -1946,11 +1984,13 @@ public class Clan
 			{
 				continue;
 			}
+			
 			if (sp.getLeaderId() == leaderId)
 			{
 				id = sp.getId();
 			}
 		}
+		
 		return id;
 	}
 	
@@ -1994,6 +2034,7 @@ public class Clan
 		{
 			_reputationScore = 100000000;
 		}
+		
 		if (_reputationScore < -100000000)
 		{
 			_reputationScore = -100000000;
@@ -2053,26 +2094,31 @@ public class Clan
 		{
 			return false;
 		}
+		
 		if (!player.hasAccess(ClanAccess.INVITE_MEMBER))
 		{
 			player.sendPacket(SystemMessageId.YOU_ARE_NOT_AUTHORIZED_TO_DO_THAT);
 			return false;
 		}
+		
 		if (target == null)
 		{
 			player.sendPacket(SystemMessageId.THE_TARGET_CANNOT_BE_INVITED);
 			return false;
 		}
+		
 		if (player.getObjectId() == target.getObjectId())
 		{
 			player.sendPacket(SystemMessageId.YOU_CANNOT_ASK_YOURSELF_TO_APPLY_TO_A_CLAN);
 			return false;
 		}
+		
 		if (_charPenaltyExpiryTime > System.currentTimeMillis())
 		{
 			player.sendPacket(SystemMessageId.YOU_CANNOT_ACCEPT_A_NEW_CLAN_MEMBER_FOR_24_H_AFTER_DISMISSING_SOMEONE);
 			return false;
 		}
+		
 		if (target.getClanId() != 0)
 		{
 			final SystemMessage sm = new SystemMessage(SystemMessageId.S1_IS_ALREADY_A_MEMBER_OF_ANOTHER_CLAN);
@@ -2080,6 +2126,7 @@ public class Clan
 			player.sendPacket(sm);
 			return false;
 		}
+		
 		if (target.getClanJoinExpiryTime() > System.currentTimeMillis())
 		{
 			final SystemMessage sm = new SystemMessage(SystemMessageId.C1_WILL_BE_ABLE_TO_JOIN_YOUR_CLAN_IN_24_H_AFTER_LEAVING_THE_PREVIOUS_ONE);
@@ -2087,6 +2134,7 @@ public class Clan
 			player.sendPacket(sm);
 			return false;
 		}
+		
 		if (((target.getLevel() > 75) || (target.getPlayerClass().level() >= 3)) && (pledgeType == -1))
 		{
 			final SystemMessage sm = new SystemMessage(SystemMessageId.S1_DOES_NOT_MEET_THE_REQUIREMENTS_TO_JOIN_A_CLAN_ACADEMY);
@@ -2095,6 +2143,7 @@ public class Clan
 			player.sendPacket(SystemMessageId.IN_ORDER_TO_JOIN_THE_CLAN_ACADEMY_YOU_MUST_BE_UNAFFILIATED_WITH_A_CLAN_AND_BE_AN_UNAWAKENED_CHARACTER_LV_84_OR_BELOW_FOR_BOTH_MAIN_AND_SUBCLASS);
 			return false;
 		}
+		
 		if (getSubPledgeMembersCount(pledgeType) >= (pledgeType == 0 ? ClanLevelData.getInstance().getCommonMemberLimit(_level) : ClanLevelData.getInstance().getEliteMemberLimit(_level)))
 		{
 			final SystemMessage sm = new SystemMessage(SystemMessageId.S1_IS_FULL_AND_CANNOT_ACCEPT_ADDITIONAL_CLAN_MEMBERS_AT_THIS_TIME);
@@ -2102,6 +2151,7 @@ public class Clan
 			player.sendPacket(sm);
 			return false;
 		}
+		
 		return true;
 	}
 	
@@ -2116,32 +2166,38 @@ public class Clan
 		{
 			return false;
 		}
+		
 		if ((player.getAllyId() == 0) || !player.isClanLeader() || (player.getClanId() != player.getAllyId()))
 		{
 			player.sendPacket(SystemMessageId.THIS_FEATURE_IS_ONLY_AVAILABLE_TO_ALLIANCE_LEADERS);
 			return false;
 		}
+		
 		final Clan leaderClan = player.getClan();
 		if ((leaderClan.getAllyPenaltyExpiryTime() > System.currentTimeMillis()) && (leaderClan.getAllyPenaltyType() == PENALTY_TYPE_DISMISS_CLAN))
 		{
 			player.sendPacket(SystemMessageId.YOU_CAN_ACCEPT_A_NEW_CLAN_IN_THE_ALLIANCE_IN_24_H_AFTER_DISMISSING_ANOTHER_ONE);
 			return false;
 		}
+		
 		if (target == null)
 		{
 			player.sendPacket(SystemMessageId.THE_TARGET_CANNOT_BE_INVITED);
 			return false;
 		}
+		
 		if (player.getObjectId() == target.getObjectId())
 		{
 			player.sendPacket(SystemMessageId.YOU_CANNOT_ASK_YOURSELF_TO_APPLY_TO_A_CLAN);
 			return false;
 		}
+		
 		if (target.getClan() == null)
 		{
 			player.sendPacket(SystemMessageId.THE_TARGET_MUST_BE_A_CLAN_MEMBER);
 			return false;
 		}
+		
 		if (!target.isClanLeader())
 		{
 			final SystemMessage sm = new SystemMessage(SystemMessageId.S1_IS_NOT_A_CLAN_LEADER);
@@ -2149,6 +2205,7 @@ public class Clan
 			player.sendPacket(sm);
 			return false;
 		}
+		
 		final Clan targetClan = target.getClan();
 		if (target.getAllyId() != 0)
 		{
@@ -2158,6 +2215,7 @@ public class Clan
 			player.sendPacket(sm);
 			return false;
 		}
+		
 		if (targetClan.getAllyPenaltyExpiryTime() > System.currentTimeMillis())
 		{
 			if (targetClan.getAllyPenaltyType() == PENALTY_TYPE_CLAN_LEAVED)
@@ -2168,17 +2226,20 @@ public class Clan
 				player.sendPacket(sm);
 				return false;
 			}
+			
 			if (targetClan.getAllyPenaltyType() == PENALTY_TYPE_CLAN_DISMISSED)
 			{
 				player.sendPacket(SystemMessageId.A_CLAN_CAN_JOIN_ANOTHER_ALLIANCE_IN_24_H_AFTER_LEAVING_THE_PREVIOUS_ONE);
 				return false;
 			}
 		}
+		
 		if (player.isInsideZone(ZoneId.SIEGE) && target.isInsideZone(ZoneId.SIEGE))
 		{
 			player.sendPacket(SystemMessageId.THE_OPPOSING_CLAN_IS_PARTICIPATING_IN_A_SIEGE_BATTLE);
 			return false;
 		}
+		
 		if (leaderClan.isAtWarWith(targetClan.getId()))
 		{
 			player.sendPacket(SystemMessageId.YOU_CANNOT_MAKE_AN_ALLIANCE_WITH_A_CLAN_YOU_ARE_IN_WAR_WITH);
@@ -2242,36 +2303,43 @@ public class Clan
 			player.sendPacket(SystemMessageId.ONLY_CLAN_LEADERS_MAY_CREATE_ALLIANCES);
 			return;
 		}
+		
 		if (_allyId != 0)
 		{
 			player.sendPacket(SystemMessageId.YOU_ALREADY_BELONG_TO_ANOTHER_ALLIANCE);
 			return;
 		}
+		
 		if (_level < 5)
 		{
 			player.sendPacket(SystemMessageId.TO_CREATE_AN_ALLIANCE_YOUR_CLAN_MUST_BE_LV_5_OR_HIGHER);
 			return;
 		}
+		
 		if ((_allyPenaltyExpiryTime > System.currentTimeMillis()) && (_allyPenaltyType == PENALTY_TYPE_DISSOLVE_ALLY))
 		{
 			player.sendPacket(SystemMessageId.YOU_CANNOT_CREATE_A_NEW_ALLIANCE_WITHIN_1_DAY_OF_DISSOLUTION);
 			return;
 		}
+		
 		if (_dissolvingExpiryTime > System.currentTimeMillis())
 		{
 			player.sendPacket(SystemMessageId.AS_YOU_ARE_CURRENTLY_SCHEDULE_FOR_CLAN_DISSOLUTION_NO_ALLIANCE_CAN_BE_CREATED);
 			return;
 		}
+		
 		if (!StringUtil.isAlphaNumeric(allyName))
 		{
 			player.sendPacket(SystemMessageId.INCORRECT_ALLIANCE_NAME_PLEASE_TRY_AGAIN);
 			return;
 		}
+		
 		if ((allyName.length() > 16) || (allyName.length() < 2))
 		{
 			player.sendPacket(SystemMessageId.INCORRECT_LENGTH_FOR_AN_ALLIANCE_NAME);
 			return;
 		}
+		
 		if (ClanTable.getInstance().isAllyExists(allyName))
 		{
 			player.sendPacket(SystemMessageId.THAT_ALLIANCE_NAME_ALREADY_EXISTS);
@@ -2296,11 +2364,13 @@ public class Clan
 			player.sendPacket(SystemMessageId.YOU_ARE_NOT_IN_AN_ALLIANCE);
 			return;
 		}
+		
 		if (!player.isClanLeader() || (_clanId != _allyId))
 		{
 			player.sendPacket(SystemMessageId.THIS_FEATURE_IS_ONLY_AVAILABLE_TO_ALLIANCE_LEADERS);
 			return;
 		}
+		
 		if (player.isInsideZone(ZoneId.SIEGE))
 		{
 			player.sendPacket(SystemMessageId.YOU_CANNOT_DISSOLVE_AN_ALLIANCE_WHILE_AN_AFFILIATED_CLAN_IS_PARTICIPATING_IN_A_SIEGE_BATTLE);
@@ -2335,6 +2405,7 @@ public class Clan
 			player.sendPacket(SystemMessageId.YOU_ARE_NOT_AUTHORIZED_TO_DO_THAT);
 			return false;
 		}
+		
 		if (System.currentTimeMillis() < _dissolvingExpiryTime)
 		{
 			player.sendPacket(SystemMessageId.AS_YOU_ARE_CURRENTLY_SCHEDULE_FOR_CLAN_DISSOLUTION_YOUR_CLAN_LEVEL_CANNOT_BE_INCREASED);
@@ -2363,6 +2434,7 @@ public class Clan
 				}
 			}
 		}
+		
 		if (!increasedLevel)
 		{
 			player.sendPacket(SystemMessageId.THE_CONDITIONS_NECESSARY_TO_INCREASE_THE_CLAN_S_LEVEL_HAVE_NOT_BEEN_MET);
@@ -2454,6 +2526,7 @@ public class Clan
 			{
 				CrestTable.getInstance().removeCrest(getAllyCrestId());
 			}
+			
 			sqlStatement = "UPDATE clan_data SET ally_crest_id = ? WHERE ally_id = ?";
 			allyId = _allyId;
 		}
@@ -2531,16 +2604,19 @@ public class Clan
 	public boolean isLearnableSubSkill(int skillId, int skillLevel)
 	{
 		Skill current = _subPledgeSkills.get(skillId);
+		
 		// is next level?
 		if ((current != null) && ((current.getLevel() + 1) == skillLevel))
 		{
 			return true;
 		}
+		
 		// is first level?
 		if ((current == null) && (skillLevel == 1))
 		{
 			return true;
 		}
+		
 		// other sub-pledges
 		for (SubPledge subunit : _subPledges.values())
 		{
@@ -2549,18 +2625,22 @@ public class Clan
 			{
 				continue;
 			}
+			
 			current = subunit.getSkill(skillId);
+			
 			// is next level?
 			if ((current != null) && ((current.getLevel() + 1) == skillLevel))
 			{
 				return true;
 			}
+			
 			// is first level?
 			if ((current == null) && (skillLevel == 1))
 			{
 				return true;
 			}
 		}
+		
 		return false;
 	}
 	
@@ -2582,11 +2662,13 @@ public class Clan
 		{
 			current = _subPledges.get(subType).getSkill(id);
 		}
+		
 		// is next level?
 		if ((current != null) && ((current.getLevel() + 1) == skill.getLevel()))
 		{
 			return true;
 		}
+		
 		// is first level?
 		if ((current == null) && (skill.getLevel() == 1))
 		{
@@ -2603,6 +2685,7 @@ public class Clan
 		{
 			list.add(new SubPledgeSkill(0, skill.getId(), skill.getLevel()));
 		}
+		
 		for (SubPledge subunit : _subPledges.values())
 		{
 			for (Skill skill : subunit.getSkills())
@@ -2610,6 +2693,7 @@ public class Clan
 				list.add(new SubPledgeSkill(subunit.getId(), skill.getId(), skill.getLevel()));
 			}
 		}
+		
 		return list;
 	}
 	
@@ -2707,6 +2791,7 @@ public class Clan
 				removeSkill(skill);
 			}
 		}
+		
 		for (ScheduledFuture<?> task : masterySkillTasks)
 		{
 			if ((task != null) && !task.isDone())
@@ -2714,6 +2799,7 @@ public class Clan
 				task.cancel(true);
 			}
 		}
+		
 		masterySkillTasks.clear();
 		removeMasterySkill(19538);
 		removeMasterySkill(19539);
@@ -2743,6 +2829,7 @@ public class Clan
 		{
 			return -1;
 		}
+		
 		return (int) (endTime - System.currentTimeMillis());
 	}
 	
@@ -2778,6 +2865,7 @@ public class Clan
 				}
 			}
 		}
+		
 		return _vars;
 	}
 	

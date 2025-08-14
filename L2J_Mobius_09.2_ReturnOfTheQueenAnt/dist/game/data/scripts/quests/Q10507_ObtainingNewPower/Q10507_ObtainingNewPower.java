@@ -47,15 +47,19 @@ public class Q10507_ObtainingNewPower extends Quest
 {
 	// NPC
 	private static final int LIONEL = 33907;
+	
 	// Item
 	private static final int PROOF_OF_STRENGTH = 47843;
+	
 	// Reward
 	private static final int DIGNITY_OF_THE_EXALTED_LV6 = 80970;
+	
 	// Misc
 	private static final int MIN_LEVEL = 107;
 	private static final int MIN_COMPLETE_LEVEL = 110;
 	private static final int REACH_LV_110 = NpcStringId.REACH_LV_110.getId();
 	private static final int PROOF_OF_STRENGTH_NEEDED = 160000;
+	
 	// Monsters
 	private static final int[] MONSTERS =
 	{
@@ -277,6 +281,7 @@ public class Q10507_ObtainingNewPower extends Quest
 		{
 			return htmltext;
 		}
+		
 		switch (event)
 		{
 			case "33907-02.htm":
@@ -297,6 +302,7 @@ public class Q10507_ObtainingNewPower extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -332,6 +338,7 @@ public class Q10507_ObtainingNewPower extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -352,10 +359,12 @@ public class Q10507_ObtainingNewPower extends Quest
 				giveItemRandomly(player, PROOF_OF_STRENGTH, 1, PROOF_OF_STRENGTH_NEEDED, 1, true);
 				playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 			}
+			
 			if ((getQuestItemsCount(player, PROOF_OF_STRENGTH) >= PROOF_OF_STRENGTH_NEEDED) && (player.getLevel() >= MIN_COMPLETE_LEVEL))
 			{
 				qs.setCond(2, true);
 			}
+			
 			sendNpcLogList(player);
 		}
 	}
@@ -371,8 +380,10 @@ public class Q10507_ObtainingNewPower extends Quest
 			{
 				holder.add(new NpcLogListHolder(REACH_LV_110, true, 1));
 			}
+			
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 	
@@ -388,6 +399,7 @@ public class Q10507_ObtainingNewPower extends Quest
 			{
 				qs.setCond(2, true);
 			}
+			
 			sendNpcLogList(player);
 		}
 	}

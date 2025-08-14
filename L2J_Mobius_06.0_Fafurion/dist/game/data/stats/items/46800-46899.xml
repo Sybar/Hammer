@@ -1335,9 +1335,9 @@
 		<set name="immediate_effect" val="true" />
 		<set name="handler" val="PaulinasSupportBox" />
 		<set name="material" val="PAPER" />
-		<cond msgId="1902">
+		<conditions msgId="1902">
 			<player levelRange="20;39" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="46850" name="Paulina's Equipment Set (C-grade)" type="EtcItem">
 		<!-- Use to obtain an equipment set appropriate to your class. Can be used only by characters between Lv. 40-60. -->
@@ -1350,9 +1350,9 @@
 		<set name="immediate_effect" val="true" />
 		<set name="handler" val="PaulinasSupportBox" />
 		<set name="material" val="PAPER" />
-		<cond msgId="1902">
+		<conditions msgId="1902">
 			<player levelRange="40;60" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="46851" name="Paulina's Equipment Set (A-grade)" type="EtcItem">
 		<!-- Use to obtain an equipment set appropriate to your class. Can be used only by characters between Lv. 61-75. -->
@@ -1365,9 +1365,9 @@
 		<set name="immediate_effect" val="true" />
 		<set name="handler" val="PaulinasSupportBox" />
 		<set name="material" val="PAPER" />
-		<cond msgId="1902">
+		<conditions msgId="1902">
 			<player levelRange="61;75" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="46852" name="Paulina's Equipment Set (S-grade)" type="EtcItem">
 		<!-- Use to obtain an equipment set appropriate to your class. Can be used only by characters between Lv. 76-84. -->
@@ -1380,9 +1380,9 @@
 		<set name="immediate_effect" val="true" />
 		<set name="handler" val="PaulinasSupportBox" />
 		<set name="material" val="PAPER" />
-		<cond msgId="1902">
+		<conditions msgId="1902">
 			<player levelRange="76;84" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="46853" name="Blessed Paulina's Specter Dual Sword" type="Weapon">
 		<!-- Dimensional Item. A Specter Dual Sword that can be equipped from Lv. 85 onwards, thanks to Paulina's blessing. <Special Option>. Atk. Spd. +5%, P. Critical Rate +82. Enchantment, Augment, Soul Crystal, Crystallization, Appearance Modification, Attribute Assignment not possible. -->

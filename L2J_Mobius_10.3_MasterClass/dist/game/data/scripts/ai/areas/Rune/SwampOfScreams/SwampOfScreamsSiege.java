@@ -50,6 +50,7 @@ public class SwampOfScreamsSiege extends AbstractNpcAI
 	};
 	private static final int SWAMP_PETRA = 24574;
 	private static final AtomicReference<SpawnTemplate> SPAWN_SWAMP_MONSTERS = new AtomicReference<>();
+	
 	// Schedule: 10-11 & 22-23
 	private static final int[] DAY_TIME =
 	{
@@ -107,11 +108,13 @@ public class SwampOfScreamsSiege extends AbstractNpcAI
 					World.getInstance().getPlayers().forEach(p -> showOnScreenMsg(p, NpcStringId.HERALD_S_ANNOUNCEMENT_10_00_11_00_MONSTERS_OF_THE_SWAMP_OF_SCREAMS_ARE_DEFEATED, 2, 10000, true));
 					scheduleNightTime();
 				}
+				
 				SPAWN_SWAMP_MONSTERS.set(SpawnData.getInstance().getSpawnByName("SwampOfScreamsMonsters"));
 				SPAWN_SWAMP_MONSTERS.get().getGroups().forEach(SpawnGroup::despawnAll);
 				break;
 			}
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	

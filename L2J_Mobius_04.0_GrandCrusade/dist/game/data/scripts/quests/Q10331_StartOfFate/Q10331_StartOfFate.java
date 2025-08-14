@@ -56,6 +56,7 @@ public class Q10331_StartOfFate extends Quest
 	private static final int MOKA = 32157;
 	private static final int VALFAR = 32146;
 	private static final int SEBION = 32978;
+	
 	// Items
 	private static final int SARIL_NECKLACE = 17580;
 	private static final int SOE = 736;
@@ -63,6 +64,7 @@ public class Q10331_StartOfFate extends Quest
 	private static final int BLESSED_SPIRITSHOT = 3948;
 	private static final int PAULINAS_SET_D_GRADE = 46849;
 	private static final int PROOF_OF_COURAGE = 17821;
+	
 	// Misc
 	private static final int MIN_LEVEL = 18;
 	
@@ -129,6 +131,7 @@ public class Q10331_StartOfFate extends Quest
 						PunishmentManager.handleIllegalPlayerAction(player, "Player " + player.getName() + " tried to cheat the 1st class transfer!", Config.DEFAULT_PUNISH);
 						return null;
 					}
+					
 					switch (newClassId)
 					{
 						case WARRIOR:
@@ -232,6 +235,7 @@ public class Q10331_StartOfFate extends Quest
 							break;
 						}
 					}
+					
 					player.setBaseClass(newClassId);
 					player.setPlayerClass(newClassId.getId());
 					player.store(false);
@@ -249,6 +253,7 @@ public class Q10331_StartOfFate extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -510,6 +515,7 @@ public class Q10331_StartOfFate extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

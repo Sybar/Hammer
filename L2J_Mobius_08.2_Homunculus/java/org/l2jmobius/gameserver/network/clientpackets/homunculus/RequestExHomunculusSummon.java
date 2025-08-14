@@ -71,6 +71,7 @@ public class RequestExHomunculusSummon extends ClientPacket
 					player.sendPacket(new ExHomunculusSummonResult(0));
 					return;
 				}
+				
 				for (Double[] homuHolder : HomunculusCreationData.getInstance().getDefaultTemplate().getCreationChance())
 				{
 					current += homuHolder[1];

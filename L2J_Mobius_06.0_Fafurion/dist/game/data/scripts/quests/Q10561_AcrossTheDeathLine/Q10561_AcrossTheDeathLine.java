@@ -41,6 +41,7 @@ public class Q10561_AcrossTheDeathLine extends Quest
 	// NPCs
 	private static final int HERPHAH = 34362;
 	private static final int PENNY = 34413;
+	
 	// Reward's
 	private static final long EXP = 4409345453L;
 	private static final int SP = 3968411;
@@ -48,6 +49,7 @@ public class Q10561_AcrossTheDeathLine extends Quest
 	private static final int BS_SHOT_GRADE_R = 22434;
 	private static final int PA_ART_OF_SEDUCTION = 37928;
 	private static final int TALISMAN_DESTRUCTION = 34985;
+	
 	// Misc
 	private static final int MIN_LEVEL = 85;
 	private static final int MAX_LEVEL = 99;
@@ -120,6 +122,7 @@ public class Q10561_AcrossTheDeathLine extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -167,6 +170,7 @@ public class Q10561_AcrossTheDeathLine extends Quest
 						else if (qs.isCond(3))
 						{
 							addFactionPoints(player, Faction.ADVENTURE_GUILD, 200);
+							
 							// TODO: we need to add reward % of amity points to factions in all faction quests
 							// Checking if reached level 2 with Adventurer's Guild Faction
 							if (player.getFactionLevel(Faction.ADVENTURE_GUILD) >= 2)
@@ -189,6 +193,7 @@ public class Q10561_AcrossTheDeathLine extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

@@ -36,6 +36,7 @@ public class Q00408_PathOfTheElvenWizard extends Quest
 	private static final int GREENIS = 30157;
 	private static final int THALIA = 30371;
 	private static final int NORTHWIND = 30423;
+	
 	// Items
 	private static final int ROSELLA_LETTER = 1218;
 	private static final int RED_DOWN = 1219;

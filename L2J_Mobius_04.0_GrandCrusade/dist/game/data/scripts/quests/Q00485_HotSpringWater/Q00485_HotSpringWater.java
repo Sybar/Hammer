@@ -45,8 +45,10 @@ public class Q00485_HotSpringWater extends Quest
 		21322, // Hot Springs Bandersnatch
 		21323, // Hot Springs Grendel
 	};
+	
 	// Items
 	private static final int WATER = 19497; // Hot Springs Water Sample
+	
 	// Misc
 	private static final int MIN_LEVEL = 70;
 	private static final int MAX_LEVEL = 74;
@@ -86,6 +88,7 @@ public class Q00485_HotSpringWater extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -125,6 +128,7 @@ public class Q00485_HotSpringWater extends Quest
 						{
 							addExpAndSp(player, 9_483_000, 2_275);
 						}
+						
 						htmltext = "30844-02.html";
 					}
 				}
@@ -144,6 +148,7 @@ public class Q00485_HotSpringWater extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

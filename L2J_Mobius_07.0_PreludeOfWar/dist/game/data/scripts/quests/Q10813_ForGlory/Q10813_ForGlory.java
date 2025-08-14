@@ -40,10 +40,12 @@ public class Q10813_ForGlory extends Quest
 {
 	// NPC
 	private static final int MYSTERIOUS_BUTLER = 33685;
+	
 	// Items
 	private static final int PROOF_OF_BATTLE_1 = 45872;
 	private static final int MYSTERIOUS_BUTLER_CERTIFICATE = 45624;
 	private static final int BATTLE_QUICK_HEALING_POTION = 45945;
+	
 	// Misc
 	private static final int MIN_LEVEL = 99;
 	private static final int PROOF_OF_BATTLE_1_NEEDED = 10;
@@ -98,14 +100,17 @@ public class Q10813_ForGlory extends Quest
 						{
 							mainQ.notifyEvent("SUBQUEST_FINISHED_NOTIFY", npc, player);
 						}
+						
 						htmltext = event;
 						break;
 					}
+					
 					htmltext = getNoQuestLevelRewardMsg(player);
 					break;
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -139,6 +144,7 @@ public class Q10813_ForGlory extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

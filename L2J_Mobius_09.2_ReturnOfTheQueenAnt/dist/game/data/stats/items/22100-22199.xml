@@ -1043,9 +1043,9 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player sex="1" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="22157" name="Forget-me-not Hairpin" type="Armor">
 		<!-- Forget-me-not shaped hairpin. Female only. -->
@@ -1060,9 +1060,9 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player sex="1" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="22158" name="Outlaw's Eyepatch" type="Armor">
 		<!-- Purple eyepatch accessory -->
@@ -1188,9 +1188,9 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player sex="1" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="22167" name="Raccoon Ears" type="Armor">
 		<!-- Raccoon ear shaped hair accessory. -->
@@ -1535,9 +1535,9 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="22312" level="1" /> <!-- Birthday Vitality Buff -->
 		</skills>

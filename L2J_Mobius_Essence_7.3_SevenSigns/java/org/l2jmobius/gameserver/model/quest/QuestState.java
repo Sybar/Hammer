@@ -52,6 +52,8 @@ public class QuestState
 	private static final String RESTART_VAR = "restartTime";
 	private static final String MEMO_VAR = "memoState";
 	private static final String MEMO_EX_VAR = "memoStateEx";
+	private static final int RESET_HOUR = 6;
+	private static final int RESET_MINUTES = 30;
 	
 	/** The name of the quest of this QuestState */
 	private final String _questName;
@@ -296,6 +298,7 @@ public class QuestState
 				catch (Exception ignored)
 				{
 				}
+				
 				int newCond = 0;
 				try
 				{
@@ -342,6 +345,7 @@ public class QuestState
 		}
 		
 		int completedStateFlags = 0;
+		
 		// cond 0 and 1 do not need completedStateFlags. Also, if cond > 1, the 1st step must
 		// always exist (i.e. it can never be skipped). So if cond is 2, we can still safely
 		// assume no steps have been skipped.
@@ -392,6 +396,7 @@ public class QuestState
 				set("__compltdStateFlags", String.valueOf(completedStateFlags));
 			}
 		}
+		
 		// If this moves forward, it changes nothing on previously skipped steps.
 		// Just mark this state and we are done.
 		else
@@ -568,8 +573,10 @@ public class QuestState
 					}
 				}
 			}
+			
 			return val;
 		}
+		
 		return 0;
 	}
 	
@@ -781,6 +788,7 @@ public class QuestState
 				setRestartTime();
 				break;
 			}
+			
 			// case ONE_TIME:
 			// case REPEATABLE:
 			default:
@@ -893,9 +901,7 @@ public class QuestState
 	}
 	
 	/**
-	 * Set the restart time for the daily quests.<br>
-	 * The time is hardcoded at {@link Quest#getResetHour()} hours, {@link Quest#getResetMinutes()} minutes of the following day.<br>
-	 * It can be overridden in scripts (quests).
+	 * Set the restart time for the daily quests.
 	 */
 	public void setRestartTime()
 	{
@@ -905,12 +911,13 @@ public class QuestState
 		}
 		
 		final Calendar reDo = Calendar.getInstance();
-		if (reDo.get(Calendar.HOUR_OF_DAY) >= getQuest().getResetHour())
+		if (reDo.get(Calendar.HOUR_OF_DAY) >= RESET_HOUR)
 		{
 			reDo.add(Calendar.DATE, 1);
 		}
-		reDo.set(Calendar.HOUR_OF_DAY, getQuest().getResetHour());
-		reDo.set(Calendar.MINUTE, getQuest().getResetMinutes());
+		
+		reDo.set(Calendar.HOUR_OF_DAY, RESET_HOUR);
+		reDo.set(Calendar.MINUTE, RESET_MINUTES);
 		set(RESTART_VAR, String.valueOf(reDo.getTimeInMillis()));
 	}
 	

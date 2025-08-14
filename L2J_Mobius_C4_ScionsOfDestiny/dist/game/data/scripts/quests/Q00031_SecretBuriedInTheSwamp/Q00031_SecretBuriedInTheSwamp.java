@@ -35,6 +35,7 @@ public class Q00031_SecretBuriedInTheSwamp extends Quest
 	private static final int FORGOTTEN_MONUMENT_3 = 31663;
 	private static final int FORGOTTEN_MONUMENT_4 = 31664;
 	private static final int CORPSE_OF_DWARF = 31665;
+	
 	// Item
 	private static final int KRORIN_JOURNAL = 7252;
 	

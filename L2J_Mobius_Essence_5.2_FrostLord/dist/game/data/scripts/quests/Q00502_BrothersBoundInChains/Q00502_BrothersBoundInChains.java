@@ -49,14 +49,18 @@ public class Q00502_BrothersBoundInChains extends Quest
 {
 	// NPC
 	private static final int DARK_JUDGE = 30981;
+	
 	// Items
 	private static final int GEMSTONE_B = 2132;
 	private static final int PENITENT_MANACLES = 70806;
 	private static final int CRUMBS_OF_PENITENCE = 70807;
+	
 	// Skill
 	private static final int HOUR_OF_PENITENCE = 55702;
+	
 	// Agathion
 	private static final int SIN_EATER = 9021;
+	
 	// Other
 	private static final String KILL_COUNT_VAR = "killCount";
 	
@@ -90,6 +94,7 @@ public class Q00502_BrothersBoundInChains extends Quest
 					skill.activateSkill(player, player);
 					startQuestTimer("buff", 270000, null, player); // Rebuff every 4min30 (retail like)
 				}
+				
 				return null;
 			}
 			case "30981-02.htm":
@@ -182,6 +187,7 @@ public class Q00502_BrothersBoundInChains extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -191,11 +197,13 @@ public class Q00502_BrothersBoundInChains extends Quest
 		{
 			return;
 		}
+		
 		final Player player = event.getPlayer();
 		if (player == null)
 		{
 			return;
 		}
+		
 		final QuestState qs = getQuestState(player, false);
 		if (qs == null)
 		{
@@ -211,11 +219,13 @@ public class Q00502_BrothersBoundInChains extends Quest
 		{
 			return;
 		}
+		
 		final Player player = event.getPlayer();
 		if (player == null)
 		{
 			return;
 		}
+		
 		final QuestState qs = getQuestState(player, false);
 		if (qs == null)
 		{
@@ -235,11 +245,13 @@ public class Q00502_BrothersBoundInChains extends Quest
 		{
 			return;
 		}
+		
 		final QuestState qs = getQuestState(player, false);
 		if (qs == null)
 		{
 			return;
 		}
+		
 		final Attackable target = event.getTarget();
 		if (target == null)
 		{
@@ -251,10 +263,12 @@ public class Q00502_BrothersBoundInChains extends Quest
 		{
 			return;
 		}
+		
 		if (target.isRaid() || target.isRaidMinion())
 		{
 			return;
 		}
+		
 		if (player.getCommandChannel() != null)
 		{
 			return;

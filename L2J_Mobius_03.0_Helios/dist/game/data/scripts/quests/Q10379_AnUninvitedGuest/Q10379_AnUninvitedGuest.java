@@ -43,6 +43,7 @@ public class Q10379_AnUninvitedGuest extends Quest
 {
 	// NPCs
 	private static final int ENDRIGO = 30632;
+	
 	// Monsters
 	private static final int SCALDISECT_THE_FURIOUS = 23212;
 	private static final int NAGDU_THE_DEFORMED = 23201;
@@ -56,9 +57,11 @@ public class Q10379_AnUninvitedGuest extends Quest
 	private static final int KALLBERA = 23209;
 	private static final int HAKAL_THE_BUTTCHERED = 23202;
 	private static final int SAMMITA = 23206;
+	
 	// Items
 	private static final int SOE_GUILLOTINE_FORTRESS = 35292;
 	private static final int ADENA = 57;
+	
 	// Misc
 	private static final int MIN_LEVEL = 95;
 	
@@ -111,6 +114,7 @@ public class Q10379_AnUninvitedGuest extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -138,6 +142,7 @@ public class Q10379_AnUninvitedGuest extends Quest
 		{
 			htmltext = "warden_endrigo_q10379_03.html";
 		}
+		
 		return htmltext;
 	}
 	
@@ -179,10 +184,12 @@ public class Q10379_AnUninvitedGuest extends Quest
 							kills++;
 							qs.set(Integer.toString(SCALDISECT_THE_FURIOUS), kills);
 						}
+						
 						final ExQuestNpcLogList log = new ExQuestNpcLogList(getId());
 						log.addNpc(SCALDISECT_THE_FURIOUS, qs.getInt("SCALDISECT_THE_FURIOUS"));
 						player.sendPacket(log);
 					}
+					
 					if (qs.getInt(Integer.toString(SCALDISECT_THE_FURIOUS)) == 1)
 					{
 						qs.setCond(0);

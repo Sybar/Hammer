@@ -38,10 +38,13 @@ public class Q00596_SpecialMissionDefeatBaylor extends Quest
 {
 	// NPCs
 	private static final int PENNY = 34413;
+	
 	// RaidBosses
 	private static final int BAYLOR = 29213;
+	
 	// Rewards
 	private static final int SCROLL_OF_ESCAPE_PARNASSUS = 80314;
+	
 	// Misc
 	private static final int MIN_LEVEL = 97;
 	private static final int MAX_LEVEL = 99;
@@ -65,6 +68,7 @@ public class Q00596_SpecialMissionDefeatBaylor extends Quest
 		{
 			return htmltext;
 		}
+		
 		switch (event)
 		{
 			case "34413-02.htm":
@@ -90,6 +94,7 @@ public class Q00596_SpecialMissionDefeatBaylor extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -124,6 +129,7 @@ public class Q00596_SpecialMissionDefeatBaylor extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

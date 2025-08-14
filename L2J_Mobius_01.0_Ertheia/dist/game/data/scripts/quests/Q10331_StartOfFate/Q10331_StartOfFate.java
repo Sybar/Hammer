@@ -56,11 +56,14 @@ public class Q10331_StartOfFate extends Quest
 	private static final int LAKCIS = 32977;
 	private static final int SEBION = 32978;
 	private static final int PANTHEON = 32972;
+	
 	// Items
 	private static final int SARIL_NECKLACE = 17580;
 	private static final int PROOF_OF_COURAGE = 17821;
+	
 	// Location
 	private static final Location NEAR_SEBION = new Location(-111774, 231933, -3160);
+	
 	// Misc
 	private static final int MIN_LEVEL = 18;
 	
@@ -240,6 +243,7 @@ public class Q10331_StartOfFate extends Quest
 						PunishmentManager.handleIllegalPlayerAction(player, "Player " + player.getName() + " tried to cheat the 1st class transfer!", Config.DEFAULT_PUNISH);
 						return null;
 					}
+					
 					switch (newClassId)
 					{
 						case WARRIOR:
@@ -343,6 +347,7 @@ public class Q10331_StartOfFate extends Quest
 							break;
 						}
 					}
+					
 					player.setBaseClass(newClassId);
 					player.setPlayerClass(newClassId.getId());
 					player.store(false);
@@ -357,6 +362,7 @@ public class Q10331_StartOfFate extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -380,9 +386,11 @@ public class Q10331_StartOfFate extends Quest
 								htmltext = "32153-01.htm";
 								break;
 							}
+							
 							htmltext = "32153-14.htm";
 							break;
 						}
+						
 						htmltext = "32153-04.htm";
 						break;
 					}
@@ -395,9 +403,11 @@ public class Q10331_StartOfFate extends Quest
 								htmltext = "32147-01.htm";
 								break;
 							}
+							
 							htmltext = "32147-13.htm";
 							break;
 						}
+						
 						htmltext = "32147-04.htm";
 						break;
 					}
@@ -410,9 +420,11 @@ public class Q10331_StartOfFate extends Quest
 								htmltext = "32160-01.htm";
 								break;
 							}
+							
 							htmltext = "32160-13.htm";
 							break;
 						}
+						
 						htmltext = "32160-04.htm";
 						break;
 					}
@@ -425,9 +437,11 @@ public class Q10331_StartOfFate extends Quest
 								htmltext = "32150-01.htm";
 								break;
 							}
+							
 							htmltext = "32150-12.htm";
 							break;
 						}
+						
 						htmltext = "32150-04.htm";
 						break;
 					}
@@ -440,9 +454,11 @@ public class Q10331_StartOfFate extends Quest
 								htmltext = "32157-01.htm";
 								break;
 							}
+							
 							htmltext = "32157-10.htm";
 							break;
 						}
+						
 						htmltext = "32157-04.htm";
 						break;
 					}
@@ -455,9 +471,11 @@ public class Q10331_StartOfFate extends Quest
 								htmltext = "32146-01.htm";
 								break;
 							}
+							
 							htmltext = "32146-11.htm";
 							break;
 						}
+						
 						htmltext = "32146-04.htm";
 						break;
 					}
@@ -504,6 +522,7 @@ public class Q10331_StartOfFate extends Quest
 								}
 								break;
 							}
+							
 							htmltext = "32153-06.htm";
 							break;
 						}
@@ -535,6 +554,7 @@ public class Q10331_StartOfFate extends Quest
 								}
 								break;
 							}
+							
 							htmltext = "32147-06.htm";
 							break;
 						}
@@ -566,6 +586,7 @@ public class Q10331_StartOfFate extends Quest
 								}
 								break;
 							}
+							
 							htmltext = "32160-06.htm";
 							break;
 						}
@@ -597,6 +618,7 @@ public class Q10331_StartOfFate extends Quest
 								}
 								break;
 							}
+							
 							htmltext = "32150-06.htm";
 							break;
 						}
@@ -616,6 +638,7 @@ public class Q10331_StartOfFate extends Quest
 								htmltext = "32157-07.html";
 								break;
 							}
+							
 							htmltext = "32157-06.htm";
 							break;
 						}
@@ -647,6 +670,7 @@ public class Q10331_StartOfFate extends Quest
 								}
 								break;
 							}
+							
 							htmltext = "32146-06.htm";
 							break;
 						}
@@ -766,6 +790,7 @@ public class Q10331_StartOfFate extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	

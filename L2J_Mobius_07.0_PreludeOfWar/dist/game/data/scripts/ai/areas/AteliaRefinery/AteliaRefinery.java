@@ -32,10 +32,12 @@ public class AteliaRefinery extends AbstractNpcAI
 {
 	// NPC
 	private static final int ATELIA_REFINERY_TELEPORT_DEVICE = 34441;
+	
 	// Special Mobs
 	private static final int HARKE = 24161;
 	private static final int ERGALION = 24162;
 	private static final int SPIRA = 24163;
+	
 	// Mobs
 	private static final int[] MOBS =
 	{
@@ -97,6 +99,7 @@ public class AteliaRefinery extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

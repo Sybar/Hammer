@@ -65,7 +65,6 @@ public class SummonPet extends AbstractEffect
 		}
 		
 		final Player player = effector.asPlayer();
-		
 		if (player.hasPet() || player.isMounted())
 		{
 			player.sendPacket(SystemMessageId.YOU_ALREADY_HAVE_A_PET);
@@ -98,8 +97,7 @@ public class SummonPet extends AbstractEffect
 		pet.setShowSummonAnimation(true);
 		if (!pet.isRespawned())
 		{
-			pet.setCurrentHp(pet.getMaxHp());
-			pet.setCurrentMp(pet.getMaxMp());
+			pet.fullRestore();
 			pet.getStat().setExp(pet.getExpForThisLevel());
 			pet.setCurrentFed(pet.getMaxFed());
 		}

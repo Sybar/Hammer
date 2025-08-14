@@ -35,9 +35,11 @@ public class Q10978_MissingPets extends Quest
 	// NPCs
 	private static final int LEMPER = 30869;
 	private static final int COOPER = 30829;
+	
 	// Items
 	private static final ItemHolder SOULSHOT_TICKET = new ItemHolder(90907, 100);
 	private static final ItemHolder PET_GUIDE = new ItemHolder(94118, 1);
+	
 	// Misc
 	private static final int MIN_LEVEL = 76;
 	
@@ -94,6 +96,7 @@ public class Q10978_MissingPets extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -135,6 +138,7 @@ public class Q10978_MissingPets extends Quest
 				htmltext = getAlreadyCompletedMsg(player);
 			}
 		}
+		
 		return htmltext;
 	}
 }

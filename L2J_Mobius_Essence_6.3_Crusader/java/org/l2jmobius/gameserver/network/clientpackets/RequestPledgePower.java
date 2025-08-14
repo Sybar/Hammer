@@ -70,6 +70,7 @@ public class RequestPledgePower extends ClientPacket
 				// => Leaves only ACCESS_WAREHOUSE, HALL_OPEN_DOOR, CASTLE_OPEN_DOOR?
 				_privs &= ClanAccess.ACCESS_WAREHOUSE.getMask() | ClanAccess.HALL_OPEN_DOOR.getMask() | ClanAccess.CASTLE_OPEN_DOOR.getMask();
 			}
+			
 			clan.setRankPrivs(_rank, _privs);
 		}
 	}

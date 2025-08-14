@@ -114,6 +114,7 @@ public class Vortex extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	

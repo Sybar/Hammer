@@ -39,8 +39,10 @@ public class Q00459_TheVillainOfTheUndergroundMineTeredor extends Quest
 {
 	// NPCs
 	private static final int FILAUR = 30535;
+	
 	// Monster
 	private static final int TEREDOR = 25785;
+	
 	// Misc
 	private static final int MIN_LEVEL = 85;
 	private static final int PROOF_OF_FIDELITY = 19450;
@@ -80,6 +82,7 @@ public class Q00459_TheVillainOfTheUndergroundMineTeredor extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -120,10 +123,12 @@ public class Q00459_TheVillainOfTheUndergroundMineTeredor extends Quest
 				{
 					htmltext = "Complete.html";
 				}
+				
 				qs.setState(State.CREATED);
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

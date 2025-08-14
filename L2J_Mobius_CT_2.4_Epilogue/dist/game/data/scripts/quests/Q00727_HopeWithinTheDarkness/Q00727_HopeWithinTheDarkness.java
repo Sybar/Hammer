@@ -90,6 +90,7 @@ public class Q00727_HopeWithinTheDarkness extends Quest
 			{
 				GlobalVariablesManager.getInstance().set("CastlePailaka " + _wardenId, 0);
 			}
+			
 			return reEnterTime;
 		}
 		
@@ -255,6 +256,7 @@ public class Q00727_HopeWithinTheDarkness extends Quest
 					npc.doCast(NPC_BUFFS.get(npc.getId()).getSkill());
 				}
 			}
+			
 			startQuestTimer("buff", 120000, npc, null);
 			return null;
 		}
@@ -294,6 +296,7 @@ public class Q00727_HopeWithinTheDarkness extends Quest
 		{
 			qs.exitQuest(true, true);
 		}
+		
 		return htmltext;
 	}
 	
@@ -317,6 +320,7 @@ public class Q00727_HopeWithinTheDarkness extends Quest
 				return "Victim-01.html";
 			}
 		}
+		
 		return null;
 	}
 	
@@ -355,6 +359,7 @@ public class Q00727_HopeWithinTheDarkness extends Quest
 			{
 				cond = qs.getCond();
 			}
+			
 			if (CASTLE_DUNGEONS.containsKey(npcId) && (cond == 0))
 			{
 				if (player.getLevel() >= 80)
@@ -381,6 +386,7 @@ public class Q00727_HopeWithinTheDarkness extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -594,6 +600,7 @@ public class Q00727_HopeWithinTheDarkness extends Quest
 	{
 		// Check for existing instances for this player
 		InstanceWorld world = InstanceManager.getInstance().getPlayerWorld(player);
+		
 		// Existing instance
 		if (world != null)
 		{
@@ -602,9 +609,11 @@ public class Q00727_HopeWithinTheDarkness extends Quest
 				player.sendPacket(SystemMessageId.YOU_HAVE_ENTERED_ANOTHER_INSTANCE_ZONE_THEREFORE_YOU_CANNOT_ENTER_CORRESPONDING_DUNGEON);
 				return "";
 			}
+			
 			teleportPlayer(player, coords, world.getInstanceId());
 			return "";
 		}
+		
 		// New instance
 		if (ret != null)
 		{
@@ -630,6 +639,7 @@ public class Q00727_HopeWithinTheDarkness extends Quest
 		{
 			return "CastleWarden-09.html";
 		}
+		
 		for (Player partyMember : party.getMembers())
 		{
 			teleportPlayer(partyMember, coords, instanceId);
@@ -641,6 +651,7 @@ public class Q00727_HopeWithinTheDarkness extends Quest
 			
 			partyMember.getQuestState(getName()).setCond(2);
 		}
+		
 		return getHtm(player, "CastleWarden-13.html").replace("%clan%", player.getClan().getName());
 	}
 	

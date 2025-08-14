@@ -38,8 +38,10 @@ public class Q10859_OwnTheEarthAndTheHeavens extends Quest
 	// NPCs
 	private static final int KEKROPUS = 34222;
 	private static final int HELIOS = 29305;
+	
 	// Items
 	private static final int BLOODY_ETERNAL_STONE_FRAGMENT = 37801;
+	
 	// Misc
 	private static final int MIN_LEVEL = 102;
 	
@@ -61,6 +63,7 @@ public class Q10859_OwnTheEarthAndTheHeavens extends Quest
 		{
 			return getNoQuestMsg(player);
 		}
+		
 		String htmltext = null;
 		switch (event)
 		{
@@ -86,11 +89,13 @@ public class Q10859_OwnTheEarthAndTheHeavens extends Quest
 						addExpAndSp(player, 895909764, 63997290);
 						break;
 					}
+					
 					htmltext = getNoQuestLevelRewardMsg(player);
 					break;
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -129,6 +134,7 @@ public class Q10859_OwnTheEarthAndTheHeavens extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

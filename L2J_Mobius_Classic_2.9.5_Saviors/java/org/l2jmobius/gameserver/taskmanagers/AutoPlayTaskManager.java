@@ -114,6 +114,7 @@ public class AutoPlayTaskManager
 										{
 											player.getAI().setIntention(Intention.MOVE_TO, target);
 										}
+										
 										continue PLAY;
 									}
 									
@@ -195,6 +196,7 @@ public class AutoPlayTaskManager
 										{
 											location = new Location(creature.getX() + x1, creature.getY() + y1, player.getZ());
 										}
+										
 										player.getAI().setIntention(Intention.MOVE_TO, location);
 										IDLE_COUNT.remove(player);
 									}
@@ -205,6 +207,7 @@ public class AutoPlayTaskManager
 								}
 							}
 						}
+						
 						continue PLAY;
 					}
 				}
@@ -232,6 +235,7 @@ public class AutoPlayTaskManager
 							{
 								player.getAI().setIntention(Intention.MOVE_TO, droppedItem);
 							}
+							
 							continue PLAY;
 						}
 						
@@ -394,10 +398,12 @@ public class AutoPlayTaskManager
 						summon.followOwner();
 					}
 				}
+				
 				if (player.hasPet())
 				{
 					player.getPet().followOwner();
 				}
+				
 				IDLE_COUNT.remove(player);
 				return;
 			}

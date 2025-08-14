@@ -43,8 +43,10 @@ public final class Q10895_RestrainQueenKrosha extends Quest
 {
 	// NPC
 	private static final int LIONEL = 33907;
+	
 	// Monster
 	private static final int QUEEN_KROSHA = 26390;
+	
 	// Misc
 	private static final int MIN_LEVEL = 107;
 	
@@ -114,6 +116,7 @@ public final class Q10895_RestrainQueenKrosha extends Quest
 				htmltext = getAlreadyCompletedMsg(player);
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -156,6 +159,7 @@ public final class Q10895_RestrainQueenKrosha extends Quest
 						}
 						break;
 					}
+					
 					getNoQuestLevelRewardMsg(player);
 					break;
 				}

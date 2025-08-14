@@ -36,6 +36,7 @@ public final class FaeronVillage extends AbstractInstance
 {
 	// NPCs
 	private static final int SERENIA = 34394;
+	
 	// Misc
 	private static final int TEMPLATE_ID = 280;
 	
@@ -63,6 +64,7 @@ public final class FaeronVillage extends AbstractInstance
 				}
 			}
 		}
+		
 		return null;
 	}
 	
@@ -78,6 +80,7 @@ public final class FaeronVillage extends AbstractInstance
 				enterInstance(player, npc, TEMPLATE_ID);
 			}
 		}
+		
 		return htmltext;
 	}
 	

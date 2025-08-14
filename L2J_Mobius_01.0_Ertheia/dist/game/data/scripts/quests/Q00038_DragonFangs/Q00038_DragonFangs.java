@@ -36,22 +36,26 @@ public class Q00038_DragonFangs extends Quest
 	private static final int IRIS = 30034;
 	private static final int MAGISTER_ROHMER = 30344;
 	private static final int GUARD_LUIS = 30386;
+	
 	// Monsters
 	private static final int LIZARDMAN_SENTINEL = 21100;
 	private static final int LIZARDMAN_SHAMAN = 21101;
 	private static final int LIZARDMAN_LEADER = 20356;
 	private static final int LIZARDMAN_SUB_LEADER = 20357;
+	
 	// Items
 	private static final ItemHolder FEATHER = new ItemHolder(7173, 100);
 	private static final int TOTEM_TOOTH_1ST = 7174;
 	private static final ItemHolder TOTEM_TOOTH_2ND = new ItemHolder(7175, 50);
 	private static final int LETTER_1ST = 7176;
 	private static final int LETTER_2ND = 7177;
+	
 	// Rewards
 	private static final int BONE_HELMET = 45;
 	private static final int LEATHER_GAUNTLET = 605;
 	private static final int ASPIS = 627;
 	private static final int BLUE_BUCKSKIN_BOOTS = 1123;
+	
 	// Misc
 	private static final int MIN_LEVEL = 19;
 	
@@ -74,6 +78,7 @@ public class Q00038_DragonFangs extends Quest
 		{
 			return htmltext;
 		}
+		
 		switch (event)
 		{
 			case "30386-03.htm":
@@ -163,6 +168,7 @@ public class Q00038_DragonFangs extends Quest
 							rewardItems(player, LEATHER_GAUNTLET, 1);
 							giveAdena(player, 3200, true);
 						}
+						
 						qs.exitQuest(false, true);
 						htmltext = event;
 					}
@@ -192,6 +198,7 @@ public class Q00038_DragonFangs extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -286,6 +293,7 @@ public class Q00038_DragonFangs extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

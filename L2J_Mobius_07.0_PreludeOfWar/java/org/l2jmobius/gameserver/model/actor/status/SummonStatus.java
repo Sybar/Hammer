@@ -23,7 +23,7 @@ package org.l2jmobius.gameserver.model.actor.status;
 import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.Summon;
-import org.l2jmobius.gameserver.model.actor.enums.player.Duel;
+import org.l2jmobius.gameserver.model.actor.holders.player.Duel;
 import org.l2jmobius.gameserver.model.stats.Stat;
 import org.l2jmobius.gameserver.util.LocationUtil;
 
@@ -73,6 +73,7 @@ public class SummonStatus extends PlayableStatus
 							membersInRange++;
 						}
 					}
+					
 					if (attacker.isPlayable() && (caster.getCurrentCp() > 0))
 					{
 						if (caster.getCurrentCp() > transferDmg)
@@ -85,6 +86,7 @@ public class SummonStatus extends PlayableStatus
 							caster.getStatus().reduceCp((int) caster.getCurrentCp());
 						}
 					}
+					
 					if (membersInRange > 0)
 					{
 						caster.reduceCurrentHp(transferDmg / membersInRange, attacker, null);

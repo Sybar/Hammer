@@ -36,9 +36,11 @@ public class Q00117_TheOceanOfDistantStars extends Quest
 	private static final int ANCIENT_GHOST = 32055;
 	private static final int OBI = 32052;
 	private static final int BOX = 32076;
+	
 	// Monsters
 	private static final int BANDIT_WARRIOR = 22023;
 	private static final int BANDIT_INSPECTOR = 22024;
+	
 	// Items
 	private static final int GREY_STAR = 8495;
 	private static final int ENGRAVED_HAMMER = 8488;

@@ -34,6 +34,7 @@ public class Herphah extends AbstractNpcAI
 {
 	// NPC
 	private static final int HERPHAH = 34362;
+	
 	// Misc
 	@SuppressWarnings("unused")
 	private static final String[] RANDOM_VOICE =

@@ -33,12 +33,11 @@ import org.l2jmobius.gameserver.model.item.holders.ItemSkillHolder;
 import org.l2jmobius.gameserver.model.item.instance.Item;
 import org.l2jmobius.gameserver.network.SystemMessageId;
 import org.l2jmobius.gameserver.network.serverpackets.MagicSkillUse;
-import org.l2jmobius.gameserver.util.Broadcast;
 
 public class SpiritShot implements IItemHandler
 {
 	@Override
-	public boolean useItem(Playable playable, Item item, boolean forceUse)
+	public boolean onItemUse(Playable playable, Item item, boolean forceUse)
 	{
 		if (!playable.isPlayer())
 		{
@@ -65,6 +64,7 @@ public class SpiritShot implements IItemHandler
 			{
 				player.sendPacket(SystemMessageId.YOU_CANNOT_USE_SPIRITSHOTS);
 			}
+			
 			return false;
 		}
 		
@@ -81,6 +81,7 @@ public class SpiritShot implements IItemHandler
 			{
 				player.sendPacket(SystemMessageId.YOU_DO_NOT_HAVE_ENOUGH_SPIRITSHOT_FOR_THAT);
 			}
+			
 			return false;
 		}
 		
@@ -96,12 +97,13 @@ public class SpiritShot implements IItemHandler
 		// Visual effect change if player has equipped Sapphire level 3 or higher
 		if (player.getActiveShappireJewel() != null)
 		{
-			Broadcast.toSelfAndKnownPlayersInRadius(player, new MagicSkillUse(player, player, player.getActiveShappireJewel().getSkillId(), player.getActiveShappireJewel().getSkillLevel(), 0, 0), 600);
+			player.broadcastSkillPacket(new MagicSkillUse(player, player, player.getActiveShappireJewel().getSkillId(), player.getActiveShappireJewel().getSkillLevel(), 0, 0), player);
 		}
 		else
 		{
-			skills.forEach(holder -> Broadcast.toSelfAndKnownPlayersInRadius(player, new MagicSkillUse(player, player, holder.getSkillId(), holder.getSkillLevel(), 0, 0), 600));
+			skills.forEach(holder -> player.broadcastSkillPacket(new MagicSkillUse(player, player, holder.getSkillId(), holder.getSkillLevel(), 0, 0), player));
 		}
+		
 		return true;
 	}
 }

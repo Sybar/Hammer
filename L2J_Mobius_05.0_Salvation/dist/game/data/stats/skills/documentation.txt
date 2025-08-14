@@ -113,6 +113,7 @@ DispelBySlot: Removes given amount of target's effects by specified AbnormalType
 DispelBySlotMyself: Removes given amount of effects by specified AbnormalType
 DispelBySlotProbability: Removes given amount of effects by specified AbnormalType at a given rate.
 DispelCaster: Removes given amount of effects from caster by specified AbnormalType. (l2jmobius)
+Distrust: Make the monsters attack each other. (l2jmobius)
 DoubleCast: Triggers Fire, Water, Wind, Earth stance and enables the ability to cast two skills at once.
 DragonWeaponDefence: Dragon weapon defence stat. (l2jmobius)
 DuelistFury: Synergy effect for Faceoff effect. (l2jmobius)

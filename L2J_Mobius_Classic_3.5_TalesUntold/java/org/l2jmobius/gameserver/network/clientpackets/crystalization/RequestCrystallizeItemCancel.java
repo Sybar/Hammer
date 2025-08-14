@@ -43,6 +43,7 @@ public class RequestCrystallizeItemCancel extends ClientPacket
 		// player.sendMessage("You are crystallizing too fast.");
 		// return;
 		// }
+		
 		if (player.isInCrystallize())
 		{
 			player.setInCrystallize(false);

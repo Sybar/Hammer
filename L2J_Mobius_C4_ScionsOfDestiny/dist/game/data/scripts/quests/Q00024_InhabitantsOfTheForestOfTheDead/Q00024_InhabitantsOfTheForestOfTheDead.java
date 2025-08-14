@@ -48,6 +48,7 @@ public class Q00024_InhabitantsOfTheForestOfTheDead extends Quest
 		21566, // SKULL_ANIMATOR
 		21567, // BONE_SLAYER
 	};
+	
 	// Items
 	private static final int LETTER = 7065;
 	private static final int HAIRPIN = 7148;

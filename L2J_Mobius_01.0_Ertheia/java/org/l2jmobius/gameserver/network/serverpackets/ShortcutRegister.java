@@ -76,6 +76,7 @@ public class ShortcutRegister extends ServerPacket
 						buffer.writeShort(0);
 						buffer.writeShort(0);
 					}
+					
 					buffer.writeInt(item.getVisualId());
 				}
 				else

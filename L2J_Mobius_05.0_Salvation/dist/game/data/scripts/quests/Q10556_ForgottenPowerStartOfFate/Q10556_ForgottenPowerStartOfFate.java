@@ -78,6 +78,7 @@ public final class Q10556_ForgottenPowerStartOfFate extends Quest
 	private static final int MASTER_WIZARD = 34390;
 	private static final int MASTER_SUMMONER = 34392;
 	private static final int MASTER_HEALER = 34393;
+	
 	// Items
 	private static final int AGATHION_GRIFFIN = 37374;
 	private static final int CHAOS_POMANDER = 37374;
@@ -91,6 +92,7 @@ public final class Q10556_ForgottenPowerStartOfFate extends Quest
 	private static final int NAVIAROPE_POWER = 32269; // Wynn Summoner
 	private static final int LEISTER_POWER = 32270; // Iss Enchanter
 	private static final int LAKCIS_POWER = 32271; // Aeore Healer
+	
 	// Misc
 	private static final Map<PlayerClass, Integer> AWAKE_POWER = new HashMap<>();
 	static
@@ -197,6 +199,7 @@ public final class Q10556_ForgottenPowerStartOfFate extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -266,6 +269,7 @@ public final class Q10556_ForgottenPowerStartOfFate extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -683,6 +687,7 @@ public final class Q10556_ForgottenPowerStartOfFate extends Quest
 				break;
 			}
 		}
+		
 		giveItems(player, CHAOS_POMANDER, 2);
 		giveItems(player, GRADUATION_GIFT, 1);
 		giveItems(player, PAULINA_EQUIPMENT_SET_R, 1);
@@ -699,6 +704,7 @@ public final class Q10556_ForgottenPowerStartOfFate extends Quest
 				player.removeSkill(skill);
 			}
 		}
+		
 		player.setAbilityPointsUsed(0);
 		player.sendPacket(new ExAcquireAPSkillList(player));
 		player.broadcastUserInfo();

@@ -781,9 +781,9 @@
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="handler" val="ItemSkills" />
 		<set name="material" val="PAPER" />
-		<cond msgId="1902">
+		<conditions msgId="1902">
 			<player levelRange="1;84" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="18017" level="1" /> <!-- Fortune Pocket Lv. 1 -->
 		</skills>
@@ -798,9 +798,9 @@
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="handler" val="ItemSkills" />
 		<set name="material" val="PAPER" />
-		<cond msgId="1902">
+		<conditions msgId="1902">
 			<player levelRange="1;84" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="18018" level="1" /> <!-- Fortune Pocket Lv. 2 -->
 		</skills>
@@ -815,9 +815,9 @@
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="handler" val="ItemSkills" />
 		<set name="material" val="PAPER" />
-		<cond msgId="1902">
+		<conditions msgId="1902">
 			<player levelRange="1;84" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="18020" level="2" /> <!-- Fortune Pocket Lv. 3 -->
 		</skills>
@@ -832,9 +832,9 @@
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="handler" val="ItemSkills" />
 		<set name="material" val="PAPER" />
-		<cond msgId="1902">
+		<conditions msgId="1902">
 			<player levelRange="85;107" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="18021" level="1" /> <!-- Fortune Pocket Lv. 4 -->
 		</skills>
@@ -848,9 +848,9 @@
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="material" val="PAPER" />
-		<cond msgId="1902">
+		<conditions msgId="1902">
 			<player levelRange="85;107" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="18023" level="2" /> <!-- Fortune Pocket Lv. 5 -->
 		</skills>

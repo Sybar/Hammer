@@ -147,6 +147,7 @@ public class UniqueGachaManager
 			{
 				totalChance += item.getItemChance();
 			}
+			
 			_rewardChance.put(entry.getKey(), totalChance);
 		}
 		
@@ -185,6 +186,7 @@ public class UniqueGachaManager
 				_temporaryWarehouse.put(player, warehouse);
 			}
 		}
+		
 		player.sendPacket(isActive() ? UniqueGachaSidebarInfo.GACHA_ON : UniqueGachaSidebarInfo.GACHA_OFF);
 	}
 	
@@ -280,6 +282,7 @@ public class UniqueGachaManager
 		{
 			return returnEmptyList();
 		}
+		
 		try
 		{
 			player.getVariables().set(GACHA_LOCK_PLAYER_VARIABLE, true);
@@ -297,6 +300,7 @@ public class UniqueGachaManager
 				rewards.add(item);
 				addToHistory(player, item, roll);
 			}
+			
 			player.getVariables().set(GACHA_PLAYER_VARIABLE, playerRollProgress);
 		}
 		finally
@@ -382,6 +386,7 @@ public class UniqueGachaManager
 					isSuccess = false;
 					break;
 				}
+				
 				isSuccess = true;
 			}
 		}
@@ -427,6 +432,7 @@ public class UniqueGachaManager
 				warehouse.transferItem(ItemProcessType.TRANSFER, wareHouseItem.getObjectId(), (template.isStackable() ? requestedItem.getCount() : 1), inventory, player, null);
 			}
 		}
+		
 		player.sendItemList();
 		
 		return true;
@@ -460,6 +466,7 @@ public class UniqueGachaManager
 		{
 			rank = UniqueGachaRank.RANK_R;
 		}
+		
 		return rank;
 	}
 	
@@ -569,6 +576,7 @@ public class UniqueGachaManager
 					{
 						continue;
 					}
+					
 					statement.setInt(1, charId);
 					statement.setInt(2, item.getId());
 					statement.setLong(3, item.getCount());
@@ -579,6 +587,7 @@ public class UniqueGachaManager
 					containsUpdate = true;
 				}
 			}
+			
 			if (containsUpdate)
 			{
 				statement.executeBatch();

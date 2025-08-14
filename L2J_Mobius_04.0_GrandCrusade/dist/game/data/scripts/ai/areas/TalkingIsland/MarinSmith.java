@@ -44,6 +44,7 @@ public class MarinSmith extends AbstractNpcAI
 		{
 			npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.HMM_IS_THIS_STILL_A_DECENT_WEAPON, 1000);
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	

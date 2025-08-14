@@ -43,6 +43,7 @@ public class Q10355_BlacksmithsSoul1 extends Quest
 	private static final int SHADAI = 32347;
 	private static final int ISHUMA = 32615;
 	private static final int MERCHANT_OF_MAMMON = 31126;
+	
 	// Items
 	private static final int SHADOW_INGOT = 46395;
 	
@@ -60,6 +61,7 @@ public class Q10355_BlacksmithsSoul1 extends Quest
 		19600, // Flower Bud
 		23581, // Apherus
 	};
+	
 	// Misc
 	private static final int MIN_LEVEL = 99;
 	private static final String KILL_COUNT_VAR = "KillCount";
@@ -85,11 +87,13 @@ public class Q10355_BlacksmithsSoul1 extends Quest
 		{
 			return getNoQuestMsg(player);
 		}
+		
 		if (event.equals("34095-01.htm"))
 		{
 			qs.startQuest();
 			htmltext = event;
 		}
+		
 		return htmltext;
 	}
 	
@@ -254,6 +258,7 @@ public class Q10355_BlacksmithsSoul1 extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -318,6 +323,7 @@ public class Q10355_BlacksmithsSoul1 extends Quest
 				return holder;
 			}
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

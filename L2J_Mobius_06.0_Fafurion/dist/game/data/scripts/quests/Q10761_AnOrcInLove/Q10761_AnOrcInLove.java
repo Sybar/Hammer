@@ -36,6 +36,7 @@ public class Q10761_AnOrcInLove extends Quest
 {
 	// NPC
 	private static final int VORBOS = 33966;
+	
 	// Monsters
 	private static final int[] MONSTERS =
 	{
@@ -49,6 +50,7 @@ public class Q10761_AnOrcInLove extends Quest
 		20501, // Turek Orc Priest
 		20546, // Turek Orc Elder
 	};
+	
 	// Misc
 	private static final int MIN_LEVEL = 30;
 	private static final String KILL_COUNT_VAR = "KillCount";
@@ -102,6 +104,7 @@ public class Q10761_AnOrcInLove extends Quest
 				htmltext = null;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -128,6 +131,7 @@ public class Q10761_AnOrcInLove extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -163,6 +167,7 @@ public class Q10761_AnOrcInLove extends Quest
 				return holder;
 			}
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

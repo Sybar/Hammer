@@ -39,7 +39,7 @@ public class AdminPrimePoints implements IAdminCommandHandler
 	};
 	
 	@Override
-	public boolean useAdminCommand(String command, Player activeChar)
+	public boolean onCommand(String command, Player activeChar)
 	{
 		final StringTokenizer st = new StringTokenizer(command, " ");
 		final String actualCommand = st.nextToken();
@@ -89,6 +89,7 @@ public class AdminPrimePoints implements IAdminCommandHandler
 						{
 							primeCount = Integer.MAX_VALUE;
 						}
+						
 						target.setPrimePoints(primeCount);
 						target.sendMessage("Admin increase your Prime Point(s) by " + value + "!");
 						activeChar.sendSysMessage("You increased Prime Point(s) of " + target.getName() + " by " + value);
@@ -134,8 +135,10 @@ public class AdminPrimePoints implements IAdminCommandHandler
 					}
 				}
 			}
+			
 			showMenuHtml(activeChar);
 		}
+		
 		return true;
 	}
 	
@@ -156,11 +159,13 @@ public class AdminPrimePoints implements IAdminCommandHandler
 				{
 					primeCount = Integer.MAX_VALUE;
 				}
+				
 				temp.setPrimePoints(primeCount);
 				temp.sendMessage("Admin increase your Prime Point(s) by " + value + "!");
 				counter++;
 			}
 		}
+		
 		return counter;
 	}
 	
@@ -183,7 +188,7 @@ public class AdminPrimePoints implements IAdminCommandHandler
 	}
 	
 	@Override
-	public String[] getAdminCommandList()
+	public String[] getCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}

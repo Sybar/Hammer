@@ -176,6 +176,7 @@ public class BlackCouponManager
 					ps.setLong(4, holder.getDestroyDate());
 					ps.addBatch();
 				}
+				
 				ps.executeBatch();
 			}
 			catch (Exception e)
@@ -207,6 +208,7 @@ public class BlackCouponManager
 					
 					holder.setNeedToStore(false);
 				}
+				
 				ps.executeBatch();
 			}
 			catch (Exception e)
@@ -335,6 +337,7 @@ public class BlackCouponManager
 				ps.setLong(4, holder.getDestroyDate());
 				ps.addBatch();
 			}
+			
 			ps.executeBatch();
 			ps.closeOnCompletion();
 		}
@@ -371,6 +374,7 @@ public class BlackCouponManager
 				
 				holder.setNeedToStore(false);
 			}
+			
 			ps.executeBatch();
 			ps.closeOnCompletion();
 		}

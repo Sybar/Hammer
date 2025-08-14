@@ -63,11 +63,13 @@ public class TaintedDimension extends AbstractInstance
 		33376,
 		33377,
 	};
+	
 	// Skills
 	private static final SkillHolder REVIVE_SKILL = new SkillHolder(14265, 1);
 	private static final SkillHolder LEADER_KILL_SKILL = new SkillHolder(14497, 1);
 	private static final SkillHolder WARD_BOOM_SKILL = new SkillHolder(14496, 1);
 	private static final SkillHolder WARD_BIG_BOOM_SKILL = new SkillHolder(14501, 1);
+	
 	// Locations
 	private static final Location[] WARD_LOCATIONS =
 	{
@@ -78,6 +80,7 @@ public class TaintedDimension extends AbstractInstance
 		new Location(183912, 85864, -7759),
 		new Location(183928, 85992, -7759),
 	};
+	
 	// Misc
 	private static final NpcStringId[] MONSTER_SAY =
 	{
@@ -158,6 +161,7 @@ public class TaintedDimension extends AbstractInstance
 					{
 						addSpawn(MONSTER_2, (npc.getX() + getRandom(-200, 200)), (npc.getY() + getRandom(-200, 200)), npc.getZ(), 0, false, 0, false, instance.getId());
 					}
+					
 					getTimers().addTimer("INSTANCE_FINISH", 6000, npc, null);
 					break;
 				}
@@ -202,6 +206,7 @@ public class TaintedDimension extends AbstractInstance
 		{
 			enterInstance(player, npc, TEMPLATE_ID);
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	
@@ -306,6 +311,7 @@ public class TaintedDimension extends AbstractInstance
 				}
 			}
 		}
+		
 		return super.onEventReceived(event, sender, receiver, reference);
 	}
 	

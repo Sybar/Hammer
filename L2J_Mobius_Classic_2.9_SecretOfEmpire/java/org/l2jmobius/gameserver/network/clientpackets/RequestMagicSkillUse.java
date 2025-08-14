@@ -66,6 +66,7 @@ public class RequestMagicSkillUse extends ClientPacket
 			else
 			{
 				player.sendPacket(ActionFailed.STATIC_PACKET);
+				
 				// if (_magicId > 0)
 				// {
 				// PacketLogger.warning("Skill Id " + _magicId + " not found in player: " + player);

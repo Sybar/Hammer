@@ -135,6 +135,7 @@ public class Weapon extends ItemTemplate
 					// Incorrect syntax, do not add new skill
 					LOGGER.info("> Could not parse " + skill + " in weapon enchant skills! item " + this);
 				}
+				
 				if ((id > 0) && (level > 0))
 				{
 					_enchant4Skill = new SkillHolder(id, level);
@@ -161,6 +162,7 @@ public class Weapon extends ItemTemplate
 					// Incorrect syntax, don't add new skill
 					LOGGER.info("> Could not parse " + skill + " in weapon onmagic skills! item " + this);
 				}
+				
 				if ((id > 0) && (level > 0) && (chance > 0))
 				{
 					_skillsOnMagic = new SkillHolder(id, level);
@@ -188,6 +190,7 @@ public class Weapon extends ItemTemplate
 					// Incorrect syntax, don't add new skill
 					LOGGER.info("> Could not parse " + skill + " in weapon oncrit skills! item " + this);
 				}
+				
 				if ((id > 0) && (level > 0) && (chance > 0))
 				{
 					_skillsOnCrit = new SkillHolder(id, level);
@@ -397,7 +400,7 @@ public class Weapon extends ItemTemplate
 		final Skill onMagicSkill = _skillsOnMagic.getSkill();
 		
 		// Trigger only if both are good or bad magic.
-		if (trigger.isBad() != onMagicSkill.isBad())
+		if (trigger.hasNegativeEffect() != onMagicSkill.hasNegativeEffect())
 		{
 			return;
 		}
@@ -430,7 +433,7 @@ public class Weapon extends ItemTemplate
 			return;
 		}
 		
-		if (onMagicSkill.isBad() && (Formulas.calcShldUse(caster, target, onMagicSkill) == Formulas.SHIELD_DEFENSE_PERFECT_BLOCK))
+		if (onMagicSkill.hasNegativeEffect() && (Formulas.calcShldUse(caster, target, onMagicSkill) == Formulas.SHIELD_DEFENSE_PERFECT_BLOCK))
 		{
 			return;
 		}
@@ -451,6 +454,7 @@ public class Weapon extends ItemTemplate
 				}
 			});
 		}
+		
 		if (caster.isPlayer())
 		{
 			final SystemMessage sm = new SystemMessage(SystemMessageId.S1_HAS_BEEN_ACTIVATED);

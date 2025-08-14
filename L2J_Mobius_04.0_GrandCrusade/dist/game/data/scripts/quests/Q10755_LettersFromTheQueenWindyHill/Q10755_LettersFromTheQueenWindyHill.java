@@ -34,11 +34,14 @@ public class Q10755_LettersFromTheQueenWindyHill extends LetterQuest
 	// NPCs
 	private static final int LEVIAN = 30037;
 	private static final int PIO = 33963;
+	
 	// Location
 	private static final Location TELEPORT_LOC = new Location(-79816, 150828, -3040);
+	
 	// Item
 	private static final int SOE_GLUDIN_VILLAGE = 39491;
 	private static final int SOE_WINDY_HILL = 39492;
+	
 	// Misc
 	private static final int MIN_LEVEL = 20;
 	private static final int MAX_LEVEL = 29;
@@ -93,6 +96,7 @@ public class Q10755_LettersFromTheQueenWindyHill extends LetterQuest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -117,6 +121,7 @@ public class Q10755_LettersFromTheQueenWindyHill extends LetterQuest
 				htmltext = "33963-01.html";
 			}
 		}
+		
 		return htmltext;
 	}
 }

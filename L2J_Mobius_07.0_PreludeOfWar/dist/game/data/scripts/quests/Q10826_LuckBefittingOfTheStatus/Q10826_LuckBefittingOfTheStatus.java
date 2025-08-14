@@ -40,11 +40,13 @@ public class Q10826_LuckBefittingOfTheStatus extends Quest
 {
 	// NPC
 	private static final int BLACKSMITH_OF_MAMMON = 31126;
+	
 	// Items
 	private static final int LADY_KNIFE = 45645;
 	private static final int MERLOT_CERTIFICATE = 46056;
 	private static final int KURTIZ_CERTIFICATE = 46057;
 	private static final int GUSTAV_CERTIFICATE = 45636;
+	
 	// Rewards
 	private static final int MAMMON_CERTIFICATE = 45635;
 	private static final int SPELLBOOK_FATE_OF_THE_EXALTED = 46036;
@@ -66,6 +68,7 @@ public class Q10826_LuckBefittingOfTheStatus extends Quest
 		WEAPON_REWARDS.put("reward_dualdagger", 17428);
 		WEAPON_REWARDS.put("reward_dualblunt", 17429);
 	}
+	
 	// Misc
 	private static final int MIN_LEVEL = 100;
 	
@@ -130,6 +133,7 @@ public class Q10826_LuckBefittingOfTheStatus extends Quest
 				{
 					htmltext = "31126-14.html";
 				}
+				
 				giveItems(player, WEAPON_REWARDS.get(event), 1);
 				giveItems(player, MAMMON_CERTIFICATE, 1);
 				giveItems(player, SPELLBOOK_FATE_OF_THE_EXALTED, 1);
@@ -140,6 +144,7 @@ public class Q10826_LuckBefittingOfTheStatus extends Quest
 				htmltext = getNoQuestLevelRewardMsg(player);
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -193,6 +198,7 @@ public class Q10826_LuckBefittingOfTheStatus extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

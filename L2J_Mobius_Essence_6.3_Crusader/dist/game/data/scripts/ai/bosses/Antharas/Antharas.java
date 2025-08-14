@@ -77,10 +77,12 @@ public class Antharas extends AbstractNpcAI
 			29150, // Tarask Dragon
 		},
 	};
+	
 	// NPCs
 	private static final int ANTHARAS_CLIENT_ID = 29068;
 	private static final int ANTHARAS_EGG_ID = 18654;
 	private static final int ANTHARAS_EGG_COUNT = 8;
+	
 	// Skill
 	private static final SkillHolder ANTH_JUMP = new SkillHolder(4106, 1); // Antharas Stun
 	private static final SkillHolder ANTH_TAIL = new SkillHolder(4107, 1); // Antharas Stun
@@ -104,6 +106,7 @@ public class Antharas extends AbstractNpcAI
 	private static final int DEAD = 1;
 	private static final String ANTHARAS_STAGE = "ANTHARAS_STAGE";
 	private static final String ANTHARAS_PREVIOUS_STAGE = "ANTHARAS_PREVIOUS_STAGE";
+	
 	// Herphah
 	private static final int HERPHAH = 34241;
 	private static final Location OUTSIDE_HERPHAH_LOC = new Location(125675, 116869, -3888);
@@ -113,6 +116,7 @@ public class Antharas extends AbstractNpcAI
 	private static final int RESPAWN_HOUR = 20;
 	private static final int RESPAWN_MINUTE = 0;
 	private static final long FIGHT_DURATION = 3600000; // 1 hour
+	
 	// Runtime
 	private static final Set<Integer> UNCLAIMED_REWARDS = ConcurrentHashMap.newKeySet();
 	private static GrandBoss _antharas = null;
@@ -135,6 +139,7 @@ public class Antharas extends AbstractNpcAI
 			addAttackId(stagesNpcs[0]);
 			addKillId(stagesNpcs[0]);
 		}
+		
 		addKillId(ANTHARAS_EGG_ID);
 		addFirstTalkId(HERPHAH);
 		addTalkId(HERPHAH);
@@ -163,6 +168,7 @@ public class Antharas extends AbstractNpcAI
 					{
 						_antharas.setCurrentHpMp(_antharas.getMaxHp(), _antharas.getMaxMp());
 					}
+					
 					addBoss(ANTHARAS_CLIENT_ID, _antharas);
 					setAntharasPreviousSpawnStage(getAntharasStage());
 					notifyEvent("SPAWN_MINION", _antharas, null);
@@ -242,6 +248,7 @@ public class Antharas extends AbstractNpcAI
 						{
 							npc.getAI().setIntention(Intention.CAST, ANTH_REGEN_1.getSkill(), npc);
 						}
+						
 						startQuestTimer("SET_REGEN", 60000, npc, null);
 					}
 					break;
@@ -270,6 +277,7 @@ public class Antharas extends AbstractNpcAI
 							_eggs[i - 1] = egg;
 						}
 					}
+					
 					startQuestTimer("SPAWN_MINION", 900000, npc, null);
 					break;
 				}
@@ -302,6 +310,7 @@ public class Antharas extends AbstractNpcAI
 							}
 						}
 					}
+					
 					startQuestTimer("SYNCHRONIZE_EGG_POSITION", 300, _antharas, null);
 					break;
 				}
@@ -362,6 +371,7 @@ public class Antharas extends AbstractNpcAI
 								creature.deleteMe();
 							}
 						}
+						
 						if (player != null) // Player cannot be null unless this event is called from GM command.
 						{
 							player.sendMessage(getClass().getSimpleName() + ": All minions have been deleted!");
@@ -400,6 +410,7 @@ public class Antharas extends AbstractNpcAI
 								}
 							}
 						}
+						
 						player.sendMessage(getClass().getSimpleName() + ": Fight has been aborted!");
 					}
 					else
@@ -429,6 +440,7 @@ public class Antharas extends AbstractNpcAI
 					{
 						return npc.getId() + "-NO_ANTHARAS.html";
 					}
+					
 					return npc.getId() + "-TELEPORTS.html";
 				}
 				case "TELEPORT_GIRAN":
@@ -470,6 +482,7 @@ public class Antharas extends AbstractNpcAI
 				}
 			}
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	
@@ -483,6 +496,7 @@ public class Antharas extends AbstractNpcAI
 				UNCLAIMED_REWARDS.remove(player.getObjectId());
 				player.addItem(ItemProcessType.REWARD, 96350, _rewardsStage == 1 ? 1 : _rewardsStage == 2 ? 5 : 10, player, true);
 			}
+			
 			return null;
 		}
 		
@@ -525,6 +539,7 @@ public class Antharas extends AbstractNpcAI
 			{
 				refreshAiParams(player, (damage / 3) * 20);
 			}
+			
 			manageSkills(npc);
 		}
 	}
@@ -566,6 +581,7 @@ public class Antharas extends AbstractNpcAI
 				{
 					UNCLAIMED_REWARDS.add(killerPlayer.getObjectId());
 				}
+				
 				setAntharasStage(currentStage + 1);
 			}
 			else if (npc.getId() == ANTHARAS_EGG_ID)
@@ -584,6 +600,7 @@ public class Antharas extends AbstractNpcAI
 						break;
 					}
 				}
+				
 				if (!eggsAlive && (_antharas != null) && !_antharas.isDead())
 				{
 					_antharas.setInvul(false);
@@ -620,14 +637,15 @@ public class Antharas extends AbstractNpcAI
 	}
 	
 	@Override
-	public boolean unload(boolean removeFromList)
+	public void unload(boolean removeFromList)
 	{
 		if (_antharas != null)
 		{
 			_antharas.deleteMe();
 			_antharas = null;
 		}
-		return super.unload(removeFromList);
+		
+		super.unload(removeFromList);
 	}
 	
 	private int getStatus()
@@ -738,6 +756,7 @@ public class Antharas extends AbstractNpcAI
 			i2 = _attackerHate3;
 			c2 = _attacker3;
 		}
+		
 		if (i2 > 0)
 		{
 			if (getRandom(100) < 70)
@@ -940,6 +959,7 @@ public class Antharas extends AbstractNpcAI
 				return true;
 			}
 		}
+		
 		return false;
 	}
 	
@@ -952,6 +972,7 @@ public class Antharas extends AbstractNpcAI
 				return true;
 			}
 		}
+		
 		return false;
 	}
 	
@@ -982,6 +1003,7 @@ public class Antharas extends AbstractNpcAI
 	private long calcMillisToAntharasEnd()
 	{
 		final Calendar calendar = Calendar.getInstance();
+		
 		// if (calendar.get(Calendar.DAY_OF_WEEK) != RESPAWN_DAY)
 		// {
 		// return 0;
@@ -1030,8 +1052,10 @@ public class Antharas extends AbstractNpcAI
 				respawnTime = calendar.getTimeInMillis();
 				break;
 			}
+			
 			calendar.add(Calendar.DAY_OF_WEEK, 1);
 		}
+		
 		if (respawnTime < 0)
 		{
 			respawnTime = calendar.getTimeInMillis();

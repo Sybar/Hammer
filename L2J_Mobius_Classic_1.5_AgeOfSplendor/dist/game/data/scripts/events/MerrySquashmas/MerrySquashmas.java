@@ -21,6 +21,7 @@
 package events.MerrySquashmas;
 
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 
 import org.l2jmobius.gameserver.data.xml.ItemData;
@@ -46,7 +47,7 @@ public class MerrySquashmas extends LongTimeEvent
 	private static final List<Integer> LARGE_SQUASH_LIST = Arrays.asList(13403, 13404, 13405, 13406);
 	private static final List<Integer> CHRONO_LIST = Arrays.asList(4202, 5133, 5817, 7058, 8350);
 	
-	//@formatter:off
+	// @formatter:off
 	private static final String[] _NOCHRONO_TEXT =
 	{
 		"You cannot kill me without Chrono",
@@ -488,7 +489,7 @@ public class MerrySquashmas extends LongTimeEvent
 		{ 13406, XP_SP_Scroll_High, 60 },
 		{ 13406, XP_SP_Scroll_Medium, 60 },
 	};
-	//@formatter:on
+	// @formatter:on
 	
 	public MerrySquashmas()
 	{
@@ -534,7 +535,7 @@ public class MerrySquashmas extends LongTimeEvent
 	}
 	
 	@Override
-	public void onSkillSee(Npc npc, Player caster, Skill skill, WorldObject[] targets, boolean isPet)
+	public void onSkillSee(Npc npc, Player caster, Skill skill, Collection<WorldObject> targets, boolean isPet)
 	{
 		if (SQUASH_LIST.contains(npc.getId()) && (skill.getId() == SNOWY_NECTAR_SKILL))
 		{
@@ -580,6 +581,7 @@ public class MerrySquashmas extends LongTimeEvent
 				{
 					continue;
 				}
+				
 				if (getRandom(100) < drop[2])
 				{
 					if (ItemData.getInstance().getTemplate(drop[1]).getCrystalType() != CrystalType.NONE)
@@ -587,6 +589,7 @@ public class MerrySquashmas extends LongTimeEvent
 						mob.asMonster().dropItem(player, drop[1], 1);
 						break;
 					}
+					
 					mob.asMonster().dropItem(player, drop[1], (getRandom(1, 3)));
 					if (getRandomBoolean())
 					{
@@ -604,6 +607,7 @@ public class MerrySquashmas extends LongTimeEvent
 		{
 			spawnNext(low, npc);
 		}
+		
 		if (_random < 10)
 		{
 			spawnNext(medium, npc);

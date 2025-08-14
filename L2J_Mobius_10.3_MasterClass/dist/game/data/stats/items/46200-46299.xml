@@ -1039,9 +1039,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="material" val="LIQUID" />
 		<set name="immediate_effect" val="true" />
-		<cond>
+		<conditions>
 			<player MaximumVitalityPoints="140000" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="18484" level="1" /> <!-- Wind Vitality Tonic -->
 		</skills>

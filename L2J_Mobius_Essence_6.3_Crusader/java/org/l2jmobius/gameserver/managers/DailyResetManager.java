@@ -50,6 +50,9 @@ import org.l2jmobius.gameserver.model.actor.holders.player.SubClassHolder;
 import org.l2jmobius.gameserver.model.actor.stat.PlayerStat;
 import org.l2jmobius.gameserver.model.clan.Clan;
 import org.l2jmobius.gameserver.model.clan.ClanMember;
+import org.l2jmobius.gameserver.model.events.EventDispatcher;
+import org.l2jmobius.gameserver.model.events.EventType;
+import org.l2jmobius.gameserver.model.events.holders.OnDailyReset;
 import org.l2jmobius.gameserver.model.item.instance.Item;
 import org.l2jmobius.gameserver.model.olympiad.Olympiad;
 import org.l2jmobius.gameserver.model.primeshop.PrimeShopGroup;
@@ -84,8 +87,16 @@ public class DailyResetManager
 		final long nextResetTime = TimeUtil.getNextTime(6, 30).getTimeInMillis();
 		final long currentTime = System.currentTimeMillis();
 		
+		// Get today's 6:30 AM timestamp.
+		final Calendar calendar = Calendar.getInstance();
+		calendar.set(Calendar.HOUR_OF_DAY, 6);
+		calendar.set(Calendar.MINUTE, 30);
+		calendar.set(Calendar.SECOND, 0);
+		calendar.set(Calendar.MILLISECOND, 0);
+		final long currentResetTime = calendar.getTimeInMillis();
+		
 		// Check if 24 hours have passed since the last daily reset.
-		if (GlobalVariablesManager.getInstance().getLong(GlobalVariablesManager.DAILY_TASK_RESET, 0) < nextResetTime)
+		if ((currentTime < currentResetTime) || (GlobalVariablesManager.getInstance().getLong(GlobalVariablesManager.DAILY_TASK_RESET, 0) > currentResetTime))
 		{
 			LOGGER.info(getClass().getSimpleName() + ": Next schedule at " + TimeUtil.getDateTimeString(nextResetTime) + ".");
 		}
@@ -154,6 +165,12 @@ public class DailyResetManager
 		resetVip();
 		resetResurrectionByPayment();
 		
+		// Trigger daily reset event.
+		if (EventDispatcher.getInstance().hasListener(EventType.ON_DAILY_RESET))
+		{
+			EventDispatcher.getInstance().notifyEvent(new OnDailyReset());
+		}
+		
 		// Store player variables.
 		for (Player player : World.getInstance().getPlayers())
 		{
@@ -200,6 +217,7 @@ public class DailyResetManager
 				clan.setNewLeader(member);
 			}
 		}
+		
 		LOGGER.info("Clan leaders have been updated.");
 	}
 	
@@ -250,6 +268,7 @@ public class DailyResetManager
 		{
 			LOGGER.log(Level.WARNING, "Error while updating vitality", e);
 		}
+		
 		LOGGER.info("Daily vitality added successfully.");
 	}
 	
@@ -287,6 +306,7 @@ public class DailyResetManager
 		{
 			LOGGER.log(Level.WARNING, "Error while updating vitality", e);
 		}
+		
 		LOGGER.info("Vitality points have been reset.");
 	}
 	
@@ -340,6 +360,7 @@ public class DailyResetManager
 				}
 			}
 		}
+		
 		// for (Player player : updates)
 		// {
 		// player.sendSkillList();
@@ -380,6 +401,7 @@ public class DailyResetManager
 					update = true;
 				}
 			}
+			
 			if (update)
 			{
 				player.sendItemList();
@@ -602,7 +624,7 @@ public class DailyResetManager
 			{
 				try (PreparedStatement ps = con.prepareStatement("DELETE FROM account_gsdata WHERE var=?"))
 				{
-					ps.setString(1, "ATTENDANCE_DATE");
+					ps.setString(1, PlayerVariables.ATTENDANCE_DATE);
 					ps.execute();
 				}
 			}
@@ -614,7 +636,7 @@ public class DailyResetManager
 			// Update data for online players.
 			for (Player player : World.getInstance().getPlayers())
 			{
-				player.getAccountVariables().remove("ATTENDANCE_DATE");
+				player.getAccountVariables().remove(PlayerVariables.ATTENDANCE_DATE);
 			}
 			
 			LOGGER.info("Account shared Attendance Rewards have been reset.");
@@ -667,6 +689,7 @@ public class DailyResetManager
 				player.getAccountVariables().remove(AccountVariables.PRIME_SHOP_PRODUCT_DAILY_COUNT + holder.getBrId());
 			}
 		}
+		
 		LOGGER.info("PrimeShopData have been reset.");
 	}
 	
@@ -681,6 +704,7 @@ public class DailyResetManager
 				ps.setString(1, AccountVariables.LCOIN_SHOP_PRODUCT_DAILY_COUNT + holder.getProductionId());
 				ps.executeUpdate();
 			}
+			
 			for (LimitShopProductHolder holder : LimitShopCraftData.getInstance().getProducts())
 			{
 				ps.setString(1, AccountVariables.LCOIN_SHOP_PRODUCT_DAILY_COUNT + holder.getProductionId());
@@ -699,11 +723,13 @@ public class DailyResetManager
 			{
 				player.getAccountVariables().remove(AccountVariables.LCOIN_SHOP_PRODUCT_DAILY_COUNT + holder.getProductionId());
 			}
+			
 			for (LimitShopProductHolder holder : LimitShopCraftData.getInstance().getProducts())
 			{
 				player.getAccountVariables().remove(AccountVariables.LCOIN_SHOP_PRODUCT_DAILY_COUNT + holder.getProductionId());
 			}
 		}
+		
 		LOGGER.info("Daily LimitShopData have been reset.");
 	}
 	
@@ -718,6 +744,7 @@ public class DailyResetManager
 				ps.setString(1, AccountVariables.LCOIN_SHOP_PRODUCT_MONTHLY_COUNT + holder.getProductionId());
 				ps.executeUpdate();
 			}
+			
 			for (LimitShopProductHolder holder : LimitShopCraftData.getInstance().getProducts())
 			{
 				ps.setString(1, AccountVariables.LCOIN_SHOP_PRODUCT_MONTHLY_COUNT + holder.getProductionId());
@@ -736,11 +763,13 @@ public class DailyResetManager
 			{
 				player.getAccountVariables().remove(AccountVariables.LCOIN_SHOP_PRODUCT_MONTHLY_COUNT + holder.getProductionId());
 			}
+			
 			for (LimitShopProductHolder holder : LimitShopCraftData.getInstance().getProducts())
 			{
 				player.getAccountVariables().remove(AccountVariables.LCOIN_SHOP_PRODUCT_MONTHLY_COUNT + holder.getProductionId());
 			}
 		}
+		
 		LOGGER.info("Monthly LimitShopData have been reset.");
 	}
 	
@@ -762,6 +791,7 @@ public class DailyResetManager
 		{
 			player.getHuntPass().resetHuntPass();
 		}
+		
 		LOGGER.info("HuntPassData have been reset.");
 	}
 	

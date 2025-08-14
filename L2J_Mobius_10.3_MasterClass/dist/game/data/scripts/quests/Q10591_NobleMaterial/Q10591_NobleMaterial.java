@@ -74,9 +74,11 @@ public class Q10591_NobleMaterial extends Quest
 		24585, // Vanor Silenos Mercenary
 		24586, // Vanor Silenos Guardian
 	};
+	
 	// Items
 	private static final int FLAME_ENERGY = 80856; // Flame Energy - monster drop
 	private static final ItemHolder TELEPORT_CUBE = new ItemHolder(81875, 1);
+	
 	// Rewards
 	private static final int ADENA_AMOUNT = 5050;
 	private static final int ACHIEVEMENT_BOX_LV_100 = 80910;
@@ -104,9 +106,11 @@ public class Q10591_NobleMaterial extends Quest
 	private static final int EXALTED_RETRIBUTER = 81166;
 	private static final int EXALTED_DUAL_SWORDS = 81167;
 	private static final int EXALTED_DUAL_DAGGERS = 81168;
+	
 	// Misc
 	private static final int MIN_LEVEL = 100;
 	private static final SkillHolder NOBLESSE_PRESENTATION = new SkillHolder(18176, 1);
+	
 	// Location
 	private static final Location BURNING_MARSH = new Location(152754, -15142, -4400);
 	private static final Location WAR_PLAINS = new Location(159620, 21075, -3688);
@@ -260,6 +264,7 @@ public class Q10591_NobleMaterial extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -376,6 +381,7 @@ public class Q10591_NobleMaterial extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -390,6 +396,7 @@ public class Q10591_NobleMaterial extends Quest
 				giveItems(player, FLAME_ENERGY, 1);
 				playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 			}
+			
 			if ((getQuestItemsCount(player, FLAME_ENERGY) >= 1000) && (player.getLevel() >= MIN_LEVEL))
 			{
 				qs.setCond(3, true);

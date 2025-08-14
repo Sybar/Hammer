@@ -46,12 +46,14 @@ public class Cannon extends AbstractNpcAI
 		32942,
 	};
 	private static final int INVISIBLE_NPC = 32943;
+	
 	// Skills
 	private static final SkillHolder PRESENT_SKILL = new SkillHolder(14175, 1); // Cannon Blast
 	// Items
 	private static final int CANNONBALL = 17611; // Giant Cannonbal
 	private static final int MEMORY_FRAGMENT = 17612; // Memory Fragment
 	private static final int F_MEMORY_FRAGMENT = 17613; // Frightening Memory Fragment
+	
 	// Misc
 	private static final Map<Integer, Integer> TRANSFORM_DATA = new HashMap<>();
 	static
@@ -139,6 +141,7 @@ public class Cannon extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

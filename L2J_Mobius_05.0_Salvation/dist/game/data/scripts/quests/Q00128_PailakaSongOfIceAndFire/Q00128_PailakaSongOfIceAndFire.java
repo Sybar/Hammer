@@ -48,6 +48,7 @@ public class Q00128_PailakaSongOfIceAndFire extends Quest
 	private static final int KINSUS = 18608;
 	private static final int GARGOS = 18607;
 	private static final int ADIANTUM = 18620;
+	
 	// Items
 	private static final int SWORD = 13034;
 	private static final int ENH_SWORD1 = 13035;
@@ -66,6 +67,7 @@ public class Q00128_PailakaSongOfIceAndFire extends Quest
 	private static final int FIRE_ENHANCER = 13040;
 	private static final int WATER_ENHANCER = 13041;
 	private static final int SCROLL_OF_ESCAPE = 736;
+	
 	// Misc
 	private static final int MIN_LEVEL = 49;
 	private static final int MAX_LEVEL = 55;
@@ -170,6 +172,7 @@ public class Q00128_PailakaSongOfIceAndFire extends Quest
 				{
 					inst.finishInstance();
 				}
+				
 				qs.exitQuest(false, true);
 				giveAdena(player, 187200, true);
 				giveItems(player, Integer.parseInt(event), 1);
@@ -178,10 +181,12 @@ public class Q00128_PailakaSongOfIceAndFire extends Quest
 				{
 					addExpAndSp(player, 1_860_000, 446);
 				}
+				
 				htmltext = "32510-02.htm";
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -276,6 +281,7 @@ public class Q00128_PailakaSongOfIceAndFire extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -297,6 +303,7 @@ public class Q00128_PailakaSongOfIceAndFire extends Quest
 						giveItems(player, BOOK2, 1);
 						giveItems(player, WATER_ESSENCE, 1);
 					}
+					
 					addSpawn(PAPION, -53903, 181484, -4555, 30456, false, 0, false, npc.getInstanceId());
 					break;
 				}
@@ -309,6 +316,7 @@ public class Q00128_PailakaSongOfIceAndFire extends Quest
 						giveItems(player, BOOK4, 1);
 						playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 					}
+					
 					addSpawn(KINSUS, -61415, 181418, -4818, 63852, false, 0, false, npc.getInstanceId());
 					break;
 				}
@@ -322,6 +330,7 @@ public class Q00128_PailakaSongOfIceAndFire extends Quest
 						giveItems(player, BOOK5, 1);
 						giveItems(player, FIRE_ESSENCE, 1);
 					}
+					
 					addSpawn(GARGOS, -61354, 183624, -4821, 63613, false, 0, false, npc.getInstanceId());
 					break;
 				}
@@ -334,6 +343,7 @@ public class Q00128_PailakaSongOfIceAndFire extends Quest
 						takeItems(player, BOOK6, -1);
 						giveItems(player, BOOK7, 1);
 					}
+					
 					addSpawn(ADIANTUM, -53297, 185027, -4617, 1512, false, 0, false, npc.getInstanceId());
 					break;
 				}

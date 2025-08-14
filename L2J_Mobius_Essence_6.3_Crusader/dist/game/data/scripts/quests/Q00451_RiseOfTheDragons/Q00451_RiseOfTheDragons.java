@@ -40,11 +40,14 @@ public class Q00451_RiseOfTheDragons extends Quest
 {
 	// NPC
 	private static final int GENIE_LAMP = 34369;
+	
 	// Monsters
 	private static final int DRAGONTROOP_SOLDIER = 22305;
 	private static final int DRAGONTROOP_MINION = 22308;
+	
 	// Item
 	private static final ItemHolder BOOST_ATK_SCROLL = new ItemHolder(94269, 4);
+	
 	// Misc
 	private static final int MIN_LEVEL = 78;
 	private static final int MAX_LEVEL = 90;
@@ -99,6 +102,7 @@ public class Q00451_RiseOfTheDragons extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -137,6 +141,7 @@ public class Q00451_RiseOfTheDragons extends Quest
 				htmltext = getAlreadyCompletedMsg(player);
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -172,6 +177,7 @@ public class Q00451_RiseOfTheDragons extends Quest
 			holder.add(new NpcLogListHolder(NpcStringId.DEFEAT_MONSTERS_44.getId(), true, qs.getInt(KILL_COUNT_VAR)));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

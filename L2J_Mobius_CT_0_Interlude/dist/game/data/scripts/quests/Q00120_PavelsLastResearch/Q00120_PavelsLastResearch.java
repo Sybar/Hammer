@@ -44,6 +44,7 @@ public class Q00120_PavelsLastResearch extends Quest
 	private static final int BOOKSHELF = 32045;
 	private static final int STONES = 32046;
 	private static final int WENDY = 32047;
+	
 	// Items
 	private static final int EAR_BINDING = 854;
 	private static final int REPORT = 8058;
@@ -651,6 +652,7 @@ public class Q00120_PavelsLastResearch extends Quest
 				htmltext = "32045-03.htm";
 			}
 		}
+		
 		return htmltext;
 	}
 }

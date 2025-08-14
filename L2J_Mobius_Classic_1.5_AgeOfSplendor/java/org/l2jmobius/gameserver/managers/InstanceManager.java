@@ -1,18 +1,22 @@
 /*
- * This file is part of the L2J Mobius project.
+ * Copyright (c) 2013 L2jMobius
  * 
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
  * 
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
+ * The above copyright notice and this permission notice shall be
+ * included in all copies or substantial portions of the Software.
  * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+ * WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR
+ * IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 package org.l2jmobius.gameserver.managers;
 
@@ -27,6 +31,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -42,6 +47,7 @@ import org.l2jmobius.Config;
 import org.l2jmobius.commons.database.DatabaseFactory;
 import org.l2jmobius.commons.util.IXmlReader;
 import org.l2jmobius.gameserver.data.holders.InstanceReenterTimeHolder;
+import org.l2jmobius.gameserver.data.holders.StringStringHolder;
 import org.l2jmobius.gameserver.data.xml.DoorData;
 import org.l2jmobius.gameserver.data.xml.SpawnData;
 import org.l2jmobius.gameserver.model.Location;
@@ -60,21 +66,26 @@ import org.l2jmobius.gameserver.model.spawns.SpawnTemplate;
 
 /**
  * Instance manager.
- * @author evill33t, GodKratos, malyelfik
+ * @author evill33t, GodKratos, malyelfik, Mobius
  */
 public class InstanceManager implements IXmlReader
 {
 	private static final Logger LOGGER = Logger.getLogger(InstanceManager.class.getName());
+	
 	// Database query
 	private static final String DELETE_INSTANCE_TIME = "DELETE FROM character_instance_time WHERE charId=? AND instanceId=?";
 	
 	// Client instance names
 	private final Map<Integer, String> _instanceNames = new HashMap<>();
+	private final List<StringStringHolder> _instanceTemplateNames = new LinkedList<>(); // Id, Name.
+	
 	// Instance templates holder
 	private final Map<Integer, InstanceTemplate> _instanceTemplates = new ConcurrentHashMap<>();
+	
 	// Created instance worlds
 	private int _currentInstanceId = 0;
 	private final Map<Integer, Instance> _instanceWorlds = new ConcurrentHashMap<>();
+	
 	// Player reenter times
 	private final Map<Integer, Map<Integer, Long>> _playerTimes = new ConcurrentHashMap<>();
 	
@@ -93,10 +104,12 @@ public class InstanceManager implements IXmlReader
 		_instanceNames.clear();
 		parseDatapackFile("data/InstanceNames.xml");
 		LOGGER.info(getClass().getSimpleName() + ": Loaded " + _instanceNames.size() + " instance names.");
+		
 		// Load instance templates
 		_instanceTemplates.clear();
 		parseDatapackDirectory("data/instances", true);
 		LOGGER.info(getClass().getSimpleName() + ": Loaded " + _instanceTemplates.size() + " instance templates.");
+		
 		// Load player's reenter data
 		_playerTimes.clear();
 		restoreInstanceTimes();
@@ -133,7 +146,10 @@ public class InstanceManager implements IXmlReader
 		forEach(n, "instance", instanceNode ->
 		{
 			final NamedNodeMap attrs = instanceNode.getAttributes();
-			_instanceNames.put(parseInteger(attrs, "id"), parseString(attrs, "name"));
+			final int id = parseInteger(attrs, "id");
+			final String name = parseString(attrs, "name");
+			_instanceNames.put(id, name);
+			_instanceTemplateNames.add(new StringStringHolder(String.valueOf(id), name));
 		});
 	}
 	
@@ -254,6 +270,7 @@ public class InstanceManager implements IXmlReader
 							{
 								LOGGER.warning(getClass().getSimpleName() + ": Cannot find template for door: " + doorId + ", instance: " + template.getName() + " (" + template.getId() + ")");
 							}
+							
 							mergedSet.merge(parsedSet);
 							
 							try
@@ -279,6 +296,7 @@ public class InstanceManager implements IXmlReader
 							exceptionBuffList.add(parseInteger(e.getAttributes(), "id"));
 						}
 					}
+					
 					template.setRemoveBuff(removeBuffType, exceptionBuffList);
 					break;
 				}
@@ -305,6 +323,7 @@ public class InstanceManager implements IXmlReader
 							}
 						}
 					}
+					
 					template.setReenterData(type, data);
 					break;
 				}
@@ -351,6 +370,7 @@ public class InstanceManager implements IXmlReader
 							}
 						}
 					}
+					
 					template.setParameters(parameters);
 					break;
 				}
@@ -365,6 +385,7 @@ public class InstanceManager implements IXmlReader
 							final String type = parseString(attrs, "type");
 							final boolean onlyLeader = parseBoolean(attrs, "onlyLeader", false);
 							final boolean showMessageAndHtml = parseBoolean(attrs, "showMessageAndHtml", false);
+							
 							// Load parameters
 							StatSet params = null;
 							for (Node f = conditionNode.getFirstChild(); f != null; f = f.getNextSibling())
@@ -399,6 +420,7 @@ public class InstanceManager implements IXmlReader
 							}
 						}
 					}
+					
 					template.setConditions(conditions);
 					break;
 				}
@@ -457,6 +479,7 @@ public class InstanceManager implements IXmlReader
 			LOGGER.warning(getClass().getSimpleName() + ": Missing template for instance with id " + id + "!");
 			return null;
 		}
+		
 		return new Instance(getNewInstanceId(), _instanceTemplates.get(id), player);
 	}
 	
@@ -504,6 +527,7 @@ public class InstanceManager implements IXmlReader
 				}
 			}
 		}
+		
 		return null;
 	}
 	
@@ -519,6 +543,7 @@ public class InstanceManager implements IXmlReader
 			{
 				_currentInstanceId = 0;
 			}
+			
 			_currentInstanceId++;
 		}
 		while (_instanceWorlds.containsKey(_currentInstanceId));
@@ -562,6 +587,15 @@ public class InstanceManager implements IXmlReader
 	}
 	
 	/**
+	 * Returns all instance templates as StringStringHolder (id, name).
+	 * @return a collection of StringStringHolder.
+	 */
+	public Collection<StringStringHolder> getInstanceTemplateNames()
+	{
+		return _instanceTemplateNames;
+	}
+	
+	/**
 	 * Restore instance reenter data for all players.
 	 */
 	private void restoreInstanceTimes()
@@ -579,6 +613,7 @@ public class InstanceManager implements IXmlReader
 					// Load params
 					final int charId = rs.getInt("charId");
 					final int instanceId = rs.getInt("instanceId");
+					
 					// Set penalty
 					setReenterPenalty(charId, instanceId, time);
 				}
@@ -627,6 +662,7 @@ public class InstanceManager implements IXmlReader
 					ps.setInt(2, id);
 					ps.addBatch();
 				}
+				
 				ps.executeBatch();
 				invalidPenalty.forEach(instanceTimes::remove);
 			}
@@ -635,6 +671,7 @@ public class InstanceManager implements IXmlReader
 				LOGGER.log(Level.WARNING, getClass().getSimpleName() + ": Cannot delete instance character reenter data: ", e);
 			}
 		}
+		
 		return instanceTimes;
 	}
 	
@@ -673,6 +710,7 @@ public class InstanceManager implements IXmlReader
 			deleteInstanceTime(player, id);
 			return -1;
 		}
+		
 		return time;
 	}
 	
@@ -734,6 +772,7 @@ public class InstanceManager implements IXmlReader
 				count++;
 			}
 		}
+		
 		return count;
 	}
 	

@@ -36,6 +36,7 @@ public class Zofan extends AbstractNpcAI
 		23229, // Zofan
 		23237, // Engineer Zofan
 	};
+	
 	// Misc
 	private static final String[] MINION_PARAMS =
 	{

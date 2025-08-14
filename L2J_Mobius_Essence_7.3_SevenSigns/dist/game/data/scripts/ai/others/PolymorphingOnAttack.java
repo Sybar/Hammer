@@ -39,7 +39,6 @@ import ai.AbstractNpcAI;
 public class PolymorphingOnAttack extends AbstractNpcAI
 {
 	private static final Map<Integer, List<Integer>> MOBSPAWNS = new HashMap<>();
-	
 	static
 	{
 		MOBSPAWNS.put(21258, Arrays.asList(21259, 100, 100, -1)); // Fallen Orc Shaman -> Sharp Talon Tiger (always polymorphs)
@@ -93,6 +92,7 @@ public class PolymorphingOnAttack extends AbstractNpcAI
 					final NpcStringId npcString = MOBTEXTS[tmp.get(3)][getRandom(MOBTEXTS[tmp.get(3)].length)];
 					npc.broadcastPacket(new CreatureSay(npc, ChatType.NPC_GENERAL, npcString));
 				}
+				
 				npc.deleteMe();
 				final Attackable newNpc = addSpawn(tmp.get(0), npc.getX(), npc.getY(), npc.getZ() + 20, npc.getHeading(), false, 0, true).asAttackable();
 				final Creature originalAttacker = isSummon ? attacker.getServitors().values().stream().findFirst().orElse(attacker.getPet()) : attacker;

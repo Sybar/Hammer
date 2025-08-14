@@ -72,12 +72,14 @@ public class AuctionDailyMissionHandler extends AbstractDailyMissionHandler
 				}
 			}
 		}
+		
 		return false;
 	}
 	
 	private void onPlayerAuctionWin(OnPlayerAuctionWin event)
 	{
 		final Player player = event.getPlayer();
+		
 		// Check if any condition needed here
 		processPlayerProgress(player);
 	}
@@ -91,6 +93,7 @@ public class AuctionDailyMissionHandler extends AbstractDailyMissionHandler
 			{
 				entry.setStatus(DailyMissionStatus.AVAILABLE);
 			}
+			
 			storePlayerEntry(entry);
 		}
 	}

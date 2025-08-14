@@ -42,6 +42,7 @@ public final class HatchlingCage extends AbstractInstance
 	// MOBs
 	private static final int HATCHLING = 24089;
 	private static final int GEM_DRAGON = 24097;
+	
 	// Misc
 	private static final int TEMPLATE_ID = 270;
 	
@@ -63,6 +64,7 @@ public final class HatchlingCage extends AbstractInstance
 				enterInstance(player, npc, TEMPLATE_ID);
 			}
 		}
+		
 		return htmltext;
 	}
 	

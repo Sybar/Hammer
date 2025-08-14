@@ -17,6 +17,7 @@
 package ai.areas.BeastFarm;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -268,6 +269,7 @@ public class BeastFarm extends AbstractNpcAI
 					break;
 				}
 			}
+			
 			nextNpc.setName(name);
 			nextNpc.broadcastPacket(new NpcInfo(nextNpc));
 			nextNpc.setRunning();
@@ -296,11 +298,11 @@ public class BeastFarm extends AbstractNpcAI
 	}
 	
 	@Override
-	public void onSkillSee(Npc npc, Player caster, Skill skill, WorldObject[] targets, boolean isSummon)
+	public void onSkillSee(Npc npc, Player caster, Skill skill, Collection<WorldObject> targets, boolean isSummon)
 	{
 		// this behavior is only run when the target of skill is the passed npc (chest)
 		// i.e. when the player is attempting to open the chest using a skill
-		if (!ArrayUtil.contains(targets, npc))
+		if (!targets.contains(npc))
 		{
 			return;
 		}
@@ -308,6 +310,7 @@ public class BeastFarm extends AbstractNpcAI
 		// gather some values on local variables
 		final int npcId = npc.getId();
 		final int skillId = skill.getId();
+		
 		// check if the npc and skills used are valid for this script. Exit if invalid.
 		if (!ArrayUtil.contains(FEEDABLE_BEASTS, npcId) || ((skillId != SKILL_GOLDEN_SPICE) && (skillId != SKILL_CRYSTAL_SPICE) && (skillId != SKILL_BLESSED_GOLDEN_SPICE) && (skillId != SKILL_BLESSED_CRYSTAL_SPICE) && (skillId != SKILL_SGRADE_GOLDEN_SPICE) && (skillId != SKILL_SGRADE_CRYSTAL_SPICE)))
 		{
@@ -434,6 +437,7 @@ public class BeastFarm extends AbstractNpcAI
 						return _skillSuccessNpcIdList.get(SKILL_CRYSTAL_SPICE);
 					}
 				}
+				
 				return -1;
 			}
 			else if ((_growthLevel == 2) && (getRandom(100) < TAME_CHANCE))

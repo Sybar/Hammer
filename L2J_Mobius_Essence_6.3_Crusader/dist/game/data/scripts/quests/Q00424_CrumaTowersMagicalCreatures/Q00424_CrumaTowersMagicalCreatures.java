@@ -40,13 +40,16 @@ public class Q00424_CrumaTowersMagicalCreatures extends Quest
 {
 	// NPC
 	private static final int GENIE_LAMP = 34369;
+	
 	// Monsters
 	private static final int PREMO = 22206;
 	private static final int DICOR = 22208;
 	private static final int EXCURO = 22201;
 	private static final int RICENSEO = 22203;
+	
 	// Item
 	private static final ItemHolder BOOST_DEF_SCROLL = new ItemHolder(94271, 3);
+	
 	// Misc
 	private static final int MIN_LEVEL = 64;
 	private static final int MAX_LEVEL = 75;
@@ -101,6 +104,7 @@ public class Q00424_CrumaTowersMagicalCreatures extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -139,6 +143,7 @@ public class Q00424_CrumaTowersMagicalCreatures extends Quest
 				htmltext = getAlreadyCompletedMsg(player);
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -174,6 +179,7 @@ public class Q00424_CrumaTowersMagicalCreatures extends Quest
 			holder.add(new NpcLogListHolder(NpcStringId.DEFEAT_MONSTERS_21.getId(), true, qs.getInt(KILL_COUNT_VAR)));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

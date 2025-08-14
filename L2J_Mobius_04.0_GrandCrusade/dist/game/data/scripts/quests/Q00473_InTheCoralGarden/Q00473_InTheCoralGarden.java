@@ -37,10 +37,13 @@ public class Q00473_InTheCoralGarden extends Quest
 {
 	// NPC
 	private static final int FIOREN = 33044;
+	
 	// Monster
 	private static final int MICHAEL = 25799;
+	
 	// Misc
 	private static final int MIN_LEVEL = 97;
+	
 	// Item
 	private static final int CERTIFICATE = 30387;
 	
@@ -77,6 +80,7 @@ public class Q00473_InTheCoralGarden extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -104,6 +108,7 @@ public class Q00473_InTheCoralGarden extends Quest
 		{
 			htmltext = "33044-08.html";
 		}
+		
 		return htmltext;
 	}
 	

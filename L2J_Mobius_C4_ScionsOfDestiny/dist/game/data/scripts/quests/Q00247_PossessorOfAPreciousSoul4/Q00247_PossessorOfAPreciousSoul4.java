@@ -32,6 +32,7 @@ public class Q00247_PossessorOfAPreciousSoul4 extends Quest
 	// NPCs
 	private static final int CARADINE = 31740;
 	private static final int LADY_OF_THE_LAKE = 31745;
+	
 	// Items
 	private static final int CARADINE_LETTER = 7679;
 	private static final int NOBLESS_TIARA = 7694;
@@ -48,6 +49,7 @@ public class Q00247_PossessorOfAPreciousSoul4 extends Quest
 	{
 		String htmltext = event;
 		final QuestState st = getQuestState(player, false);
+		
 		if (st == null)
 		{
 			return htmltext;
@@ -61,7 +63,7 @@ public class Q00247_PossessorOfAPreciousSoul4 extends Quest
 				takeItems(player, CARADINE_LETTER, 1);
 				break;
 			}
-			case "31740-05.htm":
+			case "TELEPORT":
 			{
 				st.setCond(2);
 				player.teleToLocation(143209, 43968, -3038);

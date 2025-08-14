@@ -19,6 +19,7 @@ package org.l2jmobius.gameserver.network.clientpackets;
 import org.l2jmobius.Config;
 import org.l2jmobius.gameserver.data.sql.OfflineTraderTable;
 import org.l2jmobius.gameserver.handler.AdminCommandHandler;
+import org.l2jmobius.gameserver.managers.ZoneBuildManager;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.enums.player.PlayerAction;
 import org.l2jmobius.gameserver.model.actor.holders.creature.DoorRequestHolder;
@@ -109,15 +110,30 @@ public class DlgAnswer extends ClientPacket
 				}
 				
 				player.startOfflinePlay();
+				return;
 			}
-			else if (player.removeAction(PlayerAction.USER_ENGAGE))
+			
+			if (player.removeAction(PlayerAction.USER_ENGAGE))
 			{
 				if (Config.ALLOW_WEDDING)
 				{
 					player.engageAnswer(_answer);
 				}
+				return;
 			}
-			else if (player.removeAction(PlayerAction.ADMIN_COMMAND))
+			
+			if (player.removeAction(PlayerAction.ADMIN_SAVE_ZONE))
+			{
+				if (_answer == 0)
+				{
+					return;
+				}
+				
+				ZoneBuildManager.getInstance().buildZone(player);
+				return;
+			}
+			
+			if (player.removeAction(PlayerAction.ADMIN_COMMAND))
 			{
 				final String cmd = player.getAdminConfirmCmd();
 				player.setAdminConfirmCmd(null);
@@ -127,7 +143,7 @@ public class DlgAnswer extends ClientPacket
 				}
 				
 				// The 'useConfirm' must be disabled here, as we don't want to repeat that process.
-				AdminCommandHandler.getInstance().useAdminCommand(player, cmd, false);
+				AdminCommandHandler.getInstance().onCommand(player, cmd, false);
 			}
 		}
 		else if (_messageId == SystemMessageId.QUIT_GAME_DO_YOU_WANT_TO_CONTINUE.getId())
@@ -161,7 +177,7 @@ public class DlgAnswer extends ClientPacket
 			
 			if (!OfflineTraderTable.getInstance().enteredOfflineMode(player))
 			{
-				Disconnection.of(getClient(), player).defaultSequence(LeaveWorld.STATIC_PACKET);
+				Disconnection.of(getClient(), player).storeAndDeleteWith(LeaveWorld.STATIC_PACKET);
 			}
 		}
 		else if (_messageId == SystemMessageId.S1_IS_MAKING_AN_ATTEMPT_AT_RESURRECTION_DO_YOU_WANT_TO_CONTINUE_WITH_THIS_RESURRECTION.getId())

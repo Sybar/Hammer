@@ -56,10 +56,13 @@ public class PrisonOfDarkness extends AbstractInstance
 		19019,
 		19020
 	};
+	
 	// Items
 	private static final int GIANT_CANNONBALL = 17611;
+	
 	// Skill
 	private static final SkillHolder TELEPORT = new SkillHolder(14139, 1);
+	
 	// Locations
 	private static final Location ORBIS_LOCATION = new Location(213242, 53235, -8213);
 	private static final Location TIME_BOMB_1_LOC = new Location(213242, 53235, -9213);
@@ -101,6 +104,7 @@ public class PrisonOfDarkness extends AbstractInstance
 		new Location(209498, 120271, -1239),
 		new Location(208832, 117624, -1237),
 	};
+	
 	// Misc
 	private static final int TEMPLATE_ID = 159;
 	private static final int DOOR_1 = 26190001;
@@ -146,6 +150,7 @@ public class PrisonOfDarkness extends AbstractInstance
 								npcVars.set("TIME_MULTIPLER", 10);
 								break;
 						}
+						
 						getTimers().addTimer("CHANGE_POSITION", (60000 * npcVars.getInt("TIME_MULTIPLER", 5)), npc, null);
 					}
 					break;
@@ -169,6 +174,7 @@ public class PrisonOfDarkness extends AbstractInstance
 		{
 			return npc.isScriptValue(0) ? "32956-01.html" : "32956-02.html";
 		}
+		
 		return super.onFirstTalk(npc, player);
 	}
 	
@@ -198,6 +204,7 @@ public class PrisonOfDarkness extends AbstractInstance
 							{
 								npcVars.set("CAN_TELEPORT", false);
 							}
+							
 							return "32947-01.html";
 						}
 						break;
@@ -217,6 +224,7 @@ public class PrisonOfDarkness extends AbstractInstance
 									member.teleToLocation(ORBIS_LOCATION);
 								}
 							}
+							
 							showOnScreenMsg(instance, NpcStringId.WHEN_THE_TIME_BOMB_IS_ACTIVATED_A_DOOR_OPENS_SOMEWHERE, ExShowScreenMessage.TOP_CENTER, 4000);
 							addSpawn(TIME_BOMB_1, TIME_BOMB_1_LOC, false, 0, false, instance.getId());
 							final Npc portal = instance.getAliveNpcs(EXIT_PORTAL).stream().findAny().orElse(null);
@@ -313,6 +321,7 @@ public class PrisonOfDarkness extends AbstractInstance
 				}
 			}
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	

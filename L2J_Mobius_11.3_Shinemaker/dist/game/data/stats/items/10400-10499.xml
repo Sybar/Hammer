@@ -148,9 +148,9 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkillsTemplate" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player SiegeZone="126" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2499" level="1" /> <!-- Full Soul Bottle -->
 		</skills>
@@ -393,9 +393,9 @@
 		<set name="handler" val="PetFood" />
 		<set name="commissionItemType" val="PET_SUPPLIES" />
 		<set name="for_npc" val="true" />
-		<cond msgId="600">
+		<conditions msgId="600">
 			<player categoryType="UPGRADE_BABY_PET_GROUP" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2361" level="1" /> <!-- Improved Wolf Food -->
 		</skills>
@@ -411,9 +411,9 @@
 		<set name="handler" val="SummonItems" />
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
 		<set name="commissionItemType" val="PET_SUPPLIES" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2046" level="1" /> <!-- Summon Pet -->
 		</skills>
@@ -1454,9 +1454,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="ensoulNormalSlots" val="1" />
 		<set name="ensoulSpecialSlots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">329</stat>
 			<stat type="mAtk">163</stat>
@@ -1493,9 +1493,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="ensoulNormalSlots" val="1" />
 		<set name="ensoulSpecialSlots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">329</stat>
 			<stat type="mAtk">163</stat>
@@ -1532,9 +1532,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="ensoulNormalSlots" val="1" />
 		<set name="ensoulSpecialSlots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">329</stat>
 			<stat type="mAtk">163</stat>
@@ -1572,9 +1572,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="ensoulNormalSlots" val="1" />
 		<set name="ensoulSpecialSlots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">393</stat>
 			<stat type="mAtk">163</stat>
@@ -1610,9 +1610,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="ensoulNormalSlots" val="1" />
 		<set name="ensoulSpecialSlots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">393</stat>
 			<stat type="mAtk">163</stat>
@@ -1648,9 +1648,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="ensoulNormalSlots" val="1" />
 		<set name="ensoulSpecialSlots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">393</stat>
 			<stat type="mAtk">163</stat>
@@ -1688,9 +1688,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="ensoulNormalSlots" val="1" />
 		<set name="ensoulSpecialSlots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">422</stat>
 			<stat type="mAtk">163</stat>
@@ -1728,9 +1728,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="ensoulNormalSlots" val="1" />
 		<set name="ensoulSpecialSlots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">422</stat>
 			<stat type="mAtk">163</stat>
@@ -1767,9 +1767,9 @@
 		<set name="isAppearanceable" val="true" />
 		<set name="ensoulNormalSlots" val="1" />
 		<set name="ensoulSpecialSlots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">422</stat>
 			<stat type="mAtk">163</stat>
@@ -1867,9 +1867,9 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_magic_weapon" val="true" />
 		<set name="duration" val="180" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player chaotic="false" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">23</stat>
 			<stat type="mAtk">24</stat>
@@ -1896,9 +1896,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="180" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player chaotic="false" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">24</stat>
 			<stat type="mAtk">17</stat>
@@ -1925,9 +1925,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="180" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player chaotic="false" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">21</stat>
 			<stat type="mAtk">17</stat>
@@ -1954,9 +1954,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="180" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player chaotic="false" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">29</stat>
 			<stat type="mAtk">17</stat>
@@ -1985,9 +1985,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="180" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player chaotic="false" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">49</stat>
 			<stat type="mAtk">17</stat>
@@ -2014,9 +2014,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="180" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player chaotic="false" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">24</stat>
 			<stat type="mAtk">17</stat>
@@ -2083,9 +2083,9 @@
 		<set name="price" val="34560" />
 		<set name="is_stackable" val="true" />
 		<set name="commissionItemType" val="LIFE_STONE" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="82" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="10484" name="Mid-grade Life Stone Lv. 82" type="EtcItem">
 		<!-- A mineral formed inside a monster under immense impact. Outdated and almost no longer used. Can be exchanged for Spirit Stones through a blacksmith in any town. -->
@@ -2096,9 +2096,9 @@
 		<set name="price" val="138240" />
 		<set name="is_stackable" val="true" />
 		<set name="commissionItemType" val="LIFE_STONE" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="82" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="10485" name="High-grade Life Stone Lv. 82" type="EtcItem">
 		<!-- A mineral formed inside a monster under immense impact. Outdated and almost no longer used. Can be exchanged for Spirit Stones through a blacksmith in any town. -->
@@ -2109,9 +2109,9 @@
 		<set name="price" val="691200" />
 		<set name="is_stackable" val="true" />
 		<set name="commissionItemType" val="LIFE_STONE" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="82" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="10486" name="Top-grade Life Stone Lv. 82" type="EtcItem">
 		<!-- A mineral formed inside a monster under immense impact. Outdated and almost no longer used. Can be exchanged for Spirit Stones through a blacksmith in any town. -->
@@ -2122,9 +2122,9 @@
 		<set name="price" val="3456000" />
 		<set name="commissionItemType" val="LIFE_STONE" />
 		<set name="is_stackable" val="true" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="82" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="10487" name="Dynasty Jewel Leather Armor" additionalName="Force Master" type="Armor">
 		<!-- Classes: Duelist, Grand Khavatari. -->
@@ -2142,9 +2142,9 @@
 		<set name="commissionItemType" val="ARMOR_TOP" />
 		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player categoryType="FORCE_MASTER" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">170</stat>
 		</stats>
@@ -2165,9 +2165,9 @@
 		<set name="commissionItemType" val="ARMOR_TOP" />
 		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player categoryType="WEAPON_MASTER" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">170</stat>
 		</stats>
@@ -2188,9 +2188,9 @@
 		<set name="commissionItemType" val="ARMOR_TOP" />
 		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player categoryType="BUFF_MASTER" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">170</stat>
 		</stats>
@@ -2211,9 +2211,9 @@
 		<set name="commissionItemType" val="ARMOR_TOP" />
 		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player categoryType="SUMMON_MASTER" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">170</stat>
 		</stats>

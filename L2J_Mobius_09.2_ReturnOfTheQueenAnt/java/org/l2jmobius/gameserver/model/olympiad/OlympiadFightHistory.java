@@ -65,6 +65,7 @@ public class OlympiadFightHistory
 			LOGGER.warning("OlympiadFightHistory - getWinnerFormat error parOne is null, owner = " + _player.getName());
 			return 2;
 		}
+		
 		if (_player.getObjectId() == parOne.getObjectId())
 		{
 			if (winner == 1)
@@ -80,6 +81,7 @@ public class OlympiadFightHistory
 				return 2;
 			}
 		}
+		
 		if (winner == 2)
 		{
 			return 0;
@@ -109,10 +111,12 @@ public class OlympiadFightHistory
 					{
 						break;
 					}
+					
 					OlympiadFight curFight = _fights.get(i);
 					newFights.add(curFight);
 				}
 			}
+			
 			_fights = newFights;
 		}
 	}
@@ -180,6 +184,7 @@ public class OlympiadFightHistory
 								winInfo = 2;
 							}
 						}
+						
 						_fights.add(new OlympiadFight(name, opponentLevel, opponentClassId, winInfo));
 					}
 					else

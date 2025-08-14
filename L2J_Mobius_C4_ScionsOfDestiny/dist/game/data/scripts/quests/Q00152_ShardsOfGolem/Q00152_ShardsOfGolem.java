@@ -32,13 +32,16 @@ public class Q00152_ShardsOfGolem extends Quest
 	// NPCs
 	private static final int HARRIS = 30035;
 	private static final int ALTRAN = 30283;
+	
 	// Monster
 	private static final int STONE_GOLEM = 20016;
+	
 	// Items
 	private static final int HARRIS_RECEIPT_1 = 1008;
 	private static final int HARRIS_RECEIPT_2 = 1009;
 	private static final int GOLEM_SHARD = 1010;
 	private static final int TOOL_BOX = 1011;
+	
 	// Reward
 	private static final int WOODEN_BREASTPLATE = 23;
 	

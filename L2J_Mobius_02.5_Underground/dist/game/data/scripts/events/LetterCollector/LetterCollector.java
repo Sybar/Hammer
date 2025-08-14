@@ -34,6 +34,7 @@ public class LetterCollector extends LongTimeEvent
 {
 	// NPC
 	private static final int ANGEL_CAT = 33873;
+	
 	// Items
 	private static final int A = 3875;
 	private static final int C = 3876;
@@ -49,6 +50,7 @@ public class LetterCollector extends LongTimeEvent
 	private static final int S = 3886;
 	private static final int T = 3887;
 	private static final int II = 3888;
+	
 	// Rewards
 	private static final ItemHolder[] REWARDS_TAUTI =
 	{
@@ -213,6 +215,7 @@ public class LetterCollector extends LongTimeEvent
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

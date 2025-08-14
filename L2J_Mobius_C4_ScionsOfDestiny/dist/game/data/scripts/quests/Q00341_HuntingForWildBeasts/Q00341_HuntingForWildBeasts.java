@@ -34,6 +34,7 @@ public class Q00341_HuntingForWildBeasts extends Quest
 {
 	// Item
 	private static final int BEAR_SKIN = 4259;
+	
 	// Drop chances
 	private static final Map<Integer, Integer> CHANCES = new HashMap<>();
 	static

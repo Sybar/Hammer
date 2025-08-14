@@ -34,11 +34,14 @@ public class Q10779_LettersFromTheQueenSeaOfSpores extends LetterQuest
 	// NPCs
 	private static final int HOLINT = 30191;
 	private static final int ANDY = 33845;
+	
 	// Items
 	private static final int SOE_OREN = 39574;
 	private static final int SOE_SEA_OF_SPORES = 39575;
+	
 	// Location
 	private static final Location TELEPORT_LOC = new Location(83633, 53064, -1456);
+	
 	// Misc
 	private static final int MIN_LEVEL = 52;
 	private static final int MAX_LEVEL = 57;
@@ -96,6 +99,7 @@ public class Q10779_LettersFromTheQueenSeaOfSpores extends LetterQuest
 				htmltext = null;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -120,6 +124,7 @@ public class Q10779_LettersFromTheQueenSeaOfSpores extends LetterQuest
 				htmltext = "33845-01.html";
 			}
 		}
+		
 		return htmltext;
 	}
 }

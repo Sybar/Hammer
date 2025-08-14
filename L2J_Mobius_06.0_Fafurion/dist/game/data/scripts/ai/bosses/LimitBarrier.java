@@ -104,8 +104,10 @@ public class LimitBarrier extends AbstractNpcAI
 		26383, // Spirit of Time Lafros
 		29374, // Cyrax
 	};
+	
 	// Skill
 	private static final SkillHolder LIMIT_BARRIER = new SkillHolder(32203, 1);
+	
 	// Misc
 	private static final int HIT_COUNT = 600;
 	private static final Map<Npc, Integer> RAIDBOSS_HITS = new ConcurrentHashMap<>();
@@ -130,6 +132,7 @@ public class LimitBarrier extends AbstractNpcAI
 					{
 						npc.broadcastPacket(new ExShowScreenMessage(NpcStringId.YOU_HAVE_FAILED_TO_DESTROY_THE_LIMIT_BARRIER_NTHE_RAID_BOSS_FULLY_RECOVERS_ITS_CON, 2, 5000, true));
 					}
+					
 					npc.setCurrentHp(npc.getStat().getMaxHp(), true);
 					npc.stopSkillEffects(SkillFinishType.REMOVED, LIMIT_BARRIER.getSkillId());
 					RAIDBOSS_HITS.put(npc, 0);
@@ -140,12 +143,14 @@ public class LimitBarrier extends AbstractNpcAI
 					{
 						npc.broadcastPacket(new ExShowScreenMessage(NpcStringId.YOU_HAVE_DESTROYED_THE_LIMIT_BARRIER, 2, 5000, true));
 					}
+					
 					npc.stopSkillEffects(SkillFinishType.REMOVED, LIMIT_BARRIER.getSkillId());
 					RAIDBOSS_HITS.put(npc, 0);
 				}
 				break;
 			}
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	

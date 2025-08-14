@@ -51,6 +51,7 @@ public class Q00420_LittleWing extends Quest
 	private static final int SUZET = 30751;
 	private static final int SHAMHAI = 30752;
 	private static final int COOPER = 30829;
+	
 	// Items
 	private static final int COAL = 1870;
 	private static final int CHARCOAL = 1871;
@@ -75,6 +76,7 @@ public class Q00420_LittleWing extends Quest
 	private static final int SUZET_EGG = 3829;
 	private static final int SHAMHAI_SCALE = 3830;
 	private static final int SHAMHAI_EGG = 3831;
+	
 	// Monsters
 	private static final int DEAD_SEEKER = 20202;
 	private static final int TOAD_LORD = 20231;
@@ -101,6 +103,7 @@ public class Q00420_LittleWing extends Quest
 		27188, // Fairy Tree of Abyss (Quest Monster)
 		27189, // Soul of Tree Guardian (Quest Monster)
 	};
+	
 	// Rewards
 	private static final int DRAGONFLUTE_OF_WIND = 3500;
 	private static final int DRAGONFLUTE_OF_STAR = 3501;
@@ -108,6 +111,7 @@ public class Q00420_LittleWing extends Quest
 	private static final int HATCHLING_ARMOR = 3912;
 	private static final int HATCHLING_FOOD = 4038;
 	private static final List<Integer> EGGS = Arrays.asList(EXARION_EGG, SUZET_EGG, KALIBRAN_EGG, SHAMHAI_EGG, ZWOV_EGG);
+	
 	// Drake Drops
 	private static final Map<Integer, Integer> EGG_DROPS = new HashMap<>();
 	static
@@ -118,6 +122,7 @@ public class Q00420_LittleWing extends Quest
 		EGG_DROPS.put(ROAD_SCAVENGER, KALIBRAN_EGG);
 		EGG_DROPS.put(LETO_WARRIOR, EXARION_EGG);
 	}
+	
 	// Misc
 	private static final int MIN_LEVEL = 35;
 	
@@ -225,6 +230,7 @@ public class Q00420_LittleWing extends Quest
 						takeItems(player, TOAD_SKIN, -1);
 						giveItems(player, FAIRY_STONE, 1);
 					}
+					
 					qs.setCond(3, true);
 					htmltext = event;
 				}
@@ -245,6 +251,7 @@ public class Q00420_LittleWing extends Quest
 						takeItems(player, TOAD_SKIN, -1);
 						giveItems(player, DELUXE_FAIRY_STONE, 1);
 					}
+					
 					qs.setCond(3, true);
 					htmltext = event;
 				}
@@ -276,6 +283,7 @@ public class Q00420_LittleWing extends Quest
 					{
 						giveItems(player, FAIRY_DUST, 1);
 					}
+					
 					qs.setCond(5, true);
 					htmltext = event;
 				}
@@ -337,6 +345,7 @@ public class Q00420_LittleWing extends Quest
 						giveItems(player, HATCHLING_FOOD, 20);
 						htmltext = event;
 					}
+					
 					giveReward(player);
 					takeItems(player, FAIRY_DUST, -1);
 					qs.exitQuest(true, true);
@@ -415,6 +424,7 @@ public class Q00420_LittleWing extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -812,6 +822,7 @@ public class Q00420_LittleWing extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -878,6 +889,7 @@ public class Q00420_LittleWing extends Quest
 				{
 					giveItems(player, DRAGONFLUTE_OF_TWILIGHT, 1);
 				}
+				
 				takeItems(player, i, -1);
 				break;
 			}

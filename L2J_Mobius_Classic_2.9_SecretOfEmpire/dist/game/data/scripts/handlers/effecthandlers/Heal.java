@@ -106,6 +106,7 @@ public class Heal extends AbstractEffect
 			{
 				mAtkMul = weaponInst.getTemplate().getCrystalType() == CrystalType.S84 ? 4 : weaponInst.getTemplate().getCrystalType() == CrystalType.S80 ? 2 : 1;
 			}
+			
 			// shot dynamic bonus
 			mAtkMul = bss ? mAtkMul * 4 : mAtkMul + 1;
 		}
@@ -116,6 +117,7 @@ public class Heal extends AbstractEffect
 			amount *= effected.getStat().getValue(Stat.HEAL_EFFECT, 1);
 			amount += effected.getStat().getValue(Stat.HEAL_EFFECT_ADD, 0);
 			amount *= (item == null) && effector.isPlayable() ? Config.PLAYER_HEALING_SKILL_MULTIPLIERS[effector.asPlayer().getPlayerClass().getId()] : 1f;
+			
 			// Heal critic, since CT2.3 Gracia Final
 			if (skill.isMagic() && Formulas.calcCrit(skill.getMagicCriticalRate(), effector, effected, skill))
 			{

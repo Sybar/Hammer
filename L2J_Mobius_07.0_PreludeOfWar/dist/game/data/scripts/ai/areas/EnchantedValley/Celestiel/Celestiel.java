@@ -37,6 +37,7 @@ public class Celestiel extends AbstractNpcAI
 {
 	// NPC
 	private static final int CELESTIEL = 34234;
+	
 	// Teleports
 	private static final Location SOUTH_LOCATION = new Location(110815, 59655, -3720);
 	private static final Location NORTH_LOCATION = new Location(124040, 43970, -3720);
@@ -92,6 +93,7 @@ public class Celestiel extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

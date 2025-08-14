@@ -114,6 +114,7 @@ public class PlayerStatus extends PlayableStatus
 			{
 				player.stopEffectsOnDamage();
 			}
+			
 			// Attacked players in craft/shops stand up.
 			if (player.isCrafting() || player.isInStoreMode())
 			{
@@ -132,6 +133,7 @@ public class PlayerStatus extends PlayableStatus
 				{
 					player.stopStunning(true);
 				}
+				
 				if (Formulas.calcRealTargetBreak())
 				{
 					player.getEffectList().stopEffects(AbnormalType.REAL_TARGET);
@@ -344,6 +346,7 @@ public class PlayerStatus extends PlayableStatus
 				{
 					pet.getAI().setIntention(Intention.IDLE);
 				}
+				
 				player.getServitors().values().forEach(s -> s.getAI().setIntention(Intention.IDLE));
 				return;
 			}

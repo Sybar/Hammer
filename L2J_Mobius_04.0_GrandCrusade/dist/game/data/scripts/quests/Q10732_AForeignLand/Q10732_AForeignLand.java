@@ -33,6 +33,7 @@ public class Q10732_AForeignLand extends Quest
 	// NPCs
 	private static final int NAVARI = 33931;
 	private static final int GERETH = 33932;
+	
 	// Misc
 	private static final int MAX_LEVEL = 20;
 	
@@ -84,6 +85,7 @@ public class Q10732_AForeignLand extends Quest
 				htmltext = null;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -120,6 +122,7 @@ public class Q10732_AForeignLand extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

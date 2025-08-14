@@ -67,10 +67,12 @@ public class NewbieHelper extends AbstractNpcAI
 					{
 						giveItems(player, SCROLL, 2);
 					}
+					
 					qs1.setState(State.COMPLETED);
 				}
 			}
 		}
+		
 		npc.showChatWindow(player);
 		return null;
 	}

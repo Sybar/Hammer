@@ -1384,11 +1384,11 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="material" val="LEATHER" />
 		<set name="handler" val="ItemSkills" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<and>
 				<player subclass="false" />
 			</and>
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="18351" level="2" /> <!-- Spellbook: Favor of the Exalted Lv. 2 -->
 		</skills>

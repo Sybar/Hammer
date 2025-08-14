@@ -58,6 +58,7 @@ public class StatBonusSpeed extends AbstractEffect
 				}
 			}
 		}
+		
 		_armorTypeCondition = armorTypesMask != 0 ? new ConditionUsingItemType(armorTypesMask) : null;
 	}
 	

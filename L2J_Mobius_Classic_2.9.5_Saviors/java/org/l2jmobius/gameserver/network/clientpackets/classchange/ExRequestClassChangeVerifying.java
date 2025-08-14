@@ -125,6 +125,7 @@ public class ExRequestClassChangeVerifying extends ClientPacket
 				break;
 			}
 		}
+		
 		return (qs != null) && qs.isCompleted();
 	}
 	

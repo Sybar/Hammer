@@ -45,6 +45,7 @@ public class PailakaDevilsLegacy extends AbstractInstance
 	private static final int POWDER_KEG = 18622; // Powder Keg
 	private static final int TREASURE_BOX = 32495; // Treasure Chest
 	private static final int ADVENTURER2 = 32511; // Dwarf Adventurer
+	
 	// Items
 	private static final int ANTIDOTE_POTION = 13048; // Pailaka Antidote
 	private static final int DIVINE_POTION = 13049; // Divine Soul
@@ -52,6 +53,7 @@ public class PailakaDevilsLegacy extends AbstractInstance
 	private static final int SHIELD = 13032; // Pailaka Instant Shield
 	private static final int DEFENCE_POTION = 13059; // Long-Range Defense Increasing Potion
 	private static final int HEALING_POTION = 13033; // Quick Healing Potion
+	
 	// Skills
 	private static final SkillHolder ENERGY = new SkillHolder(5712, 1); // Energy Ditch
 	private static final SkillHolder BOOM = new SkillHolder(5714, 1); // Boom Up
@@ -61,6 +63,7 @@ public class PailakaDevilsLegacy extends AbstractInstance
 	private static final Location LEMATAN_PORT_POINT = new Location(86116, -209117, -3774);
 	private static final Location LEMATAN_PORT = new Location(85000, -208699, -3336);
 	private static final Location ADVENTURER_LOC = new Location(84983, -208736, -3336, 49915);
+	
 	// Misc
 	private static final int TEMPLATE_ID = 44;
 	private static final int ZONE = 20109;
@@ -122,6 +125,7 @@ public class PailakaDevilsLegacy extends AbstractInstance
 								follower.setTarget(npc);
 								follower.doCast(ENERGY.getSkill());
 							}
+							
 							startQuestTimer("FOLLOWER_CAST", 15000, npc, null);
 						}
 						break;
@@ -150,6 +154,7 @@ public class PailakaDevilsLegacy extends AbstractInstance
 				}
 			}
 		}
+		
 		return null;
 	}
 	
@@ -226,6 +231,7 @@ public class PailakaDevilsLegacy extends AbstractInstance
 								break;
 							}
 						}
+						
 						npc.setScriptValue(1);
 						startQuestTimer("DELETE", 3000, npc, attacker);
 					}

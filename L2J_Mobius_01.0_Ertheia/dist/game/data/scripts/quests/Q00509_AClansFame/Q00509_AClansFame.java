@@ -117,6 +117,7 @@ public class Q00509_AClansFame extends Quest
 				break;
 			}
 		}
+		
 		return event;
 	}
 	
@@ -203,6 +204,7 @@ public class Q00509_AClansFame extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

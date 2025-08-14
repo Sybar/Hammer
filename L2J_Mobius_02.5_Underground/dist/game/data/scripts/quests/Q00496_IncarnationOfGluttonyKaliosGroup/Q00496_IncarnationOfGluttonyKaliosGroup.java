@@ -35,10 +35,13 @@ public class Q00496_IncarnationOfGluttonyKaliosGroup extends Quest
 {
 	// NPC
 	private static final int KARTIA_RESEARCHER = 33647;
+	
 	// Item
 	private static final int DIMENSION_KEEPER_GOLDEN_BOX = 34929;
+	
 	// Boss
 	private static final int BOSS = 25884; // Kalios (Group 95)
+	
 	// Misc
 	private static final int MIN_LEVEL = 95;
 	private static final int MAX_LEVEL = 99;
@@ -71,6 +74,7 @@ public class Q00496_IncarnationOfGluttonyKaliosGroup extends Quest
 			rewardItems(player, DIMENSION_KEEPER_GOLDEN_BOX, 1);
 			qs.exitQuest(QuestType.DAILY, true);
 		}
+		
 		return htmltext;
 	}
 	
@@ -119,6 +123,7 @@ public class Q00496_IncarnationOfGluttonyKaliosGroup extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

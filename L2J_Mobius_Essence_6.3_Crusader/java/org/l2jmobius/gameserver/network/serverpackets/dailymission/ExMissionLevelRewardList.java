@@ -75,6 +75,7 @@ public class ExMissionLevelRewardList extends ServerPacket
 		{
 			sendAvailableRewardsList(buffer, _info);
 		}
+		
 		buffer.writeInt(_info.getCurrentLevel()); // Level
 		buffer.writeInt(getPercent(_info)); // PointPercent
 		buffer.writeInt(_year); // SeasonYear
@@ -91,6 +92,7 @@ public class ExMissionLevelRewardList extends ServerPacket
 					break;
 				}
 			}
+			
 			buffer.writeInt(check); // ExtraRewardsAvailable
 		}
 		else
@@ -104,6 +106,7 @@ public class ExMissionLevelRewardList extends ServerPacket
 				buffer.writeInt(0); // ExtraRewardsAvailable
 			}
 		}
+		
 		buffer.writeInt(0); // RemainSeasonTime / does not work? / not used?
 	}
 	
@@ -117,6 +120,7 @@ public class ExMissionLevelRewardList extends ServerPacket
 				availableRewards++;
 			}
 		}
+		
 		for (int level : _holder.getKeyRewards().keySet())
 		{
 			if ((level <= info.getCurrentLevel()) && !_collectedKeyRewards.contains(level))
@@ -124,6 +128,7 @@ public class ExMissionLevelRewardList extends ServerPacket
 				availableRewards++;
 			}
 		}
+		
 		if (_holder.getBonusRewardIsAvailable() && _holder.getBonusRewardByLevelUp() && info.getCollectedSpecialReward())
 		{
 			final List<Integer> collectedBonusRewards = info.getListOfCollectedBonusRewards();
@@ -148,6 +153,7 @@ public class ExMissionLevelRewardList extends ServerPacket
 		{
 			availableRewards++;
 		}
+		
 		return availableRewards;
 	}
 	
@@ -161,6 +167,7 @@ public class ExMissionLevelRewardList extends ServerPacket
 				totalRewards++;
 			}
 		}
+		
 		for (int level : _holder.getKeyRewards().keySet())
 		{
 			if (level <= info.getCurrentLevel())
@@ -168,6 +175,7 @@ public class ExMissionLevelRewardList extends ServerPacket
 				totalRewards++;
 			}
 		}
+		
 		if (_holder.getBonusRewardByLevelUp() && info.getCollectedSpecialReward() && _holder.getBonusRewardIsAvailable() && (_maxNormalLevel <= info.getCurrentLevel()))
 		{
 			for (int level = _maxNormalLevel; level <= _holder.getMaxLevel(); level++)
@@ -187,6 +195,7 @@ public class ExMissionLevelRewardList extends ServerPacket
 		{
 			totalRewards++;
 		}
+		
 		return totalRewards;
 	}
 	
@@ -196,6 +205,7 @@ public class ExMissionLevelRewardList extends ServerPacket
 		{
 			return 100;
 		}
+		
 		return (int) Math.floor(((double) info.getCurrentEXP() / (double) _holder.getXPForSpecifiedLevel(info.getCurrentLevel())) * 100.0);
 	}
 	
@@ -211,6 +221,7 @@ public class ExMissionLevelRewardList extends ServerPacket
 				buffer.writeInt(_collectedNormalRewards.contains(level) ? 2 : 1); // State
 			}
 		}
+		
 		for (int level : _holder.getKeyRewards().keySet())
 		{
 			if (level <= info.getCurrentLevel())
@@ -220,6 +231,7 @@ public class ExMissionLevelRewardList extends ServerPacket
 				buffer.writeInt(_collectedKeyRewards.contains(level) ? 2 : 1); // State
 			}
 		}
+		
 		if (_holder.getBonusRewardByLevelUp() && info.getCollectedSpecialReward() && _holder.getBonusRewardIsAvailable() && (_maxNormalLevel <= info.getCurrentLevel()))
 		{
 			buffer.writeInt(3); // Type
@@ -232,6 +244,7 @@ public class ExMissionLevelRewardList extends ServerPacket
 					break;
 				}
 			}
+			
 			buffer.writeInt(sendLevel == 0 ? _holder.getMaxLevel() : sendLevel); // Level
 			buffer.writeInt(2); // State
 		}

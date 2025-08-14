@@ -63,6 +63,7 @@ public class RequestSaveKeyMapping extends ClientPacket
 		{
 			uiKeyMapping += b + SPLIT_VAR;
 		}
+		
 		player.getVariables().set(PlayerVariables.UI_KEY_MAPPING, uiKeyMapping);
 	}
 }

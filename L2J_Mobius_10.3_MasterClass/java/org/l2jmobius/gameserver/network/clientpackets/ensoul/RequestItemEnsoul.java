@@ -80,35 +80,42 @@ public class RequestItemEnsoul extends ClientPacket
 			player.sendPacket(SystemMessageId.CANNOT_USE_THE_SOUL_CRYSTAL_SYSTEM_WHILE_USING_THE_PRIVATE_STORE_WORKSHOP);
 			return;
 		}
+		
 		if (player.hasAbnormalType(AbnormalType.FREEZING))
 		{
 			player.sendPacket(SystemMessageId.CANNOT_USE_THE_SOUL_CRYSTAL_SYSTEM_WHILE_FROZEN);
 		}
+		
 		if (player.isDead())
 		{
 			player.sendPacket(SystemMessageId.CANNOT_USE_THE_SOUL_CRYSTAL_SYSTEM_WHILE_DEAD);
 			return;
 		}
+		
 		if ((player.getActiveTradeList() != null) || player.hasItemRequest())
 		{
 			player.sendPacket(SystemMessageId.CANNOT_USE_THE_SOUL_CRYSTAL_SYSTEM_WHILE_TRADING);
 			return;
 		}
+		
 		if (player.hasAbnormalType(AbnormalType.PARALYZE))
 		{
 			player.sendPacket(SystemMessageId.CANNOT_USE_THE_SOUL_CRYSTAL_SYSTEM_WHILE_PETRIFIED);
 			return;
 		}
+		
 		if (player.isFishing())
 		{
 			player.sendPacket(SystemMessageId.CANNOT_USE_THE_SOUL_CRYSTAL_SYSTEM_WHILE_FISHING);
 			return;
 		}
+		
 		if (player.isSitting())
 		{
 			player.sendPacket(SystemMessageId.CANNOT_USE_THE_SOUL_CRYSTAL_SYSTEM_WHILE_SEATED);
 			return;
 		}
+		
 		if (AttackStanceTaskManager.getInstance().hasAttackStanceTask(player))
 		{
 			player.sendPacket(SystemMessageId.CANNOT_USE_THE_SOUL_CRYSTAL_SYSTEM_WHILE_IN_BATTLE);
@@ -121,37 +128,44 @@ public class RequestItemEnsoul extends ClientPacket
 			PacketLogger.warning("Player: " + player + " attempting to ensoul item without having it!");
 			return;
 		}
+		
 		final ItemTemplate template = item.getTemplate();
 		if ((_type == 1) && (template.getEnsoulSlots() == 0))
 		{
 			PacketLogger.warning("Player: " + player + " attempting to ensoul non ensoulable item: " + item + "!");
 			return;
 		}
+		
 		if ((_type == 2) && (template.getSpecialEnsoulSlots() == 0))
 		{
 			PacketLogger.warning("Player: " + player + " attempting to special ensoul non special ensoulable item: " + item + "!");
 			return;
 		}
+		
 		if (!item.isEquipable())
 		{
 			PacketLogger.warning("Player: " + player + " attempting to ensoul non equippable item: " + item + "!");
 			return;
 		}
+		
 		if (item.isCommonItem())
 		{
 			PacketLogger.warning("Player: " + player + " attempting to ensoul common item: " + item + "!");
 			return;
 		}
+		
 		if (item.isShadowItem())
 		{
 			PacketLogger.warning("Player: " + player + " attempting to ensoul shadow item: " + item + "!");
 			return;
 		}
+		
 		if (item.isHeroItem())
 		{
 			PacketLogger.warning("Player: " + player + " attempting to ensoul hero item: " + item + "!");
 			return;
 		}
+		
 		if ((_options == null) || (_options.length == 0))
 		{
 			PacketLogger.warning("Player: " + player + " attempting to ensoul item without any special ability declared!");
@@ -246,6 +260,7 @@ public class RequestItemEnsoul extends ClientPacket
 			{
 				iu.addRemovedItem(soulCrystal);
 			}
+			
 			if (gemStones.isStackable() && (gemStones.getCount() > 0))
 			{
 				iu.addModifiedItem(gemStones);
@@ -254,13 +269,16 @@ public class RequestItemEnsoul extends ClientPacket
 			{
 				iu.addRemovedItem(gemStones);
 			}
+			
 			iu.addModifiedItem(item);
 		}
+		
 		player.sendInventoryUpdate(iu);
 		if (item.isEquipped())
 		{
 			item.applySpecialAbilities();
 		}
+		
 		player.sendPacket(new ExEnsoulResult(success, item));
 		item.updateDatabase(true);
 	}

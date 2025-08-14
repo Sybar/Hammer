@@ -36,6 +36,7 @@ public class Q00615_MagicalPowerOfFirePart1 extends Quest
 	private static final int UDAN = 31379;
 	private static final int ASEFA_BOX = 31559;
 	private static final int ASEFA_EYE = 31684;
+	
 	// Monsters
 	private static final int[] KETRA_MOBS =
 	{
@@ -61,6 +62,7 @@ public class Q00615_MagicalPowerOfFirePart1 extends Quest
 		21348, // Prophet's Guard
 		21349, // Prophet's Aide
 	};
+	
 	// Items
 	private static final int KEY = 1661;
 	private static final int STOLEN_RED_TOTEM = 7242;
@@ -74,6 +76,7 @@ public class Q00615_MagicalPowerOfFirePart1 extends Quest
 		7224, // Mark of Varka's Alliance - Level 4
 		7225, // Mark of Varka's Alliance - Level 5
 	};
+	
 	// Skills
 	private static final SkillHolder GOW = new SkillHolder(4547, 1); // Gaze of Watcher
 	private static final SkillHolder DISPEL_GOW = new SkillHolder(4548, 1); // Quest - Dispel Watcher Gaze
@@ -97,6 +100,7 @@ public class Q00615_MagicalPowerOfFirePart1 extends Quest
 		{
 			return null;
 		}
+		
 		String htmltext = null;
 		switch (event)
 		{
@@ -136,6 +140,7 @@ public class Q00615_MagicalPowerOfFirePart1 extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -229,6 +234,7 @@ public class Q00615_MagicalPowerOfFirePart1 extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

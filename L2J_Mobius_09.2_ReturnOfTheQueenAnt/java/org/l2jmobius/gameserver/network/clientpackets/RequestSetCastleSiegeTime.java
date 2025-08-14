@@ -55,6 +55,7 @@ public class RequestSetCastleSiegeTime extends ClientPacket
 			PacketLogger.warning(getClass().getSimpleName() + ": activeChar: " + player + " castle: " + castle + " castleId: " + _castleId);
 			return;
 		}
+		
 		if ((castle.getOwnerId() > 0) && (castle.getOwnerId() != player.getClanId()))
 		{
 			PacketLogger.warning(getClass().getSimpleName() + ": activeChar: " + player + " castle: " + castle + " castleId: " + _castleId + " is trying to change siege date of not his own castle!");
@@ -104,6 +105,7 @@ public class RequestSetCastleSiegeTime extends ClientPacket
 				return true;
 			}
 		}
+		
 		return false;
 	}
 	
@@ -116,6 +118,7 @@ public class RequestSetCastleSiegeTime extends ClientPacket
 				return false;
 			}
 		}
+		
 		return true;
 	}
 }

@@ -31,6 +31,7 @@ public class Q00110_ToThePrimevalIsle extends Quest
 	// NPCs
 	private static final int ANTON = 31338;
 	private static final int MARQUEZ = 32113;
+	
 	// Item
 	private static final int ANCIENT_BOOK = 8777;
 	

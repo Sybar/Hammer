@@ -67,16 +67,19 @@ public class RequestPrivateStoreSell extends ClientPacket
 			{
 				readInt(); // soul crystal option
 			}
+			
 			final int soulCrystals2 = readByte();
 			for (int s = 0; s < soulCrystals2; s++)
 			{
 				readInt(); // sa effect
 			}
+			
 			if (/* (slot < 1) || */ (itemId < 1) || (count < 1) || (price < 0))
 			{
 				_items = null;
 				return;
 			}
+			
 			_items[i] = new ItemRequest(slot, itemId, count, price);
 		}
 	}

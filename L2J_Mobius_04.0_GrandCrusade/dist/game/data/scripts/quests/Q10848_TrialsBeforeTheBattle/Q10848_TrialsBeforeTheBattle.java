@@ -38,9 +38,11 @@ public final class Q10848_TrialsBeforeTheBattle extends Quest
 	private static final int DEVIANNE = 31590;
 	private static final int ERICA = 31619;
 	private static final int SPORCHA = 34230;
+	
 	// Monster
 	private static final int DARK_WIZARD_OF_MAGIC = 23784;
 	private static final int SCORPION_KING = 23785;
+	
 	// Items
 	private static final int PROOFS_OF_BATTLE_READINESS = 47187;
 	private static final int SPELLBOOK_HELL_HOUND = 47148;
@@ -120,12 +122,14 @@ public final class Q10848_TrialsBeforeTheBattle extends Quest
 						addExpAndSp(player, 253076784, 0);
 						break;
 					}
+					
 					htmltext = getNoQuestLevelRewardMsg(player);
 					break;
 				}
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -146,6 +150,7 @@ public final class Q10848_TrialsBeforeTheBattle extends Quest
 						htmltext = "lionna_blackbird_q10848_01.htm";
 						break;
 					}
+					
 					htmltext = "lionna_blackbird_q10848_03.htm";
 					break;
 				}
@@ -241,6 +246,7 @@ public final class Q10848_TrialsBeforeTheBattle extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

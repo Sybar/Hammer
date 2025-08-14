@@ -42,11 +42,12 @@ public class FuncMAtkCritical extends AbstractFunction
 	@Override
 	public double calc(Creature effector, Creature effected, Skill skill, double initVal)
 	{
-		// CT2: The magic critical rate has been increased to 10 times.
+		// Apply WIT bonus only for NPCs or players with weapons.
 		if (!effector.isPlayer() || (effector.getActiveWeaponInstance() != null))
 		{
-			return initVal * BaseStat.WIT.calcBonus(effector) * 10;
+			return initVal * BaseStat.WIT.calcBonus(effector);
 		}
+		
 		return initVal;
 	}
 }

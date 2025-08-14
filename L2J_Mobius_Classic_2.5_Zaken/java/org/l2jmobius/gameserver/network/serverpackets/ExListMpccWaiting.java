@@ -45,6 +45,7 @@ public class ExListMpccWaiting extends ServerPacket
 		{
 			chunkSize = NUM_PER_PAGE;
 		}
+		
 		for (int i = startIndex; i < (startIndex + chunkSize); i++)
 		{
 			_rooms.add(rooms.get(i));

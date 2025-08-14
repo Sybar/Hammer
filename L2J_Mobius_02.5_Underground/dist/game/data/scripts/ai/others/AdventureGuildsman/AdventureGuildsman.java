@@ -90,6 +90,7 @@ public class AdventureGuildsman extends AbstractNpcAI
 				player.sendPacket(ExShowQuestInfo.STATIC_PACKET);
 			}
 		}
+		
 		return htmltext;
 	}
 	

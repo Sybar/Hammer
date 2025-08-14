@@ -36,6 +36,7 @@ public final class DragonValleyDayNightMonsters extends AbstractNpcAI
 	// Trigger Mobs
 	private static final int DRAGON_PELTAST = 24617; // Dragon Peltast
 	private static final int DRAGON_OFFICER = 24618; // Dragon Officer
+	
 	// Special Mobs
 	private static final int BEHEMOTH_DRAGON = 24619; // Behemoth Dragon
 	private static final int SOUL_HUNTER = 24620; // Soul Hunter

@@ -31,6 +31,7 @@ public class Q00019_GoToThePastureland extends Quest
 	// NPCs
 	private static final int VLADIMIR = 31302;
 	private static final int TUNATUN = 31537;
+	
 	// Items
 	private static final int YOUNG_WILD_BEAST_MEAT = 7547;
 	
@@ -71,6 +72,7 @@ public class Q00019_GoToThePastureland extends Quest
 				htmltext = "31537-02.htm";
 			}
 		}
+		
 		return htmltext;
 	}
 	

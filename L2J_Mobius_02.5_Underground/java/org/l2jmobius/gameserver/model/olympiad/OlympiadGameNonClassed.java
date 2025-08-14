@@ -63,6 +63,7 @@ public class OlympiadGameNonClassed extends OlympiadGameNormal
 		{
 			return null;
 		}
+		
 		return new OlympiadGameNonClassed(id, opponents);
 	}
 }

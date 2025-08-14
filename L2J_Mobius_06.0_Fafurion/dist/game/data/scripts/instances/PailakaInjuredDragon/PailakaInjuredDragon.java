@@ -58,7 +58,7 @@ public class PailakaInjuredDragon extends AbstractInstance
 	private static final int DRAGON_TARGET = 18605;
 	private static final int LATANA_SKILL_USE = 18661;
 	private static final int TELEPORT_TRAP = 18663;
-	//@formatter:off
+	// @formatter:off
 	private static final int[] WARRIORS =
 	{
 		18635, 18636, 18638,
@@ -78,6 +78,7 @@ public class PailakaInjuredDragon extends AbstractInstance
 		18637, 18643,
 		18647, 18651,
 	};
+	
 	// Skills
 	private static final SkillHolder ULTIMATE_DEFENCE = new SkillHolder(5044, 3);
 	private static final SkillHolder HEAL = new SkillHolder(4065, 7);
@@ -113,12 +114,14 @@ public class PailakaInjuredDragon extends AbstractInstance
 		1511, 792, 1524,
 		1529,
 	};
-	//@formatter:on
+	// @formatter:on
+	
 	// Items
 	private static final int PAILAKA_INSTANT_SHIELD = 13032;
 	private static final int QUICK_HEALING_POTION = 13033;
 	private static final int WEAPON_UPGRADE_STAGE_1 = 13056;
 	private static final int WEAPON_UPGRADE_STAGE_2 = 13057;
+	
 	// Misc
 	private static final int TEMPLATE_ID = 45;
 	
@@ -167,6 +170,7 @@ public class PailakaInjuredDragon extends AbstractInstance
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -195,6 +199,7 @@ public class PailakaInjuredDragon extends AbstractInstance
 					{
 						addSkillCastDesire(npc, player, holder, 500000);
 					}
+					
 					getTimers().addTimer("CAST_SKILL", 10000, npc, player);
 					break;
 				}
@@ -219,6 +224,7 @@ public class PailakaInjuredDragon extends AbstractInstance
 						{
 							zone.setEnabled(false, world.getId());
 						}
+						
 						npc.dropItem(world.getFirstPlayer(), PAILAKA_INSTANT_SHIELD, getRandom(10) + 1);
 						npc.dropItem(world.getFirstPlayer(), QUICK_HEALING_POTION, getRandom(10) + 1);
 						switch (npc.getParameters().getInt("GM_ID", 0))
@@ -245,6 +251,7 @@ public class PailakaInjuredDragon extends AbstractInstance
 								break;
 							}
 						}
+						
 						npc.deleteMe();
 					}
 					else
@@ -354,6 +361,7 @@ public class PailakaInjuredDragon extends AbstractInstance
 					{
 						addSkillCastDesire(npc, target, RISE_OF_LATANA, 5000);
 					}
+					
 					getTimers().addTimer("LATANA_CAST", 9700, npc, player);
 					break;
 				}
@@ -364,6 +372,7 @@ public class PailakaInjuredDragon extends AbstractInstance
 					{
 						addSkillCastDesire(npc, target, STUN, 5000);
 					}
+					
 					getTimers().addTimer("ATTACK", 11030, npc, player);
 					break;
 				}
@@ -388,6 +397,7 @@ public class PailakaInjuredDragon extends AbstractInstance
 					{
 						addSkillCastDesire(npc, player, FIRE_BREATH, 500000);
 					}
+					
 					getTimers().addTimer("ATTACK", 6000, npc, player);
 					break;
 				}
@@ -452,6 +462,7 @@ public class PailakaInjuredDragon extends AbstractInstance
 					{
 						addSkillCastDesire(npc, player, STUN, 500000);
 					}
+					
 					getTimers().addTimer("SUICIDE", 5000, npc, null);
 					break;
 				}
@@ -533,6 +544,7 @@ public class PailakaInjuredDragon extends AbstractInstance
 						npc.getEffectList().stopEffects(AbnormalType.PD_UP_SPECIAL);
 					}
 				}
+				
 				if (ArrayUtil.contains(WARRIORS, npc.getId()))
 				{
 					if (npc.calculateDistance2D(attacker) < 40)

@@ -53,6 +53,7 @@ public class ExRpItemLink extends AbstractItemPacket
 			buffer.writeByte(0);
 			buffer.writeInt(0);
 		}
+		
 		writeItem(_item, buffer);
 	}
 }

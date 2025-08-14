@@ -38,6 +38,7 @@ public class Q10899_VeteranAdventurer extends Quest
 {
 	// NPCs
 	private static final int PENNY = 34413;
+	
 	// Misc
 	private static final int MIN_LEVEL = 100;
 	
@@ -84,6 +85,7 @@ public class Q10899_VeteranAdventurer extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -114,6 +116,7 @@ public class Q10899_VeteranAdventurer extends Quest
 						htmltext = "34413-05.html";
 					}
 				}
+				
 				if (qs.isCond(2))
 				{
 					htmltext = "34413-06.html";
@@ -126,6 +129,7 @@ public class Q10899_VeteranAdventurer extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

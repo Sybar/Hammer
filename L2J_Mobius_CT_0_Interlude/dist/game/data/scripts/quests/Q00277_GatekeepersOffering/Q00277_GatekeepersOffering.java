@@ -31,6 +31,7 @@ public class Q00277_GatekeepersOffering extends Quest
 {
 	// Item
 	private static final int STARSTONE = 1572;
+	
 	// Reward
 	private static final int GATEKEEPER_CHARM = 1658;
 	

@@ -92,16 +92,19 @@ public class GMViewCharacterInfo extends ServerPacket
 		{
 			buffer.writeInt(_player.getInventory().getPaperdollObjectId(slot));
 		}
+		
 		for (int slot : getPaperdollOrder())
 		{
 			buffer.writeInt(_player.getInventory().getPaperdollItemDisplayId(slot));
 		}
+		
 		for (int slot = 0; slot < 11; slot++)
 		{
 			final VariationInstance augment = _player.getInventory().getPaperdollAugmentation(slot);
 			buffer.writeInt(augment != null ? augment.getOption1Id() : 0); // Confirmed
 			buffer.writeInt(augment != null ? augment.getOption2Id() : 0); // Confirmed
 		}
+		
 		buffer.writeByte(_player.getInventory().getTalismanSlots()); // CT2.3
 		buffer.writeByte(_player.getInventory().canEquipCloak()); // CT2.3
 		buffer.writeInt(0);
@@ -166,6 +169,7 @@ public class GMViewCharacterInfo extends ServerPacket
 		{
 			buffer.writeShort(_player.getDefenseElementValue(type));
 		}
+		
 		buffer.writeInt(_player.getFame());
 		buffer.writeInt(_player.getVitalityPoints());
 		buffer.writeInt(0);

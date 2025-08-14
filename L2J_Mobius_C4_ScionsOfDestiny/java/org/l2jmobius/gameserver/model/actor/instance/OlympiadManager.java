@@ -102,6 +102,7 @@ public class OlympiadManager extends Npc
 						classed = array[0];
 						nonClassed = array[1];
 					}
+					
 					html.setFile(player, Olympiad.OLYMPIAD_HTML_PATH + "noble_registered.htm");
 					if (Config.OLYMPIAD_REG_DISPLAY > 0)
 					{
@@ -115,6 +116,7 @@ public class OlympiadManager extends Npc
 						html.replace("%listNonClassedTeam%", "0");
 						html.replace("%listNonClassed%", String.valueOf(nonClassed));
 					}
+					
 					html.replace("%objectId%", String.valueOf(getObjectId()));
 					player.sendPacket(html);
 					break;
@@ -208,6 +210,7 @@ public class OlympiadManager extends Npc
 						// &$906; -> \\&\\$906;
 						reply.replace("%title" + arenaID + "%", matches.containsKey(i) ? matches.get(i) : "\\&$906;");
 					}
+					
 					reply.replace("%objectId%", String.valueOf(getObjectId()));
 					player.sendPacket(reply);
 					break;
@@ -231,6 +234,7 @@ public class OlympiadManager extends Npc
 								break;
 							}
 						}
+						
 						for (; index <= 10; index++)
 						{
 							reply.replace("%place" + index + "%", "");

@@ -157,7 +157,7 @@ public class DropSearchBoard implements IParseBoardHandler
 	}
 	
 	@Override
-	public boolean parseCommunityBoardCommand(String command, Player player)
+	public boolean onCommand(String command, Player player)
 	{
 		final String navigation = HtmCache.getInstance().getHtm(player, NAVIGATION_PATH);
 		final String[] params = command.split(" ");
@@ -308,6 +308,7 @@ public class DropSearchBoard implements IParseBoardHandler
 						{
 							rateAmount *= dropAmountAdenaEffectBonus;
 						}
+						
 						// bonus drop rate effect
 						rateChance *= dropRateEffectBonus;
 					}
@@ -334,12 +335,14 @@ public class DropSearchBoard implements IParseBoardHandler
 				{
 					builder.append("<td><button back=\"l2ui_ch3.prev1_down\" fore=\"l2ui_ch3.prev1\" width=16 height=16 ></td>");
 				}
+				
 				int startPage = Math.max(1, page - (maxDisplayPages / 2));
 				int endPage = Math.min(pages, (startPage + maxDisplayPages) - 1);
 				if ((endPage - startPage) < (maxDisplayPages - 1))
 				{
 					startPage = Math.max(1, (endPage - maxDisplayPages) + 1);
 				}
+				
 				for (int i = startPage; i <= endPage; i++)
 				{
 					builder.append("<td>");
@@ -353,6 +356,7 @@ public class DropSearchBoard implements IParseBoardHandler
 					}
 					builder.append("</td>");
 				}
+				
 				if (page < pages)
 				{
 					builder.append("<td><button action=\"bypass _bbs_search_drop ").append(itemId).append(" ").append(page + 1).append(" $order $level\" back=\"l2ui_ch3.next1_down\" fore=\"l2ui_ch3.next1\" width=16 height=16 ></td>");
@@ -496,11 +500,12 @@ public class DropSearchBoard implements IParseBoardHandler
 		{
 			joiner.add(params[i]);
 		}
+		
 		return joiner.toString();
 	}
 	
 	@Override
-	public String[] getCommunityBoardCommands()
+	public String[] getCommandList()
 	{
 		return COMMAND;
 	}

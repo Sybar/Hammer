@@ -51,6 +51,7 @@ public class Q10304_ForForgottenHeroes extends Quest
 {
 	// NPC
 	private static final int ISHAEL = 32894;
+	
 	// Monsters
 	private static final int YUI = 25837;
 	private static final int KINEN = 25840;
@@ -60,12 +61,14 @@ public class Q10304_ForForgottenHeroes extends Quest
 	private static final int HORNAFI = 25839;
 	private static final int YONTYMAK = 25846;
 	private static final int RON = 25825;
+	
 	// Items
 	private static final int EWR = 17526; // Scroll: Enchant Weapon (R-grade)
 	private static final int EAR = 17527; // Scroll: Enchant Armor (R-grade)
 	private static final int COKES = 36563; // Synthetic Cokes
 	private static final int POUCH = 34861; // Ingredient and Hardener Pouch (R-grade)
 	private static final int OLD_ROLL_OF_PAPER = 34033;
+	
 	// Misc
 	private static final int MIN_LEVEL = 90;
 	
@@ -87,6 +90,7 @@ public class Q10304_ForForgottenHeroes extends Quest
 		{
 			return getNoQuestMsg(player);
 		}
+		
 		switch (event)
 		{
 			case "32894-02.htm":
@@ -131,6 +135,7 @@ public class Q10304_ForForgottenHeroes extends Quest
 				break;
 			}
 		}
+		
 		if (event.equalsIgnoreCase("condition"))
 		{
 			if ((player.getParty() == null))
@@ -145,8 +150,10 @@ public class Q10304_ForForgottenHeroes extends Quest
 			{
 				return "32894-05.html";
 			}
+			
 			return "32894-04.htm";
 		}
+		
 		return htmltext;
 	}
 	
@@ -171,6 +178,7 @@ public class Q10304_ForForgottenHeroes extends Quest
 		{
 			htmltext = "Complete.html";
 		}
+		
 		return htmltext;
 	}
 	
@@ -233,6 +241,7 @@ public class Q10304_ForForgottenHeroes extends Quest
 					qs.setCond(8);
 				}
 			}
+			
 			final ExQuestNpcLogList log = new ExQuestNpcLogList(getId());
 			log.addNpc(MAKSHU, qs.getInt(Integer.toString(MAKSHU)));
 			log.addNpc(HORNAFI, qs.getInt(Integer.toString(HORNAFI)));
@@ -259,6 +268,7 @@ public class Q10304_ForForgottenHeroes extends Quest
 				break;
 			}
 		}
+		
 		if (startQuest)
 		{
 			if ((player.getLevel() >= MIN_LEVEL) && qs1.isCompleted())
@@ -272,6 +282,7 @@ public class Q10304_ForForgottenHeroes extends Quest
 				htmltext = "32894-00.htm";
 			}
 		}
+		
 		return htmltext;
 	}
 	

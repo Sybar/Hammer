@@ -33,6 +33,7 @@ public class ExSetCompassZoneCode extends ServerPacket
 	public static final int SEVENSIGNSZONE = 0x0D;
 	public static final int PVPZONE = 0x0E;
 	public static final int GENERALZONE = 0x0F;
+	
 	// TODO: need to find the desired value
 	public static final int NOPVPZONE = 0x0C;
 	

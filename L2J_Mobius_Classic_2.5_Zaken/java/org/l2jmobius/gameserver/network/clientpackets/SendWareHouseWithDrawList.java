@@ -62,6 +62,7 @@ public class SendWareHouseWithDrawList extends ClientPacket
 				_items = null;
 				return;
 			}
+			
 			_items[i] = new ItemHolder(objId, cnt);
 		}
 	}
@@ -170,6 +171,7 @@ public class SendWareHouseWithDrawList extends ClientPacket
 				PacketLogger.warning("Error withdrawing a warehouse object for char " + player.getName() + " (olditem == null)");
 				return;
 			}
+			
 			final Item newItem = warehouse.transferItem(ItemProcessType.TRANSFER, i.getId(), i.getCount(), player.getInventory(), player, manager);
 			if (newItem == null)
 			{

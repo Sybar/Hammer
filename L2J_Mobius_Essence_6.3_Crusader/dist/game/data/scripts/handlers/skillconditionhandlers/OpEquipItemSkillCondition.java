@@ -50,6 +50,7 @@ public class OpEquipItemSkillCondition implements ISkillCondition
 		{
 			_itemIds.add(params.getInt("itemId"));
 		}
+		
 		_affectType = params.getEnum("affectType", SkillConditionAffectType.class);
 	}
 	
@@ -104,6 +105,7 @@ public class OpEquipItemSkillCondition implements ISkillCondition
 				break;
 			}
 		}
+		
 		return false;
 	}
 }

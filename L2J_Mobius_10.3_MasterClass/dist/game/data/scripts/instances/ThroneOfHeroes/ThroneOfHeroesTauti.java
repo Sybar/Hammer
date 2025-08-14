@@ -35,12 +35,16 @@ public class ThroneOfHeroesTauti extends AbstractInstance
 {
 	// NPCs
 	private static final int ROIENTAL = 34571;
+	
 	// Monsters
 	private static final int TAUTI = 26266;
+	
 	// Throne's Treasure Chest Tauti
 	private static final int TREASURE_CHEST = 26457;
+	
 	// Misc
 	private static final int TEMPLATE_ID = 309;
+	
 	// NPC dialogs
 	private static final NpcStringId[] TAUTI_MESSAGES =
 	{
@@ -165,6 +169,7 @@ public class ThroneOfHeroesTauti extends AbstractInstance
 				break;
 			}
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	
@@ -210,6 +215,7 @@ public class ThroneOfHeroesTauti extends AbstractInstance
 				{
 					addSpawn(TREASURE_CHEST, killer.getX() + getRandom(-150, 150), killer.getY() + getRandom(-150, 150), killer.getZ() + 20, 0, false, 0, true, world.getId());
 				}
+				
 				// Finish instance
 				world.finishInstance(2);
 				if (!killer.isGM())

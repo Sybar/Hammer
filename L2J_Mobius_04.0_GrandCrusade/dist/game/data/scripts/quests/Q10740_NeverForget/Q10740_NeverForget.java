@@ -38,10 +38,12 @@ public class Q10740_NeverForget extends Quest
 	// NPCs
 	private static final int SIVANTHE = 33951;
 	private static final int REMEMBERANCE_TOWER = 33989;
+	
 	// Items
 	private static final int UNNAMED_RELICS = 39526;
 	private static final ItemHolder RING_OF_KNOWLEDGE = new ItemHolder(875, 2);
 	private static final ItemHolder HEALING_POTION = new ItemHolder(1060, 100);
+	
 	// Mobs
 	private static final int[] MOBS =
 	{
@@ -49,6 +51,7 @@ public class Q10740_NeverForget extends Quest
 		23450, // Ratel
 		23451, // Robust Ratel
 	};
+	
 	// Misc
 	private static final int MIN_LEVEL = 8;
 	private static final int MAX_LEVEL = 20;
@@ -95,6 +98,7 @@ public class Q10740_NeverForget extends Quest
 					{
 						q.notifyEvent("action", npc, null);
 					}
+					
 					takeItems(player, UNNAMED_RELICS, -1);
 					qs.setCond(3, true);
 				}
@@ -105,6 +109,7 @@ public class Q10740_NeverForget extends Quest
 				htmltext = null;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -180,6 +185,7 @@ public class Q10740_NeverForget extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

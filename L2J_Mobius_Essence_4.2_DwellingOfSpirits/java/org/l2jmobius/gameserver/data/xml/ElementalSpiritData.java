@@ -41,7 +41,7 @@ public class ElementalSpiritData implements IXmlReader
 	
 	public static final float FRAGMENT_XP_CONSUME = 50000.0f;
 	public static final int TALENT_INIT_FEE = 50000;
-	public final static int[] EXTRACT_FEES =
+	public static final int[] EXTRACT_FEES =
 	{
 		100000,
 		200000,
@@ -116,6 +116,7 @@ public class ElementalSpiritData implements IXmlReader
 		{
 			return SPIRIT_DATA.get(type).get(stage);
 		}
+		
 		return null;
 	}
 	

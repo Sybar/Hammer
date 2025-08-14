@@ -43,13 +43,16 @@ public final class AntharasNest extends AbstractInstance
 	// NPCs
 	private static final int STIG_MACH_FRIEND = 34366;
 	private static final int BALTHUS_KNIGHT = 34372;
+	
 	// Monsters
 	private static final int HATCHLING = 24090;
 	private static final int GEM_DRAGON_ANTHARAS = 24091;
 	private static final int HATCHLING_BOMBER = 24098;
 	private static final int CYCLONE = 24099;
+	
 	// Skills
 	private static final SkillHolder PowerBomberSkill = new SkillHolder(32166, 1);
+	
 	// Misc
 	private static final int TEMPLATE_ID = 271;
 	
@@ -139,6 +142,7 @@ public final class AntharasNest extends AbstractInstance
 									addMoveToDesire(antharas, loc, 23);
 								});
 							}
+							
 							showOnScreenMsg(instance, NpcStringId.ANTHARAS_HAS_APPEARED, ExShowScreenMessage.TOP_CENTER, 10000, false);
 							getTimers().addTimer("ANTHARAS_INIT_TASK_4", 4000L, it4 ->
 							{
@@ -157,6 +161,7 @@ public final class AntharasNest extends AbstractInstance
 				});
 			}
 		}
+		
 		return htmltext;
 	}
 	

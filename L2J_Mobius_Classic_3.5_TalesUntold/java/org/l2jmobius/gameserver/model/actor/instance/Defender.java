@@ -79,6 +79,7 @@ public class Defender extends Attackable
 				return true;
 			}
 		}
+		
 		return false;
 	}
 	
@@ -98,10 +99,12 @@ public class Defender extends Attackable
 		{
 			return;
 		}
+		
 		if (getSpawn() == null)
 		{
 			return;
 		}
+		
 		if (!isInsideRadius2D(getSpawn(), 40))
 		{
 			clearAggroList();
@@ -151,12 +154,14 @@ public class Defender extends Attackable
 			{
 				player.getAI().setIntention(Intention.ATTACK, this);
 			}
+			
 			// Notify the Player AI with INTERACT
 			if (!isAutoAttackable(player) && !canInteract(player))
 			{
 				player.getAI().setIntention(Intention.INTERACT, this);
 			}
 		}
+		
 		// Send a Server->Client ActionFailed to the Player in order to avoid that the client wait another packet
 		player.sendPacket(ActionFailed.STATIC_PACKET);
 	}
@@ -164,7 +169,7 @@ public class Defender extends Attackable
 	@Override
 	public void useMagic(Skill skill)
 	{
-		if (!skill.isBad())
+		if (!skill.hasNegativeEffect())
 		{
 			Creature target = this;
 			double lowestHpValue = Double.MAX_VALUE;
@@ -174,6 +179,7 @@ public class Defender extends Attackable
 				{
 					continue;
 				}
+				
 				if (nearby instanceof Defender)
 				{
 					final double targetHp = nearby.getCurrentHp();
@@ -197,8 +203,10 @@ public class Defender extends Attackable
 					}
 				}
 			}
+			
 			setTarget(target);
 		}
+		
 		super.useMagic(skill);
 	}
 	
@@ -215,6 +223,7 @@ public class Defender extends Attackable
 			if ((damage == 0) && (aggro <= 1) && (attacker.isPlayable()))
 			{
 				final Player player = attacker.asPlayer();
+				
 				// Check if siege is in progress
 				if (((_fort != null) && _fort.getZone().isActive()) || ((_castle != null) && _castle.getZone().isActive()))
 				{
@@ -227,6 +236,7 @@ public class Defender extends Attackable
 					}
 				}
 			}
+			
 			super.addDamageHate(attacker, damage, aggro);
 		}
 	}

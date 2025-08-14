@@ -177,9 +177,9 @@ public class Item extends WorldObject
 	public static final int REMOVED = 3;
 	public static final int MODIFIED = 2;
 	
-	//@formatter:off
-	public static final int[] DEFAULT_ENCHANT_OPTIONS = new int[] { 0, 0, 0 };
-	//@formatter:on
+	// @formatter:off
+	public static final int[] DEFAULT_ENCHANT_OPTIONS = { 0, 0, 0 };
+	// @formatter:on
 	
 	private int _lastChange = 2; // 1 ??, 2 modified, 3 removed
 	private boolean _existsInDb; // if a record exists in DB.
@@ -212,6 +212,7 @@ public class Item extends WorldObject
 		{
 			throw new IllegalArgumentException();
 		}
+		
 		super.setName(_itemTemplate.getName());
 		_loc = ItemLocation.VOID;
 		_type1 = 0;
@@ -238,6 +239,7 @@ public class Item extends WorldObject
 		{
 			throw new IllegalArgumentException();
 		}
+		
 		super.setName(_itemTemplate.getName());
 		_loc = ItemLocation.VOID;
 		_mana = _itemTemplate.getDuration();
@@ -565,6 +567,7 @@ public class Item extends WorldObject
 		{
 			return _itemTemplate.isEnchantable();
 		}
+		
 		return false;
 	}
 	
@@ -693,6 +696,7 @@ public class Item extends WorldObject
 		{
 			return (EtcItem) _itemTemplate;
 		}
+		
 		return null;
 	}
 	
@@ -705,6 +709,7 @@ public class Item extends WorldObject
 		{
 			return (Weapon) _itemTemplate;
 		}
+		
 		return null;
 	}
 	
@@ -717,6 +722,7 @@ public class Item extends WorldObject
 		{
 			return (Armor) _itemTemplate;
 		}
+		
 		return null;
 	}
 	
@@ -999,6 +1005,7 @@ public class Item extends WorldObject
 					player.removeSkill(skill, false, skill.isPassive());
 					update = true;
 				}
+				
 				for (Skill skill : agathionSkills.getSubSkills(_enchantLevel))
 				{
 					player.removeSkill(skill, false, skill.isPassive());
@@ -1019,6 +1026,7 @@ public class Item extends WorldObject
 						update = true;
 					}
 				}
+				
 				for (Skill skill : agathionSkills.getSubSkills(newLevel))
 				{
 					if (skill.isPassive() && !skill.checkConditions(SkillConditionScope.PASSIVE, player, player))
@@ -1279,6 +1287,7 @@ public class Item extends WorldObject
 				return _elementals.values().iterator().next();
 			}
 		}
+		
 		return null;
 	}
 	
@@ -1315,6 +1324,7 @@ public class Item extends WorldObject
 				}
 			}
 		}
+		
 		return 0;
 	}
 	
@@ -1464,6 +1474,7 @@ public class Item extends WorldObject
 		{
 			_storedInDb = false;
 		}
+		
 		if (resetConsumingMana)
 		{
 			_consumingMana = false;
@@ -1515,6 +1526,7 @@ public class Item extends WorldObject
 				{
 					iu.addModifiedItem(item);
 				}
+				
 				player.sendInventoryUpdate(iu);
 				player.broadcastUserInfo();
 			}
@@ -1544,6 +1556,7 @@ public class Item extends WorldObject
 			{
 				scheduleConsumeManaTask();
 			}
+			
 			if (_loc != ItemLocation.WAREHOUSE)
 			{
 				final InventoryUpdate iu = new InventoryUpdate();
@@ -1559,6 +1572,7 @@ public class Item extends WorldObject
 		{
 			return;
 		}
+		
 		_consumingMana = true;
 		ItemManaTaskManager.getInstance().add(this);
 	}
@@ -1608,6 +1622,7 @@ public class Item extends WorldObject
 				{
 					return;
 				}
+				
 				insertIntoDb();
 			}
 		}
@@ -1669,6 +1684,7 @@ public class Item extends WorldObject
 		{
 			ItemsOnGroundManager.getInstance().save(this);
 		}
+		
 		setDropperObjectId(0); // Set the dropper Id back to 0 so it no longer shows the drop packet
 		
 		if ((dropper != null) && dropper.isPlayer())
@@ -1863,6 +1879,7 @@ public class Item extends WorldObject
 		{
 			return true;
 		}
+		
 		if ((_loc == ItemLocation.PET) || (_loc == ItemLocation.PET_EQUIP))
 		{
 			return true;
@@ -1950,6 +1967,7 @@ public class Item extends WorldObject
 			{
 				iu.addModifiedItem(item);
 			}
+			
 			player.sendInventoryUpdate(iu);
 		}
 		
@@ -1967,6 +1985,7 @@ public class Item extends WorldObject
 		{
 			player.getWarehouse().destroyItem(ItemProcessType.DESTROY, this, player, null);
 		}
+		
 		player.sendPacket(new SystemMessage(SystemMessageId.S1_HAS_EXPIRED).addItemName(_itemId));
 		
 		// Delete from world.
@@ -1979,6 +1998,7 @@ public class Item extends WorldObject
 		{
 			return;
 		}
+		
 		if (getRemainingTime() <= 0)
 		{
 			endOfLife();
@@ -2044,6 +2064,7 @@ public class Item extends WorldObject
 		{
 			return _itemTemplate.isElementable();
 		}
+		
 		return false;
 	}
 	
@@ -2116,6 +2137,7 @@ public class Item extends WorldObject
 					final int oldSkillLevel = player.getSkillLevel(skill.getId());
 					if (oldSkillLevel < skill.getLevel())
 					{
+						player.removeSkill(skill, false); // Make sure previous skill effects exit properly.
 						player.addSkill(skill, false);
 					}
 				}
@@ -2131,6 +2153,7 @@ public class Item extends WorldObject
 			final Skill skill = holder.getSkill();
 			if (skill.isPassive() && (getEnchantLevel() >= holder.getValue()))
 			{
+				player.removeSkill(skill, false); // Make sure previous skill effects exit properly.
 				player.addSkill(skill, false);
 			}
 		});
@@ -2180,6 +2203,7 @@ public class Item extends WorldObject
 		{
 			_owner = World.getInstance().getPlayer(_ownerId);
 		}
+		
 		return _owner;
 	}
 	
@@ -2245,6 +2269,7 @@ public class Item extends WorldObject
 				result.add(ensoulOption);
 			}
 		}
+		
 		return result;
 	}
 	
@@ -2263,6 +2288,7 @@ public class Item extends WorldObject
 				result.add(ensoulSpecialOption);
 			}
 		}
+		
 		return result;
 	}
 	
@@ -2277,6 +2303,7 @@ public class Item extends WorldObject
 		{
 			return;
 		}
+		
 		if ((type == 2) && (position != 0)) // third slot
 		{
 			return;
@@ -2289,6 +2316,7 @@ public class Item extends WorldObject
 			{
 				removeSpecialAbility(oldOption);
 			}
+			
 			if (position < _itemTemplate.getEnsoulSlots())
 			{
 				_ensoulOptions[position] = option;
@@ -2301,6 +2329,7 @@ public class Item extends WorldObject
 			{
 				removeSpecialAbility(oldOption);
 			}
+			
 			if (position < _itemTemplate.getSpecialEnsoulSlots())
 			{
 				_ensoulSpecialOptions[position] = option;
@@ -2359,6 +2388,7 @@ public class Item extends WorldObject
 		{
 			clearSpecialAbility(ensoulOption);
 		}
+		
 		for (EnsoulOption ensoulSpecialOption : _ensoulSpecialOptions)
 		{
 			clearSpecialAbility(ensoulSpecialOption);
@@ -2376,6 +2406,7 @@ public class Item extends WorldObject
 		{
 			applySpecialAbility(ensoulOption);
 		}
+		
 		for (EnsoulOption ensoulSpecialOption : _ensoulSpecialOptions)
 		{
 			applySpecialAbility(ensoulSpecialOption);
@@ -2543,6 +2574,7 @@ public class Item extends WorldObject
 		{
 			op.remove(player);
 		}
+		
 		_enchantOptions.clear();
 	}
 	
@@ -2607,6 +2639,7 @@ public class Item extends WorldObject
 						{
 							return 0;
 						}
+						
 						if (!stone.getRacesNot().isEmpty() && stone.getRacesNot().contains(player.getRace()))
 						{
 							return 0;
@@ -2615,6 +2648,7 @@ public class Item extends WorldObject
 				}
 			}
 		}
+		
 		return visualId;
 	}
 	
@@ -2779,7 +2813,7 @@ public class Item extends WorldObject
 									}
 									
 									// Active, non offensive, skills start with reuse on equip.
-									if (!skill.isBad() && !skill.isTransformation() && (Config.ARMOR_SET_EQUIP_ACTIVE_SKILL_REUSE > 0) && player.hasEnteredWorld())
+									if (!skill.hasNegativeEffect() && !skill.isTransformation() && (Config.ARMOR_SET_EQUIP_ACTIVE_SKILL_REUSE > 0) && player.hasEnteredWorld())
 									{
 										player.addTimeStamp(skill, skill.getReuseDelay() > 0 ? skill.getReuseDelay() : Config.ARMOR_SET_EQUIP_ACTIVE_SKILL_REUSE);
 									}

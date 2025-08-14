@@ -52,6 +52,7 @@ public class RelationChanged extends ServerPacket
 	public static final int RELATION_TERRITORY_WAR = 524288; // show Territory War icon
 	public static final int RELATION_DEATH_KNIGHT_PK = 536870912;
 	public static final long RELATION_SURVEILLANCE = 2147483648L;
+	
 	// Masks
 	public static final byte SEND_DEFAULT = 1;
 	public static final byte SEND_ONE = 2;
@@ -94,6 +95,7 @@ public class RelationChanged extends ServerPacket
 		{
 			return;
 		}
+		
 		final Relation r = new Relation();
 		r._objId = activeChar.getObjectId();
 		r._relation = relation;

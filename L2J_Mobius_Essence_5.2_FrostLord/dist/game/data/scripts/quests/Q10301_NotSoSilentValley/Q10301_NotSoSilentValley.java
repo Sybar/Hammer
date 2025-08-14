@@ -39,6 +39,7 @@ public class Q10301_NotSoSilentValley extends Quest
 {
 	// NPCs
 	private static final int ORVEN = 30857;
+	
 	// Monsters
 	private static final int CHIMERA_PIECE = 20965;
 	private static final int MUTATED_CREATION = 20966;
@@ -50,10 +51,12 @@ public class Q10301_NotSoSilentValley extends Quest
 	private static final int FORGOTTEN_ANCIENT_PEOPLE = 20973;
 	private static final int ANCIENT_GUARDIAN = 22106;
 	private static final int GIANT_SHADOW = 20969;
+	
 	// Items
 	private static final ItemHolder SAYHA_COOKIE = new ItemHolder(93274, 5);
 	private static final ItemHolder SAYHA_STORM = new ItemHolder(91712, 4);
 	private static final ItemHolder MAGIC_LAMP_CHARGING_POTION = new ItemHolder(91757, 1);
+	
 	// Misc
 	private static final int MIN_LEVEL = 70;
 	private static final String KILL_COUNT_VAR = "KillCount";
@@ -115,6 +118,7 @@ public class Q10301_NotSoSilentValley extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -150,6 +154,7 @@ public class Q10301_NotSoSilentValley extends Quest
 		{
 			htmltext = getAlreadyCompletedMsg(player);
 		}
+		
 		return htmltext;
 	}
 	
@@ -184,6 +189,7 @@ public class Q10301_NotSoSilentValley extends Quest
 			holder.add(new NpcLogListHolder(NpcStringId.DEFEAT_THE_MONSTERS_IN_THE_SILENT_VALLEY_2.getId(), true, qs.getInt(KILL_COUNT_VAR)));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

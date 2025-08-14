@@ -31,12 +31,15 @@ public class Q10744_StrongerThanSteel extends Quest
 	// NPCs
 	private static final int MILONE = 33953;
 	private static final int DOLKIN = 33954;
+	
 	// Monsters
 	private static final int TREANT = 23457;
 	private static final int LEAFIE = 23458;
+	
 	// Items
 	private static final int TREANT_LEAF = 39532;
 	private static final int LEAFIE_LEAF = 39531;
+	
 	// Misc
 	private static final int MIN_LEVEL = 15;
 	private static final int MAX_LEVEL = 20;
@@ -87,6 +90,7 @@ public class Q10744_StrongerThanSteel extends Quest
 				htmltext = null;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -136,6 +140,7 @@ public class Q10744_StrongerThanSteel extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

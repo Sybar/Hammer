@@ -43,6 +43,7 @@ public class Others implements ITargetTypeHandler
 			creature.sendPacket(SystemMessageId.YOU_CANNOT_USE_THIS_ON_YOURSELF);
 			return null;
 		}
+		
 		return selectedTarget;
 	}
 }

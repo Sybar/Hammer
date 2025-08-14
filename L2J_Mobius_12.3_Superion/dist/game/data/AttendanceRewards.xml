@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="xsd/AttendanceRewards.xsd">
+	<!-- Week One -->
+	<item id="83006" count="1" highlight="0" /> <!-- Relic Summon Coupon - 11-time -->
+	<item id="82305" count="500" highlight="0" /> <!-- Beora's Ancient Energy -->
+	<item id="81887" count="1" highlight="0" /> <!-- Rune Stone -->
+	<item id="81812" count="1" highlight="0" /> <!-- Homunculus Upgrade Points - 10 -->
+	<item id="82658" count="3" highlight="0" /> <!-- Sealed Fire Source -->
+	<item id="13302" count="5" highlight="0" /> <!-- My Teleport Scroll - Event -->
+	<item id="81821" count="1" highlight="1" /> <!-- Cara's Talisman - 10-day -->
+
+	<!-- Week Two -->	
+	<item id="82903" count="2" highlight="0" /> <!-- Solaris -->
+	<item id="82305" count="500" highlight="0" /> <!-- Beora's Ancient Energy -->
+	<item id="81887" count="1" highlight="0" /> <!-- Rune Stone -->
+	<item id="81812" count="1" highlight="0" /> <!-- Homunculus Upgrade Points - 10 -->
+	<item id="82658" count="3" highlight="0" /> <!-- Sealed Fire Source -->
+	<item id="13302" count="5" highlight="0" /> <!-- My Teleport Scroll - Event -->
+	<item id="82634" count="1" highlight="1" /> <!-- Top-grade Homunculus' Hourglass - Event -->
+
+	<!-- Week Three -->	
+	<item id="82758" count="300" highlight="0" /> <!-- Aether -->
+	<item id="82305" count="500" highlight="0" /> <!-- Beora's Ancient Energy -->
+	<item id="81887" count="1" highlight="0" /> <!-- Rune Stone -->
+	<item id="81812" count="1" highlight="0" /> <!-- Homunculus Upgrade Points - 10 -->
+	<item id="13300" count="2" highlight="0" /> <!-- Feather of Blessing - Event -->
+	<item id="13302" count="5" highlight="0" /> <!-- My Teleport Scroll - Event -->
+	<item id="82344" count="200" highlight="1" /> <!-- Tales of Dimensions -->
+	
+	<!-- Week Four -->	
+	<item id="82903" count="3" highlight="0" /> <!-- Solaris -->
+	<item id="82305" count="500" highlight="0" /> <!-- Beora's Ancient Energy -->
+	<item id="81887" count="1" highlight="0" /> <!-- Rune Stone -->
+	<item id="81812" count="1" highlight="0" /> <!-- Homunculus Upgrade Points - 10 -->
+	<item id="13300" count="2" highlight="0" /> <!-- Feather of Blessing - Event -->
+	<item id="13302" count="5" highlight="0" /> <!-- My Teleport Scroll - Event -->
+	<item id="82766" count="1" highlight="1" /> <!-- Golden Orb - Event -->
+</list>

@@ -55,9 +55,11 @@ public class Q00511_AwlUnderFoot extends Quest
 		36326, // Demon
 		36364, // Monastic
 	};
+	
 	// Items
 	private static final int MARK = 9797;
 	private static final int KNIGHT_EPALUETTE = 9912;
+	
 	// Misc
 	private static final int MIN_LEVEL = 85;
 	
@@ -105,6 +107,7 @@ public class Q00511_AwlUnderFoot extends Quest
 				htmltext = null;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -133,6 +136,7 @@ public class Q00511_AwlUnderFoot extends Quest
 				htmltext = "Warden-08.html";
 			}
 		}
+		
 		return htmltext;
 	}
 }

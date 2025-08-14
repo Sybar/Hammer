@@ -288,12 +288,12 @@
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="300" />
 		<set name="equip_condition" val="{{ec_academy;1}}" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 				<player pledgeClass="1" /> <!-- Vassal (Academy) -->
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">158</stat>
 		</stats>
@@ -313,12 +313,12 @@
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="300" />
 		<set name="equip_condition" val="{{ec_academy;1}}" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 				<player pledgeClass="1" /> <!-- Vassal (Academy) -->
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">24</stat>
 		</stats>
@@ -338,12 +338,12 @@
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="300" />
 		<set name="equip_condition" val="{{ec_academy;1}}" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 				<player pledgeClass="1" /> <!-- Vassal (Academy) -->
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">24</stat>
 		</stats>
@@ -420,12 +420,12 @@
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="300" />
 		<set name="equip_condition" val="{{ec_academy;1}}" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 				<player pledgeClass="1" /> <!-- Vassal (Academy) -->
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">79</stat>
 			<stat type="maxMp">239</stat>
@@ -446,12 +446,12 @@
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="300" />
 		<set name="equip_condition" val="{{ec_academy;1}}" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 				<player pledgeClass="1" /> <!-- Vassal (Academy) -->
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">24</stat>
 		</stats>
@@ -471,12 +471,12 @@
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="300" />
 		<set name="equip_condition" val="{{ec_academy;1}}" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 				<player pledgeClass="1" /> <!-- Vassal (Academy) -->
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">24</stat>
 		</stats>
@@ -493,9 +493,9 @@
 		<set name="price" val="2032000" />
 		<set name="commissionItemType" val="HELMET" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player pledgeClass="5" /> <!-- Baron -->
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">73</stat>
 		</stats>
@@ -514,12 +514,12 @@
 		<set name="commissionItemType" val="FULL_BODY" />
 		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 				<player pledgeClass="5" /> <!-- Baron -->
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">293</stat>
 		</stats>
@@ -538,12 +538,12 @@
 		<set name="commissionItemType" val="GLOVES" />
 		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 				<player pledgeClass="5" /> <!-- Baron -->
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">49</stat>
 		</stats>
@@ -562,12 +562,12 @@
 		<set name="commissionItemType" val="FEET" />
 		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 				<player pledgeClass="5" /> <!-- Baron -->
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">49</stat>
 		</stats>
@@ -586,9 +586,9 @@
 		<set name="commissionItemType" val="FULL_BODY" />
 		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player pledgeClass="5" /> <!-- Baron -->
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">220</stat>
 		</stats>
@@ -607,9 +607,9 @@
 		<set name="commissionItemType" val="GLOVES" />
 		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player pledgeClass="5" /> <!-- Baron -->
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">49</stat>
 		</stats>
@@ -628,9 +628,9 @@
 		<set name="commissionItemType" val="FEET" />
 		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player pledgeClass="5" /> <!-- Baron -->
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">49</stat>
 		</stats>
@@ -649,12 +649,12 @@
 		<set name="commissionItemType" val="FULL_BODY" />
 		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 				<player pledgeClass="5" /> <!-- Baron -->
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">147</stat>
 			<stat type="maxMp">718</stat>
@@ -674,12 +674,12 @@
 		<set name="commissionItemType" val="GLOVES" />
 		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 				<player pledgeClass="5" /> <!-- Baron -->
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">49</stat>
 		</stats>
@@ -698,12 +698,12 @@
 		<set name="commissionItemType" val="FEET" />
 		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 				<player pledgeClass="5" /> <!-- Baron -->
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">49</stat>
 		</stats>
@@ -725,9 +725,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="300" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">111</stat>
 			<stat type="mAtk">68</stat>
@@ -755,9 +755,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="300" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">132</stat>
 			<stat type="mAtk">68</stat>
@@ -786,9 +786,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="300" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">155</stat>
 			<stat type="mAtk">68</stat>
@@ -816,9 +816,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="300" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">126</stat>
 			<stat type="mAtk">76</stat>
@@ -846,9 +846,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="300" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">151</stat>
 			<stat type="mAtk">76</stat>
@@ -877,9 +877,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="300" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">176</stat>
 			<stat type="mAtk">76</stat>
@@ -907,9 +907,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="300" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">159</stat>
 			<stat type="mAtk">91</stat>
@@ -937,9 +937,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="300" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">190</stat>
 			<stat type="mAtk">91</stat>
@@ -968,9 +968,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="300" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">221</stat>
 			<stat type="mAtk">91</stat>
@@ -1989,9 +1989,9 @@
 		<set name="handler" val="SummonItems" />
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
 		<set name="commissionItemType" val="PET_SUPPLIES" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2046" level="1" /> <!-- Summon Pet -->
 		</skills>

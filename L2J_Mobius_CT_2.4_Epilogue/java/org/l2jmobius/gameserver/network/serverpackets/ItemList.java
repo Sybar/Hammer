@@ -51,6 +51,7 @@ public class ItemList extends AbstractItemPacket
 		{
 			writeItem(item, buffer);
 		}
+		
 		writeInventoryBlock(_player.getInventory(), buffer);
 	}
 }

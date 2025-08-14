@@ -73,6 +73,7 @@ public class RequestDuelStart extends ClientPacket
 				player.sendPacket(sm);
 				return;
 			}
+			
 			boolean npcInRange = false;
 			for (Npc npc : World.getInstance().getVisibleObjectsInRange(player, Npc.class, 250))
 			{
@@ -81,6 +82,7 @@ public class RequestDuelStart extends ClientPacket
 					npcInRange = true;
 				}
 			}
+			
 			if (!npcInRange)
 			{
 				final SystemMessage sm = new SystemMessage(SystemMessageId.C1_IS_TOO_FAR_AWAY_TO_RECEIVE_A_DUEL_CHALLENGE);
@@ -88,6 +90,7 @@ public class RequestDuelStart extends ClientPacket
 				player.sendPacket(sm);
 				return;
 			}
+			
 			if (player.isProcessingRequest())
 			{
 				final SystemMessage msg = new SystemMessage(SystemMessageId.C1_IS_ON_ANOTHER_TASK_PLEASE_TRY_AGAIN_LATER);
@@ -95,6 +98,7 @@ public class RequestDuelStart extends ClientPacket
 				player.sendPacket(msg);
 				return;
 			}
+			
 			final SystemMessage sm = new SystemMessage(SystemMessageId.C1_HAS_BEEN_CHALLENGED_TO_A_DUEL);
 			sm.addString(name);
 			player.sendPacket(sm);
@@ -109,6 +113,7 @@ public class RequestDuelStart extends ClientPacket
 			player.sendPacket(SystemMessageId.THERE_IS_NO_OPPONENT_TO_RECEIVE_YOUR_CHALLENGE_FOR_A_DUEL);
 			return;
 		}
+		
 		if (player == targetChar)
 		{
 			player.sendPacket(SystemMessageId.THERE_IS_NO_OPPONENT_TO_RECEIVE_YOUR_CHALLENGE_FOR_A_DUEL);
@@ -167,6 +172,7 @@ public class RequestDuelStart extends ClientPacket
 					return;
 				}
 			}
+			
 			Player partyLeader = null; // snatch party leader of targetChar's party
 			for (Player temp : targetChar.getParty().getMembers())
 			{
@@ -174,6 +180,7 @@ public class RequestDuelStart extends ClientPacket
 				{
 					partyLeader = temp;
 				}
+				
 				if (!temp.canDuel())
 				{
 					player.sendPacket(SystemMessageId.THE_OPPOSING_PARTY_IS_CURRENTLY_UNABLE_TO_ACCEPT_A_CHALLENGE_TO_A_DUEL);

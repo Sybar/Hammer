@@ -43,6 +43,7 @@ public class RandomWalkingGuards extends AbstractNpcAI
 		31036, // orc village
 		31035, // dwarf village
 	};
+	
 	// Others
 	private static final int MIN_WALK_DELAY = 15000;
 	private static final int MAX_WALK_DELAY = 45000;
@@ -62,6 +63,7 @@ public class RandomWalkingGuards extends AbstractNpcAI
 				final Location randomLoc = LocationUtil.getRandomLocation(npc.getSpawn().getLocation(), 0, Config.MAX_DRIFT_RANGE);
 				addMoveToDesire(npc, GeoEngine.getInstance().getValidLocation(npc.getX(), npc.getY(), npc.getZ(), randomLoc.getX(), randomLoc.getY(), randomLoc.getZ(), npc.getInstanceWorld()), 23);
 			}
+			
 			getTimers().addTimer("RANDOM_WALK_" + npc.getObjectId(), null, getRandom(MIN_WALK_DELAY, MAX_WALK_DELAY), npc, null);
 		}
 	}

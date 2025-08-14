@@ -43,10 +43,12 @@ public class FameTask implements Runnable
 		{
 			return;
 		}
+		
 		if (((_player.getClient() == null) || _player.getClient().isDetached()) && !Config.OFFLINE_FAME)
 		{
 			return;
 		}
+		
 		_player.setFame(_player.getFame() + _value);
 		final SystemMessage sm = new SystemMessage(SystemMessageId.PERSONAL_REPUTATION_S1);
 		sm.addInt(_value);

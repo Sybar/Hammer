@@ -31,8 +31,10 @@ public class Q10701_TheRoadToDestruction extends Quest
 	// NPCs
 	private static final int KEUCEREUS = 32548;
 	private static final int ALLENOS = 32526;
+	
 	// Item
 	private static final int KEUCEREUS_INTRODUCTION_SOD = 38577;
+	
 	// Misc
 	private static final int MIN_LEVEL = 93;
 	
@@ -81,6 +83,7 @@ public class Q10701_TheRoadToDestruction extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -113,6 +116,7 @@ public class Q10701_TheRoadToDestruction extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

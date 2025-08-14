@@ -39,11 +39,14 @@ public class Q10776_TheWrathOfTheGiants extends Quest
 	private static final int BELKADHI = 30485;
 	private static final int DESTROYED_DEVICE = 32366;
 	private static final int NARSIDES = 33992;
+	
 	// Monsters
 	private static final int ENRAGED_GIANT_NARSIDES = 27534;
 	private static final int GIANT_MINION = 27535;
+	
 	// Items
 	private static final int REGENERATION_DEVICE_CORE = 39716;
+	
 	// Location
 	private static final Location NARSIDES_LOC = new Location(16422, 113281, -9064);
 	private static final Location ENRAGED_NARSIDES_LOC = new Location(16422, 113281, -9064);
@@ -52,6 +55,7 @@ public class Q10776_TheWrathOfTheGiants extends Quest
 		new Location(16313, 113301, -9064),
 		new Location(16515, 113298, -9064)
 	};
+	
 	// Misc
 	private static final int MIN_LEVEL = 46;
 	
@@ -130,6 +134,7 @@ public class Q10776_TheWrathOfTheGiants extends Quest
 					getTimers().cancelTimer("DESPAWN_NARSIDES", npc, null);
 					getTimers().addTimer("SPAWN_MINIONS", 4000, npc, player);
 				}
+				
 				htmltext = null;
 				break;
 			}
@@ -148,6 +153,7 @@ public class Q10776_TheWrathOfTheGiants extends Quest
 				htmltext = null;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -215,6 +221,7 @@ public class Q10776_TheWrathOfTheGiants extends Quest
 				htmltext = "33992-01.html";
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -259,6 +266,7 @@ public class Q10776_TheWrathOfTheGiants extends Quest
 						final Npc mob = addSpawn(GIANT_MINION, loc, false, 120000);
 						addAttackPlayerDesire(mob, player);
 					}
+					
 					getTimers().addTimer("SPAWN_MASTER", 2000, npc, player);
 				}
 				break;

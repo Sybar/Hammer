@@ -127,6 +127,7 @@ public class MapRegionManager implements IXmlReader
 								region.addBannedRace(attrs.getNamedItem("race").getNodeValue(), attrs.getNamedItem("point").getNodeValue());
 							}
 						}
+						
 						REGIONS.put(name, region);
 					}
 				}
@@ -152,6 +153,7 @@ public class MapRegionManager implements IXmlReader
 				return region;
 			}
 		}
+		
 		return null;
 	}
 	
@@ -171,6 +173,7 @@ public class MapRegionManager implements IXmlReader
 		{
 			return region.getLocId();
 		}
+		
 		return 0;
 	}
 	
@@ -271,6 +274,7 @@ public class MapRegionManager implements IXmlReader
 				if (teleportWhere == TeleportWhereType.CASTLE)
 				{
 					castle = CastleManager.getInstance().getCastleByOwner(clan);
+					
 					// Otherwise check if player is on castle or fortress ground
 					// and player's clan is defender
 					if (castle == null)
@@ -288,6 +292,7 @@ public class MapRegionManager implements IXmlReader
 						{
 							return castle.getResidenceZone().getChaoticSpawnLoc();
 						}
+						
 						return castle.getResidenceZone().getSpawnLoc();
 					}
 				}
@@ -296,6 +301,7 @@ public class MapRegionManager implements IXmlReader
 				if (teleportWhere == TeleportWhereType.FORTRESS)
 				{
 					fort = FortManager.getInstance().getFortByOwner(clan);
+					
 					// Otherwise check if player is on castle or fortress ground
 					// and player's clan is defender
 					if (fort == null)
@@ -313,6 +319,7 @@ public class MapRegionManager implements IXmlReader
 						{
 							return fort.getResidenceZone().getChaoticSpawnLoc();
 						}
+						
 						return fort.getResidenceZone().getSpawnLoc();
 					}
 				}
@@ -382,6 +389,7 @@ public class MapRegionManager implements IXmlReader
 				{
 					return Config.FACTION_GOOD_BASE_LOCATION;
 				}
+				
 				if (player.isEvil())
 				{
 					return Config.FACTION_EVIL_BASE_LOCATION;
@@ -482,6 +490,7 @@ public class MapRegionManager implements IXmlReader
 			{
 				getRestartRegion(player, region.getBannedRace().get(player.getRace()));
 			}
+			
 			return region;
 		}
 		catch (Exception e)

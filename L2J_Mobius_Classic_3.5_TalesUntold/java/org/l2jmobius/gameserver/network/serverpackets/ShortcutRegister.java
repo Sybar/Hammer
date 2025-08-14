@@ -77,6 +77,7 @@ public class ShortcutRegister extends ServerPacket
 						buffer.writeInt(0);
 						buffer.writeInt(0);
 					}
+					
 					// buffer.writeInt(item.getVisualId()); // TODO: Not existing in Classic client?
 				}
 				else

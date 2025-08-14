@@ -96,6 +96,7 @@ public class GMViewWarehouseWithdrawList extends AbstractItemPacket
 					buffer.writeInt(0);
 				}
 			}
+			
 			buffer.writeInt(0);
 		}
 	}

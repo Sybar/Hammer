@@ -40,6 +40,7 @@ public class Q10300_ExploringTheCrumaTower extends Quest
 	// NPCs
 	private static final int ORVEN = 30857;
 	private static final int CARSUS = 30483;
+	
 	// Monsters
 	private static final int PORTA = 22200;
 	private static final int EXCURO = 22201;
@@ -52,6 +53,7 @@ public class Q10300_ExploringTheCrumaTower extends Quest
 	private static final int DICOR = 22208;
 	private static final int PERUM = 22209;
 	private static final int TORFE = 22210;
+	
 	// Items
 	private static final ItemHolder SAYHA_COOKIE = new ItemHolder(93274, 5);
 	private static final ItemHolder SAYHA_STORM = new ItemHolder(91712, 2);
@@ -120,6 +122,7 @@ public class Q10300_ExploringTheCrumaTower extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -175,6 +178,7 @@ public class Q10300_ExploringTheCrumaTower extends Quest
 		{
 			htmltext = getAlreadyCompletedMsg(player);
 		}
+		
 		return htmltext;
 	}
 	
@@ -209,6 +213,7 @@ public class Q10300_ExploringTheCrumaTower extends Quest
 			holder.add(new NpcLogListHolder(NpcStringId.DEFEAT_MONSTERS_IN_THE_CRUMA_TOWER.getId(), true, qs.getInt(KILL_COUNT_VAR)));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

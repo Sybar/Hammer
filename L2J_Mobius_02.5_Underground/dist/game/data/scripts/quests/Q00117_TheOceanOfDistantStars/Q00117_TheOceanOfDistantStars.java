@@ -37,11 +37,14 @@ public class Q00117_TheOceanOfDistantStars extends Quest
 	private static final int GHOST_OF_A_RAILROAD_ENGINEER = 32054;
 	private static final int GHOST_OF_AN_ANCIENT_RAILROAD_ENGINEER = 32055;
 	private static final int BOX = 32076;
+	
 	// Items
 	private static final int ENGRAVED_HAMMER = 8488;
 	private static final int BOOK_OF_GREY_STAR = 8495;
+	
 	// Misc
 	private static final int MIN_LEVEL = 39;
+	
 	// Monsters
 	private static final int BANDIT_WARRIOR = 22023;
 	private static final int BANDIT_INSPECTOR = 22024;
@@ -190,6 +193,7 @@ public class Q00117_TheOceanOfDistantStars extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -344,6 +348,7 @@ public class Q00117_TheOceanOfDistantStars extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 }

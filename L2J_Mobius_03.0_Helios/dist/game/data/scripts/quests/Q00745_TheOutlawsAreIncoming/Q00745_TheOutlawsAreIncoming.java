@@ -36,6 +36,7 @@ public class Q00745_TheOutlawsAreIncoming extends Quest
 	private static final int GARGOYLE_FRAGMENT = 47047;
 	private static final int BASILISK_SCALE = 47048;
 	private static final int MAHUM_ID_TAG = 47049;
+	
 	// NPCs
 	private static final int FLUTTER = 30677;
 	private static final int KELIOS = 33862;
@@ -55,6 +56,7 @@ public class Q00745_TheOutlawsAreIncoming extends Quest
 		{21264, MAHUM_ID_TAG}, // Ol Mahum Transcender
 	};
 	// @formatter:on
+	
 	// Misc
 	private static final int MIN_LEVEL = 46;
 	private static final int MAX_LEVEL = 55;
@@ -71,6 +73,7 @@ public class Q00745_TheOutlawsAreIncoming extends Quest
 		{
 			addKillId(mob[0]);
 		}
+		
 		registerQuestItems(GARGOYLE_FRAGMENT, BASILISK_SCALE, MAHUM_ID_TAG);
 		addCondIsSubClassActive("head_blacksmith_flutter_q0745_03.htm");
 		addCondMinLevel(MIN_LEVEL, "head_blacksmith_flutter_q0745_02.htm");
@@ -122,11 +125,13 @@ public class Q00745_TheOutlawsAreIncoming extends Quest
 						addExpAndSp(player, 39862785, 3750);
 						break;
 					}
+					
 					htmltext = getNoQuestLevelRewardMsg(player);
 					break;
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -145,6 +150,7 @@ public class Q00745_TheOutlawsAreIncoming extends Quest
 					htmltext = "head_blacksmith_flutter_q0745_01.htm";
 					break;
 				}
+				
 				// fallthrou
 			}
 			case State.STARTED:
@@ -207,6 +213,7 @@ public class Q00745_TheOutlawsAreIncoming extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

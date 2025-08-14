@@ -48,6 +48,7 @@ public class Fan implements IAffectScopeHandler
 		final int fanAngle = skill.getFanRange()[3];
 		final double fanHalfAngle = fanAngle / 2; // Half left and half right.
 		final int affectLimit = skill.getAffectLimit();
+		
 		// Target checks.
 		final TargetType targetType = skill.getTargetType();
 		final AtomicInteger affected = new AtomicInteger(0);
@@ -57,18 +58,22 @@ public class Fan implements IAffectScopeHandler
 			{
 				return false;
 			}
+			
 			if (c.isDead() && (targetType != TargetType.NPC_BODY) && (targetType != TargetType.PC_BODY))
 			{
 				return false;
 			}
+			
 			if (Math.abs(LocationUtil.calculateAngleFrom(creature, c) - (headingAngle + fanStartAngle)) > fanHalfAngle)
 			{
 				return false;
 			}
+			
 			if ((c != target) && (affectObject != null) && !affectObject.checkAffectedObject(creature, c))
 			{
 				return false;
 			}
+			
 			if (!GeoEngine.getInstance().canSeeTarget(creature, c))
 			{
 				return false;

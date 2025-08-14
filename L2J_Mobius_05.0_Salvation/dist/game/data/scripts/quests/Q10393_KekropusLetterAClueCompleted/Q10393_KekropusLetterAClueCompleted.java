@@ -36,11 +36,14 @@ public class Q10393_KekropusLetterAClueCompleted extends LetterQuest
 	private static final int FLUTER = 30677;
 	private static final int KELIOS = 33862;
 	private static final int INVISIBLE_NPC = 19543;
+	
 	// Items
 	private static final int SOE_TOWN_OF_OREN = 37113; // Scroll of Escape: Town of Oren
 	private static final int SOE_OUTLAW_FOREST = 37026; // Scroll of Escape: Outlaw Forest
+	
 	// Location
 	private static final Location TELEPORT_LOC = new Location(83676, 55510, -1512);
+	
 	// Misc
 	private static final int MIN_LEVEL = 46;
 	private static final int MAX_LEVEL = 51;
@@ -97,6 +100,7 @@ public class Q10393_KekropusLetterAClueCompleted extends LetterQuest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -121,6 +125,7 @@ public class Q10393_KekropusLetterAClueCompleted extends LetterQuest
 				htmltext = npc.getId() == FLUTER ? "30677-04.html" : "33862-01.html";
 			}
 		}
+		
 		return htmltext;
 	}
 	

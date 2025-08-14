@@ -79,13 +79,16 @@ public class ExPetRankingMyInfo extends ServerPacket
 						buffer.writeInt(typeRank);
 						break;
 					}
+					
 					typeRank++;
 				}
 			}
+			
 			if (!found)
 			{
 				buffer.writeInt(0);
 			}
+			
 			int snapshotTypeRank = 1;
 			boolean snapshotFound = false;
 			for (StatSet ss : _snapshotList.values())
@@ -98,9 +101,11 @@ public class ExPetRankingMyInfo extends ServerPacket
 						buffer.writeInt(snapshotTypeRank);
 						break;
 					}
+					
 					snapshotTypeRank++;
 				}
 			}
+			
 			if (!snapshotFound)
 			{
 				buffer.writeInt(0);

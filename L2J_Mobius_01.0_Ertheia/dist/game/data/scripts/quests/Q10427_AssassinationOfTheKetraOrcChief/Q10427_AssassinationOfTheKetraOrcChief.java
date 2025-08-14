@@ -40,8 +40,10 @@ public class Q10427_AssassinationOfTheKetraOrcChief extends Quest
 	private static final int LUGONNES = 33852;
 	private static final int CHIEF_BRAKKI = 27501;
 	private static final int KAMPF = 27516;
+	
 	// Items
 	private static final int EAS = 26353; // Scroll: Enchant Armor (S-grade)
+	
 	// Misc
 	private static final int MIN_LEVEL = 76;
 	private static final int MAX_LEVEL = 80;
@@ -102,11 +104,13 @@ public class Q10427_AssassinationOfTheKetraOrcChief extends Quest
 					{
 						addExpAndSp(player, 7_665_840, 1839);
 					}
+					
 					htmltext = "33852-07.html";
 				}
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -133,6 +137,7 @@ public class Q10427_AssassinationOfTheKetraOrcChief extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -144,6 +149,7 @@ public class Q10427_AssassinationOfTheKetraOrcChief extends Quest
 		{
 			qs.setCond(2, true);
 		}
+		
 		if ((qs != null) && qs.isCond(2))
 		{
 			addSpawn(KAMPF, 142130, -82520, -6487, 0, true, 60000);

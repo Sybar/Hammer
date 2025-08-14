@@ -33,14 +33,17 @@ public class Q00374_WhisperOfDreamsPart1 extends Quest
 	// NPCs
 	private static final int MANAKIA = 30515;
 	private static final int TORAI = 30557;
+	
 	// Monsters
 	private static final int CAVE_BEAST = 20620;
 	private static final int DEATH_WAVE = 20621;
+	
 	// Items
 	private static final int CAVE_BEAST_TOOTH = 5884;
 	private static final int DEATH_WAVE_LIGHT = 5885;
 	private static final int SEALED_MYSTERIOUS_STONE = 5886;
 	private static final int MYSTERIOUS_STONE = 5887;
+	
 	// Rewards
 	private static final int[][] REWARDS =
 	{
@@ -116,6 +119,7 @@ public class Q00374_WhisperOfDreamsPart1 extends Quest
 				htmltext = "30557-03.htm";
 			}
 		}
+		
 		return htmltext;
 	}
 	

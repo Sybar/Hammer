@@ -191,6 +191,7 @@ public class ArmorSetData implements IXmlReader
 		{
 			return _armorSets[setId];
 		}
+		
 		return null;
 	}
 	
@@ -209,6 +210,7 @@ public class ArmorSetData implements IXmlReader
 				return sets;
 			}
 		}
+		
 		return Collections.emptyList();
 	}
 	

@@ -38,6 +38,7 @@ public final class Q00789_WaitingForPaagrio extends Quest
 {
 	// NPCs
 	private static final int HARP_ZU_HESTUI = 34014;
+	
 	// Monster
 	private static final int[] MONSTERS =
 	{
@@ -60,9 +61,11 @@ public final class Q00789_WaitingForPaagrio extends Quest
 		23503, // Flame Drake
 		23504, // Flame Votis
 	};
+	
 	// Items
 	private static final int MAGMA_ORE = 45449;
 	private static final int HARPS_REWARD_BOX = 45451;
+	
 	// Misc
 	private static final int MIN_LEVEL = 97;
 	private static final int MAX_LEVEL = 99;
@@ -131,6 +134,7 @@ public final class Q00789_WaitingForPaagrio extends Quest
 						htmltext = event;
 						break;
 					}
+					
 					htmltext = getNoQuestLevelRewardMsg(player);
 					break;
 				}
@@ -157,6 +161,7 @@ public final class Q00789_WaitingForPaagrio extends Quest
 						htmltext = event;
 						break;
 					}
+					
 					htmltext = getNoQuestLevelRewardMsg(player);
 					break;
 				}
@@ -183,6 +188,7 @@ public final class Q00789_WaitingForPaagrio extends Quest
 						htmltext = event;
 						break;
 					}
+					
 					htmltext = getNoQuestLevelRewardMsg(player);
 					break;
 				}
@@ -202,12 +208,14 @@ public final class Q00789_WaitingForPaagrio extends Quest
 						htmltext = event;
 						break;
 					}
+					
 					htmltext = getNoQuestLevelRewardMsg(player);
 					break;
 				}
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -226,6 +234,7 @@ public final class Q00789_WaitingForPaagrio extends Quest
 					htmltext = "harpe_zu_hestui_q0789_01.htm";
 					break;
 				}
+				
 				htmltext = "harpe_zu_hestui_q0789_02.htm";
 				break;
 			}
@@ -275,6 +284,7 @@ public final class Q00789_WaitingForPaagrio extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

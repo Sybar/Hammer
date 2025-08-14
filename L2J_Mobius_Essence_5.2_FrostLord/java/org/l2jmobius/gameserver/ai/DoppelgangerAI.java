@@ -71,10 +71,12 @@ public class DoppelgangerAI extends CreatureAI
 			setTarget(null);
 			return;
 		}
+		
 		if (maybeMoveToPawn(target, _actor.getPhysicalAttackRange()))
 		{
 			return;
 		}
+		
 		clientStopMoving(null);
 		_actor.doAutoAttack(attackTarget);
 	}
@@ -113,10 +115,12 @@ public class DoppelgangerAI extends CreatureAI
 		{
 			return;
 		}
+		
 		if (maybeMoveToPawn(target, 36))
 		{
 			return;
 		}
+		
 		setIntention(Intention.IDLE);
 	}
 	
@@ -127,6 +131,7 @@ public class DoppelgangerAI extends CreatureAI
 		{
 			return;
 		}
+		
 		_thinking = true;
 		try
 		{
@@ -201,6 +206,7 @@ public class DoppelgangerAI extends CreatureAI
 		{
 			_lastAttack = null;
 		}
+		
 		super.onIntentionCast(skill, target, item, forceUse, dontMove);
 	}
 	
@@ -227,6 +233,7 @@ public class DoppelgangerAI extends CreatureAI
 					{
 						return;
 					}
+					
 					sendPacket = false;
 				}
 				else if (_actor.isOnGeodataPath())

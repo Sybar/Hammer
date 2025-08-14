@@ -34,8 +34,10 @@ public final class SupportTroopLieutenantRash extends AbstractNpcAI
 {
 	// NPCs
 	private static final int RASH = 34371;
+	
 	// Monsters
 	private static final int ANTHARAS_TRANSFORM = 24088;
+	
 	// Misc
 	private static final int p_CheckFirstInterval = 1000;
 	private static final int p_CheckInterval = 3000;

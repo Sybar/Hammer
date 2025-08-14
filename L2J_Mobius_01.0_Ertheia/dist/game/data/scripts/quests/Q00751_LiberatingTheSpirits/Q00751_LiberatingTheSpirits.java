@@ -39,6 +39,7 @@ public class Q00751_LiberatingTheSpirits extends Quest
 {
 	// Npc
 	private static final int RODERIK = 30631;
+	
 	// Monster's
 	private static final int SCALDISECT = 23212;
 	private static final int[] MOBS =
@@ -59,8 +60,10 @@ public class Q00751_LiberatingTheSpirits extends Quest
 		23244,
 		23245
 	};
+	
 	// Item's
 	private static final int DEADMANS_FLESH = 34971;
+	
 	// Misc
 	private static final int MIN_LEVEL = 95;
 	
@@ -108,6 +111,7 @@ public class Q00751_LiberatingTheSpirits extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -127,6 +131,7 @@ public class Q00751_LiberatingTheSpirits extends Quest
 						htmltext = "30631-0.htm";
 						break;
 					}
+					
 					qs.setState(State.CREATED);
 					// fallthrough
 				}
@@ -149,6 +154,7 @@ public class Q00751_LiberatingTheSpirits extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	

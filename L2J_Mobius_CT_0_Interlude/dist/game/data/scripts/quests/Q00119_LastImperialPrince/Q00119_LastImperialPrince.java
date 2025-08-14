@@ -31,6 +31,7 @@ public class Q00119_LastImperialPrince extends Quest
 	// NPCs
 	private static final int NAMELESS_SPIRIT = 31453;
 	private static final int DEVORIN = 32009;
+	
 	// Item
 	private static final int ANTIQUE_BROOCH = 7262;
 	
@@ -88,6 +89,7 @@ public class Q00119_LastImperialPrince extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

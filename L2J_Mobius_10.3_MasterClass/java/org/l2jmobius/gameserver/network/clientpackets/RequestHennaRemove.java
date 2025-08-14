@@ -71,6 +71,7 @@ public class RequestHennaRemove extends ClientPacket
 					player.sendPacket(SystemMessageId.NOT_ENOUGH_ADENA);
 					player.sendPacket(ActionFailed.STATIC_PACKET);
 				}
+				
 				found = true;
 				break;
 			}

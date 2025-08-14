@@ -34,8 +34,10 @@ public final class BalthusKnightPaulia extends AbstractNpcAI
 {
 	// NPCs
 	private static final int PAULIA = 34370;
+	
 	// Monsters
 	private static final int ANTHARAS_TRANSFORM = 24088;
+	
 	// Misc
 	private static final int p_CheckFirstInterval = 15000;
 	private static final int p_CheckInterval = 3000;

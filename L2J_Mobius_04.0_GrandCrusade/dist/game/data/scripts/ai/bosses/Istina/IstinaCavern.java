@@ -60,18 +60,22 @@ public class IstinaCavern extends AbstractInstance
 		29195, // Istina (Common)
 		29196, // Istina (Extreme)
 	};
+	
 	// Skills
 	private static final SkillHolder ERUPTION_1 = new SkillHolder(14222, 1);
 	private static final SkillHolder ERUPTION_2 = new SkillHolder(14223, 1);
 	private static final SkillHolder ISTINA_ERUPTION_SKILL = new SkillHolder(14221, 1);
+	
 	// Items
 	private static final int CONTROL_DEVICE = 17608; // Energy Control Device
 	private static final int REWARD_BOX_COMMON = 30371; // Box Containing Magic Power
 	private static final int REWARD_BOX_EXTREME = 30374; // Magic Filled Box
+	
 	// Locations
 	private static final Location DEFEAT_ISTINA_LOC = new Location(-177120, 148782, -11384, 49140);
 	private static final Location RUMIESE_LOC = new Location(-177001, 147844, -11380, 47684);
 	private static final Location BATTLE_LOC = new Location(-177111, 146802, -11384);
+	
 	// Misc
 	private static final int PERFECT_SCORE_1 = 30000000;
 	private static final int PERFECT_SCORE_2 = 300000000;
@@ -149,6 +153,7 @@ public class IstinaCavern extends AbstractInstance
 		{
 			enterInstance(player, npc, TEMPLATE_ID_EXTREME);
 		}
+		
 		return htmltext;
 	}
 	
@@ -178,6 +183,7 @@ public class IstinaCavern extends AbstractInstance
 							addSkillCastDesire(npc, mostHated, death2, 23);
 						}
 					}
+					
 					getTimers().addTimer("DEATH_TIMER", 35000, npc, null);
 					break;
 				}
@@ -198,6 +204,7 @@ public class IstinaCavern extends AbstractInstance
 					{
 						showOnScreenMsg(instance, NpcStringId.ISTINA_SPREADS_THE_REFLECTING_PROTECTIVE_SHEET, ExShowScreenMessage.TOP_CENTER, 4000);
 					}
+					
 					final SkillHolder reflect = npcParams.getSkillHolder("Istina_Refraction_Skill");
 					npc.setTarget(npc);
 					npc.doCast(reflect.getSkill());
@@ -229,6 +236,7 @@ public class IstinaCavern extends AbstractInstance
 							eruption.getVariables().set("ERUPTION_TARGET", target);
 						}
 					}
+					
 					getTimers().addTimer("LOW_ERUPTION_TIMER", 15000, npc, null);
 					break;
 				}
@@ -280,6 +288,7 @@ public class IstinaCavern extends AbstractInstance
 							npcVars.set("HELP_COUNT_DOWN", 0);
 							instance.getPlayers().forEach(temp -> temp.sendPacket(new ExSendUIEvent(temp, 2, countDown, charged, 0, 2042, 0, NpcStringId.REPLENISH_BALLISTA_MAGIC_POWER.getId())));
 						}
+						
 						getTimers().addTimer("BALLISTA_CHECK_TIMER", 500, npc, null);
 					}
 					break;
@@ -298,6 +307,7 @@ public class IstinaCavern extends AbstractInstance
 						instance.setStatus(4);
 						getTimers().addTimer("INSTANCE_FINISH_TIMER", 22000, npc, null);
 					}
+					
 					instance.getAliveNpcs(ISTINA).forEach(istina ->
 					{
 						istina.teleToLocation(instance.getEnterLocation());
@@ -346,6 +356,7 @@ public class IstinaCavern extends AbstractInstance
 							}
 						}
 					}
+					
 					getTimers().addTimer("AUTHORITY_TIMER", 70000 + getRandom(25000), npc, null);
 					break;
 				}
@@ -448,6 +459,7 @@ public class IstinaCavern extends AbstractInstance
 							{
 								addScore *= 1.5;
 							}
+							
 							addScore *= 1.5;
 						}
 						
@@ -455,6 +467,7 @@ public class IstinaCavern extends AbstractInstance
 						{
 							addScore *= 2;
 						}
+						
 						npcVars.set("SCORE_VAL", score + addScore);
 					}
 				}
@@ -493,6 +506,7 @@ public class IstinaCavern extends AbstractInstance
 							{
 								// myself->AddTimerEx(Seal_Timer, (3 * 1000));
 							}
+							
 							// myself->AddTimerEx(Overcrowding_Timer, (10 * 1000));
 						}
 						break;
@@ -532,19 +546,23 @@ public class IstinaCavern extends AbstractInstance
 							getTimers().cancelTimer("AUTHORITY_TIMER", npc, null);
 							getTimers().cancelTimer("ERUPTION_TIMER", npc, null);
 							getTimers().cancelTimer("LOW_ERUPTION_TIMER", npc, null);
+							
 							// myself->BlockTimer(Overcrowding_Timer);
 							if (isExtremeMode(instance))
 							{
 								// myself->BlockTimer(Seal_Timer);
 								// myself->BlockTimer(Order_Timer);
 							}
+							
 							instance.getAliveNpcs(EXTREME_MINION, INVISIBLE_NPC).forEach(Npc::deleteMe);
 							instance.spawnGroup("BALLISTA");
 							instance.setStatus(2);
 							instance.getAliveNpcs(RUMIESE_INSTANCE).forEach(rumiese -> rumiese.teleToLocation(RUMIESE_LOC));
 							instance.getDoors().forEach(Door::openMe);
+							
 							// myself->AddTimerEx(Broadcast_Timer, (2 * 1000));
 							onTimerEvent("AUTHORITY_END_TIMER", null, npc, null);
+							
 							// myself->AddTimerEx(Location_Check_Timer, (4 * 1000));
 							npc.disableCoreAI(true);
 							npc.teleToLocation(DEFEAT_ISTINA_LOC);
@@ -619,6 +637,7 @@ public class IstinaCavern extends AbstractInstance
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -638,6 +657,7 @@ public class IstinaCavern extends AbstractInstance
 		{
 			charged = (score * 100) / (isExtreme ? PERFECT_SCORE_2 : PERFECT_SCORE_1);
 		}
+		
 		return charged;
 	}
 	
@@ -674,6 +694,7 @@ public class IstinaCavern extends AbstractInstance
 						maxDealer = attacker;
 						maxDamage = reward.getDamage();
 					}
+					
 					totalDamage += damage;
 				}
 			}

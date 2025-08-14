@@ -138,9 +138,9 @@
 		<set name="commissionItemType" val="HAIR_ACCESSORY" />
 		<set name="isAppearanceable" val="true" />
 		<set name="price" val="500000" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player sex="1" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="8913" name="Butterfly Hairpin" type="Armor">
 		<!-- Butterfly-shaped Hairpin. Female only. -->
@@ -154,9 +154,9 @@
 		<set name="commissionItemType" val="HAIR_ACCESSORY" />
 		<set name="isAppearanceable" val="true" />
 		<set name="price" val="500000" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player sex="1" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="8914" name="Luxurious Gold Circlet" type="Armor">
 		<!-- A luxurious golden circlet. Equipped in 2 head accessory slots. -->
@@ -209,9 +209,9 @@
 		<set name="commissionItemType" val="HAIR_ACCESSORY" />
 		<set name="isAppearanceable" val="true" />
 		<set name="price" val="500000" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player sex="1" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="8918" name="Leather Cap" type="Armor">
 		<!-- A medieval leather hat. Equipped in 2 head accessory slots. -->
@@ -291,9 +291,9 @@
 		<set name="commissionItemType" val="HAIR_ACCESSORY" />
 		<set name="isAppearanceable" val="true" />
 		<set name="price" val="500000" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player sex="0" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="8924" name="Boat Ticket: Primeval Isle to Rune." type="EtcItem">
 		<!-- Boat Ticket from Primeval Isle to Rune. -->

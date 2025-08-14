@@ -41,15 +41,19 @@ public class Q00023_LidiasHeart extends Quest
 	private static final int GHOST_OF_VON_HELLMANN = 31524;
 	private static final int BROKEN_BOOKSHELF = 31526;
 	private static final int BOX = 31530;
+	
 	// Items
 	private static final int LIDIAS_DIARY = 7064;
 	private static final int SILVER_KEY = 7149;
 	private static final int SILVER_SPEAR = 7150;
+	
 	// Reward
 	private static final int MAP_FOREST_OF_THE_DEAD = 7063;
 	private static final int LIDIAS_HAIRPIN = 7148;
+	
 	// Misc
 	private static final int MIN_LEVEL = 64;
+	
 	// Locations
 	private static final Location GHOST_SPAWN = new Location(51432, -54570, -3136);
 	
@@ -72,6 +76,7 @@ public class Q00023_LidiasHeart extends Quest
 			{
 				npc0.getVariables().set("SPAWNED", false);
 			}
+			
 			npc.deleteMe();
 			return super.onEvent(event, npc, player);
 		}
@@ -97,6 +102,7 @@ public class Q00023_LidiasHeart extends Quest
 					{
 						giveItems(player, MAP_FOREST_OF_THE_DEAD, 1);
 					}
+					
 					giveItems(player, SILVER_KEY, 1);
 					qs.startQuest();
 					qs.setMemoState(1);
@@ -234,11 +240,13 @@ public class Q00023_LidiasHeart extends Quest
 				{
 					giveItems(player, LIDIAS_HAIRPIN, 1);
 				}
+				
 				qs.setMemoState(qs.getMemoState() + 1);
 				if (hasQuestItems(player, LIDIAS_DIARY))
 				{
 					qs.setCond(4);
 				}
+				
 				htmltext = event;
 				break;
 			}
@@ -262,6 +270,7 @@ public class Q00023_LidiasHeart extends Quest
 				{
 					qs.setCond(4);
 				}
+				
 				htmltext = event;
 				break;
 			}
@@ -278,6 +287,7 @@ public class Q00023_LidiasHeart extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -494,6 +504,7 @@ public class Q00023_LidiasHeart extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	

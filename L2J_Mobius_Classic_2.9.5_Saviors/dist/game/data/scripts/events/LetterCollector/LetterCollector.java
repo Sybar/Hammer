@@ -33,6 +33,7 @@ public class LetterCollector extends LongTimeEvent
 {
 	// NPC
 	private static final int ROSALIA = 9000;
+	
 	// Items
 	private static final int A = 3875;
 	private static final int C = 3876;
@@ -47,6 +48,7 @@ public class LetterCollector extends LongTimeEvent
 	private static final int S = 3886;
 	private static final int H = 3880;
 	private static final int II = 3888;
+	
 	// Exchange Letters
 	private static final int[] LETTERS =
 	{
@@ -64,6 +66,7 @@ public class LetterCollector extends LongTimeEvent
 		H,
 		II
 	};
+	
 	// Reward
 	private static final int LINEAGEII = 29581;
 	private static final int MEMMORIES = 29583;
@@ -349,6 +352,7 @@ public class LetterCollector extends LongTimeEvent
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

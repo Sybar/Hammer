@@ -76,6 +76,7 @@ public class CommandPost extends AbstractInstance
 		23614, // Elite Executioner - Embryo
 		23615, // Elite Shaman - Embryo
 	};
+	
 	// Items
 	// private static final int EMERGENCY_WHISTLE = 46404;
 	// Location
@@ -91,9 +92,11 @@ public class CommandPost extends AbstractInstance
 	private static final Location HAYUK_MOVE = new Location(-44014, 44998, -8097);
 	private static final Location ELISE_MOVE = new Location(-44120, 44999, -8097);
 	private static final Location ELRYAH_MOVE = new Location(-44072, 45004, -8097);
+	
 	// Zones
 	private static final ScriptZone FLOOR_1_TP = ZoneManager.getInstance().getZoneById(25901, ScriptZone.class);
 	private static final ScriptZone FLOOR_2_TP = ZoneManager.getInstance().getZoneById(25902, ScriptZone.class);
+	
 	// Misc
 	private static final int TEMPLATE_ID = 259;
 	
@@ -190,6 +193,7 @@ public class CommandPost extends AbstractInstance
 							world.getNpc(GEORK).setRandomWalking(false);
 							world.getNpc(GEORK).setTargetable(false);
 						}
+						
 						startQuestTimer("check_status", 3000, null, player);
 						break;
 					}
@@ -208,6 +212,7 @@ public class CommandPost extends AbstractInstance
 								monster.setTargetable(false);
 								monster.setScriptValue(1);
 							}
+							
 							for (Npc monster : world.spawnGroup("group_2"))
 							{
 								monster.setInvul(true);
@@ -215,6 +220,7 @@ public class CommandPost extends AbstractInstance
 								monster.setRandomWalking(false);
 								monster.setTargetable(false);
 							}
+							
 							for (Npc monster : world.spawnGroup("group_3"))
 							{
 								monster.setInvul(true);
@@ -222,6 +228,7 @@ public class CommandPost extends AbstractInstance
 								monster.setRandomWalking(false);
 								monster.setTargetable(false);
 							}
+							
 							for (Npc monster : world.spawnGroup("group_4"))
 							{
 								monster.setInvul(true);
@@ -230,6 +237,7 @@ public class CommandPost extends AbstractInstance
 								monster.setTargetable(false);
 							}
 						}
+						
 						startQuestTimer("check_status", 3000, null, player);
 						break;
 					}
@@ -244,6 +252,7 @@ public class CommandPost extends AbstractInstance
 								teleported++;
 							}
 						}
+						
 						if (teleported == world.getPlayersCount())
 						{
 							world.setStatus(3);
@@ -254,6 +263,7 @@ public class CommandPost extends AbstractInstance
 						{
 							world.setParameter("TELEPORTED", teleported);
 						}
+						
 						startQuestTimer("check_status", 3000, null, player);
 						break;
 					}
@@ -265,6 +275,7 @@ public class CommandPost extends AbstractInstance
 							monster.setWalking();
 							monster.getAI().moveTo(GROUP_1_MOVE);
 						}
+						
 						world.setStatus(4);
 						startQuestTimer("check_status", 3000, null, player);
 						break;
@@ -279,9 +290,11 @@ public class CommandPost extends AbstractInstance
 								monster.setWalking();
 								monster.getAI().moveTo(GROUP_2_MOVE);
 							}
+							
 							world.openCloseDoor(world.getTemplateParameters().getInt("secondGroupId"), true);
 							world.setStatus(5);
 						}
+						
 						startQuestTimer("check_status", 3000, null, player);
 						break;
 					}
@@ -295,9 +308,11 @@ public class CommandPost extends AbstractInstance
 								monster.setWalking();
 								monster.getAI().moveTo(GROUP_3_MOVE);
 							}
+							
 							world.openCloseDoor(world.getTemplateParameters().getInt("thirdGroupId"), true);
 							world.setStatus(6);
 						}
+						
 						startQuestTimer("check_status", 3000, null, player);
 						break;
 					}
@@ -311,9 +326,11 @@ public class CommandPost extends AbstractInstance
 								monster.setWalking();
 								monster.getAI().moveTo(GROUP_4_MOVE);
 							}
+							
 							world.openCloseDoor(world.getTemplateParameters().getInt("fourthGroupId"), true);
 							world.setStatus(7);
 						}
+						
 						startQuestTimer("check_status", 3000, null, player);
 						break;
 					}
@@ -325,6 +342,7 @@ public class CommandPost extends AbstractInstance
 							world.getNpc(GEORK).deleteMe();
 							world.setStatus(8);
 						}
+						
 						startQuestTimer("check_status", 3000, null, player);
 						break;
 					}
@@ -339,6 +357,7 @@ public class CommandPost extends AbstractInstance
 								teleported++;
 							}
 						}
+						
 						if (teleported == world.getPlayersCount())
 						{
 							world.setStatus(9);
@@ -349,6 +368,7 @@ public class CommandPost extends AbstractInstance
 						{
 							world.setParameter("TELEPORTED", teleported);
 						}
+						
 						startQuestTimer("check_status", 3000, null, player);
 						break;
 					}
@@ -356,6 +376,7 @@ public class CommandPost extends AbstractInstance
 				break;
 			}
 		}
+		
 		return null;
 	}
 	
@@ -387,6 +408,7 @@ public class CommandPost extends AbstractInstance
 				npc.asAttackable().addDamageHate(target, 1, 999);
 			}
 		}
+		
 		super.onMoveFinished(npc);
 	}
 	
@@ -450,6 +472,7 @@ public class CommandPost extends AbstractInstance
 					break;
 				}
 			}
+			
 			startQuestTimer("check_status", 3000, null, player);
 		}
 	}

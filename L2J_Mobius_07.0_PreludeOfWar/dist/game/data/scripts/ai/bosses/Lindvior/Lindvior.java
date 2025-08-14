@@ -21,6 +21,7 @@
 package ai.bosses.Lindvior;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.concurrent.ScheduledFuture;
 
@@ -87,24 +88,30 @@ public class Lindvior extends AbstractNpcAI
 	private static final int INVISIBLE = 8572;
 	private static final int LIONEL_HUNTER = 33886;
 	private static final int LINDVIOR_CAMERA = 19428;
+	
 	// Zone
 	private static final int ZONE_ID = 12107;
 	private static final Location CENTER_LOCATION = new Location(46424, -26200, -1400);
+	
 	// Skills
 	private static final SkillHolder SKILL_RECHARGE_POSIBLE = new SkillHolder(15605, 1);
 	private static final SkillHolder RECHARGE = new SkillHolder(15606, 1);
 	private static final SkillHolder SKILL_REFLECT = new SkillHolder(15592, 1);
+	
 	// Item
 	private static final int LINDVIORS_SCALE = 37495;
+	
 	// Trigers
 	private static final int FIRST_STAGE_EVENT_TRIGGER = 21170112;
 	private static final int SECOND_STAGE_EVENT_TRIGGER = 21170100;
 	private static final int ALL_GENERATORS_CONNECTED_EFFECT = 21170110;
 	private static final int RED_ZONE_EFFECT = 21170120;
+	
 	// Status
 	private static final int ALIVE = 0;
 	private static final int FIGHTING = 2;
 	private static final int DEAD = 3;
+	
 	// Others
 	private static final Location[] CONTROL_GENERATOR_SPAWNS =
 	{
@@ -142,7 +149,7 @@ public class Lindvior extends AbstractNpcAI
 		new Location(45292, -26043, -1400, 13027),
 		new Location(44215, -27172, -1400, 33966)
 	};
-	private static final Location[] ATTACKER_SMALL_VORTEX_SPAWNS = new Location[]
+	private static final Location[] ATTACKER_SMALL_VORTEX_SPAWNS =
 	{
 		new Location(46256, -30159, -1430, 57430),
 		new Location(45155, -29987, -1430, 14860),
@@ -178,6 +185,7 @@ public class Lindvior extends AbstractNpcAI
 		NpcStringId.HOLD_ONTO_THE_GENERATOR_TO_ACTIVATE_THE_CHARGE_SKILL,
 		NpcStringId.THE_GENERATOR_IS_CONNECTED_TO_THE_CANNON,
 	};
+	
 	// Tasks
 	protected ScheduledFuture<?> _socialTask;
 	protected ScheduledFuture<?> _mobsSpawnTask;
@@ -203,7 +211,7 @@ public class Lindvior extends AbstractNpcAI
 	protected int _chargedMask = 0;
 	protected int _status = 0;
 	protected int _stage = 0;
-	protected final int[] _chargedValues = new int[]
+	protected final int[] _chargedValues =
 	{
 		0,
 		0,
@@ -224,6 +232,7 @@ public class Lindvior extends AbstractNpcAI
 		addSpawnId(NPC_ATTACKER_GENERATORS, NPC_ATTACKER_GENERATORS_1, LYN_DRACO_ATTACKER_GENERATORS, GENERATOR_GUARD, NPC_GENERATOR);
 		addCreatureSeeId(INVISIBLE);
 		_zoneLair = ZoneManager.getInstance().getZoneById(ZONE_ID, NoSummonFriendZone.class);
+		
 		// Unlock
 		final StatSet info = GrandBossManager.getInstance().getStatSet(LINDVIOR_RAID);
 		final int status = GrandBossManager.getInstance().getStatus(LINDVIOR_RAID);
@@ -258,6 +267,7 @@ public class Lindvior extends AbstractNpcAI
 			attacker.doDie(null);
 			LOGGER.warning(getName() + ": Character: " + attacker.getName() + " attacked: " + npc.getName() + " out of the boss zone!");
 		}
+		
 		if (!_zoneLair.isInsideZone(npc))
 		{
 			npc.teleToLocation(CENTER_LOCATION, true);
@@ -310,6 +320,7 @@ public class Lindvior extends AbstractNpcAI
 					p.broadcastPacket(new ExShowScreenMessage(NpcStringId.A_FEARSOME_POWER_EMANATES_FROM_LINDVIOR, ExShowScreenMessage.TOP_CENTER, 2000, true));
 				});
 			}
+			
 			if (_lindvior != null)
 			{
 				_lindvior.broadcastPacket(new SocialAction(_lindvior.getObjectId(), 1));
@@ -322,6 +333,7 @@ public class Lindvior extends AbstractNpcAI
 			{
 				addSpawn(LINDVIOR_SERVITOR[1], loc, true);
 			}
+			
 			_zoneLair.getPlayersInside().forEach(p -> p.broadcastPacket(new ExShowScreenMessage(NpcStringId.A_GIGANTIC_WHIRLWIND_HAS_APPEARED, ExShowScreenMessage.TOP_CENTER, 2000, true)));
 			_status = 2;
 		}
@@ -352,6 +364,7 @@ public class Lindvior extends AbstractNpcAI
 				_smallVortexesTask.cancel(true);
 				_smallVortexesTask = null;
 			}
+			
 			if (_lindvior != null)
 			{
 				_lindvior.broadcastPacket(new SocialAction(_lindvior.getObjectId(), 1));
@@ -367,50 +380,60 @@ public class Lindvior extends AbstractNpcAI
 			_socialTask.cancel(false);
 			_socialTask = null;
 		}
+		
 		if (_announceTask != null)
 		{
 			_announceTask.cancel(false);
 			_announceTask = null;
 		}
+		
 		if (_announceProtect != null)
 		{
 			_announceProtect.cancel(false);
 			_announceProtect = null;
 		}
+		
 		if (_skillCastTask != null)
 		{
 			_skillCastTask.cancel(false);
 			_skillCastTask = null;
 		}
+		
 		if (_LynDracoTask != null)
 		{
 			_LynDracoTask.cancel(false);
 			_LynDracoTask = null;
 		}
+		
 		if (_mobsSpawnTask != null)
 		{
 			_mobsSpawnTask.cancel(false);
 			_mobsSpawnTask = null;
 		}
+		
 		if (_collapseTask != null)
 		{
 			_collapseTask.cancel(false);
 			_collapseTask = null;
 		}
+		
 		if (_bigVortexesTask != null)
 		{
 			_bigVortexesTask.cancel(false);
 			_bigVortexesTask = null;
 		}
+		
 		if (_smallVortexesTask != null)
 		{
 			_smallVortexesTask.cancel(false);
 			_smallVortexesTask = null;
 		}
+		
 		if (_lionel != null)
 		{
 			_lionel.deleteMe();
 		}
+		
 		_zoneLair.getCharactersInside().forEach(mob ->
 		{
 			if (mob.isNpc())
@@ -427,6 +450,7 @@ public class Lindvior extends AbstractNpcAI
 		{
 			clean();
 		}
+		
 		_zoneLair.oustAllPlayers();
 		_zoneLair.broadcastPacket(new OnEventTrigger(FIRST_STAGE_EVENT_TRIGGER, false));
 		cancelQuestTimers("attack_generator");
@@ -437,7 +461,7 @@ public class Lindvior extends AbstractNpcAI
 	}
 	
 	@Override
-	public void onSkillSee(Npc npc, Player caster, Skill skill, WorldObject[] targets, boolean isSummon)
+	public void onSkillSee(Npc npc, Player caster, Skill skill, Collection<WorldObject> targets, boolean isSummon)
 	{
 		if ((skill.getId() == 15606) && (npc.getId() == NPC_GENERATOR))
 		{
@@ -485,6 +509,7 @@ public class Lindvior extends AbstractNpcAI
 						npc.reduceCurrentHp(1, cha, null);
 						cha.reduceCurrentHp(1, npc, null);
 					}
+					
 					if (cha.getId() == NPC_GENERATOR)
 					{
 						npc.asAttackable().addDamageHate(cha, 500, 98);
@@ -577,6 +602,7 @@ public class Lindvior extends AbstractNpcAI
 					_announceTask.cancel(true);
 					_announceTask = null;
 				}
+				
 				_generatorSpawn.forEach(npc ->
 				{
 					npc.setDisplayEffect(1);
@@ -608,26 +634,31 @@ public class Lindvior extends AbstractNpcAI
 					_announceTask.cancel(true);
 					_announceTask = null;
 				}
+				
 				if (_announceProtect != null)
 				{
 					_announceProtect.cancel(false);
 					_announceProtect = null;
 				}
+				
 				if (_skillCastTask != null)
 				{
 					_skillCastTask.cancel(true);
 					_skillCastTask = null;
 				}
+				
 				if (_LynDracoTask != null)
 				{
 					_LynDracoTask.cancel(true);
 					_LynDracoTask = null;
 				}
+				
 				if (_mobsSpawnTask != null)
 				{
 					_mobsSpawnTask.cancel(true);
 					_mobsSpawnTask = null;
 				}
+				
 				_monsterSpawn.forEach(npc ->
 				{
 					if (npc != null)
@@ -727,6 +758,7 @@ public class Lindvior extends AbstractNpcAI
 					addSpawn(NPC_ATTACKER_SMALL_VORTEX, loc, true);
 					addSpawn(LINDVIOR_SERVITOR[0], loc, true);
 				}
+				
 				_status = 1;
 				break;
 			}
@@ -738,6 +770,7 @@ public class Lindvior extends AbstractNpcAI
 				{
 					addSpawn(LINDVIOR_SERVITOR[2], loc, true);
 				}
+				
 				_skillCastTask = ThreadPool.scheduleAtFixedRate(() -> _lindvior.doCast(SKILL_REFLECT.getSkill()), 5000, 80000);
 				_status = 3;
 				break;
@@ -750,6 +783,7 @@ public class Lindvior extends AbstractNpcAI
 					_vortex.getSpawn().stopRespawn();
 					_vortex.deleteMe();
 				}
+				
 				_status = 4;
 				break;
 			}
@@ -763,6 +797,7 @@ public class Lindvior extends AbstractNpcAI
 					addSpawn(LINDVIOR_SERVITOR[4], loc, true);
 					addSpawn(LINDVIOR_SERVITOR[3], loc, true);
 				}
+				
 				_collapseTask = ThreadPool.schedule(Lindvior.this::clean, 600000);
 				_status = 6;
 				break;
@@ -794,6 +829,7 @@ public class Lindvior extends AbstractNpcAI
 							}
 						});
 					}
+					
 				}), 10000, 20000);
 				_LynDracoTask = ThreadPool.scheduleAtFixedRate(() ->
 				{
@@ -830,6 +866,7 @@ public class Lindvior extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return null;
 	}
 	
@@ -844,6 +881,7 @@ public class Lindvior extends AbstractNpcAI
 				_mobsSpawnTask.cancel(true);
 				_mobsSpawnTask = null;
 			}
+			
 			_zoneLair.getCharactersInside().stream().filter(Creature::isNpc).forEach(Creature::deleteMe);
 			ThreadPool.schedule(npc::decayMe, 10000);
 			_zoneLair.broadcastPacket(new OnEventTrigger(SECOND_STAGE_EVENT_TRIGGER, false));
@@ -875,6 +913,7 @@ public class Lindvior extends AbstractNpcAI
 		{
 			return npc.getDisplayEffect() == 1 ? "19477.html" : "19477-01.html";
 		}
+		
 		return super.onFirstTalk(npc, player);
 	}
 	
@@ -914,6 +953,7 @@ public class Lindvior extends AbstractNpcAI
 		{
 			packets[i] = new OnEventTrigger(triggers[i], status);
 		}
+		
 		for (ServerPacket packet : packets)
 		{
 			_zoneLair.broadcastPacket(packet);

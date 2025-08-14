@@ -32,10 +32,12 @@ public class Q00154_SacrificeToTheSea extends Quest
 	private static final int ROCKSWELL = 30312;
 	private static final int CRISTEL = 30051;
 	private static final int ROLFE = 30055;
+	
 	// Items
 	private static final int FOX_FUR = 1032;
 	private static final int FOX_FUR_YARN = 1033;
 	private static final int MAIDEN_DOLL = 1034;
+	
 	// Reward
 	private static final int EARING = 113;
 	

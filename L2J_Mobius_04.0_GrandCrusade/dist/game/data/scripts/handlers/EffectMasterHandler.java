@@ -144,6 +144,7 @@ public class EffectMasterHandler
 		EffectHandler.getInstance().registerHandler("DispelBySlot", DispelBySlot::new);
 		EffectHandler.getInstance().registerHandler("DispelBySlotMyself", DispelBySlotMyself::new);
 		EffectHandler.getInstance().registerHandler("DispelBySlotProbability", DispelBySlotProbability::new);
+		EffectHandler.getInstance().registerHandler("Distrust", Distrust::new);
 		EffectHandler.getInstance().registerHandler("DoubleCast", DoubleCast::new);
 		EffectHandler.getInstance().registerHandler("DragonWeaponDefence", DragonWeaponDefence::new);
 		EffectHandler.getInstance().registerHandler("DuelistFury", DuelistFury::new);

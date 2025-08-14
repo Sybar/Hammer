@@ -58,6 +58,7 @@ public class UniqueGacha extends LongTimeEvent implements IXmlReader
 		{
 			load();
 		}
+		
 		return null;
 	}
 	
@@ -69,7 +70,7 @@ public class UniqueGacha extends LongTimeEvent implements IXmlReader
 		{
 			final StatSet paramSet = new StatSet();
 			paramSet.set("isActive", isEventPeriod());
-			paramSet.set("activeUntilPeriod", getEventPeriod().getEndDate().getTime());
+			paramSet.set("activeUntilPeriod", getEndDate().getTime());
 			forEach(listNode, "configuration", configurationNode ->
 			{
 				forEach(configurationNode, "param", paramNode ->
@@ -98,6 +99,7 @@ public class UniqueGacha extends LongTimeEvent implements IXmlReader
 						{
 							System.currentTimeMillis();
 						}
+						
 						final int enchantLevel = itemSet.getInt("enchantLevel", 0);
 						manager.addReward(rank, itemId, count, chance, enchantLevel);
 					});

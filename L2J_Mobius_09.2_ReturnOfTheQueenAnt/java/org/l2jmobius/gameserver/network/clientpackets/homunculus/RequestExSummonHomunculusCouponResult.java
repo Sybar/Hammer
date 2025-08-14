@@ -81,6 +81,7 @@ public class RequestExSummonHomunculusCouponResult extends ClientPacket
 				return;
 			}
 		}
+		
 		for (ItemHolder itemHolder : creationTemplate.getItemFee())
 		{
 			if (!player.destroyItemByItemId(ItemProcessType.FEE, itemHolder.getId(), itemHolder.getCount(), player, true))
@@ -101,6 +102,7 @@ public class RequestExSummonHomunculusCouponResult extends ClientPacket
 				player.sendPacket(new ExSummonHomunculusCouponResult(0, 0));
 				return;
 			}
+			
 			for (Double[] homuHolder : creationTemplate.getCreationChance())
 			{
 				current += homuHolder[1];

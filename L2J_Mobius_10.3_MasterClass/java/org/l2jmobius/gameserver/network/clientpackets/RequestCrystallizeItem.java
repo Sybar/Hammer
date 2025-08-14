@@ -199,6 +199,7 @@ public class RequestCrystallizeItem extends ClientPacket
 		if ((crystallizationRewards == null) || crystallizationRewards.isEmpty())
 		{
 			player.sendMessage("Crystallization cannot be proceeded because there are no items registered.");
+			
 			// CRYSTALLIZATION_CANNOT_BE_PROCEEDED_BECAUSE_THERE_ARE_NO_ITEMS_REGISTERED changed to ANGEL_NEVIT_S_DESCENT_BONUS_TIME_S1
 			// player.sendPacket(SystemMessageId.CRYSTALLIZATION_CANNOT_BE_PROCEEDED_BECAUSE_THERE_ARE_NO_ITEMS_REGISTERED);
 			return;
@@ -215,6 +216,7 @@ public class RequestCrystallizeItem extends ClientPacket
 			{
 				iu.addModifiedItem(item);
 			}
+			
 			player.sendPacket(iu); // Sent inventory update for unequip instantly.
 			
 			if (itemToRemove.getEnchantLevel() > 0)
@@ -228,6 +230,7 @@ public class RequestCrystallizeItem extends ClientPacket
 				sm = new SystemMessage(SystemMessageId.S1_UNEQUIPPED);
 				sm.addItemName(itemToRemove);
 			}
+			
 			player.sendPacket(sm);
 		}
 		
@@ -255,11 +258,13 @@ public class RequestCrystallizeItem extends ClientPacket
 		sm = new SystemMessage(SystemMessageId.S1_HAS_BEEN_CRYSTALLIZED);
 		sm.addItemName(removedItem);
 		player.sendPacket(sm);
+		
 		// Notify to scripts.
 		if (EventDispatcher.getInstance().hasListener(EventType.ON_ITEM_COMBINATION))
 		{
 			EventDispatcher.getInstance().notifyEventAsync(new OnItemCombination(player, removedItem));
 		}
+		
 		player.broadcastUserInfo();
 		
 		player.setInCrystallize(false);

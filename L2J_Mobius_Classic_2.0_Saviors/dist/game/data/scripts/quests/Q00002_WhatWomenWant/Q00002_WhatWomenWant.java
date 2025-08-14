@@ -35,6 +35,7 @@ public class Q00002_WhatWomenWant extends Quest
 	private static final int MIRABEL = 30146;
 	private static final int HERBIEL = 30150;
 	private static final int GREENIS = 30157;
+	
 	// Items
 	private static final int ARUJIENS_LETTER1 = 1092;
 	private static final int ARUJIENS_LETTER2 = 1093;
@@ -42,6 +43,7 @@ public class Q00002_WhatWomenWant extends Quest
 	private static final int POETRY_BOOK = 689;
 	private static final int GREENIS_LETTER = 693;
 	private static final int EARRING = 49040;
+	
 	// Misc
 	private static final int MIN_LEVEL = 2;
 	private static final int MAX_LEVEL = 5;
@@ -84,6 +86,7 @@ public class Q00002_WhatWomenWant extends Quest
 			{
 				giveAdena(player, 450, true);
 				qs.exitQuest(false, true);
+				
 				// Newbie Guide
 				showOnScreenMsg(player, NpcStringId.DELIVERY_DUTY_COMPLETE_N_GO_FIND_THE_NEWBIE_HELPER, 2, 5000);
 				addExpAndSp(player, 4254, 335);
@@ -100,6 +103,7 @@ public class Q00002_WhatWomenWant extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -148,6 +152,7 @@ public class Q00002_WhatWomenWant extends Quest
 								giveItems(player, EARRING, 1);
 								qs.exitQuest(false, true);
 								htmltext = "30223-11.html";
+								
 								// Newbie Guide
 								// showOnScreenMsg(player, NpcStringId.DELIVERY_DUTY_COMPLETE_N_GO_FIND_THE_NEWBIE_HELPER, 2, 5000);
 								break;
@@ -222,6 +227,7 @@ public class Q00002_WhatWomenWant extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

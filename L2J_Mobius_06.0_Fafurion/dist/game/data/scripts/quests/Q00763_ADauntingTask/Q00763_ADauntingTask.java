@@ -52,12 +52,15 @@ public class Q00763_ADauntingTask extends Quest
 		21299, // Valley Buffalo Slave
 		21304, // Valley Grendel Slave
 	};
+	
 	// Items
 	private static final ItemHolder EYE = new ItemHolder(36672, 200);
 	private static final ItemHolder MALICE = new ItemHolder(36673, 200);
+	
 	// Rewards
 	private static final long EXP = 474767890;
 	private static final int SP = 5026;
+	
 	// Misc
 	private static final int MIN_LEVEL = 70;
 	private static final int MAX_LEVEL = 75;
@@ -117,6 +120,7 @@ public class Q00763_ADauntingTask extends Quest
 					{
 						addExpAndSp(player, EXP, SP);
 					}
+					
 					takeAllItems(player, EYE, MALICE);
 					qs.exitQuest(QUEST_TYPE, true);
 					htmltext = event;
@@ -125,6 +129,7 @@ public class Q00763_ADauntingTask extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -180,6 +185,7 @@ public class Q00763_ADauntingTask extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

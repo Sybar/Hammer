@@ -76,6 +76,7 @@ public class TimedHuntingZone extends ZoneType
 						{
 							player.getServitors().values().forEach(s -> s.setInsideZone(ZoneId.PVP, true));
 						}
+						
 						if (player.hasPet())
 						{
 							player.getPet().setInsideZone(ZoneId.PVP, true);
@@ -88,6 +89,7 @@ public class TimedHuntingZone extends ZoneType
 						{
 							player.getServitors().values().forEach(s -> s.setInsideZone(ZoneId.NO_PVP, true));
 						}
+						
 						if (player.hasPet())
 						{
 							player.getPet().setInsideZone(ZoneId.NO_PVP, true);
@@ -134,6 +136,7 @@ public class TimedHuntingZone extends ZoneType
 					{
 						player.getServitors().values().forEach(s -> s.setInsideZone(ZoneId.PVP, false));
 					}
+					
 					if (player.hasPet())
 					{
 						player.getPet().setInsideZone(ZoneId.PVP, false);
@@ -151,6 +154,7 @@ public class TimedHuntingZone extends ZoneType
 					{
 						player.getServitors().values().forEach(s -> s.setInsideZone(ZoneId.NO_PVP, false));
 					}
+					
 					if (player.hasPet())
 					{
 						player.getPet().setInsideZone(ZoneId.NO_PVP, false);

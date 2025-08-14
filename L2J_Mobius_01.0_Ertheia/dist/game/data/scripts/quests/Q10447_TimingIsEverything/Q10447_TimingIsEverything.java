@@ -41,6 +41,7 @@ public class Q10447_TimingIsEverything extends Quest
 {
 	// Npc
 	private static final int BRUENER = 33840;
+	
 	// Mobs
 	private static final int[] MOBS =
 	{
@@ -61,8 +62,10 @@ public class Q10447_TimingIsEverything extends Quest
 		23328, // Nerva Bloodlust
 		23329 // Nerva Kaiser
 	};
+	
 	// Item
 	private static final int NARVAS_PRISON_KEY = 36665;
+	
 	// Misc
 	private static final int MIN_LEVEL = 99;
 	
@@ -110,6 +113,7 @@ public class Q10447_TimingIsEverything extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -143,6 +147,7 @@ public class Q10447_TimingIsEverything extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

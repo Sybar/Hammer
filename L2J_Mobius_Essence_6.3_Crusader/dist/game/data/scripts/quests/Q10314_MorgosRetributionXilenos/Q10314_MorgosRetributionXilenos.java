@@ -40,15 +40,18 @@ public class Q10314_MorgosRetributionXilenos extends Quest
 {
 	// NPC
 	private static final int ASHIN = 34322;
+	
 	// Monsters
 	private static final int XILENOS_WARRIOR = 22479;
 	private static final int XILENOS_SHOOTER = 22481;
 	private static final int XILENOS_SCOUT = 22485;
 	private static final int XILENOS_ELDER = 22483;
+	
 	// Items
 	private static final ItemHolder SAYHA_COOKIE = new ItemHolder(93274, 20);
 	private static final ItemHolder SAYHA_STORM = new ItemHolder(91712, 12);
 	private static final ItemHolder MAGIC_LAMP_CHARGING_POTION = new ItemHolder(91757, 2);
+	
 	// Misc
 	private static final int MIN_LEVEL = 90;
 	private static final String KILL_COUNT_VAR = "KillCount";
@@ -98,6 +101,7 @@ public class Q10314_MorgosRetributionXilenos extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -111,6 +115,7 @@ public class Q10314_MorgosRetributionXilenos extends Quest
 			htmltext = "noreq.htm";
 			return htmltext;
 		}
+		
 		if (qs.isCreated())
 		{
 			htmltext = "34322-01.htm";
@@ -130,6 +135,7 @@ public class Q10314_MorgosRetributionXilenos extends Quest
 		{
 			htmltext = getAlreadyCompletedMsg(player);
 		}
+		
 		return htmltext;
 	}
 	
@@ -174,6 +180,7 @@ public class Q10314_MorgosRetributionXilenos extends Quest
 				return holder;
 			}
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

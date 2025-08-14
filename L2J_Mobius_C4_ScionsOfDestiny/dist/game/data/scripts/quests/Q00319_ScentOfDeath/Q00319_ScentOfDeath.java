@@ -89,6 +89,7 @@ public class Q00319_ScentOfDeath extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

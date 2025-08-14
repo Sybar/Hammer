@@ -42,8 +42,10 @@ public class Q00588_HeadOnCrash extends Quest
 {
 	// Npc
 	private static final int BERNA = 33796;
+	
 	// Monsters
 	private static final int SPICULA_LARVA = 23304;
+	
 	// Misc
 	private static final String KILL_COUNT_VAR = "KillCount";
 	private static final int MIN_LEVEL = 93;
@@ -85,6 +87,7 @@ public class Q00588_HeadOnCrash extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -121,11 +124,13 @@ public class Q00588_HeadOnCrash extends Quest
 						htmltext = "33796-00.htm";
 						break;
 					}
+					
 					qs.setState(State.CREATED);
 					// fallthrough
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -160,6 +165,7 @@ public class Q00588_HeadOnCrash extends Quest
 			holder.add(new NpcLogListHolder(NpcStringId.DEFEATED_SPICULA_LARVA.getId(), true, qs.getInt(KILL_COUNT_VAR)));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

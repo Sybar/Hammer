@@ -36,8 +36,10 @@ public class Q10382_DayOfLiberation extends Quest
 	// NPCs
 	private static final int SIZRAK = 33669;
 	private static final int TAUTI = 29236;
+	
 	// Items
 	private static final int TAUTIS_BRACELET = 35293;
+	
 	// Misc
 	private static final int MIN_LEVEL = 97;
 	
@@ -60,6 +62,7 @@ public class Q10382_DayOfLiberation extends Quest
 		{
 			return getNoQuestMsg(player);
 		}
+		
 		switch (event)
 		{
 			case "sofa_sizraku_q10382_02.htm":
@@ -85,6 +88,7 @@ public class Q10382_DayOfLiberation extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -112,6 +116,7 @@ public class Q10382_DayOfLiberation extends Quest
 		{
 			htmltext = "sofa_sizraku_q10382_06.html";
 		}
+		
 		return htmltext;
 	}
 	

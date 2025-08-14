@@ -65,10 +65,13 @@ public class Q00385_YokeOfThePast extends Quest
 		31125,
 		31126
 	};
+	
 	// Item
 	private static final int ANCIENT_SCROLL = 5902;
+	
 	// Reward
 	private static final int BLANK_SCROLL = 5965;
+	
 	// Drop chances
 	private static final Map<Integer, Integer> CHANCES = new HashMap<>();
 	static

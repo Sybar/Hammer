@@ -76,6 +76,7 @@ public class ArenaManager extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	

@@ -44,7 +44,7 @@ public class AdminLogin implements IAdminCommandHandler
 	};
 	
 	@Override
-	public boolean useAdminCommand(String command, Player activeChar)
+	public boolean onCommand(String command, Player activeChar)
 	{
 		if (command.equals("admin_server_gm_only"))
 		{
@@ -85,6 +85,7 @@ public class AdminLogin implements IAdminCommandHandler
 		{
 			showMainPage(activeChar);
 		}
+		
 		return true;
 	}
 	
@@ -156,6 +157,7 @@ public class AdminLogin implements IAdminCommandHandler
 				}
 			}
 		}
+		
 		return nameType;
 	}
 	
@@ -172,7 +174,7 @@ public class AdminLogin implements IAdminCommandHandler
 	}
 	
 	@Override
-	public String[] getAdminCommandList()
+	public String[] getCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}

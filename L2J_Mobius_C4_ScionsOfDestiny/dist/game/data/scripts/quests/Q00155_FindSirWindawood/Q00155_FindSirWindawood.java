@@ -31,6 +31,7 @@ public class Q00155_FindSirWindawood extends Quest
 	// NPCs
 	private static final int ABELLOS = 30042;
 	private static final int WINDAWOOD = 30311;
+	
 	// Items
 	private static final int OFFICIAL_LETTER = 1019;
 	private static final int HASTE_POTION = 734;

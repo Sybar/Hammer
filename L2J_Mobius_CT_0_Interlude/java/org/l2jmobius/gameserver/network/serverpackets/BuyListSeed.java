@@ -66,6 +66,7 @@ public class BuyListSeed extends ServerPacket
 				buffer.writeShort(0); // unknown :)
 				buffer.writeInt(s.getPrice()); // price
 			}
+			
 			_list.clear();
 		}
 		else

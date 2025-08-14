@@ -67,6 +67,7 @@ public class SymbolSealData implements IXmlReader
 						{
 							_data.put(classId, new ArrayList<>());
 						}
+						
 						for (Node cd = d.getFirstChild(); cd != null; cd = cd.getNextSibling())
 						{
 							if ("symbol".equalsIgnoreCase(cd.getNodeName()))
@@ -102,6 +103,7 @@ public class SymbolSealData implements IXmlReader
 				return symbol.getSkill();
 			}
 		}
+		
 		return null;
 	}
 	

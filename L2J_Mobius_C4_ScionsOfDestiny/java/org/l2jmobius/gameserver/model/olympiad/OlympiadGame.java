@@ -201,6 +201,7 @@ class OlympiadGame
 		{
 			return;
 		}
+		
 		if (_playerOneDisconnected || _playerTwoDisconnected)
 		{
 			return;
@@ -257,6 +258,7 @@ class OlympiadGame
 					final Party party = player.getParty();
 					party.removePartyMember(player, null);
 				}
+				
 				// Remove Agathion
 				if (player.getAgathionId() > 0)
 				{
@@ -356,6 +358,7 @@ class OlympiadGame
 			LOGGER.log(Level.WARNING, "", e);
 			return false;
 		}
+		
 		return true;
 	}
 	
@@ -381,6 +384,7 @@ class OlympiadGame
 				{
 					player.setAgathionId(0);
 				}
+				
 				if (player.hasSummon())
 				{
 					final Summon summon = player.getSummon();
@@ -417,6 +421,7 @@ class OlympiadGame
 			{
 				continue;
 			}
+			
 			try
 			{
 				if (Olympiad.getInstance().playerInStadia(player))
@@ -446,6 +451,7 @@ class OlympiadGame
 						player.addSkill(skill, false);
 					}
 				}
+				
 				player.sendSkillList();
 				
 				if (Config.DUALBOX_CHECK_MAX_OLYMPIAD_PARTICIPANTS_PER_IP > 0)
@@ -570,6 +576,7 @@ class OlympiadGame
 					_logResults.log(record);
 				}
 			}
+			
 			if (_playerTwoDefaulted)
 			{
 				final int lostPoints = Math.min(playerTwoPoints / 3, Config.OLYMPIAD_MAX_POINTS);
@@ -733,6 +740,7 @@ class OlympiadGame
 					LOGGER.log(Level.WARNING, "Exception on validateWinnder(): " + e.getMessage(), e);
 				}
 			}
+			
 			playerOneStat.set(COMP_DONE, playerOnePlayed + 1);
 			playerTwoStat.set(COMP_DONE, playerTwoPlayed + 1);
 			return;
@@ -920,6 +928,7 @@ class OlympiadGame
 					break;
 				}
 			}
+			
 			try
 			{
 				Thread.sleep(step * 1000);
@@ -956,6 +965,7 @@ class OlympiadGame
 			_aborted = true;
 			return false;
 		}
+		
 		return true;
 	}
 	

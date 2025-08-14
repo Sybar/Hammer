@@ -77,6 +77,7 @@ public class EffectPoint extends Npc
 			_skillTask.cancel(false);
 			_skillTask = null;
 		}
+		
 		return super.deleteMe();
 	}
 	
@@ -118,6 +119,7 @@ public class EffectPoint extends Npc
 		{
 			return null;
 		}
+		
 		return _owner.getParty();
 	}
 	

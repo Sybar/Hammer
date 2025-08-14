@@ -33,7 +33,7 @@ public interface IChatHandler
 	 * @param text
 	 * @param shareLocation
 	 */
-	void handleChat(ChatType type, Player player, String target, String text, boolean shareLocation);
+	void onChat(ChatType type, Player player, String target, String text, boolean shareLocation);
 	
 	/**
 	 * Returns a list of all chat types registered to this handler

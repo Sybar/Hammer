@@ -21,6 +21,7 @@
 package org.l2jmobius.gameserver.model.events;
 
 import org.l2jmobius.gameserver.model.events.holders.IBaseEvent;
+import org.l2jmobius.gameserver.model.events.holders.OnDailyReset;
 import org.l2jmobius.gameserver.model.events.holders.OnDayNightChange;
 import org.l2jmobius.gameserver.model.events.holders.OnServerStart;
 import org.l2jmobius.gameserver.model.events.holders.actor.creature.OnCreatureAttack;
@@ -223,6 +224,7 @@ public enum EventType
 	ON_PLAYER_CALL_TO_CHANGE_CLASS(OnPlayerCallToChangeClass.class, void.class),
 	ON_PLAYER_CHAT(OnPlayerChat.class, void.class, ChatFilterReturn.class),
 	ON_PLAYER_ABILITY_POINTS_CHANGED(OnPlayerAbilityPointsChanged.class, void.class),
+	
 	// Clan events
 	ON_PLAYER_CLAN_CREATE(OnPlayerClanCreate.class, void.class),
 	ON_PLAYER_CLAN_DESTROY(OnPlayerClanDestroy.class, void.class),
@@ -230,6 +232,7 @@ public enum EventType
 	ON_PLAYER_CLAN_LEADER_CHANGE(OnPlayerClanLeaderChange.class, void.class),
 	ON_PLAYER_CLAN_LEFT(OnPlayerClanLeft.class, void.class),
 	ON_PLAYER_CLAN_LEVELUP(OnPlayerClanLvlUp.class, void.class),
+	
 	// Clan warehouse events
 	ON_PLAYER_CLAN_WH_ITEM_ADD(OnPlayerClanWHItemAdd.class, void.class),
 	ON_PLAYER_CLAN_WH_ITEM_DESTROY(OnPlayerClanWHItemDestroy.class, void.class),
@@ -239,9 +242,11 @@ public enum EventType
 	ON_PLAYER_DLG_ANSWER(OnPlayerDlgAnswer.class, void.class, TerminateReturn.class),
 	ON_PLAYER_FAME_CHANGED(OnPlayerFameChanged.class, void.class),
 	ON_PLAYER_FISHING(OnPlayerFishing.class, void.class),
+	
 	// Henna events
 	ON_PLAYER_HENNA_ADD(OnPlayerHennaAdd.class, void.class),
 	ON_PLAYER_HENNA_REMOVE(OnPlayerHennaRemove.class, void.class),
+	
 	// Inventory events
 	ON_PLAYER_ITEM_ADD(OnPlayerItemAdd.class, void.class),
 	ON_PLAYER_ITEM_DESTROY(OnPlayerItemDestroy.class, void.class),
@@ -250,12 +255,14 @@ public enum EventType
 	ON_PLAYER_ITEM_TRANSFER(OnPlayerItemTransfer.class, void.class),
 	ON_PLAYER_ITEM_EQUIP(OnPlayerItemEquip.class, void.class),
 	ON_PLAYER_ITEM_UNEQUIP(OnPlayerItemUnequip.class, void.class),
+	
 	// Mentoring events
 	ON_PLAYER_MENTEE_ADD(OnPlayerMenteeAdd.class, void.class),
 	ON_PLAYER_MENTEE_LEFT(OnPlayerMenteeLeft.class, void.class),
 	ON_PLAYER_MENTEE_REMOVE(OnPlayerMenteeRemove.class, void.class),
 	ON_PLAYER_MENTEE_STATUS(OnPlayerMenteeStatus.class, void.class),
 	ON_PLAYER_MENTOR_STATUS(OnPlayerMentorStatus.class, void.class),
+	
 	// Other player events
 	ON_PLAYER_REPUTATION_CHANGED(OnPlayerReputationChanged.class, void.class),
 	ON_PLAYER_LEVEL_CHANGED(OnPlayerLevelChanged.class, void.class),
@@ -296,7 +303,8 @@ public enum EventType
 	
 	// Server events
 	ON_SERVER_START(OnServerStart.class, void.class),
-	ON_DAY_NIGHT_CHANGE(OnDayNightChange.class, void.class);
+	ON_DAY_NIGHT_CHANGE(OnDayNightChange.class, void.class),
+	ON_DAILY_RESET(OnDailyReset.class, void.class);
 	
 	private final Class<? extends IBaseEvent> _eventClass;
 	private final Class<?>[] _returnClass;

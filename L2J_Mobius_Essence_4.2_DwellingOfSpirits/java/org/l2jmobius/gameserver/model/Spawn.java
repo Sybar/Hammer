@@ -102,6 +102,7 @@ public class Spawn extends Location
 	public Spawn(NpcTemplate template) throws ClassNotFoundException, NoSuchMethodException, ClassCastException
 	{
 		super(0, 0, -10000);
+		
 		// Set the _template of the Spawn
 		_template = template;
 		
@@ -279,6 +280,7 @@ public class Spawn extends Location
 		{
 			doSpawn();
 		}
+		
 		_doRespawn = _respawnMinDelay > 0;
 		
 		return _currentCount;
@@ -362,6 +364,7 @@ public class Spawn extends Location
 		{
 			LOGGER.log(Level.WARNING, "Error while spawning " + _template.getId(), e);
 		}
+		
 		return null;
 	}
 	
@@ -457,6 +460,7 @@ public class Spawn extends Location
 		{
 			npc.setName(npc.getTemplate().getName());
 		}
+		
 		if (npc.getTemplate().isUsingServerSideTitle())
 		{
 			npc.setTitle(npc.getTemplate().getTitle());
@@ -510,8 +514,8 @@ public class Spawn extends Location
 			final int minDelay = delay - randomInterval;
 			final int maxDelay = delay + randomInterval;
 			
-			_respawnMinDelay = Math.max(10, minDelay) * 1000;
-			_respawnMaxDelay = Math.max(10, maxDelay) * 1000;
+			_respawnMinDelay = Math.max(1, minDelay) * 1000;
+			_respawnMaxDelay = Math.max(1, maxDelay) * 1000;
 		}
 		else
 		{
@@ -546,6 +550,7 @@ public class Spawn extends Location
 		{
 			return 0;
 		}
+		
 		return _spawnTemplate.getChaseRange();
 	}
 	

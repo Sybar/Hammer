@@ -32,7 +32,7 @@ import org.l2jmobius.gameserver.model.variables.PlayerVariables;
 public class ClientSettings
 {
 	private final Player _player;
-	private boolean _announceEnabled;
+	private boolean _announceDisabled;
 	private boolean _partyRequestRestrictedFromOthers;
 	private boolean _partyRequestRestrictedFromClan;
 	private boolean _partyRequestRestrictedFromFriends;
@@ -46,7 +46,7 @@ public class ClientSettings
 		
 		final String variable = _player.getVariables().getString(PlayerVariables.CLIENT_SETTINGS, "");
 		final StatSet settings = variable.isEmpty() ? new StatSet() : new StatSet(Arrays.stream(variable.split(",")).map(entry -> entry.split("=")).collect(Collectors.toMap(entry -> entry[0].replace("{", "").replace(" ", ""), entry -> entry[1].replace("}", "").replace(" ", ""))));
-		_announceEnabled = settings.getBoolean("ANNOUNCE_ENABLED", true);
+		_announceDisabled = settings.getBoolean("ANNOUNCE_DISABLED", false);
 		_partyRequestRestrictedFromOthers = settings.getBoolean("PARTY_REQUEST_RESTRICTED_FROM_OTHERS", false);
 		_partyRequestRestrictedFromClan = settings.getBoolean("PARTY_REQUEST_RESTRICTED_FROM_CLAN", false);
 		_partyRequestRestrictedFromFriends = settings.getBoolean("PARTY_REQUEST_RESTRICTED_FROM_FRIENDS", false);
@@ -58,7 +58,7 @@ public class ClientSettings
 	public void storeSettings()
 	{
 		final StatSet settings = new StatSet();
-		settings.set("ANNOUNCE_ENABLED", _announceEnabled);
+		settings.set("ANNOUNCE_DISABLED", _announceDisabled);
 		settings.set("PARTY_REQUEST_RESTRICTED_FROM_OTHERS", _partyRequestRestrictedFromOthers);
 		settings.set("PARTY_REQUEST_RESTRICTED_FROM_CLAN", _partyRequestRestrictedFromClan);
 		settings.set("PARTY_REQUEST_RESTRICTED_FROM_FRIENDS", _partyRequestRestrictedFromFriends);
@@ -68,14 +68,14 @@ public class ClientSettings
 		_player.getVariables().set(PlayerVariables.CLIENT_SETTINGS, settings.getSet());
 	}
 	
-	public boolean isAnnounceEnabled()
+	public boolean isAnnounceDisabled()
 	{
-		return _announceEnabled;
+		return _announceDisabled;
 	}
 	
 	public void setAnnounceEnabled(boolean enabled)
 	{
-		_announceEnabled = enabled;
+		_announceDisabled = enabled;
 		storeSettings();
 	}
 	

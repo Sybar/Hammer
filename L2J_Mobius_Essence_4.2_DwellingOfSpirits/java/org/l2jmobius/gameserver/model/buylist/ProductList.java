@@ -62,6 +62,7 @@ public class ProductList
 		{
 			_allowedNpcs = new HashSet<>();
 		}
+		
 		_allowedNpcs.add(npcId);
 	}
 	

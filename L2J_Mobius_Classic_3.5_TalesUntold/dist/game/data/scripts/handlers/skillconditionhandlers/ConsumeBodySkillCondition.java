@@ -48,6 +48,7 @@ public class ConsumeBodySkillCondition implements ISkillCondition
 		{
 			caster.sendPacket(SystemMessageId.INVALID_TARGET);
 		}
+		
 		return false;
 	}
 }

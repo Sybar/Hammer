@@ -79,6 +79,7 @@ public class ExPledgeMercenaryMemberJoin extends ClientPacket
 					player.sendPacket(SystemMessageId.YOU_CANNOT_BE_A_MERCENARY_FOR_YOUR_OWN_CLAN);
 					return;
 				}
+				
 				if ((siege != null) && (siege.checkIsAttacker(clan) || siege.checkIsDefender(clan)))
 				{
 					player.sendPacket(SystemMessageId.MEMBERS_OF_THE_CLANS_THAT_ARE_REGISTERED_AS_ATTACKERS_DEFENDERS_OR_OWN_THE_CASTLE_CANNOT_BE_MERCENARIES);

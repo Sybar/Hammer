@@ -51,10 +51,13 @@ public class Q11041_CheckOutTheSituation extends Quest
 	private static final int RECLOUS = 30648;
 	private static final int HOUND_TUREK = 24403;
 	private static final int ORC_INFANTRYMAN_TUREK = 24404;
+	
 	// Items
 	private static final ItemHolder SOE_RECLOUS = new ItemHolder(80682, 1);
+	
 	// Location
 	private static final Location TRAINING_GROUNDS_TELEPORT = new Location(-88074, 112194, -3144);
+	
 	// Misc
 	private static final String KILL_COUNT_VAR = "KillCount";
 	private static final int MIN_LEVEL = 76;
@@ -121,6 +124,7 @@ public class Q11041_CheckOutTheSituation extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -168,6 +172,7 @@ public class Q11041_CheckOutTheSituation extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -204,6 +209,7 @@ public class Q11041_CheckOutTheSituation extends Quest
 			holder.add(new NpcLogListHolder(NpcStringId.DEFEAT_TUREK_WAR_HOUNDS_AND_FOOTMEN_2.getId(), true, qs.getInt(KILL_COUNT_VAR)));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

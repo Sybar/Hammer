@@ -32,6 +32,7 @@ public class Q00161_FruitOfTheMotherTree extends Quest
 	// NPCs
 	private static final int ANDELLIA = 30362;
 	private static final int THALIA = 30371;
+	
 	// Items
 	private static final int ANDELLIA_LETTER = 1036;
 	private static final int MOTHERTREE_FRUIT = 1037;

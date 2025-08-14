@@ -38,6 +38,7 @@ public class Q00790_ObtainingFerinsTrust extends Quest
 {
 	// NPCs
 	private static final int CYPHONA = 34055;
+	
 	// Monsters
 	private static final int[] MONSTERS =
 	{
@@ -50,8 +51,10 @@ public class Q00790_ObtainingFerinsTrust extends Quest
 		23557, // Fury Kerberos Leger
 		23558 // Fury Kerberos Nero
 	};
+	
 	// Misc
 	private static final int MIN_LEVEL = 100;
+	
 	// Item's
 	private static final int MARK_OF_TRUST_LOW_GRADE = 45840;
 	private static final int MARK_OF_TRUST_MID_GRADE = 45843;
@@ -155,6 +158,7 @@ public class Q00790_ObtainingFerinsTrust extends Quest
 					addExpAndSp(player, 29662200000L, 71189100);
 					giveItems(player, FERINS_REWARD_BOX, 1);
 				}
+				
 				giveItems(player, MARK_OF_TRUST_MID_GRADE, 1);
 				giveItems(player, BSOE, 1);
 				giveItems(player, ELEXIR_OF_LIFE_R, 5);
@@ -208,6 +212,7 @@ public class Q00790_ObtainingFerinsTrust extends Quest
 					addExpAndSp(player, 29662200000L, 71189100);
 					giveItems(player, FERINS_REWARD_BOX, 1);
 				}
+				
 				giveItems(player, MARK_OF_TRUST_HIGH_GRADE, 1);
 				giveItems(player, BSOE, 1);
 				giveItems(player, ELEXIR_OF_LIFE_R, 5);
@@ -264,11 +269,13 @@ public class Q00790_ObtainingFerinsTrust extends Quest
 						giveItems(player, SUPERIOR_GIANTS_CODEX, 1);
 					}
 				}
+				
 				qs.exitQuest(QuestType.REPEATABLE, true);
 				htmltext = event;
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -334,6 +341,7 @@ public class Q00790_ObtainingFerinsTrust extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

@@ -734,7 +734,6 @@
 		</dropLists>
 	</npc>
 	<npc id="20212" level="34" type="Monster" name="Bloody Axe Turmak" title="Ol Mahum Lord">
-		<!-- Todo: Confirmed CT2.5 -->
 		<parameters>
 			<param name="MoveAroundSocial" value="90" />
 			<param name="MoveAroundSocial1" value="90" />
@@ -751,9 +750,9 @@
 		<equipment rhand="69" lhand="19" /> <!-- rhand: Bastard Sword lhand: Small Shield -->
 		<acquire exp="3877" sp="116" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="1036" hpRegen="9" mp="387" mpRegen="1.8" />
-			<attack physical="133.328822" magical="82.76936" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="120.8623636" magical="97.28601" shield="66" shieldRate="20" />
+			<vitals hp="777.385831121245" hpRegen="4.5" mp="387.72" mpRegen="1.8" />
+			<attack physical="121.20802" magical="82.76936" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="132.9486" magical="97.28601" shield="66" shieldRate="20" />
 			<speed>
 				<walk ground="50" />
 				<run ground="110" />
@@ -773,10 +772,10 @@
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="4416" level="6" /> <!-- Humanoids -->
 		</skillList>
-		<shots shotChance="30" spiritChance="30" />
+		<shots shotChance="10" spiritChance="5" />
 		<exCrtEffect>false</exCrtEffect>
 		<sNpcPropHpRate>2</sNpcPropHpRate>
-		<ai aggroRange="500" clanHelpRange="300">
+		<ai aggroRange="450" clanHelpRange="300">
 			<clanList>
 				<clan>OL_MAHUM</clan>
 			</clanList>
@@ -3761,16 +3760,11 @@
 		</collision>
 	</npc>
 	<npc id="20259" level="35" type="Monster" name="Batur Orc Prefect">
-		<!-- Todo: Confirmed CT2.5 -->
 		<parameters>
 			<param name="MoveAroundSocial" value="60" />
 			<param name="MoveAroundSocial1" value="60" />
 			<param name="MoveAroundSocial2" value="60" />
 			<param name="SetHateOccupationRatio" value="10" />
-			<param name="SoulShot" value="100" />
-			<param name="SoulShotRate" value="10" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="5" />
 			<param name="LongRangeGuardRate" value="5" />
 			<skill name="PhysicalSpecial" id="4032" level="3" /> <!-- NPC Strike -->
 		</parameters>
@@ -3779,14 +3773,14 @@
 		<equipment rhand="79" /> <!-- rhand: Sword of Damascus -->
 		<acquire exp="2162" sp="128" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="1086" hpRegen="4.5" mp="402" mpRegen="1.8" />
+			<vitals hp="815.124490768837" hpRegen="4.5" mp="402.6" mpRegen="1.8" />
 			<speed>
 				<walk ground="80" />
 				<run ground="140" />
 			</speed>
 			<hitTime>280</hitTime>
-			<attack physical="142.261856" magical="88.31491" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="124.2995273" magical="100.0527" />
+			<attack physical="129.32896" magical="88.31491" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="136.72948" magical="100.0527" />
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skillList>
@@ -3801,9 +3795,8 @@
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="4416" level="6" /> <!-- Humanoids -->
 		</skillList>
-		<shots shotChance="30" spiritChance="30" />
 		<exCrtEffect>false</exCrtEffect>
-		<ai aggroRange="1000" clanHelpRange="300">
+		<ai aggroRange="450" clanHelpRange="300">
 			<clanList>
 				<clan>ORC</clan>
 			</clanList>

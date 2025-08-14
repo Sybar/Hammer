@@ -43,6 +43,7 @@ public class Q10337_SakumsImpact extends Quest
 	private static final int RUIN_IMP_ELDER = 20507;
 	private static final int RUIN_BAT = 23023;
 	private static final int SCAVENGER_BAT = 20411;
+	
 	// Misc
 	private static final int MIN_LEVEL = 28;
 	private static final int MAX_LEVEL = 40;
@@ -104,6 +105,7 @@ public class Q10337_SakumsImpact extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -219,6 +221,7 @@ public class Q10337_SakumsImpact extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -287,6 +290,7 @@ public class Q10337_SakumsImpact extends Quest
 			npcLogList.add(new NpcLogListHolder(27458, false, qs.getInt("killed_" + SCAVENGER_BAT))); // NOTE: Somehow quest log react on bad ID, maybe client bug
 			return npcLogList;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

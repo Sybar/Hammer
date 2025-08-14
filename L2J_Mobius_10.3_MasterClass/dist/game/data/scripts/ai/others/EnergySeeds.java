@@ -16,6 +16,7 @@
  */
 package ai.others;
 
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -38,7 +39,6 @@ import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.model.zone.ZoneType;
 import org.l2jmobius.gameserver.network.SystemMessageId;
 import org.l2jmobius.gameserver.network.serverpackets.ActionFailed;
-import org.l2jmobius.gameserver.util.ArrayUtil;
 
 import ai.AbstractNpcAI;
 
@@ -61,6 +61,7 @@ public class EnergySeeds extends AbstractNpcAI
 		{22754, 22755, 22756 },
 		{22760, 22761, 22762 },
 	};
+	
 	// Doors
 	private static int[] SEED_OF_DESTRUCTION_DOORS =
 	{
@@ -71,9 +72,11 @@ public class EnergySeeds extends AbstractNpcAI
 		12240031
 	};
 	// @formatter:on
+	
 	// Zone
 	private static final int SOD_ZONE = 60009;
 	private static final Location SOD_EXIT_POINT = new Location(-248717, 250260, 4337);
+	
 	// Misc
 	private static final int RATE = 1;
 	private static final int RESPAWN = 480000;
@@ -119,13 +122,14 @@ public class EnergySeeds extends AbstractNpcAI
 				return true;
 			}
 		}
+		
 		return true;
 	}
 	
 	@Override
-	public void onSkillSee(Npc npc, Player caster, Skill skill, WorldObject[] targets, boolean isSummon)
+	public void onSkillSee(Npc npc, Player caster, Skill skill, Collection<WorldObject> targets, boolean isSummon)
 	{
-		if (!ArrayUtil.contains(targets, npc) || (skill.getId() != 5780))
+		if (!targets.contains(npc) || (skill.getId() != 5780))
 		{
 			return;
 		}
@@ -189,6 +193,7 @@ public class EnergySeeds extends AbstractNpcAI
 					caster.sendPacket(SystemMessageId.YOU_HAVE_GATHERED_SOME_ORE);
 					caster.addItem(ItemProcessType.REWARD, itemId, getRandom(1, RATE), null, true);
 				}
+				
 				seedCollectEvent(caster, npc, spawn._seedId);
 			}
 		}
@@ -207,6 +212,7 @@ public class EnergySeeds extends AbstractNpcAI
 					doorInstance.openMe();
 				}
 			}
+			
 			startAI(GraciaSeeds.DESTRUCTION);
 		}
 		else if (event.equalsIgnoreCase("StopSoDAi"))
@@ -219,6 +225,7 @@ public class EnergySeeds extends AbstractNpcAI
 					doorInstance.closeMe();
 				}
 			}
+			
 			for (Player ch : ZoneManager.getInstance().getZoneById(SOD_ZONE).getPlayersInside())
 			{
 				if (ch != null)
@@ -226,6 +233,7 @@ public class EnergySeeds extends AbstractNpcAI
 					ch.teleToLocation(SOD_EXIT_POINT);
 				}
 			}
+			
 			stopAI(GraciaSeeds.DESTRUCTION);
 		}
 		else if (event.equalsIgnoreCase("DeSpawnTask"))
@@ -239,6 +247,7 @@ public class EnergySeeds extends AbstractNpcAI
 				npc.deleteMe();
 			}
 		}
+		
 		return null;
 	}
 	
@@ -249,6 +258,7 @@ public class EnergySeeds extends AbstractNpcAI
 		{
 			player.teleToLocation(SOD_EXIT_POINT);
 		}
+		
 		player.sendPacket(ActionFailed.STATIC_PACKET);
 		return null;
 	}
@@ -368,10 +378,11 @@ public class EnergySeeds extends AbstractNpcAI
 	{
 		// Seed of Destruction
 		// Temporary Teleporters
-		//@formatter:off
+		// @formatter:off
 		_spawns.put(1, new ESSpawn(1, GraciaSeeds.DESTRUCTION, new Location(-245790,220320,-12104), new int[]{TEMPORARY_TELEPORTER}));
 		_spawns.put(2, new ESSpawn(2, GraciaSeeds.DESTRUCTION, new Location(-249770,207300,-11952), new int[]{TEMPORARY_TELEPORTER}));
-		//Energy Seeds
+		
+		// Energy Seeds
 		_spawns.put(3, new ESSpawn(3, GraciaSeeds.DESTRUCTION, new Location(-248360,219272,-12448), new int[]{18678,18679,18680}));
 		_spawns.put(4, new ESSpawn(4, GraciaSeeds.DESTRUCTION, new Location(-249448,219256,-12448), new int[]{18678,18679,18680}));
 		_spawns.put(5, new ESSpawn(5, GraciaSeeds.DESTRUCTION, new Location(-249432,220872,-12448), new int[]{18678,18679,18680}));
@@ -699,7 +710,7 @@ public class EnergySeeds extends AbstractNpcAI
 		_spawns.put(299, new ESSpawn(299, GraciaSeeds.ANNIHILATION_COKRAKON, new Location(-219079,175021,-11336), new int[]{ 18678, 18679, 18680, 18681, 18682, 18683 }));
 		_spawns.put(300, new ESSpawn(300, GraciaSeeds.ANNIHILATION_COKRAKON, new Location(-218812,174229,-11344), new int[]{ 18678, 18679, 18680, 18681, 18682, 18683 }));
 		_spawns.put(301, new ESSpawn(301, GraciaSeeds.ANNIHILATION_COKRAKON, new Location(-218723,174669,-11336), new int[]{ 18678, 18679, 18680, 18681, 18682, 18683 }));
-		//@formatter:on
+		// @formatter:on
 	}
 	
 	private class ESSpawn

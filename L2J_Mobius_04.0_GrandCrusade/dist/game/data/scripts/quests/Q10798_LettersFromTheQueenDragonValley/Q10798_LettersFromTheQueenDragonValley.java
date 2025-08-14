@@ -39,12 +39,15 @@ public class Q10798_LettersFromTheQueenDragonValley extends LetterQuest
 	// NPCs
 	private static final int MAXIMILIAN = 30120;
 	private static final int NAMO = 33973;
+	
 	// Items
 	private static final int SOE_DRAGON_VALLEY = 39587;
 	private static final int SOE_TOWN_OF_GIRAN = 39586;
+	
 	// Misc
 	private static final int MIN_LEVEL = 81;
 	private static final int MAX_LEVEL = 84;
+	
 	// Teleport
 	private static final Location TELEPORT_LOC = new Location(86674, 148630, -3401);
 	
@@ -100,6 +103,7 @@ public class Q10798_LettersFromTheQueenDragonValley extends LetterQuest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -112,6 +116,7 @@ public class Q10798_LettersFromTheQueenDragonValley extends LetterQuest
 		{
 			return htmltext;
 		}
+		
 		if (qs.isStarted())
 		{
 			if (npc.getId() == MAXIMILIAN)
@@ -123,6 +128,7 @@ public class Q10798_LettersFromTheQueenDragonValley extends LetterQuest
 				htmltext = "33973-01.html";
 			}
 		}
+		
 		return htmltext;
 	}
 }

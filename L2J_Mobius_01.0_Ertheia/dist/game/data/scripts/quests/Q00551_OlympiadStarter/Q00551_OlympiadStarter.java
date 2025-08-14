@@ -57,6 +57,7 @@ public class Q00551_OlympiadStarter extends Quest
 		{
 			return getNoQuestMsg(player);
 		}
+		
 		String htmltext = event;
 		if (event.equalsIgnoreCase("31688-03.html"))
 		{
@@ -72,6 +73,7 @@ public class Q00551_OlympiadStarter extends Quest
 				{
 					giveItems(player, MEDAL_OF_GLORY, 3);
 				}
+				
 				qs.exitQuest(QuestType.DAILY, true);
 			}
 			else
@@ -79,6 +81,7 @@ public class Q00551_OlympiadStarter extends Quest
 				htmltext = getNoQuestMsg(player);
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -89,11 +92,13 @@ public class Q00551_OlympiadStarter extends Quest
 		{
 			return;
 		}
+		
 		final QuestState qs = getQuestState(loser, false);
 		if ((qs == null) || !qs.isStarted())
 		{
 			return;
 		}
+		
 		final int matches = qs.getInt("matches") + 1;
 		switch (matches)
 		{
@@ -122,6 +127,7 @@ public class Q00551_OlympiadStarter extends Quest
 				break;
 			}
 		}
+		
 		qs.set("matches", String.valueOf(matches));
 	}
 	
@@ -135,6 +141,7 @@ public class Q00551_OlympiadStarter extends Quest
 			{
 				return;
 			}
+			
 			final QuestState qs = getQuestState(player, false);
 			if ((qs != null) && qs.isStarted())
 			{
@@ -166,6 +173,7 @@ public class Q00551_OlympiadStarter extends Quest
 						break;
 					}
 				}
+				
 				qs.set("matches", String.valueOf(matches));
 			}
 		}
@@ -174,16 +182,19 @@ public class Q00551_OlympiadStarter extends Quest
 		{
 			return;
 		}
+		
 		final Player player = looser.getPlayer();
 		if (player == null)
 		{
 			return;
 		}
+		
 		final QuestState qs = getQuestState(player, false);
 		if ((qs == null) || !qs.isStarted())
 		{
 			return;
 		}
+		
 		final int matches = qs.getInt("matches") + 1;
 		switch (matches)
 		{
@@ -212,6 +223,7 @@ public class Q00551_OlympiadStarter extends Quest
 				break;
 			}
 		}
+		
 		qs.set("matches", String.valueOf(matches));
 	}
 	
@@ -255,6 +267,7 @@ public class Q00551_OlympiadStarter extends Quest
 				htmltext = "31688-s" + count + ".html";
 			}
 		}
+		
 		return htmltext;
 	}
 }

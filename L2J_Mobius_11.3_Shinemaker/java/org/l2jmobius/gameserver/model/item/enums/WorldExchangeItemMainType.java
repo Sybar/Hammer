@@ -54,6 +54,7 @@ public enum WorldExchangeItemMainType
 				return type;
 			}
 		}
+		
 		return null;
 	}
 }

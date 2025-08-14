@@ -93,6 +93,7 @@ public class Orfen extends AbstractNpcAI
 		{
 			// load the unlock date and time for Orfen from DB
 			final long temp = info.getLong("respawn_time") - System.currentTimeMillis();
+			
 			// if Orfen is locked until a certain time, mark it so and start the unlock timer
 			// the unlock time has not yet expired.
 			if (temp > 0)
@@ -129,6 +130,7 @@ public class Orfen extends AbstractNpcAI
 	{
 		GrandBossManager.getInstance().addBoss(npc);
 		npc.broadcastPacket(new PlaySound(1, "BS01_A", 1, npc.getObjectId(), npc.getX(), npc.getY(), npc.getZ()));
+		
 		// Spawn minions
 		final int x = npc.getX();
 		final int y = npc.getY();
@@ -181,6 +183,7 @@ public class Orfen extends AbstractNpcAI
 				{
 					mob.decayMe();
 				}
+				
 				_minions.clear();
 				break;
 			}
@@ -205,6 +208,7 @@ public class Orfen extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	
@@ -230,6 +234,7 @@ public class Orfen extends AbstractNpcAI
 			{
 				chance = 9;
 			}
+			
 			if ((callerId != ARIMUS) && (caller.getCurrentHp() < (caller.getMaxHp() / 2.0)) && (getRandom(10) < chance))
 			{
 				npc.getAI().setIntention(Intention.IDLE, null, null);
@@ -322,6 +327,7 @@ public class Orfen extends AbstractNpcAI
 		{
 			return false;
 		}
+		
 		return true;
 	}
 	

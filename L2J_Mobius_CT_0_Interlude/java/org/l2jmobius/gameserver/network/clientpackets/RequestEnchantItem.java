@@ -155,6 +155,7 @@ public class RequestEnchantItem extends ClientPacket
 					
 					Skill enchant4Skill = null;
 					final ItemTemplate it = item.getTemplate();
+					
 					// Increase enchant level only if scroll's base template has chance, some armors can success over +20 but they shouldn't have increased.
 					if (scrollTemplate.getChance(player, item) > 0)
 					{
@@ -187,7 +188,7 @@ public class RequestEnchantItem extends ClientPacket
 						final Skill skill = CommonSkill.FIREWORK.getSkill();
 						if (skill != null)
 						{
-							player.broadcastPacket(new MagicSkillUse(player, player, skill.getId(), skill.getLevel(), skill.getHitTime(), skill.getReuseDelay()));
+							player.broadcastSkillPacket(new MagicSkillUse(player, player, skill.getId(), skill.getLevel(), skill.getHitTime(), skill.getReuseDelay()), player);
 						}
 					}
 					
@@ -201,6 +202,7 @@ public class RequestEnchantItem extends ClientPacket
 							player.sendSkillList();
 						}
 					}
+					
 					player.sendItemList(false);
 					break;
 				}
@@ -247,6 +249,7 @@ public class RequestEnchantItem extends ClientPacket
 							{
 								iu.addModifiedItem(itm);
 							}
+							
 							player.sendInventoryUpdate(iu);
 							player.broadcastUserInfo();
 						}
@@ -344,10 +347,12 @@ public class RequestEnchantItem extends ClientPacket
 							}
 						}
 					}
+					
 					player.sendItemList(true);
 					break;
 				}
 			}
+			
 			player.broadcastUserInfo();
 			player.setActiveEnchantItemId(Player.ID_NONE);
 		}

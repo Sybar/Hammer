@@ -37,6 +37,7 @@ public class ClanFlag extends AbstractNpcAI
 {
 	// NPC
 	private static final int CLAN_FLAG = 19269;
+	
 	// Skills
 	private static final SkillHolder BUFF = new SkillHolder(15095, 1);
 	private static final SkillHolder DEBUFF = new SkillHolder(15096, 1);
@@ -87,6 +88,7 @@ public class ClanFlag extends AbstractNpcAI
 						return;
 					}
 				}
+				
 				getTimers().addTimer("END_OF_LIFE", 100, npc, null);
 				break;
 			}

@@ -61,9 +61,11 @@ public class Raina extends AbstractNpcAI
 {
 	// NPC
 	private static final int RAINA = 33491;
+	
 	// Items
 	private static final int SUBCLASS_CERTIFICATE = 30433;
 	private static final int CHAOS_POMANDER = 37375;
+	
 	// Misc
 	private static final Set<PlayerClass> mainSubclassSet;
 	private static final Set<PlayerClass> neverSubclassed = EnumSet.of(PlayerClass.OVERLORD, PlayerClass.WARSMITH);
@@ -206,6 +208,7 @@ public class Raina extends AbstractNpcAI
 							sb.append("<fstring p1=\"0\" p2=\"" + classId + "\">" + npcStringId + "</fstring>");
 						}
 					}
+					
 					html.replace("%subclassList%", sb.toString());
 					player.sendPacket(html);
 				}
@@ -242,6 +245,7 @@ public class Raina extends AbstractNpcAI
 							sb.append("<fstring p1=\"2\" p2=\"" + subClass.getClassIndex() + "\">" + npcStringId + "</fstring>");
 						}
 					}
+					
 					html.replace("%removeList%", sb.toString());
 					player.sendPacket(html);
 				}
@@ -281,6 +285,7 @@ public class Raina extends AbstractNpcAI
 				{
 					htmltext = "notImplemented.html";
 				}
+				
 				// TODO: Maybe html is different when you have 85level but you haven't completed quest
 				if ((player.getRace() != Race.ERTHEIA) || (player.getLevel() < 105) || !player.isInCategory(CategoryType.SIXTH_CLASS_GROUP) || player.hasDualClass() || !haveDoneQuest(player, true))
 				{
@@ -322,6 +327,7 @@ public class Raina extends AbstractNpcAI
 						sb.append("<button value=\"" + ClassListData.getInstance().getClass(dualClasses.getId()).getClassName() + "\" action=\"bypass -h menu_select?ask=6&reply=" + dualClasses.getId() + "\" width=\"200\" height=\"31\" back=\"L2UI_CT1.HtmlWnd_DF_Awake_Down\" fore=\"L2UI_CT1.HtmlWnd_DF_Awake\"><br>");
 					}
 				}
+				
 				html.replace("%dualclassList%", sb.toString());
 				player.sendPacket(html);
 				break;
@@ -405,6 +411,7 @@ public class Raina extends AbstractNpcAI
 						sb.append("<button value=\"" + ClassListData.getInstance().getClass(dualClasses.getId()).getClassName() + "\" action=\"bypass -h menu_select?ask=5&reply=" + dualClasses.getId() + "\" width=\"200\" height=\"31\" back=\"L2UI_CT1.HtmlWnd_DF_Awake_Down\" fore=\"L2UI_CT1.HtmlWnd_DF_Awake\"><br>");
 					}
 				}
+				
 				html.replace("%dualclassList%", sb.toString());
 				player.sendPacket(html);
 				break;
@@ -445,6 +452,7 @@ public class Raina extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -516,6 +524,7 @@ public class Raina extends AbstractNpcAI
 						sb.append("<fstring p1=\"3\" p2=\"" + classId + "\">" + npcStringId + "</fstring>");
 					}
 				}
+				
 				npc.getVariables().set("SUBCLASS_INDEX_" + player.getObjectId(), subclassIndex);
 				html.replace("%subclassList%", sb.toString());
 				player.sendPacket(html);
@@ -621,6 +630,7 @@ public class Raina extends AbstractNpcAI
 				// {
 				// break;
 				// }
+				
 				if (!Config.ALT_GAME_SUBCLASS_WITHOUT_QUESTS)
 				{
 					break;
@@ -682,6 +692,7 @@ public class Raina extends AbstractNpcAI
 				}
 			}
 		}
+		
 		return availSubs;
 	}
 	
@@ -732,6 +743,7 @@ public class Raina extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return found;
 	}
 	
@@ -745,6 +757,7 @@ public class Raina extends AbstractNpcAI
 				leveled = false;
 			}
 		}
+		
 		return leveled;
 	}
 	
@@ -758,6 +771,7 @@ public class Raina extends AbstractNpcAI
 				dualClasses.add(ClassId);
 			}
 		}
+		
 		return dualClasses;
 	}
 	
@@ -773,6 +787,7 @@ public class Raina extends AbstractNpcAI
 				tempList.add(temp);
 			}
 		}
+		
 		return tempList;
 	}
 	
@@ -829,6 +844,7 @@ public class Raina extends AbstractNpcAI
 				}
 			}
 		}
+		
 		return subclasses;
 	}
 	
@@ -839,6 +855,7 @@ public class Raina extends AbstractNpcAI
 		{
 			return "addDualClassWithoutQuest.html";
 		}
+		
 		return "33491.html";
 	}
 	
@@ -851,6 +868,7 @@ public class Raina extends AbstractNpcAI
 			LOGGER.info("Cannot find HTML file for " + Raina.class.getSimpleName() + " AI: " + fileName);
 			return null;
 		}
+		
 		html.setHtml(text);
 		return html;
 	}

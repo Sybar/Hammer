@@ -222,6 +222,7 @@ public class RequestEnchantItem extends ClientPacket
 						{
 							item.setEnchantLevel(Math.min(item.getEnchantLevel() + Rnd.get(supportTemplate.getRandomEnchantMin(), supportTemplate.getRandomEnchantMax()), supportTemplate.getMaxEnchantLevel()));
 						}
+						
 						if (supportTemplate == null)
 						{
 							item.setEnchantLevel(Math.min(item.getEnchantLevel() + Rnd.get(scrollTemplate.getRandomEnchantMin(), scrollTemplate.getRandomEnchantMax()), scrollTemplate.getMaxEnchantLevel()));
@@ -237,6 +238,7 @@ public class RequestEnchantItem extends ClientPacket
 									enchantValue = 2;
 								}
 							}
+							
 							item.setEnchantLevel(item.getEnchantLevel() + enchantValue);
 						}
 						
@@ -257,6 +259,7 @@ public class RequestEnchantItem extends ClientPacket
 						{
 							iu.addRemovedItem(scroll);
 						}
+						
 						if (support != null)
 						{
 							if (support.getCount() > 0)
@@ -269,6 +272,7 @@ public class RequestEnchantItem extends ClientPacket
 							}
 						}
 					}
+					
 					player.sendPacket(new EnchantResult(EnchantResult.SUCCESS, new ItemHolder(item.getId(), 1), null, item.getEnchantLevel()));
 					if (Config.LOG_ITEM_ENCHANTS)
 					{
@@ -308,7 +312,7 @@ public class RequestEnchantItem extends ClientPacket
 						final Skill skill = CommonSkill.FIREWORK.getSkill();
 						if (skill != null)
 						{
-							player.broadcastPacket(new MagicSkillUse(player, player, skill.getId(), skill.getLevel(), skill.getHitTime(), skill.getReuseDelay()));
+							player.broadcastSkillPacket(new MagicSkillUse(player, player, skill.getId(), skill.getLevel(), skill.getHitTime(), skill.getReuseDelay()), player);
 						}
 					}
 					
@@ -326,6 +330,7 @@ public class RequestEnchantItem extends ClientPacket
 								}
 							});
 						}
+						
 						player.broadcastUserInfo(); // Update user info.
 					}
 					break;
@@ -394,6 +399,7 @@ public class RequestEnchantItem extends ClientPacket
 							{
 								iu.addModifiedItem(itm);
 							}
+							
 							player.sendInventoryUpdate(iu);
 							player.broadcastUserInfo();
 						}
@@ -433,6 +439,7 @@ public class RequestEnchantItem extends ClientPacket
 								player.sendPacket(SystemMessageId.THE_BLESSED_ENCHANT_FAILED_THE_ENCHANT_VALUE_OF_THE_ITEM_BECAME_0);
 								item.setEnchantLevel(0);
 							}
+							
 							player.sendPacket(new EnchantResult(EnchantResult.FAIL, new ItemHolder(item.getId(), 1), null, item.getEnchantLevel()));
 							item.updateDatabase();
 							if (Config.LOG_ITEM_ENCHANTS)
@@ -540,6 +547,7 @@ public class RequestEnchantItem extends ClientPacket
 									player.sendPacket(new EnchantResult(EnchantResult.FAIL, new ItemHolder(crystalId, count), null, 0));
 								}
 							}
+							
 							player.sendPacket(new ExEnchantChallengePointInfo(player));
 							if (Config.LOG_ITEM_ENCHANTS)
 							{

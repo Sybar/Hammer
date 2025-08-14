@@ -129,7 +129,7 @@ public class ClassChange extends AbstractEffect
 					final Skill knownSkill = player.getKnownSkill(shortcut.getId());
 					if (knownSkill != null)
 					{
-						if (knownSkill.isBad())
+						if (knownSkill.hasNegativeEffect())
 						{
 							AutoUseTaskManager.getInstance().removeAutoSkill(player, shortcut.getId());
 						}

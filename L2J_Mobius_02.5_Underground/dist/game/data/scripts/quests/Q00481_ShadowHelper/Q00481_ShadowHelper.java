@@ -36,6 +36,7 @@ public class Q00481_ShadowHelper extends Quest
 	// NPC
 	private static final int RIDENBAG = 33302;
 	private static final int DUMMY = 33348;
+	
 	// Monsters
 	private static final int[] MONSTERS =
 	{
@@ -60,6 +61,7 @@ public class Q00481_ShadowHelper extends Quest
 		21038, // Liangma
 		21040, // Soldier of Darkness
 	};
+	
 	// Misc
 	private static final int MIN_LEVEL = 38;
 	private static final String KILL_COUNT_VAR = "KillCount";
@@ -103,6 +105,7 @@ public class Q00481_ShadowHelper extends Quest
 				htmltext = null;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -120,6 +123,7 @@ public class Q00481_ShadowHelper extends Quest
 					htmltext = "33302-09.html";
 					break;
 				}
+				
 				qs.setState(State.CREATED);
 			}
 			case State.CREATED:
@@ -142,6 +146,7 @@ public class Q00481_ShadowHelper extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -174,6 +179,7 @@ public class Q00481_ShadowHelper extends Quest
 				return holder;
 			}
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

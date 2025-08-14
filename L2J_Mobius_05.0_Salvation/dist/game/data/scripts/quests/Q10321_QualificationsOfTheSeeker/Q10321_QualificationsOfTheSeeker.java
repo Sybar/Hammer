@@ -34,6 +34,7 @@ public class Q10321_QualificationsOfTheSeeker extends Quest
 	// NPCs
 	private static final int SHANNON = 32974;
 	private static final int THEODORE = 32975;
+	
 	// Misc
 	private static final int MAX_LEVEL = 20;
 	
@@ -83,6 +84,7 @@ public class Q10321_QualificationsOfTheSeeker extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -109,6 +111,7 @@ public class Q10321_QualificationsOfTheSeeker extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

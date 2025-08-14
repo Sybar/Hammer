@@ -45,11 +45,14 @@ public class Q11043_SomeonesTrace extends Quest
 	private static final int RECLOUS = 30648;
 	private static final int LORD_OF_THE_ORCS_TUREK = 24407;
 	private static final int SEER_ORC_TUREK = 24408;
+	
 	// Items
 	private static final int ORC_EMPOWERING_POTION = 80675;
 	private static final ItemHolder SOE_RECLOUS = new ItemHolder(80682, 1);
+	
 	// Location
 	private static final Location TRAINING_GROUNDS_TELEPORT = new Location(-92680, 112394, -3696);
+	
 	// Misc
 	private static final int MIN_LEVEL = 79;
 	
@@ -115,6 +118,7 @@ public class Q11043_SomeonesTrace extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -158,6 +162,7 @@ public class Q11043_SomeonesTrace extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

@@ -41,11 +41,14 @@ public final class IssDoomcryerTakhun extends AbstractNpcAI
 {
 	// NPCs
 	private static final int TAKHUN = 34376;
+	
 	// Monsters
 	private static final int ANTHARAS = 24087;
 	private static final int INVISIBLE_NPC = 18918;
+	
 	// Skills
 	private static final SkillHolder EnsembleMelodySkill = new SkillHolder(32149, 1);
+	
 	// Misc
 	private static final int p_TalkInterval = 15000;
 	

@@ -33,6 +33,7 @@ public class Q00640_TheZeroHour extends Quest
 {
 	// NPC
 	private static final int KAHMAN = 31554;
+	
 	// Item
 	private static final int FANG_OF_STAKATO = 8085;
 	private static final int[][] REWARDS =
@@ -56,6 +57,7 @@ public class Q00640_TheZeroHour extends Quest
 		registerQuestItems(FANG_OF_STAKATO);
 		addStartNpc(KAHMAN);
 		addTalkId(KAHMAN);
+		
 		// All "spiked" stakatos types, except babies and cannibalistic followers.
 		addKillId(22105, 22106, 22107, 22108, 22109, 22110, 22111, 22113, 22114, 22115, 22116, 22117, 22118, 22119, 22121);
 	}

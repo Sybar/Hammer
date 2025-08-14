@@ -35,6 +35,7 @@ public class ResidenceOfKingIgnis extends AbstractNpcAI
 {
 	// NPCs
 	private static final int IGNIS = 29105;
+	
 	// Skills
 	private static final SkillHolder FIRE_RAG_1 = new SkillHolder(50050, 1);
 	private static final SkillHolder FIRE_RAG_2 = new SkillHolder(50050, 2);
@@ -138,6 +139,7 @@ public class ResidenceOfKingIgnis extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return null;
 	}
 	

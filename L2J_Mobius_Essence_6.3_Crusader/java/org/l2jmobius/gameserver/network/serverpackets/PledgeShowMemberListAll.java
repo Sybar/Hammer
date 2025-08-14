@@ -65,6 +65,7 @@ public class PledgeShowMemberListAll extends ServerPacket
 			{
 				player.sendPacket(new PledgeShowMemberListAll(clan, subPledge, false));
 			}
+			
 			player.sendPacket(new PledgeShowMemberListAll(clan, null, true));
 		}
 	}
@@ -101,6 +102,7 @@ public class PledgeShowMemberListAll extends ServerPacket
 			{
 				continue;
 			}
+			
 			buffer.writeString(m.getName());
 			buffer.writeInt(m.getLevel());
 			buffer.writeInt(m.getClassId());
@@ -115,6 +117,7 @@ public class PledgeShowMemberListAll extends ServerPacket
 				buffer.writeInt(1); // no visible effect
 				buffer.writeInt(1); // buffer.writeInt(1);
 			}
+			
 			buffer.writeInt(m.isOnline() ? m.getObjectId() : 0); // objectId = online 0 = offline
 			buffer.writeInt(m.getSponsor() != 0);
 			buffer.writeByte(m.getOnlineStatus());

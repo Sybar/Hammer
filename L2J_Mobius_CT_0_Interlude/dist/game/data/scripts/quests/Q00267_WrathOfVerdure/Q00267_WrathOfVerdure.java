@@ -33,6 +33,7 @@ public class Q00267_WrathOfVerdure extends Quest
 {
 	// Items
 	private static final int GOBLIN_CLUB = 1335;
+	
 	// Reward
 	private static final int SILVERY_LEAF = 1340;
 	

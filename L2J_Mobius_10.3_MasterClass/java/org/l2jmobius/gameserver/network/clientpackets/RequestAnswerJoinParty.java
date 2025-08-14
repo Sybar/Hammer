@@ -57,6 +57,7 @@ public class RequestAnswerJoinParty extends ClientPacket
 		{
 			return;
 		}
+		
 		request.setProcessing(true);
 		
 		final Player requestor = request.getPlayer();

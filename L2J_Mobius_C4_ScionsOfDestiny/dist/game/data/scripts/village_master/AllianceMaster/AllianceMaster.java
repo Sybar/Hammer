@@ -53,6 +53,7 @@ public class AllianceMaster extends AbstractNpcAI
 		{
 			return "9001-04.htm";
 		}
+		
 		return event;
 	}
 	

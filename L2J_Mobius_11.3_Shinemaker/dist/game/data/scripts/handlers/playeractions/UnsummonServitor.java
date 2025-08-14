@@ -29,7 +29,7 @@ import org.l2jmobius.gameserver.network.SystemMessageId;
 public class UnsummonServitor implements IPlayerActionHandler
 {
 	@Override
-	public void useAction(Player player, ActionDataHolder data, boolean ctrlPressed, boolean shiftPressed)
+	public void onAction(Player player, ActionDataHolder data, boolean ctrlPressed, boolean shiftPressed)
 	{
 		boolean canUnsummon = true;
 		if (player.hasServitors())

@@ -17,9 +17,9 @@
 		<set name="weight" val="477" />
 		<set name="material" val="STEEL" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">97</stat>
 			<stat type="mAtk">61</stat>
@@ -47,9 +47,9 @@
 		<set name="weight" val="597" />
 		<set name="material" val="STEEL" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">135</stat>
 			<stat type="mAtk">61</stat>
@@ -324,9 +324,9 @@
 		<set name="weight" val="643" />
 		<set name="material" val="STEEL" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">190</stat>
 			<stat type="mAtk">91</stat>
@@ -354,9 +354,9 @@
 		<set name="weight" val="457" />
 		<set name="material" val="STEEL" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">159</stat>
 			<stat type="mAtk">91</stat>
@@ -384,9 +384,9 @@
 		<set name="weight" val="567" />
 		<set name="material" val="STEEL" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">245</stat>
 			<stat type="mAtk">99</stat>
@@ -660,9 +660,9 @@
 		<set name="weight" val="443" />
 		<set name="material" val="STEEL" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">193</stat>
 			<stat type="mAtk">107</stat>
@@ -690,9 +690,9 @@
 		<set name="weight" val="557" />
 		<set name="material" val="STEEL" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">270</stat>
 			<stat type="mAtk">107</stat>
@@ -720,9 +720,9 @@
 		<set name="weight" val="633" />
 		<set name="material" val="STEEL" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">231</stat>
 			<stat type="mAtk">107</stat>
@@ -967,9 +967,9 @@
 		<set name="weight" val="600" />
 		<set name="material" val="STEEL" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">304</stat>
 			<stat type="mAtk">132</stat>
@@ -997,9 +997,9 @@
 		<set name="weight" val="433" />
 		<set name="material" val="STEEL" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">255</stat>
 			<stat type="mAtk">132</stat>
@@ -1027,9 +1027,9 @@
 		<set name="weight" val="533" />
 		<set name="material" val="STEEL" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">356</stat>
 			<stat type="mAtk">132</stat>
@@ -1247,9 +1247,9 @@
 		<set name="weight" val="530" />
 		<set name="material" val="STEEL" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">401</stat>
 			<stat type="mAtk">151</stat>
@@ -1277,9 +1277,9 @@
 		<set name="weight" val="600" />
 		<set name="material" val="STEEL" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">361</stat>
 			<stat type="mAtk">151</stat>
@@ -1307,9 +1307,9 @@
 		<set name="weight" val="430" />
 		<set name="material" val="STEEL" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">302</stat>
 			<stat type="mAtk">151</stat>

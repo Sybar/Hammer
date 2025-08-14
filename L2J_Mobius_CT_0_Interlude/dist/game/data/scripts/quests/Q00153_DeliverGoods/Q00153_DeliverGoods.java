@@ -34,6 +34,7 @@ public class Q00153_DeliverGoods extends Quest
 	private static final int SILVIA = 30003;
 	private static final int ARNOLD = 30041;
 	private static final int RANT = 30054;
+	
 	// Items
 	private static final int DELIVERY_LIST = 1012;
 	private static final int HEAVY_WOOD_BOX = 1013;
@@ -42,6 +43,7 @@ public class Q00153_DeliverGoods extends Quest
 	private static final int JACKSON_RECEIPT = 1016;
 	private static final int SILVIA_RECEIPT = 1017;
 	private static final int RANT_RECEIPT = 1018;
+	
 	// Rewards
 	private static final int SOULSHOT_NO_GRADE = 1835;
 	private static final int RING_OF_KNOWLEDGE = 875;

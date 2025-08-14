@@ -35,14 +35,17 @@ public class Q00034_InSearchOfCloth extends Quest
 	private static final int RADIA = 30088;
 	private static final int RALFORD = 30165;
 	private static final int VARAN = 30294;
+	
 	// Monsters
 	private static final int TRISALIM_SPIDER = 20560;
 	private static final int TRISALIM_TARANTULA = 20561;
+	
 	// Items
 	private static final int SPINNERET = 7528;
 	private static final int SUEDE = 1866;
 	private static final int THREAD = 1868;
 	private static final int SPIDERSILK = 7161;
+	
 	// Rewards
 	private static final int MYSTERIOUS_CLOTH = 7076;
 	

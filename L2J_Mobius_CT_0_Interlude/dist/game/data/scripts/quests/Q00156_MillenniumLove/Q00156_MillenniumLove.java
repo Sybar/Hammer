@@ -31,6 +31,7 @@ public class Q00156_MillenniumLove extends Quest
 	// NPCs
 	private static final int LILITH = 30368;
 	private static final int BAENEDES = 30369;
+	
 	// Items
 	private static final int LILITH_LETTER = 1022;
 	private static final int THEON_DIARY = 1023;

@@ -34,6 +34,7 @@ public class ConditionQuest extends Condition
 	public ConditionQuest(InstanceTemplate template, StatSet parameters, boolean onlyLeader, boolean showMessageAndHtml)
 	{
 		super(template, parameters, onlyLeader, showMessageAndHtml);
+		
 		// Set message
 		setSystemMessage(SystemMessageId.C1_S_QUEST_REQUIREMENT_IS_NOT_SUFFICIENT_AND_CANNOT_BE_ENTERED, (message, player) -> message.addString(player.getName()));
 	}

@@ -30,6 +30,7 @@ public class RemembranceTower extends AbstractNpcAI
 {
 	// NPCs
 	private static final int REMEMBRANCE_TOWER = 33989;
+	
 	// Misc
 	private static final int EMMITER_ID = 17250700;
 	
@@ -54,6 +55,7 @@ public class RemembranceTower extends AbstractNpcAI
 			npc.setScriptValue(0);
 			npc.broadcastPacket(new OnEventTrigger(EMMITER_ID, false));
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	

@@ -40,6 +40,7 @@ public class GardenWatchman extends AbstractNpcAI
 	private static final int GARDEN_WATCHMAN = 22952;
 	private static final int GENESIS_TRAP_1 = 18985;
 	private static final int GENESIS_TRAP_2 = 18986;
+	
 	// Skills
 	private static final SkillHolder TRAP_SETUP = new SkillHolder(14418, 1);
 	private static final SkillHolder HARMFUL_TRAP_1 = new SkillHolder(14075, 1);
@@ -82,6 +83,7 @@ public class GardenWatchman extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	

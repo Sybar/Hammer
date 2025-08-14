@@ -35,6 +35,7 @@ public class Q00316_DestroyPlagueCarriers extends Quest
 	private static final int SUKAR_WERERAT = 20040;
 	private static final int SUKAR_WERERAT_LEADER = 20047;
 	private static final int VAROOL_FOULCLAW = 27020;
+	
 	// Items
 	private static final int WERERAT_FANG = 1042;
 	private static final int VAROOL_FOULCLAW_FANG = 1043;

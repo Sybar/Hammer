@@ -66,6 +66,7 @@ public class RecoverVitalityInPeaceZone extends AbstractEffect
 		{
 			vitality = PlayerStat.MAX_VITALITY_POINTS;
 		}
+		
 		target.setVitalityPoints((int) vitality, true);
 		
 		return skill.isToggle();
@@ -86,6 +87,7 @@ public class RecoverVitalityInPeaceZone extends AbstractEffect
 				{
 					vitality = PlayerStat.MAX_VITALITY_POINTS;
 				}
+				
 				target.setVitalityPoints((int) vitality, true);
 			}
 		}

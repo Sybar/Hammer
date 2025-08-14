@@ -41,8 +41,10 @@ public class Q10527_TheAssassinationOfTheKetraOrcCommander extends Quest
 {
 	// NPCs
 	private static final int LUGONNES = 33852;
+	
 	// Monsters
 	private static final int KETRAS_COMMANDER_TAYR = 27500; // Ketra's Commander Tayr
+	
 	// Misc
 	private static final int MIN_LEVEL = 76;
 	private static final int MAX_LEVEL = 80;
@@ -67,6 +69,7 @@ public class Q10527_TheAssassinationOfTheKetraOrcCommander extends Quest
 		{
 			return null;
 		}
+		
 		String htmltext = null;
 		switch (event)
 		{
@@ -100,6 +103,7 @@ public class Q10527_TheAssassinationOfTheKetraOrcCommander extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -133,6 +137,7 @@ public class Q10527_TheAssassinationOfTheKetraOrcCommander extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

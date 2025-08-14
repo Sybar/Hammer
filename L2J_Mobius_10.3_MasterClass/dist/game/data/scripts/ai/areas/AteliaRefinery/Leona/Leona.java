@@ -42,6 +42,7 @@ public class Leona extends AbstractNpcAI
 	// NPCs
 	private static final int LEONA = 34426;
 	private static final int ETINA_RAID = 29318;
+	
 	// Location
 	private static final Location ENTER_LOC = new Location(-245778, 181088, 2860);
 	private static final Location REFINERY = new Location(-59328, 52624, -8608);
@@ -69,14 +70,17 @@ public class Leona extends AbstractNpcAI
 				{
 					return "34426-1.html";
 				}
+				
 				if (status == 2)
 				{
 					return "34426-2.html";
 				}
+				
 				if (!player.isInParty())
 				{
 					return "34426-3.html";
 				}
+				
 				final Party party = player.getParty();
 				final boolean isInCC = party.isInCommandChannel();
 				final List<Player> members = (isInCC) ? party.getCommandChannel().getMembers() : party.getMembers();
@@ -85,6 +89,7 @@ public class Leona extends AbstractNpcAI
 				{
 					return "34426-3.html";
 				}
+				
 				if ((members.size() < Config.ETINA_MIN_PLAYERS) || (members.size() > Config.ETINA_MAX_PLAYERS))
 				{
 					final NpcHtmlMessage packet = new NpcHtmlMessage(npc.getObjectId());
@@ -94,6 +99,7 @@ public class Leona extends AbstractNpcAI
 					player.sendPacket(packet);
 					return null;
 				}
+				
 				for (Player member : members)
 				{
 					if (member.getLevel() < Config.ETINA_MIN_PLAYER_LEVEL)
@@ -105,6 +111,7 @@ public class Leona extends AbstractNpcAI
 						return null;
 					}
 				}
+				
 				for (Player member : members)
 				{
 					if (member.isInsideRadius3D(npc, Config.ALT_PARTY_RANGE))
@@ -119,6 +126,7 @@ public class Leona extends AbstractNpcAI
 		{
 			player.teleToLocation(REFINERY, true);
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	
@@ -135,6 +143,7 @@ public class Leona extends AbstractNpcAI
 		{
 			htmltext = "34426.html";
 		}
+		
 		return htmltext;
 	}
 	

@@ -110,6 +110,7 @@ public class MonsterBookData implements IXmlReader
 				return card;
 			}
 		}
+		
 		return null;
 	}
 	
@@ -122,6 +123,7 @@ public class MonsterBookData implements IXmlReader
 				return card;
 			}
 		}
+		
 		return null;
 	}
 	

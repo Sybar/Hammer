@@ -42,13 +42,17 @@ public class Q00625_TheFinestIngredientsPart2 extends Quest
 	// NPCs
 	private static final int JEREMY = 31521;
 	private static final int YETIS_TABLE = 31542;
+	
 	// Monster
 	private static final int ICICLE_EMPEROR_BUMBALUMP = 25296;
+	
 	// Required Item
 	private static final ItemHolder SOY_SOURCE_JAR = new ItemHolder(7205, 1);
+	
 	// Quest Items
 	private static final ItemHolder FOOD_FOR_BUMBALUMP = new ItemHolder(7209, 1);
 	private static final ItemHolder SPECIAL_YETI_MEAT = new ItemHolder(7210, 1);
+	
 	// Rewards
 	private static final ItemHolder GREATER_DYE_OF_STR_1 = new ItemHolder(4589, 5);
 	private static final ItemHolder GREATER_DYE_OF_STR_2 = new ItemHolder(4590, 5);
@@ -56,8 +60,10 @@ public class Q00625_TheFinestIngredientsPart2 extends Quest
 	private static final ItemHolder GREATER_DYE_OF_CON_2 = new ItemHolder(4592, 5);
 	private static final ItemHolder GREATER_DYE_OF_DEX_1 = new ItemHolder(4593, 5);
 	private static final ItemHolder GREATER_DYE_OF_DEX_2 = new ItemHolder(4594, 5);
+	
 	// Location
 	private static final Location ICICLE_EMPEROR_BUMBALUMP_LOC = new Location(158240, -121536, -2222);
+	
 	// Misc
 	private static final int MIN_LEVEL = 73;
 	
@@ -80,6 +86,7 @@ public class Q00625_TheFinestIngredientsPart2 extends Quest
 			{
 				npc.broadcastPacket(new NpcSay(npc.getObjectId(), ChatType.NPC_GENERAL, npc.getTemplate().getDisplayId(), NpcStringId.OOOH));
 			}
+			
 			return null;
 		}
 		
@@ -134,6 +141,7 @@ public class Q00625_TheFinestIngredientsPart2 extends Quest
 						{
 							rewardItems(player, GREATER_DYE_OF_DEX_2);
 						}
+						
 						qs.exitQuest(true, true);
 						htmltext = event;
 					}
@@ -182,6 +190,7 @@ public class Q00625_TheFinestIngredientsPart2 extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -263,6 +272,7 @@ public class Q00625_TheFinestIngredientsPart2 extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

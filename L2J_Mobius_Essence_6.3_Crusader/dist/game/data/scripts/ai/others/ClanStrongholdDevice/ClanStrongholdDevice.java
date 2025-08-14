@@ -61,8 +61,10 @@ public class ClanStrongholdDevice extends AbstractNpcAI
 		22210, // Torfe
 		22211, // Death Lord
 	};
+	
 	// Skill
 	private static final SkillHolder CLAN_STRONGHOLD_EFFECT = new SkillHolder(48078, 1);
+	
 	// Misc
 	private static final Map<Integer, Integer> CURRENT_CLAN_ID = new ConcurrentHashMap<>(); // Clan id key - NPC object id value (can be taken from npc.getScriptValue)
 	private static final Map<Integer, Long> LAST_ATTACK = new ConcurrentHashMap<>(); // NPC object id key - Time value

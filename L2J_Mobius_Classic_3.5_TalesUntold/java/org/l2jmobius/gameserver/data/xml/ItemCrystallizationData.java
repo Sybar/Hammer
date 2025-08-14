@@ -71,6 +71,7 @@ public class ItemCrystallizationData implements IXmlReader
 		{
 			_crystallizationTemplates.put(crystalType, new EnumMap<>(CrystallizationType.class));
 		}
+		
 		_items.clear();
 		
 		_weaponDestroyGroup = new RewardItemsOnFailure();
@@ -82,6 +83,7 @@ public class ItemCrystallizationData implements IXmlReader
 		{
 			LOGGER.info(getClass().getSimpleName() + ": Loaded " + _crystallizationTemplates.size() + " crystallization templates.");
 		}
+		
 		if (_items.size() > 0)
 		{
 			LOGGER.info(getClass().getSimpleName() + ": Loaded " + _items.size() + " pre-defined crystallizable items.");
@@ -94,6 +96,7 @@ public class ItemCrystallizationData implements IXmlReader
 		{
 			LOGGER.info(getClass().getSimpleName() + ": Loaded " + _weaponDestroyGroup.size() + " weapon enchant failure rewards.");
 		}
+		
 		if (_armorDestroyGroup.size() > 0)
 		{
 			LOGGER.info(getClass().getSimpleName() + ": Loaded " + _armorDestroyGroup.size() + " armor enchant failure rewards.");
@@ -153,6 +156,7 @@ public class ItemCrystallizationData implements IXmlReader
 										crystallizeRewards.add(new ItemChanceHolder(itemId, itemChance, itemCount));
 									}
 								}
+								
 								_items.put(id, new CrystallizationDataHolder(id, crystallizeRewards));
 							}
 						}
@@ -204,6 +208,7 @@ public class ItemCrystallizationData implements IXmlReader
 				}
 			}
 		}
+		
 		return holder;
 	}
 	
@@ -317,6 +322,7 @@ public class ItemCrystallizationData implements IXmlReader
 					break;
 				}
 			}
+			
 			if (!found)
 			{
 				result.add(new ItemChanceHolder(crystalItemId, 100, item.getCrystalCount()));

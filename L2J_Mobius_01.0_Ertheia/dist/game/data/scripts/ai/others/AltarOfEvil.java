@@ -34,6 +34,7 @@ public class AltarOfEvil extends AbstractNpcAI
 {
 	// NPCs
 	private static final int RIFTER = 23179; // Dimensional Rifter
+	
 	// Skill
 	private static final SkillHolder SKILL = new SkillHolder(14643, 1); // Summon
 	

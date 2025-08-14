@@ -34,12 +34,14 @@ public class Q00292_BrigandsSweep extends Quest
 	// NPCs
 	private static final int SPIRON = 30532;
 	private static final int BALANKI = 30533;
+	
 	// Monsters
 	private static final int GOBLIN_BRIGAND = 20322;
 	private static final int GOBLIN_BRIGAND_LEADER = 20323;
 	private static final int GOBLIN_BRIGAND_LIEUTENANT = 20324;
 	private static final int GOBLIN_SNOOPER = 20327;
 	private static final int GOBLIN_LORD = 20528;
+	
 	// Items
 	private static final int GOBLIN_NECKLACE = 1483;
 	private static final int GOBLIN_PENDANT = 1484;

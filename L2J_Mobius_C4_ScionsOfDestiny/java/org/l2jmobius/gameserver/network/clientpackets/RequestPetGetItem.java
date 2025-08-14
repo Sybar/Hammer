@@ -76,8 +76,7 @@ public class RequestPetGetItem extends ClientPacket
 		
 		if (pet.isUncontrollable())
 		{
-			// no Epilogue sysstring
-			pet.getOwner().sendMessage("When your pet's hunger gauge is at 0%, you cannot use your pet.");
+			player.sendMessage("Your pet/servitor is unresponsive and will not obey any orders.");
 			return;
 		}
 		

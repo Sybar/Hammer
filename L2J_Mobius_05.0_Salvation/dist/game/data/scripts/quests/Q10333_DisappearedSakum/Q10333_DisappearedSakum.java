@@ -46,8 +46,10 @@ public class Q10333_DisappearedSakum extends Quest
 		23021, // Giant Venomous Spider
 		23095, // Archnid Predator
 	};
+	
 	// Items
 	private static final int BADGE = 17583;
+	
 	// Misc
 	private static final int MIN_LEVEL = 18;
 	private static final int MAX_LEVEL = 40;
@@ -113,6 +115,7 @@ public class Q10333_DisappearedSakum extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -191,6 +194,7 @@ public class Q10333_DisappearedSakum extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -254,6 +258,7 @@ public class Q10333_DisappearedSakum extends Quest
 			npcLogList.add(new NpcLogListHolder(VAKU_ORC, false, qs.getInt("killed_" + VAKU_ORC)));
 			return npcLogList;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

@@ -44,9 +44,11 @@ public class Q00451_LuciensAltar extends Quest
 		32709,
 		32710
 	};
+	
 	// Items
 	private static final int REPLENISHED_BEAD = 14877;
 	private static final int DISCHARGED_BEAD = 14878;
+	
 	// Misc
 	private static final int MIN_LEVEL = 80;
 	
@@ -80,6 +82,7 @@ public class Q00451_LuciensAltar extends Quest
 			giveItems(player, REPLENISHED_BEAD, 5);
 			htmltext = event;
 		}
+		
 		return htmltext;
 	}
 	
@@ -100,6 +103,7 @@ public class Q00451_LuciensAltar extends Quest
 						htmltext = "30537-03.html";
 						break;
 					}
+					
 					qs.setState(State.CREATED);
 					// fallthrough
 				}
@@ -129,6 +133,7 @@ public class Q00451_LuciensAltar extends Quest
 						{
 							addExpAndSp(player, 13_773_960, 3_305);
 						}
+						
 						htmltext = "30537-08.html";
 					}
 					break;
@@ -147,6 +152,7 @@ public class Q00451_LuciensAltar extends Quest
 				{
 					qs.setCond(2, true);
 				}
+				
 				htmltext = "recharge.html";
 			}
 			else
@@ -154,6 +160,7 @@ public class Q00451_LuciensAltar extends Quest
 				htmltext = "findother.html";
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -167,6 +174,7 @@ public class Q00451_LuciensAltar extends Quest
 			npcLogList.add(new NpcLogListHolder(DISCHARGED_BEAD, false, (int) getQuestItemsCount(player, DISCHARGED_BEAD)));
 			return npcLogList;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

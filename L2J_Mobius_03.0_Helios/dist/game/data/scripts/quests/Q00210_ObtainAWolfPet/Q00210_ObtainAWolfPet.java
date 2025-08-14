@@ -37,8 +37,10 @@ public class Q00210_ObtainAWolfPet extends Quest
 	private static final int BELLA = 30256;
 	private static final int BYNN = 30335;
 	private static final int SYDNIA = 30321;
+	
 	// Item
 	private static final int WOLF_COLLAR = 2375;
+	
 	// Misc
 	private static final int MIN_LEVEL = 15;
 	
@@ -113,6 +115,7 @@ public class Q00210_ObtainAWolfPet extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -185,6 +188,7 @@ public class Q00210_ObtainAWolfPet extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

@@ -32,8 +32,10 @@ public class Q00760_BlockTheExit extends Quest
 	// NPCs
 	private static final int KURTIZ = 30870;
 	private static final int DARK_RIDER = 26102;
+	
 	// Items
 	private static final int REWARD_BOX = 46560; // Curtiz's Reward Box
+	
 	// Misc
 	private static final int MIN_LEVEL = 99;
 	
@@ -88,6 +90,7 @@ public class Q00760_BlockTheExit extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -122,6 +125,7 @@ public class Q00760_BlockTheExit extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -139,6 +143,7 @@ public class Q00760_BlockTheExit extends Quest
 		{
 			qs.setCond(2, true);
 		}
+		
 		super.actionForEachPlayer(player, npc, isSummon);
 	}
 }

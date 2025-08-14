@@ -1509,9 +1509,9 @@
 		<set name="commissionItemType" val="RAPIER" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_depositable" val="false" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">376</stat>
 			<stat type="mAtk">183</stat>
@@ -1547,9 +1547,9 @@
 		<set name="commissionItemType" val="RAPIER" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_depositable" val="false" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">376</stat>
 			<stat type="mAtk">183</stat>
@@ -1585,9 +1585,9 @@
 		<set name="commissionItemType" val="RAPIER" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_depositable" val="false" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">376</stat>
 			<stat type="mAtk">183</stat>
@@ -1622,9 +1622,9 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="commissionItemType" val="ANCIENT_SWORD" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">449</stat>
 			<stat type="mAtk">183</stat>
@@ -1658,9 +1658,9 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="commissionItemType" val="ANCIENT_SWORD" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">449</stat>
 			<stat type="mAtk">183</stat>
@@ -1694,9 +1694,9 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="commissionItemType" val="ANCIENT_SWORD" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">449</stat>
 			<stat type="mAtk">183</stat>
@@ -1731,9 +1731,9 @@
 		<set name="reuse_delay" val="400" />
 		<set name="commissionItemType" val="CROSSBOW" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">471</stat>
 			<stat type="mAtk">183</stat>
@@ -1768,9 +1768,9 @@
 		<set name="reuse_delay" val="400" />
 		<set name="commissionItemType" val="CROSSBOW" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">471</stat>
 			<stat type="mAtk">183</stat>
@@ -1806,9 +1806,9 @@
 		<set name="reuse_delay" val="400" />
 		<set name="commissionItemType" val="CROSSBOW" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">471</stat>
 			<stat type="mAtk">183</stat>

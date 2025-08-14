@@ -113,6 +113,7 @@ public class RequestPledgeSetAcademyMaster extends ClientPacket
 				player.sendMessage("Remove previous connections first.");
 				return;
 			}
+			
 			if (apprentice != null)
 			{
 				apprentice.setSponsor(sponsorMember.getObjectId());
@@ -136,16 +137,19 @@ public class RequestPledgeSetAcademyMaster extends ClientPacket
 			sponsorMember.saveApprenticeAndSponsor(apprenticeMember.getObjectId(), 0);
 			sm = new SystemMessage(SystemMessageId.S1_HAS_BECOME_S2_S_MENTOR);
 		}
+		
 		sm.addString(sponsorMember.getName());
 		sm.addString(apprenticeMember.getName());
 		if ((sponsor != player) && (sponsor != apprentice))
 		{
 			player.sendPacket(sm);
 		}
+		
 		if (sponsor != null)
 		{
 			sponsor.sendPacket(sm);
 		}
+		
 		if (apprentice != null)
 		{
 			apprentice.sendPacket(sm);

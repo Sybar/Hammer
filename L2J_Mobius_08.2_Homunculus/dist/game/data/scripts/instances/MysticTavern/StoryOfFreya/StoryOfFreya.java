@@ -61,6 +61,7 @@ public class StoryOfFreya extends AbstractInstance
 	private static final int FROST_KNIGHT = 23688;
 	private static final int GLACIER_GOLEM = 23718;
 	private static final int GLACIER_FROSTBRINGER = 23687;
+	
 	// Other
 	private static final int TEMPLATE_ID = 263;
 	private static final int ICE_CRYSTAL_SHARD = 46594;
@@ -104,6 +105,7 @@ public class StoryOfFreya extends AbstractInstance
 					htmltext = "34172-04.html";
 					break;
 				}
+				
 				htmltext = event;
 				break;
 			}
@@ -114,6 +116,7 @@ public class StoryOfFreya extends AbstractInstance
 					htmltext = "34172-04.html";
 					break;
 				}
+				
 				final Party party = player.getParty();
 				final List<Player> members = party.getMembers();
 				for (Player member : members)
@@ -123,6 +126,7 @@ public class StoryOfFreya extends AbstractInstance
 						QuestProgress(npc, member);
 					}
 				}
+				
 				htmltext = event;
 				break;
 			}
@@ -144,6 +148,7 @@ public class StoryOfFreya extends AbstractInstance
 							instance.addAllowed(member);
 						}
 					}
+					
 					instance.setReenterTime();
 				}
 				break;
@@ -163,6 +168,7 @@ public class StoryOfFreya extends AbstractInstance
 							QuestProgress(npc, member);
 						}
 					}
+					
 					if (getRandom(10) < 5)
 					{
 						world.spawnGroup("knight");
@@ -184,6 +190,7 @@ public class StoryOfFreya extends AbstractInstance
 						htmltext = "34173-03.html";
 						break;
 					}
+					
 					if (player.isInParty())
 					{
 						final Party party = player.getParty();
@@ -197,6 +204,7 @@ public class StoryOfFreya extends AbstractInstance
 							}
 						}
 					}
+					
 					world.openCloseDoor(world.getTemplateParameters().getInt("1_st_door"), true);
 					startQuestTimer("closeDoor", 60000, npc, null);
 				}
@@ -208,6 +216,7 @@ public class StoryOfFreya extends AbstractInstance
 						startQuestTimer("closeDoor", 30000, npc, null);
 						break;
 					}
+					
 					htmltext = "34173-03.html";
 				}
 				break;
@@ -229,6 +238,7 @@ public class StoryOfFreya extends AbstractInstance
 					htmltext = "34174-01.html";
 					break;
 				}
+				
 				if (player.isInParty())
 				{
 					final Party party = player.getParty();
@@ -276,6 +286,7 @@ public class StoryOfFreya extends AbstractInstance
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -298,6 +309,7 @@ public class StoryOfFreya extends AbstractInstance
 							addAttackPlayerDesire(knight, attacker);
 						}
 					}
+					
 					if (THRID_SPAWN_ZONE.isInsideZone(npc) && (npc.isScriptValue(0)))
 					{
 						npc.setScriptValue(1);
@@ -353,12 +365,14 @@ public class StoryOfFreya extends AbstractInstance
 					{
 						world.spawnGroup("buffalo");
 					}
+					
 					if (FOURTH_SPAWN_ZONE.isInsideZone(npc) && (world.getStatus() == 1))
 					{
 						world.setStatus(2);
 						world.broadcastPacket(new ExShowScreenMessage(NpcStringId.AN_INTENSE_COLD_IS_COMING_LOOK_AROUND, ExShowScreenMessage.TOP_CENTER, 7000, true));
 						world.spawnGroup("panthera");
 					}
+					
 					if (FIFTH_SPAWN_ZONE.isInsideZone(npc))
 					{
 						world.spawnGroup("ursus");
@@ -430,6 +444,7 @@ public class StoryOfFreya extends AbstractInstance
 						htmltext = "34172.html";
 						break;
 					}
+					
 					htmltext = "34172-05.html";
 					break;
 				}
@@ -440,6 +455,7 @@ public class StoryOfFreya extends AbstractInstance
 						htmltext = "34173.html";
 						break;
 					}
+					
 					htmltext = "34173-01.html";
 					break;
 				}
@@ -450,6 +466,7 @@ public class StoryOfFreya extends AbstractInstance
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	

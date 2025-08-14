@@ -27,6 +27,7 @@ import org.l2jmobius.gameserver.model.World;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.instance.Pet;
 import org.l2jmobius.gameserver.model.item.instance.Item;
+import org.l2jmobius.gameserver.network.SystemMessageId;
 import org.l2jmobius.gameserver.network.serverpackets.ActionFailed;
 
 public class RequestPetGetItem extends ClientPacket
@@ -83,8 +84,7 @@ public class RequestPetGetItem extends ClientPacket
 		
 		if (pet.isUncontrollable())
 		{
-			// no Epilogue sysstring
-			pet.getOwner().sendMessage("When your pet's hunger gauge is at 0%, you cannot use your pet.");
+			player.sendPacket(SystemMessageId.YOUR_PET_SERVITOR_IS_UNRESPONSIVE_AND_WILL_NOT_OBEY_ANY_ORDERS);
 			return;
 		}
 		

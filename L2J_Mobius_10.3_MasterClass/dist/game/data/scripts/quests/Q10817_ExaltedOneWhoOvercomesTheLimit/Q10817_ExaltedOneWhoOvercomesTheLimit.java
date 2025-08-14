@@ -43,18 +43,22 @@ public class Q10817_ExaltedOneWhoOvercomesTheLimit extends Quest
 {
 	// NPC
 	private static final int LIONEL = 33907;
+	
 	// Items
 	private static final int PROOF_OF_RESISTANCE = 80823;
 	private static final int LIONEL_MISSION_LIST_2 = 45632;
+	
 	// Rewards
 	private static final int SPELLBOOK_DIGNITY_OF_THE_EXALTED_LV2 = 45923;
 	private static final int SPELLBOOK_BELIEF_OF_THE_EXALTED = 45925;
 	private static final int SPELLBOOK_FAVOR_OF_THE_EXALTED_LV1 = 45928;
+	
 	// Misc
 	private static final int MIN_LEVEL = 101;
 	private static final int MIN_COMPLETE_LEVEL = 102;
 	private static final int REACH_LV_102 = NpcStringId.REACH_LV_102.getId();
 	private static final int PROOF_OF_RESISTANCE_NEEDED = 40000;
+	
 	// Monsters
 	private static final int[] MONSTERS =
 	{
@@ -333,6 +337,7 @@ public class Q10817_ExaltedOneWhoOvercomesTheLimit extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -367,6 +372,7 @@ public class Q10817_ExaltedOneWhoOvercomesTheLimit extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -386,10 +392,12 @@ public class Q10817_ExaltedOneWhoOvercomesTheLimit extends Quest
 			{
 				giveItemRandomly(player, PROOF_OF_RESISTANCE, 1, PROOF_OF_RESISTANCE_NEEDED, 1, true);
 			}
+			
 			if ((getQuestItemsCount(player, PROOF_OF_RESISTANCE) >= PROOF_OF_RESISTANCE_NEEDED) && (player.getLevel() >= MIN_COMPLETE_LEVEL))
 			{
 				qs.setCond(2, true);
 			}
+			
 			sendNpcLogList(player);
 		}
 	}
@@ -405,8 +413,10 @@ public class Q10817_ExaltedOneWhoOvercomesTheLimit extends Quest
 			{
 				holder.add(new NpcLogListHolder(REACH_LV_102, true, 1));
 			}
+			
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

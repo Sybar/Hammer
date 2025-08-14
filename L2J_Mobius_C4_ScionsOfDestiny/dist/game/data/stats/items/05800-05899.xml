@@ -17,14 +17,14 @@
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="true" />
 		<set name="for_npc" val="true" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="156" />
 			<set stat="mAtk" val="83" />
 			<set stat="critRate" val="8" />
 			<set stat="pAtkSpd" val="379" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="5801" type="Weapon" name="Dusk">
 		<set name="icon" val="icon.weapon_monster_i00" />
@@ -43,14 +43,14 @@
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="true" />
 		<set name="for_npc" val="true" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="156" />
 			<set stat="mAtk" val="83" />
 			<set stat="critRate" val="8" />
 			<set stat="pAtkSpd" val="379" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="5802" type="Weapon" name="Dawn">
 		<set name="icon" val="icon.weapon_monster_i00" />
@@ -69,14 +69,14 @@
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="true" />
 		<set name="for_npc" val="true" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="156" />
 			<set stat="mAtk" val="83" />
 			<set stat="critRate" val="8" />
 			<set stat="pAtkSpd" val="379" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="5803" type="EtcItem" name="Charm of Luck: D Grade">
 		<!-- Bestows blessing to its owner so that when the owner dies during a boss/raid war, his/her item will not get dropped. This item can only be used by a character whose level is between 20 and 39. -->
@@ -243,13 +243,13 @@
 		<set name="material" val="STEEL" />
 		<set name="is_dropable" val="false" />
 		<set name="item_skill" val="3599-1" /> <!-- Polearm Multi-attack -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="1" />
 			<set stat="mAtk" val="1" />
 			<set stat="critRate" val="8" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="325" />
-		</for>
+		</stats>
 	</item>
 	<item id="5818" type="EtcItem" name="Alternative Dark Coda">
 		<set name="icon" val="icon.etc_coda_i08" />

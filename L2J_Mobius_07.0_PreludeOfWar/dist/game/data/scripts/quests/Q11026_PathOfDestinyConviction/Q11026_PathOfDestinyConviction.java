@@ -49,8 +49,10 @@ public class Q11026_PathOfDestinyConviction extends Quest
 	// NPCs
 	private static final int TARTI = 34505;
 	private static final int RAYMOND = 30289;
+	
 	// Item
 	private static final int KAIN_PROPHECY_MACHINE_FRAGMENT = 39538;
+	
 	// Misc
 	private static final int MIN_LEVEL = 76;
 	
@@ -106,6 +108,7 @@ public class Q11026_PathOfDestinyConviction extends Quest
 				{
 					qs.setCond(2, true);
 				}
+				
 				htmltext = event;
 				break;
 			}
@@ -115,6 +118,7 @@ public class Q11026_PathOfDestinyConviction extends Quest
 				{
 					qs.setCond(3, true);
 				}
+				
 				htmltext = event;
 				break;
 			}
@@ -129,12 +133,14 @@ public class Q11026_PathOfDestinyConviction extends Quest
 					{
 						player.sendPacket(ExRequestClassChangeUi.STATIC_PACKET);
 					}
+					
 					giveStoryBuffReward(npc, player);
 					htmltext = event;
 				}
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -208,6 +214,7 @@ public class Q11026_PathOfDestinyConviction extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

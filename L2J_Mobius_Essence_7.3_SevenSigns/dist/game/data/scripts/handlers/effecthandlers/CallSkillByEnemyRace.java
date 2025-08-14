@@ -67,6 +67,7 @@ public class CallSkillByEnemyRace extends AbstractEffect
 		{
 			return;
 		}
+		
 		final int skillIdByRace = getSkillIdByRace(effected);
 		if (skillIdByRace > 0)
 		{

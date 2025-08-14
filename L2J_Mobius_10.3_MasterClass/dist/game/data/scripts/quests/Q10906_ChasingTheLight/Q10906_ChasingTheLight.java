@@ -37,6 +37,7 @@ public class Q10906_ChasingTheLight extends Quest
 {
 	// NPC
 	private static final int ENTROPY = 34599;
+	
 	// Monsters
 	private static final int[] MONSTERS =
 	{
@@ -44,8 +45,10 @@ public class Q10906_ChasingTheLight extends Quest
 		19832, // Luminous Soul - Anima Area 1 (Lv. 116)
 		19831, // Luminous Soul - Nox Area 1 (Lv. 116)
 	};
+	
 	// Item
 	private static final int LUMINOUS_SOUL_FRAGMENT = 82177;
+	
 	// Misc
 	private static final int MIN_LEVEL = 110;
 	private static final int LUMINOUS_SOUL_FRAGMENT_NEEDED = 30;
@@ -99,6 +102,7 @@ public class Q10906_ChasingTheLight extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -138,6 +142,7 @@ public class Q10906_ChasingTheLight extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -158,6 +163,7 @@ public class Q10906_ChasingTheLight extends Quest
 				giveItems(player, LUMINOUS_SOUL_FRAGMENT, 1);
 				playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 			}
+			
 			if (getQuestItemsCount(player, LUMINOUS_SOUL_FRAGMENT) >= LUMINOUS_SOUL_FRAGMENT_NEEDED)
 			{
 				qs.setCond(2, true);

@@ -20,6 +20,8 @@
  */
 package ai.bosses.Orfen;
 
+import java.util.Collection;
+
 import org.l2jmobius.Config;
 import org.l2jmobius.gameserver.ai.Intention;
 import org.l2jmobius.gameserver.managers.GrandBossManager;
@@ -70,6 +72,7 @@ public class Orfen extends AbstractNpcAI
 		{
 			// load the unlock date and time for Orfen from DB
 			final long temp = info.getLong("respawn_time") - System.currentTimeMillis();
+			
 			// if Orfen is locked until a certain time, mark it so and start the unlock timer
 			// the unlock time has not yet expired.
 			if (temp > 0)
@@ -136,11 +139,12 @@ public class Orfen extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	
 	@Override
-	public void onSkillSee(Npc npc, Player caster, Skill skill, WorldObject[] targets, boolean isSummon)
+	public void onSkillSee(Npc npc, Player caster, Skill skill, Collection<WorldObject> targets, boolean isSummon)
 	{
 		if (npc.getId() == ORFEN)
 		{

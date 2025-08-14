@@ -48,6 +48,7 @@ public class Q00070_SagaOfThePhoenixKnight extends Quest
 	private static final int TABLET_OF_VISION_2 = 31647;
 	private static final int TABLET_OF_VISION_3 = 31651;
 	private static final int TABLET_OF_VISION_4 = 31654;
+	
 	// Monsters
 	private static final int ICE_MONSTER = 27316;
 	private static final int SPIRIT_OF_A_DROWNED = 27317;
@@ -63,6 +64,7 @@ public class Q00070_SagaOfThePhoenixKnight extends Quest
 	private static final int FALLEN_KNIGHT_ADHIL = 27286;
 	private static final int HALISHA_ARCHON = 27219; // blazing spawn
 	private static final int BELETH_SHADOW = 27278; // blazing spawn
+	
 	// Items
 	private static final int ICE_CRYSTAL_FRAGMENT = 49804;
 	private static final int HALISHA_BADGE = 7485;
@@ -71,8 +73,10 @@ public class Q00070_SagaOfThePhoenixKnight extends Quest
 	private static final int RESONANCE_AMULET_3 = 7330;
 	private static final int RESONANCE_AMULET_4 = 7361;
 	private static final int PURE_ICE = 7534;
+	
 	// Reward
 	private static final int BOOK_GOLD_LION = 90038;
+	
 	// Misc
 	private static final String KILL_COUNT_VAR = "KillCount";
 	
@@ -95,6 +99,7 @@ public class Q00070_SagaOfThePhoenixKnight extends Quest
 		{
 			return null;
 		}
+		
 		String htmltext = event;
 		switch (event)
 		{
@@ -242,6 +247,7 @@ public class Q00070_SagaOfThePhoenixKnight extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -430,6 +436,7 @@ public class Q00070_SagaOfThePhoenixKnight extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -500,6 +507,7 @@ public class Q00070_SagaOfThePhoenixKnight extends Quest
 						{
 							qs.set(KILL_COUNT_VAR, count + 1);
 						}
+						
 						if (count >= 20)
 						{
 							qs.setCond(8, true);
@@ -526,8 +534,10 @@ public class Q00070_SagaOfThePhoenixKnight extends Quest
 			{
 				holder.add(new NpcLogListHolder(GUARDIAN_OF_FOBIDDEN_KNOWLEDGE, false, guardiancount));
 			}
+			
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

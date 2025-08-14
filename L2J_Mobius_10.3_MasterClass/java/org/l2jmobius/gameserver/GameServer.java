@@ -134,6 +134,7 @@ import org.l2jmobius.gameserver.managers.CastleManager;
 import org.l2jmobius.gameserver.managers.CastleManorManager;
 import org.l2jmobius.gameserver.managers.ClanEntryManager;
 import org.l2jmobius.gameserver.managers.ClanHallAuctionManager;
+import org.l2jmobius.gameserver.managers.CoupleManager;
 import org.l2jmobius.gameserver.managers.CursedWeaponsManager;
 import org.l2jmobius.gameserver.managers.CustomMailManager;
 import org.l2jmobius.gameserver.managers.DBSpawnManager;
@@ -182,8 +183,9 @@ import org.l2jmobius.gameserver.network.GameClient;
 import org.l2jmobius.gameserver.network.GamePacketHandler;
 import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.SystemMessageId;
-import org.l2jmobius.gameserver.scripting.ScriptEngineManager;
+import org.l2jmobius.gameserver.scripting.ScriptManager;
 import org.l2jmobius.gameserver.taskmanagers.GameTimeTaskManager;
+import org.l2jmobius.gameserver.taskmanagers.ItemLifeTimeTaskManager;
 import org.l2jmobius.gameserver.taskmanagers.ItemsAutoDestroyTaskManager;
 import org.l2jmobius.gameserver.taskmanagers.PersistentTaskManager;
 import org.l2jmobius.gameserver.ui.Gui;
@@ -234,7 +236,7 @@ public class GameServer
 		
 		printSection("Scripting Engine");
 		EventDispatcher.getInstance();
-		ScriptEngineManager.getInstance();
+		ScriptManager.getInstance();
 		
 		printSection("World");
 		World.getInstance();
@@ -299,6 +301,7 @@ public class GameServer
 		LuckyGameData.getInstance();
 		MableGameData.getInstance();
 		AttendanceRewardData.getInstance();
+		ItemLifeTimeTaskManager.getInstance();
 		
 		printSection("Characters");
 		ClassListData.getInstance();
@@ -376,6 +379,7 @@ public class GameServer
 		{
 			SellBuffsManager.getInstance();
 		}
+		
 		if (Config.MULTILANG_ENABLE)
 		{
 			SystemMessageId.loadLocalisations();
@@ -394,8 +398,8 @@ public class GameServer
 		try
 		{
 			LOGGER.info(getClass().getSimpleName() + ": Loading server scripts:");
-			ScriptEngineManager.getInstance().executeScript(ScriptEngineManager.MASTER_HANDLER_FILE);
-			ScriptEngineManager.getInstance().executeScriptList();
+			ScriptManager.getInstance().executeScript(ScriptManager.MASTER_HANDLER_FILE);
+			ScriptManager.getInstance().executeScriptList();
 		}
 		catch (Exception e)
 		{
@@ -419,11 +423,18 @@ public class GameServer
 		{
 			ItemsOnGroundManager.getInstance();
 		}
+		
 		if ((Config.AUTODESTROY_ITEM_AFTER > 0) || (Config.HERB_AUTO_DESTROY_TIME > 0))
 		{
 			ItemsAutoDestroyTaskManager.getInstance();
 		}
+		
 		MonsterRaceManager.getInstance();
+		if (Config.ALLOW_WEDDING)
+		{
+			CoupleManager.getInstance();
+		}
+		
 		KrateisCubeManager.getInstance();
 		UndergroundColiseumManager.getInstance();
 		PersistentTaskManager.getInstance();
@@ -433,18 +444,22 @@ public class GameServer
 		{
 			AntiFeedManager.getInstance().registerEvent(AntiFeedManager.OFFLINE_PLAY);
 		}
+		
 		if (Config.ALLOW_MAIL)
 		{
 			MailManager.getInstance();
 		}
+		
 		if (Config.CUSTOM_MAIL_MANAGER_ENABLED)
 		{
 			CustomMailManager.getInstance();
 		}
+		
 		if (EventDispatcher.getInstance().hasListener(EventType.ON_SERVER_START))
 		{
 			EventDispatcher.getInstance().notifyEventAsync(new OnServerStart());
 		}
+		
 		PunishmentManager.getInstance();
 		
 		Runtime.getRuntime().addShutdownHook(Shutdown.getInstance());
@@ -454,14 +469,17 @@ public class GameServer
 		{
 			OfflineTraderTable.getInstance().restoreOfflineTraders();
 		}
+		
 		if (Config.SERVER_RESTART_SCHEDULE_ENABLED)
 		{
 			ServerRestartManager.getInstance();
 		}
+		
 		if (Config.PRECAUTIONARY_RESTART_ENABLED)
 		{
 			PrecautionaryRestartManager.getInstance();
 		}
+		
 		if (Config.DEADLOCK_WATCHER)
 		{
 			final DeadlockWatcher deadlockWatcher = new DeadlockWatcher(Duration.ofSeconds(Config.DEADLOCK_CHECK_INTERVAL), () ->
@@ -496,6 +514,7 @@ public class GameServer
 		{
 			s = "-" + s;
 		}
+		
 		LOGGER.info(s);
 	}
 	

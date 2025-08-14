@@ -45,11 +45,13 @@ public class RequestExPledgeMasteryReset extends ClientPacket
 		{
 			return;
 		}
+		
 		final Clan clan = player.getClan();
 		if (clan == null)
 		{
 			return;
 		}
+		
 		if (player.getObjectId() != clan.getLeaderId())
 		{
 			player.sendMessage("You do not have enough privileges to take this action.");

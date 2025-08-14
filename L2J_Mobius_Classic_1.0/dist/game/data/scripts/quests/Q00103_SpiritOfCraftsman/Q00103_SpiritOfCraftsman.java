@@ -39,6 +39,7 @@ public class Q00103_SpiritOfCraftsman extends Quest
 	private static final int BLACKSMITH_KAROYD = 30307;
 	private static final int CECON = 30132;
 	private static final int HARNE = 30144;
+	
 	// Items
 	private static final int KAROYDS_LETTER = 968;
 	private static final int CECKTINONS_VOUCHER1 = 969;
@@ -48,13 +49,16 @@ public class Q00103_SpiritOfCraftsman extends Quest
 	private static final int ZOMBIE_HEAD = 973;
 	private static final int STEELBENDERS_HEAD = 974;
 	private static final int BONE_FRAGMENT = 1107;
+	
 	// Monsters
 	private static final int MARSH_ZOMBIE = 20015;
 	private static final int DOOM_SOLDIER = 20455;
 	private static final int SKELETON_HUNTER = 20517;
 	private static final int SKELETON_HUNTER_ARCHER = 20518;
+	
 	// Rewards
 	private static final int REWARDS = 49050; // Blood Saber
+	
 	// Misc
 	private static final int MIN_LEVEL = 10;
 	private static final int MAX_LEVEL = 16;
@@ -78,6 +82,7 @@ public class Q00103_SpiritOfCraftsman extends Quest
 		{
 			return htmltext;
 		}
+		
 		switch (event)
 		{
 			case "30307-04.htm":
@@ -96,6 +101,7 @@ public class Q00103_SpiritOfCraftsman extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -218,6 +224,7 @@ public class Q00103_SpiritOfCraftsman extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

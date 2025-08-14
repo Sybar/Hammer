@@ -54,6 +54,7 @@ public class SphericBarrier extends AbstractStatAddEffect
 		{
 			return new DamageReturn(false, true, false, 0);
 		}
+		
 		return new DamageReturn(false, false, false, event.getDamage());
 	}
 }

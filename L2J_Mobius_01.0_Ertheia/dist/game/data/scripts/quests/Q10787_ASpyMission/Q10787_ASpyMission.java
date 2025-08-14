@@ -36,11 +36,14 @@ public class Q10787_ASpyMission extends Quest
 	// NPCs
 	private static final int SHUVANN = 33867;
 	private static final int SUSPICIOUS_BOX = 33994;
+	
 	// Monster
 	private static final int EMBRYO_PURIFIER = 27540;
+	
 	// Items
 	private static final int ENCHANT_ARMOR_A = 26351;
 	private static final int EMBRYO_MISSIVES = 39724;
+	
 	// Misc
 	private static final int MIN_LEVEL = 61;
 	private static final int MAX_LEVEL = 65;
@@ -108,6 +111,7 @@ public class Q10787_ASpyMission extends Quest
 					{
 						addExpAndSp(player, 3125586, 750);
 					}
+					
 					qs.exitQuest(false, true);
 				}
 				break;
@@ -117,6 +121,7 @@ public class Q10787_ASpyMission extends Quest
 				htmltext = null;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -150,6 +155,7 @@ public class Q10787_ASpyMission extends Quest
 		{
 			htmltext = "33994-01.html";
 		}
+		
 		return htmltext;
 	}
 	

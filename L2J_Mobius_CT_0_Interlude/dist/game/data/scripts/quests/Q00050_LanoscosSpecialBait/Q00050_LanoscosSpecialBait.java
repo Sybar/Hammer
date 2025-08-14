@@ -20,7 +20,6 @@
  */
 package quests.Q00050_LanoscosSpecialBait;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.quest.Quest;
@@ -32,6 +31,7 @@ public class Q00050_LanoscosSpecialBait extends Quest
 {
 	// Item
 	private static final int ESSENCE_OF_WIND = 7621;
+	
 	// Reward
 	private static final int WIND_FISHING_LURE = 7610;
 	
@@ -109,8 +109,7 @@ public class Q00050_LanoscosSpecialBait extends Quest
 		final QuestState qs = getQuestState(partyMember, false);
 		if (getQuestItemsCount(partyMember, ESSENCE_OF_WIND) < 100)
 		{
-			final float chance = 33 * Config.RATE_QUEST_DROP;
-			if (getRandom(100) < chance)
+			if (getRandom(100) < 33)
 			{
 				giveItems(partyMember, ESSENCE_OF_WIND, 1);
 				playSound(partyMember, QuestSound.ITEMSOUND_QUEST_ITEMGET);

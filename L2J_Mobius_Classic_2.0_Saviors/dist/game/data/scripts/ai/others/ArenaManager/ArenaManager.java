@@ -34,6 +34,7 @@ public class ArenaManager extends AbstractNpcAI
 {
 	// NPC
 	private static final int ARENA_MANAGER = 31226;
+	
 	// Skills
 	private static final SkillHolder[] BUFFS =
 	{
@@ -124,6 +125,7 @@ public class ArenaManager extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	

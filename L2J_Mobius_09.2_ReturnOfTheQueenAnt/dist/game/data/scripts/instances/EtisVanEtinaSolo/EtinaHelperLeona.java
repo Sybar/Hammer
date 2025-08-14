@@ -66,11 +66,13 @@ public class EtinaHelperLeona extends AbstractNpcAI
 		34474, // Sporcha
 		34475, // Aliber
 	};
+	
 	// RB
 	private static final int ETIS_VAN_ETINA1 = 26321;
 	private static final int ETIS_VAN_ETINA2 = 26322;
 	private static final int KAIN_VAN_HALTER = 26235;
 	private static final int CAMILLE = 26236;
+	
 	// Misc
 	private static final int[] ETINA_SOLO_INSTANCES =
 	{
@@ -109,6 +111,7 @@ public class EtinaHelperLeona extends AbstractNpcAI
 					{
 						npc.setRunning();
 					}
+					
 					addMoveToDesire(npc, randLoc, 23);
 					((FriendlyNpc) npc).setCanReturnToSpawnPoint(false);
 				}
@@ -119,6 +122,7 @@ public class EtinaHelperLeona extends AbstractNpcAI
 					{
 						npc.setTarget(getRandomEntry(World.getInstance().getVisibleObjectsInRange(npc, Monster.class, 2500)));
 					}
+					
 					if ((target != null) && !target.isInvul() && target.isTargetable() && GeoEngine.getInstance().canSeeTarget(npc, target) && !ArrayUtil.contains(NOT_ATK_NPCS, target.getId()) && !ArrayUtil.contains(ETINA_HELPERS, target.getId()))
 					{
 						npc.setInvul(true);

@@ -49,10 +49,12 @@ public class Q00137_TempleChampionPart1 extends Quest
 		20291, // Enku Orc Hero
 		20292, // Enku Orc Shaman
 	};
+	
 	// Items
 	private static final int FRAGMENT = 10340;
 	private static final int EXECUTOR = 10334;
 	private static final int MISSIONARY = 10339;
+	
 	// Misc
 	private static final int MIN_LEVEL = 35;
 	private static final int MAX_LEVEL = 41;
@@ -118,6 +120,7 @@ public class Q00137_TempleChampionPart1 extends Quest
 						{
 							addExpAndSp(player, 219975, 20);
 						}
+						
 						qs.exitQuest(false, true);
 					}
 					else
@@ -128,6 +131,7 @@ public class Q00137_TempleChampionPart1 extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -220,6 +224,7 @@ public class Q00137_TempleChampionPart1 extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

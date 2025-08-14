@@ -153,18 +153,21 @@ public class EnchantScroll extends AbstractEnchantItem
 				return false;
 			}
 		}
+		
 		if (_items.isEmpty())
 		{
 			if (isActionBlessed() && itemToEnchant.isWeapon() && (itemToEnchant.getTemplate().getCrystalType() == getGrade()))
 			{
 				return true;
 			}
+			
 			for (EnchantScroll scroll : EnchantItemData.getInstance().getScrolls())
 			{
 				if (scroll.getId() == getId())
 				{
 					continue;
 				}
+				
 				final Collection<Integer> scrollItems = scroll.getItems();
 				if (!scrollItems.isEmpty() && scrollItems.contains(itemToEnchant.getId()))
 				{
@@ -172,6 +175,7 @@ public class EnchantScroll extends AbstractEnchantItem
 				}
 			}
 		}
+		
 		return super.isValid(itemToEnchant, supportItem);
 	}
 	

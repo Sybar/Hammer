@@ -47,6 +47,7 @@ public class MyMentor implements ITargetTypeHandler
 				return mentor.getPlayer();
 			}
 		}
+		
 		return null;
 	}
 }

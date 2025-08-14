@@ -36,11 +36,14 @@ public class Q10384_AnAudienceWithTauti extends Quest
 	// NPCs
 	private static final int FERGASON = 33681;
 	private static final int AKU = 33671;
+	
 	// Monsters
 	private static final int TAUTI = 29237;
+	
 	// Items
 	private static final int TAUTIS_FRAGMENT = 34960;
 	private static final int BOTTLE_OF_TAUTIS_SOUL = 35295;
+	
 	// Misc
 	private static final int MIN_LEVEL = 97;
 	
@@ -86,6 +89,7 @@ public class Q10384_AnAudienceWithTauti extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -128,6 +132,7 @@ public class Q10384_AnAudienceWithTauti extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

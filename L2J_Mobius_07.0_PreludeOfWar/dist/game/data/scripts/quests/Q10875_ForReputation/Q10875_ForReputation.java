@@ -39,12 +39,15 @@ public class Q10875_ForReputation extends Quest
 	// NPC
 	private static final int KRENAHT = 34237;
 	private static final int KEKROPUS = 34222;
+	
 	// Items
 	private static final int BLACKBIRD_CLAN_CERTIFICATION = 47840;
 	private static final int GIANT_TRACKERS_CERTIFICATION = 47841;
+	
 	// Rewards
 	private static final int KEKROPUS_CERTIFICATE = 47831;
 	private static final int SPELLBOOK_VITALITY_OF_THE_EXALTED = 47831;
+	
 	// Misc
 	private static final int MIN_LEVEL = 103;
 	
@@ -113,6 +116,7 @@ public class Q10875_ForReputation extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -169,6 +173,7 @@ public class Q10875_ForReputation extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

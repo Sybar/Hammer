@@ -39,6 +39,7 @@ public class Q10332_ToughRoad extends Quest
 	// NPCs
 	private static final int KAKAI = 30565;
 	private static final int BATHIS = 30332;
+	
 	// Misc
 	private static final int MIN_LEVEL = 20;
 	private static final int MAX_LEVEL = 40;
@@ -66,6 +67,7 @@ public class Q10332_ToughRoad extends Quest
 			{
 				showOnScreenMsg(player, NpcStringId.PA_AGRIO_LORD_KAKAI_IS_CALLING_FOR_YOU, ExShowScreenMessage.TOP_CENTER, 10000);
 			}
+			
 			return null;
 		}
 		
@@ -94,6 +96,7 @@ public class Q10332_ToughRoad extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -134,6 +137,7 @@ public class Q10332_ToughRoad extends Quest
 				htmltext = "30332-04.html";
 			}
 		}
+		
 		return htmltext;
 	}
 	

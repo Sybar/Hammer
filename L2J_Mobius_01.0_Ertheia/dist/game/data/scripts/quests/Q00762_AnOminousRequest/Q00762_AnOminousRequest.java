@@ -78,12 +78,14 @@ public class Q00762_AnOminousRequest extends Quest
 		21595, // Vampire Warlord
 		21599, // Requiem Priest
 	};
+	
 	// Items
 	private static final int BONE = 36670; // Monster Bone
 	private static final int BLOOD = 36671; // Monster Blood
 	private static final int STEEL_DOOR_BOX = 37391; // Steel Door Guild Reward Box (Low-grade)
+	
 	// Rewards
-	//@formatter:off
+	// @formatter:off
 	// Format: min item count, exp reward, sp reward, item count reward
 	private static final int[][] REWARD =
 	{
@@ -98,7 +100,8 @@ public class Q00762_AnOminousRequest extends Quest
 		{100, 28_280_700, 6789, 2},
 		{0, 14_140_350, 3393, 1},
 	};
-	//@formatter:on
+	// @formatter:on
+	
 	// Misc
 	private static final int MIN_LEVEL = 65;
 	private static final int MAX_LEVEL = 70;
@@ -154,6 +157,7 @@ public class Q00762_AnOminousRequest extends Quest
 							{
 								addExpAndSp(player, data[1], data[2]);
 							}
+							
 							giveItems(player, STEEL_DOOR_BOX, data[3]);
 							qs.exitQuest(QuestType.DAILY, true);
 							htmltext = event;
@@ -164,6 +168,7 @@ public class Q00762_AnOminousRequest extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -198,6 +203,7 @@ public class Q00762_AnOminousRequest extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

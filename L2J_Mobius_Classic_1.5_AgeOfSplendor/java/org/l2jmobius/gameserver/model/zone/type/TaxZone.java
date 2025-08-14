@@ -80,6 +80,7 @@ public class TaxZone extends ZoneType
 		{
 			_castle = CastleManager.getInstance().getCastleById(_domainId);
 		}
+		
 		return _castle;
 	}
 }

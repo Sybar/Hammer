@@ -54,6 +54,7 @@ public class ConditionPlayerCanUntransform extends Condition
 			player.sendPacket(SystemMessageId.BOARDING_OR_CANCELLATION_OF_BOARDING_ON_AIRSHIPS_IS_NOT_ALLOWED_IN_THE_CURRENT_AREA); // TODO: check if message is retail like.
 			canUntransform = false;
 		}
+		
 		return _value == canUntransform;
 	}
 }

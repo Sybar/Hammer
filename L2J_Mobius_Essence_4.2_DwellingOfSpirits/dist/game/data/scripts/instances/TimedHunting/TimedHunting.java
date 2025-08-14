@@ -38,8 +38,6 @@ import org.l2jmobius.gameserver.model.WorldObject;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.enums.creature.Race;
-import org.l2jmobius.gameserver.model.actor.enums.player.ShortcutType;
-import org.l2jmobius.gameserver.model.actor.holders.player.Shortcut;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.model.skill.enums.SkillFinishType;
@@ -65,6 +63,7 @@ public class TimedHunting extends AbstractInstance
 	private static final int BUNCH = 34122;
 	private static final int AYAN = 34123;
 	private static final int PANJI = 34125;
+	
 	// Skill
 	private static final int BUFF = 45197;
 	private static final int BUFF_FOR_KAMAEL = 45198;
@@ -178,6 +177,7 @@ public class TimedHunting extends AbstractInstance
 				world.destroy();
 			}
 		}
+		
 		return null;
 	}
 	
@@ -237,37 +237,16 @@ public class TimedHunting extends AbstractInstance
 		for (Entry<Integer, Integer> entry : SKILL_REPLACEMENTS.entrySet())
 		{
 			final Integer normalSkillId = entry.getKey();
-			final Integer transcendentSkillId = entry.getValue();
-			player.addReplacedSkill(normalSkillId, transcendentSkillId);
 			final Skill knownSkill = player.getKnownSkill(normalSkillId);
 			if (knownSkill == null)
 			{
 				continue;
 			}
 			
+			final Integer transcendentSkillId = entry.getValue();
 			player.addSkill(SkillData.getInstance().getSkill(transcendentSkillId, knownSkill.getLevel(), knownSkill.getSubLevel()), false);
-			for (Shortcut shortcut : player.getAllShortcuts())
-			{
-				if (shortcut.isAutoUse() && (shortcut.getType() == ShortcutType.SKILL) && (shortcut.getId() == normalSkillId))
-				{
-					if (knownSkill.isBad())
-					{
-						if (player.getAutoUseSettings().getAutoSkills().contains(normalSkillId))
-						{
-							player.getAutoUseSettings().getAutoSkills().add(transcendentSkillId);
-							player.getAutoUseSettings().getAutoSkills().remove(normalSkillId);
-						}
-					}
-					else if (player.getAutoUseSettings().getAutoBuffs().contains(normalSkillId))
-					{
-						player.getAutoUseSettings().getAutoBuffs().add(transcendentSkillId);
-						player.getAutoUseSettings().getAutoBuffs().remove(normalSkillId);
-					}
-				}
-			}
-			player.removeSkill(knownSkill, false);
+			player.addReplacedSkill(normalSkillId, transcendentSkillId);
 		}
-		player.sendSkillList();
 	}
 	
 	@Override
@@ -277,6 +256,7 @@ public class TimedHunting extends AbstractInstance
 		{
 			instance.setParameter("TimedHuntingTaskFinished", false);
 		}
+		
 		player.sendPacket(new ExSendUIEvent(player, true, false, 600, 0, NpcStringId.TIME_LEFT));
 		player.sendPacket(new TimedHuntingZoneExit(player.getVariables().getInt(PlayerVariables.LAST_HUNTING_ZONE_ID, 0)));
 		
@@ -295,30 +275,9 @@ public class TimedHunting extends AbstractInstance
 			}
 			
 			final Integer normalSkillId = entry.getKey();
-			player.removeReplacedSkill(normalSkillId);
 			player.addSkill(SkillData.getInstance().getSkill(normalSkillId, knownSkill.getLevel(), knownSkill.getSubLevel()), false);
-			for (Shortcut shortcut : player.getAllShortcuts())
-			{
-				if (shortcut.isAutoUse() && (shortcut.getType() == ShortcutType.SKILL) && (shortcut.getId() == transcendentSkillId))
-				{
-					if (knownSkill.isBad())
-					{
-						if (player.getAutoUseSettings().getAutoSkills().contains(transcendentSkillId))
-						{
-							player.getAutoUseSettings().getAutoSkills().add(normalSkillId);
-							player.getAutoUseSettings().getAutoSkills().remove(transcendentSkillId);
-						}
-					}
-					else if (player.getAutoUseSettings().getAutoBuffs().contains(transcendentSkillId))
-					{
-						player.getAutoUseSettings().getAutoBuffs().add(normalSkillId);
-						player.getAutoUseSettings().getAutoBuffs().remove(transcendentSkillId);
-					}
-				}
-			}
-			player.removeSkill(knownSkill, false);
+			player.removeReplacedSkill(normalSkillId);
 		}
-		player.sendSkillList();
 	}
 	
 	private String getReplacedSkillNames(Player player)
@@ -337,6 +296,7 @@ public class TimedHunting extends AbstractInstance
 			{
 				sb.append(", ");
 			}
+			
 			count++;
 			
 			sb.append(knownSkill.getName());
@@ -372,6 +332,7 @@ public class TimedHunting extends AbstractInstance
 						{
 							player.getInstanceWorld().spawnGroup("treasures");
 						}
+						
 						for (Npc npc : player.getInstanceWorld().spawnGroup("monsters"))
 						{
 							if (npc.isAttackable())

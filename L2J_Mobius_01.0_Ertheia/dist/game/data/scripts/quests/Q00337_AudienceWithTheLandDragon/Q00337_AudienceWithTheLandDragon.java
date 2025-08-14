@@ -45,8 +45,10 @@ public class Q00337_AudienceWithTheLandDragon extends Quest
 	private static final int HELTON = 30678; // Town of Oren
 	private static final int GILMORE = 30754; // Dragon Valley
 	private static final int THEODRIC = 30755; // Antharas's Lair
+	
 	// Misc
 	private static final int MIN_LEVEL = 50;
+	
 	// Items
 	private static final int FEATHER_OF_GABRIELLE = 3852; // Gabrielle's Feather
 	private static final int MARSH_DRAKE_TALONS = 3854; // Marsh Drake Talons
@@ -63,6 +65,7 @@ public class Q00337_AudienceWithTheLandDragon extends Quest
 	private static final int THIRD_FRAGMENT_OF_ABYSS_JEWEL = 3861; // 3rd Fragment of Abyssal Jewe
 	private static final int TOTEM_OF_LAND_DRAGON = 3858; // Totem of Land Dragon
 	private static final int PORTAL_STONE = 3865; // Portal Stone
+	
 	// Monsters
 	private static final int HARIT_LIZARDMAN_ZEALOT = 27172; // Quest Monstr
 	private static final int SACRIFICE_OF_THE_SACRIFICED = 27171; // Quest Monstr
@@ -167,6 +170,7 @@ public class Q00337_AudienceWithTheLandDragon extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -475,6 +479,7 @@ public class Q00337_AudienceWithTheLandDragon extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -519,6 +524,7 @@ public class Q00337_AudienceWithTheLandDragon extends Quest
 					{
 						spawn = jewel1;
 					}
+					
 					if (spawn)
 					{
 						for (int i = 0; i < npcInfo[4]; i++)
@@ -544,16 +550,19 @@ public class Q00337_AudienceWithTheLandDragon extends Quest
 					}
 					break;
 				}
+				
 				if (npcId == ABYSSAL_JEWEL_3)
 				{
 					jewel3 = true;
 					break;
 				}
+				
 				if (npcId == ABYSSAL_JEWEL_2)
 				{
 					jewel2 = true;
 					break;
 				}
+				
 				if (npcId == ABYSSAL_JEWEL_1)
 				{
 					jewel1 = true;
@@ -591,6 +600,7 @@ public class Q00337_AudienceWithTheLandDragon extends Quest
 						{
 							break;
 						}
+						
 						final int itemId = npcInfo[4];
 						if (!hasQuestItems(player, itemId))
 						{

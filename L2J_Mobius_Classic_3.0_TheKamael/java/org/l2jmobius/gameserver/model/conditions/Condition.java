@@ -128,6 +128,7 @@ public abstract class Condition implements ConditionListener
 			_result = res;
 			notifyChanged();
 		}
+		
 		return res;
 	}
 	

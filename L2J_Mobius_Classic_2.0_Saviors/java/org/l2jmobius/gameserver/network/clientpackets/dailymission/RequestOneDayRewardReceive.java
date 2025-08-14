@@ -57,6 +57,7 @@ public class RequestOneDayRewardReceive extends ClientPacket
 		{
 			return;
 		}
+		
 		player.addRequest(new RewardRequest(player));
 		
 		final Collection<DailyMissionDataHolder> rewards = DailyMissionData.getInstance().getDailyMissionData(_id);

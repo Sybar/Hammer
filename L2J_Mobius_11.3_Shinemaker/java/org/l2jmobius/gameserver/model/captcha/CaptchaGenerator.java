@@ -56,6 +56,7 @@ public class CaptchaGenerator
 		{
 			id++;
 		}
+		
 		return CAPTCHAS.computeIfAbsent(id, this::generateCaptcha);
 	}
 	

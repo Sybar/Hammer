@@ -20,9 +20,8 @@ import java.util.OptionalDouble;
 
 import org.l2jmobius.Config;
 import org.l2jmobius.gameserver.model.actor.Creature;
-import org.l2jmobius.gameserver.model.actor.enums.player.PlayerCondOverride;
 import org.l2jmobius.gameserver.model.actor.instance.Pet;
-import org.l2jmobius.gameserver.model.actor.transform.TransformType;
+import org.l2jmobius.gameserver.model.actor.transform.Transform;
 import org.l2jmobius.gameserver.model.item.ItemTemplate;
 import org.l2jmobius.gameserver.model.item.instance.Item;
 import org.l2jmobius.gameserver.model.item.type.CrystalType;
@@ -54,6 +53,7 @@ public interface IStatFunction
 				value += calcEnchantBodyPartBonus(item.getEnchantLevel(), item.getTemplate().isBlessed());
 			}
 		}
+		
 		return value;
 	}
 	
@@ -65,7 +65,8 @@ public interface IStatFunction
 	default double calcWeaponBaseValue(Creature creature, Stat stat)
 	{
 		final double baseTemplateValue = creature.getTemplate().getBaseValue(stat, 0);
-		double baseValue = creature.getTransformation().map(transform -> transform.getStats(creature, stat, baseTemplateValue)).orElse(baseTemplateValue);
+		final Transform transform = creature.getTransformation();
+		double baseValue = transform == null ? baseTemplateValue : transform.getStats(creature, stat, baseTemplateValue);
 		if (creature.isPet())
 		{
 			final Pet pet = creature.asPet();
@@ -73,7 +74,7 @@ public interface IStatFunction
 			final double baseVal = stat == Stat.PHYSICAL_ATTACK ? pet.getPetLevelData().getPetPAtk() : stat == Stat.MAGIC_ATTACK ? pet.getPetLevelData().getPetMAtk() : baseTemplateValue;
 			baseValue = baseVal + (weapon != null ? weapon.getTemplate().getStats(stat, baseVal) : 0);
 		}
-		else if (creature.isPlayer() && (!creature.isTransformed() || (creature.getTransformation().get().getType() == TransformType.COMBAT) || (creature.getTransformation().get().getType() == TransformType.MODE_CHANGE)))
+		else if (creature.isPlayer() && ((transform == null) || transform.canUseWeaponStats()))
 		{
 			final Item weapon = creature.getActiveWeaponInstance();
 			baseValue = (weapon != null ? weapon.getTemplate().getStats(stat, baseTemplateValue) : baseTemplateValue);
@@ -85,8 +86,8 @@ public interface IStatFunction
 	default double calcWeaponPlusBaseValue(Creature creature, Stat stat)
 	{
 		final double baseTemplateValue = creature.getTemplate().getBaseValue(stat, 0);
-		double baseValue = creature.getTransformation().filter(transform -> !transform.isStance()).map(transform -> transform.getStats(creature, stat, baseTemplateValue)).orElse(baseTemplateValue);
-		
+		final Transform transform = creature.getTransformation();
+		double baseValue = (transform != null) && !transform.isStance() ? transform.getStats(creature, stat, baseTemplateValue) : baseTemplateValue;
 		if (creature.isPlayable())
 		{
 			final Inventory inv = creature.getInventory();
@@ -160,6 +161,7 @@ public interface IStatFunction
 				value += calcEnchantedPAtkBonus(equippedItem, blessedBonus, enchant);
 			}
 		}
+		
 		return value;
 	}
 	
@@ -239,8 +241,10 @@ public interface IStatFunction
 					{
 						return (12 * blessedBonus * enchant) + (24 * blessedBonus * Math.max(0, enchant - 3));
 					}
+					
 					return (7 * blessedBonus * enchant) + (14 * blessedBonus * Math.max(0, enchant - 3));
 				}
+				
 				return (6 * blessedBonus * enchant) + (12 * blessedBonus * Math.max(0, enchant - 3));
 			}
 			case S:
@@ -253,10 +257,12 @@ public interface IStatFunction
 						// Starting at +4, P. Atk. bonus double.
 						return (10 * enchant) + (20 * Math.max(0, enchant - 3));
 					}
+					
 					// P. Atk. increases by 6 for two-handed swords, two-handed blunts, dualswords, and two-handed combat weapons.
 					// Starting at +4, P. Atk. bonus double.
 					return (6 * enchant) + (12 * Math.max(0, enchant - 3));
 				}
+				
 				// P. Atk. increases by 5 for one-handed swords, one-handed blunts, daggers, spears, and other weapons.
 				// Starting at +4, P. Atk. bonus double.
 				return (5 * enchant) + (10 * Math.max(0, enchant - 3));
@@ -271,10 +277,12 @@ public interface IStatFunction
 						// Starting at +4, P. Atk. bonus double.
 						return (8 * enchant) + (16 * Math.max(0, enchant - 3));
 					}
+					
 					// P. Atk. increases by 5 for two-handed swords, two-handed blunts, dualswords, and two-handed combat weapons.
 					// Starting at +4, P. Atk. bonus double.
 					return (5 * enchant) + (10 * Math.max(0, enchant - 3));
 				}
+				
 				// P. Atk. increases by 4 for one-handed swords, one-handed blunts, daggers, spears, and other weapons.
 				// Starting at +4, P. Atk. bonus double.
 				return (4 * enchant) + (8 * Math.max(0, enchant - 3));
@@ -290,10 +298,12 @@ public interface IStatFunction
 						// Starting at +4, P. Atk. bonus double.
 						return (6 * enchant) + (12 * Math.max(0, enchant - 3));
 					}
+					
 					// P. Atk. increases by 4 for two-handed swords, two-handed blunts, dualswords, and two-handed combat weapons.
 					// Starting at +4, P. Atk. bonus double.
 					return (4 * enchant) + (8 * Math.max(0, enchant - 3));
 				}
+				
 				// P. Atk. increases by 3 for one-handed swords, one-handed blunts, daggers, spears, and other weapons.
 				// Starting at +4, P. Atk. bonus double.
 				return (3 * enchant) + (6 * Math.max(0, enchant - 3));
@@ -306,6 +316,7 @@ public interface IStatFunction
 					// Starting at +4, P. Atk. bonus double.
 					return (4 * enchant) + (8 * Math.max(0, enchant - 3));
 				}
+				
 				// P. Atk. increases by 2 for all weapons with the exception of bows.
 				// Starting at +4, P. Atk. bonus double.
 				return (2 * enchant) + (4 * Math.max(0, enchant - 3));
@@ -315,7 +326,7 @@ public interface IStatFunction
 	
 	default double validateValue(Creature creature, double value, double minValue, double maxValue)
 	{
-		if ((value > maxValue) && !creature.canOverrideCond(PlayerCondOverride.MAX_STATS_VALUE))
+		if (value > maxValue) // && !creature.isGM()
 		{
 			return maxValue;
 		}

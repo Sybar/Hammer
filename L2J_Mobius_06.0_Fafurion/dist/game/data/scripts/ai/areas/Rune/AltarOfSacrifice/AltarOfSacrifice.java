@@ -72,6 +72,7 @@ public class AltarOfSacrifice extends AbstractNpcAI
 			startQuestTimer("msg_text", 135000, npc, null);
 			_jenas_guard.setScriptValue(0);
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	

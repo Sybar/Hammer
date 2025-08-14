@@ -203,6 +203,7 @@ public class PaybackManager
 		{
 			missionProgress.add(Integer.parseInt(temp.replace("[", "").replace("]", "").replace(" ", "")));
 		}
+		
 		final Long consumed = Long.parseLong(splitsVariable[1].split("=")[1]);
 		StatSet returnSet = new StatSet();
 		returnSet.set("CONSUMED_COINS", consumed);
@@ -226,6 +227,7 @@ public class PaybackManager
 		{
 			progress = getStatSetVariable(variable);
 		}
+		
 		_playerProgress.put(player.getObjectId(), progress);
 	}
 	

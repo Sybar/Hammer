@@ -32,6 +32,7 @@ public class Q00356_DigUpTheSeaOfSpores extends Quest
 	// Items
 	private static final int HERB_SPORE = 5866;
 	private static final int CARN_SPORE = 5865;
+	
 	// Monsters
 	private static final int ROTTING_TREE = 20558;
 	private static final int SPORE_ZOMBIE = 20562;

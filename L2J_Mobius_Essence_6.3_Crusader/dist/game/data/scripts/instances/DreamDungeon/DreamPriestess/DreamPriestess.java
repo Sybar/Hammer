@@ -157,8 +157,10 @@ public class DreamPriestess extends AbstractInstance
 			{
 				InstanceManager.getInstance().deleteInstanceTime(player, instanceId);
 			}
+			
 			return DREAM_PRIESTESS + "-gm.htm";
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	
@@ -229,6 +231,7 @@ public class DreamPriestess extends AbstractInstance
 				return true;
 			}
 		}
+		
 		return false;
 	}
 	

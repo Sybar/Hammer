@@ -44,6 +44,7 @@ public final class Q00529_RegularBarrierMaintenance extends Quest
 {
 	// NPCs
 	private static final int CHORINA = 33846;
+	
 	// Monster
 	private static final int[] MONSTERS =
 	{
@@ -61,8 +62,10 @@ public final class Q00529_RegularBarrierMaintenance extends Quest
 		29327, // Arminus
 		29326, // Arima
 	};
+	
 	// Items
 	private static final int SEIZED_ENERGY_OF_THE_SEA_OF_SPORES = 48838;
+	
 	// Misc
 	private static final int MIN_LEVEL = 106;
 	private static final int ITEM_COUNT = 200;
@@ -133,6 +136,7 @@ public final class Q00529_RegularBarrierMaintenance extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

@@ -1322,11 +1322,11 @@
 		<mpInitialConsume>88</mpInitialConsume>
 		<reuseDelay>300000</reuseDelay>
 		<staticReuse>true</staticReuse>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<not>
 				<player insideZoneId="10501, 10502, 10503" />
 			</not>
-		</cond>
+		</conditions>
 		<conditions>
 			<condition name="OpCallPc" />
 		</conditions>

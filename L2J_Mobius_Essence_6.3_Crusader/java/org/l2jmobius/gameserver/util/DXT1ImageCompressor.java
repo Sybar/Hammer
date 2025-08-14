@@ -73,6 +73,7 @@ public class DXT1ImageCompressor
 				buffer.putInt(computColorIndexes(block));
 			}
 		}
+		
 		return buffer.array();
 	}
 	
@@ -104,6 +105,7 @@ public class DXT1ImageCompressor
 			index = (x2 | ((x0 | x1) << 1));
 			encodedColors |= (index << (i << 1));
 		}
+		
 		return (int) encodedColors;
 	}
 	
@@ -136,6 +138,7 @@ public class DXT1ImageCompressor
 		buffer.putInt(0); // Green bit mask
 		buffer.putInt(0); // Blue bit mask
 		buffer.putInt(0); // Alpha bit mask
+		
 		// End pixel format
 		buffer.putInt(DDSCAPS_TEXTURE); // Complexity Caps
 		buffer.putInt(0); // caps 2

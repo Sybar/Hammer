@@ -59,6 +59,7 @@ public class MessiahOuter extends AbstractInstance
 	private static final int TELEPORTER = 34325;
 	private static final int VIOLET = 34327;
 	private static final int SOLDIER = 34300;
+	
 	// Monsters
 	private static final int SIEGE_TANK = 24023;
 	private static final int MAGIC_CANNON = 24042;
@@ -96,6 +97,7 @@ public class MessiahOuter extends AbstractInstance
 		ORC_MERCENARY,
 		CASTLE_WIZARD
 	};
+	
 	// Raid Bosses
 	private static final int SAMPSON = 26199;
 	private static final int HANSON = 26200;
@@ -162,6 +164,7 @@ public class MessiahOuter extends AbstractInstance
 		EVEN,
 		NEMERTESS
 	};
+	
 	// Skills
 	private static final SkillHolder MASS_CHAIN_SMASH = new SkillHolder(16154, 1);
 	private static final SkillHolder MASS_BLEED = new SkillHolder(16225, 1);
@@ -199,8 +202,10 @@ public class MessiahOuter extends AbstractInstance
 		ENERGY_SPIKE,
 		ENERGY_BURST
 	};
+	
 	// Locations
 	private static final Location VIOLET_LOC = new Location(-248896, 132589, 1051);
+	
 	// Zones
 	private static final int DEVIANNE_1 = 9000;
 	private static final int DEVIANNE_2 = 9001;
@@ -226,6 +231,7 @@ public class MessiahOuter extends AbstractInstance
 	private static final SayuneZone LEONA_SAYUNE_1 = ZoneManager.getInstance().getZoneByName("Sayune_96", SayuneZone.class);
 	private static final SayuneZone LEONA_SAYUNE_2 = ZoneManager.getInstance().getZoneByName("Sayune_97", SayuneZone.class);
 	private static final SayuneZone LEONA_SAYUNE_3 = ZoneManager.getInstance().getZoneByName("Sayune_98", SayuneZone.class);
+	
 	// Misc
 	private static final int TEMPLATE_ID = 265;
 	private static final int COND_MEMBERS = 21;
@@ -280,6 +286,7 @@ public class MessiahOuter extends AbstractInstance
 								{
 									player.sendMessage("Player " + member.getName() + " must come closer.");
 								}
+								
 								enterInstance(member, npc, TEMPLATE_ID);
 							}
 							else
@@ -325,6 +332,7 @@ public class MessiahOuter extends AbstractInstance
 				break;
 			}
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	
@@ -534,6 +542,7 @@ public class MessiahOuter extends AbstractInstance
 					break;
 				}
 			}
+			
 			npc.setRandomWalking(false);
 		}
 	}
@@ -564,6 +573,7 @@ public class MessiahOuter extends AbstractInstance
 						{
 							addSpawn(CASTLE_RAIDER, npc.getLocation(), true, 0, false, instance.getId());
 						}
+						
 						instance.getParameters().set("SAMPSON_50", true);
 					}
 					else
@@ -583,6 +593,7 @@ public class MessiahOuter extends AbstractInstance
 						{
 							addSpawn(CASTLE_RAIDER, npc.getLocation(), true, 0, false, instance.getId());
 						}
+						
 						instance.getParameters().set("HANSON_50", true);
 					}
 					else
@@ -653,6 +664,7 @@ public class MessiahOuter extends AbstractInstance
 						{
 							addSpawn(CASTLE_RAIDER, npc.getLocation(), true, 0, false, instance.getId());
 						}
+						
 						instance.getParameters().set("KWAI_50", true);
 					}
 					else
@@ -672,6 +684,7 @@ public class MessiahOuter extends AbstractInstance
 							npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.RISE_MY_SLAVES);
 							addSpawn(RESURRECTED_CASTLE_ARCHER, npc.getLocation(), true, 0, false, instance.getId());
 						}
+						
 						instance.getParameters().set("CORNIX_50", true);
 					}
 					else
@@ -690,6 +703,7 @@ public class MessiahOuter extends AbstractInstance
 						{
 							addSpawn(RESURRECTED_CASTLE_ARCHER, npc.getLocation(), true, 0, false, instance.getId());
 						}
+						
 						instance.getParameters().set("CARANIX_50", true);
 					}
 					else
@@ -709,6 +723,7 @@ public class MessiahOuter extends AbstractInstance
 						{
 							addSpawn(CASTLE_RAIDER, npc.getLocation(), true, 0, false, instance.getId());
 						}
+						
 						instance.getParameters().set("JONADAN_50", true);
 					}
 					else
@@ -728,6 +743,7 @@ public class MessiahOuter extends AbstractInstance
 						{
 							addSpawn(CASTLE_RAIDER, npc.getLocation(), true, 0, false, instance.getId());
 						}
+						
 						instance.getParameters().set("DEMIEN_50", true);
 					}
 					else
@@ -764,6 +780,7 @@ public class MessiahOuter extends AbstractInstance
 						{
 							addSpawn(ORC_MERCENARY, npc.getLocation(), true, 0, false, instance.getId());
 						}
+						
 						instance.getParameters().set("TARKU_50", true);
 					}
 					else
@@ -783,6 +800,7 @@ public class MessiahOuter extends AbstractInstance
 						{
 							addSpawn(ORC_MERCENARY, npc.getLocation(), true, 0, false, instance.getId());
 						}
+						
 						instance.getParameters().set("TARPIN_50", true);
 					}
 					else
@@ -802,6 +820,7 @@ public class MessiahOuter extends AbstractInstance
 						{
 							addSpawn(CASTLE_RAIDER, npc.getLocation(), true, 0, false, instance.getId());
 						}
+						
 						instance.getParameters().set("SAFE_50", true);
 					}
 					else
@@ -821,6 +840,7 @@ public class MessiahOuter extends AbstractInstance
 						{
 							addSpawn(CASTLE_RAIDER, npc.getLocation(), true, 0, false, instance.getId());
 						}
+						
 						instance.getParameters().set("SECRET_50", true);
 					}
 					else
@@ -839,6 +859,7 @@ public class MessiahOuter extends AbstractInstance
 						{
 							addSpawn(POSLOF, npc.getLocation(), true, 0, false, instance.getId());
 						}
+						
 						instance.getParameters().set("SAKUM_50", true);
 					}
 					else
@@ -858,6 +879,7 @@ public class MessiahOuter extends AbstractInstance
 						{
 							addSpawn(POSLOF, npc.getLocation(), true, 0, false, instance.getId());
 						}
+						
 						instance.getParameters().set("TYPHOON_50", true);
 					}
 					else
@@ -962,6 +984,7 @@ public class MessiahOuter extends AbstractInstance
 						{
 							addSpawn(CASTLE_WIZARD, npc.getLocation(), true, 0, false, instance.getId());
 						}
+						
 						instance.getParameters().set("WITHRA_50", true);
 					}
 					else
@@ -981,6 +1004,7 @@ public class MessiahOuter extends AbstractInstance
 						{
 							addSpawn(CASTLE_WIZARD, npc.getLocation(), true, 0, false, instance.getId());
 						}
+						
 						instance.getParameters().set("BLETRA_50", true);
 					}
 					else
@@ -1000,6 +1024,7 @@ public class MessiahOuter extends AbstractInstance
 						{
 							addSpawn(CASTLE_RAIDER, npc.getLocation(), true, 0, false, instance.getId());
 						}
+						
 						instance.getParameters().set("TANK_50", true);
 					}
 					else
@@ -1036,6 +1061,7 @@ public class MessiahOuter extends AbstractInstance
 						{
 							addSpawn(RESURRECTED_CASTLE_ARCHER, npc.getLocation(), true, 0, false, instance.getId());
 						}
+						
 						instance.getParameters().set("VARONIA_50", true);
 					}
 					else
@@ -1055,6 +1081,7 @@ public class MessiahOuter extends AbstractInstance
 						{
 							addSpawn(RESURRECTED_CASTLE_ARCHER, npc.getLocation(), true, 0, false, instance.getId());
 						}
+						
 						instance.getParameters().set("VARONIA_50", true);
 					}
 					else
@@ -1074,6 +1101,7 @@ public class MessiahOuter extends AbstractInstance
 						{
 							addSpawn(CASTLE_WIZARD, npc.getLocation(), true, 0, false, instance.getId());
 						}
+						
 						instance.getParameters().set("ODD_50", true);
 					}
 					else
@@ -1093,6 +1121,7 @@ public class MessiahOuter extends AbstractInstance
 						{
 							addSpawn(CASTLE_WIZARD, npc.getLocation(), true, 0, false, instance.getId());
 						}
+						
 						instance.getParameters().set("EVEN_50", true);
 					}
 					else
@@ -1148,6 +1177,7 @@ public class MessiahOuter extends AbstractInstance
 					break;
 				}
 			}
+			
 			if (ArrayUtil.contains(BOSSES, npc.getId()))
 			{
 				final int zoneId = killer.getVariables().getInt("CURRENT_ZONE", 0);
@@ -1252,6 +1282,7 @@ public class MessiahOuter extends AbstractInstance
 		{
 			return npc.getId() + ".html";
 		}
+		
 		return htmltext;
 	}
 	

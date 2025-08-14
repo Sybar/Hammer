@@ -60,6 +60,7 @@ public class RequestClanAskJoinByName extends ClientPacket
 		{
 			return;
 		}
+		
 		if (!player.getRequest().setRequest(invitedPlayer, this))
 		{
 			return;

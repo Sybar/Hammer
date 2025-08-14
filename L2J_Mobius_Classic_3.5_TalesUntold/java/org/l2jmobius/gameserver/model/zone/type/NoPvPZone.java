@@ -45,6 +45,7 @@ public class NoPvPZone extends ZoneType
 		if (creature.isPlayer())
 		{
 			final Player player = creature.asPlayer();
+			
 			// PVP possible during siege, now for siege participants only
 			// Could also check if this town is in siege, or if any siege is going on
 			if ((player.getSiegeState() != 0) && (Config.PEACE_ZONE_MODE == 1))

@@ -30,11 +30,13 @@ public class SeedTeleportDevice extends AbstractNpcAI
 {
 	// NPCs
 	private static final int SEED_TELEPORT_DEVICE = 15929;
+	
 	// Locations
 	private static final Location SOA = new Location(-175572, 154572, 2712);
 	private static final Location SOD = new Location(-247024, 251794, 4336);
 	private static final Location SOI = new Location(-213699, 210686, 4408);
 	private static final Location SOH = new Location(-147354, 152581, -14048);
+	
 	// Misc
 	private static final int SOH_MIN_LV = 97;
 	
@@ -71,10 +73,12 @@ public class SeedTeleportDevice extends AbstractNpcAI
 				{
 					return "SeedOfHellfire-noLv.html";
 				}
+				
 				player.teleToLocation(SOH);
 				break;
 			}
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	

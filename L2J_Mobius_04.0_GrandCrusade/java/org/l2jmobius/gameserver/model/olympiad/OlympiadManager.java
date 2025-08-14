@@ -75,6 +75,7 @@ public class OlympiadManager
 				result.add(classList.getValue());
 			}
 		}
+		
 		return result;
 	}
 	
@@ -106,6 +107,7 @@ public class OlympiadManager
 				sm.addPcName(noble);
 				player.sendPacket(sm);
 			}
+			
 			return true;
 		}
 		
@@ -118,6 +120,7 @@ public class OlympiadManager
 				sm.addPcName(noble);
 				player.sendPacket(sm);
 			}
+			
 			return true;
 		}
 		
@@ -169,9 +172,11 @@ public class OlympiadManager
 						break;
 					}
 				}
+				
 				return true;
 			}
 		}
+		
 		return false;
 	}
 	
@@ -262,6 +267,7 @@ public class OlympiadManager
 				break;
 			}
 		}
+		
 		return true;
 	}
 	

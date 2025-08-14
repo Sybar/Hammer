@@ -79,6 +79,7 @@ public enum AttributeType
 				return attributeType;
 			}
 		}
+		
 		return null;
 	}
 	
@@ -96,6 +97,7 @@ public enum AttributeType
 				return attributeType;
 			}
 		}
+		
 		return null;
 	}
 }

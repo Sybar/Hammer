@@ -36,6 +36,7 @@ public class Q00412_PathOfTheDarkWizard extends Quest
 	private static final int CHARKEREN = 30415;
 	private static final int ANNIKA = 30418;
 	private static final int ARKENIA = 30419;
+	
 	// Items
 	private static final int SEED_OF_ANGER = 1253;
 	private static final int SEED_OF_DESPAIR = 1254;

@@ -48,6 +48,7 @@ public class Q00092_SagaOfTheElementalMaster extends Quest
 	private static final int TABLET_OF_VISION_3 = 31650;
 	private static final int TABLET_OF_VISION_4 = 31655;
 	private static final int KALEIDOS_THE_UNICORN = 31629;
+	
 	// Monsters
 	private static final int ICE_MONSTER = 27316;
 	private static final int SPIRIT_OF_A_DROWNED = 27317;
@@ -63,6 +64,7 @@ public class Q00092_SagaOfTheElementalMaster extends Quest
 	private static final int VISION_GUARDIAN_SHAKIEL = 27313;
 	private static final int HALISHA_ARCHON = 27219;
 	private static final int DOG_KELVAS = 27311;
+	
 	// Items
 	private static final int ICE_CRYSTAL_FRAGMENT = 49826;
 	private static final int HALISHA_BADGE = 7507;
@@ -71,8 +73,10 @@ public class Q00092_SagaOfTheElementalMaster extends Quest
 	private static final int RESONANCE_AMULET_3 = 7352;
 	private static final int RESONANCE_AMULET_4 = 7383;
 	private static final int MIRACLE_POTION = 7605;
+	
 	// Reward
 	private static final int BOOK_PEGASUS = 90039;
+	
 	// Misc
 	private static final String KILL_COUNT_VAR = "KillCount";
 	
@@ -95,6 +99,7 @@ public class Q00092_SagaOfTheElementalMaster extends Quest
 		{
 			return null;
 		}
+		
 		String htmltext = event;
 		switch (event)
 		{
@@ -242,6 +247,7 @@ public class Q00092_SagaOfTheElementalMaster extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -430,6 +436,7 @@ public class Q00092_SagaOfTheElementalMaster extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -500,6 +507,7 @@ public class Q00092_SagaOfTheElementalMaster extends Quest
 						{
 							qs.set(KILL_COUNT_VAR, count + 1);
 						}
+						
 						if (count >= 20)
 						{
 							qs.setCond(8, true);
@@ -526,8 +534,10 @@ public class Q00092_SagaOfTheElementalMaster extends Quest
 			{
 				holder.add(new NpcLogListHolder(GUARDIAN_OF_FORBIDDEN_KNOWLEDGE, false, guardiancount));
 			}
+			
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

@@ -40,10 +40,13 @@ public class Q00440_GuardsInDisguise extends Quest
 {
 	// NPC
 	private static final int GENIE_LAMP = 34369;
+	
 	// Monsters
 	private static final int GUARD_OF_THE_PLAINS = 22182;
+	
 	// Item
 	private static final ItemHolder SOULSHOT_TICKET = new ItemHolder(90907, 40);
+	
 	// Misc
 	private static final int MIN_LEVEL = 76;
 	private static final int MAX_LEVEL = 85;
@@ -98,6 +101,7 @@ public class Q00440_GuardsInDisguise extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -136,6 +140,7 @@ public class Q00440_GuardsInDisguise extends Quest
 				htmltext = getAlreadyCompletedMsg(player);
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -171,6 +176,7 @@ public class Q00440_GuardsInDisguise extends Quest
 			holder.add(new NpcLogListHolder(NpcStringId.DEFEAT_MONSTERS_35.getId(), true, qs.getInt(KILL_COUNT_VAR)));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

@@ -96,6 +96,7 @@ public class PlayerRefund extends ItemContainer
 		{
 			LOGGER.log(Level.SEVERE, "deleteMe()", e);
 		}
+		
 		_items.clear();
 	}
 	

@@ -890,14 +890,14 @@
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>39556</itemConsumeId> <!-- Minstrel's Scroll of Escape: Town of Rune -->
 		<magicLevel>1</magicLevel>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<and>
 				<player canEscape="true" />
 				<not>
 					<player insideZoneId="10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508" />
 				</not>
 			</and>
-		</cond>
+		</conditions>
 		<effects>
 			<effect name="Teleport">
 				<!-- Town of Rune (Bard NPC) -->
@@ -918,14 +918,14 @@
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>39557</itemConsumeId> <!-- Minstrel's Scroll of Escape: Town of Aden -->
 		<magicLevel>1</magicLevel>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<and>
 				<player canEscape="true" />
 				<not>
 					<player insideZoneId="10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508" />
 				</not>
 			</and>
-		</cond>
+		</conditions>
 		<effects>
 			<effect name="Teleport">
 				<!-- Town of Aden (Bard NPC) -->
@@ -946,14 +946,14 @@
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>39574</itemConsumeId>
 		<magicLevel>1</magicLevel>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<and>
 				<player canEscape="true" />
 				<not>
 					<player insideZoneId="10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508" />
 				</not>
 			</and>
-		</cond>
+		</conditions>
 		<effects>
 			<effect name="Teleport">
 				<x>83633</x>
@@ -973,14 +973,14 @@
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>39575</itemConsumeId>
 		<magicLevel>1</magicLevel>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<and>
 				<player canEscape="true" />
 				<not>
 					<player insideZoneId="10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508" />
 				</not>
 			</and>
-		</cond>
+		</conditions>
 		<effects>
 			<effect name="Teleport">
 				<x>64328</x>
@@ -1000,14 +1000,14 @@
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>39576</itemConsumeId>
 		<magicLevel>1</magicLevel>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<and>
 				<player canEscape="true" />
 				<not>
 					<player insideZoneId="10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508" />
 				</not>
 			</and>
-		</cond>
+		</conditions>
 		<effects>
 			<effect name="Teleport">
 				<!-- Einhasad Temple near High Priest Orwen -->
@@ -1028,14 +1028,14 @@
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>39577</itemConsumeId>
 		<magicLevel>1</magicLevel>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<and>
 				<player canEscape="true" />
 				<not>
 					<player insideZoneId="10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508" />
 				</not>
 			</and>
-		</cond>
+		</conditions>
 		<effects>
 			<effect name="Teleport">
 				<!-- Forsaken Plains near NPC camp. -->
@@ -1056,14 +1056,14 @@
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>39578</itemConsumeId>
 		<magicLevel>1</magicLevel>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<and>
 				<player canEscape="true" />
 				<not>
 					<player insideZoneId="10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508" />
 				</not>
 			</and>
-		</cond>
+		</conditions>
 		<effects>
 			<effect name="Teleport">
 				<x>147446</x>
@@ -1083,14 +1083,14 @@
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>39579</itemConsumeId>
 		<magicLevel>1</magicLevel>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<and>
 				<player canEscape="true" />
 				<not>
 					<player insideZoneId="10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508" />
 				</not>
 			</and>
-		</cond>
+		</conditions>
 		<effects>
 			<effect name="Teleport">
 				<x>183543</x>
@@ -1110,14 +1110,14 @@
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>39580</itemConsumeId>
 		<magicLevel>1</magicLevel>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<and>
 				<player canEscape="true" />
 				<not>
 					<player insideZoneId="10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508" />
 				</not>
 			</and>
-		</cond>
+		</conditions>
 		<effects>
 			<effect name="Teleport">
 				<!-- Einhasad Temple at High Priest NPC -->
@@ -1138,14 +1138,14 @@
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>39581</itemConsumeId>
 		<magicLevel>1</magicLevel>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<and>
 				<player canEscape="true" />
 				<not>
 					<player insideZoneId="10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508" />
 				</not>
 			</and>
-		</cond>
+		</conditions>
 		<effects>
 			<effect name="Teleport">
 				<!-- Swamp of Screams near Dokara NPC -->
@@ -1166,14 +1166,14 @@
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>39582</itemConsumeId>
 		<magicLevel>1</magicLevel>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<and>
 				<player canEscape="true" />
 				<not>
 					<player insideZoneId="10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508" />
 				</not>
 			</and>
-		</cond>
+		</conditions>
 		<effects>
 			<effect name="Teleport">
 				<x>36563</x>
@@ -1193,14 +1193,14 @@
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>39583</itemConsumeId>
 		<magicLevel>1</magicLevel>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<and>
 				<player canEscape="true" />
 				<not>
 					<player insideZoneId="10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508" />
 				</not>
 			</and>
-		</cond>
+		</conditions>
 		<effects>
 			<effect name="Teleport">
 				<x>52107</x>
@@ -1220,14 +1220,14 @@
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>39584</itemConsumeId> <!-- Scroll of Escape: Town of Goddard -->
 		<magicLevel>1</magicLevel>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<and>
 				<player canEscape="true" />
 				<not>
 					<player insideZoneId="10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508" />
 				</not>
 			</and>
-		</cond>
+		</conditions>
 		<effects>
 			<effect name="Teleport">
 				<!-- Einhasad Temple of Goddard -->
@@ -1268,14 +1268,14 @@
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>39586</itemConsumeId> <!-- Scroll of Escape: Town of Giran -->
 		<magicLevel>1</magicLevel>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<and>
 				<player canEscape="true" />
 				<not>
 					<player insideZoneId="10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508" />
 				</not>
 			</and>
-		</cond>
+		</conditions>
 		<effects>
 			<effect name="Teleport">
 				<!-- Einhasad Temple of Giran -->
@@ -1296,14 +1296,14 @@
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>39587</itemConsumeId> <!-- Scroll of Escape: Dragon Valley -->
 		<magicLevel>1</magicLevel>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<and>
 				<player canEscape="true" />
 				<not>
 					<player insideZoneId="10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508" />
 				</not>
 			</and>
-		</cond>
+		</conditions>
 		<effects>
 			<effect name="Teleport">
 				<!-- Near Namo NPC -->
@@ -1494,14 +1494,14 @@
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>39491</itemConsumeId>
 		<magicLevel>1</magicLevel>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<and>
 				<player canEscape="true" />
 				<not>
 					<player insideZoneId="10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508" />
 				</not>
 			</and>
-		</cond>
+		</conditions>
 		<effects>
 			<effect name="Teleport">
 				<x>-79816</x>
@@ -1520,14 +1520,14 @@
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>39492</itemConsumeId>
 		<magicLevel>1</magicLevel>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<and>
 				<player canEscape="true" />
 				<not>
 					<player insideZoneId="10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508" />
 				</not>
 			</and>
-		</cond>
+		</conditions>
 		<effects>
 			<effect name="Teleport">
 				<x>-93649</x>
@@ -1546,14 +1546,14 @@
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>39486</itemConsumeId>
 		<magicLevel>1</magicLevel>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<and>
 				<player canEscape="true" />
 				<not>
 					<player insideZoneId="10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508" />
 				</not>
 			</and>
-		</cond>
+		</conditions>
 		<effects>
 			<effect name="Teleport">
 				<x>-79816</x>
@@ -1572,14 +1572,14 @@
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>39487</itemConsumeId>
 		<magicLevel>1</magicLevel>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<and>
 				<player canEscape="true" />
 				<not>
 					<player insideZoneId="10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508" />
 				</not>
 			</and>
-		</cond>
+		</conditions>
 		<effects>
 			<effect name="Teleport">
 				<x>-85585</x>
@@ -1598,14 +1598,14 @@
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>39593</itemConsumeId>
 		<magicLevel>1</magicLevel>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<and>
 				<player canEscape="true" />
 				<not>
 					<player insideZoneId="10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508" />
 				</not>
 			</and>
-		</cond>
+		</conditions>
 		<effects>
 			<effect name="Teleport">
 				<x>16272</x>
@@ -1624,14 +1624,14 @@
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>39594</itemConsumeId>
 		<magicLevel>1</magicLevel>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<and>
 				<player canEscape="true" />
 				<not>
 					<player insideZoneId="10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508" />
 				</not>
 			</and>
-		</cond>
+		</conditions>
 		<effects>
 			<effect name="Teleport">
 				<!-- Cruma Marshlands -->
@@ -1651,14 +1651,14 @@
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>39595</itemConsumeId>
 		<magicLevel>1</magicLevel>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<and>
 				<player canEscape="true" />
 				<not>
 					<player insideZoneId="10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508" />
 				</not>
 			</and>
-		</cond>
+		</conditions>
 		<effects>
 			<effect name="Teleport">
 				<x>16014</x>
@@ -1677,14 +1677,14 @@
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>39596</itemConsumeId>
 		<magicLevel>1</magicLevel>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<and>
 				<player canEscape="true" />
 				<not>
 					<player insideZoneId="10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508" />
 				</not>
 			</and>
-		</cond>
+		</conditions>
 		<effects>
 			<effect name="Teleport">
 				<!-- Inside Cruma Tower -->
@@ -1704,14 +1704,14 @@
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>39494</itemConsumeId> <!-- Scroll of Escape -->
 		<magicLevel>1</magicLevel>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<and>
 				<player canEscape="true" />
 				<not>
 					<player insideZoneId="10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508" />
 				</not>
 			</and>
-		</cond>
+		</conditions>
 		<effects>
 			<effect name="Teleport">
 				<!-- Bloody Swamplan -->
@@ -1731,14 +1731,14 @@
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>39495</itemConsumeId> <!-- Scroll of Escape: Seed of Annihilation -->
 		<magicLevel>1</magicLevel>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<and>
 				<player canEscape="true" />
 				<not>
 					<player insideZoneId="10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508" />
 				</not>
 			</and>
-		</cond>
+		</conditions>
 		<effects>
 			<effect name="Teleport">
 				<!-- Seed of Annihilation (Entrance) -->
@@ -1758,14 +1758,14 @@
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>39496</itemConsumeId> <!-- Scroll of Escape: Harnak Underground Ruins -->
 		<magicLevel>1</magicLevel>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<and>
 				<player canEscape="true" />
 				<not>
 					<player insideZoneId="10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508" />
 				</not>
 			</and>
-		</cond>
+		</conditions>
 		<effects>
 			<effect name="Teleport">
 				<!-- Harnak Underground Ruins -->
@@ -1785,14 +1785,14 @@
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>39497</itemConsumeId> <!-- Scroll of Escape: Kartia's Labyrinth -->
 		<magicLevel>1</magicLevel>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<and>
 				<player canEscape="true" />
 				<not>
 					<player insideZoneId="10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508" />
 				</not>
 			</and>
-		</cond>
+		</conditions>
 		<effects>
 			<effect name="Teleport">
 				<x>147553</x>
@@ -1811,14 +1811,14 @@
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>39498</itemConsumeId> <!-- Scroll of Escape: Fairy Settlement -->
 		<magicLevel>1</magicLevel>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<and>
 				<player canEscape="true" />
 				<not>
 					<player insideZoneId="10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508" />
 				</not>
 			</and>
-		</cond>
+		</conditions>
 		<effects>
 			<effect name="Teleport">
 				<!-- Fairy Settlement (Peace Zone) -->
@@ -1838,14 +1838,14 @@
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>39499</itemConsumeId> <!-- Scroll of Escape: Garden of Genesis -->
 		<magicLevel>1</magicLevel>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<and>
 				<player canEscape="true" />
 				<not>
 					<player insideZoneId="10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508" />
 				</not>
 			</and>
-		</cond>
+		</conditions>
 		<effects>
 			<effect name="Teleport">
 				<!-- Garden of Genesis -->
@@ -1865,14 +1865,14 @@
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>39500</itemConsumeId> <!-- Scroll of Escape: Prison of Darkness -->
 		<magicLevel>1</magicLevel>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<and>
 				<player canEscape="true" />
 				<not>
 					<player insideZoneId="10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508" />
 				</not>
 			</and>
-		</cond>
+		</conditions>
 		<effects>
 			<effect name="Teleport">
 				<!-- Ancient City Arcan (Gatekeeper) -->
@@ -1899,14 +1899,14 @@
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>39502</itemConsumeId> <!-- Scroll of Escape: Isle of Souls -->
 		<magicLevel>1</magicLevel>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<and>
 				<player canEscape="true" />
 				<not>
 					<player insideZoneId="10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508" />
 				</not>
 			</and>
-		</cond>
+		</conditions>
 		<effects>
 			<effect name="Teleport">
 				<!-- Stronghold II -->
@@ -1926,14 +1926,14 @@
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>39503</itemConsumeId> <!-- Scroll of Escape: Nornil's Cave -->
 		<magicLevel>1</magicLevel>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<and>
 				<player canEscape="true" />
 				<not>
 					<player insideZoneId="10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508" />
 				</not>
 			</and>
-		</cond>
+		</conditions>
 		<effects>
 			<effect name="Teleport">
 				<!-- Mimir's Forest -->
@@ -1953,14 +1953,14 @@
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>39504</itemConsumeId> <!-- Scroll of Escape: Seal of Shilen -->
 		<magicLevel>1</magicLevel>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<and>
 				<player canEscape="true" />
 				<not>
 					<player insideZoneId="10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508" />
 				</not>
 			</and>
-		</cond>
+		</conditions>
 		<effects>
 			<effect name="Teleport">
 				<!-- Seal of Shilen (Entrance) -->

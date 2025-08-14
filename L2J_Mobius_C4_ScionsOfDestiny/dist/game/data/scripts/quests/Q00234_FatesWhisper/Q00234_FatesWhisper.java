@@ -45,8 +45,10 @@ public class Q00234_FatesWhisper extends Quest
 	private static final int PIPETTE_KNIFE = 4665;
 	private static final int RED_PIPETTE_KNIFE = 4673;
 	private static final int CRYSTAL_B = 1460;
+	
 	// Reward
 	private static final int STAR_OF_DESTINY = 5011;
+	
 	// Chest Spawn
 	private static final Map<Integer, Integer> CHEST_SPAWN = new HashMap<>();
 	static
@@ -56,6 +58,7 @@ public class Q00234_FatesWhisper extends Quest
 		CHEST_SPAWN.put(25126, 31029);
 		CHEST_SPAWN.put(25220, 31030);
 	}
+	
 	// Weapons
 	private static final Map<Integer, String> WEAPONS = new HashMap<>();
 	static
@@ -81,8 +84,10 @@ public class Q00234_FatesWhisper extends Quest
 		registerQuestItems(PIPETTE_KNIFE, RED_PIPETTE_KNIFE);
 		addStartNpc(31002);
 		addTalkId(31002, 30182, 30847, 30178, 30833, 31028, 31029, 31030, 31027);
+		
 		// The 4 bosses which spawn chests
 		addKillId(25035, 25054, 25126, 25220);
+		
 		// Baium
 		addAttackId(29020);
 	}

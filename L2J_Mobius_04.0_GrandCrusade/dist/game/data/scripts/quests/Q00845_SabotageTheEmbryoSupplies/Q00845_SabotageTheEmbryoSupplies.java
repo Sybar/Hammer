@@ -40,6 +40,7 @@ public class Q00845_SabotageTheEmbryoSupplies extends Quest
 {
 	// NPCs
 	private static final int LOGART_VAN_DYKE = 34235;
+	
 	// Monsters
 	private static final int[] MONSTERS =
 	{
@@ -54,12 +55,15 @@ public class Q00845_SabotageTheEmbryoSupplies extends Quest
 		23512, //
 		23511 //
 	};
+	
 	// Items
 	private static final int EMBRYO_SUPPLIES = 47197;
+	
 	// Rewards
 	private static final int BASIC_SUPPLY_BOX = 47175; // Kingdom's Royal Guard Basic Supply Box Atelia Fortress
 	private static final int INTERMEDIATE_SUPPLY_BOX = 47176; // Kingdom's Royal Guard Intermediate Supply Box Atelia Fortress
 	private static final int ADVANCED_SUPPLY_BOX = 47177; // Kingdom's Royal Guard Advanced Supply Box Atelia Fortress
+	
 	// Misc
 	private static final int MIN_LEVEL = 101;
 	
@@ -112,6 +116,7 @@ public class Q00845_SabotageTheEmbryoSupplies extends Quest
 					htmltext = "34235-04b.htm";
 					break;
 				}
+				
 				htmltext = "34235-04.htm";
 				break;
 			}
@@ -127,6 +132,7 @@ public class Q00845_SabotageTheEmbryoSupplies extends Quest
 					htmltext = "34235-04b.htm";
 					break;
 				}
+				
 				htmltext = "34235-04.htm";
 				break;
 			}
@@ -169,6 +175,7 @@ public class Q00845_SabotageTheEmbryoSupplies extends Quest
 							{
 								giveItems(player, BASIC_SUPPLY_BOX, 1);
 							}
+							
 							addExpAndSp(player, 18155754360L, 18155700);
 							addFactionPoints(player, Faction.KINGDOM_ROYAL_GUARDS, 100);
 							qs.exitQuest(QuestType.DAILY, true);
@@ -196,6 +203,7 @@ public class Q00845_SabotageTheEmbryoSupplies extends Quest
 							{
 								giveItems(player, INTERMEDIATE_SUPPLY_BOX, 1);
 							}
+							
 							addExpAndSp(player, 36311508720L, 36311400);
 							addFactionPoints(player, Faction.KINGDOM_ROYAL_GUARDS, 200);
 							qs.exitQuest(QuestType.DAILY, true);
@@ -223,6 +231,7 @@ public class Q00845_SabotageTheEmbryoSupplies extends Quest
 							{
 								giveItems(player, ADVANCED_SUPPLY_BOX, 1);
 							}
+							
 							addExpAndSp(player, 54467263080L, 54467100);
 							addFactionPoints(player, Faction.KINGDOM_ROYAL_GUARDS, 300);
 							qs.exitQuest(QuestType.DAILY, true);
@@ -238,6 +247,7 @@ public class Q00845_SabotageTheEmbryoSupplies extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -269,6 +279,7 @@ public class Q00845_SabotageTheEmbryoSupplies extends Quest
 							htmltext = "34235-04b.htm";
 							break;
 						}
+						
 						htmltext = "34235-04.htm";
 						break;
 					}
@@ -311,6 +322,7 @@ public class Q00845_SabotageTheEmbryoSupplies extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

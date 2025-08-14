@@ -260,6 +260,7 @@ public class ClanWar
 		{
 			return _winnerClanId == clan.getId() ? ClanWarState.WIN : ClanWarState.LOSS;
 		}
+		
 		return _state;
 	}
 	

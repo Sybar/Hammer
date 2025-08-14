@@ -47,8 +47,10 @@ public class AteliaManager extends AbstractNpcAI
 {
 	// Npc Devianne
 	private static final int DEVIANNE = 34089;
+	
 	// Location Devianne
 	private static final Location DEVIANNE_LOC = new Location(-50063, 49439, -1760, 40362);
+	
 	// Door Atelia Fortess Guard
 	private static final int GUARD = 23539;
 	private static final NpcStringId[] ATELIA_MSG =
@@ -64,26 +66,33 @@ public class AteliaManager extends AbstractNpcAI
 		new SkillHolder(23653, 3), // Poisonous Atelia
 		new SkillHolder(23653, 4), // Poisonous Atelia
 	};
+	
 	// AI (Hummel,Geork,Burnstein) in Zone
 	private static final SkillHolder SUPPLY_BLOCKADE = new SkillHolder(16526, 1);
 	private static final SkillHolder POOR_EQUIPMENT = new SkillHolder(16542, 2);
 	private static final SkillHolder INDISCEPLINE = new SkillHolder(16542, 3);
+	
 	// Bosses
 	private static final int GEORK = 23586; // Geork
 	private static final int BURNSTEIN = 23587; // Burnstein
 	private static final int HUMMEL = 23588; // Hummel
+	
 	// Npcs Stronghold I
 	private static final int BARTON = 34059; // Barton Aden Vanguard
 	private static final int GLENKI = 34063; // Glenkinchie Blackbird Clan Member
+	
 	// Location Stronghold I
 	private static final Location BARTON_LOC = new Location(-45675, 59130, -2904, 54353);
 	private static final Location GLENKI_LOC = new Location(-45579, 59169, -2904, 55286);
+	
 	// Flag Stronghold I
 	private static final Location FLAG_1_LOC = new Location(-45690, 58901, -2864, 36407);
 	private static final Location FLAG_2_LOC = new Location(-45419, 59066, -2864, 54421);
+	
 	// Npcs Stronghold II
 	private static final int HAYUK = 34060; // Hayuk Aden Vanguard
 	private static final int HURAK = 34064; // Hurak Blackbird Clan Member
+	
 	// Location Stronghold II
 	private static final Location HURAK_LOC = new Location(-41766, 50416, -2032, 54353); //
 	private static final Location HAYUK_LOC = new Location(-41879, 50389, -2032, 55286); //
@@ -93,31 +102,39 @@ public class AteliaManager extends AbstractNpcAI
 	// Npcs Stronghold III
 	private static final int ELISE = 34061; // Elise Aden Vanguard
 	private static final int LAFFIAN = 34065; // Laffian Blackbird Clan Member
+	
 	// Other Stronghold III
 	private static final int JULIA = 34074; // Julia Warehouse Keeper
 	private static final int MION = 34076; // Mion Grocer
+	
 	// Location Stronghold III
 	private static final Location ELISE_LOC = new Location(-44715, 40358, -1416, 29326);
 	private static final Location LAFFIAN_LOC = new Location(-44574, 40318, -1416, 28937);
 	private static final Location JULIA_LOC = new Location(-44603, 40202, -1416, 32350);
 	private static final Location MION_LOC = new Location(-44525, 40430, -1416, 22568);
+	
 	// Flag Stronghold III
 	private static final Location FLAG_5_LOC = new Location(-44778, 40556, -1384, 22322);
 	private static final Location FLAG_6_LOC = new Location(-44860, 40254, -1376, 23239);
+	
 	// Npcs Stronghold IV
 	private static final int ELIYAH = 34062; // Eliyah Aden Vanguard
 	private static final int SHERRY = 34066; // Sherry Blackbird Clan Member
+	
 	// Other Stronghold IV
 	private static final int SAYLEM = 34075; // Saylem Warehouse Keeper
 	private static final int NIKA = 34077; // Nika Grocer
+	
 	// Location Stronghold IV
 	private static final Location ELIYAH_LOC = new Location(-58480, 44000, -1552, 25300);
 	private static final Location SHERRY_LOC = new Location(-58395, 43905, -1552, 28798);
 	private static final Location SAYLEM_LOC = new Location(-58327, 43957, -1552, 25179);
 	private static final Location NIKA_LOC = new Location(-58450, 43843, -1552, 32767);
+	
 	// Flag Stronghold IV
 	private static final Location FLAG_7_LOC = new Location(-58449, 44207, -1512, 20327);
 	private static final Location FLAG_8_LOC = new Location(-58693, 43986, -1520, 17904);
+	
 	// Stages (Floors)
 	private static final int[] FLOOR_MOBS =
 	{
@@ -141,6 +158,7 @@ public class AteliaManager extends AbstractNpcAI
 		23601,
 		23602
 	};
+	
 	// Skills Stages
 	private static final int[] ATELIA_CURSE =
 	{
@@ -149,6 +167,7 @@ public class AteliaManager extends AbstractNpcAI
 		23511,
 		23512
 	};
+	
 	// PART OF BOSS AI
 	private static final int[] SB_GROUP =
 	{
@@ -297,18 +316,23 @@ public class AteliaManager extends AbstractNpcAI
 			0
 		}
 	};
+	
 	// Infusers
 	private static final int INFUSER_1 = 23537;
 	private static final int INFUSER_2 = 23538;
+	
 	// Static Npcs
 	private static final int FLAG = 19594; // Stronghold Flag
+	
 	// Items
 	private static final int TPST_1 = 46146; // Atelia Fortress Stronghold I Teleport Device
 	private static final int TPST_2 = 46147; // Atelia Fortress Stronghold II Teleport Device
 	private static final int TPST_3 = 46148; // Atelia Fortress Stronghold III Teleport Device
 	private static final int TPST_4 = 46149; // Atelia Fortress Stronghold VI Teleport Device
+	
 	// Misc
 	private static int _killCount = 0;
+	
 	// Other
 	private static final int DESPAWN = 1800000; // Time 30 Min
 	private static final int SBCANCEL = 3600000; // Time 1 Hour
@@ -571,6 +595,7 @@ public class AteliaManager extends AbstractNpcAI
 						spawn.deleteMe();
 					}
 				}
+				
 				FortessSpawns.clear();
 				break;
 			}
@@ -601,6 +626,7 @@ public class AteliaManager extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -629,18 +655,22 @@ public class AteliaManager extends AbstractNpcAI
 		{
 			startQuestTimer("SH_1", 100, null, null);
 		}
+		
 		if ((npc.getZ() <= -2029) && (npc.getZ() >= -2050) && (npc.getId() == INFUSER_1))
 		{
 			startQuestTimer("SH_2", 100, null, null);
 		}
+		
 		if ((npc.getZ() <= -1419) && (npc.getZ() >= -1520) && (npc.getId() == INFUSER_2))
 		{
 			startQuestTimer("SH_3", 100, null, null);
 		}
+		
 		if ((npc.getZ() <= -1552) && (npc.getZ() >= -1580) && (npc.getId() == INFUSER_2))
 		{
 			startQuestTimer("SH_4", 100, null, null);
 		}
+		
 		if (npc.getId() == GUARD)
 		{
 			_killCount++;

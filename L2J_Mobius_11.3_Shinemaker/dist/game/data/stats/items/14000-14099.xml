@@ -89,9 +89,9 @@
 		<set name="price" val="41400" />
 		<set name="commissionItemType" val="LIFE_STONE" />
 		<set name="is_stackable" val="true" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="84" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="14009" name="Extracted Red Star Stone" type="EtcItem">
 		<!-- Fragment extracted from a Red Star Stone. Can be used in crafting useful items. -->
@@ -499,9 +499,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="for_npc" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="true" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2792" level="1" /> <!-- Stone of Stamina -->
 		</skills>
@@ -520,9 +520,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="for_npc" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="true" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2792" level="2" /> <!-- Greater Stone of Stamina -->
 		</skills>
@@ -541,9 +541,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="for_npc" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="true" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2793" level="1" /> <!-- Stone of Mana -->
 		</skills>
@@ -562,9 +562,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="for_npc" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="true" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2793" level="2" /> <!-- Greater Stone of Mana -->
 		</skills>
@@ -583,9 +583,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="for_npc" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="true" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2794" level="1" /> <!-- Recovery Stone -->
 		</skills>
@@ -604,9 +604,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="for_npc" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="true" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2794" level="2" /> <!-- Greater Stone of Recovery -->
 		</skills>
@@ -625,9 +625,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="for_npc" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="true" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2795" level="1" /> <!-- Stone of Destruction -->
 		</skills>
@@ -646,9 +646,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="for_npc" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="true" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2796" level="1" /> <!-- Stone of Invincibility -->
 		</skills>
@@ -667,9 +667,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="for_npc" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="true" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2797" level="1" /> <!-- Stone of Great Speed -->
 		</skills>
@@ -688,9 +688,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="for_npc" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="true" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2798" level="1" /> <!-- Stone of Speed -->
 		</skills>
@@ -709,9 +709,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="for_npc" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="true" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2799" level="1" /> <!-- Stone of Concentration -->
 		</skills>
@@ -730,9 +730,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="for_npc" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="true" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2800" level="1" /> <!-- Stone of Ease -->
 		</skills>
@@ -751,9 +751,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="for_npc" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="true" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2801" level="1" /> <!-- Stone of Abundance -->
 		</skills>
@@ -771,9 +771,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="for_npc" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="true" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2802" level="1" /> <!-- Recovery Stone -->
 		</skills>
@@ -988,9 +988,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="SummonItems" />
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2046" level="1" /> <!-- Summon Pet -->
 		</skills>
@@ -1009,9 +1009,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="SummonItems" />
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2046" level="1" /> <!-- Summon Pet -->
 		</skills>
@@ -1030,9 +1030,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="SummonItems" />
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2046" level="1" /> <!-- Summon Pet -->
 		</skills>
@@ -1051,9 +1051,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="SummonItems" />
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2046" level="1" /> <!-- Summon Pet -->
 		</skills>

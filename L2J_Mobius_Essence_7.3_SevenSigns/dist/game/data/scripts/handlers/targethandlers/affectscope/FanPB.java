@@ -56,18 +56,22 @@ public class FanPB implements IAffectScopeHandler
 			{
 				return false;
 			}
+			
 			if (c.isDead())
 			{
 				return false;
 			}
+			
 			if (Math.abs(LocationUtil.calculateAngleFrom(creature, c) - (headingAngle + fanStartAngle)) > fanHalfAngle)
 			{
 				return false;
 			}
+			
 			if ((affectObject != null) && !affectObject.checkAffectedObject(creature, c))
 			{
 				return false;
 			}
+			
 			if (!GeoEngine.getInstance().canSeeTarget(creature, c))
 			{
 				return false;

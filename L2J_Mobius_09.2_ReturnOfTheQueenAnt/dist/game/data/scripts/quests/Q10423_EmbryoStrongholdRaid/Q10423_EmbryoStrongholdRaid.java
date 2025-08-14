@@ -42,6 +42,7 @@ public class Q10423_EmbryoStrongholdRaid extends Quest
 {
 	// NPCs
 	private static final int ERDA = 34319;
+	
 	// Monsters
 	private static final int[] MOBS =
 	{
@@ -77,8 +78,10 @@ public class Q10423_EmbryoStrongholdRaid extends Quest
 		26228, // Even
 		26229 // Nemertess
 	};
+	
 	// Rewards
 	private static final int SUPERIOR_GIANTS_CODEX = 46151; // Superior Giant's Codex - Mastery Chapter 1
+	
 	// Misc
 	private static final int MIN_LEVEL = 100;
 	
@@ -128,6 +131,7 @@ public class Q10423_EmbryoStrongholdRaid extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -161,6 +165,7 @@ public class Q10423_EmbryoStrongholdRaid extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -180,6 +185,7 @@ public class Q10423_EmbryoStrongholdRaid extends Quest
 					playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 				}
 			}
+			
 			if (killedEmbryo == 30)
 			{
 				qs.setCond(2, true);
@@ -197,6 +203,7 @@ public class Q10423_EmbryoStrongholdRaid extends Quest
 			holder.add(new NpcLogListHolder(NpcStringId.DEFEAT_EMBRYO_OFFICER, qs.getInt("killed_" + MOBS[0])));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

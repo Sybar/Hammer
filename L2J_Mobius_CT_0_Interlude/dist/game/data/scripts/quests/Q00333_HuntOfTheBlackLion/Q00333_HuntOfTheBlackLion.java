@@ -36,8 +36,10 @@ public class Q00333_HuntOfTheBlackLion extends Quest
 	private static final int UNDRIAS = 30130;
 	private static final int LOCKIRIN = 30531;
 	private static final int MORGAN = 30737;
+	
 	// Needs for start
 	private static final int BLACK_LION_MARK = 1369;
+	
 	// Quest items
 	private static final int LION_CLAW = 3675;
 	private static final int LION_EYE = 3676;
@@ -77,6 +79,7 @@ public class Q00333_HuntOfTheBlackLion extends Quest
 	private static final int TABLET_FRAGMENT_3 = 3464;
 	private static final int TABLET_FRAGMENT_4 = 3465;
 	private static final int COMPLETE_TABLET = 3466;
+	
 	// Neutral items
 	private static final int ADENA = 57;
 	private static final int SWIFT_ATTACK_POTION = 735;
@@ -84,6 +87,7 @@ public class Q00333_HuntOfTheBlackLion extends Quest
 	private static final int HEALING_POTION = 1061;
 	private static final int SOULSHOT_D = 1463;
 	private static final int SPIRITSHOT_D = 2510;
+	
 	// Tabs: Part, NpcId, ItemId, Item Chance, Box Id, Box Chance
 	private static final int[][] DROPLIST =
 	{
@@ -789,11 +793,13 @@ public class Q00333_HuntOfTheBlackLion extends Quest
 					giveItems(player, info[2], 1);
 					playSound = true;
 				}
+				
 				if (getRandom(1000000) < info[5])
 				{
 					giveItems(player, info[4], 1);
 					playSound = true;
 				}
+				
 				if (playSound)
 				{
 					playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);

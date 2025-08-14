@@ -71,6 +71,7 @@ public class OpCheckFlagSkillCondition implements ISkillCondition
 			player.sendPacket(SystemMessageId.THE_DISTANCE_IS_TOO_FAR_AND_SO_THE_CASTING_HAS_BEEN_CANCELLED);
 			canTakeFort = false;
 		}
+		
 		return canTakeFort;
 	}
 }

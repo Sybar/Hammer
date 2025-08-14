@@ -33,8 +33,10 @@ public class Tarba extends AbstractNpcAI
 {
 	// NPC
 	private static final int TARBA = 34134;
+	
 	// Location
 	private static final Location LOCATION = new Location(-93255, 109021, -3696);
+	
 	// Misc
 	private static final String TARBA_TIME_VAR = "TARBA_TIME";
 	
@@ -57,8 +59,10 @@ public class Tarba extends AbstractNpcAI
 				player.teleToLocation(LOCATION);
 				return null;
 			}
+			
 			return "34134-02.htm";
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	

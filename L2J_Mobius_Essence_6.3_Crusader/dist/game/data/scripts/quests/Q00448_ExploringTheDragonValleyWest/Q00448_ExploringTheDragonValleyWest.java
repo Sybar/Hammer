@@ -40,6 +40,7 @@ public class Q00448_ExploringTheDragonValleyWest extends Quest
 {
 	// NPC
 	private static final int GENIE_LAMP = 34369;
+	
 	// Monsters
 	private static final int DRAGON_BEARER_CAPTAIN = 22096;
 	private static final int DRAGON_BEARER_WARRIOR = 20759;
@@ -77,8 +78,10 @@ public class Q00448_ExploringTheDragonValleyWest extends Quest
 	private static final int ISHKA = 21960;
 	private static final int ISHKA2 = 25407;
 	private static final int DRAGON = 22364;
+	
 	// Item
 	private static final ItemHolder SPIRIT_ORE = new ItemHolder(3031, 50);
+	
 	// Misc
 	private static final int MIN_LEVEL = 78;
 	private static final int MAX_LEVEL = 90;
@@ -137,6 +140,7 @@ public class Q00448_ExploringTheDragonValleyWest extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -175,6 +179,7 @@ public class Q00448_ExploringTheDragonValleyWest extends Quest
 				htmltext = getAlreadyCompletedMsg(player);
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -210,6 +215,7 @@ public class Q00448_ExploringTheDragonValleyWest extends Quest
 			holder.add(new NpcLogListHolder(NpcStringId.DEFEAT_MONSTERS_42.getId(), true, qs.getInt(KILL_COUNT_VAR)));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

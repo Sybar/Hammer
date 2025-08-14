@@ -51,10 +51,13 @@ public class Q11040_AttackOfTheEnragedForest extends Quest
 	private static final int TARTI = 34505;
 	private static final int TINY_WHIRLWIND = 24401;
 	private static final int GIANT_WHIRLWIND = 24402;
+	
 	// Items
 	private static final ItemHolder SOE_TARTI = new ItemHolder(80677, 1);
+	
 	// Location
 	private static final Location TRAINING_GROUNDS_TELEPORT = new Location(-91374, 92270, -3360);
+	
 	// Misc
 	private static final String KILL_COUNT_VAR = "KillCount";
 	private static final int MIN_LEVEL = 66;
@@ -123,6 +126,7 @@ public class Q11040_AttackOfTheEnragedForest extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -170,6 +174,7 @@ public class Q11040_AttackOfTheEnragedForest extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -206,6 +211,7 @@ public class Q11040_AttackOfTheEnragedForest extends Quest
 			holder.add(new NpcLogListHolder(NpcStringId.DEFEAT_THE_PACK_OF_WINDIMA_2.getId(), true, qs.getInt(KILL_COUNT_VAR)));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

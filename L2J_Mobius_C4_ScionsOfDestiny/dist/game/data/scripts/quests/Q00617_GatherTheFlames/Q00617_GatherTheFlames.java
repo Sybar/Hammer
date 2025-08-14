@@ -26,7 +26,6 @@ import java.util.Map;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.quest.Quest;
-import org.l2jmobius.gameserver.model.quest.QuestSound;
 import org.l2jmobius.gameserver.model.quest.QuestState;
 import org.l2jmobius.gameserver.model.quest.State;
 
@@ -35,8 +34,10 @@ public class Q00617_GatherTheFlames extends Quest
 	// NPCs
 	private static final int HILDA = 31271;
 	private static final int VULCAN = 31539;
+	
 	// Items
 	private static final int TORCH = 7264;
+	
 	// Drop chances
 	private static final Map<Integer, Integer> CHANCES = new HashMap<>();
 	static
@@ -68,6 +69,7 @@ public class Q00617_GatherTheFlames extends Quest
 		CHANCES.put(21379, 590000);
 		CHANCES.put(21380, 490000);
 	}
+	
 	// Rewards
 	private static final int[] REWARD =
 	{
@@ -168,14 +170,9 @@ public class Q00617_GatherTheFlames extends Quest
 			return;
 		}
 		
-		if (getRandom(1000) < CHANCES.get(npc.getId()))
+		if (getRandom(1000000) < CHANCES.get(npc.getId()))
 		{
-			giveItems(partyMember, TORCH, 2);
+			giveItemRandomly(partyMember, npc, TORCH, 1, 0, 1, true);
 		}
-		else
-		{
-			giveItems(partyMember, TORCH, 1);
-		}
-		playSound(partyMember, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 	}
 }

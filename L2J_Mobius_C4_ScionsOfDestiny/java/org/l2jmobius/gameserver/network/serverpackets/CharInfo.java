@@ -66,6 +66,7 @@ public class CharInfo extends ServerPacket
 			_y = _player.getY();
 			_z = _player.getZ();
 		}
+		
 		_mAtkSpd = _player.getMAtkSpd();
 		_pAtkSpd = (int) _player.getPAtkSpd();
 		_moveMultiplier = player.getMovementSpeedMultiplier();
@@ -139,6 +140,7 @@ public class CharInfo extends ServerPacket
 		buffer.writeInt(_player.getClanCrestId());
 		buffer.writeInt(_player.getAllyId());
 		buffer.writeInt(_player.getAllyCrestId());
+		
 		// In UserInfo leader rights and siege flags, but here found nothing??
 		// Therefore RelationChanged packet with that info is required
 		buffer.writeInt(0);

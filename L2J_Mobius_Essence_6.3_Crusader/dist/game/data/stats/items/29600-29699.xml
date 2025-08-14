@@ -57,9 +57,9 @@
 			<item id="29603" min="1" max="1" chance="100" /> <!-- Newbie Kit Lv. 3 - Not Available -->
 			<item id="29654" min="30" max="30" chance="100" /> <!-- 1st Class Buff Scroll - Not Available -->
 		</capsuled_items>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="10" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="29603" name="Newbie Kit Lv. 3" additionalName="Not Available" type="EtcItem">
 		<!-- The item is not available. Double-click to obtain Time-limited D-grade Weapon Coupon, 9000 Soulshots, 2000 Blessed Spiritshots, Newbie Kit Lv. 4. Required level: 20+. -->
@@ -78,9 +78,9 @@
 			<item id="34604" min="9000" max="9000" chance="100" /> <!-- Mysterious D-grade Soulshot - Not Available -->
 			<item id="34611" min="2000" max="2000" chance="100" /> <!-- Mysterious Blessed D-grade Spiritshot - Not Available -->
 		</capsuled_items>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="20" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="29604" name="Newbie Kit Lv. 4" additionalName="Not Available" type="EtcItem">
 		<!-- The item is not available. Double-click to obtain Package: Necklace of Magic Making, Soulshot (9000 pcs.), Blessed Spiritshot (2000 pcs.), Newbie Kit Lv. 5. Required level: 25+. -->
@@ -99,9 +99,9 @@
 			<item id="34611" min="2000" max="2000" chance="100" /> <!-- Mysterious Blessed D-grade Spiritshot - Not Available -->
 			<item id="29605" min="1" max="1" chance="100" /> <!-- Newbie Kit Lv. 5 - Not Available -->
 		</capsuled_items>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="25" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="29605" name="Newbie Kit Lv. 5" additionalName="Not Available" type="EtcItem">
 		<!-- The item is not available. Double-click to obtain Package: Tiger's Eye Making, 9000 Soulshots, 2000 Blessed Spiritshots, Newbie Kit Lv. 6. Required level: 30+. -->
@@ -120,9 +120,9 @@
 			<item id="34611" min="2000" max="2000" chance="100" /> <!-- Mysterious Blessed D-grade Spiritshot - Not Available -->
 			<item id="29606" min="1" max="1" chance="100" /> <!-- Newbie Kit Lv. 6 - Not Available -->
 		</capsuled_items>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="30" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="29606" name="Newbie Kit Lv. 6" additionalName="Not Available" type="EtcItem">
 		<!-- The item is not available. Double-click to obtain 10 XP/ SP Scrolls (40%), 9000 Soulshots, 2000 Blessed Spiritshots, Newbie Kit Lv. 7. Required level: 35+. -->
@@ -141,9 +141,9 @@
 			<item id="34611" min="2000" max="2000" chance="100" /> <!-- Mysterious Blessed D-grade Spiritshot - Not Available -->
 			<item id="29607" min="1" max="1" chance="100" /> <!-- Newbie Kit Lv. 7 - Not Available -->
 		</capsuled_items>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="35" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="29607" name="Newbie Kit Lv. 7" additionalName="Not Available" type="EtcItem">
 		<!-- The item is not available. Double-click to obtain 1 Ticket: Temporary C-grade Weapon. Required level: 40. -->
@@ -159,9 +159,9 @@
 		<capsuled_items>
 			<item id="29609" min="1" max="1" chance="100" /> <!-- Ticket: Temporary C-grade Weapon - Not Available -->
 		</capsuled_items>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="40" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="29608" name="Time-limited D-grade Weapon Coupon" additionalName="Not Available" type="EtcItem">
 		<!-- The item is not available. Take it to the Game Assistant in order to exchange it for a 30-day D-grade weapon. Does not expire. The weapon cannot be enchanted, modified, enhanced with a rune.Both the ticket and the weapon cannot be exchanged. -->
@@ -856,9 +856,9 @@
 			<item id="29654" min="30" max="30" chance="100" /> <!-- 1st Class Buff Scroll - Not Available -->
 			<item id="29636" min="1" max="1" chance="100" /> <!-- Newbie Kit Lv. 3 - Not Available -->
 		</capsuled_items>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="10" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="29636" name="Newbie Kit Lv. 3" additionalName="Not Available" type="EtcItem">
 		<!-- The item is not available. Double-click to obtain Saber*Elven Sword (30-day), 9000 Soulshots, 2000 Blessed Spiritshots, Newbie Kit Lv. 4. Required level: 20+. -->
@@ -877,9 +877,9 @@
 			<item id="29637" min="1" max="1" chance="100" /> <!-- Newbie Kit Lv. 4 - Not Available -->
 			<item id="29527" min="1" max="1" chance="100" /> <!-- Saber*Elven Sword - Not Available -->
 		</capsuled_items>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="20" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="29637" name="Newbie Kit Lv. 4" additionalName="Not Available" type="EtcItem">
 		<!-- The item is not available. Double-click to obtain 9000 Soulshots, 2000 Blessed Spiritshots, Newbie Kit Lv. 5. Required level: 25+. -->
@@ -897,9 +897,9 @@
 			<item id="34604" min="9000" max="9000" chance="100" /> <!-- Mysterious D-grade Soulshot - Not Available -->
 			<item id="29638" min="1" max="1" chance="100" /> <!-- Newbie Kit Lv. 5 - Not Available -->
 		</capsuled_items>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="25" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="29638" name="Newbie Kit Lv. 5" additionalName="Not Available" type="EtcItem">
 		<!-- The item is not available. Double-click to obtain 9000 Soulshots, 2000 Blessed Spiritshots, Newbie Kit Lv. 6. Required level: 30+. -->
@@ -917,9 +917,9 @@
 			<item id="34604" min="9000" max="9000" chance="100" /> <!-- Mysterious D-grade Soulshot - Not Available -->
 			<item id="29639" min="1" max="1" chance="100" /> <!-- Newbie Kit Lv. 6 - Not Available -->
 		</capsuled_items>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="30" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="29639" name="Newbie Kit Lv. 6" additionalName="Not Available" type="EtcItem">
 		<!-- The item is not available. Double-click to obtain 10 XP/ SP Scrolls (40%), 9000 Soulshots, 2000 Blessed Spiritshots, Newbie Kit Lv. 7. Required level: 35+. -->
@@ -938,9 +938,9 @@
 			<item id="29640" min="1" max="1" chance="100" /> <!-- Newbie Kit Lv. 7 - Not Available -->
 			<item id="29649" min="20" max="20" chance="100" /> <!-- XP/SP Scroll - Medium - Not Available -->
 		</capsuled_items>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="35" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="29640" name="Newbie Kit Lv. 7" additionalName="Not Available" type="EtcItem">
 		<!-- The item is not available. Double-click to obtain Samurai Black Sword (30-day). Required level: 40. -->
@@ -956,9 +956,9 @@
 		<capsuled_items>
 			<item id="49573" min="1" max="1" chance="100" /> <!-- Samurai Black Long Sword - 30-day -->
 		</capsuled_items>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="40" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="29641" name="Mysterious No-grade Soulshot" additionalName="Not Available" type="EtcItem">
 		<!-- The item is not available. Increases a weapon's physical power. Used with No-grade weapons. Take it to the Game Assistant to exchange for a new Soulshot. -->
@@ -1113,9 +1113,9 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2031" level="1" /> <!-- Healing Potion -->
 		</skills>
@@ -1139,9 +1139,9 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2032" level="1" /> <!-- Greater Healing Potion -->
 		</skills>
@@ -1162,9 +1162,9 @@
 		<set name="commissionItemType" val="POTION" />
 		<set name="is_event_restricted" val="true" />
 		<set name="for_npc" val="true" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2012" level="1" /> <!-- Haste Potion -->
 		</skills>
@@ -1229,9 +1229,9 @@
 			<item id="70102" min="30" max="30" chance="100" /> <!-- Adventurer's Greater Haste Potion - Sealed -->
 			<item id="29657" min="1" max="1" chance="100" /> <!-- Adventurer's Kit Lv. 2 - Not Available -->
 		</capsuled_items>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="24" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="29657" name="Adventurer's Kit Lv. 2" additionalName="Not Available" type="EtcItem">
 		<!-- The item is not available. Double-click to obtain Ticket: Temporary D-grade Weapon, Adventurer's Kit Lv. 3. Required level: 25+. -->
@@ -1248,9 +1248,9 @@
 			<item id="29643" min="1" max="1" chance="100" /> <!-- Mysterious D-grade Soulshot - Not Available -->
 			<item id="29608" min="1" max="1" chance="100" /> <!-- Time-limited D-grade Weapon Coupon - Not Available -->
 		</capsuled_items>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="25" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="29658" name="Adventurer's Kit Lv. 3" additionalName="Not Available" type="EtcItem">
 		<!-- The item is not available. Double-click to obtain 1st Class Buff Scrolls (30 pcs.), Adventurer's Kit Lv. 4. Required level: 28+. -->
@@ -1267,9 +1267,9 @@
 			<item id="29654" min="30" max="30" chance="100" /> <!-- 1st Class Buff Scroll - Not Available -->
 			<item id="29659" min="1" max="1" chance="100" /> <!-- Adventurer's Kit Lv. 4 - Not Available -->
 		</capsuled_items>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="28" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="29659" name="Adventurer's Kit Lv. 4" additionalName="Not Available" type="EtcItem">
 		<!-- The item is not available. Double-click to obtain Chronicle Chest, Soulshots (4,500 pcs.), Blessed Spiritshots (1000 pcs.), Adventurer's Kit Lv. 5. Required level: 30. -->
@@ -1288,9 +1288,9 @@
 			<item id="29026" min="1000" max="1000" chance="100" /> <!-- Mysterious Blessed D-grade Spiritshot - Not Available -->
 			<item id="29660" min="1" max="1" chance="100" /> <!-- Adventurer's Kit Lv. 5 - Not Available -->
 		</capsuled_items>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="30" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="29660" name="Adventurer's Kit Lv. 5" additionalName="Not Available" type="EtcItem">
 		<!-- The item is not available. Double-click to obtain Chronicle Chest, Soulshots (4,500 pcs.), Blessed Spiritshots (1000 pcs.), Scrolls of Escape (30 pcs.), Adventurer's Kit Lv. 6. Required level: 32. -->
@@ -1310,9 +1310,9 @@
 			<item id="736" min="30" max="30" chance="100" /> <!-- Scroll of Escape -->
 			<item id="29661" min="1" max="1" chance="100" /> <!-- Adventurer's Kit Lv. 6 - Not Available -->
 		</capsuled_items>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="32" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="29661" name="Adventurer's Kit Lv. 6" additionalName="Not Available" type="EtcItem">
 		<!-- The item is not available. Double-click to obtain Chronicle Chest, Soulshots (4,500 pcs.), Blessed Spiritshots (1000 pcs.), HP Replenishing Potions (50 pcs.), Adventurer's Kit Lv. 7. Required level: 35. -->
@@ -1332,9 +1332,9 @@
 			<item id="29651" min="50" max="50" chance="100" /> <!-- Healing Potion - Not Available -->
 			<item id="29662" min="1" max="1" chance="100" /> <!-- Adventurer's Kit Lv. 7 - Not Available -->
 		</capsuled_items>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="35" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="29662" name="Adventurer's Kit Lv. 7" additionalName="Not Available" type="EtcItem">
 		<!-- The item is not available. Double-click to obtain Mid-grade XP/ SP Scrolls (20 pcs.), Soulshots (4,500 pcs.), Blessed Spiritshots (1000 pcs.), Adventurer's Kit Lv. 8. Required level: 38. -->
@@ -1353,9 +1353,9 @@
 			<item id="29026" min="1000" max="1000" chance="100" /> <!-- Mysterious Blessed D-grade Spiritshot - Not Available -->
 			<item id="29662" min="1" max="1" chance="100" /> <!-- Adventurer's Kit Lv. 7 - Not Available -->
 		</capsuled_items>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="38" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="29663" name="Adventurer's Kit Lv. 8" additionalName="Not Available" type="EtcItem">
 		<!-- The item is not available. Double-click to obtain Soulshots (9000 pcs.), Blessed Spiritshots (2000 pcs.), Ticket: Temporary C-grade Weapon, Adventurer's Kit Lv. 9. Required level: 40+. -->
@@ -1374,9 +1374,9 @@
 			<item id="29609" min="1" max="1" chance="100" /> <!-- Ticket: Temporary C-grade Weapon - Not Available -->
 			<item id="29664" min="1" max="1" chance="100" /> <!-- Adventurer's Kit Lv. 9 - Not Available -->
 		</capsuled_items>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="40" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="29664" name="Adventurer's Kit Lv. 9" additionalName="Not Available" type="EtcItem">
 		<!-- The item is not available. Double-click to obtain Mid-grade HP Recovery Potion (3 pcs.), Mid-grade XP/ SP Scroll (20 pcs.), Chronicle Chest, Adventurer's Kit Lv. 10. Required level: 42. -->
@@ -1395,9 +1395,9 @@
 			<item id="29693" min="1" max="1" chance="100" /> <!-- Chronicle Chest - Not Available -->
 			<item id="29665" min="1" max="1" chance="100" /> <!-- Adventurer's Kit Lv. 10 - Not Available -->
 		</capsuled_items>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="42" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="29665" name="Adventurer's Kit Lv. 10" additionalName="Not Available" type="EtcItem">
 		<!-- The item is not available. Double-click to obtain Mid-grade XP/ SP Scrolls (20 pcs.), Soulshots (9,000 pcs.), Blessed Spiritshots (2000 pcs.), Adventurer's Kit Lv. 11. Required level: 45. -->
@@ -1416,9 +1416,9 @@
 			<item id="29026" min="2000" max="2000" chance="100" /> <!-- Mysterious Blessed D-grade Spiritshot - Not Available -->
 			<item id="29666" min="1" max="1" chance="100" /> <!-- Adventurer's Kit Lv. 11 - Not Available -->
 		</capsuled_items>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="45" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="29666" name="Adventurer's Kit Lv. 11" additionalName="Not Available" type="EtcItem">
 		<!-- The item is not available. Double-click to obtain Agathion Griffin (30-day). Required level: 49. -->
@@ -1434,9 +1434,9 @@
 		<capsuled_items>
 			<item id="29667" min="1" max="1" chance="100" /> <!-- Agathion Griffin - Not Available -->
 		</capsuled_items>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="49" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="29667" name="Agathion Griffin" additionalName="Not Available" type="Armor">
 		<!-- The item is not available. STR +1, INT +1. Allows to summon a Griffin. -->

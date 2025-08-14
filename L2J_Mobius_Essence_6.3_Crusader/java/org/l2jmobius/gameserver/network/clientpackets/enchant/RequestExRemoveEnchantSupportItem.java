@@ -53,6 +53,7 @@ public class RequestExRemoveEnchantSupportItem extends ClientPacket
 		{
 			request.setSupportItem(Player.ID_NONE);
 		}
+		
 		request.setTimestamp(System.currentTimeMillis());
 		
 		player.sendPacket(ExRemoveEnchantSupportItemResult.STATIC_PACKET);

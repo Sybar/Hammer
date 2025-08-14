@@ -16,6 +16,7 @@
  */
 package ai.areas.StakatoNest;
 
+import java.util.Collection;
 import java.util.List;
 
 import org.l2jmobius.gameserver.model.WorldObject;
@@ -27,7 +28,6 @@ import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
 import org.l2jmobius.gameserver.network.serverpackets.MagicSkillUse;
 import org.l2jmobius.gameserver.util.ArrayUtil;
-import org.l2jmobius.gameserver.util.Broadcast;
 import org.l2jmobius.gameserver.util.LocationUtil;
 
 import ai.AbstractNpcAI;
@@ -46,39 +46,50 @@ public class StakatoNest extends AbstractNpcAI
 		22621, 22622, 22623, 22624, 22625, 22626, 22627, 22628, 22629, 22630,
 		22631, 22632, 22633, 25667
 	};
+	
 	// Coocons
 	private static final int[] COCOONS =
 	{
 		18793, 18794, 18795, 18796, 18797, 18798
 	};
 	// @formatter:on
+	
 	// Cannibalistic Stakato Leader
 	private static final int STAKATO_LEADER = 22625;
 	
 	// Spike Stakato Nurse
 	private static final int STAKATO_NURSE = 22630;
+	
 	// Spike Stakato Nurse (Changed)
 	private static final int STAKATO_NURSE_2 = 22631;
+	
 	// Spiked Stakato Baby
 	private static final int STAKATO_BABY = 22632;
+	
 	// Spiked Stakato Captain
 	private static final int STAKATO_CAPTAIN = 22629;
 	
 	// Female Spiked Stakato
 	private static final int STAKATO_FEMALE = 22620;
+	
 	// Male Spiked Stakato
 	private static final int STAKATO_MALE = 22621;
+	
 	// Male Spiked Stakato (Changed)
 	private static final int STAKATO_MALE_2 = 22622;
+	
 	// Spiked Stakato Guard
 	private static final int STAKATO_GUARD = 22619;
 	
 	// Cannibalistic Stakato Chief
 	private static final int STAKATO_CHIEF = 25667;
+	
 	// Growth Accelerator
 	private static final int GROWTH_ACCELERATOR = 2905;
+	
 	// Small Stakato Cocoon
 	private static final int SMALL_COCOON = 14833;
+	
 	// Large Stakato Cocoon
 	private static final int LARGE_COCOON = 14834;
 	
@@ -123,7 +134,7 @@ public class StakatoNest extends AbstractNpcAI
 				monster = checkMinion(npc);
 				if (monster != null)
 				{
-					Broadcast.toSelfAndKnownPlayers(npc, new MagicSkillUse(npc, 2046, 1, 1000, 0));
+					npc.broadcastPacket(new MagicSkillUse(npc, 2046, 1, 1000, 0));
 					for (int i = 0; i < 3; i++)
 					{
 						final Npc spawned = addSpawn(STAKATO_CAPTAIN, monster, true);
@@ -146,7 +157,7 @@ public class StakatoNest extends AbstractNpcAI
 				monster = checkMinion(npc);
 				if (monster != null)
 				{
-					Broadcast.toSelfAndKnownPlayers(npc, new MagicSkillUse(npc, 2046, 1, 1000, 0));
+					npc.broadcastPacket(new MagicSkillUse(npc, 2046, 1, 1000, 0));
 					for (int i = 0; i < 3; i++)
 					{
 						final Npc spawned = addSpawn(STAKATO_GUARD, monster, true);
@@ -184,9 +195,9 @@ public class StakatoNest extends AbstractNpcAI
 	}
 	
 	@Override
-	public void onSkillSee(Npc npc, Player caster, Skill skill, WorldObject[] targets, boolean isSummon)
+	public void onSkillSee(Npc npc, Player caster, Skill skill, Collection<WorldObject> targets, boolean isSummon)
 	{
-		if (ArrayUtil.contains(COCOONS, npc.getId()) && ArrayUtil.contains(targets, npc) && (skill.getId() == GROWTH_ACCELERATOR))
+		if (ArrayUtil.contains(COCOONS, npc.getId()) && targets.contains(npc) && (skill.getId() == GROWTH_ACCELERATOR))
 		{
 			npc.doDie(caster);
 			final Npc spawned = addSpawn(STAKATO_CHIEF, npc.getX(), npc.getY(), npc.getZ(), LocationUtil.calculateHeadingFrom(npc, caster), false, 0, true);
@@ -216,6 +227,7 @@ public class StakatoNest extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		if (npcId > 0)
 		{
 			npc.getSpawn().decreaseCount(npc);
@@ -223,6 +235,7 @@ public class StakatoNest extends AbstractNpcAI
 			addAttackPlayerDesire(spawned, player);
 			npc.deleteMe();
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	
@@ -237,6 +250,7 @@ public class StakatoNest extends AbstractNpcAI
 				return minion.get(0);
 			}
 		}
+		
 		return null;
 	}
 	

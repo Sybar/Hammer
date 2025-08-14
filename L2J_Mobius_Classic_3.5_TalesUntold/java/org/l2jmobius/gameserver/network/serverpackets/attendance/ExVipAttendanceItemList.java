@@ -65,6 +65,7 @@ public class ExVipAttendanceItemList extends ServerPacket
 			buffer.writeByte(1); // is unknown?
 			buffer.writeByte((rewardCounter % 7) == 0); // is last in row?
 		}
+		
 		buffer.writeByte(0);
 		buffer.writeInt(0);
 	}

@@ -19,7 +19,7 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="true" />
 		<set name="item_skill" val="3051-2" /> <!-- Special Ability: Focus -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="220" />
 			<set stat="mAtk" val="121" />
 			<set stat="critRate" val="12" />
@@ -27,7 +27,7 @@
 			<set stat="pAtkSpd" val="433" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="8801" type="Weapon" name="Naga Storm - Critical Damage">
 		<!-- <Soul Crystal Enhancement>. Increases P. Atk. by 200 during a critical attack. Increases damage inflicted during PvP. -->
@@ -48,7 +48,7 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="true" />
 		<set name="item_skill" val="3066-2" /> <!-- Special Ability: Critical Damage -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="220" />
 			<set stat="mAtk" val="121" />
 			<set stat="critRate" val="12" />
@@ -56,7 +56,7 @@
 			<set stat="pAtkSpd" val="433" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="8802" type="Weapon" name="Naga Storm - Back Blow">
 		<!-- <Soul Crystal Enhancement>. Increases the critical attack rate by 37 when attacking a target from behind. Increases damage inflicted during PvP. -->
@@ -77,7 +77,7 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="true" />
 		<set name="item_skill" val="3063-1" /> <!-- Special Ability: Back Blow -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="220" />
 			<set stat="mAtk" val="121" />
 			<set stat="critRate" val="12" />
@@ -85,7 +85,7 @@
 			<set stat="pAtkSpd" val="433" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="8803" type="Weapon" name="Tiphon's Spear - Critical Stun">
 		<!-- <Soul Crystal Enhancement>. Increases the chance of stun effect by 25% during a critical attack. Increases damage inflicted during PvP. -->
@@ -108,7 +108,7 @@
 		<set name="oncrit_chance" val="25" />
 		<set name="oncrit_skill" val="3070-3" />
 		<set name="item_skill" val="3552-2" /> <!-- Special Ability: PvP Damage -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="251" />
 			<set stat="mAtk" val="121" />
 			<set stat="critRate" val="8" />
@@ -116,7 +116,7 @@
 			<set stat="pAtkSpd" val="325" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="8804" type="Weapon" name="Tiphon's Spear - Towering Blow">
 		<!-- <Soul Crystal Enhancement>. Increases the possibility of increasing attack range. Increases damage inflicted during PvP. -->
@@ -137,7 +137,7 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="true" />
 		<set name="item_skill" val="3552-2" /> <!-- Special Ability: PvP Damage -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="251" />
 			<set stat="mAtk" val="121" />
 			<set stat="critRate" val="8" />
@@ -146,7 +146,7 @@
 			<set val="80" stat="pAtkRange" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="8805" type="Weapon" name="Tiphon's Spear - Wild Blow">
 		<!-- <Soul Crystal Enhancement>. Increases the possibility of broadening the angle of attack. Increases damage inflicted during PvP. -->
@@ -167,7 +167,7 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="true" />
 		<set name="item_skill" val="3552-2" /> <!-- Special Ability: PvP Damage -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="251" />
 			<set stat="mAtk" val="121" />
 			<set stat="critRate" val="8" />
@@ -175,7 +175,7 @@
 			<set stat="pAtkSpd" val="325" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="8806" type="Weapon" name="Shyeed's Bow - Cheap Shot">
 		<!-- <Soul Crystal Enhancement>. Decreases MP consumption by 1 at a 30% probability during an ordinary attack. Increases damage inflicted during PvP. -->
@@ -199,7 +199,7 @@
 		<set name="reuse_delay" val="820" />
 		<set name="item_skill" val="3552-1" /> <!-- Special Ability: PvP Damage -->
 		<set name="reduced_mp_consume" val="30,1" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="570" />
 			<set stat="mAtk" val="133" />
 			<set stat="critRate" val="12" />
@@ -207,7 +207,7 @@
 			<set stat="pAtkSpd" val="227" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="8807" type="Weapon" name="Shyeed's Bow - Focus">
 		<!-- <Soul Crystal Enhancement> Increases Critical by 61. Increases damage inflicted during PvP. -->
@@ -230,7 +230,7 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="reuse_delay" val="820" />
 		<set name="item_skill" val="3050-2" /> <!-- Special Ability: Focus -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="570" />
 			<set stat="mAtk" val="133" />
 			<set stat="critRate" val="12" />
@@ -238,7 +238,7 @@
 			<set stat="pAtkSpd" val="227" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="8808" type="Weapon" name="Shyeed's Bow - Quick Recovery">
 		<!-- <Soul Crystal Enhancement>. Decreases re-use delay by about 17%. Increases damage inflicted during PvP. -->
@@ -261,7 +261,7 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="reuse_delay" val="639" />
 		<set name="item_skill" val="3552-1" /> <!-- Special Ability: PvP Damage -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="570" />
 			<set stat="mAtk" val="133" />
 			<set stat="critRate" val="12" />
@@ -269,7 +269,7 @@
 			<set stat="pAtkSpd" val="227" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="8809" type="Weapon" name="Sobekk's Hurricane - Rsk. Haste">
 		<!-- <Soul Crystal Enhancement>. Increases Atk. Spd. by 11% when HP falls below 60%. Increases damage inflicted during PvP. -->
@@ -290,7 +290,7 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="true" />
 		<set name="item_skill" val="3056-3" /> <!-- Special Ability: Rsk. Haste -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="305" />
 			<set stat="mAtk" val="121" />
 			<set stat="critRate" val="4" />
@@ -298,7 +298,7 @@
 			<set stat="pAtkSpd" val="325" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="8810" type="Weapon" name="Sobekk's Hurricane - Haste">
 		<!-- <Soul Crystal Enhancement>. Increases Atk. Spd. by about 6%. Increases damage inflicted during PvP. -->
@@ -319,7 +319,7 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="true" />
 		<set name="item_skill" val="3068-3" /> <!-- Special Ability: Haste -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="305" />
 			<set stat="mAtk" val="121" />
 			<set stat="critRate" val="4" />
@@ -327,7 +327,7 @@
 			<set stat="pAtkSpd" val="325" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="8811" type="Weapon" name="Sobekk's Hurricane - Critical Drain">
 		<!-- <Soul Crystal Enhancement>. Increases the possibility of absorbing 14 HP during a critical attack. Increases damage inflicted during PvP. -->
@@ -350,7 +350,7 @@
 		<set name="oncrit_chance" val="10" />
 		<set name="oncrit_skill" val="3039-7" />
 		<set name="item_skill" val="3552-1" /> <!-- Special Ability: PvP Damage -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="305" />
 			<set stat="mAtk" val="121" />
 			<set stat="critRate" val="4" />
@@ -358,7 +358,7 @@
 			<set stat="pAtkSpd" val="325" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="8812" type="Weapon" name="Themis' Tongue - Mana Up">
 		<!-- <Soul Crystal Enhancement>. Increases maximum MP by 30%. Increases damage inflicted during PvP. -->
@@ -380,14 +380,14 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="is_magic_weapon" val="true" />
 		<set name="item_skill" val="3014-3" /> <!-- Special Ability: Mana Up -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="202" />
 			<set stat="mAtk" val="161" />
 			<set stat="critRate" val="8" />
 			<set stat="pAtkSpd" val="379" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="8813" type="Weapon" name="Themis' Tongue - Mental Shield">
 		<!-- <Soul Crystal Enhancement>. Increases the chances of causing Mental Shield by 50% when using good magic upon a target. Increases damage inflicted during PvP. -->
@@ -411,14 +411,14 @@
 		<set name="onmagic_chance" val="50" />
 		<set name="onmagic_skill" val="1035-4" />
 		<set name="item_skill" val="3552-1" /> <!-- Special Ability: PvP Damage -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="202" />
 			<set stat="mAtk" val="161" />
 			<set stat="critRate" val="8" />
 			<set stat="pAtkSpd" val="379" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="8814" type="Weapon" name="Themis' Tongue - Magic Focus">
 		<!-- <Soul Crystal Enhancement>. Increases the chances of causing Focus by 20% when using good magic upon a target. Increases damage inflicted during PvP. -->
@@ -442,14 +442,14 @@
 		<set name="onmagic_chance" val="20" />
 		<set name="onmagic_skill" val="1077-3" />
 		<set name="item_skill" val="3552-1" /> <!-- Special Ability: PvP Damage -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="202" />
 			<set stat="mAtk" val="161" />
 			<set stat="critRate" val="8" />
 			<set stat="pAtkSpd" val="379" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="8815" type="Weapon" name="Cabrio's Hand - Conversion">
 		<!-- <Soul Crystal Enhancement>. Increases maximum MP by 60% and decreases maximum HP by 40%. Increases damage inflicted during PvP. -->
@@ -471,7 +471,7 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="is_magic_weapon" val="true" />
 		<set name="item_skill" val="3048-3" /> <!-- Special Ability: Conversion -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="202" />
 			<set stat="mAtk" val="161" />
 			<set stat="critRate" val="4" />
@@ -479,7 +479,7 @@
 			<set stat="pAtkSpd" val="379" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="8816" type="Weapon" name="Cabrio's Hand - Mana Up">
 		<!-- <Soul Crystal Enhancement>. Increases maximum MP by 30%. Increases damage inflicted during PvP. -->
@@ -501,7 +501,7 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="is_magic_weapon" val="true" />
 		<set name="item_skill" val="3014-3" /> <!-- Special Ability: Mana Up -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="202" />
 			<set stat="mAtk" val="161" />
 			<set stat="critRate" val="4" />
@@ -509,7 +509,7 @@
 			<set stat="pAtkSpd" val="379" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="8817" type="Weapon" name="Cabrio's Hand - Magic Silence">
 		<!-- <Soul Crystal Enhancement>. Increases the chances of causing Sleep by 10% when using bad magic upon a target. Increases damage inflicted during PvP. -->
@@ -533,7 +533,7 @@
 		<set name="onmagic_chance" val="10" />
 		<set name="onmagic_skill" val="3074-2" />
 		<set name="item_skill" val="3552-1" /> <!-- Special Ability: PvP Damage -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="202" />
 			<set stat="mAtk" val="161" />
 			<set stat="critRate" val="4" />
@@ -541,7 +541,7 @@
 			<set stat="pAtkSpd" val="379" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="8818" type="Weapon" name="Daimon Crystal - Mana Up">
 		<!-- <Soul Crystal Enhancement>. Increases maximum MP by 30%. Increases damage inflicted during PvP. -->
@@ -563,7 +563,7 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="is_magic_weapon" val="true" />
 		<set name="item_skill" val="3014-3" /> <!-- Special Ability: Mana Up -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="245" />
 			<set stat="mAtk" val="161" />
 			<set stat="critRate" val="4" />
@@ -571,7 +571,7 @@
 			<set stat="pAtkSpd" val="325" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="8819" type="Weapon" name="Daimon Crystal - Acumen">
 		<!-- <Soul Crystal Enhancement>. Increases casting speed by 15%. Increases damage inflicted during PvP. -->
@@ -593,7 +593,7 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="is_magic_weapon" val="true" />
 		<set name="item_skill" val="3047-3" /> <!-- Special Ability: Acumen -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="245" />
 			<set stat="mAtk" val="161" />
 			<set stat="critRate" val="4" />
@@ -601,7 +601,7 @@
 			<set stat="pAtkSpd" val="325" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="8820" type="Weapon" name="Daimon Crystal - Mental Shield">
 		<!-- <Soul Crystal Enhancement>. Increases the chances of causing Mental Shield by 50% when using good magic upon a target. Increases damage inflicted during PvP. -->
@@ -625,7 +625,7 @@
 		<set name="onmagic_chance" val="50" />
 		<set name="onmagic_skill" val="1035-4" />
 		<set name="item_skill" val="3552-1" /> <!-- Special Ability: PvP Damage -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="245" />
 			<set stat="mAtk" val="161" />
 			<set stat="critRate" val="4" />
@@ -633,7 +633,7 @@
 			<set stat="pAtkSpd" val="325" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="8821" type="Weapon" name="Shadow Item: Two Handed Sword">
 		<!-- This Shadow Item contains the mirrored power of a Two-Handed Sword. It cannot be traded, dropped or given other functions. -->
@@ -654,12 +654,12 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="90" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="78" />
 			<set stat="mAtk" val="39" />
 			<set stat="critRate" val="8" />
 			<set stat="pAtkSpd" val="325" />
-		</for>
+		</stats>
 	</item>
 	<item id="8822" type="Weapon" name="Shadow Item: Crimson Sword">
 		<!-- This Shadow Item contains the mirrored power of a Crimson Sword. It cannot be traded, dropped or given other functions. -->
@@ -680,12 +680,12 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="90" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="64" />
 			<set stat="mAtk" val="39" />
 			<set stat="critRate" val="8" />
 			<set stat="pAtkSpd" val="379" />
-		</for>
+		</stats>
 	</item>
 	<item id="8823" type="Weapon" name="Shadow Item: Spiked Club">
 		<!-- This Shadow Item contains the mirrored power of a Spiked Club. It cannot be traded, dropped or given other functions. -->
@@ -706,13 +706,13 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="90" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="64" />
 			<set stat="mAtk" val="39" />
 			<set stat="critRate" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-		</for>
+		</stats>
 	</item>
 	<item id="8824" type="Weapon" name="Shadow Item: Staff of Magic">
 		<!-- This Shadow Item contains the mirrored power of a Staff of Magic. It cannot be traded, dropped or given other functions. -->
@@ -734,13 +734,13 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_magic_weapon" val="true" />
 		<set name="duration" val="90" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="62" />
 			<set stat="mAtk" val="57" />
 			<set stat="critRate" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="325" />
-		</for>
+		</stats>
 	</item>
 	<item id="8825" type="Weapon" name="Shadow Item: Kukuri">
 		<!-- This Shadow Item contains the mirrored power of a Kukuri. It cannot be traded, dropped or given other functions. -->
@@ -761,13 +761,13 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="90" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="56" />
 			<set stat="mAtk" val="39" />
 			<set stat="critRate" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="433" />
-		</for>
+		</stats>
 	</item>
 	<item id="8826" type="Weapon" name="Shadow Item: Dagger of Mana">
 		<!-- This Shadow Item contains the mirrored power of a Dagger of Mana. It cannot be traded, dropped or given other functions. -->
@@ -789,13 +789,13 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_magic_weapon" val="true" />
 		<set name="duration" val="90" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="45" />
 			<set stat="mAtk" val="52" />
 			<set stat="critRate" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="433" />
-		</for>
+		</stats>
 	</item>
 	<item id="8827" type="Weapon" name="Shadow Item: Triple-Edged Jamadhr">
 		<!-- This Shadow Item contains the mirrored power of a Triple-Edged Jamadhr. It cannot be traded, dropped or given other functions. -->
@@ -816,13 +816,13 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="90" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="78" />
 			<set stat="mAtk" val="39" />
 			<set stat="critRate" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="325" />
-		</for>
+		</stats>
 	</item>
 	<item id="8828" type="Weapon" name="Shadow Item: Gastraphetes">
 		<!-- This Shadow Item contains the mirrored power of a Gastraphetes. It cannot be traded, dropped or given other functions. -->
@@ -845,13 +845,13 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="90" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="132" />
 			<set stat="mAtk" val="39" />
 			<set stat="critRate" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="293" />
-		</for>
+		</stats>
 	</item>
 	<item id="8829" type="Weapon" name="Shadow Item: War Hammer">
 		<!-- This Shadow Item contains the mirrored power of a War Hammer. It cannot be traded, dropped or given other functions. -->
@@ -873,13 +873,13 @@
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3599-1" /> <!-- Polearm Multi-attack -->
 		<set name="duration" val="90" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="64" />
 			<set stat="mAtk" val="39" />
 			<set stat="critRate" val="8" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="325" />
-		</for>
+		</stats>
 	</item>
 	<item id="8830" type="Weapon" name="Shadow Item: Katana">
 		<!-- This Shadow Item contains the mirrored power of a Katana. It cannot be traded, dropped or given other functions. -->
@@ -900,12 +900,12 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="300" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="122" />
 			<set stat="mAtk" val="68" />
 			<set stat="critRate" val="8" />
 			<set stat="pAtkSpd" val="379" />
-		</for>
+		</stats>
 	</item>
 	<item id="8831" type="Weapon" name="Shadow Item: Bec de Corbin">
 		<!-- This Shadow Item contains the mirrored power of a Bec De Corbin. It cannot be traded, dropped or given other functions. -->
@@ -927,13 +927,13 @@
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3599-1" /> <!-- Polearm Multi-attack -->
 		<set name="duration" val="300" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="122" />
 			<set stat="mAtk" val="68" />
 			<set stat="critRate" val="8" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="325" />
-		</for>
+		</stats>
 	</item>
 	<item id="8832" type="Weapon" name="Shadow Item: Cursed Staff">
 		<!-- This Shadow Item contains the mirrored power of a Cursed Staff. It cannot be traded, dropped or given other functions. -->
@@ -955,13 +955,13 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_magic_weapon" val="true" />
 		<set name="duration" val="300" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="119" />
 			<set stat="mAtk" val="100" />
 			<set stat="critRate" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="325" />
-		</for>
+		</stats>
 	</item>
 	<item id="8833" type="Weapon" name="Shadow Item: Stiletto">
 		<!-- This Shadow Item contains the mirrored power of a Stiletto. It cannot be traded, dropped or given other functions. -->
@@ -982,13 +982,13 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="300" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="107" />
 			<set stat="mAtk" val="68" />
 			<set stat="critRate" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="433" />
-		</for>
+		</stats>
 	</item>
 	<item id="8834" type="Weapon" name="Shadow Item: Soulfire Dirk">
 		<!-- This Shadow Item contains the mirrored power of a Soulfire Dirk. It cannot be traded, dropped or given other functions. -->
@@ -1010,13 +1010,13 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_magic_weapon" val="true" />
 		<set name="duration" val="300" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="86" />
 			<set stat="mAtk" val="91" />
 			<set stat="critRate" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="433" />
-		</for>
+		</stats>
 	</item>
 	<item id="8835" type="Weapon" name="Shadow Item: Elemental Bow">
 		<!-- This Shadow Item contains the mirrored power of an Elemental Bow. It cannot be traded, dropped or given other functions. -->
@@ -1039,13 +1039,13 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="300" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="277" />
 			<set stat="mAtk" val="75" />
 			<set stat="critRate" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="227" />
-		</for>
+		</stats>
 	</item>
 	<item id="8836" type="Weapon" name="Shadow Item: Dwarven War Hammer">
 		<!-- This Shadow Item contains the mirrored power of a Dwarven War Hammer. It cannot be traded, dropped or given other functions. -->
@@ -1066,13 +1066,13 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="300" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="122" />
 			<set stat="mAtk" val="68" />
 			<set stat="critRate" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-		</for>
+		</stats>
 	</item>
 	<item id="8837" type="Weapon" name="Shadow Item: Sword of Revolution">
 		<!-- This Shadow Item contains the mirrored power of a Sword of Revolution. It cannot be traded, dropped or given other functions. -->
@@ -1093,12 +1093,12 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="300" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="148" />
 			<set stat="mAtk" val="68" />
 			<set stat="critRate" val="8" />
 			<set stat="pAtkSpd" val="325" />
-		</for>
+		</stats>
 	</item>
 	<item id="8838" type="Weapon" name="Shadow Item: Knuckle Duster">
 		<!-- This Shadow Item contains the mirrored power of a Knuckle Duster. It cannot be traded, dropped or given other functions. -->
@@ -1119,13 +1119,13 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="300" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="148" />
 			<set stat="mAtk" val="68" />
 			<set stat="critRate" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="325" />
-		</for>
+		</stats>
 	</item>
 	<item id="8839" type="Weapon" name="Shadow Item: Sword of Delusion">
 		<!-- This Shadow Item contains the mirrored power of a Sword of Delusion. It cannot be traded, dropped or given other functions. -->
@@ -1146,12 +1146,12 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="300" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="139" />
 			<set stat="mAtk" val="76" />
 			<set stat="critRate" val="8" />
 			<set stat="pAtkSpd" val="379" />
-		</for>
+		</stats>
 	</item>
 	<item id="8840" type="Weapon" name="Shadow Item: Poleaxe">
 		<!-- This Shadow Item contains the mirrored power of a Poleaxe. It cannot be traded, dropped or given other functions. -->
@@ -1173,13 +1173,13 @@
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3599-1" /> <!-- Polearm Multi-attack -->
 		<set name="duration" val="300" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="139" />
 			<set stat="mAtk" val="76" />
 			<set stat="critRate" val="8" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="325" />
-		</for>
+		</stats>
 	</item>
 	<item id="8841" type="Weapon" name="Shadow Item: Stick of Eternity">
 		<!-- This Shadow Item contains the mirrored power of a Stick of Eternity. It cannot be traded, dropped or given other functions. -->
@@ -1201,13 +1201,13 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_magic_weapon" val="true" />
 		<set name="duration" val="300" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="111" />
 			<set stat="mAtk" val="101" />
 			<set stat="critRate" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-		</for>
+		</stats>
 	</item>
 	<item id="8842" type="Weapon" name="Shadow Item: Inferno Staff">
 		<!-- This Shadow Item contains the mirrored power of an Inferno Staff. It cannot be traded, dropped or given other functions. -->
@@ -1229,13 +1229,13 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_magic_weapon" val="true" />
 		<set name="duration" val="300" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="135" />
 			<set stat="mAtk" val="111" />
 			<set stat="critRate" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="325" />
-		</for>
+		</stats>
 	</item>
 	<item id="8843" type="Weapon" name="Shadow Item: Pa'agrian Hammer">
 		<!-- This Shadow Item contains the mirrored power of a Pa'agrian Hammer. It cannot be traded, dropped or given other functions. -->
@@ -1257,13 +1257,13 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_magic_weapon" val="true" />
 		<set name="duration" val="300" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="135" />
 			<set stat="mAtk" val="111" />
 			<set stat="critRate" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="325" />
-		</for>
+		</stats>
 	</item>
 	<item id="8844" type="Weapon" name="Shadow Item: Dark Screamer">
 		<!-- This Shadow Item contains the mirrored power of a Dark Screamer. It cannot be traded, dropped or given other functions. -->
@@ -1284,13 +1284,13 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="300" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="122" />
 			<set stat="mAtk" val="76" />
 			<set stat="critRate" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="433" />
-		</for>
+		</stats>
 	</item>
 	<item id="8845" type="Weapon" name="Shadow Item: Akat Long Bow">
 		<!-- This Shadow Item contains the mirrored power of an Akat Long Bow. It cannot be traded, dropped or given other functions. -->
@@ -1313,13 +1313,13 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="300" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="316" />
 			<set stat="mAtk" val="84" />
 			<set stat="critRate" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="227" />
-		</for>
+		</stats>
 	</item>
 	<item id="8846" type="Weapon" name="Shadow Item: Pa'agrian Sword">
 		<!-- This Shadow Item contains the mirrored power of a Pa'agrian Sword. It cannot be traded, dropped or given other functions. -->
@@ -1340,12 +1340,12 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="300" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="169" />
 			<set stat="mAtk" val="76" />
 			<set stat="critRate" val="8" />
 			<set stat="pAtkSpd" val="325" />
-		</for>
+		</stats>
 	</item>
 	<item id="8847" type="Weapon" name="Shadow Item: Fisted Blade">
 		<!-- This Shadow Item contains the mirrored power of a Fisted Blade. It cannot be traded, dropped or given other functions. -->
@@ -1366,13 +1366,13 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="300" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="169" />
 			<set stat="mAtk" val="76" />
 			<set stat="critRate" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="325" />
-		</for>
+		</stats>
 	</item>
 	<item id="8848" type="Weapon" name="Shadow Item: Stormbringer">
 		<!-- This Shadow Item contains the mirrored power of a Stormbringer. It cannot be traded, dropped or given other functions. -->
@@ -1393,12 +1393,12 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="300" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="175" />
 			<set stat="mAtk" val="78" />
 			<set stat="critRate" val="8" />
 			<set stat="pAtkSpd" val="325" />
-		</for>
+		</stats>
 	</item>
 	<item id="8849" type="Weapon" name="Shadow Item: Great Sword">
 		<!-- This Shadow Item contains the mirrored power of a Great Sword. It cannot be traded, dropped or given other functions. -->
@@ -1419,12 +1419,12 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="300" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="213" />
 			<set stat="mAtk" val="91" />
 			<set stat="critRate" val="8" />
 			<set stat="pAtkSpd" val="325" />
-		</for>
+		</stats>
 	</item>
 	<item id="8850" type="Weapon" name="Shadow Item: Heavy War Axe">
 		<!-- This Shadow Item contains the mirrored power of a Heavy War Axe. It cannot be traded, dropped or given other functions. -->
@@ -1445,13 +1445,13 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="300" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="175" />
 			<set stat="mAtk" val="91" />
 			<set stat="critRate" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-		</for>
+		</stats>
 	</item>
 	<item id="8851" type="Weapon" name="Shadow Item: Sprite's Staff">
 		<!-- This Shadow Item contains the mirrored power of a Sprite's Staff. It cannot be traded, dropped or given other functions. -->
@@ -1473,13 +1473,13 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_magic_weapon" val="true" />
 		<set name="duration" val="300" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="170" />
 			<set stat="mAtk" val="134" />
 			<set stat="critRate" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="325" />
-		</for>
+		</stats>
 	</item>
 	<item id="8852" type="Weapon" name="Shadow Item: Keshanberk">
 		<!-- This Shadow Item contains the mirrored power of a Keshanberk. It cannot be traded, dropped or given other functions. -->
@@ -1500,12 +1500,12 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="300" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="175" />
 			<set stat="mAtk" val="91" />
 			<set stat="critRate" val="8" />
 			<set stat="pAtkSpd" val="379" />
-		</for>
+		</stats>
 	</item>
 	<item id="8853" type="Weapon" name="Shadow Item: Sword of Valhalla">
 		<!-- This Shadow Item contains the mirrored power of a Sword of Valhalla. It cannot be traded, dropped or given other functions. -->
@@ -1527,12 +1527,12 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_magic_weapon" val="true" />
 		<set name="duration" val="300" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="140" />
 			<set stat="mAtk" val="122" />
 			<set stat="critRate" val="8" />
 			<set stat="pAtkSpd" val="379" />
-		</for>
+		</stats>
 	</item>
 	<item id="8854" type="Weapon" name="Shadow Item: Kris">
 		<!-- This Shadow Item contains the mirrored power of a Kris. It cannot be traded, dropped or given other functions. -->
@@ -1553,13 +1553,13 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="300" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="153" />
 			<set stat="mAtk" val="91" />
 			<set stat="critRate" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="433" />
-		</for>
+		</stats>
 	</item>
 	<item id="8855" type="Weapon" name="Shadow Item: Arthro Nail">
 		<!-- This Shadow Item contains the mirrored power of an Arthro Nail. It cannot be traded, dropped or given other functions. -->
@@ -1580,13 +1580,13 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="300" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="213" />
 			<set stat="mAtk" val="91" />
 			<set stat="critRate" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="325" />
-		</for>
+		</stats>
 	</item>
 	<item id="8856" type="Weapon" name="Shadow Item: Dark Elven Long Bow">
 		<!-- This Shadow Item contains the mirrored power of a Dark Elven Long Bow. It cannot be traded, dropped or given other functions. -->
@@ -1609,13 +1609,13 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="300" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="397" />
 			<set stat="mAtk" val="100" />
 			<set stat="critRate" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="227" />
-		</for>
+		</stats>
 	</item>
 	<item id="8857" type="Weapon" name="Shadow Item: Sword of Delusion*Sword of Delusion">
 		<!-- This Shadow Item contains the mirrored power of a Sword of Delusion. It cannot be traded, dropped or given other functions. -->
@@ -1636,12 +1636,12 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="300" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="213" />
 			<set stat="mAtk" val="91" />
 			<set stat="critRate" val="8" />
 			<set stat="pAtkSpd" val="325" />
-		</for>
+		</stats>
 	</item>
 	<item id="8858" type="Weapon" name="Shadow Item: Great Axe">
 		<!-- This Shadow Item contains the mirrored power of a Great Axe. It cannot be traded, dropped or given other functions. -->
@@ -1663,13 +1663,13 @@
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3599-1" /> <!-- Polearm Multi-attack -->
 		<set name="duration" val="300" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="175" />
 			<set stat="mAtk" val="91" />
 			<set stat="critRate" val="8" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="325" />
-		</for>
+		</stats>
 	</item>
 	<item id="8859" type="Weapon" name="Shadow Item: Tallum Blade">
 		<!-- This Shadow Item contains the mirrored power of a Tallum Blade. It cannot be traded, dropped or given other functions. -->
@@ -1690,12 +1690,12 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="300" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="213" />
 			<set stat="mAtk" val="107" />
 			<set stat="critRate" val="8" />
 			<set stat="pAtkSpd" val="379" />
-		</for>
+		</stats>
 	</item>
 	<item id="8860" type="Weapon" name="Shadow Item: Halberd">
 		<!-- This Shadow Item contains the mirrored power of a Halberd. It cannot be traded, dropped or given other functions. -->
@@ -1717,13 +1717,13 @@
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3599-1" /> <!-- Polearm Multi-attack -->
 		<set name="duration" val="300" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="213" />
 			<set stat="mAtk" val="107" />
 			<set stat="critRate" val="8" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="325" />
-		</for>
+		</stats>
 	</item>
 	<item id="8861" type="Weapon" name="Shadow Item: Dasparion's Staff">
 		<!-- This Shadow Item contains the mirrored power of a Dasparion's Staff. It cannot be traded, dropped or given other functions. -->
@@ -1745,13 +1745,13 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_magic_weapon" val="true" />
 		<set name="duration" val="300" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="207" />
 			<set stat="mAtk" val="157" />
 			<set stat="critRate" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="325" />
-		</for>
+		</stats>
 	</item>
 	<item id="8862" type="Weapon" name="Shadow Item: Bloody Orchid">
 		<!-- This Shadow Item contains the mirrored power of a Bloody Orchid. It cannot be traded, dropped or given other functions. -->
@@ -1772,13 +1772,13 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="300" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="186" />
 			<set stat="mAtk" val="107" />
 			<set stat="critRate" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="433" />
-		</for>
+		</stats>
 	</item>
 	<item id="8863" type="Weapon" name="Shadow Item: Blood Tornado">
 		<!-- This Shadow Item contains the mirrored power of a Blood Tornado. It cannot be traded, dropped or given other functions. -->
@@ -1799,13 +1799,13 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="300" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="259" />
 			<set stat="mAtk" val="107" />
 			<set stat="critRate" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="325" />
-		</for>
+		</stats>
 	</item>
 	<item id="8864" type="Weapon" name="Shadow Item: Carnage Bow">
 		<!-- This Shadow Item contains the mirrored power of a Carnage Bow. It cannot be traded, dropped or given other functions. -->
@@ -1828,13 +1828,13 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="300" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="440" />
 			<set stat="mAtk" val="107" />
 			<set stat="critRate" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="293" />
-		</for>
+		</stats>
 	</item>
 	<item id="8865" type="Weapon" name="Shadow Item: Keshanberk*Keshanberk">
 		<!-- This Shadow Item contains the mirrored power of Dual Keshanberks. It cannot be traded, dropped or given other functions. -->
@@ -1855,12 +1855,12 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="300" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="259" />
 			<set stat="mAtk" val="107" />
 			<set stat="critRate" val="8" />
 			<set stat="pAtkSpd" val="325" />
-		</for>
+		</stats>
 	</item>
 	<item id="8866" type="Weapon" name="Shadow Item: Meteor Shower">
 		<!-- This Shadow Item contains the mirrored power of a Meteor Shower. It cannot be traded, dropped or given other functions. -->
@@ -1881,13 +1881,13 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="300" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="213" />
 			<set stat="mAtk" val="107" />
 			<set stat="critRate" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-		</for>
+		</stats>
 	</item>
 	<item id="8867" type="Weapon" name="Shadow Item: Inferno Master">
 		<!-- This Shadow Item contains the mirrored power of an Infernal Master. It cannot be traded, dropped or given other functions. -->
@@ -1908,12 +1908,12 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="300" />
-		<for>
+		<stats>
 			<set stat="pAtk" val="259" />
 			<set stat="mAtk" val="107" />
 			<set stat="critRate" val="8" />
 			<set stat="pAtkSpd" val="325" />
-		</for>
+		</stats>
 	</item>
 	<item id="8868" type="EtcItem" name="Ziggo's Gemstone">
 		<!-- This bright, shiny gemstone looks as though it would fetch a good price if you sold it at the shop. -->
@@ -1951,9 +1951,9 @@
 		<set name="material" val="LEATHER" />
 		<set name="weight" val="20" />
 		<set name="price" val="45000" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="20" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="8872" type="EtcItem" name="Flash Gunpowder">
 		<!-- This specially processed gunpowder doesn't create smoke. It is consumed while using the swoop cannon skill. -->

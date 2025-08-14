@@ -57,6 +57,7 @@ public class PSkillCritRateFinalizer implements IStatFunction
 		{
 			return (0.5 * Math.max(enchantLevel - 3, 0)) + (0.5 * Math.max(enchantLevel - 6, 0));
 		}
+		
 		return (0.34 * Math.max(enchantLevel - 3, 0)) + (0.34 * Math.max(enchantLevel - 6, 0));
 	}
 }

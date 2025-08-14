@@ -70,6 +70,7 @@ public class EnchantResult extends ServerPacket
 		buffer.writeInt(_result);
 		buffer.writeInt(_crystal);
 		buffer.writeLong(_count);
+		
 		// Guessing.
 		// With 166 options became 3x write integers instead of shorts and enchant level moved bellow.
 		// Commenting until actually knowing.
@@ -77,6 +78,7 @@ public class EnchantResult extends ServerPacket
 		// {
 		// buffer.writeInt(option);
 		// }
+		
 		buffer.writeInt(0);
 		buffer.writeInt(0);
 		buffer.writeInt(0);

@@ -35,6 +35,7 @@ public enum ZoneId
 	SWAMP,
 	NO_SUMMON_FRIEND,
 	NO_STORE,
+	NO_PVP,
 	TOWN,
 	SCRIPT,
 	HQ,

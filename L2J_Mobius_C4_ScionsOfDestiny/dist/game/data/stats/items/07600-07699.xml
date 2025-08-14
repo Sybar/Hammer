@@ -847,9 +847,9 @@
 		<set name="material" val="WOOD" />
 		<set name="weight" val="10" />
 		<set name="price" val="500000" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player sex="1" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="7683" type="Armor" name="Rabbit Ear">
 		<!-- Hair accessory in the shape of Bunny Girl's rabbit ears -->
@@ -998,9 +998,9 @@
 		<set name="material" val="WOOD" />
 		<set name="weight" val="10" />
 		<set name="price" val="500000" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player sex="1" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="7696" type="Armor" name="Daisy Hairpin">
 		<!-- A hairpin with a daisy pattern. Hair accessory exclusively for women. -->
@@ -1011,9 +1011,9 @@
 		<set name="material" val="WOOD" />
 		<set name="weight" val="10" />
 		<set name="price" val="500000" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player sex="1" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="7697" type="EtcItem" name="Piece of Forget-me-not Hairpin">
 		<!-- An indispensable raw material that is needed to make a forget-me-not hairpin. It can be sold at a general store. -->

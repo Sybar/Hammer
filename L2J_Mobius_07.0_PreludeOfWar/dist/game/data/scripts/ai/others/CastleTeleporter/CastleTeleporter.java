@@ -24,7 +24,6 @@ import org.l2jmobius.gameserver.model.StatSet;
 import org.l2jmobius.gameserver.model.World;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.actor.enums.player.PlayerCondOverride;
 import org.l2jmobius.gameserver.model.siege.Siege;
 import org.l2jmobius.gameserver.network.NpcStringId;
 import org.l2jmobius.gameserver.network.enums.ChatType;
@@ -94,6 +93,7 @@ public class CastleTeleporter extends AbstractNpcAI
 					startQuestTimer("MASS_TELEPORT", time, npc, null);
 					npc.setScriptValue(1);
 				}
+				
 				return event;
 			}
 			case "teleportMe":
@@ -168,6 +168,7 @@ public class CastleTeleporter extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	
@@ -188,6 +189,7 @@ public class CastleTeleporter extends AbstractNpcAI
 		{
 			htmltext = getHtmlName(npc) + "-no.html";
 		}
+		
 		return htmltext;
 	}
 	
@@ -206,6 +208,7 @@ public class CastleTeleporter extends AbstractNpcAI
 		{
 			loc = new Location(npcParams.getInt("pos_x" + paramName3), npcParams.getInt("pos_y" + paramName3), npcParams.getInt("pos_z" + paramName3));
 		}
+		
 		return loc;
 	}
 	
@@ -244,12 +247,13 @@ public class CastleTeleporter extends AbstractNpcAI
 				return "CastleTeleporter-03";
 			}
 		}
+		
 		return String.valueOf(npc.getId());
 	}
 	
 	private boolean isOwner(Player player, Npc npc)
 	{
-		return player.canOverrideCond(PlayerCondOverride.CASTLE_CONDITIONS) || ((player.getClan() != null) && (player.getClanId() == npc.getCastle().getOwnerId()) && player.isClanLeader());
+		return player.isGM() || ((player.getClan() != null) && (player.getClanId() == npc.getCastle().getOwnerId()) && player.isClanLeader());
 	}
 	
 	public static void main(String[] args)

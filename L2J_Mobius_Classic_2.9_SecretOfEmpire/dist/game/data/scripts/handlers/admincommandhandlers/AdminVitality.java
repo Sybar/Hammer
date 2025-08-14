@@ -37,7 +37,7 @@ public class AdminVitality implements IAdminCommandHandler
 	};
 	
 	@Override
-	public boolean useAdminCommand(String command, Player activeChar)
+	public boolean onCommand(String command, Player activeChar)
 	{
 		if (activeChar == null)
 		{
@@ -86,14 +86,16 @@ public class AdminVitality implements IAdminCommandHandler
 				vitality = target.getVitalityPoints();
 				activeChar.sendSysMessage("Player vitality points: " + vitality);
 			}
+			
 			return true;
 		}
+		
 		activeChar.sendSysMessage("Target not found or not a player");
 		return false;
 	}
 	
 	@Override
-	public String[] getAdminCommandList()
+	public String[] getCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}

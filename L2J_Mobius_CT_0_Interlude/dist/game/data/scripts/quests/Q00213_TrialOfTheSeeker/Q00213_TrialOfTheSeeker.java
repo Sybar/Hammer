@@ -37,6 +37,7 @@ public class Q00213_TrialOfTheSeeker extends Quest
 	private static final int BRUNON = 30526;
 	private static final int VIKTOR = 30684;
 	private static final int MARINA = 30715;
+	
 	// Monsters
 	private static final int NEER_GHOUL_BERSERKER = 20198;
 	private static final int ANT_CAPTAIN = 20080;
@@ -48,6 +49,7 @@ public class Q00213_TrialOfTheSeeker extends Quest
 	private static final int MARSH_STAKATO_DRONE = 20234;
 	private static final int BREKA_ORC_OVERLORD = 20270;
 	private static final int LETO_LIZARDMAN_WARRIOR = 20580;
+	
 	// Items
 	private static final int DUFNER_LETTER = 2647;
 	private static final int TERRY_ORDER_1 = 2648;
@@ -75,6 +77,7 @@ public class Q00213_TrialOfTheSeeker extends Quest
 	private static final int ABYSS_RUNESTONE_3 = 2670;
 	private static final int ABYSS_RUNESTONE_4 = 2671;
 	private static final int TERRY_REPORT = 2672;
+	
 	// Rewards
 	private static final int MARK_OF_SEEKER = 2673;
 	private static final int DIMENSIONAL_DIAMOND = 7562;

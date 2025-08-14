@@ -39,6 +39,7 @@ public class Q00752_UncoverTheSecret extends Quest
 {
 	// Npc
 	private static final int HESET = 33780;
+	
 	// Monster's
 	private static final int SPICULA1 = 23246;
 	private static final int SPICULA2 = 23247;
@@ -59,6 +60,7 @@ public class Q00752_UncoverTheSecret extends Quest
 	private static final int TRACE = 36074;
 	private static final int ENIGMATIC = 36075;
 	private static final int SCROLL = 36082;
+	
 	// Misc
 	private static final int MIN_LEVEL = 93;
 	
@@ -106,6 +108,7 @@ public class Q00752_UncoverTheSecret extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -125,6 +128,7 @@ public class Q00752_UncoverTheSecret extends Quest
 						htmltext = "33780-0.htm";
 						break;
 					}
+					
 					qs.setState(State.CREATED);
 					// fallthrough
 				}
@@ -147,6 +151,7 @@ public class Q00752_UncoverTheSecret extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -188,6 +193,7 @@ public class Q00752_UncoverTheSecret extends Quest
 					break;
 				}
 			}
+			
 			if ((getQuestItemsCount(killer, TRACE) >= 10) && (getQuestItemsCount(killer, ENIGMATIC) >= 20))
 			{
 				qs.setCond(2, true);

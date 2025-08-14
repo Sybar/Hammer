@@ -71,8 +71,10 @@ public class SayuneRequest extends AbstractRequest
 					return entry;
 				}
 			}
+			
 			return null;
 		}
+		
 		return _possibleEntries.removeFirst();
 	}
 	

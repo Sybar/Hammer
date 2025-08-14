@@ -39,12 +39,14 @@ public class Q00682_TheStrongInTheClosedSpace extends Quest
 {
 	// NPCs
 	private static final int PENNY = 34413;
+	
 	// MiniBoss
 	private static final int BURNSTEIN = 26136; // Burnstein (Command Post)
 	private static final int ISADORA = 26220; // Isadora
 	private static final int MALISS = 26219; // Maliss
 	private static final int HELIOS = 26335; // Helios
 	private static final int QEEN_KROSHA = 26390; // Queen Krosha
+	
 	// Misc
 	private static final int MIN_LEVEL = 100;
 	
@@ -93,6 +95,7 @@ public class Q00682_TheStrongInTheClosedSpace extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -144,6 +147,7 @@ public class Q00682_TheStrongInTheClosedSpace extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

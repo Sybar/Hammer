@@ -37,6 +37,7 @@ public class OlyBuffer extends AbstractNpcAI
 {
 	// NPC
 	private static final int OLYMPIAD_BUFFER = 36402;
+	
 	// Skills
 	private static final SkillHolder[] ALLOWED_BUFFS =
 	{
@@ -69,6 +70,7 @@ public class OlyBuffer extends AbstractNpcAI
 		{
 			htmltext = "OlyBuffer-index.html";
 		}
+		
 		return htmltext;
 	}
 	
@@ -87,12 +89,14 @@ public class OlyBuffer extends AbstractNpcAI
 				skill.applyEffects(npc, player);
 				htmltext = "OlyBuffer-afterBuff.html";
 			}
+			
 			if (npc.getScriptValue() >= 5)
 			{
 				htmltext = "OlyBuffer-noMore.html";
 				getTimers().addTimer("DELETE_ME", 5000, evnt -> npc.deleteMe());
 			}
 		}
+		
 		return htmltext;
 	}
 	

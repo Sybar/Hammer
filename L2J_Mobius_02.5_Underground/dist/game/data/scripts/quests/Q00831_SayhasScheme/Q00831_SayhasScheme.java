@@ -42,9 +42,11 @@ public class Q00831_SayhasScheme extends Quest
 	private static final int YUYURIA = 34100;
 	private static final int YUYURIA_FINISH = 34155;
 	private static final int ALTAR = 34103;
+	
 	// Items
 	private static final int DESTROYED_MARK_FRAGMENT = 46374;
 	private static final int GLUDIN_HERO_REWARD = 46375;
+	
 	// Misc
 	private static final int MIN_LEVEL = 100;
 	
@@ -95,6 +97,7 @@ public class Q00831_SayhasScheme extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -139,6 +142,7 @@ public class Q00831_SayhasScheme extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -154,6 +158,7 @@ public class Q00831_SayhasScheme extends Quest
 		{
 			members.add(player);
 		}
+		
 		for (Player member : members)
 		{
 			final QuestState qs = getQuestState(member, false);

@@ -202,9 +202,11 @@ public class InitialShortcutData implements IXmlReader
 								break;
 							}
 						}
+						
 						commands.add(new MacroCmd(entry++, type, d1, d2, cmd));
 					}
 				}
+				
 				_macroPresets.put(macroId, new Macro(macroId, icon, name, description, acronym, commands));
 			}
 		}
@@ -279,6 +281,7 @@ public class InitialShortcutData implements IXmlReader
 					{
 						continue;
 					}
+					
 					shortcutId = item.getObjectId();
 					break;
 				}
@@ -297,6 +300,7 @@ public class InitialShortcutData implements IXmlReader
 					{
 						continue;
 					}
+					
 					player.registerMacro(macro);
 					break;
 				}
@@ -323,6 +327,7 @@ public class InitialShortcutData implements IXmlReader
 						{
 							continue;
 						}
+						
 						shortcutId = item.getObjectId();
 						break;
 					}
@@ -341,10 +346,12 @@ public class InitialShortcutData implements IXmlReader
 						{
 							continue;
 						}
+						
 						player.registerMacro(macro);
 						break;
 					}
 				}
+				
 				// Register shortcut
 				final Shortcut newShortcut = new Shortcut(shortcut.getSlot(), shortcut.getPage(), shortcut.getType(), shortcutId, shortcut.getLevel());
 				player.sendPacket(new ShortcutRegister(newShortcut));

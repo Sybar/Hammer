@@ -85,6 +85,7 @@ public class CeremonyOfChaosDailyMissionHandler extends AbstractDailyMissionHand
 				}
 			}
 		}
+		
 		return false;
 	}
 	
@@ -135,6 +136,7 @@ public class CeremonyOfChaosDailyMissionHandler extends AbstractDailyMissionHand
 			{
 				entry.setStatus(DailyMissionStatus.AVAILABLE);
 			}
+			
 			storePlayerEntry(entry);
 		}
 	}
@@ -145,6 +147,7 @@ public class CeremonyOfChaosDailyMissionHandler extends AbstractDailyMissionHand
 		{
 			return false;
 		}
+		
 		return ((player.getLevel() >= _minLevel)) || (player.getLevel() <= _maxLevel);
 	}
 	

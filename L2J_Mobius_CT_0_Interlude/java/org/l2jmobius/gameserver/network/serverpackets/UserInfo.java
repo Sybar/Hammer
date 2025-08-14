@@ -51,10 +51,12 @@ public class UserInfo extends ServerPacket
 		{
 			_relation |= 0x180;
 		}
+		
 		if (_player.getSiegeState() == 2)
 		{
 			_relation |= 0x80;
 		}
+		
 		_moveMultiplier = player.getMovementSpeedMultiplier();
 		_runSpd = (int) Math.round(player.getRunSpeed() / _moveMultiplier);
 		_walkSpd = (int) Math.round(player.getWalkSpeed() / _moveMultiplier);
@@ -200,12 +202,14 @@ public class UserInfo extends ServerPacket
 		{
 			title = "[Invisible]";
 		}
+		
 		buffer.writeString(title);
 		
 		buffer.writeInt(_player.getClanId());
 		buffer.writeInt(_player.getClanCrestId());
 		buffer.writeInt(_player.getAllyId());
 		buffer.writeInt(_player.getAllyCrestId()); // ally crest id
+		
 		// 0x40 leader rights
 		// siege flags: attacker - 0x180 sword over name, defender - 0x80 shield, 0xC0 crown (|leader), 0x1C0 flag (|leader)
 		buffer.writeInt(_relation);
@@ -245,6 +249,7 @@ public class UserInfo extends ServerPacket
 		buffer.writeInt(_player.getFishZ()); // fishing z
 		
 		buffer.writeInt(appearance.getNameColor());
+		
 		// new c5
 		buffer.writeByte(_player.isRunning()); // changes the Speed display on Status Window
 		buffer.writeInt(_player.getPledgeClass()); // changes the text above CP on Status Window

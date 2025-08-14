@@ -40,6 +40,7 @@ public class Q00212_TrialOfDuty extends Quest
 	private static final int SIR_KIEL = 30654;
 	private static final int SILVERSHADOW = 30655;
 	private static final int SPIRIT_TALIANUS = 30656;
+	
 	// Items
 	private static final int LETTER_OF_DUSTIN = 2634;
 	private static final int KNIGHTS_TEAR = 2635;
@@ -55,6 +56,7 @@ public class Q00212_TrialOfDuty extends Quest
 	private static final int ATHEBALDT_SHIN = 2645;
 	private static final int LETTER_OF_WINDAWOOD = 2646;
 	private static final int OLD_KNIGHT_SWORD = 3027;
+	
 	// Rewards
 	private static final int MARK_OF_DUTY = 2633;
 	private static final int DIMENSIONAL_DIAMOND = 7562;
@@ -368,6 +370,7 @@ public class Q00212_TrialOfDuty extends Quest
 					{
 						st.setCond(8, true);
 					}
+					
 					addSpawn(30656, npc, false, 300000);
 				}
 				break;

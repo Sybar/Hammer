@@ -33,6 +33,7 @@ public class Q00275_DarkWingedSpies extends Quest
 	// Monsters
 	private static final int DARKWING_BAT = 20316;
 	private static final int VARANGKA_TRACKER = 27043;
+	
 	// Items
 	private static final int DARKWING_BAT_FANG = 1478;
 	private static final int VARANGKA_PARASITE = 1479;

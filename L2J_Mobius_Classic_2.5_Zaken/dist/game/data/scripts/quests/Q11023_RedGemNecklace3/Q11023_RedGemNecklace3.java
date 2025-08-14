@@ -40,19 +40,23 @@ public class Q11023_RedGemNecklace3 extends Quest
 {
 	// NPCs
 	private static final int USKA = 30560;
+	
 	// Items
 	private static final int HARD_LENS = 90282;
 	private static final int RED_STONE = 90281;
 	private static final int NECKLACE_MATERIALS_TICKET = 90280;
+	
 	// Rewards
 	private static final int SCROLL_OF_ESCAPE = 10650;
 	private static final int HEALING_POTION = 1073;
 	private static final int MP_RECOVERY_POTION = 90310;
 	private static final int SOULSHOTS_NO_GRADE = 5789;
 	private static final int SPIRITSHOT_NO_GRADE = 5790;
+	
 	// Monsters
 	private static final int EVIL_EYE_SEER = 21257;
 	private static final int KASHA_IMP = 21117;
+	
 	// Misc
 	private static final int MIN_LEVEL = 15;
 	private static final int MAX_LEVEL = 20;
@@ -131,6 +135,7 @@ public class Q11023_RedGemNecklace3 extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -165,6 +170,7 @@ public class Q11023_RedGemNecklace3 extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

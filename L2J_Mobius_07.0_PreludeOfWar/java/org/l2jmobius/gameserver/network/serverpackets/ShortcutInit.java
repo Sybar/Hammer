@@ -25,7 +25,7 @@ import java.util.Collection;
 import org.l2jmobius.commons.network.WritableBuffer;
 import org.l2jmobius.gameserver.model.VariationInstance;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.actor.enums.player.Shortcut;
+import org.l2jmobius.gameserver.model.actor.holders.player.Shortcut;
 import org.l2jmobius.gameserver.model.item.instance.Item;
 import org.l2jmobius.gameserver.network.GameClient;
 import org.l2jmobius.gameserver.network.ServerPackets;
@@ -79,6 +79,7 @@ public class ShortcutInit extends ServerPacket
 							buffer.writeInt(0);
 							buffer.writeInt(0);
 						}
+						
 						buffer.writeInt(item.getVisualId());
 					}
 					else

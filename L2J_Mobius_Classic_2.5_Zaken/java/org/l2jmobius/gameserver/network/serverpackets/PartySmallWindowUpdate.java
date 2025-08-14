@@ -56,38 +56,47 @@ public class PartySmallWindowUpdate extends AbstractMaskPacket<PartySmallWindowU
 		{
 			buffer.writeInt((int) _member.getCurrentCp()); // c4
 		}
+		
 		if (containsMask(PartySmallWindowUpdateType.MAX_CP))
 		{
 			buffer.writeInt(_member.getMaxCp()); // c4
 		}
+		
 		if (containsMask(PartySmallWindowUpdateType.CURRENT_HP))
 		{
 			buffer.writeInt((int) _member.getCurrentHp());
 		}
+		
 		if (containsMask(PartySmallWindowUpdateType.MAX_HP))
 		{
 			buffer.writeInt(_member.getMaxHp());
 		}
+		
 		if (containsMask(PartySmallWindowUpdateType.CURRENT_MP))
 		{
 			buffer.writeInt((int) _member.getCurrentMp());
 		}
+		
 		if (containsMask(PartySmallWindowUpdateType.MAX_MP))
 		{
 			buffer.writeInt(_member.getMaxMp());
 		}
+		
 		if (containsMask(PartySmallWindowUpdateType.LEVEL))
 		{
 			buffer.writeByte(_member.getLevel());
 		}
+		
 		if (containsMask(PartySmallWindowUpdateType.CLASS_ID))
 		{
 			buffer.writeShort(_member.getPlayerClass().getId());
 		}
+		
 		if (containsMask(PartySmallWindowUpdateType.PARTY_SUBSTITUTE))
 		{
 			buffer.writeByte(0);
 		}
+		
 		if (containsMask(PartySmallWindowUpdateType.VITALITY_POINTS))
 		{
 			buffer.writeInt(_member.getVitalityPoints());

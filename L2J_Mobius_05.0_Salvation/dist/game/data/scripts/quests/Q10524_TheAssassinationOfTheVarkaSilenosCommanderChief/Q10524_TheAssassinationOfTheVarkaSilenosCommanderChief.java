@@ -42,9 +42,11 @@ public class Q10524_TheAssassinationOfTheVarkaSilenosCommanderChief extends Ques
 {
 	// NPCs
 	private static final int HANSEN = 33853;
+	
 	// Monsters
 	private static final int VARKAS_CHIEF_HORUS = 27503;
 	private static final int KAMPF = 27516;
+	
 	// Misc
 	private static final int MIN_LEVEL = 76;
 	private static final int MAX_LEVEL = 80;
@@ -69,6 +71,7 @@ public class Q10524_TheAssassinationOfTheVarkaSilenosCommanderChief extends Ques
 		{
 			return null;
 		}
+		
 		String htmltext = null;
 		switch (event)
 		{
@@ -102,6 +105,7 @@ public class Q10524_TheAssassinationOfTheVarkaSilenosCommanderChief extends Ques
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -135,6 +139,7 @@ public class Q10524_TheAssassinationOfTheVarkaSilenosCommanderChief extends Ques
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

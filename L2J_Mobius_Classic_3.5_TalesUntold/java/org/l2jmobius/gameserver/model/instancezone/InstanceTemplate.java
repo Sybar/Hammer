@@ -35,7 +35,6 @@ import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Playable;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.enums.player.GroupType;
-import org.l2jmobius.gameserver.model.actor.enums.player.PlayerCondOverride;
 import org.l2jmobius.gameserver.model.actor.templates.DoorTemplate;
 import org.l2jmobius.gameserver.model.events.ListenersContainer;
 import org.l2jmobius.gameserver.model.groups.AbstractPlayerGroup;
@@ -69,17 +68,21 @@ public class InstanceTemplate extends ListenersContainer
 	private StatSet _parameters = StatSet.EMPTY_STATSET;
 	private final Map<Integer, DoorTemplate> _doors = new HashMap<>();
 	private final List<SpawnTemplate> _spawns = new ArrayList<>();
+	
 	// Locations
 	private InstanceTeleportType _enterLocationType = InstanceTeleportType.NONE;
 	private List<Location> _enterLocations = null;
 	private InstanceTeleportType _exitLocationType = InstanceTeleportType.NONE;
 	private List<Location> _exitLocations = null;
+	
 	// Reenter data
 	private InstanceReenterType _reenterType = InstanceReenterType.NONE;
 	private List<InstanceReenterTimeHolder> _reenterData = Collections.emptyList();
+	
 	// Buff remove data
 	private InstanceRemoveBuffType _removeBuffType = InstanceRemoveBuffType.NONE;
 	private List<Integer> _removeBuffExceptions = Collections.emptyList();
+	
 	// Conditions
 	private List<Condition> _conditions = Collections.emptyList();
 	private int _groupMask = GroupType.NONE.getMask();
@@ -275,6 +278,7 @@ public class InstanceTemplate extends ListenersContainer
 		
 		// Reset group mask before setting new group
 		_groupMask = 0;
+		
 		// Check if player can enter in other group then Command channel
 		if (!onlyCC)
 		{
@@ -283,6 +287,7 @@ public class InstanceTemplate extends ListenersContainer
 			{
 				_groupMask |= GroupType.NONE.getMask();
 			}
+			
 			// Party
 			final int partySize = Config.ALT_PARTY_MAX_MEMBERS;
 			if (((max > 1) && (max <= partySize)) || ((min <= partySize) && (max > partySize)))
@@ -290,6 +295,7 @@ public class InstanceTemplate extends ListenersContainer
 				_groupMask |= GroupType.PARTY.getMask();
 			}
 		}
+		
 		// Command channel
 		if (onlyCC || (max > 7))
 		{
@@ -339,6 +345,7 @@ public class InstanceTemplate extends ListenersContainer
 				break;
 			}
 		}
+		
 		return loc;
 	}
 	
@@ -382,11 +389,13 @@ public class InstanceTemplate extends ListenersContainer
 					{
 						location = new Location(loc[0], loc[1], loc[2]);
 					}
+					
 					vars.remove(PlayerVariables.INSTANCE_ORIGIN);
 				}
 				break;
 			}
 		}
+		
 		return location;
 	}
 	
@@ -581,6 +590,7 @@ public class InstanceTemplate extends ListenersContainer
 				time = calendar.getTimeInMillis();
 			}
 		}
+		
 		return time;
 	}
 	
@@ -609,7 +619,7 @@ public class InstanceTemplate extends ListenersContainer
 		}
 		
 		// If player can override instance conditions then he can enter alone
-		if (player.canOverrideCond(PlayerCondOverride.INSTANCE_CONDITIONS))
+		if (player.isGM())
 		{
 			return GroupType.NONE;
 		}
@@ -637,6 +647,7 @@ public class InstanceTemplate extends ListenersContainer
 				return t;
 			}
 		}
+		
 		// nothing found? then player cannot enter
 		return null;
 	}
@@ -680,6 +691,7 @@ public class InstanceTemplate extends ListenersContainer
 				}
 			}
 		}
+		
 		return group;
 	}
 	
@@ -699,6 +711,7 @@ public class InstanceTemplate extends ListenersContainer
 				return false;
 			}
 		}
+		
 		return true;
 	}
 	

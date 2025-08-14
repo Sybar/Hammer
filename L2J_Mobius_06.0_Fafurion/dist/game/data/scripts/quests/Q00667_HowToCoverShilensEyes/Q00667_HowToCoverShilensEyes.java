@@ -44,12 +44,14 @@ public final class Q00667_HowToCoverShilensEyes extends Quest
 	// NPCs
 	private static final int ARCTURUS = 34267;
 	private static final int COLIN = 30703;
+	
 	// Monster
 	private static final int[] MONSTERS =
 	{
 		25915, // Anakim
 		25919, // Lilith
 	};
+	
 	// Misc
 	private static final int MIN_LEVEL = 85;
 	private static final int REWARD = 150;
@@ -111,6 +113,7 @@ public final class Q00667_HowToCoverShilensEyes extends Quest
 					htmltext = getAlreadyCompletedMsg(player);
 					break;
 				}
+				
 				qs.setState(State.CREATED);
 				// fallthrou
 			}
@@ -123,9 +126,11 @@ public final class Q00667_HowToCoverShilensEyes extends Quest
 						htmltext = npc.getId() == ARCTURUS ? "hunter_leader_arcturus_q0667_01.htm" : "union_member_colin_q0667_01.htm";
 						break;
 					}
+					
 					htmltext = npc.getId() == ARCTURUS ? "hunter_leader_arcturus_q0667_02.htm" : "union_member_colin_q0667_02.htm";
 					break;
 				}
+				
 				htmltext = npc.getId() == ARCTURUS ? "hunter_leader_arcturus_q0667_02.htm" : "union_member_colin_q0667_02.htm";
 				break;
 			}
@@ -147,6 +152,7 @@ public final class Q00667_HowToCoverShilensEyes extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -198,6 +204,7 @@ public final class Q00667_HowToCoverShilensEyes extends Quest
 							showHtmlFile(player, npc.getId() == ARCTURUS ? "hunter_leader_arcturus_q0667_08.htm" : "union_member_colin_q0667_08.htm");
 							break;
 						}
+						
 						showHtmlFile(player, npc.getId() == ARCTURUS ? "hunter_leader_arcturus_q0667_09.htm" : "union_member_colin_q0667_09.htm");
 					}
 					break;

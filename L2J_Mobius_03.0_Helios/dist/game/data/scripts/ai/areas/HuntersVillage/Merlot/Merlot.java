@@ -35,11 +35,14 @@ public class Merlot extends AbstractNpcAI
 {
 	// NPC
 	private static final int MERLOT = 34018;
+	
 	// Item
 	private static final int ATELIA_CRYSTAL = 45610;
 	private static final int DIMENSIONAL_COIN = 45941;
+	
 	// Misc
 	private static final int MIN_LEVEL = 99;
+	
 	// Location
 	private static final Location DIMENSIONAL_RAID = new Location(116503, 75392, -2712); // Merlot Position
 	
@@ -89,6 +92,7 @@ public class Merlot extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

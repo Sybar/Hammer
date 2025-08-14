@@ -61,6 +61,7 @@ public class LoginMonthDailyMissionHandler extends AbstractDailyMissionHandler
 			entry.setProgress(1);
 			entry.setStatus(DailyMissionStatus.AVAILABLE);
 		}
+		
 		storePlayerEntry(entry);
 	}
 }

@@ -38,6 +38,7 @@ public class Q00257_TheGuardIsBusy extends Quest
 	private static final int ORC_AMULET = 752;
 	private static final int ORC_NECKLACE = 1085;
 	private static final int WEREWOLF_FANG = 1086;
+	
 	// Newbie Items
 	private static final int SPIRITSHOT_FOR_BEGINNERS = 5790;
 	private static final int SOULSHOT_FOR_BEGINNERS = 5789;

@@ -39,12 +39,15 @@ public class Q10736_ASpecialPower extends Quest
 {
 	// NPC
 	private static final int KATALIN = 33943;
+	
 	// Monsters
 	private static final int FLOATO = 27526;
 	private static final int FLOATO2 = 27531;
 	private static final int RATEL = 27527;
+	
 	// Items
 	private static final ItemHolder SOULSHOTS_REWARD = new ItemHolder(1835, 500);
+	
 	// Misc
 	private static final int MIN_LEVEL = 4;
 	private static final int MAX_LEVEL = 20;
@@ -71,6 +74,7 @@ public class Q10736_ASpecialPower extends Quest
 			qs.startQuest();
 			return event;
 		}
+		
 		return null;
 	}
 	
@@ -121,6 +125,7 @@ public class Q10736_ASpecialPower extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -150,11 +155,13 @@ public class Q10736_ASpecialPower extends Quest
 					break;
 				}
 			}
+			
 			if (npcId != -1)
 			{
 				holder.add(new NpcLogListHolder(npcId, false, qs.getMemoStateEx(KILL_COUNT_VAR)));
 			}
 		}
+		
 		return holder;
 	}
 }

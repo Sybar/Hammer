@@ -48,19 +48,23 @@ public class Q00501_ProofOfClanAlliance extends Quest
 	private static final int STATUE_OF_OFFERING = 30757;
 	private static final int ATHREA = 30758;
 	private static final int KALIS = 30759;
+	
 	// Monsters
 	private static final int VANOR_SILENOS_SHAMAN = 20685;
 	private static final int HARIT_LIZARDMAN_SHAMAN = 20644;
 	private static final int OEL_MAHUM_WITCH_DOCTOR = 20576;
+	
 	// Chests
 	private static final int BOX_OF_ATHREA_1 = 27173;
 	private static final int BOX_OF_ATHREA_2 = 27174;
 	private static final int BOX_OF_ATHREA_3 = 27175;
 	private static final int BOX_OF_ATHREA_4 = 27176;
 	private static final int BOX_OF_ATHREA_5 = 27177;
+	
 	// Items
 	private static final int ADENA = 57;
 	private static final int POTION_OF_RECOVERY = 3889;
+	
 	// Quest Items
 	private static final int HERB_OF_HARIT = 3832;
 	private static final int HERB_OF_VANOR = 3833;
@@ -70,8 +74,10 @@ public class Q00501_ProofOfClanAlliance extends Quest
 	private static final int SYMBOL_OF_LOYALTY = 3837;
 	private static final int VOUCHER_OF_FAITH = 3873;
 	private static final int ANTIDOTE_RECIPE_LIST = 3872;
+	
 	// Reward
 	private static final int PROOF_OF_ALLIANCE = 3874;
+	
 	// Drops
 	private static final Map<Integer, Integer> DROP = new HashMap<>();
 	static
@@ -80,6 +86,7 @@ public class Q00501_ProofOfClanAlliance extends Quest
 		DROP.put(HARIT_LIZARDMAN_SHAMAN, HERB_OF_HARIT);
 		DROP.put(OEL_MAHUM_WITCH_DOCTOR, HERB_OF_OEL_MAHUM);
 	}
+	
 	// Chests spawns
 	// @formatter:off
 	private static final int[][] CHESTS_SPAWN =
@@ -102,6 +109,7 @@ public class Q00501_ProofOfClanAlliance extends Quest
 		{102186, 103022, -3541}
 	};
 	// @formatter:on
+	
 	// Chests
 	private static final List<Integer> CHEST_IDS = new ArrayList<>();
 	static
@@ -112,6 +120,7 @@ public class Q00501_ProofOfClanAlliance extends Quest
 		CHEST_IDS.add(BOX_OF_ATHREA_4);
 		CHEST_IDS.add(BOX_OF_ATHREA_5);
 	}
+	
 	// Trigger
 	private static boolean _isSpawned = false;
 	
@@ -235,6 +244,7 @@ public class Q00501_ProofOfClanAlliance extends Quest
 					player.sendMessage("Are you noob?");
 					cancelQuestTimer("poison", npc, player); // Cancel check timer
 				}
+				
 				return null;
 			}
 			case "despawn":
@@ -332,6 +342,7 @@ public class Q00501_ProofOfClanAlliance extends Quest
 							addExpAndSp(player, 0, 120000);
 							takeItems(player, VOUCHER_OF_FAITH, -1);
 							giveItems(player, PROOF_OF_ALLIANCE, 1);
+							
 							// htmltext = getAlreadyCompletedMsg();
 							st.exitQuest(true, true);
 						}
@@ -550,6 +561,7 @@ public class Q00501_ProofOfClanAlliance extends Quest
 				array.add(Integer.parseInt(herb));
 			}
 		}
+		
 		return array;
 	}
 	
@@ -563,6 +575,7 @@ public class Q00501_ProofOfClanAlliance extends Quest
 				return true;
 			}
 		}
+		
 		return false;
 	}
 	

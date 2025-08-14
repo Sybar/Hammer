@@ -31,6 +31,7 @@ public class Q00358_IllegitimateChildOfTheGoddess extends Quest
 {
 	// Item
 	private static final int SCALE = 5868;
+	
 	// Reward
 	private static final int[] REWARD =
 	{

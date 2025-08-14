@@ -38,11 +38,13 @@ public class Q00104_SpiritOfMirrors extends Quest
 	private static final int ARNOLD = 30041;
 	private static final int JOHNSTONE = 30043;
 	private static final int KENYOS = 30045;
+	
 	// Items
 	private static final int GALLINS_OAK_WAND = 748;
 	private static final int WAND_SPIRITBOUND_1 = 1135;
 	private static final int WAND_SPIRITBOUND_2 = 1136;
 	private static final int WAND_SPIRITBOUND_3 = 1137;
+	
 	// Rewards
 	private static final int SPIRITSHOT_NO_GRADE = 2509;
 	private static final int SOULSHOT_NO_GRADE = 1835;

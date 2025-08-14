@@ -49,6 +49,7 @@ public class DimensionalMerchant extends AbstractNpcAI
 {
 	// NPC
 	private static final int MERCHANT = 32478; // Dimensional Merchant
+	
 	// Items
 	private static final int MINION_COUPON = 13273; // Minion Coupon (5-hour)
 	private static final int MINION_COUPON_EV = 13383; // Minion Coupon (5-hour) (Event)
@@ -56,6 +57,7 @@ public class DimensionalMerchant extends AbstractNpcAI
 	private static final int SUP_MINION_COUPON_EV = 14074; // Superior Minion Coupon (Event) - 5-hour
 	private static final int ENH_MINION_COUPON = 20914; // Enhanced Rose Spirit Coupon (5-hour)
 	private static final int ENH_MINION_COUPON_EV = 22240; // Enhanced Rose Spirit Coupon (5-hour) - Event
+	
 	// Others
 	private static final String COMMAND_BYPASS = "Quest DimensionalMerchant ";
 	private static final HashMap<String, Integer> MINION_EXCHANGE = new HashMap<>();
@@ -184,6 +186,7 @@ public class DimensionalMerchant extends AbstractNpcAI
 								player.getActiveWarehouse().destroyItem(ItemProcessType.DESTROY, i, player, null);
 							}
 						}
+						
 						player.sendPacket(new WareHouseWithdrawalList(1, player, WareHouseWithdrawalList.FREIGHT));
 						player.sendPacket(new WareHouseWithdrawalList(2, player, WareHouseWithdrawalList.FREIGHT));
 					}
@@ -195,6 +198,7 @@ public class DimensionalMerchant extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -209,10 +213,12 @@ public class DimensionalMerchant extends AbstractNpcAI
 			final IItemHandler handler = ItemHandler.getInstance().getHandler(summonItem.getEtcItem());
 			if ((handler != null) && !player.hasPet())
 			{
-				handler.useItem(player, summonItem, true);
+				handler.onItemUse(player, summonItem, true);
 			}
+			
 			return "32478-08.html";
 		}
+		
 		return "32478-07.html";
 	}
 	

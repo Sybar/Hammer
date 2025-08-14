@@ -40,14 +40,18 @@ public class Q10530_KekropusLetterTheDragonsTransition extends LetterQuest
 	private static final int JERONIN = 30121;
 	private static final int NAMO = 33973;
 	private static final int INVISIBLE_NPC = 19543;
+	
 	// Items
 	private static final int SOE_TOWN_OF_GIRAN = 46733; // Scroll of Escape: Town of GIRAN
 	private static final int SOE_DRAGON_VALLEY = 46734; // Scroll of Escape: Dragon Valley
+	
 	// Location
 	private static final Location TELEPORT_LOC = new Location(84015, 147219, -3395);
+	
 	// Rewards
 	private static final int XP = 1533168;
 	private static final int SP = 306;
+	
 	// Misc
 	private static final int MIN_LEVEL = 81;
 	private static final int MAX_LEVEL = 84;
@@ -103,12 +107,14 @@ public class Q10530_KekropusLetterTheDragonsTransition extends LetterQuest
 					{
 						addExpAndSp(player, XP, SP);
 					}
+					
 					showOnScreenMsg(player, NpcStringId.YOU_HAVE_COMPLETED_ALL_OF_KEKROPUS_LETTER, ExShowScreenMessage.TOP_CENTER, 6000);
 					htmltext = event;
 				}
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -133,6 +139,7 @@ public class Q10530_KekropusLetterTheDragonsTransition extends LetterQuest
 				htmltext = npc.getId() == JERONIN ? "30121-04.htm" : "33973-01.html";
 			}
 		}
+		
 		return htmltext;
 	}
 	

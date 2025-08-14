@@ -37,12 +37,15 @@ public class Q00662_AGameOfCards extends Quest
 {
 	// NPC
 	private static final int KLUMP = 30845;
+	
 	// Items
 	private static final int RED_GEM = 8765;
 	private static final int ZIGGOS_GEMSTONE = 8868;
+	
 	// Misc
 	private static final int MIN_LEVEL = 61;
 	private static final int REQUIRED_CHIP_COUNT = 50;
+	
 	// Monsters
 	private static final Map<Integer, Integer> MONSTERS = new HashMap<>();
 	static
@@ -101,6 +104,7 @@ public class Q00662_AGameOfCards extends Quest
 					{
 						qs.startQuest();
 					}
+					
 					htmltext = event;
 				}
 				break;
@@ -143,6 +147,7 @@ public class Q00662_AGameOfCards extends Quest
 						i4 = getRandom(70) + 1;
 						i5 = getRandom(70) + 1;
 					}
+					
 					if (i1 >= 57)
 					{
 						i1 = i1 - 56;
@@ -159,6 +164,7 @@ public class Q00662_AGameOfCards extends Quest
 					{
 						i1 = i1 - 14;
 					}
+					
 					if (i2 >= 57)
 					{
 						i2 = i2 - 56;
@@ -175,6 +181,7 @@ public class Q00662_AGameOfCards extends Quest
 					{
 						i2 = i2 - 14;
 					}
+					
 					if (i3 >= 57)
 					{
 						i3 = i3 - 56;
@@ -191,6 +198,7 @@ public class Q00662_AGameOfCards extends Quest
 					{
 						i3 = i3 - 14;
 					}
+					
 					if (i4 >= 57)
 					{
 						i4 = i4 - 56;
@@ -207,6 +215,7 @@ public class Q00662_AGameOfCards extends Quest
 					{
 						i4 = i4 - 14;
 					}
+					
 					if (i5 >= 57)
 					{
 						i5 = i5 - 56;
@@ -223,6 +232,7 @@ public class Q00662_AGameOfCards extends Quest
 					{
 						i5 = i5 - 14;
 					}
+					
 					qs.set("v1", (i4 * 1000000) + (i3 * 10000) + (i2 * 100) + i1);
 					qs.set("ExMemoState", i5);
 					takeItems(player, RED_GEM, REQUIRED_CHIP_COUNT);
@@ -252,6 +262,7 @@ public class Q00662_AGameOfCards extends Quest
 						{
 							i9 = i9 + 1;
 						}
+						
 						if ((i9 % 32) < 31)
 						{
 							qs.set("ExMemoState", (i9 * 100) + i5);
@@ -264,6 +275,7 @@ public class Q00662_AGameOfCards extends Quest
 						{
 							i9 = i9 + 2;
 						}
+						
 						if ((i9 % 32) < 31)
 						{
 							qs.set("ExMemoState", (i9 * 100) + i5);
@@ -276,6 +288,7 @@ public class Q00662_AGameOfCards extends Quest
 						{
 							i9 = i9 + 4;
 						}
+						
 						if ((i9 % 32) < 31)
 						{
 							qs.set("ExMemoState", (i9 * 100) + i5);
@@ -288,6 +301,7 @@ public class Q00662_AGameOfCards extends Quest
 						{
 							i9 = i9 + 8;
 						}
+						
 						if ((i9 % 32) < 31)
 						{
 							qs.set("ExMemoState", (i9 * 100) + i5);
@@ -300,6 +314,7 @@ public class Q00662_AGameOfCards extends Quest
 						{
 							i9 = i9 + 16;
 						}
+						
 						if ((i9 % 32) < 31)
 						{
 							qs.set("ExMemoState", (i9 * 100) + i5);
@@ -323,21 +338,25 @@ public class Q00662_AGameOfCards extends Quest
 							i6 = i6 + 10;
 							i8 = i8 + 8;
 						}
+						
 						if (i1 == i3)
 						{
 							i6 = i6 + 10;
 							i8 = i8 + 4;
 						}
+						
 						if (i1 == i4)
 						{
 							i6 = i6 + 10;
 							i8 = i8 + 2;
 						}
+						
 						if (i1 == i5)
 						{
 							i6 = i6 + 10;
 							i8 = i8 + 1;
 						}
+						
 						if ((i6 % 100) < 10)
 						{
 							if ((i8 % 16) < 8)
@@ -350,6 +369,7 @@ public class Q00662_AGameOfCards extends Quest
 										i8 = i8 + 4;
 									}
 								}
+								
 								if ((i8 % 4) < 2)
 								{
 									if (i2 == i4)
@@ -358,6 +378,7 @@ public class Q00662_AGameOfCards extends Quest
 										i8 = i8 + 2;
 									}
 								}
+								
 								if ((i8 % 2) < 1)
 								{
 									if (i2 == i5)
@@ -380,6 +401,7 @@ public class Q00662_AGameOfCards extends Quest
 										i8 = i8 + 4;
 									}
 								}
+								
 								if ((i8 % 4) < 2)
 								{
 									if (i2 == i4)
@@ -388,6 +410,7 @@ public class Q00662_AGameOfCards extends Quest
 										i8 = i8 + 2;
 									}
 								}
+								
 								if ((i8 % 2) < 1)
 								{
 									if (i2 == i5)
@@ -398,6 +421,7 @@ public class Q00662_AGameOfCards extends Quest
 								}
 							}
 						}
+						
 						if ((i6 % 100) < 10)
 						{
 							if ((i8 % 8) < 4)
@@ -410,6 +434,7 @@ public class Q00662_AGameOfCards extends Quest
 										i8 = i8 + 2;
 									}
 								}
+								
 								if ((i8 % 2) < 1)
 								{
 									if (i3 == i5)
@@ -432,6 +457,7 @@ public class Q00662_AGameOfCards extends Quest
 										i8 = i8 + 2;
 									}
 								}
+								
 								if ((i8 % 2) < 1)
 								{
 									if (i3 == i5)
@@ -442,6 +468,7 @@ public class Q00662_AGameOfCards extends Quest
 								}
 							}
 						}
+						
 						if ((i6 % 100) < 10)
 						{
 							if ((i8 % 4) < 2)
@@ -539,6 +566,7 @@ public class Q00662_AGameOfCards extends Quest
 						htmltext = htmltext.replace("FontColor1", "FF6F6F");
 						htmltext = setHtml(htmltext, i1, "Cell1");
 					}
+					
 					if ((i9 % 4) < 2)
 					{
 						htmltext = htmltext.replace("FontColor2", "FFFF00");
@@ -549,6 +577,7 @@ public class Q00662_AGameOfCards extends Quest
 						htmltext = htmltext.replace("FontColor2", "FF6F6F");
 						htmltext = setHtml(htmltext, i2, "Cell2");
 					}
+					
 					if ((i9 % 8) < 4)
 					{
 						htmltext = htmltext.replace("FontColor3", "FFFF00");
@@ -559,6 +588,7 @@ public class Q00662_AGameOfCards extends Quest
 						htmltext = htmltext.replace("FontColor3", "FF6F6F");
 						htmltext = setHtml(htmltext, i3, "Cell3");
 					}
+					
 					if ((i9 % 16) < 8)
 					{
 						htmltext = htmltext.replace("FontColor4", "FFFF00");
@@ -569,6 +599,7 @@ public class Q00662_AGameOfCards extends Quest
 						htmltext = htmltext.replace("FontColor4", "FF6F6F");
 						htmltext = setHtml(htmltext, i4, "Cell4");
 					}
+					
 					if ((i9 % 32) < 16)
 					{
 						htmltext = htmltext.replace("FontColor5", "FFFF00");
@@ -588,6 +619,7 @@ public class Q00662_AGameOfCards extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -652,6 +684,7 @@ public class Q00662_AGameOfCards extends Quest
 						htmltext = htmltext.replace("FontColor3", "FF6F6F");
 						htmltext = setHtml(htmltext, i3, "Cell3");
 					}
+					
 					if ((i9 % 16) < 8)
 					{
 						htmltext = htmltext.replace("FontColor4", "FFFF00");
@@ -662,6 +695,7 @@ public class Q00662_AGameOfCards extends Quest
 						htmltext = htmltext.replace("FontColor4", "FF6F6F");
 						htmltext = setHtml(htmltext, i4, "Cell4");
 					}
+					
 					if ((i9 % 32) < 16)
 					{
 						htmltext = htmltext.replace("FontColor5", "FFFF00");
@@ -681,6 +715,7 @@ public class Q00662_AGameOfCards extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -797,6 +832,7 @@ public class Q00662_AGameOfCards extends Quest
 				break;
 			}
 		}
+		
 		return htmltext.replaceAll(regex, replacement);
 	}
 }

@@ -57,6 +57,7 @@ public class PledgeReceiveWarList extends ServerPacket
 			{
 				continue;
 			}
+			
 			buffer.writeString(clan.getName());
 			buffer.writeInt(clanWar.getState().ordinal()); // type: 0 = Declaration, 1 = Blood Declaration, 2 = In War, 3 = Victory, 4 = Defeat, 5 = Tie, 6 = Error
 			buffer.writeInt(clanWar.getRemainingTime()); // Time if friends to start remaining

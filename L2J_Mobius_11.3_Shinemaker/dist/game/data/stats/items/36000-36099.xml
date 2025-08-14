@@ -666,9 +666,9 @@
 		<set name="etcitem_type" val="SCROLL" />
 		<set name="handler" val="ItemSkills" />
 		<set name="material" val="LEATHER" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player instanceId="224,225,226,227" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="9594" level="1" /> <!-- Mysterious Incantation -->
 		</skills>
@@ -686,9 +686,9 @@
 		<set name="etcitem_type" val="SCROLL" />
 		<set name="handler" val="ItemSkills" />
 		<set name="material" val="LEATHER" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player instanceId="224,225,226,227" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="9595" level="1" /> <!-- Mysterious Defense -->
 		</skills>
@@ -1014,9 +1014,9 @@
 		<set name="immediate_effect" val="true" />
 		<set name="weight" val="220" />
 		<set name="material" val="CLOTH" />
-		<cond msgId="2453">
+		<conditions msgId="2453">
 			<player cloakStatus="true" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">50</stat>
 			<stat type="mDef">40</stat>
@@ -1034,9 +1034,9 @@
 		<set name="immediate_effect" val="true" />
 		<set name="price" val="5000000" />
 		<set name="material" val="CLOTH" />
-		<cond msgId="2453">
+		<conditions msgId="2453">
 			<player cloakStatus="true" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">50</stat>
 			<stat type="mDef">40</stat>
@@ -1054,9 +1054,9 @@
 		<set name="immediate_effect" val="true" />
 		<set name="price" val="15000000" />
 		<set name="material" val="CLOTH" />
-		<cond msgId="2453">
+		<conditions msgId="2453">
 			<player cloakStatus="true" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">50</stat>
 			<stat type="mDef">40</stat>

@@ -85,9 +85,11 @@ public class RequestSubjugationGacha extends ClientPacket
 						player.addItem(ItemProcessType.REWARD, itemId, 1, player, true);
 						break;
 					}
+					
 					rate += itemChance;
 				}
 			}
+			
 			player.sendPacket(new ExSubjugationGachaUI(curKeys));
 			player.sendPacket(new ExSubjugationGacha(rewards));
 		}

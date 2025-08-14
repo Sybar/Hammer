@@ -38,6 +38,7 @@ public class DragonValleySummoners extends AbstractNpcAI
 	private static final int DARK_GRAVE_WARRIOR = 23442;
 	private static final int CAVE_SERVANT_ARCHER = 23436;
 	private static final int CAVE_SERVANT_WARRIOR = 23437;
+	
 	// Config
 	private static final int CHANCE = 15;
 	
@@ -78,6 +79,7 @@ public class DragonValleySummoners extends AbstractNpcAI
 					break;
 				}
 			}
+			
 			npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.THE_DEAD_ARE_CALLING_AND_I_ANSWER);
 		}
 	}

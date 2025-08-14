@@ -348,9 +348,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="Elixir" />
 		<set name="commissionItemType" val="POTION" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="9985" level="7" /> <!-- Elixir of Life -->
 		</skills>
@@ -370,9 +370,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="Elixir" />
 		<set name="commissionItemType" val="POTION" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="9986" level="7" /> <!-- Elixir of Mind -->
 		</skills>

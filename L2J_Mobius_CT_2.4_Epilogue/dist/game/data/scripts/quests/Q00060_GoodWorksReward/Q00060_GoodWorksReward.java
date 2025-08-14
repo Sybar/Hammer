@@ -64,9 +64,11 @@ public class Q00060_GoodWorksReward extends Quest
 	private static final int BLACK_MARKETEER_OF_MAMMON = 31092;
 	private static final int BLUEPRINT_SELLER_DAEGER = 31435;
 	private static final int MARK = 32487;
+	
 	// Items
 	private static final int BLOODY_CLOTH_FRAGMENT = 10867;
 	private static final int HELVETIAS_ANTIDOTE = 10868;
+	
 	// Reward
 	private static final int MARK_OF_CHALLENGER = 2627;
 	private static final int MARK_OF_DUTY = 2633;
@@ -91,8 +93,10 @@ public class Q00060_GoodWorksReward extends Quest
 	private static final int MARK_OF_WITCHCRAFT = 3307;
 	private static final int MARK_OF_SUMMONER = 3336;
 	private static final int MARK_OF_LORD = 3390;
+	
 	// Quest Monster
 	private static final int PURSUER = 27340;
+	
 	// Misc
 	private static final int MIN_LEVEL = 39;
 	private static final int ONE_MILLION = 1000000;
@@ -120,6 +124,7 @@ public class Q00060_GoodWorksReward extends Quest
 			{
 				npc0.getVariables().set("SPAWNED", false);
 			}
+			
 			npc.deleteMe();
 			return super.onEvent(event, npc, player);
 		}
@@ -283,6 +288,7 @@ public class Q00060_GoodWorksReward extends Quest
 					{
 						qs.setMemoStateEx(1, 1);
 					}
+					
 					htmltext = "31092-02.html";
 				}
 				break;
@@ -325,6 +331,7 @@ public class Q00060_GoodWorksReward extends Quest
 						giveItems(player, Inventory.ADENA_ID, ONE_MILLION);
 						htmltext = "31092-04b.html";
 					}
+					
 					qs.exitQuest(false, true);
 				}
 				break;
@@ -405,6 +412,7 @@ public class Q00060_GoodWorksReward extends Quest
 					{
 						htmltext = "31092-22.html";
 					}
+					
 					qs.exitQuest(false, true);
 				}
 				break; // Original script did not have this brake.
@@ -496,14 +504,17 @@ public class Q00060_GoodWorksReward extends Quest
 					{
 						giveItems(player, MARK_OF_CHALLENGER, 1);
 					}
+					
 					if (!hasQuestItems(player, MARK_OF_TRUST))
 					{
 						giveItems(player, MARK_OF_TRUST, 1);
 					}
+					
 					if (!hasQuestItems(player, MARK_OF_DUELIST))
 					{
 						giveItems(player, MARK_OF_DUELIST, 1);
 					}
+					
 					htmltext = "31092-25.html";
 				}
 				break;
@@ -516,14 +527,17 @@ public class Q00060_GoodWorksReward extends Quest
 					{
 						giveItems(player, MARK_OF_CHALLENGER, 1);
 					}
+					
 					if (!hasQuestItems(player, MARK_OF_TRUST))
 					{
 						giveItems(player, MARK_OF_TRUST, 1);
 					}
+					
 					if (!hasQuestItems(player, MARK_OF_CHAMPION))
 					{
 						giveItems(player, MARK_OF_CHAMPION, 1);
 					}
+					
 					htmltext = "31092-25.html";
 				}
 				break;
@@ -536,14 +550,17 @@ public class Q00060_GoodWorksReward extends Quest
 					{
 						giveItems(player, MARK_OF_DUTY, 1);
 					}
+					
 					if (!hasQuestItems(player, MARK_OF_TRUST))
 					{
 						giveItems(player, MARK_OF_TRUST, 1);
 					}
+					
 					if (!hasQuestItems(player, MARK_OF_HEALER))
 					{
 						giveItems(player, MARK_OF_HEALER, 1);
 					}
+					
 					htmltext = "31092-25.html";
 				}
 				break;
@@ -556,14 +573,17 @@ public class Q00060_GoodWorksReward extends Quest
 					{
 						giveItems(player, MARK_OF_DUTY, 1);
 					}
+					
 					if (!hasQuestItems(player, MARK_OF_TRUST))
 					{
 						giveItems(player, MARK_OF_TRUST, 1);
 					}
+					
 					if (!hasQuestItems(player, MARK_OF_WITCHCRAFT))
 					{
 						giveItems(player, MARK_OF_WITCHCRAFT, 1);
 					}
+					
 					htmltext = "31092-25.html";
 				}
 				break;
@@ -576,14 +596,17 @@ public class Q00060_GoodWorksReward extends Quest
 					{
 						giveItems(player, MARK_OF_SEEKER, 1);
 					}
+					
 					if (!hasQuestItems(player, MARK_OF_TRUST))
 					{
 						giveItems(player, MARK_OF_TRUST, 1);
 					}
+					
 					if (!hasQuestItems(player, MARK_OF_SEARCHER))
 					{
 						giveItems(player, MARK_OF_SEARCHER, 1);
 					}
+					
 					htmltext = "31092-25.html";
 				}
 				break;
@@ -596,14 +619,17 @@ public class Q00060_GoodWorksReward extends Quest
 					{
 						giveItems(player, MARK_OF_SEEKER, 1);
 					}
+					
 					if (!hasQuestItems(player, MARK_OF_TRUST))
 					{
 						giveItems(player, MARK_OF_TRUST, 1);
 					}
+					
 					if (!hasQuestItems(player, MARK_OF_SAGITTARIUS))
 					{
 						giveItems(player, MARK_OF_SAGITTARIUS, 1);
 					}
+					
 					htmltext = "31092-25.html";
 				}
 				break;
@@ -616,14 +642,17 @@ public class Q00060_GoodWorksReward extends Quest
 					{
 						giveItems(player, MARK_OF_SCHOLAR, 1);
 					}
+					
 					if (!hasQuestItems(player, MARK_OF_TRUST))
 					{
 						giveItems(player, MARK_OF_TRUST, 1);
 					}
+					
 					if (!hasQuestItems(player, MARK_OF_MAGUS))
 					{
 						giveItems(player, MARK_OF_MAGUS, 1);
 					}
+					
 					htmltext = "31092-25.html";
 				}
 				break;
@@ -636,14 +665,17 @@ public class Q00060_GoodWorksReward extends Quest
 					{
 						giveItems(player, MARK_OF_SCHOLAR, 1);
 					}
+					
 					if (!hasQuestItems(player, MARK_OF_TRUST))
 					{
 						giveItems(player, MARK_OF_TRUST, 1);
 					}
+					
 					if (!hasQuestItems(player, MARK_OF_WITCHCRAFT))
 					{
 						giveItems(player, MARK_OF_WITCHCRAFT, 1);
 					}
+					
 					htmltext = "31092-25.html";
 				}
 				break;
@@ -656,14 +688,17 @@ public class Q00060_GoodWorksReward extends Quest
 					{
 						giveItems(player, MARK_OF_SCHOLAR, 1);
 					}
+					
 					if (!hasQuestItems(player, MARK_OF_TRUST))
 					{
 						giveItems(player, MARK_OF_TRUST, 1);
 					}
+					
 					if (!hasQuestItems(player, MARK_OF_SUMMONER))
 					{
 						giveItems(player, MARK_OF_SUMMONER, 1);
 					}
+					
 					htmltext = "31092-25.html";
 				}
 				break;
@@ -676,14 +711,17 @@ public class Q00060_GoodWorksReward extends Quest
 					{
 						giveItems(player, MARK_OF_PILGRIM, 1);
 					}
+					
 					if (!hasQuestItems(player, MARK_OF_TRUST))
 					{
 						giveItems(player, MARK_OF_TRUST, 1);
 					}
+					
 					if (!hasQuestItems(player, MARK_OF_HEALER))
 					{
 						giveItems(player, MARK_OF_HEALER, 1);
 					}
+					
 					htmltext = "31092-25.html";
 				}
 				break;
@@ -696,14 +734,17 @@ public class Q00060_GoodWorksReward extends Quest
 					{
 						giveItems(player, MARK_OF_PILGRIM, 1);
 					}
+					
 					if (!hasQuestItems(player, MARK_OF_TRUST))
 					{
 						giveItems(player, MARK_OF_TRUST, 1);
 					}
+					
 					if (!hasQuestItems(player, MARK_OF_REFORMER))
 					{
 						giveItems(player, MARK_OF_REFORMER, 1);
 					}
+					
 					htmltext = "31092-25.html";
 				}
 				break;
@@ -716,14 +757,17 @@ public class Q00060_GoodWorksReward extends Quest
 					{
 						giveItems(player, MARK_OF_DUTY, 1);
 					}
+					
 					if (!hasQuestItems(player, MARK_OF_LIFE))
 					{
 						giveItems(player, MARK_OF_LIFE, 1);
 					}
+					
 					if (!hasQuestItems(player, MARK_OF_HEALER))
 					{
 						giveItems(player, MARK_OF_HEALER, 1);
 					}
+					
 					htmltext = "31092-25.html";
 				}
 				break;
@@ -736,14 +780,17 @@ public class Q00060_GoodWorksReward extends Quest
 					{
 						giveItems(player, MARK_OF_CHALLENGER, 1);
 					}
+					
 					if (!hasQuestItems(player, MARK_OF_LIFE))
 					{
 						giveItems(player, MARK_OF_LIFE, 1);
 					}
+					
 					if (!hasQuestItems(player, MARK_OF_DUELIST))
 					{
 						giveItems(player, MARK_OF_DUELIST, 1);
 					}
+					
 					htmltext = "31092-25.html";
 				}
 				break;
@@ -756,14 +803,17 @@ public class Q00060_GoodWorksReward extends Quest
 					{
 						giveItems(player, MARK_OF_SEEKER, 1);
 					}
+					
 					if (!hasQuestItems(player, MARK_OF_LIFE))
 					{
 						giveItems(player, MARK_OF_LIFE, 1);
 					}
+					
 					if (!hasQuestItems(player, MARK_OF_SEARCHER))
 					{
 						giveItems(player, MARK_OF_SEARCHER, 1);
 					}
+					
 					htmltext = "31092-25.html";
 				}
 				break;
@@ -776,14 +826,17 @@ public class Q00060_GoodWorksReward extends Quest
 					{
 						giveItems(player, MARK_OF_SEEKER, 1);
 					}
+					
 					if (!hasQuestItems(player, MARK_OF_LIFE))
 					{
 						giveItems(player, MARK_OF_LIFE, 1);
 					}
+					
 					if (!hasQuestItems(player, MARK_OF_SAGITTARIUS))
 					{
 						giveItems(player, MARK_OF_SAGITTARIUS, 1);
 					}
+					
 					htmltext = "31092-25.html";
 				}
 				break;
@@ -796,14 +849,17 @@ public class Q00060_GoodWorksReward extends Quest
 					{
 						giveItems(player, MARK_OF_SCHOLAR, 1);
 					}
+					
 					if (!hasQuestItems(player, MARK_OF_LIFE))
 					{
 						giveItems(player, MARK_OF_LIFE, 1);
 					}
+					
 					if (!hasQuestItems(player, MARK_OF_MAGUS))
 					{
 						giveItems(player, MARK_OF_MAGUS, 1);
 					}
+					
 					htmltext = "31092-25.html";
 				}
 				break;
@@ -816,14 +872,17 @@ public class Q00060_GoodWorksReward extends Quest
 					{
 						giveItems(player, MARK_OF_SCHOLAR, 1);
 					}
+					
 					if (!hasQuestItems(player, MARK_OF_LIFE))
 					{
 						giveItems(player, MARK_OF_LIFE, 1);
 					}
+					
 					if (!hasQuestItems(player, MARK_OF_SUMMONER))
 					{
 						giveItems(player, MARK_OF_SUMMONER, 1);
 					}
+					
 					htmltext = "31092-25.html";
 				}
 				break;
@@ -836,14 +895,17 @@ public class Q00060_GoodWorksReward extends Quest
 					{
 						giveItems(player, MARK_OF_PILGRIM, 1);
 					}
+					
 					if (!hasQuestItems(player, MARK_OF_LIFE))
 					{
 						giveItems(player, MARK_OF_LIFE, 1);
 					}
+					
 					if (!hasQuestItems(player, MARK_OF_HEALER))
 					{
 						giveItems(player, MARK_OF_HEALER, 1);
 					}
+					
 					htmltext = "31092-25.html";
 				}
 				break;
@@ -856,14 +918,17 @@ public class Q00060_GoodWorksReward extends Quest
 					{
 						giveItems(player, MARK_OF_DUTY, 1);
 					}
+					
 					if (!hasQuestItems(player, MARK_OF_FATE))
 					{
 						giveItems(player, MARK_OF_FATE, 1);
 					}
+					
 					if (!hasQuestItems(player, MARK_OF_WITCHCRAFT))
 					{
 						giveItems(player, MARK_OF_WITCHCRAFT, 1);
 					}
+					
 					htmltext = "31092-25.html";
 				}
 				break;
@@ -876,14 +941,17 @@ public class Q00060_GoodWorksReward extends Quest
 					{
 						giveItems(player, MARK_OF_CHALLENGER, 1);
 					}
+					
 					if (!hasQuestItems(player, MARK_OF_FATE))
 					{
 						giveItems(player, MARK_OF_FATE, 1);
 					}
+					
 					if (!hasQuestItems(player, MARK_OF_DUELIST))
 					{
 						giveItems(player, MARK_OF_DUELIST, 1);
 					}
+					
 					htmltext = "31092-25.html";
 				}
 				break;
@@ -896,14 +964,17 @@ public class Q00060_GoodWorksReward extends Quest
 					{
 						giveItems(player, MARK_OF_SEEKER, 1);
 					}
+					
 					if (!hasQuestItems(player, MARK_OF_FATE))
 					{
 						giveItems(player, MARK_OF_FATE, 1);
 					}
+					
 					if (!hasQuestItems(player, MARK_OF_SEARCHER))
 					{
 						giveItems(player, MARK_OF_SEARCHER, 1);
 					}
+					
 					htmltext = "31092-25.html";
 				}
 				break;
@@ -916,14 +987,17 @@ public class Q00060_GoodWorksReward extends Quest
 					{
 						giveItems(player, MARK_OF_SEEKER, 1);
 					}
+					
 					if (!hasQuestItems(player, MARK_OF_FATE))
 					{
 						giveItems(player, MARK_OF_FATE, 1);
 					}
+					
 					if (!hasQuestItems(player, MARK_OF_SAGITTARIUS))
 					{
 						giveItems(player, MARK_OF_SAGITTARIUS, 1);
 					}
+					
 					htmltext = "31092-25.html";
 				}
 				break;
@@ -936,14 +1010,17 @@ public class Q00060_GoodWorksReward extends Quest
 					{
 						giveItems(player, MARK_OF_SCHOLAR, 1);
 					}
+					
 					if (!hasQuestItems(player, MARK_OF_FATE))
 					{
 						giveItems(player, MARK_OF_FATE, 1);
 					}
+					
 					if (!hasQuestItems(player, MARK_OF_MAGUS))
 					{
 						giveItems(player, MARK_OF_MAGUS, 1);
 					}
+					
 					htmltext = "31092-25.html";
 				}
 				break;
@@ -956,14 +1033,17 @@ public class Q00060_GoodWorksReward extends Quest
 					{
 						giveItems(player, MARK_OF_SCHOLAR, 1);
 					}
+					
 					if (!hasQuestItems(player, MARK_OF_FATE))
 					{
 						giveItems(player, MARK_OF_FATE, 1);
 					}
+					
 					if (!hasQuestItems(player, MARK_OF_SUMMONER))
 					{
 						giveItems(player, MARK_OF_SUMMONER, 1);
 					}
+					
 					htmltext = "31092-25.html";
 				}
 				break;
@@ -976,14 +1056,17 @@ public class Q00060_GoodWorksReward extends Quest
 					{
 						giveItems(player, MARK_OF_PILGRIM, 1);
 					}
+					
 					if (!hasQuestItems(player, MARK_OF_FATE))
 					{
 						giveItems(player, MARK_OF_FATE, 1);
 					}
+					
 					if (!hasQuestItems(player, MARK_OF_REFORMER))
 					{
 						giveItems(player, MARK_OF_REFORMER, 1);
 					}
+					
 					htmltext = "31092-25.html";
 				}
 				break;
@@ -996,14 +1079,17 @@ public class Q00060_GoodWorksReward extends Quest
 					{
 						giveItems(player, MARK_OF_CHALLENGER, 1);
 					}
+					
 					if (!hasQuestItems(player, MARK_OF_GLORY))
 					{
 						giveItems(player, MARK_OF_GLORY, 1);
 					}
+					
 					if (!hasQuestItems(player, MARK_OF_CHAMPION))
 					{
 						giveItems(player, MARK_OF_CHAMPION, 1);
 					}
+					
 					htmltext = "31092-25.html";
 				}
 				break;
@@ -1016,14 +1102,17 @@ public class Q00060_GoodWorksReward extends Quest
 					{
 						giveItems(player, MARK_OF_CHALLENGER, 1);
 					}
+					
 					if (!hasQuestItems(player, MARK_OF_GLORY))
 					{
 						giveItems(player, MARK_OF_GLORY, 1);
 					}
+					
 					if (!hasQuestItems(player, MARK_OF_DUELIST))
 					{
 						giveItems(player, MARK_OF_DUELIST, 1);
 					}
+					
 					htmltext = "31092-25.html";
 				}
 				break;
@@ -1036,14 +1125,17 @@ public class Q00060_GoodWorksReward extends Quest
 					{
 						giveItems(player, MARK_OF_PILGRIM, 1);
 					}
+					
 					if (!hasQuestItems(player, MARK_OF_GLORY))
 					{
 						giveItems(player, MARK_OF_GLORY, 1);
 					}
+					
 					if (!hasQuestItems(player, MARK_OF_LORD))
 					{
 						giveItems(player, MARK_OF_LORD, 1);
 					}
+					
 					htmltext = "31092-25.html";
 				}
 				break;
@@ -1056,14 +1148,17 @@ public class Q00060_GoodWorksReward extends Quest
 					{
 						giveItems(player, MARK_OF_PILGRIM, 1);
 					}
+					
 					if (!hasQuestItems(player, MARK_OF_GLORY))
 					{
 						giveItems(player, MARK_OF_GLORY, 1);
 					}
+					
 					if (!hasQuestItems(player, MARK_OF_WARSPIRIT))
 					{
 						giveItems(player, MARK_OF_WARSPIRIT, 1);
 					}
+					
 					htmltext = "31092-25.html";
 				}
 				break;
@@ -1076,14 +1171,17 @@ public class Q00060_GoodWorksReward extends Quest
 					{
 						giveItems(player, MARK_OF_GUILDSMAN, 1);
 					}
+					
 					if (!hasQuestItems(player, MARK_OF_PROSPERITY))
 					{
 						giveItems(player, MARK_OF_PROSPERITY, 1);
 					}
+					
 					if (!hasQuestItems(player, MARK_OF_SEARCHER))
 					{
 						giveItems(player, MARK_OF_SEARCHER, 1);
 					}
+					
 					htmltext = "31092-25.html";
 				}
 				break;
@@ -1096,14 +1194,17 @@ public class Q00060_GoodWorksReward extends Quest
 					{
 						giveItems(player, MARK_OF_GUILDSMAN, 1);
 					}
+					
 					if (!hasQuestItems(player, MARK_OF_PROSPERITY))
 					{
 						giveItems(player, MARK_OF_PROSPERITY, 1);
 					}
+					
 					if (!hasQuestItems(player, MARK_OF_MAESTRO))
 					{
 						giveItems(player, MARK_OF_MAESTRO, 1);
 					}
+					
 					htmltext = "31092-25.html";
 				}
 				break;
@@ -1141,11 +1242,13 @@ public class Q00060_GoodWorksReward extends Quest
 					{
 						npc.getVariables().set("SPAWNED", false);
 					}
+					
 					htmltext = event;
 				}
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -1168,6 +1271,7 @@ public class Q00060_GoodWorksReward extends Quest
 					npc.broadcastPacket(new NpcSay(npc, ChatType.NPC_GENERAL, "Who are you to join in the battle? How upsetting."));
 				}
 			}
+			
 			final Npc npc0 = npc.getVariables().getObject("npc0", Npc.class);
 			if (npc0 != null)
 			{
@@ -1341,6 +1445,7 @@ public class Q00060_GoodWorksReward extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	

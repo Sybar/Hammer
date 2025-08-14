@@ -50,10 +50,13 @@ public class Q11044_KetraOrcs extends Quest
 	private static final int RECLOUS = 30648;
 	private static final int KETRA_ORC_BANDIT = 24409;
 	private static final int KETRA_ORC_WARRIOR = 24410;
+	
 	// Items
 	private static final ItemHolder SOE_RECLOUS = new ItemHolder(80682, 1);
+	
 	// Location
 	private static final Location TRAINING_GROUNDS_TELEPORT = new Location(-94271, 109153, -3856);
+	
 	// Misc
 	private static final String KILL_COUNT_VAR = "KillCount";
 	private static final int MIN_LEVEL = 81;
@@ -120,6 +123,7 @@ public class Q11044_KetraOrcs extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -163,6 +167,7 @@ public class Q11044_KetraOrcs extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -199,6 +204,7 @@ public class Q11044_KetraOrcs extends Quest
 			holder.add(new NpcLogListHolder(NpcStringId.DEFEAT_KETRA_RAIDERS_AND_WARRIORS_2.getId(), true, qs.getInt(KILL_COUNT_VAR)));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

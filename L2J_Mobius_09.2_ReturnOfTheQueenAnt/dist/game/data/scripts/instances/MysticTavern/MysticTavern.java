@@ -53,22 +53,26 @@ public class MysticTavern extends AbstractNpcAI
 {
 	// NPC
 	private static final int GLOBE = 34200;
+	
 	// Employee
 	private static final int LOLLIA = 34182;
 	private static final int HANNA = 34183;
 	private static final int BRODIEN = 34184;
 	private static final int LUPIA = 34185;
 	private static final int MEY = 34186;
+	
 	// Instances
 	private static final int INSTANCE_TAUTI = 261;
 	// private static final int INSTANCE_KELBIM = 262;
 	private static final int INSTANCE_FREYA = 263;
+	
 	// Zones
 	private static final ScriptZone GLOBE_1_ZONE = ZoneManager.getInstance().getZoneById(80019, ScriptZone.class);
 	private static final ScriptZone GLOBE_2_ZONE = ZoneManager.getInstance().getZoneById(80020, ScriptZone.class);
 	private static final ScriptZone GLOBE_3_ZONE = ZoneManager.getInstance().getZoneById(80021, ScriptZone.class);
 	private static final ScriptZone GLOBE_4_ZONE = ZoneManager.getInstance().getZoneById(80022, ScriptZone.class);
 	private static final ScriptZone GLOBE_5_ZONE = ZoneManager.getInstance().getZoneById(80023, ScriptZone.class);
+	
 	// Misc
 	private static final int MINIMUM_PLAYER_LEVEL = 99;
 	private static final int MINIMUM_PARTY_MEMBERS = 5;
@@ -98,14 +102,17 @@ public class MysticTavern extends AbstractNpcAI
 					{
 						return "34200-no-party.html";
 					}
+					
 					if (party.getLeader() != player)
 					{
 						return "34200-no-leader.html";
 					}
+					
 					if (party.getMemberCount() < MINIMUM_PARTY_MEMBERS)
 					{
 						return "34200-not-enough-members.html";
 					}
+					
 					final List<Integer> availableInstances = new ArrayList<>();
 					availableInstances.add(INSTANCE_FREYA);
 					availableInstances.add(INSTANCE_TAUTI);
@@ -116,6 +123,7 @@ public class MysticTavern extends AbstractNpcAI
 						{
 							return "34200-not-sitting.html";
 						}
+						
 						if (member.getLevel() < MINIMUM_PLAYER_LEVEL)
 						{
 							return "34200-no-level.html";
@@ -131,6 +139,7 @@ public class MysticTavern extends AbstractNpcAI
 								}
 							}
 						}
+						
 						if (InstanceManager.getInstance().getInstanceTime(member, INSTANCE_TAUTI) > 0)
 						{
 							for (int i = 0; i < availableInstances.size(); i++)
@@ -141,6 +150,7 @@ public class MysticTavern extends AbstractNpcAI
 								}
 							}
 						}
+						
 						// if (InstanceManager.getInstance().getInstanceTime(member, INSTANCE_KELBIM) > 0)
 						// {
 						// for (int i = 0; i < availableInstances.size(); i++)
@@ -152,10 +162,12 @@ public class MysticTavern extends AbstractNpcAI
 						// }
 						// }
 					}
+					
 					if (availableInstances.isEmpty())
 					{
 						return "34200-not-available.html";
 					}
+					
 					player.getVariables().set("MysticTarvernRnd", getRandomEntry(availableInstances));
 					startQuestTimer("npcRoute", 3000, npc, player);
 				}
@@ -336,16 +348,19 @@ public class MysticTavern extends AbstractNpcAI
 						player.processQuestEvent(StoryOfTauti.class.getSimpleName(), "start_story");
 						break;
 					}
+					
 					// case INSTANCE_KELBIM:
 					// {
 					// player.processQuestEvent(StoryOfKelbim.class.getSimpleName(), "start_story");
 					// break;
 					// }
 				}
+				
 				player.getVariables().remove("MysticTarvernRnd");
 				break;
 			}
 		}
+		
 		return null;
 	}
 	

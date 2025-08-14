@@ -32,6 +32,7 @@ public class GiftOfVitality extends LongTimeEvent
 {
 	// NPC
 	private static final int STEVE_SHYAGEL = 4306;
+	
 	// Skills
 	private static final SkillHolder GIFT_OF_VITALITY = new SkillHolder(23179, 1);
 	private static final SkillHolder JOY_OF_VITALITY = new SkillHolder(23180, 1);
@@ -129,6 +130,7 @@ public class GiftOfVitality extends LongTimeEvent
 					{
 						npc.doCast(sk.getSkill());
 					}
+					
 					htmltext = "4306-okbuff.htm";
 				}
 				break;
@@ -158,6 +160,7 @@ public class GiftOfVitality extends LongTimeEvent
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

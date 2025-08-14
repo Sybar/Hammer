@@ -94,6 +94,7 @@ public class DungeonOfAbyssZone extends AbstractNpcAI
 				player.teleToLocation(EXIT_LOCATION_4);
 			}
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	

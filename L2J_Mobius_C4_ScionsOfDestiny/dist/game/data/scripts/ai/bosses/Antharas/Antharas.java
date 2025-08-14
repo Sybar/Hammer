@@ -56,7 +56,7 @@ public class Antharas extends AbstractNpcAI
 	// private static final int BEHEMOTH = 29069; // Behemoth Dragon
 	// private static final int BOMBER = 29070; // Dragon Bomber
 	private static final int HEART = 13001; // Heart of Warding
-	private static final int CUBE = 31859; // Teleportation Cubic
+	private static final int TELEPORT_CUBE = 31859; // Teleportation Cubic
 	private static final Map<Integer, Location> INVISIBLE_NPC = new HashMap<>();
 	static
 	{
@@ -79,8 +79,10 @@ public class Antharas extends AbstractNpcAI
 		INVISIBLE_NPC.put(29093, new Location(178419, 113417, -7735)); // antaras_clear_npc_17
 		INVISIBLE_NPC.put(29094, new Location(177855, 113282, -7735)); // antaras_clear_npc_18
 	}
+	
 	// Item
 	private static final int STONE = 3865; // Portal Stone
+	
 	// Skill
 	private static final SkillHolder ANTH_JUMP = new SkillHolder(4106, 1); // Antharas Stun
 	private static final SkillHolder ANTH_TAIL = new SkillHolder(4107, 1); // Antharas Stun
@@ -105,6 +107,7 @@ public class Antharas extends AbstractNpcAI
 	private static final int WAITING = 1;
 	private static final int IN_FIGHT = 2;
 	private static final int DEAD = 3;
+	
 	// Misc
 	private GrandBoss _antharas = null;
 	private static long _lastAttack = 0;
@@ -121,14 +124,16 @@ public class Antharas extends AbstractNpcAI
 	
 	private Antharas()
 	{
-		addStartNpc(HEART, CUBE);
-		addTalkId(HEART, CUBE);
+		addStartNpc(HEART, TELEPORT_CUBE);
+		addTalkId(HEART, TELEPORT_CUBE);
 		addFirstTalkId(HEART);
 		addSpawnId(INVISIBLE_NPC.keySet());
 		addSpawnId(ANTHARAS);
+		
 		// addMoveFinishedId(BOMBER);
 		// addAggroRangeEnterId(BOMBER);
 		addSpellFinishedId(ANTHARAS);
+		
 		// addAttackId(ANTHARAS, BOMBER, BEHEMOTH);
 		// addKillId(ANTHARAS, BEHEMOTH);
 		
@@ -165,6 +170,7 @@ public class Antharas extends AbstractNpcAI
 				addBoss(_antharas);
 				_lastAttack = System.currentTimeMillis();
 				startQuestTimer("CHECK_ATTACK", 60000, _antharas, null);
+				
 				// startQuestTimer("SPAWN_MINION", 300000, _antharas, null);
 				break;
 			}
@@ -191,7 +197,7 @@ public class Antharas extends AbstractNpcAI
 	{
 		switch (event)
 		{
-			case "enter":
+			case "ENTER":
 			{
 				String htmltext = null;
 				if (getStatus() == DEAD)
@@ -216,9 +222,10 @@ public class Antharas extends AbstractNpcAI
 						startQuestTimer("SPAWN_ANTHARAS", Config.ANTHARAS_WAIT_TIME * 60000, null, null);
 					}
 				}
+				
 				return htmltext;
 			}
-			case "teleportOut":
+			case "EXIT":
 			{
 				player.teleToLocation(79800 + getRandom(600), 151200 + getRandom(1100), -3534);
 				break;
@@ -284,8 +291,10 @@ public class Antharas extends AbstractNpcAI
 						break;
 					}
 				}
+				
 				npc.getAI().setIntention(Intention.MOVE_TO, new Location(179011, 114871, -7704));
 				startQuestTimer("CHECK_ATTACK", 60000, npc, null);
+				
 				// startQuestTimer("SPAWN_MINION", 300000, npc, null);
 				break;
 			}
@@ -318,6 +327,7 @@ public class Antharas extends AbstractNpcAI
 					{
 						npc.getAI().setIntention(Intention.CAST, ANTH_REGEN_1.getSkill(), npc);
 					}
+					
 					startQuestTimer("SET_REGEN", 60000, npc, null);
 				}
 				break;
@@ -348,6 +358,7 @@ public class Antharas extends AbstractNpcAI
 							}
 						}
 					}
+					
 					cancelQuestTimer("CHECK_ATTACK", npc, null);
 					// cancelQuestTimer("SPAWN_MINION", npc, null);
 				}
@@ -357,19 +368,23 @@ public class Antharas extends AbstractNpcAI
 					{
 						attacker_1_hate -= getRandom(10);
 					}
+					
 					if (attacker_2_hate > 10)
 					{
 						attacker_2_hate -= getRandom(10);
 					}
+					
 					if (attacker_3_hate > 10)
 					{
 						attacker_3_hate -= getRandom(10);
 					}
+					
 					manageSkills(npc);
 					startQuestTimer("CHECK_ATTACK", 60000, npc, null);
 				}
 				break;
 			}
+			
 			// case "SPAWN_MINION":
 			// {
 			// if ((minionMultipler > 1) && (_minionCount < (100 - (minionMultipler * 2))))
@@ -497,6 +512,7 @@ public class Antharas extends AbstractNpcAI
 				}
 				break;
 			}
+			
 			// case "DESPAWN_MINIONS":
 			// {
 			// if (getStatus() == IN_FIGHT)
@@ -526,6 +542,7 @@ public class Antharas extends AbstractNpcAI
 				{
 					setStatus(ALIVE);
 					cancelQuestTimer("CHECK_ATTACK", _antharas, null);
+					
 					// cancelQuestTimer("SPAWN_MINION", _antharas, null);
 					for (Creature creature : zone.getCharactersInside())
 					{
@@ -548,6 +565,7 @@ public class Antharas extends AbstractNpcAI
 							}
 						}
 					}
+					
 					player.sendMessage(getClass().getSimpleName() + ": Fight has been aborted!");
 				}
 				else
@@ -562,6 +580,7 @@ public class Antharas extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	
@@ -577,6 +596,7 @@ public class Antharas extends AbstractNpcAI
 	public void onAttack(Npc npc, Player attacker, int damage, boolean isSummon, Skill skill)
 	{
 		_lastAttack = System.currentTimeMillis();
+		
 		// if (npc.getId() == BOMBER)
 		// {
 		// if (npc.calculateDistance3D(attacker) < 230)
@@ -618,6 +638,7 @@ public class Antharas extends AbstractNpcAI
 		{
 			refreshAiParams(attacker, (damage / 3) * 20);
 		}
+		
 		manageSkills(npc);
 		// }
 	}
@@ -630,10 +651,11 @@ public class Antharas extends AbstractNpcAI
 			// if (npc.getId() == ANTHARAS)
 			// {
 			_antharas = null;
+			
 			// notifyEvent("DESPAWN_MINIONS", null, null);
 			zone.broadcastPacket(new SpecialCamera(npc, 1200, 20, -10, 0, 10000, 13000, 0, 0, 0, 0, 0));
 			zone.broadcastPacket(new PlaySound("BS01_D"));
-			addSpawn(CUBE, 177615, 114941, -7709, 0, false, 900000);
+			addSpawn(TELEPORT_CUBE, 177615, 114941, -7709, 0, false, 900000);
 			
 			final long baseIntervalMillis = Config.ANTHARAS_SPAWN_INTERVAL * 3600000;
 			final long randomRangeMillis = Config.ANTHARAS_SPAWN_RANDOM * 3600000;
@@ -642,6 +664,7 @@ public class Antharas extends AbstractNpcAI
 			startQuestTimer("CLEAR_STATUS", respawnTime, null, null);
 			cancelQuestTimer("SET_REGEN", npc, null);
 			cancelQuestTimer("CHECK_ATTACK", npc, null);
+			
 			// cancelQuestTimer("SPAWN_MINION", npc, null);
 			startQuestTimer("CLEAR_ZONE", 900000, null, null);
 			setStatus(DEAD);
@@ -649,6 +672,7 @@ public class Antharas extends AbstractNpcAI
 			// Next respawn time.
 			final long nextRespawnTime = System.currentTimeMillis() + respawnTime;
 			LOGGER.info("Antharas will respawn at: " + TimeUtil.getDateTimeString(nextRespawnTime));
+			
 			// }
 			// else
 			// {
@@ -675,6 +699,7 @@ public class Antharas extends AbstractNpcAI
 		cancelQuestTimer("SET_REGEN", npc, null);
 		startQuestTimer("SET_REGEN", 60000, npc, null);
 		npc.asAttackable().setOnKillDelay(0);
+		
 		// }
 		// else
 		// {
@@ -696,18 +721,20 @@ public class Antharas extends AbstractNpcAI
 		{
 			startQuestTimer("TID_USED_FEAR", 7000, npc, null);
 		}
+		
 		startQuestTimer("MANAGE_SKILL", 1000, npc, null);
 	}
 	
 	@Override
-	public boolean unload(boolean removeFromList)
+	public void unload(boolean removeFromList)
 	{
 		if (_antharas != null)
 		{
 			_antharas.deleteMe();
 			_antharas = null;
 		}
-		return super.unload(removeFromList);
+		
+		super.unload(removeFromList);
 	}
 	
 	private int getStatus()
@@ -818,6 +845,7 @@ public class Antharas extends AbstractNpcAI
 			i2 = attacker_3_hate;
 			c2 = attacker_3;
 		}
+		
 		if (i2 > 0)
 		{
 			if (getRandom(100) < 70)

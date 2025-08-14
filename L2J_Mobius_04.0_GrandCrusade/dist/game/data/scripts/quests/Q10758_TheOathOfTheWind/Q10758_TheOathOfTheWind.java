@@ -35,8 +35,10 @@ public class Q10758_TheOathOfTheWind extends Quest
 {
 	// NPC
 	private static final int PIO = 33963;
+	
 	// Monster
 	private static final int WINDIMA = 27522;
+	
 	// Misc
 	private static final int MIN_LEVEL = 28;
 	
@@ -82,6 +84,7 @@ public class Q10758_TheOathOfTheWind extends Quest
 					final Npc mob = addSpawn(WINDIMA, -93427, 89595, -3216, 0, true, 180000);
 					addAttackPlayerDesire(mob, player);
 				}
+				
 				htmltext = null;
 				break;
 			}
@@ -100,6 +103,7 @@ public class Q10758_TheOathOfTheWind extends Quest
 				htmltext = null;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -126,6 +130,7 @@ public class Q10758_TheOathOfTheWind extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -143,6 +148,7 @@ public class Q10758_TheOathOfTheWind extends Quest
 		{
 			qs.setCond(2, true);
 		}
+		
 		npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.I_AM_LOYAL_TO_YOU_MASTER_OF_THE_WINDS_AND_LOYAL_I_SHALL_REMAIN_IF_MY_VERY_SOUL_BETRAYS_ME);
 	}
 }

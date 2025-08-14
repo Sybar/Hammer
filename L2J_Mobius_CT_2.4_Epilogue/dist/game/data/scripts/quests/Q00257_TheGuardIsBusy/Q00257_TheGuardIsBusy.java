@@ -58,8 +58,10 @@ public class Q00257_TheGuardIsBusy extends Quest
 	
 	// NPC
 	private static final int GILBERT = 30039;
+	
 	// Monsters
 	private static final Map<Integer, List<MobDrop>> MONSTERS = new HashMap<>();
+	
 	// Items
 	private static final int GLUDIO_LORDS_MARK = 1084;
 	private static final int ORC_AMULET = 752;
@@ -79,6 +81,7 @@ public class Q00257_TheGuardIsBusy extends Quest
 	}
 	private static final ItemHolder SPIRITSHOTS_NO_GRADE_FOR_ROOKIES = new ItemHolder(5790, 3000);
 	private static final ItemHolder SOULSHOTS_NO_GRADE_FOR_ROOKIES = new ItemHolder(5789, 6000);
+	
 	// Misc
 	private static final int MIN_LEVEL = 6;
 	private static final int GUIDE_MISSION = 41;
@@ -123,6 +126,7 @@ public class Q00257_TheGuardIsBusy extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -211,6 +215,7 @@ public class Q00257_TheGuardIsBusy extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

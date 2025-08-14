@@ -40,8 +40,10 @@ public class Q10435_ChasingKeltron extends Quest
 	// NPCs
 	private static final int RUA = 33841;
 	private static final int SEL_MAHUM_CHIEF_KELTRON = 27498;
+	
 	// Reward
 	private static final int EAS = 960;
+	
 	// Misc
 	private static final int MIN_LEVEL = 81;
 	
@@ -101,6 +103,7 @@ public class Q10435_ChasingKeltron extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -138,6 +141,7 @@ public class Q10435_ChasingKeltron extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

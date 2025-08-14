@@ -20,6 +20,8 @@
  */
 package quests.Q10274_CollectingInTheAir;
 
+import java.util.Collection;
+
 import org.l2jmobius.gameserver.model.WorldObject;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
@@ -39,11 +41,13 @@ public class Q10274_CollectingInTheAir extends Quest
 {
 	// NPC
 	private static final int LEKON = 32557;
+	
 	// Items
 	private static final int SCROLL = 13844;
 	private static final int RED = 13858;
 	private static final int BLUE = 13859;
 	private static final int GREEN = 13860;
+	
 	// Monsters
 	private static final int[] MOBS =
 	{
@@ -81,11 +85,12 @@ public class Q10274_CollectingInTheAir extends Quest
 			qs.startQuest();
 			giveItems(player, SCROLL, 8);
 		}
+		
 		return event;
 	}
 	
 	@Override
-	public void onSkillSee(Npc npc, Player caster, Skill skill, WorldObject[] targets, boolean isSummon)
+	public void onSkillSee(Npc npc, Player caster, Skill skill, Collection<WorldObject> targets, boolean isSummon)
 	{
 		final QuestState qs = getQuestState(caster, false);
 		if ((qs == null) || !qs.isStarted())
@@ -119,6 +124,7 @@ public class Q10274_CollectingInTheAir extends Quest
 					break;
 				}
 			}
+			
 			playSound(caster, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 			npc.doDie(caster);
 		}
@@ -166,6 +172,7 @@ public class Q10274_CollectingInTheAir extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

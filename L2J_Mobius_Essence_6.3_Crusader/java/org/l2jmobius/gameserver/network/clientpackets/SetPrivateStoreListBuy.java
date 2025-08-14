@@ -96,6 +96,7 @@ public class SetPrivateStoreListBuy extends ClientPacket
 			{
 				soulCrystalOptions[k] = EnsoulData.getInstance().getOption(readInt());
 			}
+			
 			final EnsoulOption[] soulCrystalSpecialOptions = new EnsoulOption[readByte()];
 			for (int k = 0; k < soulCrystalSpecialOptions.length; k++)
 			{

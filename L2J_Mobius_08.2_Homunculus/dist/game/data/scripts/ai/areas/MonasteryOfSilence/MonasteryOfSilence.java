@@ -16,6 +16,8 @@
  */
 package ai.areas.MonasteryOfSilence;
 
+import java.util.Collection;
+
 import org.l2jmobius.gameserver.ai.Intention;
 import org.l2jmobius.gameserver.model.World;
 import org.l2jmobius.gameserver.model.WorldObject;
@@ -50,6 +52,7 @@ public class MonasteryOfSilence extends AbstractNpcAI
 		22794, // Divinity Judge
 		22795, // Divinity Manager
 	};
+	
 	// Skills
 	private static final SkillHolder ORDEAL_STRIKE = new SkillHolder(6303, 1); // Trial of the Coup
 	private static final SkillHolder LEADER_STRIKE = new SkillHolder(6304, 1); // Shock
@@ -59,6 +62,7 @@ public class MonasteryOfSilence extends AbstractNpcAI
 	private static final SkillHolder STUDENT_CANCEL = new SkillHolder(6310, 1); // Loss of Quest
 	private static final SkillHolder WARRIOR_THRUSTING = new SkillHolder(6311, 1); // Solina Thrust
 	private static final SkillHolder KNIGHT_BLESS = new SkillHolder(6313, 1); // Solina Bless
+	
 	// Misc
 	private static final NpcStringId[] DIVINITY_MSG =
 	{
@@ -119,6 +123,7 @@ public class MonasteryOfSilence extends AbstractNpcAI
 						npc.setTarget(player);
 						npc.doCast(STUDENT_CANCEL.getSkill());
 					}
+					
 					npc.setScriptValue(0);
 				}
 				break;
@@ -132,6 +137,7 @@ public class MonasteryOfSilence extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	
@@ -160,6 +166,7 @@ public class MonasteryOfSilence extends AbstractNpcAI
 						npc.setTarget(npc);
 						npc.doCast(KNIGHT_BLESS.getSkill());
 					}
+					
 					npc.setScriptValue(1);
 					npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.FOR_THE_GLORY_OF_SOLINA);
 					addAttackPlayerDesire(addSpawn(KNIGHT, npc), player);
@@ -260,9 +267,9 @@ public class MonasteryOfSilence extends AbstractNpcAI
 	}
 	
 	@Override
-	public void onSkillSee(Npc npc, Player caster, Skill skill, WorldObject[] targets, boolean isSummon)
+	public void onSkillSee(Npc npc, Player caster, Skill skill, Collection<WorldObject> targets, boolean isSummon)
 	{
-		if (skill.hasEffectType(EffectType.AGGRESSION) && (targets.length != 0))
+		if (skill.hasEffectType(EffectType.AGGRESSION) && !targets.isEmpty())
 		{
 			for (WorldObject obj : targets)
 			{

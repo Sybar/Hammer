@@ -39,6 +39,7 @@ public class Q00570_SpecialMissionKartiasLabyrinthParty extends Quest
 	// NPCs
 	private static final int PENNY = 34413;
 	private static final int KARTIA = 33647;
+	
 	// Misc
 	private static final int MIN_LEVEL = 87;
 	private static final int MAX_LEVEL = 99;
@@ -105,22 +106,26 @@ public class Q00570_SpecialMissionKartiasLabyrinthParty extends Quest
 						addFactionPoints(player, Faction.ADVENTURE_GUILD, 100); // add 100 points to ADVENTURE_GUILD Faction
 						addExpAndSp(player, 349752660, 349740);
 					}
+					
 					if (str.charAt(1) == '1')
 					{
 						addFactionPoints(player, Faction.ADVENTURE_GUILD, 125); // add 125 points to ADVENTURE_GUILD Faction
 						addExpAndSp(player, 646727130, 646710);
 					}
+					
 					if (str.charAt(2) == '1')
 					{
 						addFactionPoints(player, Faction.ADVENTURE_GUILD, 150); // add 150 points to ADVENTURE_GUILD Faction
 						addExpAndSp(player, 1793099880L, 1793070);
 					}
+					
 					qs.exitQuest(QuestType.DAILY, true);
 					htmltext = event;
 				}
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -175,6 +180,7 @@ public class Q00570_SpecialMissionKartiasLabyrinthParty extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -188,18 +194,21 @@ public class Q00570_SpecialMissionKartiasLabyrinthParty extends Quest
 			index = 0;
 			string.setCharAt(index, ch);
 		}
+		
 		final QuestState st2 = player.getQuestState("Q00495_IncarnationOfJealousyPellineGroup");
 		if ((st2 != null) && st2.isCompleted())
 		{
 			index = 1;
 			string.setCharAt(index, ch);
 		}
+		
 		final QuestState st3 = player.getQuestState("Q00496_IncarnationOfGluttonyKaliosGroup");
 		if ((st3 != null) && st3.isCompleted())
 		{
 			index = 2;
 			string.setCharAt(index, ch);
 		}
+		
 		return string;
 	}
 }

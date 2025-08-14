@@ -39,18 +39,21 @@ public class Q11014_SurpriseGift extends Quest
 	// NPCs
 	private static final int TALOS = 30141;
 	private static final int PAYNE = 30136;
+	
 	// Items
 	private static final int ZOMBIE_FOREST_ELF_TOOTH = 90244;
 	private static final int BAT_SKIN = 90245;
 	private static final int STONE_GIANTS_SHINY_ROCK = 90246;
 	private static final int OLD_BONE_FRAGMENT = 90247;
 	private static final int ARMOR_DESIGN = 90243;
+	
 	// Rewards
 	private static final int WARRIORS_ARMOR = 90306;
 	private static final int WARRIORS_GAITERS = 90307;
 	private static final int MEDIUMS_TUNIC = 90308;
 	private static final int MEDIUMS_STOCKINGS = 90309;
 	private static final int EARRING_NOVICE = 29486;
+	
 	// Monsters
 	private static final int ZOMBIE_FOREST_ELF = 20015;
 	private static final int ZOMBIE_FOREST_ELF_RESEARCHER = 20020;
@@ -59,6 +62,7 @@ public class Q11014_SurpriseGift extends Quest
 	private static final int GIANT_STONE_SOLDIER = 20379;
 	private static final int GIANT_STONE_GUARDIAN = 20380;
 	private static final int DARK_HORROR = 20105;
+	
 	// Misc
 	private static final int MIN_LEVEL = 11;
 	private static final int MAX_LEVEL = 20;
@@ -130,6 +134,7 @@ public class Q11014_SurpriseGift extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -190,6 +195,7 @@ public class Q11014_SurpriseGift extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

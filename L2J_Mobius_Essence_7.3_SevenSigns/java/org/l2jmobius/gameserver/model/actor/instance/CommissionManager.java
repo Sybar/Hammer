@@ -41,6 +41,7 @@ public class CommissionManager extends Npc
 		{
 			return true;
 		}
+		
 		return super.isAutoAttackable(attacker);
 	}
 	

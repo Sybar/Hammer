@@ -52,7 +52,7 @@ public class LoginController
 	private static LoginController _instance;
 	
 	/** Time before kicking the client if he didn't logged yet */
-	public final static int LOGIN_TIMEOUT = 60 * 1000;
+	public static final int LOGIN_TIMEOUT = 60 * 1000;
 	
 	/** this map contains the connections of the players that are in the loginserver */
 	private final Map<String, LoginClient> _accountsInLogin;
@@ -104,12 +104,13 @@ public class LoginController
 		{
 			_keyPairs[i] = new ScrambledKeyPair(_keyGen.generateKeyPair());
 		}
+		
 		LOGGER.info("Cached 10 KeyPairs for RSA communication.");
 		testCipher((RSAPrivateKey) _keyPairs[0]._pair.getPrivate());
 	}
 	
 	/**
-	 * This is mostly to force the initialization of the Crypto Implementation, avoiding it being done on runtime when its first needed.<BR>
+	 * This is mostly to force the initialization of the Crypto Implementation, avoiding it being done on runtime when its first needed.<br>
 	 * In short it avoids the worst-case execution time on runtime by doing it on loading.
 	 * @param key Any private RSA Key just for testing purposes.
 	 * @throws GeneralSecurityException if a underlying exception was thrown by the Cipher
@@ -167,6 +168,7 @@ public class LoginController
 				playerCount += gs.getCurrentPlayers();
 			}
 		}
+		
 		return playerCount;
 	}
 	
@@ -183,6 +185,7 @@ public class LoginController
 				}
 			}
 		}
+		
 		return 0;
 	}
 	
@@ -199,6 +202,7 @@ public class LoginController
 				}
 			}
 		}
+		
 		return 0;
 	}
 	
@@ -320,9 +324,11 @@ public class LoginController
 						LOGGER.info("Created new account for " + user);
 						return true;
 					}
+					
 					LOGGER.warning("Invalid username creation/use attempt: " + user);
 					return false;
 				}
+				
 				LOGGER.warning("[" + address.getHostAddress() + "]: account missing for user " + user);
 				return false;
 			}
@@ -336,6 +342,7 @@ public class LoginController
 					break;
 				}
 			}
+			
 			if (ok)
 			{
 				client.setAccessLevel(access);
@@ -428,8 +435,10 @@ public class LoginController
 			{
 				return true;
 			}
+			
 			_bannedIps.remove(address);
 		}
+		
 		return false;
 	}
 	
@@ -474,6 +483,7 @@ public class LoginController
 				System.arraycopy(scrambledMod, 1, temp, 0, 0x80);
 				scrambledMod = temp;
 			}
+			
 			// step 1 : 0x4d-0x50 <-> 0x00-0x04
 			for (int i = 0; i < 4; i++)
 			{
@@ -481,21 +491,25 @@ public class LoginController
 				scrambledMod[0x00 + i] = scrambledMod[0x4d + i];
 				scrambledMod[0x4d + i] = temp;
 			}
+			
 			// step 2 : xor first 0x40 bytes with last 0x40 bytes
 			for (int i = 0; i < 0x40; i++)
 			{
 				scrambledMod[i] = (byte) (scrambledMod[i] ^ scrambledMod[0x40 + i]);
 			}
+			
 			// step 3 : xor bytes 0x0d-0x10 with bytes 0x34-0x38
 			for (int i = 0; i < 4; i++)
 			{
 				scrambledMod[0x0d + i] = (byte) (scrambledMod[0x0d + i] ^ scrambledMod[0x34 + i]);
 			}
+			
 			// step 4 : xor last 0x40 bytes with first 0x40 bytes
 			for (int i = 0; i < 0x40; i++)
 			{
 				scrambledMod[0x40 + i] = (byte) (scrambledMod[0x40 + i] ^ scrambledMod[i]);
 			}
+			
 			LOGGER.fine("Modulus was scrambled.");
 			
 			return scrambledMod;

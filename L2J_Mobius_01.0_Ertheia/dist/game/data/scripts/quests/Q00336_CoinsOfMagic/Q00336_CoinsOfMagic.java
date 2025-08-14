@@ -45,6 +45,7 @@ public class Q00336_CoinsOfMagic extends Quest
 	private static final int MAGISTER_PAGE = 30696;
 	private static final int UNION_PRESIDENT_BERNARD = 30702;
 	private static final int HEAD_BLACKSMITH_FERRIS = 30847;
+	
 	// Items
 	private static final int Q_BLOOD_MEDUSA = 3472;
 	private static final int Q_BLOOD_WEREWOLF = 3473;
@@ -78,6 +79,7 @@ public class Q00336_CoinsOfMagic extends Quest
 	private static final int Q_CC_MEMBERSHIP_1 = 3813;
 	private static final int Q_CC_MEMBERSHIP_2 = 3814;
 	private static final int Q_CC_MEMBERSHIP_3 = 3815;
+	
 	// Monsters
 	private static final int HEADLESS_KNIGHT = 20146;
 	private static final int OEL_MAHUM = 20161;
@@ -129,6 +131,7 @@ public class Q00336_CoinsOfMagic extends Quest
 	private static final int BRILLIANT_VENGEANCE_1 = 21658;
 	private static final int BRILLIANT_ANGUISH = 21539;
 	private static final int BRILLIANT_ANGUISH_1 = 21540;
+	
 	// Rewards
 	private static final int DEMON_STAFF = 206;
 	private static final int DARK_SCREAMER = 233;
@@ -142,6 +145,7 @@ public class Q00336_CoinsOfMagic extends Quest
 	private static final int NASSENS_EARING = 855;
 	private static final int RING_OF_BINDING = 886;
 	private static final int NECKLACE_OF_PROTECTION = 916;
+	
 	// Variables name
 	private static final String WEIGHT_POINT = "weight_point";
 	private static final String PARAM_1 = "param1";
@@ -174,6 +178,7 @@ public class Q00336_CoinsOfMagic extends Quest
 					resetParams(qs);
 					return npc.getId() + "-01.html";
 				}
+				
 				if (hasQuestItems(player, Q_CC_MEMBERSHIP_2) || hasQuestItems(player, Q_CC_MEMBERSHIP_3))
 				{
 					return npc.getId() + "-54.html";
@@ -189,6 +194,7 @@ public class Q00336_CoinsOfMagic extends Quest
 					resetParams(qs);
 					return npc.getId() + "-01.html";
 				}
+				
 				if (hasQuestItems(player, Q_CC_MEMBERSHIP_3))
 				{
 					return npc.getId() + "-54.html";
@@ -212,10 +218,12 @@ public class Q00336_CoinsOfMagic extends Quest
 				{
 					return "30702-01.html";
 				}
+				
 				if (qs.getMemoState() >= 3)
 				{
 					return "30702-05.html";
 				}
+				
 				if (qs.getMemoState() == 2)
 				{
 					return "30702-02a.html";
@@ -228,12 +236,14 @@ public class Q00336_CoinsOfMagic extends Quest
 				{
 					return player.getLevel() < 40 ? "30232-01.htm" : "30232-02.htm";
 				}
+				
 				if (qs.isStarted())
 				{
 					if (!hasQuestItems(player, Q_KALDIS_GOLD_DRAGON) && ((qs.getMemoState() == 1) || (qs.getMemoState() == 2)))
 					{
 						return "30232-06.html";
 					}
+					
 					if (hasQuestItems(player, Q_KALDIS_GOLD_DRAGON) && ((qs.getMemoState() == 1) || (qs.getMemoState() == 2)))
 					{
 						giveItems(player, Q_CC_MEMBERSHIP_3, 1);
@@ -245,14 +255,17 @@ public class Q00336_CoinsOfMagic extends Quest
 						playSound(player, QuestSound.ITEMSOUND_QUEST_MIDDLE);
 						return "30232-07.html";
 					}
+					
 					if (hasQuestItems(player, Q_CC_MEMBERSHIP_3) && (qs.getMemoState() == 3))
 					{
 						return "30232-10.html";
 					}
+					
 					if (hasQuestItems(player, Q_CC_MEMBERSHIP_2) && (qs.getMemoState() == 3))
 					{
 						return "30232-11.html";
 					}
+					
 					if (hasQuestItems(player, Q_CC_MEMBERSHIP_1) && (qs.getMemoState() == 3))
 					{
 						return "30232-12.html";
@@ -260,6 +273,7 @@ public class Q00336_CoinsOfMagic extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -280,16 +294,19 @@ public class Q00336_CoinsOfMagic extends Quest
 			{
 				giveItems(player, Q_COIN_DIAGRAM, 1);
 			}
+			
 			qs.setMemoState(1);
 			qs.startQuest();
 			player.sendPacket(new TutorialShowQuestionMark(336));
 			playSound(player, QuestSound.ITEMSOUND_QUEST_MIDDLE);
 			return "30232-05.htm";
 		}
+		
 		if (event.contains(".htm"))
 		{
 			return event;
 		}
+		
 		final int npcId = npc.getId();
 		final int eventID = Integer.parseInt(event);
 		
@@ -384,6 +401,7 @@ public class Q00336_CoinsOfMagic extends Quest
 				}
 			}
 		}
+		
 		switch (npcId)
 		{
 			case PANO:
@@ -846,11 +864,13 @@ public class Q00336_CoinsOfMagic extends Quest
 								giveItems(player, Q_CC_MEMBERSHIP_2, 1);
 								return "30232-16.html";
 							}
+							
 							qs.setCond(8);
 							player.sendPacket(new TutorialShowQuestionMark(336));
 							playSound(player, QuestSound.ITEMSOUND_QUEST_MIDDLE);
 							return "30232-13.html";
 						}
+						
 						if (hasQuestItems(player, Q_CC_MEMBERSHIP_2))
 						{
 							if (hasQuestItems(player, Q_BLOOD_BASILISK, Q_BLOOD_SUCCUBUS, Q_GOLD_GIANT, Q_GOLD_WYRM, Q_SILVER_UNDINE, Q_SILVER_DRYAD))
@@ -868,11 +888,13 @@ public class Q00336_CoinsOfMagic extends Quest
 								giveItems(player, Q_CC_MEMBERSHIP_1, 1);
 								return "30232-17.html";
 							}
+							
 							qs.setCond(10);
 							player.sendPacket(new TutorialShowQuestionMark(336));
 							playSound(player, QuestSound.ITEMSOUND_QUEST_MIDDLE);
 							return "30232-14.html";
 						}
+						
 						if (hasQuestItems(player, Q_CC_MEMBERSHIP_1))
 						{
 							return "30232-15.html";
@@ -920,6 +942,7 @@ public class Q00336_CoinsOfMagic extends Quest
 							playSound(player, QuestSound.ITEMSOUND_QUEST_MIDDLE);
 							return "30232-24a.html";
 						}
+						
 						return "30232-24.html";
 					}
 					case 21:
@@ -934,6 +957,7 @@ public class Q00336_CoinsOfMagic extends Quest
 							playSound(player, QuestSound.ITEMSOUND_QUEST_MIDDLE);
 							return "30232-24b.html";
 						}
+						
 						return "30232-24.html";
 					}
 					case 22:
@@ -948,6 +972,7 @@ public class Q00336_CoinsOfMagic extends Quest
 							playSound(player, QuestSound.ITEMSOUND_QUEST_MIDDLE);
 							return "30232-24c.html";
 						}
+						
 						return "30232-24.html";
 					}
 					case 23:
@@ -962,6 +987,7 @@ public class Q00336_CoinsOfMagic extends Quest
 							playSound(player, QuestSound.ITEMSOUND_QUEST_MIDDLE);
 							return "30232-24d.html";
 						}
+						
 						return "30232-24.html";
 					}
 					case 24:
@@ -973,6 +999,7 @@ public class Q00336_CoinsOfMagic extends Quest
 							playSound(player, QuestSound.ITEMSOUND_QUEST_MIDDLE);
 							return "30232-24e.html";
 						}
+						
 						return "30232-24.html";
 					}
 					case 25:
@@ -985,6 +1012,7 @@ public class Q00336_CoinsOfMagic extends Quest
 							playSound(player, QuestSound.ITEMSOUND_QUEST_MIDDLE);
 							return "30232-24f.html";
 						}
+						
 						return "30232-24.html";
 					}
 					case 26:
@@ -996,6 +1024,7 @@ public class Q00336_CoinsOfMagic extends Quest
 							playSound(player, QuestSound.ITEMSOUND_QUEST_MIDDLE);
 							return "30232-24g.html";
 						}
+						
 						return "30232-24.html";
 					}
 					case 27:
@@ -1009,6 +1038,7 @@ public class Q00336_CoinsOfMagic extends Quest
 							playSound(player, QuestSound.ITEMSOUND_QUEST_MIDDLE);
 							return "30232-24h.html";
 						}
+						
 						return "30232-24.html";
 					}
 					case 28:
@@ -1023,6 +1053,7 @@ public class Q00336_CoinsOfMagic extends Quest
 							playSound(player, QuestSound.ITEMSOUND_QUEST_MIDDLE);
 							return "30232-24i.html";
 						}
+						
 						return "30232-24.html";
 					}
 					case 29:
@@ -1037,6 +1068,7 @@ public class Q00336_CoinsOfMagic extends Quest
 							playSound(player, QuestSound.ITEMSOUND_QUEST_MIDDLE);
 							return "30232-24j.html";
 						}
+						
 						return "30232-24.html";
 					}
 					case 30:
@@ -1051,6 +1083,7 @@ public class Q00336_CoinsOfMagic extends Quest
 							playSound(player, QuestSound.ITEMSOUND_QUEST_MIDDLE);
 							return "30232-24k.html";
 						}
+						
 						return "30232-24.html";
 					}
 					case 31:
@@ -1065,6 +1098,7 @@ public class Q00336_CoinsOfMagic extends Quest
 							playSound(player, QuestSound.ITEMSOUND_QUEST_MIDDLE);
 							return "30232-24l.html";
 						}
+						
 						return "30232-24.html";
 					}
 					case 100:
@@ -1080,6 +1114,7 @@ public class Q00336_CoinsOfMagic extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -1367,6 +1402,7 @@ public class Q00336_CoinsOfMagic extends Quest
 					{
 						takeItems(player, item1b, base);
 					}
+					
 					qs.set(WEIGHT_POINT, weightPoint);
 					int param1 = getRandom(3) + 1;
 					param1 += (getRandom(3) + 1) * 4;
@@ -1422,6 +1458,7 @@ public class Q00336_CoinsOfMagic extends Quest
 				break;
 			}
 		}
+		
 		return npcId + "-10.html";
 	}
 	
@@ -1490,6 +1527,7 @@ public class Q00336_CoinsOfMagic extends Quest
 				break;
 			}
 		}
+		
 		return npcId + "-10.html";
 	}
 	
@@ -1565,6 +1603,7 @@ public class Q00336_CoinsOfMagic extends Quest
 				break;
 			}
 		}
+		
 		return npcId + "-10.html";
 	}
 	
@@ -1609,9 +1648,11 @@ public class Q00336_CoinsOfMagic extends Quest
 					break;
 				}
 			}
+			
 			qs.set(PARAM_1, 0);
 			return npcId + "-20.html";
 		}
+		
 		if (qs.getInt(WEIGHT_POINT) == 0)
 		{
 			switch (qs.getInt(PARAM_1))
@@ -1725,6 +1766,7 @@ public class Q00336_CoinsOfMagic extends Quest
 					return npcId + "-49.html";
 				}
 			}
+			
 			qs.set(PARAM_1, 0);
 		}
 		else
@@ -1742,14 +1784,17 @@ public class Q00336_CoinsOfMagic extends Quest
 			{
 				qs.set(PARAM_3, qs.getInt(PARAM_3) + 1);
 			}
+			
 			if (i1 == i4)
 			{
 				qs.set(PARAM_3, qs.getInt(PARAM_3) + 1);
 			}
+			
 			if (i2 == i5)
 			{
 				qs.set(PARAM_3, qs.getInt(PARAM_3) + 1);
 			}
+			
 			qs.set(FLAG, 1);
 			qs.set(WEIGHT_POINT, qs.getInt(WEIGHT_POINT) - 1);
 			switch (qs.getInt(PARAM_3))
@@ -1768,6 +1813,7 @@ public class Q00336_CoinsOfMagic extends Quest
 				}
 			}
 		}
+		
 		return null;
 	}
 	
@@ -1792,6 +1838,7 @@ public class Q00336_CoinsOfMagic extends Quest
 				}
 			});
 		}
+		
 		return candidates.isEmpty() ? null : candidates.get(getRandom(candidates.size()));
 	}
 	
@@ -1816,6 +1863,7 @@ public class Q00336_CoinsOfMagic extends Quest
 				}
 			});
 		}
+		
 		return candidates.isEmpty() ? null : candidates.get(getRandom(candidates.size()));
 	}
 }

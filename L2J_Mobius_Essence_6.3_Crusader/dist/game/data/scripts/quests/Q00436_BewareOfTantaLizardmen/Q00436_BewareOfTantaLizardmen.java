@@ -40,11 +40,14 @@ public class Q00436_BewareOfTantaLizardmen extends Quest
 {
 	// NPC
 	private static final int GENIE_LAMP = 34369;
+	
 	// Monsters
 	private static final int TANTA_LIZARDMAN = 22151;
 	private static final int TANTA_LIZARDMAN_WARRIOR = 22152;
+	
 	// Item
 	private static final ItemHolder XP_GROWTH = new ItemHolder(49674, 3);
+	
 	// Misc
 	private static final int MIN_LEVEL = 76;
 	private static final String KILL_COUNT_VAR = "KillCount";
@@ -97,6 +100,7 @@ public class Q00436_BewareOfTantaLizardmen extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -135,6 +139,7 @@ public class Q00436_BewareOfTantaLizardmen extends Quest
 				htmltext = getAlreadyCompletedMsg(player);
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -170,6 +175,7 @@ public class Q00436_BewareOfTantaLizardmen extends Quest
 			holder.add(new NpcLogListHolder(NpcStringId.DEFEAT_MONSTERS_31.getId(), true, qs.getInt(KILL_COUNT_VAR)));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

@@ -128,6 +128,7 @@ public class Q00246_PossessorOfAPreciousSoul3 extends Quest
 				htmltext = null;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -231,6 +232,7 @@ public class Q00246_PossessorOfAPreciousSoul3 extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

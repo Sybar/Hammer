@@ -99,7 +99,7 @@ public class AdminEffects implements IAdminCommandHandler
 	};
 	
 	@Override
-	public boolean useAdminCommand(String commandValue, Player activeChar)
+	public boolean onCommand(String commandValue, Player activeChar)
 	{
 		String command = commandValue;
 		final StringTokenizer st = new StringTokenizer(command);
@@ -162,6 +162,7 @@ public class AdminEffects implements IAdminCommandHandler
 				activeChar.sendPacket(SystemMessageId.INVALID_TARGET);
 				return false;
 			}
+			
 			final Creature target = activeChar.getTarget().asCreature();
 			target.setInvisible(!target.isInvisible());
 			activeChar.sendSysMessage("You've made " + target.getName() + " " + (target.isInvisible() ? "invisible" : "visible") + ".");
@@ -257,6 +258,7 @@ public class AdminEffects implements IAdminCommandHandler
 			{
 				// Managed bellow.
 			}
+			
 			try
 			{
 				final WorldObject target = activeChar.getTarget();
@@ -272,6 +274,7 @@ public class AdminEffects implements IAdminCommandHandler
 					{
 						creature.startAbnormalVisualEffect(true, AbnormalVisualEffect.FLESH_STONE);
 					}
+					
 					creature.setParalyzed(true);
 					creature.startParalyze();
 				}
@@ -292,6 +295,7 @@ public class AdminEffects implements IAdminCommandHandler
 			{
 				// Managed bellow.
 			}
+			
 			try
 			{
 				final WorldObject target = activeChar.getTarget();
@@ -307,6 +311,7 @@ public class AdminEffects implements IAdminCommandHandler
 					{
 						creature.stopAbnormalVisualEffect(true, AbnormalVisualEffect.FLESH_STONE);
 					}
+					
 					creature.setParalyzed(false);
 				}
 			}
@@ -367,6 +372,7 @@ public class AdminEffects implements IAdminCommandHandler
 				{
 					radius = Integer.parseInt(st.nextToken());
 				}
+				
 				final Team team = Team.valueOf(val.toUpperCase());
 				World.getInstance().forEachVisibleObjectInRange(activeChar, Player.class, radius, player -> player.setTeam(team));
 			}
@@ -389,6 +395,7 @@ public class AdminEffects implements IAdminCommandHandler
 				{
 					return false;
 				}
+				
 				target.setTeam(team);
 			}
 			catch (Exception e)
@@ -520,14 +527,17 @@ public class AdminEffects implements IAdminCommandHandler
 				{
 					level = Integer.parseInt(st.nextToken());
 				}
+				
 				if (st.hasMoreTokens())
 				{
 					hittime = Integer.parseInt(st.nextToken());
 				}
+				
 				if (obj == null)
 				{
 					obj = activeChar;
 				}
+				
 				if (!obj.isCreature())
 				{
 					activeChar.sendPacket(SystemMessageId.INVALID_TARGET);
@@ -535,7 +545,7 @@ public class AdminEffects implements IAdminCommandHandler
 				else
 				{
 					final Creature target = obj.asCreature();
-					target.broadcastPacket(new MagicSkillUse(target, activeChar, skill, level, hittime, 0));
+					target.broadcastSkillPacket(new MagicSkillUse(target, activeChar, skill, level, hittime, 0), target);
 					activeChar.sendMessage(obj.getName() + " performs MSU " + skill + "/" + level + " by your request.");
 				}
 			}
@@ -549,6 +559,7 @@ public class AdminEffects implements IAdminCommandHandler
 		{
 			showMainPage(activeChar, command);
 		}
+		
 		return true;
 	}
 	
@@ -570,8 +581,10 @@ public class AdminEffects implements IAdminCommandHandler
 			{
 				creature.startAbnormalVisualEffect(true, ave);
 			}
+			
 			return true;
 		}
+		
 		return false;
 	}
 	
@@ -586,16 +599,19 @@ public class AdminEffects implements IAdminCommandHandler
 					activeChar.sendPacket(SystemMessageId.NOTHING_HAPPENED);
 					return false;
 				}
+				
 				if ((target instanceof Npc) && ((action < 1) || (action > 3)))
 				{
 					activeChar.sendPacket(SystemMessageId.NOTHING_HAPPENED);
 					return false;
 				}
+				
 				if (target.isPlayer() && ((action < 2) || ((action > 18) && (action != SocialAction.LEVEL_UP))))
 				{
 					activeChar.sendPacket(SystemMessageId.NOTHING_HAPPENED);
 					return false;
 				}
+				
 				final Creature creature = target.asCreature();
 				creature.broadcastPacket(new SocialAction(creature.getObjectId(), action));
 			}
@@ -608,6 +624,7 @@ public class AdminEffects implements IAdminCommandHandler
 		{
 			// Not important.
 		}
+		
 		return true;
 	}
 	
@@ -646,6 +663,7 @@ public class AdminEffects implements IAdminCommandHandler
 		{
 			activeChar.sendSysMessage("Usage: //atmosphere <sky day|night|red> <duration>");
 		}
+		
 		if (packet != null)
 		{
 			Broadcast.toAllOnlinePlayers(packet);
@@ -661,7 +679,7 @@ public class AdminEffects implements IAdminCommandHandler
 	}
 	
 	@Override
-	public String[] getAdminCommandList()
+	public String[] getCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}
@@ -685,6 +703,7 @@ public class AdminEffects implements IAdminCommandHandler
 		{
 			filename = "social";
 		}
+		
 		AdminHtml.showAdminHtml(activeChar, filename + ".htm");
 	}
 }

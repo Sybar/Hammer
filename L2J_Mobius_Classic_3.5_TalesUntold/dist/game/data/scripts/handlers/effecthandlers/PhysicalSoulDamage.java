@@ -174,7 +174,8 @@ public class PhysicalSoulDamage extends AbstractEffect
 					ssmod = Math.max(1, 4 + (effector.getStat().getValue(Stat.SHOTS_BONUS) / 100));
 				}
 			}
-			final double soulsMod = 1 + (chargedSouls * 0.04); // Souls Formula (each soul increase +4%)
+			
+			final double soulsMod = 1 + (chargedSouls * 0.048); // Souls Formula (each soul increase +4.8%)
 			
 			// ...................____________Melee Damage_____________......................................___________________Ranged Damage____________________
 			// ATTACK CALCULATION 77 * ((pAtk * lvlMod) + power) / pdef            RANGED ATTACK CALCULATION 70 * ((pAtk * lvlMod) + power + patk + power) / pdef

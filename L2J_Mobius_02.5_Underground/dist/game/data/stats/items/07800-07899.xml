@@ -362,9 +362,9 @@
 		<set name="is_sellable" val="false" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_magic_weapon" val="true" />
-		<cond msgId="1685">
+		<conditions msgId="1685">
 			<player pkCount="0" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">23</stat>
 			<stat type="mAtk">24</stat>
@@ -391,9 +391,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
-		<cond msgId="1685">
+		<conditions msgId="1685">
 			<player pkCount="0" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">24</stat>
 			<stat type="mAtk">17</stat>
@@ -420,9 +420,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
-		<cond msgId="1685">
+		<conditions msgId="1685">
 			<player pkCount="0" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">21</stat>
 			<stat type="mAtk">17</stat>
@@ -449,9 +449,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
-		<cond msgId="1685">
+		<conditions msgId="1685">
 			<player pkCount="0" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">29</stat>
 			<stat type="mAtk">17</stat>
@@ -480,9 +480,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
-		<cond msgId="1685">
+		<conditions msgId="1685">
 			<player pkCount="0" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">49</stat>
 			<stat type="mAtk">17</stat>
@@ -509,9 +509,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
-		<cond msgId="1685">
+		<conditions msgId="1685">
 			<player pkCount="0" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">24</stat>
 			<stat type="mAtk">17</stat>
@@ -539,9 +539,9 @@
 		<set name="is_sellable" val="false" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_magic_weapon" val="true" />
-		<cond msgId="1685">
+		<conditions msgId="1685">
 			<player pkCount="0" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">41</stat>
 			<stat type="mAtk">43</stat>
@@ -571,9 +571,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
-		<cond msgId="1685">
+		<conditions msgId="1685">
 			<player pkCount="0" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">105</stat>
 			<stat type="mAtk">32</stat>
@@ -603,9 +603,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
-		<cond msgId="1685">
+		<conditions msgId="1685">
 			<player pkCount="0" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">105</stat>
 			<stat type="mAtk">32</stat>
@@ -634,9 +634,9 @@
 		<set name="is_sellable" val="false" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_magic_weapon" val="true" />
-		<cond msgId="1685">
+		<conditions msgId="1685">
 			<player pkCount="0" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">50</stat>
 			<stat type="mAtk">47</stat>
@@ -664,9 +664,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
-		<cond msgId="1685">
+		<conditions msgId="1685">
 			<player pkCount="0" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">51</stat>
 			<stat type="mAtk">32</stat>
@@ -694,9 +694,9 @@
 		<set name="is_sellable" val="false" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_magic_weapon" val="true" />
-		<cond msgId="1685">
+		<conditions msgId="1685">
 			<player pkCount="0" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">41</stat>
 			<stat type="mAtk">43</stat>
@@ -723,9 +723,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
-		<cond msgId="1685">
+		<conditions msgId="1685">
 			<player pkCount="0" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">62</stat>
 			<stat type="mAtk">32</stat>
@@ -753,9 +753,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
-		<cond msgId="1685">
+		<conditions msgId="1685">
 			<player pkCount="0" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">51</stat>
 			<stat type="mAtk">32</stat>
@@ -783,9 +783,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
-		<cond msgId="1685">
+		<conditions msgId="1685">
 			<player pkCount="0" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">45</stat>
 			<stat type="mAtk">32</stat>
@@ -813,9 +813,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1685">
+		<conditions msgId="1685">
 			<player pkCount="0" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">51</stat>
 			<stat type="mAtk">32</stat>
@@ -1033,9 +1033,9 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player sex="1" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="7847" name="Lady's Hairpin (Event)" type="Armor">
 		<!-- Hair accessory for Female only. -->
@@ -1050,9 +1050,9 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player sex="1" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="7848" name="Forget-me-not Hairpin (Event)" type="Armor">
 		<!-- Forget-me-not-shaped hair accessory. Female only. -->
@@ -1067,9 +1067,9 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player sex="1" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="7849" name="Daisy Hairpin (Event)" type="Armor">
 		<!-- Daisy-shaped hair accessory. Female only. -->
@@ -1084,9 +1084,9 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player sex="1" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="7850" name="Clan Oath Helm" type="Armor">
 		<set name="icon" val="icon.armor_helmet_i00" />
@@ -1101,9 +1101,9 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="commissionItemType" val="HELMET" />
 		<set name="equip_condition" val="{{ec_academy;1}}" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player pledgeClass="1" /> <!-- Vassal (Academy) -->
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">37</stat>
 		</stats>
@@ -1124,12 +1124,12 @@
 		<set name="commissionItemType" val="FULL_BODY" />
 		<set name="isAppearanceable" val="true" />
 		<set name="equip_condition" val="{{ec_academy;1}}" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 				<player pledgeClass="1" /> <!-- Vassal (Academy) -->
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">158</stat>
 		</stats>
@@ -1149,12 +1149,12 @@
 		<set name="commissionItemType" val="GLOVES" />
 		<set name="isAppearanceable" val="true" />
 		<set name="equip_condition" val="{{ec_academy;1}}" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 				<player pledgeClass="1" /> <!-- Vassal (Academy) -->
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">24</stat>
 		</stats>
@@ -1174,12 +1174,12 @@
 		<set name="commissionItemType" val="FEET" />
 		<set name="isAppearanceable" val="true" />
 		<set name="equip_condition" val="{{ec_academy;1}}" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 				<player pledgeClass="1" /> <!-- Vassal (Academy) -->
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">24</stat>
 		</stats>
@@ -1200,9 +1200,9 @@
 		<set name="commissionItemType" val="FULL_BODY" />
 		<set name="isAppearanceable" val="true" />
 		<set name="equip_condition" val="{{ec_academy;1}}" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player pledgeClass="1" /> <!-- Vassal (Academy) -->
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">119</stat>
 		</stats>
@@ -1222,9 +1222,9 @@
 		<set name="commissionItemType" val="GLOVES" />
 		<set name="isAppearanceable" val="true" />
 		<set name="equip_condition" val="{{ec_academy;1}}" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player pledgeClass="1" /> <!-- Vassal (Academy) -->
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">24</stat>
 		</stats>
@@ -1244,9 +1244,9 @@
 		<set name="commissionItemType" val="FEET" />
 		<set name="isAppearanceable" val="true" />
 		<set name="equip_condition" val="{{ec_academy;1}}" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player pledgeClass="1" /> <!-- Vassal (Academy) -->
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">24</stat>
 		</stats>
@@ -1267,12 +1267,12 @@
 		<set name="commissionItemType" val="FULL_BODY" />
 		<set name="isAppearanceable" val="true" />
 		<set name="equip_condition" val="{{ec_academy;1}}" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 				<player pledgeClass="1" /> <!-- Vassal (Academy) -->
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">79</stat>
 			<stat type="maxMp">239</stat>
@@ -1293,12 +1293,12 @@
 		<set name="commissionItemType" val="GLOVES" />
 		<set name="isAppearanceable" val="true" />
 		<set name="equip_condition" val="{{ec_academy;1}}" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 				<player pledgeClass="1" /> <!-- Vassal (Academy) -->
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">24</stat>
 		</stats>
@@ -1318,12 +1318,12 @@
 		<set name="commissionItemType" val="FEET" />
 		<set name="isAppearanceable" val="true" />
 		<set name="equip_condition" val="{{ec_academy;1}}" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 				<player pledgeClass="1" /> <!-- Vassal (Academy) -->
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">24</stat>
 		</stats>
@@ -1340,9 +1340,9 @@
 		<set name="price" val="1336000" />
 		<set name="commissionItemType" val="HELMET" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player pledgeClass="4" /> <!-- Elder -->
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">69</stat>
 		</stats>
@@ -1361,12 +1361,12 @@
 		<set name="commissionItemType" val="FULL_BODY" />
 		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 				<player pledgeClass="4" /> <!-- Elder -->
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">278</stat>
 		</stats>
@@ -1385,12 +1385,12 @@
 		<set name="commissionItemType" val="GLOVES" />
 		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 				<player pledgeClass="4" /> <!-- Elder -->
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">46</stat>
 		</stats>
@@ -1409,12 +1409,12 @@
 		<set name="commissionItemType" val="FEET" />
 		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 				<player pledgeClass="4" /> <!-- Elder -->
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">46</stat>
 		</stats>
@@ -1433,9 +1433,9 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
 		<set name="commissionItemType" val="FULL_BODY" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player pledgeClass="4" /> <!-- Elder -->
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">209</stat>
 		</stats>
@@ -1454,9 +1454,9 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
 		<set name="commissionItemType" val="GLOVES" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player pledgeClass="4" /> <!-- Elder -->
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">46</stat>
 		</stats>
@@ -1475,9 +1475,9 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
 		<set name="commissionItemType" val="FEET" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player pledgeClass="4" /> <!-- Elder -->
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">46</stat>
 		</stats>
@@ -1496,12 +1496,12 @@
 		<set name="commissionItemType" val="FULL_BODY" />
 		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 				<player pledgeClass="4" /> <!-- Elder -->
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">139</stat>
 			<stat type="maxMp">665</stat>
@@ -1521,12 +1521,12 @@
 		<set name="commissionItemType" val="GLOVES" />
 		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 				<player pledgeClass="4" /> <!-- Elder -->
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">46</stat>
 		</stats>
@@ -1545,12 +1545,12 @@
 		<set name="commissionItemType" val="FEET" />
 		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 				<player pledgeClass="4" /> <!-- Elder -->
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">46</stat>
 		</stats>
@@ -1567,9 +1567,9 @@
 		<set name="price" val="1336000" />
 		<set name="commissionItemType" val="HELMET" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player pledgeClass="4" /> <!-- Elder -->
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">69</stat>
 		</stats>
@@ -1588,12 +1588,12 @@
 		<set name="commissionItemType" val="FULL_BODY" />
 		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 				<player pledgeClass="4" /> <!-- Elder -->
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">278</stat>
 		</stats>
@@ -1611,12 +1611,12 @@
 		<set name="commissionItemType" val="GLOVES" />
 		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 				<player pledgeClass="4" /> <!-- Elder -->
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">46</stat>
 		</stats>
@@ -1634,12 +1634,12 @@
 		<set name="commissionItemType" val="FEET" />
 		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 				<player pledgeClass="4" /> <!-- Elder -->
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">46</stat>
 		</stats>
@@ -1658,9 +1658,9 @@
 		<set name="commissionItemType" val="FULL_BODY" />
 		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player pledgeClass="4" /> <!-- Elder -->
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">209</stat>
 		</stats>
@@ -1678,9 +1678,9 @@
 		<set name="commissionItemType" val="GLOVES" />
 		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player pledgeClass="4" /> <!-- Elder -->
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">46</stat>
 		</stats>
@@ -1698,9 +1698,9 @@
 		<set name="commissionItemType" val="FEET" />
 		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player pledgeClass="4" /> <!-- Elder -->
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">46</stat>
 		</stats>
@@ -1719,12 +1719,12 @@
 		<set name="commissionItemType" val="FULL_BODY" />
 		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 				<player pledgeClass="4" /> <!-- Elder -->
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">139</stat>
 			<stat type="maxMp">665</stat>
@@ -1743,12 +1743,12 @@
 		<set name="commissionItemType" val="GLOVES" />
 		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 				<player pledgeClass="4" /> <!-- Elder -->
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">46</stat>
 		</stats>
@@ -1766,12 +1766,12 @@
 		<set name="commissionItemType" val="FEET" />
 		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 				<player pledgeClass="4" /> <!-- Elder -->
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">46</stat>
 		</stats>

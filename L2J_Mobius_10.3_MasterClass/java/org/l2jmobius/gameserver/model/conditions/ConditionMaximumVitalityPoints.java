@@ -45,6 +45,7 @@ public class ConditionMaximumVitalityPoints extends Condition
 		{
 			return player.getVitalityPoints() < _count;
 		}
+		
 		return false;
 	}
 }

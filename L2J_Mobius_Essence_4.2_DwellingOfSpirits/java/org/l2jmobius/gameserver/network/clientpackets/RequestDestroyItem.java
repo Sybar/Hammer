@@ -32,7 +32,6 @@ import org.l2jmobius.gameserver.model.World;
 import org.l2jmobius.gameserver.model.WorldObject;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.Summon;
-import org.l2jmobius.gameserver.model.actor.enums.player.PlayerCondOverride;
 import org.l2jmobius.gameserver.model.item.enums.ItemProcessType;
 import org.l2jmobius.gameserver.model.item.instance.Item;
 import org.l2jmobius.gameserver.network.PacketLogger;
@@ -108,7 +107,8 @@ public class RequestDestroyItem extends ClientPacket
 					{
 						count = ((Item) obj).getCount();
 					}
-					AdminCommandHandler.getInstance().useAdminCommand(player, "admin_delete_item " + _objectId + " " + count, true);
+					
+					AdminCommandHandler.getInstance().onCommand(player, "admin_delete_item " + _objectId + " " + count, true);
 				}
 				return;
 			}
@@ -125,7 +125,7 @@ public class RequestDestroyItem extends ClientPacket
 		}
 		
 		final int itemId = itemToRemove.getId();
-		if (!Config.DESTROY_ALL_ITEMS && ((!player.canOverrideCond(PlayerCondOverride.DESTROY_ALL_ITEMS) && !itemToRemove.isDestroyable()) || CursedWeaponsManager.getInstance().isCursed(itemId)))
+		if (!Config.DESTROY_ALL_ITEMS && ((!player.isGM() && !itemToRemove.isDestroyable()) || CursedWeaponsManager.getInstance().isCursed(itemId)))
 		{
 			if (itemToRemove.isHeroItem())
 			{
@@ -176,6 +176,7 @@ public class RequestDestroyItem extends ClientPacket
 				PacketLogger.warning("Could not delete pet objectid: " + e.getMessage());
 			}
 		}
+		
 		if (itemToRemove.isTimeLimitedItem())
 		{
 			itemToRemove.endOfLife();
@@ -202,6 +203,7 @@ public class RequestDestroyItem extends ClientPacket
 			{
 				iu.addModifiedItem(itm);
 			}
+			
 			player.sendPacket(iu); // Sent inventory update for unequip instantly.
 		}
 		
@@ -220,6 +222,7 @@ public class RequestDestroyItem extends ClientPacket
 		{
 			iu.addModifiedItem(removedItem);
 		}
+		
 		player.sendPacket(iu); // Sent inventory update for destruction instantly.
 		player.updateAdenaAndWeight();
 		
@@ -235,6 +238,7 @@ public class RequestDestroyItem extends ClientPacket
 			sm = new SystemMessage(SystemMessageId.S1_HAS_DISAPPEARED);
 			sm.addItemName(removedItem);
 		}
+		
 		player.sendPacket(sm);
 	}
 }

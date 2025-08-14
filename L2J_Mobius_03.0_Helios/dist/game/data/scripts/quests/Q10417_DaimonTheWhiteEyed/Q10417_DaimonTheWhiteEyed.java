@@ -44,8 +44,10 @@ public class Q10417_DaimonTheWhiteEyed extends Quest
 	private static final int EYE_OF_ARGOS = 31683;
 	private static final int JANITT = 33851;
 	private static final int DAIMON_THE_WHITEEYED = 27499;
+	
 	// Items
 	private static final int EAA = 730; // Scroll: Enchant Armor (A-grade)
+	
 	// Misc
 	private static final int MIN_LEVEL = 70;
 	private static final int MAX_LEVEL = 75;
@@ -118,11 +120,13 @@ public class Q10417_DaimonTheWhiteEyed extends Quest
 					{
 						addExpAndSp(player, 306_167_814, 3265);
 					}
+					
 					htmltext = event;
 				}
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -164,6 +168,7 @@ public class Q10417_DaimonTheWhiteEyed extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -190,6 +195,7 @@ public class Q10417_DaimonTheWhiteEyed extends Quest
 							qsPartyMember.set("KillCount_MOBS", mobCount);
 							playSound(singleMember, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 						}
+						
 						sendNpcLogList(singleMember);
 					}
 					
@@ -206,6 +212,7 @@ public class Q10417_DaimonTheWhiteEyed extends Quest
 						playSound(singleMember, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 						qsPartyMember.setCond(3, true);
 					}
+					
 					sendNpcLogList(singleMember);
 				}
 			}
@@ -256,6 +263,7 @@ public class Q10417_DaimonTheWhiteEyed extends Quest
 				holder.add(new NpcLogListHolder(NpcStringId.DEFEAT_THE_BEASTS_OF_THE_VALLEY, killCount));
 				return holder;
 			}
+			
 			if (qs.isCond(3))
 			{
 				final Set<NpcLogListHolder> holder = new HashSet<>();
@@ -263,6 +271,7 @@ public class Q10417_DaimonTheWhiteEyed extends Quest
 				return holder;
 			}
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

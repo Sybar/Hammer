@@ -75,6 +75,7 @@ public class EffectMasterHandler
 		DispelByCategory.class,
 		DispelBySlot.class,
 		DispelBySlotProbability.class,
+		Distrust.class,
 		ElementSeed.class,
 		EnableCloak.class,
 		EnergyDamage.class,
@@ -189,6 +190,7 @@ public class EffectMasterHandler
 			{
 				continue; // Disabled handler
 			}
+			
 			EffectHandler.getInstance().registerHandler((Class<? extends AbstractEffect>) c);
 		}
 		

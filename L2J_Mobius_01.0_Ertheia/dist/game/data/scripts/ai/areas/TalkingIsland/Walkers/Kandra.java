@@ -49,6 +49,7 @@ public class Kandra extends AbstractNpcAI
 			npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.IMPRESSIVE_LOOKING_STATUES);
 			startQuestTimer("NPC_SHOUT", (10 + getRandom(5)) * 1000, npc, null);
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	

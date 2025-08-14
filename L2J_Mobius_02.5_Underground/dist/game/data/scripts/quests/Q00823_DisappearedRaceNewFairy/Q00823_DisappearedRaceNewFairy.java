@@ -37,6 +37,7 @@ public class Q00823_DisappearedRaceNewFairy extends Quest
 {
 	// NPCs
 	private static final int MIMYU = 30747;
+	
 	// Monsters
 	private static final int[] MONSTERS =
 	{
@@ -50,9 +51,11 @@ public class Q00823_DisappearedRaceNewFairy extends Quest
 		23573, // Nymph Cosmos
 		23578 // Nymph Guardian
 	};
+	
 	// Item's
 	private static final int NYMPH_STAMEN = 46258;
 	private static final int MIMIUS_REWARD_BOX = 46259;
+	
 	// Misc
 	private static final int MIN_LEVEL = 100;
 	
@@ -124,11 +127,13 @@ public class Q00823_DisappearedRaceNewFairy extends Quest
 					addExpAndSp(player, 18271915200L, 43852486);
 					giveItems(player, MIMIUS_REWARD_BOX, 6);
 				}
+				
 				qs.exitQuest(QuestType.DAILY, true);
 				htmltext = event;
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -146,6 +151,7 @@ public class Q00823_DisappearedRaceNewFairy extends Quest
 					htmltext = "30747-11.html";
 					break;
 				}
+				
 				qs.setState(State.CREATED);
 			}
 			case State.CREATED:
@@ -170,6 +176,7 @@ public class Q00823_DisappearedRaceNewFairy extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

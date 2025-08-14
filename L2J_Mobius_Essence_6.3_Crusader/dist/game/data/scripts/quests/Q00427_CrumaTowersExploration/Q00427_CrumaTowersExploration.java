@@ -40,6 +40,7 @@ public class Q00427_CrumaTowersExploration extends Quest
 {
 	// NPC
 	private static final int GENIE_LAMP = 34369;
+	
 	// Monsters
 	private static final int CATHEROK = 22205;
 	private static final int TORFE = 22210;
@@ -53,8 +54,10 @@ public class Q00427_CrumaTowersExploration extends Quest
 	private static final int DICOR = 22208;
 	private static final int PERUM = 22209;
 	private static final int DEATH_LORD = 22211;
+	
 	// Item
 	private static final ItemHolder SPIRIT_ORE = new ItemHolder(3031, 50);
+	
 	// Misc
 	private static final int MIN_LEVEL = 56;
 	private static final int MAX_LEVEL = 64;
@@ -110,6 +113,7 @@ public class Q00427_CrumaTowersExploration extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -148,6 +152,7 @@ public class Q00427_CrumaTowersExploration extends Quest
 				htmltext = getAlreadyCompletedMsg(player);
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -183,6 +188,7 @@ public class Q00427_CrumaTowersExploration extends Quest
 			holder.add(new NpcLogListHolder(NpcStringId.DEFEAT_MONSTERS_24.getId(), true, qs.getInt(KILL_COUNT_VAR)));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

@@ -37,7 +37,6 @@ import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
 import org.l2jmobius.gameserver.network.PacketLogger;
 import org.l2jmobius.gameserver.network.SystemMessageId;
 import org.l2jmobius.gameserver.network.serverpackets.ExStorageMaxCount;
-import org.l2jmobius.gameserver.network.serverpackets.StatusUpdate;
 import org.l2jmobius.gameserver.network.serverpackets.SystemMessage;
 
 /**
@@ -111,6 +110,7 @@ public class RequestAcquireSkill extends ClientPacket
 				}
 				break;
 			}
+			
 			// case PLEDGE:
 			// {
 			// if (!player.isClanLeader())
@@ -204,6 +204,7 @@ public class RequestAcquireSkill extends ClientPacket
 						return false;
 					}
 				}
+				
 				// If the player has all required items, they are consumed.
 				for (ItemHolder itemIdCount : skillLearn.getRequiredItems())
 				{
@@ -213,16 +214,17 @@ public class RequestAcquireSkill extends ClientPacket
 					}
 				}
 			}
+			
 			// If the player has SP and all required items then consume SP.
 			if (levelUpSp > 0)
 			{
 				player.setSp(player.getSp() - levelUpSp);
-				final StatusUpdate su = new StatusUpdate(player);
-				su.addAttribute(StatusUpdate.SP, (int) player.getSp());
-				player.sendPacket(su);
+				player.updateUserInfo();
 			}
+			
 			return true;
 		}
+		
 		return false;
 	}
 	

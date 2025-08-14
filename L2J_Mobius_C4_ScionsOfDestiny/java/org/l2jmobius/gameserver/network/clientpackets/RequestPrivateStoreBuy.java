@@ -63,6 +63,7 @@ public class RequestPrivateStoreBuy extends ClientPacket
 			{
 				cnt = Integer.MAX_VALUE;
 			}
+			
 			final int price = readInt();
 			if ((objectId < 1) || (cnt < 1) || (price < 0))
 			{

@@ -33,12 +33,15 @@ public class Q00259_RequestFromTheFarmOwner extends Quest
 	// NPCs
 	private static final int EDMOND = 30497;
 	private static final int MARIUS = 30405;
+	
 	// Monsters
 	private static final int GIANT_SPIDER = 20103;
 	private static final int TALON_SPIDER = 20106;
 	private static final int BLADE_SPIDER = 20108;
+	
 	// Items
 	private static final int GIANT_SPIDER_SKIN = 1495;
+	
 	// Rewards
 	private static final int ADENA = 57;
 	private static final int HEALING_POTION = 1061;
@@ -147,6 +150,7 @@ public class Q00259_RequestFromTheFarmOwner extends Quest
 							{
 								reward += 250;
 							}
+							
 							rewardItems(player, ADENA, reward);
 						}
 						break;

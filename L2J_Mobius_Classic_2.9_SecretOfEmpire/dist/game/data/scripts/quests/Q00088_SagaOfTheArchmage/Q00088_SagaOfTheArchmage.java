@@ -48,6 +48,7 @@ public class Q00088_SagaOfTheArchmage extends Quest
 	private static final int TABLET_OF_VISION_3 = 31652;
 	private static final int TABLET_OF_VISION_4 = 31654;
 	private static final int DIVIANNE = 31590;
+	
 	// Monsters
 	private static final int ICE_MONSTER = 27316;
 	private static final int SPIRIT_OF_A_DROWNED = 27317;
@@ -63,6 +64,7 @@ public class Q00088_SagaOfTheArchmage extends Quest
 	private static final int FALLEN_ANGEL_ALLECTOR = 27250;
 	private static final int HALISHA_ARCHON = 27219;
 	private static final int UNKNOWN_STOPPER = 27254;
+	
 	// Items
 	private static final int ICE_CRYSTAL_FRAGMENT = 49822;
 	private static final int HALISHA_BADGE = 7503;
@@ -71,8 +73,10 @@ public class Q00088_SagaOfTheArchmage extends Quest
 	private static final int RESONANCE_AMULET_3 = 7348;
 	private static final int RESONANCE_AMULET_4 = 7379;
 	private static final int INVESTIGATIVE_REPORT = 7529;
+	
 	// Reward
 	private static final int BOOK_GOLD_LION = 90038;
+	
 	// Misc
 	private static final String KILL_COUNT_VAR = "KillCount";
 	
@@ -95,6 +99,7 @@ public class Q00088_SagaOfTheArchmage extends Quest
 		{
 			return null;
 		}
+		
 		String htmltext = event;
 		switch (event)
 		{
@@ -242,6 +247,7 @@ public class Q00088_SagaOfTheArchmage extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -430,6 +436,7 @@ public class Q00088_SagaOfTheArchmage extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -500,6 +507,7 @@ public class Q00088_SagaOfTheArchmage extends Quest
 						{
 							qs.set(KILL_COUNT_VAR, count + 1);
 						}
+						
 						if (count >= 20)
 						{
 							qs.setCond(8, true);
@@ -526,8 +534,10 @@ public class Q00088_SagaOfTheArchmage extends Quest
 			{
 				holder.add(new NpcLogListHolder(WATCHER_OF_THE_ANCIENT_PLEDGE, false, guardiancount));
 			}
+			
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

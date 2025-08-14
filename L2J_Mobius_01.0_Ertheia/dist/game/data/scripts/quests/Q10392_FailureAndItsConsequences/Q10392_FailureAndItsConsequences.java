@@ -40,9 +40,11 @@ public class Q10392_FailureAndItsConsequences extends Quest
 		20992, // Swamp Alligator
 		20993, // Swamp Warrior
 	};
+	
 	// Items
 	private static final int FRAGMENT = 36709; // Suspicious Fragment
 	private static final int EAC = 952; // Scroll: Enchant Armor (C-grade)
+	
 	// Misc
 	private static final int MIN_LEVEL = 40;
 	private static final int MAX_LEVEL = 46;
@@ -107,6 +109,7 @@ public class Q10392_FailureAndItsConsequences extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -167,6 +170,7 @@ public class Q10392_FailureAndItsConsequences extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

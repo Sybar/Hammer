@@ -71,6 +71,7 @@ public class SummonMulti extends AbstractEffect
 				_levelTemplates.put(summonerLevels.get(i), npcIds.get(i));
 			}
 		}
+		
 		_expMultiplier = params.getFloat("expMultiplier", 1);
 		_consumeItem = new ItemHolder(params.getInt("consumeItemId", 0), params.getInt("consumeItemCount", 1));
 		_consumeItemInterval = params.getInt("consumeItemInterval", 0);
@@ -119,6 +120,7 @@ public class SummonMulti extends AbstractEffect
 					levelTemplate = entry;
 				}
 			}
+			
 			if (levelTemplate != null)
 			{
 				template = NpcData.getInstance().getTemplate(levelTemplate.getValue());
@@ -154,19 +156,16 @@ public class SummonMulti extends AbstractEffect
 		for (BuffInfo effect : player.getEffectList().getEffects())
 		{
 			final Skill sk = effect.getSkill();
-			if (!sk.isBad() && !sk.isTransformation() && skill.isSharedWithSummon())
+			if (!sk.hasNegativeEffect() && !sk.isTransformation() && sk.isSharedWithSummon())
 			{
 				sk.applyEffects(player, summon, false, effect.getTime());
 			}
 		}
 		
-		summon.setCurrentHp(summon.getMaxHp());
-		summon.setCurrentMp(summon.getMaxMp());
+		summon.fullRestore();
 		summon.setHeading(player.getHeading());
 		summon.setSummonPoints(_summonPoints);
-		
 		player.addServitor(summon);
-		
 		summon.setShowSummonAnimation(true);
 		summon.spawnMe();
 		summon.setRunning();

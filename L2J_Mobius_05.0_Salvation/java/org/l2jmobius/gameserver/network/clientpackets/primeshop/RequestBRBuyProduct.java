@@ -103,6 +103,7 @@ public class RequestBRBuyProduct extends ClientPacket
 					player.removeRequest(PrimeShopRequest.class);
 					return;
 				}
+				
 				player.setPrimePoints(player.getPrimePoints() - price);
 			}
 			
@@ -239,6 +240,7 @@ public class RequestBRBuyProduct extends ClientPacket
 				return HERO_COINS;
 			}
 		}
+		
 		return -1;
 	}
 }

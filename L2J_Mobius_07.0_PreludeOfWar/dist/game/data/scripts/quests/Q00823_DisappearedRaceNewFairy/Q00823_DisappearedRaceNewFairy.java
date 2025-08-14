@@ -38,6 +38,7 @@ public class Q00823_DisappearedRaceNewFairy extends Quest
 {
 	// NPCs
 	private static final int MIMYU = 30747;
+	
 	// Monsters
 	private static final int[] MONSTERS =
 	{
@@ -51,11 +52,13 @@ public class Q00823_DisappearedRaceNewFairy extends Quest
 		23573, // Nymph Cosmos
 		23578 // Nymph Guardian
 	};
+	
 	// Items
 	private static final int NYMPH_STAMEN = 46258;
 	private static final int BASIC_SUPPLY_BOX = 47178;
 	private static final int INTERMEDIATE_SUPPLY_BOX = 47179;
 	private static final int ADVANCED_SUPPLY_BOX = 47180;
+	
 	// Misc
 	private static final int MIN_LEVEL = 102;
 	
@@ -106,6 +109,7 @@ public class Q00823_DisappearedRaceNewFairy extends Quest
 					htmltext = "30747-04b.htm";
 					break;
 				}
+				
 				htmltext = "30747-04.htm";
 				break;
 			}
@@ -121,6 +125,7 @@ public class Q00823_DisappearedRaceNewFairy extends Quest
 					htmltext = "30747-04b.htm";
 					break;
 				}
+				
 				htmltext = "30747-04.htm";
 				break;
 			}
@@ -163,6 +168,7 @@ public class Q00823_DisappearedRaceNewFairy extends Quest
 							{
 								giveItems(player, BASIC_SUPPLY_BOX, 1);
 							}
+							
 							addExpAndSp(player, 5_536_944_000L, 13_288_590);
 							addFactionPoints(player, Faction.MOTHER_TREE_GUARDIANS, 100);
 							qs.exitQuest(QuestType.DAILY, true);
@@ -190,6 +196,7 @@ public class Q00823_DisappearedRaceNewFairy extends Quest
 							{
 								giveItems(player, INTERMEDIATE_SUPPLY_BOX, 1);
 							}
+							
 							addExpAndSp(player, 11_073_888_000L, 26_577_180);
 							addFactionPoints(player, Faction.MOTHER_TREE_GUARDIANS, 200);
 							qs.exitQuest(QuestType.DAILY, true);
@@ -217,6 +224,7 @@ public class Q00823_DisappearedRaceNewFairy extends Quest
 							{
 								giveItems(player, ADVANCED_SUPPLY_BOX, 1);
 							}
+							
 							addExpAndSp(player, 16_610_832_000L, 39_865_770);
 							addFactionPoints(player, Faction.MOTHER_TREE_GUARDIANS, 300);
 							qs.exitQuest(QuestType.DAILY, true);
@@ -232,6 +240,7 @@ public class Q00823_DisappearedRaceNewFairy extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -263,6 +272,7 @@ public class Q00823_DisappearedRaceNewFairy extends Quest
 							htmltext = "30747-04b.htm";
 							break;
 						}
+						
 						htmltext = "30747-04.htm";
 						break;
 					}
@@ -305,6 +315,7 @@ public class Q00823_DisappearedRaceNewFairy extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

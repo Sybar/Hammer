@@ -89,6 +89,7 @@ public class ConfirmDlg extends ServerPacket
 						buffer.writeString(param.getStringValue());
 						break;
 					}
+					
 					// case SystemMessage.TYPE_LONG_NUMBER:
 					// {
 					// buffer.writeLong(param.getLongValue());
@@ -128,6 +129,7 @@ public class ConfirmDlg extends ServerPacket
 		{
 			buffer.writeInt(0);
 		}
+		
 		buffer.writeInt(_time);
 		buffer.writeInt(_requesterId);
 	}

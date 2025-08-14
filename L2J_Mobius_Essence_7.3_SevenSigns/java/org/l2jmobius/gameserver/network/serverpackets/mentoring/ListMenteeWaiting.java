@@ -38,6 +38,7 @@ public class ListMenteeWaiting extends ServerPacket
 	public ListMenteeWaiting(int page, int minLevel, int maxLevel)
 	{
 		_page = page;
+		
 		// for (Player player : World.getInstance().getPlayers())
 		// {
 		// if ((player.getLevel() >= minLevel) && (player.getLevel() <= maxLevel) && !player.isMentee() && !player.isMentor() && !player.isInCategory(CategoryType.SIXTH_CLASS_GROUP))

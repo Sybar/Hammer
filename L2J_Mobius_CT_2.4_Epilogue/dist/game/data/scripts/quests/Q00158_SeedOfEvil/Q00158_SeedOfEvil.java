@@ -32,11 +32,14 @@ public class Q00158_SeedOfEvil extends Quest
 {
 	// NPC
 	private static final int BIOTIN = 30031;
+	
 	// Monster
 	private static final int NERKAS = 27016;
+	
 	// Items
 	private static final int ENCHANT_ARMOR_D = 956;
 	private static final int CLAY_TABLET = 1025;
+	
 	// Misc
 	private static final int MIN_LEVEL = 21;
 	
@@ -59,6 +62,7 @@ public class Q00158_SeedOfEvil extends Quest
 			qs.startQuest();
 			return event;
 		}
+		
 		return null;
 	}
 	
@@ -81,6 +85,7 @@ public class Q00158_SeedOfEvil extends Quest
 			giveItems(killer, CLAY_TABLET, 1);
 			qs.setCond(2, true);
 		}
+		
 		npc.broadcastPacket(new NpcSay(npc, ChatType.NPC_GENERAL, "The power of Lord Beleth rules the whole world...!"));
 	}
 	
@@ -118,6 +123,7 @@ public class Q00158_SeedOfEvil extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

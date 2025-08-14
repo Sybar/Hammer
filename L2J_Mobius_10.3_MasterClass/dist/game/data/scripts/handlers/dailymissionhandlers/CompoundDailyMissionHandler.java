@@ -100,6 +100,7 @@ public class CompoundDailyMissionHandler extends AbstractDailyMissionHandler
 				}
 			}
 		}
+		
 		return false;
 	}
 	
@@ -110,6 +111,7 @@ public class CompoundDailyMissionHandler extends AbstractDailyMissionHandler
 		{
 			return;
 		}
+		
 		if (((_requiredMissionCompleteId != 0) && checkRequiredMission(player)) || (_requiredMissionCompleteId == 0))
 		{
 			if (!_itemIds.isEmpty())
@@ -139,6 +141,7 @@ public class CompoundDailyMissionHandler extends AbstractDailyMissionHandler
 			{
 				entry.setStatus(DailyMissionStatus.AVAILABLE);
 			}
+			
 			storePlayerEntry(entry);
 		}
 	}

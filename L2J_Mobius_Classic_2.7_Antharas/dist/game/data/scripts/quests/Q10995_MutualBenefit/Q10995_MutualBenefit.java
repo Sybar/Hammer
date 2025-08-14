@@ -40,6 +40,7 @@ public class Q10995_MutualBenefit extends Quest
 	// NPCs
 	private static final int NEWBIE_GUIDE = 30601;
 	private static final int REEP = 30516;
+	
 	// Items
 	private static final int BALCK_WOLF_TOOTH = 90284;
 	private static final int GOBLINS_NAVIGATION_DEVICE = 90285;
@@ -48,10 +49,12 @@ public class Q10995_MutualBenefit extends Quest
 	private static final int GARUM_WEREWOLF_TAIL = 90288;
 	private static final int GOBLIN_BRIGAND_LIEUTENANT_NECKLACE = 90289;
 	private static final int BOUNTY_POSTER = 90283;
+	
 	// Rewards
 	private static final int SILVERSMITH_HAMMER = 49053;
 	private static final int RING_NOVICE = 29497;
 	private static final int NECKLACE_NOVICE = 49039;
+	
 	// Monsters
 	private static final int BLACK_WOLF = 20317;
 	private static final int GOBLIN_SNOOPER = 20327;
@@ -60,6 +63,7 @@ public class Q10995_MutualBenefit extends Quest
 	private static final int GOBLIN_BRIGAND = 20322;
 	private static final int GARUM_WEREWOLF = 20307;
 	private static final int GOBLIN_BRIGAND_LIEUTENANT = 20324;
+	
 	// Misc
 	private static final int MIN_LEVEL = 2;
 	private static final int MAX_LEVEL = 20;
@@ -114,6 +118,7 @@ public class Q10995_MutualBenefit extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -299,6 +304,7 @@ public class Q10995_MutualBenefit extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

@@ -44,13 +44,16 @@ public class Q10951_NewFlameOfOrcs extends Quest
 	// NPCs
 	private static final int SABITUS = 34335;
 	private static final int TANAI = 30602;
+	
 	// Monsters
 	private static final int TRAINING_DUMMY = 22183;
+	
 	// Items
 	private static final ItemHolder SOULSHOT_REWARD = new ItemHolder(91927, 400);
 	private static final ItemHolder SOE_REWARD = new ItemHolder(10650, 5);
 	private static final ItemHolder WW_POTION_REWARD = new ItemHolder(49036, 5);
 	private static final ItemHolder HP_POTION_REWARD = new ItemHolder(91912, 50);
+	
 	// Misc
 	private static final String REWARD_CHECK_VAR1 = "Q10951_REWARD_1";
 	private static final String REWARD_CHECK_VAR2 = "Q10951_REWARD_2";
@@ -104,6 +107,7 @@ public class Q10951_NewFlameOfOrcs extends Quest
 						giveItems(player, SOULSHOT_REWARD);
 					}
 				}
+				
 				htmltext = event;
 				break;
 			}
@@ -113,6 +117,7 @@ public class Q10951_NewFlameOfOrcs extends Quest
 				{
 					qs.setCond(5);
 				}
+				
 				htmltext = event;
 				break;
 			}
@@ -130,6 +135,7 @@ public class Q10951_NewFlameOfOrcs extends Quest
 					giveStoryBuffReward(npc, player);
 					
 					qs.exitQuest(false, true);
+					
 					// TODO: Return Q10952 start htm
 					htmltext = event;
 				}
@@ -141,6 +147,7 @@ public class Q10951_NewFlameOfOrcs extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -200,6 +207,7 @@ public class Q10951_NewFlameOfOrcs extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

@@ -55,6 +55,7 @@ public class Q10456_OperationRescue extends Quest
 		23364, // Amos Master
 		23365 // Ailith Hunter
 	};
+	
 	// Misc
 	private static final int MIN_LEVEL = 99;
 	
@@ -78,6 +79,7 @@ public class Q10456_OperationRescue extends Quest
 		{
 			return null;
 		}
+		
 		switch (event)
 		{
 			case "31590-02.htm":
@@ -109,6 +111,7 @@ public class Q10456_OperationRescue extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -136,6 +139,7 @@ public class Q10456_OperationRescue extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

@@ -44,8 +44,10 @@ public class Q00488_WondersOfCaring extends Quest
 		20968, // Forgotten Face
 		20969, // Giant's Shadow
 	};
+	
 	// Items
 	private static final int BOX = 19500; // Relic Box
+	
 	// Misc
 	private static final int MIN_LEVEL = 75;
 	private static final int MAX_LEVEL = 79;
@@ -85,6 +87,7 @@ public class Q00488_WondersOfCaring extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -124,6 +127,7 @@ public class Q00488_WondersOfCaring extends Quest
 						{
 							addExpAndSp(player, 22_901_550, 5_496);
 						}
+						
 						htmltext = "32880-02.html";
 					}
 				}
@@ -143,6 +147,7 @@ public class Q00488_WondersOfCaring extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

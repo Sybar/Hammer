@@ -62,6 +62,7 @@ public class Q10531_OddHappeningsAtDragonValley extends Quest
 	// Rewards
 	private static final int XP = 651696104;
 	private static final int SP = 23435;
+	
 	// Misc
 	private static final int MIN_LEVEL = 81;
 	private static final int MAX_LEVEL = 84;
@@ -83,6 +84,7 @@ public class Q10531_OddHappeningsAtDragonValley extends Quest
 		{
 			return null;
 		}
+		
 		String htmltext = null;
 		switch (event)
 		{
@@ -121,6 +123,7 @@ public class Q10531_OddHappeningsAtDragonValley extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -151,6 +154,7 @@ public class Q10531_OddHappeningsAtDragonValley extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -184,6 +188,7 @@ public class Q10531_OddHappeningsAtDragonValley extends Quest
 			npcLogList.add(new NpcLogListHolder(NpcStringId.SUBJUGATION_IN_THE_NORTHERN_DRAGON_VALLEY, qs.getInt("KILLED_COUNT")));
 			return npcLogList;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

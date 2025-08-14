@@ -43,8 +43,10 @@ public class Q10320_LetsGoToTheCentralSquare extends Quest
 	// NPCs
 	private static final int PANTHEON = 32972;
 	private static final int THEODORE = 32975;
+	
 	// Zone
 	private static final int TALKING_ISLAND_PRESENTATION_MOVIE_ZONE = 200034;
+	
 	// Misc
 	private static final int MAX_LEVEL = 20;
 	private static final String MOVIE_VAR = "TI_presentation_movie";
@@ -98,6 +100,7 @@ public class Q10320_LetsGoToTheCentralSquare extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -124,6 +127,7 @@ public class Q10320_LetsGoToTheCentralSquare extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -140,6 +144,7 @@ public class Q10320_LetsGoToTheCentralSquare extends Quest
 					final QuestState qs = getQuestState(player, false);
 					playMovie(player, ((qs != null) && qs.isStarted()) ? Movie.SI_ILLUSION_02_QUE : Movie.SI_ILLUSION_01_QUE);
 				}
+				
 				player.getVariables().remove(MOVIE_VAR);
 			}
 		}

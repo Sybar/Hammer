@@ -1028,9 +1028,9 @@
 		<set name="material" val="LIQUID" />
 		<set name="price" val="29808" />
 		<set name="weight" val="2" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="85" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="18564" name="Mid-grade R-grade Life Stone" type="EtcItem">
 		<!-- A mineral formed inside a monster under immense impact. Outdated and almost no longer used. Can be exchanged for Spirit Stones through a blacksmith in any town. -->
@@ -1040,9 +1040,9 @@
 		<set name="material" val="LIQUID" />
 		<set name="price" val="119376" />
 		<set name="weight" val="2" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="85" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="18565" name="High-grade R-grade Life Stone" type="EtcItem">
 		<!-- A mineral formed inside a monster under immense impact. Outdated and almost no longer used. Can be exchanged for Spirit Stones through a blacksmith in any town. -->
@@ -1052,9 +1052,9 @@
 		<set name="material" val="LIQUID" />
 		<set name="price" val="596880" />
 		<set name="weight" val="2" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="85" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="18566" name="Top-grade R-grade Life Stone" type="EtcItem">
 		<!-- A mineral formed inside a monster under immense impact. Outdated and almost no longer used. Can be exchanged for Spirit Stones through a blacksmith in any town. -->
@@ -1064,9 +1064,9 @@
 		<set name="material" val="LIQUID" />
 		<set name="price" val="2985120" />
 		<set name="weight" val="2" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="85" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="18567" name="Legendary R-grade Life Stone" type="EtcItem">
 		<!-- A long forgotten mineral. Required level: 85+. -->
@@ -1076,9 +1076,9 @@
 		<set name="material" val="LIQUID" />
 		<set name="price" val="5970240" />
 		<set name="weight" val="2" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="85" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="18568" name="R95-grade Life Stone" type="EtcItem">
 		<!-- A mineral formed inside a monster under immense impact. Outdated and almost no longer used. Can be exchanged for Spirit Stones through a blacksmith in any town. -->
@@ -1088,9 +1088,9 @@
 		<set name="material" val="LIQUID" />
 		<set name="price" val="59616" />
 		<set name="weight" val="2" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="95" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="18569" name="Mid-grade R95-grade Life Stone" type="EtcItem">
 		<!-- A mineral formed inside a monster under immense impact. Outdated and almost no longer used. Can be exchanged for Spirit Stones through a blacksmith in any town. -->
@@ -1100,9 +1100,9 @@
 		<set name="material" val="LIQUID" />
 		<set name="price" val="238752" />
 		<set name="weight" val="2" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="95" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="18570" name="High-grade R95-grade Life Stone" type="EtcItem">
 		<!-- A mineral formed inside a monster under immense impact. Outdated and almost no longer used. Can be exchanged for Spirit Stones through a blacksmith in any town. -->
@@ -1112,9 +1112,9 @@
 		<set name="material" val="LIQUID" />
 		<set name="price" val="1193760" />
 		<set name="weight" val="2" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="95" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="18571" name="Top-grade R95-grade Life Stone" type="EtcItem">
 		<!-- A mineral formed inside a monster under immense impact. Outdated and almost no longer used. Can be exchanged for Spirit Stones through a blacksmith in any town. -->
@@ -1124,9 +1124,9 @@
 		<set name="material" val="LIQUID" />
 		<set name="price" val="5970240" />
 		<set name="weight" val="2" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="95" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="18572" name="Legendary R95-grade Life Stone" type="EtcItem">
 		<!-- A long forgotten mineral. Required level: 95+. -->
@@ -1136,9 +1136,9 @@
 		<set name="material" val="LIQUID" />
 		<set name="price" val="11940480" />
 		<set name="weight" val="2" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="95" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="18573" name="R99-grade Life Stone" type="EtcItem">
 		<!-- A mineral formed inside a monster under immense impact. Outdated and almost no longer used. Can be exchanged for Spirit Stones through a blacksmith in any town. -->
@@ -1148,9 +1148,9 @@
 		<set name="material" val="LIQUID" />
 		<set name="price" val="71540" />
 		<set name="weight" val="2" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="99" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="18574" name="Mid-grade R99-grade Life Stone" type="EtcItem">
 		<!-- A mineral formed inside a monster under immense impact. Outdated and almost no longer used. Can be exchanged for Spirit Stones through a blacksmith in any town. -->
@@ -1160,9 +1160,9 @@
 		<set name="material" val="LIQUID" />
 		<set name="price" val="286500" />
 		<set name="weight" val="2" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="99" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="18575" name="High-grade R99-grade Life Stone" type="EtcItem">
 		<!-- A mineral formed inside a monster under immense impact. Outdated and almost no longer used. Can be exchanged for Spirit Stones through a blacksmith in any town. -->
@@ -1172,9 +1172,9 @@
 		<set name="material" val="LIQUID" />
 		<set name="price" val="1432500" />
 		<set name="weight" val="2" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="99" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="18576" name="Top-grade R99-grade Life Stone" type="EtcItem">
 		<!-- A mineral formed inside a monster under immense impact. Outdated and almost no longer used. Can be exchanged for Spirit Stones through a blacksmith in any town. -->
@@ -1184,9 +1184,9 @@
 		<set name="material" val="LIQUID" />
 		<set name="price" val="7164300" />
 		<set name="weight" val="2" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="99" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="18577" name="Legendary R99-grade Life Stone" type="EtcItem">
 		<!-- Legendary mineral that has been petrified by a creature's physical or magical damage. Key component used in weapon augmentation by characters level 99. -->
@@ -1196,9 +1196,9 @@
 		<set name="material" val="LIQUID" />
 		<set name="price" val="14328600" />
 		<set name="weight" val="2" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="99" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="18578" name="Requiem Shaper" additionalName="Guidance" type="Weapon">
 		<!-- <Soul Crystal Enhancement>. P. Accuracy +7.6. Deals additional PvP damage. When enchanted to +4, increases Critical Damage for standard attacks. -->

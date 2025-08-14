@@ -37,6 +37,7 @@ public class Q10856_SuperionAppears extends Quest
 	private static final int KEKROPUS = 34222;
 	private static final int MELDINA = 32214;
 	private static final int HISTY = 34243;
+	
 	// Misc
 	private static final int MIN_LEVEL = 102;
 	
@@ -101,6 +102,7 @@ public class Q10856_SuperionAppears extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -169,9 +171,11 @@ public class Q10856_SuperionAppears extends Quest
 					htmltext = "34222-01.htm";
 					break;
 				}
+				
 				qs.setState(State.CREATED);
 			}
 		}
+		
 		return htmltext;
 	}
 }

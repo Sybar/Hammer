@@ -172,11 +172,13 @@ public class Hero
 						allyCrest = ClanTable.getInstance().getClan(clanId).getAllyCrestId();
 					}
 				}
+				
 				hero.set(CLAN_CREST, clanCrest);
 				hero.set(CLAN_NAME, clanName);
 				hero.set(ALLY_CREST, allyCrest);
 				hero.set(ALLY_NAME, allyName);
 			}
+			
 			ps.clearParameters();
 		}
 	}
@@ -250,10 +252,12 @@ public class Hero
 							diaryEntry.set("action", castle.getName() + " Castle was successfuly taken");
 						}
 					}
+					
 					diary.add(diaryEntry);
 					diaryentries++;
 				}
 			}
+			
 			HERO_DIARY.put(charId, diary);
 			
 			LOGGER.info("Hero System: Loaded " + diaryentries + " diary entries for Hero: " + CharInfoTable.getInstance().getNameById(charId));
@@ -309,7 +313,7 @@ public class Hero
 					if (charId == charOneId)
 					{
 						final String name = CharInfoTable.getInstance().getNameById(charTwoId);
-						final String cls = ClassListData.getInstance().getClass(charTwoClass).getClientCode();
+						final String cls = ClassListData.getInstance().getClass(charTwoClass).getClassName();
 						if ((name != null) && (cls != null))
 						{
 							final StatSet fight = new StatSet();
@@ -334,6 +338,7 @@ public class Hero
 								fight.set("result", "<font color=\"ffff00\">draw</font>");
 								draws++;
 							}
+							
 							fights.add(fight);
 							numberOfFights++;
 						}
@@ -341,7 +346,7 @@ public class Hero
 					else if (charId == charTwoId)
 					{
 						final String name = CharInfoTable.getInstance().getNameById(charOneId);
-						final String cls = ClassListData.getInstance().getClass(charOneClass).getClientCode();
+						final String cls = ClassListData.getInstance().getClass(charOneClass).getClassName();
 						if ((name != null) && (cls != null))
 						{
 							final StatSet fight = new StatSet();
@@ -366,6 +371,7 @@ public class Hero
 								fight.set("result", "<font color=\"ffff00\">draw</font>");
 								draws++;
 							}
+							
 							fights.add(fight);
 							numberOfFights++;
 						}
@@ -401,6 +407,7 @@ public class Hero
 				return e.getKey();
 			}
 		}
+		
 		return 0;
 	}
 	
@@ -621,6 +628,7 @@ public class Hero
 			{
 				player.sendInventoryUpdate(iu);
 			}
+			
 			player.broadcastUserInfo();
 		}
 		
@@ -714,6 +722,7 @@ public class Hero
 											allyCrest = ClanTable.getInstance().getClan(clanId).getAllyCrestId();
 										}
 									}
+									
 									hero.set(CLAN_CREST, clanCrest);
 									hero.set(CLAN_NAME, clanName);
 									hero.set(ALLY_CREST, allyCrest);

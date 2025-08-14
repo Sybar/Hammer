@@ -66,6 +66,7 @@ public class EnemyNot implements ITargetTypeHandler
 				{
 					creature.sendPacket(SystemMessageId.THE_DISTANCE_IS_TOO_FAR_AND_SO_THE_CASTING_HAS_BEEN_CANCELLED);
 				}
+				
 				return null;
 			}
 			
@@ -75,6 +76,7 @@ public class EnemyNot implements ITargetTypeHandler
 				{
 					creature.sendPacket(SystemMessageId.THE_TARGET_IS_LOCATED_WHERE_YOU_CANNOT_CHARGE);
 				}
+				
 				return null;
 			}
 			
@@ -85,6 +87,7 @@ public class EnemyNot implements ITargetTypeHandler
 				{
 					creature.sendPacket(SystemMessageId.CANNOT_SEE_TARGET);
 				}
+				
 				return null;
 			}
 			

@@ -77,6 +77,7 @@ public class SpawnGroup implements Cloneable, ITerritorized, IParameterized<Stat
 		{
 			_territories = new ArrayList<>();
 		}
+		
 		_territories.add(territory);
 	}
 	
@@ -93,6 +94,7 @@ public class SpawnGroup implements Cloneable, ITerritorized, IParameterized<Stat
 		{
 			_bannedTerritories = new ArrayList<>();
 		}
+		
 		_bannedTerritories.add(territory);
 	}
 	
@@ -124,6 +126,7 @@ public class SpawnGroup implements Cloneable, ITerritorized, IParameterized<Stat
 				result.add(spawn);
 			}
 		}
+		
 		return result;
 	}
 	

@@ -52,6 +52,7 @@ public class OpCompanionSkillCondition implements ISkillCondition
 				}
 			}
 		}
+		
 		return false;
 	}
 }

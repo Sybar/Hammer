@@ -234,6 +234,7 @@ public class ItemAuctionInstance
 				return item;
 			}
 		}
+		
 		return null;
 	}
 	
@@ -291,6 +292,7 @@ public class ItemAuctionInstance
 			default:
 			{
 				Arrays.sort(auctions, Comparator.comparingLong(ItemAuction::getStartingTime).reversed());
+				
 				// just to make sure we won't skip any auction because of little different times
 				final long currentTime = System.currentTimeMillis();
 				for (ItemAuction auction : auctions)
@@ -306,6 +308,7 @@ public class ItemAuctionInstance
 						break; // only first
 					}
 				}
+				
 				for (ItemAuction auction : auctions)
 				{
 					if ((auction.getStartingTime() > currentTime) && (currentAuction != auction))
@@ -314,6 +317,7 @@ public class ItemAuctionInstance
 						break;
 					}
 				}
+				
 				if (nextAuction == null)
 				{
 					nextAuction = createAuction(System.currentTimeMillis() + START_TIME_SPACE);
@@ -337,6 +341,7 @@ public class ItemAuctionInstance
 			{
 				setStateTask(ThreadPool.schedule(new ScheduleAuctionTask(currentAuction), Math.max(currentAuction.getStartingTime() - System.currentTimeMillis(), 0)));
 			}
+			
 			LOGGER.info(getClass().getSimpleName() + ": Schedule current auction " + currentAuction.getAuctionId() + " for instance " + _instanceId);
 		}
 		else
@@ -366,6 +371,7 @@ public class ItemAuctionInstance
 				}
 			}
 		}
+		
 		return stack;
 	}
 	
@@ -414,6 +420,7 @@ public class ItemAuctionInstance
 					{
 						throw new IllegalStateException("Could not set auction state: " + ItemAuctionState.STARTED + ", expected: " + state);
 					}
+					
 					LOGGER.info(getClass().getSimpleName() + ": Auction " + _auction.getAuctionId() + " has started for instance " + _auction.getInstanceId());
 					checkAndSetCurrentAndNextAuction();
 					break;
@@ -555,6 +562,7 @@ public class ItemAuctionInstance
 						LOGGER.warning(getClass().getSimpleName() + ": Auction data not found for auction: " + auctionId);
 						return null;
 					}
+					
 					auctionItemId = rset.getInt(1);
 					startingTime = rset.getLong(2);
 					endingTime = rset.getLong(3);
@@ -596,6 +604,7 @@ public class ItemAuctionInstance
 					ps.setInt(1, auctionId);
 					ps.execute();
 				}
+				
 				return null;
 			}
 			
@@ -614,6 +623,7 @@ public class ItemAuctionInstance
 					}
 				}
 			}
+			
 			return new ItemAuction(auctionId, _instanceId, startingTime, endingTime, auctionItem, auctionBids, auctionState);
 		}
 	}

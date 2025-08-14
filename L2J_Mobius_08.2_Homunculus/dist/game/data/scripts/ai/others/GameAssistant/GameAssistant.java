@@ -45,6 +45,7 @@ public class GameAssistant extends AbstractNpcAI
 {
 	// NPC
 	private static final int MERCHANT = 32478; // Game Assistant
+	
 	// Items
 	private static final int MINION_COUPON = 13273; // Minion Coupon (5-hour)
 	private static final int MINION_COUPON_EV = 13383; // Minion Coupon (5-hour) (Event)
@@ -54,6 +55,7 @@ public class GameAssistant extends AbstractNpcAI
 	private static final int ENH_MINION_COUPON_EV = 22240; // Enhanced Rose Spirit Coupon (5-hour) - Event
 	private static final int NOBLE_UPG_STONE = 48212; // Noble Upgrade Stone
 	private static final int RADIANT_UPG_STONE = 48213; // Radiant Upgrade Stone
+	
 	// Others
 	private static final HashMap<String, Integer> MINION_EXCHANGE = new HashMap<>();
 	static
@@ -200,6 +202,7 @@ public class GameAssistant extends AbstractNpcAI
 							player.getActiveWarehouse().destroyItem(ItemProcessType.DESTROY, i, player, null);
 						}
 					}
+					
 					player.sendPacket(new WareHouseWithdrawalList(1, player, WareHouseWithdrawalList.FREIGHT));
 					player.sendPacket(new WareHouseWithdrawalList(2, player, WareHouseWithdrawalList.FREIGHT));
 				}
@@ -217,6 +220,7 @@ public class GameAssistant extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -236,10 +240,12 @@ public class GameAssistant extends AbstractNpcAI
 			final IItemHandler handler = ItemHandler.getInstance().getHandler(summonItem.getEtcItem());
 			if ((handler != null) && !player.hasPet())
 			{
-				handler.useItem(player, summonItem, true);
+				handler.onItemUse(player, summonItem, true);
 			}
+			
 			htmltext = "32478-08.html";
 		}
+		
 		return htmltext;
 	}
 	
@@ -280,6 +286,7 @@ public class GameAssistant extends AbstractNpcAI
 							break;
 						}
 					}
+					
 					htmltext = "32478-21a.html";
 					break;
 				}
@@ -289,6 +296,7 @@ public class GameAssistant extends AbstractNpcAI
 		{
 			htmltext = "32478-21b.html";
 		}
+		
 		return htmltext;
 	}
 	

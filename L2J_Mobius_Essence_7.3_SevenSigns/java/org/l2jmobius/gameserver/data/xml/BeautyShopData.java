@@ -96,6 +96,7 @@ public class BeautyShopData implements IXmlReader
 											att = attrs.item(i);
 											set.set(att.getNodeName(), att.getNodeValue());
 										}
+										
 										final BeautyItem hair = new BeautyItem(set);
 										for (Node g = a.getFirstChild(); g != null; g = g.getNextSibling())
 										{
@@ -108,9 +109,11 @@ public class BeautyShopData implements IXmlReader
 													att = attrs.item(i);
 													set.set(att.getNodeName(), att.getNodeValue());
 												}
+												
 												hair.addColor(set);
 											}
 										}
+										
 										beautyData.addHair(hair);
 									}
 									else if ("face".equalsIgnoreCase(a.getNodeName()))
@@ -122,6 +125,7 @@ public class BeautyShopData implements IXmlReader
 											att = attrs.item(i);
 											set.set(att.getNodeName(), att.getNodeValue());
 										}
+										
 										final BeautyItem face = new BeautyItem(set);
 										beautyData.addFace(face);
 									}
@@ -130,6 +134,7 @@ public class BeautyShopData implements IXmlReader
 								_beautyData.put(sex, beautyData);
 							}
 						}
+						
 						_beautyList.put(race, _beautyData);
 					}
 				}
@@ -148,6 +153,7 @@ public class BeautyShopData implements IXmlReader
 		{
 			return _beautyList.get(race).get(sex);
 		}
+		
 		return null;
 	}
 	

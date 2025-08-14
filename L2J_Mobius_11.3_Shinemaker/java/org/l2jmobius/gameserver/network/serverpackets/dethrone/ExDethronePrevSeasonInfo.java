@@ -66,6 +66,7 @@ public class ExDethronePrevSeasonInfo extends ServerPacket
 					break;
 				}
 			}
+			
 			_conquerorName = previousConquestPlayerList.get(1).getString("conquest_name");
 			_rankPercent = previousConquestPlayerList.size();
 		}

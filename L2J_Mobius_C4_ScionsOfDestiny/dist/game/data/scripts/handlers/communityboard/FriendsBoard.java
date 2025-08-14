@@ -56,13 +56,7 @@ public class FriendsBoard implements IParseBoardHandler
 	};
 	
 	@Override
-	public String[] getCommunityBoardCommands()
-	{
-		return COMMANDS;
-	}
-	
-	@Override
-	public boolean parseCommunityBoardCommand(String command, Player player)
+	public boolean onCommand(String command, Player player)
 	{
 		if (command.equals("_friendlist") || command.equals("_friendlist_0_"))
 		{
@@ -218,12 +212,13 @@ public class FriendsBoard implements IParseBoardHandler
 				showBlockList(player, false);
 			}
 		}
+		
 		return true;
 	}
 	
 	private void showFriendsList(Player player, boolean delMsg)
 	{
-		String html = HtmCache.getInstance().getHtm(player, "data/html/CommunityBoard/friends_list.html");
+		String html = HtmCache.getInstance().getHtm(player, "data/html/CommunityBoard/friends/friends_list.html");
 		if (html == null)
 		{
 			return;
@@ -256,6 +251,7 @@ public class FriendsBoard implements IParseBoardHandler
 			friendListHtml.append(((friend != null) && friend.isOnline()) ? "(on)" : "(off)");
 			friendListHtml.append("<br1>");
 		}
+		
 		html = html.replace("%friendslist%", friendListHtml.toString());
 		
 		friendListHtml.setLength(0);
@@ -277,6 +273,7 @@ public class FriendsBoard implements IParseBoardHandler
 			friendListHtml.append(((friend != null) && friend.isOnline()) ? "(on)" : "(off)");
 			friendListHtml.append("<br1>");
 		}
+		
 		html = html.replace("%selectedFriendsList%", friendListHtml.toString());
 		html = html.replace("%deleteMSG%", delMsg ? FRIENDLIST_DELETE_BUTTON : "");
 		CommunityBoardHandler.separateAndSend(html, player);
@@ -284,7 +281,7 @@ public class FriendsBoard implements IParseBoardHandler
 	
 	private void showBlockList(Player player, boolean delMsg)
 	{
-		String html = HtmCache.getInstance().getHtm(player, "data/html/CommunityBoard/friends_block_list.html");
+		String html = HtmCache.getInstance().getHtm(player, "data/html/CommunityBoard/friends/friends_block_list.html");
 		if (html == null)
 		{
 			return;
@@ -315,6 +312,7 @@ public class FriendsBoard implements IParseBoardHandler
 			blockListHtml.append(((block != null) && block.isOnline()) ? "(on)" : "(off)");
 			blockListHtml.append("<br1>");
 		}
+		
 		html = html.replace("%blocklist%", blockListHtml.toString());
 		
 		blockListHtml.setLength(0);
@@ -334,6 +332,7 @@ public class FriendsBoard implements IParseBoardHandler
 			blockListHtml.append(((block != null) && block.isOnline()) ? "(on)" : "(off)");
 			blockListHtml.append("<br1>");
 		}
+		
 		html = html.replace("%selectedBlocksList%", blockListHtml.toString());
 		html = html.replace("%deleteMSG%", delMsg ? BLOCKLIST_DELETE_BUTTON : "");
 		CommunityBoardHandler.separateAndSend(html, player);
@@ -341,7 +340,7 @@ public class FriendsBoard implements IParseBoardHandler
 	
 	public static void showMailWrite(Player player)
 	{
-		String html = HtmCache.getInstance().getHtm(player, "data/html/CommunityBoard/friend-mail.html");
+		String html = HtmCache.getInstance().getHtm(player, "data/html/CommunityBoard/friends/friend-mail.html");
 		if (html == null)
 		{
 			return;
@@ -375,6 +374,13 @@ public class FriendsBoard implements IParseBoardHandler
 			MailBoard.getInstance().sendMail(arg3, arg4, arg5, player);
 			showFriendsList(player, false);
 		}
+		
 		return false;
+	}
+	
+	@Override
+	public String[] getCommandList()
+	{
+		return COMMANDS;
 	}
 }

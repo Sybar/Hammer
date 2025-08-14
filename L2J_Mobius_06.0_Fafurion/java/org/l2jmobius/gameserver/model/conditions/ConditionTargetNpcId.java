@@ -49,6 +49,7 @@ public class ConditionTargetNpcId extends Condition
 		{
 			return _npcIds.contains(effected.getId());
 		}
+		
 		return false;
 	}
 }

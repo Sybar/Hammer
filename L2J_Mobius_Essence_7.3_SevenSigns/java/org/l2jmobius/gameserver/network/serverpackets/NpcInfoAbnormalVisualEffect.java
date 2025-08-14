@@ -53,6 +53,7 @@ public class NpcInfoAbnormalVisualEffect extends ServerPacket
 		{
 			buffer.writeShort(abnormalVisualEffect.getClientId());
 		}
+		
 		if (_team == Team.BLUE)
 		{
 			if (Config.BLUE_TEAM_ABNORMAL_EFFECT != null)

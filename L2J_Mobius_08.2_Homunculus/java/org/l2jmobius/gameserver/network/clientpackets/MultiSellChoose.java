@@ -97,6 +97,7 @@ public class MultiSellChoose extends ClientPacket
 			final int ensoulId = readInt(); // Ensoul option id
 			_soulCrystalOptions[i] = EnsoulData.getInstance().getOption(ensoulId);
 		}
+		
 		_soulCrystalSpecialOptions = new EnsoulOption[readByte()]; // Special ensoul size
 		for (int i = 0; i < _soulCrystalSpecialOptions.length; i++)
 		{
@@ -167,11 +168,13 @@ public class MultiSellChoose extends ClientPacket
 			PacketLogger.warning("Character: " + player.getName() + " requested null multisell entry. Multisell: " + _listId + " entry: " + _entryId);
 			return;
 		}
+		
 		if (entries.isEmpty())
 		{
 			PacketLogger.warning("Character: " + player.getName() + " requested empty multisell entry. Multisell: " + _listId + " entry: " + _entryId);
 			return;
 		}
+		
 		if ((_entryId - 1) >= entries.size())
 		{
 			PacketLogger.warning("Character: " + player.getName() + " requested out of bounds multisell entry. Multisell: " + _listId + " entry: " + _entryId);
@@ -196,7 +199,7 @@ public class MultiSellChoose extends ClientPacket
 		ItemInfo itemEnchantment = list.getItemEnchantment(_entryId - 1); // Entry Id begins from 1. We currently use entry IDs as index pointer.
 		
 		// Validate the requested item with its full stats.
-		//@formatter:off
+		// @formatter:off
 		if ((itemEnchantment != null) && ((_amount > 1)
 			|| (itemEnchantment.getEnchantLevel() != _enchantLevel)
 			|| (itemEnchantment.getAttackElementType() != _attackAttribute) 
@@ -214,7 +217,7 @@ public class MultiSellChoose extends ClientPacket
 			|| ((_soulCrystalSpecialOptions != null) && !itemEnchantment.soulCrystalSpecialOptionsMatch(_soulCrystalSpecialOptions))
 			|| ((_soulCrystalSpecialOptions == null) && !itemEnchantment.getSoulCrystalSpecialOptions().isEmpty())
 			))
-		//@formatter:on
+		// @formatter:on
 		{
 			PacketLogger.warning("Character: " + player.getName() + " is trying to upgrade equippable item, but the stats doesn't match. Id: " + _listId + " entry: " + _entryId);
 			player.setMultiSell(null);
@@ -304,11 +307,13 @@ public class MultiSellChoose extends ClientPacket
 						added = true;
 					}
 				}
+				
 				if (!added)
 				{
 					summedIngredients.add(ingredient);
 				}
 			}
+			
 			for (ItemChanceHolder ingredient : summedIngredients)
 			{
 				if (ingredient.getEnchantmentLevel() > 0)
@@ -525,27 +530,33 @@ public class MultiSellChoose extends ClientPacket
 							{
 								addedItem.setAttribute(new AttributeHolder(AttributeType.FIRE, itemEnchantment.getAttributeDefence(AttributeType.FIRE)), false);
 							}
+							
 							if (itemEnchantment.getAttributeDefence(AttributeType.WATER) > 0)
 							{
 								addedItem.setAttribute(new AttributeHolder(AttributeType.WATER, itemEnchantment.getAttributeDefence(AttributeType.WATER)), false);
 							}
+							
 							if (itemEnchantment.getAttributeDefence(AttributeType.WIND) > 0)
 							{
 								addedItem.setAttribute(new AttributeHolder(AttributeType.WIND, itemEnchantment.getAttributeDefence(AttributeType.WIND)), false);
 							}
+							
 							if (itemEnchantment.getAttributeDefence(AttributeType.EARTH) > 0)
 							{
 								addedItem.setAttribute(new AttributeHolder(AttributeType.EARTH, itemEnchantment.getAttributeDefence(AttributeType.EARTH)), false);
 							}
+							
 							if (itemEnchantment.getAttributeDefence(AttributeType.HOLY) > 0)
 							{
 								addedItem.setAttribute(new AttributeHolder(AttributeType.HOLY, itemEnchantment.getAttributeDefence(AttributeType.HOLY)), false);
 							}
+							
 							if (itemEnchantment.getAttributeDefence(AttributeType.DARK) > 0)
 							{
 								addedItem.setAttribute(new AttributeHolder(AttributeType.DARK, itemEnchantment.getAttributeDefence(AttributeType.DARK)), false);
 							}
 						}
+						
 						if (_soulCrystalOptions != null)
 						{
 							int pos = -1;
@@ -555,6 +566,7 @@ public class MultiSellChoose extends ClientPacket
 								addedItem.addSpecialAbility(ensoul, pos, 1, false);
 							}
 						}
+						
 						if (_soulCrystalSpecialOptions != null)
 						{
 							for (EnsoulOption ensoul : _soulCrystalSpecialOptions)
@@ -616,6 +628,7 @@ public class MultiSellChoose extends ClientPacket
 						taxPaid += Math.round(ingredient.getCount() * list.getIngredientMultiplier() * list.getTaxRate()) * _amount;
 					}
 				}
+				
 				if (taxPaid > 0)
 				{
 					npc.handleTaxPayment(taxPaid);
@@ -669,6 +682,7 @@ public class MultiSellChoose extends ClientPacket
 						player.sendPacket(SystemMessageId.THE_CLAN_REPUTATION_IS_TOO_LOW);
 						return false;
 					}
+					
 					return true;
 				}
 				case FAME:
@@ -678,6 +692,7 @@ public class MultiSellChoose extends ClientPacket
 						player.sendPacket(SystemMessageId.YOU_DON_T_HAVE_ENOUGH_FAME_TO_DO_THAT);
 						return false;
 					}
+					
 					return true;
 				}
 				case RAIDBOSS_POINTS:
@@ -687,6 +702,7 @@ public class MultiSellChoose extends ClientPacket
 						player.sendPacket(SystemMessageId.NOT_ENOUGH_RAID_POINTS);
 						return false;
 					}
+					
 					return true;
 				}
 				case PC_CAFE_POINTS:
@@ -696,6 +712,7 @@ public class MultiSellChoose extends ClientPacket
 						player.sendPacket(SystemMessageId.YOU_ARE_SHORT_OF_PA_POINTS);
 						return false;
 					}
+					
 					return true;
 				}
 				default:
@@ -714,6 +731,7 @@ public class MultiSellChoose extends ClientPacket
 			player.sendPacket(sm);
 			return false;
 		}
+		
 		return true;
 	}
 }

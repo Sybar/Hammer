@@ -38,6 +38,7 @@ public class Roiental extends AbstractNpcAI
 {
 	// NPCs
 	private static final int ROIENTAL = 34571;
+	
 	// Misc
 	private static final int TOH_GB_TEMPLATE_ID = 307; // Throne of Heroes - Goldberg
 	private static final int TOH_MR_TEMPLATE_ID = 308; // Throne of Heroes - Mary Reed
@@ -86,6 +87,7 @@ public class Roiental extends AbstractNpcAI
 				htmltext = "Roiental-01a.html";
 			}
 		}
+		
 		if (event.equals("enterMaryReed"))
 		{
 			if (player.getLevel() < MIN_LVL)
@@ -113,6 +115,7 @@ public class Roiental extends AbstractNpcAI
 				htmltext = "Roiental-01b.html";
 			}
 		}
+		
 		if (event.equals("enterTauti"))
 		{
 			if (player.getLevel() < MIN_LVL)
@@ -140,6 +143,7 @@ public class Roiental extends AbstractNpcAI
 				htmltext = "Roiental-01c.html";
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -164,6 +168,7 @@ public class Roiental extends AbstractNpcAI
 		{
 			htmltext = "Roiental-01.html";
 		}
+		
 		return htmltext;
 	}
 	

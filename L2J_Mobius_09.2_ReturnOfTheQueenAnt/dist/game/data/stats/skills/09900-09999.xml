@@ -321,14 +321,14 @@
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>37112</itemConsumeId>
 		<magicLevel>1</magicLevel>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<and>
 				<player canEscape="true" />
 				<not>
 					<player insideZoneId="10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508" />
 				</not>
 			</and>
-		</cond>
+		</conditions>
 		<effects>
 			<effect name="Teleport">
 				<x>108458</x>
@@ -358,14 +358,14 @@
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>37113</itemConsumeId>
 		<magicLevel>1</magicLevel>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<and>
 				<player canEscape="true" />
 				<not>
 					<player insideZoneId="10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508" />
 				</not>
 			</and>
-		</cond>
+		</conditions>
 		<effects>
 			<effect name="Teleport">
 				<x>83676</x>
@@ -385,14 +385,14 @@
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>37114</itemConsumeId>
 		<magicLevel>1</magicLevel>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<and>
 				<player canEscape="true" />
 				<not>
 					<player insideZoneId="10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508" />
 				</not>
 			</and>
-		</cond>
+		</conditions>
 		<effects>
 			<effect name="Teleport">
 				<x>81013</x>
@@ -422,14 +422,14 @@
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>37119</itemConsumeId>
 		<magicLevel>1</magicLevel>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<and>
 				<player canEscape="true" />
 				<not>
 					<player insideZoneId="10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508" />
 				</not>
 			</and>
-		</cond>
+		</conditions>
 		<effects>
 			<effect name="Teleport">
 				<x>147491</x>
@@ -459,14 +459,14 @@
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>37121</itemConsumeId>
 		<magicLevel>1</magicLevel>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<and>
 				<player canEscape="true" />
 				<not>
 					<player insideZoneId="10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508" />
 				</not>
 			</and>
-		</cond>
+		</conditions>
 		<effects>
 			<effect name="Teleport">
 				<x>147491</x>
@@ -497,14 +497,14 @@
 		<itemConsumeId>37027</itemConsumeId>
 		<itemConsumeId>37123</itemConsumeId>
 		<magicLevel>1</magicLevel>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<and>
 				<player canEscape="true" />
 				<not>
 					<player insideZoneId="10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508" />
 				</not>
 			</and>
-		</cond>
+		</conditions>
 		<effects>
 			<effect name="Teleport">
 				<x>86404</x>
@@ -821,14 +821,14 @@
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>37025</itemConsumeId>
 		<magicLevel>1</magicLevel>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<and>
 				<player canEscape="true" />
 				<not>
 					<player insideZoneId="10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508" />
 				</not>
 			</and>
-		</cond>
+		</conditions>
 		<effects>
 			<effect name="Teleport">
 				<x>115583</x>
@@ -848,14 +848,14 @@
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>37026</itemConsumeId>
 		<magicLevel>1</magicLevel>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<and>
 				<player canEscape="true" />
 				<not>
 					<player insideZoneId="10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508" />
 				</not>
 			</and>
-		</cond>
+		</conditions>
 		<effects>
 			<effect name="Teleport">
 				<x>91539</x>
@@ -875,14 +875,14 @@
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>37027</itemConsumeId>
 		<magicLevel>1</magicLevel>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<and>
 				<player canEscape="true" />
 				<not>
 					<player insideZoneId="10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508" />
 				</not>
 			</and>
-		</cond>
+		</conditions>
 		<effects>
 			<effect name="Teleport">
 				<x>63990</x>
@@ -902,14 +902,14 @@
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>37028</itemConsumeId>
 		<magicLevel>1</magicLevel>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<and>
 				<player canEscape="true" />
 				<not>
 					<player insideZoneId="10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508" />
 				</not>
 			</and>
-		</cond>
+		</conditions>
 		<effects>
 			<effect name="Teleport">
 				<x>174470</x>
@@ -929,14 +929,14 @@
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>37029</itemConsumeId>
 		<magicLevel>1</magicLevel>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<and>
 				<player canEscape="true" />
 				<not>
 					<player insideZoneId="10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508" />
 				</not>
 			</and>
-		</cond>
+		</conditions>
 		<effects>
 			<effect name="Teleport">
 				<x>183522</x>
@@ -956,14 +956,14 @@
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>37030</itemConsumeId>
 		<magicLevel>1</magicLevel>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<and>
 				<player canEscape="true" />
 				<not>
 					<player insideZoneId="10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508" />
 				</not>
 			</and>
-		</cond>
+		</conditions>
 		<effects>
 			<effect name="Teleport">
 				<x>69340</x>
@@ -983,14 +983,14 @@
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>37031</itemConsumeId>
 		<magicLevel>1</magicLevel>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<and>
 				<player canEscape="true" />
 				<not>
 					<player insideZoneId="10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508" />
 				</not>
 			</and>
-		</cond>
+		</conditions>
 		<effects>
 			<effect name="Teleport">
 				<x>52107</x>
@@ -1010,14 +1010,14 @@
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>37032</itemConsumeId>
 		<magicLevel>1</magicLevel>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<and>
 				<player canEscape="true" />
 				<not>
 					<player insideZoneId="10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508" />
 				</not>
 			</and>
-		</cond>
+		</conditions>
 		<effects>
 			<effect name="Teleport">
 				<x>165054</x>
@@ -1037,14 +1037,14 @@
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>37034</itemConsumeId>
 		<magicLevel>1</magicLevel>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<and>
 				<player canEscape="true" />
 				<not>
 					<player insideZoneId="10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508" />
 				</not>
 			</and>
-		</cond>
+		</conditions>
 		<effects>
 			<effect name="Teleport">
 				<x>125740</x>
@@ -1064,14 +1064,14 @@
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>37035</itemConsumeId>
 		<magicLevel>1</magicLevel>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<and>
 				<player canEscape="true" />
 				<not>
 					<player insideZoneId="10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508" />
 				</not>
 			</and>
-		</cond>
+		</conditions>
 		<effects>
 			<effect name="Teleport">
 				<x>146718</x>
@@ -1091,14 +1091,14 @@
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>37036</itemConsumeId>
 		<magicLevel>1</magicLevel>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<and>
 				<player canEscape="true" />
 				<not>
 					<player insideZoneId="10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508" />
 				</not>
 			</and>
-		</cond>
+		</conditions>
 		<effects>
 			<effect name="Teleport">
 				<x>70255</x>
@@ -1118,14 +1118,14 @@
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>37037</itemConsumeId>
 		<magicLevel>1</magicLevel>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<and>
 				<player canEscape="true" />
 				<not>
 					<player insideZoneId="10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508" />
 				</not>
 			</and>
-		</cond>
+		</conditions>
 		<effects>
 			<effect name="Teleport">
 				<x>79337</x>
@@ -1155,14 +1155,14 @@
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>37039</itemConsumeId>
 		<magicLevel>1</magicLevel>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<and>
 				<player canEscape="true" />
 				<not>
 					<player insideZoneId="10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508" />
 				</not>
 			</and>
-		</cond>
+		</conditions>
 		<effects>
 			<effect name="Teleport">
 				<x>86922</x>
@@ -1181,14 +1181,14 @@
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>37040</itemConsumeId>
 		<magicLevel>1</magicLevel>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<and>
 				<player canEscape="true" />
 				<not>
 					<player insideZoneId="10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508" />
 				</not>
 			</and>
-		</cond>
+		</conditions>
 		<effects>
 			<effect name="Teleport">
 				<x>81307</x>
@@ -1343,14 +1343,14 @@
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>37117</itemConsumeId>
 		<magicLevel>1</magicLevel>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<and>
 				<player canEscape="true" />
 				<not>
 					<player insideZoneId="10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508" />
 				</not>
 			</and>
-		</cond>
+		</conditions>
 		<effects>
 			<effect name="Teleport">
 				<x>42682</x>
@@ -1370,14 +1370,14 @@
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>37118</itemConsumeId>
 		<magicLevel>1</magicLevel>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<and>
 				<player canEscape="true" />
 				<not>
 					<player insideZoneId="10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508" />
 				</not>
 			</and>
-		</cond>
+		</conditions>
 		<effects>
 			<effect name="Teleport">
 				<x>42682</x>
@@ -1399,14 +1399,14 @@
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>37115</itemConsumeId>
 		<magicLevel>1</magicLevel>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<and>
 				<player canEscape="true" />
 				<not>
 					<player insideZoneId="10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508" />
 				</not>
 			</and>
-		</cond>
+		</conditions>
 		<effects>
 			<effect name="Teleport">
 				<x>147540</x>
@@ -1426,14 +1426,14 @@
 		<itemConsumeCount>1</itemConsumeCount>
 		<itemConsumeId>37116</itemConsumeId>
 		<magicLevel>1</magicLevel>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<and>
 				<player canEscape="true" />
 				<not>
 					<player insideZoneId="10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508" />
 				</not>
 			</and>
-		</cond>
+		</conditions>
 		<effects>
 			<effect name="Teleport">
 				<x>147540</x>

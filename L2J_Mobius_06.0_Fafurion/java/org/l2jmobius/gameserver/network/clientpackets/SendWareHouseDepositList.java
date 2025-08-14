@@ -66,6 +66,7 @@ public class SendWareHouseDepositList extends ClientPacket
 				_items = null;
 				return;
 			}
+			
 			_items.add(new ItemHolder(objId, count));
 		}
 	}
@@ -140,6 +141,7 @@ public class SendWareHouseDepositList extends ClientPacket
 			{
 				currentAdena -= itemHolder.getCount();
 			}
+			
 			if (!item.isStackable())
 			{
 				slots += itemHolder.getCount();

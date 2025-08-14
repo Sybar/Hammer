@@ -561,9 +561,9 @@
 		<set name="etcitem_type" val="SCROLL" />
 		<set name="material" val="PAPER" />
 		<set name="handler" val="ItemSkills" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="18582" level="1" /> <!-- Scroll of Escape: Goddard -->
 		</skills>
@@ -580,9 +580,9 @@
 		<set name="etcitem_type" val="SCROLL" />
 		<set name="material" val="PAPER" />
 		<set name="handler" val="ItemSkills" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="18582" level="2" /> <!-- Scroll of Escape: Varka Silenos Barracks -->
 		</skills>
@@ -599,9 +599,9 @@
 		<set name="etcitem_type" val="SCROLL" />
 		<set name="material" val="PAPER" />
 		<set name="handler" val="ItemSkills" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="18582" level="4" /> <!-- Scroll of Escape: Giran -->
 		</skills>
@@ -618,9 +618,9 @@
 		<set name="etcitem_type" val="SCROLL" />
 		<set name="material" val="PAPER" />
 		<set name="handler" val="ItemSkills" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="18582" level="3" /> <!-- Scroll of Escape: Ketra Orc Outpost -->
 		</skills>
@@ -637,9 +637,9 @@
 		<set name="etcitem_type" val="SCROLL" />
 		<set name="material" val="PAPER" />
 		<set name="handler" val="ItemSkills" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="18582" level="5" /> <!-- Scroll of Escape: Goddard -->
 		</skills>
@@ -656,9 +656,9 @@
 		<set name="etcitem_type" val="SCROLL" />
 		<set name="material" val="PAPER" />
 		<set name="handler" val="ItemSkills" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="18582" level="6" /> <!-- Scroll of Escape: Dragon Valley -->
 		</skills>
@@ -1011,9 +1011,9 @@
 		<set name="etcitem_type" val="SCROLL" />
 		<set name="material" val="PAPER" />
 		<set name="handler" val="ItemSkills" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="18582" level="7" /> <!-- Scroll of Escape: Giant's Cave -->
 		</skills>

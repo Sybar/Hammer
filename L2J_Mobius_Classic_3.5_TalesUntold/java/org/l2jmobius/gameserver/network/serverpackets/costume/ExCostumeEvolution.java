@@ -75,6 +75,7 @@ public class ExCostumeEvolution extends ServerPacket
 		{
 			buffer.writeInt(0); // Handle the case where targetCostumes is null
 		}
+		
 		if (_resultCostume != null)
 		{
 			buffer.writeInt(1);

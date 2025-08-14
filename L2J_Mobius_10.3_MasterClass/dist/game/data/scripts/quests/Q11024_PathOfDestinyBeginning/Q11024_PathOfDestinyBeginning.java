@@ -64,13 +64,16 @@ public class Q11024_PathOfDestinyBeginning extends Quest
 	private static final int NASTY_BUGGLE = 24381;
 	private static final int NASTY_ZOMBIE = 24382;
 	private static final int NASTY_ZOMBIE_LORD = 24383;
+	
 	// Items
 	private static final int SS_NG_NOVICE = 5789;
 	private static final int BSS_NG_NOVICE = 5790;
 	private static final ItemHolder TELEPORT_CUBE = new ItemHolder(81875, 1);
+	
 	// Locations
 	private static final Location TRAINING_GROUNDS_TELEPORT = new Location(-17916, 143630, -3904);
 	private static final Location TRAINING_GROUNDS_TELEPORT2 = new Location(-16744, 140209, -3872);
+	
 	// Misc
 	private static final String SHOTS_REWARD_CHECK_VAR = "SHOTS_REWARD_CHECK";
 	private static final String REWARD_CHECK_VAR1 = "Q11024_REWARD_1";
@@ -150,6 +153,7 @@ public class Q11024_PathOfDestinyBeginning extends Quest
 							addExpAndSp(player, 158, 1);
 						}
 					}
+					
 					htmltext = event;
 				}
 				break;
@@ -174,6 +178,7 @@ public class Q11024_PathOfDestinyBeginning extends Quest
 						showOnScreenMsg(player, NpcStringId.CLASS_TRANSFER_IS_AVAILABLE_CLICK_THE_CLASS_TRANSFER_ICON_IN_THE_NOTIFICATION_WINDOW_TO_TRANSFER_YOUR_CLASS, ExShowScreenMessage.TOP_CENTER, 10000);
 						player.sendPacket(ExClassChangeSetAlarm.STATIC_PACKET);
 					}
+					
 					final Quest nextQuest = QuestManager.getInstance().getQuest(Q11025_PathOfDestinyProving.class.getSimpleName());
 					if (nextQuest != null)
 					{
@@ -192,6 +197,7 @@ public class Q11024_PathOfDestinyBeginning extends Quest
 						player.getVariables().set(REWARD_CHECK_VAR1, true);
 						addExpAndSp(player, 292, 1);
 					}
+					
 					htmltext = event;
 				}
 				break;
@@ -258,6 +264,7 @@ public class Q11024_PathOfDestinyBeginning extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -330,6 +337,7 @@ public class Q11024_PathOfDestinyBeginning extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -406,6 +414,7 @@ public class Q11024_PathOfDestinyBeginning extends Quest
 				return holder;
 			}
 		}
+		
 		return super.getNpcLogList(player);
 	}
 	

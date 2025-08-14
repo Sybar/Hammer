@@ -64,6 +64,7 @@ public class PetDataTable implements IXmlReader
 			{
 				final int npcId = parseInteger(d.getAttributes(), "id");
 				final int itemId = parseInteger(d.getAttributes(), "itemId");
+				
 				// index ignored for now
 				final PetData data = new PetData(npcId, itemId);
 				for (Node p = d.getFirstChild(); p != null; p = p.getNextSibling())
@@ -91,6 +92,7 @@ public class PetDataTable implements IXmlReader
 						{
 							data.setSyncLevel(parseInteger(attrs, "val") == 1);
 						}
+						
 						// evolve ignored
 					}
 					else if (p.getNodeName().equals("skills"))
@@ -127,6 +129,7 @@ public class PetDataTable implements IXmlReader
 											{
 												set.set("slowFlySpeedOnRide", attrs.getNamedItem("slowFly").getNodeValue());
 											}
+											
 											if (attrs.getNamedItem("fastFly") != null)
 											{
 												set.set("fastFlySpeedOnRide", attrs.getNamedItem("fastFly").getNodeValue());
@@ -138,11 +141,13 @@ public class PetDataTable implements IXmlReader
 										}
 									}
 								}
+								
 								data.addNewStat(level, new PetLevelData(set));
 							}
 						}
 					}
 				}
+				
 				_pets.put(npcId, data);
 			}
 		}
@@ -162,6 +167,7 @@ public class PetDataTable implements IXmlReader
 				return data;
 			}
 		}
+		
 		return null;
 	}
 	
@@ -180,8 +186,10 @@ public class PetDataTable implements IXmlReader
 			{
 				return pd.getPetLevelData(pd.getMaxLevel());
 			}
+			
 			return pd.getPetLevelData(petLevel);
 		}
+		
 		return null;
 	}
 	
@@ -196,6 +204,7 @@ public class PetDataTable implements IXmlReader
 		{
 			LOGGER.info(getClass().getSimpleName() + ": Missing pet data for npcid: " + petId);
 		}
+		
 		return _pets.get(petId);
 	}
 	

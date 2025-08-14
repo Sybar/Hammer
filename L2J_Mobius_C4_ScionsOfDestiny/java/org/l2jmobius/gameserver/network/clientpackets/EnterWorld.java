@@ -48,7 +48,6 @@ import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.appearance.PlayerAppearance;
 import org.l2jmobius.gameserver.model.actor.enums.creature.Race;
 import org.l2jmobius.gameserver.model.actor.enums.player.IllegalActionPunishmentType;
-import org.l2jmobius.gameserver.model.actor.enums.player.PlayerCondOverride;
 import org.l2jmobius.gameserver.model.actor.enums.player.TeleportWhereType;
 import org.l2jmobius.gameserver.model.actor.instance.ClassMaster;
 import org.l2jmobius.gameserver.model.clan.Clan;
@@ -116,7 +115,7 @@ public class EnterWorld extends ClientPacket
 		if (player == null)
 		{
 			PacketLogger.warning("EnterWorld failed! player returned 'null'.");
-			Disconnection.of(client).defaultSequence(LeaveWorld.STATIC_PACKET);
+			Disconnection.of(client).storeAndDeleteWith(LeaveWorld.STATIC_PACKET);
 			return;
 		}
 		
@@ -399,6 +398,7 @@ public class EnterWorld extends ClientPacket
 			{
 				i.scheduleLifeTimeTask();
 			}
+			
 			if (i.isShadowItem() && i.isEquipped())
 			{
 				i.decreaseMana(false);
@@ -425,7 +425,7 @@ public class EnterWorld extends ClientPacket
 		
 		// Attacker or spectator logging in to a siege zone.
 		// Actually should be checked for inside castle only?
-		if (!player.canOverrideCond(PlayerCondOverride.ZONE_CONDITIONS) && player.isInsideZone(ZoneId.SIEGE) && (!player.isInSiege() || (player.getSiegeState() < 2)))
+		if (!player.isGM() && player.isInsideZone(ZoneId.SIEGE) && (!player.isInSiege() || (player.getSiegeState() < 2)))
 		{
 			player.teleToLocation(TeleportWhereType.TOWN);
 		}
@@ -446,6 +446,7 @@ public class EnterWorld extends ClientPacket
 					punish = true;
 				}
 			}
+			
 			if (punish && (Config.OVER_ENCHANT_PUNISHMENT != IllegalActionPunishmentType.NONE))
 			{
 				player.sendMessage("[Server]: You have over-enchanted items!");
@@ -522,14 +523,14 @@ public class EnterWorld extends ClientPacket
 				// Banned?
 				if ((hwInfo != null) && PunishmentManager.getInstance().hasPunishment(hwInfo.getMacAddress(), PunishmentAffect.HWID, PunishmentType.BAN))
 				{
-					Disconnection.of(client).defaultSequence(LeaveWorld.STATIC_PACKET);
+					Disconnection.of(client).storeAndDeleteWith(LeaveWorld.STATIC_PACKET);
 					return;
 				}
 				
 				// Check max players.
 				if (Config.KICK_MISSING_HWID && (hwInfo == null))
 				{
-					Disconnection.of(client).defaultSequence(LeaveWorld.STATIC_PACKET);
+					Disconnection.of(client).storeAndDeleteWith(LeaveWorld.STATIC_PACKET);
 				}
 				else if (Config.MAX_PLAYERS_PER_HWID > 0)
 				{
@@ -545,9 +546,10 @@ public class EnterWorld extends ClientPacket
 							}
 						}
 					}
+					
 					if (count > Config.MAX_PLAYERS_PER_HWID)
 					{
-						Disconnection.of(client).defaultSequence(LeaveWorld.STATIC_PACKET);
+						Disconnection.of(client).storeAndDeleteWith(LeaveWorld.STATIC_PACKET);
 					}
 				}
 			}, 5000);

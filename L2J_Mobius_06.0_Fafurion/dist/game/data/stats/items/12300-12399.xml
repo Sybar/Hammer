@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
 	<item id="12300" name="Common Item - Sealed Imperial Crusader Gauntlets" type="Armor">
 		<!-- Sealed Imperial Crusader Gauntlets with limited enhancement options. Cannot be enchanted, augmented, or enhanced with a soul crystal. -->
@@ -1264,9 +1264,9 @@
 		<set name="crystal_type" val="B" />
 		<set name="commissionItemType" val="ANCIENT_SWORD" />
 		<set name="spiritshots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">190</stat>
 			<stat type="mAtk">91</stat>
@@ -1387,9 +1387,9 @@
 		<set name="crystal_type" val="B" />
 		<set name="commissionItemType" val="RAPIER" />
 		<set name="spiritshots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">159</stat>
 			<stat type="mAtk">91</stat>
@@ -1469,9 +1469,9 @@
 		<set name="crystal_type" val="B" />
 		<set name="commissionItemType" val="CROSSBOW" />
 		<set name="spiritshots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">221</stat>
 			<stat type="mAtk">91</stat>
@@ -1570,9 +1570,9 @@
 		<set name="crystal_type" val="B" />
 		<set name="commissionItemType" val="ANCIENT_SWORD" />
 		<set name="spiritshots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">210</stat>
 			<stat type="mAtk">99</stat>

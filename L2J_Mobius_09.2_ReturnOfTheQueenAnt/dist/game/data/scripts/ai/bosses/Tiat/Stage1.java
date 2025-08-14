@@ -88,9 +88,11 @@ public class Stage1 extends AbstractInstance implements IXmlReader
 	// Spawn data
 	private final Map<Integer, Territory> _spawnZoneList = new HashMap<>();
 	private final Map<Integer, List<SODSpawn>> _spawnList = new HashMap<>();
+	
 	// Locations
 	private static final Location ENTER_TELEPORT_2 = new Location(-245800, 220488, -12112);
 	private static final Location CENTER_TELEPORT = new Location(-245802, 220528, -12104);
+	
 	// Traps/Skills
 	private static final int[] TRAP_18771_NPCS =
 	{
@@ -106,9 +108,11 @@ public class Stage1 extends AbstractInstance implements IXmlReader
 		22538,
 		22537
 	};
+	
 	// NPCs
 	private static final int ALENOS = 32526;
 	private static final int TELEPORT = 32601;
+	
 	// Monsters
 	private static final int OBELISK = 18776;
 	private static final int POWERFUL_DEVICE = 18777;
@@ -120,6 +124,7 @@ public class Stage1 extends AbstractInstance implements IXmlReader
 	private static final int TIAT_VIDEO_NPC = 29169;
 	private static final Location MOVE_TO_TIAT = new Location(-250403, 207273, -11952, 16384);
 	private static final Location MOVE_TO_DOOR = new Location(-251432, 214905, -12088, 16384);
+	
 	// TODO: handle this better
 	private static final int[] SPAWN_MOB_IDS =
 	{
@@ -138,6 +143,7 @@ public class Stage1 extends AbstractInstance implements IXmlReader
 		22552,
 		22596
 	};
+	
 	// Doors/Walls/Zones
 	private static final int[] ATTACKABLE_DOORS =
 	{
@@ -180,8 +186,10 @@ public class Stage1 extends AbstractInstance implements IXmlReader
 	private static final int SCOUTPASS_DOOR = 12240027;
 	private static final int FORTRESS_DOOR = 12240030;
 	private static final int THRONE_DOOR = 12240031;
+	
 	// Zone
 	private static final int VIDEO_ZONE = 60010;
+	
 	// Misc
 	private static final int TEMPLATE_ID = 110; // this is the client number
 	private static final int MAX_DEVICESPAWNEDMOBCOUNT = 100; // prevent too much mob spawn
@@ -199,6 +207,7 @@ public class Stage1 extends AbstractInstance implements IXmlReader
 		{
 			addTrapActionId(i);
 		}
+		
 		addEnterZoneId(VIDEO_ZONE);
 		addInstanceCreatedId(TEMPLATE_ID);
 		addDespawnId(SPAWN_DEVICE);
@@ -208,7 +217,7 @@ public class Stage1 extends AbstractInstance implements IXmlReader
 	public void load()
 	{
 		parseDatapackFile("data/scripts/ai/bosses/Tiat/SeedOfDestruction.xml");
-		LOGGER.info("[Seed of Destruction] Loaded " + _spawnZoneList.size() + " spawn zones data.");
+		LOGGER.info("Seed of Destruction: Loaded " + _spawnZoneList.size() + " spawn zones data.");
 	}
 	
 	@Override
@@ -252,6 +261,7 @@ public class Stage1 extends AbstractInstance implements IXmlReader
 										{
 											killIds.add(npcId);
 										}
+										
 										_spawnList.get(flag).add(spw);
 									}
 									else if (f.getNodeName().equals("zone"))
@@ -268,6 +278,7 @@ public class Stage1 extends AbstractInstance implements IXmlReader
 										{
 											killIds.add(npcId);
 										}
+										
 										_spawnList.get(flag).add(spw);
 									}
 								}
@@ -295,6 +306,7 @@ public class Stage1 extends AbstractInstance implements IXmlReader
 										ter.add(x, y, minz, maxz, 0);
 									}
 								}
+								
 								_spawnZoneList.put(id, ter);
 							}
 						}
@@ -302,6 +314,7 @@ public class Stage1 extends AbstractInstance implements IXmlReader
 				}
 			}
 		}
+		
 		addKillId(killIds);
 	}
 	
@@ -315,6 +328,7 @@ public class Stage1 extends AbstractInstance implements IXmlReader
 			{
 				door.setIsAttackableDoor(true);
 			}
+			
 			door.closeMe();
 		}
 	}
@@ -344,7 +358,7 @@ public class Stage1 extends AbstractInstance implements IXmlReader
 				}
 				else
 				{
-					LOGGER.info("[Seed of Destruction] Missing zone: " + spw.zone);
+					LOGGER.info("Seed of Destruction: Missing zone " + spw.zone);
 				}
 			}
 			else
@@ -372,6 +386,7 @@ public class Stage1 extends AbstractInstance implements IXmlReader
 				{
 					world.openCloseDoor(i, true);
 				}
+				
 				spawnFlaggedNPCs(world, 1);
 				break;
 			}
@@ -382,6 +397,7 @@ public class Stage1 extends AbstractInstance implements IXmlReader
 				{
 					world.openCloseDoor(i, true);
 				}
+				
 				spawnFlaggedNPCs(world, 4);
 				break;
 			}
@@ -420,6 +436,7 @@ public class Stage1 extends AbstractInstance implements IXmlReader
 			addTrap(npcId, x, y, z, h, world.getId());
 			return;
 		}
+		
 		final Npc npc = addSpawn(npcId, x, y, z, h, false, 0, false, world.getId());
 		if (addToKillTable)
 		{
@@ -550,6 +567,7 @@ public class Stage1 extends AbstractInstance implements IXmlReader
 				}
 			}
 		}
+		
 		return null;
 	}
 	
@@ -649,6 +667,7 @@ public class Stage1 extends AbstractInstance implements IXmlReader
 		{
 			player.teleToLocation(CENTER_TELEPORT);
 		}
+		
 		return null;
 	}
 	

@@ -32,13 +32,16 @@ public class Q00375_WhisperOfDreamsPart2 extends Quest
 {
 	// NPCs
 	private static final int MANAKIA = 30515;
+	
 	// Monsters
 	private static final int KARIK = 20629;
 	private static final int CAVE_HOWLER = 20624;
+	
 	// Items
 	private static final int MYSTERIOUS_STONE = 5887;
 	private static final int KARIK_HORN = 5888;
 	private static final int CAVE_HOWLER_SKULL = 5889;
+	
 	// Rewards : A grade robe recipes
 	private static final int[] REWARDS =
 	{
@@ -110,6 +113,7 @@ public class Q00375_WhisperOfDreamsPart2 extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

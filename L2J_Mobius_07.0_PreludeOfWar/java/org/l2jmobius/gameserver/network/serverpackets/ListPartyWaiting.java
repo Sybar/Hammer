@@ -52,6 +52,7 @@ public class ListPartyWaiting extends ServerPacket
 		{
 			chunkSize = NUM_PER_PAGE;
 		}
+		
 		for (int i = startIndex; i < (startIndex + chunkSize); i++)
 		{
 			_rooms.add(rooms.get(i));
@@ -80,6 +81,7 @@ public class ListPartyWaiting extends ServerPacket
 				buffer.writeString(member.getName());
 			}
 		}
+		
 		buffer.writeInt(World.getInstance().getPartyCount()); // Helios
 		buffer.writeInt(World.getInstance().getPartyMemberCount()); // Helios
 	}

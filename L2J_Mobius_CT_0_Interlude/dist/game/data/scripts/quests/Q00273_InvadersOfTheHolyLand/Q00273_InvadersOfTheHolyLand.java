@@ -35,6 +35,7 @@ public class Q00273_InvadersOfTheHolyLand extends Quest
 	// Items
 	private static final int BLACK_SOULSTONE = 1475;
 	private static final int RED_SOULSTONE = 1476;
+	
 	// Reward
 	private static final int SOULSHOT_FOR_BEGINNERS = 5789;
 	
@@ -170,6 +171,7 @@ public class Q00273_InvadersOfTheHolyLand extends Quest
 		{
 			giveItems(player, RED_SOULSTONE, 1);
 		}
+		
 		playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 	}
 }

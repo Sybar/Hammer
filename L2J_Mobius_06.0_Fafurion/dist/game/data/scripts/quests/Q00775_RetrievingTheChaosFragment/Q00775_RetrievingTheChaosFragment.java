@@ -40,6 +40,7 @@ public class Q00775_RetrievingTheChaosFragment extends Quest
 {
 	// NPCs
 	private static final int LEONA_BLACKBIRD = 31595;
+	
 	// Monsters
 	private static final int[] MONSTERS =
 	{
@@ -67,8 +68,10 @@ public class Q00775_RetrievingTheChaosFragment extends Quest
 		23362, // Amos Soldier
 		23365, // Ailith Hunter
 	};
+	
 	// Misc
 	private static final int MIN_LEVEL = 99;
+	
 	// Items
 	private static final int CHAOS_FRAGMENT = 37766;
 	private static final int INTERMEDIATE_SUPPLY_BOX = 47173;
@@ -122,6 +125,7 @@ public class Q00775_RetrievingTheChaosFragment extends Quest
 					htmltext = "31595-04b.htm";
 					break;
 				}
+				
 				htmltext = "31595-04.htm";
 				break;
 			}
@@ -137,6 +141,7 @@ public class Q00775_RetrievingTheChaosFragment extends Quest
 					htmltext = "31595-04b.htm";
 					break;
 				}
+				
 				htmltext = "31595-04.htm";
 				break;
 			}
@@ -179,6 +184,7 @@ public class Q00775_RetrievingTheChaosFragment extends Quest
 							{
 								giveItems(player, CHAOS_FRAGMENT, 1);
 							}
+							
 							addExpAndSp(player, 12_113_489_880L, 12_113_460);
 							addFactionPoints(player, Faction.BLACKBIRD_CLAN, 100);
 							qs.exitQuest(QuestType.DAILY, true);
@@ -206,6 +212,7 @@ public class Q00775_RetrievingTheChaosFragment extends Quest
 							{
 								giveItems(player, INTERMEDIATE_SUPPLY_BOX, 1);
 							}
+							
 							addExpAndSp(player, 24_226_979_760L, 24_226_920);
 							addFactionPoints(player, Faction.BLACKBIRD_CLAN, 200);
 							qs.exitQuest(QuestType.DAILY, true);
@@ -233,6 +240,7 @@ public class Q00775_RetrievingTheChaosFragment extends Quest
 							{
 								giveItems(player, ADVANCED_SUPPLY_BOX, 1);
 							}
+							
 							addExpAndSp(player, 36_340_469_640L, 36_340_380);
 							addFactionPoints(player, Faction.BLACKBIRD_CLAN, 300);
 							qs.exitQuest(QuestType.DAILY, true);
@@ -248,6 +256,7 @@ public class Q00775_RetrievingTheChaosFragment extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -279,6 +288,7 @@ public class Q00775_RetrievingTheChaosFragment extends Quest
 							htmltext = "31595-04b.htm";
 							break;
 						}
+						
 						htmltext = "31595-04.htm";
 						break;
 					}
@@ -321,6 +331,7 @@ public class Q00775_RetrievingTheChaosFragment extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

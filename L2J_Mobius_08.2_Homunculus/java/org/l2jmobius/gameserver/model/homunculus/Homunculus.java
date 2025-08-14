@@ -166,6 +166,7 @@ public class Homunculus implements Comparable<Homunculus>
 				return _template.getHpLevel5();
 			}
 		}
+		
 		return _template.getHpLevel1();
 	}
 	
@@ -194,6 +195,7 @@ public class Homunculus implements Comparable<Homunculus>
 				return _template.getAtkLevel5();
 			}
 		}
+		
 		return _template.getAtkLevel1();
 	}
 	
@@ -222,6 +224,7 @@ public class Homunculus implements Comparable<Homunculus>
 				return _template.getDefLevel5();
 			}
 		}
+		
 		return _template.getDefLevel1();
 	}
 	

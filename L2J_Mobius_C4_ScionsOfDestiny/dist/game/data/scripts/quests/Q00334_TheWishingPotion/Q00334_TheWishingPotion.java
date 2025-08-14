@@ -101,6 +101,7 @@ public class Q00334_TheWishingPotion extends Quest
 		{3, 0, TYRANT_KINGPIN, 0, TYRANTS_CHITIN_ID, 1, 50, 1},
 		{3, 0, TURAK_BUGBEAR, 0, BUGBEAR_BLOOD_ID, 1, 15, 1},
 		{3, 0, TURAK_BUGBEAR_WARRIOR, 0, BUGBEAR_BLOOD_ID, 1, 25, 1}
+		
 	}; // @formatter:on
 	
 	public Q00334_TheWishingPotion()
@@ -143,10 +144,12 @@ public class Q00334_TheWishingPotion extends Quest
 					{
 						giveItems(player, POTION_RECIPE_1_ID, 1);
 					}
+					
 					if (getQuestItemsCount(player, POTION_RECIPE_2_ID) == 0)
 					{
 						giveItems(player, POTION_RECIPE_2_ID, 1);
 					}
+					
 					if (getQuestItemsCount(player, MATILDS_ORB_ID) == 0)
 					{
 						htmltext = "30738-06.htm";
@@ -155,6 +158,7 @@ public class Q00334_TheWishingPotion extends Quest
 					{
 						htmltext = "30738-12.htm";
 					}
+					
 					st.setCond(3);
 				}
 				else if ((getQuestItemsCount(player, MATILDS_ORB_ID) >= 1) && (getQuestItemsCount(player, WISH_POTION_ID) >= 1))
@@ -184,6 +188,7 @@ public class Q00334_TheWishingPotion extends Quest
 					{
 						giveItems(player, MATILDS_ORB_ID, 1);
 					}
+					
 					giveItems(player, WISH_POTION_ID, 1);
 					st.setCond(0);
 				}
@@ -307,6 +312,7 @@ public class Q00334_TheWishingPotion extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -323,6 +329,7 @@ public class Q00334_TheWishingPotion extends Quest
 		{
 			cond = st.getCond();
 		}
+		
 		switch (npcId)
 		{
 			case ALCHEMIST_MATILD:
@@ -345,10 +352,12 @@ public class Q00334_TheWishingPotion extends Quest
 						{
 							giveItems(player, POTION_RECIPE_1_ID, 1);
 						}
+						
 						if (getQuestItemsCount(player, POTION_RECIPE_2_ID) == 0)
 						{
 							giveItems(player, POTION_RECIPE_2_ID, 1);
 						}
+						
 						htmltext = "30738-12.htm";
 					}
 					else
@@ -443,11 +452,13 @@ public class Q00334_TheWishingPotion extends Quest
 						giveItems(player, DEMONS_GLOVES_FABRIC_ID, 1);
 					}
 				}
+				
 				st.getPlayer().getTarget().decayMe();
 				htmltext = "30742-01.htm";
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -480,6 +491,7 @@ public class Q00334_TheWishingPotion extends Quest
 					{
 						checkIngr(st, player);
 					}
+					
 					if ((element[1] != cond) && (element[1] != 0))
 					{
 						st.setCond(element[1]);
@@ -488,6 +500,7 @@ public class Q00334_TheWishingPotion extends Quest
 				}
 			}
 		}
+		
 		final int dropChance = getRandom(100) + 1;
 		if ((npcId == SUCCUBUS_OF_SEDUCTION) && (dropChance <= DROP_CHANCE_FORBIDDEN_LOVE_SCROLL_ID))
 		{
@@ -529,6 +542,7 @@ public class Q00334_TheWishingPotion extends Quest
 			{
 				giveItems(player, DEMONS_TUNIC_ID, 1);
 			}
+			
 			playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 		}
 	}

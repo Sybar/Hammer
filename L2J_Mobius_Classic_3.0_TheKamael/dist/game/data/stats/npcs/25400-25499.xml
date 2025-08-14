@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/npcs.xsd">
 	<npc id="25400" level="34" type="Monster" name="Watchman's Servant" title="Raid Fighter">
 		<parameters>
@@ -3511,17 +3511,17 @@
 				<npc id="25469" count="1" respawnTime="360" weightPoint="1" />
 			</minions>
 			<param name="RaidSpawnMusic" value="Rm01_A" />
-			<skill name="DDMagic_a" id="4196" level="6" />
-			<skill name="SelfRangeDebuff_a" id="4185" level="6" />
-			<skill name="SelfRangeDebuffAnother_a" id="4190" level="6" />
+			<skill name="DDMagic_a" id="4196" level="9" />
+			<skill name="SelfRangeDebuff_a" id="4185" level="9" />
+			<skill name="SelfRangeDebuffAnother_a" id="4190" level="9" />
 		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
-		<acquire exp="238359334" sp="7150780" raidPoints="5" />
+		<acquire exp="238359334" sp="1117" raidPoints="5" />
 		<stats str="60" int="76" dex="73" wit="70" con="57" men="80">
-			<vitals hp="1393889.96528" hpRegen="319.2293199" mp="5687.895" mpRegen="3" />
-			<attack physical="935.281402739188" magical="169.895221587679" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
-			<defence physical="801.13404" magical="390.82" evasion="-18" />
+			<vitals hp="2515150.16450965" hpRegen="2647.36823225113" mp="3349.6" mpRegen="6" />
+			<attack physical="27330.336" magical="9145.973" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
+			<defence physical="2048.25" magical="999.2" evasion="-18" />
 			<speed>
 				<walk ground="70" />
 				<run ground="190" />
@@ -3532,9 +3532,9 @@
 		<status undying="false" />
 		<skillList>
 			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4185" level="6" /> <!-- Sleep -->
-			<skill id="4190" level="6" /> <!-- Decrease MP -->
-			<skill id="4196" level="6" /> <!-- Decrease Speed -->
+			<skill id="4185" level="9" /> <!-- Sleep -->
+			<skill id="4190" level="9" /> <!-- Decrease MP -->
+			<skill id="4196" level="9" /> <!-- Decrease Speed -->
 			<skill id="4276" level="1" /> <!-- Weak Point against Bow/Crossbow Weapons -->
 			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -3557,73 +3557,85 @@
 		</collision>
 		<dropLists>
 			<drop>
-				<item id="5292" min="1" max="1" chance="5.548" /> <!-- Sealed Dark Crystal Shield -->
-				<item id="5315" min="1" max="1" chance="4.86" /> <!-- Sealed Shield of Nightmare -->
-				<item id="5291" min="1" max="1" chance="4.067" /> <!-- Sealed Dark Crystal Boots -->
-				<item id="5294" min="1" max="1" chance="4.028" /> <!-- Sealed Tallum Helmet -->
-				<item id="5295" min="1" max="1" chance="4.022" /> <!-- Sealed Tallum Gloves -->
-				<item id="5296" min="1" max="1" chance="3.949" /> <!-- Sealed Tallum Boots -->
-				<item id="5289" min="1" max="1" chance="3.945" /> <!-- Sealed Dark Crystal Helmet -->
-				<item id="5290" min="1" max="1" chance="3.939" /> <!-- Sealed Dark Crystal Gloves -->
-				<item id="5318" min="1" max="1" chance="2.464" /> <!-- Sealed Majestic Gauntlets -->
-				<item id="5304" min="1" max="1" chance="2.461" /> <!-- Sealed Tallum Tunic -->
-				<item id="5293" min="1" max="1" chance="2.453" /> <!-- Sealed Tallum Plate Armor -->
-				<item id="5317" min="1" max="1" chance="2.442" /> <!-- Sealed Majestic Circlet -->
-				<item id="5287" min="1" max="1" chance="2.421" /> <!-- Sealed Dark Crystal Breastplate -->
-				<item id="5305" min="1" max="1" chance="2.412" /> <!-- Sealed Tallum Stockings -->
-				<item id="5313" min="1" max="1" chance="2.412" /> <!-- Sealed Gauntlets of Nightmare -->
-				<item id="5298" min="1" max="1" chance="2.405" /> <!-- Sealed Dark Crystal Leggings -->
-				<item id="5301" min="1" max="1" chance="2.39" /> <!-- Sealed Tallum Leather Armor -->
-				<item id="5288" min="1" max="1" chance="2.386" /> <!-- Sealed Dark Crystal Gaiters -->
-				<item id="5314" min="1" max="1" chance="2.384" /> <!-- Sealed Boots of Nightmare -->
-				<item id="5312" min="1" max="1" chance="2.383" /> <!-- Sealed Helm of Nightmare -->
-				<item id="5297" min="1" max="1" chance="2.378" /> <!-- Sealed Dark Crystal Leather Armor -->
-				<item id="5319" min="1" max="1" chance="2.365" /> <!-- Sealed Majestic Boots -->
-				<item id="5308" min="1" max="1" chance="2.36" /> <!-- Sealed Dark Crystal Robe -->
-				<item id="5323" min="1" max="1" chance="1.651" /> <!-- Sealed Majestic Leather Armor -->
-				<item id="5316" min="1" max="1" chance="1.627" /> <!-- Sealed Majestic Plate Armor -->
-				<item id="5326" min="1" max="1" chance="1.621" /> <!-- Sealed Robe of Nightmare -->
-				<item id="5311" min="1" max="1" chance="1.587" /> <!-- Sealed Armor of Nightmare -->
-				<item id="5329" min="1" max="1" chance="1.578" /> <!-- Sealed Majestic Robe -->
-				<item id="5320" min="1" max="1" chance="1.546" /> <!-- Sealed Leather Armor of Nightmare -->
-				<item id="2504" min="1" max="1" chance="0.75" /> <!-- Meteor Shower -->
-				<item id="98" min="1" max="1" chance="0.75" /> <!-- Halberd -->
-				<item id="81" min="1" max="1" chance="0.75" /> <!-- Dragon Slayer -->
-				<item id="80" min="1" max="1" chance="0.75" /> <!-- Tallum Blade -->
-				<item id="212" min="1" max="1" chance="0.75" /> <!-- Dasparion's Staff -->
-				<item id="7884" min="1" max="1" chance="0.75" /> <!-- Infernal Master -->
-				<item id="7894" min="1" max="1" chance="0.75" /> <!-- Spiritual Eye -->
-				<item id="7895" min="1" max="1" chance="0.75" /> <!-- Flaming Dragon Skull -->
-				<item id="7899" min="1" max="1" chance="0.75" /> <!-- Destroyer Hammer -->
-				<item id="150" min="1" max="1" chance="0.75" /> <!-- Elemental Sword -->
-				<item id="151" min="1" max="1" chance="0.75" /> <!-- Sword of Miracles -->
-				<item id="2500" min="1" max="1" chance="0.75" /> <!-- Dark Legion's Edge -->
-				<item id="305" min="1" max="1" chance="0.75" /> <!-- Tallum Glaive -->
-				<item id="289" min="1" max="1" chance="0.75" /> <!-- Soul Bow -->
-				<item id="288" min="1" max="1" chance="0.75" /> <!-- Carnage Bow -->
-				<item id="270" min="1" max="1" chance="0.75" /> <!-- Dragon Grinder -->
-				<item id="269" min="1" max="1" chance="0.75" /> <!-- Blood Tornado -->
-				<item id="236" min="1" max="1" chance="0.75" /> <!-- Soul Separator -->
-				<item id="235" min="1" max="1" chance="0.75" /> <!-- Bloody Orchid -->
-				<item id="213" min="1" max="1" chance="0.75" /> <!-- Branch of the Mother Tree -->
-				<item id="164" min="1" max="1" chance="0.75" /> <!-- Elysian -->
-				<item id="7902" min="1" max="1" chance="0.75" /> <!-- Doom Crusher -->
-				<item id="70000" min="19" max="57" chance="100" /> <!-- Sealed Rune - Stage 1 -->
-				<item id="90045" min="2" max="6" chance="100" /> <!-- Magical Tablet -->
-				<item id="91546" min="1" max="1" chance="15.71" /> <!-- Accessory Varnish (A-grade) -->
-				<item id="91532" min="1" max="1" chance="14.92" /> <!-- Weapon Varnish (A-grade) -->
-				<item id="91539" min="1" max="1" chance="14.74" /> <!-- Armor Varnish (A-grade) -->
-				<item id="90898" min="1" max="1" chance="0.75" /> <!-- Agathion's Soul -->
+				<group chance="12">
+					<item id="80" min="1" max="1" chance="4.2" /> <!-- Tallum Blade -->
+					<item id="81" min="1" max="1" chance="4.2" /> <!-- Dragon Slayer -->
+					<item id="98" min="1" max="1" chance="4.2" /> <!-- Halberd -->
+					<item id="150" min="1" max="1" chance="4.2" /> <!-- Elemental Sword -->
+					<item id="151" min="1" max="1" chance="4.2" /> <!-- Sword of Miracles -->
+					<item id="164" min="1" max="1" chance="4.2" /> <!-- Elysian -->
+					<item id="212" min="1" max="1" chance="4.2" /> <!-- Dasparion's Staff -->
+					<item id="213" min="1" max="1" chance="4.2" /> <!-- Branch of the Mother Tree -->
+					<item id="235" min="1" max="1" chance="4.2" /> <!-- Bloody Orchid -->
+					<item id="236" min="1" max="1" chance="4.2" /> <!-- Soul Separator -->
+					<item id="269" min="1" max="1" chance="4.2" /> <!-- Blood Tornado -->
+					<item id="270" min="1" max="1" chance="4.2" /> <!-- Dragon Grinder -->
+					<item id="288" min="1" max="1" chance="4.2" /> <!-- Carnage Bow -->
+					<item id="289" min="1" max="1" chance="4.2" /> <!-- Soul Bow -->
+					<item id="305" min="1" max="1" chance="4.2" /> <!-- Tallum Glaive -->
+					<item id="2500" min="1" max="1" chance="4.2" /> <!-- Dark Legion's Edge -->				
+					<item id="2504" min="1" max="1" chance="4.1" /> <!-- Meteor Shower -->
+					<item id="7884" min="1" max="1" chance="4.1" /> <!-- Infernal Master -->
+					<item id="7894" min="1" max="1" chance="4.1" /> <!-- Spiritual Eye -->
+					<item id="7895" min="1" max="1" chance="4.1" /> <!-- Flaming Dragon Skull -->
+					<item id="7899" min="1" max="1" chance="4.1" /> <!-- Destroyer Hammer -->				
+					<item id="91903" min="1" max="1" chance="4.1" /> <!-- Lacerator -->
+					<item id="91888" min="1" max="1" chance="4.1" /> <!-- Undertaker -->				
+					<item id="7902" min="1" max="1" chance="4.1" /> <!-- Doom Crusher -->
+				</group>
+				<group chance="80">
+					<item id="5287" min="1" max="1" chance="3" /> <!-- Sealed Dark Crystal Breastplate -->
+					<item id="5288" min="1" max="1" chance="3" /> <!-- Sealed Dark Crystal Gaiters -->
+					<item id="5289" min="1" max="1" chance="5" /> <!-- Sealed Dark Crystal Helmet -->
+					<item id="5290" min="1" max="1" chance="5" /> <!-- Sealed Dark Crystal Gloves -->
+					<item id="5291" min="1" max="1" chance="5" /> <!-- Sealed Dark Crystal Boots -->
+					<item id="5292" min="1" max="1" chance="7" /> <!-- Sealed Dark Crystal Shield -->
+					<item id="5293" min="1" max="1" chance="3" /> <!-- Sealed Tallum Plate Armor -->
+					<item id="5294" min="1" max="1" chance="5" /> <!-- Sealed Tallum Helmet -->
+					<item id="5295" min="1" max="1" chance="5" /> <!-- Sealed Tallum Gloves -->
+					<item id="5296" min="1" max="1" chance="5" /> <!-- Sealed Tallum Boots -->
+					<item id="5297" min="1" max="1" chance="3" /> <!-- Sealed Dark Crystal Leather Armor -->
+					<item id="5298" min="1" max="1" chance="3" /> <!-- Sealed Dark Crystal Leggings -->
+					<item id="5301" min="1" max="1" chance="3" /> <!-- Sealed Tallum Leather Armor -->
+					<item id="5304" min="1" max="1" chance="3" /> <!-- Sealed Tallum Tunic -->
+					<item id="5305" min="1" max="1" chance="3" /> <!-- Sealed Tallum Stockings -->
+					<item id="5308" min="1" max="1" chance="3" /> <!-- Sealed Dark Crystal Robe -->
+					<item id="5311" min="1" max="1" chance="2" /> <!-- Sealed Armor of Nightmare -->
+					<item id="5312" min="1" max="1" chance="3" /> <!-- Sealed Helm of Nightmare -->
+					<item id="5313" min="1" max="1" chance="3" /> <!-- Sealed Gauntlets of Nightmare -->
+					<item id="5314" min="1" max="1" chance="3" /> <!-- Sealed Boots of Nightmare -->
+					<item id="5315" min="1" max="1" chance="6" /> <!-- Sealed Shield of Nightmare -->
+					<item id="5316" min="1" max="1" chance="2" /> <!-- Sealed Majestic Plate Armor -->
+					<item id="5317" min="1" max="1" chance="3" /> <!-- Sealed Majestic Circlet -->
+					<item id="5318" min="1" max="1" chance="3" /> <!-- Sealed Majestic Gauntlets -->
+					<item id="5319" min="1" max="1" chance="3" /> <!-- Sealed Majestic Boots -->
+					<item id="5320" min="1" max="1" chance="2" /> <!-- Sealed Leather Armor of Nightmare -->
+					<item id="5323" min="1" max="1" chance="2" /> <!-- Sealed Majestic Leather Armor -->
+					<item id="5326" min="1" max="1" chance="2" /> <!-- Sealed Robe of Nightmare -->
+					<item id="5329" min="1" max="1" chance="2" /> <!-- Sealed Majestic Robe -->
+				</group>
+				<group chance="100">
+					<item id="90045" min="2" max="6" chance="100" /> <!-- Magical Tablet -->
+				</group>
+				<group chance="15">
+					<item id="91532" min="1" max="1" chance="100" /> <!-- Weapon Varnish (A-grade) -->
+				</group>
+				<group chance="15">
+					<item id="91539" min="1" max="1" chance="100" /> <!-- Armor Varnish (A-grade) -->
+				</group>
+				<group chance="15">
+					<item id="91546" min="1" max="1" chance="100" /> <!-- Accessory Varnish (A-grade) -->
+				</group>
 			</drop>
 		</dropLists>
 	</npc>
-	<npc id="25468" level="79" type="Monster" name="Cursed Life" title="Raid Fighter">
+	<npc id="25468" level="80" type="Monster" name="Cursed Life" title="Raid Fighter">
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="1101947.04427217" hpRegen="77.2103847760486" mp="1674.8" mpRegen="2.7" />
-			<attack physical="1794.61195730547" magical="658.023170035969" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
-			<defence physical="393.29139" magical="383.72" evasion="-18" />
+			<vitals hp="1101947.04427217" hpRegen="529.473646450226" mp="1674.8" mpRegen="3" />
+			<attack physical="11680.3916467087" magical="7953.02" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
+			<defence physical="1024.125" magical="499.6" evasion="-18" />
 			<speed>
 				<walk ground="70" />
 				<run ground="190" />
@@ -3653,16 +3665,16 @@
 			<height normal="30" />
 		</collision>
 	</npc>
-	<npc id="25469" level="79" type="Monster" name="Cursed Soul" title="Raid Fighter">
+	<npc id="25469" level="80" type="Monster" name="Cursed Soul" title="Raid Fighter">
 		<parameters>
 			<skill name="PhysicalSpecial_a" id="4743" level="6" />
 		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="1101947.04427217" hpRegen="77.2103847760486" mp="1674.8" mpRegen="2.7" />
-			<attack physical="3589.22391461093" magical="2632.09268014388" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
-			<defence physical="393.29139" magical="383.72" evasion="-18" />
+			<vitals hp="1101947.04427217" hpRegen="529.473646450226" mp="1674.8" mpRegen="3" />
+			<attack physical="11680.3916467087" magical="7953.02" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
+			<defence physical="1024.125" magical="499.6" evasion="-18" />
 			<speed>
 				<walk ground="70" />
 				<run ground="190" />
@@ -3700,16 +3712,16 @@
 				<npc id="25472" count="1" respawnTime="360" weightPoint="1" />
 			</minions>
 			<param name="RaidSpawnMusic" value="Rm01_A" />
-			<skill name="RangeHold_a" id="4197" level="6" />
+			<skill name="RangeHold_a" id="4197" level="9" />
 		</parameters>
 		<race>GIANT</race>
 		<sex>MALE</sex>
 		<equipment rhand="3938" /> <!-- Monster Only (Lesser Giant Wizard's Weapon) -->
-		<acquire exp="238359334" sp="7150780" raidPoints="5" />
+		<acquire exp="238359334" sp="1117" raidPoints="5" />
 		<stats str="60" int="76" dex="73" wit="70" con="57" men="80">
-			<vitals hp="1393889.96528" hpRegen="319.2293199" mp="5687.895" mpRegen="3" />
-			<attack physical="1011.35162185326" magical="180.852206414908" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
-			<defence physical="830.18256" magical="405" evasion="-18" />
+			<vitals hp="2515150.16450965" hpRegen="2647.36823225113" mp="3349.6" mpRegen="6" />
+			<attack physical="27330.336" magical="9145.973" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
+			<defence physical="2048.25" magical="999.2" evasion="-18" />
 			<speed>
 				<walk ground="15" />
 				<run ground="190" />
@@ -3720,7 +3732,7 @@
 		<status undying="false" />
 		<skillList>
 			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4197" level="6" /> <!-- Hold -->
+			<skill id="4197" level="9" /> <!-- Hold -->
 			<skill id="4273" level="3" /> <!-- Resist Daggers/Rapier Weapon -->
 			<skill id="4274" level="1" /> <!-- Blunt Weapon Weak Point -->
 			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
@@ -3744,77 +3756,89 @@
 		</collision>
 		<dropLists>
 			<drop>
-				<item id="5292" min="1" max="1" chance="5.624" /> <!-- Sealed Dark Crystal Shield -->
-				<item id="5315" min="1" max="1" chance="4.797" /> <!-- Sealed Shield of Nightmare -->
-				<item id="5290" min="1" max="1" chance="4.029" /> <!-- Sealed Dark Crystal Gloves -->
-				<item id="5295" min="1" max="1" chance="4.02" /> <!-- Sealed Tallum Gloves -->
-				<item id="5289" min="1" max="1" chance="4.004" /> <!-- Sealed Dark Crystal Helmet -->
-				<item id="5291" min="1" max="1" chance="3.997" /> <!-- Sealed Dark Crystal Boots -->
-				<item id="5294" min="1" max="1" chance="3.991" /> <!-- Sealed Tallum Helmet -->
-				<item id="5296" min="1" max="1" chance="3.986" /> <!-- Sealed Tallum Boots -->
-				<item id="5317" min="1" max="1" chance="2.466" /> <!-- Sealed Majestic Circlet -->
-				<item id="5288" min="1" max="1" chance="2.463" /> <!-- Sealed Dark Crystal Gaiters -->
-				<item id="5304" min="1" max="1" chance="2.459" /> <!-- Sealed Tallum Tunic -->
-				<item id="5312" min="1" max="1" chance="2.453" /> <!-- Sealed Helm of Nightmare -->
-				<item id="5313" min="1" max="1" chance="2.451" /> <!-- Sealed Gauntlets of Nightmare -->
-				<item id="5293" min="1" max="1" chance="2.449" /> <!-- Sealed Tallum Plate Armor -->
-				<item id="5319" min="1" max="1" chance="2.444" /> <!-- Sealed Majestic Boots -->
-				<item id="5301" min="1" max="1" chance="2.434" /> <!-- Sealed Tallum Leather Armor -->
-				<item id="5314" min="1" max="1" chance="2.41" /> <!-- Sealed Boots of Nightmare -->
-				<item id="5318" min="1" max="1" chance="2.406" /> <!-- Sealed Majestic Gauntlets -->
-				<item id="5308" min="1" max="1" chance="2.385" /> <!-- Sealed Dark Crystal Robe -->
-				<item id="5298" min="1" max="1" chance="2.355" /> <!-- Sealed Dark Crystal Leggings -->
-				<item id="5287" min="1" max="1" chance="2.347" /> <!-- Sealed Dark Crystal Breastplate -->
-				<item id="5305" min="1" max="1" chance="2.347" /> <!-- Sealed Tallum Stockings -->
-				<item id="5297" min="1" max="1" chance="2.336" /> <!-- Sealed Dark Crystal Leather Armor -->
-				<item id="5311" min="1" max="1" chance="1.635" /> <!-- Sealed Armor of Nightmare -->
-				<item id="5326" min="1" max="1" chance="1.601" /> <!-- Sealed Robe of Nightmare -->
-				<item id="5329" min="1" max="1" chance="1.593" /> <!-- Sealed Majestic Robe -->
-				<item id="5316" min="1" max="1" chance="1.593" /> <!-- Sealed Majestic Plate Armor -->
-				<item id="5320" min="1" max="1" chance="1.558" /> <!-- Sealed Leather Armor of Nightmare -->
-				<item id="5323" min="1" max="1" chance="1.53" /> <!-- Sealed Majestic Leather Armor -->
-				<item id="98" min="1" max="1" chance="0.75" /> <!-- Halberd -->
-				<item id="81" min="1" max="1" chance="0.75" /> <!-- Dragon Slayer -->
-				<item id="212" min="1" max="1" chance="0.75" /> <!-- Dasparion's Staff -->
-				<item id="80" min="1" max="1" chance="0.75" /> <!-- Tallum Blade -->
-				<item id="7884" min="1" max="1" chance="0.75" /> <!-- Infernal Master -->
-				<item id="7894" min="1" max="1" chance="0.75" /> <!-- Spiritual Eye -->
-				<item id="7895" min="1" max="1" chance="0.75" /> <!-- Flaming Dragon Skull -->
-				<item id="7899" min="1" max="1" chance="0.75" /> <!-- Destroyer Hammer -->
-				<item id="150" min="1" max="1" chance="0.75" /> <!-- Elemental Sword -->
-				<item id="151" min="1" max="1" chance="0.75" /> <!-- Sword of Miracles -->
-				<item id="164" min="1" max="1" chance="0.75" /> <!-- Elysian -->
-				<item id="2504" min="1" max="1" chance="0.75" /> <!-- Meteor Shower -->
-				<item id="2500" min="1" max="1" chance="0.75" /> <!-- Dark Legion's Edge -->
-				<item id="305" min="1" max="1" chance="0.75" /> <!-- Tallum Glaive -->
-				<item id="289" min="1" max="1" chance="0.75" /> <!-- Soul Bow -->
-				<item id="288" min="1" max="1" chance="0.75" /> <!-- Carnage Bow -->
-				<item id="270" min="1" max="1" chance="0.75" /> <!-- Dragon Grinder -->
-				<item id="269" min="1" max="1" chance="0.75" /> <!-- Blood Tornado -->
-				<item id="236" min="1" max="1" chance="0.75" /> <!-- Soul Separator -->
-				<item id="235" min="1" max="1" chance="0.75" /> <!-- Bloody Orchid -->
-				<item id="213" min="1" max="1" chance="0.75" /> <!-- Branch of the Mother Tree -->
-				<item id="7902" min="1" max="1" chance="0.75" /> <!-- Doom Crusher -->
-				<item id="70000" min="19" max="57" chance="100" /> <!-- Sealed Rune - Stage 1 -->
-				<item id="90045" min="2" max="6" chance="100" /> <!-- Magical Tablet -->
-				<item id="91539" min="1" max="1" chance="15.46" /> <!-- Armor Varnish (A-grade) -->
-				<item id="91532" min="1" max="1" chance="14.68" /> <!-- Weapon Varnish (A-grade) -->
-				<item id="91546" min="1" max="1" chance="14.44" /> <!-- Accessory Varnish (A-grade) -->
-				<item id="90898" min="1" max="1" chance="0.75" /> <!-- Agathion's Soul -->
+				<group chance="12">
+					<item id="80" min="1" max="1" chance="4.2" /> <!-- Tallum Blade -->
+					<item id="81" min="1" max="1" chance="4.2" /> <!-- Dragon Slayer -->
+					<item id="98" min="1" max="1" chance="4.2" /> <!-- Halberd -->
+					<item id="150" min="1" max="1" chance="4.2" /> <!-- Elemental Sword -->
+					<item id="151" min="1" max="1" chance="4.2" /> <!-- Sword of Miracles -->
+					<item id="164" min="1" max="1" chance="4.2" /> <!-- Elysian -->
+					<item id="212" min="1" max="1" chance="4.2" /> <!-- Dasparion's Staff -->
+					<item id="213" min="1" max="1" chance="4.2" /> <!-- Branch of the Mother Tree -->
+					<item id="235" min="1" max="1" chance="4.2" /> <!-- Bloody Orchid -->
+					<item id="236" min="1" max="1" chance="4.2" /> <!-- Soul Separator -->
+					<item id="269" min="1" max="1" chance="4.2" /> <!-- Blood Tornado -->
+					<item id="270" min="1" max="1" chance="4.2" /> <!-- Dragon Grinder -->
+					<item id="288" min="1" max="1" chance="4.2" /> <!-- Carnage Bow -->
+					<item id="289" min="1" max="1" chance="4.2" /> <!-- Soul Bow -->
+					<item id="305" min="1" max="1" chance="4.2" /> <!-- Tallum Glaive -->
+					<item id="2500" min="1" max="1" chance="4.2" /> <!-- Dark Legion's Edge -->				
+					<item id="2504" min="1" max="1" chance="4.1" /> <!-- Meteor Shower -->
+					<item id="7884" min="1" max="1" chance="4.1" /> <!-- Infernal Master -->
+					<item id="7894" min="1" max="1" chance="4.1" /> <!-- Spiritual Eye -->
+					<item id="7895" min="1" max="1" chance="4.1" /> <!-- Flaming Dragon Skull -->
+					<item id="7899" min="1" max="1" chance="4.1" /> <!-- Destroyer Hammer -->				
+					<item id="91903" min="1" max="1" chance="4.1" /> <!-- Lacerator -->
+					<item id="91888" min="1" max="1" chance="4.1" /> <!-- Undertaker -->				
+					<item id="7902" min="1" max="1" chance="4.1" /> <!-- Doom Crusher -->
+				</group>
+				<group chance="80">
+					<item id="5287" min="1" max="1" chance="3" /> <!-- Sealed Dark Crystal Breastplate -->
+					<item id="5288" min="1" max="1" chance="3" /> <!-- Sealed Dark Crystal Gaiters -->
+					<item id="5289" min="1" max="1" chance="5" /> <!-- Sealed Dark Crystal Helmet -->
+					<item id="5290" min="1" max="1" chance="5" /> <!-- Sealed Dark Crystal Gloves -->
+					<item id="5291" min="1" max="1" chance="5" /> <!-- Sealed Dark Crystal Boots -->
+					<item id="5292" min="1" max="1" chance="7" /> <!-- Sealed Dark Crystal Shield -->
+					<item id="5293" min="1" max="1" chance="3" /> <!-- Sealed Tallum Plate Armor -->
+					<item id="5294" min="1" max="1" chance="5" /> <!-- Sealed Tallum Helmet -->
+					<item id="5295" min="1" max="1" chance="5" /> <!-- Sealed Tallum Gloves -->
+					<item id="5296" min="1" max="1" chance="5" /> <!-- Sealed Tallum Boots -->
+					<item id="5297" min="1" max="1" chance="3" /> <!-- Sealed Dark Crystal Leather Armor -->
+					<item id="5298" min="1" max="1" chance="3" /> <!-- Sealed Dark Crystal Leggings -->
+					<item id="5301" min="1" max="1" chance="3" /> <!-- Sealed Tallum Leather Armor -->
+					<item id="5304" min="1" max="1" chance="3" /> <!-- Sealed Tallum Tunic -->
+					<item id="5305" min="1" max="1" chance="3" /> <!-- Sealed Tallum Stockings -->
+					<item id="5308" min="1" max="1" chance="3" /> <!-- Sealed Dark Crystal Robe -->
+					<item id="5311" min="1" max="1" chance="2" /> <!-- Sealed Armor of Nightmare -->
+					<item id="5312" min="1" max="1" chance="3" /> <!-- Sealed Helm of Nightmare -->
+					<item id="5313" min="1" max="1" chance="3" /> <!-- Sealed Gauntlets of Nightmare -->
+					<item id="5314" min="1" max="1" chance="3" /> <!-- Sealed Boots of Nightmare -->
+					<item id="5315" min="1" max="1" chance="6" /> <!-- Sealed Shield of Nightmare -->
+					<item id="5316" min="1" max="1" chance="2" /> <!-- Sealed Majestic Plate Armor -->
+					<item id="5317" min="1" max="1" chance="3" /> <!-- Sealed Majestic Circlet -->
+					<item id="5318" min="1" max="1" chance="3" /> <!-- Sealed Majestic Gauntlets -->
+					<item id="5319" min="1" max="1" chance="3" /> <!-- Sealed Majestic Boots -->
+					<item id="5320" min="1" max="1" chance="2" /> <!-- Sealed Leather Armor of Nightmare -->
+					<item id="5323" min="1" max="1" chance="2" /> <!-- Sealed Majestic Leather Armor -->
+					<item id="5326" min="1" max="1" chance="2" /> <!-- Sealed Robe of Nightmare -->
+					<item id="5329" min="1" max="1" chance="2" /> <!-- Sealed Majestic Robe -->
+				</group>
+				<group chance="100">
+					<item id="90045" min="2" max="6" chance="100" /> <!-- Magical Tablet -->
+				</group>
+				<group chance="15">
+					<item id="91532" min="1" max="1" chance="100" /> <!-- Weapon Varnish (A-grade) -->
+				</group>
+				<group chance="15">
+					<item id="91539" min="1" max="1" chance="100" /> <!-- Armor Varnish (A-grade) -->
+				</group>
+				<group chance="15">
+					<item id="91546" min="1" max="1" chance="100" /> <!-- Accessory Varnish (A-grade) -->
+				</group>
 			</drop>
 		</dropLists>
 	</npc>
-	<npc id="25471" level="79" type="Monster" name="Utenus' Wizard" title="Raid Fighter">
+	<npc id="25471" level="80" type="Monster" name="Utenus' Wizard" title="Raid Fighter">
 		<parameters>
-			<skill name="DDMagic_a" id="4195" level="6" />
-			<skill name="Debuff_a" id="4205" level="6" />
+			<skill name="DDMagic_a" id="4195" level="9" />
+			<skill name="Debuff_a" id="4205" level="9" />
 		</parameters>
 		<race>GIANT</race>
 		<sex>MALE</sex>
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="1101947.04427217" hpRegen="79.6115910136094" mp="1674.8" mpRegen="2.7" />
-			<attack physical="2595.52117740397" magical="1246.88892158742" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
-			<defence physical="407.835495" magical="397.92" evasion="-18" />
+			<vitals hp="1101947.04427217" hpRegen="529.473646450226" mp="1674.8" mpRegen="3" />
+			<attack physical="11680.3916467087" magical="7953.02" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
+			<defence physical="1024.125" magical="499.6" evasion="-18" />
 			<speed>
 				<walk ground="15" />
 				<run ground="190" />
@@ -3825,8 +3849,8 @@
 		<status undying="false" />
 		<skillList>
 			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4195" level="6" /> <!-- BOSS Twister -->
-			<skill id="4205" level="6" /> <!-- Paralysis -->
+			<skill id="4195" level="9" /> <!-- BOSS Twister -->
+			<skill id="4205" level="9" /> <!-- Paralysis -->
 			<skill id="4273" level="3" /> <!-- Resist Daggers/Rapier Weapon -->
 			<skill id="4274" level="1" /> <!-- Blunt Weapon Weak Point -->
 			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
@@ -3847,16 +3871,16 @@
 			<height normal="44" />
 		</collision>
 	</npc>
-	<npc id="25472" level="79" type="Monster" name="Utenus' Escort" title="Raid Fighter">
+	<npc id="25472" level="80" type="Monster" name="Utenus' Escort" title="Raid Fighter">
 		<parameters>
-			<skill name="PhysicalSpecial_a" id="4743" level="6" />
+			<skill name="PhysicalSpecial_a" id="4743" level="9" />
 		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="1101947.04427217" hpRegen="79.6115910136094" mp="1674.8" mpRegen="2.7" />
-			<attack physical="3893.37910058347" magical="2805.62281957004" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
-			<defence physical="407.835495" magical="397.92" evasion="-18" />
+			<vitals hp="1101947.04427217" hpRegen="529.473646450226" mp="1674.8" mpRegen="3" />
+			<attack physical="11680.3916467087" magical="7953.02" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
+			<defence physical="1024.125" magical="499.6" evasion="-18" />
 			<speed>
 				<walk ground="80" />
 				<run ground="190" />
@@ -3879,7 +3903,7 @@
 			<skill id="4415" level="5" /> <!-- Blunt Weapons -->
 			<skill id="4416" level="2" /> <!-- Magic Creatures -->
 			<skill id="4444" level="2" /> <!-- Higher Resist Bow/Crossbow Weapons -->
-			<skill id="4743" level="6" /> <!-- BOSS Strike -->
+			<skill id="4743" level="9" /> <!-- BOSS Strike -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="300" />

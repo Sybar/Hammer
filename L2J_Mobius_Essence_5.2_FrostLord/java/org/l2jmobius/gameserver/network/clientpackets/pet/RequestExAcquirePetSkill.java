@@ -54,16 +54,19 @@ public class RequestExAcquirePetSkill extends ClientPacket
 		{
 			return;
 		}
+		
 		final Pet pet = player.getPet();
 		if (pet == null)
 		{
 			return;
 		}
+		
 		final Skill skill = SkillData.getInstance().getSkill(skillId, skillLevel);
 		if (skill == null)
 		{
 			return;
 		}
+		
 		final Optional<PetSkillAcquireHolder> reqItem = PetAcquireList.getInstance().getSkills(pet.getPetData().getType()).stream().filter(it -> (it.getSkillId() == skillId) && (it.getSkillLevel() == skillLevel)).findFirst();
 		if (reqItem.isPresent())
 		{

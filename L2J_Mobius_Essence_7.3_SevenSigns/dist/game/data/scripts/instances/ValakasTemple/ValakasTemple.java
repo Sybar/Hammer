@@ -258,6 +258,7 @@ public class ValakasTemple extends AbstractInstance
 					locations.add(clone.getSpawnLocation());
 				}
 			}
+			
 			world.setParameter("TELEPORT_CLONES", locations);
 		}
 		
@@ -350,8 +351,10 @@ public class ValakasTemple extends AbstractInstance
 		// Enable boss circle.
 		ThreadPool.schedule(() -> removeEventsFromInstance(world), 15_000);
 		world.getPlayers().forEach(player -> player.sendPacket(new OnEventTrigger(ValakasTemple.EVENT_ID_BOSS_CIRCLE, true)));
+		
 		// Make list of players inside.
 		final List<Player> players = new ArrayList<>(world.getPlayers());
+		
 		// Make list "random" - no matter how players been teleported, but clones will be get random ids.
 		Collections.shuffle(players);
 		final List<Location> locations = world.getParameters().getList("TELEPORT_CLONES", Location.class);
@@ -359,6 +362,7 @@ public class ValakasTemple extends AbstractInstance
 		{
 			player.teleToLocation(getRandomEntry(locations), false);
 		}
+		
 		// Spawn and get clones instances.
 		final List<Npc> cloneNpcs = world.spawnGroup("clones");
 		int counter = 0;

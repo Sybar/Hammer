@@ -72,6 +72,7 @@ public class ExShowHomunculusBirthInfo extends ServerPacket
 				creationStage = 1;
 			}
 		}
+		
 		buffer.writeInt(creationStage); // in creation process (0: can create, 1: in process, 2: can awake
 		buffer.writeInt(_hpPoints); // hp points
 		buffer.writeInt(_spPoints); // sp points

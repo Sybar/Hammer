@@ -22,9 +22,7 @@ package events.SnowmanEnergy;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.util.Calendar;
 import java.util.List;
-import java.util.logging.Level;
 
 import org.l2jmobius.Config;
 import org.l2jmobius.commons.database.DatabaseFactory;
@@ -32,6 +30,11 @@ import org.l2jmobius.gameserver.data.xml.SkillData;
 import org.l2jmobius.gameserver.model.World;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.model.events.EventType;
+import org.l2jmobius.gameserver.model.events.ListenerRegisterType;
+import org.l2jmobius.gameserver.model.events.annotations.RegisterEvent;
+import org.l2jmobius.gameserver.model.events.annotations.RegisterType;
+import org.l2jmobius.gameserver.model.events.holders.OnDailyReset;
 import org.l2jmobius.gameserver.model.groups.Party;
 import org.l2jmobius.gameserver.model.item.enums.ItemProcessType;
 import org.l2jmobius.gameserver.model.quest.LongTimeEvent;
@@ -219,10 +222,13 @@ public class SnowmanEnergy extends LongTimeEvent
 		24657, // Grandel
 		24658, // Black Grandel
 	};
+	
 	// Item
 	private static final int CHRISTMAS_GIFT = 81927;
+	
 	// Skill
 	private static final Skill SNOWMAN_ENERGY = SkillData.getInstance().getSkill(34028, 1);
+	
 	// Misc
 	private static final String SNOWMAN_GIFT_RECIEVED_VAR = "SNOWMAN_GIFT_RECIEVED";
 	private static final int PLAYER_LEVEL = 105;
@@ -236,7 +242,6 @@ public class SnowmanEnergy extends LongTimeEvent
 		addStartNpc(SANTA);
 		addFirstTalkId(SANTA);
 		addTalkId(SANTA);
-		startQuestTimer("schedule", 1000, null, null);
 	}
 	
 	@Override
@@ -252,14 +257,16 @@ public class SnowmanEnergy extends LongTimeEvent
 					htmltext = "33888-no-level.htm";
 					break;
 				}
+				
 				if (player.getLevel() < PLAYER_LEVEL)
 				{
 					htmltext = "33888-no-level.htm";
 				}
-				if (!player.getAccountVariables().getBoolean("SNOWMAN_GIFT_RECIEVED", false))
+				
+				if (!player.getAccountVariables().getBoolean(SNOWMAN_GIFT_RECIEVED_VAR, false))
 				{
 					giveItems(player, CHRISTMAS_GIFT, 1);
-					player.getAccountVariables().set("SNOWMAN_GIFT_RECIEVED", true);
+					player.getAccountVariables().set(SNOWMAN_GIFT_RECIEVED_VAR, true);
 					htmltext = "33888-successful.htm";
 				}
 				else
@@ -273,49 +280,15 @@ public class SnowmanEnergy extends LongTimeEvent
 				htmltext = "33888-info.htm";
 				break;
 			}
-			case "schedule":
-			{
-				final long currentTime = System.currentTimeMillis();
-				final Calendar calendar = Calendar.getInstance();
-				calendar.set(Calendar.HOUR_OF_DAY, 6);
-				calendar.set(Calendar.MINUTE, 30);
-				if (calendar.getTimeInMillis() < currentTime)
-				{
-					calendar.add(Calendar.DAY_OF_YEAR, 1);
-				}
-				cancelQuestTimers("reset");
-				startQuestTimer("reset", calendar.getTimeInMillis() - currentTime, null, null);
-				break;
-			}
-			case "reset":
-			{
-				if (isEventPeriod())
-				{
-					// Update data for offline players.
-					try (Connection con = DatabaseFactory.getConnection();
-						PreparedStatement ps = con.prepareStatement("DELETE FROM account_gsdata WHERE var=?"))
-					{
-						ps.setString(1, SNOWMAN_GIFT_RECIEVED_VAR);
-						ps.executeUpdate();
-					}
-					catch (Exception e)
-					{
-						LOGGER.log(Level.SEVERE, "Could not reset Smash It Completely Event var: ", e);
-					}
-					
-					// Update data for online players.
-					for (Player plr : World.getInstance().getPlayers())
-					{
-						plr.getAccountVariables().remove(SNOWMAN_GIFT_RECIEVED_VAR);
-						plr.getAccountVariables().storeMe();
-					}
-				}
-				cancelQuestTimers("schedule");
-				startQuestTimer("schedule", 1000, null, null);
-				break;
-			}
 		}
+		
 		return htmltext;
+	}
+	
+	@Override
+	public String onFirstTalk(Npc npc, Player player)
+	{
+		return npc.getId() + ".htm";
 	}
 	
 	@Override
@@ -327,13 +300,14 @@ public class SnowmanEnergy extends LongTimeEvent
 			{
 				if (ArrayUtil.contains(MONSTERS_SOLO, npc.getId()))
 				{
-					addSpawn(RED_SNOWMAN, npc, true, 60000);
+					addSpawn(RED_SNOWMAN, npc, true, 60000, false, player.getInstanceId());
 				}
 				else if (ArrayUtil.contains(MONSTERS_PARTY, npc.getId()))
 				{
-					addSpawn(BLUE_SNOWMAN, npc, true, 60000);
+					addSpawn(BLUE_SNOWMAN, npc, true, 60000, false, player.getInstanceId());
 				}
 			}
+			
 			if (npc.getId() == RED_SNOWMAN)
 			{
 				SkillCaster.triggerCast(player, player, SNOWMAN_ENERGY);
@@ -360,6 +334,7 @@ public class SnowmanEnergy extends LongTimeEvent
 				{
 					SkillCaster.triggerCast(player, player, SNOWMAN_ENERGY);
 				}
+				
 				if (getRandom(100) < 30)
 				{
 					player.addItem(ItemProcessType.REWARD, CHRISTMAS_GIFT, 1, player, true);
@@ -368,10 +343,34 @@ public class SnowmanEnergy extends LongTimeEvent
 		}
 	}
 	
-	@Override
-	public String onFirstTalk(Npc npc, Player player)
+	@RegisterEvent(EventType.ON_DAILY_RESET)
+	@RegisterType(ListenerRegisterType.GLOBAL)
+	public void onDailyReset(OnDailyReset event)
 	{
-		return npc.getId() + ".htm";
+		if (!isEventPeriod())
+		{
+			return;
+		}
+		
+		// Update data for offline players.
+		try (Connection con = DatabaseFactory.getConnection();
+			PreparedStatement ps = con.prepareStatement("DELETE FROM account_gsdata WHERE var=?"))
+		{
+			ps.setString(1, SNOWMAN_GIFT_RECIEVED_VAR);
+			ps.executeUpdate();
+		}
+		catch (Exception e)
+		{
+			LOGGER.warning(getClass().getSimpleName() + ": Could not reset variables: " + e.getMessage());
+		}
+		
+		// Update data for online players.
+		for (Player player : World.getInstance().getPlayers())
+		{
+			player.getAccountVariables().remove(SNOWMAN_GIFT_RECIEVED_VAR);
+		}
+		
+		LOGGER.info(getClass().getSimpleName() + " has been reset.");
 	}
 	
 	public static void main(String[] args)

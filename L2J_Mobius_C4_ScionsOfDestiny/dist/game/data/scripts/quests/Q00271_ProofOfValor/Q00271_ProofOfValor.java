@@ -32,6 +32,7 @@ public class Q00271_ProofOfValor extends Quest
 {
 	// Item
 	private static final int KASHA_WOLF_FANG = 1473;
+	
 	// Rewards
 	private static final int NECKLACE_OF_VALOR = 1507;
 	private static final int NECKLACE_OF_COURAGE = 1506;

@@ -16,6 +16,7 @@
  */
 package ai.areas.Wastelands;
 
+import org.l2jmobius.commons.threads.ThreadPool;
 import org.l2jmobius.gameserver.ai.Intention;
 import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.World;
@@ -54,12 +55,14 @@ public class Wastelands extends AbstractNpcAI
 	private static final int SAKUM = 27453;
 	private static final int COMMANDO = 19126;
 	private static final int COMMANDO_CAPTAIN = 19127;
+	
 	// Misc
 	private static final NpcStringId[] GUARD_SHOUT =
 	{
 		NpcStringId.ATTACK_2,
 		NpcStringId.FOLLOW_ME_3
 	};
+	
 	// Locations
 	private static final Location GUARD_POSLOF_LOC = new Location(-29474, 187083, -3912);
 	private static final Location[] COMMANDO_SAKUM_LOC =
@@ -136,13 +139,13 @@ public class Wastelands extends AbstractNpcAI
 				
 				if (attackId > 0)
 				{
-					//@formatter:off
+					// @formatter:off
 					final Monster monster = World.getInstance().getVisibleObjectsInRange(guard, Monster.class, 1000)
 						.stream()
 						.filter(obj -> (obj.getId() == attackId))
 						.findFirst()
 						.orElse(null);
-					//@formatter:on
+					// @formatter:on
 					
 					if (monster != null)
 					{
@@ -162,13 +165,13 @@ public class Wastelands extends AbstractNpcAI
 						
 						if (guard.getId() == SCHUAZEN)
 						{
-							//@formatter:off
+							// @formatter:off
 							final FriendlyNpc decoGuard = World.getInstance().getVisibleObjectsInRange(guard, FriendlyNpc.class, 500)
 								.stream()
 								.filter(obj -> (obj.getId() == DECO_GUARD2))
 								.findFirst()
 								.orElse(null);
-							//@formatter:on
+							// @formatter:on
 							
 							if (decoGuard != null)
 							{
@@ -184,6 +187,7 @@ public class Wastelands extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	
@@ -211,13 +215,13 @@ public class Wastelands extends AbstractNpcAI
 			case REGENERATED_POSLOF:
 			{
 				final int guardId = npc.getId() == REGENERATED_KANILOV ? JOEL : SCHUAZEN;
-				//@formatter:off
+				// @formatter:off
 				final FriendlyNpc guard =  World.getInstance().getVisibleObjectsInRange(npc, FriendlyNpc.class, 500)
 					.stream()
 					.filter(obj -> (obj.getId() == guardId))
 					.findFirst()
 					.orElse(null);
-				//@formatter:on
+				// @formatter:on
 				
 				if (guard != null)
 				{
@@ -225,6 +229,7 @@ public class Wastelands extends AbstractNpcAI
 					{
 						addSpawn(DECO_GUARD2, GUARD_POSLOF_LOC);
 					}
+					
 					guard.broadcastSay(ChatType.NPC_GENERAL, guard.getId() == JOEL ? NpcStringId.AH_REGENERATOR_POSLOF_APPEARED_AGAIN : NpcStringId.AH_REGENERATOR_KANILOV_APPEARED_AGAIN);
 					notifyEvent("START_ATTACK", guard, null);
 				}
@@ -277,13 +282,13 @@ public class Wastelands extends AbstractNpcAI
 	{
 		final Attackable guard = event.getTarget().asAttackable();
 		
-		//@formatter:off
+		// @formatter:off
 		final Attackable sakum = World.getInstance().getVisibleObjectsInRange(guard, Attackable.class, 1000)
 			.stream()
 			.filter(obj -> (obj.getId() == SAKUM))
 			.findFirst()
 			.orElse(null);
-		//@formatter:on
+		// @formatter:on
 		
 		if (sakum != null)
 		{
@@ -305,10 +310,16 @@ public class Wastelands extends AbstractNpcAI
 				for (Location loc : COMMANDO_CAPTAIN_SAKUM_LOC)
 				{
 					final Attackable commander = addSpawn(COMMANDO_CAPTAIN, loc).asAttackable();
-					commander.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.HOW_DARE_YOU_ATTACK);
-					commander.reduceCurrentHp(1, sakum, null); // TODO: Find better way for attack
-					sakum.reduceCurrentHp(1, commander, null);
-					notifyEvent("START_ATTACK", commander, null);
+					ThreadPool.schedule(() ->
+					{
+						if (sakum.isSpawned() && !sakum.isDead() && commander.isSpawned() && !commander.isDead())
+						{
+							commander.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.HOW_DARE_YOU_ATTACK);
+							commander.reduceCurrentHp(1, sakum, null); // TODO: Find better way for attack
+							sakum.reduceCurrentHp(1, commander, null);
+							notifyEvent("START_ATTACK", commander, null);
+						}
+					}, 1500);
 				}
 			}
 			else
@@ -318,9 +329,15 @@ public class Wastelands extends AbstractNpcAI
 				for (Location loc : COMMANDO_SAKUM_LOC)
 				{
 					final Attackable commander = addSpawn(COMMANDO, loc).asAttackable();
-					commander.reduceCurrentHp(1, sakum, null); // TODO: Find better way for attack
-					sakum.reduceCurrentHp(1, commander, null);
-					notifyEvent("START_ATTACK", commander, null);
+					ThreadPool.schedule(() ->
+					{
+						if (sakum.isSpawned() && !sakum.isDead() && commander.isSpawned() && !commander.isDead())
+						{
+							commander.reduceCurrentHp(1, sakum, null); // TODO: Find better way for attack
+							sakum.reduceCurrentHp(1, commander, null);
+							notifyEvent("START_ATTACK", commander, null);
+						}
+					}, 1500);
 				}
 			}
 		}

@@ -29,6 +29,7 @@ public class Rumiese extends AbstractNpcAI
 {
 	// NPC
 	private static final int RUMIESE = 33151;
+	
 	// Item
 	private static final int CONTROL_DEVICE = 17608; // Energy Control Device
 	
@@ -64,6 +65,7 @@ public class Rumiese extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

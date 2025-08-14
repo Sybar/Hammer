@@ -53,6 +53,7 @@ public class VipManager
 		{
 			return;
 		}
+		
 		Containers.Global().addListener(new ConsumerEventListener(Containers.Global(), EventType.ON_PLAYER_LOAD, (Consumer<OnPlayerLoad>) this::onPlayerLoaded, this));
 	}
 	
@@ -78,10 +79,12 @@ public class VipManager
 		{
 			return false;
 		}
+		
 		if (player.getVipTier() <= 0)
 		{
 			return false;
 		}
+		
 		return player.getAccountVariables().getLong(AccountVariables.VIP_ITEM_BOUGHT, 0L) <= 0;
 	}
 	
@@ -96,6 +99,7 @@ public class VipManager
 		{
 			player.sendPacket(new ExBRNewIconCashBtnWnd((byte) 0));
 		}
+		
 		player.removeListener(_vipLoginListener);
 		player.sendPacket(new ReceiveVipInfo(player));
 	}
@@ -143,6 +147,7 @@ public class VipManager
 		{
 			temp = VIP_MAX_TIER;
 		}
+		
 		return temp;
 	}
 	
@@ -172,9 +177,11 @@ public class VipManager
 				{
 					temp = VIP_MAX_TIER;
 				}
+				
 				return VipData.getInstance().getVipTiers().get(temp);
 			}
 		}
+		
 		return VipData.getInstance().getVipTiers().get(VIP_MAX_TIER);
 	}
 	
@@ -185,6 +192,7 @@ public class VipManager
 		{
 			return 0;
 		}
+		
 		return tier.getPointsDepreciated();
 	}
 	
@@ -195,6 +203,7 @@ public class VipManager
 		{
 			return 0;
 		}
+		
 		return tier.getPointsRequired();
 	}
 	
@@ -207,6 +216,7 @@ public class VipManager
 			player.setVipTierExpiration(Instant.now().plus(30, ChronoUnit.DAYS).toEpochMilli());
 			return true;
 		}
+		
 		return false;
 	}
 	

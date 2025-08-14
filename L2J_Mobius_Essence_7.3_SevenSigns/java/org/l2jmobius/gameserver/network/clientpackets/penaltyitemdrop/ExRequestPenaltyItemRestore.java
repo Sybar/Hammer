@@ -67,6 +67,7 @@ public class ExRequestPenaltyItemRestore extends ClientPacket
 				break;
 			}
 		}
+		
 		if (itemPenalty == null)
 		{
 			return;

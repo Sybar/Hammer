@@ -38,12 +38,14 @@ public class AnakimBoss extends AbstractNpcAI
 {
 	// Npc
 	private static final int ANAKIM = 29348;
+	
 	// Skills
 	private static final SkillHolder POWER_STRIKE = new SkillHolder(32566, 1);
 	private static final SkillHolder POWER_MULTI_SHOT = new SkillHolder(32567, 1);
 	private static final SkillHolder HOLY_VENGEANCE = new SkillHolder(32568, 1);
 	private static final SkillHolder HOLY_DIMENSION = new SkillHolder(32569, 1);
 	private static final SkillHolder HOLY_SHIELD = new SkillHolder(32570, 1);
+	
 	// Others
 	private boolean _hp75 = false;
 	private boolean _hp50 = false;
@@ -68,6 +70,7 @@ public class AnakimBoss extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	
@@ -96,6 +99,7 @@ public class AnakimBoss extends AbstractNpcAI
 			{
 				refreshAiParams(attacker, npc, ((damage / 3) * 20));
 			}
+			
 			manageSkills(npc);
 		}
 	}
@@ -121,6 +125,7 @@ public class AnakimBoss extends AbstractNpcAI
 				return;
 			}
 		}
+		
 		final int index = MathUtil.getIndexOfMinValue(vars.getInt("i_quest0"), vars.getInt("i_quest1"), vars.getInt("i_quest2"));
 		vars.set("i_quest" + index, newAggroVal);
 		vars.set("c_quest" + index, attacker);
@@ -148,6 +153,7 @@ public class AnakimBoss extends AbstractNpcAI
 				vars.set("i_quest" + i, 0);
 			}
 		}
+		
 		final int index = MathUtil.getIndexOfMaxValue(vars.getInt("i_quest0"), vars.getInt("i_quest1"), vars.getInt("i_quest2"));
 		final Creature player = vars.getObject("c_quest" + index, Creature.class);
 		final int i2 = vars.getInt("i_quest" + index);
@@ -185,6 +191,7 @@ public class AnakimBoss extends AbstractNpcAI
 			npc.doCast(HOLY_SHIELD.getSkill());
 			return;
 		}
+		
 		if ((player != null) && !player.isDead())
 		{
 			if (chance < 15)

@@ -49,6 +49,7 @@ public class Merchant extends Folk
 		{
 			return true;
 		}
+		
 		return super.isAutoAttackable(attacker);
 	}
 	
@@ -64,6 +65,7 @@ public class Merchant extends Folk
 		{
 			pom = npcId + "-" + value;
 		}
+		
 		return "data/html/merchant/" + pom + ".htm";
 	}
 	

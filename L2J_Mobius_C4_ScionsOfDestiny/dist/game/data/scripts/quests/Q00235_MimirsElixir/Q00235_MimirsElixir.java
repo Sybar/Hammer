@@ -34,6 +34,7 @@ public class Q00235_MimirsElixir extends Quest
 	private static final int JOAN = 30718;
 	private static final int LADD = 30721;
 	private static final int MIXING_URN = 31149;
+	
 	// Items
 	private static final int STAR_OF_DESTINY = 5011;
 	private static final int PURE_SILVER = 6320;
@@ -42,6 +43,7 @@ public class Q00235_MimirsElixir extends Quest
 	private static final int BLOOD_FIRE = 6318;
 	private static final int MIMIR_ELIXIR = 6319;
 	private static final int MAGISTER_MIXING_STONE = 5905;
+	
 	// Reward
 	private static final int SCROLL_ENCHANT_WEAPON_A = 729;
 	

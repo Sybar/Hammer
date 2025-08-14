@@ -280,9 +280,9 @@
 		<set name="weight" val="2" />
 		<set name="price" val="10030020" />
 		<set name="is_stackable" val="true" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="110" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="81136" name="Talisman of Insanity Mysterious Pack" type="EtcItem">
 		<!-- Double-click to obtain Sealed Talisman of Insanity or 3 Mysterious Packs Lv. 3. -->
@@ -400,9 +400,9 @@
 		<set name="is_stackable" val="true" />
 		<set name="immediate_effect" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<cond>
+		<conditions>
 			<player MinimumVitalityPoints="35000" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="39612" level="1" /> <!-- Santiago's Sea Wind Scroll -->
 		</skills>

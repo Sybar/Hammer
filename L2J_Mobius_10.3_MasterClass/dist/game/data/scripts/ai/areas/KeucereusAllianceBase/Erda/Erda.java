@@ -40,6 +40,7 @@ public class Erda extends AbstractNpcAI
 	// NPCs
 	private static final int ERDA = 34319;
 	private static final int ETINA_RAID = 29318;
+	
 	// Location
 	private static final Location ENTER_LOC = new Location(-245778, 181088, 2860);
 	private static final Location CAMILLE_LOC = new Location(-245758, 149020, 11838);
@@ -67,14 +68,17 @@ public class Erda extends AbstractNpcAI
 				{
 					return "34319-1.html";
 				}
+				
 				if (status == 2)
 				{
 					return "34319-2.html";
 				}
+				
 				if (!player.isInParty())
 				{
 					return "34319-3.html";
 				}
+				
 				final Party party = player.getParty();
 				final boolean isInCC = party.isInCommandChannel();
 				final List<Player> members = (isInCC) ? party.getCommandChannel().getMembers() : party.getMembers();
@@ -83,6 +87,7 @@ public class Erda extends AbstractNpcAI
 				{
 					return "34319-3.html";
 				}
+				
 				if ((members.size() < Config.ETINA_MIN_PLAYERS) || (members.size() > Config.ETINA_MAX_PLAYERS))
 				{
 					final NpcHtmlMessage packet = new NpcHtmlMessage(npc.getObjectId());
@@ -92,6 +97,7 @@ public class Erda extends AbstractNpcAI
 					player.sendPacket(packet);
 					return null;
 				}
+				
 				for (Player member : members)
 				{
 					if (member.getLevel() < Config.ETINA_MIN_PLAYER_LEVEL)
@@ -103,6 +109,7 @@ public class Erda extends AbstractNpcAI
 						return null;
 					}
 				}
+				
 				for (Player member : members)
 				{
 					if (member.isInsideRadius3D(npc, Config.ALT_PARTY_RANGE))
@@ -117,6 +124,7 @@ public class Erda extends AbstractNpcAI
 		{
 			player.teleToLocation(CAMILLE_LOC, true);
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	

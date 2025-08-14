@@ -17,9 +17,9 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_sellable" val="false" />
 		<set name="material" val="PAPER" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="81" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="91202" name="Scroll: Sublime Self-Sacrifice" type="EtcItem">
 		<!-- Scroll needed to learn Sublime Self-sacrifice. -->
@@ -27,9 +27,9 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_sellable" val="false" />
 		<set name="material" val="PAPER" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="81" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="91203" name="Scroll: Summon Feline Queen" type="EtcItem">
 		<!-- Secret Book used to learn Summon Feline Queen. -->
@@ -37,9 +37,9 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_sellable" val="false" />
 		<set name="material" val="PAPER" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="77" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="91204" name="Scroll: Summon Seraphim the Unicorn" type="EtcItem">
 		<!-- Secret Book used to learn Summon Seraphim the Unicorn. -->
@@ -47,9 +47,9 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_sellable" val="false" />
 		<set name="material" val="PAPER" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="77" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="91205" name="Scroll: Summon Nightshade" type="EtcItem">
 		<!-- Secret Book used to learn Summon Nightshade. -->
@@ -57,9 +57,9 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_sellable" val="false" />
 		<set name="material" val="PAPER" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="77" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="91206" name="Chronicle Token" type="EtcItem">
 		<!-- CON, MEN, DEX, WIT, STR, INT +1 with Inventory. Attack/Magic Rate +5%. The -->
@@ -793,9 +793,9 @@
 		<set name="is_stackable" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="handler" val="ItemSkills" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="51174" level="1" /> <!-- Transform Swordsinger -->
 		</skills>
@@ -810,9 +810,9 @@
 		<set name="is_stackable" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="handler" val="ItemSkills" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="51174" level="1" /> <!-- Transform Swordsinger -->
 		</skills>

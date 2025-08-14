@@ -43,6 +43,7 @@ public class PaulinasSupportBox implements IItemHandler
 	private static final int BOX_A_GRADE = 46851;
 	private static final int BOX_S_GRADE = 46852;
 	private static final int BOX_R_GRADE = 46919;
+	
 	// Rewards
 	private static final int BOX_D_HEAVY = 46837;
 	private static final int BOX_D_LIGHT = 46838;
@@ -59,6 +60,7 @@ public class PaulinasSupportBox implements IItemHandler
 	private static final int BOX_R_HEAVY = 46924;
 	private static final int BOX_R_LIGHT = 46925;
 	private static final int BOX_R_ROBE = 46926;
+	
 	// D-Grade weapon rewards
 	private static final int WEAPON_SWORD_D = 46791;
 	private static final int WEAPON_GSWORD_D = 46792;
@@ -71,6 +73,7 @@ public class PaulinasSupportBox implements IItemHandler
 	// private static final int WEAPON_RAPIER_D = 46799;
 	private static final int WEAPON_CROSSBOW_D = 46800;
 	private static final int BOLTS_D = 9633;
+	
 	// C-Grade weapon rewards
 	private static final int WEAPON_SWORD_C = 46801;
 	private static final int WEAPON_GSWORD_C = 46802;
@@ -86,6 +89,7 @@ public class PaulinasSupportBox implements IItemHandler
 	private static final int WEAPON_CROSSBOW_C = 46812;
 	private static final int ARROWS_C = 1342;
 	private static final int BOLTS_C = 9634;
+	
 	// A-Grade weapon rewards
 	private static final int WEAPON_SWORD_A = 46813;
 	private static final int WEAPON_GSWORD_A = 46814;
@@ -101,6 +105,7 @@ public class PaulinasSupportBox implements IItemHandler
 	private static final int WEAPON_CROSSBOW_A = 46824;
 	private static final int ARROWS_A = 1344;
 	private static final int BOLTS_A = 9636;
+	
 	// S-Grade weapon rewards
 	private static final int WEAPON_SWORD_S = 46825;
 	private static final int WEAPON_GSWORD_S = 46826;
@@ -116,6 +121,7 @@ public class PaulinasSupportBox implements IItemHandler
 	private static final int WEAPON_RAPIER_S = 46835;
 	private static final int WEAPON_CROSSBOW_S = 46836;
 	private static final int BOLT_OF_LIGHT_S = 9637;
+	
 	// R-Grade weapon rewards
 	private static final int WEAPON_SWORD_R = 47008;
 	private static final int WEAPON_SHIELD_R = 47026;
@@ -134,7 +140,7 @@ public class PaulinasSupportBox implements IItemHandler
 	private static final int ORICHALCUM_BOLT_R = 19443;
 	
 	@Override
-	public boolean useItem(Playable playable, Item item, boolean forceUse)
+	public boolean onItemUse(Playable playable, Item item, boolean forceUse)
 	{
 		if (!playable.isPlayer())
 		{
@@ -719,6 +725,7 @@ public class PaulinasSupportBox implements IItemHandler
 				break;
 			}
 		}
+		
 		return true;
 	}
 }

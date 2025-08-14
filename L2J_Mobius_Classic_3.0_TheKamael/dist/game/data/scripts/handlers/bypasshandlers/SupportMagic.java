@@ -82,7 +82,7 @@ public class SupportMagic implements IBypassHandler
 	private static final int HASTE_LEVEL_2 = Config.MAX_NEWBIE_BUFF_LEVEL + 1; // disabled
 	
 	@Override
-	public boolean useBypass(String command, Player player, Creature target)
+	public boolean onCommand(String command, Player player, Creature target)
 	{
 		if (!target.isNpc() || player.isCursedWeaponEquipped())
 		{
@@ -97,6 +97,7 @@ public class SupportMagic implements IBypassHandler
 		{
 			makeSupportMagic(player, target.asNpc(), false);
 		}
+		
 		return true;
 	}
 	
@@ -179,7 +180,7 @@ public class SupportMagic implements IBypassHandler
 	}
 	
 	@Override
-	public String[] getBypassList()
+	public String[] getCommandList()
 	{
 		return COMMANDS;
 	}

@@ -58,6 +58,7 @@ public class LeonaBlackbird extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

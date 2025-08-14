@@ -456,9 +456,9 @@
 		<set name="etcitem_type" val="SCROLL" />
 		<set name="material" val="PAPER" />
 		<set name="handler" val="ItemSkills" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="17188" level="1" /> <!-- Dandy's Faith -->
 		</skills>
@@ -474,9 +474,9 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="material" val="PAPER" />
 		<set name="handler" val="ItemSkills" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="17189" level="1" /> <!-- Dandy's Passion -->
 		</skills>
@@ -491,9 +491,9 @@
 		<set name="etcitem_type" val="SCROLL" />
 		<set name="material" val="PAPER" />
 		<set name="handler" val="ItemSkills" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="17187" level="1" /> <!-- Dandy's Challenge -->
 		</skills>
@@ -872,12 +872,12 @@
 		<set name="is_sellable" val="false" />
 		<set name="weight" val="220" />
 		<set name="material" val="CLOTH" />
-		<cond msgId="2453">
+		<conditions msgId="2453">
 			<player cloakStatus="true" />
-		</cond>
-		<cond>
+		</conditions>
+		<conditions>
 			<player level="80" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">50</stat>
 			<stat type="mDef">40</stat>

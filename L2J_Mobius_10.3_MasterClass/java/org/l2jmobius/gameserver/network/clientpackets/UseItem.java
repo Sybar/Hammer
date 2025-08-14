@@ -29,8 +29,6 @@ import org.l2jmobius.gameserver.ai.Action;
 import org.l2jmobius.gameserver.ai.CreatureAI;
 import org.l2jmobius.gameserver.ai.Intention;
 import org.l2jmobius.gameserver.ai.NextAction;
-import org.l2jmobius.gameserver.data.enums.CategoryType;
-import org.l2jmobius.gameserver.data.xml.CategoryData;
 import org.l2jmobius.gameserver.data.xml.EnchantItemGroupsData;
 import org.l2jmobius.gameserver.handler.AdminCommandHandler;
 import org.l2jmobius.gameserver.handler.IItemHandler;
@@ -53,8 +51,6 @@ import org.l2jmobius.gameserver.model.item.enums.ItemSkillType;
 import org.l2jmobius.gameserver.model.item.holders.ItemSkillHolder;
 import org.l2jmobius.gameserver.model.item.instance.Item;
 import org.l2jmobius.gameserver.model.item.type.ActionType;
-import org.l2jmobius.gameserver.model.item.type.ArmorType;
-import org.l2jmobius.gameserver.model.item.type.WeaponType;
 import org.l2jmobius.gameserver.model.zone.ZoneId;
 import org.l2jmobius.gameserver.network.PacketLogger;
 import org.l2jmobius.gameserver.network.SystemMessageId;
@@ -124,7 +120,7 @@ public class UseItem extends ClientPacket
 				final WorldObject obj = World.getInstance().findObject(_objectId);
 				if ((obj != null) && obj.isItem())
 				{
-					AdminCommandHandler.getInstance().useAdminCommand(player, "admin_use_item " + _objectId, true);
+					AdminCommandHandler.getInstance().onCommand(player, "admin_use_item " + _objectId, true);
 				}
 			}
 			return;
@@ -229,33 +225,10 @@ public class UseItem extends ClientPacket
 				return;
 			}
 			
-			if (CategoryData.getInstance().isInCategory(CategoryType.DEATH_KNIGHT_ALL_CLASS, player.getPlayerClass().getId()))
+			if (!player.canUseEquipment(item))
 			{
-				if (item.isArmor())
-				{
-					// Prevent equip shields for Death Knight players.
-					if (item.getItemType() == ArmorType.SHIELD)
-					{
-						if (item.isEquipped())
-						{
-							player.disarmShield();
-						}
-						else
-						{
-							player.sendPacket(SystemMessageId.YOU_DO_NOT_MEET_THE_REQUIRED_CONDITION_TO_EQUIP_THAT_ITEM);
-						}
-						return;
-					}
-				}
-				else if (item.isWeapon() && (item.getItemType() != WeaponType.FISHINGROD)) // Fishing rods are enabled for all players.
-				{
-					// Prevent Death Knight players to equip other weapons than Swords.
-					if ((item.getItemType() != WeaponType.SWORD) || (item.getTemplate().getBodyPart() == ItemTemplate.SLOT_LR_HAND))
-					{
-						player.sendPacket(SystemMessageId.YOU_DO_NOT_MEET_THE_REQUIRED_CONDITION_TO_EQUIP_THAT_ITEM);
-						return;
-					}
-				}
+				player.sendPacket(SystemMessageId.YOU_DO_NOT_MEET_THE_REQUIRED_CONDITION_TO_EQUIP_THAT_ITEM);
+				return;
 			}
 			
 			// Prevent players to equip weapon while wearing combat flag
@@ -267,11 +240,13 @@ public class UseItem extends ClientPacket
 					player.sendPacket(SystemMessageId.YOU_DO_NOT_MEET_THE_REQUIRED_CONDITION_TO_EQUIP_THAT_ITEM);
 					return;
 				}
+				
 				if (player.isMounted() || player.isDisarmed())
 				{
 					player.sendPacket(SystemMessageId.YOU_DO_NOT_MEET_THE_REQUIRED_CONDITION_TO_EQUIP_THAT_ITEM);
 					return;
 				}
+				
 				if (player.isCursedWeaponEquipped())
 				{
 					return;
@@ -372,7 +347,7 @@ public class UseItem extends ClientPacket
 					PacketLogger.warning("Unmanaged Item handler: " + etcItem.getHandlerName() + " for Item Id: " + _itemId + "!");
 				}
 			}
-			else if (handler.useItem(player, item, _ctrlPressed))
+			else if (handler.onItemUse(player, item, _ctrlPressed))
 			{
 				// Item reuse time should be added if the item is successfully used.
 				// Skill reuse delay is done at handlers.itemhandlers.ItemSkillsTemplate;
@@ -421,6 +396,7 @@ public class UseItem extends ClientPacket
 			sm = new SystemMessage(SystemMessageId.S1_WILL_BE_AVAILABLE_AGAIN_IN_S2_SEC);
 			sm.addItemName(item);
 		}
+		
 		sm.addInt(seconds);
 		player.sendPacket(sm);
 	}

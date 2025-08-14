@@ -92,6 +92,7 @@ public class RankingHistory
 			{
 				store(); // to update
 			}
+			
 			_nextUpdate = currentTime + Config.CHAR_DATA_STORE_INTERVAL;
 			try (Connection con = DatabaseFactory.getConnection();
 				PreparedStatement statement = con.prepareStatement("SELECT * FROM character_ranking_history WHERE charId = ? ORDER BY day DESC"))
@@ -114,6 +115,7 @@ public class RankingHistory
 				LOGGER.log(Level.WARNING, "Could not get RankingCharHistory data: " + e.getMessage(), e);
 			}
 		}
+		
 		return _data;
 	}
 }

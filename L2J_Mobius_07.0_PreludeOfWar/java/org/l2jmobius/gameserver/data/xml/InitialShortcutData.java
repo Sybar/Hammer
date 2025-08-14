@@ -30,12 +30,12 @@ import org.w3c.dom.Node;
 
 import org.l2jmobius.commons.util.IXmlReader;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.actor.enums.player.Macro;
-import org.l2jmobius.gameserver.model.actor.enums.player.MacroCmd;
 import org.l2jmobius.gameserver.model.actor.enums.player.MacroType;
 import org.l2jmobius.gameserver.model.actor.enums.player.PlayerClass;
-import org.l2jmobius.gameserver.model.actor.enums.player.Shortcut;
 import org.l2jmobius.gameserver.model.actor.enums.player.ShortcutType;
+import org.l2jmobius.gameserver.model.actor.holders.player.Macro;
+import org.l2jmobius.gameserver.model.actor.holders.player.MacroCmd;
+import org.l2jmobius.gameserver.model.actor.holders.player.Shortcut;
 import org.l2jmobius.gameserver.model.item.instance.Item;
 import org.l2jmobius.gameserver.network.serverpackets.ShortcutRegister;
 
@@ -199,9 +199,11 @@ public class InitialShortcutData implements IXmlReader
 								break;
 							}
 						}
+						
 						commands.add(new MacroCmd(entry++, type, d1, d2, cmd));
 					}
 				}
+				
 				_macroPresets.put(macroId, new Macro(macroId, icon, name, description, acronym, commands));
 			}
 		}
@@ -278,6 +280,7 @@ public class InitialShortcutData implements IXmlReader
 					{
 						continue;
 					}
+					
 					shortcutId = item.getObjectId();
 					break;
 				}
@@ -296,6 +299,7 @@ public class InitialShortcutData implements IXmlReader
 					{
 						continue;
 					}
+					
 					player.registerMacro(macro);
 					break;
 				}
@@ -322,6 +326,7 @@ public class InitialShortcutData implements IXmlReader
 						{
 							continue;
 						}
+						
 						shortcutId = item.getObjectId();
 						break;
 					}
@@ -340,6 +345,7 @@ public class InitialShortcutData implements IXmlReader
 						{
 							continue;
 						}
+						
 						player.registerMacro(macro);
 						break;
 					}

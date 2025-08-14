@@ -49,6 +49,7 @@ public class Q00091_SagaOfTheArcanaLord extends Quest
 	private static final int TABLET_OF_VISION_3 = 31650;
 	private static final int TABLET_OF_VISION_4 = 31654;
 	private static final int SPARKY_THE_CAT_1 = 31586;
+	
 	// Monsters
 	private static final int ICE_MONSTER = 27316;
 	private static final int SPIRIT_OF_A_DROWNED = 27317;
@@ -64,6 +65,7 @@ public class Q00091_SagaOfTheArcanaLord extends Quest
 	private static final int VISION_GUARDIAN_SHAKIEL = 27313;
 	private static final int HALISHA_ARCHON = 27219;
 	private static final int KITANIS_VAN_HACKEN = 27310;
+	
 	// Items
 	private static final int ICE_CRYSTAL_FRAGMENT = 49825;
 	private static final int HALISHA_BADGE = 7506;
@@ -72,8 +74,10 @@ public class Q00091_SagaOfTheArcanaLord extends Quest
 	private static final int RESONANCE_AMULET_3 = 7351;
 	private static final int RESONANCE_AMULET_4 = 7382;
 	private static final int SUMMONER_KEAT_LETTER = 7604;
+	
 	// Reward
 	private static final int BOOK_GOLD_LION = 90038;
+	
 	// Misc
 	private static final String KILL_COUNT_VAR = "KillCount";
 	
@@ -96,6 +100,7 @@ public class Q00091_SagaOfTheArcanaLord extends Quest
 		{
 			return null;
 		}
+		
 		String htmltext = event;
 		switch (event)
 		{
@@ -243,6 +248,7 @@ public class Q00091_SagaOfTheArcanaLord extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -443,6 +449,7 @@ public class Q00091_SagaOfTheArcanaLord extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -513,6 +520,7 @@ public class Q00091_SagaOfTheArcanaLord extends Quest
 						{
 							qs.set(KILL_COUNT_VAR, count + 1);
 						}
+						
 						if (count >= 20)
 						{
 							qs.setCond(8, true);
@@ -539,8 +547,10 @@ public class Q00091_SagaOfTheArcanaLord extends Quest
 			{
 				holder.add(new NpcLogListHolder(GUARDIAN_OF_FORBIDDEN_KNOWLEDGE, false, guardiancount));
 			}
+			
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

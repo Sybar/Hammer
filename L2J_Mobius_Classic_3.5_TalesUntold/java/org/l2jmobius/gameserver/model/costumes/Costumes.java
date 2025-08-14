@@ -212,6 +212,7 @@ public class Costumes
 		{
 			LOGGER.log(Level.SEVERE, "Failed to load costumes for player " + player.getObjectId(), e);
 		}
+		
 		return costumes;
 	}
 	
@@ -226,6 +227,7 @@ public class Costumes
 				return child;
 			}
 		}
+		
 		return null;
 	}
 	
@@ -242,6 +244,7 @@ public class Costumes
 				extractCost.add(new ItemHolder(parseInteger(costAttrs, "id"), parseLong(costAttrs, "count")));
 			}
 		}
+		
 		return extractCost;
 	}
 	
@@ -265,6 +268,7 @@ public class Costumes
 				}
 			}
 		}
+		
 		return intSet;
 	}
 	
@@ -290,6 +294,7 @@ public class Costumes
 		{
 			return costume.skill();
 		}
+		
 		return null; // Or however you want to handle the null case.
 	}
 	
@@ -381,6 +386,7 @@ public class Costumes
 			player.sendPacket(SystemMessageId.CANNOT_USE_SEALBOOKS_AND_EVOLVE_OR_EXTRACT_TRANSFORMATIONS_DURING_A_BATTLE);
 			return false;
 		}
+		
 		return true;
 	}
 	

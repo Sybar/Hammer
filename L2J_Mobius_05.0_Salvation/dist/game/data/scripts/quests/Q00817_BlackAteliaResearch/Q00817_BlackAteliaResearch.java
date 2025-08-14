@@ -44,9 +44,11 @@ public class Q00817_BlackAteliaResearch extends Quest
 		23604, // Guardian Destra
 		26128, // Kelbim's Clone
 	};
+	
 	// Items
 	private static final int BLACK_ATELIA_POWDER = 46145;
 	private static final int HARDENER_POUCH_R = 32779;
+	
 	// Misc
 	private static final int MIN_LEVEL = 101;
 	
@@ -94,6 +96,7 @@ public class Q00817_BlackAteliaResearch extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -122,6 +125,7 @@ public class Q00817_BlackAteliaResearch extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

@@ -86,10 +86,12 @@ public class RequestAutoSoulShot extends ClientPacket
 							{
 								soulshotCount += pet.getSoulShotsPerHit();
 							}
+							
 							for (Summon servitor : player.getServitors().values())
 							{
 								soulshotCount += servitor.getSoulShotsPerHit();
 							}
+							
 							if (soulshotCount > item.getCount())
 							{
 								player.sendPacket(SystemMessageId.YOU_DON_T_HAVE_ENOUGH_SOULSHOTS_NEEDED_FOR_A_PET_SERVITOR);
@@ -104,10 +106,12 @@ public class RequestAutoSoulShot extends ClientPacket
 							{
 								spiritshotCount += pet.getSpiritShotsPerHit();
 							}
+							
 							for (Summon servitor : player.getServitors().values())
 							{
 								spiritshotCount += servitor.getSpiritShotsPerHit();
 							}
+							
 							if (spiritshotCount > item.getCount())
 							{
 								player.sendPacket(SystemMessageId.YOU_DON_T_HAVE_ENOUGH_SOULSHOTS_NEEDED_FOR_A_PET_SERVITOR);
@@ -130,9 +134,11 @@ public class RequestAutoSoulShot extends ClientPacket
 								sm.addItemName(item);
 								player.sendPacket(sm);
 							}
+							
 							// Charge
 							pet.rechargeShots(isSoulshot, isSpiritshot, false);
 						}
+						
 						for (Summon summon : player.getServitors().values())
 						{
 							// Send message
@@ -142,6 +148,7 @@ public class RequestAutoSoulShot extends ClientPacket
 								sm.addItemName(item);
 								player.sendPacket(sm);
 							}
+							
 							// Charge
 							summon.rechargeShots(isSoulshot, isSpiritshot, false);
 						}

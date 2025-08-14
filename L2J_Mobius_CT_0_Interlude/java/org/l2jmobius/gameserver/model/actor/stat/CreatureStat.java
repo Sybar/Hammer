@@ -25,7 +25,6 @@ import java.util.Arrays;
 import org.l2jmobius.Config;
 import org.l2jmobius.gameserver.model.Elementals;
 import org.l2jmobius.gameserver.model.actor.Creature;
-import org.l2jmobius.gameserver.model.actor.enums.player.PlayerCondOverride;
 import org.l2jmobius.gameserver.model.item.Weapon;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.model.stats.Calculator;
@@ -126,6 +125,7 @@ public class CreatureStat
 				}
 			}
 		}
+		
 		return value;
 	}
 	
@@ -168,10 +168,12 @@ public class CreatureStat
 	public int getCriticalHit(Creature target, Skill skill)
 	{
 		double val = calcStat(Stat.CRITICAL_RATE, _creature.getTemplate().getBaseCritRate(), target, skill);
-		if (!_creature.canOverrideCond(PlayerCondOverride.MAX_STATS_VALUE))
-		{
-			val = Math.min(val, Config.MAX_PCRIT_RATE);
-		}
+		
+		// if (!_creature.isGM())
+		// {
+		val = Math.min(val, Config.MAX_PCRIT_RATE);
+		// }
+		
 		return (int) (val + .5);
 	}
 	
@@ -191,10 +193,12 @@ public class CreatureStat
 	public int getEvasionRate(Creature target)
 	{
 		int val = (int) Math.round(calcStat(Stat.EVASION_RATE, 0, target, null));
-		if (!_creature.canOverrideCond(PlayerCondOverride.MAX_STATS_VALUE))
-		{
-			val = Math.min(val, Config.MAX_EVASION);
-		}
+		
+		// if (!_creature.isGM())
+		// {
+		val = Math.min(val, Config.MAX_EVASION);
+		// }
+		
 		return val;
 	}
 	
@@ -228,6 +232,7 @@ public class CreatureStat
 		{
 			return (int) calcStat(Stat.MAGIC_ATTACK_RANGE, skill.getCastRange(), null, skill);
 		}
+		
 		return _creature.getTemplate().getBaseAttackRange();
 	}
 	
@@ -276,6 +281,7 @@ public class CreatureStat
 		{
 			bonusAtk = Config.CHAMPION_ATK;
 		}
+		
 		if (_creature.isRaid())
 		{
 			bonusAtk *= Config.RAID_MATTACK_MULTIPLIER;
@@ -297,10 +303,11 @@ public class CreatureStat
 		}
 		
 		double val = calcStat(Stat.MAGIC_ATTACK_SPEED, _creature.getTemplate().getBaseMAtkSpd() * bonusSpdAtk);
-		if (!_creature.canOverrideCond(PlayerCondOverride.MAX_STATS_VALUE))
-		{
-			val = Math.min(val, Config.MAX_MATK_SPEED);
-		}
+		
+		// if (!_creature.isGM())
+		// {
+		val = Math.min(val, Config.MAX_MATK_SPEED);
+		// }
 		
 		return (int) val;
 	}
@@ -313,10 +320,12 @@ public class CreatureStat
 	public int getMCriticalHit(Creature target, Skill skill)
 	{
 		int val = (int) calcStat(Stat.MCRITICAL_RATE, 1, target, skill) * 10;
-		if (!_creature.canOverrideCond(PlayerCondOverride.MAX_STATS_VALUE))
-		{
-			val = Math.min(val, Config.MAX_MCRIT_RATE);
-		}
+		
+		// if (!_creature.isGM())
+		// {
+		val = Math.min(val, Config.MAX_MCRIT_RATE);
+		// }
+		
 		return val;
 	}
 	
@@ -400,6 +409,7 @@ public class CreatureStat
 		{
 			baseSpeed = getBaseMoveSpeed(_creature.isRunning() ? MoveType.RUN : MoveType.WALK);
 		}
+		
 		return getMoveSpeed() * (1. / baseSpeed);
 	}
 	
@@ -418,6 +428,7 @@ public class CreatureStat
 		{
 			return 0;
 		}
+		
 		return calcStat(Stat.MOVE_SPEED, baseRunSpd * _gmSpeedMultiplier, null, null);
 	}
 	
@@ -431,6 +442,7 @@ public class CreatureStat
 		{
 			return 0;
 		}
+		
 		return calcStat(Stat.MOVE_SPEED, baseWalkSpd * _gmSpeedMultiplier);
 	}
 	
@@ -444,6 +456,7 @@ public class CreatureStat
 		{
 			return 0;
 		}
+		
 		return calcStat(Stat.MOVE_SPEED, baseRunSpd * _gmSpeedMultiplier, null, null);
 	}
 	
@@ -457,6 +470,7 @@ public class CreatureStat
 		{
 			return 0;
 		}
+		
 		return calcStat(Stat.MOVE_SPEED, baseWalkSpd * _gmSpeedMultiplier);
 	}
 	
@@ -478,6 +492,7 @@ public class CreatureStat
 		{
 			return _creature.isRunning() ? getSwimRunSpeed() : getSwimWalkSpeed();
 		}
+		
 		return _creature.isRunning() ? getRunSpeed() : getWalkSpeed();
 	}
 	
@@ -501,10 +516,12 @@ public class CreatureStat
 		{
 			bonusAtk = Config.CHAMPION_ATK;
 		}
+		
 		if (_creature.isRaid())
 		{
 			bonusAtk *= Config.RAID_PATTACK_MULTIPLIER;
 		}
+		
 		return Math.min(calcStat(Stat.POWER_ATTACK, _creature.getTemplate().getBasePAtk() * bonusAtk, target, null), Config.MAX_PATK);
 	}
 	
@@ -518,6 +535,7 @@ public class CreatureStat
 		{
 			bonusAtk = Config.CHAMPION_SPD_ATK;
 		}
+		
 		return Math.round(calcStat(Stat.POWER_ATTACK_SPEED, _creature.getTemplate().getBasePAtkSpd() * bonusAtk, null, null));
 	}
 	
@@ -545,6 +563,7 @@ public class CreatureStat
 		{
 			baseAttackRange = _creature.getTemplate().getBaseAttackRange();
 		}
+		
 		return (int) calcStat(Stat.POWER_ATTACK_RANGE, baseAttackRange, null, null);
 	}
 	
@@ -590,6 +609,7 @@ public class CreatureStat
 		{
 			return 1;
 		}
+		
 		double mpConsume = skill.getMpConsume();
 		final double nextDanceMpCost = Math.ceil(skill.getMpConsume() / 2.);
 		if (skill.isDance() && Config.DANCE_CONSUME_ADDITIONAL_MP && (_creature != null) && (_creature.getDanceCount() > 0))
@@ -602,10 +622,12 @@ public class CreatureStat
 		{
 			return (int) calcStat(Stat.DANCE_MP_CONSUME_RATE, mpConsume);
 		}
+		
 		if (skill.isMagic())
 		{
 			return (int) calcStat(Stat.MAGICAL_MP_CONSUME_RATE, mpConsume);
 		}
+		
 		return (int) calcStat(Stat.PHYSICAL_MP_CONSUME_RATE, mpConsume);
 	}
 	

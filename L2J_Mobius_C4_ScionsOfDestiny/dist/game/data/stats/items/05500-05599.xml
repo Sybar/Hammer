@@ -1023,7 +1023,7 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="is_magic_weapon" val="true" />
 		<set name="item_skill" val="3014-2" /> <!-- Special Ability: Mana Up -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="207" />
 			<set stat="mAtk" val="157" />
 			<set stat="critRate" val="4" />
@@ -1031,7 +1031,7 @@
 			<set stat="pAtkSpd" val="325" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="5597" type="Weapon" name="Dasparion's Staff">
 		<!-- Increases maximum MP by 60% and decreases maximum HP by 40%. Enhances damage to target during PvP. -->
@@ -1053,7 +1053,7 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="is_magic_weapon" val="true" />
 		<set name="item_skill" val="3048-2" /> <!-- Special Ability: Conversion -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="207" />
 			<set stat="mAtk" val="157" />
 			<set stat="critRate" val="4" />
@@ -1061,7 +1061,7 @@
 			<set stat="pAtkSpd" val="325" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="5598" type="Weapon" name="Dasparion's Staff">
 		<!-- Increases Casting Spd. by 15%. Enhances damage to target during PvP. -->
@@ -1083,7 +1083,7 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="is_magic_weapon" val="true" />
 		<set name="item_skill" val="3047-2" /> <!-- Special Ability: Acumen -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="207" />
 			<set stat="mAtk" val="157" />
 			<set stat="critRate" val="4" />
@@ -1091,7 +1091,7 @@
 			<set stat="pAtkSpd" val="325" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 	<item id="5599" type="Weapon" name="Meteor Shower">
 		<!-- Increases Critical Attack by 61. Enhances damage to target during PvP. -->
@@ -1112,7 +1112,7 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="true" />
 		<set name="item_skill" val="3050-1" /> <!-- Special Ability: Focus -->
-		<for>
+		<stats>
 			<set stat="pAtk" val="213" />
 			<set stat="mAtk" val="107" />
 			<set stat="critRate" val="4" />
@@ -1120,6 +1120,6 @@
 			<set stat="pAtkSpd" val="379" />
 			<enchant val="0" stat="pAtk" />
 			<enchant val="0" stat="mAtk" />
-		</for>
+		</stats>
 	</item>
 </list>

@@ -92,6 +92,7 @@ public class ExRequestActivateAutoShortcut extends ClientPacket
 						}
 					}
 				}
+				
 				if ((skill == null) && player.hasPet())
 				{
 					skill = player.getPet().getKnownSkill(skillId);
@@ -118,10 +119,11 @@ public class ExRequestActivateAutoShortcut extends ClientPacket
 					AutoUseTaskManager.getInstance().removeAutoPotionItem(player);
 				}
 			}
+			
 			// auto skill
 			if (skill != null)
 			{
-				if (skill.isBad())
+				if (skill.hasNegativeEffect())
 				{
 					AutoUseTaskManager.getInstance().removeAutoSkill(player, skill.getId());
 				}
@@ -160,10 +162,11 @@ public class ExRequestActivateAutoShortcut extends ClientPacket
 					}
 				}
 			}
+			
 			// auto skill
 			if (Config.ENABLE_AUTO_SKILL && (skill != null))
 			{
-				if (skill.isBad())
+				if (skill.hasNegativeEffect())
 				{
 					AutoUseTaskManager.getInstance().addAutoSkill(player, skill.getId());
 				}
@@ -173,6 +176,7 @@ public class ExRequestActivateAutoShortcut extends ClientPacket
 				}
 				return;
 			}
+			
 			// action
 			AutoUseTaskManager.getInstance().addAutoAction(player, shortcut.getId());
 		}

@@ -109,6 +109,7 @@ public class CollectionData implements IXmlReader
 									LOGGER.severe(getClass().getSimpleName() + ": Item template null for itemId: " + itemId + " collection item: " + id);
 									continue;
 								}
+								
 								items.add(new ItemEnchantHolder(itemId, itemCount, itemEnchantLevel));
 							}
 						}
@@ -133,6 +134,7 @@ public class CollectionData implements IXmlReader
 		{
 			return _collectionsByTabId.get(tabId);
 		}
+		
 		return Collections.emptyList();
 	}
 	

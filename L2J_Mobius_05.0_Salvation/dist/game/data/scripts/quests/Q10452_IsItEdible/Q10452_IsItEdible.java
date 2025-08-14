@@ -35,14 +35,17 @@ public class Q10452_IsItEdible extends Quest
 {
 	// NPCs
 	private static final int SALLY = 32743;
+	
 	// Monster's
 	private static final int FANTASY_MUSHROM = 18864;
 	private static final int STICKY_MUSHROMS = 18865;
 	private static final int VITALIITY_PLANT = 18868;
+	
 	// items
 	private static final int FANTASY_MUSHROMS_SPORE = 36688;
 	private static final int STICKY_MUSHROMS_SPORE = 36689;
 	private static final int VITALIITY_LEAF_POUCH = 36690;
+	
 	// Misc
 	private static final int MIN_LEVEL = 81;
 	
@@ -65,6 +68,7 @@ public class Q10452_IsItEdible extends Quest
 		{
 			return htmltext;
 		}
+		
 		switch (event)
 		{
 			case "32743-02.htm":
@@ -90,6 +94,7 @@ public class Q10452_IsItEdible extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -122,6 +127,7 @@ public class Q10452_IsItEdible extends Quest
 		{
 			htmltext = "Complete.html";
 		}
+		
 		return htmltext;
 	}
 	
@@ -133,6 +139,7 @@ public class Q10452_IsItEdible extends Quest
 		{
 			return;
 		}
+		
 		switch (npc.getId())
 		{
 			case FANTASY_MUSHROM:
@@ -163,6 +170,7 @@ public class Q10452_IsItEdible extends Quest
 				}
 			}
 		}
+		
 		if ((getQuestItemsCount(killer, FANTASY_MUSHROMS_SPORE) >= 1) && (getQuestItemsCount(killer, STICKY_MUSHROMS_SPORE) >= 1) && (getQuestItemsCount(killer, VITALIITY_LEAF_POUCH) >= 1))
 		{
 			qs.setCond(2, true);

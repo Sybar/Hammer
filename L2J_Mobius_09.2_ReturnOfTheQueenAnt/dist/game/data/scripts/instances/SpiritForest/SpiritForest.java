@@ -109,6 +109,7 @@ public class SpiritForest extends AbstractInstance
 				player.sendPacket(SystemMessageId.YOU_ARE_NOT_CURRENTLY_IN_A_PARTY_SO_YOU_CANNOT_ENTER);
 			}
 		}
+		
 		return null;
 	}
 	

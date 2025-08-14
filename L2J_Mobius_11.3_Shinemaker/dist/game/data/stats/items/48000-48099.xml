@@ -1272,9 +1272,9 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player clanHall="62" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="5414" level="1" /> <!-- Agathion's Cute Trick - Rainbow -->
 		</skills>
@@ -1291,9 +1291,9 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player clanHall="63" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="5413" level="1" /> <!-- Agathion's Cute Trick - Beast Farm -->
 		</skills>
@@ -1311,11 +1311,11 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="equip_condition" val="{{ec_castle;1};{ec_castle_num;{1}}}" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player castle="1" />
 			</and>
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="5415" level="1" /> <!-- Agathion's Cute Trick - Castle -->
 		</skills>
@@ -1333,11 +1333,11 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="equip_condition" val="{{ec_castle;1};{ec_castle_num;{2}}}" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player castle="2" />
 			</and>
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="5415" level="1" /> <!-- Agathion's Cute Trick - Castle -->
 		</skills>
@@ -1355,11 +1355,11 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="equip_condition" val="{{ec_castle;1};{ec_castle_num;{3}}}" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player castle="3" />
 			</and>
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="5415" level="1" /> <!-- Agathion's Cute Trick - Castle -->
 		</skills>
@@ -1377,11 +1377,11 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="equip_condition" val="{{ec_castle;1};{ec_castle_num;{4}}}" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player castle="4" />
 			</and>
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="5415" level="1" /> <!-- Agathion's Cute Trick - Castle -->
 		</skills>
@@ -1399,11 +1399,11 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="equip_condition" val="{{ec_castle;1};{ec_castle_num;{5}}}" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player castle="5" />
 			</and>
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="5415" level="1" /> <!-- Agathion's Cute Trick - Castle -->
 		</skills>
@@ -1421,11 +1421,11 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="equip_condition" val="{{ec_castle;1};{ec_castle_num;{6}}}" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player castle="6" />
 			</and>
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="5415" level="1" /> <!-- Agathion's Cute Trick - Castle -->
 		</skills>
@@ -1443,11 +1443,11 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="equip_condition" val="{{ec_castle;1};{ec_castle_num;{7}}}" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player castle="7" />
 			</and>
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="5415" level="1" /> <!-- Agathion's Cute Trick - Castle -->
 		</skills>
@@ -1465,9 +1465,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="equip_condition" val="{{ec_castle;1};{ec_castle_num;{8}}}" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player castle="8" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="5415" level="1" /> <!-- Agathion's Cute Trick - Castle -->
 		</skills>
@@ -1485,9 +1485,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="equip_condition" val="{{ec_castle;1};{ec_castle_num;{9}}}" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player castle="9" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="5415" level="1" /> <!-- Agathion's Cute Trick - Castle -->
 		</skills>
@@ -1519,9 +1519,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="equip_condition" val="{{ec_fortress;1}}" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player fort="-1" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="5458" level="1" /> <!-- Agathion's Cute Trick - Fortress -->
 		</skills>

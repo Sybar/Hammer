@@ -88,6 +88,7 @@ public class RequestResetAbilityPoint extends ClientPacket
 			player.sendPacket(SystemMessageId.YOU_DO_NOT_HAVE_ENOUGH_SP_FOR_THIS);
 			return;
 		}
+		
 		player.setSp(player.getSp() - Config.ABILITY_POINTS_RESET_SP);
 		for (SkillLearn sk : SkillTreeData.getInstance().getAbilitySkillTree().values())
 		{
@@ -98,6 +99,7 @@ public class RequestResetAbilityPoint extends ClientPacket
 				player.getEffectList().stopSkillEffects(SkillFinishType.SILENT, skill); // TODO: Check if retail shows system message.
 			}
 		}
+		
 		player.setAbilityPointsUsed(0);
 		player.sendPacket(new ExAcquireAPSkillList(player));
 		player.broadcastUserInfo();

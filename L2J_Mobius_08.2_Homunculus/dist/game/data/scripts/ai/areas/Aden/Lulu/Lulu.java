@@ -46,9 +46,11 @@ public class Lulu extends AbstractNpcAI
 	private static final int LULU = 34545;
 	private static final int WAEL = 34546;
 	private static final int EILEEN = 34547;
+	
 	// Skills
 	private static final SkillHolder LULU_LUCK_LV1 = new SkillHolder(32966, 1);
 	private static final SkillHolder LULU_LUCK_LV2 = new SkillHolder(32966, 2);
+	
 	// Misc
 	private static final ConfirmDlg CONFIRM_DIALOG = new ConfirmDlg(SystemMessageId.I_CAN_GIVE_YOU_A_GOOD_LUCK_BUFF_WILL_YOU_ACCEPT_IT_IT_WILL_COST_YOU_7_000_000_ADENA);
 	private static final int ADENA_COST = 7000000;
@@ -71,12 +73,15 @@ public class Lulu extends AbstractNpcAI
 			{
 				_luluNpc = null;
 			}
+			
 			if ((_luluNpc == null) && !npc.isDead())
 			{
 				_luluNpc = npc;
 			}
+			
 			player.sendPacket(CONFIRM_DIALOG);
 		}
+		
 		return null;
 	}
 	
@@ -90,6 +95,7 @@ public class Lulu extends AbstractNpcAI
 			player.sendPacket(new NpcHtmlMessage(npc.getObjectId(), 0, htmlText, 1));
 			return null;
 		}
+		
 		return npcId + ".html";
 	}
 	

@@ -103,7 +103,7 @@ public class SummonPet extends AbstractEffect
 		for (BuffInfo effect : player.getEffectList().getEffects())
 		{
 			final Skill sk = effect.getSkill();
-			if (!sk.isBad() && !sk.isTransformation() && skill.isSharedWithSummon())
+			if (!sk.hasNegativeEffect() && !sk.isTransformation() && sk.isSharedWithSummon())
 			{
 				sk.applyEffects(player, pet, false, effect.getTime());
 			}
@@ -111,12 +111,12 @@ public class SummonPet extends AbstractEffect
 		
 		if (!pet.isRespawned())
 		{
-			pet.setCurrentHp(pet.getMaxHp());
-			pet.setCurrentMp(pet.getMaxMp());
+			pet.fullRestore();
 			pet.getStat().setExp(pet.getExpForThisLevel());
 			pet.setCurrentFed(pet.getMaxFed());
 			pet.storeMe();
 		}
+		
 		pet.setRunning();
 		collar.setEnchantLevel(pet.getLevel());
 		pet.spawnMe(player.getX() + 50, player.getY() + 100, player.getZ());

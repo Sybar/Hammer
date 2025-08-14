@@ -34,8 +34,10 @@ public class Q10327_IntruderWhoWantsTheBookOfGiants extends Quest
 {
 	// NPCs
 	private static final int PANTHEON = 32972;
+	
 	// Items
 	private static final int THE_WAR_OF_GODS_AND_GIANTS = 17575;
+	
 	// Misc
 	private static final int MAX_LEVEL = 20;
 	private static final int APPRENTICE_EARRING = 112;
@@ -86,6 +88,7 @@ public class Q10327_IntruderWhoWantsTheBookOfGiants extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -125,6 +128,7 @@ public class Q10327_IntruderWhoWantsTheBookOfGiants extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

@@ -93,6 +93,7 @@ public class PartyMatchingHistoryTable
 				ps2.setString(2, history.getLeader());
 				ps2.addBatch();
 			}
+			
 			ps2.executeBatch();
 		}
 		catch (Exception e)

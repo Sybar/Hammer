@@ -33,6 +33,7 @@ public class Q10341_DayOfDestinyHumansFate extends ThirdClassTransferQuest
 {
 	// NPC
 	private static final int ORVEN = 30857;
+	
 	// Misc
 	private static final int MIN_LEVEL = 76;
 	private static final Race START_RACE = Race.HUMAN;
@@ -79,6 +80,7 @@ public class Q10341_DayOfDestinyHumansFate extends ThirdClassTransferQuest
 				htmltext = super.onEvent(event, npc, player);
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -105,6 +107,7 @@ public class Q10341_DayOfDestinyHumansFate extends ThirdClassTransferQuest
 				}
 			}
 		}
+		
 		return (!htmltext.equals(getNoQuestMsg(player)) ? htmltext : super.onTalk(npc, player));
 	}
 }

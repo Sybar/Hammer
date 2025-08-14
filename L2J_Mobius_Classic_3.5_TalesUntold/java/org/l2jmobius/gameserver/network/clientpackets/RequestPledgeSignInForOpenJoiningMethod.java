@@ -70,6 +70,7 @@ public class RequestPledgeSignInForOpenJoiningMethod extends ClientPacket
 					player.sendPacket(SystemMessageId.AFTER_A_CLAN_MEMBER_IS_DISMISSED_FROM_A_CLAN_THE_CLAN_MUST_WAIT_AT_LEAST_A_DAY_BEFORE_ACCEPTING_A_NEW_MEMBER);
 					return;
 				}
+				
 				if (player.getClanJoinExpiryTime() > System.currentTimeMillis())
 				{
 					final SystemMessage sm = new SystemMessage(SystemMessageId.C1_CANNOT_JOIN_THE_CLAN_BECAUSE_ONE_DAY_HAS_NOT_YET_PASSED_SINCE_THEY_LEFT_ANOTHER_CLAN);
@@ -77,6 +78,7 @@ public class RequestPledgeSignInForOpenJoiningMethod extends ClientPacket
 					player.sendPacket(sm);
 					return;
 				}
+				
 				if (clan.getSubPledgeMembersCount(0) >= clan.getMaxNrOfMembers(0))
 				{
 					final SystemMessage sm = new SystemMessage(SystemMessageId.S1_IS_FULL_AND_CANNOT_ACCEPT_ADDITIONAL_CLAN_MEMBERS_AT_THIS_TIME);
@@ -105,6 +107,7 @@ public class RequestPledgeSignInForOpenJoiningMethod extends ClientPacket
 						castle.giveResidentialSkills(player);
 					}
 				}
+				
 				if (clan.getFortId() > 0)
 				{
 					final Fort fort = FortManager.getInstance().getFortByOwner(clan);
@@ -113,6 +116,7 @@ public class RequestPledgeSignInForOpenJoiningMethod extends ClientPacket
 						fort.giveResidentialSkills(player);
 					}
 				}
+				
 				player.sendSkillList();
 				
 				clan.broadcastToOtherOnlineMembers(new PledgeShowMemberListAdd(player), player);

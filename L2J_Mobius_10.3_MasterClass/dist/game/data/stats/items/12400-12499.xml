@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
 	<item id="12400" name="Chaotic Kaim Vanul's Bones" type="EtcItem">
 		<!-- A rare item that requires a thorough varnishing. Old and not very useful equipment. -->
@@ -31,9 +31,9 @@
 		<set name="crystal_type" val="B" />
 		<set name="commissionItemType" val="RAPIER" />
 		<set name="spiritshots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">176</stat>
 			<stat type="mAtk">99</stat>
@@ -94,9 +94,9 @@
 		<set name="crystal_type" val="B" />
 		<set name="commissionItemType" val="CROSSBOW" />
 		<set name="spiritshots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">245</stat>
 			<stat type="mAtk">99</stat>
@@ -137,9 +137,9 @@
 		<set name="crystal_type" val="A" />
 		<set name="commissionItemType" val="CROSSBOW" />
 		<set name="spiritshots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">270</stat>
 			<stat type="mAtk">107</stat>
@@ -160,9 +160,9 @@
 		<set name="crystal_type" val="A" />
 		<set name="commissionItemType" val="RAPIER" />
 		<set name="spiritshots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">193</stat>
 			<stat type="mAtk">107</stat>
@@ -361,9 +361,9 @@
 		<set name="crystal_type" val="A" />
 		<set name="commissionItemType" val="ANCIENT_SWORD" />
 		<set name="spiritshots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">231</stat>
 			<stat type="mAtk">107</stat>
@@ -404,9 +404,9 @@
 		<set name="crystal_type" val="A" />
 		<set name="commissionItemType" val="RAPIER" />
 		<set name="spiritshots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">210</stat>
 			<stat type="mAtk">114</stat>
@@ -446,9 +446,9 @@
 		<set name="crystal_type" val="A" />
 		<set name="commissionItemType" val="ANCIENT_SWORD" />
 		<set name="spiritshots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">251</stat>
 			<stat type="mAtk">114</stat>
@@ -590,9 +590,9 @@
 		<set name="crystal_type" val="A" />
 		<set name="commissionItemType" val="CROSSBOW" />
 		<set name="spiritshots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">294</stat>
 			<stat type="mAtk">114</stat>
@@ -757,9 +757,9 @@
 		<set name="crystal_type" val="A" />
 		<set name="commissionItemType" val="CROSSBOW" />
 		<set name="spiritshots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">318</stat>
 			<stat type="mAtk">121</stat>
@@ -800,9 +800,9 @@
 		<set name="crystal_type" val="A" />
 		<set name="commissionItemType" val="ANCIENT_SWORD" />
 		<set name="spiritshots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">272</stat>
 			<stat type="mAtk">121</stat>
@@ -902,9 +902,9 @@
 		<set name="crystal_type" val="A" />
 		<set name="commissionItemType" val="RAPIER" />
 		<set name="spiritshots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">228</stat>
 			<stat type="mAtk">121</stat>
@@ -984,9 +984,9 @@
 		<set name="crystal_type" val="S" />
 		<set name="commissionItemType" val="ANCIENT_SWORD" />
 		<set name="spiritshots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">304</stat>
 			<stat type="mAtk">132</stat>
@@ -1068,9 +1068,9 @@
 		<set name="crystal_type" val="S" />
 		<set name="commissionItemType" val="RAPIER" />
 		<set name="spiritshots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">255</stat>
 			<stat type="mAtk">132</stat>
@@ -1111,9 +1111,9 @@
 		<set name="crystal_type" val="S" />
 		<set name="commissionItemType" val="CROSSBOW" />
 		<set name="spiritshots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">356</stat>
 			<stat type="mAtk">132</stat>
@@ -1252,9 +1252,9 @@
 		<set name="crystal_type" val="S" />
 		<set name="commissionItemType" val="ANCIENT_SWORD" />
 		<set name="spiritshots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">361</stat>
 			<stat type="mAtk">151</stat>
@@ -1295,9 +1295,9 @@
 		<set name="crystal_type" val="S" />
 		<set name="commissionItemType" val="RAPIER" />
 		<set name="spiritshots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">302</stat>
 			<stat type="mAtk">151</stat>
@@ -1477,9 +1477,9 @@
 		<set name="crystal_type" val="S" />
 		<set name="commissionItemType" val="CROSSBOW" />
 		<set name="spiritshots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">401</stat>
 			<stat type="mAtk">151</stat>
@@ -1581,9 +1581,9 @@
 		<set name="crystal_type" val="S80" />
 		<set name="commissionItemType" val="CROSSBOW" />
 		<set name="spiritshots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">422</stat>
 			<stat type="mAtk">163</stat>
@@ -1604,9 +1604,9 @@
 		<set name="crystal_type" val="S80" />
 		<set name="commissionItemType" val="RAPIER" />
 		<set name="spiritshots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">329</stat>
 			<stat type="mAtk">163</stat>
@@ -1667,9 +1667,9 @@
 		<set name="crystal_type" val="S80" />
 		<set name="commissionItemType" val="ANCIENT_SWORD" />
 		<set name="spiritshots" val="1" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">393</stat>
 			<stat type="mAtk">163</stat>

@@ -41,6 +41,7 @@ public class Q00401_PathOfTheWarrior extends Quest
 	private static final int SIMPLON_LETTER = 1143;
 	private static final int POISON_SPIDER_LEG = 1144;
 	private static final int MEDALLION_OF_WARRIOR = 1145;
+	
 	// NPCs
 	private static final int AURON = 30010;
 	private static final int SIMPLON = 30253;

@@ -95,6 +95,7 @@ public class AugmentationDailyMissionHandler extends AbstractDailyMissionHandler
 				}
 			}
 		}
+		
 		return false;
 	}
 	
@@ -105,6 +106,7 @@ public class AugmentationDailyMissionHandler extends AbstractDailyMissionHandler
 		{
 			return;
 		}
+		
 		// Only missions with specific augment stones
 		if ((_missionId == 3055) || (_missionId == 3056) || (_missionId == 3057))
 		{
@@ -136,6 +138,7 @@ public class AugmentationDailyMissionHandler extends AbstractDailyMissionHandler
 			{
 				entry.setStatus(DailyMissionStatus.AVAILABLE);
 			}
+			
 			storePlayerEntry(entry);
 		}
 	}

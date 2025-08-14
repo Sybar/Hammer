@@ -76,6 +76,7 @@ public class PurgeRewardDailyMissionHandler extends AbstractDailyMissionHandler
 				}
 			}
 		}
+		
 		return false;
 	}
 	
@@ -86,6 +87,7 @@ public class PurgeRewardDailyMissionHandler extends AbstractDailyMissionHandler
 		{
 			return;
 		}
+		
 		processPlayerProgress(player);
 	}
 	
@@ -98,6 +100,7 @@ public class PurgeRewardDailyMissionHandler extends AbstractDailyMissionHandler
 			{
 				entry.setStatus(DailyMissionStatus.AVAILABLE);
 			}
+			
 			storePlayerEntry(entry);
 		}
 	}

@@ -38,6 +38,7 @@ public class Q00404_PathOfTheHumanWizard extends Quest
 	private static final int FLAME_SALAMANDER = 30411;
 	private static final int WIND_SYLPH = 30412;
 	private static final int WATER_UNDINE = 30413;
+	
 	// Items
 	private static final int MAP_OF_LUSTER = 1280;
 	private static final int KEY_OF_FLAME = 1281;

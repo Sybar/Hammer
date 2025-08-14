@@ -39,10 +39,12 @@ public class ResidenceOfKingProcella extends AbstractNpcAI
 	private static final int PROCELLA_GUARDIAN_2 = 29113;
 	private static final int PROCELLA_GUARDIAN_3 = 29114;
 	private static final int PROCELLA_STORM = 29115;
+	
 	// Skills
 	private static final SkillHolder HURRICANE_SUMMON = new SkillHolder(50042, 1);
 	private static final int HURRICANE_BOLT = 50043;
 	private static final SkillHolder HURRICANE_BOLT_LV_1 = new SkillHolder(50043, 1);
+	
 	// Misc
 	private static final int STORM_MAX_COUNT = 16;
 	
@@ -139,6 +141,7 @@ public class ResidenceOfKingProcella extends AbstractNpcAI
 								}
 							}
 						}
+						
 						startQuestTimer("CHECK_CHAR_INSIDE_RADIUS_NPC", 100, npc, player);
 					}
 					else
@@ -149,6 +152,7 @@ public class ResidenceOfKingProcella extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return null;
 	}
 	

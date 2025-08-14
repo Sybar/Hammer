@@ -26,7 +26,6 @@ import org.l2jmobius.gameserver.model.Spawn;
 import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.Summon;
-import org.l2jmobius.gameserver.model.actor.enums.player.PlayerCondOverride;
 import org.l2jmobius.gameserver.model.actor.enums.player.TeleportWhereType;
 import org.l2jmobius.gameserver.model.actor.instance.Door;
 import org.l2jmobius.gameserver.model.olympiad.OlympiadGameTask;
@@ -54,6 +53,7 @@ public class OlympiadStadiumZone extends ZoneRespawn
 		{
 			settings = new Settings();
 		}
+		
 		setSettings(settings);
 	}
 	
@@ -123,7 +123,7 @@ public class OlympiadStadiumZone extends ZoneRespawn
 			if (player != null)
 			{
 				// Only participants, observers and GMs allowed.
-				if (!player.canOverrideCond(PlayerCondOverride.ZONE_CONDITIONS) && !player.isInOlympiadMode() && !player.inObserverMode())
+				if (!player.isGM() && !player.isInOlympiadMode() && !player.inObserverMode())
 				{
 					ThreadPool.execute(new KickPlayer(player));
 				}

@@ -44,6 +44,7 @@ public final class Q10559_BeforeTheGuide extends Quest
 	// NPCs
 	private static final int MONK_OF_CHAOS = 33880;
 	private static final int HERPHAH = 34362;
+	
 	// Items
 	private static final int BALTHUS_KNIGHT_BRACLET = 48277;
 	
@@ -89,6 +90,7 @@ public final class Q10559_BeforeTheGuide extends Quest
 					htmltext = "monk_chaos_q10559_01.htm";
 					break;
 				}
+				
 				htmltext = "herphah_q10559_01.htm";
 				break;
 			}
@@ -99,6 +101,7 @@ public final class Q10559_BeforeTheGuide extends Quest
 					htmltext = "monk_chaos_q10559_05.htm";
 					break;
 				}
+				
 				htmltext = "herphah_q10559_02.htm";
 				break;
 			}
@@ -108,6 +111,7 @@ public final class Q10559_BeforeTheGuide extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

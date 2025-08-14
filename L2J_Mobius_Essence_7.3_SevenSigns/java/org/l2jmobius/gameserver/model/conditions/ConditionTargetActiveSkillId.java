@@ -61,6 +61,7 @@ public class ConditionTargetActiveSkillId extends Condition
 		{
 			return (_skillLevel == -1) || (_skillLevel <= knownSkill.getLevel());
 		}
+		
 		return false;
 	}
 }

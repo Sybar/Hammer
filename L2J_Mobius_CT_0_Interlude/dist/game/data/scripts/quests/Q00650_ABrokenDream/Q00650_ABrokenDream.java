@@ -33,9 +33,11 @@ public class Q00650_ABrokenDream extends Quest
 {
 	// NPC
 	private static final int GHOST = 32054;
+	
 	// Monsters
 	private static final int CREWMAN = 22027;
 	private static final int VAGABOND = 22028;
+	
 	// Item
 	private static final int DREAM_FRAGMENT = 8514;
 	

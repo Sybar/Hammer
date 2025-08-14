@@ -44,7 +44,7 @@ import ai.AbstractNpcAI;
 
 /**
  * Core AI.
- * @author DrLecter, Emperorc, Mobius
+ * @author DrLecter, Emperorc, Mobius, Skache
  */
 public class Core extends AbstractNpcAI
 {
@@ -53,6 +53,8 @@ public class Core extends AbstractNpcAI
 	private static final int DEATH_KNIGHT = 29007;
 	private static final int DOOM_WRAITH = 29008;
 	private static final int SUSCEPTOR = 29011;
+	private static final int TELEPORT_CUBE = 900103;
+	
 	// Spawns
 	private static final Map<Integer, Location> MINNION_SPAWNS = new HashMap<>();
 	static
@@ -77,11 +79,14 @@ public class Core extends AbstractNpcAI
 		MINNION_SPAWNS.put(SUSCEPTOR, new Location(17706, 109423, -6488));
 		MINNION_SPAWNS.put(SUSCEPTOR, new Location(17849, 109388, -6480));
 	}
+	
 	// Misc
 	private static final byte ALIVE = 0;
 	private static final byte DEAD = 1;
 	private static final Collection<Attackable> _minions = ConcurrentHashMap.newKeySet();
 	private static boolean _firstAttacked;
+	private static final Location LOCATION_ABOVE_GROUND = new Location(17253, 114232, -3440); // Cruma Tower Entrance.
+	private static final Location LOCATION_THIRD_FLOOR = new Location(17719, 115590, -6584); // Cruma Core (3rd floor).
 	
 	private Core()
 	{
@@ -92,6 +97,7 @@ public class Core extends AbstractNpcAI
 		{
 			// Load the unlock date and time for Core from DB.
 			final long temp = info.getLong("respawn_time") - System.currentTimeMillis();
+			
 			// If Core is locked until a certain time, mark it so and start the unlock timer the unlock time has not yet expired.
 			if (temp > 0)
 			{
@@ -112,6 +118,7 @@ public class Core extends AbstractNpcAI
 			{
 				_firstAttacked = true;
 			}
+			
 			final int loc_x = info.getInt("loc_x");
 			final int loc_y = info.getInt("loc_y");
 			final int loc_z = info.getInt("loc_z");
@@ -134,6 +141,7 @@ public class Core extends AbstractNpcAI
 	{
 		GrandBossManager.getInstance().addBoss(npc);
 		npc.broadcastPacket(new PlaySound(1, "BS01_A", 1, npc.getObjectId(), npc.getX(), npc.getY(), npc.getZ()));
+		
 		// Spawn minions
 		Attackable mob;
 		Location spawnLocation;
@@ -166,6 +174,32 @@ public class Core extends AbstractNpcAI
 			_minions.forEach(Attackable::decayMe);
 			_minions.clear();
 		}
+		else if (event.startsWith("TELEPORT"))
+		{
+			final String[] split = event.split(" ");
+			if (split.length >= 2)
+			{
+				switch (split[1])
+				{
+					case "floor3":
+					{
+						player.teleToLocation(LOCATION_THIRD_FLOOR);
+						break;
+					}
+					case "ground":
+					{
+						player.teleToLocation(LOCATION_ABOVE_GROUND);
+						break;
+					}
+					default:
+					{
+						LOGGER.warning(getClass().getSimpleName() + ": Unknown teleport destination: " + split[1]);
+						break;
+					}
+				}
+			}
+		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	
@@ -201,8 +235,8 @@ public class Core extends AbstractNpcAI
 			npc.broadcastPacket(new NpcSay(objId, ChatType.NPC_GENERAL, npc.getId(), "System is being shut down..."));
 			npc.broadcastPacket(new NpcSay(objId, ChatType.NPC_GENERAL, npc.getId(), "......"));
 			_firstAttacked = false;
-			addSpawn(900103, 16502, 110165, -6394, 0, false, 900000);
-			addSpawn(900103, 18948, 110166, -6397, 0, false, 900000);
+			addSpawn(TELEPORT_CUBE, 16502, 110165, -6394, 0, false, 900000);
+			addSpawn(TELEPORT_CUBE, 18948, 110166, -6397, 0, false, 900000);
 			GrandBossManager.getInstance().setStatus(CORE, DEAD);
 			
 			final long baseIntervalMillis = Config.CORE_SPAWN_INTERVAL * 3600000;
@@ -214,6 +248,7 @@ public class Core extends AbstractNpcAI
 			LOGGER.info("Core will respawn at: " + TimeUtil.getDateTimeString(nextRespawnTime));
 			
 			startQuestTimer("core_unlock", respawnTime, null, null);
+			
 			// Also save the respawn time so that the info is maintained past reboots.
 			final StatSet info = GrandBossManager.getInstance().getStatSet(CORE);
 			info.set("respawn_time", System.currentTimeMillis() + respawnTime);

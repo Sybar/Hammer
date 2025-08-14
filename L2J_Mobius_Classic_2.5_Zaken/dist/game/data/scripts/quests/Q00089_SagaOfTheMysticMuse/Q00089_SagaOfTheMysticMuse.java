@@ -48,6 +48,7 @@ public class Q00089_SagaOfTheMysticMuse extends Quest
 	private static final int TABLET_OF_VISION_3 = 31652;
 	private static final int TABLET_OF_VISION_4 = 31655;
 	private static final int SILVER_FAYSHAR = 31643;
+	
 	// Monsters
 	private static final int ICE_MONSTER = 27316;
 	private static final int SPIRIT_OF_A_DROWNED = 27317;
@@ -63,6 +64,7 @@ public class Q00089_SagaOfTheMysticMuse extends Quest
 	private static final int FALLEN_ANGEL_ALLECTOR = 27250;
 	private static final int HALISHA_ARCHON = 27219;
 	private static final int UNKNOWN_STOPPER = 27254;
+	
 	// Items
 	private static final int ICE_CRYSTAL_FRAGMENT = 49823;
 	private static final int HALISHA_BADGE = 7504;
@@ -71,8 +73,10 @@ public class Q00089_SagaOfTheMysticMuse extends Quest
 	private static final int RESONANCE_AMULET_3 = 7349;
 	private static final int RESONANCE_AMULET_4 = 7380;
 	private static final int INVESTIGATIVE_REPORT = 7530;
+	
 	// Reward
 	private static final int BOOK_PEGASUS = 90039;
+	
 	// Misc
 	private static final String KILL_COUNT_VAR = "KillCount";
 	
@@ -95,6 +99,7 @@ public class Q00089_SagaOfTheMysticMuse extends Quest
 		{
 			return null;
 		}
+		
 		String htmltext = event;
 		switch (event)
 		{
@@ -242,6 +247,7 @@ public class Q00089_SagaOfTheMysticMuse extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -430,6 +436,7 @@ public class Q00089_SagaOfTheMysticMuse extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -500,6 +507,7 @@ public class Q00089_SagaOfTheMysticMuse extends Quest
 						{
 							qs.set(KILL_COUNT_VAR, count + 1);
 						}
+						
 						if (count >= 20)
 						{
 							qs.setCond(8, true);
@@ -526,8 +534,10 @@ public class Q00089_SagaOfTheMysticMuse extends Quest
 			{
 				holder.add(new NpcLogListHolder(WATCHER_OF_THE_ANCIENT_PLEDGE, false, guardiancount));
 			}
+			
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

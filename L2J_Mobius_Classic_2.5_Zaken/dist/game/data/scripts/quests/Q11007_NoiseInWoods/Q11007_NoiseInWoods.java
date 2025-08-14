@@ -40,17 +40,20 @@ public class Q11007_NoiseInWoods extends Quest
 	// NPCs
 	private static final int NEWBIE_GUIDE = 30599;
 	private static final int KENDELL = 30218;
+	
 	// Items
 	private static final int TAIL_OF_A_GRAY_WOLF = 90218;
 	private static final int GOBLINS_PACK_OF_KNICKKNACKS = 90219;
 	private static final int KABBO_ORC_STURDY_AMULET = 90220;
 	private static final int MUSHROOM_SPORE_POWDER = 90221;
 	private static final int MARK_OF_SECURITY = 90217;
+	
 	// Rewards
 	private static final int RED_SUNSET_SWORD = 49046;
 	private static final int RED_SUNSET_STAFF = 49045;
 	private static final int RING_NOVICE = 29497;
 	private static final int NECKLACE_NOVICE = 49039;
+	
 	// Monsters
 	private static final int GRAY_WOLF = 20525;
 	private static final int GOBLIN_RAIDER = 20325;
@@ -58,6 +61,7 @@ public class Q11007_NoiseInWoods extends Quest
 	private static final int KABOO_ORC_ARCHER = 20469;
 	private static final int KABOO_ORC_SOLDIER = 20470;
 	private static final int SPORE_FUNGUS = 20509;
+	
 	// Misc
 	private static final int MIN_LEVEL = 2;
 	private static final int MAX_LEVEL = 20;
@@ -129,6 +133,7 @@ public class Q11007_NoiseInWoods extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -279,6 +284,7 @@ public class Q11007_NoiseInWoods extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

@@ -40,13 +40,16 @@ public class Q00464_BarracksMainForce extends Quest
 {
 	// NPC
 	private static final int GENIE_LAMP = 34369;
+	
 	// Monsters
 	private static final int TUREK_ORC = 22135;
 	private static final int TUREK_ORC_FOOTMAN = 22136;
 	private static final int TUREK_ORC_ELITE = 22141;
 	private static final int TUREK_ORC_SKIRMISHER = 22130;
+	
 	// Item
 	private static final ItemHolder EINHASAD_BLESSING_SCROLL = new ItemHolder(92991, 3);
+	
 	// Misc
 	private static final int MIN_LEVEL = 83;
 	private static final String KILL_COUNT_VAR = "KillCount";
@@ -99,6 +102,7 @@ public class Q00464_BarracksMainForce extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -137,6 +141,7 @@ public class Q00464_BarracksMainForce extends Quest
 				htmltext = getAlreadyCompletedMsg(player);
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -172,6 +177,7 @@ public class Q00464_BarracksMainForce extends Quest
 			holder.add(new NpcLogListHolder(NpcStringId.DEFEAT_MONSTERS_55.getId(), true, qs.getInt(KILL_COUNT_VAR)));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

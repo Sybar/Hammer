@@ -41,12 +41,15 @@ public class Q10364_ObligationsOfTheSeeker extends Quest
 	private static final int CELIN = 33451;
 	private static final int WALTER = 33452;
 	private static final int DEP = 33453;
+	
 	// Monsters
 	private static final int KRAPHER = 22996;
 	private static final int AVIAN = 22994;
+	
 	// Items
 	private static final int DIRTY_PAPER_PIECES = 17578;
 	private static final int LEATHER_SHOES = 37;
+	
 	// Misc
 	private static final int MIN_LEVEL = 13;
 	private static final int MAX_LEVEL = 25;
@@ -111,6 +114,7 @@ public class Q10364_ObligationsOfTheSeeker extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -193,6 +197,7 @@ public class Q10364_ObligationsOfTheSeeker extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

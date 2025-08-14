@@ -66,10 +66,12 @@ public class ClanHall extends AbstractResidence
 	private final Set<ClanHallTeleportHolder> _teleports = new HashSet<>();
 	private final Location _ownerLocation;
 	private final Location _banishLocation;
+	
 	// Dynamic parameters
 	Clan _owner = null;
 	long _paidUntil = 0;
 	protected ScheduledFuture<?> _checkPaymentTask = null;
+	
 	// Other
 	private static final String INSERT_CLANHALL = "INSERT INTO clanhall (id, ownerId, paidUntil) VALUES (?,?,?)";
 	private static final String LOAD_CLANHALL = "SELECT * FROM clanhall WHERE id=?";
@@ -78,6 +80,7 @@ public class ClanHall extends AbstractResidence
 	public ClanHall(StatSet params)
 	{
 		super(params.getInt("id"));
+		
 		// Set static parameters
 		setName(params.getString("name"));
 		_grade = params.getEnum("grade", ClanHallGrade.class);
@@ -90,20 +93,25 @@ public class ClanHall extends AbstractResidence
 		{
 			_npcs.addAll(npcs);
 		}
+		
 		final List<Door> doors = params.getList("doorList", Door.class);
 		if (doors != null)
 		{
 			_doors.addAll(doors);
 		}
+		
 		final List<ClanHallTeleportHolder> teleports = params.getList("teleportList", ClanHallTeleportHolder.class);
 		if (teleports != null)
 		{
 			_teleports.addAll(teleports);
 		}
+		
 		_ownerLocation = params.getLocation("owner_loc");
 		_banishLocation = params.getLocation("banish_loc");
+		
 		// Set dynamic parameters (from DB)
 		load();
+		
 		// Init Clan Hall zone and Functions
 		initResidenceZone();
 		initFunctions();
@@ -279,6 +287,7 @@ public class ClanHall extends AbstractResidence
 				_owner.broadcastToOnlineMembers(new PledgeShowInfoUpdate(_owner));
 				removeFunctions();
 			}
+			
 			_owner = null;
 			setPaidUntil(0);
 			if (_checkPaymentTask != null)
@@ -287,6 +296,7 @@ public class ClanHall extends AbstractResidence
 				_checkPaymentTask = null;
 			}
 		}
+		
 		updateDB();
 	}
 	
@@ -342,6 +352,7 @@ public class ClanHall extends AbstractResidence
 				result.add(holder);
 			}
 		}
+		
 		return result;
 	}
 	

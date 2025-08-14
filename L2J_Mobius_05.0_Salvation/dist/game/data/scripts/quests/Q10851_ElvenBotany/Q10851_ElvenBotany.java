@@ -40,11 +40,14 @@ public class Q10851_ElvenBotany extends Quest
 	// NPCs
 	private static final int CELESTIEL = 34234;
 	private static final int IRENE = 34233;
+	
 	// Misc
 	private static final int MIN_LEVEL = 102;
+	
 	// Monsters
 	private static final int FLOWER_BUD = 19600;
 	private static final int APHERUS = 23581;
+	
 	// Items
 	private static final int APHERUS_SAMPLE = 47200;
 	private static final int FLOWER_BUD_SAMPLE = 47201;
@@ -107,6 +110,7 @@ public class Q10851_ElvenBotany extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -160,6 +164,7 @@ public class Q10851_ElvenBotany extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -190,6 +195,7 @@ public class Q10851_ElvenBotany extends Quest
 					break;
 				}
 			}
+			
 			if ((getQuestItemsCount(killer, FLOWER_BUD_SAMPLE) >= 50) && (getQuestItemsCount(killer, APHERUS_SAMPLE) >= 150))
 			{
 				qs.setCond(3, true);

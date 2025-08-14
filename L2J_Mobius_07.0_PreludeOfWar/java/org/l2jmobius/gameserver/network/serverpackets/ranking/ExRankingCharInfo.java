@@ -71,6 +71,7 @@ public class ExRankingCharInfo extends ServerPacket
 					}
 				}
 			}
+			
 			buffer.writeInt(0); // server rank
 			buffer.writeInt(0); // race rank
 			buffer.writeInt(0); // server rank snapshot

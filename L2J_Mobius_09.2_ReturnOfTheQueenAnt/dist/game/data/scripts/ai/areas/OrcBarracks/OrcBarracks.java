@@ -46,6 +46,7 @@ public class OrcBarracks extends AbstractNpcAI
 		20546, // Turek Orc Elder
 		23418, // Marionette Spirit
 	};
+	
 	// Misc
 	private static final int MINION_COUNT = 2;
 	private static final int SPAWN_RATE = 80;

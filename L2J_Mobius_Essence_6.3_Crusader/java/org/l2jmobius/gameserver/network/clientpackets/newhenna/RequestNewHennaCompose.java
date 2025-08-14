@@ -104,10 +104,12 @@ public class RequestNewHennaCompose extends ClientPacket
 		{
 			iu.addModifiedItem(inventory.getItemByItemId(one.getId()));
 		}
+		
 		if (_slotTwoItemId != -1)
 		{
 			iu.addModifiedItem(inventory.getItemByItemId(two.getId()));
 		}
+		
 		iu.addModifiedItem(inventory.getItemByItemId(Inventory.ADENA_ID));
 		
 		if (((_slotOneItemId != -1) && (inventory.destroyItemByItemId(ItemProcessType.FEE, one.getId(), one.getCount(), player, null) == null)) //
@@ -134,9 +136,11 @@ public class RequestNewHennaCompose extends ClientPacket
 				player.removeHenna(_slotOneIndex, false);
 				player.addHenna(_slotOneIndex, HennaData.getInstance().getHenna(reward.getHennaId()));
 			}
+			
 			player.addItem(ItemProcessType.REWARD, reward.getId(), reward.getCount(), null, false);
 			player.sendPacket(new NewHennaPotenCompose(reward.getHennaId(), reward.getId() == 0 ? -1 : reward.getId(), false));
 		}
+		
 		player.sendPacket(iu);
 	}
 }

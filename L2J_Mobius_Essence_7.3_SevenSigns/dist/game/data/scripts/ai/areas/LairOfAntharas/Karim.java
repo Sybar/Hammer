@@ -39,6 +39,7 @@ public class Karim extends AbstractNpcAI
 {
 	// NPC
 	private static final int KARIM = 25913;
+	
 	// Locations
 	private static final Location[] LOCATIONS =
 	{
@@ -47,8 +48,10 @@ public class Karim extends AbstractNpcAI
 		new Location(148694, 115718, -3724),
 		new Location(147470, 112505, -3724)
 	};
+	
 	// Zone
 	private static final ZoneType ZONE = ZoneManager.getInstance().getZoneByName("antharas_lair");
+	
 	// Misc
 	private static Npc _karim;
 	

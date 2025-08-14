@@ -46,9 +46,11 @@ public class NewbieGuide extends AbstractNpcAI
 		30602,
 		34110, // Kamael
 	};
+	
 	// Items
 	private static final ItemHolder SOULSHOT_REWARD = new ItemHolder(91927, 200);
 	private static final ItemHolder SPIRITSHOT_REWARD = new ItemHolder(91928, 100);
+	
 	// Other
 	private static final String TUTORIAL_QUEST = "Q00255_Tutorial";
 	private static final String SUPPORT_MAGIC_STRING = "<Button ALIGN=LEFT ICON=\"NORMAL\" action=\"bypass -h Link default/SupportMagic.htm\">Receive help from beneficial magic.</Button>";
@@ -83,6 +85,7 @@ public class NewbieGuide extends AbstractNpcAI
 		{
 			htmltext = npc.getId() + "-" + event + (player.isMageClass() ? "m" : "f") + ".htm";
 		}
+		
 		return htmltext;
 	}
 	
@@ -93,6 +96,7 @@ public class NewbieGuide extends AbstractNpcAI
 		{
 			return npc.getId() + "-no.htm";
 		}
+		
 		final QuestState qs = player.getQuestState(TUTORIAL_QUEST);
 		if ((qs != null) && !Config.DISABLE_TUTORIAL && qs.isMemoState(5))
 		{
@@ -108,10 +112,12 @@ public class NewbieGuide extends AbstractNpcAI
 				playTutorialVoice(player, "tutorial_voice_026");
 			}
 		}
+		
 		if (Config.MAX_NEWBIE_BUFF_LEVEL > 0)
 		{
 			return npc.getId() + ".htm";
 		}
+		
 		final NpcHtmlMessage html = new NpcHtmlMessage(npc.getObjectId());
 		html.setFile(player, "data/scripts/ai/others/NewbieGuide/" + npc.getId() + ".htm");
 		html.replace(SUPPORT_MAGIC_STRING, "");

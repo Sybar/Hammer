@@ -35,12 +35,15 @@ public class Q00275_DarkWingedSpies extends Quest
 {
 	// Npc
 	private static final int NERUGA_CHIEF_TANTUS = 30567;
+	
 	// Items
 	private static final int DARKWING_BAT_FANG = 1478;
 	private static final int VARANGKAS_PARASITE = 1479;
+	
 	// Monsters
 	private static final int DARKWING_BAT = 20316;
 	private static final int VARANGKAS_TRACKER = 27043;
+	
 	// Misc
 	private static final int MIN_LEVEL = 11;
 	private static final int FANG_PRICE = 5;
@@ -66,6 +69,7 @@ public class Q00275_DarkWingedSpies extends Quest
 			qs.startQuest();
 			return event;
 		}
+		
 		return null;
 	}
 	
@@ -100,6 +104,7 @@ public class Q00275_DarkWingedSpies extends Quest
 						{
 							qs.setCond(2);
 						}
+						
 						takeItems(killer, VARANGKAS_PARASITE, -1);
 					}
 					break;
@@ -156,6 +161,7 @@ public class Q00275_DarkWingedSpies extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

@@ -40,6 +40,7 @@ public class ResidenceOfQueenNebula extends AbstractNpcAI
 	// NPCs
 	private static final int NEBULA = 29106;
 	private static final int WATER_SLIME = 29111;
+	
 	// Skills
 	private static final int AQUA_RAGE = 50036;
 	private static final SkillHolder AQUA_RAGE_1 = new SkillHolder(AQUA_RAGE, 1);
@@ -143,6 +144,7 @@ public class ResidenceOfQueenNebula extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return null;
 	}
 	

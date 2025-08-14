@@ -58,6 +58,7 @@ public abstract class ThirdClassTransferQuest extends Quest
 		33168,
 		33169,
 	};
+	
 	// Items
 	private static final Map<Race, Integer> RACE_TAGS = new EnumMap<>(Race.class);
 	static
@@ -73,8 +74,10 @@ public abstract class ThirdClassTransferQuest extends Quest
 	private static final int SPIRITSHOTS = 3952;
 	private static final int BLESSED_SCROLL_OF_RESURRECTION = 33518;
 	private static final int PAULINAS_EQUIPMENT_SET = 46852;
+	
 	// Skills
 	private static final SkillHolder SHOW_SKILL = new SkillHolder(5103, 1);
+	
 	// Misc
 	private static final int QUESTION_MARK_ID = 101;
 	private final int _minLevel;
@@ -89,7 +92,7 @@ public abstract class ThirdClassTransferQuest extends Quest
 		{
 			registerQuestItems(tag.getValue());
 		}
-		//@formatter:off
+		// @formatter:off
 		registerQuestItems(
 			17484, // Cry of Destiny - Gladiator
 			17485, // Cry of Destiny - Warlord
@@ -127,7 +130,7 @@ public abstract class ThirdClassTransferQuest extends Quest
 			17516, // Cry of Destiny - Soulbreaker (female)
 			17517 // Cry of Destiny - Arbalester
 		);
-		//@formatter:on
+		// @formatter:on
 		_minLevel = minLevel;
 		_race = race;
 	}
@@ -239,6 +242,7 @@ public abstract class ThirdClassTransferQuest extends Quest
 					{
 						player.setBaseClass(newClassId);
 					}
+					
 					player.setPlayerClass(newClassId.getId());
 					player.store(false);
 					player.broadcastUserInfo();
@@ -254,6 +258,7 @@ public abstract class ThirdClassTransferQuest extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -331,6 +336,7 @@ public abstract class ThirdClassTransferQuest extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	

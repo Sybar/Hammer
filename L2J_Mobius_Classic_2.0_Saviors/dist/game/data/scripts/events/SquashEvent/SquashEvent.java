@@ -21,6 +21,7 @@
 package events.SquashEvent;
 
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 
 import org.l2jmobius.gameserver.data.xml.ItemData;
@@ -45,7 +46,7 @@ public class SquashEvent extends LongTimeEvent
 	private static final List<Integer> LARGE_SQUASH_LIST = Arrays.asList(12778, 12779, 13016, 13017);
 	private static final List<Integer> CHRONO_LIST = Arrays.asList(4202, 5133, 5817, 7058, 8350);
 	
-	//@formatter:off
+	// @formatter:off
 	private static final String[] _NOCHRONO_TEXT =
 	{
 		"You cannot kill me without Chrono",
@@ -487,7 +488,7 @@ public class SquashEvent extends LongTimeEvent
 		{ 13017, XP_SP_Scroll_High, 60 },
 		{ 13017, XP_SP_Scroll_Medium, 60 },
 	};
-	//@formatter:on
+	// @formatter:on
 	
 	public SquashEvent()
 	{
@@ -533,7 +534,7 @@ public class SquashEvent extends LongTimeEvent
 	}
 	
 	@Override
-	public void onSkillSee(Npc npc, Player caster, Skill skill, WorldObject[] targets, boolean isPet)
+	public void onSkillSee(Npc npc, Player caster, Skill skill, Collection<WorldObject> targets, boolean isPet)
 	{
 		if (SQUASH_LIST.contains(npc.getId()) && (skill.getId() == NECTAR_SKILL))
 		{
@@ -579,6 +580,7 @@ public class SquashEvent extends LongTimeEvent
 				{
 					continue;
 				}
+				
 				if (getRandom(100) < drop[2])
 				{
 					if (ItemData.getInstance().getTemplate(drop[1]).getCrystalType() != CrystalType.NONE)
@@ -586,6 +588,7 @@ public class SquashEvent extends LongTimeEvent
 						mob.asMonster().dropItem(player, drop[1], 1);
 						break;
 					}
+					
 					mob.asMonster().dropItem(player, drop[1], (getRandom(1, 3)));
 					if (getRandomBoolean())
 					{
@@ -603,6 +606,7 @@ public class SquashEvent extends LongTimeEvent
 		{
 			spawnNext(low, npc);
 		}
+		
 		if (_random < 10)
 		{
 			spawnNext(medium, npc);

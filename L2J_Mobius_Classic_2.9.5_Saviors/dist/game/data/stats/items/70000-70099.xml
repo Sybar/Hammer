@@ -863,9 +863,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="is_tradable" val="false" />
 		<set name="weight" val="120" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="20" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="14826" level="1" /> <!-- Intense Slash -->
 		</skills>
@@ -882,9 +882,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="is_tradable" val="false" />
 		<set name="weight" val="120" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="20" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="14826" level="2" /> <!-- Intense Slash -->
 		</skills>
@@ -901,9 +901,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="is_tradable" val="false" />
 		<set name="weight" val="120" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="20" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="14826" level="3" /> <!-- Intense Slash -->
 		</skills>
@@ -920,9 +920,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="is_tradable" val="false" />
 		<set name="weight" val="120" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="20" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="14826" level="4" /> <!-- Intense Slash -->
 		</skills>
@@ -939,9 +939,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="is_tradable" val="false" />
 		<set name="weight" val="120" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="20" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="14826" level="5" /> <!-- Intense Slash -->
 		</skills>
@@ -958,9 +958,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="is_tradable" val="false" />
 		<set name="weight" val="120" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="20" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="14826" level="6" /> <!-- Intense Slash -->
 		</skills>
@@ -977,9 +977,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="is_tradable" val="false" />
 		<set name="weight" val="120" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="20" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="14828" level="1" /> <!-- Purity Blast -->
 		</skills>
@@ -996,9 +996,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="is_tradable" val="false" />
 		<set name="weight" val="120" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="20" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="14828" level="2" /> <!-- Purity Blast -->
 		</skills>
@@ -1015,9 +1015,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="is_tradable" val="false" />
 		<set name="weight" val="120" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="20" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="14828" level="3" /> <!-- Purity Blast -->
 		</skills>
@@ -1034,9 +1034,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="is_tradable" val="false" />
 		<set name="weight" val="120" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="20" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="14828" level="4" /> <!-- Purity Blast -->
 		</skills>
@@ -1053,9 +1053,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="is_tradable" val="false" />
 		<set name="weight" val="120" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="20" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="14828" level="5" /> <!-- Purity Blast -->
 		</skills>
@@ -1072,9 +1072,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="is_tradable" val="false" />
 		<set name="weight" val="120" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="20" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="14828" level="6" /> <!-- Purity Blast -->
 		</skills>
@@ -1091,9 +1091,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="is_tradable" val="false" />
 		<set name="weight" val="120" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="20" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="14830" level="1" /> <!-- Grey Explosion -->
 		</skills>
@@ -1110,9 +1110,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="is_tradable" val="false" />
 		<set name="weight" val="120" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="20" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="14830" level="2" /> <!-- Grey Explosion -->
 		</skills>
@@ -1129,9 +1129,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="is_tradable" val="false" />
 		<set name="weight" val="120" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="20" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="14830" level="3" /> <!-- Grey Explosion -->
 		</skills>
@@ -1148,9 +1148,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="is_tradable" val="false" />
 		<set name="weight" val="120" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="20" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="14830" level="4" /> <!-- Grey Explosion -->
 		</skills>
@@ -1167,9 +1167,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="is_tradable" val="false" />
 		<set name="weight" val="120" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="20" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="14830" level="5" /> <!-- Grey Explosion -->
 		</skills>
@@ -1186,9 +1186,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="is_tradable" val="false" />
 		<set name="weight" val="120" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="20" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="14830" level="6" /> <!-- Grey Explosion -->
 		</skills>
@@ -1205,9 +1205,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="is_tradable" val="false" />
 		<set name="weight" val="120" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="20" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="14832" level="1" /> <!-- Platonic Blizzard -->
 		</skills>
@@ -1224,9 +1224,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="is_tradable" val="false" />
 		<set name="weight" val="120" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="20" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="14832" level="2" /> <!-- Platonic Blizzard -->
 		</skills>
@@ -1243,9 +1243,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="is_tradable" val="false" />
 		<set name="weight" val="120" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="20" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="14832" level="3" /> <!-- Platonic Blizzard -->
 		</skills>
@@ -1262,9 +1262,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="is_tradable" val="false" />
 		<set name="weight" val="120" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="20" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="14832" level="4" /> <!-- Platonic Blizzard -->
 		</skills>
@@ -1281,9 +1281,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="is_tradable" val="false" />
 		<set name="weight" val="120" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="20" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="14832" level="5" /> <!-- Platonic Blizzard -->
 		</skills>
@@ -1300,9 +1300,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="is_tradable" val="false" />
 		<set name="weight" val="120" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="20" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="14832" level="6" /> <!-- Platonic Blizzard -->
 		</skills>

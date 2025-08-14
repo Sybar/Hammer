@@ -42,6 +42,7 @@ public class Q10882_VictoryCollection extends Quest
 {
 	// Npcs
 	private static final int SETTLEN = 34180;
+	
 	// Monsters
 	private static final int[] MONSTERS =
 	{
@@ -59,6 +60,7 @@ public class Q10882_VictoryCollection extends Quest
 		23703, // Ice Knight
 		23689 // Freya
 	};
+	
 	// Items
 	private static final int SETTLEN_CERTIFICATE = 47837;
 	private static final ItemHolder LIONEL_HUNTERS_LIST_PART_5 = new ItemHolder(47834, 1);
@@ -67,6 +69,7 @@ public class Q10882_VictoryCollection extends Quest
 	private static final int STORY_BOOK_OF_FREYA = 47849;
 	private static final int STORY_BOOK_OF_KAIN_VAN_HALTER = 47850;
 	private static final int COVERED_PAGE = 48930;
+	
 	// Misc
 	private static final int MIN_LEVEL = 104;
 	
@@ -123,6 +126,7 @@ public class Q10882_VictoryCollection extends Quest
 						{
 							mainQ.notifyEvent("SUBQUEST_FINISHED_NOTIFY", npc, player);
 						}
+						
 						htmltext = event;
 					}
 					else
@@ -133,6 +137,7 @@ public class Q10882_VictoryCollection extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -173,6 +178,7 @@ public class Q10882_VictoryCollection extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

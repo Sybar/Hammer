@@ -73,7 +73,7 @@ public class AdminBuffs implements IAdminCommandHandler
 	};
 	
 	@Override
-	public boolean useAdminCommand(String commandValue, Player activeChar)
+	public boolean onCommand(String commandValue, Player activeChar)
 	{
 		String command = commandValue;
 		if (command.startsWith("admin_buff"))
@@ -131,6 +131,7 @@ public class AdminBuffs implements IAdminCommandHandler
 					{
 						page = Integer.parseInt(st.nextToken());
 					}
+					
 					showBuffs(activeChar, player, page, command.endsWith("_ps"));
 					return true;
 				}
@@ -300,6 +301,7 @@ public class AdminBuffs implements IAdminCommandHandler
 			activeChar.sendSysMessage("There is nothing to switch.");
 			return false;
 		}
+		
 		return true;
 	}
 	
@@ -314,6 +316,7 @@ public class AdminBuffs implements IAdminCommandHandler
 		{
 			gmchar.removeSkill(skill, false); // Don't Save GM skills to database
 		}
+		
 		SkillTreeData.getInstance().addSkills(gmchar, toAuraSkills);
 	}
 	
@@ -473,6 +476,7 @@ public class AdminBuffs implements IAdminCommandHandler
 				sb.append("\" width=30 height=21 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td></tr></table>");
 				sb.append("<img src=\"L2UI.SquareGray\" width=295 height=1>");
 			}
+			
 		}).build();
 		
 		final NpcHtmlMessage html = new NpcHtmlMessage(0, 1);
@@ -590,7 +594,7 @@ public class AdminBuffs implements IAdminCommandHandler
 	}
 	
 	@Override
-	public String[] getAdminCommandList()
+	public String[] getCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}

@@ -36,9 +36,9 @@ public class ProofOfJustice extends AbstractNpcAI
 {
 	// Items
 	private static final int JUSTICE = 17822; // Proof of Justice
+	
 	// Misc
 	private static final Map<Integer, List<PlayerClass>> CLASSLIST = new HashMap<>();
-	
 	static
 	{
 		CLASSLIST.put(30505, Arrays.asList(PlayerClass.DESTROYER, PlayerClass.TYRANT, PlayerClass.OVERLORD, PlayerClass.WARCRYER));
@@ -72,6 +72,7 @@ public class ProofOfJustice extends AbstractNpcAI
 		{
 			return npc.getId() + "-no.html";
 		}
+		
 		MultisellData.getInstance().separateAndSend(718, player, npc, false);
 		return super.onTalk(npc, player);
 	}

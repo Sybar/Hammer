@@ -216,6 +216,7 @@ public class Location implements IPositionable
 			final Location loc = (Location) obj;
 			return (getX() == loc.getX()) && (getY() == loc.getY()) && (getZ() == loc.getZ()) && (getHeading() == loc.getHeading());
 		}
+		
 		return false;
 	}
 	

@@ -4001,11 +4001,11 @@
 		</parameters>
 		<race>DEMONIC</race>
 		<sex>FEMALE</sex>
-		<acquire exp="1008600000" sp="30258000" raidPoints="300" />
+		<acquire exp="1008600000" sp="4500" raidPoints="300" />
 		<stats str="60" int="76" dex="73" wit="70" con="57" men="80">
-			<vitals hp="53409375" hpRegen="319.2293199" mp="31191.426" mpRegen="3" />
-			<attack physical="4522.433913" magical="3088.236091" random="30" critical="4.75" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="3335.250614" magical="1627.090034" />
+			<vitals hp="37500000" hpRegen="1" mp="18000" mpRegen="99" />
+			<attack physical="33431.4486" magical="10376.976" random="10" critical="4" accuracy="4.75" attackSpeed="223" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="2048.8" magical="1365.6" />
 			<speed>
 				<walk ground="45" />
 				<run ground="200" />
@@ -4027,10 +4027,7 @@
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="4416" level="9" /> <!-- Demons -->
 			<skill id="4494" level="1" /> <!-- Raid Boss -->
-			<skill id="5467" level="1" /> <!-- Strong against the dark elemental. -->
 			<skill id="4897" level="1" /> <!-- Raid Boss - Level 82 -->
-			<skill id="4278" level="1" /> <!-- Dark Attack -->
-			<skill id="4333" level="5" /> <!-- Dark Attack Resistance -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" />
@@ -4115,7 +4112,7 @@
 			</drop>
 		</dropLists>
 	</npc>
-	<npc id="25284" level="83" type="Monster" name="Lilith' Agent">
+	<npc id="25284" level="81" type="Monster" name="Lilith' Agent">
 		<parameters>
 			<skill name="DDMagic_a" id="4316" level="8" />
 			<skill name="Debuff_a" id="4198" level="8" />
@@ -4123,9 +4120,9 @@
 		<race>DEMONIC</race>
 		<sex>FEMALE</sex>
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="2000000" hpRegen="209.832715101535" mp="18000" mpRegen="3" />
-			<attack physical="10232.1784290785" magical="4457.93887176621" random="10" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
-			<defence physical="505.60512" magical="493.3" evasion="-18" />
+			<vitals hp="2000000" hpRegen="1" mp="18000" mpRegen="99" />
+			<attack physical="16715.7243" magical="7266.42" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
+			<defence physical="2048.8" magical="1365.6" />
 			<speed>
 				<walk ground="50" />
 				<run ground="190" />
@@ -4146,10 +4143,7 @@
 			<skill id="4413" level="11" /> <!-- Average M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="5" /> <!-- Blunt Weapons -->
-			<skill id="5467" level="1" /> <!-- Strong against the dark elemental. -->
 			<skill id="4416" level="9" /> <!-- Demons -->
-			<skill id="4278" level="1" /> <!-- Dark Attack -->
-			<skill id="4333" level="5" /> <!-- Dark Attack Resistance -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="MAGE" />
@@ -4158,7 +4152,7 @@
 			<height normal="34" />
 		</collision>
 	</npc>
-	<npc id="25285" level="83" type="Monster" name="Lilith' Escort">
+	<npc id="25285" level="81" type="Monster" name="Lilith' Escort">
 		<parameters>
 			<skill name="PhysicalSpecial_a" id="4179" level="8" />
 		</parameters>
@@ -4166,9 +4160,9 @@
 		<sex>MALE</sex>
 		<equipment rhand="5800" lhand="5799" /> <!-- Nephilim Lord / Nephilim Lord -->
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="2000000" hpRegen="209.832715101535" mp="18000" mpRegen="3" />
-			<attack physical="15348.6513599018" magical="10030.8013090312" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="505.60512" magical="493.3" evasion="-18" shield="674" shieldRate="20" />
+			<vitals hp="2000000" hpRegen="1" mp="18000" mpRegen="99" />
+			<attack physical="16715.7243" magical="7266.42" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="2048.8" magical="1365.6" shield="674" shieldRate="20" />
 			<speed>
 				<walk ground="56" />
 				<run ground="220" />
@@ -4189,10 +4183,7 @@
 			<skill id="4413" level="11" /> <!-- Average M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
-			<skill id="5467" level="1" /> <!-- Strong against the dark elemental. -->
 			<skill id="4416" level="9" /> <!-- Demons -->
-			<skill id="4278" level="1" /> <!-- Dark Attack -->
-			<skill id="4333" level="5" /> <!-- Dark Attack Resistance -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" />
@@ -4215,11 +4206,11 @@
 		</parameters>
 		<race>DIVINE</race>
 		<sex>FEMALE</sex>
-		<acquire exp="1008600000" sp="30258000" raidPoints="300" />
+		<acquire exp="1008600000" sp="4500" raidPoints="300" />
 		<stats str="60" int="76" dex="73" wit="70" con="57" men="80">
-			<vitals hp="53409375" hpRegen="319.2293199" mp="31191.426" mpRegen="3" />
-			<attack physical="4522.433913" magical="3088.236091" random="30" critical="4.75" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="3335.250614" magical="1627.090034" />
+			<vitals hp="37500000" hpRegen="1" mp="18000" mpRegen="99" />
+			<attack physical="33431.4486" magical="10376.976" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="2048.8" magical="1365.6" />
 			<speed>
 				<walk ground="45" />
 				<run ground="200" />
@@ -4241,7 +4232,6 @@
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="4416" level="8" /> <!-- Angels -->
 			<skill id="4494" level="1" /> <!-- Raid Boss -->
-			<skill id="5467" level="1" /> <!-- Strong against the dark elemental. -->
 			<skill id="4898" level="1" /> <!-- Raid Boss (Lv. 82) -->
 			<skill id="15608" level="7" /> <!-- Power Strike -->
 			<skill id="15610" level="7" /> <!-- Spinning Slasher -->
@@ -4330,7 +4320,7 @@
 			</drop>
 		</dropLists>
 	</npc>
-	<npc id="25287" level="87" type="Monster" name="Anakim's Guardian">
+	<npc id="25287" level="81" type="Monster" name="Anakim's Guardian">
 		<parameters>
 			<skill name="HealMagic_a" id="4209" level="8" />
 			<skill name="SelfRangeBuff_a" id="4212" level="8" />
@@ -4338,9 +4328,9 @@
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="2000000.0" hpRegen="209.832715101535" mp="18000.0" mpRegen="3" />
-			<attack physical="7674.3256799509" magical="2507.70032725781" random="10" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
-			<defence physical="505.60512" magical="493.3" evasion="-18" />
+			<vitals hp="2000000" hpRegen="1" mp="18000" mpRegen="99" />
+			<attack physical="16715.7243" magical="7266.42" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
+			<defence physical="2048.8" magical="1365.6" />
 			<speed>
 				<walk ground="50" />
 				<run ground="190" />
@@ -4361,7 +4351,6 @@
 			<skill id="4413" level="11" /> <!-- Average M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="5" /> <!-- Blunt Weapons -->
-			<skill id="5467" level="1" /> <!-- Strong against the dark elemental. -->
 			<skill id="4416" level="8" /> <!-- Angels -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
@@ -4371,13 +4360,13 @@
 			<height normal="40.5" />
 		</collision>
 	</npc>
-	<npc id="25288" level="87" type="Monster" name="Anakim's Royal Guard">
+	<npc id="25288" level="81" type="Monster" name="Anakim's Royal Guard">
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="2000000.0" hpRegen="209.832715101535" mp="18000.0" mpRegen="3" />
-			<attack physical="7674.3256799509" magical="2507.70032725781" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="505.60512" magical="493.3" evasion="-18" />
+			<vitals hp="2000000" hpRegen="1" mp="18000" mpRegen="99" />
+			<attack physical="16715.7243" magical="7266.42" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="2048.8" magical="1365.6" />
 			<speed>
 				<walk ground="65" />
 				<run ground="220" />
@@ -4397,7 +4386,6 @@
 			<skill id="4413" level="11" /> <!-- Average M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
-			<skill id="5467" level="1" /> <!-- Strong against the dark elemental. -->
 			<skill id="4416" level="8" /> <!-- Angels -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
@@ -4407,13 +4395,13 @@
 			<height normal="43" grown="51.6" />
 		</collision>
 	</npc>
-	<npc id="25289" level="87" type="Monster" name="Anakim's Executor">
+	<npc id="25289" level="81" type="Monster" name="Anakim's Executor">
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="2000000.0" hpRegen="209.832715101535" mp="18000.0" mpRegen="3" />
-			<attack physical="7674.3256799509" magical="2507.70032725781" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="505.60512" magical="493.3" evasion="-18" />
+			<vitals hp="2000000" hpRegen="1" mp="18000" mpRegen="99" />
+			<attack physical="16715.7243" magical="7266.42" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="2048.8" magical="1365.6" />
 			<speed>
 				<walk ground="65" />
 				<run ground="190" />
@@ -4432,7 +4420,6 @@
 			<skill id="4413" level="11" /> <!-- Average M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
-			<skill id="5467" level="1" /> <!-- Strong against the dark elemental. -->
 			<skill id="4416" level="8" /> <!-- Angels -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>

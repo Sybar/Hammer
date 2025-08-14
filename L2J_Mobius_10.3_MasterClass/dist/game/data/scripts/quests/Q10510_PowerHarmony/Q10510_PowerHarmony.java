@@ -48,16 +48,20 @@ public class Q10510_PowerHarmony extends Quest
 {
 	// NPC
 	private static final int LIONEL = 33907;
+	
 	// Item
 	private static final int PROOF_OF_UNITY = 82199;
+	
 	// Reward
 	private static final int DIGNITY_OF_THE_EXALTED_LV7 = 82213;
 	private static final int ELEMENTS_OF_THE_EXALTED = 82214;
+	
 	// Misc
 	private static final int MIN_LEVEL = 110;
 	private static final int MIN_COMPLETE_LEVEL = 115;
 	private static final int REACH_LV_115 = NpcStringId.REACH_LV_115.getId();
 	private static final int PROOF_OF_UNITY_NEEDED = 320000;
+	
 	// Monsters
 	private static final int[] MONSTERS =
 	{
@@ -306,6 +310,7 @@ public class Q10510_PowerHarmony extends Quest
 		{
 			return htmltext;
 		}
+		
 		switch (event)
 		{
 			case "33907-02.htm":
@@ -327,6 +332,7 @@ public class Q10510_PowerHarmony extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -364,6 +370,7 @@ public class Q10510_PowerHarmony extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -383,10 +390,12 @@ public class Q10510_PowerHarmony extends Quest
 			{
 				giveItemRandomly(player, PROOF_OF_UNITY, 1, PROOF_OF_UNITY_NEEDED, 1, true);
 			}
+			
 			if ((getQuestItemsCount(player, PROOF_OF_UNITY) >= PROOF_OF_UNITY_NEEDED) && (player.getLevel() >= MIN_COMPLETE_LEVEL))
 			{
 				qs.setCond(2, true);
 			}
+			
 			sendNpcLogList(player);
 		}
 	}
@@ -402,8 +411,10 @@ public class Q10510_PowerHarmony extends Quest
 			{
 				holder.add(new NpcLogListHolder(REACH_LV_115, true, 1));
 			}
+			
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 	
@@ -419,6 +430,7 @@ public class Q10510_PowerHarmony extends Quest
 			{
 				qs.setCond(2, true);
 			}
+			
 			sendNpcLogList(event.getPlayer());
 		}
 	}

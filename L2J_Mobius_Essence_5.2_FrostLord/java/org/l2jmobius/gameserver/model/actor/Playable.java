@@ -21,6 +21,7 @@
 package org.l2jmobius.gameserver.model.actor;
 
 import java.util.Collection;
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -28,6 +29,7 @@ import org.l2jmobius.gameserver.ai.Action;
 import org.l2jmobius.gameserver.managers.ZoneManager;
 import org.l2jmobius.gameserver.model.WorldObject;
 import org.l2jmobius.gameserver.model.actor.enums.creature.InstanceType;
+import org.l2jmobius.gameserver.model.actor.holders.player.AutoUseSettingsHolder;
 import org.l2jmobius.gameserver.model.actor.stat.PlayableStat;
 import org.l2jmobius.gameserver.model.actor.status.PlayableStatus;
 import org.l2jmobius.gameserver.model.actor.templates.CreatureTemplate;
@@ -42,7 +44,9 @@ import org.l2jmobius.gameserver.model.events.returns.TerminateReturn;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
 import org.l2jmobius.gameserver.model.item.instance.Item;
 import org.l2jmobius.gameserver.model.quest.QuestState;
+import org.l2jmobius.gameserver.model.skill.BuffInfo;
 import org.l2jmobius.gameserver.model.skill.Skill;
+import org.l2jmobius.gameserver.network.serverpackets.AbnormalStatusUpdate;
 import org.l2jmobius.gameserver.network.serverpackets.EtcStatusUpdate;
 
 /**
@@ -128,6 +132,7 @@ public abstract class Playable extends Creature
 			{
 				return false;
 			}
+			
 			// now reset currentHp to zero
 			setCurrentHp(0);
 			setDead(true);
@@ -152,6 +157,7 @@ public abstract class Playable extends Creature
 			stopEffects(EffectFlag.NOBLESS_BLESSING);
 			deleteBuffs = false;
 		}
+		
 		if (isResurrectSpecialAffected())
 		{
 			stopEffects(EffectFlag.RESURRECTION_SPECIAL);
@@ -167,6 +173,7 @@ public abstract class Playable extends Creature
 				{
 					player.reviveRequest(player, false, 0, 0, 0, 0);
 				}
+				
 				player.setCharmOfCourage(false);
 				player.sendPacket(new EtcStatusUpdate(player));
 			}
@@ -238,6 +245,7 @@ public abstract class Playable extends Creature
 			final ClanWar war = playerClan.getWarWith(target.getClanId());
 			return (war != null) && (war.getState() == ClanWarState.MUTUAL);
 		}
+		
 		return false;
 	}
 	
@@ -322,6 +330,70 @@ public abstract class Playable extends Creature
 	{
 		_replacedSkills.put(originalId, replacementId);
 		_originalSkills.put(replacementId, originalId);
+		
+		final Skill knownSkill = getKnownSkill(originalId);
+		if (knownSkill == null)
+		{
+			return;
+		}
+		
+		final Player player = asPlayer();
+		final AutoUseSettingsHolder autoUseSettings = player.getAutoUseSettings();
+		if (knownSkill.hasNegativeEffect())
+		{
+			final List<Integer> autoSkills = autoUseSettings.getAutoSkills();
+			if (autoSkills.contains(originalId))
+			{
+				autoSkills.add(replacementId);
+				autoSkills.remove(Integer.valueOf(originalId));
+			}
+		}
+		else
+		{
+			final Collection<Integer> autoBuffs = autoUseSettings.getAutoBuffs();
+			if (autoBuffs.contains(originalId))
+			{
+				autoBuffs.add(replacementId);
+				autoBuffs.remove(originalId);
+			}
+		}
+		
+		// Replace continuous effects.
+		if (knownSkill.isContinuous() && isAffectedBySkill(originalId))
+		{
+			int abnormalTime = 0;
+			for (BuffInfo info : getEffectList().getEffects())
+			{
+				if (info.getSkill().getId() == originalId)
+				{
+					abnormalTime = info.getAbnormalTime();
+					break;
+				}
+			}
+			
+			if (abnormalTime > 2000)
+			{
+				final Skill replacementkill = getKnownSkill(replacementId);
+				if (replacementkill != null)
+				{
+					replacementkill.applyEffects(this, this);
+					final AbnormalStatusUpdate asu = new AbnormalStatusUpdate();
+					for (BuffInfo info : getEffectList().getEffects())
+					{
+						if (info.getSkill().getId() == replacementId)
+						{
+							info.resetAbnormalTime(abnormalTime);
+							asu.addSkill(info);
+						}
+					}
+					
+					player.sendPacket(asu);
+				}
+			}
+		}
+		
+		removeSkill(knownSkill, false);
+		player.sendSkillList();
 	}
 	
 	/**
@@ -332,10 +404,76 @@ public abstract class Playable extends Creature
 	public void removeReplacedSkill(int originalId)
 	{
 		final Integer replacementId = _replacedSkills.remove(originalId);
-		if (replacementId != null)
+		if (replacementId == null)
 		{
-			_originalSkills.remove(replacementId);
+			return;
 		}
+		
+		_originalSkills.remove(replacementId);
+		
+		final Skill knownSkill = getKnownSkill(replacementId);
+		if (knownSkill == null)
+		{
+			return;
+		}
+		
+		final Player player = asPlayer();
+		final AutoUseSettingsHolder autoUseSettings = player.getAutoUseSettings();
+		if (knownSkill.hasNegativeEffect())
+		{
+			final List<Integer> autoSkills = autoUseSettings.getAutoSkills();
+			if (autoSkills.contains(replacementId))
+			{
+				autoSkills.add(originalId);
+				autoSkills.remove(Integer.valueOf(replacementId));
+			}
+		}
+		else
+		{
+			final Collection<Integer> autoBuffs = autoUseSettings.getAutoBuffs();
+			if (autoBuffs.contains(replacementId))
+			{
+				autoBuffs.add(originalId);
+				autoBuffs.remove(replacementId);
+			}
+		}
+		
+		// Replace continuous effects.
+		if (knownSkill.isContinuous() && isAffectedBySkill(replacementId))
+		{
+			int abnormalTime = 0;
+			for (BuffInfo info : getEffectList().getEffects())
+			{
+				if (info.getSkill().getId() == replacementId)
+				{
+					abnormalTime = info.getAbnormalTime();
+					break;
+				}
+			}
+			
+			if (abnormalTime > 2000)
+			{
+				final Skill originalskill = getKnownSkill(originalId);
+				if (originalskill != null)
+				{
+					originalskill.applyEffects(this, this);
+					final AbnormalStatusUpdate asu = new AbnormalStatusUpdate();
+					for (BuffInfo info : getEffectList().getEffects())
+					{
+						if (info.getSkill().getId() == originalId)
+						{
+							info.resetAbnormalTime(abnormalTime);
+							asu.addSkill(info);
+						}
+					}
+					
+					player.sendPacket(asu);
+				}
+			}
+		}
+		
+		removeSkill(knownSkill, false);
+		player.sendSkillList();
 	}
 	
 	/**
@@ -345,7 +483,25 @@ public abstract class Playable extends Creature
 	 */
 	public int getReplacementSkill(int originalId)
 	{
-		return _replacedSkills.getOrDefault(originalId, originalId);
+		// Pet has not been restored yet.
+		if (_replacedSkills == null)
+		{
+			return originalId;
+		}
+		
+		int replacedSkillId = originalId;
+		while (true)
+		{
+			final Integer nextId = _replacedSkills.get(replacedSkillId);
+			if ((nextId == null) || (nextId == replacedSkillId))
+			{
+				break;
+			}
+			
+			replacedSkillId = nextId;
+		}
+		
+		return replacedSkillId;
 	}
 	
 	/**
@@ -355,7 +511,25 @@ public abstract class Playable extends Creature
 	 */
 	public int getOriginalSkill(int replacementId)
 	{
-		return _originalSkills.getOrDefault(replacementId, replacementId);
+		// Pet has not been restored yet.
+		if (_originalSkills == null)
+		{
+			return replacementId;
+		}
+		
+		int originalSkillId = replacementId;
+		while (true)
+		{
+			final Integer nextId = _originalSkills.get(originalSkillId);
+			if ((nextId == null) || (nextId == originalSkillId))
+			{
+				break;
+			}
+			
+			originalSkillId = nextId;
+		}
+		
+		return originalSkillId;
 	}
 	
 	/**

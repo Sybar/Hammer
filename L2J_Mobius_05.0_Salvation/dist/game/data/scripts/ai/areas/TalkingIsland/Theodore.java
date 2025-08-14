@@ -44,6 +44,7 @@ public class Theodore extends AbstractNpcAI
 		{
 			npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.AND_NOW_YOUR_JOURNEY_BEGINS, 1000);
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	

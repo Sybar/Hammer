@@ -48,11 +48,13 @@ public class Q10544_SeekerSupplies extends Quest
 	private static final int DEVON = 32160; // Dark Elf
 	private static final int MOKA = 32157; // Dwarf
 	private static final int VALFAR = 32146; // Kamael
+	
 	// Item's
 	private static final int GROCERY_SUPLLY_BOX = 39524;
 	private static final int WEAPON_SUPLLY_BOX = 39522;
 	private static final int ARMOR_SUPLLY_BOX = 39523;
 	private static final int ACCESSORY_SUPPLY_BOX = 39525;
+	
 	// Reward's
 	private static final int LEATHER_SHIRT = 22;
 	private static final int LEATHER_PANTS = 29;
@@ -60,6 +62,7 @@ public class Q10544_SeekerSupplies extends Quest
 	private static final int LEATHER_STOCKINGS = 464;
 	private static final int APPRENTICE_EARRING = 112;
 	private static final int NECKLACE_OF_KNOWNLEDGE = 906;
+	
 	// Misc
 	private static final int MAX_LEVEL = 20;
 	
@@ -155,6 +158,7 @@ public class Q10544_SeekerSupplies extends Quest
 						break;
 					}
 				}
+				
 				giveItems(player, ACCESSORY_SUPPLY_BOX, 1);
 				htmltext = event;
 				break;
@@ -176,6 +180,7 @@ public class Q10544_SeekerSupplies extends Quest
 					giveItems(player, LEATHER_SHIRT, 1);
 					giveItems(player, LEATHER_PANTS, 1);
 				}
+				
 				giveItems(player, APPRENTICE_EARRING, 2);
 				giveItems(player, NECKLACE_OF_KNOWNLEDGE, 1);
 				addExpAndSp(player, 2630, 10);
@@ -184,6 +189,7 @@ public class Q10544_SeekerSupplies extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -319,6 +325,7 @@ public class Q10544_SeekerSupplies extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

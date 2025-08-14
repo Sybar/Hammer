@@ -39,17 +39,20 @@ public class Q11002_HelpWithTempleRestoration extends Quest
 	// NPCs
 	private static final int ALTRAN = 30283;
 	private static final int HARRYS = 30035;
+	
 	// Items
 	private static final int WOODEN_POLE = 90205;
 	private static final int WOODEN_DOOR_PANEL = 90206;
 	private static final int STONE_POWDER = 90207;
 	private static final int INVENTORY_BOOK = 90204;
+	
 	// Rewards
 	private static final int WARRIORS_ARMOR = 90306;
 	private static final int WARRIORS_GAITERS = 90307;
 	private static final int MEDIUMS_TUNIC = 90308;
 	private static final int MEDIUMS_STOCKINGS = 90309;
 	private static final int EARRING_NOVICE = 29486;
+	
 	// Monsters
 	private static final int ORC_LIEUTENANT = 20096;
 	private static final int ORC_CAPTAIN = 20098;
@@ -57,6 +60,7 @@ public class Q11002_HelpWithTempleRestoration extends Quest
 	private static final int WEREWOLF_HUMTER = 20343;
 	private static final int STONE_GOLEM = 20016;
 	private static final int CRASHER = 20101;
+	
 	// Misc
 	private static final int MIN_LEVEL = 11;
 	private static final int MAX_LEVEL = 20;
@@ -126,6 +130,7 @@ public class Q11002_HelpWithTempleRestoration extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -186,6 +191,7 @@ public class Q11002_HelpWithTempleRestoration extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

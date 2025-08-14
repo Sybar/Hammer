@@ -51,17 +51,20 @@ public class Q10962_NewHorizons extends Quest
 	// NPCs
 	private static final int LEAHEN = 34111;
 	private static final int CAPTAIN_BATHIS = 30332;
+	
 	// Monsters
 	private static final int MOUNTAIN_WEREWORLF = 21985;
 	private static final int MOUNTAIN_FUNGUES = 21986;
 	private static final int MUERTOS_WARRIOR = 21987;
 	private static final int MUERTOS_CAPTAIN = 21988;
+	
 	// Items
 	private static final ItemHolder SOE_TO_CAPTAIN_BATHIS = new ItemHolder(91651, 1);
 	private static final ItemHolder SOE_NOVICE = new ItemHolder(10650, 20);
 	private static final ItemHolder SPIRIT_ORE = new ItemHolder(3031, 50);
 	private static final ItemHolder HP_POTS = new ItemHolder(91912, 50);
 	private static final ItemHolder XP_GROWTH_SCROLL = new ItemHolder(49674, 1);
+	
 	// Misc
 	private static final int MAX_LEVEL = 20;
 	private static final String KILL_COUNT_VAR = "KillCount";
@@ -134,11 +137,13 @@ public class Q10962_NewHorizons extends Quest
 						showOnScreenMsg(player, NpcStringId.YOU_VE_FINISHED_THE_TUTORIAL_TAKE_YOUR_1ST_CLASS_TRANSFER_AND_COMPLETE_YOUR_TRAINING_WITH_BATHIS_TO_BECOME_STRONGER, ExShowScreenMessage.TOP_CENTER, 10000);
 						player.sendPacket(ExClassChangeSetAlarm.STATIC_PACKET);
 					}
+					
 					qs.exitQuest(false, true);
 				}
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -175,6 +180,7 @@ public class Q10962_NewHorizons extends Quest
 			holder.add(new NpcLogListHolder(NpcStringId.KILL_MONSTERS_IN_THE_GOLDEN_HILLS.getId(), true, qs.getInt(KILL_COUNT_VAR)));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 	
@@ -216,6 +222,7 @@ public class Q10962_NewHorizons extends Quest
 				htmltext = getAlreadyCompletedMsg(player);
 			}
 		}
+		
 		return htmltext;
 	}
 	

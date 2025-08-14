@@ -234,10 +234,12 @@ public class NpcLocationInfo extends AbstractNpcAI
 					y = spawn.getY();
 					z = spawn.getZ();
 				}
+				
 				addRadar(player, x, y, z);
 				htmltext = "MoveToLoc.htm";
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -250,6 +252,7 @@ public class NpcLocationInfo extends AbstractNpcAI
 		{
 			htmltext = npcId + ".htm";
 		}
+		
 		return htmltext;
 	}
 	

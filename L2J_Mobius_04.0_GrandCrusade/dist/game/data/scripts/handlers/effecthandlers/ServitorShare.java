@@ -27,12 +27,15 @@ import java.util.Map.Entry;
 import org.l2jmobius.gameserver.model.StatSet;
 import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.model.actor.stat.CreatureStat;
+import org.l2jmobius.gameserver.model.actor.stat.PlayerStat;
 import org.l2jmobius.gameserver.model.effects.AbstractEffect;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.model.stats.Stat;
 
 /**
  * Servitor Share effect implementation.
+ * @author Mobius
  */
 public class ServitorShare extends AbstractEffect
 {
@@ -60,13 +63,36 @@ public class ServitorShare extends AbstractEffect
 	@Override
 	public void pump(Creature effected, Skill skill)
 	{
-		final Player owner = effected.asPlayer();
-		if (owner != null)
+		final Player player = effected.asPlayer();
+		if (player == null)
 		{
-			for (Entry<Stat, Float> stats : _sharedStats.entrySet())
-			{
-				effected.getStat().mergeAdd(stats.getKey(), owner.getStat().getValue(stats.getKey()) * stats.getValue().floatValue());
-			}
+			return;
 		}
+		
+		final PlayerStat playerStat = player.getStat();
+		final CreatureStat effectedStat = effected.getStat();
+		for (Entry<Stat, Float> entry : _sharedStats.entrySet())
+		{
+			final Stat stat = entry.getKey();
+			effectedStat.mergeAdd(stat, playerStat.getValue(stat) * entry.getValue());
+		}
+	}
+	
+	@Override
+	public void onExit(Creature effector, Creature effected, Skill skill)
+	{
+		if (effected.isSummon())
+		{
+			effected.getStat().recalculateStats(true);
+			return;
+		}
+		
+		final Player player = effected.asPlayer();
+		if (player == null)
+		{
+			return;
+		}
+		
+		player.getServitors().values().forEach(s -> s.getStat().recalculateStats(true));
 	}
 }

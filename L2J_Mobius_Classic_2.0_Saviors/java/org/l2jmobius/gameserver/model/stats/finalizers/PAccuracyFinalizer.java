@@ -42,22 +42,27 @@ public class PAccuracyFinalizer implements IStatFunction
 		{
 			baseValue += level - 69;
 		}
+		
 		if (level > 77)
 		{
 			baseValue += 1;
 		}
+		
 		if (level > 80)
 		{
 			baseValue += 2;
 		}
+		
 		if (level > 87)
 		{
 			baseValue += 2;
 		}
+		
 		if (level > 92)
 		{
 			baseValue += 1;
 		}
+		
 		if (level > 97)
 		{
 			baseValue += 1;
@@ -79,6 +84,7 @@ public class PAccuracyFinalizer implements IStatFunction
 		{
 			return (0.3 * Math.max(enchantLevel - 3, 0)) + (0.3 * Math.max(enchantLevel - 6, 0));
 		}
+		
 		return (0.2 * Math.max(enchantLevel - 3, 0)) + (0.2 * Math.max(enchantLevel - 6, 0));
 	}
 }

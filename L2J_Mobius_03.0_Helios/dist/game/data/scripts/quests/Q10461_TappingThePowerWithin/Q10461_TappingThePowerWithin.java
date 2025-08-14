@@ -35,6 +35,7 @@ public class Q10461_TappingThePowerWithin extends Quest
 {
 	// NPCs
 	private static final int LIONEL_HUNTER = 33907;
+	
 	// Misc
 	private static final int MIN_LEVEL = 99;
 	
@@ -85,6 +86,7 @@ public class Q10461_TappingThePowerWithin extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -102,6 +104,7 @@ public class Q10461_TappingThePowerWithin extends Quest
 					htmltext = "33907-01.htm";
 					break;
 				}
+				
 				htmltext = "33907-07.html";
 				break;
 			}
@@ -119,6 +122,7 @@ public class Q10461_TappingThePowerWithin extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

@@ -107,6 +107,7 @@ public class Lethal extends AbstractEffect
 			{
 				effected.setCurrentHp(1);
 			}
+			
 			effector.sendPacket(SystemMessageId.HIT_WITH_LETHAL_STRIKE);
 		}
 		// Half-Kill
@@ -124,6 +125,7 @@ public class Lethal extends AbstractEffect
 			{
 				effected.setCurrentHp(effected.getCurrentHp() * 0.5);
 			}
+			
 			effector.sendPacket(SystemMessageId.HALF_KILL);
 		}
 		

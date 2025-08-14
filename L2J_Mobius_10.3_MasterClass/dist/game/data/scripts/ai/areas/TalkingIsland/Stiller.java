@@ -31,6 +31,7 @@ public class Stiller extends AbstractNpcAI
 {
 	// NPCs
 	private static final int STILLER = 33125;
+	
 	// Misc
 	private static final NpcStringId[] STILLER_SHOUT =
 	{
@@ -50,6 +51,7 @@ public class Stiller extends AbstractNpcAI
 		{
 			npc.broadcastSay(ChatType.NPC_GENERAL, STILLER_SHOUT[getRandom(2)], 1000);
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	

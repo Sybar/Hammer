@@ -39,6 +39,7 @@ public class Q10977_TracesOfBattle extends Quest
 {
 	// NPCs
 	private static final int ORVEN = 30857;
+	
 	// Monsters
 	private static final int GRAVEYARD_WANDERER = 20659;
 	private static final int ARCHER_OF_GREED = 20660;
@@ -49,11 +50,13 @@ public class Q10977_TracesOfBattle extends Quest
 	private static final int TAIK_ORC_SUPPLY = 20665;
 	private static final int VIOLLENT_FARCRAN = 20667;
 	private static final int FIERCE_GUARD = 22103;
+	
 	// Items
 	private static final ItemHolder MAGIC_LAMP_CHARGING_POTION = new ItemHolder(91757, 3);
 	private static final ItemHolder SOULSHOT_TICKET = new ItemHolder(90907, 10);
 	private static final ItemHolder SAYHA_GUST = new ItemHolder(91776, 9);
 	private static final ItemHolder SPIRIT_ORE = new ItemHolder(3031, 450);
+	
 	// Misc
 	private static final int MIN_LEVEL = 45;
 	private static final String KILL_COUNT_VAR = "KillCount";
@@ -114,6 +117,7 @@ public class Q10977_TracesOfBattle extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -149,6 +153,7 @@ public class Q10977_TracesOfBattle extends Quest
 		{
 			htmltext = getAlreadyCompletedMsg(player);
 		}
+		
 		return htmltext;
 	}
 	
@@ -184,6 +189,7 @@ public class Q10977_TracesOfBattle extends Quest
 			holder.add(new NpcLogListHolder(NpcStringId.LEVEL_70_ACCOMPLISHED, player.getLevel() > 69 ? 1 : 0));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

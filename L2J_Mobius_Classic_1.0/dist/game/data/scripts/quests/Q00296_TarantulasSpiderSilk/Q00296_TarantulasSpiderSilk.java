@@ -32,16 +32,19 @@ public class Q00296_TarantulasSpiderSilk extends Quest
 	// NPCs
 	private static final int TRADER_MION = 30519;
 	private static final int DEFENDER_NATHAN = 30548;
+	
 	// Items
 	private static final int TARANTULA_SPIDER_SILK = 1493;
 	private static final int TARANTULA_SPINNERETTE = 1494;
+	
 	// Monsters
-	private static final int[] MONSTERS = new int[]
+	private static final int[] MONSTERS =
 	{
 		20394,
 		20403,
 		20508,
 	};
+	
 	// Misc
 	private static final int MIN_LEVEL = 15;
 	
@@ -111,6 +114,7 @@ public class Q00296_TarantulasSpiderSilk extends Quest
 				break;
 			}
 		}
+		
 		return html;
 	}
 	
@@ -150,6 +154,7 @@ public class Q00296_TarantulasSpiderSilk extends Quest
 				{
 					giveAdena(talker, (silk * 5) + (silk >= 10 ? 1000 : 0), true);
 					takeItems(talker, TARANTULA_SPIDER_SILK, -1);
+					
 					// Q00281_HeadForTheHills.giveNewbieReward(talker); // TODO: It's using wrong bitmask, need to create a general bitmask for this using EnumIntBitmask class inside Quest class for handling Quest rewards.
 					html = "30519-05.html";
 				}
@@ -163,6 +168,7 @@ public class Q00296_TarantulasSpiderSilk extends Quest
 				html = "30548-01.html";
 			}
 		}
+		
 		return html;
 	}
 }

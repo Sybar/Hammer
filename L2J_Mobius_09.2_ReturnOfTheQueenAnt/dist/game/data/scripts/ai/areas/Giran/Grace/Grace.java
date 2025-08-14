@@ -44,9 +44,11 @@ public class Grace extends AbstractNpcAI
 {
 	// NPC
 	private static final int GRACE = 34544;
+	
 	// Skills
 	private static final SkillHolder GRACE_LUCK_LV1 = new SkillHolder(32967, 1);
 	private static final SkillHolder GRACE_LUCK_LV2 = new SkillHolder(32967, 2);
+	
 	// Misc
 	private static final ConfirmDlg CONFIRM_DIALOG = new ConfirmDlg(SystemMessageId.I_CAN_GIVE_YOU_A_GOOD_LUCK_BUFF_WILL_YOU_ACCEPT_IT_IT_WILL_COST_YOU_7_000_000_ADENA);
 	private static final int ADENA_COST = 7000000;
@@ -69,12 +71,15 @@ public class Grace extends AbstractNpcAI
 			{
 				_graceNpc = null;
 			}
+			
 			if ((_graceNpc == null) && !npc.isDead())
 			{
 				_graceNpc = npc;
 			}
+			
 			player.sendPacket(CONFIRM_DIALOG);
 		}
+		
 		return null;
 	}
 	

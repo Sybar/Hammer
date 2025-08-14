@@ -149,6 +149,7 @@ public class RequestExPledgeEnemyRegister extends ClientPacket
 				member.getPlayer().broadcastUserInfo();
 			}
 		}
+		
 		for (ClanMember member : enemyClan.getMembers())
 		{
 			if ((member != null) && member.isOnline())

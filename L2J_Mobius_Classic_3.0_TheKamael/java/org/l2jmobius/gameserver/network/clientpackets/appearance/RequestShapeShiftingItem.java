@@ -198,6 +198,7 @@ public class RequestShapeShiftingItem extends ClientPacket
 			player.removeRequest(ShapeShiftingItemRequest.class);
 			return;
 		}
+		
 		if ((appearanceStone.getType() == AppearanceType.NORMAL) && (inventory.destroyItem(ItemProcessType.FEE, extractItem, 1, player, this) == null))
 		{
 			player.sendPacket(ExShapeShiftingResult.FAILED);
@@ -266,6 +267,7 @@ public class RequestShapeShiftingItem extends ClientPacket
 		{
 			iu.addModifiedItem(extractItem);
 		}
+		
 		if (inventory.getItemByObjectId(stone.getObjectId()) == null)
 		{
 			iu.addRemovedItem(stone);
@@ -274,6 +276,7 @@ public class RequestShapeShiftingItem extends ClientPacket
 		{
 			iu.addModifiedItem(stone);
 		}
+		
 		player.sendInventoryUpdate(iu);
 		
 		player.removeRequest(ShapeShiftingItemRequest.class);
@@ -289,8 +292,10 @@ public class RequestShapeShiftingItem extends ClientPacket
 					slots.addComponentType(slot);
 				}
 			}
+			
 			player.sendPacket(slots);
 		}
+		
 		player.sendPacket(new ExAdenaInvenCount(player));
 	}
 }

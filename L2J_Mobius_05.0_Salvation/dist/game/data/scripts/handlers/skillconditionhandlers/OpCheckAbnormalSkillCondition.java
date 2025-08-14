@@ -59,6 +59,7 @@ public class OpCheckAbnormalSkillCondition implements ISkillCondition
 				}
 			}
 		}
+		
 		return false;
 	}
 }

@@ -38,7 +38,7 @@ public class AdminGraciaSeeds implements IAdminCommandHandler
 	};
 	
 	@Override
-	public boolean useAdminCommand(String command, Player activeChar)
+	public boolean onCommand(String command, Player activeChar)
 	{
 		final StringTokenizer st = new StringTokenizer(command, " ");
 		final String actualCommand = st.nextToken(); // Get actual command
@@ -77,11 +77,12 @@ public class AdminGraciaSeeds implements IAdminCommandHandler
 		{
 			html.replace("%sodtime%", "-1");
 		}
+		
 		activeChar.sendPacket(html);
 	}
 	
 	@Override
-	public String[] getAdminCommandList()
+	public String[] getCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}

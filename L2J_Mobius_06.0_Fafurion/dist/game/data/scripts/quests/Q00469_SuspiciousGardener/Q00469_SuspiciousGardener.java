@@ -39,8 +39,10 @@ public class Q00469_SuspiciousGardener extends Quest
 {
 	// NPC
 	private static final int GOFINA = 33031;
+	
 	// Monsters
 	private static final int APHERIUS_LOOKOUT_BEWILDERED = 22964;
+	
 	// Items
 	private static final ItemHolder CERTIFICATE_OF_LIFE = new ItemHolder(30385, 2); // Certificate of Life
 	// Misc
@@ -63,6 +65,7 @@ public class Q00469_SuspiciousGardener extends Quest
 		{
 			return null;
 		}
+		
 		String htmltext = null;
 		switch (event)
 		{
@@ -86,6 +89,7 @@ public class Q00469_SuspiciousGardener extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -105,6 +109,7 @@ public class Q00469_SuspiciousGardener extends Quest
 						htmltext = "33031-04.html";
 						break;
 					}
+					
 					qs.setState(State.CREATED);
 					// fallthrough
 				}
@@ -131,6 +136,7 @@ public class Q00469_SuspiciousGardener extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	

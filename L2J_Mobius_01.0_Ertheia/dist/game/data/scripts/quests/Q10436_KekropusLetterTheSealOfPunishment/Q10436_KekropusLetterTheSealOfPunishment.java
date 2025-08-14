@@ -41,12 +41,15 @@ public class Q10436_KekropusLetterTheSealOfPunishment extends LetterQuest
 	private static final int MOUEN = 30196;
 	private static final int LAKI = 32742;
 	private static final int INVISIBLE_NPC = 19543;
+	
 	// Items
 	private static final int SOE_TOWN_OF_OREN = 37114; // Scroll of Escape: Town of Oren
 	private static final int EWS = 959; // Scroll: Enchant Weapon (S-grade)
 	private static final int EAS = 960; // Scroll: Enchant Armor (S-grade)
+	
 	// Location
 	private static final Location TELEPORT_LOC = new Location(86404, -142221, -1341);
+	
 	// Misc
 	private static final int MIN_LEVEL = 81;
 	private static final int MAX_LEVEL = 84;
@@ -103,11 +106,13 @@ public class Q10436_KekropusLetterTheSealOfPunishment extends LetterQuest
 					{
 						addExpAndSp(player, 1_412_040, 338);
 					}
+					
 					htmltext = event;
 				}
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -132,6 +137,7 @@ public class Q10436_KekropusLetterTheSealOfPunishment extends LetterQuest
 				htmltext = npc.getId() == MOUEN ? "30196-04.html" : "32472-01.html";
 			}
 		}
+		
 		return htmltext;
 	}
 	

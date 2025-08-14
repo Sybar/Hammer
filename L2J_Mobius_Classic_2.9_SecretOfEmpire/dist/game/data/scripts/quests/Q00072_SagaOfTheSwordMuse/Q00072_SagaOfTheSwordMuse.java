@@ -49,6 +49,7 @@ public class Q00072_SagaOfTheSwordMuse extends Quest
 	private static final int TABLET_OF_VISION_3 = 31650;
 	private static final int TABLET_OF_VISION_4 = 31655;
 	private static final int MOON_VOICE_IRENE = 31618;
+	
 	// Monsters
 	private static final int ICE_MONSTER = 27316;
 	private static final int SPIRIT_OF_A_DROWNED = 27317;
@@ -64,6 +65,7 @@ public class Q00072_SagaOfTheSwordMuse extends Quest
 	private static final int SWORD_PLAYER_BIEL = 27288;
 	private static final int HALISHA_ARCHON = 27219;
 	private static final int FALLEN_ANGEL_NARCISSUS = 27280;
+	
 	// Items
 	private static final int ICE_CRYSTAL_FRAGMENT = 49806;
 	private static final int HALISHA_BADGE = 7487;
@@ -72,8 +74,10 @@ public class Q00072_SagaOfTheSwordMuse extends Quest
 	private static final int RESONANCE_AMULET_3 = 7332;
 	private static final int RESONANCE_AMULET_4 = 7363;
 	private static final int BITTER_COLD_BEER = 7536;
+	
 	// Reward
 	private static final int BOOK_PEGASUS = 90039;
+	
 	// Misc
 	private static final String KILL_COUNT_VAR = "KillCount";
 	
@@ -96,6 +100,7 @@ public class Q00072_SagaOfTheSwordMuse extends Quest
 		{
 			return null;
 		}
+		
 		String htmltext = event;
 		switch (event)
 		{
@@ -243,6 +248,7 @@ public class Q00072_SagaOfTheSwordMuse extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -433,6 +439,7 @@ public class Q00072_SagaOfTheSwordMuse extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -503,6 +510,7 @@ public class Q00072_SagaOfTheSwordMuse extends Quest
 						{
 							qs.set(KILL_COUNT_VAR, count + 1);
 						}
+						
 						if (count >= 20)
 						{
 							qs.setCond(8, true);
@@ -529,8 +537,10 @@ public class Q00072_SagaOfTheSwordMuse extends Quest
 			{
 				holder.add(new NpcLogListHolder(WATCHER_OF_ANCIENT_PLEDGE, false, guardiancount));
 			}
+			
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

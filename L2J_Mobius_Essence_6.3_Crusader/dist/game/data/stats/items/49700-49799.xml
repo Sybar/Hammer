@@ -1185,9 +1185,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="handler" val="ItemSkills" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="76" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="39170" level="1" /> <!-- Balthus Knights' Supply Box -->
 		</skills>

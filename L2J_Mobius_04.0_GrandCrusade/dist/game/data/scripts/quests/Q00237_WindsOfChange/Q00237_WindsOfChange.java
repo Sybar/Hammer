@@ -38,12 +38,14 @@ public class Q00237_WindsOfChange extends Quest
 	private static final int MORELYN = 30925;
 	private static final int HELVETICA = 32641;
 	private static final int ATHENIA = 32643;
+	
 	// Items
 	private static final int FLAUENS_LETTER = 14862;
 	private static final int DOSKOZER_LETTER = 14863;
 	private static final int ATHENIA_LETTER = 14864;
 	private static final int VICINITY_OF_FOS = 14865;
 	private static final int SUPPORT_CERTIFICATE = 14866;
+	
 	// Misc
 	private static final int MIN_LEVEL = 82;
 	
@@ -164,6 +166,7 @@ public class Q00237_WindsOfChange extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -325,6 +328,7 @@ public class Q00237_WindsOfChange extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

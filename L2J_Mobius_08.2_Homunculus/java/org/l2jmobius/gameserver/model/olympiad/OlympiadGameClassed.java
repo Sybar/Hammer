@@ -71,6 +71,7 @@ public class OlympiadGameClassed extends OlympiadGameNormal
 			
 			return new OlympiadGameClassed(id, opponents);
 		}
+		
 		return null;
 	}
 	

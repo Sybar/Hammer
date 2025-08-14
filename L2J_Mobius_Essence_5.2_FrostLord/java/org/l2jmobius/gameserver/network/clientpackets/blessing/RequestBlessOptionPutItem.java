@@ -53,6 +53,7 @@ public class RequestBlessOptionPutItem extends ClientPacket
 		{
 			return;
 		}
+		
 		if (player.isProcessingTransaction() || player.isInStoreMode())
 		{
 			getClient().sendPacket(SystemMessageId.YOU_CANNOT_ENCHANT_WHILE_OPERATING_A_PRIVATE_STORE_OR_PRIVATE_WORKSHOP);

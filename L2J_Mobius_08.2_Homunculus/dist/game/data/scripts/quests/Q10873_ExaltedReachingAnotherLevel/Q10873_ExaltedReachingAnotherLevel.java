@@ -43,17 +43,21 @@ public class Q10873_ExaltedReachingAnotherLevel extends Quest
 {
 	// NPC
 	private static final int LIONEL = 33907;
+	
 	// Items
 	private static final int PROOF_OF_REPUTATION = 80826;
 	private static final int LIONEL_MISSION_LIST_4 = 47829;
+	
 	// Rewards
 	private static final int DIGNITY_OF_THE_EXALTED_LV4 = 47852;
 	private static final int VITALITY_OF_THE_EXALTED_LV1 = 47854;
+	
 	// Misc
 	private static final int MIN_LEVEL = 103;
 	private static final int MIN_COMPLETE_LEVEL = 105;
 	private static final int REACH_LV_105 = NpcStringId.REACH_LV_105.getId();
 	private static final int PROOF_OF_REPUTATION_NEEDED = 80000;
+	
 	// Monsters
 	private static final int[] MONSTERS =
 	{
@@ -202,6 +206,7 @@ public class Q10873_ExaltedReachingAnotherLevel extends Quest
 		{
 			return htmltext;
 		}
+		
 		switch (event)
 		{
 			case "33907-03.htm":
@@ -239,6 +244,7 @@ public class Q10873_ExaltedReachingAnotherLevel extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -279,6 +285,7 @@ public class Q10873_ExaltedReachingAnotherLevel extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -298,10 +305,12 @@ public class Q10873_ExaltedReachingAnotherLevel extends Quest
 			{
 				giveItemRandomly(player, PROOF_OF_REPUTATION, 1, PROOF_OF_REPUTATION_NEEDED, 1, true);
 			}
+			
 			if ((getQuestItemsCount(player, PROOF_OF_REPUTATION) >= PROOF_OF_REPUTATION_NEEDED) && (player.getLevel() >= MIN_COMPLETE_LEVEL))
 			{
 				qs.setCond(2, true);
 			}
+			
 			sendNpcLogList(player);
 		}
 	}
@@ -317,8 +326,10 @@ public class Q10873_ExaltedReachingAnotherLevel extends Quest
 			{
 				holder.add(new NpcLogListHolder(REACH_LV_105, true, 1));
 			}
+			
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

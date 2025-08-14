@@ -35,7 +35,7 @@ public class SupportBlessing implements IBypassHandler
 	};
 	
 	@Override
-	public boolean useBypass(String command, Player player, Creature target)
+	public boolean onCommand(String command, Player player, Creature target)
 	{
 		if (!target.isNpc())
 		{
@@ -50,13 +50,14 @@ public class SupportBlessing implements IBypassHandler
 			npc.showChatWindow(player, "data/html/default/SupportBlessingHighLevel.htm");
 			return true;
 		}
+		
 		npc.setTarget(player);
 		SkillCaster.triggerCast(npc, player, CommonSkill.BLESSING_OF_PROTECTION.getSkill());
 		return false;
 	}
 	
 	@Override
-	public String[] getBypassList()
+	public String[] getCommandList()
 	{
 		return COMMANDS;
 	}

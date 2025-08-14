@@ -30,7 +30,7 @@ import org.l2jmobius.gameserver.network.SystemMessageId;
 public class SummonItems extends ItemSkillsTemplate
 {
 	@Override
-	public boolean useItem(Playable playable, Item item, boolean forceUse)
+	public boolean onItemUse(Playable playable, Item item, boolean forceUse)
 	{
 		if (!playable.isPlayer())
 		{
@@ -62,6 +62,12 @@ public class SummonItems extends ItemSkillsTemplate
 			return false;
 		}
 		
+		if ((player.getActiveTradeList() != null) || player.isInStoreMode())
+		{
+			player.sendPacket(SystemMessageId.CANNOT_BE_SUMMONED_WHILE_TRADING);
+			return false;
+		}
+		
 		final PetData petData = PetDataTable.getInstance().getPetDataByItemId(item.getId());
 		if ((petData == null) || (petData.getNpcId() == -1))
 		{
@@ -69,6 +75,6 @@ public class SummonItems extends ItemSkillsTemplate
 		}
 		
 		player.addScript(new PetItemHolder(item));
-		return super.useItem(playable, item, forceUse);
+		return super.onItemUse(playable, item, forceUse);
 	}
 }

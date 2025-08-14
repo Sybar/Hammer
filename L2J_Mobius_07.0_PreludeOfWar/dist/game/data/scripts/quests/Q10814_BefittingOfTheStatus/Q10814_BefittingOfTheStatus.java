@@ -40,6 +40,7 @@ public class Q10814_BefittingOfTheStatus extends Quest
 {
 	// Npc
 	private static final int GALLADUCCI = 30097;
+	
 	// Items
 	private static final int REPLICA_TIARA = 37804;
 	private static final int GALLADUCI_RODEMAI_CERTIFICATE = 45625;
@@ -62,6 +63,7 @@ public class Q10814_BefittingOfTheStatus extends Quest
 		6845, // Pirate's Eyepatch
 		13490, // Arrow-pierced Apple
 	};
+	
 	// Misc
 	private static final int MIN_LEVEL = 99;
 	
@@ -114,9 +116,11 @@ public class Q10814_BefittingOfTheStatus extends Quest
 						{
 							mainQ.notifyEvent("SUBQUEST_FINISHED_NOTIFY", npc, player);
 						}
+						
 						htmltext = event;
 						break;
 					}
+					
 					htmltext = getNoQuestLevelRewardMsg(player);
 				}
 				break;
@@ -142,9 +146,11 @@ public class Q10814_BefittingOfTheStatus extends Quest
 								{
 									continue;
 								}
+								
 								qs.setMemoStateEx(i, itemId);
 								break;
 							}
+							
 							takeItems(player, itemId, 1);
 							if (qs.getCond() < 6)
 							{
@@ -189,6 +195,7 @@ public class Q10814_BefittingOfTheStatus extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -258,10 +265,12 @@ public class Q10814_BefittingOfTheStatus extends Quest
 						}
 					}
 				}
+				
 				htmlFile.replace("%itemList%", sb.toString());
 				html = htmlFile.getHtml();
 			}
 		}
+		
 		return html;
 	}
 	
@@ -274,6 +283,7 @@ public class Q10814_BefittingOfTheStatus extends Quest
 			LOGGER.info("Cannot find HTML file for " + Q10814_BefittingOfTheStatus.class.getSimpleName() + " Quest: " + fileName);
 			return null;
 		}
+		
 		html.setHtml(text);
 		return html;
 	}
@@ -308,6 +318,7 @@ public class Q10814_BefittingOfTheStatus extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

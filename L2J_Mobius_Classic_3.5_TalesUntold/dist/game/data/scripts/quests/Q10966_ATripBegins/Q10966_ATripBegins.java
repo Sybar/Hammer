@@ -45,12 +45,14 @@ public class Q10966_ATripBegins extends Quest
 	// NPCs
 	private static final int CAPTAIN_BATHIS = 30332;
 	private static final int BELLA = 30256;
+	
 	// Items
 	private static final ItemHolder SOE_TO_CAPTAIN_BATHIS = new ItemHolder(91651, 1);
 	private static final ItemHolder SOE_NOVICE = new ItemHolder(10650, 10); // TODO: Replace with Advanced Scroll of Escape Event(s)
 	private static final ItemHolder TALISMAN_OF_ADEN = new ItemHolder(91745, 1); // TODO: Fix item
 	private static final ItemHolder SCROLL_OF_ENCHANT_TALISMAN_OF_ADEN = new ItemHolder(91756, 1); // TODO: Fix item
 	private static final ItemHolder ADVENTURERS_BRACELET = new ItemHolder(91934, 1);
+	
 	// Monsters
 	private static final int ARACHNID_PREDATOR = 20926;
 	private static final int SKELETON_BOWMAN = 20051;
@@ -58,6 +60,7 @@ public class Q10966_ATripBegins extends Quest
 	private static final int RAGING_SPARTOI = 20060;
 	private static final int TUMRAN_BUGBEAR = 20062;
 	private static final int TUMRAN_BUGBEAR_WARRIOR = 20064;
+	
 	// Misc
 	private static final int MIN_LEVEL = 20;
 	private static final int MAX_LEVEL = 25;
@@ -131,6 +134,7 @@ public class Q10966_ATripBegins extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -167,6 +171,7 @@ public class Q10966_ATripBegins extends Quest
 			holder.add(new NpcLogListHolder(NpcStringId.CLEAR_RUINS_OF_AGONY.getId(), true, qs.getInt(KILL_COUNT_VAR)));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 	
@@ -212,6 +217,7 @@ public class Q10966_ATripBegins extends Quest
 				htmltext = getAlreadyCompletedMsg(player);
 			}
 		}
+		
 		return htmltext;
 	}
 }

@@ -34,8 +34,10 @@ public class Q10381_ToTheSeedOfHellfire extends Quest
 	private static final int KEUCEREUS = 32548;
 	private static final int KBALDIR = 32733;
 	private static final int SIZRAK = 33669;
+	
 	// Item
 	private static final int KBALDIR_LETTER = 34957;
+	
 	// Misc
 	private static final int MIN_LEVEL = 97;
 	
@@ -94,6 +96,7 @@ public class Q10381_ToTheSeedOfHellfire extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -156,6 +159,7 @@ public class Q10381_ToTheSeedOfHellfire extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

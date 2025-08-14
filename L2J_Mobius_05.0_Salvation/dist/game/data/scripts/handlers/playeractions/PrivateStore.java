@@ -38,7 +38,7 @@ public class PrivateStore implements IPlayerActionHandler
 	private static final Logger LOGGER = Logger.getLogger(PrivateStore.class.getName());
 	
 	@Override
-	public void useAction(Player player, ActionDataHolder data, boolean ctrlPressed, boolean shiftPressed)
+	public void onAction(Player player, ActionDataHolder data, boolean ctrlPressed, boolean shiftPressed)
 	{
 		final PrivateStoreType type = PrivateStoreType.findById(data.getOptionId());
 		if (type == null)
@@ -68,6 +68,7 @@ public class PrivateStore implements IPlayerActionHandler
 				if ((player.getPrivateStoreType() == PrivateStoreType.SELL) || (player.getPrivateStoreType() == PrivateStoreType.SELL_MANAGE) || (player.getPrivateStoreType() == PrivateStoreType.PACKAGE_SELL))
 				{
 					player.setPrivateStoreType(PrivateStoreType.NONE);
+					player.getSellList().clear();
 				}
 				break;
 			}

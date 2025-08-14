@@ -31,6 +31,7 @@ public class Q10756_AnInterdimensionalDraft extends Quest
 {
 	// NPC
 	private static final int PIO = 33963;
+	
 	// Monsters
 	private static final int[] MONSTERS =
 	{
@@ -43,8 +44,10 @@ public class Q10756_AnInterdimensionalDraft extends Quest
 		23415, // Windima Feri
 		23416, // Windima Resh
 	};
+	
 	// Items
 	private static final int UNWORLDLY_WIND = 39493;
+	
 	// Misc
 	private static final int MIN_LEVEL = 20;
 	private static final double DROP_RATE = 0.7d;
@@ -100,6 +103,7 @@ public class Q10756_AnInterdimensionalDraft extends Quest
 				htmltext = null;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -126,6 +130,7 @@ public class Q10756_AnInterdimensionalDraft extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

@@ -43,6 +43,7 @@ public class OpEnergyMaxSkillCondition implements ISkillCondition
 			caster.sendPacket(SystemMessageId.YOUR_FORCE_HAS_REACHED_MAXIMUM_CAPACITY);
 			return false;
 		}
+		
 		return true;
 	}
 }

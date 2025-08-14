@@ -45,19 +45,21 @@ public class Q00245_ComeToMe extends Quest
 {
 	// NPC
 	private static final int FERRIS = 30847;
+	
 	// Monsters
-	private static final int[] BLAZING_MOBS_1 = new int[]
+	private static final int[] BLAZING_MOBS_1 =
 	{
 		21110, // Swamp Predator
 		21111 // Lava Wyrm
 	};
-	private static final int[] BLAZING_MOBS_2 = new int[]
+	private static final int[] BLAZING_MOBS_2 =
 	{
 		21112, // Hames Orc Foot Soldier
 		21113, // Hames Orc Sniper
 		21115, // Hames Orc Shaman
 		21116 // Hames Orc Prefect
 	};
+	
 	// Items
 	private static final int FLAME_ASHES = 30322;
 	private static final int CRYSTALS_OF_EXPERIENCE = 30323;
@@ -65,6 +67,7 @@ public class Q00245_ComeToMe extends Quest
 	private static final int MENTOR_RING = 30383;
 	private static final int ACADEMY_DYE_STR = 47205;
 	private static final int ACADEMY_DYE_WIT = 47210;
+	
 	// Misc
 	private static final int MIN_LEVEL = 70;
 	private static final int MAX_LEVEL = 75;
@@ -94,8 +97,10 @@ public class Q00245_ComeToMe extends Quest
 					mentee.getQuestState(getName()).setCond(3, true);
 					return event;
 				}
+				
 				return "30847-14.html";
 			}
+			
 			return "30847-12.html";
 		}
 		
@@ -114,6 +119,7 @@ public class Q00245_ComeToMe extends Quest
 			takeItems(player, FLAME_ASHES, -1);
 			playSound(player, QuestSound.ITEMSOUND_QUEST_MIDDLE);
 		}
+		
 		return event;
 	}
 	
@@ -190,6 +196,7 @@ public class Q00245_ComeToMe extends Quest
 								{
 									player.getClan().addReputationScore(500);
 								}
+								
 								addExpAndSp(player, 2_018_733, 484);
 								giveItems(player, MENTOR_RING, 1);
 								giveItems(player, getRandom(ACADEMY_DYE_STR, ACADEMY_DYE_WIT), 10);
@@ -199,6 +206,7 @@ public class Q00245_ComeToMe extends Quest
 							{
 								htmltext = getNoQuestLevelRewardMsg(player);
 							}
+							
 							qs.exitQuest(QuestType.ONE_TIME, true);
 							break;
 						}
@@ -212,6 +220,7 @@ public class Q00245_ComeToMe extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -268,6 +277,7 @@ public class Q00245_ComeToMe extends Quest
 				return "30847-11.html";
 			}
 		}
+		
 		npc.showChatWindow(player);
 		return null;
 	}
@@ -287,6 +297,7 @@ public class Q00245_ComeToMe extends Quest
 				}
 			}
 		}
+		
 		return mentee;
 	}
 }

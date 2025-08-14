@@ -641,9 +641,9 @@
 		<set name="material" val="SILVER" />
 		<set name="is_sellable" val="false" />
 		<set name="weight" val="150" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="100" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="39393" level="1" /> <!-- Artifact Book Lv. 1 -->
 		</skills>
@@ -657,9 +657,9 @@
 		<set name="material" val="SILVER" />
 		<set name="is_sellable" val="false" />
 		<set name="weight" val="150" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="105" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="39394" level="1" /> <!-- Artifact Book Lv. 2 -->
 		</skills>
@@ -673,9 +673,9 @@
 		<set name="material" val="SILVER" />
 		<set name="is_sellable" val="false" />
 		<set name="weight" val="150" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="110" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="39395" level="1" /> <!-- Artifact Book Lv. 3 -->
 		</skills>

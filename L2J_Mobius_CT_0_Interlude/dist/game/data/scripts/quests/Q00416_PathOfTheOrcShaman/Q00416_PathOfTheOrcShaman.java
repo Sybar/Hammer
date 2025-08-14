@@ -40,6 +40,7 @@ public class Q00416_PathOfTheOrcShaman extends Quest
 	private static final int MOIRA = 31979;
 	private static final int TOTEM_SPIRIT_OF_GANDI = 32057;
 	private static final int DEAD_LEOPARD_CARCASS = 32090;
+	
 	// Monsters
 	private static final int VENOMOUS_SPIDER = 20038;
 	private static final int ARACHNID_TRACKER = 20043;
@@ -49,6 +50,7 @@ public class Q00416_PathOfTheOrcShaman extends Quest
 	private static final int KASHA_BEAR = 20479;
 	private static final int DURKA_SPIRIT = 27056;
 	private static final int BLACK_LEOPARD = 27319;
+	
 	// Items
 	private static final int FIRE_CHARM = 1616;
 	private static final int KASHA_BEAR_PELT = 1617;

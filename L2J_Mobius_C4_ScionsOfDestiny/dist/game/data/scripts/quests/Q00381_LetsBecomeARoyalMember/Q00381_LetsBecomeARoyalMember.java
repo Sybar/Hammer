@@ -32,11 +32,13 @@ public class Q00381_LetsBecomeARoyalMember extends Quest
 	// NPCs
 	private static final int SORINT = 30232;
 	private static final int SANDRA = 30090;
+	
 	// Items
 	private static final int KAIL_COIN = 5899;
 	private static final int COIN_ALBUM = 5900;
 	private static final int GOLDEN_CLOVER_COIN = 7569;
 	private static final int COIN_COLLECTOR_MEMBERSHIP = 3813;
+	
 	// Reward
 	private static final int ROYAL_MEMBERSHIP = 5898;
 	

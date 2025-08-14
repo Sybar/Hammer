@@ -31,6 +31,7 @@ public class Lumi extends AbstractNpcAI
 {
 	// NPCs
 	private static final int LUMI = 33025;
+	
 	// Misc
 	private static final NpcStringId[] LUMI_SHOUT =
 	{
@@ -51,6 +52,7 @@ public class Lumi extends AbstractNpcAI
 		{
 			npc.broadcastSay(ChatType.NPC_GENERAL, LUMI_SHOUT[getRandom(3)], 1000);
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	

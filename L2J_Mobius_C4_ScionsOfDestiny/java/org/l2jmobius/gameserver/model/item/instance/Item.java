@@ -166,6 +166,7 @@ public class Item extends WorldObject
 		{
 			throw new IllegalArgumentException();
 		}
+		
 		super.setName(_itemTemplate.getName());
 		setCount(1);
 		_loc = ItemLocation.VOID;
@@ -193,6 +194,7 @@ public class Item extends WorldObject
 		{
 			throw new IllegalArgumentException();
 		}
+		
 		super.setName(_itemTemplate.getName());
 		setCount(1);
 		_loc = ItemLocation.VOID;
@@ -257,6 +259,7 @@ public class Item extends WorldObject
 				}
 			}
 		}
+		
 		// outside of synchronized to avoid deadlocks
 		// Remove the Item from the world
 		World.getInstance().removeVisibleObject(this, oldregion);
@@ -434,6 +437,7 @@ public class Item extends WorldObject
 		{
 			return;
 		}
+		
 		final int old = _count;
 		final int max = _itemId == ADENA_ID ? MAX_ADENA : Integer.MAX_VALUE;
 		
@@ -495,6 +499,7 @@ public class Item extends WorldObject
 		{
 			return _itemTemplate.isEnchantable();
 		}
+		
 		return false;
 	}
 	
@@ -623,6 +628,7 @@ public class Item extends WorldObject
 		{
 			return (EtcItem) _itemTemplate;
 		}
+		
 		return null;
 	}
 	
@@ -635,6 +641,7 @@ public class Item extends WorldObject
 		{
 			return (Weapon) _itemTemplate;
 		}
+		
 		return null;
 	}
 	
@@ -647,6 +654,7 @@ public class Item extends WorldObject
 		{
 			return (Armor) _itemTemplate;
 		}
+		
 		return null;
 	}
 	
@@ -938,6 +946,7 @@ public class Item extends WorldObject
 		{
 			_storedInDb = false;
 		}
+		
 		if (resetConsumingMana)
 		{
 			_consumingMana = false;
@@ -981,6 +990,7 @@ public class Item extends WorldObject
 					item.unChargeAllShots();
 					iu.addModifiedItem(item);
 				}
+				
 				player.sendInventoryUpdate(iu);
 				player.broadcastUserInfo();
 			}
@@ -1014,6 +1024,7 @@ public class Item extends WorldObject
 			{
 				scheduleConsumeManaTask();
 			}
+			
 			if (_loc != ItemLocation.WAREHOUSE)
 			{
 				final InventoryUpdate iu = new InventoryUpdate();
@@ -1029,6 +1040,7 @@ public class Item extends WorldObject
 		{
 			return;
 		}
+		
 		_consumingMana = true;
 		ItemManaTaskManager.getInstance().add(this);
 	}
@@ -1088,6 +1100,7 @@ public class Item extends WorldObject
 				{
 					return;
 				}
+				
 				insertIntoDb();
 			}
 		}
@@ -1134,12 +1147,14 @@ public class Item extends WorldObject
 			LOGGER.log(Level.SEVERE, "Could not restore an item owned by " + ownerId + " from DB:", e);
 			return null;
 		}
+		
 		final ItemTemplate item = ItemData.getInstance().getTemplate(itemId);
 		if (item == null)
 		{
 			LOGGER.severe("Item item_id=" + itemId + " not known, object_id=" + objectId);
 			return null;
 		}
+		
 		inst = new Item(objectId, item);
 		inst._ownerId = ownerId;
 		inst.setCount(count);
@@ -1213,6 +1228,7 @@ public class Item extends WorldObject
 		{
 			ItemsOnGroundManager.getInstance().save(this);
 		}
+		
 		setDropperObjectId(0); // Set the dropper Id back to 0 so it no longer shows the drop packet
 		
 		if ((dropper != null) && dropper.isPlayer())
@@ -1424,6 +1440,7 @@ public class Item extends WorldObject
 				item.unChargeAllShots();
 				iu.addModifiedItem(item);
 			}
+			
 			player.sendInventoryUpdate(iu);
 			player.broadcastUserInfo();
 		}
@@ -1446,6 +1463,7 @@ public class Item extends WorldObject
 		{
 			player.getWarehouse().destroyItem(ItemProcessType.DESTROY, this, player, null);
 		}
+		
 		player.sendMessage("The limited-time item has disappeared because the remaining time ran out.");
 		
 		// Delete from world.
@@ -1458,6 +1476,7 @@ public class Item extends WorldObject
 		{
 			return;
 		}
+		
 		if (getRemainingTime() <= 0)
 		{
 			endOfLife();
@@ -1622,6 +1641,7 @@ public class Item extends WorldObject
 		{
 			_owner = World.getInstance().getPlayer(_ownerId);
 		}
+		
 		return _owner;
 	}
 	

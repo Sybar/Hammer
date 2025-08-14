@@ -49,6 +49,7 @@ public class ExUserInfoAbnormalVisualEffect extends ServerPacket
 		{
 			buffer.writeShort(abnormalVisualEffect.getClientId());
 		}
+		
 		if (isInvisible)
 		{
 			buffer.writeShort(AbnormalVisualEffect.STEALTH.getClientId());

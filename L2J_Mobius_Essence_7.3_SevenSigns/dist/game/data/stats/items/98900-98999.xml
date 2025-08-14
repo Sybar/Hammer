@@ -1201,9 +1201,9 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="price" val="2000" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="49501" level="1" /> <!-- Feed -->
 		</skills>
@@ -1610,9 +1610,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_freightable" val="true" />
-		<cond msgId="600">
+		<conditions msgId="600">
 			<player categoryType="PET_GROUP" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="mDef">48</stat>
 		</stats>
@@ -1638,9 +1638,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_freightable" val="true" />
-		<cond msgId="600">
+		<conditions msgId="600">
 			<player categoryType="PET_GROUP" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="mDef">26</stat>
 		</stats>

@@ -87,6 +87,7 @@ public class CpHealOverTime extends AbstractEffect
 		{
 			cp = Math.max(cp, 1);
 		}
+		
 		effected.setCurrentCp(cp, false);
 		effected.broadcastStatusUpdate(effector);
 		return true;

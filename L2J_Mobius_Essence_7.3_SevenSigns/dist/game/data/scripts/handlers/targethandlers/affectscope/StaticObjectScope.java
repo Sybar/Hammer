@@ -51,6 +51,7 @@ public class StaticObjectScope implements IAffectScopeHandler
 			{
 				return false;
 			}
+			
 			if (c.isDead())
 			{
 				return false;

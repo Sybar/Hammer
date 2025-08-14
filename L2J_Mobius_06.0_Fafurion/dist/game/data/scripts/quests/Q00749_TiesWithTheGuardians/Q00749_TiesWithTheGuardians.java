@@ -43,8 +43,10 @@ public final class Q00749_TiesWithTheGuardians extends Quest
 {
 	// NPC
 	private static final int RAFINI = 34356;
+	
 	// Item
 	private static final int FACTION_AMITY_TOKEN = 48030;
+	
 	// Misc
 	private static final int MIN_LEVEL = 88;
 	private static final int MAX_LEVEL = 100;
@@ -86,6 +88,7 @@ public final class Q00749_TiesWithTheGuardians extends Quest
 					htmltext = "guardian_leader_q10851_05a.htm";
 					break;
 				}
+				
 				htmltext = "guardian_leader_q10851_05.htm";
 				break;
 			}
@@ -117,6 +120,7 @@ public final class Q00749_TiesWithTheGuardians extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -152,6 +156,7 @@ public final class Q00749_TiesWithTheGuardians extends Quest
 						showHtmlFile(player, "guardian_leader_q10851_05a.htm", npc);
 						break;
 					}
+					
 					showHtmlFile(player, "guardian_leader_q10851_05.htm", npc);
 					break;
 				}
@@ -191,6 +196,7 @@ public final class Q00749_TiesWithTheGuardians extends Quest
 						}
 						break;
 					}
+					
 					getNoQuestLevelRewardMsg(player);
 					break;
 				}
@@ -209,10 +215,12 @@ public final class Q00749_TiesWithTheGuardians extends Quest
 								showHtmlFile(player, "guardian_rapini_q0749_13.htm", npc);
 								break;
 							}
+							
 							showHtmlFile(player, "guardian_rapini_q0749_14.htm", npc);
 							break;
 						}
 					}
+					
 					getNoQuestLevelRewardMsg(player);
 					break;
 				}
@@ -230,6 +238,7 @@ public final class Q00749_TiesWithTheGuardians extends Quest
 						}
 						break;
 					}
+					
 					getNoQuestLevelRewardMsg(player);
 					break;
 				}
@@ -246,9 +255,11 @@ public final class Q00749_TiesWithTheGuardians extends Quest
 							showHtmlFile(player, "guardian_rapini_q0749_13a.htm", npc);
 							break;
 						}
+						
 						showHtmlFile(player, "guardian_rapini_q0749_14a.htm", npc);
 						break;
 					}
+					
 					getNoQuestLevelRewardMsg(player);
 					break;
 				}
@@ -271,6 +282,7 @@ public final class Q00749_TiesWithTheGuardians extends Quest
 					htmltext = getAlreadyCompletedMsg(player);
 					break;
 				}
+				
 				qs.setState(State.CREATED);
 				// fallthrou
 			}
@@ -283,9 +295,11 @@ public final class Q00749_TiesWithTheGuardians extends Quest
 						htmltext = "guardian_rapini_q0749_02a.htm";
 						break;
 					}
+					
 					htmltext = "guardian_rapini_q0749_01.htm";
 					break;
 				}
+				
 				htmltext = "guardian_rapini_q0749_02.htm";
 				break;
 			}
@@ -300,6 +314,7 @@ public final class Q00749_TiesWithTheGuardians extends Quest
 							htmltext = "guardian_leader_q10851_05a.htm";
 							break;
 						}
+						
 						htmltext = "guardian_leader_q10851_05.htm";
 						break;
 					}
@@ -327,6 +342,7 @@ public final class Q00749_TiesWithTheGuardians extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

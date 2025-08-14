@@ -35,15 +35,18 @@ public class Q00261_CollectorsDream extends Quest
 {
 	// NPC
 	private static final int ALSHUPES = 30222;
+	
 	// Monsters
-	private static final int[] MONSTERS = new int[]
+	private static final int[] MONSTERS =
 	{
 		20308, // Hook Spider
 		20460, // Crimson Spider
 		20466, // Pincer Spider
 	};
+	
 	// Item
 	private static final int SPIDER_LEG = 1087;
+	
 	// Misc
 	private static final int MIN_LEVEL = 15;
 	private static final int MAX_LEG_COUNT = 8;
@@ -67,6 +70,7 @@ public class Q00261_CollectorsDream extends Quest
 			qs.startQuest();
 			return event;
 		}
+		
 		return null;
 	}
 	
@@ -122,6 +126,7 @@ public class Q00261_CollectorsDream extends Quest
 									setNRMemoState(newbieGuideQs, GUIDE_MISSION, getNRMemoState(newbieGuideQs, GUIDE_MISSION) + 10000000);
 									showOnScreenMsg(player, "Last duty complete. \\n Go find the Newbie Guide.", 2, 5000);
 								}
+								
 								newbieGuideQs.setState(State.COMPLETED);
 							}
 							
@@ -136,6 +141,7 @@ public class Q00261_CollectorsDream extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

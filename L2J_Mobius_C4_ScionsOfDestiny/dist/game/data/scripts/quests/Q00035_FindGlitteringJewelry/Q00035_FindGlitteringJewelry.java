@@ -34,11 +34,13 @@ public class Q00035_FindGlitteringJewelry extends Quest
 	// NPCs
 	private static final int ELLIE = 30091;
 	private static final int FELTON = 30879;
+	
 	// Items
 	private static final int ROUGH_JEWEL = 7162;
 	private static final int ORIHARUKON = 1893;
 	private static final int SILVER_NUGGET = 1873;
 	private static final int THONS = 4044;
+	
 	// Reward
 	private static final int JEWEL_BOX = 7077;
 	

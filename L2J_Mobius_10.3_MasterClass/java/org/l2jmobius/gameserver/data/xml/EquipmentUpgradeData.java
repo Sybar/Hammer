@@ -83,6 +83,7 @@ public class EquipmentUpgradeData implements IXmlReader
 					}
 				}
 			}
+			
 			final long adena = set.getLong("adena", 0);
 			final String[] resultItem = set.getString("result").split(",");
 			final int resultItemId = Integer.parseInt(resultItem[0]);

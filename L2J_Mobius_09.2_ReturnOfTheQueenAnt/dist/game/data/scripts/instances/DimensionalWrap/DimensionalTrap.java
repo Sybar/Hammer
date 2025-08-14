@@ -41,6 +41,7 @@ public class DimensionalTrap extends AbstractNpcAI
 	private static final int DIMENSIONAL_DEMAGE_TRAP_2 = 19560; // Damage trap, power 2
 	private static final int DIMENSIONAL_DEMAGE_TRAP_3 = 19561; // Damage trap, power 3
 	private static final int DIMENSIONAL_HEAL_LIGHT = 19562; // Heal Trap
+	
 	// skill
 	private static final SkillHolder TRAP_HOLD = new SkillHolder(16409, 1);
 	private static final SkillHolder TRAP_ARIALL_YOKE = new SkillHolder(16410, 1);
@@ -106,6 +107,7 @@ public class DimensionalTrap extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	

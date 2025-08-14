@@ -32,8 +32,8 @@ import ai.AbstractNpcAI;
  */
 public class DummyIfrit extends AbstractNpcAI
 {
-	private final static int DUMMY_IFRIT_NPC_ID = 25966;
-	// private final static int BLAZING_DRAGON_NPC_ID = 25967;
+	private static final int DUMMY_IFRIT_NPC_ID = 25966;
+	// private static final int BLAZING_DRAGON_NPC_ID = 25967;
 	
 	private DummyIfrit()
 	{

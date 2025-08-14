@@ -78,6 +78,7 @@ public class SelMahumDrill extends AbstractNpcAI
 		NpcStringId.THE_DRILLMASTER_IS_DEAD,
 		NpcStringId.LINE_UP_THE_RANKS
 	};
+	
 	// Chiefs event broadcast range
 	private static final int TRAINING_RANGE = 1500;
 	
@@ -131,6 +132,7 @@ public class SelMahumDrill extends AbstractNpcAI
 		addEventReceivedId(MAHUM_SOLDIERS);
 		addSpawnId(MAHUM_CHIEFS);
 		addSpawnId(MAHUM_SOLDIERS);
+		
 		// Start global return home timer
 		startQuestTimer("return_home", 120000, null, null, true);
 	}
@@ -192,6 +194,7 @@ public class SelMahumDrill extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	
@@ -227,16 +230,19 @@ public class SelMahumDrill extends AbstractNpcAI
 					{
 						return null;
 					}
+					
 					if (ArrayUtil.contains(MAHUM_SOLDIERS, receiver.getId()))
 					{
 						if (getRandom(4) < 1)
 						{
 							receiver.broadcastSay(ChatType.NPC_GENERAL, SOLDIER_FSTRINGS[getRandom(2)]);
 						}
+						
 						if (receiver.canBeAttacked())
 						{
 							receiver.asAttackable().clearAggroList();
 						}
+						
 						receiver.disableCoreAI(true);
 						receiver.getVariables().set("BUSY_STATE", 1);
 						receiver.setRunning();
@@ -255,6 +261,7 @@ public class SelMahumDrill extends AbstractNpcAI
 				}
 			}
 		}
+		
 		return super.onEventReceived(eventName, sender, receiver, reference);
 	}
 	

@@ -65,6 +65,7 @@ public class WareHouseDepositList extends AbstractItemPacket
 			{
 				_items.add(temp);
 			}
+			
 			if ((temp != null) && temp.isDepositable(isPrivate) && temp.isStackable())
 			{
 				_itemsStackable.add(temp.getDisplayId());
@@ -84,6 +85,7 @@ public class WareHouseDepositList extends AbstractItemPacket
 		{
 			buffer.writeInt(itemId);
 		}
+		
 		buffer.writeShort(_items.size());
 		for (Item item : _items)
 		{

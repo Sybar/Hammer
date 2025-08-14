@@ -38,6 +38,7 @@ public class Q10831_UnbelievableSight extends Quest
 {
 	// NPC
 	private static final int BELAS = 34056;
+	
 	// Monsters
 	private static final int ENERGY_OF_WIND = 19647;
 	private static final int KERBEROS_LAGER = 23550;
@@ -48,9 +49,11 @@ public class Q10831_UnbelievableSight extends Quest
 	private static final int FURY_SYLPH_PURKA = 23556;
 	private static final int FURY_KERBEROS_LEGER = 23557;
 	private static final int FURY_KERBEROS_NERO = 23558;
+	
 	// Items
 	private static final int TRANSFORMED_ENERGY = 48005;
 	private static final int SOE = 46158; // Scroll of Escape: Blackbird Campsite
+	
 	// Misc
 	private static final int MIN_LEVEL = 102;
 	
@@ -100,6 +103,7 @@ public class Q10831_UnbelievableSight extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -133,6 +137,7 @@ public class Q10831_UnbelievableSight extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

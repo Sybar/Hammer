@@ -246,9 +246,9 @@
 		<set name="price" val="2000000" />
 		<set name="is_stackable" val="true" />
 		<set name="material" val="LIQUID" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player insideZoneId="210109" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="16627" level="1" /> <!-- Giants Deterioration Protection Potion -->
 		</skills>
@@ -262,9 +262,9 @@
 		<set name="price" val="2000000" />
 		<set name="is_stackable" val="true" />
 		<set name="material" val="LIQUID" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player insideZoneId="210109" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="16628" level="1" /> <!-- Giants Lightning Protection Potion -->
 		</skills>
@@ -279,9 +279,9 @@
 		<set name="is_stackable" val="true" />
 		<set name="reuse_delay" val="30000" />
 		<set name="material" val="LIQUID" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player insideZoneId="210109" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="16626" level="1" /> <!-- Giants Particle Dissolver -->
 		</skills>
@@ -452,12 +452,12 @@
 		<set name="is_tradable" val="false" />
 		<set name="handler" val="ItemSkills" />
 		<set name="material" val="LEATHER" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<and>
 				<player level="99" />
 				<player subclass="false" />
 			</and>
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="7117" level="1" /> <!-- Spellbook: Hell Hound -->
 		</skills>
@@ -473,12 +473,12 @@
 		<set name="is_tradable" val="false" />
 		<set name="handler" val="ItemSkills" />
 		<set name="material" val="LEATHER" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<and>
 				<player level="99" />
 				<player subclass="false" />
 			</and>
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="7120" level="1" /> <!-- Spellbook: War Horse -->
 		</skills>
@@ -494,12 +494,12 @@
 		<set name="weight" val="20" />
 		<set name="handler" val="ItemSkills" />
 		<set name="material" val="LEATHER" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<and>
 				<player level="99" />
 				<player subclass="false" />
 			</and>
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="7118" level="1" /> <!-- Spellbook: Pegasus -->
 		</skills>
@@ -515,12 +515,12 @@
 		<set name="is_tradable" val="false" />
 		<set name="handler" val="ItemSkills" />
 		<set name="material" val="LEATHER" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<and>
 				<player level="99" />
 				<player subclass="false" />
 			</and>
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="7121" level="1" /> <!-- Spellbook: Griffin -->
 		</skills>
@@ -536,12 +536,12 @@
 		<set name="is_tradable" val="false" />
 		<set name="handler" val="ItemSkills" />
 		<set name="material" val="LEATHER" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<and>
 				<player level="99" />
 				<player subclass="false" />
 			</and>
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="7119" level="1" /> <!-- Spellbook: Wing Hound -->
 		</skills>
@@ -554,9 +554,9 @@
 		<set name="material" val="CLOTH" />
 		<set name="is_sellable" val="false" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="2453">
+		<conditions msgId="2453">
 			<player cloakStatus="true" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">7</stat>
 		</stats>
@@ -569,9 +569,9 @@
 		<set name="material" val="CLOTH" />
 		<set name="is_sellable" val="false" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="2453">
+		<conditions msgId="2453">
 			<player cloakStatus="true" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">7</stat>
 		</stats>
@@ -584,9 +584,9 @@
 		<set name="material" val="CLOTH" />
 		<set name="is_sellable" val="false" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="2453">
+		<conditions msgId="2453">
 			<player cloakStatus="true" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">7</stat>
 		</stats>
@@ -599,9 +599,9 @@
 		<set name="material" val="CLOTH" />
 		<set name="is_sellable" val="false" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="2453">
+		<conditions msgId="2453">
 			<player cloakStatus="true" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">7</stat>
 		</stats>
@@ -614,9 +614,9 @@
 		<set name="material" val="CLOTH" />
 		<set name="is_sellable" val="false" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="2453">
+		<conditions msgId="2453">
 			<player cloakStatus="true" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">7</stat>
 		</stats>

@@ -45,7 +45,7 @@ import org.l2jmobius.gameserver.network.ServerPackets;
  */
 public class CharInfo extends ServerPacket
 {
-	private static final int[] PAPERDOLL_ORDER = new int[]
+	private static final int[] PAPERDOLL_ORDER =
 	{
 		Inventory.PAPERDOLL_UNDER,
 		Inventory.PAPERDOLL_HEAD,
@@ -108,6 +108,7 @@ public class CharInfo extends ServerPacket
 			_y = player.getY();
 			_z = player.getZ();
 		}
+		
 		_heading = player.getHeading();
 		_mAtkSpd = player.getMAtkSpd();
 		_pAtkSpd = player.getPAtkSpd();
@@ -168,6 +169,7 @@ public class CharInfo extends ServerPacket
 				classId = 53;
 			}
 		}
+		
 		buffer.writeInt(classId);
 		
 		for (int slot : getPaperdollOrder())
@@ -272,10 +274,12 @@ public class CharInfo extends ServerPacket
 		{
 			buffer.writeShort(abnormalVisualEffect.getClientId()); // Confirmed
 		}
+		
 		if (_gmSeeInvis)
 		{
 			buffer.writeShort(AbnormalVisualEffect.STEALTH.getClientId());
 		}
+		
 		if (_team == Team.BLUE)
 		{
 			if (Config.BLUE_TEAM_ABNORMAL_EFFECT != null)
@@ -310,6 +314,7 @@ public class CharInfo extends ServerPacket
 		{
 			buffer.writeInt(0);
 		}
+		
 		buffer.writeInt(0);
 		buffer.writeByte(0); // 362 - Vanguard mount.
 	}

@@ -52,6 +52,7 @@ public class KastiaResearcher extends AbstractNpcAI
 				world.finishInstance(0);
 			}
 		}
+		
 		return null;
 	}
 	

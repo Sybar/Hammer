@@ -57,11 +57,13 @@ public final class Q00846_BuildingUpStrength extends Quest
 	private static final int CAPTIVE_CHEF = 34251;
 	private static final int CAPTIVE_WIZARD = 34253;
 	private static final int CAPTIVE_CITIZEN = 34255;
+	
 	// Items
 	private static final int SUPPLY_BOX_BASIC = 47184;
 	private static final int SUPPLY_BOX_INTERMEDIATE = 47185;
 	private static final int SUPPLY_BOX_ADVANCED = 47186;
 	private static final int FACTION_AMITY_TOKEN = 48030;
+	
 	// Misc
 	private static final int MIN_LEVEL = 101;
 	private static final int COUNT_BASIC = 2;
@@ -109,10 +111,12 @@ public final class Q00846_BuildingUpStrength extends Quest
 					htmltext = "roayl_quartermaster_q0846_05a.htm";
 					break;
 				}
+				
 				htmltext = "roayl_quartermaster_q0846_05b.htm";
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -131,6 +135,7 @@ public final class Q00846_BuildingUpStrength extends Quest
 					htmltext = getAlreadyCompletedMsg(player);
 					break;
 				}
+				
 				qs.setState(State.CREATED);
 				// fallthrough
 			}
@@ -143,9 +148,11 @@ public final class Q00846_BuildingUpStrength extends Quest
 						htmltext = "roayl_quartermaster_q0846_01.htm";
 						break;
 					}
+					
 					htmltext = "royal_maestre_q0845_02a.htm";
 					break;
 				}
+				
 				htmltext = "roayl_quartermaster_q0846_02.htm";
 				break;
 			}
@@ -165,6 +172,7 @@ public final class Q00846_BuildingUpStrength extends Quest
 							htmltext = "roayl_quartermaster_q0846_06a.htm";
 							break;
 						}
+						
 						htmltext = "roayl_quartermaster_q0846_06b.htm";
 						break;
 					}
@@ -202,6 +210,7 @@ public final class Q00846_BuildingUpStrength extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -275,6 +284,7 @@ public final class Q00846_BuildingUpStrength extends Quest
 									break;
 								}
 							}
+							
 							npc.doDie(player);
 							addSpawn(34248, npc.getX(), npc.getY(), npc.getZ(), npc.getHeading(), false, 180000, false, 0); // Spawn Freed Miner
 							break;
@@ -320,6 +330,7 @@ public final class Q00846_BuildingUpStrength extends Quest
 									break;
 								}
 							}
+							
 							npc.doDie(player);
 							addSpawn(34250, npc.getX(), npc.getY(), npc.getZ(), npc.getHeading(), false, 180000, false, 0); // Spawn Freed Scout
 							break;
@@ -365,6 +376,7 @@ public final class Q00846_BuildingUpStrength extends Quest
 									break;
 								}
 							}
+							
 							npc.doDie(player);
 							addSpawn(34252, npc.getX(), npc.getY(), npc.getZ(), npc.getHeading(), false, 180000, false, 0); // Spawn Freed Chef
 							break;
@@ -410,6 +422,7 @@ public final class Q00846_BuildingUpStrength extends Quest
 									break;
 								}
 							}
+							
 							npc.doDie(player);
 							addSpawn(34254, npc.getX(), npc.getY(), npc.getZ(), npc.getHeading(), false, 180000, false, 0); // Spawn Freed Wizard
 							break;
@@ -455,6 +468,7 @@ public final class Q00846_BuildingUpStrength extends Quest
 									break;
 								}
 							}
+							
 							npc.doDie(player);
 							addSpawn(34256, npc.getX(), npc.getY(), npc.getZ(), npc.getHeading(), false, 180000, false, 0); // Spawn Freed Citizen
 							break;
@@ -479,6 +493,7 @@ public final class Q00846_BuildingUpStrength extends Quest
 						showHtmlFile(player, "roayl_quartermaster_q0846_08a.htm", npc);
 						break;
 					}
+					
 					showHtmlFile(player, "roayl_quartermaster_q0846_08b.htm", npc);
 					break;
 				}
@@ -551,6 +566,7 @@ public final class Q00846_BuildingUpStrength extends Quest
 							addFactionPoints(player, Faction.KINGDOM_ROYAL_GUARDS, 100 * 2);
 							break;
 						}
+						
 						showHtmlFile(player, "roayl_quartermaster_q0846_14.htm", npc);
 					}
 					break;
@@ -591,6 +607,7 @@ public final class Q00846_BuildingUpStrength extends Quest
 							addFactionPoints(player, Faction.KINGDOM_ROYAL_GUARDS, 200 * 2);
 							break;
 						}
+						
 						showHtmlFile(player, "roayl_quartermaster_q0846_14a.htm", npc);
 					}
 					break;
@@ -631,6 +648,7 @@ public final class Q00846_BuildingUpStrength extends Quest
 							addFactionPoints(player, Faction.KINGDOM_ROYAL_GUARDS, 300 * 2);
 							break;
 						}
+						
 						showHtmlFile(player, "roayl_quartermaster_q0846_14b.htm", npc);
 					}
 					break;
@@ -654,6 +672,7 @@ public final class Q00846_BuildingUpStrength extends Quest
 			checkLogState(player);
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 	

@@ -41,6 +41,7 @@ public class Q00021_HiddenTruth extends Quest
 	private static final int DOMINIC = 31350;
 	private static final int BENEDICT = 31349;
 	private static final int INNOCENTIN = 31328;
+	
 	// Items
 	private static final int CROSS_OF_EINHASAD = 7140;
 	private static final int CROSS_OF_EINHASAD_NEXT_QUEST = 7141;

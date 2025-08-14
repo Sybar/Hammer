@@ -40,11 +40,14 @@ public class Q00465_DontComeCloser extends Quest
 {
 	// NPC
 	private static final int GENIE_LAMP = 34369;
+	
 	// Monsters
 	private static final int TUREK_ORC_MARKSMAN = 22137;
 	private static final int TUREK_ORC_SNIPER = 22143; //
+	
 	// Item
 	private static final ItemHolder BOOST_ATK_SCROLL = new ItemHolder(94269, 9);
+	
 	// Misc
 	private static final int MIN_LEVEL = 83;
 	private static final String KILL_COUNT_VAR = "KillCount";
@@ -97,6 +100,7 @@ public class Q00465_DontComeCloser extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -135,6 +139,7 @@ public class Q00465_DontComeCloser extends Quest
 				htmltext = getAlreadyCompletedMsg(player);
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -170,6 +175,7 @@ public class Q00465_DontComeCloser extends Quest
 			holder.add(new NpcLogListHolder(NpcStringId.DEFEAT_MONSTERS_55.getId(), true, qs.getInt(KILL_COUNT_VAR)));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

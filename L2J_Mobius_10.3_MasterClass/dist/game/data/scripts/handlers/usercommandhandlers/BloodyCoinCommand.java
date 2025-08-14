@@ -23,6 +23,7 @@ package handlers.usercommandhandlers;
 import org.l2jmobius.Config;
 import org.l2jmobius.gameserver.handler.IUserCommandHandler;
 import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.model.variables.PlayerVariables;
 import org.l2jmobius.gameserver.network.SystemMessageId;
 import org.l2jmobius.gameserver.network.serverpackets.SystemMessage;
 
@@ -37,7 +38,7 @@ public class BloodyCoinCommand implements IUserCommandHandler
 	};
 	
 	@Override
-	public boolean useUserCommand(int id, Player player)
+	public boolean onCommand(int id, Player player)
 	{
 		if (id != COMMAND_IDS[0])
 		{
@@ -50,8 +51,8 @@ public class BloodyCoinCommand implements IUserCommandHandler
 		}
 		else
 		{
-			final int attackPoints = player.getVariables().getInt("CONQUEST_ATTACK_POINTS", Config.CONQUEST_ATTACK_POINTS);
-			final int lifePoints = player.getVariables().getInt("CONQUEST_LIFE_POINTS", Config.CONQUEST_LIFE_POINTS);
+			final int attackPoints = player.getVariables().getInt(PlayerVariables.CONQUEST_ATTACK_POINTS, Config.CONQUEST_ATTACK_POINTS);
+			final int lifePoints = player.getVariables().getInt(PlayerVariables.CONQUEST_LIFE_POINTS, Config.CONQUEST_LIFE_POINTS);
 			
 			player.sendPacket(SystemMessageId.BLOODY_COINS_INFO);
 			
@@ -65,11 +66,12 @@ public class BloodyCoinCommand implements IUserCommandHandler
 			
 			return true;
 		}
+		
 		return false;
 	}
 	
 	@Override
-	public int[] getUserCommandList()
+	public int[] getCommandList()
 	{
 		return COMMAND_IDS;
 	}

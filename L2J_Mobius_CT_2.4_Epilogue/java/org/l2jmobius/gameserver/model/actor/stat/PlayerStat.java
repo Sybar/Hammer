@@ -27,7 +27,6 @@ import org.l2jmobius.gameserver.data.xml.ExperienceData;
 import org.l2jmobius.gameserver.data.xml.PetDataTable;
 import org.l2jmobius.gameserver.model.PetLevelData;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.actor.enums.player.PlayerCondOverride;
 import org.l2jmobius.gameserver.model.actor.holders.player.SubClassHolder;
 import org.l2jmobius.gameserver.model.actor.instance.ClassMaster;
 import org.l2jmobius.gameserver.model.actor.instance.Pet;
@@ -48,7 +47,6 @@ import org.l2jmobius.gameserver.network.serverpackets.PledgeShowMemberListUpdate
 import org.l2jmobius.gameserver.network.serverpackets.SocialAction;
 import org.l2jmobius.gameserver.network.serverpackets.StatusUpdate;
 import org.l2jmobius.gameserver.network.serverpackets.SystemMessage;
-import org.l2jmobius.gameserver.util.LocationUtil;
 
 public class PlayerStat extends PlayableStat
 {
@@ -141,7 +139,7 @@ public class PlayerStat extends PlayableStat
 		double ratioTakenByPlayer = 0;
 		
 		// if this player has a pet and it is in his range he takes from the owner's Exp, give the pet Exp now
-		if (player.hasPet() && LocationUtil.checkIfInShortRange(Config.ALT_PARTY_RANGE, player, player.getSummon(), false))
+		if (player.hasPet() && (player.calculateDistance3D(player.getSummon()) < Config.ALT_PARTY_RANGE))
 		{
 			final Pet pet = player.getSummon().asPet();
 			ratioTakenByPlayer = pet.getPetLevelData().getOwnerExpTaken() / 100f;
@@ -219,6 +217,7 @@ public class PlayerStat extends PlayableStat
 				player.broadcastStatusUpdate();
 			}
 		}
+		
 		return true;
 	}
 	
@@ -265,6 +264,7 @@ public class PlayerStat extends PlayableStat
 			clan.updateClanMember(player);
 			clan.broadcastToOnlineMembers(new PledgeShowMemberListUpdate(player));
 		}
+		
 		if (player.isInParty())
 		{
 			player.getParty().recalculatePartyLevel(); // Recalculate the party level
@@ -300,8 +300,10 @@ public class PlayerStat extends PlayableStat
 		
 		// Update the overloaded status of the Player
 		player.refreshOverloaded();
+		
 		// Update the expertise status of the Player
 		player.refreshExpertisePenalty();
+		
 		// Send a Server->Client packet UserInfo to the Player
 		player.updateUserInfo();
 		return levelIncreased;
@@ -343,6 +345,7 @@ public class PlayerStat extends PlayableStat
 		{
 			return player.getSubClasses().get(player.getClassIndex()).getExp();
 		}
+		
 		return super.getExp();
 	}
 	
@@ -432,6 +435,7 @@ public class PlayerStat extends PlayableStat
 				return holder.getLevel();
 			}
 		}
+		
 		return super.getLevel();
 	}
 	
@@ -480,6 +484,7 @@ public class PlayerStat extends PlayableStat
 				}
 			}
 		}
+		
 		return val;
 	}
 	
@@ -503,6 +508,7 @@ public class PlayerStat extends PlayableStat
 				}
 			}
 		}
+		
 		return val;
 	}
 	
@@ -526,6 +532,7 @@ public class PlayerStat extends PlayableStat
 				}
 			}
 		}
+		
 		return val;
 	}
 	
@@ -537,6 +544,7 @@ public class PlayerStat extends PlayableStat
 		{
 			return player.getSubClasses().get(player.getClassIndex()).getSp();
 		}
+		
 		return super.getSp();
 	}
 	
@@ -583,6 +591,7 @@ public class PlayerStat extends PlayableStat
 				return data.getSpeedOnRide(type);
 			}
 		}
+		
 		return super.getBaseMoveSpeed(type);
 	}
 	
@@ -593,7 +602,7 @@ public class PlayerStat extends PlayableStat
 		
 		// Apply max run speed cap.
 		final Player player = getActiveChar();
-		if ((val > Config.MAX_RUN_SPEED) && !player.canOverrideCond(PlayerCondOverride.MAX_STATS_VALUE))
+		if ((val > Config.MAX_RUN_SPEED) && !player.isGM())
 		{
 			return Config.MAX_RUN_SPEED;
 		}
@@ -606,6 +615,7 @@ public class PlayerStat extends PlayableStat
 			{
 				val /= 2;
 			}
+			
 			// if mount is hungry, it decreases move speed by 50%
 			if (player.isHungry())
 			{
@@ -623,7 +633,7 @@ public class PlayerStat extends PlayableStat
 		
 		// Apply max run speed cap.
 		final Player player = getActiveChar();
-		if ((val > Config.MAX_RUN_SPEED) && !player.canOverrideCond(PlayerCondOverride.MAX_STATS_VALUE))
+		if ((val > Config.MAX_RUN_SPEED) && !player.isGM())
 		{
 			return Config.MAX_RUN_SPEED;
 		}
@@ -635,6 +645,7 @@ public class PlayerStat extends PlayableStat
 			{
 				val /= 2;
 			}
+			
 			// if mount is hungry, it decreases move speed by 50%
 			if (player.isHungry())
 			{
@@ -649,10 +660,11 @@ public class PlayerStat extends PlayableStat
 	public double getPAtkSpd()
 	{
 		final double val = super.getPAtkSpd();
-		if ((val > Config.MAX_PATK_SPEED) && !getActiveChar().canOverrideCond(PlayerCondOverride.MAX_STATS_VALUE))
+		if ((val > Config.MAX_PATK_SPEED) && !getActiveChar().isGM())
 		{
 			return Config.MAX_PATK_SPEED;
 		}
+		
 		return val;
 	}
 	
@@ -691,6 +703,7 @@ public class PlayerStat extends PlayableStat
 			{
 				player.sendPacket(SystemMessageId.YOUR_VITALITY_HAS_INCREASED);
 			}
+			
 			if (level == 0)
 			{
 				player.sendPacket(SystemMessageId.YOUR_VITALITY_IS_FULLY_EXHAUSTED);
@@ -751,6 +764,7 @@ public class PlayerStat extends PlayableStat
 				{
 					return;
 				}
+				
 				if (stat < 0)
 				{
 					points = -points;
@@ -816,6 +830,7 @@ public class PlayerStat extends PlayableStat
 				}
 			}
 		}
+		
 		return vitality;
 	}
 	
@@ -843,10 +858,12 @@ public class PlayerStat extends PlayableStat
 		{
 			bonus += (vitality - 1);
 		}
+		
 		if (hunting > 1.0)
 		{
 			bonus += (hunting - 1);
 		}
+		
 		if (bonusExp > 1)
 		{
 			bonus += (bonusExp - 1);
@@ -878,10 +895,12 @@ public class PlayerStat extends PlayableStat
 		{
 			bonus += (vitality - 1);
 		}
+		
 		if (hunting > 1.0)
 		{
 			bonus += (hunting - 1);
 		}
+		
 		if (bonusSp > 1)
 		{
 			bonus += (bonusSp - 1);

@@ -57,6 +57,7 @@ public class SiegeFlag extends Npc
 		{
 			_siege = FortSiegeManager.getInstance().getSiege(player.getX(), player.getY(), player.getZ());
 		}
+		
 		if ((_clan == null) || (_siege == null))
 		{
 			throw new NullPointerException(getClass().getSimpleName() + ": Initialization failed.");
@@ -93,6 +94,7 @@ public class SiegeFlag extends Npc
 		{
 			return false;
 		}
+		
 		if ((_siege != null) && (_clan != null))
 		{
 			final SiegeClan sc = _siege.getAttackerClan(_clan);
@@ -101,6 +103,7 @@ public class SiegeFlag extends Npc
 				sc.removeFlag(this);
 			}
 		}
+		
 		return true;
 	}
 	

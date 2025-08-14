@@ -64,6 +64,7 @@ public class ExShowReceivedPostList extends ServerPacket
 				{
 					buffer.writeInt(SystemMessageId.THE_REGISTRATION_PERIOD_FOR_THE_ITEM_YOU_REGISTERED_HAS_EXPIRED.getId());
 				}
+				
 				buffer.writeInt(msg.getId());
 				buffer.writeString(msg.getSubject());
 				buffer.writeString(msg.getSenderName());
@@ -80,6 +81,7 @@ public class ExShowReceivedPostList extends ServerPacket
 		{
 			buffer.writeInt(0);
 		}
+		
 		buffer.writeInt(MESSAGE_FEE);
 		buffer.writeInt(MESSAGE_FEE_PER_SLOT);
 	}

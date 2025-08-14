@@ -76,6 +76,7 @@ public class SymbolMaker extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

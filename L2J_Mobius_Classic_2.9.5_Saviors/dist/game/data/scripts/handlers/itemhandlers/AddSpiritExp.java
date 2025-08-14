@@ -35,13 +35,14 @@ import org.l2jmobius.gameserver.network.SystemMessageId;
 public class AddSpiritExp implements IItemHandler
 {
 	@Override
-	public boolean useItem(Playable playable, Item item, boolean forceUse)
+	public boolean onItemUse(Playable playable, Item item, boolean forceUse)
 	{
 		if (!playable.isPlayer())
 		{
 			playable.sendPacket(SystemMessageId.YOUR_PET_CANNOT_CARRY_THIS_ITEM);
 			return false;
 		}
+		
 		final Player player = playable.asPlayer();
 		
 		ElementalSpirit spirit = null;
@@ -90,11 +91,13 @@ public class AddSpiritExp implements IItemHandler
 			player.sendPacket(SystemMessageId.CANNOT_DRAIN_DURING_BATTLE);
 			return false;
 		}
+		
 		if ((spirit.getLevel() == spirit.getMaxLevel()) && (spirit.getExperience() == spirit.getExperienceToNextLevel()))
 		{
 			player.sendPacket(SystemMessageId.YOU_HAVE_REACHED_THE_HIGHEST_LEVEL_AND_CANNOT_ABSORB_ANY_FURTHER);
 			return false;
 		}
+		
 		return true;
 	}
 }

@@ -142,6 +142,7 @@ public class PurgeRankingManager
 								throw new IllegalStateException("Unexpected value: " + category);
 							}
 						}
+						
 						attachment.addItem(ItemProcessType.REWARD, reward, 5 - counter, null, null);
 						MailManager.getInstance().sendMessage(msg);
 						
@@ -204,6 +205,7 @@ public class PurgeRankingManager
 					rankingInCategory.put(rank, set);
 					rank++;
 				}
+				
 				_ranking.put(category, rankingInCategory);
 			}
 			// LOGGER.info(getClass().getSimpleName() + ": Loaded " + _ranking.get(category).size() + " records for category " + category + ".");
@@ -240,6 +242,7 @@ public class PurgeRankingManager
 			{
 			}
 		}
+		
 		return top5.entrySet().stream().sorted(Entry.<String, Integer> comparingByValue().reversed()).collect(Collectors.toMap(Entry::getKey, Entry::getValue, (_, e2) -> e2, LinkedHashMap::new));
 	}
 	
@@ -257,6 +260,7 @@ public class PurgeRankingManager
 			{
 				return new SimpleEntry<>(0, 0);
 			}
+			
 			return new SimpleEntry<>(player.get().getKey(), player.get().getValue().getInt("points"));
 		}
 		

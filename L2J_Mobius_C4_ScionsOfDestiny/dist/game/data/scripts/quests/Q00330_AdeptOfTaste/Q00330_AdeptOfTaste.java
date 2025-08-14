@@ -40,6 +40,7 @@ public class Q00330_AdeptOfTaste extends Quest
 	private static final int PANO = 30078;
 	private static final int MIRIEN = 30461;
 	private static final int JONAS = 30469;
+	
 	// Items
 	private static final int INGREDIENT_LIST = 1420;
 	private static final int SONIA_BOTANY_BOOK = 1421;
@@ -73,10 +74,12 @@ public class Q00330_AdeptOfTaste extends Quest
 	private static final int MIRIEN_REVIEW_3 = 1449;
 	private static final int MIRIEN_REVIEW_4 = 1450;
 	private static final int MIRIEN_REVIEW_5 = 1451;
+	
 	// Rewards
 	private static final int JONAS_SALAD_RECIPE = 1455;
 	private static final int JONAS_SAUCE_RECIPE = 1456;
 	private static final int JONAS_STEAK_RECIPE = 1457;
+	
 	// Drop chances
 	private static final Map<Integer, int[]> CHANCES = new HashMap<>();
 	static
@@ -249,6 +252,7 @@ public class Q00330_AdeptOfTaste extends Quest
 								giveItems(player, JONAS_STEAK_RECIPE, 1);
 								addExpAndSp(player, 12000, 0);
 							}
+							
 							st.exitQuest(true, true);
 						}
 						break;

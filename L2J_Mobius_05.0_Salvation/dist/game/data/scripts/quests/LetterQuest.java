@@ -197,9 +197,11 @@ public abstract class LetterQuest extends Quest
 					takeItems(player, _startSOE, -1);
 				}
 			}
+			
 			player.sendPacket(TutorialCloseHtml.STATIC_PACKET);
 			player.clearHtmlActions(HtmlActionScope.TUTORIAL_HTML);
 		}
+		
 		if ((qs != null) && qs.isCond(1))
 		{
 			qs.setCond(2, true);

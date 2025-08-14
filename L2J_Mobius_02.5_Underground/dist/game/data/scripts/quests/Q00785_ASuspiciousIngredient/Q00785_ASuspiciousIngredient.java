@@ -38,6 +38,7 @@ public class Q00785_ASuspiciousIngredient extends Quest
 {
 	// NPC
 	private static final int MYSTERIUS_WIZARD = 31522;
+	
 	// Monsters
 	private static final int[] MONSTERS =
 	{
@@ -65,10 +66,12 @@ public class Q00785_ASuspiciousIngredient extends Quest
 		21599, // Requeem priest
 		21600 // Requeem Behemot
 	};
+	
 	// Items
 	private static final int MONSTER_FLESH = 39732;
 	private static final int MONSTER_BLOOD = 39733;
 	private static final int STEEL_DOOR_GUILD_REWARD_BOX = 37391;
+	
 	// Misc
 	private static final int MIN_LEVEL = 65;
 	private static final int MAX_LEVEL = 70;
@@ -203,6 +206,7 @@ public class Q00785_ASuspiciousIngredient extends Quest
 					htmltext = event;
 					break;
 				}
+				
 				if ((getQuestItemsCount(player, MONSTER_FLESH) >= 50) && (getQuestItemsCount(player, MONSTER_BLOOD) >= 900))
 				{
 					takeItems(player, MONSTER_FLESH, -1);
@@ -215,6 +219,7 @@ public class Q00785_ASuspiciousIngredient extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -234,6 +239,7 @@ public class Q00785_ASuspiciousIngredient extends Quest
 						htmltext = "31522-10.html";
 						break;
 					}
+					
 					qs.setState(State.CREATED);
 					break;
 				}
@@ -260,6 +266,7 @@ public class Q00785_ASuspiciousIngredient extends Quest
 		{
 			htmltext = "31522-10.html";
 		}
+		
 		return htmltext;
 	}
 	
@@ -274,6 +281,7 @@ public class Q00785_ASuspiciousIngredient extends Quest
 				qs.setCond(2, true);
 			}
 		}
+		
 		if ((qs != null) && (qs.isCond(2)))
 		{
 			if (giveItemRandomly(killer, npc, MONSTER_BLOOD, 1, 900, 0.25, true))

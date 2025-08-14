@@ -32,6 +32,7 @@ public class Milia extends AbstractNpcAI
 {
 	// NPCs
 	private static final int MILIA = 30006;
+	
 	// Locations
 	private static final Location GLUDIO_AIRSHIP = new Location(-149406, 255247, -80);
 	
@@ -53,6 +54,7 @@ public class Milia extends AbstractNpcAI
 		{
 			npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.SPEAK_WITH_ME_ABOUT_TRAVELING_AROUND_ADEN, 1000);
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	

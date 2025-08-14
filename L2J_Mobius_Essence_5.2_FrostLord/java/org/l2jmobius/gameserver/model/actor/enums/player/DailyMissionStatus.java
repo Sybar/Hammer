@@ -46,6 +46,7 @@ public enum DailyMissionStatus
 				return type;
 			}
 		}
+		
 		return null;
 	}
 }

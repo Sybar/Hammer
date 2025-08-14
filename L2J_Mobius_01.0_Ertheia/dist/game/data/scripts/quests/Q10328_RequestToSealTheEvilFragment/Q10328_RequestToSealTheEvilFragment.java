@@ -33,8 +33,10 @@ public class Q10328_RequestToSealTheEvilFragment extends Quest
 	// NPCs
 	private static final int PANTHEON = 32972;
 	private static final int KAKAI = 30565;
+	
 	// Items
 	private static final int EVIL_FRAGMENT = 17577;
+	
 	// Misc
 	private static final int MAX_LEVEL = 20;
 	
@@ -86,6 +88,7 @@ public class Q10328_RequestToSealTheEvilFragment extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -116,6 +119,7 @@ public class Q10328_RequestToSealTheEvilFragment extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

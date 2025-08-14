@@ -77,11 +77,13 @@ public class Ramona extends AbstractNpcAI
 		26146, // Shooter of the Queen
 		26147 // Wizard of the Queen
 	};
+	
 	// Trigers
 	private static final int FIRST_GENERATOR = 22230702;
 	private static final int SECOND_GENERATOR = 22230704;
 	private static final int THRID_GENERATOR = 22230706;
 	private static final int FOURTH_GENERATOR = 22230708;
+	
 	// Skills
 	private static final Skill HYPER_MEGA_PLASMA_SHOT = SkillData.getInstance().getSkill(16641, 1);
 	private static final Skill HYPER_MEGA_PLASMA_BRUST = SkillData.getInstance().getSkill(16642, 1);
@@ -111,9 +113,11 @@ public class Ramona extends AbstractNpcAI
 		HIPER_MEGA_TELEKINESS,
 		ULTRA_MEGA_TELEKINESS
 	};
+	
 	// Locations
 	private static final Location DEFAULT_LOC = new Location(78023, 172262, -10604, 16383);
 	private static final Location RAMONA_SPAWN_LOC = new Location(78012, 169922, -10467, 16383);
+	
 	// Other
 	private static final int ROOM_CONTROL_DOOR = 22230711;
 	private static final NoSummonFriendZone ZONE = ZoneManager.getInstance().getZoneById(210108, NoSummonFriendZone.class);
@@ -121,6 +125,7 @@ public class Ramona extends AbstractNpcAI
 	private static final EffectZone ZONE_DEFENCE = ZoneManager.getInstance().getZoneById(200110, EffectZone.class);
 	private static final EffectZone ZONE_HP = ZoneManager.getInstance().getZoneById(200111, EffectZone.class);
 	private static final EffectZone ZONE_ERADICATION = ZoneManager.getInstance().getZoneById(200112, EffectZone.class);
+	
 	// Vars
 	private static final String RAMONA_RESPAWN_VAR = "RamonaRespawn";
 	private static Status _boss = Status.ALIVE;
@@ -256,6 +261,7 @@ public class Ramona extends AbstractNpcAI
 						_minions.add(minion);
 					}
 				}
+				
 				startQuestTimer("RAMONA2_SKILL", 6000, _ramona2, null);
 				break;
 			}
@@ -285,6 +291,7 @@ public class Ramona extends AbstractNpcAI
 						_minions.add(minion);
 					}
 				}
+				
 				startQuestTimer("RAMONA3_SKILL", 6000, _ramona3, null);
 				break;
 			}
@@ -318,6 +325,7 @@ public class Ramona extends AbstractNpcAI
 							}
 						}
 					}
+					
 					startQuestTimer("END_RAMONA", 2000, null, null);
 				}
 				else
@@ -334,14 +342,17 @@ public class Ramona extends AbstractNpcAI
 				{
 					_ramona1.deleteMe();
 				}
+				
 				if (_ramona2 != null)
 				{
 					_ramona2.deleteMe();
 				}
+				
 				if (_ramona3 != null)
 				{
 					_ramona3.deleteMe();
 				}
+				
 				if (!_minions.isEmpty())
 				{
 					for (Npc minion : _minions)
@@ -350,13 +361,16 @@ public class Ramona extends AbstractNpcAI
 						{
 							continue;
 						}
+						
 						minion.deleteMe();
 					}
 				}
+				
 				if ((_boss == Status.ALIVE) || (_boss == Status.IN_FIGHT))
 				{
 					addSpawn(MP_CONTROL, RAMONA_SPAWN_LOC, false, 0, false);
 				}
+				
 				QuestTimer activityTimer = getQuestTimer("CHECK_ACTIVITY_TASK", null, null);
 				if (activityTimer != null)
 				{
@@ -367,6 +381,7 @@ public class Ramona extends AbstractNpcAI
 				{
 					ZONE.broadcastPacket(new OnEventTrigger(i, false));
 				}
+				
 				ZONE_ATTACK.setEnabled(false);
 				ZONE_DEFENCE.setEnabled(false);
 				ZONE_HP.setEnabled(false);
@@ -380,6 +395,7 @@ public class Ramona extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	
@@ -404,6 +420,7 @@ public class Ramona extends AbstractNpcAI
 					startQuestTimer("SPAWN_RAMONA2", 1000, null, null);
 					startQuestTimer("SPAWN_RAMONA_MINIONS", 6000, _ramona2, null);
 				}
+				
 				_lastAction = System.currentTimeMillis();
 				break;
 			}
@@ -415,6 +432,7 @@ public class Ramona extends AbstractNpcAI
 					startQuestTimer("SPAWN_RAMONA3", 1000, null, null);
 					startQuestTimer("SPAWN_RAMONA_MINIONS_1", 6000, _ramona3, null);
 				}
+				
 				_lastAction = System.currentTimeMillis();
 				break;
 			}
@@ -424,6 +442,7 @@ public class Ramona extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		if ((npc.getId() == RAMONA_1) || (npc.getId() == RAMONA_2) || (npc.getId() == RAMONA_3))
 		{
 			if (skill == null)
@@ -446,6 +465,7 @@ public class Ramona extends AbstractNpcAI
 			{
 				refreshAiParams(attacker, npc, ((damage / 3) * 20));
 			}
+			
 			manageSkills(npc);
 		}
 	}
@@ -471,6 +491,7 @@ public class Ramona extends AbstractNpcAI
 				return;
 			}
 		}
+		
 		final int index = MathUtil.getIndexOfMinValue(vars.getInt("i_quest0"), vars.getInt("i_quest1"), vars.getInt("i_quest2"));
 		vars.set("i_quest" + index, newAggroVal);
 		vars.set("c_quest" + index, attacker);
@@ -498,6 +519,7 @@ public class Ramona extends AbstractNpcAI
 				vars.set("i_quest" + i, 0);
 			}
 		}
+		
 		final int index = MathUtil.getIndexOfMaxValue(vars.getInt("i_quest0"), vars.getInt("i_quest1"), vars.getInt("i_quest2"));
 		final Creature player = vars.getObject("c_quest" + index, Creature.class);
 		final int i2 = vars.getInt("i_quest" + index);

@@ -333,6 +333,7 @@ public class Shutdown extends Thread
 		{
 			return;
 		}
+		
 		_countdownFinished = true;
 		
 		final TimeCounter tc = new TimeCounter();
@@ -511,7 +512,7 @@ public class Shutdown extends Thread
 	{
 		for (Player player : World.getInstance().getPlayers())
 		{
-			Disconnection.of(player).defaultSequence(ServerClose.STATIC_PACKET);
+			Disconnection.of(player).storeAndDeleteWith(ServerClose.STATIC_PACKET);
 		}
 	}
 	

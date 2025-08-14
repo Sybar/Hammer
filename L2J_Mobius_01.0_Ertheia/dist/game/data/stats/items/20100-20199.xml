@@ -524,9 +524,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="is_depositable" val="false" />
 		<set name="time" val="240" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">72</stat>
 			<stat type="mAtk">47</stat>
@@ -560,9 +560,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="is_depositable" val="false" />
 		<set name="time" val="240" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">86</stat>
 			<stat type="mAtk">47</stat>
@@ -596,9 +596,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="is_depositable" val="false" />
 		<set name="time" val="240" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">100</stat>
 			<stat type="mAtk">47</stat>
@@ -984,9 +984,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="is_depositable" val="false" />
 		<set name="time" val="240" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">141</stat>
 			<stat type="mAtk">83</stat>
@@ -1020,9 +1020,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="is_depositable" val="false" />
 		<set name="time" val="240" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">169</stat>
 			<stat type="mAtk">83</stat>
@@ -1056,9 +1056,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="is_depositable" val="false" />
 		<set name="time" val="240" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">198</stat>
 			<stat type="mAtk">83</stat>
@@ -1444,9 +1444,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="is_depositable" val="false" />
 		<set name="time" val="240" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">176</stat>
 			<stat type="mAtk">99</stat>
@@ -1480,9 +1480,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="is_depositable" val="false" />
 		<set name="time" val="240" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">210</stat>
 			<stat type="mAtk">99</stat>
@@ -1516,9 +1516,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="is_depositable" val="false" />
 		<set name="time" val="240" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">245</stat>
 			<stat type="mAtk">99</stat>
@@ -1915,9 +1915,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="is_depositable" val="false" />
 		<set name="time" val="240" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">210</stat>
 			<stat type="mAtk">114</stat>
@@ -1952,9 +1952,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="is_depositable" val="false" />
 		<set name="time" val="240" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">251</stat>
 			<stat type="mAtk">114</stat>
@@ -1989,9 +1989,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="is_depositable" val="false" />
 		<set name="time" val="240" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">294</stat>
 			<stat type="mAtk">114</stat>
@@ -2389,9 +2389,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="is_depositable" val="false" />
 		<set name="time" val="240" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">255</stat>
 			<stat type="mAtk">132</stat>
@@ -2426,9 +2426,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="is_depositable" val="false" />
 		<set name="time" val="240" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">304</stat>
 			<stat type="mAtk">132</stat>
@@ -2463,9 +2463,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="is_depositable" val="false" />
 		<set name="time" val="240" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">356</stat>
 			<stat type="mAtk">132</stat>

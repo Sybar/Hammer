@@ -1401,11 +1401,11 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 		<reuseDelay>6000</reuseDelay>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<and>
 				<player insideZoneId="12017, 12018, 12019" />
 			</and>
-		</cond>
+		</conditions>
 		<effects>
 			<effect name="SummonNpc">
 				<npcId>27487</npcId>

@@ -400,9 +400,9 @@
 		<set name="is_stackable" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="weight" val="2" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="85" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="36732" name="Recipe: Requiem Shaper (60%)" type="EtcItem">
 		<!-- For Dwarves only. A recipe for Requiem Shaper. Requires Create Item Lv. 11. The success rate is 60%. With a low chance, the crafted item can be Blessed. -->

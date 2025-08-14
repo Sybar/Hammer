@@ -61,6 +61,7 @@ public class CastleFlagOfProtection extends AbstractNpcAI
 		{
 			htmltext = "CastleFlagOfProtection-01.html";
 		}
+		
 		return htmltext;
 	}
 	

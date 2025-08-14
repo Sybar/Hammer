@@ -67,6 +67,7 @@ public class MobGroup
 		{
 			_mobs = ConcurrentHashMap.newKeySet();
 		}
+		
 		return _mobs;
 	}
 	
@@ -204,6 +205,7 @@ public class MobGroup
 				return mob;
 			}
 		}
+		
 		return null;
 	}
 	

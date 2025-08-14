@@ -59,11 +59,14 @@ public class LabyrinthOfBelis extends AbstractInstance
 	private static final int HANDYMAN = 22997;
 	private static final int ELECTRICITY_GENERATOR = 33216;
 	private static final int NEMERTESS = 22984;
+	
 	// Items
 	// private static final int SARIL_NECKLACE = 17580;
 	private static final int BELIS_MARK = 17615;
+	
 	// Skills
 	private static final SkillHolder CURRENT_SHOCK = new SkillHolder(14698, 1);
+	
 	// Locations
 	private static final Location INFILTRATION_OFFICER_ROOM_2 = new Location(-117040, 212502, -8592);
 	private static final Location INFILTRATION_OFFICER_ROOM_3 = new Location(-117843, 214230, -8592);
@@ -73,6 +76,7 @@ public class LabyrinthOfBelis extends AbstractInstance
 	private static final Location GENERATOR_SPAWN = new Location(-118333, 214791, -8557);
 	private static final Location ATTACKER_SPOT = new Location(-117927, 214391, -8600);
 	private static final Location NEMERTESS_SPAWN = new Location(-118336, 212973, -8680);
+	
 	// Misc
 	private static final int TEMPLATE_ID = 178;
 	private static final int DOOR_ID_ROOM_1_2 = 16240002;
@@ -201,8 +205,10 @@ public class LabyrinthOfBelis extends AbstractInstance
 									}
 								}
 							}
+							
 							return "33215-04.html";
 						}
+						
 						return "33215-05.html";
 					}
 					case "finish":
@@ -213,6 +219,7 @@ public class LabyrinthOfBelis extends AbstractInstance
 				}
 			}
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	
@@ -352,6 +359,7 @@ public class LabyrinthOfBelis extends AbstractInstance
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -415,6 +423,7 @@ public class LabyrinthOfBelis extends AbstractInstance
 					{
 						qs.setCond(2, true);
 					}
+					
 					npc.deleteMe();
 					playMovie(player, Movie.SC_TALKING_ISLAND_BOSS_ENDING);
 					getTimers().addTimer("ROOM_4_DONE", 30000, npc, null);
@@ -491,6 +500,7 @@ public class LabyrinthOfBelis extends AbstractInstance
 						{
 							getTimers().cancelTimer("ATTACKERS", npc, player);
 						}
+						
 						world.setParameter("counter", counter);
 						showOnScreenMsg(player, (getRandomBoolean() ? NpcStringId.IF_TERAIN_DIES_THE_MISSION_WILL_FAIL : NpcStringId.BEHIND_YOU_THE_ENEMY_IS_AMBUSHING_YOU), ExShowScreenMessage.TOP_CENTER, 4500);
 						final Attackable mob = addSpawn((getRandomBoolean() ? OPERATIVE : HANDYMAN), SPAWN_ATTACKERS, false, 0, true, world.getId()).asAttackable();

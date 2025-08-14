@@ -139,6 +139,7 @@ public class ExRequestTeleport extends ClientPacket
 						return;
 					}
 				}
+				
 				// Reduce items.
 				if (teleport.isSpecial())
 				{

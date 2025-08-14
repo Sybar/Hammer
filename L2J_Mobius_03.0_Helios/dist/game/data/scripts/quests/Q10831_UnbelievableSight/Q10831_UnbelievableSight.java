@@ -37,6 +37,7 @@ public class Q10831_UnbelievableSight extends Quest
 {
 	// NPC
 	private static final int BELAS = 34056;
+	
 	// Monsters
 	private static final int EL_FLOATO = 23559;
 	private static final int KERBEROS_LAGER = 23550;
@@ -47,11 +48,13 @@ public class Q10831_UnbelievableSight extends Quest
 	private static final int FURY_SYLPH_PURKA = 23556;
 	private static final int FURY_KERBEROS_LEGER = 23557;
 	private static final int FURY_KERBEROS_NERO = 23558;
+	
 	// Item's
 	private static final int UNBALANCED_ENERGY = 45822;
 	private static final int MARK_OF_TRUST_LOW_GRADE = 45840;
 	private static final int SPIRIT_EVIL_TOUGHT_PIACE = 46130;
 	private static final int SOE = 46158;
+	
 	// Misc
 	private static final int MIN_LEVEL = 100;
 	
@@ -101,6 +104,7 @@ public class Q10831_UnbelievableSight extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -118,6 +122,7 @@ public class Q10831_UnbelievableSight extends Quest
 					htmltext = "noItem.htm";
 					break;
 				}
+				
 				htmltext = "34056-01.htm";
 				break;
 			}
@@ -139,6 +144,7 @@ public class Q10831_UnbelievableSight extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

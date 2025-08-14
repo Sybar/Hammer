@@ -148,11 +148,13 @@ public class Gui
 			_chckbxmntmEnabled.setSelected(true);
 			_chckbxmntmDisabled.setSelected(false);
 			_chckbxmntmGmOnly.setSelected(false);
+			
 			// LoginServer.getInstance().setStatus(ServerStatus.STATUS_NORMAL);
 			for (GameServer gsi : GameServerTable.getInstance().getGameServerList())
 			{
 				gsi.setStatus(ServerStatus.STATUS_NORMAL);
 			}
+			
 			LoginServer.LOGGER.info("Status changed to enabled.");
 		});
 		_chckbxmntmEnabled.setSelected(true);
@@ -165,11 +167,13 @@ public class Gui
 			_chckbxmntmEnabled.setSelected(false);
 			_chckbxmntmDisabled.setSelected(true);
 			_chckbxmntmGmOnly.setSelected(false);
+			
 			// LoginServer.getInstance().setStatus(ServerStatus.STATUS_DOWN);
 			for (GameServer gsi : GameServerTable.getInstance().getGameServerList())
 			{
 				gsi.setStatus(ServerStatus.STATUS_DOWN);
 			}
+			
 			LoginServer.LOGGER.info("Status changed to disabled.");
 		});
 		mnStatus.add(_chckbxmntmDisabled);
@@ -181,11 +185,13 @@ public class Gui
 			_chckbxmntmEnabled.setSelected(false);
 			_chckbxmntmDisabled.setSelected(false);
 			_chckbxmntmGmOnly.setSelected(true);
+			
 			// LoginServer.getInstance().setStatus(ServerStatus.STATUS_GM_ONLY);
 			for (GameServer gsi : GameServerTable.getInstance().getGameServerList())
 			{
 				gsi.setStatus(ServerStatus.STATUS_GM_ONLY);
 			}
+			
 			LoginServer.LOGGER.info("Status changed to GM only.");
 		});
 		mnStatus.add(_chckbxmntmGmOnly);

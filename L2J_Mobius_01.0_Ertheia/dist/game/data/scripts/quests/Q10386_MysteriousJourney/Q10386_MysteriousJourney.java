@@ -34,9 +34,11 @@ public class Q10386_MysteriousJourney extends Quest
 	private static final int HESED = 33780;
 	private static final int SEAL_WATCHMAN = 33797;
 	private static final int VERNA = 33796;
+	
 	// Items
 	private static final int VACCINE_BOX = 36073; // Vaccine Box
 	private static final int EWR = 17526; // Scroll: Enchant Weapon (R-grade)
+	
 	// Misc
 	private static final int MIN_LEVEL = 93;
 	
@@ -107,6 +109,7 @@ public class Q10386_MysteriousJourney extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -160,6 +163,7 @@ public class Q10386_MysteriousJourney extends Quest
 								{
 									addExpAndSp(player, 27_244_350, 6_538);
 								}
+								
 								qs.exitQuest(false, true);
 								htmltext = "33780-06.html";
 								break;
@@ -207,6 +211,7 @@ public class Q10386_MysteriousJourney extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

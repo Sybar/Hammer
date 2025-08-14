@@ -43,6 +43,7 @@ public class Q10965_DeathMysteries extends Quest
 	// NPC
 	private static final int RAYMOND = 30289;
 	private static final int MAXIMILLIAN = 30120;
+	
 	// Monsters
 	private static final int WYRM = 20176;
 	private static final int GUARDIAN_BASILISK = 20550;
@@ -50,9 +51,11 @@ public class Q10965_DeathMysteries extends Quest
 	private static final int FETTERED_SOUL = 20552;
 	private static final int WINDUS = 20553;
 	private static final int GRANDIS = 20554;
+	
 	// Items
 	private static final ItemHolder ADVENTURERS_AGATHION_BRACELET = new ItemHolder(91933, 1);
 	private static final ItemHolder ADVENTURERS_AGATHION_GRIFIN = new ItemHolder(91935, 1);
+	
 	// Misc
 	private static final String KILL_COUNT_VAR = "KillCount";
 	private static final int MAX_LEVEL = 40;
@@ -139,6 +142,7 @@ public class Q10965_DeathMysteries extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -174,6 +178,7 @@ public class Q10965_DeathMysteries extends Quest
 			holder.add(new NpcLogListHolder(NpcStringId.CLEAR_DEATH_PASS.getId(), true, qs.getInt(KILL_COUNT_VAR)));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 	
@@ -219,6 +224,7 @@ public class Q10965_DeathMysteries extends Quest
 				htmltext = getAlreadyCompletedMsg(player);
 			}
 		}
+		
 		return htmltext;
 	}
 }

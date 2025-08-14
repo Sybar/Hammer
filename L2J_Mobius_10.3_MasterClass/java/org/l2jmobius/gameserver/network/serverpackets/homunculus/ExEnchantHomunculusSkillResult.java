@@ -92,6 +92,7 @@ public class ExEnchantHomunculusSkillResult extends ServerPacket
 				break;
 			}
 		}
+		
 		_homunculusId = homunculus.getId();
 		homunculusList.update(homunculus);
 		homunculusList.refreshStats(true);

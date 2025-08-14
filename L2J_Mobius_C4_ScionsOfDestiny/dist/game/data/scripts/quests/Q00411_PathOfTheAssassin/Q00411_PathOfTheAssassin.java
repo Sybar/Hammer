@@ -35,6 +35,7 @@ public class Q00411_PathOfTheAssassin extends Quest
 	private static final int TRISKEL = 30416;
 	private static final int ARKENIA = 30419;
 	private static final int LEIKAN = 30382;
+	
 	// Items
 	private static final int SHILEN_CALL = 1245;
 	private static final int ARKENIA_LETTER = 1246;

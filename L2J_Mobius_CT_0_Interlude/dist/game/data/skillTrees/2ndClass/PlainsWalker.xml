@@ -24,10 +24,13 @@
 		<skill skillName="Unlock" skillId="27" skillLevel="6" getLevel="40" levelUpSp="28000" learnedByNpc="true" />
 		<skill skillName="Entangle" skillId="102" skillLevel="2" getLevel="40" levelUpSp="28000" learnedByNpc="true" />
 		<skill skillName="Poison Recovery" skillId="21" skillLevel="2" getLevel="40" levelUpSp="28000" learnedByNpc="true" />
-		<skill skillName="Spirit Barrier" skillId="123" skillLevel="1" getLevel="40" levelUpSp="28000" learnedByNpc="true" />
+		<skill skillName="Spirit Barrier" skillId="123" skillLevel="1" getLevel="40" levelUpSp="28000" learnedByNpc="true">
+			<item id="3051" count="1" /> <!-- Spellbook: Spirit Barrier -->
+		</skill>
 		<skill skillName="Critical Chance" skillId="137" skillLevel="2" getLevel="40" levelUpSp="28000" learnedByNpc="true" />
 		<skill skillName="Fake Death" skillId="60" skillLevel="1" getLevel="40" levelUpSp="28000" learnedByNpc="true" />
 		<skill skillName="Silent Move" skillId="221" skillLevel="1" getLevel="40" levelUpSp="28000" learnedByNpc="true" />
+
 		<skill skillName="Dagger Mastery" skillId="209" skillLevel="12" getLevel="43" levelUpSp="12000" learnedByNpc="true" />
 		<skill skillName="Dagger Mastery" skillId="209" skillLevel="13" getLevel="43" levelUpSp="12000" learnedByNpc="true" />
 		<skill skillName="Dagger Mastery" skillId="209" skillLevel="14" getLevel="43" levelUpSp="12000" learnedByNpc="true" />
@@ -53,6 +56,7 @@
 		<skill skillName="Esprit" skillId="171" skillLevel="2" getLevel="43" levelUpSp="35000" learnedByNpc="true" />
 		<skill skillName="Quick Step" skillId="169" skillLevel="2" getLevel="43" levelUpSp="35000" learnedByNpc="true" />
 		<skill skillName="Entangle" skillId="102" skillLevel="3" getLevel="43" levelUpSp="35000" learnedByNpc="true" />
+
 		<skill skillName="Dagger Mastery" skillId="209" skillLevel="15" getLevel="46" levelUpSp="13000" learnedByNpc="true" />
 		<skill skillName="Dagger Mastery" skillId="209" skillLevel="16" getLevel="46" levelUpSp="13000" learnedByNpc="true" />
 		<skill skillName="Dagger Mastery" skillId="209" skillLevel="17" getLevel="46" levelUpSp="13000" learnedByNpc="true" />
@@ -78,8 +82,9 @@
 		<skill skillName="Entangle" skillId="102" skillLevel="4" getLevel="46" levelUpSp="40000" learnedByNpc="true" />
 		<skill skillName="Cure Bleeding" skillId="61" skillLevel="2" getLevel="46" levelUpSp="40000" learnedByNpc="true" />
 		<skill skillName="Boost Evasion" skillId="198" skillLevel="2" getLevel="46" levelUpSp="40000" learnedByNpc="true" />
-		<skill skillName="Chameleon Rest" skillId="296" skillLevel="1" getLevel="46" levelUpSp="40000" learnedByNpc="true" />
 		<skill skillName="Summon Treasure Key" skillId="419" skillLevel="1" getLevel="46" levelUpSp="40000" learnedByNpc="true" />
+		<skill skillName="Chameleon Rest" skillId="296" skillLevel="1" getLevel="46" levelUpSp="40000" learnedByNpc="true" />
+
 		<skill skillName="Dagger Mastery" skillId="209" skillLevel="18" getLevel="49" levelUpSp="25000" learnedByNpc="true" />
 		<skill skillName="Dagger Mastery" skillId="209" skillLevel="19" getLevel="49" levelUpSp="25000" learnedByNpc="true" />
 		<skill skillName="Dagger Mastery" skillId="209" skillLevel="20" getLevel="49" levelUpSp="25000" learnedByNpc="true" />
@@ -105,6 +110,7 @@
 		<skill skillName="Bleed" skillId="96" skillLevel="3" getLevel="49" levelUpSp="75000" learnedByNpc="true" />
 		<skill skillName="Spirit Barrier" skillId="123" skillLevel="2" getLevel="49" levelUpSp="75000" learnedByNpc="true" />
 		<skill skillName="Entangle" skillId="102" skillLevel="5" getLevel="49" levelUpSp="75000" learnedByNpc="true" />
+
 		<skill skillName="Dagger Mastery" skillId="209" skillLevel="21" getLevel="52" levelUpSp="38000" learnedByNpc="true" />
 		<skill skillName="Dagger Mastery" skillId="209" skillLevel="22" getLevel="52" levelUpSp="38000" learnedByNpc="true" />
 		<skill skillName="Dagger Mastery" skillId="209" skillLevel="23" getLevel="52" levelUpSp="38000" learnedByNpc="true" />
@@ -130,6 +136,7 @@
 		<skill skillName="Entangle" skillId="102" skillLevel="6" getLevel="52" levelUpSp="115000" learnedByNpc="true" />
 		<skill skillName="Sprint" skillId="230" skillLevel="2" getLevel="52" levelUpSp="115000" learnedByNpc="true" />
 		<skill skillName="Lure" skillId="51" skillLevel="1" getLevel="52" levelUpSp="115000" learnedByNpc="true" />
+
 		<skill skillName="Dagger Mastery" skillId="209" skillLevel="24" getLevel="55" levelUpSp="49000" learnedByNpc="true" />
 		<skill skillName="Dagger Mastery" skillId="209" skillLevel="25" getLevel="55" levelUpSp="49000" learnedByNpc="true" />
 		<skill skillName="Dagger Mastery" skillId="209" skillLevel="26" getLevel="55" levelUpSp="49000" learnedByNpc="true" />
@@ -157,33 +164,35 @@
 		<skill skillName="Ultimate Evasion" skillId="111" skillLevel="2" getLevel="55" levelUpSp="147000" learnedByNpc="true" />
 		<skill skillName="Entangle" skillId="102" skillLevel="7" getLevel="55" levelUpSp="147000" learnedByNpc="true" />
 		<skill skillName="Sand Bomb" skillId="412" skillLevel="1" getLevel="55" levelUpSp="147000" learnedByNpc="true" />
-		<skill skillName="Dagger Mastery" skillId="209" skillLevel="27" getLevel="58" levelUpSp="50000" learnedByNpc="true" />
-		<skill skillName="Dagger Mastery" skillId="209" skillLevel="28" getLevel="58" levelUpSp="50000" learnedByNpc="true" />
-		<skill skillName="Dagger Mastery" skillId="209" skillLevel="29" getLevel="58" levelUpSp="50000" learnedByNpc="true" />
-		<skill skillName="Light Armor Mastery" skillId="233" skillLevel="29" getLevel="58" levelUpSp="50000" learnedByNpc="true" />
-		<skill skillName="Light Armor Mastery" skillId="233" skillLevel="30" getLevel="58" levelUpSp="50000" learnedByNpc="true" />
-		<skill skillName="Light Armor Mastery" skillId="233" skillLevel="31" getLevel="58" levelUpSp="50000" learnedByNpc="true" />
-		<skill skillName="Elemental Heal" skillId="58" skillLevel="37" getLevel="58" levelUpSp="50000" learnedByNpc="true" />
-		<skill skillName="Elemental Heal" skillId="58" skillLevel="38" getLevel="58" levelUpSp="50000" learnedByNpc="true" />
-		<skill skillName="Elemental Heal" skillId="58" skillLevel="39" getLevel="58" levelUpSp="50000" learnedByNpc="true" />
-		<skill skillName="Charm" skillId="15" skillLevel="34" getLevel="58" levelUpSp="50000" learnedByNpc="true" />
-		<skill skillName="Charm" skillId="15" skillLevel="35" getLevel="58" levelUpSp="50000" learnedByNpc="true" />
-		<skill skillName="Charm" skillId="15" skillLevel="36" getLevel="58" levelUpSp="50000" learnedByNpc="true" />
-		<skill skillName="Deadly Blow" skillId="263" skillLevel="19" getLevel="58" levelUpSp="50000" learnedByNpc="true" />
-		<skill skillName="Deadly Blow" skillId="263" skillLevel="20" getLevel="58" levelUpSp="50000" learnedByNpc="true" />
-		<skill skillName="Deadly Blow" skillId="263" skillLevel="21" getLevel="58" levelUpSp="50000" learnedByNpc="true" />
-		<skill skillName="Backstab" skillId="30" skillLevel="19" getLevel="58" levelUpSp="50000" learnedByNpc="true" />
-		<skill skillName="Backstab" skillId="30" skillLevel="20" getLevel="58" levelUpSp="50000" learnedByNpc="true" />
-		<skill skillName="Backstab" skillId="30" skillLevel="21" getLevel="58" levelUpSp="50000" learnedByNpc="true" />
-		<skill skillName="Vicious Stance" skillId="312" skillLevel="12" getLevel="58" levelUpSp="150000" learnedByNpc="true" />
-		<skill skillName="Switch" skillId="12" skillLevel="6" getLevel="58" levelUpSp="150000" learnedByNpc="true" />
-		<skill skillName="Bleed" skillId="96" skillLevel="4" getLevel="58" levelUpSp="150000" learnedByNpc="true" />
-		<skill skillName="Boost Evasion" skillId="198" skillLevel="3" getLevel="58" levelUpSp="150000" learnedByNpc="true" />
-		<skill skillName="Entangle" skillId="102" skillLevel="8" getLevel="58" levelUpSp="150000" learnedByNpc="true" />
-		<skill skillName="Spirit Barrier" skillId="123" skillLevel="3" getLevel="58" levelUpSp="150000" learnedByNpc="true" />
-		<skill skillName="Mortal Strike" skillId="410" skillLevel="1" getLevel="58" levelUpSp="150000" learnedByNpc="true" />
-		<skill skillName="Sand Bomb" skillId="412" skillLevel="2" getLevel="58" levelUpSp="150000" learnedByNpc="true" />
-		<skill skillName="Summon Treasure Key" skillId="419" skillLevel="2" getLevel="58" levelUpSp="150000" learnedByNpc="true" />
+
+		<skill skillName="Dagger Mastery" skillId="209" skillLevel="27" getLevel="58" levelUpSp="53000" learnedByNpc="true" />
+		<skill skillName="Dagger Mastery" skillId="209" skillLevel="28" getLevel="58" levelUpSp="53000" learnedByNpc="true" />
+		<skill skillName="Dagger Mastery" skillId="209" skillLevel="29" getLevel="58" levelUpSp="53000" learnedByNpc="true" />
+		<skill skillName="Light Armor Mastery" skillId="233" skillLevel="29" getLevel="58" levelUpSp="53000" learnedByNpc="true" />
+		<skill skillName="Light Armor Mastery" skillId="233" skillLevel="30" getLevel="58" levelUpSp="53000" learnedByNpc="true" />
+		<skill skillName="Light Armor Mastery" skillId="233" skillLevel="31" getLevel="58" levelUpSp="53000" learnedByNpc="true" />
+		<skill skillName="Elemental Heal" skillId="58" skillLevel="37" getLevel="58" levelUpSp="53000" learnedByNpc="true" />
+		<skill skillName="Elemental Heal" skillId="58" skillLevel="38" getLevel="58" levelUpSp="53000" learnedByNpc="true" />
+		<skill skillName="Elemental Heal" skillId="58" skillLevel="39" getLevel="58" levelUpSp="53000" learnedByNpc="true" />
+		<skill skillName="Charm" skillId="15" skillLevel="34" getLevel="58" levelUpSp="53000" learnedByNpc="true" />
+		<skill skillName="Charm" skillId="15" skillLevel="35" getLevel="58" levelUpSp="53000" learnedByNpc="true" />
+		<skill skillName="Charm" skillId="15" skillLevel="36" getLevel="58" levelUpSp="53000" learnedByNpc="true" />
+		<skill skillName="Deadly Blow" skillId="263" skillLevel="19" getLevel="58" levelUpSp="53000" learnedByNpc="true" />
+		<skill skillName="Deadly Blow" skillId="263" skillLevel="20" getLevel="58" levelUpSp="53000" learnedByNpc="true" />
+		<skill skillName="Deadly Blow" skillId="263" skillLevel="21" getLevel="58" levelUpSp="53000" learnedByNpc="true" />
+		<skill skillName="Backstab" skillId="30" skillLevel="19" getLevel="58" levelUpSp="53000" learnedByNpc="true" />
+		<skill skillName="Backstab" skillId="30" skillLevel="20" getLevel="58" levelUpSp="53000" learnedByNpc="true" />
+		<skill skillName="Backstab" skillId="30" skillLevel="21" getLevel="58" levelUpSp="53000" learnedByNpc="true" />
+		<skill skillName="Vicious Stance" skillId="312" skillLevel="12" getLevel="58" levelUpSp="160000" learnedByNpc="true" />
+		<skill skillName="Switch" skillId="12" skillLevel="6" getLevel="58" levelUpSp="160000" learnedByNpc="true" />
+		<skill skillName="Bleed" skillId="96" skillLevel="4" getLevel="58" levelUpSp="160000" learnedByNpc="true" />
+		<skill skillName="Boost Evasion" skillId="198" skillLevel="3" getLevel="58" levelUpSp="160000" learnedByNpc="true" />
+		<skill skillName="Entangle" skillId="102" skillLevel="8" getLevel="58" levelUpSp="160000" learnedByNpc="true" />
+		<skill skillName="Spirit Barrier" skillId="123" skillLevel="3" getLevel="58" levelUpSp="160000" learnedByNpc="true" />
+		<skill skillName="Sand Bomb" skillId="412" skillLevel="2" getLevel="58" levelUpSp="160000" learnedByNpc="true" />
+		<skill skillName="Mortal Strike" skillId="410" skillLevel="1" getLevel="58" levelUpSp="160000" learnedByNpc="true" />
+		<skill skillName="Summon Treasure Key" skillId="419" skillLevel="2" getLevel="58" levelUpSp="160000" learnedByNpc="true" />
+
 		<skill skillName="Dagger Mastery" skillId="209" skillLevel="30" getLevel="60" levelUpSp="112000" learnedByNpc="true" />
 		<skill skillName="Dagger Mastery" skillId="209" skillLevel="31" getLevel="60" levelUpSp="112000" learnedByNpc="true" />
 		<skill skillName="Light Armor Mastery" skillId="233" skillLevel="32" getLevel="60" levelUpSp="112000" learnedByNpc="true" />
@@ -201,8 +210,9 @@
 		<skill skillName="Unlock" skillId="27" skillLevel="11" getLevel="60" levelUpSp="223000" learnedByNpc="true" />
 		<skill skillName="Entangle" skillId="102" skillLevel="9" getLevel="60" levelUpSp="223000" learnedByNpc="true" />
 		<skill skillName="Poison Recovery" skillId="21" skillLevel="3" getLevel="60" levelUpSp="223000" learnedByNpc="true" />
-		<skill skillName="Sand Bomb" skillId="412" skillLevel="3" getLevel="60" levelUpSp="223000" learnedByNpc="true" />
 		<skill skillName="Escape Shackle" skillId="453" skillLevel="1" getLevel="60" levelUpSp="223000" learnedByNpc="true" />
+		<skill skillName="Sand Bomb" skillId="412" skillLevel="3" getLevel="60" levelUpSp="223000" learnedByNpc="true" />
+
 		<skill skillName="Dagger Mastery" skillId="209" skillLevel="32" getLevel="62" levelUpSp="170000" learnedByNpc="true" />
 		<skill skillName="Dagger Mastery" skillId="209" skillLevel="33" getLevel="62" levelUpSp="170000" learnedByNpc="true" />
 		<skill skillName="Light Armor Mastery" skillId="233" skillLevel="34" getLevel="62" levelUpSp="170000" learnedByNpc="true" />
@@ -221,6 +231,7 @@
 		<skill skillName="Entangle" skillId="102" skillLevel="10" getLevel="62" levelUpSp="330000" learnedByNpc="true" />
 		<skill skillName="Cure Bleeding" skillId="61" skillLevel="3" getLevel="62" levelUpSp="330000" learnedByNpc="true" />
 		<skill skillName="Sand Bomb" skillId="412" skillLevel="4" getLevel="62" levelUpSp="330000" learnedByNpc="true" />
+
 		<skill skillName="Dagger Mastery" skillId="209" skillLevel="34" getLevel="64" levelUpSp="220000" learnedByNpc="true" />
 		<skill skillName="Dagger Mastery" skillId="209" skillLevel="35" getLevel="64" levelUpSp="220000" learnedByNpc="true" />
 		<skill skillName="Light Armor Mastery" skillId="233" skillLevel="36" getLevel="64" levelUpSp="220000" learnedByNpc="true" />
@@ -238,6 +249,7 @@
 		<skill skillName="Unlock" skillId="27" skillLevel="12" getLevel="64" levelUpSp="440000" learnedByNpc="true" />
 		<skill skillName="Entangle" skillId="102" skillLevel="11" getLevel="64" levelUpSp="440000" learnedByNpc="true" />
 		<skill skillName="Sand Bomb" skillId="412" skillLevel="5" getLevel="64" levelUpSp="440000" learnedByNpc="true" />
+
 		<skill skillName="Dagger Mastery" skillId="209" skillLevel="36" getLevel="66" levelUpSp="250000" learnedByNpc="true" />
 		<skill skillName="Dagger Mastery" skillId="209" skillLevel="37" getLevel="66" levelUpSp="250000" learnedByNpc="true" />
 		<skill skillName="Light Armor Mastery" skillId="233" skillLevel="38" getLevel="66" levelUpSp="250000" learnedByNpc="true" />
@@ -256,9 +268,10 @@
 		<skill skillName="Entangle" skillId="102" skillLevel="12" getLevel="66" levelUpSp="500000" learnedByNpc="true" />
 		<skill skillName="Blinding Blow" skillId="321" skillLevel="1" getLevel="66" levelUpSp="250000" learnedByNpc="true" />
 		<skill skillName="Blinding Blow" skillId="321" skillLevel="2" getLevel="66" levelUpSp="250000" learnedByNpc="true" />
-		<skill skillName="Mortal Strike" skillId="410" skillLevel="2" getLevel="66" levelUpSp="500000" learnedByNpc="true" />
 		<skill skillName="Sand Bomb" skillId="412" skillLevel="6" getLevel="66" levelUpSp="500000" learnedByNpc="true" />
+		<skill skillName="Mortal Strike" skillId="410" skillLevel="2" getLevel="66" levelUpSp="500000" learnedByNpc="true" />
 		<skill skillName="Summon Treasure Key" skillId="419" skillLevel="3" getLevel="66" levelUpSp="500000" learnedByNpc="true" />
+
 		<skill skillName="Dagger Mastery" skillId="209" skillLevel="38" getLevel="68" levelUpSp="300000" learnedByNpc="true" />
 		<skill skillName="Dagger Mastery" skillId="209" skillLevel="39" getLevel="68" levelUpSp="300000" learnedByNpc="true" />
 		<skill skillName="Light Armor Mastery" skillId="233" skillLevel="40" getLevel="68" levelUpSp="300000" learnedByNpc="true" />
@@ -279,6 +292,7 @@
 		<skill skillName="Blinding Blow" skillId="321" skillLevel="3" getLevel="68" levelUpSp="300000" learnedByNpc="true" />
 		<skill skillName="Blinding Blow" skillId="321" skillLevel="4" getLevel="68" levelUpSp="300000" learnedByNpc="true" />
 		<skill skillName="Sand Bomb" skillId="412" skillLevel="7" getLevel="68" levelUpSp="600000" learnedByNpc="true" />
+
 		<skill skillName="Dagger Mastery" skillId="209" skillLevel="40" getLevel="70" levelUpSp="390000" learnedByNpc="true" />
 		<skill skillName="Dagger Mastery" skillId="209" skillLevel="41" getLevel="70" levelUpSp="390000" learnedByNpc="true" />
 		<skill skillName="Light Armor Mastery" skillId="233" skillLevel="42" getLevel="70" levelUpSp="390000" learnedByNpc="true" />
@@ -298,6 +312,7 @@
 		<skill skillName="Blinding Blow" skillId="321" skillLevel="5" getLevel="70" levelUpSp="390000" learnedByNpc="true" />
 		<skill skillName="Blinding Blow" skillId="321" skillLevel="6" getLevel="70" levelUpSp="390000" learnedByNpc="true" />
 		<skill skillName="Sand Bomb" skillId="412" skillLevel="8" getLevel="70" levelUpSp="780000" learnedByNpc="true" />
+
 		<skill skillName="Dagger Mastery" skillId="209" skillLevel="42" getLevel="72" levelUpSp="500000" learnedByNpc="true" />
 		<skill skillName="Dagger Mastery" skillId="209" skillLevel="43" getLevel="72" levelUpSp="500000" learnedByNpc="true" />
 		<skill skillName="Light Armor Mastery" skillId="233" skillLevel="44" getLevel="72" levelUpSp="500000" learnedByNpc="true" />
@@ -317,26 +332,27 @@
 		<skill skillName="Blinding Blow" skillId="321" skillLevel="7" getLevel="72" levelUpSp="500000" learnedByNpc="true" />
 		<skill skillName="Blinding Blow" skillId="321" skillLevel="8" getLevel="72" levelUpSp="500000" learnedByNpc="true" />
 		<skill skillName="Sand Bomb" skillId="412" skillLevel="9" getLevel="72" levelUpSp="1000000" learnedByNpc="true" />
-		<skill skillName="Dagger Mastery" skillId="209" skillLevel="44" getLevel="74" levelUpSp="810000" learnedByNpc="true" />
-		<skill skillName="Dagger Mastery" skillId="209" skillLevel="45" getLevel="74" levelUpSp="810000" learnedByNpc="true" />
-		<skill skillName="Light Armor Mastery" skillId="233" skillLevel="46" getLevel="74" levelUpSp="810000" learnedByNpc="true" />
-		<skill skillName="Light Armor Mastery" skillId="233" skillLevel="47" getLevel="74" levelUpSp="810000" learnedByNpc="true" />
-		<skill skillName="Deadly Blow" skillId="263" skillLevel="36" getLevel="74" levelUpSp="810000" learnedByNpc="true" />
-		<skill skillName="Deadly Blow" skillId="263" skillLevel="37" getLevel="74" levelUpSp="810000" learnedByNpc="true" />
-		<skill skillName="Backstab" skillId="30" skillLevel="36" getLevel="74" levelUpSp="810000" learnedByNpc="true" />
-		<skill skillName="Backstab" skillId="30" skillLevel="37" getLevel="74" levelUpSp="810000" learnedByNpc="true" />
-		<skill skillName="Elemental Heal" skillId="58" skillLevel="54" getLevel="74" levelUpSp="810000" learnedByNpc="true" />
-		<skill skillName="Elemental Heal" skillId="58" skillLevel="55" getLevel="74" levelUpSp="810000" learnedByNpc="true" />
-		<skill skillName="Charm" skillId="15" skillLevel="51" getLevel="74" levelUpSp="810000" learnedByNpc="true" />
-		<skill skillName="Charm" skillId="15" skillLevel="52" getLevel="74" levelUpSp="810000" learnedByNpc="true" />
-		<skill skillName="Vicious Stance" skillId="312" skillLevel="20" getLevel="74" levelUpSp="1630000" learnedByNpc="true" />
-		<skill skillName="Switch" skillId="12" skillLevel="14" getLevel="74" levelUpSp="1630000" learnedByNpc="true" />
-		<skill skillName="Esprit" skillId="171" skillLevel="8" getLevel="74" levelUpSp="1630000" learnedByNpc="true" />
-		<skill skillName="Entangle" skillId="102" skillLevel="16" getLevel="74" levelUpSp="1630000" learnedByNpc="true" />
-		<skill skillName="Blinding Blow" skillId="321" skillLevel="9" getLevel="74" levelUpSp="810000" learnedByNpc="true" />
-		<skill skillName="Blinding Blow" skillId="321" skillLevel="10" getLevel="74" levelUpSp="810000" learnedByNpc="true" />
-		<skill skillName="Mortal Strike" skillId="410" skillLevel="3" getLevel="74" levelUpSp="1630000" learnedByNpc="true" />
-		<skill skillName="Sand Bomb" skillId="412" skillLevel="10" getLevel="74" levelUpSp="1630000" learnedByNpc="true" />
-		<skill skillName="Summon Treasure Key" skillId="419" skillLevel="4" getLevel="74" levelUpSp="1630000" learnedByNpc="true" />
+
+		<skill skillName="Dagger Mastery" skillId="209" skillLevel="44" getLevel="74" levelUpSp="930000" learnedByNpc="true" />
+		<skill skillName="Dagger Mastery" skillId="209" skillLevel="45" getLevel="74" levelUpSp="930000" learnedByNpc="true" />
+		<skill skillName="Light Armor Mastery" skillId="233" skillLevel="46" getLevel="74" levelUpSp="930000" learnedByNpc="true" />
+		<skill skillName="Light Armor Mastery" skillId="233" skillLevel="47" getLevel="74" levelUpSp="930000" learnedByNpc="true" />
+		<skill skillName="Deadly Blow" skillId="263" skillLevel="36" getLevel="74" levelUpSp="930000" learnedByNpc="true" />
+		<skill skillName="Deadly Blow" skillId="263" skillLevel="37" getLevel="74" levelUpSp="930000" learnedByNpc="true" />
+		<skill skillName="Backstab" skillId="30" skillLevel="36" getLevel="74" levelUpSp="930000" learnedByNpc="true" />
+		<skill skillName="Backstab" skillId="30" skillLevel="37" getLevel="74" levelUpSp="930000" learnedByNpc="true" />
+		<skill skillName="Elemental Heal" skillId="58" skillLevel="54" getLevel="74" levelUpSp="930000" learnedByNpc="true" />
+		<skill skillName="Elemental Heal" skillId="58" skillLevel="55" getLevel="74" levelUpSp="930000" learnedByNpc="true" />
+		<skill skillName="Charm" skillId="15" skillLevel="51" getLevel="74" levelUpSp="930000" learnedByNpc="true" />
+		<skill skillName="Charm" skillId="15" skillLevel="52" getLevel="74" levelUpSp="930000" learnedByNpc="true" />
+		<skill skillName="Vicious Stance" skillId="312" skillLevel="20" getLevel="74" levelUpSp="1860000" learnedByNpc="true" />
+		<skill skillName="Switch" skillId="12" skillLevel="14" getLevel="74" levelUpSp="1860000" learnedByNpc="true" />
+		<skill skillName="Esprit" skillId="171" skillLevel="8" getLevel="74" levelUpSp="1860000" learnedByNpc="true" />
+		<skill skillName="Entangle" skillId="102" skillLevel="16" getLevel="74" levelUpSp="1860000" learnedByNpc="true" />
+		<skill skillName="Blinding Blow" skillId="321" skillLevel="9" getLevel="74" levelUpSp="930000" learnedByNpc="true" />
+		<skill skillName="Blinding Blow" skillId="321" skillLevel="10" getLevel="74" levelUpSp="930000" learnedByNpc="true" />
+		<skill skillName="Sand Bomb" skillId="412" skillLevel="10" getLevel="74" levelUpSp="1860000" learnedByNpc="true" />
+		<skill skillName="Mortal Strike" skillId="410" skillLevel="3" getLevel="74" levelUpSp="1860000" learnedByNpc="true" />
+		<skill skillName="Summon Treasure Key" skillId="419" skillLevel="4" getLevel="74" levelUpSp="1860000" learnedByNpc="true" />
 	</skillTree>
 </list>

@@ -33,12 +33,15 @@ public class SoulSummonStone extends AbstractNpcAI
 {
 	// NPCs
 	private static final int SOUL_SUMMON_STONE = 34434;
+	
 	// Bosses
 	private static final int SUMMONED_HARPAS = 26347;
 	private static final int SUMMONED_GARP = 26348;
 	private static final int SUMMONED_MORICKS = 26349;
+	
 	// Items
 	private static final int SOUL_QUARTZ = 48536;
+	
 	// Misc
 	private Npc _boss;
 	
@@ -61,6 +64,7 @@ public class SoulSummonStone extends AbstractNpcAI
 				{
 					return "34434-04.html";
 				}
+				
 				if (hasQuestItems(player, SOUL_QUARTZ))
 				{
 					takeItems(player, SOUL_QUARTZ, 1);
@@ -81,9 +85,11 @@ public class SoulSummonStone extends AbstractNpcAI
 						return "34434-03.html";
 					}
 				}
+				
 				return "34434-05.html";
 			}
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	

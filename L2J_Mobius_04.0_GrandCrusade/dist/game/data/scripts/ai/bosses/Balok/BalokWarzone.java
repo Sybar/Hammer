@@ -21,6 +21,7 @@
 package ai.bosses.Balok;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 import org.l2jmobius.gameserver.ai.Intention;
@@ -56,17 +57,20 @@ public class BalokWarzone extends AbstractInstance
 	private static final int ENTRANCE_PORTAL = 33523;
 	private static final int INVISIBLE_NPC_1 = 29106;
 	private static final int HELLS_GATE = 19040;
+	
 	// Item
 	private static final int PRISON_KEY = 10015;
+	
 	// Skills
 	private static final SkillHolder DARKNESS_DRAIN = new SkillHolder(14367, 1);
 	private static final SkillHolder REAR_DESTROY = new SkillHolder(14576, 1);
 	private static final SkillHolder EARTH_DEMOLITION = new SkillHolder(14246, 1);
 	private static final SkillHolder IMPRISION = new SkillHolder(5226, 1);
 	private static final SkillHolder INVINCIBILITY_ACTIVATION = new SkillHolder(14190, 1);
+	
 	// Misc
 	private static final int TEMPLATE_ID = 167;
-	//@formatter:off
+	// @formatter:off
 	private static final int[][] MINION_SPAWN = 
 	{
 		{154592, 141488, -12738, 26941},
@@ -89,7 +93,7 @@ public class BalokWarzone extends AbstractInstance
         {152055, 141231, -12712},
         {153608, 140371, -12712}
 	};
-	//@formatter:on	
+	// @formatter:on
 	private final List<Npc> _minionList = new ArrayList<>();
 	private Npc _currentMinion;
 	private Npc _balok;
@@ -125,6 +129,7 @@ public class BalokWarzone extends AbstractInstance
 				takeItems(player, PRISON_KEY, -1);
 			}
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	
@@ -220,6 +225,7 @@ public class BalokWarzone extends AbstractInstance
 					world.setStatus(2);
 				}
 			}
+			
 			if ((npc.getCurrentHp() < (npc.getMaxHp() * 0.50)) && (world.getStatus() == 2))
 			{
 				if (npc.isScriptValue(0))
@@ -227,18 +233,21 @@ public class BalokWarzone extends AbstractInstance
 					INVINCIBILITY_ACTIVATION.getSkill().applyEffects(npc, npc);
 					npc.setScriptValue(1);
 				}
+				
 				World.getInstance().forEachVisibleObjectInRange(npc, Player.class, 300, instPlayer ->
 				{
 					if ((instPlayer == null) || (getRandom(100) > 2))
 					{
 						return;
 					}
+					
 					npc.setTarget(instPlayer);
 					npc.doCast(IMPRISION.getSkill());
 					getTimers().addTimer("imprission_minions", 4000, npc, instPlayer);
 				});
 				getTimers().addTimer("stage_last_send_minions", 2000, npc, null);
 			}
+			
 			if ((npc.getCurrentHp() < (npc.getMaxHp() * 0.25)) && npc.isScriptValue(1))
 			{
 				npc.setScriptValue(2);
@@ -310,7 +319,7 @@ public class BalokWarzone extends AbstractInstance
 	}
 	
 	@Override
-	public void onSkillSee(Npc npc, Player caster, Skill skill, WorldObject[] targets, boolean isSummon)
+	public void onSkillSee(Npc npc, Player caster, Skill skill, Collection<WorldObject> targets, boolean isSummon)
 	{
 		if (!npc.isDead() && caster.isBehind(npc))
 		{
@@ -319,6 +328,7 @@ public class BalokWarzone extends AbstractInstance
 			{
 				npc.stopSkillEffects(INVINCIBILITY_ACTIVATION.getSkill());
 			}
+			
 			npc.setTarget(caster);
 			npc.doCast(REAR_DESTROY.getSkill());
 		}

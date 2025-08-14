@@ -73,7 +73,6 @@ public class CallSkill extends AbstractEffect
 				}
 				else
 				{
-					LOGGER.warning("Player " + effector + " called unknown skill " + _skill + " triggered by " + skill + " CallSkill.");
 					return;
 				}
 			}
@@ -111,17 +110,13 @@ public class CallSkill extends AbstractEffect
 					return;
 				}
 				
-				effector.broadcastPacket(new MagicSkillUse(effector, effected, triggerSkill.getDisplayId(), triggerSkill.getLevel(), hitTime, 0));
+				effector.broadcastSkillPacket(new MagicSkillUse(effector, effected, triggerSkill.getDisplayId(), triggerSkill.getLevel(), hitTime, 0), effected);
 				ThreadPool.schedule(() -> SkillCaster.triggerCast(effector, effected, triggerSkill), hitTime);
 			}
 			else
 			{
 				SkillCaster.triggerCast(effector, effected, triggerSkill);
 			}
-		}
-		else
-		{
-			LOGGER.warning("Skill not found effect called from " + skill);
 		}
 	}
 }

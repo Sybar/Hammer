@@ -41,12 +41,14 @@ public class Q10836_DisappearedClanMember extends Quest
 {
 	// NPC
 	private static final int ELIKIA = 34057;
+	
 	// Items
 	private static final int BLACKBIRD_SEAL = 46132;
 	private static final int BLACKBIRD_REPORT_GLENKINCHIE = 46134;
 	private static final int BLACKBIRD_REPORT_HURAK = 46135;
 	private static final int BLACKBIRD_REPORT_LAFFIAN = 46136;
 	private static final int BLACKBIRD_REPORT_SHERRY = 46137;
+	
 	// Misc
 	private static final int MIN_LEVEL = 101;
 	private static final int EAR = 17527;
@@ -97,6 +99,7 @@ public class Q10836_DisappearedClanMember extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -130,6 +133,7 @@ public class Q10836_DisappearedClanMember extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

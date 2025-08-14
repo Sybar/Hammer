@@ -34,15 +34,18 @@ public class Q10781_IngredientsToEnforcements extends Quest
 {
 	// NPC
 	private static final int BACON = 33846;
+	
 	// Monsters
 	private static final int[] MONSTERS =
 	{
 		23309, // Corpse Looter Stakato
 		23310, // Lesser Laikel
 	};
+	
 	// Items
 	private static final int WIND_SPIRIT_FRAGMENT = 39721;
 	private static final int ENCHANT_ARMOR_B = 948;
+	
 	// Misc
 	private static final int MIN_LEVEL = 52;
 	private static final int MAX_LEVEL = 58;
@@ -98,6 +101,7 @@ public class Q10781_IngredientsToEnforcements extends Quest
 				htmltext = null;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -124,6 +128,7 @@ public class Q10781_IngredientsToEnforcements extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

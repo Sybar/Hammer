@@ -78,6 +78,7 @@ public class LargeCocoon extends AbstractNpcAI
 				// {
 				// qs10305.notifyEvent("NOTIFY_Q10305", npc, player);
 				// }
+				
 				if (getRandom(3) < 1)
 				{
 					addSpawn(LARGE_CONTAMINED_COCOON, npc.getX(), npc.getY(), npc.getZ(), npc.getHeading(), false, 30000);
@@ -130,10 +131,12 @@ public class LargeCocoon extends AbstractNpcAI
 						}
 					}
 				}
+				
 				npc.deleteMe();
 				break;
 			}
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	
@@ -277,6 +280,7 @@ public class LargeCocoon extends AbstractNpcAI
 		// {
 		// qs10305.notifyEvent("NOTIFY_Q10305", npc, playable.asPlayer());
 		// }
+		
 		if (getRandom(3) < 1)
 		{
 			addSpawn(LARGE_CONTAMINED_COCOON, npc.getX(), npc.getY(), npc.getZ(), npc.getHeading(), false, 30000);
@@ -329,6 +333,7 @@ public class LargeCocoon extends AbstractNpcAI
 				}
 			}
 		}
+		
 		npc.deleteMe();
 	}
 	

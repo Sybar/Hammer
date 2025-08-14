@@ -57,6 +57,7 @@ public class ElementalSpiritExtractInfo extends ServerPacket
 		buffer.writeByte(_type); // active elemental spirit
 		buffer.writeByte(1); // is extract ?
 		buffer.writeByte(1); // cost count
+		
 		// for each cost count
 		buffer.writeInt(57); // item id
 		buffer.writeInt(1000000); // item count

@@ -41,9 +41,11 @@ public class EveTheFortuneTeller extends LongTimeEvent
 	// NPCs
 	private static final int EVE = 8542;
 	private static final int JAYCE = 8540;
+	
 	// Items
 	private static final int FORTUNE_READING_TICKET = 23767;
 	private static final int LUXURY_FORTUNE_READING_TICKET = 23768;
+	
 	// Misc
 	private static final NpcStringId[] JAYCE_TEXT =
 	{
@@ -79,6 +81,7 @@ public class EveTheFortuneTeller extends LongTimeEvent
 					player.sendPacket(SystemMessageId.NOT_ENOUGH_SPACE_IN_THE_INVENTORY_UNABLE_TO_PROCESS_THIS_REQUEST_UNTIL_YOUR_INVENTORY_S_WEIGHT_AND_SLOT_COUNT_ARE_LESS_THAN_80_PERCENT_OF_CAPACITY);
 					break;
 				}
+				
 				player.sendPacket(new ExStartLuckyGame(LuckyGameType.NORMAL, player.getInventory().getInventoryItemCount(FORTUNE_READING_TICKET, -1)));
 				break;
 			}
@@ -89,6 +92,7 @@ public class EveTheFortuneTeller extends LongTimeEvent
 					player.sendPacket(SystemMessageId.NOT_ENOUGH_SPACE_IN_THE_INVENTORY_UNABLE_TO_PROCESS_THIS_REQUEST_UNTIL_YOUR_INVENTORY_S_WEIGHT_AND_SLOT_COUNT_ARE_LESS_THAN_80_PERCENT_OF_CAPACITY);
 					break;
 				}
+				
 				player.sendPacket(new ExStartLuckyGame(LuckyGameType.LUXURY, player.getInventory().getInventoryItemCount(LUXURY_FORTUNE_READING_TICKET, -1)));
 				break;
 			}
@@ -98,6 +102,7 @@ public class EveTheFortuneTeller extends LongTimeEvent
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

@@ -47,6 +47,7 @@ public class RequestStopPledgeWar extends ClientPacket
 		{
 			return;
 		}
+		
 		final Clan playerClan = player.getClan();
 		if (playerClan == null)
 		{
@@ -93,12 +94,14 @@ public class RequestStopPledgeWar extends ClientPacket
 		// player.sendPacket(sm);
 		// return;
 		// }
+		
 		for (ClanMember member : playerClan.getMembers())
 		{
 			if ((member == null) || (member.getPlayer() == null))
 			{
 				continue;
 			}
+			
 			if (AttackStanceTaskManager.getInstance().hasAttackStanceTask(member.getPlayer()))
 			{
 				player.sendPacket(SystemMessageId.SINCE_THERE_ARE_CLAN_MEMBERS_WHO_ARE_ENGAGED_IN_COMBAT_THE_WAR_DECLARATION_CANNOT_BE_CANCELLED);

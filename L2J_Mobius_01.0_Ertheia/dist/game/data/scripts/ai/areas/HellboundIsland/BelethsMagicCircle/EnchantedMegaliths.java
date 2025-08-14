@@ -67,6 +67,7 @@ public class EnchantedMegaliths extends AbstractNpcAI
 		23372,
 		23373
 	};
+	
 	// Others
 	private static final ScriptZone HELLBOUND_ZONE = ZoneManager.getInstance().getZoneById(40101, ScriptZone.class);
 	private static final String HB_MEGALITH_STAGE = "HB_MegalithStage";
@@ -102,12 +103,14 @@ public class EnchantedMegaliths extends AbstractNpcAI
 					{
 						stage = 1;
 					}
+					
 					updateMegalithStage();
 					kills = 0;
 				}
 				break;
 			}
 		}
+		
 		return null;
 	}
 	
@@ -128,6 +131,7 @@ public class EnchantedMegaliths extends AbstractNpcAI
 					player.sendPacket(new OnEventTrigger(19250026, true));
 					player.sendPacket(new OnEventTrigger(19250002, true));
 					player.sendPacket(new OnEventTrigger(19250008, true));
+					
 					// Deactivate red or yellow glow
 					player.sendPacket(new OnEventTrigger(19250034, false));
 					player.sendPacket(new OnEventTrigger(19250016, false));
@@ -152,6 +156,7 @@ public class EnchantedMegaliths extends AbstractNpcAI
 					player.sendPacket(new OnEventTrigger(19250028, true));
 					player.sendPacket(new OnEventTrigger(19250004, true));
 					player.sendPacket(new OnEventTrigger(19250010, true));
+					
 					// Deactivate red or green glow
 					player.sendPacket(new OnEventTrigger(19250032, false));
 					player.sendPacket(new OnEventTrigger(19250014, false));
@@ -176,6 +181,7 @@ public class EnchantedMegaliths extends AbstractNpcAI
 					player.sendPacket(new OnEventTrigger(19250030, true));
 					player.sendPacket(new OnEventTrigger(19250006, true));
 					player.sendPacket(new OnEventTrigger(19250012, true));
+					
 					// Deactivate green or yellow glow
 					player.sendPacket(new OnEventTrigger(19250034, false));
 					player.sendPacket(new OnEventTrigger(19250016, false));
@@ -192,6 +198,7 @@ public class EnchantedMegaliths extends AbstractNpcAI
 					break;
 				}
 			}
+			
 			if (spawnTemplateNormal == null)
 			{
 				updateMegalithStage();

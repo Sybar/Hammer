@@ -34,12 +34,11 @@ import org.l2jmobius.gameserver.model.item.type.ActionType;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
 import org.l2jmobius.gameserver.network.SystemMessageId;
 import org.l2jmobius.gameserver.network.serverpackets.MagicSkillUse;
-import org.l2jmobius.gameserver.util.Broadcast;
 
 public class BlessedSpiritShot implements IItemHandler
 {
 	@Override
-	public boolean useItem(Playable playable, Item item, boolean forceUse)
+	public boolean onItemUse(Playable playable, Item item, boolean forceUse)
 	{
 		if (!playable.isPlayer())
 		{
@@ -72,6 +71,7 @@ public class BlessedSpiritShot implements IItemHandler
 			{
 				player.sendPacket(SystemMessageId.CANNOT_USE_SPIRITSHOTS);
 			}
+			
 			return false;
 		}
 		
@@ -100,13 +100,14 @@ public class BlessedSpiritShot implements IItemHandler
 			{
 				player.sendPacket(SystemMessageId.NOT_ENOUGH_SPIRITSHOTS);
 			}
+			
 			return false;
 		}
 		
 		// Send message to client
 		player.sendPacket(SystemMessageId.POWER_OF_MANA_ENABLED);
 		player.setChargedShot(ShotType.BLESSED_SPIRITSHOTS, true);
-		Broadcast.toSelfAndKnownPlayersInRadius(player, new MagicSkillUse(player, player, skills[0].getSkillId(), skills[0].getSkillLevel(), 0, 0), 600);
+		player.broadcastSkillPacket(new MagicSkillUse(player, player, skills[0].getSkillId(), skills[0].getSkillLevel(), 0, 0), player);
 		return true;
 	}
 }

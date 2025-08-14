@@ -45,11 +45,14 @@ public class Q10890_SaviorsPathHallOfEtina extends Quest
 	// NPCs
 	private static final int LEONA_BLACKBIRD = 34425;
 	private static final int LEONA_BLACKBIRD_OUTLET = 34426;
+	
 	// Monsters
 	private static final int ETIS_VAN_ETINA_SOLO = 26322;
+	
 	// Rewards
 	private static final int SAVIORS_MASK = 48584;
 	private static final int SAVIORS_ENCHANT_SCROLL = 48583;
+	
 	// Misc
 	private static final int MIN_LEVEL = 104;
 	private static final Location OUTLET_TELEPORT = new Location(-251728, 178576, -8928);
@@ -131,6 +134,7 @@ public class Q10890_SaviorsPathHallOfEtina extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -175,6 +179,7 @@ public class Q10890_SaviorsPathHallOfEtina extends Quest
 						{
 							htmltext = "34426-01.htm";
 						}
+						
 						if (qs.isCond(2))
 						{
 							htmltext = "34426-02.html";
@@ -198,6 +203,7 @@ public class Q10890_SaviorsPathHallOfEtina extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -215,6 +221,7 @@ public class Q10890_SaviorsPathHallOfEtina extends Quest
 		{
 			qs.setCond(3, true);
 			qs.set(ETIS_VAN_ETINA_SOLO_VAR, "true");
+			
 			// notifyKill(npc, player, isSummon);
 			sendNpcLogList(player);
 		}
@@ -231,6 +238,7 @@ public class Q10890_SaviorsPathHallOfEtina extends Quest
 			holder.add(new NpcLogListHolder(1026322, true, (status != null) && status.equals("true") ? 1 : 0));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

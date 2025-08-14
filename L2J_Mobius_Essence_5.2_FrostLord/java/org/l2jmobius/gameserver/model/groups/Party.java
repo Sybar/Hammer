@@ -169,6 +169,7 @@ public class Party extends AbstractPlayerGroup
 				availableMembers.add(member);
 			}
 		}
+		
 		return !availableMembers.isEmpty() ? availableMembers.get(Rnd.get(availableMembers.size())) : null;
 	}
 	
@@ -186,6 +187,7 @@ public class Party extends AbstractPlayerGroup
 			{
 				_itemLastLoot = 0;
 			}
+			
 			Player member;
 			try
 			{
@@ -200,6 +202,7 @@ public class Party extends AbstractPlayerGroup
 				// continue, take another member if this just logged off
 			}
 		}
+		
 		return null;
 	}
 	
@@ -244,6 +247,7 @@ public class Party extends AbstractPlayerGroup
 				break;
 			}
 		}
+		
 		return looter != null ? looter : player;
 	}
 	
@@ -312,6 +316,7 @@ public class Party extends AbstractPlayerGroup
 				{
 					player.sendPacket(new ExPartyPetWindowAdd(pet));
 				}
+				
 				pMember.getServitors().values().forEach(s -> player.sendPacket(new ExPartyPetWindowAdd(s)));
 			}
 		}
@@ -369,6 +374,7 @@ public class Party extends AbstractPlayerGroup
 				{
 					summon.updateEffectIcons();
 				}
+				
 				member.getServitors().values().forEach(Summon::updateEffectIcons);
 				
 				// send hp status update
@@ -394,9 +400,11 @@ public class Party extends AbstractPlayerGroup
 				{
 					_positionPacket.reuse(this);
 				}
+				
 				broadcastPacket(_positionPacket);
 			}, PARTY_POSITION_BROADCAST_INTERVAL.toMillis() / 2, PARTY_POSITION_BROADCAST_INTERVAL.toMillis());
 		}
+		
 		applyTacticalSigns(player, false);
 		World.getInstance().incrementPartyMember();
 	}
@@ -413,6 +421,7 @@ public class Party extends AbstractPlayerGroup
 				}
 			}
 		}
+		
 		return _tacticalSigns;
 	}
 	
@@ -566,6 +575,7 @@ public class Party extends AbstractPlayerGroup
 			{
 				broadcastPacket(new ExPartyPetWindowDelete(pet));
 			}
+			
 			player.getServitors().values().forEach(s -> player.sendPacket(new ExPartyPetWindowDelete(s)));
 			
 			// Close the CCInfoWindow
@@ -573,6 +583,7 @@ public class Party extends AbstractPlayerGroup
 			{
 				player.sendPacket(ExCloseMPCC.STATIC_PACKET);
 			}
+			
 			if (isLeader && (_members.size() > 1) && (Config.ALT_LEAVE_PARTY_LEADER || (type == PartyMessageType.DISCONNECTED)))
 			{
 				msg = new SystemMessage(SystemMessageId.C1_HAS_BECOME_THE_PARTY_LEADER);
@@ -612,13 +623,16 @@ public class Party extends AbstractPlayerGroup
 					_changeDistributionTypeRequestTask.cancel(true);
 					_changeDistributionTypeRequestTask = null;
 				}
+				
 				if (_positionBroadcastTask != null)
 				{
 					_positionBroadcastTask.cancel(false);
 					_positionBroadcastTask = null;
 				}
+				
 				_members.clear();
 			}
+			
 			applyTacticalSigns(player, true);
 		}
 	}
@@ -637,6 +651,7 @@ public class Party extends AbstractPlayerGroup
 				removePartyMember(member, PartyMessageType.NONE);
 			}
 		}
+		
 		World.getInstance().decrementParty();
 	}
 	
@@ -701,6 +716,7 @@ public class Party extends AbstractPlayerGroup
 				return member;
 			}
 		}
+		
 		return null;
 	}
 	
@@ -834,7 +850,7 @@ public class Party extends AbstractPlayerGroup
 	 */
 	public void distributeXpAndSp(double xpRewardValue, double spRewardValue, List<Player> rewardedMembers, int topLvl, Attackable target)
 	{
-		final List<Player> validMembers = getValidMembers(rewardedMembers, topLvl);
+		final List<Player> validMembers = getValidMembers(rewardedMembers, topLvl, target);
 		double xpReward = xpRewardValue * getExpBonus(validMembers.size(), target.getInstanceWorld());
 		double spReward = spRewardValue * getSpBonus(validMembers.size(), target.getInstanceWorld());
 		int sqLevelSum = 0;
@@ -882,8 +898,10 @@ public class Party extends AbstractPlayerGroup
 						{
 							finalExp *= member.getStat().getExpBonusMultiplier();
 						}
+						
 						clan.addHuntingPoints(member, target, finalExp);
 					}
+					
 					member.updateVitalityPoints(target.getVitalityPoints(member.getLevel(), exp, target.isRaid()), true, false);
 					PcCafePointsManager.getInstance().givePcCafePoint(member, exp);
 					MagicLampData.getInstance().addLampExp(member, exp, true);
@@ -929,6 +947,7 @@ public class Party extends AbstractPlayerGroup
 					player.addExpAndSp(xp, sp, vit);
 					break;
 				}
+				
 				i++;
 			}
 		}
@@ -936,6 +955,7 @@ public class Party extends AbstractPlayerGroup
 		{
 			player.addExpAndSp(addExp, addSp, vit);
 		}
+		
 		return xp;
 	}
 	
@@ -958,10 +978,11 @@ public class Party extends AbstractPlayerGroup
 				newLevel = member.getLevel();
 			}
 		}
+		
 		_partyLvl = newLevel;
 	}
 	
-	private List<Player> getValidMembers(List<Player> members, int topLvl)
+	private List<Player> getValidMembers(List<Player> members, int topLvl, Attackable target)
 	{
 		final List<Player> validMembers = new ArrayList<>();
 		switch (Config.PARTY_XP_CUTOFF_METHOD)
@@ -970,7 +991,7 @@ public class Party extends AbstractPlayerGroup
 			{
 				for (Player member : members)
 				{
-					if ((topLvl - member.getLevel()) <= Config.PARTY_XP_CUTOFF_LEVEL)
+					if ((target.getInstanceId() == member.getInstanceId()) && ((topLvl - member.getLevel()) <= Config.PARTY_XP_CUTOFF_LEVEL))
 					{
 						validMembers.add(member);
 					}
@@ -982,12 +1003,16 @@ public class Party extends AbstractPlayerGroup
 				int sqLevelSum = 0;
 				for (Player member : members)
 				{
-					sqLevelSum += (member.getLevel() * member.getLevel());
+					if (target.getInstanceId() == member.getInstanceId())
+					{
+						sqLevelSum += (member.getLevel() * member.getLevel());
+					}
 				}
+				
 				for (Player member : members)
 				{
 					final int sqLevel = member.getLevel() * member.getLevel();
-					if ((sqLevel * 100) >= (sqLevelSum * Config.PARTY_XP_CUTOFF_PERCENT))
+					if ((target.getInstanceId() == member.getInstanceId()) && ((sqLevel * 100) >= (sqLevelSum * Config.PARTY_XP_CUTOFF_PERCENT)))
 					{
 						validMembers.add(member);
 					}
@@ -1001,19 +1026,22 @@ public class Party extends AbstractPlayerGroup
 				{
 					sqLevelSum += (member.getLevel() * member.getLevel());
 				}
+				
 				int i = members.size() - 1;
 				if (i < 1)
 				{
 					return members;
 				}
+				
 				if (i >= BONUS_EXP_SP.length)
 				{
 					i = BONUS_EXP_SP.length - 1;
 				}
+				
 				for (Player member : members)
 				{
 					final int sqLevel = member.getLevel() * member.getLevel();
-					if (sqLevel >= (sqLevelSum / (members.size() * members.size())))
+					if ((target.getInstanceId() == member.getInstanceId()) && (sqLevel >= (sqLevelSum / (members.size() * members.size()))))
 					{
 						validMembers.add(member);
 					}
@@ -1022,15 +1050,28 @@ public class Party extends AbstractPlayerGroup
 			}
 			case HIGHFIVE:
 			{
-				validMembers.addAll(members);
+				for (Player member : members)
+				{
+					if (target.getInstanceId() == member.getInstanceId())
+					{
+						validMembers.add(member);
+					}
+				}
 				break;
 			}
 			case NONE:
 			{
-				validMembers.addAll(members);
+				for (Player member : members)
+				{
+					if (target.getInstanceId() == member.getInstanceId())
+					{
+						validMembers.add(member);
+					}
+				}
 				break;
 			}
 		}
+		
 		return validMembers;
 	}
 	
@@ -1041,10 +1082,12 @@ public class Party extends AbstractPlayerGroup
 		{
 			return 1;
 		}
+		
 		if (i >= BONUS_EXP_SP.length)
 		{
 			i = BONUS_EXP_SP.length - 1;
 		}
+		
 		return BONUS_EXP_SP[i];
 	}
 	
@@ -1116,6 +1159,7 @@ public class Party extends AbstractPlayerGroup
 		{
 			return;
 		}
+		
 		_changeRequestDistributionType = partyDistributionType;
 		_changeDistributionTypeAnswers = new HashSet<>();
 		_changeDistributionTypeRequestTask = ThreadPool.schedule(() -> finishLootRequest(false), PARTY_DISTRIBUTION_TYPE_REQUEST_TIMEOUT.toMillis());
@@ -1157,11 +1201,13 @@ public class Party extends AbstractPlayerGroup
 		{
 			return;
 		}
+		
 		if (_changeDistributionTypeRequestTask != null)
 		{
 			_changeDistributionTypeRequestTask.cancel(false);
 			_changeDistributionTypeRequestTask = null;
 		}
+		
 		if (success)
 		{
 			broadcastPacket(new ExSetPartyLooting(1, _changeRequestDistributionType));
@@ -1175,6 +1221,7 @@ public class Party extends AbstractPlayerGroup
 			broadcastPacket(new ExSetPartyLooting(0, _distributionType));
 			broadcastPacket(new SystemMessage(SystemMessageId.PARTY_LOOT_CHANGE_WAS_CANCELLED));
 		}
+		
 		_changeRequestDistributionType = null;
 		_changeDistributionTypeAnswers = null;
 	}

@@ -43,6 +43,7 @@ public class Q10852_TheMotherTreeRevivalProject extends Quest
 {
 	// NPCs
 	private static final int IRENE = 34233;
+	
 	// Monsters
 	private static final int NYMPH_SENTINEL = 23578;
 	private static final int[] ROSE =
@@ -65,9 +66,11 @@ public class Q10852_TheMotherTreeRevivalProject extends Quest
 		23572, // Nymph Cosmos
 		23573, // Nymph Cosmos
 	};
+	
 	// Items
 	private static final int RUNE_STONE = 39738;
 	private static final int SPELLBOOK_PEGASUS = 47150;
+	
 	// Misc
 	private static final int MIN_LEVEL = 102;
 	
@@ -128,6 +131,7 @@ public class Q10852_TheMotherTreeRevivalProject extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -172,6 +176,7 @@ public class Q10852_TheMotherTreeRevivalProject extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -249,6 +254,7 @@ public class Q10852_TheMotherTreeRevivalProject extends Quest
 			npcLogList.add(new NpcLogListHolder(NYMPH_SENTINEL, false, qs.getInt("killed_" + NYMPH_SENTINEL)));
 			return npcLogList;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

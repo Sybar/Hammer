@@ -61,6 +61,7 @@ public class ExRequestCostumeExtract extends ClientPacket
 		{
 			return;
 		}
+		
 		var playerCostume = player.getCostume(id);
 		Costume costume;
 		
@@ -97,6 +98,7 @@ public class ExRequestCostumeExtract extends ClientPacket
 			player.sendPacket(SystemMessageId.NOT_ENOUGH_SPACE_IN_THE_INVENTORY_PLEASE_MAKE_MORE_ROOM_AND_TRY_AGAIN);
 			return false;
 		}
+		
 		return Costumes.getInstance().checkCostumeAction(player);
 	}
 	
@@ -117,6 +119,7 @@ public class ExRequestCostumeExtract extends ClientPacket
 					return false;
 				}
 			}
+			
 			for (ItemHolder itemHolder : extractCost)
 			{
 				player.destroyItemByItemId(null, itemHolder.getId(), itemHolder.getCount(), player, true);
@@ -126,6 +129,7 @@ public class ExRequestCostumeExtract extends ClientPacket
 		{
 			inventory.unblock();
 		}
+		
 		return true;
 	}
 }

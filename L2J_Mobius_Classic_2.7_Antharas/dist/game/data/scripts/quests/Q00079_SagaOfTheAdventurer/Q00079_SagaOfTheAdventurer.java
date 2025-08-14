@@ -49,6 +49,7 @@ public class Q00079_SagaOfTheAdventurer extends Quest
 	private static final int TABLET_OF_VISION_3 = 31653;
 	private static final int TABLET_OF_VISION_4 = 31654;
 	private static final int ERICA_KEN_WEBER = 31619;
+	
 	// Monsters
 	private static final int ICE_MONSTER = 27316;
 	private static final int SPIRIT_OF_A_DROWNED = 27317;
@@ -64,6 +65,7 @@ public class Q00079_SagaOfTheAdventurer extends Quest
 	private static final int STONE_WATCHMAN_EZEKIEL = 27296;
 	private static final int HALISHA_ARCHON = 27219;
 	private static final int STONE_GUARDIAN_AZRAEL = 27302;
+	
 	// Items
 	private static final int ICE_CRYSTAL_FRAGMENT = 49813;
 	private static final int HALISHA_BADGE = 7494;
@@ -72,8 +74,10 @@ public class Q00079_SagaOfTheAdventurer extends Quest
 	private static final int RESONANCE_AMULET_3 = 7339;
 	private static final int RESONANCE_AMULET_4 = 7370;
 	private static final int ICE_WINE = 7516;
+	
 	// Reward
 	private static final int BOOK_GOLD_LION = 90038;
+	
 	// Misc
 	private static final String KILL_COUNT_VAR = "KillCount";
 	
@@ -96,6 +100,7 @@ public class Q00079_SagaOfTheAdventurer extends Quest
 		{
 			return null;
 		}
+		
 		String htmltext = event;
 		switch (event)
 		{
@@ -243,6 +248,7 @@ public class Q00079_SagaOfTheAdventurer extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -433,6 +439,7 @@ public class Q00079_SagaOfTheAdventurer extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -503,6 +510,7 @@ public class Q00079_SagaOfTheAdventurer extends Quest
 						{
 							qs.set(KILL_COUNT_VAR, count + 1);
 						}
+						
 						if (count >= 20)
 						{
 							qs.setCond(8, true);
@@ -529,8 +537,10 @@ public class Q00079_SagaOfTheAdventurer extends Quest
 			{
 				holder.add(new NpcLogListHolder(GUARDIAN_OF_FOBIDDEN_KNOWLEDGE, false, guardiancount));
 			}
+			
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

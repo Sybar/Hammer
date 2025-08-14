@@ -52,6 +52,7 @@ public class Helios extends AbstractNpcAI
 	private static final int HELIOS1 = 29303;
 	private static final int HELIOS2 = 29304;
 	private static final int HELIOS3 = 29305;
+	
 	// Minions
 	private static final int LEOPOLD = 29306;
 	private static final int HELIOS_RED_LIGHTNING = 29307;
@@ -64,6 +65,7 @@ public class Helios extends AbstractNpcAI
 	private static final int ROYAL_GATEKEEPER = 29314;
 	private static final int MIMILLION = 29315;
 	private static final int MIMILLUS = 29316;
+	
 	// Location
 	private static final Location HELIOS_SPAWN_LOC = new Location(92771, 161909, 3494, 38329);
 	private static final Location BLUE_LIGHTNING_SPEAR_LOC = new Location(93208, 161269, 3489);
@@ -73,13 +75,16 @@ public class Helios extends AbstractNpcAI
 	private static final Location LEOPOLD_LOC = new Location(93531, 162415, 3487);
 	private static final Location LEOPOLD_ORIGIN_LOC = new Location(92601, 162196, 3464);
 	private static final Location ENUMA_ELISH_ORIGIN_LOC = new Location(92957, 161640, 3485);
+	
 	// Zone
 	private static final int ZONE_ID = 210109;
+	
 	// Status
 	private static final int ALIVE = 0;
 	private static final int WAITING = 1;
 	private static final int FIGHTING = 2;
 	private static final int DEAD = 3;
+	
 	// Skills
 	private static final SkillHolder AUDIENCE_DEBUFF = new SkillHolder(16613, 1);
 	private static final SkillHolder RED_LIGHTNING_SPEAR = new SkillHolder(16617, 1);
@@ -95,6 +100,7 @@ public class Helios extends AbstractNpcAI
 	private static final SkillHolder LEOPOLD_MINI_GUN = new SkillHolder(16632, 1);
 	private static final SkillHolder LEOPOLD_SPRAY_SHOT = new SkillHolder(16633, 1);
 	private static final SkillHolder LEOPOLD_HARPOON = new SkillHolder(16634, 1);
+	
 	// Spawns
 	private static final List<SpawnHolder> SPAWNS_MINIONS = new ArrayList<>();
 	static
@@ -123,6 +129,7 @@ public class Helios extends AbstractNpcAI
 		SPAWNS_MINIONS.add(new SpawnHolder(ROYAL_GATEKEEPER, HELIOS_SPAWN_LOC, 0, false));
 		SPAWNS_MINIONS.add(new SpawnHolder(ROYAL_GATEKEEPER, HELIOS_SPAWN_LOC, 0, false));
 	}
+	
 	// Misc
 	private static final int HELIOS_RAID_DURATION = 5; // hours
 	private static Npc _bossInstance;
@@ -147,8 +154,10 @@ public class Helios extends AbstractNpcAI
 	{
 		addAttackId(HELIOS1, HELIOS2, HELIOS3);
 		addKillId(HELIOS1, HELIOS2, HELIOS3, MIMILLION, MIMILLUS);
+		
 		// Zone
 		_bossZone = ZoneManager.getInstance().getZoneById(ZONE_ID, NoSummonFriendZone.class);
+		
 		// Unlock
 		final StatSet info = GrandBossManager.getInstance().getStatSet(HELIOS3);
 		final int status = GrandBossManager.getInstance().getStatus(HELIOS3);
@@ -183,11 +192,13 @@ public class Helios extends AbstractNpcAI
 			_debuffTask = ThreadPool.scheduleAtFixedRate(() -> _bossZone.getPlayersInside().forEach(player -> AUDIENCE_DEBUFF.getSkill().applyEffects(player, player)), 5000, 20000);
 			Broadcast.toAllOnlinePlayers(new ExShowScreenMessage(NpcStringId.THE_ADEN_WARRIORS_BEGIN_BATTLE_WITH_THE_GIANT_EMPEROR_HELIOS, ExShowScreenMessage.TOP_CENTER, 10000, true));
 		}
+		
 		if ((npc.getId() == HELIOS1) && !_stage1 && (npc.getCurrentHp() <= (npc.getMaxHp() * 0.5)))
 		{
 			_stage1 = true;
 			HELIOS_RAGE1.getSkill().applyEffects(_bossInstance, _bossInstance);
 		}
+		
 		if ((npc.getId() == HELIOS2) && !_activated)
 		{
 			_activated = true;
@@ -204,6 +215,7 @@ public class Helios extends AbstractNpcAI
 						_blueLightning.doCast(BLUE_LIGHTNING_SPEAR.getSkill());
 					}
 				}
+				
 				_bossZone.broadcastPacket(new ExShowScreenMessage(NpcStringId.HELIOS_PICKS_UP_THE_BLUE_LIGHTNING_SPEAR_AND_BEGINS_GATHERING_HIS_POWER, ExShowScreenMessage.TOP_CENTER, 10000, true));
 			}, 10000, 120000);
 			_redSpearTask = ThreadPool.scheduleAtFixedRate(() ->
@@ -218,6 +230,7 @@ public class Helios extends AbstractNpcAI
 						_redLightning.doCast(RED_LIGHTNING_SPEAR.getSkill());
 					}
 				}
+				
 				_bossZone.broadcastPacket(new ExShowScreenMessage(NpcStringId.HELIOS_PICKS_UP_THE_RED_LIGHTNING_SPEAR_AND_BEGINS_GATHERING_HIS_POWER, ExShowScreenMessage.TOP_CENTER, 10000, true));
 			}, 30000, 120000);
 			_leopoldTask = ThreadPool.scheduleAtFixedRate(() ->
@@ -258,11 +271,13 @@ public class Helios extends AbstractNpcAI
 				}
 			}, 5000, 10000);
 		}
+		
 		if ((npc.getId() == HELIOS2) && !_stage2 && (npc.getCurrentHp() <= (npc.getMaxHp() * 0.5)))
 		{
 			_stage2 = true;
 			HELIOS_RAGE2.getSkill().applyEffects(_bossInstance, _bossInstance);
 		}
+		
 		if ((npc.getId() == HELIOS3) && !_activated)
 		{
 			_activated = true;
@@ -305,6 +320,7 @@ public class Helios extends AbstractNpcAI
 				}
 			}, 5000, 10000);
 		}
+		
 		if ((npc.getId() == HELIOS3) && !_helios80 && (npc.getCurrentHp() <= (npc.getMaxHp() * 0.8)))
 		{
 			_helios80 = true;
@@ -345,6 +361,7 @@ public class Helios extends AbstractNpcAI
 					{
 						_minionSpawns.add(addSpawn(spawn.getNpcId(), spawn.getLocation()));
 					}
+					
 					startQuestTimer("resetRaid", HELIOS_RAID_DURATION * 60 * 60 * 1000, _bossInstance, null);
 				}
 				break;
@@ -369,6 +386,7 @@ public class Helios extends AbstractNpcAI
 				{
 					_minionSpawns.add(addSpawn(spawn.getNpcId(), spawn.getLocation()));
 				}
+				
 				startQuestTimer("spheresSpawn", 10000, null, null);
 				break;
 			}
@@ -405,6 +423,7 @@ public class Helios extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -422,16 +441,19 @@ public class Helios extends AbstractNpcAI
 			_blueSpearTask.cancel(true);
 			_blueSpearTask = null;
 		}
+		
 		if (_redSpearTask != null)
 		{
 			_redSpearTask.cancel(true);
 			_redSpearTask = null;
 		}
+		
 		if (_leopoldTask != null)
 		{
 			_leopoldTask.cancel(true);
 			_leopoldTask = null;
 		}
+		
 		if (_debuffTask != null)
 		{
 			_debuffTask.cancel(true);
@@ -476,6 +498,7 @@ public class Helios extends AbstractNpcAI
 				{
 					_leopold.deleteMe();
 				}
+				
 				_bossZone.getPlayersInside().forEach(player -> playMovie(player, Movie.SC_HELIOS_TRANS_B));
 				startQuestTimer("stage3", 15000, null, null);
 				break;

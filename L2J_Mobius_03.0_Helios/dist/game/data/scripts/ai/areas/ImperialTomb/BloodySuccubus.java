@@ -39,6 +39,7 @@ public class BloodySuccubus extends AbstractNpcAI
 	private static final int SUCCUBUS_OF_DARKNESS = 23192;
 	private static final int SUCCUBUS_OF_LUNACY = 23197;
 	private static final int SUCCUBUS_OF_SILENCE = 23198;
+	
 	// Attack messages
 	private static final NpcStringId[] ON_ATTACK_MSG_BLOODY_SUCCUBUS =
 	{
@@ -80,6 +81,7 @@ public class BloodySuccubus extends AbstractNpcAI
 		NpcStringId.OOOOH,
 		NpcStringId.DO_NOT_INTERFERE
 	};
+	
 	// Death messages
 	private static final NpcStringId[] ON_FAILED_MSG_BLOODY_SUCCUBUS =
 	{
@@ -133,6 +135,7 @@ public class BloodySuccubus extends AbstractNpcAI
 					cancelQuestTimer("say", npc, null);
 					return null;
 				}
+				
 				npc.broadcastSay(ChatType.NPC_GENERAL, getRandomEntry(ON_ATTACK_MSG_BLOODY_SUCCUBUS));
 				break;
 			}
@@ -143,6 +146,7 @@ public class BloodySuccubus extends AbstractNpcAI
 					cancelQuestTimer("say1", npc, null);
 					return null;
 				}
+				
 				npc.broadcastSay(ChatType.NPC_GENERAL, getRandomEntry(ON_ATTACK_MSG_SUCCUBUS_OF_DEATH));
 				break;
 			}
@@ -153,6 +157,7 @@ public class BloodySuccubus extends AbstractNpcAI
 					cancelQuestTimer("say2", npc, null);
 					return null;
 				}
+				
 				npc.broadcastSay(ChatType.NPC_GENERAL, getRandomEntry(ON_ATTACK_MSG_SUCCUBUS_OF_DARKNESS));
 				break;
 			}
@@ -163,6 +168,7 @@ public class BloodySuccubus extends AbstractNpcAI
 					cancelQuestTimer("say3", npc, null);
 					return null;
 				}
+				
 				npc.broadcastSay(ChatType.NPC_GENERAL, getRandomEntry(ON_ATTACK_MSG_SUCCUBUS_OF_LUNACY));
 				break;
 			}
@@ -173,10 +179,12 @@ public class BloodySuccubus extends AbstractNpcAI
 					cancelQuestTimer("say4", npc, null);
 					return null;
 				}
+				
 				npc.broadcastSay(ChatType.NPC_GENERAL, getRandomEntry(ON_ATTACK_MSG_SUCCUBUS_OF_SILENCE));
 				break;
 			}
 		}
+		
 		return null;
 	}
 	

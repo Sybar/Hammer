@@ -39,6 +39,7 @@ public class Q00325_GrimCollector extends Quest
 	private static final int CURTIS = 30336;
 	private static final int VARSAK = 30342;
 	private static final int SAMED = 30434;
+	
 	// Items
 	private static final int ANATOMY_DIAGRAM = 1349;
 	private static final int ZOMBIE_HEAD = 1350;
@@ -50,6 +51,7 @@ public class Q00325_GrimCollector extends Quest
 	private static final int ARM_BONE = 1356;
 	private static final int THIGH_BONE = 1357;
 	private static final int COMPLETE_SKELETON = 1358;
+	
 	// Drops
 	private static final Map<Integer, List<ItemHolder>> DROPLIST = new HashMap<>();
 	static

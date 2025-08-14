@@ -276,12 +276,12 @@
 		<set name="price" val="29674485" />
 		<set name="weight" val="220" />
 		<set name="commissionItemType" val="CLOAK" />
-		<cond msgId="2453">
+		<conditions msgId="2453">
 			<player cloakStatus="true" />
-		</cond>
-		<cond>
+		</conditions>
+		<conditions>
 			<player level="80" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="darkRes">15</stat>
 			<stat type="earthRes">5</stat>
@@ -306,12 +306,12 @@
 		<set name="price" val="32971650" />
 		<set name="weight" val="220" />
 		<set name="commissionItemType" val="CLOAK" />
-		<cond msgId="2453">
+		<conditions msgId="2453">
 			<player cloakStatus="true" />
-		</cond>
-		<cond>
+		</conditions>
+		<conditions>
 			<player level="80" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="darkRes">10</stat>
 			<stat type="earthRes">10</stat>
@@ -336,12 +336,12 @@
 		<set name="price" val="29674485" />
 		<set name="weight" val="220" />
 		<set name="commissionItemType" val="CLOAK" />
-		<cond msgId="2453">
+		<conditions msgId="2453">
 			<player cloakStatus="true" />
-		</cond>
-		<cond>
+		</conditions>
+		<conditions>
 			<player level="80" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="darkRes">15</stat>
 			<stat type="earthRes">15</stat>
@@ -367,12 +367,12 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_dropable" val="false" />
-		<cond msgId="2453">
+		<conditions msgId="2453">
 			<player cloakStatus="true" />
-		</cond>
-		<cond>
+		</conditions>
+		<conditions>
 			<player level="80" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="darkRes">10</stat>
 			<stat type="earthRes">5</stat>
@@ -398,12 +398,12 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_dropable" val="false" />
-		<cond msgId="2453">
+		<conditions msgId="2453">
 			<player cloakStatus="true" />
-		</cond>
-		<cond>
+		</conditions>
+		<conditions>
 			<player level="80" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="darkRes">5</stat>
 			<stat type="earthRes">5</stat>
@@ -429,12 +429,12 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_dropable" val="false" />
-		<cond msgId="2453">
+		<conditions msgId="2453">
 			<player cloakStatus="true" />
-		</cond>
-		<cond>
+		</conditions>
+		<conditions>
 			<player level="80" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="darkRes">10</stat>
 			<stat type="earthRes">10</stat>
@@ -990,9 +990,9 @@
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">86</stat>
 			<stat type="mAtk">47</stat>
@@ -1043,9 +1043,9 @@
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<target levelRange="21;85" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="22271" level="1" /> <!-- Maestro's Key -->
 		</skills>

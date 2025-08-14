@@ -131,6 +131,7 @@ public class ExOlympiadRankingInfo extends ServerPacket
 				limited = Collections.emptyList();
 			}
 		}
+		
 		buffer.writeInt(limited.size());
 		int rank = 1;
 		for (Entry<Integer, StatSet> data : limited.stream().sorted(Entry.comparingByKey()).collect(Collectors.toList()))
@@ -156,6 +157,7 @@ public class ExOlympiadRankingInfo extends ServerPacket
 			{
 				buffer.writeInt(scope == RankingOlympiadScope.SELF ? data.getKey() : curRank);
 			}
+			
 			buffer.writeInt(Config.SERVER_ID); // server id
 			buffer.writeInt(player.getInt("level")); // level
 			buffer.writeInt(player.getInt("classId")); // class id

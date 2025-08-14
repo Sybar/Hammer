@@ -20,6 +20,18 @@
 		</effectPoint>
 		<effectRange>1400</effectRange>
 		<hitTime>2500</hitTime>
+		<itemConsumeCount>
+			<value fromLevel="1" toLevel="2">0</value>
+			<value fromLevel="1" toLevel="2" fromSubLevel="1001" toSubLevel="1001">1</value>
+			<value fromLevel="1" toLevel="2" fromSubLevel="1002" toSubLevel="1002">2</value>
+			<value fromLevel="1" toLevel="2" fromSubLevel="1003" toSubLevel="1003">3</value>
+		</itemConsumeCount>
+		<itemConsumeId>3031</itemConsumeId>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>
+			<value level="1">76</value>
+			<value level="2">89</value>
+		</magicLevel>
 		<mpConsume>
 			<value level="1">127</value>
 			<value level="2">135</value>
@@ -36,35 +48,41 @@
 			<effect name="PhysicalDamage">
 				<power>
 					<value level="1">6700</value>
+					<value fromLevel="1" toLevel="1" fromSubLevel="1001" toSubLevel="1001">6800</value>
+					<value fromLevel="1" toLevel="1" fromSubLevel="1002" toSubLevel="1002">6900</value>
+					<value fromLevel="1" toLevel="1" fromSubLevel="1003" toSubLevel="1003">7150</value>
 					<value level="2">7000</value>
+					<value fromLevel="2" toLevel="2" fromSubLevel="1001" toSubLevel="1001">7100</value>
+					<value fromLevel="2" toLevel="2" fromSubLevel="1002" toSubLevel="1002">7200</value>
+					<value fromLevel="2" toLevel="2" fromSubLevel="1003" toSubLevel="1003">7450</value>
 				</power>
 				<criticalChance>15</criticalChance>
 				<ignoreShieldDefence>true</ignoreShieldDefence>
 				<pDefMod>0.90</pDefMod>
-			</effect>
-			<effect name="PhysicalDamage">
-				<power>
-					<value level="1">6700</value>
-					<value level="2">7000</value>
-				</power>
-				<criticalChance>15</criticalChance>
-				<ignoreShieldDefence>true</ignoreShieldDefence>
-				<pDefMod>0.90</pDefMod>
+				<repeatCount>2</repeatCount>
 			</effect>
 			<effect name="CallSkill">
-				<skillId>47648</skillId> <!-- Fire Mark -->
+				<skillId>47650</skillId> <!-- Storm Mark -->
 				<skillLevel>1</skillLevel>
 			</effect>
-			<effect name="CallSkill">
+			<effect name="ComboSkill">
 				<skillId>47647</skillId> <!-- Mega-impulse -->
 				<skillLevel>1</skillLevel>
-				<targetCheckSkillId>47649,47650</targetCheckSkillId>
+				<targetCheckSkillId>47648</targetCheckSkillId>
+				<targetCheckSkillId2>47649</targetCheckSkillId2>
+				<mode>TRIPLE</mode>
 			</effect>
 			<effect name="CallSkill">
 				<skillId>47661</skillId> <!-- Arrow Break -->
 				<skillLevel>
 					<value level="1">6</value>
+					<value fromLevel="1" toLevel="1" fromSubLevel="1001" toSubLevel="1001">7</value>
+					<value fromLevel="1" toLevel="1" fromSubLevel="1002" toSubLevel="1002">8</value>
+					<value fromLevel="1" toLevel="1" fromSubLevel="1003" toSubLevel="1003">9</value>
 					<value level="2">10</value>
+					<value fromLevel="2" toLevel="2" fromSubLevel="1001" toSubLevel="1001">11</value>
+					<value fromLevel="2" toLevel="2" fromSubLevel="1002" toSubLevel="1002">12</value>
+					<value fromLevel="2" toLevel="2" fromSubLevel="1003" toSubLevel="1003">13</value>
 				</skillLevel>
 			</effect>
 		</effects>

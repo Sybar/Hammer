@@ -33,7 +33,7 @@ import org.l2jmobius.gameserver.network.SystemMessageId;
 public class LimitedSayha implements IItemHandler
 {
 	@Override
-	public boolean useItem(Playable playable, Item item, boolean forceUse)
+	public boolean onItemUse(Playable playable, Item item, boolean forceUse)
 	{
 		if (!playable.isPlayer())
 		{
@@ -66,6 +66,7 @@ public class LimitedSayha implements IItemHandler
 				break;
 			}
 		}
+		
 		if ((time > 0) && player.setLimitedSayhaGraceEndTime(System.currentTimeMillis() + time))
 		{
 			player.destroyItem(ItemProcessType.DESTROY, item, 1, player, true);
@@ -75,6 +76,7 @@ public class LimitedSayha implements IItemHandler
 			player.sendMessage("Your Limited Sayha's Grace remaining time is greater than item's.");
 			return false;
 		}
+		
 		return true;
 	}
 }

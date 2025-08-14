@@ -34,9 +34,11 @@ public class Q10904_JourneyToTheConquestWorld extends Quest
 	// NPCs
 	private static final int ENTROPY = 34599;
 	private static final int CHLOE = 34600;
+	
 	// Items
 	private static final int CONQUEST_NAME_CHANGE_COUPON = 81979;
 	private static final int CHLOE_INVITATION = 82176;
+	
 	// Misc
 	private static final int MIN_LEVEL = 110;
 	
@@ -92,6 +94,7 @@ public class Q10904_JourneyToTheConquestWorld extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -143,6 +146,7 @@ public class Q10904_JourneyToTheConquestWorld extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

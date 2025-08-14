@@ -46,6 +46,7 @@ public class Q10522_TheDarkSecretOfVarkaSilenos extends Quest
 {
 	// NPCs
 	private static final int HANSEN = 33853;
+	
 	// Monsters
 	private static final int VARKA_SILENOS_RECRUIT = 21350;
 	private static final int VARKA_SILENOS_FOOTMAN = 21351;
@@ -84,6 +85,7 @@ public class Q10522_TheDarkSecretOfVarkaSilenos extends Quest
 		{
 			return null;
 		}
+		
 		String htmltext = null;
 		switch (event)
 		{
@@ -117,6 +119,7 @@ public class Q10522_TheDarkSecretOfVarkaSilenos extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -150,6 +153,7 @@ public class Q10522_TheDarkSecretOfVarkaSilenos extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -225,6 +229,7 @@ public class Q10522_TheDarkSecretOfVarkaSilenos extends Quest
 			holder.add(new NpcLogListHolder(VARKA_BACKUP_WIZARD, false, qs.getInt("killed_" + VARKA_BACKUP_WIZARD)));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

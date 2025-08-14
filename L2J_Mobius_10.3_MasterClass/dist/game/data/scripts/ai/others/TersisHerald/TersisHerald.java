@@ -41,8 +41,10 @@ public class TersisHerald extends AbstractNpcAI
 	private static final int ANTHARAS = 29068;
 	private static final int VALAKAS = 29028;
 	private static final int LINDVIOR = 29240;
+	
 	// Skills
 	private static final SkillHolder DRAGON_BUFF = new SkillHolder(23312, 1); // Fall of the Dragon
+	
 	// Location
 	private static final Location[] SPAWNS =
 	{
@@ -56,6 +58,7 @@ public class TersisHerald extends AbstractNpcAI
 		new Location(44153, -48520, -792, 32768), // Rune
 		new Location(86971, -142772, -1336, 14324), // Schuttgart
 	};
+	
 	// Misc
 	private static final int DESPAWN_TIME = 4 * 60 * 60 * 1000; // 4h
 	private static final NpcStringId[] SPAM_MSGS =
@@ -87,6 +90,7 @@ public class TersisHerald extends AbstractNpcAI
 			npc.setTarget(player);
 			npc.doCast(DRAGON_BUFF.getSkill());
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	

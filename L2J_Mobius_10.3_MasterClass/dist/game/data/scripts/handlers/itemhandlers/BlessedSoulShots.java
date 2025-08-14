@@ -35,7 +35,6 @@ import org.l2jmobius.gameserver.model.item.instance.Item;
 import org.l2jmobius.gameserver.model.item.type.ActionType;
 import org.l2jmobius.gameserver.network.SystemMessageId;
 import org.l2jmobius.gameserver.network.serverpackets.MagicSkillUse;
-import org.l2jmobius.gameserver.util.Broadcast;
 
 /**
  * @author Mobius
@@ -43,7 +42,7 @@ import org.l2jmobius.gameserver.util.Broadcast;
 public class BlessedSoulShots implements IItemHandler
 {
 	@Override
-	public boolean useItem(Playable playable, Item item, boolean forceUse)
+	public boolean onItemUse(Playable playable, Item item, boolean forceUse)
 	{
 		if (!playable.isPlayer())
 		{
@@ -70,6 +69,7 @@ public class BlessedSoulShots implements IItemHandler
 			{
 				player.sendPacket(SystemMessageId.YOU_CANNOT_USE_SOULSHOTS);
 			}
+			
 			return false;
 		}
 		
@@ -98,6 +98,7 @@ public class BlessedSoulShots implements IItemHandler
 			{
 				player.sendPacket(SystemMessageId.YOU_DO_NOT_HAVE_ENOUGH_SOULSHOTS_FOR_THAT);
 			}
+			
 			return false;
 		}
 		
@@ -113,12 +114,13 @@ public class BlessedSoulShots implements IItemHandler
 		// Visual effect change if player has equipped Ruby level 3 or higher
 		if (player.getActiveRubyJewel() != null)
 		{
-			Broadcast.toSelfAndKnownPlayersInRadius(player, new MagicSkillUse(player, player, player.getActiveRubyJewel().getSkillId(), player.getActiveRubyJewel().getSkillLevel(), 0, 0), 600);
+			player.broadcastSkillPacket(new MagicSkillUse(player, player, player.getActiveRubyJewel().getSkillId(), player.getActiveRubyJewel().getSkillLevel(), 0, 0), player);
 		}
 		else
 		{
-			skills.forEach(holder -> Broadcast.toSelfAndKnownPlayersInRadius(player, new MagicSkillUse(player, player, holder.getSkillId(), holder.getSkillLevel(), 0, 0), 600));
+			skills.forEach(holder -> player.broadcastSkillPacket(new MagicSkillUse(player, player, holder.getSkillId(), holder.getSkillLevel(), 0, 0), player));
 		}
+		
 		return true;
 	}
 }

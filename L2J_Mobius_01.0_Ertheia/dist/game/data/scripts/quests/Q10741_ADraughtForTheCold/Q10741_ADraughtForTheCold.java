@@ -33,14 +33,17 @@ public class Q10741_ADraughtForTheCold extends Quest
 	// NPCs
 	private static final int SIVANTHE = 33951;
 	private static final int LEIRA = 33952;
+	
 	// Items
 	private static final int EMPTY_HONEY_JAR = 39527;
 	private static final int SWEET_HONEY = 39528;
 	private static final int NUTRITIOUS_MEAT = 39529;
+	
 	// Mobs
 	private static final int HONEY_BEE = 23452;
 	private static final int KIKU = 23453;
 	private static final int ROBUST_HONEY_BEE = 23484;
+	
 	// Misc
 	private static final int MIN_LEVEL = 10;
 	private static final int MAX_LEVEL = 20;
@@ -93,6 +96,7 @@ public class Q10741_ADraughtForTheCold extends Quest
 				htmltext = null;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -137,6 +141,7 @@ public class Q10741_ADraughtForTheCold extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

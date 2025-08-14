@@ -48,6 +48,7 @@ public class TradeOtherAdd extends AbstractItemPacket
 		{
 			buffer.writeInt(1);
 		}
+		
 		buffer.writeInt(1);
 		writeItem(_item, buffer);
 	}

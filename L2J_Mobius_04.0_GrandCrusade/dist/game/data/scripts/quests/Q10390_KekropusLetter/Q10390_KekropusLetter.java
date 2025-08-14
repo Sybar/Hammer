@@ -48,10 +48,12 @@ public class Q10390_KekropusLetter extends Quest
 	private static final int GOSTA = 30916;
 	private static final int ELI = 33858;
 	private static final int INVISIBLE_NPC = 19543;
+	
 	// Items
 	private static final int KEKROPUS_LETTER = 36706;
 	private static final int HAINE_SOE = 37112; // Scroll of Escape: Heine
 	private static final int ALLIGATOR_ISLAND_SOE = 37025; // Scroll of Escape: Alligator Island
+	
 	// Misc
 	private static final int MIN_LEVEL = 40;
 	private static final int MAX_LEVEL = 45;
@@ -157,6 +159,7 @@ public class Q10390_KekropusLetter extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -291,6 +294,7 @@ public class Q10390_KekropusLetter extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -342,6 +346,7 @@ public class Q10390_KekropusLetter extends Quest
 				break;
 			}
 		}
+		
 		return false;
 	}
 }

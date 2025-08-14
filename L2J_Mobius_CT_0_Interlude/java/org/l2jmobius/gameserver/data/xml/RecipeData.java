@@ -86,6 +86,7 @@ public class RecipeData implements IXmlReader
 							LOGGER.severe(getClass().getSimpleName() + ": Missing id for recipe item, skipping");
 							continue;
 						}
+						
 						id = Integer.parseInt(att.getNodeValue());
 						set.set("id", id);
 						
@@ -95,6 +96,7 @@ public class RecipeData implements IXmlReader
 							LOGGER.severe(getClass().getSimpleName() + ": Missing recipeId for recipe item id: " + id + ", skipping");
 							continue;
 						}
+						
 						set.set("recipeId", Integer.parseInt(att.getNodeValue()));
 						
 						att = attrs.getNamedItem("name");
@@ -103,6 +105,7 @@ public class RecipeData implements IXmlReader
 							LOGGER.severe(getClass().getSimpleName() + ": Missing name for recipe item id: " + id + ", skipping");
 							continue;
 						}
+						
 						set.set("recipeName", att.getNodeValue());
 						
 						att = attrs.getNamedItem("craftLevel");
@@ -111,6 +114,7 @@ public class RecipeData implements IXmlReader
 							LOGGER.severe(getClass().getSimpleName() + ": Missing level for recipe item id: " + id + ", skipping");
 							continue;
 						}
+						
 						set.set("craftLevel", Integer.parseInt(att.getNodeValue()));
 						
 						att = attrs.getNamedItem("type");
@@ -119,6 +123,7 @@ public class RecipeData implements IXmlReader
 							LOGGER.severe(getClass().getSimpleName() + ": Missing type for recipe item id: " + id + ", skipping");
 							continue;
 						}
+						
 						set.set("isDwarvenRecipe", att.getNodeValue().equalsIgnoreCase("dwarven"));
 						
 						att = attrs.getNamedItem("successRate");
@@ -127,6 +132,7 @@ public class RecipeData implements IXmlReader
 							LOGGER.severe(getClass().getSimpleName() + ": Missing successRate for recipe item id: " + id + ", skipping");
 							continue;
 						}
+						
 						set.set("successRate", Integer.parseInt(att.getNodeValue()));
 						
 						for (Node c = d.getFirstChild(); c != null; c = c.getNextSibling())
@@ -177,10 +183,12 @@ public class RecipeData implements IXmlReader
 						{
 							recipeList.addRecipe(recipePart);
 						}
+						
 						for (RecipeStatHolder recipeStatUse : recipeStatUseList)
 						{
 							recipeList.addStatUse(recipeStatUse);
 						}
+						
 						for (RecipeStatHolder recipeAltStatChange : recipeAltStatChangeList)
 						{
 							recipeList.addAltStatChange(recipeAltStatChange);
@@ -217,6 +225,7 @@ public class RecipeData implements IXmlReader
 				return find;
 			}
 		}
+		
 		return null;
 	}
 	
@@ -232,6 +241,7 @@ public class RecipeData implements IXmlReader
 		{
 			idList[i++] = rec.getRecipeId();
 		}
+		
 		return idList;
 	}
 	
@@ -250,6 +260,7 @@ public class RecipeData implements IXmlReader
 			player.setCrafting(false);
 			return null;
 		}
+		
 		return recipeList;
 	}
 	

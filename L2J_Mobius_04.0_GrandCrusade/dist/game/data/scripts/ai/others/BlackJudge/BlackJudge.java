@@ -53,6 +53,7 @@ public class BlackJudge extends AbstractNpcAI
 				htmltext = "30981-02.html";
 			}
 		}
+		
 		return htmltext;
 	}
 	

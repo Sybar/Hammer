@@ -52,10 +52,13 @@ public class Q11034_ResurrectedOne extends Quest
 	private static final int SKELETON_SCOUT = 24386;
 	private static final int SKELETON_ARCHER = 24387;
 	private static final int SKELETON_WARRIOR = 24388;
+	
 	// Items
 	private static final ItemHolder SOE_ZENATH = new ItemHolder(80680, 1);
+	
 	// Location
 	private static final Location TRAINING_GROUNDS_TELEPORT = new Location(-46169, 110937, -3808);
+	
 	// Misc
 	private static final String KILL_COUNT_VAR = "KillCount";
 	private static final int MIN_LEVEL = 27;
@@ -122,6 +125,7 @@ public class Q11034_ResurrectedOne extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -169,6 +173,7 @@ public class Q11034_ResurrectedOne extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -205,6 +210,7 @@ public class Q11034_ResurrectedOne extends Quest
 			holder.add(new NpcLogListHolder(NpcStringId.DEFEAT_SKELETONS_3.getId(), true, qs.getInt(KILL_COUNT_VAR)));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

@@ -64,6 +64,7 @@ public class ResetEnchantItemFailRewardInfo extends ServerPacket
 		{
 			enchantSupportItem = enchantItemData.getSupportItem(request.getSupportItem());
 		}
+		
 		if (enchantScroll.isBlessed() || ((request.getSupportItem() != null) && (enchantSupportItem != null) && enchantSupportItem.isBlessed()))
 		{
 			_addedItem.setEnchantLevel(0);

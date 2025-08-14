@@ -68,6 +68,7 @@ public class ExPledgeMissionInfo extends ServerPacket
 		{
 			int progress = reward.getProgress(_player);
 			int status = reward.getStatus(_player);
+			
 			// Client status:
 			// 0 - Not displayed.
 			// 1 - Locked or not available.
@@ -88,6 +89,7 @@ public class ExPledgeMissionInfo extends ServerPacket
 			else if (reward.isLevelUpMission())
 			{
 				progress = 1;
+				
 				// Dualclass and Mainclass missions should not be displayed while you are on the other class.
 				if ((_player.isDualClassActive() && reward.isMainClassOnly()) || (!_player.isDualClassActive() && reward.isDualClassOnly()))
 				{
@@ -110,6 +112,7 @@ public class ExPledgeMissionInfo extends ServerPacket
 					status = 2; // Available.
 				}
 			}
+			
 			buffer.writeInt(reward.getId());
 			buffer.writeInt(progress);
 			buffer.writeByte(status);

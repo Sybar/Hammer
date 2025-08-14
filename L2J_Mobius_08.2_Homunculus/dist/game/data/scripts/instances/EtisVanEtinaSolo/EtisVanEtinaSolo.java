@@ -52,19 +52,22 @@ public class EtisVanEtinaSolo extends AbstractInstance
 	private static final int ELIKIA = 34473;
 	private static final int SPORCHA = 34474;
 	private static final int ALIBER = 34475;
+	
 	// RB
 	private static final int ETIS_VAN_ETINA1 = 26321;
 	private static final int ETIS_VAN_ETINA2 = 26322;
 	private static final int KAIN_VAN_HALTER = 24179;
 	private static final int CAMILLE = 24178;
+	
 	// Corridor Mobs
-	//@formatter:off
+	// @formatter:off
 	private static final int[] CORRIDOR_MOBS_1 = {24173, 24174, 24175, 24176};
 	private static final int[] CORRIDOR_MOBS_2 = {24180, 24181, 24182, 24183, 24164, 24165, 24166, 24167};
 	private static final int[] CORRIDOR_MOBS_3 = {24184, 24185, 24186, 24187, 24188, 24189, 24190, 24191, 24192, 24168, 24169, 24170, 24171, 24172, 24173, 24174, 24175, 24176};
 	private static final int[] CORRIDOR_MOBS_4 = {24189, 24190, 24191, 24192, 24173, 24174, 24175, 24176};
-	//@formatter:on
+	// @formatter:on
 	private static final int PARAGON = 24193;
+	
 	// Seals
 	private static final int SEAL_OF_GNOSIS = 19677;
 	private static final int SEAL_OF_STRIFE = 19678;
@@ -73,11 +76,13 @@ public class EtisVanEtinaSolo extends AbstractInstance
 	private static final int SEAL_OF_AWAKENING = 19681;
 	private static final int SEAL_OF_CALAMITY = 19682;
 	private static final int SEAL_OF_DESTRUCTION = 19683;
+	
 	// Others
 	private static final int DOOR1 = 12230702;
 	private static final int DOOR2 = 12230704;
 	private static final int DOOR3 = 12230802;
 	private static final int DOOR4 = 12230804;
+	
 	// Skills
 	private static final SkillHolder CALL_OF_SEVEN_SIGNS = new SkillHolder(32317, 1);
 	private static final SkillHolder CALL_OF_SEVEN_SIGNS_SEAL_N = new SkillHolder(32004, 1);
@@ -209,6 +214,7 @@ public class EtisVanEtinaSolo extends AbstractInstance
 							world.getParameters().set("BARRICADE_DESTROYED", false);
 						}
 					}
+					
 					if (!mobs1 && world.getNpcsOfGroup("BARRICADES_1").isEmpty() && !world.getNpcsOfGroup("BARRICADES_2").isEmpty() && (world.getAliveNpcCount(CORRIDOR_MOBS_1) == 0))
 					{
 						world.spawnGroup("CORRIDOR_MOBS_1");
@@ -221,6 +227,7 @@ public class EtisVanEtinaSolo extends AbstractInstance
 						});
 						world.getParameters().set("CORRIDOR_MOBS_1_SPAWNED", true);
 					}
+					
 					if (!mobs2 && world.getNpcsOfGroup("BARRICADES_2").isEmpty() && !world.getNpcsOfGroup("BARRICADES_3").isEmpty() && (world.getAliveNpcCount(CORRIDOR_MOBS_2) == 0))
 					{
 						world.spawnGroup("CORRIDOR_MOBS_2");
@@ -233,6 +240,7 @@ public class EtisVanEtinaSolo extends AbstractInstance
 						});
 						world.getParameters().set("CORRIDOR_MOBS_2_SPAWNED", true);
 					}
+					
 					if (!mobs3 && world.getNpcsOfGroup("BARRICADES_3").isEmpty() && !world.getNpcsOfGroup("BARRICADES_4").isEmpty() && (world.getAliveNpcCount(CORRIDOR_MOBS_3) == 0))
 					{
 						world.spawnGroup("CORRIDOR_MOBS_3");
@@ -245,6 +253,7 @@ public class EtisVanEtinaSolo extends AbstractInstance
 						});
 						world.getParameters().set("CORRIDOR_MOBS_3_SPAWNED", true);
 					}
+					
 					if (!mobs4 && world.getNpcsOfGroup("BARRICADES_4").isEmpty() && (world.getAliveNpcCount(CORRIDOR_MOBS_4) == 0))
 					{
 						world.spawnGroup("CORRIDOR_MOBS_4");
@@ -262,8 +271,10 @@ public class EtisVanEtinaSolo extends AbstractInstance
 							world.getNpc(PARAGON).setInvul(true);
 							world.getNpc(PARAGON).getEffectList().startAbnormalVisualEffect(AbnormalVisualEffect.INVINCIBILITY);
 						}
+						
 						npc.broadcastPacket(new ExShowScreenMessage(NpcStringId.YOU_CAN_T_DEFEAT_PARAGON_WHILE_PARAGON_S_MINIONS_ARE_ALIVE, ExShowScreenMessage.TOP_CENTER, 7000, true));
 					}
+					
 					if (world.getNpcsOfGroup("BARRICADES_4").isEmpty() && (world.getAliveNpcCount(CORRIDOR_MOBS_4) == 0) && (world.getNpc(PARAGON) != null) && world.getNpc(PARAGON).isInvul())
 					{
 						world.getNpc(PARAGON).setInvul(false);
@@ -271,6 +282,7 @@ public class EtisVanEtinaSolo extends AbstractInstance
 						showOnScreenMsg(world, NpcStringId.PARAGON_IS_NO_LONGER_INVINCIBLE, ExShowScreenMessage.TOP_CENTER, 7000, true);
 						world.getNpc(LEONA_BLACKBIRD).broadcastSay(ChatType.NPC_GENERAL, NpcStringId.TODAY_IS_THE_DAY_THAT_I_WILL_ENTER);
 					}
+					
 					if ((world.getStatus() == 1) && world.getNpcsOfGroup("BARRICADES_4").isEmpty() && (world.getAliveNpcCount(PARAGON) == 0))
 					{
 						startQuestTimer("openInnerDoors", 5000, null, player);
@@ -479,6 +491,7 @@ public class EtisVanEtinaSolo extends AbstractInstance
 				break;
 			}
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	
@@ -570,30 +583,37 @@ public class EtisVanEtinaSolo extends AbstractInstance
 				{
 					cancelQuestTimer("gnosisCastTimer", npc, killer);
 				}
+				
 				if (getQuestTimer("strifeCastTimer", npc, killer) != null)
 				{
 					cancelQuestTimer("strifeCastTimer", npc, killer);
 				}
+				
 				if (getQuestTimer("avariceCastTimer", npc, killer) != null)
 				{
 					cancelQuestTimer("avariceCastTimer", npc, killer);
 				}
+				
 				if (getQuestTimer("punishmentCastTimer", npc, killer) != null)
 				{
 					cancelQuestTimer("punishmentCastTimer", npc, killer);
 				}
+				
 				if (getQuestTimer("awakeningCastTimer", npc, killer) != null)
 				{
 					cancelQuestTimer("awakeningCastTimer", npc, killer);
 				}
+				
 				if (getQuestTimer("calamityCastTimer", npc, killer) != null)
 				{
 					cancelQuestTimer("calamityCastTimer", npc, killer);
 				}
+				
 				if (getQuestTimer("destructionCastTimer", npc, killer) != null)
 				{
 					cancelQuestTimer("destructionCastTimer", npc, killer);
 				}
+				
 				closeDoor(DOOR1, world.getId());
 				closeDoor(DOOR2, world.getId());
 				closeDoor(DOOR3, world.getId());
@@ -715,6 +735,7 @@ public class EtisVanEtinaSolo extends AbstractInstance
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	

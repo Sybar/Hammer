@@ -38,6 +38,7 @@ public class Masa extends AbstractNpcAI
 {
 	// NPC
 	private static final int MASA_NPC_ID = 34257;
+	
 	// Misc
 	private static final int DETECTION_RADIUS = 450;
 	private static final Set<Player> SEEN_PLAYERS = new HashSet<>();
@@ -67,6 +68,7 @@ public class Masa extends AbstractNpcAI
 				SEEN_PLAYERS.remove(player);
 			}
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	

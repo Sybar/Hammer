@@ -31,12 +31,14 @@ public class Q10450_ADarkAmbition extends Quest
 	// NPCs
 	private static final int MATHIAS = 31340;
 	private static final int TUSKA = 33839;
+	
 	// Items
 	private static final int ELIXIR_LIFE = 30357; // Elixir of Life (R-grade)
 	private static final int ELIXIR_MANA = 30358; // Elixir of Mind (R-grade)
 	private static final int SSR = 34609; // Mysterious Soulshot (R-grade) - Event
 	private static final int BSSR = 34616; // Mysterious Blessed Spiritshot (R-grade) - Event
 	private static final int SOE = 37019; // Scroll of Escape: Gainak
+	
 	// Misc
 	private static final int MIN_LEVEL = 99;
 	
@@ -86,12 +88,14 @@ public class Q10450_ADarkAmbition extends Quest
 					{
 						addExpAndSp(player, 15_436_575, 3_704);
 					}
+					
 					qs.exitQuest(false, true);
 					htmltext = event;
 				}
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -125,6 +129,7 @@ public class Q10450_ADarkAmbition extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

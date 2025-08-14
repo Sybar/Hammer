@@ -32,12 +32,14 @@ public class Q00001_LettersOfLove extends Quest
 	private static final int DARIN = 30048;
 	private static final int ROXXY = 30006;
 	private static final int BAULRO = 30033;
+	
 	// Items
 	private static final int DARINS_LETTER = 687;
 	private static final int ROXXYS_KERCHIEF = 688;
 	private static final int DARINS_RECEIPT = 1079;
 	private static final int BAULROS_POTION = 1080;
 	private static final int NECKLACE_OF_KNOWLEDGE = 49039;
+	
 	// Misc
 	private static final int MIN_LEVEL = 2;
 	private static final int MAX_LEVEL = 5;
@@ -81,6 +83,7 @@ public class Q00001_LettersOfLove extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -228,6 +231,7 @@ public class Q00001_LettersOfLove extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

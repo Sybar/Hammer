@@ -43,6 +43,7 @@ public class Cemetery extends AbstractNpcAI
 	private static final int TAIK_ORC_SUPPLY_OFFICER = 20669;
 	private static final int GRAVE_GUARD = 20668;
 	private static final int TAIK_ORC_WATCHMAN = 20666;
+	
 	// Guard
 	private static final int GRAVE_WARDEN = 22128;
 	

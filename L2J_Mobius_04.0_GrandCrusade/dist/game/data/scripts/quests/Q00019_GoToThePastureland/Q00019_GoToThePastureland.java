@@ -31,9 +31,11 @@ public class Q00019_GoToThePastureland extends Quest
 	// NPCs
 	private static final int VLADIMIR = 31302;
 	private static final int TUNATUN = 31537;
+	
 	// Items
 	private static final int VEAL = 15532;
 	private static final int YOUNG_WILD_BEAST_MEAT = 7547;
+	
 	// Misc
 	private static final int MIN_LEVEL = 82;
 	
@@ -82,6 +84,7 @@ public class Q00019_GoToThePastureland extends Quest
 				htmltext = "31537-03.html";
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -115,6 +118,7 @@ public class Q00019_GoToThePastureland extends Quest
 		{
 			htmltext = "31537-01.html";
 		}
+		
 		return htmltext;
 	}
 }

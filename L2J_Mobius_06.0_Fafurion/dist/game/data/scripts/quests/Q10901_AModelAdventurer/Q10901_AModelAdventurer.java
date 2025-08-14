@@ -38,8 +38,10 @@ public class Q10901_AModelAdventurer extends Quest
 {
 	// NPCs
 	private static final int PENNY = 34413;
+	
 	// Misc
 	private static final int MIN_LEVEL = 100;
+	
 	// Rewards
 	private static final int RUNE_STONE = 39738; // Reward Item: Rune Stone
 	
@@ -87,6 +89,7 @@ public class Q10901_AModelAdventurer extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -117,6 +120,7 @@ public class Q10901_AModelAdventurer extends Quest
 						htmltext = "34413-05.html";
 					}
 				}
+				
 				if (qs.isCond(2))
 				{
 					htmltext = "34413-06.html";
@@ -129,6 +133,7 @@ public class Q10901_AModelAdventurer extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

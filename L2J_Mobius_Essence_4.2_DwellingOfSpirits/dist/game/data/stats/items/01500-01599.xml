@@ -452,9 +452,9 @@
 		<set name="is_event_restricted" val="true" />
 		<set name="commissionItemType" val="POTION" />
 		<set name="is_sellable" val="false" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2037" level="1" /> <!-- Major Healing Potion -->
 		</skills>
@@ -476,9 +476,9 @@
 		<set name="is_event_restricted" val="true" />
 		<set name="commissionItemType" val="POTION" />
 		<set name="is_sellable" val="false" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2038" level="1" /> <!-- High-grade HP Recovery Potion -->
 		</skills>

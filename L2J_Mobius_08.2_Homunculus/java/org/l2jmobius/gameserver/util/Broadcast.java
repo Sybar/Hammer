@@ -102,11 +102,13 @@ public class Broadcast
 							{
 								rc.addRelation(pet, relation, isAutoAttackable);
 							}
+							
 							if (creature.hasServitors())
 							{
 								creature.getServitors().values().forEach(s -> rc.addRelation(s, relation, isAutoAttackable));
 							}
 						}
+						
 						player.sendPacket(rc);
 						creature.getKnownRelations().put(player.getObjectId(), new RelationCache(relation, isAutoAttackable));
 					}

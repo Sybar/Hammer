@@ -58,18 +58,23 @@ public class Fafurion extends AbstractNpcAI
 	private static final int EMERALD_DRAGON = 29368;
 	private static final int BLUE_WATER_DRAGON = 29369;
 	private static final int FAFURION_DEFENDER = 29370;
+	
 	// Item
 	private static final int FONDUS_STONE = 80322;
+	
 	// Zone
 	private static final NoRestartZone FAFURION_ZONE = ZoneManager.getInstance().getZoneById(85002, NoRestartZone.class);
+	
 	// Locations
 	private static final Location RAID_ENTER_LOC = new Location(180059, 212896, -14727);
 	private static final Location FAFURION_SPAWN_LOC = new Location(180712, 210664, -14823, 22146);
+	
 	// Status
 	private static final int ALIVE = 0;
 	private static final int WAITING = 1;
 	private static final int FIGHTING = 2;
 	private static final int DEAD = 3;
+	
 	// Misc
 	private static final int MAX_PEOPLE = 200;
 	private static final int RAID_DURATION = 5; // hours
@@ -82,6 +87,7 @@ public class Fafurion extends AbstractNpcAI
 		addTalkId(HEART_OF_TSUNAMI);
 		addFirstTalkId(HEART_OF_TSUNAMI);
 		addKillId(FAFURION_STAGE_1, FAFURION_STAGE_2, FAFURION_STAGE_3, FAFURION_STAGE_4, FAFURION_STAGE_5, FAFURION_STAGE_6, FAFURION_STAGE_7);
+		
 		// Unlock
 		final StatSet info = GrandBossManager.getInstance().getStatSet(FAFURION_GRANDBOSS_ID);
 		final int status = GrandBossManager.getInstance().getStatus(FAFURION_GRANDBOSS_ID);
@@ -181,6 +187,7 @@ public class Fafurion extends AbstractNpcAI
 							break;
 						}
 					}
+					
 					startQuestTimer("resetRaid", RAID_DURATION * 60 * 60 * 1000, _fafurion, null);
 				}
 				break;
@@ -194,16 +201,19 @@ public class Fafurion extends AbstractNpcAI
 					{
 						plr.sendPacket(new ExShowScreenMessage(NpcStringId.EXCEEDED_THE_FAFURION_S_NEST_RAID_TIME_LIMIT, ExShowScreenMessage.TOP_CENTER, 10000, true));
 					}
+					
 					GrandBossManager.getInstance().setStatus(FAFURION_GRANDBOSS_ID, ALIVE);
 					FAFURION_ZONE.oustAllPlayers();
 					if (npc != null)
 					{
 						npc.deleteMe();
 					}
+					
 					if (_stage > 1)
 					{
 						_stage--;
 					}
+					
 					GlobalVariablesManager.getInstance().set("Fafurion_Stage", _stage);
 				}
 				break;
@@ -221,14 +231,17 @@ public class Fafurion extends AbstractNpcAI
 					{
 						return "34488-02.html";
 					}
+					
 					if (FAFURION_ZONE.getPlayersInside().size() >= MAX_PEOPLE)
 					{
 						return "34488-03.html";
 					}
+					
 					if (!player.isInParty())
 					{
 						return "34488-01.html";
 					}
+					
 					final Party party = player.getParty();
 					final boolean isInCC = party.isInCommandChannel();
 					final List<Player> members = (isInCC) ? party.getCommandChannel().getMembers() : party.getMembers();
@@ -237,14 +250,17 @@ public class Fafurion extends AbstractNpcAI
 					{
 						return "34488-02.html";
 					}
+					
 					if ((members.size() < Config.FAFURION_MIN_PLAYERS) || (members.size() > Config.FAFURION_MAX_PLAYERS))
 					{
 						return "34488-01.html";
 					}
+					
 					if (members.size() > (MAX_PEOPLE - FAFURION_ZONE.getPlayersInside().size()))
 					{
 						return "34488-03.html";
 					}
+					
 					for (Player member : members)
 					{
 						if (member.getLevel() < Config.FAFURION_MIN_PLAYER_LEVEL)
@@ -252,12 +268,14 @@ public class Fafurion extends AbstractNpcAI
 							return "34488-01.html";
 						}
 					}
+					
 					if (!hasQuestItems(player, FONDUS_STONE))
 					{
 						// TODO: Retail message.
 						player.sendMessage("You need to own a fondus stone.");
 						return null;
 					}
+					
 					takeItems(player, FONDUS_STONE, 1);
 					for (Player member : members)
 					{
@@ -267,6 +285,7 @@ public class Fafurion extends AbstractNpcAI
 						}
 					}
 				}
+				
 				if (status == ALIVE)
 				{
 					GrandBossManager.getInstance().setStatus(FAFURION_GRANDBOSS_ID, WAITING);
@@ -335,6 +354,7 @@ public class Fafurion extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -524,6 +544,7 @@ public class Fafurion extends AbstractNpcAI
 			{
 				_stage++;
 			}
+			
 			GlobalVariablesManager.getInstance().set("Fafurion_Stage", _stage);
 		}
 	}

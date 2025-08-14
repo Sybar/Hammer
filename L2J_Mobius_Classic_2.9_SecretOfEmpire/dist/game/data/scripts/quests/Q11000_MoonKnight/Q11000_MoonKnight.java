@@ -51,10 +51,12 @@ public class Q11000_MoonKnight extends Quest
 	private static final int NETI = 30425;
 	private static final int ROLENTO = 30437;
 	private static final int GUDZ = 30941;
+	
 	// Monsters
 	private static final int OL_MAHUM_THIEF = 27201;
 	private static final int TUREK_ORC_COMMANDER = 27202;
 	private static final int TUREK_ORC_INVADER = 27203;
+	
 	// Rewards
 	private static final int MOON_HELMET = 7850;
 	private static final int MOON_ARMOR = 7851;
@@ -66,6 +68,7 @@ public class Q11000_MoonKnight extends Quest
 	private static final int MOON_CAPE = 7857;
 	private static final int MOON_SILK_GLOVES = 7858;
 	private static final int MOON_SANDALS = 7859;
+	
 	// Items
 	private static final int MOLD = 49555;
 	private static final int AMORA_RECEIPT = 49556;
@@ -74,6 +77,7 @@ public class Q11000_MoonKnight extends Quest
 	private static final int TUREK_ORC_INVADER_HEAD = 49561;
 	private static final int ROLENTO_BAG = 49559;
 	private static final int IRON_SCALE_GUILD_CERTIFICATE = 49560;
+	
 	// Misc
 	private static final int QUESTION_MARK_ID = 18;
 	private static final int MIN_LEVEL = 25;
@@ -205,6 +209,7 @@ public class Q11000_MoonKnight extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -413,6 +418,7 @@ public class Q11000_MoonKnight extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

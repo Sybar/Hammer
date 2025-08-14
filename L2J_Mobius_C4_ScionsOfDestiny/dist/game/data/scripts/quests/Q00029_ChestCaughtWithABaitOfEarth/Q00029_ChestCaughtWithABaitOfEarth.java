@@ -33,6 +33,7 @@ public class Q00029_ChestCaughtWithABaitOfEarth extends Quest
 	// NPCs
 	private static final int WILLIE = 31574;
 	private static final int ANABEL = 30909;
+	
 	// Items
 	private static final int SMALL_PURPLE_TREASURE_CHEST = 6507;
 	private static final int SMALL_GLASS_BOX = 7627;

@@ -39,6 +39,7 @@ public class SeaOfSporesDefender extends AbstractNpcAI
 	// NPCs
 	private static final int FUNGUS_DEFENDER = 24649;
 	private static final int FUNGUS = 24650;
+	
 	// Misc
 	private static final Map<Npc, Long> TALK_COOLDOWN = new ConcurrentHashMap<>();
 	private static final long COOLDOWN_TIME = 60000; // 1 minute

@@ -29,6 +29,7 @@ import org.l2jmobius.gameserver.handler.IActionShiftHandler;
 import org.l2jmobius.gameserver.managers.WalkingManager;
 import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.WorldObject;
+import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.enums.creature.InstanceType;
 import org.l2jmobius.gameserver.network.serverpackets.NpcHtmlMessage;
@@ -51,7 +52,7 @@ public class NpcActionShift implements IActionShiftHandler
 	 * <li>Client packet : Action</li>
 	 */
 	@Override
-	public boolean action(Player player, WorldObject target, boolean interact)
+	public boolean onAction(Player player, WorldObject target, boolean interact)
 	{
 		// Check if the Player is a GM
 		if (player.isGM())
@@ -115,6 +116,7 @@ public class NpcActionShift implements IActionShiftHandler
 					final Location spawnLoc = target.asNpc().getSpawn().getSpawnLocation() != null ? target.asNpc().getSpawn().getSpawnLocation() : target.asNpc().getSpawn();
 					html.replace("%spawn%", spawnLoc.getX() + " " + spawnLoc.getY() + " " + spawnLoc.getZ());
 				}
+				
 				if (target.asNpc().getSpawn().getRespawnMinDelay() == 0)
 				{
 					html.replace("%resp%", "None");
@@ -171,6 +173,7 @@ public class NpcActionShift implements IActionShiftHandler
 			{
 				html.replace("%route%", "");
 			}
+			
 			player.sendPacket(html);
 		}
 		else if (Config.ALT_GAME_VIEWNPC)
@@ -179,9 +182,17 @@ public class NpcActionShift implements IActionShiftHandler
 			{
 				return false;
 			}
+			
 			player.setTarget(target);
-			NpcViewMod.sendNpcView(player, target.asNpc());
+			
+			// Only show view if NPC is alive.
+			final Npc npc = target.asNpc();
+			if ((npc != null) && !npc.isDead())
+			{
+				NpcViewMod.sendNpcView(player, npc);
+			}
 		}
+		
 		return true;
 	}
 	

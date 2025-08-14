@@ -24,7 +24,6 @@ import org.l2jmobius.gameserver.managers.InstanceManager;
 import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.actor.enums.player.PlayerCondOverride;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
 import org.l2jmobius.gameserver.model.instancezone.InstanceReenterType;
 import org.l2jmobius.gameserver.model.instancezone.InstanceTemplate;
@@ -142,6 +141,7 @@ public abstract class AbstractInstance extends AbstractNpcAI
 			
 			// Get instance enter scope
 			final List<Player> enterGroup = template.getEnterGroup(player);
+			
 			// When nobody can enter
 			if (enterGroup == null)
 			{
@@ -150,7 +150,7 @@ public abstract class AbstractInstance extends AbstractNpcAI
 			}
 			
 			// Validate conditions for group
-			if (!player.canOverrideCond(PlayerCondOverride.INSTANCE_CONDITIONS) && (!template.validateConditions(enterGroup, npc, this::showHtmlFile) || !validateConditions(enterGroup, npc, template)))
+			if (!player.isGM() && (!template.validateConditions(enterGroup, npc, this::showHtmlFile) || !validateConditions(enterGroup, npc, template)))
 			{
 				return;
 			}

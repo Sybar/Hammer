@@ -76,6 +76,7 @@ public class TrainingZone extends AbstractInstance
 	private final SkillHolder BUFFS[] =
 	{
 		null,
+		
 		// Attack Buff
 		new SkillHolder(48490, 1),
 		new SkillHolder(48491, 1),
@@ -157,6 +158,7 @@ public class TrainingZone extends AbstractInstance
 			enterInstance(player, npc, huntingZone.getInstanceId());
 			
 		}
+		
 		if (event.startsWith("npc_talk"))
 		{
 			final Instance world = npc.getInstanceWorld();
@@ -167,6 +169,7 @@ public class TrainingZone extends AbstractInstance
 			}
 			
 		}
+		
 		if (npc != null)
 		{
 			final Instance instance = npc.getInstanceWorld();
@@ -223,6 +226,7 @@ public class TrainingZone extends AbstractInstance
 					{
 						instance.despawnGroup("Mobs_" + i);
 					}
+					
 					instance.spawnGroup("Mobs_" + index);
 					
 					return "34307-1.html";
@@ -277,6 +281,7 @@ public class TrainingZone extends AbstractInstance
 				instance.broadcastPacket(new ExShowScreenMessage(BOSS_SPAWN_ANNOUNCEMENT[index], 2, 10000, true));
 			}
 		}
+		
 		return null;
 	}
 	
@@ -331,13 +336,16 @@ public class TrainingZone extends AbstractInstance
 				{
 					return "34308-no_zone.html";
 				}
+				
 				if (npc.calculateDistance3D(START_LOCATION) < 500)
 				{
 					return "34308-outside.html";
 				}
+				
 				return "34308-inside.html";
 			}
 		}
+		
 		return npc.getId() + ".html";
 	}
 	

@@ -265,6 +265,7 @@ public class Message
 				break;
 			}
 		}
+		
 		return _senderName;
 	}
 	
@@ -278,6 +279,7 @@ public class Message
 				_receiverName = "";
 			}
 		}
+		
 		return _receiverName;
 	}
 	

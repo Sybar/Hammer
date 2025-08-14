@@ -65,10 +65,15 @@ public class RequestRelicsSummon extends ClientPacket
 			return;
 		}
 		
+		if (!player.destroyItemByItemId(ItemProcessType.FEE, _couponId, 1, player, true))
+		{
+			player.sendPacket(SystemMessageId.FAILURE_ALL_MATERIALS_ARE_LOST);
+			return;
+		}
+		
 		player.addRequest(new RelicSummonRequest(player));
 		
 		final int relicSummonCount = Config.ELEVEN_SUMMON_COUNT_COUPONS.contains(_couponId) ? 11 : 1;
 		player.sendPacket(new ExRelicsSummonResult(player, _couponId, relicSummonCount));
-		player.destroyItem(ItemProcessType.FEE, couponItem, 1, player, true);
 	}
 }

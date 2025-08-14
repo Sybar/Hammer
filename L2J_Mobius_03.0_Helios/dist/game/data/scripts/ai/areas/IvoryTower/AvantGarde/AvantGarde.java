@@ -102,6 +102,7 @@ public class AvantGarde extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

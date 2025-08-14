@@ -51,7 +51,7 @@ public enum ClientPackets
 	CHARACTER_CREATE(0x0C, CharacterCreate::new, ConnectionState.AUTHENTICATED),
 	CHARACTER_DELETE(0x0D, CharacterDelete::new, ConnectionState.AUTHENTICATED),
 	PROTOCOL_VERSION(0x0E, ProtocolVersion::new, ConnectionState.CONNECTED),
-	MOVE_BACKWARD_TO_LOCATION(0x0F, MoveBackwardToLocation::new, ConnectionState.IN_GAME),
+	MOVE_TO_LOCATION(0x0F, MoveToLocation::new, ConnectionState.IN_GAME),
 	ENTER_WORLD(0x11, EnterWorld::new, ConnectionState.ENTERING),
 	CHARACTER_SELECT(0x12, CharacterSelect::new, ConnectionState.AUTHENTICATED),
 	NEW_CHARACTER(0x13, NewCharacter::new, ConnectionState.AUTHENTICATED),
@@ -99,7 +99,7 @@ public enum ClientPackets
 	SAY2(0x49, Say2::new, ConnectionState.IN_GAME),
 	REQUEST_PLEDGE_MEMBER_LIST(0x4D, RequestPledgeMemberList::new, ConnectionState.IN_GAME),
 	REQUEST_MAGIC_LIST(0x4F, null, ConnectionState.IN_GAME),
-	REQUEST_SKILL_LIST(0x50, RequestSkillList::new, ConnectionState.IN_GAME), 
+	REQUEST_SKILL_LIST(0x50, RequestSkillList::new, ConnectionState.IN_GAME),
 	MOVE_WITH_DELTA(0x52, MoveWithDelta::new, ConnectionState.IN_GAME),
 	REQUEST_GET_ON_VEHICLE(0x53, RequestGetOnVehicle::new, ConnectionState.IN_GAME),
 	REQUEST_GET_OFF_VEHICLE(0x54, RequestGetOffVehicle::new, ConnectionState.IN_GAME),
@@ -250,7 +250,7 @@ public enum ClientPackets
 			if (packet != null)
 			{
 				final String name = packet.getClass().getSimpleName();
-				if (!Config.ALT_DEV_EXCLUDED_PACKETS.contains(name))
+				if (!Config.EXCLUDED_DEBUG_PACKETS.contains(name))
 				{
 					PacketLogger.info("[C] " + name);
 				}
@@ -260,6 +260,7 @@ public enum ClientPackets
 				PacketLogger.info("[C] 0x" + Integer.toHexString(_packetId).toUpperCase());
 			}
 		}
+		
 		return packet;
 	}
 	

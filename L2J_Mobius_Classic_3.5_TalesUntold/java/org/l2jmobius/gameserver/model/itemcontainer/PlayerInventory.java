@@ -178,6 +178,7 @@ public class PlayerInventory extends Inventory
 				result.add(item);
 			}
 		}
+		
 		return result;
 	}
 	
@@ -197,6 +198,7 @@ public class PlayerInventory extends Inventory
 				result.add(item);
 			}
 		}
+		
 		return result;
 	}
 	
@@ -227,6 +229,7 @@ public class PlayerInventory extends Inventory
 				result.add(item);
 			}
 		}
+		
 		return result;
 	}
 	
@@ -253,8 +256,10 @@ public class PlayerInventory extends Inventory
 				}
 				continue;
 			}
+			
 			result.add(item);
 		}
+		
 		return result;
 	}
 	
@@ -277,6 +282,7 @@ public class PlayerInventory extends Inventory
 				}
 			}
 		}
+		
 		return result;
 	}
 	
@@ -302,6 +308,7 @@ public class PlayerInventory extends Inventory
 				break;
 			}
 		}
+		
 		if (notAllEquipped)
 		{
 			final Item adjItem = getItemByItemId(item.getItem().getId());
@@ -363,6 +370,7 @@ public class PlayerInventory extends Inventory
 		{
 			return destroyItemByItemId(process, ADENA_ID, count, actor, reference) != null;
 		}
+		
 		return false;
 	}
 	
@@ -380,6 +388,7 @@ public class PlayerInventory extends Inventory
 		{
 			return destroyItemByItemId(process, BEAUTY_TICKET_ID, count, actor, reference) != null;
 		}
+		
 		return false;
 	}
 	
@@ -460,6 +469,7 @@ public class PlayerInventory extends Inventory
 				}
 			}
 		}
+		
 		return addedItem;
 	}
 	
@@ -521,6 +531,7 @@ public class PlayerInventory extends Inventory
 				{
 					clan.addExp((int) xpCount);
 				}
+				
 				ThreadPool.schedule(() -> actor.destroyItemByItemId(ItemProcessType.FEE, CLAN_EXP, xpCount, actor, false), 100);
 				return item;
 			}
@@ -539,6 +550,7 @@ public class PlayerInventory extends Inventory
 					{
 						playerIU.addNewItem(item);
 					}
+					
 					actor.sendInventoryUpdate(playerIU);
 					
 					// Adena UI update.
@@ -560,6 +572,7 @@ public class PlayerInventory extends Inventory
 				}
 			}
 		}
+		
 		return item;
 	}
 	
@@ -582,14 +595,17 @@ public class PlayerInventory extends Inventory
 		{
 			_adena = null;
 		}
+		
 		if ((_silverCoin != null) && ((_silverCoin.getCount() <= 0) || (_silverCoin.getOwnerId() != getOwnerId())))
 		{
 			_silverCoin = null;
 		}
+		
 		if ((_goldCoin != null) && ((_goldCoin.getCount() <= 0) || (_goldCoin.getOwnerId() != getOwnerId())))
 		{
 			_goldCoin = null;
 		}
+		
 		if ((_adena != null) && ((_adena.getCount() <= 0) || (_adena.getOwnerId() != getOwnerId())))
 		{
 			_adena = null;
@@ -617,6 +633,7 @@ public class PlayerInventory extends Inventory
 		{
 			actor.sendItemList();
 		}
+		
 		return detachedItem;
 	}
 	
@@ -656,6 +673,7 @@ public class PlayerInventory extends Inventory
 		{
 			_silverCoin = null;
 		}
+		
 		if ((_goldCoin != null) && (_goldCoin.getCount() <= 0))
 		{
 			_goldCoin = null;
@@ -783,10 +801,12 @@ public class PlayerInventory extends Inventory
 		{
 			_adena = null;
 		}
+		
 		if ((_silverCoin != null) && ((_silverCoin.getCount() <= 0) || (_silverCoin.getOwnerId() != getOwnerId())))
 		{
 			_silverCoin = null;
 		}
+		
 		if ((_goldCoin != null) && ((_goldCoin.getCount() <= 0) || (_goldCoin.getOwnerId() != getOwnerId())))
 		{
 			_goldCoin = null;
@@ -986,6 +1006,7 @@ public class PlayerInventory extends Inventory
 		{
 			LOGGER.log(Level.WARNING, "Could not restore inventory: " + e.getMessage(), e);
 		}
+		
 		return paperdoll;
 	}
 	
@@ -1008,6 +1029,7 @@ public class PlayerInventory extends Inventory
 				{
 					requiredSlots++;
 				}
+				
 				lootWeight += item.getWeight();
 			}
 		}
@@ -1021,6 +1043,7 @@ public class PlayerInventory extends Inventory
 				_owner.sendPacket(SystemMessageId.WEIGHT_AND_VOLUME_LIMIT_HAVE_BEEN_EXCEEDED_THAT_SKILL_IS_CURRENTLY_UNAVAILABLE);
 			}
 		}
+		
 		return inventoryStatusOK;
 	}
 	
@@ -1036,6 +1059,7 @@ public class PlayerInventory extends Inventory
 		{
 			slots++;
 		}
+		
 		return validateCapacity(slots, item.isQuestItem());
 	}
 	
@@ -1052,6 +1076,7 @@ public class PlayerInventory extends Inventory
 		{
 			slots++;
 		}
+		
 		return validateCapacity(slots, ItemData.getInstance().getTemplate(itemId).isQuestItem());
 	}
 	
@@ -1074,6 +1099,7 @@ public class PlayerInventory extends Inventory
 		{
 			return true;
 		}
+		
 		return ((_totalWeight + weight) <= _owner.getMaxLoad());
 	}
 	
@@ -1160,6 +1186,7 @@ public class PlayerInventory extends Inventory
 							return true;
 						}
 					}
+					
 					return false;
 				}
 				case BLACKLIST:
@@ -1171,10 +1198,12 @@ public class PlayerInventory extends Inventory
 							return false;
 						}
 					}
+					
 					return true;
 				}
 			}
 		}
+		
 		return true;
 	}
 	
@@ -1207,10 +1236,12 @@ public class PlayerInventory extends Inventory
 						{
 							_owner.removeSkill(skill, false, skill.isPassive());
 						}
+						
 						for (Skill skill : agathionSkills.getSubSkills(item.getEnchantLevel()))
 						{
 							_owner.removeSkill(skill, false, skill.isPassive());
 						}
+						
 						// Add new skills.
 						if (item.getLocationSlot() == Inventory.PAPERDOLL_AGATHION1)
 						{
@@ -1220,15 +1251,18 @@ public class PlayerInventory extends Inventory
 								{
 									continue;
 								}
+								
 								_owner.addSkill(skill, false);
 							}
 						}
+						
 						for (Skill skill : agathionSkills.getSubSkills(item.getEnchantLevel()))
 						{
 							if (skill.isPassive() && !skill.checkConditions(SkillConditionScope.PASSIVE, _owner, _owner))
 							{
 								continue;
 							}
+							
 							_owner.addSkill(skill, false);
 						}
 					}
@@ -1293,6 +1327,7 @@ public class PlayerInventory extends Inventory
 					{
 						item.changeCount(ItemProcessType.NONE, -1, creator, reference);
 					}
+					
 					item.setLastChange(Item.MODIFIED);
 					refreshWeight();
 					iu.addModifiedItem(item);
@@ -1343,6 +1378,7 @@ public class PlayerInventory extends Inventory
 				}
 			}
 		}
+		
 		return false;
 	}
 }

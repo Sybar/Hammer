@@ -76,6 +76,7 @@ public class ConditionPlayerCanSummonSiegeGolem extends Condition
 			player.sendPacket(SystemMessageId.INVALID_TARGET);
 			canSummonSiegeGolem = false;
 		}
+		
 		return _value == canSummonSiegeGolem;
 	}
 }

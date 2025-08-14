@@ -54,23 +54,26 @@ public class CastleTeleporter extends AbstractNpcAI
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
-		if (event.equalsIgnoreCase("teleporter-03.html"))
+		if (event.equalsIgnoreCase("TELEPORT_START"))
 		{
 			if (npc.isScriptValue(0))
 			{
 				final Siege siege = npc.getCastle().getSiege();
 				final int time = (siege.isInProgress() && (siege.getControlTowerCount() == 0)) ? 480000 : 30000;
-				startQuestTimer("teleport", time, npc, null);
+				startQuestTimer("TELEPORT_EXECUTE", time, npc, null);
 				npc.setScriptValue(1);
 			}
-			return event;
+			
+			return "teleporter-03.html";
 		}
-		if (event.equalsIgnoreCase("teleport"))
+		
+		if (event.equalsIgnoreCase("TELEPORT_EXECUTE"))
 		{
 			final int region = MapRegionManager.getInstance().getMapRegionLocId(npc.getX(), npc.getY());
 			final NpcSay msg = new NpcSay(npc, ChatType.NPC_SHOUT, "The defenders of " + npc.getCastle().getName() + " castle will be teleported to the inner castle.");
 			npc.getCastle().oustAllPlayers();
 			npc.setScriptValue(0);
+			
 			// TODO: Is it possible to get all the players for that region, instead of all players?
 			for (Player pl : World.getInstance().getPlayers())
 			{
@@ -80,6 +83,7 @@ public class CastleTeleporter extends AbstractNpcAI
 				}
 			}
 		}
+		
 		return null;
 	}
 	

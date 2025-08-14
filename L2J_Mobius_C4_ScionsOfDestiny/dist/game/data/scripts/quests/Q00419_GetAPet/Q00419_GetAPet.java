@@ -38,6 +38,7 @@ public class Q00419_GetAPet extends Quest
 	private static final int BELLA = 30256;
 	private static final int METTY = 30072;
 	private static final int ELLIE = 30091;
+	
 	// Items
 	private static final int ANIMAL_LOVER_LIST = 3417;
 	private static final int ANIMAL_SLAYER_LIST_1 = 3418;
@@ -50,8 +51,10 @@ public class Q00419_GetAPet extends Quest
 	private static final int BLOODY_NAIL = 3425;
 	private static final int BLOODY_KASHA_FANG = 3426;
 	private static final int BLOODY_TARANTULA_NAIL = 3427;
+	
 	// Reward
 	private static final int WOLF_COLLAR = 2375;
+	
 	// Droplist
 	private static final Map<Integer, int[]> DROPLIST = new HashMap<>();
 	static
@@ -275,6 +278,7 @@ public class Q00419_GetAPet extends Quest
 				questions[index] = questions[questions.length - 1];
 				st.set("quiz", String.join(" ", Arrays.copyOf(questions, questions.length - 1)));
 			}
+			
 			return "30731-" + question + ".htm";
 		}
 		

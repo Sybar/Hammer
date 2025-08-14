@@ -72,6 +72,7 @@ public class RequestPledgeBonusReward extends ClientPacket
 				{
 					skillReward.getSkill().activateSkill(player, player);
 				}
+				
 				member.setRewardClaimed(type);
 			}
 			else

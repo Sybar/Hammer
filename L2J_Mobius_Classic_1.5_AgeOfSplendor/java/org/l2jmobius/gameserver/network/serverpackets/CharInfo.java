@@ -42,7 +42,7 @@ import org.l2jmobius.gameserver.network.ServerPackets;
  */
 public class CharInfo extends ServerPacket
 {
-	private static final int[] PAPERDOLL_ORDER = new int[]
+	private static final int[] PAPERDOLL_ORDER =
 	{
 		Inventory.PAPERDOLL_UNDER,
 		Inventory.PAPERDOLL_HEAD,
@@ -98,6 +98,7 @@ public class CharInfo extends ServerPacket
 			_y = _player.getY();
 			_z = _player.getZ();
 		}
+		
 		_heading = _player.getHeading();
 		_mAtkSpd = _player.getMAtkSpd();
 		_pAtkSpd = _player.getPAtkSpd();
@@ -244,6 +245,7 @@ public class CharInfo extends ServerPacket
 		{
 			buffer.writeShort(abnormalVisualEffect.getClientId()); // Confirmed
 		}
+		
 		if (_gmSeeInvis)
 		{
 			buffer.writeShort(AbnormalVisualEffect.STEALTH.getClientId());

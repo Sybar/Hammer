@@ -41,17 +41,20 @@ public class Q11008_PreparationForDungeon extends Quest
 	// NPCs
 	private static final int KENDELL = 30218;
 	private static final int STARDEN = 30220;
+	
 	// Items
 	private static final int ORCS_BANDAGE = 90223;
 	private static final int DRYADS_CRIMSON_HERB = 90224;
 	private static final int SPIDER_VENOM = 90225;
 	private static final int NOTE_ABOUT_REQUIRED_INGREDIENTS = 90222; // Need finish htm
+	
 	// Rewards
 	private static final int WARRIORS_ARMOR = 90306;
 	private static final int WARRIORS_GAITERS = 90307;
 	private static final int MEDIUMS_TUNIC = 90308;
 	private static final int MEDIUMS_STOCKINGS = 90309;
 	private static final int EARRING_NOVICE = 29486;
+	
 	// Monsters
 	private static final int KABOO_ORC_WARRIOR_CAPTAIN = 20472;
 	private static final int KABOO_ORC_WARRIOR_LIEUTENANT = 20473;
@@ -61,6 +64,7 @@ public class Q11008_PreparationForDungeon extends Quest
 	private static final int HOOK_SPIDER = 20308;
 	private static final int CRIMSON_SPIDER = 20460;
 	private static final int PINCER_SPIDER = 20466;
+	
 	// Misc
 	private static final int MIN_LEVEL = 11;
 	private static final int MAX_LEVEL = 20;
@@ -131,6 +135,7 @@ public class Q11008_PreparationForDungeon extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -191,6 +196,7 @@ public class Q11008_PreparationForDungeon extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

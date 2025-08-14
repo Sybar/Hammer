@@ -131,6 +131,7 @@ public class OlympiadGameTask implements Runnable
 			_needAnnounce = false;
 			return true;
 		}
+		
 		return false;
 	}
 	
@@ -327,6 +328,7 @@ public class OlympiadGameTask implements Runnable
 					return;
 				}
 			}
+			
 			ThreadPool.schedule(this, delay * 1000);
 		}
 		catch (Exception e)
@@ -366,6 +368,7 @@ public class OlympiadGameTask implements Runnable
 			_countDown = time;
 			return delay;
 		}
+		
 		// should not happens
 		_countDown = -1;
 		return 1;
@@ -405,6 +408,7 @@ public class OlympiadGameTask implements Runnable
 		{
 			LOGGER.log(Level.WARNING, e.getMessage(), e);
 		}
+		
 		return false;
 	}
 	
@@ -434,6 +438,7 @@ public class OlympiadGameTask implements Runnable
 		{
 			LOGGER.log(Level.WARNING, e.getMessage(), e);
 		}
+		
 		return false;
 	}
 	
@@ -451,6 +456,7 @@ public class OlympiadGameTask implements Runnable
 		{
 			LOGGER.log(Level.WARNING, e.getMessage(), e);
 		}
+		
 		return true;
 	}
 	

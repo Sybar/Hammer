@@ -376,9 +376,9 @@
 		<set name="is_depositable" val="false" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="commissionItemType" val="ONE_HAND_SWORD" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player isHero="true" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">524</stat>
 			<stat type="mAtk">230</stat>
@@ -414,9 +414,9 @@
 		<set name="is_depositable" val="false" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="commissionItemType" val="TWO_HAND_SWORD" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player isHero="true" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">638</stat>
 			<stat type="mAtk">230</stat>
@@ -451,9 +451,9 @@
 		<set name="is_depositable" val="false" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="commissionItemType" val="BLUNT_WEAPON" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player isHero="true" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">524</stat>
 			<stat type="mAtk">230</stat>
@@ -491,9 +491,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="commissionItemType" val="ONE_HAND_MAGIC_BLUNT_WEAPON" />
 		<set name="is_magic_weapon" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player isHero="true" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">420</stat>
 			<stat type="mAtk">307</stat>
@@ -530,9 +530,9 @@
 		<set name="is_depositable" val="false" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="commissionItemType" val="TWO_HAND_BLUNT_WEAPON" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player isHero="true" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">638</stat>
 			<stat type="mAtk">230</stat>
@@ -570,9 +570,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="commissionItemType" val="TWO_HAND_MAGIC_BLUNT_WEAPON" />
 		<set name="is_magic_weapon" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player isHero="true" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">511</stat>
 			<stat type="mAtk">337</stat>
@@ -609,9 +609,9 @@
 		<set name="is_depositable" val="false" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="commissionItemType" val="DAGGER" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player isHero="true" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">458</stat>
 			<stat type="mAtk">230</stat>
@@ -648,9 +648,9 @@
 		<set name="is_depositable" val="false" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="commissionItemType" val="FIST_WEAPON" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player isHero="true" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">638</stat>
 			<stat type="mAtk">230</stat>
@@ -689,9 +689,9 @@
 		<set name="is_depositable" val="false" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="commissionItemType" val="BOW" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player isHero="true" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">952</stat>
 			<stat type="mAtk">230</stat>
@@ -728,9 +728,9 @@
 		<set name="is_depositable" val="false" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="commissionItemType" val="DUALSWORD" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player isHero="true" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">638</stat>
 			<stat type="mAtk">230</stat>
@@ -766,9 +766,9 @@
 		<set name="is_depositable" val="false" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="commissionItemType" val="SPEAR" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player isHero="true" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">524</stat>
 			<stat type="mAtk">230</stat>
@@ -1091,9 +1091,9 @@
 		<set name="handler" val="SummonItems" />
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
 		<set name="commissionItemType" val="PET_SUPPLIES" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2046" level="1" /> <!-- Summon Pet -->
 		</skills>
@@ -1110,9 +1110,9 @@
 		<set name="handler" val="SummonItems" />
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
 		<set name="commissionItemType" val="PET_SUPPLIES" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2046" level="1" /> <!-- Summon Pet -->
 		</skills>
@@ -1129,9 +1129,9 @@
 		<set name="handler" val="SummonItems" />
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
 		<set name="commissionItemType" val="PET_SUPPLIES" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2046" level="1" /> <!-- Summon Pet -->
 		</skills>

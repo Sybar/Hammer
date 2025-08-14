@@ -203,6 +203,7 @@ public class SkillData implements IXmlReader
 										}
 										break;
 									}
+									
 									final SkillConditionScope skillConditionScope = SkillConditionScope.findByXmlNodeName(skillNodeName);
 									if (skillConditionScope != null)
 									{
@@ -419,6 +420,7 @@ public class SkillData implements IXmlReader
 				parseInfo(n, variableValues, info);
 			}
 		}
+		
 		return new NamedParamInfo(name, fromLevel, toLevel, fromSubLevel, toSubLevel, info);
 	}
 	
@@ -509,6 +511,7 @@ public class SkillData implements IXmlReader
 								{
 									variables.put("base", Double.parseDouble(baseText));
 								}
+								
 								parsedValue = parseValue(n, false, false, variables);
 								if (parsedValue != null)
 								{
@@ -520,6 +523,7 @@ public class SkillData implements IXmlReader
 				}
 			}
 		}
+		
 		return values;
 	}
 	
@@ -604,6 +608,7 @@ public class SkillData implements IXmlReader
 			{
 				throw new IllegalArgumentException("Text and list in same node are not allowed. Node[" + n + "]");
 			}
+			
 			if (statSet != null)
 			{
 				statSet.set(".", list);
@@ -620,6 +625,7 @@ public class SkillData implements IXmlReader
 			{
 				throw new IllegalArgumentException("Text and list in same node are not allowed. Node[" + n + "]");
 			}
+			
 			if (statSet != null)
 			{
 				statSet.set(".", text);
@@ -762,6 +768,7 @@ public class SkillData implements IXmlReader
 				{
 					postfix.append(operators.pop()).append(' ');
 				}
+				
 				operators.push(token);
 				expectNumber = true;
 			}
@@ -776,6 +783,7 @@ public class SkillData implements IXmlReader
 				{
 					postfix.append(operators.pop()).append(' ');
 				}
+				
 				operators.pop();
 				expectNumber = false;
 			}
@@ -973,6 +981,7 @@ public class SkillData implements IXmlReader
 		
 		// Skill/level not found, fix for transformation scripts.
 		final int maxLevel = getMaxLevel(skillId);
+		
 		// Requested level too high.
 		if ((maxLevel > 0) && (level > maxLevel))
 		{
@@ -1013,11 +1022,13 @@ public class SkillData implements IXmlReader
 		{
 			result.add(_skillsByHash.get(getSkillHashCode(326, 1))); // Build Advanced Headquarters
 		}
+		
 		if (hasCastle)
 		{
 			result.add(_skillsByHash.get(getSkillHashCode(844, 1))); // Outpost Construction
 			result.add(_skillsByHash.get(getSkillHashCode(845, 1))); // Outpost Demolition
 		}
+		
 		return result;
 	}
 	

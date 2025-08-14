@@ -3927,9 +3927,9 @@
 		<magicLevel>1</magicLevel>
 		<reuseDelay>1200000</reuseDelay>
 		<staticReuse>true</staticReuse>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player insideZoneId="90578" />
-		</cond>
+		</conditions>
 		<effects>
 			<effect name="ResistSkill">
 				<skillId1>6662</skillId1>
@@ -3958,9 +3958,9 @@
 		<magicLevel>1</magicLevel>
 		<reuseDelay>1200000</reuseDelay>
 		<staticReuse>true</staticReuse>
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player insideZoneId="90578" />
-		</cond>
+		</conditions>
 		<effects>
 			<effect name="ResistSkill">
 				<skillId1>6662</skillId1>

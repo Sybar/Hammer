@@ -113,6 +113,7 @@ public class ExRequestMableGameRollDice extends ClientPacket
 		{
 			player.sendPacket(new ExMableGameDiceResult(dice, newCellId, newCell.getColor().getClientId(), playerState.getRemainCommonDice()));
 		}
+		
 		playerState.handleCell(player, newCell);
 	}
 }

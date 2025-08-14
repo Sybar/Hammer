@@ -490,6 +490,7 @@ public class NpcData implements IXmlReader
 															{
 																clans = new HashSet<>(1);
 															}
+															
 															clans.add(getOrCreateClanId(clanListNode.getTextContent()));
 															break;
 														}
@@ -499,6 +500,7 @@ public class NpcData implements IXmlReader
 															{
 																ignoreClanNpcIds = new HashSet<>(1);
 															}
+															
 															ignoreClanNpcIds.add(Integer.parseInt(clanListNode.getTextContent()));
 															break;
 														}
@@ -547,7 +549,7 @@ public class NpcData implements IXmlReader
 															
 															if (ItemData.getInstance().getTemplate(itemId) == null)
 															{
-																LOGGER.warning("DropListItem: Could not find item with id " + itemId + ".");
+																LOGGER.warning(getClass().getSimpleName() + ": Could not find drop with id " + itemId + ".");
 															}
 															else
 															{
@@ -556,6 +558,8 @@ public class NpcData implements IXmlReader
 														}
 													}
 													
+													// Group drops are sorted by chance (low to high).
+													group.sortByChance();
 													dropGroups.add(group);
 												}
 												else if (nodeName.equalsIgnoreCase("item"))
@@ -570,7 +574,7 @@ public class NpcData implements IXmlReader
 													
 													if (ItemData.getInstance().getTemplate(itemId) == null)
 													{
-														LOGGER.warning("DropListItem: Could not find item with id " + itemId + ".");
+														LOGGER.warning(getClass().getSimpleName() + ": Could not find drop with id " + itemId + ".");
 													}
 													else
 													{
@@ -757,6 +761,7 @@ public class NpcData implements IXmlReader
 							{
 								dropLists = new ArrayList<>();
 							}
+							
 							dropLists.addAll(Config.BOSS_DROP_LIST);
 						}
 						
@@ -807,6 +812,7 @@ public class NpcData implements IXmlReader
 			id = _clans.size();
 			_clans.put(clanName, id);
 		}
+		
 		return id;
 	}
 	
@@ -848,6 +854,7 @@ public class NpcData implements IXmlReader
 		{
 			return result;
 		}
+		
 		for (Entry<String, Integer> record : _clans.entrySet())
 		{
 			for (int id : clanIds)
@@ -858,6 +865,7 @@ public class NpcData implements IXmlReader
 				}
 			}
 		}
+		
 		return result;
 	}
 	
@@ -885,6 +893,7 @@ public class NpcData implements IXmlReader
 				return npcTemplate;
 			}
 		}
+		
 		return null;
 	}
 	
@@ -903,6 +912,7 @@ public class NpcData implements IXmlReader
 				result.add(npcTemplate);
 			}
 		}
+		
 		return result;
 	}
 	

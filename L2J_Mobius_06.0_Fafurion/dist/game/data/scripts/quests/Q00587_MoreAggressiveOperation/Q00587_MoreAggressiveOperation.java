@@ -43,6 +43,7 @@ public class Q00587_MoreAggressiveOperation extends Quest
 {
 	// NPCs
 	private static final int HESET = 33780;
+	
 	// Monsters
 	private static final int BERSERK_CONTROL_GOLEM = 24130;
 	private static final int CONTROL_GOLEM = 23261;
@@ -64,8 +65,10 @@ public class Q00587_MoreAggressiveOperation extends Quest
 		23266, // Broken Pincer Golem
 		23267, // Screw Golem
 	};
+	
 	// Items
 	private static final int CONTROL_MODULE = 48383;
+	
 	// Misc
 	private static final int MIN_LEVEL = 93;
 	private static final int MAX_LEVEL = 103;
@@ -118,6 +121,7 @@ public class Q00587_MoreAggressiveOperation extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -169,6 +173,7 @@ public class Q00587_MoreAggressiveOperation extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -187,6 +192,7 @@ public class Q00587_MoreAggressiveOperation extends Quest
 					addAttackPlayerDesire(mob, player, 5);
 				}
 			}
+			
 			if ((npc.getId() == BERSERK_CONTROL_GOLEM) && (getQuestItemsCount(player, CONTROL_MODULE) < 4) && (getRandom(100) < 40))
 			{
 				giveItems(player, CONTROL_MODULE, 1);
@@ -201,6 +207,7 @@ public class Q00587_MoreAggressiveOperation extends Quest
 					playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 				}
 			}
+			
 			if ((killedAntelope == 400) && (getQuestItemsCount(player, CONTROL_MODULE) == 4))
 			{
 				qs.setCond(2, true);
@@ -218,6 +225,7 @@ public class Q00587_MoreAggressiveOperation extends Quest
 			holder.add(new NpcLogListHolder(NpcStringId.DEFEAT_MONSTERS_AROUND_THE_TENT, qs.getInt("killed_" + MOBS[0])));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

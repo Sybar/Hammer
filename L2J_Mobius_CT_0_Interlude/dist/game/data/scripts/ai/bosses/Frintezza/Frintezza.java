@@ -67,7 +67,7 @@ public class Frintezza extends AbstractNpcAI
 	private static final int SCARLET2 = 29047;
 	private static final int FRINTEZZA = 29045;
 	private static final int GUIDE = 32011;
-	private static final int CUBE = 29061;
+	private static final int TELEPORT_CUBE = 29061;
 	
 	// Frintezza Status Tracking
 	private static final byte DORMANT = 0; // Frintezza is spawned and no one has entered yet. Entry is unlocked.
@@ -292,8 +292,8 @@ public class Frintezza extends AbstractNpcAI
 		registerMobs(mob);
 		addStartNpc(GUIDE);
 		addTalkId(GUIDE);
-		addStartNpc(CUBE);
-		addTalkId(CUBE);
+		addStartNpc(TELEPORT_CUBE);
+		addTalkId(TELEPORT_CUBE);
 		final StatSet info = GrandBossManager.getInstance().getStatSet(FRINTEZZA);
 		final int status = GrandBossManager.getInstance().getStatus(FRINTEZZA);
 		if (status == DEAD)
@@ -397,6 +397,7 @@ public class Frintezza extends AbstractNpcAI
 						mob.deleteMe();
 					}
 				}
+				
 				_room1Mobs.clear();
 				break;
 			}
@@ -409,6 +410,7 @@ public class Frintezza extends AbstractNpcAI
 						mob.deleteMe();
 					}
 				}
+				
 				_room2Mobs.clear();
 				startQuestTimer("waiting", 180000, npc, null);
 				break;
@@ -419,46 +421,57 @@ public class Frintezza extends AbstractNpcAI
 				{
 					_demon1.deleteMe();
 				}
+				
 				if (_demon2 != null)
 				{
 					_demon2.deleteMe();
 				}
+				
 				if (_demon3 != null)
 				{
 					_demon3.deleteMe();
 				}
+				
 				if (_demon4 != null)
 				{
 					_demon4.deleteMe();
 				}
+				
 				if (_portrait1 != null)
 				{
 					_portrait1.deleteMe();
 				}
+				
 				if (_portrait2 != null)
 				{
 					_portrait2.deleteMe();
 				}
+				
 				if (_portrait3 != null)
 				{
 					_portrait3.deleteMe();
 				}
+				
 				if (_portrait4 != null)
 				{
 					_portrait4.deleteMe();
 				}
+				
 				if (_frintezza != null)
 				{
 					_frintezza.deleteMe();
 				}
+				
 				if (_weakScarlet != null)
 				{
 					_weakScarlet.deleteMe();
 				}
+				
 				if (_strongScarlet != null)
 				{
 					_strongScarlet.deleteMe();
 				}
+				
 				_demon1 = null;
 				_demon2 = null;
 				_demon3 = null;
@@ -495,10 +508,12 @@ public class Frintezza extends AbstractNpcAI
 				{
 					DoorData.getInstance().getDoor(i).closeMe();
 				}
+				
 				for (int i = 25150061; i <= 25150070; i++)
 				{
 					DoorData.getInstance().getDoor(i).closeMe();
 				}
+				
 				DoorData.getInstance().getDoor(25150042).closeMe();
 				DoorData.getInstance().getDoor(25150043).closeMe();
 				DoorData.getInstance().getDoor(25150045).closeMe();
@@ -513,6 +528,7 @@ public class Frintezza extends AbstractNpcAI
 					{
 						npc.teleToLocation(174232, -88020, -5116);
 					}
+					
 					if ((npc.getX() < 171932) || (npc.getX() > 176532) || (npc.getY() < -90320) || (npc.getY() > -85720) || (npc.getZ() < -5130))
 					{
 						npc.teleToLocation(174232, -88020, -5116);
@@ -641,6 +657,7 @@ public class Frintezza extends AbstractNpcAI
 						}
 					}
 				}
+				
 				startQuestTimer("camera_9c", 0, _frintezza, null);
 				break;
 			}
@@ -660,6 +677,7 @@ public class Frintezza extends AbstractNpcAI
 						}
 					}
 				}
+				
 				startQuestTimer("camera_10", 2000, _frintezza, null);
 				break;
 			}
@@ -882,6 +900,7 @@ public class Frintezza extends AbstractNpcAI
 				{
 					skill.applyEffects(_weakScarlet, _weakScarlet);
 				}
+				
 				_weakScarlet.setCollisionHeight(109.4);
 				_weakScarlet.setCollisionRadius(54);
 				_weakScarlet.broadcastInfo();
@@ -986,6 +1005,7 @@ public class Frintezza extends AbstractNpcAI
 				{
 					skill.applyEffects(_strongScarlet, _strongScarlet);
 				}
+				
 				_strongScarlet.setCollisionHeight(130);
 				_strongScarlet.setCollisionRadius(115);
 				_strongScarlet.broadcastInfo();
@@ -1056,6 +1076,7 @@ public class Frintezza extends AbstractNpcAI
 						{
 							_zone.broadcastPacket(new ExShowScreenMessage("Fugue of Jubilation", ExShowScreenMessage.TOP_CENTER, 3000));
 						}
+						
 						startQuestTimer("songs_effect", 5000, _frintezza, null);
 						startQuestTimer("songs_play", 32000 + getRandom(10000), _frintezza, null);
 					}
@@ -1088,6 +1109,7 @@ public class Frintezza extends AbstractNpcAI
 				{
 					return null;
 				}
+				
 				if ((_onSong == 1) || (_onSong == 2) || (_onSong == 3))
 				{
 					if ((_frintezza != null) && !_frintezza.isDead() && (_activeScarlet != null) && !_activeScarlet.isDead())
@@ -1124,6 +1146,7 @@ public class Frintezza extends AbstractNpcAI
 							cha.sendPacket(new SystemMessage(SystemMessageId.THE_EFFECTS_OF_S1_FLOW_THROUGH_YOU).addSkillName(5008, 5));
 						}
 					}
+					
 					startQuestTimer("stop_effect", 25000, _frintezza, null);
 				}
 				break;
@@ -1141,6 +1164,7 @@ public class Frintezza extends AbstractNpcAI
 						cha.setParalyzed(false);
 					}
 				}
+				
 				_abnormal = 0;
 				break;
 			}
@@ -1195,6 +1219,7 @@ public class Frintezza extends AbstractNpcAI
 						_weakScarlet.setCastingNow(true);
 						_weakScarlet.doCast(skill);
 					}
+					
 					startQuestTimer("skill01", _skill[i][2] + 5000 + getRandom(10000), npc, null);
 				}
 				break;
@@ -1220,6 +1245,7 @@ public class Frintezza extends AbstractNpcAI
 						_weakScarlet.setCastingNow(true);
 						_weakScarlet.doCast(skill);
 					}
+					
 					startQuestTimer("skill02", _skill[i][2] + 5000 + getRandom(10000), npc, null);
 					if (i == 5)
 					{
@@ -1250,6 +1276,7 @@ public class Frintezza extends AbstractNpcAI
 						_strongScarlet.setCastingNow(true);
 						_strongScarlet.doCast(skill);
 					}
+					
 					startQuestTimer("skill03", _skill[i][2] + 5000 + getRandom(10000), npc, null);
 					if (i == 10)
 					{
@@ -1281,6 +1308,7 @@ public class Frintezza extends AbstractNpcAI
 							cha.startAbnormalVisualEffect(true, AbnormalVisualEffect.FLOATING_ROOT);
 						}
 					}
+					
 					startQuestTimer("stop_effect", 25000, npc, null);
 				}
 				break;
@@ -1339,6 +1367,7 @@ public class Frintezza extends AbstractNpcAI
 						mob.decayMe();
 					}
 				}
+				
 				_minions.clear();
 				break;
 			}
@@ -1347,6 +1376,7 @@ public class Frintezza extends AbstractNpcAI
 				if ((npc != null) && !npc.isDead() && (_frintezza != null) && !_frintezza.isDead())
 				{
 					final Npc mob = addSpawn(npc.getId() + 2, npc.getX(), npc.getY(), npc.getZ(), npc.getHeading(), false, 0);
+					
 					// mob.setIsRaidMinion(true);
 					_minions.add(mob.asAttackable());
 					startQuestTimer("action", 200, mob, null);
@@ -1356,7 +1386,7 @@ public class Frintezza extends AbstractNpcAI
 			}
 			case "spawn_cubes":
 			{
-				addSpawn(CUBE, 174232, -88020, -5114, 16384, false, 900000);
+				addSpawn(TELEPORT_CUBE, 174232, -88020, -5114, 16384, false, 900000);
 				break;
 			}
 			case "frintezza_unlock":
@@ -1369,6 +1399,17 @@ public class Frintezza extends AbstractNpcAI
 				_zone.oustAllPlayers();
 				break;
 			}
+			case "EXIT":
+			{
+				if (npc.getId() == TELEPORT_CUBE)
+				{
+					final int x = 150037 + getRandom(500);
+					final int y = -57720 + getRandom(500);
+					player.teleToLocation(x, y, -2976);
+					return null;
+				}
+				break;
+			}
 		}
 		
 		return super.onEvent(event, npc, player);
@@ -1377,13 +1418,6 @@ public class Frintezza extends AbstractNpcAI
 	@Override
 	public String onTalk(Npc npc, Player player)
 	{
-		if (npc.getId() == CUBE)
-		{
-			final int x = 150037 + getRandom(500);
-			final int y = -57720 + getRandom(500);
-			player.teleToLocation(x, y, -2976);
-			return null;
-		}
 		
 		if (player.getWeightPenalty() >= 3)
 		{
@@ -1440,25 +1474,30 @@ public class Frintezza extends AbstractNpcAI
 						{
 							continue;
 						}
+						
 						for (Player member : party.getMembers())
 						{
 							if ((member == null) || (member.getLevel() < 74))
 							{
 								continue;
 							}
+							
 							if (!member.isInsideRadius3D(npc, 700))
 							{
 								continue;
 							}
+							
 							if (_playersInside.size() > 45)
 							{
 								member.sendMessage("The number of challenges have been full, so can not enter.");
 								break;
 							}
+							
 							_playersInside.add(member);
 							_zone.allowPlayerEntry(member, 300);
 							member.teleToLocation(_invadeLoc[_locCycle][0] + getRandom(50), _invadeLoc[_locCycle][1] + getRandom(50), _invadeLoc[_locCycle][2]);
 						}
+						
 						if (_playersInside.size() > 45)
 						{
 							break;
@@ -1565,6 +1604,7 @@ public class Frintezza extends AbstractNpcAI
 			LOGGER.info("Frintezza will respawn at: " + TimeUtil.getDateTimeString(nextRespawnTime));
 			
 			startQuestTimer("frintezza_unlock", respawnTime, npc, null);
+			
 			// Also save the respawn time so that the info is maintained past reboots.
 			final StatSet info = GrandBossManager.getInstance().getStatSet(FRINTEZZA);
 			info.set("respawn_time", System.currentTimeMillis() + respawnTime);
@@ -1604,6 +1644,7 @@ public class Frintezza extends AbstractNpcAI
 						outside++;
 					}
 				}
+				
 				if (outside == 0)
 				{
 					startQuestTimer("room2_del", 100, npc, null);

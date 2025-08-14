@@ -40,10 +40,13 @@ public class Q00418_OrcsAllAround extends Quest
 {
 	// NPC
 	private static final int GENIE_LAMP = 34369;
+	
 	// Monster
 	private static final int TAIK_ORC_ELDER = 20665;
+	
 	// Item
 	private static final ItemHolder SAYHA_COOKIE = new ItemHolder(93274, 4);
+	
 	// Misc
 	private static final int MIN_LEVEL = 64;
 	private static final int MAX_LEVEL = 75;
@@ -98,6 +101,7 @@ public class Q00418_OrcsAllAround extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -136,6 +140,7 @@ public class Q00418_OrcsAllAround extends Quest
 				htmltext = getAlreadyCompletedMsg(player);
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -171,6 +176,7 @@ public class Q00418_OrcsAllAround extends Quest
 			holder.add(new NpcLogListHolder(NpcStringId.DEFEAT_MONSTERS_16.getId(), true, qs.getInt(KILL_COUNT_VAR)));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

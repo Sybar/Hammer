@@ -58,6 +58,7 @@ public abstract class AbstractClientPacket implements Runnable
 		{
 			e.printStackTrace();
 		}
+		
 		return result;
 	}
 	
@@ -68,6 +69,7 @@ public abstract class AbstractClientPacket implements Runnable
 		{
 			result[i] = _decrypt[_off + i];
 		}
+		
 		_off += length;
 		return result;
 	}

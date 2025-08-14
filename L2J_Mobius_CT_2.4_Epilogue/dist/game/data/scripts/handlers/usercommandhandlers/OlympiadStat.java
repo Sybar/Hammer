@@ -36,7 +36,7 @@ public class OlympiadStat implements IUserCommandHandler
 	};
 	
 	@Override
-	public boolean useUserCommand(int id, Player player)
+	public boolean onCommand(int id, Player player)
 	{
 		if (!Config.OLYMPIAD_ENABLED)
 		{
@@ -79,7 +79,7 @@ public class OlympiadStat implements IUserCommandHandler
 	}
 	
 	@Override
-	public int[] getUserCommandList()
+	public int[] getCommandList()
 	{
 		return COMMAND_IDS;
 	}

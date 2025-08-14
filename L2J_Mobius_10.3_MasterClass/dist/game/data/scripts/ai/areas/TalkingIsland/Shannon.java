@@ -44,6 +44,7 @@ public class Shannon extends AbstractNpcAI
 		{
 			npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.LOOK_AT_ALL_THE_NEWBIES_HA_HA_HA, 1000);
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	

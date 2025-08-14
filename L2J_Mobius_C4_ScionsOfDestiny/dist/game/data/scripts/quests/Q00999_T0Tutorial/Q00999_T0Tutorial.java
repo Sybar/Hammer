@@ -43,6 +43,7 @@ public class Q00999_T0Tutorial extends Quest
 	private static final int SOULSHOT_NOVICE = 5789;
 	private static final int SPIRITSHOT_NOVICE = 5790;
 	private static final int BLUE_GEM = 6353;
+	
 	// NPCs
 	private static final int[] NPCS =
 	{
@@ -126,14 +127,17 @@ public class Q00999_T0Tutorial extends Quest
 		{
 			addStartNpc(startNpc);
 		}
+		
 		for (int FirstTalkId : NPCS)
 		{
 			addFirstTalkId(FirstTalkId);
 		}
+		
 		for (int TalkId : NPCS)
 		{
 			addTalkId(TalkId);
 		}
+		
 		addKillId(18342);
 		addKillId(20001);
 	}
@@ -168,6 +172,7 @@ public class Q00999_T0Tutorial extends Quest
 				{
 					st.playTutorialVoice("tutorial_voice_009a");
 				}
+				
 				qs.set("Ex", "1");
 			}
 			else if (Ex == 3)
@@ -175,6 +180,7 @@ public class Q00999_T0Tutorial extends Quest
 				st.playTutorialVoice("tutorial_voice_010a");
 				qs.set("Ex", "4");
 			}
+			
 			return null;
 		}
 		else if (event.equalsIgnoreCase("TimerEx_GrandMaster"))
@@ -185,6 +191,7 @@ public class Q00999_T0Tutorial extends Quest
 				playSound(player, "ItemSound.quest_tutorial");
 				st.playTutorialVoice("tutorial_voice_025");
 			}
+			
 			return null;
 		}
 		else
@@ -205,6 +212,7 @@ public class Q00999_T0Tutorial extends Quest
 			{
 				addRadar(player, radarX, radarY, radarZ);
 			}
+			
 			if ((getQuestItemsCount(player, item) > 0) && (st.getInt("onlyone") == 0))
 			{
 				addExpAndSp(player, 0, 50);
@@ -215,6 +223,7 @@ public class Q00999_T0Tutorial extends Quest
 				{
 					qs.set("Ex", "4");
 				}
+				
 				if (player.getPlayerClass().getId() == classId1)
 				{
 					giveItems(player, gift1, count1);
@@ -232,10 +241,12 @@ public class Q00999_T0Tutorial extends Quest
 					giveItems(player, gift2, count2);
 					st.playTutorialVoice("tutorial_voice_026");
 				}
+				
 				st.set("step", "4");
 				st.set("onlyone", "1");
 			}
 		}
+		
 		return htmltext;
 	}
 	

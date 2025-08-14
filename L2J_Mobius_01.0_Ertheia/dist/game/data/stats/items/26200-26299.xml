@@ -459,9 +459,9 @@
 			<item id="37135" min="1" max="1" chance="100" /> <!-- Steel Plate Helmet (60-day) -->
 			<item id="26231" min="1" max="1" chance="100" /> <!-- Fated Support Box: Ertheia Wizard (B-grade) -->
 		</capsuled_items>
-		<cond msgId="1902">
+		<conditions msgId="1902">
 			<player levelRange="40;84" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="26230" name="Fated Support Box: Ertheia Fighter (C-grade)" type="EtcItem">
 		<!-- Double-click to receive C-grade equipment items necessary for Ertheia fighter-type characters. Can be used by characters Lv. 40 - 84. -->
@@ -487,9 +487,9 @@
 			<item id="37135" min="1" max="1" chance="100" /> <!-- Steel Plate Helmet (60-day) -->
 			<item id="26232" min="1" max="1" chance="100" /> <!-- Fated Support Box: Ertheia Fighter (B-grade) -->
 		</capsuled_items>
-		<cond msgId="1902">
+		<conditions msgId="1902">
 			<player levelRange="40;84" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="26231" name="Fated Support Box: Ertheia Wizard (B-grade)" type="EtcItem">
 		<!-- Double-click to receive B-grade equipment items necessary for Ertheia wizard-type characters. Can be used by characters Lv. 52 - 84. -->
@@ -514,9 +514,9 @@
 			<item id="37257" min="1" max="1" chance="100" /> <!-- Steel Wizard's Tear (60-day) -->
 			<item id="26233" min="1" max="1" chance="100" /> <!-- Fated Support Box: Ertheia Wizard (A-grade) -->
 		</capsuled_items>
-		<cond msgId="1902">
+		<conditions msgId="1902">
 			<player levelRange="52;84" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="26232" name="Fated Support Box: Ertheia Fighter (B-grade)" type="EtcItem">
 		<!-- Double-click to receive B-grade equipment items necessary for Ertheia fighter-type characters. Can be used by characters Lv. 52 - 84. -->
@@ -541,9 +541,9 @@
 			<item id="37148" min="1" max="1" chance="100" /> <!-- Steel Doom Helmet (60-day) -->
 			<item id="26234" min="1" max="1" chance="100" /> <!-- Fated Support Box: Ertheia Fighter (A-grade) -->
 		</capsuled_items>
-		<cond msgId="1902">
+		<conditions msgId="1902">
 			<player levelRange="52;84" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="26233" name="Fated Support Box: Ertheia Wizard (A-grade)" type="EtcItem">
 		<!-- Double-click to receive A-grade equipment items necessary for Ertheia wizard-type characters. Can be used by characters Lv. 61 - 84. -->
@@ -568,9 +568,9 @@
 			<item id="37167" min="1" max="1" chance="100" /> <!-- Steel Dark Crystal Helmet (60-day) -->
 			<item id="26235" min="1" max="1" chance="100" /> <!-- Fated Support Box: Ertheia Wizard - Stage 1 (S-grade) -->
 		</capsuled_items>
-		<cond msgId="1902">
+		<conditions msgId="1902">
 			<player levelRange="61;84" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="26234" name="Fated Support Box: Ertheia Fighter (A-grade)" type="EtcItem">
 		<!-- Double-click to receive A-grade equipment items necessary for Ertheia fighter-type characters. Can be used by characters Lv. 61 - 84. -->
@@ -596,9 +596,9 @@
 			<item id="37167" min="1" max="1" chance="100" /> <!-- Steel Dark Crystal Helmet (60-day) -->
 			<item id="26236" min="1" max="1" chance="100" /> <!-- Fated Support Box: Ertheia Fighter - Stage 1 (S-grade) -->
 		</capsuled_items>
-		<cond msgId="1902">
+		<conditions msgId="1902">
 			<player levelRange="61;84" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="26235" name="Fated Support Box: Ertheia Wizard - Stage 1 (S-grade)" type="EtcItem">
 		<!-- Double-click to receive S-grade equipment items necessary for Ertheia wizard-type characters. Can be used by characters Lv. 76 - 84. -->
@@ -623,9 +623,9 @@
 			<item id="37281" min="1" max="1" chance="100" /> <!-- Steel Arcana Mace (60-day) -->
 			<item id="26237" min="1" max="1" chance="100" /> <!-- Fated Support Box: Ertheia Wizard - Stage 2 (S-grade) -->
 		</capsuled_items>
-		<cond msgId="1902">
+		<conditions msgId="1902">
 			<player levelRange="76;84" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="26236" name="Fated Support Box: Ertheia Fighter - Stage 1 (S-grade)" type="EtcItem">
 		<!-- Double-click to receive S-grade equipment items necessary for Ertheia fighter-type characters. Can be used by characters Lv. 76 - 84. -->
@@ -651,9 +651,9 @@
 			<item id="37189" min="1" max="1" chance="100" /> <!-- Steel Draconic Leather Helmet (60-day) -->
 			<item id="26238" min="1" max="1" chance="100" /> <!-- Fated Support Box: Ertheia Fighter - Stage 2 (S-grade) -->
 		</capsuled_items>
-		<cond msgId="1902">
+		<conditions msgId="1902">
 			<player levelRange="76;84" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="26237" name="Fated Support Box: Ertheia Wizard - Stage 2 (S-grade)" type="EtcItem">
 		<!-- Double-click to receive S-grade equipment items necessary for Ertheia wizard-type characters. Can be used by characters Lv. 81 - 84. -->
@@ -679,9 +679,9 @@
 			<item id="37289" min="1" max="1" chance="100" /> <!-- Steel Dynasty Phantom (60-day) -->
 			<item id="26239" min="1" max="1" chance="100" /> <!-- Fated Support Box: Sayha's Seer (R-grade) -->
 		</capsuled_items>
-		<cond msgId="1902">
+		<conditions msgId="1902">
 			<player levelRange="81;84" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="26238" name="Fated Support Box: Ertheia Fighter - Stage 2 (S-grade)" type="EtcItem">
 		<!-- Double-click to receive S-grade equipment items necessary for Ertheia fighter-type characters. Can be used by characters Lv. 81 - 84. -->
@@ -707,9 +707,9 @@
 			<item id="37204" min="1" max="1" chance="100" /> <!-- Steel Dynasty Leather Helmet (60-day) -->
 			<item id="37240" min="1" max="1" chance="100" /> <!-- Steel Immortal Necklace (30-day) -->
 		</capsuled_items>
-		<cond msgId="1902">
+		<conditions msgId="1902">
 			<player levelRange="81;84" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="26239" name="Fated Support Box: Sayha's Seer (R-grade)" type="EtcItem">
 		<!-- Double-click to receive equipment items necessary for Sayha's Seer characters. Can be used by characters Lv. 85 - 99. -->
@@ -736,9 +736,9 @@
 			<item id="37300" min="1" max="1" chance="100" /> <!-- Steel Requiem Caster (30-day) -->
 			<item id="37301" min="1" max="1" chance="100" /> <!-- Steel Requiem Buster (30-day) -->
 		</capsuled_items>
-		<cond msgId="1902">
+		<conditions msgId="1902">
 			<player levelRange="85;99" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="26240" name="Fated Support Box: Eviscerator (R-grade)" type="EtcItem">
 		<!-- Double-click to receive equipment items necessary for Eviscerator characters. Can be used by characters Lv. 85 - 99. -->
@@ -763,9 +763,9 @@
 			<item id="37213" min="1" max="1" chance="100" /> <!-- Steel Immortal Leather Armor (30-day) -->
 			<item id="37215" min="1" max="1" chance="100" /> <!-- Steel Immortal Leather Helmet (30-day) -->
 		</capsuled_items>
-		<cond msgId="1902">
+		<conditions msgId="1902">
 			<player levelRange="85;99" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="26241" name="Lost Gloves" type="EtcItem">
 		<!-- Lost gloves. -->
@@ -900,12 +900,12 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_freightable" val="true" />
 		<set name="default_action" val="EQUIP" />
-		<cond msgId="2453">
+		<conditions msgId="2453">
 			<player cloakStatus="true" />
-		</cond>
-		<cond>
+		</conditions>
+		<conditions>
 			<player level="80" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">50</stat>
 			<stat type="mDef">80</stat>
@@ -926,12 +926,12 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_freightable" val="true" />
 		<set name="default_action" val="EQUIP" />
-		<cond msgId="2453">
+		<conditions msgId="2453">
 			<player cloakStatus="true" />
-		</cond>
-		<cond>
+		</conditions>
+		<conditions>
 			<player level="80" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">50</stat>
 			<stat type="mDef">80</stat>

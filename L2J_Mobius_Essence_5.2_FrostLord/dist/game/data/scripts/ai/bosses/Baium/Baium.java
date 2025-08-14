@@ -57,7 +57,8 @@ public class Baium extends AbstractNpcAI
 	private static final int BAIUM_STONE = 29025; // Baium
 	private static final int ANG_VORTEX = 31862; // Angelic Vortex
 	private static final int ARCHANGEL = 29021; // Archangel
-	private static final int TELE_CUBE = 31842; // Teleportation Cubic
+	private static final int TELEPORT_CUBE = 31842; // Teleportation Cubic
+	
 	// Skills
 	private static final SkillHolder BAIUM_ATTACK = new SkillHolder(4127, 1); // Baium: General Attack
 	private static final SkillHolder ENERGY_WAVE = new SkillHolder(4128, 1); // Wind Of Force
@@ -71,6 +72,7 @@ public class Baium extends AbstractNpcAI
 	private static final SkillHolder ANTI_STRIDER = new SkillHolder(4258, 1); // Hinder Strider
 	// Items
 	private static final int FABRIC = 4295; // Blooded Fabric
+	
 	// Zone
 	private static final NoRestartZone zone = ZoneManager.getInstance().getZoneById(70051, NoRestartZone.class); // Baium zone
 	// Status
@@ -78,6 +80,7 @@ public class Baium extends AbstractNpcAI
 	private static final int WAITING = 1;
 	private static final int IN_FIGHT = 2;
 	private static final int DEAD = 3;
+	
 	// Locations
 	private static final Location BAIUM_GIFT_LOC = new Location(115910, 17337, 10105);
 	private static final Location BAIUM_LOC = new Location(116033, 17447, 10107, 40188);
@@ -97,6 +100,7 @@ public class Baium extends AbstractNpcAI
 		new Location(114880, 16236, 10136, 5400),
 		new Location(114239, 17168, 10136, -1992)
 	};
+	
 	// Misc
 	private GrandBoss _baium = null;
 	private static long _lastAttack = 0;
@@ -105,8 +109,8 @@ public class Baium extends AbstractNpcAI
 	private Baium()
 	{
 		addFirstTalkId(ANG_VORTEX);
-		addTalkId(ANG_VORTEX, TELE_CUBE, BAIUM_STONE);
-		addStartNpc(ANG_VORTEX, TELE_CUBE, BAIUM_STONE);
+		addTalkId(ANG_VORTEX, TELEPORT_CUBE, BAIUM_STONE);
+		addStartNpc(ANG_VORTEX, TELEPORT_CUBE, BAIUM_STONE);
 		addAttackId(BAIUM, ARCHANGEL);
 		addKillId(BAIUM);
 		addSpellFinishedId(BAIUM);
@@ -144,6 +148,7 @@ public class Baium extends AbstractNpcAI
 					final Npc archangel = addSpawn(ARCHANGEL, loc, false, 0, true);
 					startQuestTimer("SELECT_TARGET", 5000, archangel, null);
 				}
+				
 				startQuestTimer("CHECK_ATTACK", 60000, _baium, null);
 				break;
 			}
@@ -172,7 +177,7 @@ public class Baium extends AbstractNpcAI
 			{
 				return event;
 			}
-			case "enter":
+			case "ENTER":
 			{
 				String htmltext = null;
 				if (getStatus() == DEAD)
@@ -192,15 +197,16 @@ public class Baium extends AbstractNpcAI
 					takeItems(player, FABRIC, 1);
 					player.teleToLocation(TELEPORT_IN_LOC);
 				}
+				
 				return htmltext;
 			}
-			case "teleportOut":
+			case "EXIT":
 			{
 				final Location destination = TELEPORT_OUT_LOC[getRandom(TELEPORT_OUT_LOC.length)];
 				player.teleToLocation(destination.getX() + getRandom(100), destination.getY() + getRandom(100), destination.getZ());
 				break;
 			}
-			case "wakeUp":
+			case "WAKE_UP":
 			{
 				if (getStatus() == ALIVE)
 				{
@@ -266,7 +272,7 @@ public class Baium extends AbstractNpcAI
 				if ((player != null) && player.isInsideRadius3D(npc, 16000))
 				{
 					zone.broadcastPacket(new SocialAction(npc.getObjectId(), 1));
-					npc.broadcastSay(ChatType.NPC_GENERAL, player.getName() + ", How dare you wake me! Now you shall die!"); // TODO: replace with NpcStringId when are done core support
+					npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.HOW_DARE_YOU_WAKE_ME_UP_NOW_YOU_SHALL_DIE, player.getName());
 					npc.setTarget(player);
 					npc.doCast(BAIUM_PRESENT.getSkill());
 				}
@@ -279,6 +285,7 @@ public class Baium extends AbstractNpcAI
 						break;
 					}
 				}
+				
 				startQuestTimer("SPAWN_ARCHANGEL", 8000, npc, null);
 				break;
 			}
@@ -332,6 +339,7 @@ public class Baium extends AbstractNpcAI
 						{
 							mob.clearAggroList();
 						}
+						
 						addAttackPlayerDesire(mob, mostHated.asPlayable());
 					}
 					else
@@ -345,6 +353,7 @@ public class Baium extends AbstractNpcAI
 								{
 									mob.clearAggroList();
 								}
+								
 								addAttackPlayerDesire(mob, creature);
 								found = true;
 								break;
@@ -359,6 +368,7 @@ public class Baium extends AbstractNpcAI
 								{
 									mob.clearAggroList();
 								}
+								
 								mob.setRunning();
 								mob.addDamageHate(_baium, 0, 999);
 								mob.getAI().setIntention(Intention.ATTACK, _baium);
@@ -369,6 +379,7 @@ public class Baium extends AbstractNpcAI
 							}
 						}
 					}
+					
 					startQuestTimer("SELECT_TARGET", 5000, npc, null);
 				}
 				break;
@@ -388,6 +399,7 @@ public class Baium extends AbstractNpcAI
 						npc.setTarget(npc);
 						npc.doCast(HEAL_OF_BAIUM.getSkill());
 					}
+					
 					startQuestTimer("CHECK_ATTACK", 60000, npc, null);
 				}
 				break;
@@ -443,6 +455,7 @@ public class Baium extends AbstractNpcAI
 				{
 					player.sendMessage(getClass().getSimpleName() + ": You cannot abort attack right now!");
 				}
+				
 				cancelQuestTimers("CHECK_ATTACK");
 				cancelQuestTimers("SELECT_TARGET");
 				break;
@@ -458,6 +471,7 @@ public class Baium extends AbstractNpcAI
 							creature.deleteMe();
 						}
 					}
+					
 					if (player != null)
 					{
 						player.sendMessage(getClass().getSimpleName() + ": All archangels has been deleted!");
@@ -478,6 +492,7 @@ public class Baium extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	
@@ -513,6 +528,7 @@ public class Baium extends AbstractNpcAI
 			{
 				refreshAiParams(attacker, npc, ((damage / 3) * 20));
 			}
+			
 			manageSkills(npc);
 		}
 		else
@@ -547,7 +563,7 @@ public class Baium extends AbstractNpcAI
 		if (zone.isCharacterInZone(killer))
 		{
 			setStatus(DEAD);
-			addSpawn(TELE_CUBE, TELEPORT_CUBIC_LOC, false, 900000);
+			addSpawn(TELEPORT_CUBE, TELEPORT_CUBIC_LOC, false, 900000);
 			zone.broadcastPacket(new PlaySound("BS01_D"));
 			
 			final long baseIntervalMillis = Config.BAIUM_SPAWN_INTERVAL * 3600000;
@@ -596,6 +612,7 @@ public class Baium extends AbstractNpcAI
 		{
 			refreshAiParams(creature, npc, 10000, 1000);
 		}
+		
 		manageSkills(npc);
 	}
 	
@@ -610,13 +627,14 @@ public class Baium extends AbstractNpcAI
 	}
 	
 	@Override
-	public boolean unload(boolean removeFromList)
+	public void unload(boolean removeFromList)
 	{
 		if (_baium != null)
 		{
 			_baium.deleteMe();
 		}
-		return super.unload(removeFromList);
+		
+		super.unload(removeFromList);
 	}
 	
 	private void refreshAiParams(Creature attacker, Npc npc, int damage)
@@ -640,6 +658,7 @@ public class Baium extends AbstractNpcAI
 				return;
 			}
 		}
+		
 		final int index = MathUtil.getIndexOfMinValue(vars.getInt("i_quest0"), vars.getInt("i_quest1"), vars.getInt("i_quest2"));
 		vars.set("i_quest" + index, newAggroVal);
 		vars.set("c_quest" + index, attacker);
@@ -681,6 +700,7 @@ public class Baium extends AbstractNpcAI
 				vars.set("i_quest" + i, 0);
 			}
 		}
+		
 		final int index = MathUtil.getIndexOfMaxValue(vars.getInt("i_quest0"), vars.getInt("i_quest1"), vars.getInt("i_quest2"));
 		final Creature creature = vars.getObject("c_quest" + index, Creature.class);
 		final int i2 = vars.getInt("i_quest" + index);

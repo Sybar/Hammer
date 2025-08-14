@@ -134,6 +134,7 @@ public class RequestExHomunculusEnchantExp extends ClientPacket
 						homunculus.setExp(homunculus.getExp() + (homunculus.getTemplate().getExpToLevel6() - homunculus.getExp()));
 						player.sendPacket(new ExHomunculusPointInfo(player));
 					}
+					
 					if (homunculus.getExp() >= homunculus.getTemplate().getExpToLevel6())
 					{
 						return;
@@ -141,6 +142,7 @@ public class RequestExHomunculusEnchantExp extends ClientPacket
 					break;
 				}
 			}
+			
 			player.getHomunculusList().update(homunculus);
 			player.sendPacket(new ExShowHomunculusList(player));
 		}

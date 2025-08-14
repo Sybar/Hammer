@@ -42,9 +42,11 @@ public class Camille extends AbstractInstance
 	private static final int ISBURG = 26244;
 	private static final int TRANSMISSION_UNIT = 34324;
 	private static final int ERDA = 34319;
+	
 	// Locations
 	private static final Location ENTER_LOCATION = new Location(-245768, 147832, 4662);
 	private static final Location CAMILLE_LOCATION = new Location(-245752, 150392, 11845);
+	
 	// Misc
 	private static final int TEMPLATE_ID = 266;
 	
@@ -84,6 +86,7 @@ public class Camille extends AbstractInstance
 				break;
 			}
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	

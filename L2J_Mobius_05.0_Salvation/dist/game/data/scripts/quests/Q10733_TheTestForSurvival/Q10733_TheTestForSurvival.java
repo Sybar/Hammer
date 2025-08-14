@@ -36,8 +36,10 @@ public class Q10733_TheTestForSurvival extends Quest
 	private static final int DIA = 34005;
 	private static final int KATALIN = 33943;
 	private static final int AYANTHE = 33942;
+	
 	// Items
 	private static final int GERETH_RECOMMENDATION = 39519;
+	
 	// Misc
 	private static final int MAX_LEVEL = 20;
 	
@@ -101,6 +103,7 @@ public class Q10733_TheTestForSurvival extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -153,6 +156,7 @@ public class Q10733_TheTestForSurvival extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

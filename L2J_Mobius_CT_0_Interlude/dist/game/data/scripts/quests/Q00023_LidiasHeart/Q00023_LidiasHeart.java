@@ -174,6 +174,7 @@ public class Q00023_LidiasHeart extends Quest
 				return null;
 			}
 		}
+		
 		return htmltext;
 	}
 	

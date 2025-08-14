@@ -39,6 +39,7 @@ public class CastleWarehouse extends AbstractNpcAI
 		35315, // Warehouse Keeper (Inadril)
 		35362, // Warehouse Keeper (Goddard)
 	};
+	
 	// Items
 	private static final int BLOOD_OATH = 9910;
 	private static final int BLOOD_ALLIANCE = 9911;
@@ -110,6 +111,7 @@ public class CastleWarehouse extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

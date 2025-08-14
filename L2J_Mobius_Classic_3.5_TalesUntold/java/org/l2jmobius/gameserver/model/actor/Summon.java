@@ -138,7 +138,9 @@ public abstract class Summon extends Playable
 		{
 			party.broadcastToPartyMembers(_owner, new ExPartyPetWindowAdd(this));
 		}
+		
 		setShowSummonAnimation(false); // addVisibleObject created the info packets with summon animation
+		
 		// if someone comes into range now, the animation shouldn't show any more
 		_restoreSummon = false;
 		rechargeShots(true, true, false);
@@ -229,10 +231,12 @@ public abstract class Summon extends Playable
 						{
 							packet = new SummonInfo(this, player, 1);
 						}
+						
 						packet.addComponentType(NpcInfoType.ABNORMALS);
 						player.sendPacket(packet);
 					});
 				}
+				
 				_abnormalEffectTask = null;
 			}, 50);
 		}
@@ -252,6 +256,7 @@ public abstract class Summon extends Playable
 		{
 			return 0;
 		}
+		
 		return ExperienceData.getInstance().getExpForLevel(getLevel());
 	}
 	
@@ -261,6 +266,7 @@ public abstract class Summon extends Playable
 		{
 			return 0;
 		}
+		
 		return ExperienceData.getInstance().getExpForLevel(getLevel() + 1);
 	}
 	
@@ -303,6 +309,7 @@ public abstract class Summon extends Playable
 		{
 			return (short) getTemplate().getSoulShot();
 		}
+		
 		return 1;
 	}
 	
@@ -312,6 +319,7 @@ public abstract class Summon extends Playable
 		{
 			return (short) getTemplate().getSpiritShot();
 		}
+		
 		return 1;
 	}
 	
@@ -365,10 +373,12 @@ public abstract class Summon extends Playable
 		{
 			return false;
 		}
+		
 		if (!decayed)
 		{
 			DecayTaskManager.getInstance().add(this);
 		}
+		
 		return true;
 	}
 	
@@ -602,6 +612,7 @@ public abstract class Summon extends Playable
 		{
 			return null;
 		}
+		
 		return _owner.getParty();
 	}
 	
@@ -685,6 +696,7 @@ public abstract class Summon extends Playable
 				setTarget(_owner.getTarget());
 				target = skill.getTarget(this, forceUse, dontMove, false);
 			}
+			
 			if (target == null)
 			{
 				sendPacket(SystemMessageId.YOUR_TARGET_CANNOT_BE_FOUND);
@@ -724,7 +736,7 @@ public abstract class Summon extends Playable
 		}
 		
 		// Check if this is bad magic skill and if Player is in Olympiad and the match isn't already start, send a Server->Client packet ActionFailed
-		if (skill.isBad() && _owner.isInOlympiadMode() && !_owner.isOlympiadStart())
+		if (skill.hasNegativeEffect() && _owner.isInOlympiadMode() && !_owner.isOlympiadStart())
 		{
 			sendPacket(ActionFailed.STATIC_PACKET);
 			return false;
@@ -743,6 +755,7 @@ public abstract class Summon extends Playable
 		if (value)
 		{
 			_previousFollowStatus = _follow;
+			
 			// if immobilized temporarily disable follow mode
 			if (_previousFollowStatus)
 			{
@@ -1115,7 +1128,7 @@ public abstract class Summon extends Playable
 					handler = ItemHandler.getInstance().getHandler(item.getEtcItem());
 					if (handler != null)
 					{
-						handler.useItem(_owner, item, false);
+						handler.onItemUse(_owner, item, false);
 					}
 				}
 				
@@ -1124,7 +1137,7 @@ public abstract class Summon extends Playable
 					handler = ItemHandler.getInstance().getHandler(item.getEtcItem());
 					if (handler != null)
 					{
-						handler.useItem(_owner, item, false);
+						handler.onItemUse(_owner, item, false);
 					}
 				}
 			}

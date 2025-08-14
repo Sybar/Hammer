@@ -66,6 +66,7 @@ public class Q00580_BeyondTheMemories extends Quest
 		22946, // Demonic Seknus
 		23350, // Demonic Noctum
 	};
+	
 	// Misc
 	private static final int KILLING_NPCSTRING_ID = NpcStringId.DEFEAT_MONSTERS_IN_THE_UNDERGROUND_RUINS.getId();
 	private static final QuestType QUEST_TYPE = QuestType.DAILY; // REPEATABLE, ONE_TIME, DAILY
@@ -73,8 +74,10 @@ public class Q00580_BeyondTheMemories extends Quest
 	private static final int KILLING_COND = 1;
 	private static final int FINISH_COND = 2;
 	private static final int MIN_LEVEL = 85;
+	
 	// Location
 	private static final Location HARNAK_UNDERGROUND_RUINS = new Location(-114700, 147909, -7715);
+	
 	// Rewards
 	private static final int EXP = 231860550;
 	private static final int SP = 231840;
@@ -133,6 +136,7 @@ public class Q00580_BeyondTheMemories extends Quest
 				break;
 			}
 		}
+		
 		return event;
 	}
 	
@@ -177,6 +181,7 @@ public class Q00580_BeyondTheMemories extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -193,6 +198,7 @@ public class Q00580_BeyondTheMemories extends Quest
 			{
 				qs.setCond(FINISH_COND, true);
 			}
+			
 			sendNpcLogList(killer);
 		}
 	}
@@ -207,6 +213,7 @@ public class Q00580_BeyondTheMemories extends Quest
 			holder.add(new NpcLogListHolder(KILLING_NPCSTRING_ID, true, qs.getInt("AncientGhosts")));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

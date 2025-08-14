@@ -38,6 +38,7 @@ public class Q00600_KeyToTheRefiningProcess extends Quest
 {
 	// NPCs
 	private static final int DEVIANNE = 34427;
+	
 	// Monsters
 	private static final int[] MONSTERS =
 	{
@@ -50,8 +51,10 @@ public class Q00600_KeyToTheRefiningProcess extends Quest
 		24162, // Ergalion 105
 		24163, // Spira 106
 	};
+	
 	// Items
 	private static final int FRAGMENT_OF_CONDENSED_ENERGY = 48549;
+	
 	// Misc
 	private static final int MIN_LEVEL = 103;
 	
@@ -103,6 +106,7 @@ public class Q00600_KeyToTheRefiningProcess extends Quest
 					htmltext = "34427-04b.htm";
 					break;
 				}
+				
 				htmltext = "34427-04.htm";
 				break;
 			}
@@ -118,6 +122,7 @@ public class Q00600_KeyToTheRefiningProcess extends Quest
 					htmltext = "34427-04b.htm";
 					break;
 				}
+				
 				htmltext = "34427-04.htm";
 				break;
 			}
@@ -155,6 +160,7 @@ public class Q00600_KeyToTheRefiningProcess extends Quest
 							// {
 							// giveItems(player, SAVIORS_WISH, 1);
 							// }
+							
 							giveAdena(player, 2495659, true);
 							addExpAndSp(player, 27191624760L, 27191610);
 							addFactionPoints(player, Faction.BLACKBIRD_CLAN, 100);
@@ -179,6 +185,7 @@ public class Q00600_KeyToTheRefiningProcess extends Quest
 							// {
 							// giveItems(player, SAVIORS_WISH, 1);
 							// }
+							
 							giveAdena(player, 4991318, true);
 							addExpAndSp(player, 54383249520L, 54383220);
 							addFactionPoints(player, Faction.BLACKBIRD_CLAN, 200);
@@ -203,6 +210,7 @@ public class Q00600_KeyToTheRefiningProcess extends Quest
 							// {
 							// giveItems(player, SAVIORS_WISH, 1);
 							// }
+							
 							giveAdena(player, 7486978, true);
 							addExpAndSp(player, 81574874280L, 81574830);
 							addFactionPoints(player, Faction.BLACKBIRD_CLAN, 300);
@@ -219,6 +227,7 @@ public class Q00600_KeyToTheRefiningProcess extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -250,6 +259,7 @@ public class Q00600_KeyToTheRefiningProcess extends Quest
 							htmltext = "34427-04b.htm";
 							break;
 						}
+						
 						htmltext = "34427-04.htm";
 						break;
 					}
@@ -292,6 +302,7 @@ public class Q00600_KeyToTheRefiningProcess extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

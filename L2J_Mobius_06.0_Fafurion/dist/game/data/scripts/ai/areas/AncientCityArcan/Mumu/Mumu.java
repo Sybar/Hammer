@@ -55,6 +55,7 @@ public class Mumu extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

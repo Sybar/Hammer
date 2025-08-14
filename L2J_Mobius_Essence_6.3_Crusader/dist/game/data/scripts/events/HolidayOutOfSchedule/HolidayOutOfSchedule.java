@@ -55,8 +55,10 @@ public class HolidayOutOfSchedule extends LongTimeEvent
 	private static final int RUDOLPH_HUMANIZED_NPC_ID = 34338;
 	private static final int LARGE_CHRISTMAS_TREE_NPC_ID = 34278;
 	private static final int SANTA_CLAUS_NPC_ID = 34339;
+	
 	// Skill
 	private static final SkillHolder TREE_SKILL = new SkillHolder(48596, 1);
+	
 	// Items
 	private static final Set<ItemHolder> SANTA_GIFT = new HashSet<>();
 	static
@@ -68,6 +70,7 @@ public class HolidayOutOfSchedule extends LongTimeEvent
 		SANTA_GIFT.add(new ItemHolder(94269, 10)); // Scroll: Boost Attack - Sealed
 		SANTA_GIFT.add(new ItemHolder(94271, 10)); // Scroll: Boost Defense - Sealed
 	}
+	
 	// Locations
 	private static final Map<String, Location[]> SANTA_LOCATION = new HashMap<>();
 	static
@@ -151,6 +154,7 @@ public class HolidayOutOfSchedule extends LongTimeEvent
 			new Location(146782, -68944, -3656, 0), // Player Teleport
 		});
 	}
+	
 	// Misc
 	private static final Set<Npc> TREE_NPCs = new HashSet<>();
 	private static final Npc[] SCHEDULE_NPCS = new Npc[2];
@@ -196,6 +200,7 @@ public class HolidayOutOfSchedule extends LongTimeEvent
 							{
 								player.teleToLocation(SANTA_LOCATION.get(_santaLocation)[2], false);
 							}
+							
 							return RUDOLPH_HUMANIZED_NPC_ID + "-0" + (_santaActive ? "2" : "3") + ".htm";
 						}
 					}
@@ -215,6 +220,7 @@ public class HolidayOutOfSchedule extends LongTimeEvent
 						{
 							player.sendPacket(new SystemMessage(SystemMessageId.THIS_ACCOUNT_HAS_ALREADY_RECEIVED_A_GIFT_THE_GIFT_CAN_ONLY_BE_GIVEN_ONCE_PER_ACCOUNT));
 						}
+						
 						return SANTA_CLAUS_NPC_ID + "-01.htm";
 					}
 				}
@@ -231,6 +237,7 @@ public class HolidayOutOfSchedule extends LongTimeEvent
 					{
 						continue;
 					}
+					
 					aroundPlayers.forEach(p ->
 					{
 						SkillCaster.triggerCast(tree, p, TREE_SKILL.getSkill());
@@ -247,6 +254,7 @@ public class HolidayOutOfSchedule extends LongTimeEvent
 				despawnSanta();
 			}
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	
@@ -281,6 +289,7 @@ public class HolidayOutOfSchedule extends LongTimeEvent
 			{
 				despawnSanta();
 			}
+			
 			startQuestTimer("SANTA_DESPAWN", endTimer.next(currentTime) - currentTime, null, null);
 			return;
 		}
@@ -312,11 +321,13 @@ public class HolidayOutOfSchedule extends LongTimeEvent
 				SCHEDULE_NPCS[1].deleteMe();
 				SCHEDULE_NPCS[1] = null;
 			}
+			
 			// Remove Santa.
 			_santaActive = false;
 			SCHEDULE_NPCS[0].deleteMe();
 			SCHEDULE_NPCS[0] = null;
 		}
+		
 		_santaLocation = null;
 		startQuestTimer("SANTA_SPAWN", respawnTimer.next(currentTime) - currentTime, null, null, false);
 	}

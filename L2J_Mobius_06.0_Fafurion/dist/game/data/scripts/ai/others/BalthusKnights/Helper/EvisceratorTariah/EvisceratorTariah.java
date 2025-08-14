@@ -41,12 +41,15 @@ public final class EvisceratorTariah extends AbstractNpcAI
 {
 	// NPCs
 	private static final int TARIAH = 34377;
+	
 	// Monsters
 	private static final int ANTHARAS = 24087;
 	private static final int INVISIBLE_NPC = 18918;
+	
 	// Skills
 	private static final SkillHolder GravityHitSkill = new SkillHolder(32155, 1);
 	private static final SkillHolder SteelMindSkill = new SkillHolder(32156, 1);
+	
 	// Misc
 	private static final int p_CheckInterval = 3000;
 	private static final int p_TalkInterval = 15000;

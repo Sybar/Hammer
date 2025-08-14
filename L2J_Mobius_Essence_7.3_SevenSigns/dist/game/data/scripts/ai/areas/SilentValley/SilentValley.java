@@ -35,6 +35,7 @@ public class SilentValley extends AbstractNpcAI
 	private static final int WARRIOR_OF_ANCIENT_TIMES = 20970;
 	private static final int SHAMAN_OF_ANCIENT_TIMES = 20971;
 	private static final int FORGOTTEN_ANCIENT_CREATURE = 20972;
+	
 	// Guard
 	private static final int ANCIENT_GUARDIAN = 22106;
 	

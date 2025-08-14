@@ -42,18 +42,22 @@ public class Q10568_KamaelsTechnologicalAdvancement extends Quest
 {
 	// NPCs
 	private static final int HISTIE = 34243;
+	
 	// Monsters
 	private static final int[] MONSTERS =
 	{
 		23816, // Om Bathus
 		23817 // Om Kshana
 	};
+	
 	// Items
 	private static final int HUNTERS_STONE_FRAGMENT = 48166;
+	
 	// Misc
 	private static final int MIN_LEVEL = 102;
 	private static final int KILLING_NPCSTRING_ID = NpcStringId.DEFEAT_THE_HUNTER.getId(); // NpcStringId.1019686
 	private static final boolean PARTY_QUEST = true;
+	
 	// Reward
 	private static final int HUNTERS_STONE = 48167;
 	
@@ -102,6 +106,7 @@ public class Q10568_KamaelsTechnologicalAdvancement extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -119,6 +124,7 @@ public class Q10568_KamaelsTechnologicalAdvancement extends Quest
 					htmltext = "34243-00.htm";
 					break;
 				}
+				
 				htmltext = "34243-01.htm";
 				break;
 			}
@@ -140,6 +146,7 @@ public class Q10568_KamaelsTechnologicalAdvancement extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -156,6 +163,7 @@ public class Q10568_KamaelsTechnologicalAdvancement extends Quest
 			{
 				qs.setCond(2, true);
 			}
+			
 			sendNpcLogList(killer);
 		}
 	}
@@ -170,6 +178,7 @@ public class Q10568_KamaelsTechnologicalAdvancement extends Quest
 			holder.add(new NpcLogListHolder(KILLING_NPCSTRING_ID, true, qs.getInt("AncientGhosts")));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

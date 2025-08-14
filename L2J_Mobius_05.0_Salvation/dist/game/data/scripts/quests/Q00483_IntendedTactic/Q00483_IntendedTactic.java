@@ -37,6 +37,7 @@ public class Q00483_IntendedTactic extends Quest
 {
 	// NPC
 	private static final int ENDE = 33357;
+	
 	// Monsters
 	private static final int[] MOBS =
 	{
@@ -54,10 +55,12 @@ public class Q00483_IntendedTactic extends Quest
 		25811, // Lazearth
 		25815 // Ken
 	};
+	
 	// Items
 	private static final int LOYAL_SERVANS_BLOOD = 17736;
 	private static final int TRUTTHFUL_ONES_BLOOD = 17737;
 	private static final int TOKEN_OF_INSOLENCE_TOWER = 17624;
+	
 	// Misc
 	private static final int MIN_LEVEL = 48;
 	
@@ -79,6 +82,7 @@ public class Q00483_IntendedTactic extends Quest
 		{
 			return null;
 		}
+		
 		String htmltext = null;
 		switch (event)
 		{
@@ -107,6 +111,7 @@ public class Q00483_IntendedTactic extends Quest
 					htmltext = "33357-12.html";
 					break;
 				}
+				
 				takeItems(player, LOYAL_SERVANS_BLOOD, -1);
 				addExpAndSp(player, 1500000, 360);
 				qs.exitQuest(QuestType.DAILY, true);
@@ -114,6 +119,7 @@ public class Q00483_IntendedTactic extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -133,6 +139,7 @@ public class Q00483_IntendedTactic extends Quest
 						htmltext = "33357-03.html";
 						break;
 					}
+					
 					qs.setState(State.CREATED);
 					break;
 				}
@@ -159,6 +166,7 @@ public class Q00483_IntendedTactic extends Quest
 		{
 			htmltext = "33357-03.html";
 		}
+		
 		return htmltext;
 	}
 	
@@ -170,6 +178,7 @@ public class Q00483_IntendedTactic extends Quest
 		{
 			qs.setCond(2, true);
 		}
+		
 		if ((qs != null) && qs.isCond(2) && (ArrayUtil.contains(BOSSES, npc.getId())) && giveItemRandomly(killer, npc, TRUTTHFUL_ONES_BLOOD, 1, 10, 1, true))
 		{
 			qs.setCond(2, true);

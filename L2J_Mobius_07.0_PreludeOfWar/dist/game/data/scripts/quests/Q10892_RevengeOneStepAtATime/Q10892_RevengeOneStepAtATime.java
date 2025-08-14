@@ -68,9 +68,11 @@ public class Q10892_RevengeOneStepAtATime extends Quest
 		24162, // Ergalion
 		24163 // Spira
 	};
+	
 	// Reward
 	private static final int RUNE_STONE = 39738;
 	private static final int ELCYUM_CRYSTAL = 36514;
+	
 	// Misc
 	private static final int MIN_LEVEL = 103;
 	
@@ -119,6 +121,7 @@ public class Q10892_RevengeOneStepAtATime extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -162,6 +165,7 @@ public class Q10892_RevengeOneStepAtATime extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -210,6 +214,7 @@ public class Q10892_RevengeOneStepAtATime extends Quest
 			npcLogList.add(new NpcLogListHolder(GUARDIAN[0], false, qs.getInt("killed_" + GUARDIAN[0])));
 			return npcLogList;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

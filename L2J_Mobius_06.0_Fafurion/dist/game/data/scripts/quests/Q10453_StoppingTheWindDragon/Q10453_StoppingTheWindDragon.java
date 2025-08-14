@@ -33,10 +33,13 @@ public class Q10453_StoppingTheWindDragon extends Quest
 {
 	// NPC
 	private static final int JENNA = 33872;
+	
 	// Monsters
 	private static final int LINDVIOR = 29240;
+	
 	// Items
 	private static final int LINDVIOR_SLAYERS_HELMET = 37497;
+	
 	// Misc
 	private static final int MIN_LEVEL = 95;
 	
@@ -74,6 +77,7 @@ public class Q10453_StoppingTheWindDragon extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -101,6 +105,7 @@ public class Q10453_StoppingTheWindDragon extends Quest
 		{
 			htmltext = "adens_wizard_jenna_q10453_6.html";
 		}
+		
 		return htmltext;
 	}
 	

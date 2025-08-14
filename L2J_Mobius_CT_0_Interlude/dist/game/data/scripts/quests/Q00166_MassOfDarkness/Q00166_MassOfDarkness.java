@@ -35,6 +35,7 @@ public class Q00166_MassOfDarkness extends Quest
 	private static final int IRIA = 30135;
 	private static final int DORANKUS = 30139;
 	private static final int TRUDY = 30143;
+	
 	// Items
 	private static final int UNDRIAS_LETTER = 1088;
 	private static final int CEREMONIAL_DAGGER = 1089;

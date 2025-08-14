@@ -23,7 +23,7 @@ package org.l2jmobius.gameserver.model.actor.status;
 import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.actor.enums.player.Duel;
+import org.l2jmobius.gameserver.model.actor.holders.player.Duel;
 
 public class NpcStatus extends CreatureStatus
 {

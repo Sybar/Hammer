@@ -49,6 +49,7 @@ public class GateOfUnlimitedSummoning extends AbstractNpcAI
 		DEATH_GATE.put(15218, 5); // Death Gate
 		DEATH_GATE.put(15219, 6); // Death Gate
 	}
+	
 	// Skills
 	private static final int GATE_ROOT = 11289;
 	private static final int GATE_VORTEX = 11291;
@@ -86,6 +87,7 @@ public class GateOfUnlimitedSummoning extends AbstractNpcAI
 						npc.doCast(skill);
 					}
 				}
+				
 				getTimers().addTimer("SKILL_CAST_SLOW", 3000, npc, null);
 				break;
 			}

@@ -78,6 +78,7 @@ public class ExSteadyBoxUiInit extends ServerPacket
 		{
 			buffer.writeInt(0); // EventID Normal Point + Pvp Point Bar
 		}
+		
 		buffer.writeInt(0); // nEventStartTime time for limitkill
 		buffer.writeInt(_player.getAchievementBox().pvpEndDate());
 		

@@ -48,6 +48,7 @@ public class Q00230_TestOfTheSummoner extends Quest
 	private static final int BASILLA = 30638;
 	private static final int CELESTIEL = 30639;
 	private static final int BRYNTHEA = 30640;
+	
 	// Monsters
 	private static final int NOBLE_ANT = 20089;
 	private static final int NOBLE_ANT_LEADER = 20090;
@@ -70,6 +71,7 @@ public class Q00230_TestOfTheSummoner extends Quest
 	private static final int LETO_LIZARDMAN_SHAMAN = 20581;
 	private static final int LETO_LIZARDMAN_OVERLORD = 20582;
 	private static final int KARUL_BUGBEAR = 20600;
+	
 	// Quest Monsters
 	private static final int PAKO_THE_CAT = 27102;
 	private static final int UNICORN_RACER = 27103;
@@ -77,6 +79,7 @@ public class Q00230_TestOfTheSummoner extends Quest
 	private static final int MIMI_THE_CAT = 27105;
 	private static final int UNICORN_PHANTASM = 27106;
 	private static final int SILHOUETTE_TILFO = 27107;
+	
 	// Items
 	private static final int LETO_LIZARDMAN_AMULET = 3337;
 	private static final int SAC_OF_REDSPORES = 3338;
@@ -131,9 +134,11 @@ public class Q00230_TestOfTheSummoner extends Quest
 	private static final int CRYSTAL_OF_FOUL_6 = 3387;
 	private static final int CRYSTAL_OF_DEFEAT_6 = 3388;
 	private static final int CRYSTAL_OF_VICTORY_6 = 3389;
+	
 	// Rewards
 	private static final int MARK_OF_SUMMONER = 3336;
 	private static final int DIMENSIONAL_DIAMOND = 7562;
+	
 	// Other
 	private static final int[][] LARA_LISTS = new int[][]
 	{
@@ -166,6 +171,7 @@ public class Q00230_TestOfTheSummoner extends Quest
 		{
 			return null;
 		}
+		
 		String htmltext = event;
 		
 		switch (event)
@@ -1018,6 +1024,7 @@ public class Q00230_TestOfTheSummoner extends Quest
 				else if ((st.getInt("Almors") == 3) && _duelsInProgress.containsKey(npcId))
 				{
 					final ProgressDuelMob duel = _duelsInProgress.get(npcId);
+					
 					// check if the attacker is the same pet as the one that attacked before.
 					if (!isPet || (player.getSummon() != duel.getPet())) // if a foul occured find the player who had the duel in progress and give a foul crystal
 					{

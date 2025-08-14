@@ -51,7 +51,7 @@ public class ExEnchantSkillInfo extends ServerPacket
 	public void writeImpl(GameClient client, WritableBuffer buffer)
 	{
 		ServerPackets.EX_ENCHANT_SKILL_INFO.writeId(this, buffer);
-		buffer.writeInt(_skillId);
+		buffer.writeInt(client.getPlayer().getReplacementSkill(_skillId));
 		buffer.writeShort(_skillLevel);
 		buffer.writeShort(_skillSubLevel);
 		buffer.writeInt((_skillSubLevel % 1000) != EnchantSkillGroupsData.MAX_ENCHANT_LEVEL);

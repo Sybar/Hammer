@@ -52,6 +52,7 @@ public class Q10673_SagaOfLegend extends Quest
 {
 	// NPCs
 	private static final int ORVEN = 30857;
+	
 	// Monsters
 	private static final int[] MOBS =
 	{
@@ -79,6 +80,7 @@ public class Q10673_SagaOfLegend extends Quest
 		22154, // Tanta Lizardmen Archer
 		22155, // Tanta Lizardmen Summoner
 	};
+	
 	// Rewards
 	private static final int MAGICAL_TABLET = 90045;
 	private static final int SPELLBOOK_HUMAN = 90038; // Spellbook: Mount Golden Lion
@@ -89,6 +91,7 @@ public class Q10673_SagaOfLegend extends Quest
 	private static final int SPELLBOOK_KAMAEL = 91946; // Spellbook: Mount Griffin
 	private static final int SPELLBOOK_DEATH_KNIGHT = 93383; // Spellbook: Mount Nightmare Steed
 	private static final int SPELLBOOK_SYLPH = 95367; // Spellbook: Mount Elemental Lyn Draco
+	
 	// Misc
 	private static final int MIN_LEVEL = 76;
 	private static final String KILL_COUNT_VAR = "KillCount";
@@ -158,11 +161,13 @@ public class Q10673_SagaOfLegend extends Quest
 					{
 						player.sendPacket(ExClassChangeSetAlarm.STATIC_PACKET);
 					}
+					
 					htmltext = event;
 				}
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -208,6 +213,7 @@ public class Q10673_SagaOfLegend extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -242,6 +248,7 @@ public class Q10673_SagaOfLegend extends Quest
 			holder.add(new NpcLogListHolder(NpcStringId.ORVEN_S_REQUEST.getId(), true, qs.getInt(KILL_COUNT_VAR)));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 	

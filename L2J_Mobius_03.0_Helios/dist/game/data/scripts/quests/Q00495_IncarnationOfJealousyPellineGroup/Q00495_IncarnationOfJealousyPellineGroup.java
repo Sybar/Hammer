@@ -35,10 +35,13 @@ public class Q00495_IncarnationOfJealousyPellineGroup extends Quest
 {
 	// NPC
 	private static final int KARTIA_RESEARCHER = 33647;
+	
 	// Item
 	private static final int DIMENSION_KEEPER_RED_BOX = 34928;
+	
 	// Boss
 	private static final int BOSS = 25883; // Pelline (Group 90)
+	
 	// Misc
 	private static final int MIN_LEVEL = 90;
 	private static final int MAX_LEVEL = 94;
@@ -71,6 +74,7 @@ public class Q00495_IncarnationOfJealousyPellineGroup extends Quest
 			rewardItems(player, DIMENSION_KEEPER_RED_BOX, 1);
 			qs.exitQuest(QuestType.DAILY, true);
 		}
+		
 		return htmltext;
 	}
 	
@@ -119,6 +123,7 @@ public class Q00495_IncarnationOfJealousyPellineGroup extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

@@ -58,9 +58,11 @@ public class Q00779_UtilizeTheDarknessSeedOfDestruction extends Quest
 		22551, // Priest of Darkness
 		22552 // Mutated Drake
 	};
+	
 	// Misc
 	private static final int MIN_LEVEL = 93;
 	private static final int MAX_LEVEL = 97;
+	
 	// Item
 	private static final int TIATS_TOTEM = 38579;
 	private static final int TIATS_CHARM = 38575;
@@ -84,6 +86,7 @@ public class Q00779_UtilizeTheDarknessSeedOfDestruction extends Quest
 		{
 			return htmltext;
 		}
+		
 		switch (event)
 		{
 			case "32526-02.htm":
@@ -105,11 +108,13 @@ public class Q00779_UtilizeTheDarknessSeedOfDestruction extends Quest
 					final long itemCount = getQuestItemsCount(player, TIATS_TOTEM);
 					giveItems(player, TIATS_CHARM, (int) (itemCount / 5));
 				}
+				
 				qs.exitQuest(QuestType.DAILY, true);
 				htmltext = event;
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -127,6 +132,7 @@ public class Q00779_UtilizeTheDarknessSeedOfDestruction extends Quest
 					htmltext = getAlreadyCompletedMsg(player, QuestType.DAILY);
 					break;
 				}
+				
 				qs.setState(State.CREATED);
 				// fallthrough
 			}
@@ -151,6 +157,7 @@ public class Q00779_UtilizeTheDarknessSeedOfDestruction extends Quest
 							htmltext = "32526-07.html";
 							break;
 						}
+						
 						htmltext = "32526-05.html";
 						break;
 					}
@@ -158,6 +165,7 @@ public class Q00779_UtilizeTheDarknessSeedOfDestruction extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -172,6 +180,7 @@ public class Q00779_UtilizeTheDarknessSeedOfDestruction extends Quest
 				giveItems(player, TIATS_TOTEM, 1);
 				playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 			}
+			
 			if ((getQuestItemsCount(player, TIATS_TOTEM) == 50))
 			{
 				qs.setCond(2, true);

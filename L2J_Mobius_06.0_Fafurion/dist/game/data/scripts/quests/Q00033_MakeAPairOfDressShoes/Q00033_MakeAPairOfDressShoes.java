@@ -33,10 +33,12 @@ public class Q00033_MakeAPairOfDressShoes extends Quest
 	private static final int IAN = 30164;
 	private static final int WOODLEY = 30838;
 	private static final int LEIKAR = 31520;
+	
 	// Items
 	private static final int LEATHER = 36516;
 	private static final int THREAD = 36556;
 	private static final int DRESS_SHOES_BOX = 7113;
+	
 	// Misc
 	private static final int MIN_LEVEL = 85;
 	private static final int LEATHER_COUNT = 360;
@@ -80,6 +82,7 @@ public class Q00033_MakeAPairOfDressShoes extends Quest
 				{
 					return "30838-10.html";
 				}
+				
 				takeItems(player, LEATHER, LEATHER_COUNT);
 				takeItems(player, THREAD, THREAD_COUNT);
 				takeItems(player, Inventory.ADENA_ID, ADENA_COUNT2);
@@ -98,6 +101,7 @@ public class Q00033_MakeAPairOfDressShoes extends Quest
 				{
 					return "30164-03.html";
 				}
+				
 				giveItems(player, LEATHER, LEATHER_COUNT);
 				giveItems(player, THREAD, THREAD_COUNT);
 				takeItems(player, Inventory.ADENA_ID, ADENA_COUNT3);
@@ -110,6 +114,7 @@ public class Q00033_MakeAPairOfDressShoes extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -196,6 +201,7 @@ public class Q00033_MakeAPairOfDressShoes extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

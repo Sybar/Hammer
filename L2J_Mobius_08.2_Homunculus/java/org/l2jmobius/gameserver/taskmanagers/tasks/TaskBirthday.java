@@ -96,6 +96,7 @@ public class TaskBirthday extends PersistentTask
 					{
 						text = text.replace("$c1", CharInfoTable.getInstance().getNameById(playerId));
 					}
+					
 					if (text.contains("$s1"))
 					{
 						text = text.replace("$s1", String.valueOf(age));

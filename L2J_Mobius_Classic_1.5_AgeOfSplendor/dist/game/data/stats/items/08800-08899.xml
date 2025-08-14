@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
 	<item id="8871" name="Strategy Guide" type="EtcItem">
 		<!-- This book contains information about the methods and strategies used to lead a Command Channel. Use it to create a Command Channel. Lv. 20 or above. -->
@@ -9,9 +9,9 @@
 		<set name="weight" val="20" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="price" val="45000" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="20" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="8872" name="Flash Gunpowder" type="EtcItem">
 		<!-- This specially processed gunpowder doesn't create smoke. It is consumed while using the swoop cannon skill. -->

@@ -40,6 +40,7 @@ public class Q00420_ExploringTheWarTornPlains extends Quest
 {
 	// NPC
 	private static final int GENIE_LAMP = 34369;
+	
 	// Monsters
 	private static final int HATAR_RATMAN_THIEF = 20661;
 	private static final int HATAR_RATMAN_BOSS = 20662;
@@ -51,8 +52,10 @@ public class Q00420_ExploringTheWarTornPlains extends Quest
 	private static final int HATAR_HASNISHEE = 20663;
 	private static final int TAIK_ORC_ELDER = 20665;
 	private static final int FIERCE_GUARD = 22103;
+	
 	// Item
 	private static final ItemHolder HP_RECOVERY_POTION = new ItemHolder(97799, 200);
+	
 	// Misc
 	private static final int MIN_LEVEL = 56;
 	private static final int MAX_LEVEL = 64;
@@ -108,6 +111,7 @@ public class Q00420_ExploringTheWarTornPlains extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -146,6 +150,7 @@ public class Q00420_ExploringTheWarTornPlains extends Quest
 				htmltext = getAlreadyCompletedMsg(player);
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -181,6 +186,7 @@ public class Q00420_ExploringTheWarTornPlains extends Quest
 			holder.add(new NpcLogListHolder(NpcStringId.DEFEAT_MONSTERS_18.getId(), true, qs.getInt(KILL_COUNT_VAR)));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

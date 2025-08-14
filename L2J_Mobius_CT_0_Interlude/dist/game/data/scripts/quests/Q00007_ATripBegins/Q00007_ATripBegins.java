@@ -33,8 +33,10 @@ public class Q00007_ATripBegins extends Quest
 	private static final int MIRABEL = 30146;
 	private static final int ARIEL = 30148;
 	private static final int ASTERIOS = 30154;
+	
 	// Items
 	private static final int ARIEL_RECO = 7572;
+	
 	// Rewards
 	private static final int MARK_TRAVELER = 7570;
 	private static final int SOE_GIRAN = 7559;

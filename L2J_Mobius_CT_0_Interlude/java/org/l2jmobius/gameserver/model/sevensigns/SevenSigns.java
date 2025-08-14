@@ -92,6 +92,7 @@ public class SevenSigns
 	public static final int ANAKIM_NPC_ID = 25286;
 	public static final int CREST_OF_DAWN_ID = 31170;
 	public static final int CREST_OF_DUSK_ID = 31171;
+	
 	// Seal Stone Related Constants
 	public static final int SEAL_STONE_BLUE_ID = 6360;
 	public static final int SEAL_STONE_GREEN_ID = 6361;
@@ -211,6 +212,7 @@ public class SevenSigns
 				lastPeriodChange.set(Calendar.HOUR_OF_DAY, PERIOD_START_HOUR);
 				lastPeriodChange.set(Calendar.MINUTE, PERIOD_START_MINS);
 				lastPeriodChange.set(Calendar.SECOND, 0);
+				
 				// if we hit next week, just turn back 1 week
 				if (Calendar.getInstance().before(lastPeriodChange))
 				{
@@ -314,6 +316,7 @@ public class SevenSigns
 						{
 							AutoSpawnHandler.getInstance().setSpawnActive(lilithSpawn, true);
 						}
+						
 						AutoSpawnHandler.getInstance().setSpawnActive(anakimSpawn, false);
 						for (AutoSpawnInstance dawnCrest : crestOfDawnSpawns)
 						{
@@ -322,6 +325,7 @@ public class SevenSigns
 								AutoSpawnHandler.getInstance().setSpawnActive(dawnCrest, true);
 							}
 						}
+						
 						for (AutoSpawnInstance duskCrest : crestOfDuskSpawns)
 						{
 							AutoSpawnHandler.getInstance().setSpawnActive(duskCrest, false);
@@ -334,6 +338,7 @@ public class SevenSigns
 						{
 							AutoSpawnHandler.getInstance().setSpawnActive(anakimSpawn, true);
 						}
+						
 						AutoSpawnHandler.getInstance().setSpawnActive(lilithSpawn, false);
 						for (AutoSpawnInstance duskCrest : crestOfDuskSpawns)
 						{
@@ -342,6 +347,7 @@ public class SevenSigns
 								AutoSpawnHandler.getInstance().setSpawnActive(duskCrest, true);
 							}
 						}
+						
 						for (AutoSpawnInstance dawnCrest : crestOfDawnSpawns)
 						{
 							AutoSpawnHandler.getInstance().setSpawnActive(dawnCrest, false);
@@ -359,6 +365,7 @@ public class SevenSigns
 				{
 					AutoSpawnHandler.getInstance().setSpawnActive(dawnCrest, false);
 				}
+				
 				for (AutoSpawnInstance duskCrest : crestOfDuskSpawns)
 				{
 					AutoSpawnHandler.getInstance().setSpawnActive(duskCrest, false);
@@ -375,10 +382,12 @@ public class SevenSigns
 			{
 				AutoSpawnHandler.getInstance().setSpawnActive(dawnCrest, false);
 			}
+			
 			for (AutoSpawnInstance duskCrest : crestOfDuskSpawns)
 			{
 				AutoSpawnHandler.getInstance().setSpawnActive(duskCrest, false);
 			}
+			
 			for (AutoSpawnInstance spawnInst : oratorSpawns)
 			{
 				AutoSpawnHandler.getInstance().setSpawnActive(spawnInst, false);
@@ -430,6 +439,7 @@ public class SevenSigns
 				return "dusk";
 			}
 		}
+		
 		return "No Cabal";
 	}
 	
@@ -446,6 +456,7 @@ public class SevenSigns
 				return "Revolutionaries of Dusk";
 			}
 		}
+		
 		return "No Cabal";
 	}
 	
@@ -471,6 +482,7 @@ public class SevenSigns
 				break;
 			}
 		}
+		
 		return sealName;
 	}
 	
@@ -491,6 +503,7 @@ public class SevenSigns
 		{
 			return 0 - numDays;
 		}
+		
 		return 7 - numDays;
 	}
 	
@@ -520,11 +533,13 @@ public class SevenSigns
 						daysToChange = 0;
 					}
 				}
+				
 				// Otherwise...
 				if (daysToChange > 0)
 				{
 					_nextPeriodChange.add(Calendar.DATE, daysToChange);
 				}
+				
 				_nextPeriodChange.set(Calendar.HOUR_OF_DAY, PERIOD_START_HOUR);
 				_nextPeriodChange.set(Calendar.MINUTE, PERIOD_START_MINS);
 				break;
@@ -536,6 +551,7 @@ public class SevenSigns
 				break;
 			}
 		}
+		
 		LOGGER.info("SevenSigns: Next period change set to " + _nextPeriodChange.getTime());
 	}
 	
@@ -566,6 +582,7 @@ public class SevenSigns
 				break;
 			}
 		}
+		
 		return periodName;
 	}
 	
@@ -639,6 +656,7 @@ public class SevenSigns
 		{
 			return false;
 		}
+		
 		return true;
 	}
 	
@@ -661,6 +679,7 @@ public class SevenSigns
 				return Math.round((float) (_duskStoneScore / ((float) totalStoneScore == 0 ? 1 : totalStoneScore)) * 500) + _duskFestivalScore;
 			}
 		}
+		
 		return 0;
 	}
 	
@@ -681,6 +700,7 @@ public class SevenSigns
 				return _duskStoneScore;
 			}
 		}
+		
 		return 0;
 	}
 	
@@ -701,6 +721,7 @@ public class SevenSigns
 				return _duskFestivalScore;
 			}
 		}
+		
 		return 0;
 	}
 	
@@ -752,6 +773,7 @@ public class SevenSigns
 				cabalMembers++;
 			}
 		}
+		
 		return cabalMembers;
 	}
 	
@@ -777,6 +799,7 @@ public class SevenSigns
 		{
 			return 0;
 		}
+		
 		return currPlayer.getInt("contribution_score");
 	}
 	
@@ -787,6 +810,7 @@ public class SevenSigns
 		{
 			return 0;
 		}
+		
 		return currPlayer.getInt("ancient_adena_amount");
 	}
 	
@@ -797,6 +821,7 @@ public class SevenSigns
 		{
 			return SEAL_NULL;
 		}
+		
 		return currPlayer.getInt("seal");
 	}
 	
@@ -882,6 +907,7 @@ public class SevenSigns
 		{
 			LOGGER.log(Level.SEVERE, "SevenSigns: Unable to load Seven Signs data from database: " + e.getMessage(), e);
 		}
+		
 		// Festival data is loaded now after the Seven Signs engine data.
 	}
 	
@@ -906,6 +932,7 @@ public class SevenSigns
 				ps.setInt(8, sevenDat.getInt("charId"));
 				ps.addBatch();
 			}
+			
 			ps.executeBatch();
 		}
 		catch (SQLException e)
@@ -967,6 +994,7 @@ public class SevenSigns
 			{
 				ps.setInt(18 + i, SevenSignsFestival.getInstance().getAccumulatedBonus(i));
 			}
+			
 			_lastSave = Calendar.getInstance();
 			ps.setLong(18 + SevenSignsFestival.FESTIVAL_COUNT, _lastSave.getTimeInMillis());
 			ps.execute();
@@ -1082,6 +1110,7 @@ public class SevenSigns
 				saveSevenSignsStatus();
 			}
 		}
+		
 		return rewardAmount;
 	}
 	
@@ -1440,6 +1469,7 @@ public class SevenSigns
 					{
 						sendMessageToAll(SystemMessageId.SEVEN_SIGNS_THE_REVOLUTIONARIES_OF_DUSK_HAVE_OBTAINED_THE_SEAL_OF_STRIFE);
 					}
+					
 					CastleManager.getInstance().validateTaxes(newSealOwner);
 					break;
 				}
@@ -1498,6 +1528,7 @@ public class SevenSigns
 				{
 					// Start the Festival of Darkness cycle.
 					SevenSignsFestival.getInstance().startFestivalManager();
+					
 					// Send message that Competition has begun.
 					sendMessageToAll(SystemMessageId.SEVEN_SIGNS_THE_QUEST_EVENT_PERIOD_HAS_BEGUN_VISIT_A_PRIEST_OF_DAWN_OR_PRIESTESS_OF_DUSK_TO_PARTICIPATE_IN_THE_EVENT);
 					break;
@@ -1507,6 +1538,7 @@ public class SevenSigns
 					// Send message that Competition has ended.
 					sendMessageToAll(SystemMessageId.SEVEN_SIGNS_THE_QUEST_EVENT_PERIOD_HAS_ENDED_THE_NEXT_QUEST_EVENT_WILL_START_IN_ONE_WEEK);
 					final int compWinner = getCabalHighestScore();
+					
 					// Schedule a stop of the festival engine and reward highest ranking members from cycle
 					SevenSignsFestival.getInstance().getFestivalManagerSchedule().cancel(false);
 					SevenSignsFestival.getInstance().rewardHighestRanked();
@@ -1526,6 +1558,7 @@ public class SevenSigns
 					}
 					
 					_previousWinner = compWinner;
+					
 					// Reset Castle ticket buy count
 					final List<Castle> castles = CastleManager.getInstance().getCastles();
 					for (Castle castle : castles)
@@ -1538,8 +1571,10 @@ public class SevenSigns
 				{
 					// Perform initial Seal Validation set up.
 					initializeSeals();
+					
 					// Buff/Debuff members of the event when Seal of Strife captured.
 					giveCPMult(getSealOwner(SEAL_STRIFE));
+					
 					// Send message that Seal Validation has begun.
 					sendMessageToAll(SystemMessageId.SEVEN_SIGNS_THE_SEAL_VALIDATION_PERIOD_HAS_BEGUN);
 					LOGGER.info("SevenSigns: The " + getCabalName(_previousWinner) + " have won the competition with " + getCurrentScore(_previousWinner) + " points!");
@@ -1549,14 +1584,18 @@ public class SevenSigns
 				{
 					// Ensure a cycle restart when this period ends.
 					_activePeriod = PERIOD_COMP_RECRUITING;
+					
 					// Send message that Seal Validation has ended.
 					sendMessageToAll(SystemMessageId.SEVEN_SIGNS_THE_SEAL_VALIDATION_PERIOD_HAS_ENDED);
+					
 					// Clear Seal of Strife influence.
 					removeCPMult();
+					
 					// Reset all data
 					resetPlayerData();
 					resetSeals();
 					_currentCycle++;
+					
 					// Reset all Festival-related data and remove any unused blood offerings.
 					// NOTE: A full update of Festival data in the database is also performed.
 					SevenSignsFestival.getInstance().resetFestivalData(false);
@@ -1593,34 +1632,42 @@ public class SevenSigns
 		{
 			return true;
 		}
+		
 		if ((itemId > 6801) && (itemId < 6812))
 		{
 			return true;
 		}
+		
 		if ((itemId > 7997) && (itemId < 8008))
 		{
 			return true;
 		}
+		
 		if ((itemId > 7940) && (itemId < 7951))
 		{
 			return true;
 		}
+		
 		if ((itemId > 6294) && (itemId < 6307))
 		{
 			return true;
 		}
+		
 		if ((itemId > 6831) && (itemId < 6834))
 		{
 			return true;
 		}
+		
 		if ((itemId > 8027) && (itemId < 8030))
 		{
 			return true;
 		}
+		
 		if ((itemId > 7970) && (itemId < 7973))
 		{
 			return true;
 		}
+		
 		return false;
 	}
 	
@@ -1631,18 +1678,22 @@ public class SevenSigns
 		{
 			return true;
 		}
+		
 		if ((itemId > 6811) && (itemId < 6832))
 		{
 			return true;
 		}
+		
 		if ((itemId > 7950) && (itemId < 7971))
 		{
 			return true;
 		}
+		
 		if ((itemId > 8007) && (itemId < 8028))
 		{
 			return true;
 		}
+		
 		return false;
 	}
 	
@@ -1683,12 +1734,14 @@ public class SevenSigns
 		{
 			return true;
 		}
+		
 		// Golems cannot be summoned by Dusk when the Seal of Strife is controlled by the Dawn
 		if (isSealValidationPeriod() && (getSealOwner(SEAL_STRIFE) == CABAL_DAWN) && (getPlayerCabal(player.getObjectId()) == CABAL_DUSK))
 		{
 			player.sendPacket(SystemMessageId.DUE_TO_THE_AFFECTS_OF_THE_SEAL_OF_STRIFE_IT_IS_NOT_POSSIBLE_TO_SUMMON_AT_THIS_TIME);
 			return true;
 		}
+		
 		return false;
 	}
 	

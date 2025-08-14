@@ -36,6 +36,7 @@ public class Q00589_ASecretChange extends Quest
 {
 	// NPCs
 	private static final int CORZET = 34424;
+	
 	// Monsters
 	private static final int[] MONSTERS =
 	{
@@ -44,9 +45,11 @@ public class Q00589_ASecretChange extends Quest
 		24202, // Silence Claw
 		24203, // Silence Witch
 	};
+	
 	// Misc
 	private static final int MIN_LEVEL = 95;
 	private static final int MAX_LEVEL = 105;
+	
 	// Items
 	private static final int TRACE_OF_EVIL = 48533; // Quest item: Trace of Evil
 	
@@ -96,6 +99,7 @@ public class Q00589_ASecretChange extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -133,11 +137,13 @@ public class Q00589_ASecretChange extends Quest
 						htmltext = "34424-00.htm";
 						break;
 					}
+					
 					qs.setState(State.CREATED);
 					// fallthrough
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	

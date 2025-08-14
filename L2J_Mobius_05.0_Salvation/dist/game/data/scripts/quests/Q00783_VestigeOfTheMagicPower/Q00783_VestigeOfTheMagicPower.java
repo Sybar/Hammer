@@ -42,6 +42,7 @@ public class Q00783_VestigeOfTheMagicPower extends Quest
 {
 	// NPCs
 	private static final int LEONA_BLACKBIRD = 31595;
+	
 	// Monsters
 	private static final int[] MONSTERS =
 	{
@@ -56,6 +57,7 @@ public class Q00783_VestigeOfTheMagicPower extends Quest
 		23398, // Koraza
 		23399 // Bend Beetle
 	};
+	
 	// Misc
 	private static final int MIN_LEVEL = 99;
 	private static final int HIGH_GRADE_FRAGMENT_OF_CHAOS = 46557;
@@ -83,6 +85,7 @@ public class Q00783_VestigeOfTheMagicPower extends Quest
 		{
 			return getNoQuestMsg(player);
 		}
+		
 		switch (event)
 		{
 			case "31595-02.htm":
@@ -153,6 +156,7 @@ public class Q00783_VestigeOfTheMagicPower extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -204,12 +208,14 @@ public class Q00783_VestigeOfTheMagicPower extends Quest
 						htmltext = "31595-00a.htm";
 						break;
 					}
+					
 					qs.setState(State.CREATED);
 					htmltext = "31595-01.htm";
 					break;
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -230,10 +236,12 @@ public class Q00783_VestigeOfTheMagicPower extends Quest
 					{
 						qsPartyMember.setCond(5, true);
 					}
+					
 					if (qsPartyMember.isCond(3) && giveItemRandomly(singleMember, npc, HIGH_GRADE_FRAGMENT_OF_CHAOS, 1, 300, 1, true))
 					{
 						qsPartyMember.setCond(6, true);
 					}
+					
 					if (qsPartyMember.isCond(4) && giveItemRandomly(singleMember, npc, HIGH_GRADE_FRAGMENT_OF_CHAOS, 1, 300, 1, true))
 					{
 						qsPartyMember.setCond(7, true);
@@ -250,10 +258,12 @@ public class Q00783_VestigeOfTheMagicPower extends Quest
 				{
 					qs.setCond(5, true);
 				}
+				
 				if (qs.isCond(3) && giveItemRandomly(killer, npc, HIGH_GRADE_FRAGMENT_OF_CHAOS, 1, 300, 1, true))
 				{
 					qs.setCond(6, true);
 				}
+				
 				if (qs.isCond(4) && giveItemRandomly(killer, npc, HIGH_GRADE_FRAGMENT_OF_CHAOS, 1, 300, 1, true))
 				{
 					qs.setCond(7, true);

@@ -41,9 +41,11 @@ public class NightmareKamaloka extends AbstractInstance
 	private static final int BENUSTA = 34542;
 	private static final int DARK_RIDER = 26102;
 	private static final int INVISIBLE_NPC = 18919;
+	
 	// Items
 	private static final ItemHolder BENUSTAS_REWARD_BOX = new ItemHolder(81151, 1);
 	private static final ItemHolder BENUSTAS_SHINING_REWARD_BOX = new ItemHolder(81452, 1);
+	
 	// Misc
 	private static final Map<Integer, Integer> BOSS_MAP = new HashMap<>();
 	static
@@ -131,6 +133,7 @@ public class NightmareKamaloka extends AbstractInstance
 				break;
 			}
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	
@@ -163,12 +166,14 @@ public class NightmareKamaloka extends AbstractInstance
 				{
 					giveItems(member, BENUSTAS_REWARD_BOX);
 				}
+				
 				final Party party = world.getFirstPlayer().getParty();
 				final Player randomPlayer = party != null ? party.getRandomPlayer() : null;
 				if ((randomPlayer != null) && (getRandom(100) < 80) && (world.getPlayersCount() == world.getParameters().getInt("INITIAL_PARTY_MEMBERS", 0)))
 				{
 					giveItems(randomPlayer, BENUSTAS_SHINING_REWARD_BOX);
 				}
+				
 				world.finishInstance();
 			}
 			else

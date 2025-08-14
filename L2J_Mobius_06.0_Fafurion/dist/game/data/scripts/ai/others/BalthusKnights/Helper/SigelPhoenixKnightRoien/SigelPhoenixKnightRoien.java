@@ -41,12 +41,15 @@ public final class SigelPhoenixKnightRoien extends AbstractNpcAI
 {
 	// NPCs
 	private static final int ROIEN = 34373;
+	
 	// Monsters
 	private static final int ANTHARAS = 24087;
 	private static final int INVISIBLE_NPC = 18918;
+	
 	// Skills
 	private static final SkillHolder SuperiorAggressionAuraSkill = new SkillHolder(32137, 1);
 	private static final SkillHolder KingOfBeastsSkill = new SkillHolder(32138, 1);
+	
 	// Misc
 	private static final int p_CheckInterval = 3000;
 	private static final int p_TalkInterval = 15000;
@@ -76,6 +79,7 @@ public final class SigelPhoenixKnightRoien extends AbstractNpcAI
 					{
 						ThreadPool.schedule(new TalkTask(npc, instance), p_TalkInterval);
 					}
+					
 					ThreadPool.schedule(() ->
 					{
 						npc.setRandomWalking(false);

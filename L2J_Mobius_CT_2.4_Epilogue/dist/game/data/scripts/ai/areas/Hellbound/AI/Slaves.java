@@ -41,8 +41,10 @@ public class Slaves extends AbstractNpcAI
 		22320, // Junior Watchman
 		22321, // Junior Summoner
 	};
+	
 	// Locations
 	private static final Location MOVE_TO = new Location(-25451, 252291, -3252, 3500);
+	
 	// Misc
 	private static final int TRUST_REWARD = 10;
 	
@@ -73,6 +75,7 @@ public class Slaves extends AbstractNpcAI
 					{
 						continue;
 					}
+					
 					slave.clearAggroList();
 					slave.abortAttack();
 					slave.abortCast();
@@ -81,6 +84,7 @@ public class Slaves extends AbstractNpcAI
 					{
 						HellboundEngine.getInstance().updateTrust(TRUST_REWARD, false);
 					}
+					
 					slave.getAI().setIntention(Intention.MOVE_TO, MOVE_TO);
 					DecayTaskManager.getInstance().add(slave);
 				}

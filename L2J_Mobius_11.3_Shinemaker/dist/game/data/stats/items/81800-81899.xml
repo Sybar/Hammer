@@ -968,11 +968,11 @@
 		<set name="weight" val="100" />
 		<set name="is_sellable" val="false" />
 		<set name="handler" val="ExtractableItems" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<and>
 				<player level="85" />
 			</and>
-		</cond>
+		</conditions>
 		<capsuled_items>
 			<item id="81873" min="1" max="1" chance="100" /> <!-- Heavenly Talisman - Event -->
 		</capsuled_items>
@@ -986,9 +986,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="handler" val="ItemSkills" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player levelRange="1;104" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="39723" level="1" /> <!-- Teleportation Cube -->
 		</skills>

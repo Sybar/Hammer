@@ -34,8 +34,10 @@ public class Juriel extends AbstractNpcAI
 {
 	// NPC
 	private static final int JURIEL = 29209;
+	
 	// Location
 	private static final Location JURIEL_LOC = new Location(115213, 16623, 10080);
+	
 	// Misc
 	private static final String JURIEL_RESPAWN_PATTERN = "30 22 * * 3";
 	private SchedulingPattern _respawnPattern = null;
@@ -64,6 +66,7 @@ public class Juriel extends AbstractNpcAI
 		{
 			addSpawn(JURIEL, JURIEL_LOC, false, getDespawnTime());
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	

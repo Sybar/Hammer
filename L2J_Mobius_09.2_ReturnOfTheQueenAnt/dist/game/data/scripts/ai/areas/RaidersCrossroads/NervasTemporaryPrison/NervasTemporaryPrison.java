@@ -38,6 +38,7 @@ public class NervasTemporaryPrison extends AbstractNpcAI
 	// NPCs
 	private static final int KAYSEN = 19458;
 	private static final int NERVAS_TEMPORARY_PRISON = 19459;
+	
 	// Locations
 	private static final Location[] SPAWN_LOCATIONS =
 	{
@@ -50,6 +51,7 @@ public class NervasTemporaryPrison extends AbstractNpcAI
 		new Location(6516, -139680, -656),
 		new Location(8555, -146514, -312),
 	};
+	
 	// Item
 	private static final int NERVA_KEY = 36665;
 	
@@ -106,6 +108,7 @@ public class NervasTemporaryPrison extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return null;
 	}
 	

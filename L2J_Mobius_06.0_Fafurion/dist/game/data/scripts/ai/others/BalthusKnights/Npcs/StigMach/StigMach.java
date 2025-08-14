@@ -41,6 +41,7 @@ public final class StigMach extends AbstractNpcAI
 {
 	// NPCs
 	private static final int STIG = 34361;
+	
 	// Skills
 	private static final SkillHolder SKILL_BALTHUS_KNIGHT_MEMBER = new SkillHolder(32130, 1);
 	
@@ -61,6 +62,7 @@ public final class StigMach extends AbstractNpcAI
 		{
 			htmltext = "stig002.htm";
 		}
+		
 		return htmltext;
 	}
 	

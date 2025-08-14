@@ -45,9 +45,11 @@ public class Q11039_CommunicationBreakdown extends Quest
 	private static final int PIO = 33963;
 	private static final int FUSSY_VILA = 24399;
 	private static final int FUSSY_ARBOR = 24400;
+	
 	// Items
 	private static final int EMBEDDED_SHARD = 80674;
 	private static final ItemHolder SOE_PIO = new ItemHolder(80681, 1);
+	
 	// Location
 	private static final Location TRAINING_GROUNDS_TELEPORT = new Location(-87808, 87292, -3424);
 	
@@ -111,6 +113,7 @@ public class Q11039_CommunicationBreakdown extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -154,6 +157,7 @@ public class Q11039_CommunicationBreakdown extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

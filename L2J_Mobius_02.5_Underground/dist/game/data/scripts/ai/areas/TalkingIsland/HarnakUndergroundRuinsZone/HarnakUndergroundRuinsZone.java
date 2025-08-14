@@ -48,9 +48,9 @@ import ai.AbstractNpcAI;
  */
 public class HarnakUndergroundRuinsZone extends AbstractNpcAI
 {
-	//@formatter:off
+	// @formatter:off
 	private static final int[] NORMAL_MOBS = {22931, 22932, 22933, 22934, 22935, 22936, 22937, 22938, 23349};
-	//@formatter:on
+	// @formatter:on
 	static Map<ZoneType, zoneInfo> _roomInfo = new HashMap<>(24);
 	static final Set<SpawnTemplate> _templates = ConcurrentHashMap.newKeySet();
 	
@@ -74,6 +74,7 @@ public class HarnakUndergroundRuinsZone extends AbstractNpcAI
 				_templates.forEach(t -> t.spawn(g -> String.valueOf(g.getName()).equalsIgnoreCase(zoneName), null));
 			}
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	
@@ -201,12 +202,14 @@ public class HarnakUndergroundRuinsZone extends AbstractNpcAI
 								player.sendPacket(new ExSendUIEvent(player));
 							}
 						}
+						
 						final String zoneName = _zone.getName().toLowerCase().replace(" ", "_");
 						_templates.forEach(t -> t.despawn(g -> String.valueOf(g.getName()).equalsIgnoreCase(zoneName + "_demonic")));
 						_templates.forEach(t -> t.spawn(g -> String.valueOf(g.getName()).equalsIgnoreCase(zoneName), null));
 						return;
 					}
 				}
+				
 				if (currentInfo.getZoneStage() < 6)
 				{
 					currentInfo.setZoneStage(currentInfo.getZoneStage() + 1);
@@ -241,6 +244,7 @@ public class HarnakUndergroundRuinsZone extends AbstractNpcAI
 					{
 						calcDamage = 10;
 					}
+					
 					currentInfo.setMonitorizedDamage(calcDamage);
 					for (Player player : currentZone.getKey().getPlayersInside())
 					{
@@ -258,6 +262,7 @@ public class HarnakUndergroundRuinsZone extends AbstractNpcAI
 					calcPoints = 300;
 					ThreadPool.schedule(new changeZoneStage(currentZone.getKey()), 1000);
 				}
+				
 				currentInfo.setCurrentPoint(calcPoints);
 				for (Player player : currentZone.getKey().getPlayersInside())
 				{

@@ -22,7 +22,6 @@ import java.util.List;
 import org.l2jmobius.commons.util.Rnd;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.enums.creature.Race;
-import org.l2jmobius.gameserver.model.actor.enums.player.PlayerCondOverride;
 import org.l2jmobius.gameserver.model.item.enums.ItemProcessType;
 import org.l2jmobius.gameserver.model.item.holders.ItemHolder;
 import org.l2jmobius.gameserver.model.item.instance.Item;
@@ -86,7 +85,7 @@ public class RequestAlchemyTryMixCube extends ClientPacket
 		if (_items == null)
 		{
 			PacketLogger.warning("Kicked " + player + " for using packet injection tool with " + getClass().getSimpleName());
-			Disconnection.of(player).defaultSequence(ServerClose.STATIC_PACKET);
+			Disconnection.of(player).storeAndDeleteWith(ServerClose.STATIC_PACKET);
 			return;
 		}
 		
@@ -116,7 +115,7 @@ public class RequestAlchemyTryMixCube extends ClientPacket
 			return;
 		}
 		
-		if ((player.getKnownSkill(CommonSkill.ALCHEMY_CUBE.getId()) == null) && !player.canOverrideCond(PlayerCondOverride.SKILL_CONDITIONS))
+		if ((player.getKnownSkill(CommonSkill.ALCHEMY_CUBE.getId()) == null) && !player.isGM())
 		{
 			player.sendPacket(new ExTryMixCube(TryMixCubeType.FAIL_SKILL_WRONG));
 			return;

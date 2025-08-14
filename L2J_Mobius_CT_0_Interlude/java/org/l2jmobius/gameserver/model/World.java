@@ -118,6 +118,7 @@ public class World
 						}
 					}
 				}
+				
 				WorldRegion[] regionArray = new WorldRegion[surroundingRegions.size()];
 				regionArray = surroundingRegions.toArray(regionArray);
 				_worldRegions[rx][ry].setSurroundingRegions(regionArray);
@@ -144,6 +145,7 @@ public class World
 	public void addObject(WorldObject object)
 	{
 		_allObjects.putIfAbsent(object.getObjectId(), object);
+		
 		// if (_allObjects.putIfAbsent(object.getObjectId(), object) != null)
 		// {
 		// LOGGER.warning(getClass().getSimpleName() + ": Object " + object + " already exists in the world. Stack Trace: " + CommonUtil.getTraceString(Thread.currentThread().getStackTrace()));
@@ -160,8 +162,8 @@ public class World
 			final Player existingPlayer = _allPlayers.putIfAbsent(object.getObjectId(), newPlayer);
 			if (existingPlayer != null)
 			{
-				Disconnection.of(existingPlayer).defaultSequence(LeaveWorld.STATIC_PACKET);
-				Disconnection.of(newPlayer).defaultSequence(LeaveWorld.STATIC_PACKET);
+				Disconnection.of(existingPlayer).storeAndDeleteWith(LeaveWorld.STATIC_PACKET);
+				Disconnection.of(newPlayer).storeAndDeleteWith(LeaveWorld.STATIC_PACKET);
 				LOGGER.warning(getClass().getSimpleName() + ": Duplicate character!? Disconnected both characters (" + newPlayer.getName() + ")");
 			}
 			else if (Config.FACTION_SYSTEM_ENABLED)
@@ -192,6 +194,7 @@ public class World
 			{
 				return;
 			}
+			
 			_allPlayers.remove(object.getObjectId());
 			
 			if (Config.FACTION_SYSTEM_ENABLED)
@@ -312,6 +315,7 @@ public class World
 				return wo.asNpc();
 			}
 		}
+		
 		return null;
 	}
 	
@@ -619,6 +623,7 @@ public class World
 				result.add(o);
 			}
 		});
+		
 		return result;
 	}
 	
@@ -678,6 +683,7 @@ public class World
 				result.add(o);
 			}
 		});
+		
 		return result;
 	}
 	

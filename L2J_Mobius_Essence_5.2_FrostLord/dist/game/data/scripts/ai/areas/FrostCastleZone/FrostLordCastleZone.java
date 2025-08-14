@@ -185,6 +185,7 @@ public class FrostLordCastleZone extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	
@@ -278,6 +279,7 @@ public class FrostLordCastleZone extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		deleteGlakiasSpawns(npc);
 	}
 	
@@ -303,6 +305,7 @@ public class FrostLordCastleZone extends AbstractNpcAI
 				time = nextDateMillis;
 			}
 		}
+		
 		startQuestTimer("FIRST_RAID_SPAWN", time - System.currentTimeMillis(), null, null);
 	}
 	
@@ -317,6 +320,7 @@ public class FrostLordCastleZone extends AbstractNpcAI
 				time = nextDateMillis;
 			}
 		}
+		
 		startQuestTimer("SECOND_RAID_SPAWN", time - System.currentTimeMillis(), null, null);
 	}
 	
@@ -332,8 +336,10 @@ public class FrostLordCastleZone extends AbstractNpcAI
 			{
 				return calendar.getTimeInMillis();
 			}
+			
 			calendar.add(Calendar.DAY_OF_WEEK, 1);
 		}
+		
 		return calendar.getTimeInMillis();
 	}
 	

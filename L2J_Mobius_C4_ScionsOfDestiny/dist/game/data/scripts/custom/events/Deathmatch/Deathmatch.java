@@ -76,6 +76,7 @@ public class Deathmatch extends Event
 {
 	// NPC
 	private static final int MANAGER = 70011;
+	
 	// Skills
 	private static final SkillHolder[] FIGHTER_BUFFS =
 	{
@@ -106,6 +107,7 @@ public class Deathmatch extends Event
 	private static final ZoneForm SPAWN_1 = ZoneManager.getInstance().getZoneByName("colosseum_battle1").getZone();
 	private static final ZoneForm SPAWN_2 = ZoneManager.getInstance().getZoneByName("colosseum_battle2").getZone();
 	private static final ZoneForm SPAWN_3 = ZoneManager.getInstance().getZoneByName("colosseum_battle3").getZone();
+	
 	// Settings
 	private static final int REGISTRATION_TIME = 1; // Minutes
 	private static final int WAIT_TIME = 20; // Seconds
@@ -116,6 +118,7 @@ public class Deathmatch extends Event
 	private static final int MINIMUM_PARTICIPANT_COUNT = 4;
 	private static final int MAXIMUM_PARTICIPANT_COUNT = 24; // Scoreboard has 25 slots
 	private static final ItemHolder REWARD = new ItemHolder(57, 1000000); // Adena
+	
 	// Misc
 	private static final Map<Player, Integer> PLAYER_SCORES = new ConcurrentHashMap<>();
 	private static final Set<Player> PLAYER_LIST = ConcurrentHashMap.newKeySet();
@@ -226,11 +229,13 @@ public class Deathmatch extends Event
 				{
 					return null;
 				}
+				
 				// Remove the player from the IP count
 				if (Config.DUALBOX_CHECK_MAX_L2EVENT_PARTICIPANTS_PER_IP > 0)
 				{
 					AntiFeedManager.getInstance().removePlayer(AntiFeedManager.L2EVENT_ID, player);
 				}
+				
 				PLAYER_LIST.remove(player);
 				PLAYER_SCORES.remove(player);
 				removeListeners(player);
@@ -254,6 +259,7 @@ public class Deathmatch extends Event
 							{
 								npc.setTarget(player);
 								npc.doCast(skill.getSkill());
+								
 								// No animation.
 								// skill.getSkill().applyEffects(npc, player);
 							}
@@ -264,13 +270,13 @@ public class Deathmatch extends Event
 							{
 								npc.setTarget(player);
 								npc.doCast(skill.getSkill());
+								
 								// No animation.
 								// skill.getSkill().applyEffects(npc, player);
 							}
 						}
-						player.setCurrentHp(player.getMaxHp());
-						player.setCurrentMp(player.getMaxMp());
-						player.setCurrentCp(player.getMaxCp());
+						
+						player.fullRestore();
 					}
 				}
 				break;
@@ -286,6 +292,7 @@ public class Deathmatch extends Event
 						PLAYER_SCORES.remove(participant);
 					}
 				}
+				
 				// Check if there are enough players to start the event.
 				if (PLAYER_LIST.size() < MINIMUM_PARTICIPANT_COUNT)
 				{
@@ -295,16 +302,20 @@ public class Deathmatch extends Event
 						removeListeners(participant);
 						participant.setRegisteredOnEvent(false);
 					}
+					
 					EVENT_ACTIVE = false;
 					return null;
 				}
+				
 				// Create the instance.
 				final InstanceWorld world = new InstanceWorld();
 				world.setInstance(InstanceManager.getInstance().createDynamicInstance(INSTANCE_ID));
 				InstanceManager.getInstance().addWorld(world);
 				PVP_WORLD = world;
+				
 				// Make sure doors are closed.
 				PVP_WORLD.getDoors().forEach(Door::closeMe);
+				
 				// Randomize player list.
 				final List<Player> playerList = new ArrayList<>(PLAYER_LIST.size());
 				playerList.addAll(PLAYER_LIST);
@@ -337,6 +348,7 @@ public class Deathmatch extends Event
 							break RANDOM;
 						}
 					}
+					
 					participant.setInvul(true);
 					participant.setImmobilized(true);
 					participant.disableAllSkills();
@@ -347,6 +359,7 @@ public class Deathmatch extends Event
 						summon.setImmobilized(true);
 						summon.disableAllSkills();
 					}
+					
 					addDeathListener(participant);
 				}
 				
@@ -388,6 +401,7 @@ public class Deathmatch extends Event
 						summon.enableAllSkills();
 					}
 				}
+				
 				// Schedule finish.
 				startQuestTimer("10", (FIGHT_TIME * 60000) - 10000, null, null);
 				startQuestTimer("9", (FIGHT_TIME * 60000) - 9000, null, null);
@@ -407,6 +421,7 @@ public class Deathmatch extends Event
 				// Close doors.
 				PVP_WORLD.closeDoor(BLUE_DOOR_ID);
 				PVP_WORLD.closeDoor(RED_DOOR_ID);
+				
 				// Disable players.
 				for (Player participant : PLAYER_LIST)
 				{
@@ -421,6 +436,7 @@ public class Deathmatch extends Event
 						summon.disableAllSkills();
 					}
 				}
+				
 				// Make sure noone is dead.
 				for (Player participant : PLAYER_LIST)
 				{
@@ -454,6 +470,7 @@ public class Deathmatch extends Event
 					participant.leaveParty();
 					PVP_WORLD.ejectPlayer(participant);
 				}
+				
 				// Destroy world.
 				if (PVP_WORLD != null)
 				{
@@ -463,8 +480,10 @@ public class Deathmatch extends Event
 						instance.setDuration(60000);
 						instance.setEmptyDestroyTime(0);
 					}
+					
 					PVP_WORLD = null;
 				}
+				
 				// Enable players.
 				for (Player participant : PLAYER_LIST)
 				{
@@ -479,6 +498,7 @@ public class Deathmatch extends Event
 						summon.disableAllSkills();
 					}
 				}
+				
 				EVENT_ACTIVE = false;
 				break;
 			}
@@ -505,6 +525,7 @@ public class Deathmatch extends Event
 							break RANDOM;
 						}
 					}
+					
 					resetActivityTimers(player);
 				}
 				break;
@@ -540,6 +561,7 @@ public class Deathmatch extends Event
 				break;
 			}
 		}
+		
 		// Activity timer.
 		if (event.startsWith("KickPlayer") && (player != null) && (player.getInstanceId() == PVP_WORLD.getInstanceId()))
 		{
@@ -562,6 +584,7 @@ public class Deathmatch extends Event
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -582,9 +605,11 @@ public class Deathmatch extends Event
 			{
 				return "manager-buffheal.html";
 			}
+			
 			startQuestTimer("manager-cancel", 5, npc, player);
 			return "manager-cancel.html";
 		}
+		
 		// Player is not registered.
 		startQuestTimer("manager-register", 5, npc, player);
 		return "manager-register.html";
@@ -617,68 +642,81 @@ public class Deathmatch extends Event
 			player.sendMessage("You are already registered on this event.");
 			return false;
 		}
+		
 		if (player.getLevel() < MINIMUM_PARTICIPANT_LEVEL)
 		{
 			player.sendMessage("Your level is too low to participate.");
 			return false;
 		}
+		
 		if (player.getLevel() > MAXIMUM_PARTICIPANT_LEVEL)
 		{
 			player.sendMessage("Your level is too high to participate.");
 			return false;
 		}
+		
 		if (player.isRegisteredOnEvent())
 		{
 			player.sendMessage("You are already registered on an event.");
 			return false;
 		}
+		
 		if (PLAYER_LIST.size() >= MAXIMUM_PARTICIPANT_COUNT)
 		{
 			player.sendMessage("There are too many players registered on the event.");
 			return false;
 		}
+		
 		if (player.isFlying())
 		{
 			player.sendMessage("You cannot register on the event while flying.");
 			return false;
 		}
+		
 		if (!player.isInventoryUnder80(false))
 		{
 			player.sendMessage("There are too many items in your inventory.");
 			player.sendMessage("Try removing some items.");
 			return false;
 		}
+		
 		if ((player.getWeightPenalty() != 0))
 		{
 			player.sendMessage("Your invetory weight has exceeded the normal limit.");
 			player.sendMessage("Try removing some items.");
 			return false;
 		}
+		
 		if (player.getKarma() > 0)
 		{
 			player.sendMessage("People with bad reputation can't register.");
 			return false;
 		}
+		
 		if (player.isInOlympiadMode() || Olympiad.getInstance().isRegistered(player))
 		{
 			player.sendMessage("You cannot participate while registered on the Olympiad.");
 			return false;
 		}
+		
 		if (player.getInstanceId() > 0)
 		{
 			player.sendMessage("You cannot register while in an instance.");
 			return false;
 		}
+		
 		if (player.isInSiege() || player.isInsideZone(ZoneId.SIEGE))
 		{
 			player.sendMessage("You cannot register while on a siege.");
 			return false;
 		}
+		
 		if (player.isFishing())
 		{
 			player.sendMessage("You cannot register while fishing.");
 			return false;
 		}
+		
 		return true;
 	}
 	
@@ -716,6 +754,7 @@ public class Deathmatch extends Event
 				listener.unregisterMe();
 			}
 		}
+		
 		for (AbstractEventListener listener : player.getListeners(EventType.ON_CREATURE_DEATH))
 		{
 			if (listener.getOwner() == this)
@@ -737,6 +776,7 @@ public class Deathmatch extends Event
 	private void onPlayerLogout(OnPlayerLogout event)
 	{
 		final Player player = event.getPlayer();
+		
 		// Remove player from lists.
 		PLAYER_LIST.remove(player);
 		PLAYER_SCORES.remove(player);
@@ -749,8 +789,10 @@ public class Deathmatch extends Event
 		{
 			final Player killedPlayer = event.getTarget().asPlayer();
 			final Player killer = event.getAttacker().asPlayer();
+			
 			// Confirm player kill.
 			PLAYER_SCORES.put(killer, PLAYER_SCORES.get(killer) + 1);
+			
 			// Packet does not exist in Interlude.
 			// PVP_WORLD.broadcastPacket(new ExPVPMatchCCRecord(ExPVPMatchCCRecord.UPDATE, Util.sortByValue(PLAYER_SCORES, true)));
 			// Auto release after 10 seconds.
@@ -765,6 +807,7 @@ public class Deathmatch extends Event
 		{
 			return false;
 		}
+		
 		EVENT_ACTIVE = true;
 		
 		// Cancel timers. (In case event started immediately after another event was canceled.)
@@ -775,20 +818,24 @@ public class Deathmatch extends Event
 				timer.cancel();
 			}
 		}
+		
 		// Register the event at AntiFeedManager and clean it for just in case if the event is already registered
 		if (Config.DUALBOX_CHECK_MAX_L2EVENT_PARTICIPANTS_PER_IP > 0)
 		{
 			AntiFeedManager.getInstance().registerEvent(AntiFeedManager.L2EVENT_ID);
 			AntiFeedManager.getInstance().clear(AntiFeedManager.L2EVENT_ID);
 		}
+		
 		// Clear player lists.
 		PLAYER_LIST.clear();
 		PLAYER_SCORES.clear();
+		
 		// Spawn event manager.
 		MANAGER_NPC_INSTANCE = addSpawn(MANAGER, MANAGER_SPAWN_LOC, false, REGISTRATION_TIME * 60000);
 		MANAGER_NPC_INSTANCE.setTitle("Deathmatch Event");
 		MANAGER_NPC_INSTANCE.broadcastStatusUpdate();
 		startQuestTimer("TeleportToArena", REGISTRATION_TIME * 60000, null, null);
+		
 		// Send message to players.
 		Broadcast.toAllOnlinePlayers("Deathmatch Event: Registration opened for " + REGISTRATION_TIME + " minutes.");
 		Broadcast.toAllOnlinePlayers("Deathmatch Event: You can register at Giran Event Manager.");
@@ -802,10 +849,12 @@ public class Deathmatch extends Event
 		{
 			return false;
 		}
+		
 		EVENT_ACTIVE = false;
 		
 		// Despawn event manager.
 		MANAGER_NPC_INSTANCE.deleteMe();
+		
 		// Cancel timers.
 		for (List<QuestTimer> timers : getQuestTimers().values())
 		{
@@ -814,6 +863,7 @@ public class Deathmatch extends Event
 				timer.cancel();
 			}
 		}
+		
 		// Remove participants.
 		for (Player participant : PLAYER_LIST)
 		{
@@ -832,6 +882,7 @@ public class Deathmatch extends Event
 				summon.enableAllSkills();
 			}
 		}
+		
 		if (PVP_WORLD != null)
 		{
 			final Instance instance = InstanceManager.getInstance().getInstance(PVP_WORLD.getInstanceId());
@@ -840,8 +891,10 @@ public class Deathmatch extends Event
 				instance.setDuration(60000);
 				instance.setEmptyDestroyTime(0);
 			}
+			
 			PVP_WORLD = null;
 		}
+		
 		// Send message to players.
 		Broadcast.toAllOnlinePlayers("Deathmatch Event: Event was canceled.");
 		return true;

@@ -73,6 +73,7 @@ public class DeadPartyPledge implements IAffectScopeHandler
 						return false;
 					}
 				}
+				
 				if ((affectObject != null) && !affectObject.checkAffectedObject(creature, p))
 				{
 					return false;

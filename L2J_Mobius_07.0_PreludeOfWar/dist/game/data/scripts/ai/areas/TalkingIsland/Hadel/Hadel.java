@@ -31,6 +31,7 @@ public class Hadel extends AbstractNpcAI
 {
 	// NPC
 	private static final int HADEL = 33344;
+	
 	// Locations
 	private static final Location GIANTS = new Location(-114562, 227307, -2864);
 	private static final Location HARNAK = new Location(-114700, 147909, -7720);
@@ -66,10 +67,12 @@ public class Hadel extends AbstractNpcAI
 					htmltext = "33344-noClass.html";
 					break;
 				}
+				
 				player.teleToLocation(HARNAK);
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

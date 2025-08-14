@@ -82,6 +82,7 @@ public class ExReplyReceivedPost extends ServerPacket
 				{
 					buffer.writeShort(item.getElementDefAttr(i));
 				}
+				
 				for (int op : item.getEnchantOptions())
 				{
 					buffer.writeShort(op);
@@ -92,6 +93,7 @@ public class ExReplyReceivedPost extends ServerPacket
 		{
 			buffer.writeInt(0);
 		}
+		
 		buffer.writeLong(_msg.getReqAdena());
 		buffer.writeInt(_msg.hasAttachments());
 		buffer.writeInt(_msg.getSendBySystem());

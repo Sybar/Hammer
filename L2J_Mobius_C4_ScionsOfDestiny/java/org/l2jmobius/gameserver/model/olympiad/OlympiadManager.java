@@ -109,6 +109,7 @@ class OlympiadManager implements Runnable
 					{
 						break;
 					}
+					
 					if (STADIUMS[i].isFreeToUse())
 					{
 						if (i < (STADIUMS.length / 2))
@@ -133,12 +134,15 @@ class OlympiadManager implements Runnable
 											player.setOlympiadSide(-1);
 											player.setOlympiadGameId(-1);
 										}
+										
 										_olympiadInstances.remove(i);
 									}
+									
 									if (gamesQueue.get(i) != null)
 									{
 										gamesQueue.remove(i);
 									}
+									
 									STADIUMS[i].setStadiaFree();
 									
 									// try to reuse this stadia next time
@@ -165,12 +169,15 @@ class OlympiadManager implements Runnable
 											player.setOlympiadSide(-1);
 											player.setOlympiadGameId(-1);
 										}
+										
 										_olympiadInstances.remove(i);
 									}
+									
 									if (gamesQueue.get(i) != null)
 									{
 										gamesQueue.remove(i);
 									}
+									
 									STADIUMS[i].setStadiaFree();
 									
 									// try to reuse this stadia next time
@@ -200,12 +207,15 @@ class OlympiadManager implements Runnable
 											player.setOlympiadSide(-1);
 											player.setOlympiadGameId(-1);
 										}
+										
 										_olympiadInstances.remove(i);
 									}
+									
 									if (gamesQueue.get(i) != null)
 									{
 										gamesQueue.remove(i);
 									}
+									
 									STADIUMS[i].setStadiaFree();
 									
 									// try to reuse this stadia next time
@@ -232,12 +242,15 @@ class OlympiadManager implements Runnable
 											player.setOlympiadSide(-1);
 											player.setOlympiadGameId(-1);
 										}
+										
 										_olympiadInstances.remove(i);
 									}
+									
 									if (gamesQueue.get(i) != null)
 									{
 										gamesQueue.remove(i);
 									}
+									
 									STADIUMS[i].setStadiaFree();
 									
 									// try to reuse this stadia next time
@@ -306,6 +319,7 @@ class OlympiadManager implements Runnable
 		// when comp time finish wait for all games terminated before execute
 		// the cleanup code
 		boolean allGamesTerminated = false;
+		
 		// wait for all games terminated
 		while (!allGamesTerminated)
 		{
@@ -330,6 +344,7 @@ class OlympiadManager implements Runnable
 				}
 			}
 		}
+		
 		// when all games terminated clear all
 		gamesQueue.clear();
 		_olympiadInstances.clear();
@@ -344,6 +359,7 @@ class OlympiadManager implements Runnable
 		{
 			return _olympiadInstances.get(index);
 		}
+		
 		return null;
 	}
 	
@@ -372,6 +388,7 @@ class OlympiadManager implements Runnable
 		{
 			return null;
 		}
+		
 		return list.get(classList.get(Rnd.get(classList.size())));
 	}
 	
@@ -382,6 +399,7 @@ class OlympiadManager implements Runnable
 		{
 			return opponents;
 		}
+		
 		final int loopCount = (list.size() / 2);
 		int first;
 		int second;
@@ -407,15 +425,18 @@ class OlympiadManager implements Runnable
 		{
 			return false;
 		}
+		
 		if (list.isEmpty())
 		{
 			return false;
 		}
+		
 		final int loopCount = list.size() >> 1;
 		if (loopCount < 1)
 		{
 			return false;
 		}
+		
 		return true;
 	}
 	

@@ -51,17 +51,20 @@ public class Q10986_SwampMonster extends Quest
 	// NPCs
 	private static final int VOLODOS = 30137;
 	private static final int CAPTAIN_BATHIS = 30332;
+	
 	// Monsters
 	private static final int MARSH_ZOMBIE = 20015; // NOTE: Zombie Forest Elf in old client
 	private static final int MARSH_ZOMBIE_SCOUT = 20020; // NOTE: Zombie Forest Elf Resercher in old client
 	private static final int DARK_HORROR = 20105;
 	private static final int LESSER_DARK_HORROR = 20025;
+	
 	// Items
 	private static final ItemHolder SOE_TO_CAPTAIN_BATHIS = new ItemHolder(91651, 1);
 	private static final ItemHolder SOE_NOVICE = new ItemHolder(10650, 20);
 	private static final ItemHolder SPIRIT_ORE = new ItemHolder(3031, 50);
 	private static final ItemHolder HP_POTS = new ItemHolder(91912, 50);
 	private static final ItemHolder XP_GROWTH_SCROLL = new ItemHolder(49674, 1);
+	
 	// Misc
 	private static final int MAX_LEVEL = 20;
 	private static final String KILL_COUNT_VAR = "KillCount";
@@ -133,11 +136,13 @@ public class Q10986_SwampMonster extends Quest
 						showOnScreenMsg(player, NpcStringId.YOU_VE_FINISHED_THE_TUTORIAL_NTAKE_YOUR_1ST_CLASS_TRANSFER_AND_COMPLETE_YOUR_TRAINING_WITH_BATHIS_TO_BECOME_STRONGER, ExShowScreenMessage.TOP_CENTER, 10000);
 						player.sendPacket(ExClassChangeSetAlarm.STATIC_PACKET);
 					}
+					
 					qs.exitQuest(false, true);
 				}
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -174,6 +179,7 @@ public class Q10986_SwampMonster extends Quest
 			holder.add(new NpcLogListHolder(NpcStringId.KILL_ZOMBIES_AND_DARK_HORRORS.getId(), true, qs.getInt(KILL_COUNT_VAR)));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 	
@@ -215,6 +221,7 @@ public class Q10986_SwampMonster extends Quest
 				htmltext = getAlreadyCompletedMsg(player);
 			}
 		}
+		
 		return htmltext;
 	}
 	

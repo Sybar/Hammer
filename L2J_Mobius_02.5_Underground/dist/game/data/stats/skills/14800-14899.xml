@@ -973,7 +973,7 @@
 		<affectScope>SINGLE</affectScope>
 		<basicProperty>NONE</basicProperty>
 		<effectPoint>1</effectPoint>
-		<for>
+		<effects>
 			<effect name="DamageBlock">
 				<type>BLOCK_HP</type>
 			</effect>
@@ -986,7 +986,7 @@
 				<amount>-100</amount>
 				<slot>ALL</slot>
 			</effect>
-		</for>
+		</effects>
 		<hitCancelTime>0</hitCancelTime>
 		<isMagic>2</isMagic>
 		<lvlBonusRate>1</lvlBonusRate>

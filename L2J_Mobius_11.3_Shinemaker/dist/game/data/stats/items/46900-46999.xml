@@ -377,9 +377,9 @@
 		<set name="immediate_effect" val="true" />
 		<set name="handler" val="PaulinasSupportBox" />
 		<set name="material" val="PAPER" />
-		<cond msgId="1902">
+		<conditions msgId="1902">
 			<player levelRange="40;120" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="18597" level="5" /> <!-- Paulina's R-grade Equipment Set -->
 		</skills>

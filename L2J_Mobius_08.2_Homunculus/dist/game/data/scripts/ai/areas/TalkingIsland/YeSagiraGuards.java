@@ -59,6 +59,7 @@ public class YeSagiraGuards extends AbstractNpcAI
 					npc.reduceCurrentHp(1, monster, null); // TODO: Find better way for attack
 				}
 			}
+			
 			getTimers().addTimer("GUARD_AGGRO_" + npc.getObjectId(), null, 10000, npc, null);
 		}
 	}

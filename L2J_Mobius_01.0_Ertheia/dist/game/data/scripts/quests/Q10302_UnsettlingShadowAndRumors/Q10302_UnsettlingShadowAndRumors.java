@@ -36,8 +36,10 @@ public class Q10302_UnsettlingShadowAndRumors extends Quest
 	private static final int CAS = 32901;
 	private static final int MR_KAY = 32903;
 	private static final int KITT = 32902;
+	
 	// Items
 	private static final int OLD_ROLL_OF_PAPER = 34033;
+	
 	// Misc
 	private static final int MIN_LEVEL = 88;
 	
@@ -139,6 +141,7 @@ public class Q10302_UnsettlingShadowAndRumors extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -248,6 +251,7 @@ public class Q10302_UnsettlingShadowAndRumors extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

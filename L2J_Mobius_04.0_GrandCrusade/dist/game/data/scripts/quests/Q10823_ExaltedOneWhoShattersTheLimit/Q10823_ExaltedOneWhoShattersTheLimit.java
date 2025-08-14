@@ -37,17 +37,20 @@ public class Q10823_ExaltedOneWhoShattersTheLimit extends Quest
 {
 	// NPC
 	private static final int LIONEL = 33907;
+	
 	// Items
 	private static final int MERLOT_SERTIFICATE = 46056;
 	private static final int KURTIZ_CERTIFICATE = 46057;
 	private static final int MAMMON_CERTIFICATE = 45635;
 	private static final int GUSTAV_CERTIFICATE = 45636;
 	private static final int LIONEL_MISSION_LIST_3 = 45637;
+	
 	// Rewards
 	private static final int EXALTED_CLOAK = 37763;
 	private static final int OBTAIN_EXALTED_STATUS = 45638;
 	private static final int EXALTED_TIARA = 45644;
 	private static final int DIGNITY_OF_THE_EXALTED = 45924;
+	
 	// Misc
 	private static final int MIN_LEVEL = 100;
 	private static final int MIN_DUALCLASS_LEVEL = 100;
@@ -104,6 +107,7 @@ public class Q10823_ExaltedOneWhoShattersTheLimit extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -138,6 +142,7 @@ public class Q10823_ExaltedOneWhoShattersTheLimit extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

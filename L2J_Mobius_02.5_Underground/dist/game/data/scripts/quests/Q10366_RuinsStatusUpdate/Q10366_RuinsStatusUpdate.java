@@ -41,6 +41,7 @@ public class Q10366_RuinsStatusUpdate extends Quest
 	private static final int TOOK = 32150;
 	private static final int MOKA = 32157;
 	private static final int VALFAR = 32146;
+	
 	// Misc
 	private static final int MIN_LEVEL = 16;
 	private static final int MAX_LEVEL = 25;
@@ -149,10 +150,12 @@ public class Q10366_RuinsStatusUpdate extends Quest
 					addExpAndSp(player, 150000, 36);
 					qs.exitQuest(false, true);
 				}
+				
 				htmltext = event;
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -223,6 +226,7 @@ public class Q10366_RuinsStatusUpdate extends Quest
 								break;
 							}
 						}
+						
 						htmltext = "32153-04.html";
 						break;
 					}
@@ -236,6 +240,7 @@ public class Q10366_RuinsStatusUpdate extends Quest
 								break;
 							}
 						}
+						
 						htmltext = "32147-04.html";
 						break;
 					}
@@ -249,6 +254,7 @@ public class Q10366_RuinsStatusUpdate extends Quest
 								break;
 							}
 						}
+						
 						htmltext = "32160-04.html";
 						break;
 					}
@@ -262,6 +268,7 @@ public class Q10366_RuinsStatusUpdate extends Quest
 								break;
 							}
 						}
+						
 						htmltext = "32150-04.html";
 						break;
 					}
@@ -275,6 +282,7 @@ public class Q10366_RuinsStatusUpdate extends Quest
 								break;
 							}
 						}
+						
 						htmltext = "32157-04.html";
 						break;
 					}
@@ -288,6 +296,7 @@ public class Q10366_RuinsStatusUpdate extends Quest
 								break;
 							}
 						}
+						
 						htmltext = "32146-04.html";
 						break;
 					}
@@ -316,6 +325,7 @@ public class Q10366_RuinsStatusUpdate extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 }

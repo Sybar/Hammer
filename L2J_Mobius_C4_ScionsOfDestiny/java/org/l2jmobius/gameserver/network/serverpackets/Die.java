@@ -57,6 +57,7 @@ public class Die extends ServerPacket
 			_clan = player.getClan();
 			_isJailed = player.isJailed();
 		}
+		
 		_canTeleport = creature.canRevive() && !creature.isPendingRevive();
 		_sweepable = creature.isSweepActive();
 	}
@@ -74,12 +75,14 @@ public class Die extends ServerPacket
 			{
 				_allowFixedRes = _creature.getInventory().haveItemForSelfResurrection();
 			}
+			
 			// Verify if player can use fixed resurrection without Feather
 			if (_access.allowFixedRes())
 			{
 				_allowFixedRes = true;
 			}
 		}
+		
 		if (_canTeleport && (_clan != null) && !_isJailed)
 		{
 			boolean isInCastleDefense = false;
@@ -106,6 +109,7 @@ public class Die extends ServerPacket
 			buffer.writeInt(0); // 6d 02 00 00 00 - to castle
 			buffer.writeInt(0); // 6d 05 00 00 00 - to siege HQ
 		}
+		
 		buffer.writeInt(_sweepable); // sweepable (blue glow)
 		buffer.writeInt(_allowFixedRes); // fixed
 	}

@@ -44,13 +44,16 @@ public class Q10576_GlitteringWeapons extends Quest
 {
 	// NPCs
 	private static final int RUPIO = 30471;
+	
 	// Item
 	private static final int ENHANCEMENT_PRACTICE_LONG_SWORD = 48170;
 	private static final int PRACTICE_WEAPON_ENCHANT_SCROLL = 48171;
+	
 	// Rewards
 	private static final long XP = 597699960;
 	private static final int SP = 597690;
 	private static final int CERTIFICATE_FROM_RUPIO = 48174;
+	
 	// Misc
 	private static final int MIN_LEVEL = 95;
 	
@@ -73,6 +76,7 @@ public class Q10576_GlitteringWeapons extends Quest
 		{
 			return getNoQuestMsg(player);
 		}
+		
 		String htmltext = null;
 		switch (event)
 		{
@@ -150,6 +154,7 @@ public class Q10576_GlitteringWeapons extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -191,6 +196,7 @@ public class Q10576_GlitteringWeapons extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -203,6 +209,7 @@ public class Q10576_GlitteringWeapons extends Quest
 		}
 		
 		final QuestState qs = getQuestState(player, false);
+		
 		// Check if weapon has been augmented to complete the quest
 		if ((qs != null) && qs.isCond(2))
 		{

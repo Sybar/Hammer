@@ -34,11 +34,13 @@ public class FrightenedRagnaOrc extends AbstractNpcAI
 {
 	// NPC ID
 	private static final int MOB_ID = 18807;
+	
 	// Chances
 	private static final int ADENA = 10000;
 	private static final int CHANCE = 1000;
 	private static final int ADENA2 = 1000000;
 	private static final int CHANCE2 = 10;
+	
 	// Skill
 	private static final SkillHolder SKILL = new SkillHolder(6234, 1);
 	
@@ -85,6 +87,7 @@ public class FrightenedRagnaOrc extends AbstractNpcAI
 					cancelQuestTimer("say", npc, null);
 					return null;
 				}
+				
 				final String msg = getRandomBoolean() ? "I... don't want to fight..." : "Is this really necessary...?";
 				npc.broadcastSay(ChatType.NPC_GENERAL, msg);
 				break;
@@ -119,6 +122,7 @@ public class FrightenedRagnaOrc extends AbstractNpcAI
 					{
 						npc.broadcastSay(ChatType.NPC_GENERAL, getRandomBoolean() ? "Thanks, but that thing about 10,000,000 adena was a lie! See ya!!" : "You're pretty dumb to believe me!");
 					}
+					
 					startQuestTimer("despawn", 1000, npc, null);
 				}
 				break;
@@ -131,6 +135,7 @@ public class FrightenedRagnaOrc extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return null;
 	}
 	

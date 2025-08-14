@@ -44,10 +44,12 @@ public class Q10880_TheLastOneStanding extends Quest
 	// NPCs
 	private static final int CYPHONA = 34055;
 	private static final int FERIN = 34054;
+	
 	// Items
 	private static final int FERIN_CERTIFICATE = 47835;
 	private static final int PROOF_OF_STRENGTH = 47843;
 	private static final ItemHolder LIONEL_HUNTERS_LIST_PART_5 = new ItemHolder(47834, 1);
+	
 	// Monsters
 	private static final int[] MONSTERS =
 	{
@@ -173,6 +175,7 @@ public class Q10880_TheLastOneStanding extends Quest
 						{
 							mainQ.notifyEvent("SUBQUEST_FINISHED_NOTIFY", npc, player);
 						}
+						
 						htmltext = event;
 					}
 					else
@@ -198,6 +201,7 @@ public class Q10880_TheLastOneStanding extends Quest
 						{
 							mainQ.notifyEvent("SUBQUEST_FINISHED_NOTIFY", npc, player);
 						}
+						
 						htmltext = event;
 					}
 					else
@@ -223,6 +227,7 @@ public class Q10880_TheLastOneStanding extends Quest
 						{
 							mainQ.notifyEvent("SUBQUEST_FINISHED_NOTIFY", npc, player);
 						}
+						
 						htmltext = event;
 					}
 					else
@@ -233,6 +238,7 @@ public class Q10880_TheLastOneStanding extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -284,6 +290,7 @@ public class Q10880_TheLastOneStanding extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

@@ -46,6 +46,7 @@ public class ExRequestClassChange extends ClientPacket
 {
 	private int _classId;
 	private static final String AWAKE_POWER_REWARDED_VAR = "AWAKE_POWER_REWARDED";
+	
 	// Reward
 	private static final int CHAOS_POMANDER = 37374;
 	private static final int VITALITY_MAINTAINING_RUNE = 80712;
@@ -89,6 +90,7 @@ public class ExRequestClassChange extends ClientPacket
 				break;
 			}
 		}
+		
 		if (!canChange //
 			&& (_classId != 170) && (player.getPlayerClass().getId() != 133)) // Female Soul Hound fix.
 		{
@@ -148,6 +150,7 @@ public class ExRequestClassChange extends ClientPacket
 							player.getVariables().set(AWAKE_POWER_REWARDED_VAR, true);
 							player.addItem(ItemProcessType.REWARD, AWAKE_POWER_EVIS, 1, player, true);
 						}
+						
 						if (player.getPlayerClass() == PlayerClass.SAYHA_SEER)
 						{
 							player.getVariables().set(AWAKE_POWER_REWARDED_VAR, true);

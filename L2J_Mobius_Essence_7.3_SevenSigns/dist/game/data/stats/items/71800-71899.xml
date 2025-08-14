@@ -316,9 +316,9 @@
 		<set name="is_depositable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
-		<cond msgId="1902">
+		<conditions msgId="1902">
 			<player levelRange="1;60" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="71829" name="XP and SP Rune Pack 50% (1-hour)" type="EtcItem">
 		<!-- Double-click to obtain XP and SP Rune 50% (1-hour). -->

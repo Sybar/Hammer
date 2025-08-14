@@ -27,6 +27,7 @@ public class EnchantSkillLearn
 	// These two build the primary key.
 	private final int _id;
 	private final int _level;
+	
 	// Not needed, just for easier debugging.
 	private final String _name;
 	private final int _spCost;

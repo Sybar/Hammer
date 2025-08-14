@@ -50,6 +50,7 @@ public class Target implements ITargetTypeHandler
 			{
 				creature.sendPacket(SystemMessageId.INVALID_TARGET);
 			}
+			
 			return null;
 		}
 		
@@ -78,6 +79,7 @@ public class Target implements ITargetTypeHandler
 			{
 				creature.sendPacket(SystemMessageId.THE_TARGET_IS_LOCATED_WHERE_YOU_CANNOT_CHARGE);
 			}
+			
 			return null;
 		}
 		
@@ -91,6 +93,7 @@ public class Target implements ITargetTypeHandler
 			
 			return null;
 		}
+		
 		return target;
 	}
 }

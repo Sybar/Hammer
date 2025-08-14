@@ -36,6 +36,7 @@ public class Q00354_ConquestOfAlligatorIsland extends Quest
 	private static final int ALLIGATOR_TOOTH = 5863;
 	private static final int TORN_MAP_FRAGMENT = 5864;
 	private static final int PIRATE_TREASURE_MAP = 5915;
+	
 	// Drops
 	private static final Map<Integer, Double> MOB1 = new HashMap<>();
 	private static final Map<Integer, Integer> MOB2 = new HashMap<>();

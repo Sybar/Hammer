@@ -33,6 +33,7 @@ public class Q10412_ASuspiciousVagabondInTheForest extends Quest
 	// NPCs
 	private static final int HATUBA = 33849;
 	private static final int VAGABOND = 33850; // Suspicious Vagabond Mortally Endangered
+	
 	// Misc
 	private static final int MIN_LEVEL = 65;
 	private static final int MAX_LEVEL = 70;
@@ -81,11 +82,13 @@ public class Q10412_ASuspiciousVagabondInTheForest extends Quest
 					{
 						addExpAndSp(player, 7541520, 226);
 					}
+					
 					htmltext = event;
 				}
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -126,6 +129,7 @@ public class Q10412_ASuspiciousVagabondInTheForest extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

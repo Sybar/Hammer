@@ -132,6 +132,7 @@ public class RevengeHistoryManager
 						removals.add(holder);
 					}
 				}
+				
 				for (RevengeHistoryHolder holder : removals)
 				{
 					history.remove(holder);
@@ -177,6 +178,7 @@ public class RevengeHistoryManager
 					ps2.addBatch();
 				}
 			}
+			
 			ps2.executeBatch();
 		}
 		catch (Exception e)
@@ -279,11 +281,13 @@ public class RevengeHistoryManager
 			player.sendPacket(SystemMessageId.THE_ENEMY_IS_OFFLINE_AND_CANNOT_BE_FOUND_RIGHT_NOW);
 			return false;
 		}
+		
 		if (killer.isTeleporting() || killer.isInsideZone(ZoneId.PEACE) || killer.isInInstance() || killer.isInTimedHuntingZone() || killer.isInsideZone(ZoneId.SIEGE) || killer.isInsideZone(ZoneId.NO_BOOKMARK))
 		{
 			player.sendPacket(SystemMessageId.THE_CHARACTER_IS_IN_A_LOCATION_WHERE_IT_IS_IMPOSSIBLE_TO_USE_THIS_FUNCTION);
 			return false;
 		}
+		
 		if (killer.isDead())
 		{
 			player.sendPacket(SystemMessageId.THE_CHARACTER_IS_IN_A_LOCATION_WHERE_IT_IS_IMPOSSIBLE_TO_USE_THIS_FUNCTION);
@@ -295,11 +299,13 @@ public class RevengeHistoryManager
 			player.sendPacket(SystemMessageId.THE_CHARACTER_IS_IN_A_LOCATION_WHERE_IT_IS_IMPOSSIBLE_TO_USE_THIS_FUNCTION);
 			return false;
 		}
+		
 		if (player.isDead())
 		{
 			player.sendPacket(SystemMessageId.YOU_CANNOT_USE_TELEPORT_WHILE_YOU_ARE_DEAD);
 			return false;
 		}
+		
 		if (player.isInCombat() || player.isDisabled())
 		{
 			player.sendPacket(SystemMessageId.YOU_CANNOT_TELEPORT_WHILE_IN_COMBAT);
@@ -354,6 +360,7 @@ public class RevengeHistoryManager
 				{
 					HIDE_SKILL.getSkill().applyEffects(summon, summon);
 				}
+				
 				player.teleToLocation(killer.getLocation());
 			}
 		}
@@ -406,6 +413,7 @@ public class RevengeHistoryManager
 			{
 				HIDE_SKILL.getSkill().applyEffects(summon, summon);
 			}
+			
 			player.teleToLocation(killer.getLocation());
 		}
 	}
@@ -494,6 +502,7 @@ public class RevengeHistoryManager
 				target.sendPacket(new ExPvpBookShareRevengeList(target));
 			}
 		}
+		
 		player.sendPacket(new ExPvpBookShareRevengeList(player));
 	}
 	

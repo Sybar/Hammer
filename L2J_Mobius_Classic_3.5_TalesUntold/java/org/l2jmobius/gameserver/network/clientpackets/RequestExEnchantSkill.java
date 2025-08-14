@@ -92,6 +92,7 @@ public class RequestExEnchantSkill extends ClientPacket
 		// {
 		// return;
 		// }
+		
 		if (!player.isAllowedToEnchantSkills())
 		{
 			return;
@@ -196,6 +197,7 @@ public class RequestExEnchantSkill extends ClientPacket
 					{
 						player.addTimeStamp(enchantedSkill, reuse);
 					}
+					
 					player.addSkill(enchantedSkill, true);
 					
 					final SystemMessage sm = new SystemMessage(SystemMessageId.SKILL_ENCHANT_WAS_SUCCESSFUL_S1_HAS_BEEN_ENCHANTED);
@@ -215,6 +217,7 @@ public class RequestExEnchantSkill extends ClientPacket
 						{
 							player.addTimeStamp(enchantedSkill, reuse);
 						}
+						
 						player.addSkill(enchantedSkill, true);
 						
 						player.sendPacket(SystemMessageId.SKILL_ENCHANT_FAILED_THE_SKILL_WILL_BE_INITIALIZED);
@@ -223,6 +226,7 @@ public class RequestExEnchantSkill extends ClientPacket
 					{
 						player.sendPacket(new SystemMessage(SystemMessageId.SKILL_ENCHANT_FAILED_CURRENT_LEVEL_OF_ENCHANT_SKILL_S1_WILL_REMAIN_UNCHANGED).addSkillName(skill));
 					}
+					
 					player.sendPacket(ExEnchantSkillResult.STATIC_PACKET_FALSE);
 					
 					if (Config.LOG_SKILL_ENCHANTS)
@@ -249,6 +253,7 @@ public class RequestExEnchantSkill extends ClientPacket
 					{
 						player.addTimeStamp(enchantedSkill, reuse);
 					}
+					
 					player.addSkill(enchantedSkill, true);
 					
 					final SystemMessage sm = new SystemMessage(SystemMessageId.ENCHANT_SKILL_ROUTE_CHANGE_WAS_SUCCESSFUL_LV_OF_ENCHANT_SKILL_S1_WILL_REMAIN);
@@ -264,6 +269,7 @@ public class RequestExEnchantSkill extends ClientPacket
 					{
 						player.addTimeStamp(enchantedSkill, reuse);
 					}
+					
 					player.addSkill(enchantedSkill, true);
 					
 					player.sendPacket(SystemMessageId.SKILL_ENCHANT_FAILED_THE_SKILL_WILL_BE_INITIALIZED);

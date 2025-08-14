@@ -38,6 +38,7 @@ public class TombStone extends AbstractNpcAI
 	// Monsters
 	public static final int SEALED_TOMB_STONE = 18727;
 	public static final int DUMMY_TOMB_STORE = 18728;
+	
 	// Misc
 	private static final Map<Integer, Npc> DUMMY_STONE_NPC = new HashMap<>();
 	private static final String DUMMY_TOMB_STATE = "DUMMY_TOMB_STATE";

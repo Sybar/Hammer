@@ -866,9 +866,9 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="material" val="PAPER" />
 		<set name="reuse_delay" val="600000" />
-		<cond>
+		<conditions>
 			<player MinimumVitalityPoints="35000" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="29375" level="1" /> <!-- Freya's Glittering Scroll of Storm -->
 		</skills>

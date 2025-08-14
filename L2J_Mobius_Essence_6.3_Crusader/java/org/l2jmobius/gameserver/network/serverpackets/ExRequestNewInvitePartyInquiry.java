@@ -56,6 +56,7 @@ public class ExRequestNewInvitePartyInquiry extends ServerPacket
 		{
 			castle = clan.getCastleId();
 		}
+		
 		_pledgeCastleDBID = castle;
 	}
 	

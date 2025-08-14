@@ -51,6 +51,7 @@ public class ExPrisonUserInfo extends ServerPacket
 		{
 			_itemAmount = 0;
 		}
+		
 		_remainTime = (int) ((player.getVariables().getLong(PlayerVariables.PRISON_WAIT_TIME, 0) - System.currentTimeMillis()) / 1000);
 	}
 	

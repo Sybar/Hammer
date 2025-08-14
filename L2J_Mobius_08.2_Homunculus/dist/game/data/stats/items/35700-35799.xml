@@ -740,9 +740,9 @@
 		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="reuse_delay" val="86400000" />
 		<set name="material" val="PAPER" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player insideZoneId="60025, 60026, 60027" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="9504" level="1" /> <!-- Low-grade Scroll: PK -->
 		</skills>
@@ -916,9 +916,9 @@
 		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="reuse_delay" val="86400000" />
 		<set name="material" val="PAPER" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player insideZoneId="60025, 60026, 60027" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="9505" level="1" /> <!-- Mid-grade Scroll: PK -->
 		</skills>
@@ -936,9 +936,9 @@
 		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="reuse_delay" val="86400000" />
 		<set name="material" val="PAPER" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player insideZoneId="60025, 60026, 60027" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="9506" level="1" /> <!-- High-grade Scroll: PK -->
 		</skills>
@@ -956,9 +956,9 @@
 		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<set name="reuse_delay" val="86400000" />
 		<set name="material" val="PAPER" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player insideZoneId="60025, 60026, 60027" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="9507" level="1" /> <!-- Top-grade Scroll: PK -->
 		</skills>

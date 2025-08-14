@@ -111,6 +111,7 @@ public class LetterCollector extends LongTimeEvent implements IXmlReader
 								break;
 							}
 						}
+						
 						word.add(new ItemHolder(letters.get(token), count));
 					}
 				});
@@ -125,6 +126,7 @@ public class LetterCollector extends LongTimeEvent implements IXmlReader
 						{
 							chanceSum.set(chanceSum.get() + chance);
 						}
+						
 						rewards.add(new ItemChanceHolder(itemSet.getInt("id"), chance, itemSet.getLong("count"), (byte) itemSet.getInt("enchantLevel", 0)));
 					});
 				});

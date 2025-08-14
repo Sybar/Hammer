@@ -34,6 +34,7 @@ public class Q10783_TracesOfAnAmbush extends Quest
 {
 	// NPC
 	private static final int NOVAIN = 33866;
+	
 	// Monsters
 	private static final int EMBRYO_PREDATOR = 27539;
 	private static final int[] MONSTERS =
@@ -49,9 +50,11 @@ public class Q10783_TracesOfAnAmbush extends Quest
 		21258, // Fallen Orc Shaman
 		21259, // Fallen Orc Shaman
 	};
+	
 	// Items
 	private static final int MISSIVE_SCRAPS = 39722;
 	private static final int ENCHANT_ARMOR_B = 948;
+	
 	// Messages
 	private static final NpcStringId[] MESSAGES =
 	{
@@ -59,6 +62,7 @@ public class Q10783_TracesOfAnAmbush extends Quest
 		NpcStringId.BACK_FOR_MORE_HUH,
 		NpcStringId.YOU_LITTLE_PUNK_TAKE_THAT
 	};
+	
 	// Misc
 	private static final int MIN_LEVEL = 58;
 	private static final int MAX_LEVEL = 61;
@@ -113,6 +117,7 @@ public class Q10783_TracesOfAnAmbush extends Quest
 				htmltext = null;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -139,6 +144,7 @@ public class Q10783_TracesOfAnAmbush extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

@@ -42,6 +42,7 @@ public class Bathin extends AbstractNpcAI
 {
 	// NPC
 	private static final int BATHIN = 26445;
+	
 	// Misc
 	private static final int INSTANCE_ID = 1020;
 	private static final int DOOR = 15180100;
@@ -92,6 +93,7 @@ public class Bathin extends AbstractNpcAI
 			{
 				instance.spawnGroup("bathin");
 			}
+			
 			for (Player pplayer : instance.getPlayers())
 			{
 				if (pplayer.isInsideRadius3D(-147664, 13152, -9424, 10000))
@@ -99,6 +101,7 @@ public class Bathin extends AbstractNpcAI
 					pplayer.sendPacket(new OnEventTrigger(DOOR_EMITTER, true));
 				}
 			}
+			
 			GlobalVariablesManager.getInstance().set(BATHIN_ALIVE_VAR, true);
 		}, startDelay, 604800000); // 7 days
 		

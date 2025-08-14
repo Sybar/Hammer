@@ -146,6 +146,7 @@ public class LoginClient extends Thread
 				
 				byte[] decrypt = new byte[length - 2];
 				System.arraycopy(incoming, 2, decrypt, 0, decrypt.length);
+				
 				// decrypt if we have a key
 				_crypt.decrypt(decrypt, 0, decrypt.length);
 				checksumOk = NewCrypt.verifyChecksum(decrypt);
@@ -308,6 +309,7 @@ public class LoginClient extends Thread
 			sb.append("Account: ");
 			sb.append(_account);
 		}
+		
 		if (ip != null)
 		{
 			if (_account != null)

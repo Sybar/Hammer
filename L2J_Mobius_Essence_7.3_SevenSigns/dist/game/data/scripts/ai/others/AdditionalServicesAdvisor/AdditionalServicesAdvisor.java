@@ -20,6 +20,9 @@
  */
 package ai.others.AdditionalServicesAdvisor;
 
+import java.util.LinkedList;
+import java.util.List;
+
 import org.l2jmobius.gameserver.data.enums.CategoryType;
 import org.l2jmobius.gameserver.data.xml.ClassListData;
 import org.l2jmobius.gameserver.managers.InstanceManager;
@@ -41,12 +44,14 @@ import ai.AbstractNpcAI;
 
 /**
  * @author Mobius
+ * @URL https://l2.wiki/essence/wiki/gameplay/class-change/en
  */
 public class AdditionalServicesAdvisor extends AbstractNpcAI
 {
 	// NPCs
 	private static final int JUNI = 34152;
 	private static final int HERMIN = 34153;
+	
 	// Items
 	private static final int CLASS_CHANGE_COUPON = 94828;
 	private static final int SP_SCROLL = 94829;
@@ -58,6 +63,7 @@ public class AdditionalServicesAdvisor extends AbstractNpcAI
 	private static final int SPELLBOOK_KAMAEL = 91946; // Spellbook: Mount Griffin
 	private static final int SPELLBOOK_DEATH_KNIGHT = 93383; // Spellbook: Mount Nightmare Steed
 	private static final int SPELLBOOK_SYLPH = 95367; // Spellbook: Mount Elemental Lyn Draco
+	
 	// Misc
 	private static final Location TELEPORT_ADEN_LOCATION = new Location(146856, 25803, -2008);
 	private static final Location TELEPORT_GIRAN_LOCATION = new Location(83386, 148014, -3400);
@@ -128,6 +134,7 @@ public class AdditionalServicesAdvisor extends AbstractNpcAI
 						break;
 					}
 				}
+				
 				if (event.startsWith("choose_class"))
 				{
 					final int classId = Integer.parseInt(event.split(" ")[1]);
@@ -223,6 +230,77 @@ public class AdditionalServicesAdvisor extends AbstractNpcAI
 					{
 						takeItems(player, CLASS_CHANGE_COUPON, 1);
 						
+						final List<Integer> bookRefunds = new LinkedList<>();
+						if (player.getSkillLevel(54102) > 0) // White Guardian Transformation
+						{
+							bookRefunds.add(95502); // Spellbook: White Guardian (Sealed)
+						}
+						
+						if (player.getSkillLevel(54231) > 0) // Dragon Slayer Appearance
+						{
+							bookRefunds.add(96780); // Spellbook: Dragon Slayer (Sealed)
+						}
+						
+						if (player.getSkillLevel(45269) > 0) // Expanded Potential of Dyes
+						{
+							bookRefunds.add(96614); // Spellbook: Expanded Potential of Dyes (Sealed)
+						}
+						
+						if (player.getSkillLevel(45235) > 0) // Increased Weight Limit of Glory
+						{
+							bookRefunds.add(93064); // Weight Limit Coupon of Glory (Sealed)
+						}
+						
+						if (player.getSkillLevel(45234) > 0) // Expand Inventory of Glory
+						{
+							bookRefunds.add(93063); // Inventory Expansion Coupon of Glory (Sealed)
+						}
+						
+						if (player.getSkillLevel(45361) == 1) // Glorious Warrior's Ability Lv. 1
+						{
+							bookRefunds.add(94046); // Spellbook: Glorious Warrior's Ability Lv. 1 (Sealed)
+						}
+						
+						if (player.getSkillLevel(45361) == 2) // Glorious Warrior's Ability Lv. 2
+						{
+							bookRefunds.add(95890); // Spellbook: Glorious Warrior's Ability Lv. 2 (Sealed)
+						}
+						
+						if (player.getSkillLevel(45361) == 3) // Glorious Warrior's Ability Lv. 3
+						{
+							bookRefunds.add(95891); // Spellbook: Glorious Warrior's Ability Lv. 3 (Sealed)
+						}
+						
+						if (player.getSkillLevel(54200) > 0) // Mount Glorious Steed
+						{
+							bookRefunds.add(93059); // Spellbook: Mount Glorious Steed (Sealed)
+						}
+						
+						if (player.getSkillLevel(54202) > 0) // Mount Shining Lady
+						{
+							bookRefunds.add(93061); // Spellbook: Mount Shining Lady (Sealed)
+						}
+						
+						if (player.getSkillLevel(40140) > 0) // Mount Wyvern
+						{
+							bookRefunds.add(93485); // Spellbook: Mount Wyvern (Sealed)
+						}
+						
+						if (player.getSkillLevel(54227) > 0) // Mount Black Wyvern
+						{
+							bookRefunds.add(95712); // Spellbook: Mount Black Wyvern (Sealed)
+						}
+						
+						if (player.getSkillLevel(54240) > 0) // Mount Red Wyvern
+						{
+							bookRefunds.add(97203); // Spellbook: Mount Red Wyvern (Sealed)
+						}
+						
+						if (player.getSkillLevel(45472) > 0) // Glorious Warrior: Special Teleport
+						{
+							bookRefunds.add(98838); // Spellbook: Glorious Warrior: Special Teleport (Sealed)
+						}
+						
 						player.stopAllEffects();
 						player.getEffectList().stopAllToggles();
 						player.getEffectList().stopAllEffectsWithoutExclusions(false, false); // ReplaceSkillBySkill should stop here.
@@ -240,6 +318,7 @@ public class AdditionalServicesAdvisor extends AbstractNpcAI
 						{
 							appearance.setMale();
 						}
+						
 						player.setPlayerClass(classId);
 						player.setBaseClass(player.getActiveClass());
 						
@@ -297,15 +376,16 @@ public class AdditionalServicesAdvisor extends AbstractNpcAI
 							}
 						}
 						
+						for (int refundBookId : bookRefunds)
+						{
+							giveItems(player, refundBookId, 1);
+						}
+						
 						player.getServitorsAndPets().forEach(s -> s.unSummon(player));
 						player.getEffectList().stopAllEffects(true);
-						player.getInventory().getItems().forEach(item ->
-						{
-							if (item.isEquipped())
-							{
-								player.getInventory().unEquipItemInSlot(item.getLocationSlot());
-							}
-						});
+						
+						// Disarm unusable equipment.
+						player.disarmUnusableEquipment();
 						
 						// Appearance after class change.
 						appearance.setHairStyle(0);
@@ -320,7 +400,7 @@ public class AdditionalServicesAdvisor extends AbstractNpcAI
 						player.sendSkillList();
 						player.sendPacket(new ExSubjobInfo(player, SubclassInfoType.CLASS_CHANGED));
 						player.sendPacket(new ExUserInfoInvenWeight(player));
-						Disconnection.of(player).defaultSequence(LeaveWorld.STATIC_PACKET);
+						Disconnection.of(player).storeAndDeleteWith(LeaveWorld.STATIC_PACKET);
 					}
 					else
 					{
@@ -330,6 +410,7 @@ public class AdditionalServicesAdvisor extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return html;
 	}
 	
@@ -345,6 +426,7 @@ public class AdditionalServicesAdvisor extends AbstractNpcAI
 		{
 			return npc.getId() + "-no_coupon.htm";
 		}
+		
 		for (Item item : player.getInventory().getItems())
 		{
 			if (item.isEquipped())
@@ -352,18 +434,22 @@ public class AdditionalServicesAdvisor extends AbstractNpcAI
 				return npc.getId() + "-unequip_items.htm";
 			}
 		}
+		
 		if (!player.isInventoryUnder80(false) || (player.getWeightPenalty() >= 3))
 		{
 			return npc.getId() + "-no_inventory.htm";
 		}
+		
 		if (!player.isInCategory(CategoryType.FOURTH_CLASS_GROUP))
 		{
 			return npc.getId() + "-3rd_class.htm";
 		}
+		
 		if (player.isInOlympiadMode() || player.isHero() || Hero.getInstance().isHero(player.getObjectId()) || Hero.getInstance().isUnclaimedHero(player.getObjectId()))
 		{
 			return npc.getId() + "-1.htm";
 		}
+		
 		return null;
 	}
 	

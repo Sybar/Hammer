@@ -74,7 +74,6 @@ import org.l2jmobius.gameserver.model.events.holders.actor.npc.OnNpcSkillFinishe
 import org.l2jmobius.gameserver.model.events.holders.actor.npc.OnNpcSpawn;
 import org.l2jmobius.gameserver.model.events.holders.actor.npc.OnNpcTeleport;
 import org.l2jmobius.gameserver.model.events.returns.TerminateReturn;
-import org.l2jmobius.gameserver.model.events.timers.TimerHolder;
 import org.l2jmobius.gameserver.model.groups.Party;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
 import org.l2jmobius.gameserver.model.item.Weapon;
@@ -84,6 +83,7 @@ import org.l2jmobius.gameserver.model.item.holders.ItemHolder;
 import org.l2jmobius.gameserver.model.item.instance.Item;
 import org.l2jmobius.gameserver.model.olympiad.Olympiad;
 import org.l2jmobius.gameserver.model.quest.QuestTimer;
+import org.l2jmobius.gameserver.model.quest.timers.TimerHolder;
 import org.l2jmobius.gameserver.model.residences.ClanHall;
 import org.l2jmobius.gameserver.model.siege.Castle;
 import org.l2jmobius.gameserver.model.siege.Fort;
@@ -512,12 +512,14 @@ public class Npc extends Creature
 			player.sendPacket(ActionFailed.STATIC_PACKET);
 			return false;
 		}
+		
 		if (player.isLockedTarget() && (player.getLockedTarget() != this))
 		{
 			player.sendPacket(SystemMessageId.FAILED_TO_CHANGE_ENMITY);
 			player.sendPacket(ActionFailed.STATIC_PACKET);
 			return false;
 		}
+		
 		return true;
 	}
 	
@@ -551,6 +553,7 @@ public class Npc extends Creature
 		{
 			return false;
 		}
+		
 		return true;
 	}
 	
@@ -637,6 +640,7 @@ public class Npc extends Creature
 				}
 			}
 		}
+		
 		return ClanHallData.getInstance().getClanHallByNpcId(getId());
 	}
 	
@@ -685,7 +689,7 @@ public class Npc extends Creature
 			final IBypassHandler handler = BypassHandler.getInstance().getHandler(command);
 			if (handler != null)
 			{
-				handler.useBypass(command, player, this);
+				handler.onCommand(command, player, this);
 			}
 			else
 			{
@@ -809,6 +813,7 @@ public class Npc extends Creature
 			player.sendPacket(ActionFailed.STATIC_PACKET);
 			return true;
 		}
+		
 		return false;
 	}
 	
@@ -907,6 +912,7 @@ public class Npc extends Creature
 				{
 					return;
 				}
+				
 				// Get the text of the selected HTML file in function of the npcId and of the page number
 				filename = (getHtmlPath(npcId, value, player));
 				break;
@@ -1027,6 +1033,7 @@ public class Npc extends Creature
 					player.setPkKills(player.getPkKills() + 1);
 					player.broadcastUserInfo(UserInfoType.SOCIAL);
 					player.checkItemRestriction();
+					
 					// pk item rewards
 					if (Config.REWARD_PK_ITEM)
 					{
@@ -1036,6 +1043,7 @@ public class Npc extends Creature
 							player.addItem(ItemProcessType.REWARD, Config.REWARD_PK_ITEM_ID, Config.REWARD_PK_ITEM_AMOUNT, this, Config.REWARD_PK_ITEM_MESSAGE);
 						}
 					}
+					
 					// announce pk
 					if (Config.ANNOUNCE_PK_PVP && !player.isGM())
 					{
@@ -1058,6 +1066,7 @@ public class Npc extends Creature
 				player.setPvpKills(player.getPvpKills() + 1);
 				player.setTotalKills(player.getTotalKills() + 1);
 				player.broadcastUserInfo(UserInfoType.SOCIAL);
+				
 				// pvp item rewards
 				if (Config.REWARD_PVP_ITEM)
 				{
@@ -1067,6 +1076,7 @@ public class Npc extends Creature
 						player.addItem(ItemProcessType.REWARD, Config.REWARD_PVP_ITEM_ID, Config.REWARD_PVP_ITEM_AMOUNT, this, Config.REWARD_PVP_ITEM_MESSAGE);
 					}
 				}
+				
 				// announce pvp
 				if (Config.ANNOUNCE_PK_PVP && !player.isGM())
 				{
@@ -1105,6 +1115,7 @@ public class Npc extends Creature
 			{
 				new MpRewardTask(summon, this);
 			}
+			
 			if (getTemplate().getMpRewardAffectType() == MpRewardAffectType.PARTY)
 			{
 				final Party party = killerPlayer.getParty();
@@ -1196,9 +1207,8 @@ public class Npc extends Creature
 		// Reset decay info
 		setDecayed(false);
 		
-		// Fully heal npc and don't broadcast packet.
-		setCurrentHp(getMaxHp(), false);
-		setCurrentMp(getMaxMp(), false);
+		// Fully heal NPC.
+		fullRestore();
 		
 		// Clear script variables
 		if (hasVariables())
@@ -1244,6 +1254,7 @@ public class Npc extends Creature
 		{
 			return;
 		}
+		
 		setDecayed(true);
 		
 		// Remove the Npc from the world when the decay task is launched
@@ -1515,12 +1526,13 @@ public class Npc extends Creature
 		{
 			if (physical)
 			{
-				Broadcast.toSelfAndKnownPlayersInRadius(this, new MagicSkillUse(this, this, 2154, 1, 0, 0), 600);
+				broadcastPacket(new MagicSkillUse(this, this, 2154, 1, 0, 0));
 				chargeShot(ShotType.SOULSHOTS);
 			}
+			
 			if (magic)
 			{
-				Broadcast.toSelfAndKnownPlayersInRadius(this, new MagicSkillUse(this, this, 2159, 1, 0, 0), 600);
+				broadcastPacket(new MagicSkillUse(this, this, 2159, 1, 0, 0));
 				chargeShot(ShotType.SPIRITSHOTS);
 			}
 		}
@@ -1532,18 +1544,21 @@ public class Npc extends Creature
 				{
 					return;
 				}
+				
 				_soulshotamount--;
-				Broadcast.toSelfAndKnownPlayersInRadius(this, new MagicSkillUse(this, this, 2154, 1, 0, 0), 600);
+				broadcastPacket(new MagicSkillUse(this, this, 2154, 1, 0, 0));
 				chargeShot(ShotType.SOULSHOTS);
 			}
+			
 			if (magic && (_spiritshotamount > 0))
 			{
 				if (Rnd.get(100) > getTemplate().getSpiritShotChance())
 				{
 					return;
 				}
+				
 				_spiritshotamount--;
-				Broadcast.toSelfAndKnownPlayersInRadius(this, new MagicSkillUse(this, this, 2159, 1, 0, 0), 600);
+				broadcastPacket(new MagicSkillUse(this, this, 2159, 1, 0, 0));
 				chargeShot(ShotType.SPIRITSHOTS);
 			}
 		}
@@ -1700,6 +1715,7 @@ public class Npc extends Creature
 			{
 				ItemsAutoDestroyTaskManager.getInstance().addItem(item);
 			}
+			
 			item.setProtected(false);
 			
 			// If stackable, end loop as entire count is included in 1 instance of item.
@@ -1708,6 +1724,7 @@ public class Npc extends Creature
 				break;
 			}
 		}
+		
 		return item;
 	}
 	
@@ -1739,6 +1756,7 @@ public class Npc extends Creature
 				return term.terminate();
 			}
 		}
+		
 		return super.isVisibleFor(player);
 	}
 	
@@ -1922,10 +1940,12 @@ public class Npc extends Creature
 					_params = set;
 					return set;
 				}
+				
 				_params = npcSpawnTemplate.getParameters();
 				return _params;
 			}
 		}
+		
 		_params = getTemplate().getParameters();
 		return _params;
 	}
@@ -2014,6 +2034,7 @@ public class Npc extends Creature
 			{
 				timer.cancelTask();
 			}
+			
 			_questTimers.clear();
 		}
 	}
@@ -2042,6 +2063,7 @@ public class Npc extends Creature
 			{
 				timer.cancelTask();
 			}
+			
 			_timerHolders.clear();
 		}
 	}

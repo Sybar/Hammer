@@ -40,12 +40,15 @@ public class Q00415_ThoseCalledHatar extends Quest
 {
 	// NPC
 	private static final int GENIE_LAMP = 34369;
+	
 	// Monsters
 	private static final int HATAR_RATMAN_THIEF = 20661;
 	private static final int HATAR_RATMAN_BOSS = 20662;
 	private static final int HATAR_RATMAN_HANISHEE = 20663;
+	
 	// Item
 	private static final ItemHolder XP_GROWTH = new ItemHolder(49674, 2);
+	
 	// Misc
 	private static final int MIN_LEVEL = 64;
 	private static final int MAX_LEVEL = 75;
@@ -100,6 +103,7 @@ public class Q00415_ThoseCalledHatar extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -138,6 +142,7 @@ public class Q00415_ThoseCalledHatar extends Quest
 				htmltext = getAlreadyCompletedMsg(player);
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -173,6 +178,7 @@ public class Q00415_ThoseCalledHatar extends Quest
 			holder.add(new NpcLogListHolder(NpcStringId.DEFEAT_MONSTERS_13.getId(), true, qs.getInt(KILL_COUNT_VAR)));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

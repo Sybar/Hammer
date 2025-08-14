@@ -173,6 +173,7 @@ public class AppearanceStone
 		{
 			_crystalTypes = EnumSet.noneOf(CrystalType.class);
 		}
+		
 		_crystalTypes.add(type);
 	}
 	
@@ -187,6 +188,7 @@ public class AppearanceStone
 		{
 			_targetTypes = EnumSet.noneOf(AppearanceTargetType.class);
 		}
+		
 		_targetTypes.add(type);
 	}
 	
@@ -201,6 +203,7 @@ public class AppearanceStone
 		{
 			_bodyParts = new HashSet<>();
 		}
+		
 		_bodyParts.add(part);
 	}
 	
@@ -210,6 +213,7 @@ public class AppearanceStone
 		{
 			_allVisualIds = new HashSet<>();
 		}
+		
 		_allVisualIds.add(appearanceHolder);
 	}
 	
@@ -229,6 +233,7 @@ public class AppearanceStone
 		{
 			_races = EnumSet.noneOf(Race.class);
 		}
+		
 		_races.add(race);
 	}
 	
@@ -243,6 +248,7 @@ public class AppearanceStone
 		{
 			_racesNot = EnumSet.noneOf(Race.class);
 		}
+		
 		_racesNot.add(race);
 	}
 	
@@ -360,6 +366,7 @@ public class AppearanceStone
 							player.sendPacket(SystemMessageId.THIS_ITEM_DOES_NOT_MEET_REQUIREMENTS);
 							return false;
 						}
+						
 						return true;
 					}
 				}
@@ -550,8 +557,10 @@ public class AppearanceStone
 					}
 				}
 			}
+			
 			return holder;
 		}
+		
 		return null;
 	}
 }

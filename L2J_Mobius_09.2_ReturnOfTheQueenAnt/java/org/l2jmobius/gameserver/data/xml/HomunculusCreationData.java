@@ -145,6 +145,7 @@ public class HomunculusCreationData implements IXmlReader
 				items.add(new ItemHolder(itemId, itemCount));
 			}
 		}
+		
 		return items;
 	}
 	
@@ -161,6 +162,7 @@ public class HomunculusCreationData implements IXmlReader
 				chanceList.add(feeArray);
 			}
 		}
+		
 		return chanceList;
 	}
 	
@@ -187,6 +189,7 @@ public class HomunculusCreationData implements IXmlReader
 				return template;
 			}
 		}
+		
 		return null;
 	}
 	

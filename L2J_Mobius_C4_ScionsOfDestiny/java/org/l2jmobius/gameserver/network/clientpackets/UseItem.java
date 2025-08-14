@@ -40,6 +40,7 @@ import org.l2jmobius.gameserver.model.item.ItemTemplate;
 import org.l2jmobius.gameserver.model.item.Weapon;
 import org.l2jmobius.gameserver.model.item.enums.ItemProcessType;
 import org.l2jmobius.gameserver.model.item.instance.Item;
+import org.l2jmobius.gameserver.model.item.type.EtcItemType;
 import org.l2jmobius.gameserver.model.item.type.WeaponType;
 import org.l2jmobius.gameserver.model.itemcontainer.Inventory;
 import org.l2jmobius.gameserver.model.skill.Skill;
@@ -74,34 +75,37 @@ public class UseItem extends ClientPacket
 			return;
 		}
 		
-		// Flood protect UseItem
+		// Flood protect UseItem.
 		if (!getClient().getFloodProtectors().canUseItem())
 		{
 			return;
 		}
 		
+		// Jail restriction.
 		if (player.isInsideZone(ZoneId.JAIL))
 		{
 			player.sendMessage("You cannot use items while jailed.");
 			return;
 		}
 		
-		if (player.getActiveTradeList() != null)
+		final Item item = player.getInventory().getItemByObjectId(_objectId);
+		if (item == null)
+		{
+			return;
+		}
+		
+		// Pet Collar exclusion. This is handled in SummonItems handler.
+		final boolean isPetCollar = (item.getEtcItem() != null) && (item.getEtcItem().getItemType() == EtcItemType.PET_COLLAR);
+		if ((player.getActiveTradeList() != null) && !isPetCollar)
 		{
 			player.sendPacket(SystemMessageId.YOU_CANNOT_PICK_UP_OR_USE_ITEMS_WHILE_TRADING);
 			return;
 		}
 		
-		if (player.isInStoreMode())
+		if (player.isInStoreMode() && !isPetCollar)
 		{
 			player.sendMessage("You may not use items in a private store or private work shop.");
 			player.sendPacket(ActionFailed.STATIC_PACKET);
-			return;
-		}
-		
-		final Item item = player.getInventory().getItemByObjectId(_objectId);
-		if (item == null)
-		{
 			return;
 		}
 		
@@ -209,6 +213,7 @@ public class UseItem extends ClientPacket
 						player.sendPacket(SystemMessageId.THE_ITEM_CAN_T_BE_INSTALLED_BECAUSE_IT_IS_NOT_FIT_FOR_THE_CONDITION_FOR_ITEM_INSTALLATION);
 						return;
 					}
+					
 					if (player.isDisarmed())
 					{
 						player.sendPacket(SystemMessageId.THE_ITEM_CAN_T_BE_INSTALLED_BECAUSE_IT_IS_NOT_FIT_FOR_THE_CONDITION_FOR_ITEM_INSTALLATION);
@@ -267,6 +272,7 @@ public class UseItem extends ClientPacket
 			{
 				player.getInventory().setPaperdollItem(Inventory.PAPERDOLL_LHAND, item);
 				player.broadcastUserInfo();
+				
 				// Send a Server->Client packet ItemList to this Player to update left hand equipment.
 				player.sendItemList(false);
 				return;
@@ -285,7 +291,7 @@ public class UseItem extends ClientPacket
 			
 			// Item reuse time should be added if the item is successfully used.
 			// Skill reuse delay is done at handlers.itemhandlers.ItemSkillsTemplate;
-			if (handler.useItem(player, item, _ctrlPressed) && (reuseDelay > 0))
+			if (handler.onItemUse(player, item, _ctrlPressed) && (reuseDelay > 0))
 			{
 				player.addTimeStampItem(item, reuseDelay);
 				sendSharedGroupUpdate(player, sharedReuseGroup, reuseDelay, reuseDelay);
@@ -311,6 +317,7 @@ public class UseItem extends ClientPacket
 		{
 			sm = "There are " + seconds + " second(s) remaining in " + item.getName() + "'s re-use time.";
 		}
+		
 		player.sendMessage(sm);
 	}
 	

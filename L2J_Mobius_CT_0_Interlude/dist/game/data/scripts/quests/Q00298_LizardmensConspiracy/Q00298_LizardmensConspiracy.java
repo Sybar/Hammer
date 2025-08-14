@@ -32,6 +32,7 @@ public class Q00298_LizardmensConspiracy extends Quest
 	// NPCs
 	private static final int PRAGA = 30333;
 	private static final int ROHMER = 30344;
+	
 	// Items
 	private static final int PATROL_REPORT = 7182;
 	private static final int WHITE_GEM = 7183;
@@ -137,6 +138,7 @@ public class Q00298_LizardmensConspiracy extends Quest
 		{
 			return;
 		}
+		
 		final Player partyMember = qs.getPlayer();
 		
 		final QuestState st = getQuestState(partyMember, false);

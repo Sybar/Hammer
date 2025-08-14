@@ -36,7 +36,6 @@ public class ExStorageMaxCount extends ServerPacket
 	private final int _receipeD;
 	private final int _recipe;
 	private final int _inventoryExtraSlots;
-	private final int _inventoryQuestItems;
 	
 	public ExStorageMaxCount(Player player)
 	{
@@ -48,7 +47,6 @@ public class ExStorageMaxCount extends ServerPacket
 		_receipeD = player.getDwarfRecipeLimit();
 		_recipe = player.getCommonRecipeLimit();
 		_inventoryExtraSlots = (int) player.getStat().calcStat(Stat.INV_LIM, 0, null, null);
-		_inventoryQuestItems = Config.INVENTORY_MAXIMUM_QUEST_ITEMS;
 	}
 	
 	@Override
@@ -63,6 +61,5 @@ public class ExStorageMaxCount extends ServerPacket
 		buffer.writeInt(_receipeD);
 		buffer.writeInt(_recipe);
 		buffer.writeInt(_inventoryExtraSlots); // Belt inventory slots increase count
-		buffer.writeInt(_inventoryQuestItems);
 	}
 }

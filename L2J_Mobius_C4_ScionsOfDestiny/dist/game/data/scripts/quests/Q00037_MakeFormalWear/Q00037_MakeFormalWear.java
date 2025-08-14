@@ -33,6 +33,7 @@ public class Q00037_MakeFormalWear extends Quest
 	private static final int LEIKAR = 31520;
 	private static final int JEREMY = 31521;
 	private static final int MIST = 31627;
+	
 	// Items
 	private static final int MYSTERIOUS_CLOTH = 7076;
 	private static final int JEWEL_BOX = 7077;
@@ -41,6 +42,7 @@ public class Q00037_MakeFormalWear extends Quest
 	private static final int SIGNET_RING = 7164;
 	private static final int ICE_WINE = 7160;
 	private static final int BOX_OF_COOKIES = 7159;
+	
 	// Reward
 	private static final int FORMAL_WEAR = 6408;
 	

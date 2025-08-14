@@ -831,9 +831,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">359</stat>
 			<stat type="mAtk">176</stat>
@@ -870,9 +870,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">444</stat>
 			<stat type="mAtk">176</stat>
@@ -908,9 +908,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player races="KAMAEL" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">429</stat>
 			<stat type="mAtk">176</stat>
@@ -945,12 +945,12 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="commissionItemType" val="DUAL_DAGGER" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player level="81" />
 				<player categoryType="DAGGER_MASTER" />
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">360</stat>
 			<stat type="mAtk">181</stat>
@@ -985,12 +985,12 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player level="81" />
 				<player categoryType="DAGGER_MASTER" />
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">360</stat>
 			<stat type="mAtk">181</stat>
@@ -1094,12 +1094,12 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="commissionItemType" val="DUAL_DAGGER" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player level="84" />
 				<player categoryType="DAGGER_MASTER" />
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">415</stat>
 			<stat type="mAtk">183</stat>
@@ -1133,12 +1133,12 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player level="84" />
 				<player categoryType="DAGGER_MASTER" />
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">415</stat>
 			<stat type="mAtk">183</stat>
@@ -1239,12 +1239,12 @@
 		<set name="enchant_enabled" val="true" />
 		<set name="commissionItemType" val="DUAL_DAGGER" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player level="85" />
 				<player categoryType="DAGGER_MASTER" />
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">437</stat>
 			<stat type="mAtk">192</stat>
@@ -1278,12 +1278,12 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player level="85" />
 				<player categoryType="DAGGER_MASTER" />
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pAtk">437</stat>
 			<stat type="mAtk">192</stat>
@@ -1374,9 +1374,9 @@
 		<set name="price" val="49680" />
 		<set name="commissionItemType" val="LIFE_STONE" />
 		<set name="is_stackable" val="true" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="85" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="16161" name="Mid-grade Life Stone - Lv. 85" type="EtcItem">
 		<!-- Mid-grade mineral created when a stone in a monster is solidified by physical/magic hit. Key component used in weapon Augmentation by characters level 85 or above. -->
@@ -1387,9 +1387,9 @@
 		<set name="price" val="198960" />
 		<set name="commissionItemType" val="LIFE_STONE" />
 		<set name="is_stackable" val="true" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="85" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="16162" name="High-grade Life Stone - Lv. 85" type="EtcItem">
 		<!-- High-grade mineral created when a stone in a monster is solidified by physical/magic hit. Key component used in weapon Augmentation by characters level 85 or above. -->
@@ -1400,9 +1400,9 @@
 		<set name="price" val="994800" />
 		<set name="is_stackable" val="true" />
 		<set name="commissionItemType" val="LIFE_STONE" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="85" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="16163" name="Top-grade Life Stone - Lv. 85" type="EtcItem">
 		<!-- Top-grade mineral created when a stone in a monster is solidified by physical/magic hit. Key component used in weapon Augmentation by characters level 85 or above. -->
@@ -1413,9 +1413,9 @@
 		<set name="price" val="4975200" />
 		<set name="commissionItemType" val="LIFE_STONE" />
 		<set name="is_stackable" val="true" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="85" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="16164" name="Life Stone - Lv. 86" type="EtcItem">
 		<!-- General mineral created when a stone in a monster is solidified by physical/magic hit. Key component used in weapon Augmentation by characters level 85 or above. -->
@@ -1426,9 +1426,9 @@
 		<set name="price" val="59616" />
 		<set name="is_stackable" val="true" />
 		<set name="commissionItemType" val="LIFE_STONE" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="85" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="16165" name="Mid-grade Life Stone - Lv. 86" type="EtcItem">
 		<!-- Mid-grade mineral created when a stone in a monster is solidified by physical/magic hit. Key component used in weapon Augmentation by characters level 85 or above. -->
@@ -1439,9 +1439,9 @@
 		<set name="price" val="238752" />
 		<set name="is_stackable" val="true" />
 		<set name="commissionItemType" val="LIFE_STONE" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="85" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="16166" name="High-grade Life Stone - Lv. 86" type="EtcItem">
 		<!-- High-grade mineral created when a stone in a monster is solidified by physical/magic hit. Key component used in weapon Augmentation by characters level 85 or above. -->
@@ -1452,9 +1452,9 @@
 		<set name="price" val="1193760" />
 		<set name="is_stackable" val="true" />
 		<set name="commissionItemType" val="LIFE_STONE" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="85" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="16167" name="Top-grade Life Stone - Lv. 86" type="EtcItem">
 		<!-- Top-grade mineral created when a stone in a monster is solidified by physical/magic hit. Key component used in weapon Augmentation by characters level 85 or above. -->
@@ -1465,9 +1465,9 @@
 		<set name="price" val="5970240" />
 		<set name="commissionItemType" val="LIFE_STONE" />
 		<set name="is_stackable" val="true" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="85" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="16168" name="Elegia Breastplate {PvP}" type="Armor">
 		<!-- Decreases damage received during PvP. Has a chance of decreasing all Speeds of the attacker. -->
@@ -1688,9 +1688,9 @@
 		<set name="price" val="49680" />
 		<set name="commissionItemType" val="LIFE_STONE" />
 		<set name="is_stackable" val="true" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="85" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="16178" name="Life Stone: Accessory - Lv. 86" type="EtcItem">
 		<!-- Mineral stone that solidifies inside a monster by a physical or magic hit. It can be used when augmenting accessories, and characters level 85 or above can use it. -->
@@ -1701,9 +1701,9 @@
 		<set name="price" val="59616" />
 		<set name="commissionItemType" val="LIFE_STONE" />
 		<set name="is_stackable" val="true" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="85" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="16179" name="Vesper Cutter - Thunder {PvP}" additionalName="Haste" type="Weapon">
 		<!-- Masterwork Item that increases P. Critical Rate. <Soul Crystal Enhancement>. Increases Atk. Spd. by about 11%. Increases damage inflicted during PvP. Has a chance of recovering CP during an attack. -->

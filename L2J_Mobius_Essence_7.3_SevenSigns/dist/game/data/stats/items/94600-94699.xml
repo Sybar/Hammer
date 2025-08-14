@@ -737,9 +737,9 @@
 		<set name="material" val="SILVER" />
 		<set name="weight" val="150" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="600">
+		<conditions msgId="600">
 			<player categoryType="PET_GROUP" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="mDef">48</stat>
 		</stats>
@@ -761,9 +761,9 @@
 		<set name="material" val="GOLD" />
 		<set name="weight" val="150" />
 		<set name="enchant_enabled" val="true" />
-		<cond msgId="600">
+		<conditions msgId="600">
 			<player categoryType="PET_GROUP" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="mDef">26</stat>
 		</stats>

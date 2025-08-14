@@ -80,30 +80,37 @@ public class Attackable extends Npc
 	// Raid
 	private boolean _isRaid = false;
 	private boolean _isRaidMinion = false;
+	
 	//
 	private boolean _champion = false;
 	private final Map<Creature, AggroInfo> _aggroList = new ConcurrentHashMap<>();
 	private boolean _canReturnToSpawnPoint = true;
 	private boolean _seeThroughSilentMove = false;
+	
 	// Manor
 	private boolean _seeded = false;
 	private Seed _seed = null;
 	private int _seederObjId = 0;
 	private final AtomicReference<ItemHolder> _harvestItem = new AtomicReference<>();
+	
 	// Spoil
 	private int _spoilerObjectId;
 	private final AtomicReference<Collection<ItemHolder>> _sweepItems = new AtomicReference<>();
+	
 	// Over-hit
 	private boolean _overhit;
 	private double _overhitDamage;
 	private Creature _overhitAttacker;
+	
 	// Command channel
 	private CommandChannel _firstCommandChannelAttacked = null;
 	private CommandChannelTimer _commandChannelTimer = null;
 	private long _commandChannelLastAttack = 0;
+	
 	// Soul crystal
 	private boolean _absorbed;
 	private final Map<Integer, AbsorberInfo> _absorbersList = new ConcurrentHashMap<>();
+	
 	// Misc
 	private boolean _mustGiveExpSp;
 	protected int _onKillDelay = 2500; // L2J uses 5000
@@ -270,6 +277,7 @@ public class Attackable extends Npc
 				master.getMinionList().onAssist(this, attacker);
 			}
 		}
+		
 		// Reduce the current HP of the Attackable and launch the doDie Task if necessary
 		super.reduceCurrentHp(damage, attacker, awake, isDOT, skill);
 	}
@@ -454,6 +462,7 @@ public class Attackable extends Npc
 						totalMemberDamage += memberAggro.getDamage();
 					}
 				}
+				
 				container.damage = totalMemberDamage;
 				
 				if (!partyContainerStream.isPresent())
@@ -571,6 +580,7 @@ public class Attackable extends Npc
 						
 						// Get all Creature that can be rewarded in the party
 						final List<Player> rewardedMembers = new ArrayList<>();
+						
 						// Go through all Player in the party
 						final List<Player> groupMembers = attackerParty.isInCommandChannel() ? attackerParty.getCommandChannel().getMembers() : attackerParty.getMembers();
 						for (Player partyPlayer : groupMembers)
@@ -603,6 +613,7 @@ public class Attackable extends Npc
 										}
 									}
 								}
+								
 								rewards.remove(partyPlayer); // Remove the Player from the Attackable rewards
 							}
 							else if (calculateDistance3D(partyPlayer) < Config.ALT_PARTY_RANGE)
@@ -677,6 +688,7 @@ public class Attackable extends Npc
 		{
 			return;
 		}
+		
 		getAttackByList().add(creature);
 	}
 	
@@ -726,7 +738,10 @@ public class Attackable extends Npc
 				}
 				
 				getAI().notifyAction(Action.ATTACKED, attacker);
-				addDamageHate(attacker, damage, (damage * 100) / (getLevel() + 7));
+				
+				// Calculate the amount of hate this attackable receives from this attack.
+				final long hateValue = ((long) damage * 100) / (getLevel() + 7);
+				addDamageHate(attacker, damage, (int) hateValue);
 				
 				final Player player = attacker.asPlayer();
 				if ((player != null) && EventDispatcher.getInstance().hasListener(EventType.ON_ATTACKABLE_ATTACK, this))
@@ -952,6 +967,7 @@ public class Attackable extends Npc
 		{
 			result.add(null);
 		}
+		
 		return result;
 	}
 	
@@ -969,10 +985,12 @@ public class Attackable extends Npc
 			{
 				continue;
 			}
+			
 			ai.checkHate(this);
 			
 			result.add(ai.getAttacker());
 		}
+		
 		return result;
 	}
 	
@@ -1062,6 +1080,7 @@ public class Attackable extends Npc
 					for (ItemHolder drop : deathItems)
 					{
 						final ItemTemplate item = ItemData.getInstance().getTemplate(drop.getId());
+						
 						// Check if the autoLoot mode is active
 						if (Config.AUTO_LOOT_ITEM_IDS.contains(item.getId()) || isFlying() || (!item.hasExImmediateEffect() && ((!_isRaid && Config.AUTO_LOOT) || (_isRaid && Config.AUTO_LOOT_RAIDS))))
 						{
@@ -1073,6 +1092,7 @@ public class Attackable extends Npc
 							{
 								doSimultaneousCast(skillHolder.getSkill());
 							}
+							
 							mainDamageDealer.broadcastInfo(); // ? check if this is necessary
 						}
 						else
@@ -1084,6 +1104,7 @@ public class Attackable extends Npc
 							}
 						}
 					}
+					
 					deathItems.clear();
 				}
 			}
@@ -1103,6 +1124,7 @@ public class Attackable extends Npc
 			for (ItemHolder drop : deathItems)
 			{
 				final ItemTemplate item = ItemData.getInstance().getTemplate(drop.getId());
+				
 				// Check if the autoLoot mode is active
 				if (Config.AUTO_LOOT_ITEM_IDS.contains(item.getId()) || isFlying() || (!item.hasExImmediateEffect() && ((!_isRaid && Config.AUTO_LOOT) || (_isRaid && Config.AUTO_LOOT_RAIDS))) || (item.hasExImmediateEffect() && Config.AUTO_LOOT_HERBS))
 				{
@@ -1123,6 +1145,7 @@ public class Attackable extends Npc
 					broadcastPacket(sm);
 				}
 			}
+			
 			deathItems.clear();
 		}
 	}
@@ -1181,6 +1204,7 @@ public class Attackable extends Npc
 				lootItems.add(ItemData.getInstance().getTemplate(item.getId()));
 			}
 		}
+		
 		return lootItems;
 	}
 	
@@ -1213,10 +1237,12 @@ public class Attackable extends Npc
 		{
 			return false;
 		}
+		
 		if (sendMessage && (attacker != null))
 		{
 			attacker.sendPacket(SystemMessageId.THE_CORPSE_IS_TOO_OLD_THE_SKILL_CANNOT_BE_USED);
 		}
+		
 		return true;
 	}
 	
@@ -1231,10 +1257,12 @@ public class Attackable extends Npc
 		{
 			return true;
 		}
+		
 		if (sendMessage)
 		{
 			sweeper.sendPacket(SystemMessageId.THERE_ARE_NO_PRIORITY_RIGHTS_ON_A_SWEEPER);
 		}
+		
 		return false;
 	}
 	
@@ -1266,6 +1294,7 @@ public class Attackable extends Npc
 			_overhitAttacker = null;
 			return;
 		}
+		
 		overhitEnabled(true);
 		_overhitDamage = overhitDmg;
 		_overhitAttacker = attacker;
@@ -1416,6 +1445,7 @@ public class Attackable extends Npc
 						break;
 					}
 				}
+				
 				xp *= mul;
 				sp *= mul;
 			}
@@ -1484,6 +1514,7 @@ public class Attackable extends Npc
 		_seeded = false;
 		_seed = null;
 		_seederObjId = 0;
+		
 		// Clear overhit value
 		overhitEnabled(false);
 		
@@ -1599,6 +1630,7 @@ public class Attackable extends Npc
 		{
 			count += diff;
 		}
+		
 		_harvestItem.set(new ItemHolder(_seed.getCropId(), count * Config.RATE_DROP_MANOR));
 	}
 	
@@ -1613,6 +1645,7 @@ public class Attackable extends Npc
 		{
 			return;
 		}
+		
 		_seed = seed;
 		_seederObjId = seeder.getObjectId();
 	}

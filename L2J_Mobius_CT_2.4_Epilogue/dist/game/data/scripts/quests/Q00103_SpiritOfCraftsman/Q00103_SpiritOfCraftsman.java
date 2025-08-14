@@ -43,6 +43,7 @@ public class Q00103_SpiritOfCraftsman extends Quest
 	private static final int BLACKSMITH_KAROYD = 30307;
 	private static final int CECON = 30132;
 	private static final int HARNE = 30144;
+	
 	// Items
 	private static final int KAROYDS_LETTER = 968;
 	private static final int CECKTINONS_VOUCHER1 = 969;
@@ -52,11 +53,13 @@ public class Q00103_SpiritOfCraftsman extends Quest
 	private static final int ZOMBIE_HEAD = 973;
 	private static final int STEELBENDERS_HEAD = 974;
 	private static final int BONE_FRAGMENT = 1107;
+	
 	// Monsters
 	private static final int MARSH_ZOMBIE = 20015;
 	private static final int DOOM_SOLDIER = 20455;
 	private static final int SKELETON_HUNTER = 20517;
 	private static final int SKELETON_HUNTER_ARCHER = 20518;
+	
 	// Rewards
 	private static final int BLOODSABER = 975;
 	private static final ItemHolder[] REWARDS =
@@ -71,6 +74,7 @@ public class Q00103_SpiritOfCraftsman extends Quest
 	private static final ItemHolder SOULSHOTS_NO_GRADE_FOR_ROOKIES = new ItemHolder(5789, 7000);
 	private static final ItemHolder SOULSHOTS_NO_GRADE = new ItemHolder(1835, 1000);
 	private static final ItemHolder SPIRITSHOTS_NO_GRADE = new ItemHolder(2509, 500);
+	
 	// Misc
 	private static final int MIN_LEVEL = 10;
 	private static final int GUIDE_MISSION = 41;
@@ -93,6 +97,7 @@ public class Q00103_SpiritOfCraftsman extends Quest
 		{
 			return htmltext;
 		}
+		
 		switch (event)
 		{
 			case "30307-04.htm":
@@ -111,6 +116,7 @@ public class Q00103_SpiritOfCraftsman extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -151,6 +157,7 @@ public class Q00103_SpiritOfCraftsman extends Quest
 							giveItems(talker, SOULSHOTS_NO_GRADE_FOR_ROOKIES);
 							playSound(talker, "tutorial_voice_026");
 						}
+						
 						if (!talker.isMageClass())
 						{
 							giveItems(talker, SOULSHOTS_NO_GRADE);
@@ -272,6 +279,7 @@ public class Q00103_SpiritOfCraftsman extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

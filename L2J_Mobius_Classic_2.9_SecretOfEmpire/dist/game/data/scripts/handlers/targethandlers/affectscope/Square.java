@@ -62,6 +62,7 @@ public class Square implements IAffectScopeHandler
 			{
 				return false;
 			}
+			
 			if (c.isDead() && (targetType != TargetType.NPC_BODY) && (targetType != TargetType.PC_BODY))
 			{
 				return false;
@@ -78,6 +79,7 @@ public class Square implements IAffectScopeHandler
 				{
 					return false;
 				}
+				
 				if (!GeoEngine.getInstance().canSeeTarget(creature, c))
 				{
 					return false;

@@ -46,6 +46,7 @@ public class ElfHumanClericChange2 extends AbstractNpcAI
 	private static final int MARK_OF_HEALER = 2820; // proof11z, proof21z
 	private static final int MARK_OF_REFORMER = 2821; // proof12z
 	private static final int MARK_OF_LIFE = 3140; // proof21y
+	
 	// Classes
 	private static final int BISHOP = 16;
 	private static final int PROPHET = 17;
@@ -85,6 +86,7 @@ public class ElfHumanClericChange2 extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -113,6 +115,7 @@ public class ElfHumanClericChange2 extends AbstractNpcAI
 				takeItems(player, -1, MARK_OF_PILGRIM, MARK_OF_TRUST, MARK_OF_HEALER);
 				player.setPlayerClass(BISHOP);
 				player.setBaseClass(BISHOP);
+				
 				// SystemMessage and cast skill is done by setClassId
 				player.broadcastUserInfo();
 				giveItems(player, SHADOW_ITEM_EXCHANGE_COUPON_C_GRADE, 15);
@@ -141,6 +144,7 @@ public class ElfHumanClericChange2 extends AbstractNpcAI
 				takeItems(player, -1, MARK_OF_PILGRIM, MARK_OF_TRUST, MARK_OF_REFORMER);
 				player.setPlayerClass(PROPHET);
 				player.setBaseClass(PROPHET);
+				
 				// SystemMessage and cast skill is done by setClassId
 				player.broadcastUserInfo();
 				giveItems(player, SHADOW_ITEM_EXCHANGE_COUPON_C_GRADE, 15);
@@ -169,6 +173,7 @@ public class ElfHumanClericChange2 extends AbstractNpcAI
 				takeItems(player, -1, MARK_OF_PILGRIM, MARK_OF_LIFE, MARK_OF_HEALER);
 				player.setPlayerClass(ELDER);
 				player.setBaseClass(ELDER);
+				
 				// SystemMessage and cast skill is done by setClassId
 				player.broadcastUserInfo();
 				giveItems(player, SHADOW_ITEM_EXCHANGE_COUPON_C_GRADE, 15);
@@ -179,6 +184,7 @@ public class ElfHumanClericChange2 extends AbstractNpcAI
 				htmltext = "30120-27.htm"; // fnNoProof21
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -210,6 +216,7 @@ public class ElfHumanClericChange2 extends AbstractNpcAI
 		{
 			htmltext = "30120-14.htm"; // fnClassMismatch
 		}
+		
 		return htmltext;
 	}
 	

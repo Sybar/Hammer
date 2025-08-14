@@ -101,16 +101,19 @@ public class Q00255_Tutorial extends Quest
 		SUPERVISORS.add(30573); // orc
 		SUPERVISORS.add(30528); // dwarf
 	}
+	
 	// Monsters
 	private static final int[] GREMLINS =
 	{
 		18342, // this is used for now
 		20001
 	};
+	
 	// Items
 	private static final int BLUE_GEM = 6353;
 	private static final ItemHolder SOULSHOT_REWARD = new ItemHolder(5789, 200);
 	private static final ItemHolder SPIRITSHOT_REWARD = new ItemHolder(5790, 100);
+	
 	// Others
 	private static final Map<Integer, QuestSoundHtmlHolder> STARTING_VOICE_HTML = new HashMap<>();
 	static
@@ -224,6 +227,7 @@ public class Q00255_Tutorial extends Quest
 						giveItems(player, SOULSHOT_REWARD);
 						playTutorialVoice(player, "tutorial_voice_026");
 					}
+					
 					htmltext = (npc != null ? npc.getId() : player.getTarget().getId()) + "-3.html";
 					player.sendPacket(new TutorialShowQuestionMark(QUESTION_MARK_ID_3, 0));
 				}
@@ -236,6 +240,7 @@ public class Q00255_Tutorial extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -252,6 +257,7 @@ public class Q00255_Tutorial extends Quest
 				{
 					qs.setMemoState(3);
 				}
+				
 				switch (qs.getMemoState())
 				{
 					case 0:
@@ -268,6 +274,7 @@ public class Q00255_Tutorial extends Quest
 						{
 							return "tutorial_05_mystic_orc.html";
 						}
+						
 						return "tutorial_05_mystic.html";
 					}
 					case 2:
@@ -280,6 +287,7 @@ public class Q00255_Tutorial extends Quest
 						{
 							return "tutorial_05_mystic_orc_back.html";
 						}
+						
 						return "tutorial_05_mystic_back.html";
 					}
 					case 3:
@@ -294,6 +302,7 @@ public class Q00255_Tutorial extends Quest
 							playTutorialVoice(player, "tutorial_voice_027");
 							return npc.getId() + "-3.html";
 						}
+						
 						giveItems(player, SOULSHOT_REWARD);
 						playTutorialVoice(player, "tutorial_voice_026");
 						return npc.getId() + "-2.html";
@@ -330,6 +339,7 @@ public class Q00255_Tutorial extends Quest
 				}
 			}
 		}
+		
 		return npc.getId() + "-1.html";
 	}
 	
@@ -348,6 +358,7 @@ public class Q00255_Tutorial extends Quest
 					counter++;
 				}
 			}
+			
 			if (counter < 10) // do not drop if more than 10
 			{
 				npc.dropItem(killer, BLUE_GEM, 1);

@@ -129,6 +129,7 @@ public class TradeList
 			inventory.adjustAvailableItem(item);
 			list.add(item);
 		}
+		
 		return list;
 	}
 	
@@ -157,6 +158,7 @@ public class TradeList
 				}
 			}
 		}
+		
 		return new TradeItem(item, item.getCount(), item.getReferencePrice());
 	}
 	
@@ -314,6 +316,7 @@ public class TradeList
 						LOGGER.warning(_partner.getName() + ": Trading partner (" + _partner.getName() + ") is invalid in this trade!");
 						return null;
 					}
+					
 					partnerList.invalidateConfirmation();
 				}
 				
@@ -330,6 +333,7 @@ public class TradeList
 				return titem;
 			}
 		}
+		
 		return null;
 	}
 	
@@ -486,6 +490,7 @@ public class TradeList
 			{
 				return false;
 			}
+			
 			final Item newItem = _owner.getInventory().transferItem(ItemProcessType.TRANSFER, titem.getObjectId(), titem.getCount(), partner.getInventory(), _owner, _partner);
 			if (newItem == null)
 			{
@@ -517,6 +522,7 @@ public class TradeList
 				}
 			}
 		}
+		
 		return true;
 	}
 	
@@ -533,11 +539,13 @@ public class TradeList
 			{
 				continue;
 			}
+			
 			final ItemTemplate template = ItemData.getInstance().getTemplate(item.getItem().getId());
 			if (template == null)
 			{
 				continue;
 			}
+			
 			if (!template.isStackable())
 			{
 				slots += item.getCount();
@@ -547,6 +555,7 @@ public class TradeList
 				slots++;
 			}
 		}
+		
 		return slots;
 	}
 	
@@ -562,13 +571,16 @@ public class TradeList
 			{
 				continue;
 			}
+			
 			final ItemTemplate template = ItemData.getInstance().getTemplate(item.getItem().getId());
 			if (template == null)
 			{
 				continue;
 			}
+			
 			weight += item.getCount() * template.getWeight();
 		}
+		
 		return (int) Math.min(weight, Integer.MAX_VALUE);
 	}
 	
@@ -660,11 +672,13 @@ public class TradeList
 						{
 							item.setCount(ti.getCount());
 						}
+						
 						found = true;
 					}
 					break;
 				}
 			}
+			
 			// item with this objectId and price not found in tradelist
 			if (!found)
 			{
@@ -687,6 +701,7 @@ public class TradeList
 			}
 			
 			totalPrice += item.getCount() * item.getPrice();
+			
 			// check for overflow of the total price
 			if ((MAX_ADENA < totalPrice) || (totalPrice < 0))
 			{
@@ -709,6 +724,7 @@ public class TradeList
 			{
 				continue;
 			}
+			
 			weight += item.getCount() * template.getWeight();
 			if (!template.isStackable())
 			{
@@ -747,8 +763,10 @@ public class TradeList
 			player.sendPacket(SystemMessageId.NOT_ENOUGH_ADENA);
 			return 1;
 		}
+		
 		playerIU.addItem(adenaItem);
 		ownerInventory.addAdena(ItemProcessType.SELL, totalPrice, _owner, player);
+		
 		// ownerIU.addItem(ownerInventory.getAdenaInstance());
 		boolean ok = true;
 		
@@ -777,6 +795,7 @@ public class TradeList
 				ok = false;
 				break;
 			}
+			
 			removeItem(item.getObjectId(), -1, item.getCount());
 			
 			PrivateStoreHistoryManager.getInstance().registerTransaction(PrivateStoreType.SELL, newItem, item.getCount(), item.getCount() * item.getPrice());
@@ -790,6 +809,7 @@ public class TradeList
 			{
 				ownerIU.addRemovedItem(oldItem);
 			}
+			
 			if (newItem.getCount() > item.getCount())
 			{
 				playerIU.addModifiedItem(newItem);
@@ -881,11 +901,13 @@ public class TradeList
 						{
 							item.setCount(ti.getCount());
 						}
+						
 						found = item.getCount() > 0;
 					}
 					break;
 				}
 			}
+			
 			// not found any item in the tradelist with same itemId and price
 			// maybe another player already sold this item ?
 			if (!found)
@@ -901,6 +923,7 @@ public class TradeList
 			}
 			
 			final long _totalPrice = totalPrice + (item.getCount() * item.getPrice());
+			
 			// check for overflow of the total price
 			if ((MAX_ADENA < _totalPrice) || (_totalPrice < 0))
 			{
@@ -936,6 +959,7 @@ public class TradeList
 				{
 					continue;
 				}
+				
 				objectId = oldItem.getObjectId();
 				oldItem = player.checkItemManipulation(objectId, item.getCount(), "sell");
 				if (oldItem == null)
@@ -943,6 +967,7 @@ public class TradeList
 					continue;
 				}
 			}
+			
 			if (oldItem.getId() != item.getItemId())
 			{
 				PunishmentManager.handleIllegalPlayerAction(player, player + " is cheating with sell items", Config.DEFAULT_PUNISH);
@@ -978,6 +1003,7 @@ public class TradeList
 			{
 				playerIU.addRemovedItem(oldItem);
 			}
+			
 			if (newItem.getCount() > item.getCount())
 			{
 				ownerIU.addModifiedItem(newItem);
@@ -1026,6 +1052,7 @@ public class TradeList
 				// should not happens, just a precaution
 				return false;
 			}
+			
 			final Item adenaItem = ownerInventory.getAdenaInstance();
 			ownerInventory.reduceAdena(ItemProcessType.BUY, totalPrice, _owner, player);
 			ownerIU.addItem(adenaItem);
@@ -1043,6 +1070,7 @@ public class TradeList
 			_owner.sendItemList();
 			player.sendItemList();
 		}
+		
 		return ok;
 	}
 }

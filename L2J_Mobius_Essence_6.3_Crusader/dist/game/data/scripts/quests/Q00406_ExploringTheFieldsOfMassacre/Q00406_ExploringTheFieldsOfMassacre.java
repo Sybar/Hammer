@@ -40,6 +40,7 @@ public class Q00406_ExploringTheFieldsOfMassacre extends Quest
 {
 	// NPC
 	private static final int GENIE_LAMP = 34369;
+	
 	// Monsters
 	private static final int GUARD_BUTCHER = 22101;
 	private static final int DOOM_ARCHER = 21008;
@@ -53,8 +54,10 @@ public class Q00406_ExploringTheFieldsOfMassacre extends Quest
 	private static final int GRAVEYANRD_PREDATOR = 21005;
 	private static final int GRAVEYARD_LICH = 21003;
 	private static final int GRAVEYARD_PREDATOR = 21005;
+	
 	// Item
 	private static final ItemHolder HP_POTION = new ItemHolder(91857, 200);
+	
 	// Misc
 	private static final int MIN_LEVEL = 52;
 	private static final int MAX_LEVEL = 56;
@@ -111,6 +114,7 @@ public class Q00406_ExploringTheFieldsOfMassacre extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -149,6 +153,7 @@ public class Q00406_ExploringTheFieldsOfMassacre extends Quest
 				htmltext = getAlreadyCompletedMsg(player);
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -184,6 +189,7 @@ public class Q00406_ExploringTheFieldsOfMassacre extends Quest
 			holder.add(new NpcLogListHolder(NpcStringId.DEFEAT_MONSTERS_6.getId(), true, qs.getInt(KILL_COUNT_VAR)));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

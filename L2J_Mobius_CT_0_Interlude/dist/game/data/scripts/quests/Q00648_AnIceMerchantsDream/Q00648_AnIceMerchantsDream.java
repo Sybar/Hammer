@@ -37,10 +37,12 @@ public class Q00648_AnIceMerchantsDream extends Quest
 	// NPCs
 	private static final int RAFFORTY = 32020;
 	private static final int ICE_SHELF = 32023;
+	
 	// Items
 	private static final int SILVER_HEMOCYTE = 8057;
 	private static final int SILVER_ICE_CRYSTAL = 8077;
 	private static final int BLACK_ICE_CRYSTAL = 8078;
+	
 	// Rewards
 	private static final Map<String, int[]> REWARDS = new HashMap<>();
 	static
@@ -54,6 +56,7 @@ public class Q00648_AnIceMerchantsDream extends Quest
 		REWARDS.put("f", new int[]{BLACK_ICE_CRYSTAL, 500, 947}); // Scroll: Enchant Weapon (B-Grade)
 		REWARDS.put("g", new int[]{BLACK_ICE_CRYSTAL, 80, 948}); // Scroll: Enchant Armor (B-Grade)
 	}
+	
 	// Drop chances
 	private static final Map<Integer, int[]> CHANCES = new HashMap<>();
 	static
@@ -288,6 +291,7 @@ public class Q00648_AnIceMerchantsDream extends Quest
 			giveItems(partyMember, SILVER_ICE_CRYSTAL, 1);
 			playSound(partyMember, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 		}
+		
 		if (st.isCond(2) && (chance[1] > 0) && (getRandom(1000000) < chance[1]))
 		{
 			giveItems(partyMember, SILVER_HEMOCYTE, 1);

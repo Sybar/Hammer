@@ -28,7 +28,6 @@ import org.l2jmobius.commons.database.DatabaseFactory;
 import org.l2jmobius.gameserver.managers.PunishmentManager;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.Summon;
-import org.l2jmobius.gameserver.model.actor.enums.player.PlayerCondOverride;
 import org.l2jmobius.gameserver.model.item.enums.ItemProcessType;
 import org.l2jmobius.gameserver.model.item.instance.Item;
 import org.l2jmobius.gameserver.network.PacketLogger;
@@ -107,7 +106,7 @@ public class RequestDestroyItem extends ClientPacket
 			return;
 		}
 		
-		if (!Config.DESTROY_ALL_ITEMS && (!player.canOverrideCond(PlayerCondOverride.DESTROY_ALL_ITEMS) && !itemToRemove.isDestroyable()))
+		if (!Config.DESTROY_ALL_ITEMS && (!player.isGM() && !itemToRemove.isDestroyable()))
 		{
 			if (itemToRemove.isHeroItem())
 			{
@@ -158,6 +157,7 @@ public class RequestDestroyItem extends ClientPacket
 				PacketLogger.warning("Could not delete pet objectid: " + e.getMessage());
 			}
 		}
+		
 		if (itemToRemove.isTimeLimitedItem())
 		{
 			itemToRemove.endOfLife();
@@ -184,6 +184,7 @@ public class RequestDestroyItem extends ClientPacket
 			{
 				iu.addModifiedItem(itm);
 			}
+			
 			player.sendPacket(iu); // Sent inventory update for unequip instantly.
 		}
 		
@@ -202,6 +203,7 @@ public class RequestDestroyItem extends ClientPacket
 		{
 			iu.addModifiedItem(removedItem);
 		}
+		
 		player.sendPacket(iu); // Sent inventory update for destruction instantly.
 		
 		final StatusUpdate su = new StatusUpdate(player);
@@ -220,6 +222,7 @@ public class RequestDestroyItem extends ClientPacket
 			sm = new SystemMessage(SystemMessageId.S1_HAS_DISAPPEARED);
 			sm.addItemName(removedItem);
 		}
+		
 		player.sendPacket(sm);
 	}
 }

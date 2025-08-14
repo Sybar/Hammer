@@ -39,10 +39,12 @@ public class Q00564_BasicMissionKartiasLabyrinthSolo extends Quest
 	// NPCs
 	private static final int PENNY = 34413;
 	private static final int KARTIA = 33647;
+	
 	// Reward's
 	private static final long EXP = 1409345453;
 	private static final int SP = 3968411;
 	private static final int SCROLL_OF_ESCAPE_KARTIAS_LABYRINTH = 39497;
+	
 	// Misc
 	private static final int MIN_LEVEL = 85;
 	private static final int MAX_LEVEL = 97;
@@ -107,14 +109,17 @@ public class Q00564_BasicMissionKartiasLabyrinthSolo extends Quest
 					{
 						addFactionPoints(player, Faction.ADVENTURE_GUILD, 100); // add 100 points to ADVENTURE_GUILD Faction
 					}
+					
 					if (str.charAt(1) == '1')
 					{
 						addFactionPoints(player, Faction.ADVENTURE_GUILD, 125); // add 125 points to ADVENTURE_GUILD Faction
 					}
+					
 					if (str.charAt(2) == '1')
 					{
 						addFactionPoints(player, Faction.ADVENTURE_GUILD, 150); // add 150 points to ADVENTURE_GUILD Faction
 					}
+					
 					giveItems(player, SCROLL_OF_ESCAPE_KARTIAS_LABYRINTH, 1);
 					addExpAndSp(player, EXP, SP);
 					qs.exitQuest(QuestType.DAILY, true);
@@ -123,6 +128,7 @@ public class Q00564_BasicMissionKartiasLabyrinthSolo extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -177,6 +183,7 @@ public class Q00564_BasicMissionKartiasLabyrinthSolo extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -190,18 +197,21 @@ public class Q00564_BasicMissionKartiasLabyrinthSolo extends Quest
 			index = 0;
 			string.setCharAt(index, ch);
 		}
+		
 		final QuestState st2 = player.getQuestState("Q00498_IncarnationOfJealousyPellineSolo");
 		if ((st2 != null) && st2.isCompleted())
 		{
 			index = 1;
 			string.setCharAt(index, ch);
 		}
+		
 		final QuestState st3 = player.getQuestState("Q00499_IncarnationOfGluttonyKaliosSolo");
 		if ((st3 != null) && st3.isCompleted())
 		{
 			index = 2;
 			string.setCharAt(index, ch);
 		}
+		
 		return string;
 	}
 }

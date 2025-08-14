@@ -49,6 +49,7 @@ public class Q00087_SagaOfEvasSaint extends Quest
 	public static final int TABLET_OF_VISION_3 = 31650;
 	public static final int TABLET_OF_VISION_4 = 31655;
 	public static final int ELIKIA = 31620;
+	
 	// Monsters
 	public static final int ICE_MONSTER = 27316;
 	public static final int SPIRIT_OF_A_DROWNED = 27317;
@@ -64,6 +65,7 @@ public class Q00087_SagaOfEvasSaint extends Quest
 	public static final int FALLEN_ANGEL_NAVERIUS = 27266;
 	public static final int HALISHA_ARCHON = 27219;
 	public static final int FALLEN_ANGEL_TANAKIA = 27274;
+	
 	// Items
 	public static final int ICE_CRYSTAL_FRAGMENT = 49821;
 	public static final int HALISHA_BADGE = 7502;
@@ -72,8 +74,10 @@ public class Q00087_SagaOfEvasSaint extends Quest
 	public static final int RESONANCE_AMULET_3 = 7347;
 	public static final int RESONANCE_AMULET_4 = 7378;
 	public static final int FOOD_SACK = 49837;
+	
 	// Reward
 	public static final int BOOK_PEGASUS = 90039;
+	
 	// Misc
 	private static final String KILL_COUNT_VAR = "KillCount";
 	
@@ -96,6 +100,7 @@ public class Q00087_SagaOfEvasSaint extends Quest
 		{
 			return null;
 		}
+		
 		String htmltext = event;
 		switch (event)
 		{
@@ -243,6 +248,7 @@ public class Q00087_SagaOfEvasSaint extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -433,6 +439,7 @@ public class Q00087_SagaOfEvasSaint extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -503,6 +510,7 @@ public class Q00087_SagaOfEvasSaint extends Quest
 						{
 							qs.set(KILL_COUNT_VAR, count + 1);
 						}
+						
 						if (count >= 20)
 						{
 							qs.setCond(8, true);
@@ -529,8 +537,10 @@ public class Q00087_SagaOfEvasSaint extends Quest
 			{
 				holder.add(new NpcLogListHolder(GATEKEEPER_OF_THE_HOLY_EDICT, false, guardiancount));
 			}
+			
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

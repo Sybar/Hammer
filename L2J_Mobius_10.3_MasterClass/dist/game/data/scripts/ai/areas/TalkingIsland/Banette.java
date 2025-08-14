@@ -60,8 +60,10 @@ public class Banette extends AbstractNpcAI
 					break;
 				}
 			}
+			
 			startQuestTimer("NPC_SHOUT", (10 + getRandom(5)) * 1000, npc, null);
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	

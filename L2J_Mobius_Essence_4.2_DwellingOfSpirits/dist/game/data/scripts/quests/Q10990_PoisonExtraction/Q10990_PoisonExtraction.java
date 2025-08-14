@@ -46,9 +46,11 @@ public class Q10990_PoisonExtraction extends Quest
 	// NPCs
 	private static final int GERALD = 30650;
 	private static final int CAPTAIN_BATHIS = 30332;
+	
 	// Monsters
 	private static final int HUNTER_TARANTULA = 20403;
 	private static final int PLUNDER_TARANTULA = 20508;
+	
 	// Items
 	private static final int VENOM_SAC = 91653;
 	private static final ItemHolder SOE_TO_CAPTAIN_BATHIS = new ItemHolder(91651, 1);
@@ -56,6 +58,7 @@ public class Q10990_PoisonExtraction extends Quest
 	private static final ItemHolder SPIRIT_ORE = new ItemHolder(3031, 50);
 	private static final ItemHolder HP_POTS = new ItemHolder(91912, 50);
 	private static final ItemHolder XP_GROWTH_SCROLL = new ItemHolder(49674, 1);
+	
 	// Misc
 	private static final int MAX_LEVEL = 20;
 	
@@ -120,11 +123,13 @@ public class Q10990_PoisonExtraction extends Quest
 						showOnScreenMsg(player, NpcStringId.YOU_VE_FINISHED_THE_TUTORIAL_NTAKE_YOUR_1ST_CLASS_TRANSFER_AND_COMPLETE_YOUR_TRAINING_WITH_BATHIS_TO_BECOME_STRONGER, ExShowScreenMessage.TOP_CENTER, 10000);
 						player.sendPacket(ExClassChangeSetAlarm.STATIC_PACKET);
 					}
+					
 					qs.exitQuest(false, true);
 				}
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -166,6 +171,7 @@ public class Q10990_PoisonExtraction extends Quest
 				htmltext = getAlreadyCompletedMsg(player);
 			}
 		}
+		
 		return htmltext;
 	}
 	

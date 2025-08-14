@@ -82,10 +82,12 @@ public class HandysBlockCheckerManager
 			{
 				return;
 			}
+			
 			if (Config.HBCE_FAIR_PLAY)
 			{
 				holder.checkAndShuffle();
 			}
+			
 			ThreadPool.execute(holder.getEvent().new StartEvent());
 		}
 		else
@@ -191,6 +193,7 @@ public class HandysBlockCheckerManager
 			// KrateiCubeManager.getInstance().removeParticipant(player);
 			// player.sendPacket(SystemMessageId.APPLICANTS_FOR_THE_OLYMPIAD_UNDERGROUND_COLISEUM_OR_KRATEI_S_CUBE_MATCHES_CANNOT_REGISTER));
 			// }
+			
 			if (_registrationPenalty.contains(player.getObjectId()))
 			{
 				player.sendPacket(SystemMessageId.YOU_MUST_WAIT_10_SECONDS_BEFORE_ATTEMPTING_TO_REGISTER_AGAIN);
@@ -207,6 +210,7 @@ public class HandysBlockCheckerManager
 				holder.addPlayer(player, 0);
 				isRed = true;
 			}
+			
 			holder.broadCastPacketToTeam(new ExCubeGameAddPlayer(player, isRed));
 			return true;
 		}
@@ -272,6 +276,7 @@ public class HandysBlockCheckerManager
 			{
 				holder.removePlayer(player, 1);
 			}
+			
 			holder.broadCastPacketToTeam(new ExCubeGameChangeTeam(player, isFromRed));
 		}
 	}
@@ -296,6 +301,7 @@ public class HandysBlockCheckerManager
 		{
 			return false;
 		}
+		
 		return _arenaStatus.get(arenaId);
 	}
 	
@@ -329,6 +335,7 @@ public class HandysBlockCheckerManager
 		if (player.getTeam() != Team.NONE)
 		{
 			player.stopAllEffects();
+			
 			// Remove team aura
 			player.setTeam(Team.NONE);
 			
@@ -339,12 +346,15 @@ public class HandysBlockCheckerManager
 				final long count = inv.getInventoryItemCount(13787, 0);
 				inv.destroyItemByItemId(ItemProcessType.DESTROY, 13787, count, player, player);
 			}
+			
 			if (inv.getItemByItemId(13788) != null)
 			{
 				final long count = inv.getInventoryItemCount(13788, 0);
 				inv.destroyItemByItemId(ItemProcessType.DESTROY, 13788, count, player, player);
 			}
+			
 			player.setInsideZone(ZoneId.PVP, false);
+			
 			// Teleport Back
 			player.teleToLocation(-57478, -60367, -2370);
 		}

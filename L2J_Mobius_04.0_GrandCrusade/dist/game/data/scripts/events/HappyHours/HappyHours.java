@@ -36,11 +36,14 @@ public class HappyHours extends LongTimeEvent
 {
 	// NPC
 	private static final int SIBI = 34262;
+	
 	// Items
 	private static final int SUPPLY_BOX = 47399;
 	private static final int SIBIS_COIN = 49783;
+	
 	// Skill
 	private static final int TRANSFORMATION_SKILL = 39171;
+	
 	// Other
 	private static final int MIN_LEVEL = 20;
 	private static final int REWARD_INTERVAL = 60 * 60 * 1000; // 1 hour
@@ -70,10 +73,12 @@ public class HappyHours extends LongTimeEvent
 				{
 					return "34262-2.htm";
 				}
+				
 				if (ownsAtLeastOneItem(player, SUPPLY_BOX))
 				{
 					return "34262-3.htm";
 				}
+				
 				giveItems(player, SUPPLY_BOX, 1);
 				break;
 			}
@@ -106,6 +111,7 @@ public class HappyHours extends LongTimeEvent
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

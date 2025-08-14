@@ -65,6 +65,7 @@ public class ConditionHasResidence extends Condition
 				break;
 			}
 		}
+		
 		return test;
 	}
 }

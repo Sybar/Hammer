@@ -96,8 +96,10 @@ public class TvT extends Event
 	}
 	
 	private static final String HTML_PATH = "data/scripts/custom/events/TeamVsTeam/";
+	
 	// NPC
 	private static final int MANAGER = 70010;
+	
 	// Skills
 	private static final SkillHolder GHOST_WALKING = new SkillHolder(100000, 1); // Custom Ghost Walking
 	private static final SkillHolder KNIGHT = new SkillHolder(15648, 1); // Knight's Harmony (Adventurer)
@@ -130,6 +132,7 @@ public class TvT extends Event
 	private static final Location RED_SPAWN_LOC = new Location(151536, 46722, -3416);
 	private static final ZoneType BLUE_PEACE_ZONE = ZoneManager.getInstance().getZoneByName("colosseum_peace1");
 	private static final ZoneType RED_PEACE_ZONE = ZoneManager.getInstance().getZoneByName("colosseum_peace2");
+	
 	// Settings
 	private static final int REGISTRATION_TIME = 10; // Minutes
 	private static final int WAIT_TIME = 1; // Minutes
@@ -141,6 +144,7 @@ public class TvT extends Event
 	private static final int MAXIMUM_PARTICIPANT_COUNT = 24; // Scoreboard has 25 slots
 	private static final int PARTY_MEMBER_COUNT = 7;
 	private static final ItemHolder REWARD = new ItemHolder(57, 1000000); // Adena
+	
 	// Misc
 	private static final Map<Player, Integer> PLAYER_SCORES = new ConcurrentHashMap<>();
 	private static final Set<Player> PLAYER_LIST = ConcurrentHashMap.newKeySet();
@@ -257,11 +261,13 @@ public class TvT extends Event
 				{
 					return null;
 				}
+				
 				// Remove the player from the IP count
 				if (Config.DUALBOX_CHECK_MAX_L2EVENT_PARTICIPANTS_PER_IP > 0)
 				{
 					AntiFeedManager.getInstance().removePlayer(AntiFeedManager.L2EVENT_ID, player);
 				}
+				
 				PLAYER_LIST.remove(player);
 				PLAYER_SCORES.remove(player);
 				removeListeners(player);
@@ -283,6 +289,7 @@ public class TvT extends Event
 						{
 							SkillCaster.triggerCast(npc, player, holder.getSkill());
 						}
+						
 						if (player.isMageClass())
 						{
 							SkillCaster.triggerCast(npc, player, WIZARD.getSkill());
@@ -295,9 +302,8 @@ public class TvT extends Event
 						{
 							SkillCaster.triggerCast(npc, player, WARRIOR.getSkill());
 						}
-						player.setCurrentHp(player.getMaxHp());
-						player.setCurrentMp(player.getMaxMp());
-						player.setCurrentCp(player.getMaxCp());
+						
+						player.fullRestore();
 					}
 				}
 				break;
@@ -318,6 +324,7 @@ public class TvT extends Event
 						PLAYER_SCORES.remove(participant);
 					}
 				}
+				
 				// Check if there are enough players to start the event.
 				if (PLAYER_LIST.size() < MINIMUM_PARTICIPANT_COUNT)
 				{
@@ -327,16 +334,20 @@ public class TvT extends Event
 						removeListeners(participant);
 						participant.setRegisteredOnEvent(false);
 					}
+					
 					// Set state INACTIVE
 					setState(EventState.INACTIVE);
 					return null;
 				}
+				
 				// Create the instance.
 				final InstanceManager manager = InstanceManager.getInstance();
 				final InstanceTemplate template = manager.getInstanceTemplate(INSTANCE_ID);
 				PVP_WORLD = manager.createInstance(template, null);
+				
 				// Make sure doors are closed.
 				PVP_WORLD.getDoors().forEach(Door::closeMe);
+				
 				// Randomize player list and separate teams.
 				final List<Player> playerList = new ArrayList<>(PLAYER_LIST.size());
 				playerList.addAll(PLAYER_LIST);
@@ -366,8 +377,10 @@ public class TvT extends Event
 						participant.setTeam(Team.RED);
 						team = true;
 					}
+					
 					addDeathListener(participant);
 				}
+				
 				// Make Blue CC.
 				if (BLUE_TEAM.size() > 1)
 				{
@@ -397,12 +410,14 @@ public class TvT extends Event
 						{
 							participant.joinParty(lastBlueParty);
 						}
+						
 						if (blueParticipantCounter == PARTY_MEMBER_COUNT)
 						{
 							blueParticipantCounter = 0;
 						}
 					}
 				}
+				
 				// Make Red CC.
 				if (RED_TEAM.size() > 1)
 				{
@@ -432,20 +447,25 @@ public class TvT extends Event
 						{
 							participant.joinParty(lastRedParty);
 						}
+						
 						if (redParticipantCounter == PARTY_MEMBER_COUNT)
 						{
 							redParticipantCounter = 0;
 						}
 					}
 				}
+				
 				// Spawn managers.
 				addSpawn(MANAGER, BLUE_BUFFER_SPAWN_LOC, false, (WAIT_TIME + FIGHT_TIME) * 60000, false, PVP_WORLD.getId());
 				addSpawn(MANAGER, RED_BUFFER_SPAWN_LOC, false, (WAIT_TIME + FIGHT_TIME) * 60000, false, PVP_WORLD.getId());
+				
 				// Initialize scores.
 				BLUE_SCORE = 0;
 				RED_SCORE = 0;
+				
 				// Initialize scoreboard.
 				PVP_WORLD.broadcastPacket(new ExPVPMatchCCRecord(ExPVPMatchCCRecord.INITIALIZE, MapUtil.sortByValue(PLAYER_SCORES, true)));
+				
 				// Schedule start.
 				startQuestTimer("5", (WAIT_TIME * 60000) - 5000, null, null);
 				startQuestTimer("4", (WAIT_TIME * 60000) - 4000, null, null);
@@ -472,6 +492,7 @@ public class TvT extends Event
 				
 				// Send message.
 				broadcastScreenMessageWithEffect("The fight has began!", 5);
+				
 				// Schedule finish.
 				startQuestTimer("10", (FIGHT_TIME * 60000) - 10000, null, null);
 				startQuestTimer("9", (FIGHT_TIME * 60000) - 9000, null, null);
@@ -505,6 +526,7 @@ public class TvT extends Event
 						summon.disableAllSkills();
 					}
 				}
+				
 				// Make sure noone is dead.
 				for (Player participant : PLAYER_LIST)
 				{
@@ -513,6 +535,7 @@ public class TvT extends Event
 						participant.doRevive();
 					}
 				}
+				
 				// Team wins by Forfeit.
 				if (TEAM_FORFEIT)
 				{
@@ -569,6 +592,7 @@ public class TvT extends Event
 						participant.broadcastSocialAction(13);
 					}
 				}
+				
 				startQuestTimer("ScoreBoard", 3500, null, null);
 				startQuestTimer("TeleportOut", 7000, null, null);
 				break;
@@ -576,6 +600,7 @@ public class TvT extends Event
 			case "ScoreBoard":
 			{
 				PVP_WORLD.broadcastPacket(new ExPVPMatchCCRecord(ExPVPMatchCCRecord.FINISH, MapUtil.sortByValue(PLAYER_SCORES, true)));
+				
 				// remove event FIGHT_TIME
 				for (Player participant : PLAYER_LIST)
 				{
@@ -586,6 +611,7 @@ public class TvT extends Event
 			case "TeleportOut":
 			{
 				TEAM_FORFEIT = false;
+				
 				// Remove event listeners.
 				for (Player participant : PLAYER_LIST)
 				{
@@ -594,12 +620,14 @@ public class TvT extends Event
 					participant.setOnEvent(false);
 					participant.leaveParty();
 				}
+				
 				// Destroy world.
 				if (PVP_WORLD != null)
 				{
 					PVP_WORLD.destroy();
 					PVP_WORLD = null;
 				}
+				
 				// Enable players.
 				for (Player participant : PLAYER_LIST)
 				{
@@ -613,6 +641,7 @@ public class TvT extends Event
 						summon.disableAllSkills();
 					}
 				}
+				
 				// Set state INACTIVE
 				setState(EventState.INACTIVE);
 				break;
@@ -625,8 +654,10 @@ public class TvT extends Event
 					{
 						player.setIsPendingRevive(true);
 						player.teleToLocation(BLUE_SPAWN_LOC, false, player.getInstanceWorld());
+						
 						// Make player invulnerable for 30 seconds.
 						GHOST_WALKING.getSkill().applyEffects(player, player);
+						
 						// Reset existing activity timers.
 						resetActivityTimers(player); // In case player died in peace zone.
 					}
@@ -634,8 +665,10 @@ public class TvT extends Event
 					{
 						player.setIsPendingRevive(true);
 						player.teleToLocation(RED_SPAWN_LOC, false, player.getInstanceWorld());
+						
 						// Make player invulnerable for 30 seconds.
 						GHOST_WALKING.getSkill().applyEffects(player, player);
+						
 						// Reset existing activity timers.
 						resetActivityTimers(player); // In case player died in peace zone.
 					}
@@ -673,6 +706,7 @@ public class TvT extends Event
 				break;
 			}
 		}
+		
 		// Activity timer.
 		if (event.startsWith("KickPlayer") && (player != null) && (player.getInstanceWorld() == PVP_WORLD))
 		{
@@ -709,6 +743,7 @@ public class TvT extends Event
 				player.sendPacket(new ExPVPMatchCCRecord(ExPVPMatchCCRecord.FINISH, MapUtil.sortByValue(PLAYER_SCORES, true)));
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -753,6 +788,7 @@ public class TvT extends Event
 					creature.teleToLocation(RED_SPAWN_LOC, creature.getInstanceWorld());
 					sendScreenMessage(player, "Entering the enemy headquarters is prohibited!", 10);
 				}
+				
 				if ((zone == RED_PEACE_ZONE) && (creature.getTeam() == Team.BLUE))
 				{
 					creature.teleToLocation(BLUE_SPAWN_LOC, creature.getInstanceWorld());
@@ -797,78 +833,93 @@ public class TvT extends Event
 			player.sendMessage("You are already registered on this event.");
 			return false;
 		}
+		
 		if (player.getLevel() < MINIMUM_PARTICIPANT_LEVEL)
 		{
 			player.sendMessage("Your level is too low to participate.");
 			return false;
 		}
+		
 		if (player.getLevel() > MAXIMUM_PARTICIPANT_LEVEL)
 		{
 			player.sendMessage("Your level is too high to participate.");
 			return false;
 		}
+		
 		if (player.isRegisteredOnEvent() || (player.getBlockCheckerArena() > -1))
 		{
 			player.sendMessage("You are already registered on an event.");
 			return false;
 		}
+		
 		if (PLAYER_LIST.size() >= MAXIMUM_PARTICIPANT_COUNT)
 		{
 			player.sendMessage("There are too many players registered on the event.");
 			return false;
 		}
+		
 		if (player.isFlyingMounted())
 		{
 			player.sendMessage("You cannot register on the event while flying.");
 			return false;
 		}
+		
 		if (player.isTransformed())
 		{
 			player.sendMessage("You cannot register on the event while on a transformed state.");
 			return false;
 		}
+		
 		if (!player.isInventoryUnder80(false))
 		{
 			player.sendMessage("There are too many items in your inventory.");
 			player.sendMessage("Try removing some items.");
 			return false;
 		}
+		
 		if ((player.getWeightPenalty() != 0))
 		{
 			player.sendMessage("Your invetory weight has exceeded the normal limit.");
 			player.sendMessage("Try removing some items.");
 			return false;
 		}
+		
 		if (player.isCursedWeaponEquipped() || (player.getReputation() < 0))
 		{
 			player.sendMessage("People with bad reputation can't register.");
 			return false;
 		}
+		
 		if (player.isInDuel())
 		{
 			player.sendMessage("You cannot register while on a duel.");
 			return false;
 		}
+		
 		if (player.isInOlympiadMode() || OlympiadManager.getInstance().isRegistered(player))
 		{
 			player.sendMessage("You cannot participate while registered on the Olympiad.");
 			return false;
 		}
+		
 		if (player.isInInstance())
 		{
 			player.sendMessage("You cannot register while in an instance.");
 			return false;
 		}
+		
 		if (player.isInSiege() || player.isInsideZone(ZoneId.SIEGE))
 		{
 			player.sendMessage("You cannot register while on a siege.");
 			return false;
 		}
+		
 		if (player.isFishing())
 		{
 			player.sendMessage("You cannot register while fishing.");
 			return false;
 		}
+		
 		return true;
 	}
 	
@@ -911,6 +962,7 @@ public class TvT extends Event
 				listener.unregisterMe();
 			}
 		}
+		
 		for (AbstractEventListener listener : player.getListeners(EventType.ON_CREATURE_DEATH))
 		{
 			if (listener.getOwner() == this)
@@ -950,6 +1002,7 @@ public class TvT extends Event
 	private void onPlayerLogout(OnPlayerLogout event)
 	{
 		final Player player = event.getPlayer();
+		
 		// Remove player from lists.
 		PLAYER_LIST.remove(player);
 		PLAYER_SCORES.remove(player);
@@ -976,6 +1029,7 @@ public class TvT extends Event
 		{
 			final Player killedPlayer = event.getTarget().asPlayer();
 			final Player killer = event.getAttacker().asPlayer();
+			
 			// Confirm Blue team kill.
 			if ((killer.getTeam() == Team.BLUE) && (killedPlayer.getTeam() == Team.RED))
 			{
@@ -984,6 +1038,7 @@ public class TvT extends Event
 				broadcastScoreMessage();
 				PVP_WORLD.broadcastPacket(new ExPVPMatchCCRecord(ExPVPMatchCCRecord.UPDATE, MapUtil.sortByValue(PLAYER_SCORES, true)));
 			}
+			
 			// Confirm Red team kill.
 			if ((killer.getTeam() == Team.RED) && (killedPlayer.getTeam() == Team.BLUE))
 			{
@@ -992,6 +1047,7 @@ public class TvT extends Event
 				broadcastScoreMessage();
 				PVP_WORLD.broadcastPacket(new ExPVPMatchCCRecord(ExPVPMatchCCRecord.UPDATE, MapUtil.sortByValue(PLAYER_SCORES, true)));
 			}
+			
 			// Auto release after 10 seconds.
 			startQuestTimer("ResurrectPlayer", 10000, null, killedPlayer);
 		}
@@ -1011,20 +1067,24 @@ public class TvT extends Event
 				timer.cancel();
 			}
 		}
+		
 		// Register the event at AntiFeedManager and clean it for just in case if the event is already registered
 		if (Config.DUALBOX_CHECK_MAX_L2EVENT_PARTICIPANTS_PER_IP > 0)
 		{
 			AntiFeedManager.getInstance().registerEvent(AntiFeedManager.L2EVENT_ID);
 			AntiFeedManager.getInstance().clear(AntiFeedManager.L2EVENT_ID);
 		}
+		
 		// Clear player lists.
 		PLAYER_LIST.clear();
 		PLAYER_SCORES.clear();
 		BLUE_TEAM.clear();
 		RED_TEAM.clear();
+		
 		// Spawn event manager.
 		MANAGER_NPC_INSTANCE = addSpawn(MANAGER, MANAGER_SPAWN_LOC, false, REGISTRATION_TIME * 60000);
 		startQuestTimer("TeleportToArena", REGISTRATION_TIME * 60000, null, null);
+		
 		// Send message to players.
 		Broadcast.toAllOnlinePlayers("TvT Event: Registration opened for " + REGISTRATION_TIME + " minutes.");
 		Broadcast.toAllOnlinePlayers("TvT Event: You can register at Giran TvT Event Manager.");
@@ -1036,6 +1096,7 @@ public class TvT extends Event
 	{
 		// Despawn event manager.
 		MANAGER_NPC_INSTANCE.deleteMe();
+		
 		// Cancel timers.
 		for (List<QuestTimer> timers : getQuestTimers().values())
 		{
@@ -1044,6 +1105,7 @@ public class TvT extends Event
 				timer.cancel();
 			}
 		}
+		
 		// Remove participants.
 		for (Player participant : PLAYER_LIST)
 		{
@@ -1077,6 +1139,7 @@ public class TvT extends Event
 			PVP_WORLD.destroy();
 			PVP_WORLD = null;
 		}
+		
 		// Send message to players.
 		Broadcast.toAllOnlinePlayers("TvT Event: Event was canceled.");
 		
@@ -1108,6 +1171,7 @@ public class TvT extends Event
 		{
 			isInactive = _state == EventState.INACTIVE;
 		}
+		
 		return isInactive;
 	}
 	
@@ -1122,6 +1186,7 @@ public class TvT extends Event
 		{
 			isParticipating = _state == EventState.PARTICIPATING;
 		}
+		
 		return isParticipating;
 	}
 	
@@ -1136,6 +1201,7 @@ public class TvT extends Event
 		{
 			isStarting = _state == EventState.STARTING;
 		}
+		
 		return isStarting;
 	}
 	
@@ -1150,6 +1216,7 @@ public class TvT extends Event
 		{
 			isStarted = _state == EventState.STARTED;
 		}
+		
 		return isStarted;
 	}
 	

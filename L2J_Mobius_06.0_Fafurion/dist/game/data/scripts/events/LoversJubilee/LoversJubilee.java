@@ -35,6 +35,7 @@ public class LoversJubilee extends LongTimeEvent
 {
 	// NPC
 	private static final int ROSALIA = 4305;
+	
 	// Item
 	private static final int ONE_RED_ROSE_BUD = 20905;
 	private static final int ONE_BLUE_ROSE_BUD = 20906;
@@ -53,6 +54,7 @@ public class LoversJubilee extends LongTimeEvent
 	private static final int IMPROVED_LAPHAM_ROSE_NECKLACE = 20919;
 	private static final int IMPROVED_MAFUM_ROSE_NECKLACE = 20920;
 	private static final int SPIRIT_TEST_REPORT = 20921;
+	
 	// Misc
 	private static final int ONE_ROSE_PRICE = 500;
 	private static final int TEN_ROSES_PRICE = 5000;
@@ -104,6 +106,7 @@ public class LoversJubilee extends LongTimeEvent
 							break;
 						}
 					}
+					
 					htmtext = "4305-023.htm";
 				}
 				break;
@@ -137,6 +140,7 @@ public class LoversJubilee extends LongTimeEvent
 							break;
 						}
 					}
+					
 					htmtext = "4305-023.htm";
 				}
 				break;
@@ -194,6 +198,7 @@ public class LoversJubilee extends LongTimeEvent
 						break;
 					}
 				}
+				
 				htmtext = "4305-025.htm";
 				break;
 			}
@@ -238,10 +243,12 @@ public class LoversJubilee extends LongTimeEvent
 						break;
 					}
 				}
+				
 				htmtext = "4305-026.htm";
 				break;
 			}
 		}
+		
 		return htmtext;
 	}
 	

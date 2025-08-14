@@ -44,6 +44,7 @@ public class Q00572_SpecialMissionProofOfCourageFieldRaid extends Quest
 {
 	// NPCs
 	private static final int PENNY = 34413;
+	
 	// Raidbosses
 	private static final int[] BOSSES =
 	{
@@ -67,6 +68,7 @@ public class Q00572_SpecialMissionProofOfCourageFieldRaid extends Quest
 		26059, // Ekidna's Statue Pantasaus
 		26060, // Ekidna's Statue Ixignon
 	};
+	
 	// Misc
 	private static final int MIN_LEVEL = 88;
 	private static final int MAX_LEVEL = 92;
@@ -91,6 +93,7 @@ public class Q00572_SpecialMissionProofOfCourageFieldRaid extends Quest
 		{
 			return htmltext;
 		}
+		
 		switch (event)
 		{
 			case "34413-02.htm":
@@ -107,6 +110,7 @@ public class Q00572_SpecialMissionProofOfCourageFieldRaid extends Quest
 					htmltext = "34413-04.htm";
 					break;
 				}
+				
 				htmltext = "34413-00.htm";
 				break;
 			}
@@ -120,6 +124,7 @@ public class Q00572_SpecialMissionProofOfCourageFieldRaid extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -154,6 +159,7 @@ public class Q00572_SpecialMissionProofOfCourageFieldRaid extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -191,6 +197,7 @@ public class Q00572_SpecialMissionProofOfCourageFieldRaid extends Quest
 				return holder;
 			}
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

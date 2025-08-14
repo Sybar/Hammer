@@ -106,6 +106,7 @@ public class RebalanceHPSummon extends AbstractEffect
 				newHP = effector.getMaxRecoverableHp();
 			}
 		}
+		
 		effector.setCurrentHp(newHP);
 	}
 }

@@ -52,6 +52,7 @@ public class ConditionPlayerCanSummonServitor extends Condition
 		{
 			canSummon = false;
 		}
+		
 		return canSummon == _value;
 	}
 }

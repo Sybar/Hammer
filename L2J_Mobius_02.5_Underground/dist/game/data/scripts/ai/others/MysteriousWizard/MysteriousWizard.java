@@ -32,6 +32,7 @@ public class MysteriousWizard extends AbstractNpcAI
 {
 	// Npc
 	private static final int MYSTERIOUS_WIZARD = 33980;
+	
 	// Misc
 	private static final int FORTRESS_OF_THE_DEAD = 254;
 	
@@ -67,6 +68,7 @@ public class MysteriousWizard extends AbstractNpcAI
 				htmltext = "33980-04.html";
 			}
 		}
+		
 		return htmltext;
 	}
 	

@@ -137,6 +137,7 @@ public class ClassTransferTalk extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -173,6 +174,7 @@ public class ClassTransferTalk extends AbstractNpcAI
 						}
 						break;
 					}
+					
 					htmltext = "32153-01.html";
 					break;
 				}
@@ -190,6 +192,7 @@ public class ClassTransferTalk extends AbstractNpcAI
 						}
 						break;
 					}
+					
 					htmltext = "32147-01.html";
 					break;
 				}
@@ -207,6 +210,7 @@ public class ClassTransferTalk extends AbstractNpcAI
 						}
 						break;
 					}
+					
 					htmltext = "32160-01.html";
 					break;
 				}
@@ -224,6 +228,7 @@ public class ClassTransferTalk extends AbstractNpcAI
 						}
 						break;
 					}
+					
 					htmltext = "32150-01.html";
 					break;
 				}
@@ -241,6 +246,7 @@ public class ClassTransferTalk extends AbstractNpcAI
 						}
 						break;
 					}
+					
 					htmltext = "30565-01.html";
 					break;
 				}
@@ -277,6 +283,7 @@ public class ClassTransferTalk extends AbstractNpcAI
 						}
 						break;
 					}
+					
 					htmltext = "30505-01.html";
 					break;
 				}
@@ -287,6 +294,7 @@ public class ClassTransferTalk extends AbstractNpcAI
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	

@@ -34,8 +34,10 @@ public class Phiriel extends AbstractNpcAI
 {
 	// NPC
 	private static final int PHIRIEL = 29210;
+	
 	// Location
 	private static final Location PHIRIEL_LOC = new Location(115213, 16623, 10080);
+	
 	// Misc
 	private static final String PHIRIEL_RESPAWN_PATTERN = "30 22 * * 4";
 	private SchedulingPattern _respawnPattern = null;
@@ -64,6 +66,7 @@ public class Phiriel extends AbstractNpcAI
 		{
 			addSpawn(PHIRIEL, PHIRIEL_LOC, false, getDespawnTime());
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	

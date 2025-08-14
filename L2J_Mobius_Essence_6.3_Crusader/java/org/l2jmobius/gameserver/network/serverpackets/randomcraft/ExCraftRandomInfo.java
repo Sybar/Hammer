@@ -64,8 +64,10 @@ public class ExCraftRandomInfo extends ServerPacket
 				buffer.writeInt(0);
 				buffer.writeLong(0);
 			}
+			
 			size--;
 		}
+		
 		// Write missing
 		for (int i = size; i > 0; i--)
 		{

@@ -47,14 +47,17 @@ public class Q10958_ExploringNewOpportunities extends Quest
 	private static final int MATHORN = 34139;
 	private static final int SKELETON_ARCHER = 22184;
 	private static final int SKELETON_WARRIOR = 22185;
+	
 	// Items
 	private static final ItemHolder SOE_MATHORN = new ItemHolder(93319, 1);
 	private static final ItemHolder SOE_NOVICE = new ItemHolder(10650, 10);
 	private static final ItemHolder RING_NOVICE = new ItemHolder(49041, 2);
 	private static final ItemHolder EARRING_NOVICE = new ItemHolder(49040, 2);
 	private static final ItemHolder NECKLACE_NOVICE = new ItemHolder(49039, 1);
+	
 	// Location
 	private static final Location TRAINING_GROUNDS = new Location(39554, 149715, -3896);
+	
 	// Misc
 	private static final String KILL_COUNT_VAR = "KillCount";
 	
@@ -118,10 +121,12 @@ public class Q10958_ExploringNewOpportunities extends Quest
 					addExpAndSp(player, 260000, 6000);
 					qs.exitQuest(false, true);
 				}
+				
 				htmltext = event;
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -162,6 +167,7 @@ public class Q10958_ExploringNewOpportunities extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -198,6 +204,7 @@ public class Q10958_ExploringNewOpportunities extends Quest
 			holder.add(new NpcLogListHolder(NpcStringId.CLEAN_THE_FIRST_TRAINING_GROUNDS_UP.getId(), true, qs.getInt(KILL_COUNT_VAR)));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

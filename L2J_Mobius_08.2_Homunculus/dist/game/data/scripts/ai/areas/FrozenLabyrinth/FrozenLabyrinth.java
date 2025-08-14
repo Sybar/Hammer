@@ -54,6 +54,7 @@ public class FrozenLabyrinth extends AbstractNpcAI
 				addAttackPlayerDesire(monster, attacker);
 				diff += 20;
 			}
+			
 			npc.setScriptValue(1);
 			npc.deleteMe();
 		}

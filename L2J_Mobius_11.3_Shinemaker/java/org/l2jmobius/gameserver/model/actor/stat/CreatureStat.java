@@ -29,10 +29,13 @@ import java.util.Map;
 import java.util.OptionalDouble;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ScheduledFuture;
+import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 import java.util.function.BiFunction;
 
 import org.l2jmobius.Config;
+import org.l2jmobius.commons.threads.ThreadPool;
 import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.enums.creature.AttributeType;
@@ -81,6 +84,8 @@ public class CreatureStat
 	private double _attackSpeedMultiplier = 1;
 	private double _mAttackSpeedMultiplier = 1;
 	
+	private ScheduledFuture<?> _recalculateStatsTask = null;
+	private final AtomicBoolean _broadcast = new AtomicBoolean();
 	private final ReentrantReadWriteLock _lock = new ReentrantReadWriteLock();
 	
 	public CreatureStat(Creature creature)
@@ -293,6 +298,7 @@ public class CreatureStat
 				return (int) (1.1 * owner.getStat().getValue(Stat.MAGIC_ATTACK));
 			}
 		}
+		
 		return (int) getValue(Stat.MAGIC_ATTACK);
 	}
 	
@@ -331,6 +337,7 @@ public class CreatureStat
 				return (int) (0.7 * owner.getStat().getValue(Stat.MAGICAL_DEFENCE));
 			}
 		}
+		
 		return (int) getValue(Stat.MAGICAL_DEFENCE);
 	}
 	
@@ -363,6 +370,7 @@ public class CreatureStat
 		{
 			baseSpeed = _creature.getTemplate().getBaseValue(_creature.isRunning() ? Stat.RUN_SPEED : Stat.WALK_SPEED, 0);
 		}
+		
 		return getMoveSpeed() * (1. / baseSpeed);
 	}
 	
@@ -407,6 +415,7 @@ public class CreatureStat
 		{
 			return _creature.isRunning() ? getSwimRunSpeed() : getSwimWalkSpeed();
 		}
+		
 		return _creature.isRunning() ? getRunSpeed() : getWalkSpeed();
 	}
 	
@@ -423,6 +432,7 @@ public class CreatureStat
 				return (int) (1.1 * owner.getStat().getValue(Stat.PHYSICAL_ATTACK));
 			}
 		}
+		
 		return (int) getValue(Stat.PHYSICAL_ATTACK);
 	}
 	
@@ -452,6 +462,7 @@ public class CreatureStat
 				return (int) (0.7 * owner.getStat().getValue(Stat.PHYSICAL_DEFENCE));
 			}
 		}
+		
 		return (int) getValue(Stat.PHYSICAL_DEFENCE);
 	}
 	
@@ -525,12 +536,14 @@ public class CreatureStat
 		{
 			return 1;
 		}
+		
 		double mpConsume = skill.getMpConsume();
 		final double nextDanceMpCost = Math.ceil(skill.getMpConsume() / 2.);
 		if (skill.isDance() && Config.DANCE_CONSUME_ADDITIONAL_MP && (_creature != null) && (_creature.getDanceCount() > 0))
 		{
 			mpConsume += _creature.getDanceCount() * nextDanceMpCost;
 		}
+		
 		return (int) (mpConsume * getMpConsumeTypeValue(skill.getMagicType()));
 	}
 	
@@ -544,12 +557,14 @@ public class CreatureStat
 		{
 			return 1;
 		}
+		
 		return skill.getMpInitialConsume();
 	}
 	
 	public AttributeType getAttackElement()
 	{
 		final Item weaponInstance = _creature.getActiveWeaponInstance();
+		
 		// 1st order - weapon element
 		if ((weaponInstance != null) && (weaponInstance.getAttackAttributeType() != AttributeType.NONE))
 		{
@@ -981,6 +996,7 @@ public class CreatureStat
 			{
 				_statsAdd.put(stat, stat.getResetAddValue());
 			}
+			
 			if (stat.getResetMulValue() != 0)
 			{
 				_statsMul.put(stat, stat.getResetMulValue());
@@ -994,148 +1010,178 @@ public class CreatureStat
 	 */
 	public void recalculateStats(boolean broadcast)
 	{
-		// Copy old data before wiping it out.
-		final Map<Stat, Double> adds = !broadcast ? Collections.emptyMap() : new EnumMap<>(_statsAdd);
-		final Map<Stat, Double> muls = !broadcast ? Collections.emptyMap() : new EnumMap<>(_statsMul);
-		
-		_lock.writeLock().lock();
-		
-		try
+		if (broadcast)
 		{
-			// Wipe all the data.
-			resetStats();
-			
-			// Delayed pump effects.
-			final List<DelayedPumpHolder> delayedPumps = new LinkedList<>();
-			
-			// Call pump to each effect.
-			for (BuffInfo info : _creature.getEffectList().getPassives())
+			synchronized (_broadcast)
 			{
-				if (info.isInUse() && info.getSkill().checkConditions(SkillConditionScope.PASSIVE, _creature, _creature.getTarget()))
-				{
-					for (AbstractEffect effect : info.getEffects())
-					{
-						if (effect.canStart(info.getEffector(), info.getEffected(), info.getSkill()) && effect.canPump(info.getEffector(), info.getEffected(), info.getSkill()))
-						{
-							if (effect.delayPump())
-							{
-								delayedPumps.add(new DelayedPumpHolder(effect, info.getEffected(), info.getSkill()));
-							}
-							else
-							{
-								effect.pump(info.getEffected(), info.getSkill());
-							}
-						}
-					}
-				}
+				_broadcast.compareAndSet(false, true);
 			}
-			for (BuffInfo info : _creature.getEffectList().getOptions())
+		}
+		
+		synchronized (this)
+		{
+			if (_recalculateStatsTask != null)
 			{
-				if (info.isInUse())
-				{
-					for (AbstractEffect effect : info.getEffects())
-					{
-						if (effect.canStart(info.getEffector(), info.getEffected(), info.getSkill()) && effect.canPump(info.getEffector(), info.getEffected(), info.getSkill()))
-						{
-							if (effect.delayPump())
-							{
-								delayedPumps.add(new DelayedPumpHolder(effect, info.getEffected(), info.getSkill()));
-							}
-							else
-							{
-								effect.pump(info.getEffected(), info.getSkill());
-							}
-						}
-					}
-				}
-			}
-			for (BuffInfo info : _creature.getEffectList().getEffects())
-			{
-				if (info.isInUse())
-				{
-					for (AbstractEffect effect : info.getEffects())
-					{
-						if (effect.canStart(info.getEffector(), info.getEffected(), info.getSkill()) && effect.canPump(info.getEffector(), info.getEffected(), info.getSkill()))
-						{
-							if (effect.delayPump())
-							{
-								delayedPumps.add(new DelayedPumpHolder(effect, info.getEffected(), info.getSkill()));
-							}
-							else
-							{
-								effect.pump(info.getEffected(), info.getSkill());
-							}
-						}
-					}
-				}
+				return;
 			}
 			
-			// Call delayed effect pumps.
-			if (!delayedPumps.isEmpty())
+			_recalculateStatsTask = ThreadPool.schedule(() ->
 			{
-				for (DelayedPumpHolder holder : delayedPumps)
+				synchronized (_broadcast)
 				{
-					holder.getEffect().pump(holder.getEffected(), holder.getSkill());
-				}
-			}
-			
-			// Pump for summon ABILITY_CHANGE abnormal type.
-			if (_creature.isSummon())
-			{
-				final Player player = _creature.asPlayer();
-				if ((player != null) && player.hasAbnormalType(AbnormalType.ABILITY_CHANGE))
-				{
-					for (BuffInfo info : player.getEffectList().getEffects())
+					final boolean broadcastChanges = _broadcast.get();
+					_broadcast.compareAndSet(true, false);
+					
+					_lock.writeLock().lock();
+					
+					// Copy old data before wiping it out.
+					final Map<Stat, Double> adds = !broadcastChanges ? Collections.emptyMap() : new EnumMap<>(_statsAdd);
+					final Map<Stat, Double> muls = !broadcastChanges ? Collections.emptyMap() : new EnumMap<>(_statsMul);
+					
+					try
 					{
-						if (info.isInUse() && info.isAbnormalType(AbnormalType.ABILITY_CHANGE))
+						// Wipe all the data.
+						resetStats();
+						
+						// Delayed pump effects.
+						final List<DelayedPumpHolder> delayedPumps = new LinkedList<>();
+						
+						// Call pump to each effect.
+						for (BuffInfo info : _creature.getEffectList().getPassives())
 						{
-							for (AbstractEffect effect : info.getEffects())
+							if (info.isInUse() && info.getSkill().checkConditions(SkillConditionScope.PASSIVE, _creature, _creature.getTarget()))
 							{
-								if (effect.canStart(info.getEffector(), info.getEffected(), info.getSkill()) && effect.canPump(_creature, _creature, info.getSkill()))
+								for (AbstractEffect effect : info.getEffects())
 								{
-									effect.pump(_creature, info.getSkill());
+									if (effect.canStart(info.getEffector(), info.getEffected(), info.getSkill()) && effect.canPump(info.getEffector(), info.getEffected(), info.getSkill()))
+									{
+										if (effect.delayPump())
+										{
+											delayedPumps.add(new DelayedPumpHolder(effect, info.getEffected(), info.getSkill()));
+										}
+										else
+										{
+											effect.pump(info.getEffected(), info.getSkill());
+										}
+									}
 								}
 							}
 						}
+						
+						for (BuffInfo info : _creature.getEffectList().getOptions())
+						{
+							if (info.isInUse())
+							{
+								for (AbstractEffect effect : info.getEffects())
+								{
+									if (effect.canStart(info.getEffector(), info.getEffected(), info.getSkill()) && effect.canPump(info.getEffector(), info.getEffected(), info.getSkill()))
+									{
+										if (effect.delayPump())
+										{
+											delayedPumps.add(new DelayedPumpHolder(effect, info.getEffected(), info.getSkill()));
+										}
+										else
+										{
+											effect.pump(info.getEffected(), info.getSkill());
+										}
+									}
+								}
+							}
+						}
+						
+						for (BuffInfo info : _creature.getEffectList().getEffects())
+						{
+							if (info.isInUse())
+							{
+								for (AbstractEffect effect : info.getEffects())
+								{
+									if (effect.canStart(info.getEffector(), info.getEffected(), info.getSkill()) && effect.canPump(info.getEffector(), info.getEffected(), info.getSkill()))
+									{
+										if (effect.delayPump())
+										{
+											delayedPumps.add(new DelayedPumpHolder(effect, info.getEffected(), info.getSkill()));
+										}
+										else
+										{
+											effect.pump(info.getEffected(), info.getSkill());
+										}
+									}
+								}
+							}
+						}
+						
+						// Call delayed effect pumps.
+						if (!delayedPumps.isEmpty())
+						{
+							for (DelayedPumpHolder holder : delayedPumps)
+							{
+								holder.getEffect().pump(holder.getEffected(), holder.getSkill());
+							}
+						}
+						
+						// Pump for summon ABILITY_CHANGE abnormal type.
+						if (_creature.isSummon())
+						{
+							final Player player = _creature.asPlayer();
+							if ((player != null) && player.hasAbnormalType(AbnormalType.ABILITY_CHANGE))
+							{
+								for (BuffInfo info : player.getEffectList().getEffects())
+								{
+									if (info.isInUse() && info.isAbnormalType(AbnormalType.ABILITY_CHANGE))
+									{
+										for (AbstractEffect effect : info.getEffects())
+										{
+											if (effect.canStart(info.getEffector(), info.getEffected(), info.getSkill()) && effect.canPump(_creature, _creature, info.getSkill()))
+											{
+												effect.pump(_creature, info.getSkill());
+											}
+										}
+									}
+								}
+							}
+						}
+						
+						_attackSpeedMultiplier = Formulas.calcAtkSpdMultiplier(_creature);
+						_mAttackSpeedMultiplier = Formulas.calcMAtkSpdMultiplier(_creature);
+					}
+					finally
+					{
+						_lock.writeLock().unlock();
+					}
+					
+					// Notify recalculation to child classes.
+					onRecalculateStats(broadcastChanges);
+					
+					if (broadcastChanges)
+					{
+						// Calculate the difference between old and new stats.
+						final Set<Stat> changed = EnumSet.noneOf(Stat.class);
+						Double statAddResetValue;
+						Double statMulResetValue;
+						Double statAddValue;
+						Double statMulValue;
+						Double addsValue;
+						Double mulsValue;
+						for (Stat stat : Stat.values())
+						{
+							statAddResetValue = stat.getResetAddValue();
+							statMulResetValue = stat.getResetMulValue();
+							addsValue = adds.getOrDefault(stat, statAddResetValue);
+							mulsValue = muls.getOrDefault(stat, statMulResetValue);
+							statAddValue = _statsAdd.getOrDefault(stat, statAddResetValue);
+							statMulValue = _statsMul.getOrDefault(stat, statMulResetValue);
+							if (addsValue.equals(statAddResetValue) || mulsValue.equals(statMulResetValue) || !addsValue.equals(statAddValue) || !mulsValue.equals(statMulValue))
+							{
+								changed.add(stat);
+							}
+						}
+						
+						_creature.broadcastModifiedStats(changed);
 					}
 				}
-			}
-			
-			_attackSpeedMultiplier = Formulas.calcAtkSpdMultiplier(_creature);
-			_mAttackSpeedMultiplier = Formulas.calcMAtkSpdMultiplier(_creature);
-		}
-		finally
-		{
-			_lock.writeLock().unlock();
-		}
-		
-		// Notify recalculation to child classes.
-		onRecalculateStats(broadcast);
-		
-		if (broadcast)
-		{
-			// Calculate the difference between old and new stats.
-			final Set<Stat> changed = EnumSet.noneOf(Stat.class);
-			Double statAddResetValue;
-			Double statMulResetValue;
-			Double statAddValue;
-			Double statMulValue;
-			Double addsValue;
-			Double mulsValue;
-			for (Stat stat : Stat.values())
-			{
-				statAddResetValue = stat.getResetAddValue();
-				statMulResetValue = stat.getResetMulValue();
-				addsValue = adds.getOrDefault(stat, statAddResetValue);
-				mulsValue = muls.getOrDefault(stat, statMulResetValue);
-				statAddValue = _statsAdd.getOrDefault(stat, statAddResetValue);
-				statMulValue = _statsMul.getOrDefault(stat, statMulResetValue);
-				if (addsValue.equals(statAddResetValue) || mulsValue.equals(statMulResetValue) || !addsValue.equals(statAddValue) || !mulsValue.equals(statMulValue))
-				{
-					changed.add(stat);
-				}
-			}
-			_creature.broadcastModifiedStats(changed);
+				
+				_recalculateStatsTask = null;
+			}, 50);
 		}
 	}
 	
@@ -1146,10 +1192,12 @@ public class CreatureStat
 		{
 			_creature.setCurrentCp(getMaxCp());
 		}
+		
 		if (_creature.getCurrentHp() > getMaxHp())
 		{
 			_creature.setCurrentHp(getMaxHp());
 		}
+		
 		if (_creature.getCurrentMp() > getMaxMp())
 		{
 			_creature.setCurrentMp(getMaxMp());
@@ -1167,6 +1215,7 @@ public class CreatureStat
 				return val.doubleValue();
 			}
 		}
+		
 		return 1d;
 	}
 	
@@ -1186,6 +1235,7 @@ public class CreatureStat
 				return val.doubleValue();
 			}
 		}
+		
 		return 0d;
 	}
 	
@@ -1223,6 +1273,7 @@ public class CreatureStat
 		{
 			return skillEvasions.peekLast().doubleValue();
 		}
+		
 		return 0d;
 	}
 	

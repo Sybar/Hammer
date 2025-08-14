@@ -38,6 +38,7 @@ public class Q00111_ElrokianHuntersProof extends Quest
 	private static final int MUSHIKA = 32114;
 	private static final int ASAMAH = 32115;
 	private static final int KIRIKACHIN = 32116;
+	
 	// Items
 	private static final int ELROKIAN_TRAP = 8763;
 	private static final int TRAP_STONE = 8764;
@@ -47,11 +48,12 @@ public class Q00111_ElrokianHuntersProof extends Quest
 	private static final int DEINONYCHUS_BONE = 8771;
 	private static final int PACHYCEPHALOSAURUS_SKIN = 8772;
 	private static final int PRACTICE_ELROKIAN_TRAP = 8773;
+	
 	// Misc
 	private static final int MIN_LEVEL = 75;
+	
 	// Mobs
 	private static final Map<Integer, ItemChanceHolder> MOBS_DROP_CHANCES = new HashMap<>();
-	
 	static
 	{
 		MOBS_DROP_CHANCES.put(22196, new ItemChanceHolder(DIARY_FRAGMENT, 0.51, 4)); // velociraptor_leader
@@ -221,6 +223,7 @@ public class Q00111_ElrokianHuntersProof extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -481,6 +484,7 @@ public class Q00111_ElrokianHuntersProof extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

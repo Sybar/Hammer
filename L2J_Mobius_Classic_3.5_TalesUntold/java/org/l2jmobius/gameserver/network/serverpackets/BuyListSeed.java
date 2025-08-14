@@ -78,6 +78,7 @@ public class BuyListSeed extends ServerPacket
 				buffer.writeByte(1); // GOD Item enabled = 1 disabled (red) = 0
 				buffer.writeLong(s.getPrice()); // price
 			}
+			
 			_list.clear();
 		}
 		else

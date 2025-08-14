@@ -39,8 +39,10 @@ public class Q10443_TheAnnihilatedPlains2 extends Quest
 	private static final int TUSKA = 33839;
 	private static final int REFUGEE_CORPSE = 33837;
 	private static final int FALK = 33843;
+	
 	// Item
 	private static final int REFUGEES_NEACKLES = 36678;
+	
 	// Misc
 	private static final int MIN_LEVEL = 99;
 	
@@ -94,6 +96,7 @@ public class Q10443_TheAnnihilatedPlains2 extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -151,6 +154,7 @@ public class Q10443_TheAnnihilatedPlains2 extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

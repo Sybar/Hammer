@@ -37,6 +37,7 @@ public class Q10786_ResidentProblemSolver extends Quest
 {
 	// NPC
 	private static final int SHUVANN = 33867;
+	
 	// Monsters
 	private static final int[] MONSTERS =
 	{
@@ -55,6 +56,7 @@ public class Q10786_ResidentProblemSolver extends Quest
 		20975, // Spiteful Soul Wizard
 		20976, // Spiteful Soul Warrior
 	};
+	
 	// Misc
 	private static final int MIN_LEVEL = 61;
 	private static final int MAX_LEVEL = 65;
@@ -102,6 +104,7 @@ public class Q10786_ResidentProblemSolver extends Quest
 					{
 						addExpAndSp(player, 38226567, 1500);
 					}
+					
 					qs.exitQuest(false, true);
 				}
 				break;
@@ -111,6 +114,7 @@ public class Q10786_ResidentProblemSolver extends Quest
 				htmltext = null;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -137,6 +141,7 @@ public class Q10786_ResidentProblemSolver extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -173,6 +178,7 @@ public class Q10786_ResidentProblemSolver extends Quest
 				return holder;
 			}
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

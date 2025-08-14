@@ -36,8 +36,10 @@ public class Q10566_BestChoice extends Quest
 {
 	// NPC
 	private static final int HERPHAH = 34362;
+	
 	// Misc
 	private static final int MIN_LEVEL = 95;
+	
 	// Items
 	private static final int CERTIFICATE_SANTIAGO = 48173;
 	private static final int CERTIFICATE_RUPIO = 48174;
@@ -45,6 +47,7 @@ public class Q10566_BestChoice extends Quest
 	private static final int CERTIFICATE_VINCENZ = 48176;
 	private static final int CERTIFICATE_FERRIS = 48177;
 	private static final int HERPHAHS_MISSION_LIST = 48172;
+	
 	// Rewards
 	private static final int HERPHAHS_SUPPORT_BOX = 48250;
 	
@@ -65,6 +68,7 @@ public class Q10566_BestChoice extends Quest
 		{
 			return getNoQuestMsg(player);
 		}
+		
 		String htmltext = null;
 		switch (event)
 		{
@@ -87,6 +91,7 @@ public class Q10566_BestChoice extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -125,6 +130,7 @@ public class Q10566_BestChoice extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

@@ -130,6 +130,7 @@ public class FishingData implements IXmlReader
 											baitData.addReward(new FishingCatch(cId, cChance, cMultiplier));
 										}
 									}
+									
 									_baitData.put(baitData.getItemId(), baitData);
 								}
 							}

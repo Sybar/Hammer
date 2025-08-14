@@ -68,6 +68,7 @@ public class ExShowUpgradeSystemNormal extends AbstractItemPacket
 		{
 			buffer.writeInt(id);
 		}
+		
 		buffer.writeInt(_discountRatio.size()); // array of discount count
 		for (int discount : _discountRatio)
 		{

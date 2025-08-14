@@ -94,6 +94,7 @@ public class PailakaRuneCastle extends AbstractInstance
 		MANAGERS.put(36326, 108); // Demon
 		MANAGERS.put(36364, 109); // Monastic
 	}
+	
 	// Misc
 	private static final long REENTER = 24 * 3600000; // 24 hours
 	private static final Map<Integer, Long> REENETER_HOLDER = new ConcurrentHashMap<>();
@@ -120,6 +121,7 @@ public class PailakaRuneCastle extends AbstractInstance
 				{
 					return null;
 				}
+				
 				if (world.getAliveNpcs(Monster.class).isEmpty())
 				{
 					switch (world.getStatus())
@@ -141,13 +143,16 @@ public class PailakaRuneCastle extends AbstractInstance
 									qs.setCond(2);
 								}
 							}
+							
 							world.finishInstance();
 							break;
 						}
 					}
+					
 					world.incStatus();
 					return null;
 				}
+				
 				startQuestTimer("WAVE_DEFEATED_CHECK", 5000, null, player, false);
 				break;
 			}
@@ -158,6 +163,7 @@ public class PailakaRuneCastle extends AbstractInstance
 				{
 					return null;
 				}
+				
 				List<Npc> monsters = new ArrayList<>();
 				switch (world.getStatus())
 				{
@@ -180,6 +186,7 @@ public class PailakaRuneCastle extends AbstractInstance
 						break;
 					}
 				}
+				
 				final List<FriendlyNpc> helpers = world.getAliveNpcs(FriendlyNpc.class);
 				if (!helpers.isEmpty())
 				{
@@ -196,6 +203,7 @@ public class PailakaRuneCastle extends AbstractInstance
 						addMoveToDesire(monster, helper.getLocation(), 10);
 					}
 				}
+				
 				cancelQuestTimer("FORCE_NEXT_WAVE", null, player);
 				startQuestTimer("FORCE_NEXT_WAVE", 480000, null, player, false); // 8 minutes
 				startQuestTimer("WAVE_DEFEATED_CHECK", 1000, null, player, false);
@@ -208,6 +216,7 @@ public class PailakaRuneCastle extends AbstractInstance
 				{
 					return null;
 				}
+				
 				if (world.getStatus() < 3)
 				{
 					cancelQuestTimer("WAVE_DEFEATED_CHECK", null, player);
@@ -223,10 +232,12 @@ public class PailakaRuneCastle extends AbstractInstance
 				{
 					return null;
 				}
+				
 				world.ejectPlayer(player);
 				break;
 			}
 		}
+		
 		return null;
 	}
 	
@@ -238,14 +249,17 @@ public class PailakaRuneCastle extends AbstractInstance
 		{
 			return null;
 		}
+		
 		if (npc.isDead())
 		{
 			return "victim-02.html";
 		}
+		
 		if (world.getStatus() < 3)
 		{
 			return "victim-01.html";
 		}
+		
 		return "victim-03.html";
 	}
 	
@@ -257,6 +271,7 @@ public class PailakaRuneCastle extends AbstractInstance
 		{
 			enterInstance(player, npc, MANAGERS.get(npcId));
 		}
+		
 		return null;
 	}
 	
@@ -265,6 +280,7 @@ public class PailakaRuneCastle extends AbstractInstance
 	{
 		// Put re-enter for instance
 		REENETER_HOLDER.put(instance.getTemplateId(), System.currentTimeMillis() + REENTER);
+		
 		// Schedule spawn of first wave
 		startQuestTimer("SPAWN_NEXT_WAVE", 120000, null, player, false); // 2 minutes
 	}
@@ -289,6 +305,7 @@ public class PailakaRuneCastle extends AbstractInstance
 					showHtmlFile(groupLeader, "enterRestricted.html");
 					return false;
 				}
+				
 				REENETER_HOLDER.remove(template.getId());
 			}
 		}
@@ -318,9 +335,11 @@ public class PailakaRuneCastle extends AbstractInstance
 					showHtmlFile(groupLeader, "enterRestricted.html");
 					return false;
 				}
+				
 				REENETER_HOLDER.remove(template.getId());
 			}
 		}
+		
 		return true;
 	}
 	

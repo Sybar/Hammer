@@ -39,6 +39,7 @@ public class Q10302_FoilPlansOfTheLizardmen extends Quest
 {
 	// NPC
 	private static final int ORVEN = 30857;
+	
 	// Monsters
 	private static final int[] MONSTERS =
 	{
@@ -48,11 +49,13 @@ public class Q10302_FoilPlansOfTheLizardmen extends Quest
 		22154,
 		22155,
 	};
+	
 	// Items
 	private static final ItemHolder SOE_HIGH_PRIEST_OVEN = new ItemHolder(91768, 1);
 	private static final ItemHolder SAYHA_COOKIE = new ItemHolder(93274, 10);
 	private static final ItemHolder SAYHA_STORM = new ItemHolder(91712, 6);
 	private static final ItemHolder MAGIC_LAMP_CHARGING_POTION = new ItemHolder(91757, 1);
+	
 	// Misc
 	private static final int MIN_LEVEL = 76;
 	private static final String KILL_COUNT_VAR = "KillCount";
@@ -107,6 +110,7 @@ public class Q10302_FoilPlansOfTheLizardmen extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -142,6 +146,7 @@ public class Q10302_FoilPlansOfTheLizardmen extends Quest
 		{
 			htmltext = getAlreadyCompletedMsg(player);
 		}
+		
 		return htmltext;
 	}
 	
@@ -184,6 +189,7 @@ public class Q10302_FoilPlansOfTheLizardmen extends Quest
 			holder.add(new NpcLogListHolder(NpcStringId.KILL_MONSTERS_IN_THE_PLAINS_OF_THE_LIZARDMEN.getId(), true, qs.getInt(KILL_COUNT_VAR)));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

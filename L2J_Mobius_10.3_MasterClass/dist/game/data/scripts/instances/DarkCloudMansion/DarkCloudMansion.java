@@ -43,6 +43,7 @@ public class DarkCloudMansion extends AbstractInstance
 	private static final int TRUTH = 32291; // Symbol of Truth
 	private static final int MONOLITH = 32324; // Black Stone Monolith
 	private static final int COLUMN = 22402; // Shadow Column
+	
 	// Mobs
 	private static final int PARME_HEALER = 22400;
 	private static final int[] BELETH_SUBORDINATE =
@@ -66,10 +67,13 @@ public class DarkCloudMansion extends AbstractInstance
 		18376,
 		18377
 	};
+	
 	// Skill
 	private static final SkillHolder INCARNATION = new SkillHolder(5441, 1);
+	
 	// Items
 	private static final int CC = 9690; // Contaminated Crystal
+	
 	// Doors
 	private static final int START_DOOR = 24230001; // Starting Room
 	private static final int ROOM_A_DOOR = 24230002; // First Room
@@ -77,6 +81,7 @@ public class DarkCloudMansion extends AbstractInstance
 	private static final int ROOM_C_DOOR = 24230003; // Third Room
 	private static final int ROOM_D_DOOR = 24230004; // Forth Room
 	private static final int ROOM_E_DOOR = 24230006; // Fifth Room
+	
 	// Messages
 	private static final NpcStringId[] SPAWN_CHAT =
 	{
@@ -148,6 +153,7 @@ public class DarkCloudMansion extends AbstractInstance
 				}
 			}
 		}
+		
 		return null;
 	}
 	
@@ -166,6 +172,7 @@ public class DarkCloudMansion extends AbstractInstance
 				teleportPlayerOut(player, world);
 			}
 		}
+		
 		return null;
 	}
 	
@@ -205,6 +212,7 @@ public class DarkCloudMansion extends AbstractInstance
 						{
 							addSpawn(getRandomEntry(MONOLITH_PRIVATES), npc, false, 0, false, world.getId());
 						}
+						
 						world.openCloseDoor(ROOM_B_DOOR, false);
 					}
 					break;
@@ -223,6 +231,7 @@ public class DarkCloudMansion extends AbstractInstance
 						world.setStatus(8);
 						world.openCloseDoor(ROOM_D_DOOR, true);
 					}
+					
 					npc.showChatWindow(player);
 					break;
 				}
@@ -232,11 +241,13 @@ public class DarkCloudMansion extends AbstractInstance
 					{
 						giveItems(player, CC, 1);
 					}
+					
 					npc.showChatWindow(player);
 					break;
 				}
 			}
 		}
+		
 		return null;
 	}
 	
@@ -389,6 +400,7 @@ public class DarkCloudMansion extends AbstractInstance
 		{
 			n.broadcastSay(ChatType.NPC_GENERAL, getRandomEntry(SPAWN_CHAT));
 		}
+		
 		for (int i = 0; i < 3; i++)
 		{
 			final Npc n = npcs.remove(getRandom(npcs.size()));
@@ -429,6 +441,7 @@ public class DarkCloudMansion extends AbstractInstance
 					startQuestTimer("CHAT", 4000, npc, null);
 					startQuestTimer("DELETE", 4500, npc, null);
 				}
+				
 				world.openCloseDoor(ROOM_E_DOOR, false);
 			}
 		}

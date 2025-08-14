@@ -47,9 +47,9 @@
 		<set name="etcitem_type" val="SCROLL" />
 		<set name="handler" val="ItemSkills" />
 		<set name="material" val="LEATHER" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player instanceId="224,225,226,227" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="15105" level="1" /> <!-- Mysterious Shadow -->
 		</skills>
@@ -67,9 +67,9 @@
 		<set name="etcitem_type" val="SCROLL" />
 		<set name="handler" val="ItemSkills" />
 		<set name="material" val="LEATHER" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player instanceId="224,225,226,227" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="15106" level="1" /> <!-- Mysterious Power -->
 		</skills>
@@ -85,9 +85,9 @@
 		<set name="handler" val="SummonItems" />
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
 		<set name="material" val="LEATHER" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="7102" level="1" /> <!-- Summon Clan Pet -->
 		</skills>
@@ -103,9 +103,9 @@
 		<set name="handler" val="SummonItems" />
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
 		<set name="material" val="LEATHER" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="7102" level="1" /> <!-- Summon Clan Pet -->
 		</skills>
@@ -121,9 +121,9 @@
 		<set name="handler" val="SummonItems" />
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
 		<set name="material" val="LEATHER" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="7102" level="1" /> <!-- Summon Clan Pet -->
 		</skills>
@@ -141,9 +141,9 @@
 		<set name="handler" val="SummonItems" />
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
 		<set name="material" val="LEATHER" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="7102" level="1" /> <!-- Summon Clan Pet -->
 		</skills>
@@ -461,14 +461,14 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_dropable" val="false" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player castle="-1" />
 				<player pledgeClass="100" /> <!-- Elite member -->
 				<player isOnSide="LIGHT" />
 				<player cloakStatus="true" />
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">80</stat>
 			<stat type="mDef">40</stat>
@@ -494,14 +494,14 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_dropable" val="false" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player castle="-1" />
 				<player pledgeClass="100" /> <!-- Elite member -->
 				<player isOnSide="DARK" />
 				<player cloakStatus="true" />
 			</and>
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">80</stat>
 			<stat type="mDef">40</stat>
@@ -1339,9 +1339,9 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="SCROLL" />
 		<set name="material" val="PAPER" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="9446" level="1" /> <!-- Scroll of Escape: Hot Springs -->
 		</skills>
@@ -1361,9 +1361,9 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="SCROLL" />
 		<set name="material" val="PAPER" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="9447" level="1" /> <!-- Scroll of Escape: Forge of the Gods -->
 		</skills>
@@ -1383,9 +1383,9 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="SCROLL" />
 		<set name="material" val="PAPER" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="9448" level="1" /> <!-- Scroll of Escape: Chromatic Highlands -->
 		</skills>
@@ -1405,9 +1405,9 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="SCROLL" />
 		<set name="material" val="PAPER" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="9449" level="1" /> <!-- Scroll of Escape: Aden Battlefield -->
 		</skills>
@@ -1427,9 +1427,9 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="SCROLL" />
 		<set name="material" val="PAPER" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="9450" level="1" /> <!-- Scroll of Escape: Rune Battlefield -->
 		</skills>
@@ -1621,17 +1621,17 @@
 		<set name="is_sellable" val="false" />
 		<set name="commissionItemType" val="CLOAK" />
 		<set name="is_dropable" val="false" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player castle="-1" />
 				<player isClanLeader="true" />
 				<player isOnSide="LIGHT" />
 				<player cloakStatus="true" />
 			</and>
-		</cond>
-		<cond>
+		</conditions>
+		<conditions>
 			<player level="80" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">100</stat>
 			<stat type="mDef">80</stat>
@@ -1658,17 +1658,17 @@
 		<set name="is_sellable" val="false" />
 		<set name="commissionItemType" val="CLOAK" />
 		<set name="is_dropable" val="false" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player castle="-1" />
 				<player isClanLeader="true" />
 				<player isOnSide="DARK" />
 				<player cloakStatus="true" />
 			</and>
-		</cond>
-		<cond>
+		</conditions>
+		<conditions>
 			<player level="80" />
-		</cond>
+		</conditions>
 		<stats>
 			<stat type="pDef">100</stat>
 			<stat type="mDef">80</stat>

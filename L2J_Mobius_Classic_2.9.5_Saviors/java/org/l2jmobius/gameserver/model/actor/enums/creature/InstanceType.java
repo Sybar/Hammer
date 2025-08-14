@@ -37,12 +37,14 @@ public enum InstanceType
 	TerrainObject(Npc),
 	EffectPoint(Npc),
 	CommissionManager(Npc),
+	
 	// Summons, Pets, Decoys and Traps
 	Servitor(Summon),
 	Pet(Summon),
 	Cubic(Creature),
 	Decoy(Creature),
 	Trap(Npc),
+	
 	// Attackable
 	Attackable(Npc),
 	Guard(Attackable),
@@ -55,25 +57,31 @@ public enum InstanceType
 	RaidBoss(Monster),
 	GrandBoss(RaidBoss),
 	FriendlyNpc(Attackable),
+	
 	// FlyMobs
 	FlyTerrainObject(Npc),
+	
 	// Vehicles
 	Vehicle(Creature),
 	Boat(Vehicle),
 	AirShip(Vehicle),
 	Shuttle(Vehicle),
 	ControllableAirShip(AirShip),
+	
 	// Siege
 	Defender(Attackable),
 	Artefact(Folk),
 	ControlTower(Npc),
 	FlameTower(Npc),
 	SiegeFlag(Npc),
+	
 	// Fort Siege
 	FortCommander(Defender),
+	
 	// Fort NPCs
 	FortLogistics(Merchant),
 	FortManager(Merchant),
+	
 	// City NPCs
 	BroadcastingTower(Npc),
 	Fisherman(Merchant),
@@ -81,9 +89,11 @@ public enum InstanceType
 	PetManager(Merchant),
 	Teleporter(Npc),
 	VillageMaster(Folk),
+	
 	// Doormens
 	Doorman(Folk),
 	FortDoorman(Doorman),
+	
 	// Custom
 	ClassMaster(Folk),
 	SchemeBuffer(Npc),
@@ -147,6 +157,7 @@ public enum InstanceType
 				return true;
 			}
 		}
+		
 		return false;
 	}
 }

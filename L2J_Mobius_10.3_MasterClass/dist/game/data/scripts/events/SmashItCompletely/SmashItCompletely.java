@@ -22,8 +22,6 @@ package events.SmashItCompletely;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.util.Calendar;
-import java.util.logging.Level;
 
 import org.l2jmobius.commons.database.DatabaseFactory;
 import org.l2jmobius.gameserver.model.World;
@@ -34,6 +32,7 @@ import org.l2jmobius.gameserver.model.events.ListenerRegisterType;
 import org.l2jmobius.gameserver.model.events.annotations.Id;
 import org.l2jmobius.gameserver.model.events.annotations.RegisterEvent;
 import org.l2jmobius.gameserver.model.events.annotations.RegisterType;
+import org.l2jmobius.gameserver.model.events.holders.OnDailyReset;
 import org.l2jmobius.gameserver.model.events.holders.item.OnItemUse;
 import org.l2jmobius.gameserver.model.item.enums.ItemProcessType;
 import org.l2jmobius.gameserver.model.quest.LongTimeEvent;
@@ -58,9 +57,11 @@ public class SmashItCompletely extends LongTimeEvent
 	private static final int SWEET_WATERMELON = 13608;
 	private static final int PRIME_WATERMELON = 13609;
 	private static final int LARGE_PRIME_WATERMELON = 13610;
+	
 	// Items
 	private static final int WATERMELON_SEED = 81782;
 	private static final int ICE_BOX = 81783;
+	
 	// Skills
 	private static final SkillHolder[] SKILLS =
 	{
@@ -69,6 +70,7 @@ public class SmashItCompletely extends LongTimeEvent
 		new SkillHolder(39714, 4), // Large Prime Watermelon
 		new SkillHolder(33927, 1), // Watermelon Burst
 	};
+	
 	// Buffs
 	private static final SkillHolder[] BUFFS =
 	{
@@ -76,6 +78,7 @@ public class SmashItCompletely extends LongTimeEvent
 		new SkillHolder(33928, 2), // Dizzy Lv. 2 = 2 hours
 		new SkillHolder(33928, 3), // Dizzy Lv. 3 = 3 hours
 	};
+	
 	// Misc
 	private static final String SMASH_IT_COMPLETELY_VAR = "SMASH_IT_COMPLETELY_SEED_RECEIVED";
 	private static final int PLAYER_LEVEL = 105;
@@ -84,9 +87,11 @@ public class SmashItCompletely extends LongTimeEvent
 		NpcStringId.HERE_COMES_BABY_SHARK_DOO_DOO_DOO,
 		NpcStringId.HEY_I_WANT_A_WATERMELON_TOO
 	};
+	
 	// Chances for higher quality watermelons
 	private static final int LARGE_PRIME_WATERMELON_SUMMON_CHANCE = 15; // Large Watermelon summon chance
 	private static final int PRIME_WATERMELON_SUMMON_CHANCE = 40; // Prime Watermelon summon chance
+	
 	// Chances to get Dizzy buff
 	private static final int LARGE_PRIME_WATERMELON_BUFF_CHANCE = 80; // Large Watermelon buff chance
 	private static final int PRIME_WATERMELON_BUFF_CHANCE = 60; // Prime Watermelon buff chance
@@ -99,8 +104,6 @@ public class SmashItCompletely extends LongTimeEvent
 		addTalkId(DOODOODOO);
 		addSpawnId(DOODOODOO, SWEET_WATERMELON, PRIME_WATERMELON, LARGE_PRIME_WATERMELON);
 		addKillId(SWEET_WATERMELON, PRIME_WATERMELON, LARGE_PRIME_WATERMELON);
-		
-		startQuestTimer("schedule", 1000, null, null);
 	}
 	
 	@Override
@@ -123,11 +126,13 @@ public class SmashItCompletely extends LongTimeEvent
 				{
 					break;
 				}
+				
 				if (player.getLevel() < PLAYER_LEVEL)
 				{
 					htmltext = "34575-no-level.htm";
 					break;
 				}
+				
 				if (player.getAccountVariables().getBoolean(SMASH_IT_COMPLETELY_VAR, false))
 				{
 					player.sendMessage("This account has already received a seed. An account can receive a seed only once a day.");
@@ -140,53 +145,13 @@ public class SmashItCompletely extends LongTimeEvent
 				htmltext = "34575-successful.htm";
 				break;
 			}
-			case "schedule":
-			{
-				final long currentTime = System.currentTimeMillis();
-				final Calendar calendar = Calendar.getInstance();
-				calendar.set(Calendar.HOUR_OF_DAY, 6);
-				calendar.set(Calendar.MINUTE, 30);
-				if (calendar.getTimeInMillis() < currentTime)
-				{
-					calendar.add(Calendar.DAY_OF_YEAR, 1);
-				}
-				cancelQuestTimers("reset");
-				startQuestTimer("reset", calendar.getTimeInMillis() - currentTime, null, null);
-				break;
-			}
-			case "reset":
-			{
-				if (isEventPeriod())
-				{
-					// Update data for offline players.
-					try (Connection con = DatabaseFactory.getConnection();
-						PreparedStatement ps = con.prepareStatement("DELETE FROM account_gsdata WHERE var=?"))
-					{
-						ps.setString(1, SMASH_IT_COMPLETELY_VAR);
-						ps.executeUpdate();
-					}
-					catch (Exception e)
-					{
-						LOGGER.log(Level.SEVERE, "Could not reset Smash It Completely Event var: ", e);
-					}
-					
-					// Update data for online players.
-					for (Player plr : World.getInstance().getPlayers())
-					{
-						plr.getAccountVariables().remove(SMASH_IT_COMPLETELY_VAR);
-						plr.getAccountVariables().storeMe();
-					}
-				}
-				cancelQuestTimers("schedule");
-				startQuestTimer("schedule", 1000, null, null);
-				break;
-			}
 			case "DOODOODOO_SHOUT":
 			{
 				Broadcast.toKnownPlayersInRadius(npc, new NpcSay(npc.getObjectId(), ChatType.NPC_GENERAL, npc.getId(), getRandomEntry(DOODOODOO_TEXT)), 1000);
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -221,6 +186,7 @@ public class SmashItCompletely extends LongTimeEvent
 				{
 					SkillCaster.triggerCast(killer, killer, BUFFS[1].getSkill());
 				}
+				
 				if (killer.isInventoryUnder80(false))
 				{
 					killer.doAutoLoot(npc.asAttackable(), ICE_BOX, 1); // Prime Watermelon Ice Box x1
@@ -237,6 +203,7 @@ public class SmashItCompletely extends LongTimeEvent
 				{
 					SkillCaster.triggerCast(killer, killer, BUFFS[2].getSkill());
 				}
+				
 				if (killer.isInventoryUnder80(false))
 				{
 					killer.doAutoLoot(npc.asAttackable(), ICE_BOX, 2); // Large Prime Watermelon Ice Box x2
@@ -302,6 +269,36 @@ public class SmashItCompletely extends LongTimeEvent
 				SkillCaster.triggerCast(player, player, SKILLS[0].getSkill());
 			}
 		}
+	}
+	
+	@RegisterEvent(EventType.ON_DAILY_RESET)
+	@RegisterType(ListenerRegisterType.GLOBAL)
+	public void onDailyReset(OnDailyReset event)
+	{
+		if (!isEventPeriod())
+		{
+			return;
+		}
+		
+		// Update data for offline players.
+		try (Connection con = DatabaseFactory.getConnection();
+			PreparedStatement ps = con.prepareStatement("DELETE FROM account_gsdata WHERE var=?"))
+		{
+			ps.setString(1, SMASH_IT_COMPLETELY_VAR);
+			ps.executeUpdate();
+		}
+		catch (Exception e)
+		{
+			LOGGER.warning(getClass().getSimpleName() + ": Could not reset variables: " + e.getMessage());
+		}
+		
+		// Update data for online players.
+		for (Player player : World.getInstance().getPlayers())
+		{
+			player.getAccountVariables().remove(SMASH_IT_COMPLETELY_VAR);
+		}
+		
+		LOGGER.info(getClass().getSimpleName() + " has been reset.");
 	}
 	
 	public static void main(String[] args)

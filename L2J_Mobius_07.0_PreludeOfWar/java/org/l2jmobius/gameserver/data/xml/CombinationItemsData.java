@@ -92,6 +92,7 @@ public class CombinationItemsData implements IXmlReader
 				return item;
 			}
 		}
+		
 		return null;
 	}
 	
@@ -105,6 +106,7 @@ public class CombinationItemsData implements IXmlReader
 				result.add(item);
 			}
 		}
+		
 		return result;
 	}
 	
@@ -118,6 +120,7 @@ public class CombinationItemsData implements IXmlReader
 				result.add(item);
 			}
 		}
+		
 		return result;
 	}
 	

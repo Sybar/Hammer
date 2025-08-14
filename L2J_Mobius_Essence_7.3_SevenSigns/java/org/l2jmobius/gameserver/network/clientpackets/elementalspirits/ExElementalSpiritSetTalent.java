@@ -102,6 +102,7 @@ public class ExElementalSpiritSetTalent extends ClientPacket
 			player.sendPacket(userInfo);
 			player.sendPacket(new SystemMessage(SystemMessageId.CHARACTERISTICS_WERE_APPLIED_SUCCESSFULLY));
 		}
+		
 		player.sendPacket(new ElementalSpiritSetTalent(player, _type, result));
 	}
 }

@@ -44,6 +44,7 @@ public class ResistSkill extends AbstractEffect
 			{
 				break;
 			}
+			
 			_skills.add(new SkillHolder(skillId, skillLevel));
 		}
 		

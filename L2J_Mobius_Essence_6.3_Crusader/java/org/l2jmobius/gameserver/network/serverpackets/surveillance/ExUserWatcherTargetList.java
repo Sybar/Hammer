@@ -58,6 +58,7 @@ public class ExUserWatcherTargetList extends ServerPacket
 				level = CharInfoTable.getInstance().getLevelById(objId);
 				classId = CharInfoTable.getInstance().getClassIdById(objId);
 			}
+			
 			_info.add(new TargetInfo(name, online, level, classId));
 		}
 	}

@@ -63,6 +63,7 @@ public class GiantCavePurge extends AbstractNpcAI
 					isHotTime = true;
 				}
 			}
+			
 			final int pointsForMob = isHotTime ? PURGE_DATA.getNpcs().get(npc.getId()) * 2 : PURGE_DATA.getNpcs().get(npc.getId());
 			final int currentPurgePoints = (killer.getPurgePoints().get(CATEGORY) == null) ? 0 : killer.getPurgePoints().get(CATEGORY).getPoints();
 			final int currentKeys = (killer.getPurgePoints().get(CATEGORY) == null) ? 0 : killer.getPurgePoints().get(CATEGORY).getKeys();
@@ -90,6 +91,7 @@ public class GiantCavePurge extends AbstractNpcAI
 		{
 			return;
 		}
+		
 		player.getVariables().remove(PlayerVariables.PURGE_LAST_CATEGORY);
 		player.getVariables().set(PlayerVariables.PURGE_LAST_CATEGORY, CATEGORY);
 	}

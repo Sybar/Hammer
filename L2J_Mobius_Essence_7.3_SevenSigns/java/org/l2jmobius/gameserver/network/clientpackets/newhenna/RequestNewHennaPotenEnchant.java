@@ -97,6 +97,7 @@ public class RequestNewHennaPotenEnchant extends ClientPacket
 			{
 				dailyCount = 0;
 			}
+			
 			player.setDyePotentialDailyCount(dailyCount);
 			// player.setDyePotentialDailyStep(dailyStep);
 		}
@@ -125,6 +126,7 @@ public class RequestNewHennaPotenEnchant extends ClientPacket
 						player.applyDyePotenSkills();
 					}
 				}
+				
 				hennaPattern.setEnchantExp(newEnchantExp);
 				hennaPattern.setSlotPosition(_slotId);
 				player.sendPacket(new NewHennaPotenEnchant(_slotId, hennaPattern.getEnchantLevel(), hennaPattern.getEnchantExp(), dailyStep, dailyCount, hennaPattern.getActiveStep(), true));

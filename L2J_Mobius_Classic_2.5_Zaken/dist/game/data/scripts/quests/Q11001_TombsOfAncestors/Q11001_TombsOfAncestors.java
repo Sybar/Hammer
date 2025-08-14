@@ -39,17 +39,20 @@ public class Q11001_TombsOfAncestors extends Quest
 	// NPCs
 	private static final int NEWBIE_GUIDE = 30598;
 	private static final int ALTRAN = 30283;
+	
 	// Items
 	private static final int WOLF_PELT = 90200;
 	private static final int ORC_AMULET = 90201;
 	private static final int WEREWOLFS_FANG = 90202;
 	private static final int BROKEN_SWORD = 90203;
 	private static final int HUNTERS_MEMO = 90199;
+	
 	// Rewards
 	private static final int SWORD_OF_SOLIDARITY = 49043;
 	private static final int WAND_OF_ADEPT = 49044;
 	private static final int RING_NOVICE = 29497;
 	private static final int NECKLACE_NOVICE = 49039;
+	
 	// Monsters
 	private static final int WOLF = 20120;
 	private static final int ELDER_WOLF = 20442;
@@ -58,6 +61,7 @@ public class Q11001_TombsOfAncestors extends Quest
 	private static final int ORC_ARCHER = 20006;
 	private static final int ORC_WARRIOR = 20093;
 	private static final int WEREWOLVES = 20132;
+	
 	// Misc
 	private static final int MIN_LEVEL = 2;
 	private static final int MAX_LEVEL = 20;
@@ -127,6 +131,7 @@ public class Q11001_TombsOfAncestors extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -187,6 +192,7 @@ public class Q11001_TombsOfAncestors extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

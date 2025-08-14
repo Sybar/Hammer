@@ -55,6 +55,7 @@ public class PledgeWaitingInfo
 		{
 			_playerClassId = getPlayer().getPlayerClass().getId();
 		}
+		
 		return _playerClassId;
 	}
 	
@@ -64,6 +65,7 @@ public class PledgeWaitingInfo
 		{
 			_playerLvl = getPlayer().getLevel();
 		}
+		
 		return _playerLvl;
 	}
 	
@@ -78,6 +80,7 @@ public class PledgeWaitingInfo
 		{
 			_playerName = getPlayer().getName();
 		}
+		
 		return _playerName;
 	}
 	

@@ -37,6 +37,7 @@ import org.l2jmobius.gameserver.model.quest.State;
 public class Q00784_TheQuietKiller extends Quest
 {
 	private static final int KAHMAN = 31554;
+	
 	// Monsters
 	private static final int[] MONSTERS =
 	{
@@ -53,10 +54,12 @@ public class Q00784_TheQuietKiller extends Quest
 		// 20518, // Frenzied Stakato Soldier
 		20919 // Frenzied Stakato Drone
 	};
+	
 	// Items
 	private static final int STAKATO_CHITIN = 39730;
 	private static final int QUALITY_STAKATO_CHITIN = 39731;
 	private static final int EMISSARYS_REWARD_BOX = 39726;
+	
 	// Misc
 	private static final int MIN_LEVEL = 65;
 	private static final int MAX_LEVEL = 70;
@@ -183,6 +186,7 @@ public class Q00784_TheQuietKiller extends Quest
 					qs.exitQuest(QuestType.DAILY, true);
 					break;
 				}
+				
 				if ((getQuestItemsCount(player, STAKATO_CHITIN) >= 50) && (getQuestItemsCount(player, QUALITY_STAKATO_CHITIN) >= 900))
 				{
 					takeItems(player, STAKATO_CHITIN, -1);
@@ -194,6 +198,7 @@ public class Q00784_TheQuietKiller extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -213,6 +218,7 @@ public class Q00784_TheQuietKiller extends Quest
 						htmltext = "31554-10.html";
 						break;
 					}
+					
 					qs.setState(State.CREATED);
 					break;
 				}
@@ -239,6 +245,7 @@ public class Q00784_TheQuietKiller extends Quest
 		{
 			htmltext = "31554-10.html";
 		}
+		
 		return htmltext;
 	}
 	
@@ -253,6 +260,7 @@ public class Q00784_TheQuietKiller extends Quest
 				qs.setCond(2, true);
 			}
 		}
+		
 		if ((qs != null) && (qs.isCond(2)))
 		{
 			if (giveItemRandomly(killer, npc, QUALITY_STAKATO_CHITIN, 1, 900, 0.25, true))

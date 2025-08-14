@@ -129,6 +129,7 @@ public class NpcSpawnTemplate implements Cloneable, IParameterized<StatSet>
 				{
 					throw new NullPointerException("Spawn with non existing zone requested " + zoneName);
 				}
+				
 				_zone = zone;
 			}
 		}
@@ -148,14 +149,17 @@ public class NpcSpawnTemplate implements Cloneable, IParameterized<StatSet>
 		{
 			set.merge(spawnTemplate.getParameters());
 		}
+		
 		if (group.getParameters() != null)
 		{
 			set.merge(group.getParameters());
 		}
+		
 		if (_parameters != null)
 		{
 			set.merge(_parameters);
 		}
+		
 		return set;
 	}
 	
@@ -165,6 +169,7 @@ public class NpcSpawnTemplate implements Cloneable, IParameterized<StatSet>
 		{
 			_locations = new ArrayList<>();
 		}
+		
 		_locations.add(loc);
 	}
 	
@@ -268,6 +273,7 @@ public class NpcSpawnTemplate implements Cloneable, IParameterized<StatSet>
 		{
 			_minions = new ArrayList<>();
 		}
+		
 		_minions.add(minion);
 	}
 	
@@ -289,6 +295,7 @@ public class NpcSpawnTemplate implements Cloneable, IParameterized<StatSet>
 					return loc;
 				}
 			}
+			
 			LOGGER.warning("Couldn't match location by chance turning first...");
 			return null;
 		}
@@ -582,10 +589,12 @@ public class NpcSpawnTemplate implements Cloneable, IParameterized<StatSet>
 		{
 			respawn = (int) _respawnTime.getSeconds();
 		}
+		
 		if (_respawnTimeRandom != null)
 		{
 			respawnRandom = (int) _respawnTimeRandom.getSeconds();
 		}
+		
 		if (_respawnPattern != null)
 		{
 			respawnPattern = _respawnPattern;
@@ -624,6 +633,7 @@ public class NpcSpawnTemplate implements Cloneable, IParameterized<StatSet>
 			{
 				npc.asMonster().getMinionList().spawnMinions(_minions);
 			}
+			
 			_spawnedNpcs.add(npc);
 			
 			SpawnTable.getInstance().addSpawn(spawn);

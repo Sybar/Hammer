@@ -47,6 +47,7 @@ public class Q10395_NotATraitor extends Quest
 		20576, // Oel Mahum Shaman
 		21261, // Ol Mahum Transcender
 	};
+	
 	// Misc
 	private static final int MIN_LEVEL = 46;
 	private static final int MAX_LEVEL = 52;
@@ -96,11 +97,13 @@ public class Q10395_NotATraitor extends Quest
 					{
 						addExpAndSp(player, 8419210, 907);
 					}
+					
 					htmltext = event;
 				}
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -141,6 +144,7 @@ public class Q10395_NotATraitor extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -170,6 +174,7 @@ public class Q10395_NotATraitor extends Quest
 			npcLogList.add(new NpcLogListHolder(NpcStringId.ELIMINATE_THE_OEL_MAHUM_MONSTERS, qs.getInt("killedMonsters")));
 			return npcLogList;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

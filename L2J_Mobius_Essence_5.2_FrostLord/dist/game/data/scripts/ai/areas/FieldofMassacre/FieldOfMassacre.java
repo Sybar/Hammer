@@ -44,6 +44,7 @@ public class FieldOfMassacre extends AbstractNpcAI
 	private static final int DOOM_ARCHER = 21008;
 	private static final int DOOM_TROOPER = 21009;
 	private static final int DOOM_WARRIOR = 21010;
+	
 	// Guard
 	private static final int GUARD_BUTCHER = 22101;
 	

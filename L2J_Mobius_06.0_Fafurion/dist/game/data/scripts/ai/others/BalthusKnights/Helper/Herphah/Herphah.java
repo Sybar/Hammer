@@ -39,11 +39,14 @@ public final class Herphah extends AbstractNpcAI
 {
 	// NPCs
 	private static final int HERPHAH = 34367;
+	
 	// Monsters
 	private static final int ANTHARAS_TRANSFORM = 24088;
+	
 	// Skills
 	private static final SkillHolder PowerBomberSkill = new SkillHolder(32133, 1);
 	private static final SkillHolder HurricaneStormSkill = new SkillHolder(32134, 1);
+	
 	// Misc
 	private static final int p_CheckFirstInterval = 1000;
 	private static final int p_CheckInterval = 3000;
@@ -146,6 +149,7 @@ public final class Herphah extends AbstractNpcAI
 				}, 5000L); // 5 sec
 			}
 		}
+		
 		return htmltext;
 	}
 	

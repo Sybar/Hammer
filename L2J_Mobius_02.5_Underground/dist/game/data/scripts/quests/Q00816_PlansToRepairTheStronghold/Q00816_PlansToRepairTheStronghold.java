@@ -37,6 +37,7 @@ public class Q00816_PlansToRepairTheStronghold extends Quest
 {
 	// NPCs
 	private static final int ADOLPH = 34058;
+	
 	// Monsters
 	private static final int[] MONSTERS =
 	{
@@ -49,11 +50,13 @@ public class Q00816_PlansToRepairTheStronghold extends Quest
 		23511, // Fortress Archon 102
 		23512 // Atelia High Priest 102
 	};
+	
 	// Items
 	private static final int MATERIAL_QUEST = 46142; // Stronghold Flag Repair Supplies
 	private static final int BASIC_SUPPLY_BOX = 47175;
 	private static final int INTERMEDIATE_SUPPLY_BOX = 47176;
 	private static final int ADVANCED_SUPPLY_BOX = 47177;
+	
 	// Misc
 	private static final int MIN_LEVEL = 101;
 	
@@ -149,6 +152,7 @@ public class Q00816_PlansToRepairTheStronghold extends Quest
 							{
 								giveItems(player, BASIC_SUPPLY_BOX, 1);
 							}
+							
 							addExpAndSp(player, 18_155_754_360L, 18_155_700);
 							qs.exitQuest(QuestType.DAILY, true);
 							htmltext = event;
@@ -175,6 +179,7 @@ public class Q00816_PlansToRepairTheStronghold extends Quest
 							{
 								giveItems(player, INTERMEDIATE_SUPPLY_BOX, 1);
 							}
+							
 							addExpAndSp(player, 36_311_508_720L, 36_311_400);
 							qs.exitQuest(QuestType.DAILY, true);
 							htmltext = event;
@@ -201,6 +206,7 @@ public class Q00816_PlansToRepairTheStronghold extends Quest
 							{
 								giveItems(player, ADVANCED_SUPPLY_BOX, 1);
 							}
+							
 							addExpAndSp(player, 54_467_263_080L, 54_467_100);
 							qs.exitQuest(QuestType.DAILY, true);
 							htmltext = event;
@@ -227,6 +233,7 @@ public class Q00816_PlansToRepairTheStronghold extends Quest
 							{
 								giveItems(player, ADVANCED_SUPPLY_BOX, 2);
 							}
+							
 							addExpAndSp(player, 72_623_017_440L, 72_622_800);
 							qs.exitQuest(QuestType.DAILY, true);
 							htmltext = event;
@@ -241,6 +248,7 @@ public class Q00816_PlansToRepairTheStronghold extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -310,6 +318,7 @@ public class Q00816_PlansToRepairTheStronghold extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

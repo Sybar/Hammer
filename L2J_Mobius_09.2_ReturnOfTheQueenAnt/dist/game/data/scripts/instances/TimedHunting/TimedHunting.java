@@ -37,6 +37,7 @@ public class TimedHunting extends AbstractInstance
 	// NPCs
 	private static final int PATROL_TELEPORTER = 34568;
 	private static final int PATROL_GUARD = 34569;
+	
 	// Misc
 	private static final int[] TEMPLATE_IDS =
 	{
@@ -88,6 +89,7 @@ public class TimedHunting extends AbstractInstance
 				player.teleToLocation(huntingZone.getEnterLocation(), world);
 			}
 		}
+		
 		return null;
 	}
 	

@@ -40,6 +40,7 @@ public final class Tarti extends AbstractNpcAI
 {
 	// NPCs
 	private static final int TARTI = 34359;
+	
 	// Misc
 	private static final int[] SLOTS =
 	{
@@ -96,6 +97,7 @@ public final class Tarti extends AbstractNpcAI
 							break;
 						}
 					}
+					
 					final ServerPacket packet = new ExTutorialShowId(9);
 					player.sendPacket(packet);
 					htmltext = "tarti_balthus001.htm";
@@ -113,6 +115,7 @@ public final class Tarti extends AbstractNpcAI
 		{
 			htmltext = "tarti_balthus002.htm";
 		}
+		
 		return htmltext;
 	}
 	
@@ -126,6 +129,7 @@ public final class Tarti extends AbstractNpcAI
 			player.sendPacket(packet);
 			
 			player.sendPacket(new TutorialShowHtml("popup.htm"));
+			
 			// TODO:
 			// On Tutorial click:
 			// final ServerPacket packet = new ExTutorialShowId(HelpPageType.CHAT);

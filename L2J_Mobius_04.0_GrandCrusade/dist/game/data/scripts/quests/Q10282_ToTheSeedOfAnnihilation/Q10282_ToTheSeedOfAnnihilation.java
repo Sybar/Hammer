@@ -36,9 +36,11 @@ public class Q10282_ToTheSeedOfAnnihilation extends Quest
 	// NPCs
 	private static final int KBALDIR = 32733;
 	private static final int KLEMIS = 32734;
+	
 	// Item
 	private static final int SOA_ORDERS = 15512;
 	private static final int EAR = 17527; // Scroll: Enchant Armor (R-grade)
+	
 	// Misc
 	private static final int MIN_LV = 85;
 	
@@ -78,6 +80,7 @@ public class Q10282_ToTheSeedOfAnnihilation extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -125,6 +128,7 @@ public class Q10282_ToTheSeedOfAnnihilation extends Quest
 			}
 				break;
 		}
+		
 		return htmltext;
 	}
 }

@@ -35,6 +35,7 @@ public class Q00260_OrcHunting extends Quest
 {
 	// NPC
 	private static final int RAYEN = 30221;
+	
 	// Monsters
 	private static final int KABOO_ORC = 20468;
 	private static final int KABOO_ORC_ARCHER = 20469;
@@ -42,9 +43,11 @@ public class Q00260_OrcHunting extends Quest
 	private static final int KABOO_ORC_FIGHTER = 20471;
 	private static final int KABOO_ORC_FIGHTER_LEADER = 20472;
 	private static final int KABOO_ORC_FIGHTER_LIEUTENANT = 20473;
+	
 	// Items
 	private static final int ORC_AMULET = 1114;
 	private static final int ORC_NECKLACE = 1115;
+	
 	// Newbie Items
 	private static final int SPIRITSHOT_FOR_BEGINNERS = 5790;
 	private static final int SOULSHOT_FOR_BEGINNERS = 5789;

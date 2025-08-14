@@ -349,8 +349,10 @@ public class RequestAcquireSkill extends ClientPacket
 						{
 							list += ";";
 						}
+						
 						list += _id + "-" + _level;
 					}
+					
 					vars.set("SubSkillList", list);
 					giveSkill(player, trainer, skill, false);
 				}
@@ -379,8 +381,10 @@ public class RequestAcquireSkill extends ClientPacket
 						{
 							list += ";";
 						}
+						
 						list += _id + "-" + _level;
 					}
+					
 					vars.set("DualSkillList", list);
 					giveSkill(player, trainer, skill, false);
 				}
@@ -552,6 +556,7 @@ public class RequestAcquireSkill extends ClientPacket
 						{
 							player.sendPacket(SystemMessageId.YOU_DO_NOT_HAVE_ENOUGH_ITEMS_TO_LEARN_THIS_SKILL);
 						}
+						
 						return false;
 					}
 				}
@@ -625,8 +630,10 @@ public class RequestAcquireSkill extends ClientPacket
 				ui.addComponentType(UserInfoType.CURRENT_HPMPCP_EXP_SP);
 				player.sendPacket(ui);
 			}
+			
 			return true;
 		}
+		
 		return false;
 	}
 	
@@ -681,6 +688,7 @@ public class RequestAcquireSkill extends ClientPacket
 		{
 			EventDispatcher.getInstance().notifyEventAsync(new OnPlayerSkillLearn(trainer, player, skill, _skillType), player);
 		}
+		
 		player.restoreAutoShortcutVisual();
 	}
 	
@@ -716,6 +724,7 @@ public class RequestAcquireSkill extends ClientPacket
 		{
 			return true;
 		}
+		
 		final QuestState qs = player.getQuestState("Q00136_MoreThanMeetsTheEye");
 		return (qs != null) && qs.isCompleted();
 	}

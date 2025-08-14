@@ -47,8 +47,10 @@ public class Q10395_NotATraitor extends Quest
 		20576, // Oel Mahum Shaman
 		21261, // Ol Mahum Transcender
 	};
+	
 	// Items
 	private static final int EAC = 952; // Scroll: Enchant Armor (C-grade)
+	
 	// Misc
 	private static final int MIN_LEVEL = 46;
 	private static final int MAX_LEVEL = 56;
@@ -99,11 +101,13 @@ public class Q10395_NotATraitor extends Quest
 					{
 						addExpAndSp(player, 3_781_574, 907);
 					}
+					
 					htmltext = event;
 				}
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -144,6 +148,7 @@ public class Q10395_NotATraitor extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -173,6 +178,7 @@ public class Q10395_NotATraitor extends Quest
 			npcLogList.add(new NpcLogListHolder(NpcStringId.ELIMINATE_THE_OEL_MAHUM_MONSTERS, qs.getInt("killedMonsters")));
 			return npcLogList;
 		}
+		
 		return super.getNpcLogList(activeChar);
 	}
 }

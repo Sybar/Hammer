@@ -33,12 +33,14 @@ public class Q00032_AnObviousLie extends Quest
 	private static final int GENTLER = 30094;
 	private static final int MAXIMILIAN = 30120;
 	private static final int MIKI_THE_CAT = 31706;
+	
 	// Items
 	private static final int SUEDE = 1866;
 	private static final int THREAD = 1868;
 	private static final int SPIRIT_ORE = 3031;
 	private static final int MAP = 7165;
 	private static final int MEDICINAL_HERB = 7166;
+	
 	// Rewards
 	private static final int CAT_EARS = 6843;
 	private static final int RACOON_EARS = 7680;

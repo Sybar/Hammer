@@ -56,11 +56,13 @@ public class Q10373_ExploringTheDimensionSealingTheDimension extends Quest
 		{
 			return getNoQuestMsg(player);
 		}
+		
 		if (event.equals("34227-04.htm"))
 		{
 			qs.startQuest();
 			htmltext = event;
 		}
+		
 		return htmltext;
 	}
 	
@@ -106,6 +108,7 @@ public class Q10373_ExploringTheDimensionSealingTheDimension extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 }

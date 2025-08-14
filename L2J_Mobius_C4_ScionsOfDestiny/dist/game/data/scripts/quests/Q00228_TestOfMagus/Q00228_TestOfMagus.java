@@ -40,6 +40,7 @@ public class Q00228_TestOfMagus extends Quest
 	private static final int WATER_UNDINE = 30413;
 	private static final int CASIAN = 30612;
 	private static final int RUKAL = 30629;
+	
 	// Monsters
 	private static final int HARPY = 20145;
 	private static final int MARSH_STAKATO = 20157;
@@ -56,6 +57,7 @@ public class Q00228_TestOfMagus extends Quest
 	private static final int SINGING_FLOWER_NIGHTMARE = 27096;
 	private static final int SINGING_FLOWER_DARKLING = 27097;
 	private static final int GHOST_FIRE = 27098;
+	
 	// Items
 	private static final int RUKAL_LETTER = 2841;
 	private static final int PARINA_LETTER = 2842;
@@ -80,6 +82,7 @@ public class Q00228_TestOfMagus extends Quest
 	private static final int SYLPH_CHARM = 2861;
 	private static final int UNDINE_CHARM = 2862;
 	private static final int SERPENT_CHARM = 2863;
+	
 	// Rewards
 	private static final int MARK_OF_MAGUS = 2840;
 	private static final int DIMENSIONAL_DIAMOND = 7562;

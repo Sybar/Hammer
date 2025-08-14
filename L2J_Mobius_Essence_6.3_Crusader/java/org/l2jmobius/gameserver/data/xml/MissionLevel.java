@@ -113,6 +113,7 @@ public class MissionLevel implements IXmlReader
 				{
 					bonusLevel = bonusLevel - 1;
 				}
+				
 				_template.put(season.get(), new MissionLevelHolder(maxLevel.get(), bonusLevel + 1, xpForLevel.get(), normalReward.get(), keyReward.get(), specialReward.get(), bonusReward.get(), bonusRewardByLevelUp.get(), bonusRewardIsAvailable.get()));
 			});
 		});

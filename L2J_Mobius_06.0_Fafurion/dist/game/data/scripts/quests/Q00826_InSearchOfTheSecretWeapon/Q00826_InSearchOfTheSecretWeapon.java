@@ -55,9 +55,11 @@ public class Q00826_InSearchOfTheSecretWeapon extends Quest
 		23663, // Unit Commander 8
 		23664, // Unit Commander 8
 	};
+	
 	// Items
 	private static final int ASHEN_CERTIFICATE = 46371;
 	private static final int SHADOW_WEAPON_COUPON = 46376;
+	
 	// Misc
 	private static final int MIN_LEVEL = 100;
 	
@@ -107,6 +109,7 @@ public class Q00826_InSearchOfTheSecretWeapon extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -148,6 +151,7 @@ public class Q00826_InSearchOfTheSecretWeapon extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -163,6 +167,7 @@ public class Q00826_InSearchOfTheSecretWeapon extends Quest
 		{
 			members.add(player);
 		}
+		
 		for (Player member : members)
 		{
 			final QuestState qs = getQuestState(member, false);

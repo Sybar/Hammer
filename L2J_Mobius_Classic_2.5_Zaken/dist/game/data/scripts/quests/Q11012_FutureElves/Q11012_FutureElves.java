@@ -43,9 +43,11 @@ public class Q11012_FutureElves extends Quest
 	private static final int REISA = 30328;
 	private static final int ROSELLA = 30414;
 	private static final int MANUEL = 30293;
+	
 	// Items
 	private static final int SCROLL_OF_BLOOD_MELODY = 49772;
 	private static final int IMPROVED_SOE = 49087;
+	
 	// Misc
 	private static final int MIN_LEVEL = 19;
 	
@@ -125,6 +127,7 @@ public class Q11012_FutureElves extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -157,6 +160,7 @@ public class Q11012_FutureElves extends Quest
 					}
 					break;
 				}
+				
 				if ((npc.getId() == SORIUS) && (talker.getPlayerClass() != PlayerClass.ELVEN_KNIGHT))
 				{
 					if (qs.isCond(2))
@@ -165,6 +169,7 @@ public class Q11012_FutureElves extends Quest
 					}
 					break;
 				}
+				
 				if ((npc.getId() == REISA) && (talker.getPlayerClass() != PlayerClass.ELVEN_SCOUT))
 				{
 					if (qs.isCond(3))
@@ -173,6 +178,7 @@ public class Q11012_FutureElves extends Quest
 					}
 					break;
 				}
+				
 				if ((npc.getId() == ROSELLA) && (talker.getPlayerClass() != PlayerClass.ELVEN_WIZARD))
 				{
 					if (qs.isCond(4))
@@ -181,6 +187,7 @@ public class Q11012_FutureElves extends Quest
 					}
 					break;
 				}
+				
 				if ((npc.getId() == MANUEL) && (talker.getPlayerClass() != PlayerClass.ORACLE))
 				{
 					if (qs.isCond(5))
@@ -197,6 +204,7 @@ public class Q11012_FutureElves extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

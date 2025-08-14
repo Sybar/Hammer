@@ -39,6 +39,7 @@ public class Q10571_StrategicReconciliation extends Quest
 {
 	// NPCs
 	private static final int TARTI = 34360;
+	
 	// Monsters
 	private static final int[] MONSTERS =
 	{
@@ -55,9 +56,11 @@ public class Q10571_StrategicReconciliation extends Quest
 		23809, // Lost Dimensional Evil Thoughts
 		23810 // Roaming Vengeance of the Dimension
 	};
+	
 	// Misc
 	private static final int MIN_LEVEL = 95;
 	private static final int MAX_LEVEL = 106;
+	
 	// Items
 	private static final int DIMENSIONAL_TRACES = 48162;
 	
@@ -107,6 +110,7 @@ public class Q10571_StrategicReconciliation extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -134,6 +138,7 @@ public class Q10571_StrategicReconciliation extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

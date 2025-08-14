@@ -38,14 +38,18 @@ public class Q10372_PurgatoryVolvere extends Quest
 	// NPCs
 	private static final int GERKENSHTEIN = 33648;
 	private static final int ANDREI = 31292;
+	
 	// Monster's
 	private static final int BLOODY_SUCCUBUS = 23185;
+	
 	// Items
 	private static final int SUCCUBUS_ESENCE = 34766;
 	private static final int GERKENSHTEINS_REPORT = 34767;
+	
 	// Reward
 	private static final int EXP_REWARD = 23009000;
 	private static final int SP_REWARD = 5522;
+	
 	// Misc
 	private static final int MIN_LEVEL = 76;
 	private static final int MAX_LEVEL = 81;
@@ -70,6 +74,7 @@ public class Q10372_PurgatoryVolvere extends Quest
 		{
 			return getNoQuestMsg(player);
 		}
+		
 		switch (event)
 		{
 			case "33648-02.htm":
@@ -109,6 +114,7 @@ public class Q10372_PurgatoryVolvere extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -169,6 +175,7 @@ public class Q10372_PurgatoryVolvere extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	

@@ -61,6 +61,7 @@ public class DeadPledge implements IAffectScopeHandler
 				{
 					return false;
 				}
+				
 				if ((p != player) && ((p.getClanId() == 0) || (p.getClanId() != player.getClanId())))
 				{
 					return false;

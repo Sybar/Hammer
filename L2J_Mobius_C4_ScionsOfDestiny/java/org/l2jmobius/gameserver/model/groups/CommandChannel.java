@@ -65,6 +65,7 @@ public class CommandChannel extends AbstractPlayerGroup
 		{
 			return;
 		}
+		
 		// Update the CCinfo for existing players
 		// broadcastPacket(new ExMPCCPartyInfoUpdate(party, 1));
 		_parties.add(party);
@@ -72,6 +73,7 @@ public class CommandChannel extends AbstractPlayerGroup
 		{
 			_channelLvl = party.getLevel();
 		}
+		
 		party.setCommandChannel(this);
 		party.broadcastPacket(new SystemMessage(SystemMessageId.YOU_HAVE_PARTICIPATED_IN_THE_COMMAND_CHANNEL));
 		party.broadcastPacket(ExOpenMPCC.STATIC_PACKET);
@@ -97,6 +99,7 @@ public class CommandChannel extends AbstractPlayerGroup
 				_channelLvl = pty.getLevel();
 			}
 		}
+		
 		party.setCommandChannel(null);
 		party.broadcastPacket(new ExCloseMPCC());
 		if (_parties.size() < 2)
@@ -125,6 +128,7 @@ public class CommandChannel extends AbstractPlayerGroup
 					removeParty(party);
 				}
 			}
+			
 			_parties.clear();
 		}
 	}
@@ -143,6 +147,7 @@ public class CommandChannel extends AbstractPlayerGroup
 				count += party.getMemberCount();
 			}
 		}
+		
 		return count;
 	}
 	
@@ -165,6 +170,7 @@ public class CommandChannel extends AbstractPlayerGroup
 		{
 			members.addAll(party.getMembers());
 		}
+		
 		return members;
 	}
 	
@@ -197,6 +203,7 @@ public class CommandChannel extends AbstractPlayerGroup
 		{
 			return false;
 		}
+		
 		return (getMemberCount() >= Config.LOOT_RAIDS_PRIVILEGE_CC_SIZE);
 	}
 	
@@ -227,6 +234,7 @@ public class CommandChannel extends AbstractPlayerGroup
 				}
 			}
 		}
+		
 		return false;
 	}
 	
@@ -247,6 +255,7 @@ public class CommandChannel extends AbstractPlayerGroup
 				}
 			}
 		}
+		
 		return true;
 	}
 	

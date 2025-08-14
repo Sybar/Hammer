@@ -61,7 +61,7 @@ public class BanHandler implements IPunishmentHandler
 					}
 					else
 					{
-						Disconnection.of(client).defaultSequence(LeaveWorld.STATIC_PACKET);
+						Disconnection.of(client).storeAndDeleteWith(LeaveWorld.STATIC_PACKET);
 					}
 				}
 				break;
@@ -106,7 +106,7 @@ public class BanHandler implements IPunishmentHandler
 	 */
 	private void applyToPlayer(Player player)
 	{
-		Disconnection.of(player).defaultSequence(ServerClose.STATIC_PACKET);
+		Disconnection.of(player).storeAndDeleteWith(ServerClose.STATIC_PACKET);
 	}
 	
 	@Override

@@ -52,6 +52,7 @@ public abstract class UpdateElementalSpiritPacket extends AbstractElementalSpiri
 			{
 				return;
 			}
+			
 			buffer.writeByte(_type);
 			writeSpiritInfo(buffer, spirit);
 		}

@@ -40,12 +40,16 @@ public class Q10777_ReportsFromCrumaTowerPart2 extends Quest
 	// NPCs
 	private static final int BELKADHI = 30485;
 	private static final int MAGIC_OWL = 33991;
+	
 	// Items
 	private static final int ENCHANT_ARMOR_C = 952;
+	
 	// Location
 	private static final Location OWL_LOC = new Location(17666, 108589, -9072);
+	
 	// Skill
 	private static final SkillHolder TELEPORT = new SkillHolder(2588, 1);
+	
 	// Misc
 	private static final int MIN_LEVEL = 49;
 	
@@ -91,6 +95,7 @@ public class Q10777_ReportsFromCrumaTowerPart2 extends Quest
 					final Npc owl = addSpawn(MAGIC_OWL, OWL_LOC);
 					getTimers().addTimer("DESPAWN_OWL", 20000, owl, null);
 				}
+				
 				htmltext = null;
 				break;
 			}
@@ -104,6 +109,7 @@ public class Q10777_ReportsFromCrumaTowerPart2 extends Quest
 					npc.doCast(TELEPORT.getSkill());
 					getTimers().addTimer("DESPAWN_OWL", 4000, npc, null);
 				}
+				
 				htmltext = null;
 				break;
 			}
@@ -123,6 +129,7 @@ public class Q10777_ReportsFromCrumaTowerPart2 extends Quest
 				htmltext = null;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -156,6 +163,7 @@ public class Q10777_ReportsFromCrumaTowerPart2 extends Quest
 		{
 			htmltext = "33991-01.html";
 		}
+		
 		return htmltext;
 	}
 	

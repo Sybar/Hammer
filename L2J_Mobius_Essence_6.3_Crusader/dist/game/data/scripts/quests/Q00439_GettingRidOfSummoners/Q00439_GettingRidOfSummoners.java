@@ -40,8 +40,10 @@ public class Q00439_GettingRidOfSummoners extends Quest
 {
 	// NPC
 	private static final int GENIE_LAMP = 34369;
+	
 	// Monster
 	private static final int TANTA_LIZARDMAN_SUMMONER = 22155;
+	
 	// Item
 	private static final ItemHolder HP_RECOVERY_POTION = new ItemHolder(91690, 20); // Special
 	// Misc
@@ -98,6 +100,7 @@ public class Q00439_GettingRidOfSummoners extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -136,6 +139,7 @@ public class Q00439_GettingRidOfSummoners extends Quest
 				htmltext = getAlreadyCompletedMsg(player);
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -171,6 +175,7 @@ public class Q00439_GettingRidOfSummoners extends Quest
 			holder.add(new NpcLogListHolder(NpcStringId.DEFEAT_MONSTERS_34.getId(), true, qs.getInt(KILL_COUNT_VAR)));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

@@ -130,7 +130,7 @@ public class ClassChange extends AbstractEffect
 					final Skill knownSkill = player.getKnownSkill(shortcut.getId());
 					if (knownSkill != null)
 					{
-						if (knownSkill.isBad())
+						if (knownSkill.hasNegativeEffect())
 						{
 							AutoUseTaskManager.getInstance().removeAutoSkill(player, shortcut.getId());
 						}
@@ -156,6 +156,9 @@ public class ClassChange extends AbstractEffect
 					}
 				}
 			}
+			
+			// Disarm unusable equipment.
+			player.disarmUnusableEquipment();
 			
 			// Fix Death Knight model animation.
 			if (player.isDeathKnight())

@@ -22,14 +22,17 @@ package events.LegendsMark;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.util.Calendar;
-import java.util.logging.Level;
 
 import org.l2jmobius.commons.database.DatabaseFactory;
 import org.l2jmobius.gameserver.data.xml.MultisellData;
 import org.l2jmobius.gameserver.model.World;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.model.events.EventType;
+import org.l2jmobius.gameserver.model.events.ListenerRegisterType;
+import org.l2jmobius.gameserver.model.events.annotations.RegisterEvent;
+import org.l2jmobius.gameserver.model.events.annotations.RegisterType;
+import org.l2jmobius.gameserver.model.events.holders.OnDailyReset;
 import org.l2jmobius.gameserver.model.quest.LongTimeEvent;
 
 /**
@@ -40,6 +43,7 @@ public class LegendsMark extends LongTimeEvent
 {
 	// NPC
 	private static final int DREAMER = 34588;
+	
 	// Monsters
 	private static final int[] MONSTERS =
 	{
@@ -197,11 +201,14 @@ public class LegendsMark extends LongTimeEvent
 		24322, // Temple Knight Recruit
 	
 	};
+	
 	// Item
 	private static final int PROPHECY_FRAGMENTS = 81904;
+	
 	// Multisells
 	private static final int PROPHECY_FRAGMENT = 34588001;
 	private static final int LEGEND_MARK = 34588002;
+	
 	// Misc
 	private static final String PROPHECY_FRAGMENTS_DROP_COUNT_VAR = "PROPHECY_FRAGMENTS_DROP_COUNT";
 	private static final int PLAYER_LEVEL = 99;
@@ -216,7 +223,6 @@ public class LegendsMark extends LongTimeEvent
 		addFirstTalkId(DREAMER);
 		addTalkId(DREAMER);
 		addKillId(MONSTERS);
-		startQuestTimer("schedule", 1000, null, null);
 	}
 	
 	@Override
@@ -242,46 +248,8 @@ public class LegendsMark extends LongTimeEvent
 				MultisellData.getInstance().separateAndSend(LEGEND_MARK, player, npc, false);
 				break;
 			}
-			case "schedule":
-			{
-				final long currentTime = System.currentTimeMillis();
-				final Calendar calendar = Calendar.getInstance();
-				calendar.set(Calendar.HOUR_OF_DAY, 6);
-				calendar.set(Calendar.MINUTE, 30);
-				if (calendar.getTimeInMillis() < currentTime)
-				{
-					calendar.add(Calendar.DAY_OF_YEAR, 1);
-				}
-				cancelQuestTimers("reset");
-				startQuestTimer("reset", calendar.getTimeInMillis() - currentTime, null, null);
-				break;
-			}
-			case "reset":
-			{
-				// Update data for offline players.
-				try (Connection con = DatabaseFactory.getConnection();
-					PreparedStatement ps = con.prepareStatement("DELETE FROM character_variables WHERE var=?"))
-				{
-					ps.setString(1, PROPHECY_FRAGMENTS_DROP_COUNT_VAR);
-					ps.executeUpdate();
-				}
-				catch (Exception e)
-				{
-					LOGGER.log(Level.SEVERE, "Could not reset Aether drop count: ", e);
-				}
-				
-				// Update data for online players.
-				for (Player plr : World.getInstance().getPlayers())
-				{
-					plr.getVariables().remove(PROPHECY_FRAGMENTS_DROP_COUNT_VAR);
-					plr.getVariables().storeMe();
-				}
-				
-				cancelQuestTimers("schedule");
-				startQuestTimer("schedule", 1000, null, null);
-				break;
-			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -303,6 +271,36 @@ public class LegendsMark extends LongTimeEvent
 				giveItems(killer, PROPHECY_FRAGMENTS, getRandom(DROP_MIN, DROP_MAX));
 			}
 		}
+	}
+	
+	@RegisterEvent(EventType.ON_DAILY_RESET)
+	@RegisterType(ListenerRegisterType.GLOBAL)
+	public void onDailyReset(OnDailyReset event)
+	{
+		if (!isEventPeriod())
+		{
+			return;
+		}
+		
+		// Update data for offline players.
+		try (Connection con = DatabaseFactory.getConnection();
+			PreparedStatement ps = con.prepareStatement("DELETE FROM character_variables WHERE var=?"))
+		{
+			ps.setString(1, PROPHECY_FRAGMENTS_DROP_COUNT_VAR);
+			ps.executeUpdate();
+		}
+		catch (Exception e)
+		{
+			LOGGER.warning(getClass().getSimpleName() + ": Could not reset variables: " + e.getMessage());
+		}
+		
+		// Update data for online players.
+		for (Player player : World.getInstance().getPlayers())
+		{
+			player.getVariables().remove(PROPHECY_FRAGMENTS_DROP_COUNT_VAR);
+		}
+		
+		LOGGER.info(getClass().getSimpleName() + " has been reset.");
 	}
 	
 	public static void main(String[] args)

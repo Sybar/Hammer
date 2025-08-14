@@ -1033,9 +1033,9 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player clanHall="62" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="48083" name="Agathion Charm - Wild Beast Reserve" type="Armor">
 		<!-- Charm that can summon an agathion. Only for members of a clan that owns the Wild Beast Reserve. -->
@@ -1049,9 +1049,9 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player clanHall="63" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="48084" name="Agathion Charm - Gludio" type="Armor">
 		<!-- Charm that can summon an agathion. Only for members of a clan that owns the Gludio Castle. -->
@@ -1066,11 +1066,11 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="equip_condition" val="{{ec_castle;1};{ec_castle_num;{1}}}" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player castle="1" />
 			</and>
-		</cond>
+		</conditions>
 	</item>
 	<item id="48085" name="Agathion Charm - Dion" type="Armor">
 		<!-- Charm that can summon an agathion. Only for members of a clan that owns the Dion Castle. -->
@@ -1085,11 +1085,11 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="equip_condition" val="{{ec_castle;1};{ec_castle_num;{2}}}" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player castle="2" />
 			</and>
-		</cond>
+		</conditions>
 	</item>
 	<item id="48086" name="Agathion Charm - Giran" type="Armor">
 		<!-- Charm that can summon an agathion. Only for members of a clan that owns the Giran Castle. -->
@@ -1104,11 +1104,11 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="equip_condition" val="{{ec_castle;1};{ec_castle_num;{3}}}" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player castle="3" />
 			</and>
-		</cond>
+		</conditions>
 	</item>
 	<item id="48087" name="Agathion Charm - Oren" type="Armor">
 		<!-- Charm that can summon an agathion. Only for members of a clan that owns the Oren Castle. -->
@@ -1123,11 +1123,11 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="equip_condition" val="{{ec_castle;1};{ec_castle_num;{4}}}" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player castle="4" />
 			</and>
-		</cond>
+		</conditions>
 	</item>
 	<item id="48088" name="Agathion Charm - Aden" type="Armor">
 		<!-- Charm that can summon an agathion. Only for members of a clan that owns the Aden Castle. -->
@@ -1142,11 +1142,11 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="equip_condition" val="{{ec_castle;1};{ec_castle_num;{5}}}" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player castle="5" />
 			</and>
-		</cond>
+		</conditions>
 	</item>
 	<item id="48089" name="Agathion Charm - Innadril" type="Armor">
 		<!-- Charm that can summon an agathion. Only for members of a clan that owns the Innadril Castle. -->
@@ -1161,11 +1161,11 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="equip_condition" val="{{ec_castle;1};{ec_castle_num;{6}}}" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player castle="6" />
 			</and>
-		</cond>
+		</conditions>
 	</item>
 	<item id="48090" name="Agathion Charm - Goddard" type="Armor">
 		<!-- Charm that can summon an agathion. Only for members of a clan that owns the Goddard Castle. -->
@@ -1180,11 +1180,11 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="equip_condition" val="{{ec_castle;1};{ec_castle_num;{7}}}" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<and>
 				<player castle="7" />
 			</and>
-		</cond>
+		</conditions>
 	</item>
 	<item id="48091" name="Agathion Charm - Rune" type="Armor">
 		<!-- Charm that can summon an agathion. Only for members of a clan that owns the Rune Castle. -->
@@ -1199,9 +1199,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="equip_condition" val="{{ec_castle;1};{ec_castle_num;{8}}}" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player castle="8" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="48092" name="Agathion Charm - Schuttgart" type="Armor">
 		<!-- Charm that can summon an agathion. Only for members of a clan that owns the Schuttgart Castle. -->
@@ -1216,9 +1216,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="equip_condition" val="{{ec_castle;1};{ec_castle_num;{9}}}" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player castle="9" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="48093" name="Agathion Charm" type="Armor">
 		<!-- A charm for summoning Agathion Fortress. Shadow item. For 700 min. -->
@@ -1244,9 +1244,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="equip_condition" val="{{ec_fortress;1}}" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player fort="-1" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="48095" name="Agathion Charm" type="Armor">
 		<!-- A charm for summoning Agathion Rainbow Clan Hall. Shadow item. For 700 min. -->

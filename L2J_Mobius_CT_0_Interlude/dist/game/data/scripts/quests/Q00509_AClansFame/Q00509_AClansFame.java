@@ -37,18 +37,21 @@ public class Q00509_AClansFame extends Quest
 {
 	// NPCs
 	private static final int VALDIS = 31331;
+	
 	// Raid Bosses
 	private static final int DAIMON_THE_WHITE_EYED = 25290;
 	private static final int HESTIA_GUARDIAN_DEITY = 25293;
 	private static final int PLAGUE_GOLEM = 25523;
 	private static final int DEMONS_AGENT_FALSTON = 25322;
 	private static final int QUEEN_SHYEED = 25514;
+	
 	// Items
 	private static final int DAIMONS_EYES = 8489;
 	private static final int HESTIAS_FAIRY_STONE = 8490;
 	private static final int NUCLEUS_OF_LESSER_GOLEM = 8491;
 	private static final int FALSTON_FANG = 8492;
 	private static final int SHAIDS_TALON = 8493;
+	
 	// Reward list (itemId, minClanPoints, maxClanPoints)
 	private static final int[][] REWARD_LIST =
 	{
@@ -59,6 +62,7 @@ public class Q00509_AClansFame extends Quest
 		{DEMONS_AGENT_FALSTON, FALSTON_FANG, 220, 255},
 		{QUEEN_SHYEED, SHAIDS_TALON, 130, 165}
 	};
+	
 	// Radar
 	private static final int[][] radar =
 	{

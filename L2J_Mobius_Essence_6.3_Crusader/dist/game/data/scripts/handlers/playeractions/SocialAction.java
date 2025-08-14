@@ -40,7 +40,7 @@ import org.l2jmobius.gameserver.taskmanagers.AttackStanceTaskManager;
 public class SocialAction implements IPlayerActionHandler
 {
 	@Override
-	public void useAction(Player player, ActionDataHolder data, boolean ctrlPressed, boolean shiftPressed)
+	public void onAction(Player player, ActionDataHolder data, boolean ctrlPressed, boolean shiftPressed)
 	{
 		switch (data.getOptionId())
 		{

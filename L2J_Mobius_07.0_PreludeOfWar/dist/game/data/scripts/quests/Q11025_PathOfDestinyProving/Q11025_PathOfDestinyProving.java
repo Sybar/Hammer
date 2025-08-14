@@ -54,8 +54,10 @@ public class Q11025_PathOfDestinyProving extends Quest
 	private static final int MYSTERIOUS_MAGE = 1033980; // TODO: Find proper ID.
 	private static final int SKELETON_ARCHER = 27529;
 	private static final int SKELETON_WARRIOR = 27528;
+	
 	// Items
 	private static final int WIND_SPIRIT = 80673;
+	
 	// Class change rewards
 	private static final int SS_R = 33780;
 	private static final int BSS_R = 33794;
@@ -79,8 +81,10 @@ public class Q11025_PathOfDestinyProving extends Quest
 	private static final int WEAPON_SIGIL_R = 47037;
 	private static final int ORICHALCUM_BOLT_R = 19443;
 	private static final int ORICHALCUM_ARROW_R = 18550;
+	
 	// Location
 	private static final Location TRAINING_GROUNDS_TELEPORT = new Location(-4983, 116607, -3344);
+	
 	// Misc
 	private static final String R_GRADE_ITEMS_REWARDED_VAR = "R_GRADE_ITEMS_REWARDED";
 	private static final int MIN_LEVEL = 40;
@@ -184,12 +188,14 @@ public class Q11025_PathOfDestinyProving extends Quest
 						showOnScreenMsg(player, NpcStringId.CLASS_TRANSFER_IS_AVAILABLE_NCLICK_THE_CLASS_TRANSFER_ICON_IN_THE_NOTIFICATION_WINDOW_TO_TRANSFER_YOUR_CLASS, ExShowScreenMessage.TOP_CENTER, 10000);
 						player.sendPacket(ExRequestClassChangeUi.STATIC_PACKET);
 					}
+					
 					giveStoryBuffReward(npc, player);
 					htmltext = event;
 					break;
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -288,6 +294,7 @@ public class Q11025_PathOfDestinyProving extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

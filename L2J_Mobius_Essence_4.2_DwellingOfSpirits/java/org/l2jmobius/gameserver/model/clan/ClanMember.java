@@ -68,6 +68,7 @@ public class ClanMember
 		{
 			throw new IllegalArgumentException("Cannot create a Clan Member with a null clan.");
 		}
+		
 		_clan = clan;
 		_name = clanMember.getString("char_name");
 		_level = clanMember.getInt("level");
@@ -93,6 +94,7 @@ public class ClanMember
 		{
 			throw new IllegalArgumentException("Cannot create a Clan Member if player has a null clan.");
 		}
+		
 		_player = player;
 		_clan = clan;
 		_name = player.getName();
@@ -137,11 +139,13 @@ public class ClanMember
 			{
 				SiegeManager.getInstance().addSiegeSkills(player);
 			}
+			
 			if (player.isClanLeader())
 			{
 				_clan.setLeader(this);
 			}
 		}
+		
 		_player = player;
 	}
 	
@@ -164,10 +168,12 @@ public class ClanMember
 		{
 			return false;
 		}
+		
 		if ((_player.getClient() == null) || _player.getClient().isDetached())
 		{
 			return false;
 		}
+		
 		return true;
 	}
 	
@@ -372,8 +378,10 @@ public class ClanMember
 			{
 				return apprentice.getName();
 			}
+			
 			return "Error";
 		}
+		
 		if (_sponsor != 0)
 		{
 			final ClanMember sponsor = _clan.getClanMember(_sponsor);
@@ -381,8 +389,10 @@ public class ClanMember
 			{
 				return sponsor.getName();
 			}
+			
 			return "Error";
 		}
+		
 		return "";
 	}
 	
@@ -794,6 +804,7 @@ public class ClanMember
 		{
 			pledgeClass = 8;
 		}
+		
 		return pledgeClass;
 	}
 	

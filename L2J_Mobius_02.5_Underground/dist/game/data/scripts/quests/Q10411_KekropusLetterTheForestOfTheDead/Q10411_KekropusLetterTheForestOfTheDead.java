@@ -36,12 +36,15 @@ public class Q10411_KekropusLetterTheForestOfTheDead extends LetterQuest
 	private static final int MATHIAS = 31340;
 	private static final int HATUBA = 33849;
 	private static final int INVISIBLE_NPC = 19543;
+	
 	// Items
 	private static final int SOE_FOREST_OF_THE_DEAD = 37031; // Scroll of Escape: Forest of the Dead
 	private static final int SOE_TOWN_OF_RUNE = 37118; // Scroll of Escape: Town of Rune
 	private static final int EWA = 729; // Scroll: Enchant Weapon (A-grade)
+	
 	// Location
 	private static final Location TELEPORT_LOC = new Location(42682, -47986, -792);
+	
 	// Misc
 	private static final int MIN_LEVEL = 65;
 	private static final int MAX_LEVEL = 69;
@@ -97,12 +100,14 @@ public class Q10411_KekropusLetterTheForestOfTheDead extends LetterQuest
 					{
 						addExpAndSp(player, 942_690, 226);
 					}
+					
 					showOnScreenMsg(player, NpcStringId.GROW_STRONGER_HERE_UNTIL_YOU_RECEIVE_THE_NEXT_LETTER_FROM_KEKROPUS_AT_LV_70, ExShowScreenMessage.TOP_CENTER, 6000);
 					htmltext = event;
 				}
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -127,6 +132,7 @@ public class Q10411_KekropusLetterTheForestOfTheDead extends LetterQuest
 				htmltext = npc.getId() == MATHIAS ? "31340-04.html" : "33849-01.html";
 			}
 		}
+		
 		return htmltext;
 	}
 	

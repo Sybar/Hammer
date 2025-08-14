@@ -39,7 +39,6 @@ import org.l2jmobius.gameserver.managers.PunishmentManager;
 import org.l2jmobius.gameserver.model.World;
 import org.l2jmobius.gameserver.model.WorldObject;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.actor.enums.creature.Race;
 import org.l2jmobius.gameserver.model.actor.enums.player.IllegalActionPunishmentType;
 import org.l2jmobius.gameserver.model.actor.request.AutoPeelRequest;
 import org.l2jmobius.gameserver.model.effects.EffectType;
@@ -52,8 +51,6 @@ import org.l2jmobius.gameserver.model.item.enums.ItemProcessType;
 import org.l2jmobius.gameserver.model.item.holders.ItemSkillHolder;
 import org.l2jmobius.gameserver.model.item.instance.Item;
 import org.l2jmobius.gameserver.model.item.type.ActionType;
-import org.l2jmobius.gameserver.model.item.type.ArmorType;
-import org.l2jmobius.gameserver.model.item.type.WeaponType;
 import org.l2jmobius.gameserver.model.zone.ZoneId;
 import org.l2jmobius.gameserver.network.PacketLogger;
 import org.l2jmobius.gameserver.network.SystemMessageId;
@@ -125,7 +122,7 @@ public class UseItem extends ClientPacket
 				final WorldObject obj = World.getInstance().findObject(_objectId);
 				if ((obj != null) && obj.isItem())
 				{
-					AdminCommandHandler.getInstance().useAdminCommand(player, "admin_use_item " + _objectId, true);
+					AdminCommandHandler.getInstance().onCommand(player, "admin_use_item " + _objectId, true);
 				}
 			}
 			return;
@@ -230,83 +227,10 @@ public class UseItem extends ClientPacket
 				return;
 			}
 			
-			if (item.isArmor())
+			if (!player.canUseEquipment(item))
 			{
-				// Prevent equip shields for Death Knight, Sylph, Vanguard or Assassin players.
-				if ((item.getItemType() == ArmorType.SHIELD) && (player.isDeathKnight() || (player.getRace() == Race.SYLPH) || player.isVanguard() || player.isAssassin()))
-				{
-					player.sendPacket(SystemMessageId.YOU_DO_NOT_MEET_THE_REQUIRED_CONDITION_TO_EQUIP_THAT_ITEM);
-					return;
-				}
-			}
-			else if (item.isWeapon() && (item.getItemType() != WeaponType.FISHINGROD)) // Fishing rods are enabled for all players.
-			{
-				// Prevent equip pistols for non Sylph players.
-				if (item.getItemType() == WeaponType.PISTOLS)
-				{
-					if ((player.getRace() != Race.SYLPH))
-					{
-						player.sendPacket(SystemMessageId.YOU_DO_NOT_MEET_THE_REQUIRED_CONDITION_TO_EQUIP_THAT_ITEM);
-						return;
-					}
-				}
-				else
-				{
-					// Prevent Dwarf players equip rapiers.
-					if ((player.getRace() == Race.DWARF))
-					{
-						if (item.getItemType() == WeaponType.RAPIER)
-						{
-							player.sendPacket(SystemMessageId.YOU_DO_NOT_MEET_THE_REQUIRED_CONDITION_TO_EQUIP_THAT_ITEM);
-							return;
-						}
-					}
-					// Prevent Orc players equip rapiers.
-					else if ((player.getRace() == Race.ORC))
-					{
-						if (item.getItemType() == WeaponType.RAPIER)
-						{
-							player.sendPacket(SystemMessageId.YOU_DO_NOT_MEET_THE_REQUIRED_CONDITION_TO_EQUIP_THAT_ITEM);
-							return;
-						}
-					}
-					// Prevent Sylph players to equip other weapons than Pistols.
-					else if ((player.getRace() == Race.SYLPH))
-					{
-						if (item.getItemType() != WeaponType.PISTOLS)
-						{
-							player.sendPacket(SystemMessageId.YOU_DO_NOT_MEET_THE_REQUIRED_CONDITION_TO_EQUIP_THAT_ITEM);
-							return;
-						}
-					}
-					// Prevent Vanguard Rider players to equip other weapons than Pole.
-					else if (player.isVanguard())
-					{
-						if (item.getItemType() != WeaponType.POLE)
-						{
-							player.sendPacket(SystemMessageId.YOU_DO_NOT_MEET_THE_REQUIRED_CONDITION_TO_EQUIP_THAT_ITEM);
-							return;
-						}
-					}
-					// Prevent Assassins players to equip other weapons than Dagger.
-					else if (player.isAssassin())
-					{
-						if (item.getItemType() != WeaponType.DAGGER)
-						{
-							player.sendPacket(SystemMessageId.YOU_DO_NOT_MEET_THE_REQUIRED_CONDITION_TO_EQUIP_THAT_ITEM);
-							return;
-						}
-					}
-					// Prevent other races using Ancient swords.
-					else if ((player.getRace() != Race.KAMAEL))
-					{
-						if (item.getItemType() == WeaponType.ANCIENTSWORD)
-						{
-							player.sendPacket(SystemMessageId.YOU_DO_NOT_MEET_THE_REQUIRED_CONDITION_TO_EQUIP_THAT_ITEM);
-							return;
-						}
-					}
-				}
+				player.sendPacket(SystemMessageId.YOU_DO_NOT_MEET_THE_REQUIRED_CONDITION_TO_EQUIP_THAT_ITEM);
+				return;
 			}
 			
 			// Prevent players to equip weapon while wearing combat flag
@@ -318,11 +242,13 @@ public class UseItem extends ClientPacket
 					player.sendPacket(SystemMessageId.YOU_DO_NOT_MEET_THE_REQUIRED_CONDITION_TO_EQUIP_THAT_ITEM);
 					return;
 				}
+				
 				if (player.isMounted() || player.isDisarmed())
 				{
 					player.sendPacket(SystemMessageId.YOU_DO_NOT_MEET_THE_REQUIRED_CONDITION_TO_EQUIP_THAT_ITEM);
 					return;
 				}
+				
 				if (player.isCursedWeaponEquipped())
 				{
 					return;
@@ -423,7 +349,7 @@ public class UseItem extends ClientPacket
 					PacketLogger.warning("Unmanaged Item handler: " + etcItem.getHandlerName() + " for Item Id: " + _itemId + "!");
 				}
 			}
-			else if (handler.useItem(player, item, _ctrlPressed))
+			else if (handler.onItemUse(player, item, _ctrlPressed))
 			{
 				// Item reuse time should be added if the item is successfully used.
 				// Skill reuse delay is done at handlers.itemhandlers.ItemSkillsTemplate;
@@ -479,6 +405,7 @@ public class UseItem extends ClientPacket
 			sm = new SystemMessage(SystemMessageId.S1_WILL_BE_AVAILABLE_AGAIN_IN_S2_SEC);
 			sm.addItemName(item);
 		}
+		
 		sm.addInt(seconds);
 		player.sendPacket(sm);
 	}

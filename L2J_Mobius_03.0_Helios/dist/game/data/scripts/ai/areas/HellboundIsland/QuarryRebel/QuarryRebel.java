@@ -51,6 +51,7 @@ public class QuarryRebel extends AbstractNpcAI
 	private static final int MAGICAL_SCARLETT = 19514;
 	private static final int BERSERK_TANYA = 23379;
 	private static final int BERSERK_SCARLETT = 23380;
+	
 	// Other
 	private static final double GROUP_4_SPAWN_CHANCE = 25; // TODO need check this parameters
 	
@@ -123,13 +124,14 @@ public class QuarryRebel extends AbstractNpcAI
 				}
 			}
 		}
+		
 		return event;
 	}
 	
 	@Override
 	public void onAttack(Npc npc, Player attacker, int damage, boolean isSummon, Skill skill)
 	{
-		if ((skill != null) && skill.isBad())
+		if ((skill != null) && skill.hasNegativeEffect())
 		{
 			_lastMagicAttack = true;
 		}

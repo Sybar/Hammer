@@ -55,10 +55,13 @@ public class Q00257_TheGuardIsBusy extends Quest
 	
 	// NPC
 	private static final int GILBERT = 30039;
+	
 	// Misc
 	private static final int MIN_LEVEL = 6;
+	
 	// Monsters
 	private static final Map<Integer, List<MobDrop>> MONSTERS = new HashMap<>();
+	
 	// Items
 	private static final int GLUDIO_LORDS_MARK = 1084;
 	private static final int ORC_AMULET = 752;
@@ -118,6 +121,7 @@ public class Q00257_TheGuardIsBusy extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -162,6 +166,7 @@ public class Q00257_TheGuardIsBusy extends Quest
 					final long fang = getQuestItemsCount(player, WEREWOLF_FANG);
 					giveAdena(player, ((amulets * 5) + (necklace * 8) + (fang * 10) + (((amulets + necklace + fang) >= 10) ? 1000 : 0)), true);
 					takeItems(player, -1, ORC_AMULET, ORC_NECKLACE, WEREWOLF_FANG);
+					
 					// Q00281_HeadForTheHills.giveNewbieReward(player);
 					htmltext = "30039-07.html";
 				}
@@ -172,6 +177,7 @@ public class Q00257_TheGuardIsBusy extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

@@ -46,6 +46,7 @@ public class Q00226_TestOfTheHealer extends Quest
 	private static final int KAIN_FLYING_KNIFE = 30664;
 	private static final int KRISTINA = 30665;
 	private static final int DAURIN_HAMMERCRUSH = 30674;
+	
 	// Monsters
 	private static final int LETO_LIZARDMAN_LEADER = 27123;
 	private static final int LETO_LIZARDMAN_ASSASSIN = 27124;
@@ -53,6 +54,7 @@ public class Q00226_TestOfTheHealer extends Quest
 	private static final int LETO_LIZARDMAN_WIZARD = 27126;
 	private static final int LETO_LIZARDMAN_LORD = 27127;
 	private static final int TATOMA = 27134;
+	
 	// Items
 	private static final int REPORT_OF_PERRIN = 2810;
 	private static final int KRISTINA_LETTER = 2811;
@@ -64,9 +66,11 @@ public class Q00226_TestOfTheHealer extends Quest
 	private static final int SECRET_LETTER_2 = 2817;
 	private static final int SECRET_LETTER_3 = 2818;
 	private static final int SECRET_LETTER_4 = 2819;
+	
 	// Rewards
 	private static final int MARK_OF_HEALER = 2820;
 	private static final int DIMENSIONAL_DIAMOND = 7562;
+	
 	// Misc
 	private Npc _tatoma;
 	private Npc _letoLeader;
@@ -498,6 +502,7 @@ public class Q00226_TestOfTheHealer extends Quest
 				{
 					st.setCond(3, true);
 				}
+				
 				_tatoma = null;
 				cancelQuestTimer("tatoma_despawn", null, player);
 				break;
@@ -509,6 +514,7 @@ public class Q00226_TestOfTheHealer extends Quest
 					st.setCond(12, true);
 					giveItems(player, SECRET_LETTER_1, 1);
 				}
+				
 				_letoLeader = null;
 				cancelQuestTimer("leto_leader_despawn", null, player);
 				break;
@@ -556,6 +562,7 @@ public class Q00226_TestOfTheHealer extends Quest
 					found++;
 				}
 			}
+			
 			if (found < count)
 			{
 				addSpawn(npcId, player, true, 300000);

@@ -88,6 +88,7 @@ public class CustomMailManager
 								itemHolders.add(new ItemEnchantHolder(Integer.parseInt(str), 1));
 							}
 						}
+						
 						if (!itemHolders.isEmpty())
 						{
 							for (ItemEnchantHolder itemHolder : itemHolders)

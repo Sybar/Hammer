@@ -49,6 +49,7 @@ public class CastleCourtMagician extends AbstractNpcAI
 		35655, // Rune
 		35656, // Schuttgart
 	};
+	
 	// Skills
 	private static final int CLAN_GATE = 3632; // Clan Gate
 	private static final SkillHolder DISPLAY_CLAN_GATE = new SkillHolder(5109, 1); // Production - Clan Gate
@@ -120,6 +121,7 @@ public class CastleCourtMagician extends AbstractNpcAI
 		10423, // Blue Talisman - Self-Destruction
 		10419, // White Talisman - Darkness
 	};
+	
 	// Misc
 	private static final CategoryType[] AWAKENED_CT =
 	{
@@ -168,6 +170,7 @@ public class CastleCourtMagician extends AbstractNpcAI
 					htmltext = "courtmagician-06.html";
 					break;
 				}
+				
 				if (player.getInventory().getSize() == player.getInventoryLimit())
 				{
 					player.sendPacket(SystemMessageId.YOUR_INVENTORY_IS_FULL);
@@ -267,6 +270,7 @@ public class CastleCourtMagician extends AbstractNpcAI
 						itemId = WHITE_FIRE;
 					}
 				}
+				
 				takeItems(player, EPAULETTE, 10);
 				giveItems(player, itemId, 1);
 				htmltext = "courtmagician-04.html";
@@ -381,10 +385,12 @@ public class CastleCourtMagician extends AbstractNpcAI
 					htmltext = "courtmagician-08.html";
 					break;
 				}
+				
 				giveItems(player, cloakId, 1);
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

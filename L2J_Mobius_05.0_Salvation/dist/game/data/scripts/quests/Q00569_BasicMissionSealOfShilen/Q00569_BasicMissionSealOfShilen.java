@@ -38,9 +38,11 @@ public class Q00569_BasicMissionSealOfShilen extends Quest
 	// NPCs
 	private static final int PENNY = 34413;
 	private static final int GEORGIO = 33515;
+	
 	// Rewards
 	private static final int SCROLL_OF_ESCAPE_SEAL_OF_SHILEN = 39504;
 	private static final int SCROLL_OF_ESCAPE_TOWN_OF_ADEN = 48413;
+	
 	// Misc
 	private static final int MIN_LEVEL = 94;
 	private static final int MAX_LEVEL = 96;
@@ -97,6 +99,7 @@ public class Q00569_BasicMissionSealOfShilen extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -174,6 +177,7 @@ public class Q00569_BasicMissionSealOfShilen extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

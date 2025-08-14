@@ -35,6 +35,7 @@ public class Q00265_BondsOfSlavery extends Quest
 {
 	// Item
 	private static final int SHACKLE = 1368;
+	
 	// Newbie Items
 	private static final int SPIRITSHOT_FOR_BEGINNERS = 5790;
 	private static final int SOULSHOT_FOR_BEGINNERS = 5789;

@@ -20,8 +20,6 @@
  */
 package handlers.admincommandhandlers;
 
-import java.util.logging.Logger;
-
 import org.l2jmobius.Config;
 import org.l2jmobius.gameserver.cache.HtmCache;
 import org.l2jmobius.gameserver.data.xml.EnchantItemGroupsData;
@@ -40,8 +38,6 @@ import org.l2jmobius.gameserver.network.serverpackets.NpcHtmlMessage;
  */
 public class AdminEnchant implements IAdminCommandHandler
 {
-	private static final Logger LOGGER = Logger.getLogger(AdminEnchant.class.getName());
-	
 	private static final String[] ADMIN_COMMANDS =
 	{
 		"admin_seteh", // 6
@@ -97,7 +93,7 @@ public class AdminEnchant implements IAdminCommandHandler
 	};
 	
 	@Override
-	public boolean useAdminCommand(String command, Player activeChar)
+	public boolean onCommand(String command, Player activeChar)
 	{
 		int currentPage = 0;
 		if (command.equals("admin_enchant"))
@@ -327,19 +323,11 @@ public class AdminEnchant implements IAdminCommandHandler
 				catch (StringIndexOutOfBoundsException e)
 				{
 					// Quality of life change. If no input - set enchant value to 0.
-					if (Config.DEVELOPER)
-					{
-						LOGGER.warning("Enchant Value set to: " + 0);
-					}
 					activeChar.sendSysMessage("Auto-Set Enchant value to 0.");
 					setEnchant(activeChar, 0, slot);
 				}
 				catch (NumberFormatException e)
 				{
-					if (Config.DEVELOPER)
-					{
-						LOGGER.warning("Set enchant error: " + e);
-					}
 					activeChar.sendSysMessage("Please specify a valid new enchant value.");
 				}
 			}
@@ -347,6 +335,7 @@ public class AdminEnchant implements IAdminCommandHandler
 			// show the enchant menu after an action
 			showMainPage(activeChar, currentPage);
 		}
+		
 		return true;
 	}
 	
@@ -400,6 +389,7 @@ public class AdminEnchant implements IAdminCommandHandler
 					enchant = EnchantItemGroupsData.getInstance().getMaxArmorEnchant();
 				}
 			}
+			
 			itemInstance.setEnchantLevel(enchant);
 			
 			// Send packets.
@@ -440,6 +430,7 @@ public class AdminEnchant implements IAdminCommandHandler
 				{
 					currentEnch = findItem.getEnchantLevel();
 				}
+				
 				// If no agathion in slot - returns blank square icon
 				if (item == null)
 				{
@@ -449,6 +440,7 @@ public class AdminEnchant implements IAdminCommandHandler
 				else
 				{
 					getVars = getVars.replace("%ar" + i + "_icon%", item.getIcon() == null ? "icon.etc_question_mark_i00" : item.getIcon());
+					
 					// if enchant value is 0 - show "blank instead of 0
 					if (currentEnch != 0)
 					{
@@ -478,6 +470,7 @@ public class AdminEnchant implements IAdminCommandHandler
 				{
 					currentEnch = findItem.getEnchantLevel();
 				}
+				
 				// If no agathion in slot - returns blank square icon
 				if (item == null)
 				{
@@ -487,6 +480,7 @@ public class AdminEnchant implements IAdminCommandHandler
 				else
 				{
 					getVars = getVars.replace("%ag" + i + "_icon%", item.getIcon() == null ? "icon.etc_question_mark_i00" : item.getIcon());
+					
 					// if enchant value is 0 - show "blank instead of 0
 					if (currentEnch != 0)
 					{
@@ -506,7 +500,7 @@ public class AdminEnchant implements IAdminCommandHandler
 	}
 	
 	@Override
-	public String[] getAdminCommandList()
+	public String[] getCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}

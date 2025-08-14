@@ -53,6 +53,7 @@ public class RequestListPartyMatchingWaitingRoom extends ClientPacket
 				_classId.add(PlayerClass.getPlayerClass(readInt()));
 			}
 		}
+		
 		if (remaining() > 0)
 		{
 			_query = readString();

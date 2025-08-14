@@ -61,8 +61,10 @@ public class Q00938_TheFishermansOtherHobby extends Quest
 	private static final int EINDARKNER = 31697;
 	private static final int GALBA = 32007;
 	private static final int SANTIAGO = 34138;
+	
 	// Reward
 	private static final int SANTIAGOS_REEL_FRAGMENT = 47562;
+	
 	// Misc
 	private static final int MIN_LEVEL = 85;
 	private static final int NIMBLE_FISH = 47551;
@@ -84,6 +86,7 @@ public class Q00938_TheFishermansOtherHobby extends Quest
 		{
 			return null;
 		}
+		
 		String htmltext = null;
 		switch (event)
 		{
@@ -112,6 +115,7 @@ public class Q00938_TheFishermansOtherHobby extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -145,6 +149,7 @@ public class Q00938_TheFishermansOtherHobby extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

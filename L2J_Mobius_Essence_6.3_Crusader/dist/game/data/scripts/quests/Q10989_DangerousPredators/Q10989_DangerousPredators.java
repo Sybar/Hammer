@@ -43,16 +43,19 @@ public class Q10989_DangerousPredators extends Quest
 	// NPCs
 	private static final int NEWBIE_GUIDE = 30601;
 	private static final int GERALD = 30650;
+	
 	// Monsters
 	private static final int LONGTAIL_KELTIR = 20533;
 	private static final int ELDER_LONGTAIL_KELTIR = 20539;
 	private static final int BLACK_WOLF = 20317;
+	
 	// Items
 	private static final ItemHolder SOE_TO_GERAILD = new ItemHolder(91650, 1);
 	private static final ItemHolder SOE_NOVICE = new ItemHolder(10650, 10);
 	private static final ItemHolder RING_NOVICE = new ItemHolder(49041, 2);
 	private static final ItemHolder EARRING_NOVICE = new ItemHolder(49040, 2);
 	private static final ItemHolder NECKLACE_NOVICE = new ItemHolder(49039, 1);
+	
 	// Misc
 	private static final int MAX_LEVEL = 20;
 	private static final String KILL_COUNT_VAR = "KillCount";
@@ -115,6 +118,7 @@ public class Q10989_DangerousPredators extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -152,6 +156,7 @@ public class Q10989_DangerousPredators extends Quest
 			holder.add(new NpcLogListHolder(NpcStringId.KILL_WOLVES_AND_BEARDED_KELTIRS_2.getId(), true, qs.getInt(KILL_COUNT_VAR)));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 	
@@ -193,6 +198,7 @@ public class Q10989_DangerousPredators extends Quest
 				htmltext = getAlreadyCompletedMsg(player);
 			}
 		}
+		
 		return htmltext;
 	}
 }

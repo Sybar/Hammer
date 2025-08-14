@@ -37,16 +37,20 @@ public class Q10811_ExaltedOneWhoFacesTheLimit extends Quest
 {
 	// NPC
 	private static final int LIONEL = 33907;
+	
 	// Items
 	private static final int LIONEL_HUNTER_MISSING_LIST = 45627;
 	private static final int SLAYERS_PROOF = 45871;
+	
 	// Misc
 	private static final int MIN_LEVEL = 100;
 	private static final int MIN_COMPLETE_LEVEL = 101;
 	private static final int REACH_LV_101 = NpcStringId.REACH_LV_101.getId();
 	private static final int SLAYERS_PROOF_NEEDED = 40000;
+	
 	// Reward
 	private static final int SPELLBOOK_DIGNITY_OF_THE_EXALTED_LV1 = 45922;
+	
 	// Monsters
 	private static final int[] MONSTERS =
 	{
@@ -326,6 +330,7 @@ public class Q10811_ExaltedOneWhoFacesTheLimit extends Quest
 			}
 			
 		}
+		
 		return htmltext;
 	}
 	
@@ -363,6 +368,7 @@ public class Q10811_ExaltedOneWhoFacesTheLimit extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -382,10 +388,12 @@ public class Q10811_ExaltedOneWhoFacesTheLimit extends Quest
 			{
 				giveItemRandomly(player, SLAYERS_PROOF, 1, SLAYERS_PROOF_NEEDED, 1, true);
 			}
+			
 			if ((getQuestItemsCount(player, SLAYERS_PROOF) >= SLAYERS_PROOF_NEEDED) && (player.getLevel() >= MIN_COMPLETE_LEVEL))
 			{
 				qs.setCond(3, true);
 			}
+			
 			sendNpcLogList(player);
 		}
 	}
@@ -401,8 +409,10 @@ public class Q10811_ExaltedOneWhoFacesTheLimit extends Quest
 			{
 				holder.add(new NpcLogListHolder(REACH_LV_101, true, 1));
 			}
+			
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

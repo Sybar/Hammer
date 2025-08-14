@@ -32,8 +32,10 @@ public class Q00646_SignsOfRevolt extends Quest
 {
 	// NPC
 	private static final int TORRANT = 32016;
+	
 	// Item
 	private static final int CURSED_DOLL = 8087;
+	
 	// Rewards
 	private static final int[][] REWARDS =
 	{

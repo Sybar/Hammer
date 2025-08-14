@@ -92,6 +92,7 @@ public class RequestPledgeWaitingUserAccept extends ClientPacket
 							castle.giveResidentialSkills(target);
 						}
 					}
+					
 					if (clan.getFortId() > 0)
 					{
 						final Fort fort = FortManager.getInstance().getFortByOwner(clan);
@@ -100,6 +101,7 @@ public class RequestPledgeWaitingUserAccept extends ClientPacket
 							fort.giveResidentialSkills(target);
 						}
 					}
+					
 					target.sendSkillList();
 					
 					clan.broadcastToOtherOnlineMembers(new PledgeShowMemberListAdd(target), target);

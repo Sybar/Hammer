@@ -947,9 +947,9 @@
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="etcitem_type" val="POTION" />
 		<set name="reuse_delay" val="3600000" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player insideZoneId="70050" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="9179" level="1" /> <!-- Antharas' Blood Crystal -->
 		</skills>

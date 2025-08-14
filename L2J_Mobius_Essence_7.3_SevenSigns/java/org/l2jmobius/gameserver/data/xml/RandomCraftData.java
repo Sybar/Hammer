@@ -129,6 +129,7 @@ public class RandomCraftData implements IXmlReader
 			{
 				randomizeRewards();
 			}
+			
 			_randomRewardIndex++;
 			
 			reward = _randomRewards.get(_randomRewardIndex);
@@ -137,6 +138,7 @@ public class RandomCraftData implements IXmlReader
 				return new RandomCraftRewardItemHolder(reward.getItemId(), reward.getCount(), false, 20);
 			}
 		}
+		
 		return null;
 	}
 	
@@ -154,6 +156,7 @@ public class RandomCraftData implements IXmlReader
 		{
 			return false;
 		}
+		
 		return holder.isAnnounce();
 	}
 	
@@ -164,6 +167,7 @@ public class RandomCraftData implements IXmlReader
 		{
 			return 0;
 		}
+		
 		return holder.getPoints();
 	}
 	
@@ -174,6 +178,7 @@ public class RandomCraftData implements IXmlReader
 		{
 			return 0;
 		}
+		
 		return holder.getFee();
 	}
 	

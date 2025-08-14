@@ -37,6 +37,7 @@ public class Q10780_AWeakenedBarrier extends Quest
 	// NPCs
 	private static final int ANDY = 33845;
 	private static final int BACON = 33846;
+	
 	// Monsters
 	private static final int[] MONSTERS =
 	{
@@ -47,6 +48,7 @@ public class Q10780_AWeakenedBarrier extends Quest
 		23307, // Corpse Spider
 		23308, // Explosive Spider
 	};
+	
 	// Misc
 	private static final int MIN_LEVEL = 52;
 	private static final int MAX_LEVEL = 58;
@@ -100,6 +102,7 @@ public class Q10780_AWeakenedBarrier extends Quest
 				htmltext = null;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -136,6 +139,7 @@ public class Q10780_AWeakenedBarrier extends Quest
 		{
 			htmltext = (qs.isCond(1)) ? "33846-01.html" : "33846-02.html";
 		}
+		
 		return htmltext;
 	}
 	
@@ -171,6 +175,7 @@ public class Q10780_AWeakenedBarrier extends Quest
 				return holder;
 			}
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

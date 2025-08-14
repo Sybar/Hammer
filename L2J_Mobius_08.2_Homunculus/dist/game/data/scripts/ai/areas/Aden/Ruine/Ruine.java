@@ -35,9 +35,11 @@ public class Ruine extends AbstractNpcAI
 {
 	// NPC
 	private static final int COD_ADEN_OFFICER = 34229;
+	
 	// Level checks
 	private static final int MIN_LEVEL_CRACK = 95;
 	private static final int MIN_LEVEL_RIFT = 100;
+	
 	// Teleports
 	private static final Location DIMENSIONAL_CRACK = new Location(-119304, -182456, -6752);
 	private static final Location DIMENSIONAL_RIFT = new Location(140629, 79672, -5424);
@@ -69,6 +71,7 @@ public class Ruine extends AbstractNpcAI
 					player.teleToLocation(DIMENSIONAL_CRACK);
 					break;
 				}
+				
 				htmltext = "cod_aden_officer003.htm";
 				break;
 			}
@@ -79,10 +82,12 @@ public class Ruine extends AbstractNpcAI
 					player.teleToLocation(DIMENSIONAL_RIFT);
 					break;
 				}
+				
 				htmltext = "cod_aden_officer003.htm";
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

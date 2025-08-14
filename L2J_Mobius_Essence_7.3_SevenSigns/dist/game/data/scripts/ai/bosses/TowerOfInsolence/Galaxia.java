@@ -34,8 +34,10 @@ public class Galaxia extends AbstractNpcAI
 {
 	// NPC
 	private static final int GALAXIA = 29208;
+	
 	// Location
 	private static final Location GALAXIA_LOC = new Location(115213, 16623, 10080);
+	
 	// Misc
 	private static final String GALAXIA_RESPAWN_PATTERN = "30 22 * * 2";
 	private SchedulingPattern _respawnPattern = null;
@@ -64,6 +66,7 @@ public class Galaxia extends AbstractNpcAI
 		{
 			addSpawn(GALAXIA, GALAXIA_LOC, false, getDespawnTime());
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	

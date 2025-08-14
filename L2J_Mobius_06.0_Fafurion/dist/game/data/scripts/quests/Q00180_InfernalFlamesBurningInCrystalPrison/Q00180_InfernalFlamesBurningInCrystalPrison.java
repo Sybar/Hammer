@@ -37,12 +37,16 @@ public class Q00180_InfernalFlamesBurningInCrystalPrison extends Quest
 {
 	// NPC
 	private static final int FIOREN = 33044;
+	
 	// Monster
 	private static final int BAYLOR = 29213;
+	
 	// Misc
 	private static final int MIN_LEVEL = 97;
+	
 	// Quest Item
 	private static final int BELETH_MARK = 17591;
+	
 	// Item
 	private static final int ENCHANT_SROLL_R = 22428;
 	
@@ -70,6 +74,7 @@ public class Q00180_InfernalFlamesBurningInCrystalPrison extends Quest
 		{
 			qs.startQuest();
 		}
+		
 		return htmltext;
 	}
 	
@@ -101,6 +106,7 @@ public class Q00180_InfernalFlamesBurningInCrystalPrison extends Quest
 		{
 			htmltext = "33044-03.html";
 		}
+		
 		return htmltext;
 	}
 	

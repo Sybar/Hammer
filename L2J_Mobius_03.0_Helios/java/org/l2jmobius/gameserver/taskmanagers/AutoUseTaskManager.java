@@ -39,6 +39,7 @@ import org.l2jmobius.gameserver.model.actor.Playable;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.Summon;
 import org.l2jmobius.gameserver.model.actor.instance.Guard;
+import org.l2jmobius.gameserver.model.actor.transform.Transform;
 import org.l2jmobius.gameserver.model.actor.transform.TransformTemplate;
 import org.l2jmobius.gameserver.model.effects.AbstractEffect;
 import org.l2jmobius.gameserver.model.events.EventDispatcher;
@@ -97,7 +98,13 @@ public class AutoUseTaskManager
 					continue;
 				}
 				
-				if (player.isSitting() || player.hasBlockActions() || player.isControlBlocked() || player.isAlikeDead() || player.isMounted() || (player.isTransformed() && player.getTransformation().get().isRiding()))
+				if (player.isSitting() || player.hasBlockActions() || player.isControlBlocked() || player.isAlikeDead() || player.isMounted())
+				{
+					continue;
+				}
+				
+				final Transform transform = player.getTransformation();
+				if ((transform != null) && transform.isRiding())
 				{
 					continue;
 				}
@@ -143,7 +150,7 @@ public class AutoUseTaskManager
 						if ((reuseDelay <= 0) || (player.getItemRemainingReuseTime(item.getObjectId()) <= 0))
 						{
 							final IItemHandler handler = ItemHandler.getInstance().getHandler(item.getEtcItem());
-							if ((handler != null) && handler.useItem(player, item, false))
+							if ((handler != null) && handler.onItemUse(player, item, false))
 							{
 								if (reuseDelay > 0)
 								{
@@ -177,7 +184,7 @@ public class AutoUseTaskManager
 							{
 								final EtcItem etcItem = item.getEtcItem();
 								final IItemHandler handler = ItemHandler.getInstance().getHandler(etcItem);
-								if ((handler != null) && handler.useItem(player, item, false))
+								if ((handler != null) && handler.onItemUse(player, item, false))
 								{
 									if (reuseDelay > 0)
 									{
@@ -239,11 +246,13 @@ public class AutoUseTaskManager
 									}
 								}
 							}
+							
 							if ((skill == null) && player.hasPet())
 							{
 								pet = player.getPet();
 								skill = pet.getKnownSkill(skillId.intValue());
 							}
+							
 							if (skill == null)
 							{
 								player.getAutoUseSettings().getAutoBuffs().remove(skillId);
@@ -333,6 +342,7 @@ public class AutoUseTaskManager
 									{
 										skill = PetSkillData.getInstance().getKnownSkill(summon, skillId);
 									}
+									
 									if (skill != null)
 									{
 										pet = summon;
@@ -341,6 +351,7 @@ public class AutoUseTaskManager
 									}
 								}
 							}
+							
 							if ((skill == null) && player.hasPet())
 							{
 								pet = player.getPet();
@@ -349,12 +360,14 @@ public class AutoUseTaskManager
 								{
 									skill = PetSkillData.getInstance().getKnownSkill(pet.asSummon(), skillId);
 								}
+								
 								if (pet.isSkillDisabled(skill))
 								{
 									player.getAutoUseSettings().incrementSkillOrder();
 									break SKILLS;
 								}
 							}
+							
 							if (skill == null)
 							{
 								player.getAutoUseSettings().getAutoSkills().remove(skillId);
@@ -369,7 +382,7 @@ public class AutoUseTaskManager
 							break SKILLS;
 						}
 						
-						// Check bad skill target.
+						// Check negative effect skill target.
 						if ((target == null) || target.asCreature().isDead())
 						{
 							// Remove queued skill.
@@ -428,9 +441,9 @@ public class AutoUseTaskManager
 						}
 						
 						// Do not allow to do some action if player is transformed.
-						if (player.isTransformed())
+						if (transform != null)
 						{
-							final TransformTemplate transformTemplate = player.getTransformation().get().getTemplate(player);
+							final TransformTemplate transformTemplate = transform.getTemplate(player);
 							final int[] allowedActions = transformTemplate.getBasicActionList();
 							if ((allowedActions == null) || (Arrays.binarySearch(allowedActions, actionId) < 0))
 							{
@@ -444,7 +457,7 @@ public class AutoUseTaskManager
 							final IPlayerActionHandler actionHandler = PlayerActionHandler.getInstance().getHandler(actionHolder.getHandler());
 							if (actionHandler != null)
 							{
-								actionHandler.useAction(player, actionHolder, false, false);
+								actionHandler.onAction(player, actionHolder, false, false);
 							}
 						}
 					}
@@ -461,6 +474,7 @@ public class AutoUseTaskManager
 				{
 					return false;
 				}
+				
 				int occurrences = 0;
 				for (Summon servitor : player.getServitors().values())
 				{
@@ -469,6 +483,7 @@ public class AutoUseTaskManager
 						occurrences++;
 					}
 				}
+				
 				if (occurrences == player.getServitors().size())
 				{
 					return false;
@@ -499,14 +514,21 @@ public class AutoUseTaskManager
 				{
 					return (abnormalBuffInfo.getSkill().getId() == buffInfo.getSkill().getId()) && ((buffInfo.getTime() <= REUSE_MARGIN_TIME) || (buffInfo.getSkill().getLevel() < skill.getLevel()));
 				}
+				
 				return (abnormalBuffInfo.getSkill().getAbnormalLevel() < skill.getAbnormalLevel()) || abnormalBuffInfo.isAbnormalType(AbnormalType.NONE);
 			}
+			
 			return buffInfo == null;
 		}
 		
 		private boolean canUseMagic(Playable playable, WorldObject target, Skill skill)
 		{
 			if ((skill.getItemConsumeCount() > 0) && (playable.getInventory().getInventoryItemCount(skill.getItemConsumeId(), -1) < skill.getItemConsumeCount()))
+			{
+				return false;
+			}
+			
+			if (playable.isPlayer() && (playable.asPlayer().getCharges() < skill.getChargeConsumeCount()))
 			{
 				return false;
 			}

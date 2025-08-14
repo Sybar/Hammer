@@ -36,6 +36,7 @@ public class Q00418_PathOfTheArtisan extends Quest
 	private static final int KLUTO = 30317;
 	private static final int PINTER = 30298;
 	private static final int LOCKIRIN = 30531;
+	
 	// Items
 	private static final int SILVERA_RING = 1632;
 	private static final int FIRST_PASS_CERTIFICATE = 1633;

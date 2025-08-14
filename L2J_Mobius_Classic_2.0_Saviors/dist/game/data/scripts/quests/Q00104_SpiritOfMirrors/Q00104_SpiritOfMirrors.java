@@ -39,11 +39,13 @@ public class Q00104_SpiritOfMirrors extends Quest
 	private static final int ARNOLD = 30041;
 	private static final int JOHNSTONE = 30043;
 	private static final int KENYOS = 30045;
+	
 	// Items
 	private static final int GALLINTS_OAK_WAND = 748;
 	private static final int SPIRITBOUND_WAND1 = 1135;
 	private static final int SPIRITBOUND_WAND2 = 1136;
 	private static final int SPIRITBOUND_WAND3 = 1137;
+	
 	// Monsters
 	private static final Map<Integer, Integer> MONSTERS = new HashMap<>();
 	static
@@ -52,8 +54,10 @@ public class Q00104_SpiritOfMirrors extends Quest
 		MONSTERS.put(27004, SPIRITBOUND_WAND2); // Spirit Of Mirrors
 		MONSTERS.put(27005, SPIRITBOUND_WAND3); // Spirit Of Mirrors
 	}
+	
 	// Rewards
 	private static final int REWARDS = 49044; // Wand of Adept
+	
 	// Misc
 	private static final int MIN_LEVEL = 10;
 	private static final int MAX_LEVEL = 15;
@@ -78,6 +82,7 @@ public class Q00104_SpiritOfMirrors extends Quest
 			giveItems(player, GALLINTS_OAK_WAND, 3);
 			return event;
 		}
+		
 		return null;
 	}
 	
@@ -149,15 +154,18 @@ public class Q00104_SpiritOfMirrors extends Quest
 					{
 						qs.set(npc.getName(), "1");
 					}
+					
 					if (qs.isSet("Arnold") && qs.isSet("Johnstone") && qs.isSet("Kenyos"))
 					{
 						qs.setCond(2, true);
 					}
 				}
+				
 				htmltext = npc.getId() + "-01.html";
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

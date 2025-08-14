@@ -39,12 +39,15 @@ public class FortressOfTheDead extends AbstractInstance
 	private static final int VON_HELLMAN = 19566;
 	private static final int MYSTERIOUS_WIZARD = 33980;
 	private static final int KAIN_VAN_HALTER = 33979;
+	
 	// Items
 	private static final int KAIN_PROPHECY_MACHINE_FRAGMENT = 39538;
+	
 	// Location
 	private static final Location VON_HELLMAN_LOC = new Location(57963, -28676, 568, 49980);
 	private static final Location MYSTERIOUS_WIZARD_LOC = new Location(57982, -28645, 568);
 	private static final Location KAIN_VAN_HALTER_LOC = new Location(57963, -28676, 568, 49980);
+	
 	// Misc
 	private static final int TEMPLATE_ID = 254;
 	
@@ -119,6 +122,7 @@ public class FortressOfTheDead extends AbstractInstance
 							qs.setCond(19, true);
 							giveItems(player, KAIN_PROPHECY_MACHINE_FRAGMENT, 1);
 						}
+						
 						world.getNpc(KAIN_VAN_HALTER).deleteMe();
 						world.getNpc(MYSTERIOUS_WIZARD).deleteMe();
 						playMovie(player, Movie.ERT_QUEST_B);
@@ -128,6 +132,7 @@ public class FortressOfTheDead extends AbstractInstance
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -177,6 +182,7 @@ public class FortressOfTheDead extends AbstractInstance
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

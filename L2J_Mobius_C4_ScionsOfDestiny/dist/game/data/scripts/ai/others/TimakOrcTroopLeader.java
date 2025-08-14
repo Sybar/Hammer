@@ -67,6 +67,7 @@ public class TimakOrcTroopLeader extends AbstractNpcAI
 							break;
 						}
 					}
+					
 					if (!found)
 					{
 						npc.broadcastSay(ChatType.NPC_GENERAL, getRandomEntry(ON_ATTACK_MSG));

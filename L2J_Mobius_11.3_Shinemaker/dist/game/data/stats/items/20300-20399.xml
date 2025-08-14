@@ -417,10 +417,10 @@
 		<set name="is_premium" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="time" val="1440" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player vehicleMounted="false" />
 			<!-- TEMP FIX: To prevent retail bug lose a cake in ship/airship -->
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="22034" level="1" /> <!-- Birthday Cake -->
 		</skills>
@@ -472,9 +472,9 @@
 		<set name="is_freightable" val="true" />
 		<set name="enchant_enabled" val="true" />
 		<set name="isAppearanceable" val="true" />
-		<cond msgId="1518">
+		<conditions msgId="1518">
 			<player sex="1" />
-		</cond>
+		</conditions>
 	</item>
 	<item id="20324" name="Black Gem Mask" type="Armor">
 		<!-- A mask decorated with black gemstones. -->
@@ -1405,9 +1405,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="is_freightable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="22053" level="1" /> <!-- Scroll of Escape: Talking Island Village -->
 		</skills>
@@ -1426,9 +1426,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="is_freightable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="22053" level="2" /> <!-- Scroll of Escape: Elven Village -->
 		</skills>
@@ -1447,9 +1447,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="is_freightable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="22053" level="3" /> <!-- Scroll of Escape: Dark Elf Village -->
 		</skills>
@@ -1468,9 +1468,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="is_freightable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="22053" level="4" /> <!-- Scroll of Escape: Orc Village -->
 		</skills>
@@ -1489,9 +1489,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="is_freightable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="22053" level="5" /> <!-- Scroll of Escape: Dwarven Village -->
 		</skills>
@@ -1510,9 +1510,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="is_freightable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="22053" level="6" /> <!-- Scroll of Escape: Gludin -->
 		</skills>
@@ -1531,9 +1531,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="is_freightable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="22053" level="7" /> <!-- Scroll of Escape: Gludio -->
 		</skills>
@@ -1552,9 +1552,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="is_freightable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="22053" level="8" /> <!-- Scroll of Escape: Dion -->
 		</skills>
@@ -1573,9 +1573,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="is_freightable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="22053" level="9" /> <!-- Scroll of Escape: Floran -->
 		</skills>
@@ -1594,9 +1594,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="is_freightable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="22053" level="10" /> <!-- Scroll of Escape: Giran -->
 		</skills>
@@ -1615,9 +1615,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="is_freightable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="22053" level="11" /> <!-- Scroll of Escape: Hardin's Academy -->
 		</skills>
@@ -1636,9 +1636,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="is_freightable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="22053" level="12" /> <!-- Scroll of Escape: Heine -->
 		</skills>
@@ -1657,9 +1657,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="is_freightable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="22053" level="13" /> <!-- Scroll of Escape: Oren -->
 		</skills>
@@ -1678,9 +1678,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="is_freightable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="22053" level="14" /> <!-- Scroll of Escape: Ivory Tower -->
 		</skills>
@@ -1699,9 +1699,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="is_freightable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="22053" level="15" /> <!-- Scroll of Escape: Hunters' Village -->
 		</skills>
@@ -1720,9 +1720,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="is_freightable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="22053" level="16" /> <!-- Scroll of Escape: Aden -->
 		</skills>
@@ -1741,9 +1741,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="is_freightable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="22053" level="17" /> <!-- Scroll of Escape: Goddard -->
 		</skills>
@@ -1762,9 +1762,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="is_freightable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="22053" level="18" /> <!-- Scroll of Escape: Rune -->
 		</skills>
@@ -1783,9 +1783,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="is_freightable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="22053" level="19" /> <!-- Scroll of Escape: Schuttgart -->
 		</skills>

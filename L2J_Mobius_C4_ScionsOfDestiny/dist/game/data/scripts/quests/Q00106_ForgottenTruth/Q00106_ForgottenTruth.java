@@ -37,12 +37,14 @@ public class Q00106_ForgottenTruth extends Quest
 	// NPCs
 	private static final int THIFIELL = 30358;
 	private static final int KARTIA = 30133;
+	
 	// Items
 	private static final int ONYX_TALISMAN_1 = 984;
 	private static final int ONYX_TALISMAN_2 = 985;
 	private static final int ANCIENT_SCROLL = 986;
 	private static final int ANCIENT_CLAY_TABLET = 987;
 	private static final int KARTIA_TRANSLATION = 988;
+	
 	// Rewards
 	private static final int SPIRITSHOT_NO_GRADE = 2509;
 	private static final int SOULSHOT_NO_GRADE = 1835;
@@ -212,6 +214,7 @@ public class Q00106_ForgottenTruth extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

@@ -85,6 +85,7 @@ public class CastleData implements IXmlReader
 										spawns.add(new CastleSpawnHolder(npcId, side, x, y, z, heading));
 									}
 								}
+								
 								_spawns.put(castleId, spawns);
 							}
 							else if ("siegeGuards".equals(tpNode.getNodeName()))
@@ -103,6 +104,7 @@ public class CastleData implements IXmlReader
 										guards.add(new SiegeGuardHolder(castleId, itemId, type, stationary, npcId, npcMaxAmount));
 									}
 								}
+								
 								_siegeGuards.put(castleId, guards);
 							}
 						}
@@ -125,6 +127,7 @@ public class CastleData implements IXmlReader
 				}
 			}
 		}
+		
 		return result;
 	}
 	

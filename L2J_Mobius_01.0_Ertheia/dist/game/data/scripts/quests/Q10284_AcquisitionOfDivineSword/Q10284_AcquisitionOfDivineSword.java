@@ -38,10 +38,13 @@ public class Q10284_AcquisitionOfDivineSword extends Quest
 	private static final int KRUN = 32653;
 	private static final int TARUN = 32654;
 	private static final int JINIA = 32760;
+	
 	// Misc
 	private static final int MIN_LEVEL = 82;
+	
 	// Item
 	private static final int COLD_RESISTANCE_POTION = 15514;
+	
 	// Location
 	private static final Location EXIT_LOC = new Location(113793, -109342, -845, 0);
 	
@@ -170,6 +173,7 @@ public class Q10284_AcquisitionOfDivineSword extends Quest
 					{
 						world.finishInstance(0);
 					}
+					
 					htmltext = event;
 				}
 				break;
@@ -194,6 +198,7 @@ public class Q10284_AcquisitionOfDivineSword extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -325,6 +330,7 @@ public class Q10284_AcquisitionOfDivineSword extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

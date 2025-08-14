@@ -31,7 +31,7 @@ import org.l2jmobius.gameserver.network.SystemMessageId;
 public class ItemSkills extends ItemSkillsTemplate
 {
 	@Override
-	public boolean useItem(Playable playable, Item item, boolean forceUse)
+	public boolean onItemUse(Playable playable, Item item, boolean forceUse)
 	{
 		final Player player = playable.asPlayer();
 		if ((player != null) && player.isInOlympiadMode())
@@ -39,6 +39,7 @@ public class ItemSkills extends ItemSkillsTemplate
 			player.sendPacket(SystemMessageId.THE_ITEM_CANNOT_BE_USED_IN_THE_OLYMPIAD);
 			return false;
 		}
-		return super.useItem(playable, item, forceUse);
+		
+		return super.onItemUse(playable, item, forceUse);
 	}
 }

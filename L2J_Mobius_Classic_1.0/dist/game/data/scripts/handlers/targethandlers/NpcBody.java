@@ -55,6 +55,7 @@ public class NpcBody implements ITargetTypeHandler
 			{
 				creature.sendPacket(SystemMessageId.INVALID_TARGET);
 			}
+			
 			return null;
 		}
 		
@@ -68,6 +69,7 @@ public class NpcBody implements ITargetTypeHandler
 				{
 					creature.sendPacket(SystemMessageId.THE_DISTANCE_IS_TOO_FAR_AND_SO_THE_CASTING_HAS_BEEN_STOPPED);
 				}
+				
 				return null;
 			}
 			
@@ -78,8 +80,10 @@ public class NpcBody implements ITargetTypeHandler
 				{
 					creature.sendPacket(SystemMessageId.CANNOT_SEE_TARGET);
 				}
+				
 				return null;
 			}
+			
 			return target;
 		}
 		
@@ -88,6 +92,7 @@ public class NpcBody implements ITargetTypeHandler
 		{
 			creature.sendPacket(SystemMessageId.INVALID_TARGET);
 		}
+		
 		return null;
 	}
 }

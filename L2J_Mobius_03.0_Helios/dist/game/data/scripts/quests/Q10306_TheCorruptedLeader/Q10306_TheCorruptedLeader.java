@@ -33,6 +33,7 @@ public class Q10306_TheCorruptedLeader extends Quest
 	// NPCs
 	private static final int NOETI_KASHERON = 32896;
 	private static final int KIMERIAN = 25745;
+	
 	// Items
 	private static final int ENCHANT_ARMOR_R = 17527;
 	private static final int[] REWARD_CRYSTALS =
@@ -44,6 +45,7 @@ public class Q10306_TheCorruptedLeader extends Quest
 		9556,
 		9557,
 	};
+	
 	// Misc
 	private static final int MIN_LEVEL = 90;
 	
@@ -97,6 +99,7 @@ public class Q10306_TheCorruptedLeader extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -130,6 +133,7 @@ public class Q10306_TheCorruptedLeader extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

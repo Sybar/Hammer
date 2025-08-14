@@ -83,12 +83,14 @@ public class HomunculusManager
 					list.add(homunculus);
 				}
 			}
+			
 			rset.close();
 		}
 		catch (Exception e)
 		{
 			LOGGER.warning("HomunculusManager.select(Player): " + e);
 		}
+		
 		return list;
 	}
 	
@@ -115,6 +117,7 @@ public class HomunculusManager
 			LOGGER.warning(owner.getHomunculusList() + " could not add homunculus to homunculus list: " + homunculus);
 			return false;
 		}
+		
 		return true;
 	}
 	
@@ -146,6 +149,7 @@ public class HomunculusManager
 			LOGGER.warning(owner.getHomunculusList() + " could not delete homunculus: " + id + " " + active + " ownerId: " + owner.getObjectId());
 			return false;
 		}
+		
 		return true;
 	}
 	
@@ -172,6 +176,7 @@ public class HomunculusManager
 			LOGGER.warning(owner.getHomunculusList() + " could not update homunculus list on owner id: " + owner.getObjectId());
 			return false;
 		}
+		
 		return true;
 	}
 	

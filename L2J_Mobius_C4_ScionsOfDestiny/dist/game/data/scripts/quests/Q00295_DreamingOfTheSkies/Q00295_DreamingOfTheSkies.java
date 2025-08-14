@@ -31,6 +31,7 @@ public class Q00295_DreamingOfTheSkies extends Quest
 {
 	// Item
 	private static final int FLOATING_STONE = 1492;
+	
 	// Reward
 	private static final int RING_OF_FIREFLY = 1509;
 	

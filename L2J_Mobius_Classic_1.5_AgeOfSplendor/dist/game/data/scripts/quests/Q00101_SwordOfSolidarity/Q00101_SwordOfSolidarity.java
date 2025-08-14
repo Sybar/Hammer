@@ -33,6 +33,7 @@ public class Q00101_SwordOfSolidarity extends Quest
 	// NPCs
 	private static final int ROIEN = 30008;
 	private static final int ALTRAN = 30283;
+	
 	// Items
 	private static final int BROKEN_SWORD_HANDLE = 739;
 	private static final int BROKEN_BLADE_BOTTOM = 740;
@@ -40,14 +41,17 @@ public class Q00101_SwordOfSolidarity extends Quest
 	private static final int ALTRANS_NOTE = 742;
 	private static final int ROIENS_LETTER = 796;
 	private static final int DIRECTIONS_TO_RUINS = 937;
+	
 	// Monsters
 	private static final int[] MONSTERS =
 	{
 		20361, // Tunath Orc Marksman
 		20362, // Tunath Orc Warrior
 	};
+	
 	// Rewards
 	private static final int REWARDS = 49043; // Sword of Solidarity
+	
 	// Misc
 	private static final int MIN_LEVEL = 10;
 	private static final int MAX_LEVEL = 16;
@@ -108,6 +112,7 @@ public class Q00101_SwordOfSolidarity extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -277,6 +282,7 @@ public class Q00101_SwordOfSolidarity extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

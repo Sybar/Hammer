@@ -98,6 +98,7 @@ class OlympiadGameTask implements Runnable
 			{
 				player.setOlympiadGameId(_game._stadiumID);
 			}
+			
 			final Player otherPlayer = _game._players.get(i ^ 1);
 			
 			String sm = null;
@@ -135,10 +136,12 @@ class OlympiadGameTask implements Runnable
 				{
 					player.sendMessage(sm);
 				}
+				
 				if (otherPlayer != null)
 				{
 					otherPlayer.sendPacket(SystemMessageId.THE_GAME_HAS_BEEN_CANCELLED_BECAUSE_THE_OTHER_PARTY_DOES_NOT_MEET_THE_REQUIREMENTS_FOR_JOINING_THE_GAME);
 				}
+				
 				if (i == 0)
 				{
 					_game._playerOneDefaulted = true;
@@ -149,6 +152,7 @@ class OlympiadGameTask implements Runnable
 				}
 			}
 		}
+		
 		return _game._playerOneDefaulted || _game._playerTwoDefaulted;
 	}
 	
@@ -243,6 +247,7 @@ class OlympiadGameTask implements Runnable
 	private boolean runGame()
 	{
 		SystemMessage sm;
+		
 		// Checking for opponents and teleporting to arena
 		if (checkDefaulted())
 		{
@@ -255,6 +260,7 @@ class OlympiadGameTask implements Runnable
 		{
 			_game.announceGame();
 		}
+		
 		try
 		{
 			Thread.sleep(5000);
@@ -343,6 +349,7 @@ class OlympiadGameTask implements Runnable
 			try
 			{
 				Thread.sleep(10000);
+				
 				// If game haveWinner then stop waiting battle_period
 				// and validate winner
 				if (_game.haveWinner())
@@ -366,6 +373,7 @@ class OlympiadGameTask implements Runnable
 	private boolean teleportCountdown()
 	{
 		SystemMessage sm;
+		
 		// Waiting for teleport to arena
 		byte step = 60;
 		for (int i = Config.OLYMPIAD_WAIT_TIME; i > 0; i -= step)
@@ -389,6 +397,7 @@ class OlympiadGameTask implements Runnable
 					step = 1;
 					break;
 			}
+			
 			try
 			{
 				Thread.sleep(step * 1000);

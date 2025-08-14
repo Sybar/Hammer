@@ -56,15 +56,19 @@ public class BaylorWarzone extends AbstractInstance
 	private static final int INVISIBLE_NPC_1 = 29106;
 	private static final int INVISIBLE_NPC_2 = 29108;
 	private static final int INVISIBLE_NPC_3 = 29109;
+	
 	// Skills
 	private static final SkillHolder INVIS_NPC_SOCIAL_SKILL = new SkillHolder(5401, 1);
 	private static final SkillHolder BAYLOR_SOCIAL_SKILL = new SkillHolder(5402, 1);
+	
 	// Items
 	private static final ItemHolder BENUSTAS_REWARD_BOX = new ItemHolder(81151, 1);
 	private static final ItemHolder BENUSTAS_SHINING_REWARD_BOX = new ItemHolder(81452, 1);
 	private static final ItemHolder BENUSTAS_REWARD_BOX_110 = new ItemHolder(81741, 1);
+	
 	// Locations
 	private static final Location BATTLE_PORT = new Location(153567, 143319, -12736);
+	
 	// Misc
 	private static final int[] TEMPLATE_IDS =
 	{
@@ -140,6 +144,7 @@ public class BaylorWarzone extends AbstractInstance
 				player.sendPacket(SystemMessageId.YOU_ARE_NOT_IN_A_PARTY_SO_YOU_CANNOT_ENTER);
 			}
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	
@@ -235,6 +240,7 @@ public class BaylorWarzone extends AbstractInstance
 						baylor.asAttackable().setCanReturnToSpawnPoint(false);
 						count++;
 					}
+					
 					getTimers().addTimer("START_SCENE_13", 300, npc, null);
 					break;
 				}
@@ -368,12 +374,14 @@ public class BaylorWarzone extends AbstractInstance
 				{
 					giveItems(member, world.getTemplateId() == TEMPLATE_IDS[0] ? BENUSTAS_REWARD_BOX : BENUSTAS_REWARD_BOX_110);
 				}
+				
 				final Party party = world.getFirstPlayer().getParty();
 				final Player randomPlayer = party != null ? party.getRandomPlayer() : null;
 				if ((randomPlayer != null) && (getRandom(100) < 80) && (world.getPlayersCount() == world.getParameters().getInt("INITIAL_PARTY_MEMBERS", 0)))
 				{
 					giveItems(randomPlayer, BENUSTAS_SHINING_REWARD_BOX);
 				}
+				
 				world.finishInstance();
 			}
 			else

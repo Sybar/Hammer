@@ -43,6 +43,7 @@ public class Q10579_ContainingTheAttributePower extends Quest
 {
 	// NPC
 	private static final int FERRIS = 30847;
+	
 	// Items
 	// TODO: Need to add some of the Stones that are not present in the current client
 	private static final int ATTRIBUTE_PRACTICE_LONG_SWORD = 48168;
@@ -52,10 +53,12 @@ public class Q10579_ContainingTheAttributePower extends Quest
 	private static final int ATTRIBUTE_PRACTICE_WIND_STONE = 48169; // FIXME: Does not exist.
 	private static final int ATTRIBUTE_PRACTICE_HOLY_STONE = 48169; // FIXME: Does not exist.
 	private static final int ATTRIBUTE_PRACTICE_DARK_STONE = 48169; // FIXME: Does not exist.
+	
 	// Rewards
 	private static final int XP = 59769;
 	private static final int SP = 54;
 	private static final int CERTIFICATE_FROM_FERRIS = 48177;
+	
 	// Misc
 	private static final int MIN_LEVEL = 95;
 	
@@ -78,6 +81,7 @@ public class Q10579_ContainingTheAttributePower extends Quest
 		{
 			return getNoQuestMsg(player);
 		}
+		
 		String htmltext = null;
 		switch (event)
 		{
@@ -193,6 +197,7 @@ public class Q10579_ContainingTheAttributePower extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -230,6 +235,7 @@ public class Q10579_ContainingTheAttributePower extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -242,6 +248,7 @@ public class Q10579_ContainingTheAttributePower extends Quest
 		}
 		
 		final QuestState qs = getQuestState(player, false);
+		
 		// Check weapon has elemental enchant to complete the quest
 		if ((qs != null) && qs.isCond(3) && (player.getInventory().getItemByItemId(ATTRIBUTE_PRACTICE_LONG_SWORD).hasAttributes()))
 		{

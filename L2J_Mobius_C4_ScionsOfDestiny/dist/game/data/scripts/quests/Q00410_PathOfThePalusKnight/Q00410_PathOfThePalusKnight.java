@@ -34,10 +34,12 @@ public class Q00410_PathOfThePalusKnight extends Quest
 	// NPCs
 	private static final int KALINTA = 30422;
 	private static final int VIRGIL = 30329;
+	
 	// Monsters
 	private static final int POISON_SPIDER = 20038;
 	private static final int ARACHNID_TRACKER = 20043;
 	private static final int LYCANTHROPE = 20049;
+	
 	// Items
 	private static final int PALUS_TALISMAN = 1237;
 	private static final int LYCANTHROPE_SKULL = 1238;

@@ -46,6 +46,7 @@ public class RequestCommissionRegister extends ClientPacket
 		_itemCount = readLong();
 		_durationType = readInt();
 		_feeDiscountType = readShort();
+		
 		// readShort(); // Unknown IDS;
 		// readInt(); // Unknown
 		// readInt(); // Unknown

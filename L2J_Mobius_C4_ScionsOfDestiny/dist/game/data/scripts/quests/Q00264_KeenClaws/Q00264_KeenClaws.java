@@ -31,6 +31,7 @@ public class Q00264_KeenClaws extends Quest
 {
 	// Item
 	private static final int WOLF_CLAW = 1367;
+	
 	// Rewards
 	private static final int LEATHER_SANDALS = 36;
 	private static final int WOODEN_HELMET = 43;

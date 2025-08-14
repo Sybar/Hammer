@@ -44,12 +44,15 @@ public class Q10539_EnergySupplyCutoffPlan extends Quest
 {
 	// NPCs
 	private static final int KRENAHT = 34237;
+	
 	// Monsters
 	private static final int MARKA = 23739;
 	private static final int SCHLIEN = 23740;
 	private static final int BERIMAH = 23741;
+	
 	// Reward
 	private static final int RUNE_STONE = 39738;
+	
 	// Misc
 	private static final int MIN_LEVEL = 100;
 	
@@ -97,6 +100,7 @@ public class Q10539_EnergySupplyCutoffPlan extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -130,6 +134,7 @@ public class Q10539_EnergySupplyCutoffPlan extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -180,6 +185,7 @@ public class Q10539_EnergySupplyCutoffPlan extends Quest
 			npcLogList.add(new NpcLogListHolder(BERIMAH, false, qs.getInt(Integer.toString(BERIMAH))));
 			return npcLogList;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

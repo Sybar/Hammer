@@ -38,10 +38,12 @@ public class Q00465_WeAreFriends extends Quest
 	// NPCs
 	private static final int FAIRY_CITIZEN = 32921;
 	private static final int FAIRY_CITIZEN_SPAWN = 32923;
+	
 	// Item
 	private static final int MARK_OF_FRIENDSHIP = 17377;
 	private static final int FAIRY_LEAF_FLUTE = 17378;
 	private static final int CERTIFICATE_OF_PROMISE = 30384;
+	
 	// Misc
 	private static final int MIN_LEVEL = 88;
 	
@@ -62,6 +64,7 @@ public class Q00465_WeAreFriends extends Quest
 		{
 			return null;
 		}
+		
 		String htmltext = null;
 		switch (event)
 		{
@@ -85,6 +88,7 @@ public class Q00465_WeAreFriends extends Quest
 				{
 					qs.setCond(2, true);
 				}
+				
 				htmltext = event;
 				npc.deleteMe();
 				break;
@@ -98,6 +102,7 @@ public class Q00465_WeAreFriends extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -115,6 +120,7 @@ public class Q00465_WeAreFriends extends Quest
 					htmltext = "32921-04.html";
 					break;
 				}
+				
 				qs.setState(State.CREATED);
 				// fallthrough
 			}
@@ -149,11 +155,13 @@ public class Q00465_WeAreFriends extends Quest
 							htmltext = "32923-01.html";
 							break;
 						}
+						
 						return null;
 					}
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 }

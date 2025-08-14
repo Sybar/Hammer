@@ -62,6 +62,7 @@ public enum BaseStat
 			// return (int) Math.min(_stat.finalize(creature, Optional.empty()), MAX_STAT_VALUE - 1);
 			return (int) creature.getStat().getValue(_stat);
 		}
+		
 		return 0;
 	}
 	
@@ -74,6 +75,7 @@ public enum BaseStat
 			{
 				return 1;
 			}
+			
 			return _bonus[value];
 		}
 		
@@ -99,6 +101,7 @@ public enum BaseStat
 				return baseStat;
 			}
 		}
+		
 		throw new NoSuchElementException("Unknown base stat '" + stat + "' for enum BaseStats");
 	}
 	

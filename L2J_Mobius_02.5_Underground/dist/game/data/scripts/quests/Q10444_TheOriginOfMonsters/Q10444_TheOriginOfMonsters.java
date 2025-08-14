@@ -42,10 +42,12 @@ public class Q10444_TheOriginOfMonsters extends Quest
 	private static final int PARAJAN = 33842;
 	private static final int QUINCY = 33838;
 	private static final int KROGEL = 25927;
+	
 	// Items
 	private static final int BLOODY_ETERNEL_ENHANCEMENT_STONE = 35569;
 	private static final int ELMORES_SUPPORT_BOX = 37020;
 	private static final int CHUNK_OF_A_CROPSE = 36679;
+	
 	// Misc
 	private static final int MIN_LEVEL = 99;
 	
@@ -96,6 +98,7 @@ public class Q10444_TheOriginOfMonsters extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -147,6 +150,7 @@ public class Q10444_TheOriginOfMonsters extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

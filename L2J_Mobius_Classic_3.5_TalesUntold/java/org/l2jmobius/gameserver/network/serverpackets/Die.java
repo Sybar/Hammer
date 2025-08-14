@@ -80,21 +80,25 @@ public class Die extends ServerPacket
 			{
 				_flags += 2;
 			}
+			
 			// Castle check.
 			if (((clan != null) && (clan.getCastleId() > 0)) || isInCastleDefense)
 			{
 				_flags += 4;
 			}
+			
 			// Fortress check.
 			if (((clan != null) && (clan.getFortId() > 0)) || isInFortDefense)
 			{
 				_flags += 8;
 			}
+			
 			// Outpost check.
 			if (((siegeClan != null) && !isInCastleDefense && !isInFortDefense && !siegeClan.getFlag().isEmpty()))
 			{
 				_flags += 16;
 			}
+			
 			// Feather check.
 			if (creature.getAccessLevel().allowFixedRes() || creature.getInventory().haveItemForSelfResurrection())
 			{

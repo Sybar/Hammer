@@ -24,7 +24,6 @@ import org.l2jmobius.Config;
 import org.l2jmobius.gameserver.data.xml.HennaData;
 import org.l2jmobius.gameserver.managers.PunishmentManager;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.actor.enums.player.PlayerCondOverride;
 import org.l2jmobius.gameserver.model.item.enums.ItemProcessType;
 import org.l2jmobius.gameserver.model.item.henna.Henna;
 import org.l2jmobius.gameserver.model.item.instance.Item;
@@ -103,10 +102,11 @@ public class RequestNewHennaEquip extends ClientPacket
 		else
 		{
 			player.sendPacket(SystemMessageId.YOU_CANNOT_MAKE_A_PATTERN);
-			if (!player.canOverrideCond(PlayerCondOverride.ITEM_CONDITIONS) && !henna.isAllowedClass(player))
+			if (!player.isGM() && !henna.isAllowedClass(player))
 			{
 				PunishmentManager.handleIllegalPlayerAction(player, "Exploit attempt: Character " + player.getName() + " of account " + player.getAccountName() + " tryed to add a forbidden henna.", Config.DEFAULT_PUNISH);
 			}
+			
 			PacketLogger.warning(player + ": Invalid Henna error 2 " + _symbolId + " " + _slotId + " " + item.getTemplate());
 			player.sendPacket(ActionFailed.STATIC_PACKET);
 		}

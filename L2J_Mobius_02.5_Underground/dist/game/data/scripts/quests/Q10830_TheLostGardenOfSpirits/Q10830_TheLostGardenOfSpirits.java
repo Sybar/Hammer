@@ -37,6 +37,7 @@ public class Q10830_TheLostGardenOfSpirits extends Quest
 {
 	// NPC
 	private static final int CYPHONIA = 34055;
+	
 	// Monsters
 	private static final int[] MONSTERS =
 	{
@@ -49,9 +50,11 @@ public class Q10830_TheLostGardenOfSpirits extends Quest
 		23557, // Fury Kerberos Leger
 		23558 // Fury Kerberos Nero
 	};
+	
 	// Items
 	private static final int UNSTABLE_SPIRITS_ENERGY = 45821;
 	private static final int SOE = 46158;
+	
 	// Misc
 	private static final int MIN_LEVEL = 100;
 	
@@ -99,6 +102,7 @@ public class Q10830_TheLostGardenOfSpirits extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -132,6 +136,7 @@ public class Q10830_TheLostGardenOfSpirits extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

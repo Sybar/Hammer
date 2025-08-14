@@ -79,6 +79,7 @@ public class PetTypeData implements IXmlReader
 				return _skills.get(entry.getKey());
 			}
 		}
+		
 		return null;
 	}
 	
@@ -128,6 +129,7 @@ public class PetTypeData implements IXmlReader
 				result = temp.getValue();
 			}
 		}
+		
 		return result;
 	}
 	
@@ -143,6 +145,7 @@ public class PetTypeData implements IXmlReader
 				result = temp;
 			}
 		}
+		
 		return result;
 	}
 	

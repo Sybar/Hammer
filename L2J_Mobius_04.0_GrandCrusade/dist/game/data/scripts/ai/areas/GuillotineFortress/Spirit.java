@@ -33,6 +33,7 @@ public class Spirit extends AbstractNpcAI
 	private static final int EXECUTED_MAIDEN_VENGEFUL_SPIRIT = 33682;
 	private static final int SPIRIT_OF_THE_TORTURED_DWARF = 33683;
 	private static final int SPIRIT_OF_ONE_BURNED_ALIVE = 33684;
+	
 	// Misc
 	private static final NpcStringId[] EXECUTED_MAIDEN_VENGEFUL_SPIRIT_SHOUT =
 	{
@@ -102,6 +103,7 @@ public class Spirit extends AbstractNpcAI
 				break;
 			}
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	

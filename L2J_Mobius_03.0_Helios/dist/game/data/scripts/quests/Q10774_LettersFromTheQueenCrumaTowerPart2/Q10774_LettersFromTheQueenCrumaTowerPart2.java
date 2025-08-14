@@ -34,12 +34,15 @@ public class Q10774_LettersFromTheQueenCrumaTowerPart2 extends LetterQuest
 	// NPCs
 	private static final int SYLVAIN = 30070;
 	private static final int ROMBEL = 30487;
+	
 	// Items
 	private static final int SOE_DION_TOWN = 39595;
 	private static final int SOE_CRUMA_TOWER = 39596;
 	private static final int ENCHANT_ARMOR_C = 952;
+	
 	// Location
 	private static final Location TELEPORT_LOC = new Location(16014, 142326, -2688);
+	
 	// Misc
 	private static final int MIN_LEVEL = 46;
 	private static final int MAX_LEVEL = 50;
@@ -99,6 +102,7 @@ public class Q10774_LettersFromTheQueenCrumaTowerPart2 extends LetterQuest
 				htmltext = null;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -123,6 +127,7 @@ public class Q10774_LettersFromTheQueenCrumaTowerPart2 extends LetterQuest
 				htmltext = "30487-01.html";
 			}
 		}
+		
 		return htmltext;
 	}
 }

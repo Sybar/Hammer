@@ -82,6 +82,7 @@ public class MagicalDamageOverTime extends AbstractEffect
 				{
 					return skill.isToggle();
 				}
+				
 				damage = target.getCurrentHp() - 1;
 			}
 		}

@@ -60,8 +60,10 @@ public class Q00529_RegularBarrierMaintenance extends Quest
 		24238,
 		24239,
 	};
+	
 	// Item
 	private static final int MONSTER_DROP = 48838;
+	
 	// Misc
 	private static final int REQUIRED_DROP_COUNT = 200;
 	private static final int KILLING_NPCSTRING_ID = NpcStringId.LV_106_REGULAR_BARRIER_MAINTENANCE_IN_PROGRESS.getId();
@@ -107,6 +109,7 @@ public class Q00529_RegularBarrierMaintenance extends Quest
 				if (qs.isCond(FINISH_COND) && (getQuestItemsCount(player, MONSTER_DROP) >= REQUIRED_DROP_COUNT))
 				{
 					takeItems(player, MONSTER_DROP, -1);
+					
 					// Reward.
 					addExpAndSp(player, 49763842650L, 49763790);
 					giveAdena(player, 3225882, false);
@@ -119,6 +122,7 @@ public class Q00529_RegularBarrierMaintenance extends Quest
 				return null;
 			}
 		}
+		
 		return event;
 	}
 	
@@ -163,6 +167,7 @@ public class Q00529_RegularBarrierMaintenance extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -177,6 +182,7 @@ public class Q00529_RegularBarrierMaintenance extends Quest
 			{
 				qs.setCond(FINISH_COND, true);
 			}
+			
 			sendNpcLogList(player);
 		}
 	}
@@ -191,6 +197,7 @@ public class Q00529_RegularBarrierMaintenance extends Quest
 			holder.add(new NpcLogListHolder(KILLING_NPCSTRING_ID, true, (int) getQuestItemsCount(player, MONSTER_DROP)));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

@@ -58,7 +58,6 @@ import org.l2jmobius.gameserver.network.serverpackets.ServerPacket;
 import org.l2jmobius.gameserver.network.serverpackets.SystemMessage;
 import org.l2jmobius.gameserver.network.serverpackets.balthusevent.ExBalthusEvent;
 import org.l2jmobius.gameserver.network.serverpackets.balthusevent.ExBalthusEventJackpotUser;
-import org.l2jmobius.gameserver.script.DateRange;
 
 /**
  * @author Index
@@ -87,7 +86,8 @@ public class BalthusEventManager
 	private int _currProgress = -1;
 	private long[] _timeForRoll = null;
 	private ScheduledFuture<?> _cycleConcurrentScheduling = null;
-	private DateRange _eventPeriod;
+	private Date _eventStartDate;
+	private Date _eventEndDate;
 	
 	public BalthusEventManager()
 	{
@@ -96,22 +96,23 @@ public class BalthusEventManager
 	public void init()
 	{
 		final Date currentDate = new Date();
-		if (!_eventPeriod.isValid() || currentDate.before(_eventPeriod.getStartDate()) || currentDate.after(_eventPeriod.getEndDate()))
+		if (!isValidPeriod() || currentDate.before(_eventStartDate) || currentDate.after(_eventEndDate))
 		{
-			if (currentDate.after(_eventPeriod.getEndDate()))
+			if (currentDate.after(_eventEndDate))
 			{
 				// LOGGER.warning(getClass().getSimpleName() + ": Balthus event cannot be started because the event period has ended.");
 			}
 			else
 			{
 				LOGGER.warning(getClass().getSimpleName() + ": Balthus event cannot be started because the event period is not valid. Trying to create a thread to run the event;");
-				final long delay = _eventPeriod.getStartDate().getTime() - System.currentTimeMillis();
+				final long delay = _eventStartDate.getTime() - System.currentTimeMillis();
 				if (delay > 0)
 				{
 					if (_cycleConcurrentScheduling != null)
 					{
 						_cycleConcurrentScheduling.cancel(true);
 					}
+					
 					_cycleConcurrentScheduling = ThreadPool.schedule(this::init, delay);
 				}
 				else
@@ -131,6 +132,7 @@ public class BalthusEventManager
 			calendar.add(Calendar.HOUR_OF_DAY, 1);
 			initRollTime(calendar.getTimeInMillis());
 		}
+		
 		rollNextReward();
 		initNextRoll();
 		_isRunning = true;
@@ -164,6 +166,7 @@ public class BalthusEventManager
 				subject.put(lang, value);
 				availableLang.add(lang);
 			}
+			
 			if (key.startsWith("mailContent_"))
 			{
 				final String value = String.valueOf(entry.getValue());
@@ -172,23 +175,36 @@ public class BalthusEventManager
 				availableLang.add(lang);
 			}
 		}
+		
 		for (String lang : availableLang)
 		{
 			final String subject2 = subject.getOrDefault(lang, "");
 			final String content2 = content.getOrDefault(lang, "");
 			mailContent.put(lang, new SimpleEntry<>(subject2, content2));
 		}
+		
 		_mail = mailContent;
 	}
 	
-	public DateRange getEventPeriod()
+	public void setEventPeriod(Date startDate, Date endDate)
 	{
-		return _eventPeriod;
+		_eventStartDate = startDate;
+		_eventEndDate = endDate;
 	}
 	
-	public void setEventPeriod(DateRange eventPeriod)
+	public Date getEventStartDate()
 	{
-		_eventPeriod = eventPeriod;
+		return _eventStartDate;
+	}
+	
+	public Date getEventEndDate()
+	{
+		return _eventEndDate;
+	}
+	
+	private boolean isValidPeriod()
+	{
+		return (_eventStartDate != null) && (_eventEndDate != null) && _eventStartDate.before(_eventEndDate);
 	}
 	
 	public void addRewards(Entry<Integer, Integer> period, int itemId, long itemCount, double chanceToObtain, int enchantLevel, double chanceToNextGame, boolean redeemInAnyCase)
@@ -213,7 +229,7 @@ public class BalthusEventManager
 	
 	private void initNextRoll()
 	{
-		if (!_eventPeriod.isValid())
+		if (!isValidPeriod())
 		{
 			LOGGER.warning(getClass().getSimpleName() + ": Event period is not valid. Event end.");
 			return;
@@ -227,6 +243,7 @@ public class BalthusEventManager
 			_timeForRoll = calculateTimeForRolls(System.currentTimeMillis());
 			_currProgress = -1;
 		}
+		
 		_currentRoll.addAndGet(1);
 		
 		final long timeForRoll = Math.max(1L, _timeForRoll[_currentRoll.get()] - System.currentTimeMillis());
@@ -234,6 +251,7 @@ public class BalthusEventManager
 		{
 			_cycleConcurrentScheduling.cancel(true);
 		}
+		
 		_cycleConcurrentScheduling = ThreadPool.schedule(this::redeemReward, timeForRoll);
 		
 		for (Player player : World.getInstance().getPlayers())
@@ -293,6 +311,7 @@ public class BalthusEventManager
 			{
 				_cycleConcurrentScheduling.cancel(true);
 			}
+			
 			_cycleConcurrentScheduling = ThreadPool.schedule(this::initNextRoll, Math.max(1L, _timeForRoll[_maxRollPerHour + 1] - System.currentTimeMillis()));
 		}
 	}
@@ -363,6 +382,7 @@ public class BalthusEventManager
 						messageAnnounce = new SystemMessage(SystemMessageId.THE_SECRET_SUPPLIES_OF_THE_BALTHUS_KNIGHTS_ARRIVED_SOMEONE_RECEIVED_S1);
 						messageAnnounce.addItemName(itemToWinner);
 					}
+					
 					packetsForSend.add(messageAnnounce);
 				}
 			}
@@ -394,6 +414,7 @@ public class BalthusEventManager
 						player.getVariables().increaseLong(PlayerVariables.BALTHUS_REWARD, 0L, _consolation.getCount());
 						player.sendPacket(new SystemMessage(SystemMessageId.YOU_OBTAINED_S1_SIBI_S_COINS).addInt((int) _consolation.getCount()));
 					}
+					
 					player.sendPacket(new ExBalthusEvent(player));
 				}
 			}
@@ -415,8 +436,10 @@ public class BalthusEventManager
 			{
 				returnItem.setEnchantLevel(_rewardItem.getEnchantmentLevel());
 			}
+			
 			MailManager.getInstance().sendMessage(msg);
 		}
+		
 		return returnItem;
 	}
 	
@@ -462,6 +485,7 @@ public class BalthusEventManager
 		{
 			rollTime[i] = rollTime[i - 1] + Rnd.get(TimeUnit.MINUTES.toMillis(1L), TimeUnit.MINUTES.toMillis(60 / _maxRollPerHour));
 		}
+		
 		rollTime[_maxRollPerHour + 1] = rollTime[0] + TimeUnit.MINUTES.toMillis(60L);
 		return rollTime;
 	}

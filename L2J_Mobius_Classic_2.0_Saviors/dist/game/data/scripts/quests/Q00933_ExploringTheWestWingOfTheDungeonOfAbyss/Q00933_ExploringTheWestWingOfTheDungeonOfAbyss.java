@@ -36,11 +36,13 @@ public class Q00933_ExploringTheWestWingOfTheDungeonOfAbyss extends Quest
 	// NPCs
 	private static final int MAGRIT = 31774;
 	private static final int INGRIT = 31775;
+	
 	// Monsters
 	public int MERTT = 21638;
 	public int DUHT = 21639;
 	public int PRIZT = 21640;
 	public int KOVART = 21641;
+	
 	// Items
 	public ItemHolder OSKZLA = new ItemHolder(90008, 1);
 	public ItemHolder POD = new ItemHolder(90136, 1);
@@ -206,6 +208,7 @@ public class Q00933_ExploringTheWestWingOfTheDungeonOfAbyss extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -219,6 +222,7 @@ public class Q00933_ExploringTheWestWingOfTheDungeonOfAbyss extends Quest
 			{
 				giveItems(killer, OSKZLA);
 			}
+			
 			if (getQuestItemsCount(killer, OSKZLA.getId()) >= 50)
 			{
 				qs.setCond(2);

@@ -36,6 +36,7 @@ public class Q00416_PathOfTheOrcShaman extends Quest
 	private static final int UMOS = 30502;
 	private static final int HESTUI_TOTEM_SPIRIT = 30592;
 	private static final int DUDA_MARA_TOTEM_SPIRIT = 30593;
+	
 	// Monsters
 	private static final int VENOMOUS_SPIDER = 20038;
 	private static final int ARACHNID_TRACKER = 20043;
@@ -44,6 +45,7 @@ public class Q00416_PathOfTheOrcShaman extends Quest
 	private static final int KASHA_BLADE_SPIDER = 20478;
 	private static final int KASHA_BEAR = 20479;
 	private static final int DURKA_SPIRIT = 27056;
+	
 	// Items
 	private static final int FIRE_CHARM = 1616;
 	private static final int KASHA_BEAR_PELT = 1617;

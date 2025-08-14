@@ -44,9 +44,11 @@ public class Q10325_SearchingForNewPower extends Quest
 	private static final int HERTZ = 32151;
 	private static final int KINCAID = 32159;
 	private static final int XONIA = 32144;
+	
 	// Items
 	private static final ItemHolder SPIRITSHOTS = new ItemHolder(2509, 1000);
 	private static final ItemHolder SOULSHOTS = new ItemHolder(1835, 1000);
+	
 	// Misc
 	private static final int MAX_LEVEL = 20;
 	
@@ -127,6 +129,7 @@ public class Q10325_SearchingForNewPower extends Quest
 		{
 			htmltext = event;
 		}
+		
 		return htmltext;
 	}
 	
@@ -161,6 +164,7 @@ public class Q10325_SearchingForNewPower extends Quest
 							{
 								giveItems(player, SOULSHOTS);
 							}
+							
 							addExpAndSp(player, 4654, 5);
 							giveAdena(player, 120, true);
 							qs.exitQuest(false, true);
@@ -183,9 +187,11 @@ public class Q10325_SearchingForNewPower extends Quest
 								htmltext = "32156-01.html";
 								break;
 							}
+							
 							htmltext = "32156-02.html";
 							break;
 						}
+						
 						htmltext = "32156-04.html";
 						break;
 					}
@@ -199,9 +205,11 @@ public class Q10325_SearchingForNewPower extends Quest
 								htmltext = "32148-01.html";
 								break;
 							}
+							
 							htmltext = "32148-02.html";
 							break;
 						}
+						
 						htmltext = "32148-04.html";
 						break;
 					}
@@ -215,9 +223,11 @@ public class Q10325_SearchingForNewPower extends Quest
 								htmltext = "32161-01.html";
 								break;
 							}
+							
 							htmltext = "32161-02.html";
 							break;
 						}
+						
 						htmltext = "32161-04.html";
 						break;
 					}
@@ -231,9 +241,11 @@ public class Q10325_SearchingForNewPower extends Quest
 								htmltext = "32151-01.html";
 								break;
 							}
+							
 							htmltext = "32151-02.html";
 							break;
 						}
+						
 						htmltext = "32151-04.html";
 						break;
 					}
@@ -247,9 +259,11 @@ public class Q10325_SearchingForNewPower extends Quest
 								htmltext = "32159-01.html";
 								break;
 							}
+							
 							htmltext = "32159-02.html";
 							break;
 						}
+						
 						htmltext = "32159-04.html";
 						break;
 					}
@@ -263,9 +277,11 @@ public class Q10325_SearchingForNewPower extends Quest
 								htmltext = "32144-01.html";
 								break;
 							}
+							
 							htmltext = "32144-02.html";
 							break;
 						}
+						
 						htmltext = "32144-04.html";
 						break;
 					}
@@ -294,6 +310,7 @@ public class Q10325_SearchingForNewPower extends Quest
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 }

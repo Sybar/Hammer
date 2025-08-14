@@ -20,6 +20,8 @@
  */
 package ai.others.BalthusKnights.Monsters.BalthusAntharas;
 
+import java.util.Collection;
+
 import org.l2jmobius.gameserver.ai.Intention;
 import org.l2jmobius.gameserver.model.StatSet;
 import org.l2jmobius.gameserver.model.World;
@@ -66,6 +68,7 @@ public final class BalthusAntharas extends AbstractNpcAI
 		34370,
 		34371
 	};
+	
 	// Monsters
 	private static final int ANTHARAS = 24087;
 	private static final int ANTHARAS_TRANSFORM = 24088;
@@ -73,6 +76,7 @@ public final class BalthusAntharas extends AbstractNpcAI
 	private static final int GEM_DRAGON_ANTHARAS = 24091;
 	private static final int HATCHLING_BOMBER = 24098;
 	private static final int CYCLONE = 24099;
+	
 	// Skills
 	private static final SkillHolder PowerBomberSkill = new SkillHolder(32166, 1);
 	private static final SkillHolder AntharasBreathSkill = new SkillHolder(32160, 1);
@@ -87,7 +91,7 @@ public final class BalthusAntharas extends AbstractNpcAI
 	}
 	
 	@Override
-	public void onSkillSee(Npc npc, Player caster, Skill skill, WorldObject[] targets, boolean isSummon)
+	public void onSkillSee(Npc npc, Player caster, Skill skill, Collection<WorldObject> targets, boolean isSummon)
 	{
 		if ((skill != null) && (caster != null) && (skill.getId() == AntharasBreathSkill.getSkillId()) && (npc != null) && !npc.isDead() && !npc.isDecayed())
 		{
@@ -245,6 +249,7 @@ public final class BalthusAntharas extends AbstractNpcAI
 					{
 						antharas.deleteMe();
 					}
+					
 					addSpawn(INVISIBLE_NPC, 173773, 190240, -11501, 32480, false, 0, false, instance.getId());
 					playMovie(instance, Movie.SC_ANTARAS_TRANS);
 					getTimers().addTimer("p_TransTask2", 8000L, null, instance.getFirstPlayer());
@@ -387,6 +392,7 @@ public final class BalthusAntharas extends AbstractNpcAI
 					final Npc herphah = instance.getNpc(HERPHAH);
 					herphah.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.AS_LONG_AS_I_M_HERE_YOU_WILL_SURVIVE);
 					instance.broadcastPacket(new PlaySound(3, "Npcdialog1.herphah_ep50_battle_3", 0, 0, 0, 0, 0));
+					
 					// Repeat to Task 4
 					getTimers().addTimer("p_Wave3Task4", 15000L, null, instance.getFirstPlayer());
 					break;
@@ -440,6 +446,7 @@ public final class BalthusAntharas extends AbstractNpcAI
 						getTimers().cancelTimersOf(antharas_trans);
 						antharas_trans.deleteMe();
 					}
+					
 					getTimers().addTimer("p_CallHerphahTask", 1000L, null, instance.getFirstPlayer());
 					getTimers().addTimer("p_CallTartiTask", 1000L, null, instance.getFirstPlayer());
 					getTimers().addTimer("p_CallStigTask", 1000L, null, instance.getFirstPlayer());

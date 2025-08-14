@@ -40,19 +40,23 @@ public class Q11011_NewPotionDevelopment3 extends Quest
 {
 	// NPCs
 	private static final int HERBIEL = 30150;
+	
 	// Items
 	private static final int ANTIDOTE = 90235;
 	private static final int ARACHNID_TRACKER_THORN = 90236;
 	private static final int MEDICATIONS_RESEARCH = 90234;
+	
 	// Rewards
 	private static final int SCROLL_OF_ESCAPE = 10650;
 	private static final int HEALING_POTION = 1073;
 	private static final int MP_RECOVERY_POTION = 90310;
 	private static final int SOULSHOTS_NO_GRADE = 5789;
 	private static final int SPIRITSHOT_NO_GRADE = 5790;
+	
 	// Monsters
 	private static final int RATMAN_SCAVENGER = 20039;
 	private static final int ARACHNID_TRACKER = 20043;
+	
 	// Misc
 	private static final int MIN_LEVEL = 15;
 	private static final int MAX_LEVEL = 20;
@@ -131,6 +135,7 @@ public class Q11011_NewPotionDevelopment3 extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -165,6 +170,7 @@ public class Q11011_NewPotionDevelopment3 extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

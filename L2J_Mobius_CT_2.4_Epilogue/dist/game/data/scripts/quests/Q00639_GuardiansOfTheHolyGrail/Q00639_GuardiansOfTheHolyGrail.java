@@ -37,6 +37,7 @@ public class Q00639_GuardiansOfTheHolyGrail extends Quest
 	private static final int DOMINIC = 31350;
 	private static final int GREMORY = 32008;
 	private static final int HOLY_GRAIL = 32028;
+	
 	// Items
 	private static final int SCRIPTURE = 8069;
 	private static final int WATER_BOTTLE = 8070;

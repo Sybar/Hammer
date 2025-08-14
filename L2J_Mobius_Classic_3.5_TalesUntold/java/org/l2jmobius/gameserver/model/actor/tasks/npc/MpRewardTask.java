@@ -58,6 +58,7 @@ public class MpRewardTask
 				return (creature.getMaxMp() * (template.getMpRewardValue() / 100d)) / template.getMpRewardTicks();
 			}
 		}
+		
 		return template.getMpRewardValue() / template.getMpRewardTicks();
 	}
 	

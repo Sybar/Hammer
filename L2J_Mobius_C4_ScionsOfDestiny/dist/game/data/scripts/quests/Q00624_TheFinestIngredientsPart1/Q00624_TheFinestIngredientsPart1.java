@@ -34,10 +34,12 @@ public class Q00624_TheFinestIngredientsPart1 extends Quest
 	private static final int ATROX = 21321;
 	private static final int ATROXSPAWN = 21317;
 	private static final int BANDERSNATCH = 21314;
+	
 	// Items
 	private static final int TRUNK_OF_NEPENTHES = 7202;
 	private static final int FOOT_OF_BANDERSNATCHLING = 7203;
 	private static final int SECRET_SPICE = 7204;
+	
 	// Rewards
 	private static final int ICE_CRYSTAL = 7080;
 	private static final int SOY_SAUCE_JAR = 7205;

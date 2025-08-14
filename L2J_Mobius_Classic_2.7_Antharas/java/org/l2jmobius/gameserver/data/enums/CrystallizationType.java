@@ -36,10 +36,12 @@ public enum CrystallizationType
 		{
 			return WEAPON;
 		}
+		
 		if (item instanceof Armor)
 		{
 			return ARMOR;
 		}
+		
 		if ((item.getBodyPart() == ItemTemplate.SLOT_R_EAR) //
 			|| (item.getBodyPart() == ItemTemplate.SLOT_L_EAR) //
 			|| (item.getBodyPart() == ItemTemplate.SLOT_R_FINGER) //

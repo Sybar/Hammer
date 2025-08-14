@@ -84,6 +84,7 @@ public class OlympiadDailyMissionHandler extends AbstractDailyMissionHandler
 				}
 			}
 		}
+		
 		return false;
 	}
 	
@@ -104,6 +105,7 @@ public class OlympiadDailyMissionHandler extends AbstractDailyMissionHandler
 				processPlayerProgress(event.getWinner().getPlayer());
 			}
 		}
+		
 		if (!_winOnly && (event.getLoser() != null) && checkPlayerLevel(event.getLoser().getPlayer()))
 		{
 			final DailyMissionPlayerEntry loserEntry = getPlayerEntry(event.getLoser().getObjectId(), true);
@@ -113,6 +115,7 @@ public class OlympiadDailyMissionHandler extends AbstractDailyMissionHandler
 				{
 					loserEntry.setStatus(DailyMissionStatus.AVAILABLE);
 				}
+				
 				storePlayerEntry(loserEntry);
 			}
 		}
@@ -125,6 +128,7 @@ public class OlympiadDailyMissionHandler extends AbstractDailyMissionHandler
 		{
 			return false;
 		}
+		
 		return ((player.getLevel() >= _minLevel)) || (player.getLevel() <= _maxLevel);
 	}
 	
@@ -165,6 +169,7 @@ public class OlympiadDailyMissionHandler extends AbstractDailyMissionHandler
 			{
 				entry.setStatus(DailyMissionStatus.AVAILABLE);
 			}
+			
 			storePlayerEntry(entry);
 		}
 	}

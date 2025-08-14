@@ -40,6 +40,7 @@ public class Q00434_ExploringTheSilentValley extends Quest
 {
 	// NPC
 	private static final int GENIE_LAMP = 34369;
+	
 	// Monsters
 	private static final int GIANT_SHADOW = 20969;
 	private static final int WARRIOR_OF_ANCIENT_TIMES = 20971;
@@ -47,8 +48,10 @@ public class Q00434_ExploringTheSilentValley extends Quest
 	private static final int FORGOTTEN_ANCIENT_CREATURE = 20973;
 	private static final int CREATURE_OF_THE_PAST = 20967;
 	private static final int FORGOTTEN_FACE = 20968;
+	
 	// Item
 	private static final ItemHolder SPIRIT_ORE = new ItemHolder(3031, 50);
+	
 	// Misc
 	private static final int MIN_LEVEL = 56;
 	private static final int MAX_LEVEL = 64;
@@ -104,6 +107,7 @@ public class Q00434_ExploringTheSilentValley extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -142,6 +146,7 @@ public class Q00434_ExploringTheSilentValley extends Quest
 				htmltext = getAlreadyCompletedMsg(player);
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -177,6 +182,7 @@ public class Q00434_ExploringTheSilentValley extends Quest
 			holder.add(new NpcLogListHolder(NpcStringId.DEFEAT_MONSTERS_30.getId(), true, qs.getInt(KILL_COUNT_VAR)));
 			return holder;
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

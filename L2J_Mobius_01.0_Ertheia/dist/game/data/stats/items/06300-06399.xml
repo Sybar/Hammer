@@ -369,9 +369,9 @@
 		<set name="handler" val="PetFood" />
 		<set name="commissionItemType" val="PET_SUPPLIES" />
 		<set name="for_npc" val="true" />
-		<cond msgId="600">
+		<conditions msgId="600">
 			<player categoryType="STRIDER,WYVERN_GROUP" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="2180" level="1" /> <!-- Wyvern Food -->
 		</skills>

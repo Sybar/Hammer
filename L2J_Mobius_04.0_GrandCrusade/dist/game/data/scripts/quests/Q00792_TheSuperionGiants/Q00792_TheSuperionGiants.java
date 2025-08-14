@@ -40,6 +40,7 @@ public class Q00792_TheSuperionGiants extends Quest
 {
 	// NPC
 	private static final int HISTY = 34243;
+	
 	// Monsters
 	private static final int[] MONSTERS =
 	{
@@ -54,11 +55,13 @@ public class Q00792_TheSuperionGiants extends Quest
 		23782, // Royal Archmage
 		23783, // Royal Gatekeeper
 	};
+	
 	// Items
 	private static final int TRACES_OF_THE_SCATTERED_GIANT = 47192;
 	private static final int BASIC_SUPPLY_BOX = 48254;
 	private static final int INTERMEDIATE_SUPPLY_BOX = 48255;
 	private static final int ADVANCED_SUPPLY_BOX = 48256;
+	
 	// Misc
 	private static final int MIN_LEVEL = 102;
 	
@@ -110,6 +113,7 @@ public class Q00792_TheSuperionGiants extends Quest
 					htmltext = "34243-04b.htm";
 					break;
 				}
+				
 				htmltext = "34243-04.htm";
 				break;
 			}
@@ -125,6 +129,7 @@ public class Q00792_TheSuperionGiants extends Quest
 					htmltext = "34243-04b.htm";
 					break;
 				}
+				
 				htmltext = "34243-04.htm";
 				break;
 			}
@@ -167,6 +172,7 @@ public class Q00792_TheSuperionGiants extends Quest
 							{
 								giveItems(player, BASIC_SUPPLY_BOX, 1);
 							}
+							
 							addExpAndSp(player, 22_221_427_950L, 22_221_360);
 							addFactionPoints(player, Faction.GIANT_TRACKERS, 100);
 							qs.exitQuest(QuestType.DAILY, true);
@@ -194,6 +200,7 @@ public class Q00792_TheSuperionGiants extends Quest
 							{
 								giveItems(player, INTERMEDIATE_SUPPLY_BOX, 1);
 							}
+							
 							addExpAndSp(player, 44_442_855_900L, 44_442_720);
 							addFactionPoints(player, Faction.GIANT_TRACKERS, 200);
 							qs.exitQuest(QuestType.DAILY, true);
@@ -221,6 +228,7 @@ public class Q00792_TheSuperionGiants extends Quest
 							{
 								giveItems(player, ADVANCED_SUPPLY_BOX, 1);
 							}
+							
 							addExpAndSp(player, 66_664_283_850L, 66_664_080);
 							addFactionPoints(player, Faction.GIANT_TRACKERS, 300);
 							qs.exitQuest(QuestType.DAILY, true);
@@ -236,6 +244,7 @@ public class Q00792_TheSuperionGiants extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -267,6 +276,7 @@ public class Q00792_TheSuperionGiants extends Quest
 							htmltext = "34243-04b.htm";
 							break;
 						}
+						
 						htmltext = "34243-04.htm";
 						break;
 					}
@@ -309,6 +319,7 @@ public class Q00792_TheSuperionGiants extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

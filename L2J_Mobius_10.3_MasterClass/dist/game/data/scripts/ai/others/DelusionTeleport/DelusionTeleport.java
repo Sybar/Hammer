@@ -43,6 +43,7 @@ public class DelusionTeleport extends AbstractNpcAI
 		32662, // Guardian of Great Seal
 		32663, // Guardian of Tower of Seal
 	};
+	
 	// Location
 	private static final Location[] HALL_LOCATIONS =
 	{
@@ -51,7 +52,6 @@ public class DelusionTeleport extends AbstractNpcAI
 	};
 	
 	private static final Map<Integer, Location> RETURN_LOCATIONS = new HashMap<>();
-	
 	static
 	{
 		RETURN_LOCATIONS.put(0, new Location(43835, -47749, -792)); // Undefined origin, return to Rune
@@ -84,6 +84,7 @@ public class DelusionTeleport extends AbstractNpcAI
 			player.teleToLocation(RETURN_LOCATIONS.get(townId), true);
 			player.getVariables().remove(PlayerVariables.DELUSION_RETURN);
 		}
+		
 		return super.onTalk(npc, player);
 	}
 	

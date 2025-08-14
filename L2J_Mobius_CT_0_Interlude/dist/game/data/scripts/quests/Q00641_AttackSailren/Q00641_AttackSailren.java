@@ -34,6 +34,7 @@ public class Q00641_AttackSailren extends Quest
 {
 	// NPC
 	private static final int STATUE = 32109;
+	
 	// Quest Item
 	private static final int GAZKH_FRAGMENT = 8782;
 	private static final int GAZKH = 8784;
@@ -55,6 +56,7 @@ public class Q00641_AttackSailren extends Quest
 		{
 			return null;
 		}
+		
 		String htmltext = event;
 		
 		if (event.equals("32109-5.htm"))

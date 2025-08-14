@@ -36,6 +36,7 @@ public final class PowerOfLakcis extends AbstractInstance
 {
 	// NPCs
 	private static final int MASTER_HEALER = 34393;
+	
 	// Misc
 	private static final int TEMPLATE_ID = 279;
 	
@@ -67,6 +68,7 @@ public final class PowerOfLakcis extends AbstractInstance
 				}
 			}
 		}
+		
 		return null;
 	}
 	
@@ -82,6 +84,7 @@ public final class PowerOfLakcis extends AbstractInstance
 				enterInstance(player, npc, TEMPLATE_ID);
 			}
 		}
+		
 		return htmltext;
 	}
 	

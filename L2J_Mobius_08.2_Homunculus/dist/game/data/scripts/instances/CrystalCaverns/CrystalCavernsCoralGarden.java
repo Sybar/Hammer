@@ -43,8 +43,10 @@ public class CrystalCavernsCoralGarden extends AbstractInstance
 	private static final int MICHAELA_ARMED = 26114;
 	private static final int GOLEM_1 = 19013; // Crystalline Golem
 	private static final int GOLEM_2 = 19014; // Crystalline Golem
+	
 	// Location
 	private static final Location BOSS_LOC = new Location(144307, 220032, -11824);
+	
 	// Misc
 	private static final int TEMPLATE_ID = 165;
 	private static final int BOSS_DOOR_ID = 24240026;
@@ -106,6 +108,7 @@ public class CrystalCavernsCoralGarden extends AbstractInstance
 						npc.setTitle(null);
 						npc.broadcastInfo();
 					}
+					
 					npcVars.set("CAN_CALL_MONSTERS", ((spawn.getX() - ((npc.getX() * spawn.getX()) - npc.getX())) + (spawn.getY() - (npc.getY() * spawn.getY()) - npc.getY())) > (200 * 200));
 					break;
 				}
@@ -120,6 +123,7 @@ public class CrystalCavernsCoralGarden extends AbstractInstance
 		{
 			enterInstance(player, npc, TEMPLATE_ID);
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	
@@ -152,6 +156,7 @@ public class CrystalCavernsCoralGarden extends AbstractInstance
 			WalkingManager.getInstance().startMoving(npc, npc.getId() == GOLEM_1 ? "gd_golem_1" : "gd_golem_2");
 			getTimers().addRepeatingTimer("LOOP_TIMER", 500, npc, null);
 		}
+		
 		return null;
 	}
 	

@@ -37,10 +37,13 @@ public class Q00472_ChallengeSteamCorridor extends Quest
 {
 	// NPC
 	private static final int FIOREN = 33044;
+	
 	// Monster
 	private static final int KECHI = 25532;
+	
 	// Mis
 	private static final int MIN_LEVEL = 97;
+	
 	// Item
 	private static final int CERTIFICATE = 30387;
 	
@@ -78,6 +81,7 @@ public class Q00472_ChallengeSteamCorridor extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -105,6 +109,7 @@ public class Q00472_ChallengeSteamCorridor extends Quest
 		{
 			htmltext = "33044-08.html";
 		}
+		
 		return htmltext;
 	}
 	

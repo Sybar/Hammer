@@ -37,8 +37,10 @@ public class Q10283_RequestOfIceMerchant extends Quest
 	private static final int RAFFORTY = 32020;
 	private static final int KIER = 32022;
 	private static final int JINIA = 32760;
+	
 	// Location
 	private static final Location MOVE_TO_END = new Location(104457, -107010, -3698, 0);
+	
 	// Misc
 	private boolean _jiniaOnSpawn = false;
 	
@@ -99,6 +101,7 @@ public class Q10283_RequestOfIceMerchant extends Quest
 			npc.getAI().setIntention(Intention.MOVE_TO, MOVE_TO_END);
 			npc.decayMe();
 		}
+		
 		return htmltext;
 	}
 	
@@ -115,6 +118,7 @@ public class Q10283_RequestOfIceMerchant extends Quest
 		{
 			return "32760-01.html";
 		}
+		
 		return null;
 	}
 	
@@ -173,6 +177,7 @@ public class Q10283_RequestOfIceMerchant extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

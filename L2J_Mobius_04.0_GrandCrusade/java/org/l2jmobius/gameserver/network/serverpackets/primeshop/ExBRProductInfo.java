@@ -56,6 +56,7 @@ public class ExBRProductInfo extends ServerPacket
 			buffer.writeInt(item.getWeight());
 			buffer.writeInt(item.isTradable());
 		}
+		
 		buffer.writeLong(_charAdena);
 		buffer.writeLong(_charPoints);
 		buffer.writeLong(_charCoins); // Hero coins

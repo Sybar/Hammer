@@ -78,11 +78,13 @@ public class CallPc extends AbstractEffect
 						target.sendPacket(sm);
 						return;
 					}
+					
 					target.getInventory().destroyItemByItemId(null, _itemId, _itemCount, player, target);
 					final SystemMessage sm = new SystemMessage(SystemMessageId.S1_DISAPPEARED);
 					sm.addItemName(_itemId);
 					target.sendPacket(sm);
 				}
+				
 				target.addScript(new SummonRequestHolder(player));
 				
 				final ConfirmDlg confirm = new ConfirmDlg(SystemMessageId.C1_WANTS_TO_SUMMON_YOU_TO_S2_ACCEPT.getId());

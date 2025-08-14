@@ -134,6 +134,7 @@ public class DocumentItem extends DocumentBase implements IXmlReader
 				{
 					throw new IllegalStateException("Item created but table node found! Item " + itemId);
 				}
+				
 				parseTable(n);
 			}
 			else if ("set".equalsIgnoreCase(n.getNodeName()))
@@ -142,6 +143,7 @@ public class DocumentItem extends DocumentBase implements IXmlReader
 				{
 					throw new IllegalStateException("Item created but set node found! Item " + itemId);
 				}
+				
 				parseBeanSet(n, _currentItem.set, 1);
 			}
 			else if ("stats".equalsIgnoreCase(n.getNodeName()))
@@ -178,6 +180,7 @@ public class DocumentItem extends DocumentBase implements IXmlReader
 								LOGGER.warning(getClass().getSimpleName() + ": Item " + itemId + " has ON_ENCHANT value greater than it's enchant limit.");
 							}
 						}
+						
 						_currentItem.item.addSkill(new ItemSkillHolder(id, level, subLevel, type, chance, value));
 					}
 				}
@@ -199,7 +202,7 @@ public class DocumentItem extends DocumentBase implements IXmlReader
 					}
 				}
 			}
-			else if ("cond".equalsIgnoreCase(n.getNodeName()))
+			else if ("conditions".equalsIgnoreCase(n.getNodeName()))
 			{
 				makeItem();
 				final Condition condition = parseCondition(n.getFirstChild(), _currentItem.item);
@@ -218,9 +221,11 @@ public class DocumentItem extends DocumentBase implements IXmlReader
 						condition.addName();
 					}
 				}
+				
 				_currentItem.item.attachCondition(condition);
 			}
 		}
+		
 		// bah! in this point item doesn't have to be still created
 		makeItem();
 	}

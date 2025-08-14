@@ -60,6 +60,7 @@ public class RequestExPledgeContributionReward extends ClientPacket
 			player.sendMessage("You have already been rewarded for this cycle.");
 			return;
 		}
+		
 		player.getVariables().set(PlayerVariables.CLAN_CONTRIBUTION_REWARDED_COUNT, player.getVariables().getInt(PlayerVariables.CLAN_CONTRIBUTION_REWARDED_COUNT, 0) + 1);
 		
 		player.setFame(player.getFame() + Config.CLAN_CONTRIBUTION_FAME_REWARD);

@@ -42,15 +42,18 @@ public class Q00562_BasicMissionAltarOfEvil extends Quest
 	private static final int ELISA = 30848;
 	private static final int BELLA = 30256;
 	private static final int DE_VILLAGE_TELEPORT_DEVICE = 30134;
+	
 	// Rewards
 	private static final long EXP = 231860550;
 	private static final int SP = 231840;
 	private static final int FP = 200; // Faction points
 	private static final int SCROLL_OF_ESCAPE_BLOODY_SWAMPLAND = 39494;
 	private static final int SCROLL_OF_ESCAPE_TOWN_OF_ADEN = 48413;
+	
 	// Misc
 	private static final int MIN_LEVEL = 85;
 	private static final int MAX_LEVEL = 88;
+	
 	// Location
 	private static final Location TOWN_OF_ADEN = new Location(146632, 26760, -2213);
 	
@@ -151,6 +154,7 @@ public class Q00562_BasicMissionAltarOfEvil extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -251,6 +255,7 @@ public class Q00562_BasicMissionAltarOfEvil extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -264,12 +269,14 @@ public class Q00562_BasicMissionAltarOfEvil extends Quest
 			index = 0;
 			string.setCharAt(index, ch);
 		}
+		
 		final QuestState st2 = player.getQuestState("Q00582_WashBloodWithBlood");
 		if ((st2 != null) && st2.isCompleted())
 		{
 			index = 1;
 			string.setCharAt(index, ch);
 		}
+		
 		return string;
 	}
 }

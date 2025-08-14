@@ -59,6 +59,7 @@ public class Speed extends AbstractEffect
 				}
 			}
 		}
+		
 		if (weaponTypesMask != 0)
 		{
 			_condition = new ConditionUsingItemType(weaponTypesMask);

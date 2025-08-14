@@ -51,15 +51,19 @@ public class Kuka extends AbstractNpcAI
 	private static final int KHAMIN = 34173;
 	private static final int JISRA = 25925;
 	private static final int KUKA = 25926;
+	
 	// Item
 	private static final int PROOF_OF_COURAGE = 48185;
+	
 	// Locations
 	private static final Location KUKA_LOC = new Location(-58974, 135294, -2392);
 	private static final Location JISRA_LOC = new Location(-60496, 137347, -2392);
 	private static final Location TELEPORT_START_LOC = new Location(-57406, 136429, -2396);
 	private static final Location TELEPORT_OUT_LOC = new Location(-48363, 140230, -2947);
+	
 	// Zone
 	private static final NoRestartZone ZONE = ZoneManager.getInstance().getZoneByName("kuka_no_restart", NoRestartZone.class);
+	
 	// Misc
 	private static final String ENTER_ZONE_PATTERN = "30-50 */2 * * *";
 	private static final String KUKA_RESPAWN_PATTERN = "50 */2 * * *";
@@ -74,6 +78,7 @@ public class Kuka extends AbstractNpcAI
 	{
 		addFirstTalkId(KHAMIN);
 		addEnterZoneId(ZONE.getId());
+		
 		// addAttackId(JISRA);
 		addKillId(KUKA, JISRA);
 		

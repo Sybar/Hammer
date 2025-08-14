@@ -99,6 +99,7 @@ public class BenedictsMonastery extends AbstractInstance
 			case CREATED:
 			{
 				instance.setStatus(TALK_WITH_HOLY_GRAILS_RAIDER_NPC_ON_START);
+				
 				// send screen message if player will not talk with Holy Grail's Raider
 				// human, found a holy grail, it has answers to your questions
 				ScheduledFuture<?> showFirstStringOnScreen = ThreadPool.schedule(() -> instance.broadcastPacket(new ExShowScreenMessage(STRING_ID_01, ExShowScreenMessage.TOP_CENTER, 10000, true)), 30000);
@@ -151,9 +152,11 @@ public class BenedictsMonastery extends AbstractInstance
 	private void spawnBoss(Instance instance)
 	{
 		final boolean random = Rnd.nextBoolean();
+		
 		// show text
 		final NpcStringId bossText = random ? STRING_ID_04 : STRING_ID_05;
 		instance.broadcastPacket(new ExShowScreenMessage(bossText, ExShowScreenMessage.TOP_CENTER, 10000, true));
+		
 		// spawn boss
 		final String bossTemplate = random ? "BenedictMonsters_Boss_Gabriel" : "BenedictMonsters_Boss_GabrielMinion";
 		instance.spawnGroup(bossTemplate).forEach(n -> n.getSpawn().stopRespawn());
@@ -168,6 +171,7 @@ public class BenedictsMonastery extends AbstractInstance
 			{
 				InstanceManager.getInstance().deleteInstanceTime(player, INSTANCE_ID);
 			}
+			
 			instance.destroy();
 			return;
 		}
@@ -179,11 +183,13 @@ public class BenedictsMonastery extends AbstractInstance
 			randomNpcs.add(monster);
 			monsters.remove(monster);
 		}
+		
 		for (Npc monster : randomNpcs)
 		{
 			monster.setTitleString(DREAM_WATCHER);
 			monster.broadcastInfo();
 		}
+		
 		monsters.clear();
 		randomNpcs.clear();
 	}
@@ -199,14 +205,17 @@ public class BenedictsMonastery extends AbstractInstance
 				showFirstStringOnScreen.cancel(true);
 				showFirstStringOnScreen = null;
 			}
+			
 			// I hate that cursed arrogant Ventus! You go ahead and get to the Temple of Ventus.
 			instance.broadcastPacket(new ExShowScreenMessage(STRING_ID_01, ExShowScreenMessage.TOP_CENTER, 10000, true));
 		}
+		
 		if ((showFirstStringOnScreen != null) && showFirstStringOnScreen.isDone())
 		{
 			showFirstStringOnScreen.cancel(true);
 			showFirstStringOnScreen = null;
 		}
+		
 		instance.getParameters().remove(FIRST_STRING_TIMER);
 	}
 	

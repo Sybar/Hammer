@@ -112,6 +112,7 @@ public class EnchantScroll extends AbstractEnchantItem
 				{
 					continue;
 				}
+				
 				final Collection<Integer> scrollItems = scroll.getItems();
 				if (!scrollItems.isEmpty() && scrollItems.contains(itemToEnchant.getId()))
 				{

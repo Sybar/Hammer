@@ -45,6 +45,7 @@ public class Q10794_InvestigateTheForest extends Quest
 	// NPCs
 	private static final int HATUBA = 33849;
 	private static final int TOMBSTONE = 31531;
+	
 	// Monsters
 	private static final int[] MONSTERS =
 	{
@@ -77,10 +78,12 @@ public class Q10794_InvestigateTheForest extends Quest
 		21597, // Requiem Lord
 		21599, // Requiem Priest
 	};
+	
 	// Misc
 	private static final int MIN_LEVEL = 65;
 	private static final int MAX_LEVEL = 70;
 	private static final String KILL_COUNT_VAR = "KillCount";
+	
 	// Items
 	private static final int OLD_JEWELRY_BOX = 39725;
 	
@@ -139,12 +142,14 @@ public class Q10794_InvestigateTheForest extends Quest
 					{
 						addExpAndSp(player, 93856309, 4072);
 					}
+					
 					htmltext = event;
 					qs.exitQuest(false, true);
 				}
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -187,6 +192,7 @@ public class Q10794_InvestigateTheForest extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -223,6 +229,7 @@ public class Q10794_InvestigateTheForest extends Quest
 				return holder;
 			}
 		}
+		
 		return super.getNpcLogList(player);
 	}
 }

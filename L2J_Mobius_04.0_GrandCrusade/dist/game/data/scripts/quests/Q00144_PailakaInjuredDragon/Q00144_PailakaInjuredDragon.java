@@ -38,6 +38,7 @@ public class Q00144_PailakaInjuredDragon extends Quest
 	private static final int KETRA_ORC_INTELLIGENCE_OFFICIER = 32509;
 	private static final int KETRA_ORC_SUPPORTER_2 = 32512;
 	private static final int LATANA = 18660;
+	
 	// Items
 	private static final int SPEAR_OF_SILENOS = 13052;
 	private static final int SPEAR_OF_SILENOS_REINFORCED = 13053;
@@ -48,6 +49,7 @@ public class Q00144_PailakaInjuredDragon extends Quest
 	private static final int QUICK_HEALING_POTION = 13033;
 	private static final int SCROLL_OF_ESCAPE = 736;
 	private static final ItemHolder PAILAKA_SHIRT = new ItemHolder(13296, 1);
+	
 	// Skills
 	private static final SkillHolder[] BUFFS =
 	{
@@ -64,6 +66,7 @@ public class Q00144_PailakaInjuredDragon extends Quest
 		new SkillHolder(1268, 4),
 		new SkillHolder(1045, 6),
 	};
+	
 	// Misc
 	private static final int MIN_LEVEL = 73;
 	private static final int MAX_LEVEL = 77;
@@ -95,6 +98,7 @@ public class Q00144_PailakaInjuredDragon extends Quest
 				return qs.isCompleted() ? "32512-02.html" : "32512-01.html";
 			}
 		}
+		
 		return null;
 	}
 	
@@ -200,6 +204,7 @@ public class Q00144_PailakaInjuredDragon extends Quest
 					{
 						htmltext = getNoQuestLevelRewardMsg(player);
 					}
+					
 					final Instance inst = InstanceManager.getInstance().getPlayerInstance(player, true);
 					if (inst != null)
 					{
@@ -209,6 +214,7 @@ public class Q00144_PailakaInjuredDragon extends Quest
 				break;
 			}
 		}
+		
 		if (event.startsWith("buff") && npc.isScriptValue(0))
 		{
 			final int currentBuffCount = npc.getVariables().getInt("buff_count");
@@ -231,6 +237,7 @@ public class Q00144_PailakaInjuredDragon extends Quest
 				npc.setScriptValue(1);
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -281,6 +288,7 @@ public class Q00144_PailakaInjuredDragon extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	

@@ -1928,9 +1928,9 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ExtractableItems" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="60" />
-		</cond>
+		</conditions>
 		<capsuled_items>
 			<item id="91663" min="500" max="500" chance="100" /> <!-- L-Coin -->
 			<item id="91745" min="1" max="1" minEnchant="2" maxEnchant="2" chance="100" /> <!-- Talisman of Aden - Sealed -->
@@ -1948,9 +1948,9 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ExtractableItems" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="65" />
-		</cond>
+		</conditions>
 		<capsuled_items>
 			<item id="91663" min="500" max="500" chance="100" /> <!-- L-Coin -->
 			<item id="93301" min="1" max="1" minEnchant="2" maxEnchant="2" chance="100" /> <!-- Cloak of Protection - Sealed -->
@@ -1968,9 +1968,9 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ExtractableItems" />
-		<cond msgId="113" addName="1">
+		<conditions msgId="113" addName="1">
 			<player level="70" />
-		</cond>
+		</conditions>
 		<capsuled_items>
 			<item id="91663" min="1000" max="1000" chance="100" /> <!-- L-Coin -->
 			<item id="91862" min="1" max="1" minEnchant="2" maxEnchant="2" chance="100" /> <!-- Dragon Belt - Sealed -->
@@ -2064,9 +2064,9 @@
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
-		<cond addName="1" msgId="113">
+		<conditions addName="1" msgId="113">
 			<player flyMounted="false" />
-		</cond>
+		</conditions>
 		<skills>
 			<skill id="40141" level="1" /> <!-- Combat Scroll -->
 		</skills>

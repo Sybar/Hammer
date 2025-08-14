@@ -104,6 +104,7 @@ public class RequestUpgradeSystemResult extends ClientPacket
 		{
 			player.destroyItemByItemId(ItemProcessType.FEE, material.getId(), material.getCount(), player, true);
 		}
+		
 		if (adena > 0)
 		{
 			player.reduceAdena(ItemProcessType.FEE, adena, player, true);
@@ -129,27 +130,33 @@ public class RequestUpgradeSystemResult extends ClientPacket
 				{
 					addedItem.setAttribute(new AttributeHolder(AttributeType.FIRE, itemEnchantment.getAttributeDefence(AttributeType.FIRE)), false);
 				}
+				
 				if (itemEnchantment.getAttributeDefence(AttributeType.WATER) > 0)
 				{
 					addedItem.setAttribute(new AttributeHolder(AttributeType.WATER, itemEnchantment.getAttributeDefence(AttributeType.WATER)), false);
 				}
+				
 				if (itemEnchantment.getAttributeDefence(AttributeType.WIND) > 0)
 				{
 					addedItem.setAttribute(new AttributeHolder(AttributeType.WIND, itemEnchantment.getAttributeDefence(AttributeType.WIND)), false);
 				}
+				
 				if (itemEnchantment.getAttributeDefence(AttributeType.EARTH) > 0)
 				{
 					addedItem.setAttribute(new AttributeHolder(AttributeType.EARTH, itemEnchantment.getAttributeDefence(AttributeType.EARTH)), false);
 				}
+				
 				if (itemEnchantment.getAttributeDefence(AttributeType.HOLY) > 0)
 				{
 					addedItem.setAttribute(new AttributeHolder(AttributeType.HOLY, itemEnchantment.getAttributeDefence(AttributeType.HOLY)), false);
 				}
+				
 				if (itemEnchantment.getAttributeDefence(AttributeType.DARK) > 0)
 				{
 					addedItem.setAttribute(new AttributeHolder(AttributeType.DARK, itemEnchantment.getAttributeDefence(AttributeType.DARK)), false);
 				}
 			}
+			
 			if (itemEnchantment.getSoulCrystalOptions() != null)
 			{
 				int pos = -1;
@@ -159,6 +166,7 @@ public class RequestUpgradeSystemResult extends ClientPacket
 					addedItem.addSpecialAbility(ensoul, pos, 1, false);
 				}
 			}
+			
 			if (itemEnchantment.getSoulCrystalSpecialOptions() != null)
 			{
 				for (EnsoulOption ensoul : itemEnchantment.getSoulCrystalSpecialOptions())
@@ -166,6 +174,7 @@ public class RequestUpgradeSystemResult extends ClientPacket
 					addedItem.addSpecialAbility(ensoul, 0, 2, false);
 				}
 			}
+			
 			if (itemEnchantment.getVisualId() > 0)
 			{
 				final ItemVariables oldVars = existingItem.getVariables();

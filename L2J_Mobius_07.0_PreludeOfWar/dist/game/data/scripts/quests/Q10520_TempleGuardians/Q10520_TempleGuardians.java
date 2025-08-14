@@ -45,8 +45,10 @@ public final class Q10520_TempleGuardians extends Quest
 {
 	// NPCs
 	private static final int OKAYTI = 34490;
+	
 	// MOBs
 	private static final int CYRAX = 29374;
+	
 	// Misc
 	private static final int MIN_LEVEL = 110;
 	
@@ -103,6 +105,7 @@ public final class Q10520_TempleGuardians extends Quest
 					htmltext = "okayti_q10520_06.htm";
 					break;
 				}
+				
 				htmltext = "okayti_q10520_07.htm";
 				break;
 			}
@@ -112,6 +115,7 @@ public final class Q10520_TempleGuardians extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -154,6 +158,7 @@ public final class Q10520_TempleGuardians extends Quest
 						}
 						break;
 					}
+					
 					getNoQuestLevelRewardMsg(player);
 					break;
 				}

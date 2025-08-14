@@ -92,8 +92,10 @@ public class Apherus extends AbstractNpcAI
 					apherus.stopSkillEffects(APHERUS_INVICIBILITY.getSkill());
 				}
 			});
+			
 			return null;
 		}
+		
 		return event;
 	}
 	
@@ -161,6 +163,7 @@ public class Apherus extends AbstractNpcAI
 			{
 				return "apherusDoor-no.html";
 			}
+			
 			if (getRandom(100) > 60)
 			{
 				startQuestTimer("buff", 500, npc, player);
@@ -168,6 +171,7 @@ public class Apherus extends AbstractNpcAI
 				{
 					openDoor(door, npc.getInstanceId());
 				}
+				
 				npc.broadcastPacket(new ExShowScreenMessage(NpcStringId.APHERUS_GARDEN_IS_OPEN, ExShowScreenMessage.TOP_CENTER, 3000, true));
 			}
 			else
@@ -179,6 +183,7 @@ public class Apherus extends AbstractNpcAI
 					protector.setTarget(player);
 					addAttackPlayerDesire(protector, player);
 				}
+				
 				showOnScreenMsg(player, NpcStringId.S1_THE_KEY_DOES_NOT_MATCH_SO_WE_RE_IN_TROUBLE, ExShowScreenMessage.TOP_CENTER, 6000, true, player.getName());
 			}
 		}
@@ -186,6 +191,7 @@ public class Apherus extends AbstractNpcAI
 		{
 			return "apherusDoor-no.html";
 		}
+		
 		return null;
 	}
 	

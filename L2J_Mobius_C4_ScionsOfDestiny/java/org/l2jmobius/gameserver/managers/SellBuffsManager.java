@@ -225,8 +225,10 @@ public class SellBuffsManager implements IXmlReader
 		sb.append("<td> <button action=\"\" value=\"Level\" width=70 height=15 back=\"sek.cbui94\" fore=\"sek.cbui92\"> </td>"); // Leve
 		sb.append("<td> <button action=\"\" value=\"MP Cost\" width=70 height=15 back=\"sek.cbui94\" fore=\"sek.cbui92\"> </td>"); // Price
 		sb.append("<td> <button action=\"\" value=\"Price\" width=100 height=15 back=\"sek.cbui94\" fore=\"sek.cbui92\"> </td>"); // Price
-		sb.append("<td> <button action=\"\" value=\"Action\" width=95 height=15 back=\"sek.cbui94\" fore=\"sek.cbui92\"> </td>"); // Action
+		sb.append("<td> <button action=\"\" value=\"Player\" width=80 height=15 back=\"sek.cbui94\" fore=\"sek.cbui92\"> </td>"); // Player
+		sb.append("<td> <button action=\"\" value=\"Pet\" width=80 height=15 back=\"sek.cbui94\" fore=\"sek.cbui92\"> </td>"); // Pet
 		sb.append("<td fixwidth=\"20\"></td>");
+		sb.append("<tr><td><br></td></tr>");
 		sb.append("</tr>");
 		
 		for (SellBuffHolder holder : sellList)
@@ -247,7 +249,8 @@ public class SellBuffsManager implements IXmlReader
 			sb.append("<td align=center>" + ((skill.getLevel() > 100) ? SkillData.getInstance().getMaxLevel(skill.getId()) : skill.getLevel()) + "</td>");
 			sb.append("<td align=center> <font color=\"1E90FF\">" + (skill.getMpConsume() * Config.SELLBUFF_MP_MULTIPLER) + "</font></td>");
 			sb.append("<td align=center> " + FormatUtil.formatAdena(holder.getPrice()) + " <font color=\"LEVEL\"> " + (item != null ? item.getName() : "") + "</font> </td>");
-			sb.append("<td align=center fixwidth=\"40\"><button value=\"Buy Buff\" action=\"bypass sellbuffbuyskill " + seller.getObjectId() + " " + skill.getId() + " " + index + "\" width=\"95\" height=\"21\" back=\"bigbutton_over\" fore=\"bigbutton\"></td>");
+			sb.append("<td align=right fixwidth=\"40\"><button value=\"Buy Buff\" action=\"bypass sellbuffbuyskill " + seller.getObjectId() + " " + skill.getId() + " " + index + "\" width=\"75\" height=\"21\" back=\"L2UI_ch3.Btn1_normalOn\" fore=\"L2UI_ch3.Btn1_normal\"></td>");
+			sb.append("<td align=right fixwidth=\"40\"><button value=\"Buy Buff\" action=\"bypass sellbuffbuyskillPet " + seller.getObjectId() + " " + skill.getId() + " " + index + "\" width=\"75\" height=\"21\" back=\"L2UI_ch3.Btn1_normalOn\" fore=\"L2UI_ch3.Btn1_normal\"></td>");
 			sb.append("</tr>");
 			sb.append("<tr><td><br></td></tr>");
 		}
@@ -442,6 +445,7 @@ public class SellBuffsManager implements IXmlReader
 				return true;
 			}
 		}
+		
 		return false;
 	}
 	
@@ -490,6 +494,7 @@ public class SellBuffsManager implements IXmlReader
 			player.sendMessage("You can't sell buffs here!");
 			return false;
 		}
+		
 		return true;
 	}
 	

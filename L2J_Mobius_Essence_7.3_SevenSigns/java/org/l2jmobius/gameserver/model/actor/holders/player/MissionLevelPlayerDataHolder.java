@@ -62,16 +62,19 @@ public class MissionLevelPlayerDataHolder
 				_currentLevel = Integer.parseInt(values.get(0));
 				continue;
 			}
+			
 			if (key.equals("LevelXP"))
 			{
 				_currentEXP = Integer.parseInt(values.get(0));
 				continue;
 			}
+			
 			if (key.equals("SpecialReward"))
 			{
 				_collectedSpecialReward = Boolean.parseBoolean(values.get(0));
 				continue;
 			}
+			
 			if (key.equals("BonusReward"))
 			{
 				_collectedBonusReward = Boolean.parseBoolean(values.get(0));
@@ -88,11 +91,13 @@ public class MissionLevelPlayerDataHolder
 			{
 				valuesData.add(Integer.parseInt(mission));
 			}
+			
 			if (key.equals("ListOfNormalRewards"))
 			{
 				_collectedNormalRewards.addAll(valuesData);
 				continue;
 			}
+			
 			if (key.equals("ListOfKeyRewards"))
 			{
 				_collectedKeyRewards.addAll(valuesData);
@@ -113,6 +118,7 @@ public class MissionLevelPlayerDataHolder
 	public String getVariablesFromInfo()
 	{
 		StringBuilder sb = new StringBuilder();
+		
 		// CurrentLevel:5;LevelXP:10;ListOfBaseRewards:2,19,20;ListOfKeyRewards:;SpecialRewards:;BonusRewards:;ListOfBonusRewards:;
 		sb.append("CurrentLevel").append(":").append(_currentLevel).append(";");
 		sb.append("LevelXP").append(":").append(_currentEXP).append(";");
@@ -144,8 +150,10 @@ public class MissionLevelPlayerDataHolder
 			{
 				break;
 			}
+			
 			sb.append(",");
 		}
+		
 		return sb.toString();
 	}
 	

@@ -34,6 +34,7 @@ public class Q00168_DeliverSupplies extends Quest
 	private static final int ROSELYN = 30355;
 	private static final int KRISTIN = 30357;
 	private static final int HARANT = 30360;
+	
 	// Items
 	private static final int JENNA_LETTER = 1153;
 	private static final int SENTRY_BLADE_1 = 1154;

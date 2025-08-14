@@ -89,6 +89,7 @@ public class SkillTreeData implements IXmlReader
 	private static final Map<Race, Map<Long, SkillLearn>> _raceSkillTree = new ConcurrentHashMap<>();
 	private static final Map<SubclassType, Map<Long, SkillLearn>> _revelationSkillTree = new ConcurrentHashMap<>();
 	private static final Map<PlayerClass, Set<Integer>> _awakeningSaveSkillTree = new ConcurrentHashMap<>();
+	
 	// Skill Hash Code, SkillLearn
 	private static final Map<Long, SkillLearn> _certificationSkillTree = new ConcurrentHashMap<>();
 	private static final Map<Long, SkillLearn> _fishingSkillTree = new ConcurrentHashMap<>();
@@ -100,11 +101,13 @@ public class SkillTreeData implements IXmlReader
 	private static final Map<Long, SkillLearn> _abilitySkillTree = new ConcurrentHashMap<>();
 	private static final Map<Long, SkillLearn> _alchemySkillTree = new ConcurrentHashMap<>();
 	private static final Map<Long, SkillLearn> _dualClassSkillTree = new ConcurrentHashMap<>();
+	
 	// Other skill trees
 	private static final Map<Long, SkillLearn> _nobleSkillTree = new ConcurrentHashMap<>();
 	private static final Map<Long, SkillLearn> _heroSkillTree = new ConcurrentHashMap<>();
 	private static final Map<Long, SkillLearn> _gameMasterSkillTree = new ConcurrentHashMap<>();
 	private static final Map<Long, SkillLearn> _gameMasterAuraSkillTree = new ConcurrentHashMap<>();
+	
 	// Remove skill tree
 	private static final Map<PlayerClass, Set<Integer>> _removeSkillCache = new ConcurrentHashMap<>();
 	
@@ -580,6 +583,7 @@ public class SkillTreeData implements IXmlReader
 		{
 			result.add(SkillData.getInstance().getSkill(skill.getSkillId(), skill.getSkillLevel()));
 		}
+		
 		return result;
 	}
 	
@@ -597,6 +601,7 @@ public class SkillTreeData implements IXmlReader
 				result.add(SkillData.getInstance().getSkill(skill.getSkillId(), skill.getSkillLevel()));
 			}
 		}
+		
 		return result;
 	}
 	
@@ -611,6 +616,7 @@ public class SkillTreeData implements IXmlReader
 		{
 			result.add(SkillData.getInstance().getSkill(skill.getSkillId(), skill.getSkillLevel()));
 		}
+		
 		return result;
 	}
 	
@@ -625,6 +631,7 @@ public class SkillTreeData implements IXmlReader
 		{
 			result.add(SkillData.getInstance().getSkill(skill.getSkillId(), skill.getSkillLevel()));
 		}
+		
 		return result;
 	}
 	
@@ -639,6 +646,7 @@ public class SkillTreeData implements IXmlReader
 		{
 			result.add(SkillData.getInstance().getSkill(skill.getSkillId(), skill.getSkillLevel()));
 		}
+		
 		return result;
 	}
 	
@@ -656,6 +664,7 @@ public class SkillTreeData implements IXmlReader
 			{
 				continue;
 			}
+			
 			final Skill oldSkill = player.getKnownSkill(skill.getSkillId());
 			if ((oldSkill != null) && (oldSkill.getLevel() == (skill.getSkillLevel() - 1)))
 			{
@@ -666,6 +675,7 @@ public class SkillTreeData implements IXmlReader
 				return true;
 			}
 		}
+		
 		return false;
 	}
 	
@@ -854,6 +864,7 @@ public class SkillTreeData implements IXmlReader
 					break SEARCH;
 				}
 			}
+			
 			if (allRemoved)
 			{
 				break;
@@ -1025,6 +1036,7 @@ public class SkillTreeData implements IXmlReader
 				}
 			}
 		}
+		
 		return result;
 	}
 	
@@ -1046,6 +1058,7 @@ public class SkillTreeData implements IXmlReader
 				result.add(skill);
 			}
 		}
+		
 		return result;
 	}
 	
@@ -1075,6 +1088,7 @@ public class SkillTreeData implements IXmlReader
 				}
 			}
 		}
+		
 		return result;
 	}
 	
@@ -1101,6 +1115,7 @@ public class SkillTreeData implements IXmlReader
 				result.add(skill);
 			}
 		}
+		
 		return result;
 	}
 	
@@ -1126,6 +1141,7 @@ public class SkillTreeData implements IXmlReader
 				result.add(skill);
 			}
 		}
+		
 		return result;
 	}
 	
@@ -1156,6 +1172,7 @@ public class SkillTreeData implements IXmlReader
 				}
 			}
 		}
+		
 		return result;
 	}
 	
@@ -1185,6 +1202,7 @@ public class SkillTreeData implements IXmlReader
 				}
 			}
 		}
+		
 		return result;
 	}
 	
@@ -1223,6 +1241,7 @@ public class SkillTreeData implements IXmlReader
 				}
 			}
 		}
+		
 		return result;
 	}
 	
@@ -1241,6 +1260,7 @@ public class SkillTreeData implements IXmlReader
 				result.add(skill);
 			}
 		}
+		
 		return result;
 	}
 	
@@ -1260,6 +1280,7 @@ public class SkillTreeData implements IXmlReader
 				result.add(skill);
 			}
 		}
+		
 		return result;
 	}
 	
@@ -1279,6 +1300,7 @@ public class SkillTreeData implements IXmlReader
 				result.add(skill);
 			}
 		}
+		
 		result.sort(Comparator.comparing(SkillLearn::getSkillId));
 		return result;
 	}
@@ -1298,6 +1320,7 @@ public class SkillTreeData implements IXmlReader
 				result.add(skill);
 			}
 		}
+		
 		return result;
 	}
 	
@@ -1375,6 +1398,7 @@ public class SkillTreeData implements IXmlReader
 				break;
 			}
 		}
+		
 		return sl;
 	}
 	
@@ -1469,6 +1493,7 @@ public class SkillTreeData implements IXmlReader
 		{
 			return _transferSkillTrees.get(classId).get(SkillData.getSkillHashCode(id, lvl));
 		}
+		
 		return null;
 	}
 	
@@ -1488,6 +1513,7 @@ public class SkillTreeData implements IXmlReader
 				return skill;
 			}
 		}
+		
 		return null;
 	}
 	
@@ -1570,6 +1596,7 @@ public class SkillTreeData implements IXmlReader
 				}
 			}
 		}
+		
 		return minLevel;
 	}
 	
@@ -1690,6 +1717,7 @@ public class SkillTreeData implements IXmlReader
 						}
 					}
 				}
+				
 				if (!isItemSkill)
 				{
 					player.removeSkill(skill, true, true);
@@ -1712,6 +1740,7 @@ public class SkillTreeData implements IXmlReader
 					}
 				}
 			}
+			
 			currentClass = currentClass.getParent();
 		}
 	}
@@ -1807,6 +1836,7 @@ public class SkillTreeData implements IXmlReader
 			{
 				skillHashes[index++] = skillHash;
 			}
+			
 			skillLearnMap.clear();
 			Arrays.sort(skillHashes);
 			_skillsByClassIdHashCodes.put(classId.getId(), skillHashes);
@@ -1839,6 +1869,7 @@ public class SkillTreeData implements IXmlReader
 			{
 				skillHashes[index++] = skillHash;
 			}
+			
 			Arrays.sort(skillHashes);
 			_skillsByRaceHashCodes.put(race.ordinal(), skillHashes);
 			skillHashList.clear();
@@ -1885,6 +1916,7 @@ public class SkillTreeData implements IXmlReader
 		{
 			_allSkillsHashCodes[hashIndex++] = skillHash;
 		}
+		
 		Arrays.sort(_allSkillsHashCodes);
 	}
 	

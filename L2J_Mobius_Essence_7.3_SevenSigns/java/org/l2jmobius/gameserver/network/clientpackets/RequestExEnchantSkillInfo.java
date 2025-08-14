@@ -64,25 +64,25 @@ public class RequestExEnchantSkillInfo extends ClientPacket
 		// return;
 		// }
 		
-		final Skill skill = SkillData.getInstance().getSkill(_skillId, _skillLevel, _skillSubLevel);
-		if ((skill == null) || (skill.getId() != _skillId))
+		final int replacedSkillId = player.getReplacementSkill(_skillId);
+		final Skill skill = SkillData.getInstance().getSkill(replacedSkillId, _skillLevel, _skillSubLevel);
+		if (skill == null)
 		{
 			return;
 		}
+		
 		final Set<Integer> route = EnchantSkillGroupsData.getInstance().getRouteForSkill(_skillId, _skillLevel);
 		if (route.isEmpty())
 		{
 			return;
 		}
 		
-		final Skill playerSkill = player.getKnownSkill(_skillId);
-		if ((playerSkill.getLevel() != _skillLevel) || (playerSkill.getSubLevel() != _skillSubLevel))
+		final Skill playerSkill = player.getKnownSkill(replacedSkillId);
+		if ((playerSkill == null) || (playerSkill.getLevel() != _skillLevel) || (playerSkill.getSubLevel() != _skillSubLevel))
 		{
 			return;
 		}
 		
 		player.sendPacket(new ExEnchantSkillInfo(_skillId, _skillLevel, _skillSubLevel, playerSkill.getSubLevel()));
-		// ExEnchantSkillInfoDetail - not really necessary I think
-		// player.sendPacket(new ExEnchantSkillInfoDetail(SkillEnchantType.NORMAL, _skillId, _skillLevel, _skillSubLevel , activeChar));
 	}
 }

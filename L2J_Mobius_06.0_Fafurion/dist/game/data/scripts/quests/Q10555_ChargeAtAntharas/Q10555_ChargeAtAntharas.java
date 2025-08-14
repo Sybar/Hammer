@@ -64,6 +64,7 @@ public final class Q10555_ChargeAtAntharas extends Quest
 	private static final int ULTRIAN = 34380;
 	private static final int NARITA = 34381;
 	private static final int KAYLEEN = 34382;
+	
 	// Monsters
 	private static final int GEM_DRAGON_ANTHARAS = 24091;
 	
@@ -131,6 +132,7 @@ public final class Q10555_ChargeAtAntharas extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -171,6 +173,7 @@ public final class Q10555_ChargeAtAntharas extends Quest
 							{
 								instance.onEvent("startGemDragonsAttack", npc, player);
 							}
+							
 							qs.setCond(2, true);
 							player.getVariables().set(PlayerVariables.BALTHUS_PHASE, 3);
 							showHtmlFile(player, "stig_friend002.htm");

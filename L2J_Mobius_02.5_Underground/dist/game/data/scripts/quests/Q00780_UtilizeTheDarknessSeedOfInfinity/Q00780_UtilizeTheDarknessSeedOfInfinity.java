@@ -45,6 +45,7 @@ public class Q00780_UtilizeTheDarknessSeedOfInfinity extends Quest
 		23412, // Erosion Hacker
 		23413, // Erosion Ark
 	};
+	
 	// Items
 	private static final int MARRED_SOUL_CRYSTAL = 38580;
 	private static final int FREED_SOUL_CRYSTAL = 38576;
@@ -101,11 +102,13 @@ public class Q00780_UtilizeTheDarknessSeedOfInfinity extends Quest
 						qs.exitQuest(true, true);
 						break;
 					}
+					
 					htmltext = getNoQuestLevelRewardMsg(player);
 					break;
 				}
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -150,6 +153,7 @@ public class Q00780_UtilizeTheDarknessSeedOfInfinity extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -179,6 +183,7 @@ public class Q00780_UtilizeTheDarknessSeedOfInfinity extends Quest
 				{
 					qs.setCond(2, true);
 				}
+				
 				if ((getQuestItemsCount(killer, MARRED_SOUL_CRYSTAL) == MAX_COUNT) && qs.isCond(2))
 				{
 					qs.setCond(3, true);

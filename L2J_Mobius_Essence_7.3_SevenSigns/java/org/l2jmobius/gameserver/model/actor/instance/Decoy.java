@@ -31,7 +31,6 @@ import org.l2jmobius.gameserver.model.World;
 import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.enums.creature.InstanceType;
-import org.l2jmobius.gameserver.model.actor.enums.player.PlayerCondOverride;
 import org.l2jmobius.gameserver.model.actor.templates.NpcTemplate;
 import org.l2jmobius.gameserver.model.item.Weapon;
 import org.l2jmobius.gameserver.model.item.instance.Item;
@@ -104,11 +103,13 @@ public class Decoy extends Creature
 		{
 			return false;
 		}
+		
 		if (_hateSpam != null)
 		{
 			_hateSpam.cancel(true);
 			_hateSpam = null;
 		}
+		
 		unSummon();
 		DecayTaskManager.getInstance().add(this);
 		return true;
@@ -181,7 +182,7 @@ public class Decoy extends Creature
 		{
 			if (isVisibleFor(player))
 			{
-				player.sendPacket(new CharInfo(this, isInvisible() && player.canOverrideCond(PlayerCondOverride.SEE_ALL_PLAYERS)));
+				player.sendPacket(new CharInfo(this, isInvisible() && player.isGM()));
 			}
 		});
 	}
@@ -264,7 +265,7 @@ public class Decoy extends Creature
 	@Override
 	public void sendInfo(Player player)
 	{
-		player.sendPacket(new CharInfo(this, isInvisible() && player.canOverrideCond(PlayerCondOverride.SEE_ALL_PLAYERS)));
+		player.sendPacket(new CharInfo(this, isInvisible() && player.isGM()));
 	}
 	
 	@Override

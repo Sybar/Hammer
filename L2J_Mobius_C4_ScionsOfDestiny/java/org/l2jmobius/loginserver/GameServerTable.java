@@ -192,6 +192,7 @@ public class GameServerTable
 				return gs.gst;
 			}
 		}
+		
 		return null;
 	}
 	
@@ -204,6 +205,7 @@ public class GameServerTable
 				return gs.status;
 			}
 		}
+		
 		return -1;
 	}
 	
@@ -240,6 +242,7 @@ public class GameServerTable
 				return gs.serverId;
 			}
 		}
+		
 		return 0;
 	}
 	
@@ -252,6 +255,7 @@ public class GameServerTable
 				return true;
 			}
 		}
+		
 		return false;
 	}
 	
@@ -270,6 +274,7 @@ public class GameServerTable
 			{
 				statement.setString(3, "*");
 			}
+			
 			statement.executeUpdate();
 		}
 		catch (SQLException e)
@@ -287,6 +292,7 @@ public class GameServerTable
 				return true;
 			}
 		}
+		
 		return false;
 	}
 	
@@ -299,6 +305,7 @@ public class GameServerTable
 				return i;
 			}
 		}
+		
 		return 0;
 	}
 	
@@ -373,6 +380,7 @@ public class GameServerTable
 		{
 			e.printStackTrace();
 		}
+		
 		return false;
 	}
 	
@@ -489,6 +497,7 @@ public class GameServerTable
 				
 			}
 		}
+		
 		return false;
 	}
 	

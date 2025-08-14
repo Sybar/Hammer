@@ -31,6 +31,7 @@ public class Luderic extends AbstractNpcAI
 {
 	// NPCs
 	private static final int LUDERIC = 33575;
+	
 	// Misc
 	private static final NpcStringId[] LUDERIC_SHOUT =
 	{
@@ -54,6 +55,7 @@ public class Luderic extends AbstractNpcAI
 		{
 			npc.broadcastSocialAction(1);
 		}
+		
 		return super.onEvent(event, npc, player);
 	}
 	

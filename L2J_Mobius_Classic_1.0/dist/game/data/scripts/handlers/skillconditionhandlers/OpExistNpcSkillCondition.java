@@ -56,6 +56,7 @@ public class OpExistNpcSkillCondition implements ISkillCondition
 				return _isAround;
 			}
 		}
+		
 		return !_isAround;
 	}
 }
