@@ -5319,6 +5319,9 @@ public abstract class Creature extends WorldObject
 	 */
 	public void fullRestore()
 	{
+		// Full restore takes 100ms. Util then set template HP.
+		setCurrentHp(getMaxHp());
+		
 		ThreadPool.schedule(() ->
 		{
 			setCurrentHp(getMaxHp());
