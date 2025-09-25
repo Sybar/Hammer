@@ -39,6 +39,7 @@ import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
 import org.l2jmobius.gameserver.model.zone.type.BossZone;
 import org.l2jmobius.gameserver.model.zone.type.NoRestartZone;
+import org.l2jmobius.gameserver.network.enums.ChatType;
 import org.l2jmobius.gameserver.network.serverpackets.PlaySound;
 import org.l2jmobius.gameserver.network.serverpackets.SocialAction;
 import org.l2jmobius.gameserver.network.serverpackets.SpecialCamera;
@@ -323,6 +324,15 @@ public class Valakas extends AbstractNpcAI
 				
 				startQuestTimer("regen_task", 60000, npc, null, true);
 				startQuestTimer("skill_task", 2000, npc, null, true);
+				
+				for (Player insidePlayer : BOSS_ZONE.getPlayersInside())
+				{
+					if (insidePlayer.isHero() && Config.VALAKAS_RECOGNIZE_HERO)
+					{
+						npc.broadcastSay(ChatType.NPC_GENERAL, insidePlayer.getName() + "!!!! You cannot hope to defeat me with your meager strength.");
+						break;
+					}
+				}
 			}
 			// Death cinematic, spawn of Teleport Cubes.
 			else if (event.equalsIgnoreCase("die_1"))

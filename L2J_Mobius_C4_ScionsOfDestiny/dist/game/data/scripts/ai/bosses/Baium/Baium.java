@@ -38,7 +38,6 @@ import org.l2jmobius.gameserver.model.variables.NpcVariables;
 import org.l2jmobius.gameserver.model.zone.type.NoRestartZone;
 import org.l2jmobius.gameserver.network.enums.ChatType;
 import org.l2jmobius.gameserver.network.serverpackets.Earthquake;
-import org.l2jmobius.gameserver.network.serverpackets.ExShowScreenMessage;
 import org.l2jmobius.gameserver.network.serverpackets.PlaySound;
 import org.l2jmobius.gameserver.network.serverpackets.SocialAction;
 import org.l2jmobius.gameserver.util.MathUtil;
@@ -286,9 +285,9 @@ public class Baium extends AbstractNpcAI
 				
 				for (Player insidePlayer : zone.getPlayersInside())
 				{
-					if (insidePlayer.isHero())
+					if (insidePlayer.isHero() && Config.BAIUM_RECOGNIZE_HERO)
 					{
-						zone.broadcastPacket(new ExShowScreenMessage("Not even the gods themselves could touch me. But you, " + insidePlayer.getName() + ", you dare challenge me?! Ignorant mortal!", 2, 4000));
+						npc.broadcastSay(ChatType.NPC_GENERAL, "Not even the gods themselves could touch me. But you, " + insidePlayer.getName() + ", you dare challenge me?! Ignorant mortal!");
 						break;
 					}
 				}

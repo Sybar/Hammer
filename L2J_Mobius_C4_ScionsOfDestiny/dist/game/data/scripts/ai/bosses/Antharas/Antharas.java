@@ -35,8 +35,8 @@ import org.l2jmobius.gameserver.model.actor.instance.GrandBoss;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
 import org.l2jmobius.gameserver.model.zone.type.NoRestartZone;
+import org.l2jmobius.gameserver.network.enums.ChatType;
 import org.l2jmobius.gameserver.network.serverpackets.Earthquake;
-import org.l2jmobius.gameserver.network.serverpackets.ExShowScreenMessage;
 import org.l2jmobius.gameserver.network.serverpackets.PlaySound;
 import org.l2jmobius.gameserver.network.serverpackets.SocialAction;
 import org.l2jmobius.gameserver.network.serverpackets.SpecialCamera;
@@ -285,9 +285,9 @@ public class Antharas extends AbstractNpcAI
 				
 				for (Player players : World.getInstance().getVisibleObjectsInRange(npc, Player.class, 4000))
 				{
-					if (players.isHero())
+					if (players.isHero() && Config.ANTHARAS_RECOGNIZE_HERO)
 					{
-						zone.broadcastPacket(new ExShowScreenMessage(players.getName() + "!!!! You cannot hope to defeat me with your meager strength.", 2, 4000));
+						npc.broadcastSay(ChatType.NPC_GENERAL, players.getName() + "!!!! You cannot hope to defeat me with your meager strength.");
 						break;
 					}
 				}
