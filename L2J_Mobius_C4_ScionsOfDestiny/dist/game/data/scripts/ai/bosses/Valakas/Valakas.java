@@ -329,7 +329,7 @@ public class Valakas extends AbstractNpcAI
 				{
 					if (insidePlayer.isHero() && Config.VALAKAS_RECOGNIZE_HERO)
 					{
-						npc.broadcastSay(ChatType.NPC_GENERAL, insidePlayer.getName() + "!!!! You cannot hope to defeat me with your meager strength.");
+						npc.broadcastSay(ChatType.NPC_SHOUT, insidePlayer.getName() + "!!!! You cannot hope to defeat me with your meager strength.");
 						break;
 					}
 				}

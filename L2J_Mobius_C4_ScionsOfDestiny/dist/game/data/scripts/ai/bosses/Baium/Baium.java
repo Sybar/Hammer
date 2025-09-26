@@ -287,7 +287,7 @@ public class Baium extends AbstractNpcAI
 				{
 					if (insidePlayer.isHero() && Config.BAIUM_RECOGNIZE_HERO)
 					{
-						npc.broadcastSay(ChatType.NPC_GENERAL, "Not even the gods themselves could touch me. But you, " + insidePlayer.getName() + ", you dare challenge me?! Ignorant mortal!");
+						npc.broadcastSay(ChatType.NPC_SHOUT, "Not even the gods themselves could touch me. But you, " + insidePlayer.getName() + ", you dare challenge me?! Ignorant mortal!");
 						break;
 					}
 				}

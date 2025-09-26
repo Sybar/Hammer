@@ -524,7 +524,7 @@ public abstract class Creature extends WorldObject
 				if ((name != null) && !Config.RAIDBOSSES_EXCLUDED_FROM_SPAWN_ANNOUNCEMENTS.contains(getId()))
 				{
 					Broadcast.toAllOnlinePlayers(name + " has spawned!");
-					Broadcast.toAllOnlinePlayersOnScreen(name + " has spawned!");
+					// Broadcast.toAllOnlinePlayersOnScreen(name + " has spawned!");
 				}
 			}
 		}
@@ -534,7 +534,7 @@ public abstract class Creature extends WorldObject
 			if ((name != null) && !Config.RAIDBOSSES_EXCLUDED_FROM_SPAWN_ANNOUNCEMENTS.contains(getId()))
 			{
 				Broadcast.toAllOnlinePlayers(name + " has spawned!");
-				Broadcast.toAllOnlinePlayersOnScreen(name + " has spawned!");
+				// Broadcast.toAllOnlinePlayersOnScreen(name + " has spawned!");
 			}
 		}
 	}
@@ -2542,7 +2542,7 @@ public abstract class Creature extends WorldObject
 				if ((name != null) && !Config.RAIDBOSSES_EXCLUDED_FROM_DEFEAT_ANNOUNCEMENTS.contains(getId()))
 				{
 					Broadcast.toAllOnlinePlayers(name + " has been defeated!");
-					Broadcast.toAllOnlinePlayersOnScreen(name + " has been defeated!");
+					// Broadcast.toAllOnlinePlayersOnScreen(name + " has been defeated!");
 				}
 			}
 		}
@@ -2552,7 +2552,7 @@ public abstract class Creature extends WorldObject
 			if ((name != null) && !Config.RAIDBOSSES_EXCLUDED_FROM_DEFEAT_ANNOUNCEMENTS.contains(getId()))
 			{
 				Broadcast.toAllOnlinePlayers(name + " has been defeated!");
-				Broadcast.toAllOnlinePlayersOnScreen(name + " has been defeated!");
+				// Broadcast.toAllOnlinePlayersOnScreen(name + " has been defeated!");
 			}
 		}
 		

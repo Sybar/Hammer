@@ -287,7 +287,7 @@ public class Antharas extends AbstractNpcAI
 				{
 					if (players.isHero() && Config.ANTHARAS_RECOGNIZE_HERO)
 					{
-						npc.broadcastSay(ChatType.NPC_GENERAL, players.getName() + "!!!! You cannot hope to defeat me with your meager strength.");
+						npc.broadcastSay(ChatType.NPC_SHOUT, players.getName() + "!!!! You cannot hope to defeat me with your meager strength.");
 						break;
 					}
 				}
