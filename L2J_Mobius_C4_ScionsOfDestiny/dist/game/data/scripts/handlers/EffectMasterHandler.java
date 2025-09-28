@@ -52,7 +52,6 @@ public class EffectMasterHandler
 		ChangeFishingMastery.class,
 		ChangeHairColor.class,
 		ChangeHairStyle.class,
-		ClanGate.class,
 		Confuse.class,
 		ConsumeBody.class,
 		CpDamPercent.class,
