@@ -92,8 +92,9 @@ public class Q10332_ToughRoad extends Quest
 					addExpAndSp(player, 42250, 20);
 					qs.exitQuest(false, true);
 					player.getVariables().remove(MOVIE_VAR);
-					break;
+					htmltext = event;
 				}
+				break;
 			}
 		}
 		
