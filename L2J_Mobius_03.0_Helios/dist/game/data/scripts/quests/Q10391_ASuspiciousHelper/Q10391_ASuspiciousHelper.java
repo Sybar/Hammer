@@ -100,6 +100,7 @@ public class Q10391_ASuspiciousHelper extends Quest
 					giveStoryQuestReward(player, 1);
 					giveItems(player, EAC, 1);
 					addExpAndSp(player, 388290, 93);
+					htmltext = event;
 				}
 				break;
 			}

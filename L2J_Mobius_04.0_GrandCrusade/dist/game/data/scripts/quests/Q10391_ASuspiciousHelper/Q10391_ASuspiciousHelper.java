@@ -98,6 +98,7 @@ public class Q10391_ASuspiciousHelper extends Quest
 					qs.exitQuest(false, true);
 					giveStoryQuestReward(npc, player);
 					addExpAndSp(player, 388290, 93);
+					htmltext = event;
 				}
 				break;
 			}
