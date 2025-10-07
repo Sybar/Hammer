@@ -95,6 +95,7 @@ public class Q10398_ASuspiciousBadge extends Quest
 					{
 						addExpAndSp(player, 6135787, 914);
 					}
+					htmltext = event;
 				}
 				break;
 			}
