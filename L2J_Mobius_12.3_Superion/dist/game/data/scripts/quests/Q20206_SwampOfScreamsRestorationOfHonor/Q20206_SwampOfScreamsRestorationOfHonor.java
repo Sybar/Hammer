@@ -82,7 +82,7 @@ public class Q20206_SwampOfScreamsRestorationOfHonor extends Quest
 				final NewQuestLocation questLocation = getQuestData().getLocation();
 				if (questState == null)
 				{
-					final Location location = TeleportListData.getInstance().getTeleport(questLocation.getStartLocationId()).getLocation();
+					final Location location = TeleportListData.getInstance().getTeleport(questLocation.getEndLocationId()).getLocation();
 					teleportToQuestLocation(player, location);
 					sendAcceptDialog(player);
 				}
