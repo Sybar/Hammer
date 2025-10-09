@@ -180,7 +180,7 @@ public class Kuka extends AbstractNpcAI
 				final Spawn spawn = new Spawn(template);
 				spawn.setXYZ(location);
 				spawn.setRespawnPattern(respawnPattern);
-				return DBSpawnManager.getInstance().addNewSpawn(spawn, true);
+				return DBSpawnManager.getInstance().addNewSpawn(spawn, false);
 			}
 		}
 		catch (Exception e)
