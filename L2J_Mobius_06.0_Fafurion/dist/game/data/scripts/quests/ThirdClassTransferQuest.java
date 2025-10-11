@@ -32,13 +32,11 @@ import org.l2jmobius.gameserver.model.events.annotations.RegisterEvent;
 import org.l2jmobius.gameserver.model.events.annotations.RegisterType;
 import org.l2jmobius.gameserver.model.events.holders.actor.player.OnPlayerLevelChanged;
 import org.l2jmobius.gameserver.model.events.holders.actor.player.OnPlayerLogin;
-import org.l2jmobius.gameserver.model.events.holders.actor.player.OnPlayerPressTutorialMark;
 import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
 import org.l2jmobius.gameserver.model.quest.State;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
 import org.l2jmobius.gameserver.network.SystemMessageId;
-import org.l2jmobius.gameserver.network.serverpackets.TutorialShowHtml;
 import org.l2jmobius.gameserver.network.serverpackets.TutorialShowQuestionMark;
 import org.l2jmobius.gameserver.util.ArrayUtil;
 
@@ -338,17 +336,6 @@ public abstract class ThirdClassTransferQuest extends Quest
 		}
 		
 		return htmltext;
-	}
-	
-	@RegisterEvent(EventType.ON_PLAYER_PRESS_TUTORIAL_MARK)
-	@RegisterType(ListenerRegisterType.GLOBAL_PLAYERS)
-	public void onPlayerPressTutorialMark(OnPlayerPressTutorialMark event)
-	{
-		if (event.getMarkId() == QUESTION_MARK_ID)
-		{
-			final Player player = event.getPlayer();
-			player.sendPacket(new TutorialShowHtml(getHtm(player, "popupInvite.html")));
-		}
 	}
 	
 	@RegisterEvent(EventType.ON_PLAYER_LEVEL_CHANGED)

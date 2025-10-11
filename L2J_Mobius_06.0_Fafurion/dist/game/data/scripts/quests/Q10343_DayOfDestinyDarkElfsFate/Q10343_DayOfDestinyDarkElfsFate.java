@@ -20,8 +20,14 @@ import org.l2jmobius.gameserver.data.enums.CategoryType;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.enums.creature.Race;
+import org.l2jmobius.gameserver.model.events.EventType;
+import org.l2jmobius.gameserver.model.events.ListenerRegisterType;
+import org.l2jmobius.gameserver.model.events.annotations.RegisterEvent;
+import org.l2jmobius.gameserver.model.events.annotations.RegisterType;
+import org.l2jmobius.gameserver.model.events.holders.actor.player.OnPlayerPressTutorialMark;
 import org.l2jmobius.gameserver.model.quest.QuestState;
 import org.l2jmobius.gameserver.model.quest.State;
+import org.l2jmobius.gameserver.network.serverpackets.TutorialShowHtml;
 
 import quests.ThirdClassTransferQuest;
 
@@ -35,6 +41,7 @@ public class Q10343_DayOfDestinyDarkElfsFate extends ThirdClassTransferQuest
 	private static final int OLTRAN = 30862;
 	
 	// Misc
+	private static final int QUESTION_MARK_ID = 101;
 	private static final int MIN_LEVEL = 76;
 	private static final Race START_RACE = Race.DARK_ELF;
 	
@@ -109,5 +116,19 @@ public class Q10343_DayOfDestinyDarkElfsFate extends ThirdClassTransferQuest
 		}
 		
 		return (!htmltext.equals(getNoQuestMsg(player)) ? htmltext : super.onTalk(npc, player));
+	}
+	
+	@RegisterEvent(EventType.ON_PLAYER_PRESS_TUTORIAL_MARK)
+	@RegisterType(ListenerRegisterType.GLOBAL_PLAYERS)
+	public void onPlayerPressTutorialMark(OnPlayerPressTutorialMark event)
+	{
+		if (event.getMarkId() == QUESTION_MARK_ID)
+		{
+			final Player player = event.getPlayer();
+			if (player.getRace() == START_RACE)
+			{
+				player.sendPacket(new TutorialShowHtml(getHtm(player, "popupInvite.html")));
+			}
+		}
 	}
 }
