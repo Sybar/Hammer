@@ -116,7 +116,7 @@ public class Q10375_SuccubusDisciples extends Quest
 			htmltext = getAlreadyCompletedMsg(player);
 		}
 		
-		if ((npc.getId() == ZENYA) && !CategoryData.getInstance().isInCategory(CategoryType.THIRD_CLASS_GROUP, player.getPlayerClass().getId()))
+		if ((npc.getId() == ZENYA) && !CategoryData.getInstance().isInCategory(CategoryType.FOURTH_CLASS_GROUP, player.getPlayerClass().getId()))
 		{
 			return "noClass.html";
 		}
