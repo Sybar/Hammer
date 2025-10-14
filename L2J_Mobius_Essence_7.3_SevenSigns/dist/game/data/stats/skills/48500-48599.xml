@@ -258,11 +258,50 @@
 		<!-- Summons Watermelon during the event. -->
 		<icon>icon.skill17695</icon>
 		<operateType>A1</operateType>
-	</skill>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitCancelTime>1.5</hitCancelTime>
+		<hitTime>1500</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>96852</itemConsumeId> <!-- Watermelon Seed -->
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<reuseDelay>10000</reuseDelay>
+		<conditions>
+			<condition name="OpCanNotUseAirship" />
+		</conditions>
+		<effects>
+			<effect name="SummonNpc">
+				<npcId>13271</npcId> <!-- Young Watermelon -->
+				<npcCount>1</npcCount>
+				<despawnDelay>180000</despawnDelay>
+			</effect>
+		</effects>
+	</skill>	
 	<skill id="48512" toLevel="1" name="Summon Prime Watermelon">
 		<!-- Summons Prime Watermelon during the event. -->
 		<icon>icon.skill17696</icon>
 		<operateType>A1</operateType>
+		<affectScope>SINGLE</affectScope>
+		<hitCancelTime>1.5</hitCancelTime>
+		<hitTime>1500</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>96853</itemConsumeId> <!-- Prime Watermelon Seed -->
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<reuseDelay>10000</reuseDelay>
+		<conditions>
+			<condition name="OpCanNotUseAirship" />
+		</conditions>
+		<effects>
+			<effect name="SummonNpc">
+				<npcId>13275</npcId> <!-- Young Honey Watermelon -->
+				<npcCount>1</npcCount>
+				<despawnDelay>180000</despawnDelay>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="48513" toLevel="1" name="Oppressive Heat">
 		<!-- You lose conscience from dancing in the oppressive heat. -->
