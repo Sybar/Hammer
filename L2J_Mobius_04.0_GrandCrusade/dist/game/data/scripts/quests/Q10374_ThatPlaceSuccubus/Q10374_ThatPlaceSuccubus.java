@@ -120,7 +120,7 @@ public class Q10374_ThatPlaceSuccubus extends Quest
 	{
 		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		if ((npc.getId() == ZENYA) && !CategoryData.getInstance().isInCategory(CategoryType.THIRD_CLASS_GROUP, player.getPlayerClass().getId()))
+		if ((npc.getId() == ZENYA) && !CategoryData.getInstance().isInCategory(CategoryType.FOURTH_CLASS_GROUP, player.getPlayerClass().getId()))
 		{
 			return "noClass.html";
 		}
