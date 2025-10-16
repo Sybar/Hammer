@@ -20,6 +20,7 @@
  */
 package quests.Q10370_MenacingTimes;
 
+import org.l2jmobius.gameserver.data.enums.CategoryType;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.enums.creature.Race;
@@ -47,8 +48,11 @@ public class Q10370_MenacingTimes extends Quest
 	
 	// Monster's
 	private static final int GRAVE_SCARAB = 21646;
+	private static final int SCAVENGER_SCARAB = 21647;
 	private static final int GRAVE_ANT = 21648;
+	private static final int SCAVENGER_ANT = 21649;
 	private static final int SHRINE_KNIGHT = 21650;
+	private static final int SHRINE_ROYAL_GUARD = 21651;
 	
 	// Items
 	private static final int REMNANT_ASHES = 34765;
@@ -67,7 +71,7 @@ public class Q10370_MenacingTimes extends Quest
 		super(10370);
 		addStartNpc(ORVEN, WINONIN, OLTRAN, LADANZA, FERRIS, BROME);
 		addTalkId(ORVEN, WINONIN, OLTRAN, LADANZA, FERRIS, BROME, ANDREI, GERKENSHTEIN);
-		addKillId(GRAVE_SCARAB, GRAVE_ANT, SHRINE_KNIGHT);
+		addKillId(GRAVE_SCARAB, SCAVENGER_SCARAB, GRAVE_ANT, SCAVENGER_ANT, SHRINE_KNIGHT, SHRINE_ROYAL_GUARD);
 		registerQuestItems(REMNANT_ASHES);
 		addCondLevel(MIN_LEVEL, MAX_LEVEL, "no_level.htm");
 	}
@@ -162,7 +166,7 @@ public class Q10370_MenacingTimes extends Quest
 				{
 					case ORVEN:
 					{
-						if ((player.getRace() == Race.HUMAN) && player.isAwakenedClass())
+						if ((player.getRace() == Race.HUMAN) && player.isInCategory(CategoryType.FOURTH_CLASS_GROUP))
 						{
 							htmltext = "30857-01.htm";
 						}
@@ -174,7 +178,7 @@ public class Q10370_MenacingTimes extends Quest
 					}
 					case WINONIN:
 					{
-						if ((player.getRace() == Race.ELF) && player.isAwakenedClass())
+						if ((player.getRace() == Race.ELF) && player.isInCategory(CategoryType.FOURTH_CLASS_GROUP))
 						{
 							htmltext = "30856-01.htm";
 						}
@@ -186,7 +190,7 @@ public class Q10370_MenacingTimes extends Quest
 					}
 					case OLTRAN:
 					{
-						if ((player.getRace() == Race.DARK_ELF) && player.isAwakenedClass())
+						if ((player.getRace() == Race.DARK_ELF) && player.isInCategory(CategoryType.FOURTH_CLASS_GROUP))
 						{
 							htmltext = "30862-01.htm";
 						}
@@ -198,7 +202,7 @@ public class Q10370_MenacingTimes extends Quest
 					}
 					case LADANZA:
 					{
-						if ((player.getRace() == Race.ORC) && player.isAwakenedClass())
+						if ((player.getRace() == Race.ORC) && player.isInCategory(CategoryType.FOURTH_CLASS_GROUP))
 						{
 							htmltext = "30865-01.htm";
 						}
@@ -210,7 +214,7 @@ public class Q10370_MenacingTimes extends Quest
 					}
 					case FERRIS:
 					{
-						if ((player.getRace() == Race.DWARF) && player.isAwakenedClass())
+						if ((player.getRace() == Race.DWARF) && player.isInCategory(CategoryType.FOURTH_CLASS_GROUP))
 						{
 							htmltext = "30847-01.htm";
 						}
@@ -222,7 +226,7 @@ public class Q10370_MenacingTimes extends Quest
 					}
 					case BROME:
 					{
-						if ((player.getRace() == Race.KAMAEL) && player.isAwakenedClass())
+						if ((player.getRace() == Race.KAMAEL) && player.isInCategory(CategoryType.FOURTH_CLASS_GROUP))
 						{
 							htmltext = "32221-01.htm";
 						}
