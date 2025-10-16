@@ -20,10 +20,10 @@
  */
 package quests.Q10376_BloodyGoodTime;
 
+import org.l2jmobius.gameserver.data.enums.CategoryType;
 import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.actor.enums.creature.Race;
 import org.l2jmobius.gameserver.model.item.holders.ItemHolder;
 import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
@@ -167,18 +167,12 @@ public class Q10376_BloodyGoodTime extends Quest
 				{
 					case State.CREATED:
 					{
-						if (!player.isAwakenedClass() && (player.getRace() != Race.ERTHEIA))
+						if (player.isInCategory(CategoryType.FOURTH_CLASS_GROUP))
 						{
 							return "32140-01.htm";
 						}
-						else if ((player.getRace() == Race.ERTHEIA) && (player.getLevel() >= MIN_LEVEL))
-						{
-							return "32140-01.htm";
-						}
-						else
-						{
-							return "32140-03.html";
-						}
+						
+						return "32140-03.html";
 					}
 					case State.STARTED:
 					{
