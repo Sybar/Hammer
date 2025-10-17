@@ -20,6 +20,7 @@
  */
 package quests.Q10371_GraspThyPower;
 
+import org.l2jmobius.gameserver.data.enums.CategoryType;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.item.holders.ItemHolder;
@@ -111,7 +112,7 @@ public class Q10371_GraspThyPower extends Quest
 	{
 		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		if ((qs.isCreated()) && player.isAwakenedClass())
+		if ((qs.isCreated()) && player.isInCategory(CategoryType.FOURTH_CLASS_GROUP))
 		{
 			htmltext = "33648-01.htm";
 		}

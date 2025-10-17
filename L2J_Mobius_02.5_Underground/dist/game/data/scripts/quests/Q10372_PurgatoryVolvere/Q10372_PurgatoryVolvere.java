@@ -20,6 +20,7 @@
  */
 package quests.Q10372_PurgatoryVolvere;
 
+import org.l2jmobius.gameserver.data.enums.CategoryType;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.quest.Quest;
@@ -134,7 +135,7 @@ public class Q10372_PurgatoryVolvere extends Quest
 			{
 				if (npc.getId() == GERKENSHTEIN)
 				{
-					htmltext = (player.isAwakenedClass() ? "33648-01.htm" : "complete.htm");
+					htmltext = (player.isInCategory(CategoryType.FOURTH_CLASS_GROUP) ? "33648-01.htm" : "complete.htm");
 				}
 				break;
 			}
