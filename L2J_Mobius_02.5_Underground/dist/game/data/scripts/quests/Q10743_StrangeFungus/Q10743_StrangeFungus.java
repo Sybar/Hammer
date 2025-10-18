@@ -80,6 +80,7 @@ public class Q10743_StrangeFungus extends Quest
 		{
 			case "33952-02.htm":
 			case "33953-02.html":
+			case "33953-04.html":
 			{
 				break;
 			}
@@ -140,9 +141,16 @@ public class Q10743_StrangeFungus extends Quest
 			}
 			case MILONE:
 			{
-				if (qs.isStarted() && qs.isCond(2))
+				if (qs.isStarted())
 				{
-					htmltext = "33953-01.html";
+					if (qs.isCond(1))
+					{
+						htmltext = "33953-04.html";
+					}
+					else if (qs.isCond(2))
+					{
+						htmltext = "33953-01.html";
+					}
 				}
 				break;
 			}
