@@ -78,9 +78,9 @@ public class Q10789_LettersFromTheQueenSwampOfScreams extends LetterQuest
 			}
 			case "31328-03.html":
 			{
-				if (qs.isCond(1))
+				if (qs.isCond(2))
 				{
-					qs.setCond(2, true);
+					qs.setCond(3, true);
 					giveItems(player, SOE_SWAMP_OF_SCREAMS, 1);
 					htmltext = event;
 				}
@@ -88,7 +88,7 @@ public class Q10789_LettersFromTheQueenSwampOfScreams extends LetterQuest
 			}
 			case "33847-03.html":
 			{
-				if (qs.isCond(2))
+				if (qs.isCond(3))
 				{
 					giveItems(player, ENCHANT_WEAPON_A, 2);
 					giveStoryQuestReward(player, 91);
@@ -118,9 +118,9 @@ public class Q10789_LettersFromTheQueenSwampOfScreams extends LetterQuest
 		{
 			if (npc.getId() == INNOCENTIN)
 			{
-				htmltext = (qs.isCond(1)) ? "31328-01.html" : "31328-04.html";
+				htmltext = (qs.isCond(2)) ? "31328-01.html" : "31328-04.html";
 			}
-			else if (qs.isCond(2))
+			else if (qs.isCond(3))
 			{
 				htmltext = "33847-01.html";
 			}

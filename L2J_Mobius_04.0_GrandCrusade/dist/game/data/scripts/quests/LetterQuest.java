@@ -56,6 +56,7 @@ public abstract class LetterQuest extends Quest
 	public LetterQuest(int questId)
 	{
 		super(questId);
+		setStartLocation(_startSOE, _startTeleport);
 	}
 	
 	/**

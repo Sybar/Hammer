@@ -85,9 +85,8 @@ public class Q10424_KekropusLetterBelosWhereabouts extends LetterQuest
 			{
 				if (qs.isCond(2))
 				{
-					takeItems(player, SOE_TOWN_OF_GODDARD, -1);
-					giveItems(player, SOE_KETRA_ORC_OUTPOST, 1);
 					qs.setCond(3, true);
+					giveItems(player, SOE_KETRA_ORC_OUTPOST, 1);
 					htmltext = event;
 				}
 				break;

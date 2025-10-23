@@ -79,18 +79,17 @@ public class Q10408_KekropusLetterTheSwampOfScreams extends LetterQuest
 			}
 			case "31340-03.html":
 			{
-				if (qs.isCond(1))
+				if (qs.isCond(2))
 				{
-					takeItems(player, SOE_TOWN_OF_RUNE, -1);
+					qs.setCond(3, true);
 					giveItems(player, SOE_SWAMP_OF_SCREAMS, 1);
-					qs.setCond(2, true);
 					htmltext = event;
 				}
 				break;
 			}
 			case "33847-02.html":
 			{
-				if (qs.isCond(2))
+				if (qs.isCond(3))
 				{
 					qs.exitQuest(false, true);
 					giveStoryQuestReward(npc, player);
@@ -121,11 +120,11 @@ public class Q10408_KekropusLetterTheSwampOfScreams extends LetterQuest
 		
 		if (qs.isStarted())
 		{
-			if ((npc.getId() == MATHIAS) && qs.isCond(1))
+			if ((npc.getId() == MATHIAS) && qs.isCond(2))
 			{
 				htmltext = "31340-01.html";
 			}
-			else if (qs.isCond(2))
+			else if (qs.isCond(3))
 			{
 				htmltext = npc.getId() == MATHIAS ? "31340-04.html" : "33847-01.html";
 			}
@@ -141,7 +140,7 @@ public class Q10408_KekropusLetterTheSwampOfScreams extends LetterQuest
 		{
 			final Player player = creature.asPlayer();
 			final QuestState qs = getQuestState(player, false);
-			if ((qs != null) && qs.isCond(2))
+			if ((qs != null) && qs.isCond(3))
 			{
 				showOnScreenMsg(player, NpcStringId.SWAMP_OF_SCREAMS_IA_A_GOOD_HUNTING_ZONE_FOR_LV_65_OR_ABOVE, ExShowScreenMessage.TOP_CENTER, 6000);
 			}

@@ -78,9 +78,9 @@ public class Q10782_LettersFromTheQueenForsakenPlains extends LetterQuest
 			}
 			case "30857-03.html":
 			{
-				if (qs.isCond(1))
+				if (qs.isCond(2))
 				{
-					qs.setCond(2, true);
+					qs.setCond(3, true);
 					giveItems(player, SOE_FORSAKEN_PLAINS, 1);
 					htmltext = event;
 				}
@@ -88,7 +88,7 @@ public class Q10782_LettersFromTheQueenForsakenPlains extends LetterQuest
 			}
 			case "33866-03.html":
 			{
-				if (qs.isCond(2))
+				if (qs.isCond(3))
 				{
 					giveItems(player, ENCHANT_ARMOR_B, 10);
 					giveStoryQuestReward(player, 60);
@@ -118,9 +118,9 @@ public class Q10782_LettersFromTheQueenForsakenPlains extends LetterQuest
 		{
 			if (npc.getId() == ORVEN)
 			{
-				htmltext = (qs.isCond(1)) ? "30857-01.html" : "30857-04.html";
+				htmltext = (qs.isCond(2)) ? "30857-01.html" : "30857-04.html";
 			}
-			else if (qs.isCond(2))
+			else if (qs.isCond(3))
 			{
 				htmltext = "33866-01.html";
 			}

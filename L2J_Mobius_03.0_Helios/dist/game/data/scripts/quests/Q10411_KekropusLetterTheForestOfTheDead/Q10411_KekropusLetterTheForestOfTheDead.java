@@ -80,18 +80,17 @@ public class Q10411_KekropusLetterTheForestOfTheDead extends LetterQuest
 			}
 			case "31340-03.html":
 			{
-				if (qs.isCond(1))
+				if (qs.isCond(2))
 				{
-					takeItems(player, SOE_TOWN_OF_RUNE, -1);
+					qs.setCond(3, true);
 					giveItems(player, SOE_FOREST_OF_THE_DEAD, 1);
-					qs.setCond(2, true);
 					htmltext = event;
 				}
 				break;
 			}
 			case "33849-02.html":
 			{
-				if (qs.isCond(2))
+				if (qs.isCond(3))
 				{
 					qs.exitQuest(false, true);
 					giveItems(player, EWA, 2);
@@ -123,11 +122,11 @@ public class Q10411_KekropusLetterTheForestOfTheDead extends LetterQuest
 		
 		if (qs.isStarted())
 		{
-			if ((npc.getId() == MATHIAS) && qs.isCond(1))
+			if ((npc.getId() == MATHIAS) && qs.isCond(2))
 			{
 				htmltext = "31340-01.html";
 			}
-			else if (qs.isCond(2))
+			else if (qs.isCond(3))
 			{
 				htmltext = npc.getId() == MATHIAS ? "31340-04.html" : "33849-01.html";
 			}
@@ -143,7 +142,7 @@ public class Q10411_KekropusLetterTheForestOfTheDead extends LetterQuest
 		{
 			final Player player = creature.asPlayer();
 			final QuestState qs = getQuestState(player, false);
-			if ((qs != null) && qs.isCond(2))
+			if ((qs != null) && qs.isCond(3))
 			{
 				showOnScreenMsg(player, NpcStringId.FOREST_OF_THE_DEAD_IS_A_GOOD_HUNTING_ZONE_FOR_LV_65_OR_ABOVE, ExShowScreenMessage.TOP_CENTER, 6000);
 			}

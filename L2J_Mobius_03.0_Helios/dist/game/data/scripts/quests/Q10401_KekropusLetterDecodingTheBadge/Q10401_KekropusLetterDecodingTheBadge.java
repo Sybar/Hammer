@@ -80,9 +80,9 @@ public class Q10401_KekropusLetterDecodingTheBadge extends LetterQuest
 			}
 			case "33864-03.html":
 			{
-				if (qs.isCond(1))
+				if (qs.isCond(2))
 				{
-					qs.setCond(2, true);
+					qs.setCond(3, true);
 					giveItems(player, SOE_FORSAKEN_PLAINS, 1);
 					htmltext = event;
 				}
@@ -90,7 +90,7 @@ public class Q10401_KekropusLetterDecodingTheBadge extends LetterQuest
 			}
 			case "33865-02.html":
 			{
-				if (qs.isCond(2))
+				if (qs.isCond(3))
 				{
 					qs.exitQuest(false, true);
 					giveItems(player, EAB, 5);
@@ -122,11 +122,11 @@ public class Q10401_KekropusLetterDecodingTheBadge extends LetterQuest
 		
 		if (qs.isStarted())
 		{
-			if (qs.isCond(1) && (npc.getId() == PATERSON))
+			if (qs.isCond(2) && (npc.getId() == PATERSON))
 			{
 				htmltext = "33864-01.html";
 			}
-			else if (qs.isCond(2))
+			else if (qs.isCond(3))
 			{
 				htmltext = npc.getId() == PATERSON ? "33864-04.html" : "33865-01.html";
 			}
@@ -142,7 +142,7 @@ public class Q10401_KekropusLetterDecodingTheBadge extends LetterQuest
 		{
 			final Player player = creature.asPlayer();
 			final QuestState qs = getQuestState(player, false);
-			if ((qs != null) && qs.isCond(2))
+			if ((qs != null) && qs.isCond(3))
 			{
 				showOnScreenMsg(player, NpcStringId.FORSAKEN_PLAINS_IA_A_GOOD_HUNTING_ZONE_FOR_LV_58_OR_ABOVE, ExShowScreenMessage.TOP_CENTER, 6000);
 			}

@@ -90,7 +90,6 @@ public class Q10530_KekropusLetterTheDragonsTransition extends LetterQuest
 			{
 				if (qs.isCond(2))
 				{
-					takeItems(player, SOE_TOWN_OF_GIRAN, -1);
 					giveItems(player, SOE_DRAGON_VALLEY, 1);
 					qs.setCond(3, true);
 					htmltext = event;

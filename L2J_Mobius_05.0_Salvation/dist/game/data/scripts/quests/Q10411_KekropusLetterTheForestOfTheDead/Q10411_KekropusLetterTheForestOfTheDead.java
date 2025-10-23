@@ -81,9 +81,8 @@ public class Q10411_KekropusLetterTheForestOfTheDead extends LetterQuest
 			{
 				if (qs.isCond(2))
 				{
-					takeItems(player, SOE_TOWN_OF_RUNE, -1);
-					giveItems(player, SOE_FOREST_OF_THE_DEAD, 1);
 					qs.setCond(3, true);
+					giveItems(player, SOE_FOREST_OF_THE_DEAD, 1);
 					htmltext = event;
 				}
 				break;

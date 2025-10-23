@@ -86,17 +86,16 @@ public class Q10433_KekropusLetterRegardingASeal extends LetterQuest
 			}
 			case "30196-03.html":
 			{
-				if (qs.isCond(1))
+				if (qs.isCond(2))
 				{
-					takeItems(player, SOE_TOWN_OF_OREN, -1);
-					qs.setCond(2, true);
+					qs.setCond(3, true);
 					htmltext = event;
 				}
 				break;
 			}
 			case "33841-02.html":
 			{
-				if (qs.isCond(2))
+				if (qs.isCond(3))
 				{
 					qs.exitQuest(false, true);
 					giveItems(player, EWS, 1);
@@ -128,11 +127,11 @@ public class Q10433_KekropusLetterRegardingASeal extends LetterQuest
 		
 		if (qs.isStarted())
 		{
-			if ((npc.getId() == MOUEN) && qs.isCond(1))
+			if ((npc.getId() == MOUEN) && qs.isCond(2))
 			{
 				htmltext = "30196-01.html";
 			}
-			else if (qs.isCond(2))
+			else if (qs.isCond(3))
 			{
 				htmltext = npc.getId() == MOUEN ? "30196-04.html" : "33841-01.html";
 			}
@@ -148,7 +147,7 @@ public class Q10433_KekropusLetterRegardingASeal extends LetterQuest
 		{
 			final Player player = creature.asPlayer();
 			final QuestState qs = getQuestState(player, false);
-			if ((qs != null) && qs.isCond(2))
+			if ((qs != null) && qs.isCond(3))
 			{
 				showOnScreenMsg(player, NpcStringId.SEL_MAHUM_TRAINING_GROUNDS_IS_A_GOOD_HUNTING_ZONE_FOR_LV_81_OR_ABOVE, ExShowScreenMessage.TOP_CENTER, 6000);
 			}

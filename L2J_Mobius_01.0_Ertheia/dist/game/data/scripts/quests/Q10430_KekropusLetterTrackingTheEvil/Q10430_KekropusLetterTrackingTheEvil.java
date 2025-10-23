@@ -87,18 +87,17 @@ public class Q10430_KekropusLetterTrackingTheEvil extends LetterQuest
 			}
 			case "31981-03.html":
 			{
-				if (qs.isCond(1))
+				if (qs.isCond(2))
 				{
-					takeItems(player, SOE_TOWN_OF_SCHUTTGART, -1);
+					qs.setCond(3, true);
 					giveItems(player, SOE_DEN_OF_EVIL, 1);
-					qs.setCond(2, true);
 					htmltext = event;
 				}
 				break;
 			}
 			case "33868-02.html":
 			{
-				if (qs.isCond(2))
+				if (qs.isCond(3))
 				{
 					qs.exitQuest(false, true);
 					giveItems(player, EWS, 1);
@@ -130,11 +129,11 @@ public class Q10430_KekropusLetterTrackingTheEvil extends LetterQuest
 		
 		if (qs.isStarted())
 		{
-			if ((npc.getId() == VISHOTSKY) && qs.isCond(1))
+			if ((npc.getId() == VISHOTSKY) && qs.isCond(2))
 			{
 				htmltext = "31981-01.html";
 			}
-			else if (qs.isCond(2))
+			else if (qs.isCond(3))
 			{
 				htmltext = npc.getId() == VISHOTSKY ? "31981-04.html" : "33868-01.html";
 			}
@@ -150,7 +149,7 @@ public class Q10430_KekropusLetterTrackingTheEvil extends LetterQuest
 		{
 			final Player player = creature.asPlayer();
 			final QuestState qs = getQuestState(player, false);
-			if ((qs != null) && qs.isCond(2))
+			if ((qs != null) && qs.isCond(3))
 			{
 				showOnScreenMsg(player, NpcStringId.DEN_OF_EVIL_IS_A_GOOD_HUNTING_ZONE_FOR_LV_81_OR_ABOVE, ExShowScreenMessage.TOP_CENTER, 6000);
 			}

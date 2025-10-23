@@ -90,27 +90,27 @@ public class Q10439_KekropusLetterTheOriginsOfARumor extends LetterQuest
 			}
 			case "30916-04.html":
 			{
-				if (qs.isCond(1))
+				if (qs.isCond(2))
 				{
+					qs.setCond(3, true);
 					giveItems(player, SOE_FIELD_OF_SILENCE, 1);
-					qs.setCond(2, true);
 					htmltext = event;
 				}
 				break;
 			}
 			case "30916-06.html":
 			{
-				if (qs.isCond(1))
+				if (qs.isCond(2))
 				{
+					qs.setCond(4, true);
 					giveItems(player, SOE_FIELD_OF_WISPERS, 1);
-					qs.setCond(3, true);
 					htmltext = event;
 				}
 				break;
 			}
 			case "32641-02.html":
 			{
-				if (qs.isCond(2))
+				if (qs.isCond(3))
 				{
 					qs.exitQuest(false, true);
 					giveItems(player, EWS, 1);
@@ -127,7 +127,7 @@ public class Q10439_KekropusLetterTheOriginsOfARumor extends LetterQuest
 			}
 			case "32642-02.html":
 			{
-				if (qs.isCond(3))
+				if (qs.isCond(4))
 				{
 					qs.exitQuest(false, true);
 					giveItems(player, EWS, 1);
@@ -160,17 +160,17 @@ public class Q10439_KekropusLetterTheOriginsOfARumor extends LetterQuest
 		if (qs.isStarted())
 		{
 			giveItems(player, SOE_HEINE, 1);
-			if ((npc.getId() == GOSTA) && qs.isCond(1))
+			if ((npc.getId() == GOSTA) && qs.isCond(2))
 			{
 				htmltext = "30916-01.html";
 			}
-			else if (qs.isCond(2))
+			else if (qs.isCond(3))
 			{
 				htmltext = npc.getId() == GOSTA ? "30916-05.html" : "32641-01.html";
 			}
-			else if (qs.isCond(3))
+			else if (qs.isCond(4))
 			{
-				htmltext = npc.getId() == GOSTA ? "30917-07.html" : "32642-01.html";
+				htmltext = npc.getId() == GOSTA ? "30916-07.html" : "32642-01.html";
 			}
 		}
 		
@@ -186,11 +186,11 @@ public class Q10439_KekropusLetterTheOriginsOfARumor extends LetterQuest
 			final QuestState qs = getQuestState(player, false);
 			if (qs != null)
 			{
-				if (qs.isCond(2))
+				if (qs.isCond(3))
 				{
 					showOnScreenMsg(player, NpcStringId.FIELD_OF_SILENCE_AND_FIELD_OR_WHISPERS_ARE_GOOD_HUNTING_ZONES_FOR_LV_81_OR_ABOVE, ExShowScreenMessage.TOP_CENTER, 6000);
 				}
-				else if (qs.isCond(3))
+				else if (qs.isCond(4))
 				{
 					showOnScreenMsg(player, NpcStringId.FIELD_OF_SILENCE_AND_FIELD_OR_WHISPERS_ARE_GOOD_HUNTING_ZONES_FOR_LV_81_OR_ABOVE, ExShowScreenMessage.TOP_CENTER, 6000);
 				}

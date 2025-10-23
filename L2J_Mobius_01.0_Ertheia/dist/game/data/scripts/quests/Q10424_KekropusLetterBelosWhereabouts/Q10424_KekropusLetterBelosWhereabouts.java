@@ -84,18 +84,17 @@ public class Q10424_KekropusLetterBelosWhereabouts extends LetterQuest
 			}
 			case "31292-03.htm":
 			{
-				if (qs.isCond(1))
+				if (qs.isCond(2))
 				{
-					takeItems(player, SOE_TOWN_OF_GODDARD, -1);
+					qs.setCond(3, true);
 					giveItems(player, SOE_KETRA_ORC_OUTPOST, 1);
-					qs.setCond(2, true);
 					htmltext = event;
 				}
 				break;
 			}
 			case "33852-02.htm":
 			{
-				if (qs.isCond(2))
+				if (qs.isCond(3))
 				{
 					qs.exitQuest(false, true);
 					giveItems(player, EWS, 1);
@@ -127,11 +126,11 @@ public class Q10424_KekropusLetterBelosWhereabouts extends LetterQuest
 		
 		if (qs.isStarted())
 		{
-			if ((npc.getId() == ANDREI) && qs.isCond(1))
+			if ((npc.getId() == ANDREI) && qs.isCond(2))
 			{
 				htmltext = "31292-01.htm";
 			}
-			else if (qs.isCond(2))
+			else if (qs.isCond(3))
 			{
 				htmltext = npc.getId() == ANDREI ? "31292-04.htm" : "33852-01.htm";
 			}
@@ -147,7 +146,7 @@ public class Q10424_KekropusLetterBelosWhereabouts extends LetterQuest
 		{
 			final Player player = creature.asPlayer();
 			final QuestState qs = getQuestState(player, false);
-			if ((qs != null) && qs.isCond(2))
+			if ((qs != null) && qs.isCond(3))
 			{
 				showOnScreenMsg(player, NpcStringId.KETRA_ORC_OUTPOST_IS_A_GOOD_HUNTING_ZONE_FOR_LV_76_OR_ABOVE, ExShowScreenMessage.TOP_CENTER, 6000);
 			}

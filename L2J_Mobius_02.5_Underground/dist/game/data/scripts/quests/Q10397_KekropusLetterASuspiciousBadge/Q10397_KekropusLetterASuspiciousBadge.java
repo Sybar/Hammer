@@ -80,17 +80,17 @@ public class Q10397_KekropusLetterASuspiciousBadge extends LetterQuest
 			}
 			case "30196-03.html":
 			{
-				if (qs.isCond(1))
+				if (qs.isCond(2))
 				{
+					qs.setCond(3, true);
 					giveItems(player, SOE_SEA_OF_SPORES, 1);
-					qs.setCond(2, true);
 					htmltext = event;
 				}
 				break;
 			}
 			case "33845-02.html":
 			{
-				if (qs.isCond(2))
+				if (qs.isCond(3))
 				{
 					qs.exitQuest(false, true);
 					giveItems(player, EWB, 2);
@@ -122,11 +122,11 @@ public class Q10397_KekropusLetterASuspiciousBadge extends LetterQuest
 		
 		if (qs.isStarted())
 		{
-			if (qs.isCond(1) && (npc.getId() == MOUEN))
+			if (qs.isCond(2) && (npc.getId() == MOUEN))
 			{
 				htmltext = "30196-01.html";
 			}
-			else if (qs.isCond(2))
+			else if (qs.isCond(3))
 			{
 				htmltext = npc.getId() == MOUEN ? "30196-04.html" : "33845-01.html";
 			}
@@ -142,7 +142,7 @@ public class Q10397_KekropusLetterASuspiciousBadge extends LetterQuest
 		{
 			final Player player = creature.asPlayer();
 			final QuestState qs = getQuestState(player, false);
-			if ((qs != null) && qs.isCond(2))
+			if ((qs != null) && qs.isCond(3))
 			{
 				showOnScreenMsg(player, NpcStringId.SEA_OF_SPORES_IS_A_GOOD_HUNTING_ZONE_FOR_LV_52_OR_ABOVE, ExShowScreenMessage.TOP_CENTER, 6000);
 			}

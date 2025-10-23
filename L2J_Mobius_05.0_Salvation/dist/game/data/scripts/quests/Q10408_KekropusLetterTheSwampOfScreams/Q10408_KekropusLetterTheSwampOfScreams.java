@@ -81,9 +81,8 @@ public class Q10408_KekropusLetterTheSwampOfScreams extends LetterQuest
 			{
 				if (qs.isCond(2))
 				{
-					takeItems(player, SOE_TOWN_OF_RUNE, -1);
-					giveItems(player, SOE_SWAMP_OF_SCREAMS, 1);
 					qs.setCond(3, true);
+					giveItems(player, SOE_SWAMP_OF_SCREAMS, 1);
 					htmltext = event;
 				}
 				break;

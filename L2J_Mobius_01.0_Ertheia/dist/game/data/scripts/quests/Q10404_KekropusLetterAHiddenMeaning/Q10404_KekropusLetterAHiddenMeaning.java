@@ -80,9 +80,9 @@ public class Q10404_KekropusLetterAHiddenMeaning extends LetterQuest
 			}
 			case "33864-03.html":
 			{
-				if (qs.isCond(1))
+				if (qs.isCond(2))
 				{
-					qs.setCond(2, true);
+					qs.setCond(3, true);
 					giveItems(player, SOE_FIELDS_OF_MASSACRE, 1);
 					htmltext = event;
 				}
@@ -90,7 +90,7 @@ public class Q10404_KekropusLetterAHiddenMeaning extends LetterQuest
 			}
 			case "33867-02.html":
 			{
-				if (qs.isCond(2))
+				if (qs.isCond(3))
 				{
 					qs.exitQuest(false, true);
 					giveItems(player, EWA, 1);
@@ -122,11 +122,11 @@ public class Q10404_KekropusLetterAHiddenMeaning extends LetterQuest
 		
 		if (qs.isStarted())
 		{
-			if ((npc.getId() == PATERSON) && qs.isCond(1))
+			if ((npc.getId() == PATERSON) && qs.isCond(2))
 			{
 				htmltext = "33864-01.html";
 			}
-			else if (qs.isCond(2))
+			else if (qs.isCond(3))
 			{
 				htmltext = npc.getId() == PATERSON ? "33864-04.html" : "33867-01.html";
 			}
@@ -142,7 +142,7 @@ public class Q10404_KekropusLetterAHiddenMeaning extends LetterQuest
 		{
 			final Player player = creature.asPlayer();
 			final QuestState qs = getQuestState(player, false);
-			if ((qs != null) && qs.isCond(2))
+			if ((qs != null) && qs.isCond(3))
 			{
 				showOnScreenMsg(player, NpcStringId.FIELDS_OF_MASSACRE_IS_A_GOOD_HUNTING_ZONE_FOR_LV_61_OR_ABOVE, ExShowScreenMessage.TOP_CENTER, 6000);
 			}

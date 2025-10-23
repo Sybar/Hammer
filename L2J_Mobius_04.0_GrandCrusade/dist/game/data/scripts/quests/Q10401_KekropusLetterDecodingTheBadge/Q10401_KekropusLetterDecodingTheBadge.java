@@ -79,9 +79,9 @@ public class Q10401_KekropusLetterDecodingTheBadge extends LetterQuest
 			}
 			case "33864-03.html":
 			{
-				if (qs.isCond(1))
+				if (qs.isCond(2))
 				{
-					qs.setCond(2, true);
+					qs.setCond(3, true);
 					giveItems(player, SOE_FORSAKEN_PLAINS, 1);
 					htmltext = event;
 				}
@@ -89,7 +89,7 @@ public class Q10401_KekropusLetterDecodingTheBadge extends LetterQuest
 			}
 			case "33865-02.html":
 			{
-				if (qs.isCond(2))
+				if (qs.isCond(3))
 				{
 					qs.exitQuest(false, true);
 					giveStoryQuestReward(npc, player);
@@ -120,11 +120,11 @@ public class Q10401_KekropusLetterDecodingTheBadge extends LetterQuest
 		
 		if (qs.isStarted())
 		{
-			if (qs.isCond(1) && (npc.getId() == PATERSON))
+			if (qs.isCond(2) && (npc.getId() == PATERSON))
 			{
 				htmltext = "33864-01.html";
 			}
-			else if (qs.isCond(2))
+			else if (qs.isCond(3))
 			{
 				htmltext = npc.getId() == PATERSON ? "33864-04.html" : "33865-01.html";
 			}

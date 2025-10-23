@@ -79,18 +79,17 @@ public class Q10419_KekropusLetterKampfsWhereabouts extends LetterQuest
 			}
 			case "31292-03.html":
 			{
-				if (qs.isCond(1))
+				if (qs.isCond(2))
 				{
-					takeItems(player, SOE_TOWN_OF_GODDARD, -1);
+					qs.setCond(3, true);
 					giveItems(player, SOE_VARKA_SILENOS_BARRACKS, 1);
-					qs.setCond(2, true);
 					htmltext = event;
 				}
 				break;
 			}
 			case "33853-02.html":
 			{
-				if (qs.isCond(2))
+				if (qs.isCond(3))
 				{
 					qs.exitQuest(false, true);
 					giveStoryQuestReward(npc, player);
@@ -121,11 +120,11 @@ public class Q10419_KekropusLetterKampfsWhereabouts extends LetterQuest
 		
 		if (qs.isStarted())
 		{
-			if ((npc.getId() == ANDREI) && qs.isCond(1))
+			if ((npc.getId() == ANDREI) && qs.isCond(2))
 			{
 				htmltext = "31292-01.html";
 			}
-			else if (qs.isCond(2))
+			else if (qs.isCond(3))
 			{
 				htmltext = npc.getId() == ANDREI ? "31292-04.html" : "33853-01.html";
 			}
@@ -141,7 +140,7 @@ public class Q10419_KekropusLetterKampfsWhereabouts extends LetterQuest
 		{
 			final Player player = creature.asPlayer();
 			final QuestState qs = getQuestState(player, false);
-			if ((qs != null) && qs.isCond(2))
+			if ((qs != null) && qs.isCond(3))
 			{
 				showOnScreenMsg(player, NpcStringId.VARKA_SILENOS_BARRACKS_IS_A_GOOD_HUNTING_ZONE_FOR_LV_76_OR_ABOVE, ExShowScreenMessage.TOP_CENTER, 6000);
 			}

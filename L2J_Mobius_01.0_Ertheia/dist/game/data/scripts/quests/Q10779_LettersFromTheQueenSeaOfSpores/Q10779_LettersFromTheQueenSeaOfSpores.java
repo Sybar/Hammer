@@ -77,16 +77,16 @@ public class Q10779_LettersFromTheQueenSeaOfSpores extends LetterQuest
 			}
 			case "30191-03.html":
 			{
-				if (qs.isCond(1))
+				if (qs.isCond(2))
 				{
-					qs.setCond(2, true);
+					qs.setCond(3, true);
 					giveItems(player, SOE_SEA_OF_SPORES, 1);
 				}
 				break;
 			}
 			case "33845-03.html":
 			{
-				if (qs.isCond(2))
+				if (qs.isCond(3))
 				{
 					giveItems(player, ENCHANT_WEAPON_B, 3);
 					giveStoryQuestReward(player, 37);
@@ -119,9 +119,9 @@ public class Q10779_LettersFromTheQueenSeaOfSpores extends LetterQuest
 		{
 			if (npc.getId() == HOLINT)
 			{
-				htmltext = (qs.isCond(1)) ? "30191-01.html" : "30191-04.html";
+				htmltext = (qs.isCond(2)) ? "30191-01.html" : "30191-04.html";
 			}
-			else if (qs.isCond(2))
+			else if (qs.isCond(3))
 			{
 				htmltext = "33845-01.html";
 			}
