@@ -108,6 +108,14 @@
 			<npc id="35467" x="149024" y="-55456" z="-2760" respawnTime="60sec" /> <!-- Branhillde -->
 			<npc id="35468" x="148912" y="-55568" z="-2760" heading="32000" respawnTime="60sec" /> <!-- Lambert -->
 			<npc id="36706" x="149019" y="-54783" z="-2776" heading="47907" respawnTime="60sec" /> <!-- Mermoden -->
+			<npc id="31276" x="148880" y="-52608" z="-2736" heading="49500" respawnTime="60sec" /> <!-- Grand Master - Bernhard -->
+			<npc id="31277" x="149008" y="-52560" z="-2736" heading="49500" respawnTime="60sec" /> <!-- Master - Felix -->
+			<npc id="31278" x="148736" y="-52560" z="-2736" heading="49500" respawnTime="60sec" /> <!-- Master - Bronwyn -->
+			<npc id="31279" x="147712" y="-52688" z="-2731" heading="49000" respawnTime="60sec" /> <!-- High Priest - Gregory -->
+			<npc id="31280" x="148048" y="-52416" z="-2736" heading="49000" respawnTime="60sec" /> <!-- Priest - Bastian -->
+			<npc id="31281" x="147376" y="-52416" z="-2736" heading="49000" respawnTime="60sec" /> <!-- Priest - Cerenas -->
+			<npc id="31282" x="146688" y="-52576" z="-2736" heading="49500" respawnTime="60sec" /> <!-- Magister - Justin -->
+			<npc id="31283" x="146416" y="-52564" z="-2736" heading="49500" respawnTime="60sec" /> <!-- Magister - Alminas -->
 		</group>
 	</spawn>
 </list>
