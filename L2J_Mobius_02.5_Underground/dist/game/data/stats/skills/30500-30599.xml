@@ -4161,10 +4161,6 @@
 					<value level="5">5</value>
 				</skillLevel>
 			</effect>
-			<effect name="CallSkill">
-				<skillId>30533</skillId> <!-- Backside Purge -->
-				<skillLevel>1</skillLevel>
-			</effect>
 		</selfEffects>
 	</skill>
 	<skill id="30510" toLevel="1" name="Infighter">
@@ -6870,6 +6866,24 @@
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
+		</effects>
+	</skill>
+	<skill id="30533" toLevel="1" name="Backside Purge">
+		<icon>icon.skill30509</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>5</abnormalTime>
+		<abnormalType>ABNORMAL_INVINCIBILITY</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<effectPoint>2</effectPoint>
+		<effects>
+			<effect name="DispelByCategory">
+				<slot>DEBUFF</slot>
+				<rate>100</rate>
+				<max>10</max>
+			</effect>
+			<effect name="DebuffBlock" />
 		</effects>
 	</skill>
 	<skill id="30540" toLevel="17" name="Eminent Fist Weapon Mastery">

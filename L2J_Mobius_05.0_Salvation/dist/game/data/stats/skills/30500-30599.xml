@@ -3111,10 +3111,6 @@
 					<value level="5">5</value>
 				</skillLevel>
 			</effect>
-			<effect name="CallSkill">
-				<skillId>30533</skillId> <!-- Backside Purge -->
-				<skillLevel>1</skillLevel>
-			</effect>
 		</selfEffects>
 	</skill>
 	<skill id="30510" toLevel="1" name="Infighter">
@@ -5335,6 +5331,7 @@
 		</effects>
 	</skill>
 	<skill id="30533" toLevel="1" name="Backside Purge">
+		<icon>icon.skill30509</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
 		<abnormalLevel>1</abnormalLevel>
