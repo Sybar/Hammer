@@ -25,7 +25,6 @@ import org.l2jmobius.gameserver.handler.IItemHandler;
 import org.l2jmobius.gameserver.model.actor.Playable;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.request.RelicSummonRequest;
-import org.l2jmobius.gameserver.model.item.enums.ItemProcessType;
 import org.l2jmobius.gameserver.model.item.instance.Item;
 import org.l2jmobius.gameserver.model.variables.AccountVariables;
 import org.l2jmobius.gameserver.network.SystemMessageId;
@@ -63,11 +62,11 @@ public class RelicSummonCoupon implements IItemHandler
 			return false;
 		}
 		
-		if (!player.destroyItemByItemId(ItemProcessType.FEE, item.getId(), 1, player, true))
-		{
-			player.sendPacket(SystemMessageId.FAILURE_ALL_MATERIALS_ARE_LOST);
-			return false;
-		}
+		// if (!player.destroyItemByItemId(ItemProcessType.FEE, item.getId(), 1, player, true))
+		// {
+		// player.sendPacket(SystemMessageId.FAILURE_ALL_MATERIALS_ARE_LOST);
+		// return false;
+		// }
 		
 		player.addRequest(new RelicSummonRequest(player));
 		
