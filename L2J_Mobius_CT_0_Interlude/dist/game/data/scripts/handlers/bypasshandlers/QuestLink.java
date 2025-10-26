@@ -137,6 +137,8 @@ public class QuestLink implements IBypassHandler
 			
 			if ((player.getApprentice() > 0) && (World.getInstance().getPlayer(player.getApprentice()) != null))
 			{
+				questId = quest.getId();
+				
 				if (questId == TO_LEAD_AND_BE_LED)
 				{
 					sb.append("<a action=\"bypass Quest Q00118_ToLeadAndBeLed sponsor\">[" + quest.getDescription() + state + " (Sponsor)]</a><br>");

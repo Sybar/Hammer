@@ -108,7 +108,8 @@ public class QuestLink implements IBypassHandler
 			}
 			
 			// Skip tutorial links.
-			if (quest.getId() == 255)
+			questId = quest.getId();
+			if (questId == 255)
 			{
 				continue;
 			}
