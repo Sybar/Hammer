@@ -94,6 +94,9 @@
 		<skill id="49032" lvl="18" reqLvl="88" evolve="2" item="57" itemAmount="4000000" /> <!-- Horn Thrust -->
 		<skill id="49032" lvl="19" reqLvl="89" evolve="2" item="57" itemAmount="4500000" /> <!-- Horn Thrust -->
 		<skill id="49032" lvl="20" reqLvl="90" evolve="2" item="57" itemAmount="5000000" /> <!-- Horn Thrust -->
+		<skill id="49031" lvl="1" reqLvl="1" evolve="0" /> <!-- Buffalo -->
+		<skill id="49031" lvl="2" reqLvl="40" evolve="1" /> <!-- Buffalo -->
+		<skill id="49031" lvl="3" reqLvl="76" evolve="2" /> <!-- Buffalo -->
 		<skill id="49031" lvl="4" reqLvl="82" evolve="2" item="57" itemAmount="5000000" /> <!-- Buffalo -->
 		<skill id="49031" lvl="5" reqLvl="84" evolve="2" item="57" itemAmount="10000000" /> <!-- Buffalo -->
 		<skill id="49031" lvl="6" reqLvl="86" evolve="2" item="57" itemAmount="15000000" /> <!-- Buffalo -->
@@ -150,6 +153,9 @@
 		<skill id="49012" lvl="18" reqLvl="88" evolve="2" item="57" itemAmount="2500000" /> <!-- Breaking Blaster -->
 		<skill id="49012" lvl="19" reqLvl="89" evolve="2" item="57" itemAmount="2750000" /> <!-- Breaking Blaster -->
 		<skill id="49012" lvl="20" reqLvl="90" evolve="2" item="57" itemAmount="3000000" /> <!-- Breaking Blaster -->
+		<skill id="49011" lvl="1" reqLvl="1" evolve="0" /> <!-- Tiger -->
+		<skill id="49011" lvl="2" reqLvl="40" evolve="1" /> <!-- Tiger -->
+		<skill id="49011" lvl="3" reqLvl="76" evolve="2" /> <!-- Tiger -->
 		<skill id="49011" lvl="4" reqLvl="82" evolve="2" item="57" itemAmount="5000000" /> <!-- Tiger -->
 		<skill id="49011" lvl="5" reqLvl="84" evolve="2" item="57" itemAmount="10000000" /> <!-- Tiger -->
 		<skill id="49011" lvl="6" reqLvl="86" evolve="2" item="57" itemAmount="15000000" /> <!-- Tiger -->
@@ -322,6 +328,9 @@
 		<skill id="49042" lvl="18" reqLvl="88" evolve="2" item="57" itemAmount="4000000" /> <!-- Arrow Feather -->
 		<skill id="49042" lvl="19" reqLvl="89" evolve="2" item="57" itemAmount="4500000" /> <!-- Arrow Feather -->
 		<skill id="49042" lvl="20" reqLvl="90" evolve="2" item="57" itemAmount="5000000" /> <!-- Arrow Feather -->
+		<skill id="49041" lvl="1" reqLvl="1" evolve="0" /> <!-- Hawk -->
+		<skill id="49041" lvl="2" reqLvl="40" evolve="1" /> <!-- Hawk -->
+		<skill id="49041" lvl="3" reqLvl="76" evolve="2" /> <!-- Hawk -->
 		<skill id="49041" lvl="4" reqLvl="82" evolve="2" item="57" itemAmount="5000000" /> <!-- Hawk -->
 		<skill id="49041" lvl="5" reqLvl="84" evolve="2" item="57" itemAmount="10000000" /> <!-- Hawk -->
 		<skill id="49041" lvl="6" reqLvl="86" evolve="2" item="57" itemAmount="15000000" /> <!-- Hawk -->
@@ -391,6 +400,9 @@
 		<skill id="49063" lvl="18" reqLvl="88" evolve="2" item="57" itemAmount="4000000" /> <!-- Fox Fire -->
 		<skill id="49063" lvl="19" reqLvl="89" evolve="2" item="57" itemAmount="4500000" /> <!-- Fox Fire -->
 		<skill id="49063" lvl="20" reqLvl="90" evolve="2" item="57" itemAmount="5000000" /> <!-- Fox Fire -->
+		<skill id="49061" lvl="1" reqLvl="1" evolve="0" /> <!-- Fox -->
+		<skill id="49061" lvl="2" reqLvl="40" evolve="1" /> <!-- Fox -->
+		<skill id="49061" lvl="3" reqLvl="76" evolve="2" /> <!-- Fox -->
 		<skill id="49061" lvl="4" reqLvl="82" evolve="2" item="57" itemAmount="5000000" /> <!-- Fox -->
 		<skill id="49061" lvl="5" reqLvl="84" evolve="2" item="57" itemAmount="10000000" /> <!-- Fox -->
 		<skill id="49061" lvl="6" reqLvl="86" evolve="2" item="57" itemAmount="15000000" /> <!-- Fox -->
@@ -407,7 +419,7 @@
 		<skill id="49067" lvl="6" reqLvl="83" evolve="2" item="57" itemAmount="1500000" /> <!-- Charm -->
 		<skill id="49067" lvl="7" reqLvl="88" evolve="2" item="57" itemAmount="2000000" /> <!-- Charm -->
 		<skill id="49067" lvl="8" reqLvl="90" evolve="2" item="57" itemAmount="2500000" /> <!-- Charm -->
-		<skill id="49070" lvl="1" reqLvl="76" evolve="2" item="98892" itemAmount="1" /> <!-- Magic Power Boost -->
+		<skill id="49070" lvl="1" reqLvl="76" evolve="2" item="102029;102026" itemAmount="1;1" /> <!-- Magic Power Boost -->
 		<skill id="49068" lvl="1" reqLvl="76" evolve="2" item="102296;98891" itemAmount="1;1" /> <!-- Fox Call -->
 		<skill id="49068" lvl="2" reqLvl="79" evolve="2" item="57" itemAmount="5000000" /> <!-- Fox Call -->
 		<skill id="49068" lvl="3" reqLvl="82" evolve="2" item="57" itemAmount="5000000" /> <!-- Fox Call -->

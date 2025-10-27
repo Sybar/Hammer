@@ -203,28 +203,31 @@
 	<action id="1143" handler="ServitorSkillUse" option="10088" /> <!-- Panther Rush -->
 	<action id="1144" handler="PetSkillUse" option="49002" /> <!-- Magic Missile -->
 	<action id="1145" handler="PetSkillUse" option="49004" /> <!-- Entrenching -->
-	<action id="1146" handler="PetSkillUse" option="49005" /> <!-- Chain Block -->
-	<action id="1147" handler="PetSkillUse" option="49006" /> <!-- Blocked Target Change -->
-	<action id="1148" handler="PetSkillUse" option="49012" /> <!-- Breaking Blaster -->
-	<action id="1149" handler="PetSkillUse" option="49013" /> <!-- Blinking Attack -->
-	<action id="1150" handler="PetSkillUse" option="49014" /> <!-- Beast Within -->
-	<action id="1151" handler="PetSkillUse" option="11381" /> <!-- Hide - Removed with 502 -->
-	<action id="1152" handler="PetSkillUse" option="49016" /> <!-- Strong Bite -->
-	<action id="1153" handler="PetSkillUse" option="49022" /> <!-- Dire Claw -->
-	<action id="1154" handler="PetSkillUse" option="49023" /> <!-- Leap Attack -->
-	<action id="1155" handler="PetSkillUse" option="49024" /> <!-- Last Dire Claw -->
-	<action id="1156" handler="PetSkillUse" option="49032" /> <!-- Horn Thrust -->
-	<action id="1157" handler="PetSkillUse" option="49033" /> <!-- Rump Stun -->
-	<action id="1158" handler="PetSkillUse" option="49034" /> <!-- Pulling Body -->
-	<action id="1159" handler="PetSkillUse" option="49035" /> <!-- Breath of Hurricane -->
-	<action id="1160" handler="PetSkillUse" option="49042" /> <!-- Arrow Feather -->
-	<action id="1161" handler="PetSkillUse" option="49043" /> <!-- Quick Jump -->
-	<action id="1162" handler="PetSkillUse" option="49044" /> <!-- Feather Storm -->
-	<action id="1163" handler="PetSkillUse" option="49045" /> <!-- Exploding Feather -->
-	<action id="1164" handler="PetSkillUse" option="49046" /> <!-- Scout's Strike -->
-	<action id="1165" handler="PetSkillUse" option="49052" /> <!-- Crippling Bite -->
-	<action id="1166" handler="PetSkillUse" option="49053" /> <!-- Rushing Assault -->
-	<action id="1167" handler="PetSkillUse" option="49054" /> <!-- Back Explosion -->
+	
+	<!--  Pet actions removed with 502
+	<action id="1146" handler="PetSkillUse" option="49005" /> Chain Block
+	<action id="1147" handler="PetSkillUse" option="49006" /> Blocked Target Change
+	<action id="1148" handler="PetSkillUse" option="49012" /> Breaking Blaster
+	<action id="1149" handler="PetSkillUse" option="49013" /> Blinking Attack
+	<action id="1150" handler="PetSkillUse" option="49014" /> Beast Within
+	<action id="1151" handler="PetSkillUse" option="11381" /> Hide - Removed with 502
+	<action id="1152" handler="PetSkillUse" option="49016" /> Strong Bite
+	<action id="1153" handler="PetSkillUse" option="49022" /> Dire Claw
+	<action id="1154" handler="PetSkillUse" option="49023" /> Leap Attack
+	<action id="1155" handler="PetSkillUse" option="49024" /> Last Dire Claw
+	<action id="1156" handler="PetSkillUse" option="49032" /> Horn Thrust
+	<action id="1157" handler="PetSkillUse" option="49033" /> Rump Stun
+	<action id="1158" handler="PetSkillUse" option="49034" /> Pulling Body
+	<action id="1159" handler="PetSkillUse" option="49035" /> Breath of Hurricane
+	<action id="1160" handler="PetSkillUse" option="49042" /> Arrow Feather
+	<action id="1161" handler="PetSkillUse" option="49043" /> Quick Jump
+	<action id="1162" handler="PetSkillUse" option="49044" /> Feather Storm
+	<action id="1163" handler="PetSkillUse" option="49045" /> Exploding Feather
+	<action id="1164" handler="PetSkillUse" option="49046" /> Scout's Strike
+	<action id="1165" handler="PetSkillUse" option="49052" /> Crippling Bite
+	<action id="1166" handler="PetSkillUse" option="49053" /> Rushing Assault
+	<action id="1167" handler="PetSkillUse" option="49054" /> Back Explosion -->
+	
 	<action id="1168" handler="ServitorSkillUse" option="31213" /> <!-- Skill: Emperor's Blessing -->
 	<action id="1169" handler="ServitorSkillUse" option="31214" /> <!-- Skill: Outcry -->
 	<action id="1170" handler="ServitorSkillUse" option="31215" /> <!-- Skill: Guard's Blessing -->

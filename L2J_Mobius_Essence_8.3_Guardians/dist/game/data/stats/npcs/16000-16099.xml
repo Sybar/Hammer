@@ -1545,7 +1545,6 @@
 		</collision>
 	</npc>
 	<npc id="16079" level="67" type="Folk" name="Buffalo Calf">
-		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>BEAST</race>
 		<sex>MALE</sex>
 		<stats str="41" int="21" dex="31" wit="20" con="52" men="25">
@@ -1567,20 +1566,8 @@
 			<radius normal="8.4" />
 			<height normal="9.6" />
 		</collision>
-		<skillList>
-			<skill id="4416" level="3" /> <!-- Beasts -->
-			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="1" /> <!-- Bare Hands -->
-		</skillList>
 	</npc>
 	<npc id="16080" level="67" type="Monster" name="Black Buffalo">
-		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>BEAST</race>
 		<sex>MALE</sex>
 		<stats str="41" int="21" dex="31" wit="20" con="52" men="25">
@@ -1602,20 +1589,8 @@
 			<radius normal="13.5" />
 			<height normal="14" />
 		</collision>
-		<skillList>
-			<skill id="4416" level="3" /> <!-- Beasts -->
-			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="1" /> <!-- Bare Hands -->
-		</skillList>
 	</npc>
 	<npc id="16081" level="67" type="Monster" name="White Buffalo">
-		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>BEAST</race>
 		<sex>MALE</sex>
 		<stats str="41" int="21" dex="31" wit="20" con="52" men="25">
@@ -1637,20 +1612,8 @@
 			<radius normal="13.5" />
 			<height normal="14" />
 		</collision>
-		<skillList>
-			<skill id="4416" level="3" /> <!-- Beasts -->
-			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="1" /> <!-- Bare Hands -->
-		</skillList>
 	</npc>
 	<npc id="16082" level="67" type="Monster" name="Black Combat Buffalo">
-		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>BEAST</race>
 		<sex>MALE</sex>
 		<stats str="41" int="21" dex="31" wit="20" con="52" men="25">
@@ -1672,20 +1635,8 @@
 			<radius normal="14.175" />
 			<height normal="14.85" />
 		</collision>
-		<skillList>
-			<skill id="4416" level="3" /> <!-- Beasts -->
-			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="1" /> <!-- Bare Hands -->
-		</skillList>
 	</npc>
 	<npc id="16083" level="67" type="Monster" name="White Combat Buffalo">
-		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>BEAST</race>
 		<sex>MALE</sex>
 		<stats str="41" int="21" dex="31" wit="20" con="52" men="25">
@@ -1707,20 +1658,8 @@
 			<radius normal="14.175" />
 			<height normal="14.85" />
 		</collision>
-		<skillList>
-			<skill id="4416" level="3" /> <!-- Beasts -->
-			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="1" /> <!-- Bare Hands -->
-		</skillList>
 	</npc>
 	<npc id="16084" level="69" type="Folk" name="Tiger Cub">
-		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>BEAST</race>
 		<sex>MALE</sex>
 		<stats str="41" int="21" dex="43" wit="20" con="40" men="25">
@@ -1742,20 +1681,8 @@
 			<radius normal="9.24" />
 			<height normal="12.708" />
 		</collision>
-		<skillList>
-			<skill id="4416" level="3" /> <!-- Beasts -->
-			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="1" /> <!-- Bare Hands -->
-		</skillList>
 	</npc>
 	<npc id="16085" level="69" type="Monster" name="White Tiger">
-		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>BEAST</race>
 		<sex>MALE</sex>
 		<stats str="41" int="21" dex="43" wit="20" con="40" men="25">
@@ -1777,20 +1704,8 @@
 			<radius normal="16.8" />
 			<height normal="11.4" />
 		</collision>
-		<skillList>
-			<skill id="4416" level="3" /> <!-- Beasts -->
-			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="1" /> <!-- Bare Hands -->
-		</skillList>
 	</npc>
 	<npc id="16086" level="69" type="Monster" name="Tiger">
-		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>BEAST</race>
 		<sex>MALE</sex>
 		<stats str="41" int="21" dex="43" wit="20" con="40" men="25">
@@ -1812,20 +1727,8 @@
 			<radius normal="16.8" />
 			<height normal="11.4" />
 		</collision>
-		<skillList>
-			<skill id="4416" level="3" /> <!-- Beasts -->
-			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="1" /> <!-- Bare Hands -->
-		</skillList>
 	</npc>
 	<npc id="16087" level="69" type="Monster" name="White Sharp-clawed Tiger">
-		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>BEAST</race>
 		<sex>MALE</sex>
 		<stats str="41" int="21" dex="43" wit="20" con="40" men="25">
@@ -1847,20 +1750,8 @@
 			<radius normal="17.64" />
 			<height normal="12.12" />
 		</collision>
-		<skillList>
-			<skill id="4416" level="3" /> <!-- Beasts -->
-			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="1" /> <!-- Bare Hands -->
-		</skillList>
 	</npc>
 	<npc id="16088" level="69" type="Monster" name="Steel Sharp-clawed Tiger">
-		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>BEAST</race>
 		<sex>MALE</sex>
 		<stats str="41" int="21" dex="43" wit="20" con="40" men="25">
@@ -1882,20 +1773,8 @@
 			<radius normal="17.64" />
 			<height normal="12.12" />
 		</collision>
-		<skillList>
-			<skill id="4416" level="3" /> <!-- Beasts -->
-			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="1" /> <!-- Bare Hands -->
-		</skillList>
 	</npc>
 	<npc id="16089" level="65" type="Folk" name="Kookaburra Chick">
-		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>BEAST</race>
 		<sex>MALE</sex>
 		<stats str="30" int="44" dex="21" wit="27" con="29" men="39">
@@ -1917,20 +1796,8 @@
 			<radius normal="5.775" />
 			<height normal="11.85" />
 		</collision>
-		<skillList>
-			<skill id="4416" level="3" /> <!-- Beasts -->
-			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="1" /> <!-- Bare Hands -->
-		</skillList>
 	</npc>
 	<npc id="16090" level="65" type="Monster" name="Red Kookaburra">
-		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>BEAST</race>
 		<sex>MALE</sex>
 		<stats str="30" int="44" dex="21" wit="27" con="29" men="39">
@@ -1952,20 +1819,8 @@
 			<radius normal="8.58" />
 			<height normal="20.1" />
 		</collision>
-		<skillList>
-			<skill id="4416" level="3" /> <!-- Beasts -->
-			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="1" /> <!-- Bare Hands -->
-		</skillList>
 	</npc>
 	<npc id="16091" level="65" type="Monster" name="Blue Kookaburra">
-		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>BEAST</race>
 		<sex>MALE</sex>
 		<stats str="30" int="44" dex="21" wit="27" con="29" men="39">
@@ -1987,20 +1842,8 @@
 			<radius normal="8.58" />
 			<height normal="20.1" />
 		</collision>
-		<skillList>
-			<skill id="4416" level="3" /> <!-- Beasts -->
-			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="1" /> <!-- Bare Hands -->
-		</skillList>
 	</npc>
 	<npc id="16092" level="65" type="Monster" name="Red Combat Kookaburra">
-		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>BEAST</race>
 		<sex>MALE</sex>
 		<stats str="30" int="44" dex="21" wit="27" con="29" men="39">
@@ -2022,20 +1865,8 @@
 			<radius normal="9.009" />
 			<height normal="21.255" />
 		</collision>
-		<skillList>
-			<skill id="4416" level="3" /> <!-- Beasts -->
-			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="1" /> <!-- Bare Hands -->
-		</skillList>
 	</npc>
 	<npc id="16093" level="65" type="Monster" name="Blue Combat Kookaburra">
-		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>BEAST</race>
 		<sex>MALE</sex>
 		<stats str="30" int="44" dex="21" wit="27" con="29" men="39">
@@ -2057,20 +1888,8 @@
 			<radius normal="9.009" />
 			<height normal="21.255" />
 		</collision>
-		<skillList>
-			<skill id="4416" level="3" /> <!-- Beasts -->
-			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="1" /> <!-- Bare Hands -->
-		</skillList>
 	</npc>
 	<npc id="16094" level="55" type="Folk" name="Dragon Hatchling">
-		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>DRAGON</race>
 		<sex>MALE</sex>
 		<stats str="41" int="21" dex="35" wit="20" con="48" men="25">
@@ -2092,20 +1911,8 @@
 			<radius normal="8.91" />
 			<height normal="8.88" />
 		</collision>
-		<skillList>
-			<skill id="4416" level="10" /> <!-- Dragons -->
-			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="1" /> <!-- Bare Hands -->
-		</skillList>
 	</npc>
 	<npc id="16095" level="55" type="Monster" name="Green Dragon">
-		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>DRAGON</race>
 		<sex>MALE</sex>
 		<stats str="41" int="21" dex="35" wit="20" con="48" men="25">
@@ -2127,20 +1934,8 @@
 			<radius normal="13.915" />
 			<height normal="16.965" />
 		</collision>
-		<skillList>
-			<skill id="4416" level="10" /> <!-- Dragons -->
-			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="1" /> <!-- Bare Hands -->
-		</skillList>
 	</npc>
 	<npc id="16096" level="55" type="Monster" name="Red Dragon">
-		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>DRAGON</race>
 		<sex>MALE</sex>
 		<stats str="41" int="21" dex="35" wit="20" con="48" men="25">
@@ -2162,20 +1957,8 @@
 			<radius normal="13.915" />
 			<height normal="16.965" />
 		</collision>
-		<skillList>
-			<skill id="4416" level="10" /> <!-- Dragons -->
-			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="1" /> <!-- Bare Hands -->
-		</skillList>
 	</npc>
 	<npc id="16097" level="55" type="Monster" name="Earth Dragon">
-		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>DRAGON</race>
 		<sex>MALE</sex>
 		<stats str="41" int="21" dex="35" wit="20" con="48" men="25">
@@ -2197,20 +1980,8 @@
 			<radius normal="14.5981" />
 			<height normal="17.9451" />
 		</collision>
-		<skillList>
-			<skill id="4416" level="10" /> <!-- Dragons -->
-			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="1" /> <!-- Bare Hands -->
-		</skillList>
 	</npc>
 	<npc id="16098" level="55" type="Monster" name="Fire Dragon">
-		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>DRAGON</race>
 		<sex>MALE</sex>
 		<stats str="41" int="21" dex="35" wit="20" con="48" men="25">
@@ -2232,20 +2003,8 @@
 			<radius normal="14.5981" />
 			<height normal="17.9451" />
 		</collision>
-		<skillList>
-			<skill id="4416" level="10" /> <!-- Dragons -->
-			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="1" /> <!-- Bare Hands -->
-		</skillList>
 	</npc>
 	<npc id="16099" level="55" type="Folk" name="Hawk Hatchling">
-		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
 		<stats str="41" int="21" dex="44" wit="20" con="39" men="25">
@@ -2267,16 +2026,5 @@
 			<radius normal="8.4" />
 			<height normal="13.8" />
 		</collision>
-		<skillList>
-			<skill id="4416" level="4" /> <!-- Animals -->
-			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average Damage Dealer -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="1" /> <!-- Bare Hands -->
-		</skillList>
 	</npc>
 </list>
