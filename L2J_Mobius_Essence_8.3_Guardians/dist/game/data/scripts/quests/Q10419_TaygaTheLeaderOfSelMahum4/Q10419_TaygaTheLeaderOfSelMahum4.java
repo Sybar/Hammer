@@ -43,7 +43,7 @@ public class Q10419_TaygaTheLeaderOfSelMahum4 extends Quest
 	private static final int QUEST_ID = 10419;
 	private static final int[] MONSTERS =
 	{
-		22721 // Tayga Astrologer
+		22722 // Tayga Elite Knight
 	};
 	
 	public Q10419_TaygaTheLeaderOfSelMahum4()
