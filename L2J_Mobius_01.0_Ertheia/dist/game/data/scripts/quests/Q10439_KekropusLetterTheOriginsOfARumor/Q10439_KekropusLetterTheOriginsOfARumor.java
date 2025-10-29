@@ -33,7 +33,7 @@ import quests.LetterQuest;
 
 /**
  * Kekropus' Letter: The Origins of a Rumor (10439)
- * @author Stayway
+ * @author Stayway, Trevor The Third
  */
 public class Q10439_KekropusLetterTheOriginsOfARumor extends LetterQuest
 {

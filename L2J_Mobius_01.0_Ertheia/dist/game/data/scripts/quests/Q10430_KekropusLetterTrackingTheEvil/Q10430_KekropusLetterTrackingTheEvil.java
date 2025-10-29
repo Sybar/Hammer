@@ -33,7 +33,7 @@ import quests.LetterQuest;
 
 /**
  * Kekropus' Letter: Tracking The Evil (10430)
- * @author Stayway
+ * @author Stayway, Trevor The Third
  */
 public class Q10430_KekropusLetterTrackingTheEvil extends LetterQuest
 {

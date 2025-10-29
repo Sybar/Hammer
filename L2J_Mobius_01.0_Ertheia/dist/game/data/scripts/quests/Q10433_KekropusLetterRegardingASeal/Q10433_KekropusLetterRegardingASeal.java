@@ -33,7 +33,7 @@ import quests.LetterQuest;
 
 /**
  * Kekropus' Letter: Regarding a Seal (10433)
- * @author Stayway
+ * @author Stayway, Trevor The Third
  */
 public class Q10433_KekropusLetterRegardingASeal extends LetterQuest
 {

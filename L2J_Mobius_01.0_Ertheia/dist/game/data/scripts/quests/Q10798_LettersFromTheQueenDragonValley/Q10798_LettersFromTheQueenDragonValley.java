@@ -32,7 +32,7 @@ import quests.LetterQuest;
 /**
  * Letters from the Queen: Dragon Valley (10798)
  * @URL https://l2wiki.com/Letters_from_the_Queen:_Dragon_Valley
- * @author Gigi
+ * @author Gigi, Trevor The Third
  */
 public class Q10798_LettersFromTheQueenDragonValley extends LetterQuest
 {

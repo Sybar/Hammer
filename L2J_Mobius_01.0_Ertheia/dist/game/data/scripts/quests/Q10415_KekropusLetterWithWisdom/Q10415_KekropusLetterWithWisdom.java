@@ -33,7 +33,7 @@ import quests.LetterQuest;
 /**
  * Kekropus Letter: With Wisdom (10415)
  * @URL https://l2wiki.com/Kekropus%27_Letter:_With_Wisdom
- * @author Gigi
+ * @author Gigi, Trevor The Third
  */
 public class Q10415_KekropusLetterWithWisdom extends LetterQuest
 {

@@ -32,7 +32,7 @@ import quests.LetterQuest;
 
 /**
  * Kekropus' Letter: Belos' Whereabouts (10424)
- * @author Stayway
+ * @author Stayway, Trevor The Third
  */
 public class Q10424_KekropusLetterBelosWhereabouts extends LetterQuest
 {

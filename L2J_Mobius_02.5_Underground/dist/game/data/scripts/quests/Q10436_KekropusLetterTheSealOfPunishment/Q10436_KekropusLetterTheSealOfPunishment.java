@@ -33,7 +33,7 @@ import quests.LetterQuest;
 
 /**
  * Kekropus' Letter: The Seal of Punishment (10436)
- * @author Stayway
+ * @author Stayway, Trevor The Third
  */
 public class Q10436_KekropusLetterTheSealOfPunishment extends LetterQuest
 {

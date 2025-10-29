@@ -32,7 +32,7 @@ import quests.LetterQuest;
 /**
  * Letters from the Queen: Wall of Argos (10795)
  * @URL https://l2wiki.com/Letters_from_the_Queen:_Wall_of_Argos
- * @author Gigi
+ * @author Gigi, Trevor The Third
  */
 public class Q10795_LettersFromTheQueenWallOfAgros extends LetterQuest
 {
