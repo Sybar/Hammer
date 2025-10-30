@@ -95,6 +95,7 @@ public class ReplaceSkillBySkill extends AbstractEffect
 		{
 			playable.addSkill(addedSkill);
 			playable.removeSkill(knownSkill, false);
+			playable.addReplacedSkill(_existingSkill.getSkillId(), _replacementSkill.getSkillId());
 			if (playable.isPet())
 			{
 				final Pet pet = playable.asPet();
@@ -130,6 +131,7 @@ public class ReplaceSkillBySkill extends AbstractEffect
 		{
 			playable.addSkill(addedSkill);
 			playable.removeSkill(knownSkill, false);
+			playable.removeReplacedSkill(existingSkillId);
 			if (playable.isPet())
 			{
 				final Pet pet = playable.asPet();

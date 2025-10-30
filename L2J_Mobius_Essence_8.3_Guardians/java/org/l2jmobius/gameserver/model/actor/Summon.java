@@ -31,6 +31,7 @@ import org.l2jmobius.gameserver.ai.SummonAI;
 import org.l2jmobius.gameserver.data.sql.CharSummonTable;
 import org.l2jmobius.gameserver.data.xml.ExperienceData;
 import org.l2jmobius.gameserver.data.xml.ItemData;
+import org.l2jmobius.gameserver.data.xml.SkillData;
 import org.l2jmobius.gameserver.geoengine.GeoEngine;
 import org.l2jmobius.gameserver.handler.IItemHandler;
 import org.l2jmobius.gameserver.handler.ItemHandler;
@@ -901,6 +902,14 @@ public abstract class Summon extends Playable
 			
 			// Send a Server->Client packet ActionFailed to the Player
 			_owner.sendPacket(ActionFailed.STATIC_PACKET);
+			return;
+		}
+		
+		final int skillId = skill.getId();
+		final int replacementSkillId = getReplacementSkill(skillId);
+		if (skillId != replacementSkillId)
+		{
+			super.doCast(SkillData.getInstance().getSkill(replacementSkillId, skill.getLevel(), skill.getSubLevel()));
 			return;
 		}
 		

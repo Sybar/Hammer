@@ -35,11 +35,13 @@ import org.l2jmobius.gameserver.network.serverpackets.ServerPacket;
 public class ExPetSkillList extends ServerPacket
 {
 	private final boolean _onEnter;
+	private final Pet _pet;
 	private final Collection<Skill> _skills;
 	
 	public ExPetSkillList(boolean onEnter, Pet pet)
 	{
 		_onEnter = onEnter;
+		_pet = pet;
 		_skills = pet.getAllSkills();
 	}
 	
@@ -51,7 +53,8 @@ public class ExPetSkillList extends ServerPacket
 		buffer.writeInt(_skills.size());
 		for (Skill sk : _skills)
 		{
-			buffer.writeInt(sk.getDisplayId());
+			final int skillId = _pet.getReplacementSkill(sk.getDisplayId());
+			buffer.writeInt(skillId);
 			buffer.writeInt(sk.getDisplayLevel());
 			buffer.writeInt(sk.getReuseDelayGroup());
 			buffer.writeByte(0);
