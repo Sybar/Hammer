@@ -50,11 +50,33 @@
 		<!-- When using a guardian's skill with a certain chance:. The owner's common craft XP is charged for 0.13%. -->
 		<icon>icon.s_guardian_craftpoint_charge</icon>
 		<operateType>P</operateType>
+		<effects>
+			<effect name="TriggerSkillByMagicType">
+				<magicTypes>0;1</magicTypes>
+				<skillId>49506</skillId> <!-- Guardian's Gratitude - Common Craft Lv1 -->
+				<skillLevel>
+					<value level="1">1</value>
+				</skillLevel>
+				<chance>10</chance>
+				<targetType>OWNER_PET</targetType>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="49504" toLevel="1" name="Guardian's Gratitude - Common Craft">
 		<!-- When using a guardian's skill with a certain chance:. The owner's common craft XP is charged for 0.13%. -->
 		<icon>icon.s_guardian_craftpoint_charge</icon>
 		<operateType>P</operateType>
+		<effects>
+			<effect name="TriggerSkillByMagicType">
+				<magicTypes>0;1</magicTypes>
+				<skillId>49507</skillId> <!-- Guardian's Gratitude - Common Craft Lv1 -->
+				<skillLevel>
+					<value level="1">1</value>
+				</skillLevel>
+				<chance>10</chance>
+				<targetType>OWNER_PET</targetType>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="49505" toLevel="3" name="Vulcan's Soul">
 		<icon>icon.s_trigger_heavy_approach1_step_high</icon>
@@ -62,50 +84,157 @@
 		<effectPoint>-891</effectPoint>
 	</skill>
 	<skill id="49506" toLevel="1" name="Guardian's Gratitude - Common Craft">
-		<icon>icon.skill0000</icon>
-		<operateType>A1</operateType>
+		<icon>icon.s_guardian_craftpoint_charge</icon>
+		<operateType>A2</operateType>
+		<targetType>OWNER_PET</targetType>
+		<affectScope>SINGLE</affectScope>
+		<abnormalLevel>
+			<value level="1">1</value>
+		</abnormalLevel>
+		<abnormalTime>1</abnormalTime>
+		<isMagic>5</isMagic>
+		<isRecoveryHerb>true</isRecoveryHerb>
+		<effects>
+			<effect name="ModifyCraftPoints">
+				<amount>13000</amount>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="49507" toLevel="1" name="Guardian's Gratitude - Common Craft">
-		<icon>icon.skill0000</icon>
-		<operateType>P</operateType>
+		<icon>icon.s_guardian_craftpoint_charge</icon>
+		<operateType>A2</operateType>
+		<targetType>OWNER_PET</targetType>
+		<affectScope>SINGLE</affectScope>
+		<abnormalLevel>
+			<value level="1">1</value>
+		</abnormalLevel>
+		<abnormalTime>1</abnormalTime>
+		<isMagic>5</isMagic>
+		<isRecoveryHerb>true</isRecoveryHerb>
+		<effects>
+			<effect name="ModifyCraftPoints">
+				<amount>13000</amount>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="49508" toLevel="2" name="Guardian's Gratitude - Magic Lamp">
-		<!-- Level 1: When using the guardian's skills with a certain chance:. The owner's Magic Lamp XP +3%. Duration: 20 sec. -->
-		<!-- Level 2: When using the guardian's skills with a certain chance:. The owner's Magic Lamp XP +5%. Duration: 20 sec. -->
+		<!-- Level 1: When using a guardian's skills, the owner's Magic Lamp XP +3% with a certain chance. Duration: 20 sec. -->
+		<!-- Level 2: When using a guardian's skills, the owner's Magic Lamp XP +5% with a certain chance. Duration: 20 sec. -->
 		<icon>icon.s_guardian_magiclamp_acceleration</icon>
 		<operateType>P</operateType>
+		<effects>
+			<effect name="TriggerSkillByMagicType">
+				<magicTypes>0;1</magicTypes>
+				<skillId>49509</skillId> <!-- Guardian's Gratitude - Magic Lamp -->
+				<skillLevel>
+					<value level="1">1</value>
+					<value level="2">2</value>
+				</skillLevel>
+				<chance>10</chance>
+				<targetType>OWNER_PET</targetType>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="49509" toLevel="2" name="Guardian's Gratitude - Magic Lamp">
-		<!-- Level 1: When using the guardian's skills with a certain chance:. The owner's Magic Lamp XP +3%. Duration: 20 sec. -->
-		<!-- Level 2: When using the guardian's skills with a certain chance:. The owner's Magic Lamp XP +5%. Duration: 20 sec. -->
+		<!-- Level 1: When using a guardian's skills, the owner's Magic Lamp XP +3% with a certain chance. Duration: 20 sec. -->
+		<!-- Level 2: When using a guardian's skills, the owner's Magic Lamp XP +5% with a certain chance. Duration: 20 sec. -->
 		<icon>icon.s_guardian_magiclamp_acceleration</icon>
-		<operateType>P</operateType>
+		<operateType>A2</operateType>
+		<abnormalLevel>
+			<value level="1">1</value>
+			<value level="2">2</value>
+		</abnormalLevel>
+		<abnormalTime>20</abnormalTime>
 		<isMagic>5</isMagic>
+		<targetType>OWNER_PET</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="MagicLampExpRate">
+				<amount>
+					<value level="1">3</value>
+					<value level="2">5</value>
+				</amount>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="49510" toLevel="2" name="Guardian's Gratitude - Magic Lamp">
 		<!-- Level 1: When using the guardian's skills with a certain chance:. The owner's Magic Lamp XP +3%. Duration: 20 sec. -->
 		<!-- Level 2: When using the guardian's skills with a certain chance:. The owner's Magic Lamp XP +5%. Duration: 20 sec. -->
 		<icon>icon.s_guardian_magiclamp_acceleration</icon>
 		<operateType>P</operateType>
+		<effects>
+			<effect name="TriggerSkillByMagicType">
+				<magicTypes>0;1</magicTypes>
+				<skillId>49511</skillId> <!-- Guardian's Gratitude - Magic Lamp -->
+				<skillLevel>
+					<value level="1">1</value>
+					<value level="2">2</value>
+				</skillLevel>
+				<chance>10</chance>
+				<targetType>OWNER_PET</targetType>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="49511" toLevel="2" name="Guardian's Gratitude - Magic Lamp">
 		<!-- Level 1: When using the guardian's skills with a certain chance:. The owner's Magic Lamp XP +3%. Duration: 20 sec. -->
 		<!-- Level 2: When using the guardian's skills with a certain chance:. The owner's Magic Lamp XP +5%. Duration: 20 sec. -->
 		<icon>icon.s_guardian_magiclamp_acceleration</icon>
-		<operateType>P</operateType>
+		<operateType>A2</operateType>
+		<abnormalLevel>
+			<value level="1">1</value>
+			<value level="2">2</value>
+		</abnormalLevel>
+		<abnormalTime>20</abnormalTime>
 		<isMagic>5</isMagic>
+		<targetType>OWNER_PET</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="MagicLampExpRate">
+				<amount>
+					<value level="1">3</value>
+					<value level="2">5</value>
+				</amount>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="49512" toLevel="2" name="Guardian's Gratitude - Magic Lamp">
 		<!-- Level 1: When using the guardian's skills with a certain chance:. The owner's Magic Lamp XP +3%. Duration: 20 sec. -->
 		<!-- Level 2: When using the guardian's skills with a certain chance:. The owner's Magic Lamp XP +7%. Duration: 20 sec. -->
 		<icon>icon.s_guardian_magiclamp_acceleration</icon>
 		<operateType>P</operateType>
+		<effects>
+			<effect name="TriggerSkillByMagicType">
+				<magicTypes>0;1</magicTypes>
+				<skillId>49513</skillId> <!-- Guardian's Gratitude - Magic Lamp -->
+				<skillLevel>
+					<value level="1">1</value>
+					<value level="2">2</value>
+				</skillLevel>
+				<chance>10</chance>
+				<targetType>OWNER_PET</targetType>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="49513" toLevel="2" name="Guardian's Gratitude - Magic Lamp">
 		<!-- Level 1: When using the guardian's skills with a certain chance:. The owner's Magic Lamp XP +3%. Duration: 20 sec. -->
 		<!-- Level 2: When using the guardian's skills with a certain chance:. The owner's Magic Lamp XP +7%. Duration: 20 sec. -->
 		<icon>icon.s_guardian_magiclamp_acceleration</icon>
-		<operateType>P</operateType>
+		<operateType>A2</operateType>
+		<abnormalLevel>
+			<value level="1">1</value>
+			<value level="2">2</value>
+		</abnormalLevel>
+		<abnormalTime>20</abnormalTime>
 		<isMagic>5</isMagic>
+		<targetType>OWNER_PET</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effects>
+			<effect name="MagicLampExpRate">
+				<amount>
+					<value level="1">3</value>
+					<value level="2">5</value>
+				</amount>
+			</effect>
+		</effects>
 	</skill>
 </list>
