@@ -1149,23 +1149,81 @@
 	<skill id="33181" toLevel="1" name="Dark Thorn">
 		<icon>icon.skill1417</icon>
 		<operateType>A1</operateType>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<castRange>600</castRange>
+		<coolTime>500</coolTime>
 		<effectPoint>-1000</effectPoint>
+		<hitTime>1000</hitTime>
+		<isMagic>1</isMagic>
+		<magicLevel>120</magicLevel>
+		<magicCriticalRate>5</magicCriticalRate>
+		<reuseDelay>500</reuseDelay>
+		<effects>
+			<effect name="PhysicalDamage">
+				<power>10000</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="33182" toLevel="1" name="Darkness Energy Bomb">
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectLimit>5-12</affectLimit>
+		<affectObject>NOT_FRIEND</affectObject>
+		<affectRange>300</affectRange>
+		<affectScope>POINT_BLANK</affectScope>
+		<coolTime>500</coolTime>
 		<effectPoint>-100</effectPoint>
+		<hitTime>2000</hitTime>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>108</magicLevel>
+		<mpConsume>1</mpConsume>
+		<reuseDelay>10000</reuseDelay>
+		<effects>
+			<effect name="PhysicalDamage">
+				<power>10000</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="33183" toLevel="1" name="Vicious Killing Strike">
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<castRange>40</castRange>
+		<coolTime>500</coolTime>
 		<effectPoint>-100</effectPoint>
+		<effectRange>40</effectRange>
+		<hitTime>1000</hitTime>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>106</magicLevel>
+		<effects>
+			<effect name="PhysicalDamage">
+				<power>10000</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="33184" toLevel="1" name="Furious Slasher">
 		<icon>icon.skill16204</icon>
 		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectLimit>5-12</affectLimit>
+		<affectObject>NOT_FRIEND</affectObject>
+		<affectRange>300</affectRange>
+		<affectScope>POINT_BLANK</affectScope>
+		<coolTime>500</coolTime>
 		<effectPoint>-100</effectPoint>
+		<hitTime>2000</hitTime>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>108</magicLevel>
 		<mpConsume>1</mpConsume>
+		<reuseDelay>10000</reuseDelay>
+		<effects>
+			<effect name="PhysicalDamage">
+				<power>10000</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="33185" toLevel="1" name="Dark Energy">
 		<!-- Increases P. Atk./ M. Atk./ P. Def./ M. Def. at night. -->
@@ -1181,12 +1239,38 @@
 		<!-- Physical melee skill used by warriors. Attacks 1 monster with a weapon. -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<castRange>40</castRange>
+		<coolTime>500</coolTime>
 		<effectPoint>-100</effectPoint>
+		<effectRange>40</effectRange>
+		<hitTime>1000</hitTime>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>128</magicLevel>
+		<effects>
+			<effect name="PhysicalDamage">
+				<power>10000</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="33188" toLevel="1" name="Earth Strike">
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<castRange>40</castRange>
+		<coolTime>500</coolTime>
 		<effectPoint>-100</effectPoint>
+		<effectRange>40</effectRange>
+		<hitTime>1000</hitTime>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>128</magicLevel>
+		<effects>
+			<effect name="PhysicalDamage">
+				<power>10000</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="33189" toLevel="4" name="Reinforced Shield of Infinity - Lv. 1">
 		<!-- Level 1: P./ M. Def. +30%. -->

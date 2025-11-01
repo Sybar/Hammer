@@ -1986,25 +1986,6 @@
 		<!-- Acquired XP bonus while hunting in a party. All party members receive the same amount of XP with no reference to the party size. -->
 		<icon>icon.skill0335</icon>
 		<operateType>A1</operateType>
-		<targetType>ENEMY</targetType>
-		<affectScope>SINGLE</affectScope>
-		<castRange>400</castRange>
-		<coolTime>420</coolTime>
-		<effectPoint>-337</effectPoint>
-		<effectRange>400</effectRange>
-		<hitTime>780</hitTime>
-		<magicCriticalRate>5</magicCriticalRate>
-		<magicLevel>76</magicLevel>
-		<nextAction>CAST</nextAction>
-		<reuseDelay>1000</reuseDelay>
-		<effects>
-			<effect name="PhysicalDamage">
-				<power>20000</power>
-				<ignoreShieldDefence>true</ignoreShieldDefence>
-				<criticalChance>30</criticalChance>
-				<overHit>true</overHit>
-			</effect>
-		</effects>
 	</skill>
 	<skill id="34286" toLevel="1" name="Green's Protective Elysium Blessing">
 		<!-- For 24 h., P. Atk./ M. Atk./ P. Def./ M. Def. +25%. Acquired XP/ SP +5%. The effect remains after death. Cannot be used in the Olympiad or the Ceremony of Chaos. -->

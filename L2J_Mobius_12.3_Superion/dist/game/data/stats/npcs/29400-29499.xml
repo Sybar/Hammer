@@ -1547,7 +1547,12 @@
 		</skillList>
 	</npc>
 	<npc id="29427" level="122" type="RaidBoss" name="Demonic Venom" title="Raid Boss">
-		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<skill name="SkillID1" id="62056" level="1" /> 
+			<skill name="SkillID2" id="62063" level="1" /> 
+			<param name="SkillID1_Probablity" value="400" /> 
+			<param name="SkillID2_Probablity" value="400" />
+		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<equipment rhand="8203" lhand="8203" /> <!-- Monster Only (Venom Sword) / Monster Only (Venom Sword) -->
@@ -1566,7 +1571,8 @@
 				<defence fire="2200" water="2200" wind="2200" earth="2200" holy="2150" dark="2200" />
 			</attribute>
 		</stats>
-		<status attackable="true" />
+		<status attackable="true" noSleepMode="true" canMove="false" />
+		<ai type="MAGE" aggroRange="1000" isAggressive="false"></ai>
 		<collision>
 			<radius normal="27" />
 			<height normal="70.5" />
@@ -1581,10 +1587,18 @@
 			<skill id="34814" level="7" /> <!-- Critical Rate Resistance -->
 			<skill id="34815" level="9" /> <!-- Critical Damage Resistance -->
 			<skill id="34820" level="5" /> <!-- Received Damage Resistance -->
+			<skill id="62064" level="1" /> <!-- Chaos Power -->
+			<skill id="62063" level="1" /> <!-- Dark Power Flash -->
+			<skill id="62056" level="1" /> <!-- Dark Power Unleashing -->
 		</skillList>
 	</npc>
 	<npc id="29428" level="124" type="RaidBoss" name="Avenger Graff" title="Raid Boss">
-		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<skill name="SkillID1" id="62058" level="1" /> 
+			<skill name="SkillID2" id="62060" level="1" /> 
+			<param name="SkillID1_Probablity" value="400" /> 
+			<param name="SkillID3_Probablity" value="400" />
+		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<acquire exp="2544338746" sp="2289905" />
@@ -1602,7 +1616,8 @@
 				<defence fire="2350" water="2350" wind="2350" earth="2350" holy="2300" dark="2350" />
 			</attribute>
 		</stats>
-		<status attackable="true" />
+		<status attackable="true" noSleepMode="true" canMove="false" />
+		<ai type="MAGE" aggroRange="1000" isAggressive="false"></ai>
 		<collision>
 			<radius normal="34" />
 			<height normal="85.4" />
@@ -1617,10 +1632,18 @@
 			<skill id="34814" level="7" /> <!-- Critical Rate Resistance -->
 			<skill id="34815" level="9" /> <!-- Critical Damage Resistance -->
 			<skill id="34820" level="5" /> <!-- Received Damage Resistance -->
+			<skill id="62064" level="1" /> <!-- Chaos Power -->
+			<skill id="62060" level="1" /> <!-- Dark Thorn -->
+			<skill id="62058" level="1" /> <!-- Dark Power Unleashing -->
 		</skillList>
 	</npc>
 	<npc id="29429" level="126" type="RaidBoss" name="Mad Cullan" title="Raid Boss">
-		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<skill name="SkillID1" id="62059" level="1" />
+			<skill name="SkillID2" id="62062" level="1" /> 
+			<param name="SkillID1_Probablity" value="400" /> 
+			<param name="SkillID2_Probablity" value="400" />
+		</parameters>
 		<race>DWARF</race>
 		<sex>MALE</sex>
 		<acquire exp="2627076088" sp="2364368" />
@@ -1638,7 +1661,8 @@
 				<defence fire="2500" water="2500" wind="2450" earth="2500" holy="2500" dark="2500" />
 			</attribute>
 		</stats>
-		<status attackable="true" />
+		<status attackable="true" noSleepMode="true" canMove="false" />
+		<ai type="MAGE" aggroRange="1000" isAggressive="false"></ai>
 		<collision>
 			<radius normal="35" />
 			<height normal="64.5" />
@@ -1653,10 +1677,18 @@
 			<skill id="34814" level="7" /> <!-- Critical Rate Resistance -->
 			<skill id="34815" level="9" /> <!-- Critical Damage Resistance -->
 			<skill id="34820" level="5" /> <!-- Received Damage Resistance -->
+			<skill id="62064" level="1" /> <!-- Chaos Power -->
+			<skill id="62062" level="1" /> <!-- Dark Power Flash -->
+			<skill id="62059" level="1" /> <!-- Dark Power Unleashing -->
 		</skillList>
 	</npc>
 	<npc id="29430" level="128" type="RaidBoss" name="Arrogant Lebruum" title="Raid Boss">
-		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<skill name="SkillID1" id="62058" level="1" /> 
+			<skill name="SkillID2" id="62060" level="1" /> 
+			<param name="SkillID1_Probablity" value="400" /> 
+			<param name="SkillID3_Probablity" value="400" />
+		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<acquire exp="2711137228" sp="2440023" />
@@ -1674,7 +1706,8 @@
 				<defence fire="2650" water="2650" wind="2650" earth="2650" holy="2600" dark="2650" />
 			</attribute>
 		</stats>
-		<status attackable="true" />
+		<status attackable="true" noSleepMode="true" canMove="false" />
+		<ai type="MAGE" aggroRange="1000" isAggressive="false"></ai>
 		<collision>
 			<radius normal="40" />
 			<height normal="84.197" />
@@ -1689,10 +1722,12 @@
 			<skill id="34814" level="7" /> <!-- Critical Rate Resistance -->
 			<skill id="34815" level="9" /> <!-- Critical Damage Resistance -->
 			<skill id="34820" level="5" /> <!-- Received Damage Resistance -->
+			<skill id="62064" level="1" /> <!-- Chaos Power -->
+			<skill id="62061" level="1" /> <!-- Dark Thorn -->
+			<skill id="62059" level="1" /> <!-- Dark Power Unleashing -->
 		</skillList>
 	</npc>
 	<npc id="29431" level="126" type="RaidBoss" name="Chaos Golem #17" title="Raid Boss">
-		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>ETC</race>
 		<sex>MALE</sex>
 		<acquire exp="2627076088" sp="2364368" />

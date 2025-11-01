@@ -268,12 +268,7 @@
 			<param name="MoveAroundSocial" value="80" />
 			<param name="MoveAroundSocial1" value="80" />
 			<param name="MoveAroundSocial2" value="80" />
-			<param name="SoulShot" value="100" />
-			<param name="SoulShotRate" value="10" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="5" />
-			<param name="LongRangeGuardRate" value="5" />
-			<skill name="PhysicalSpecial" id="4032" level="6" />
+			<skill name="Physical" id="33187" level="1" />
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
@@ -298,15 +293,15 @@
 			<skill id="4416" level="4" /> <!-- Animals -->
 			<skill id="5465" level="1" /> <!-- Earth Attack -->
 			<skill id="14765" level="3" /> <!-- Vampiric Rage Resistance -->
-			<skill id="4032" level="6" /> <!-- Power Strike -->
 			<skill id="4412" level="9" /> <!-- Slightly Weak P. Def. -->
 			<skill id="4413" level="13" /> <!-- Slightly Strong M. Def. -->
 			<skill id="34285" level="1" /> <!-- Hard Hunting Zone -->
+			<skill id="33187" level="1" /> <!-- Wild Break -->
 		</skillList>
 		<shots shotChance="30" spiritChance="30" />
 		<exCrtEffect>false</exCrtEffect>
 		<sNpcPropHpRate>2</sNpcPropHpRate>
-		<ai clanHelpRange="300" aggroRange="300">
+		<ai type="BALANCED" clanHelpRange="300" aggroRange="300">
 			<clanList>
 				<clan>ALL</clan>
 			</clanList>
@@ -346,13 +341,7 @@
 			<param name="MoveAroundSocial" value="78" />
 			<param name="MoveAroundSocial1" value="78" />
 			<param name="MoveAroundSocial2" value="78" />
-			<param name="AttackLowHP" value="1" />
-			<param name="SoulShot" value="100" />
-			<param name="SoulShotRate" value="10" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="5" />
-			<param name="LongRangeGuardRate" value="5" />
-			<skill name="PhysicalSpecial" id="4579" level="7" />
+			<skill name="Physical" id="33187" level="1" />
 		</parameters>
 		<race>BEAST</race>
 		<sex>MALE</sex>
@@ -379,13 +368,13 @@
 			<skill id="4416" level="3" /> <!-- Beasts -->
 			<skill id="5465" level="1" /> <!-- Earth Attack -->
 			<skill id="14765" level="3" /> <!-- Vampiric Rage Resistance -->
-			<skill id="4579" level="7" /> <!-- Bleed -->
 			<skill id="34285" level="1" /> <!-- Hard Hunting Zone -->
+			<skill id="33187" level="1" /> <!-- Wild Break -->
 		</skillList>
 		<shots shotChance="30" spiritChance="30" />
 		<exCrtEffect>false</exCrtEffect>
 		<sNpcPropHpRate>3</sNpcPropHpRate>
-		<ai aggroRange="300" clanHelpRange="300" isAggressive="true">
+		<ai type="BALANCED" aggroRange="300" clanHelpRange="300" isAggressive="true">
 			<clanList>
 				<clan>ALL</clan>
 			</clanList>
@@ -445,14 +434,14 @@
 			<skill id="4416" level="3" /> <!-- Beasts -->
 			<skill id="5465" level="1" /> <!-- Earth Attack -->
 			<skill id="14765" level="3" /> <!-- Vampiric Rage Resistance -->
-			<skill id="4032" level="1" /> <!-- Power Strike -->
 			<skill id="34285" level="1" /> <!-- Hard Hunting Zone -->
+			<skill id="33187" level="1" /> <!-- Wild Break -->
 		</skillList>
 		<collision>
 			<radius normal="22" grown="27" />
 			<height normal="31" grown="38" />
 		</collision>
-		<ai aggroRange="300" clanHelpRange="300" isAggressive="true">
+		<ai type="BALANCED" aggroRange="300" clanHelpRange="300" isAggressive="true">
 			<clanList>
 				<clan>ALL</clan>
 			</clanList>
@@ -508,14 +497,14 @@
 			<skill id="4416" level="4" /> <!-- Animals -->
 			<skill id="5465" level="1" /> <!-- Earth Attack -->
 			<skill id="14765" level="3" /> <!-- Vampiric Rage Resistance -->
-			<skill id="4032" level="1" /> <!-- Power Strike -->
 			<skill id="34285" level="1" /> <!-- Hard Hunting Zone -->
+			<skill id="33187" level="1" /> <!-- Wild Break -->
 		</skillList>
 		<collision>
 			<radius normal="15" grown="18" />
 			<height normal="39" grown="47.5" />
 		</collision>
-		<ai aggroRange="300" clanHelpRange="300" isAggressive="true">
+		<ai type="BALANCED" aggroRange="300" clanHelpRange="300" isAggressive="true">
 			<clanList>
 				<clan>ALL</clan>
 			</clanList>
@@ -551,25 +540,15 @@
 			<param name="MoveAroundSocial" value="90" />
 			<param name="MoveAroundSocial1" value="90" />
 			<param name="MoveAroundSocial2" value="90" />
-			<skill name="CheckMagic" id="4098" level="7" />
-			<skill name="CheckMagic1" id="4046" level="7" />
-			<skill name="SleepMagic" id="4046" level="7" />
-			<param name="SoulShot" value="100" />
-			<param name="SoulShotRate" value="10" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="5" />
 			<param name="LongRangeGuardRate" value="5" />
-			<skill name="DDMagic" id="4105" level="7" />
-			<skill name="CancelMagic" id="4094" level="7" />
-			<skill name="DeBuff" id="4657" level="7" />
-			<skill name="DeBuffCancel" id="4650" level="1" />
+			<skill name="DDMagic" id="33188" level="1" />
 		</parameters>
 		<race>ETC</race>
 		<sex>MALE</sex>
 		<acquire exp="1158031" sp="1042" />
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
 			<vitals hp="2538603" hpRegen="9.5" mp="3190" mpRegen="3.3" />
-			<attack physical="1599215" magical="145753" random="30" critical="4.75" accuracy="4.75" attackSpeed="250" type="SWORD" range="40" distance="80" width="120" />
+			<attack physical="1599215" magical="145753" random="30" critical="4.75" accuracy="4.75" attackSpeed="250" type="SWORD" range="50" distance="100" width="120" />
 			<defence physical="753240" magical="364523" />
 			<attribute>
 				<attack type="EARTH" value="2350" />
@@ -591,19 +570,13 @@
 			<skill id="4416" level="2" /> <!-- Magical Creatures -->
 			<skill id="5465" level="1" /> <!-- Earth Attack -->
 			<skill id="14765" level="3" /> <!-- Vampiric Rage Resistance -->
-			<skill id="4046" level="7" /> <!-- Sleep -->
-			<skill id="4094" level="7" /> <!-- Cancellation -->
-			<skill id="4098" level="7" /> <!-- Silence -->
-			<skill id="4105" level="7" /> <!-- Beam Cannon -->
-			<skill id="4650" level="1" /> <!-- Dispel Hold -->
-			<skill id="4657" level="7" /> <!-- Hold -->
-			<skill id="4789" level="3" /> <!-- High Lv. -->
 			<skill id="34285" level="1" /> <!-- Hard Hunting Zone -->
+			<skill id="33188" level="1" /> <!-- Earth Strike -->
 		</skillList>
 		<shots shotChance="30" spiritChance="30" />
 		<exCrtEffect>false</exCrtEffect>
 		<sNpcPropHpRate>3</sNpcPropHpRate>
-		<ai aggroRange="300" clanHelpRange="400" isAggressive="true">
+		<ai type="MAGE" aggroRange="300" clanHelpRange="400" isAggressive="true">
 			<clanList>
 				<clan>ALL</clan>
 			</clanList>
@@ -643,14 +616,7 @@
 			<param name="MoveAroundSocial" value="80" />
 			<param name="MoveAroundSocial1" value="80" />
 			<param name="MoveAroundSocial2" value="80" />
-			<param name="AttackLowHP" value="1" />
-			<param name="SoulShot" value="100" />
-			<param name="SoulShotRate" value="10" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="5" />
-			<param name="LongRangeGuardRate" value="5" />
-			<skill name="W_LongRangeDDMagic" id="4563" level="7" />
-			<skill name="W_ShortRangeDDMagic" id="4561" level="7" />
+			<skill name="DDMagic" id="33188" level="1" />
 		</parameters>
 		<race>ETC</race>
 		<sex>MALE</sex>
@@ -679,15 +645,13 @@
 			<skill id="4416" level="2" /> <!-- Magical Creatures -->
 			<skill id="5465" level="1" /> <!-- Earth Attack -->
 			<skill id="14765" level="3" /> <!-- Vampiric Rage Resistance -->
-			<skill id="4561" level="7" /> <!-- Fire Burn -->
-			<skill id="4563" level="7" /> <!-- Solar Flare -->
-			<skill id="4789" level="3" /> <!-- High Lv. -->
 			<skill id="34285" level="1" /> <!-- Hard Hunting Zone -->
+			<skill id="33188" level="1" /> <!-- Earth Strike -->
 		</skillList>
 		<shots shotChance="30" spiritChance="30" />
 		<exCrtEffect>false</exCrtEffect>
 		<sNpcPropHpRate>3</sNpcPropHpRate>
-		<ai aggroRange="300" clanHelpRange="400" isAggressive="true">
+		<ai type="BALANCED" aggroRange="300" clanHelpRange="400" isAggressive="true">
 			<clanList>
 				<clan>ALL</clan>
 			</clanList>
@@ -1056,8 +1020,9 @@
 			<skill id="33112" level="1" /> <!-- Night of Spores -->
 			<skill id="14818" level="1" /> <!-- Instant Kill Attack Resistance -->
 			<skill id="16547" level="10" /> <!-- Danger Zone Resistance -->
+			<skill id="32469" level="1" /> <!-- Putrid Strike -->
 		</skillList>
-		<ai type="FIGHTER" clanHelpRange="450" aggroRange="450" isAggressive="true">
+		<ai type="BALANCED" clanHelpRange="450" aggroRange="450" isAggressive="true">
 			<clanList>
 				<clan>SOS</clan>
 			</clanList>
@@ -1168,8 +1133,9 @@
 			<skill id="33112" level="1" /> <!-- Night of Spores -->
 			<skill id="14818" level="1" /> <!-- Instant Kill Attack Resistance -->
 			<skill id="16547" level="10" /> <!-- Danger Zone Resistance -->
+			<skill id="32469" level="1" /> <!-- Putrid Strike -->
 		</skillList>
-		<ai type="FIGHTER" clanHelpRange="450" aggroRange="450" isAggressive="true">
+		<ai type="BALANCED" clanHelpRange="450" aggroRange="450" isAggressive="true">
 			<clanList>
 				<clan>SOS</clan>
 			</clanList>
@@ -1281,8 +1247,9 @@
 			<skill id="14818" level="1" /> <!-- Instant Kill Attack Resistance -->
 			<skill id="16547" level="10" /> <!-- Danger Zone Resistance -->
 			<skill id="5599" level="12" /> <!-- Confusion Resistance -->
+			<skill id="32471" level="1" /> <!-- Putrid Slash -->
 		</skillList>
-		<ai type="FIGHTER" clanHelpRange="450" aggroRange="450" isAggressive="true">
+		<ai type="BALANCED" clanHelpRange="450" aggroRange="450" isAggressive="true">
 			<clanList>
 				<clan>SOS</clan>
 			</clanList>
@@ -1394,8 +1361,9 @@
 			<skill id="14818" level="1" /> <!-- Instant Kill Attack Resistance -->
 			<skill id="16547" level="10" /> <!-- Danger Zone Resistance -->
 			<skill id="5599" level="12" /> <!-- Confusion Resistance -->
+			<skill id="32471" level="1" /> <!-- Putrid Slash -->
 		</skillList>
-		<ai type="FIGHTER" clanHelpRange="450" aggroRange="450" isAggressive="true">
+		<ai type="BALANCED" clanHelpRange="450" aggroRange="450" isAggressive="true">
 			<clanList>
 				<clan>SOS</clan>
 			</clanList>
@@ -2370,7 +2338,7 @@
 			</attribute>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<ai type="FIGHTER" clanHelpRange="450" aggroRange="300" isAggressive="false">
+		<ai type="MAGE" clanHelpRange="450" aggroRange="300" isAggressive="false">
 			<clanList>
 				<clan>VARKA_SILENOS</clan>
 			</clanList>
@@ -2395,6 +2363,8 @@
 			<skill id="33104" level="1" /> <!-- Party Bonus -->
 			<skill id="14818" level="1" /> <!-- Instant Kill Attack Resistance -->
 			<skill id="16547" level="10" /> <!-- Danger Zone Resistance -->
+			<skill id="33182" level="1" /> <!-- Darkness Energy Bomb -->
+			<skill id="33181" level="1" /> <!-- Dark Thorn -->
 		</skillList>
 		<dropLists>
 			<drop>
@@ -2487,7 +2457,7 @@
 			</attribute>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<ai type="FIGHTER" clanHelpRange="450" aggroRange="300" isAggressive="false">
+		<ai type="BALANCED" clanHelpRange="450" aggroRange="300" isAggressive="false">
 			<clanList>
 				<clan>VARKA_SILENOS</clan>
 			</clanList>
@@ -2512,6 +2482,8 @@
 			<skill id="33104" level="1" /> <!-- Party Bonus -->
 			<skill id="14818" level="1" /> <!-- Instant Kill Attack Resistance -->
 			<skill id="16547" level="10" /> <!-- Danger Zone Resistance -->
+			<skill id="33182" level="1" /> <!-- Darkness Energy Bomb -->
+			<skill id="33181" level="1" /> <!-- Dark Thorn -->
 		</skillList>
 		<dropLists>
 			<drop>
@@ -2604,7 +2576,7 @@
 			</attribute>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<ai type="FIGHTER" clanHelpRange="450" aggroRange="300" isAggressive="false">
+		<ai type="BALANCED" clanHelpRange="450" aggroRange="300" isAggressive="false">
 			<clanList>
 				<clan>VARKA_SILENOS</clan>
 			</clanList>
@@ -2629,6 +2601,7 @@
 			<skill id="33104" level="1" /> <!-- Party Bonus -->
 			<skill id="14818" level="1" /> <!-- Instant Kill Attack Resistance -->
 			<skill id="16547" level="10" /> <!-- Danger Zone Resistance -->
+			<skill id="33183" level="1" /> <!-- Vicious Killing Strike -->
 		</skillList>
 		<dropLists>
 			<drop>
@@ -2721,7 +2694,7 @@
 			</attribute>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<ai type="FIGHTER" clanHelpRange="450" aggroRange="300" isAggressive="false">
+		<ai type="BALANCED" clanHelpRange="450" aggroRange="300" isAggressive="false">
 			<clanList>
 				<clan>VARKA_SILENOS</clan>
 			</clanList>
@@ -2746,6 +2719,8 @@
 			<skill id="33104" level="1" /> <!-- Party Bonus -->
 			<skill id="14818" level="1" /> <!-- Instant Kill Attack Resistance -->
 			<skill id="16547" level="10" /> <!-- Danger Zone Resistance -->
+			<skill id="33184" level="1" /> <!-- Furious Slasher -->
+			<skill id="33183" level="1" /> <!-- Vicious Killing Strike -->
 		</skillList>
 		<dropLists>
 			<drop>
@@ -2838,7 +2813,7 @@
 			</attribute>
 			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<ai type="FIGHTER" clanHelpRange="450" aggroRange="300" isAggressive="false">
+		<ai type="BALANCED" clanHelpRange="450" aggroRange="300" isAggressive="false">
 			<clanList>
 				<clan>VARKA_SILENOS</clan>
 			</clanList>
@@ -2863,6 +2838,7 @@
 			<skill id="33104" level="1" /> <!-- Party Bonus -->
 			<skill id="14818" level="1" /> <!-- Instant Kill Attack Resistance -->
 			<skill id="16547" level="10" /> <!-- Danger Zone Resistance -->
+			<skill id="33184" level="1" /> <!-- Furious Slasher -->
 		</skillList>
 		<dropLists>
 			<drop>
