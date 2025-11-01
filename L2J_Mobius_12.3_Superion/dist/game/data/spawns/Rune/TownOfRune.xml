@@ -127,7 +127,7 @@
 			<npc id="33856" x="43431" y="-48383" z="-792" heading="16383" respawnTime="60sec" /> <!-- Beauty Shop Helper -->
 			<npc id="33872" x="43556" y="-47608" z="-792" heading="36864" respawnTime="60sec" /> <!-- Jenna - Aden's Wizard -->
 			<npc id="33957" x="44114" y="-48397" z="-792" heading="29577" respawnTime="60sec" /> <!-- Marmie - Minstrel -->
-			<npc id="33977" x="43210" y="-48449" z="-792" heading="16456" respawnTime="60sec" /> <!-- Veruti - Alchemist -->
+			<!-- <npc id="33977" x="43210" y="-48449" z="-792" heading="16456" respawnTime="60sec" /> --> <!-- Veruti - Alchemist -->
 			<npc id="35512" x="38256" y="-48432" z="896" respawnTime="60sec" /> <!-- Manor Manager - Rune -->
 			<npc id="35566" x="39440" y="-48304" z="896" respawnTime="60sec" /> <!-- Ronald - Clan Hall Manager -->
 			<npc id="35567" x="39308" y="-48304" z="896" heading="33000" respawnTime="60sec" /> <!-- Emil - Clan Hall Gatekeeper -->
