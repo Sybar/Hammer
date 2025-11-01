@@ -437,7 +437,16 @@
 	<skill id="29518" toLevel="1" name="Boss' Protection">
 		<!-- The boss' protection greatly reduces received damage. To cancel the protection, the wielder must be attacked by many strong characters of Lv. 110+. -->
 		<icon>icon.skill10021_2</icon>
-		<operateType>A1</operateType>
+		<abnormalLevel>3</abnormalLevel>
+		<magicLevel>-1</magicLevel>
+		<operateType>A2</operateType>
+		<abnormalVisualEffect>H_R_PROTECTION_SHIELD_AVE_2</abnormalVisualEffect>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<specialLevel>-1</specialLevel>
+		<hitCancelTime>0</hitCancelTime>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
 	</skill>
 	<skill id="29519" toLevel="1" name="Appearance Stone: Steampunk Outfit">
 		<icon>icon.skill0000</icon>
