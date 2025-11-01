@@ -2473,16 +2473,136 @@
 		</collision>
 		<dropLists>
 			<drop>
+				<group chance="30">
+					<item id="8191" min="1" max="1" chance="100" /> <!-- Necklace of Frintezza -->
+				</group>
+				<group chance="10">
+					<item id="21893" min="1" max="1" chance="100" /> <!-- Halisha's Helmet -->
+				</group>
+				<group chance="10">
+					<item id="21715" min="1" max="1" chance="100" /> <!-- Sealed Cloak of Frintezza -->
+				</group>
+				<group chance="40">
+					<item id="13893" min="1" max="1" chance="100" /> <!-- Sealed Holy Spirit's Cloak -->
+				</group>
+				<group chance="80">
+					<item id="15592" min="1" max="1" chance="16.7" /> <!-- Vorpal Breastplate -->
+					<item id="15595" min="1" max="1" chance="16.66" /> <!-- Vorpal Gaiters -->
+					<item id="15593" min="1" max="1" chance="16.66" /> <!-- Vorpal Leather Breastplate -->
+					<item id="15596" min="1" max="1" chance="16.66" /> <!-- Vorpal Leather Leggings -->
+					<item id="15594" min="1" max="1" chance="16.66" /> <!-- Vorpal Tunic -->
+					<item id="15597" min="1" max="1" chance="16.66" /> <!-- Vorpal Stockings -->
+				</group>
+				<group chance="80">
+					<item id="15589" min="1" max="1" chance="9.1" /> <!-- Vorpal Helmet -->
+					<item id="15598" min="1" max="1" chance="9.09" /> <!-- Vorpal Gauntlets -->
+					<item id="15601" min="1" max="1" chance="9.09" /> <!-- Vorpal Boots -->
+					<item id="15590" min="1" max="1" chance="9.09" /> <!-- Vorpal Leather Helmet -->
+					<item id="15599" min="1" max="1" chance="9.09" /> <!-- Vorpal Leather Gloves -->
+					<item id="15602" min="1" max="1" chance="9.09" /> <!-- Vorpal Leather Boots -->
+					<item id="15591" min="1" max="1" chance="9.09" /> <!-- Vorpal Circlet -->
+					<item id="15600" min="1" max="1" chance="9.09" /> <!-- Vorpal Gloves -->
+					<item id="15603" min="1" max="1" chance="9.09" /> <!-- Vorpal Shoes -->
+					<item id="15604" min="1" max="1" chance="9.09" /> <!-- Vorpal Shield -->
+					<item id="15605" min="1" max="1" chance="9.09" /> <!-- Vorpal Sigil -->
+				</group>
+				<group chance="70">
+					<item id="15575" min="1" max="1" chance="16.7" /> <!-- Elegia Breastplate -->
+					<item id="15578" min="1" max="1" chance="16.66" /> <!-- Elegia Gaiters -->
+					<item id="15576" min="1" max="1" chance="16.66" /> <!-- Elegia Leather Breastplate -->
+					<item id="15579" min="1" max="1" chance="16.66" /> <!-- Elegia Leather Leggings -->
+					<item id="15577" min="1" max="1" chance="16.66" /> <!-- Elegia Tunic -->
+					<item id="15580" min="1" max="1" chance="16.66" /> <!-- Elegia Stockings -->
+				</group>
+				<group chance="70">
+					<item id="15572" min="1" max="1" chance="9.1" /> <!-- Elegia Helmet -->
+					<item id="15581" min="1" max="1" chance="9.09" /> <!-- Elegia Gauntlets -->
+					<item id="15584" min="1" max="1" chance="9.09" /> <!-- Elegia Boots -->
+					<item id="15573" min="1" max="1" chance="9.09" /> <!-- Elegia Leather Helmet -->
+					<item id="15582" min="1" max="1" chance="9.09" /> <!-- Elegia Leather Gloves -->
+					<item id="15585" min="1" max="1" chance="9.09" /> <!-- Elegia Leather Boots -->
+					<item id="15574" min="1" max="1" chance="9.09" /> <!-- Elegia Circlet -->
+					<item id="15583" min="1" max="1" chance="9.09" /> <!-- Elegia Gloves -->
+					<item id="15586" min="1" max="1" chance="9.09" /> <!-- Elegia Shoes -->
+					<item id="15587" min="1" max="1" chance="9.09" /> <!-- Elegia Shield -->
+					<item id="15588" min="1" max="1" chance="9.09" /> <!-- Elegia Sigil -->
+				</group>
+				<group chance="70">
+					<item id="15568" min="1" max="1" chance="9.1" /> <!-- Skull Carnium Bow -->
+					<item id="15562" min="1" max="1" chance="9.09" /> <!-- Feather Eye Blade -->
+					<item id="15565" min="1" max="1" chance="9.09" /> <!-- Rising Star -->
+					<item id="15558" min="1" max="1" chance="9.09" /> <!-- Periel Sword -->
+					<item id="15564" min="1" max="1" chance="9.09" /> <!-- Doubletop Spear -->
+					<item id="15560" min="1" max="1" chance="9.09" /> <!-- Vigwik Axe -->
+					<item id="15563" min="1" max="1" chance="9.09" /> <!-- Octo Claw -->
+					<item id="15559" min="1" max="1" chance="9.09" /> <!-- Skull Edge -->
+					<item id="15567" min="1" max="1" chance="9.09" /> <!-- Veniplant Sword -->
+					<item id="15566" min="1" max="1" chance="9.09" /> <!-- Black Visage -->
+					<item id="15561" min="1" max="1" chance="9.09" /> <!-- Devilish Maul -->
+				</group>
+				<group chance="50">
+					<item id="15554" min="1" max="1" chance="9.1" /> <!-- Recurve Thorne Bow -->
+					<item id="15545" min="1" max="1" chance="9.09" /> <!-- Mamba Edge -->
+					<item id="15546" min="1" max="1" chance="9.09" /> <!-- Eversor Mace -->
+					<item id="15547" min="1" max="1" chance="9.09" /> <!-- Contristo Hammer -->
+					<item id="15548" min="1" max="1" chance="9.09" /> <!-- Lava Saw -->
+					<item id="15550" min="1" max="1" chance="9.09" /> <!-- Demitelum -->
+					<item id="15551" min="1" max="1" chance="9.09" /> <!-- Sacredium -->
+					<item id="15552" min="1" max="1" chance="9.09" /> <!-- Cyclic Cane -->
+					<item id="15553" min="1" max="1" chance="9.09" /> <!-- Archangel Sword -->
+					<item id="15549" min="1" max="1" chance="9.09" /> <!-- Jade Claw -->
+					<item id="15544" min="1" max="1" chance="9.09" /> <!-- Eternal Core Sword -->
+				</group>
+				<group chance="10">
+					<item id="37519" min="1" max="1" chance="100" /> <!-- Bottle of Frintezza's Soul -->
+				</group>
+				<group chance="100">
+					<item id="46489" min="1" max="1" chance="7" /> <!-- Pantheon's Soul Crystal - Stage 1 -->
+					<item id="46490" min="1" max="1" chance="6" /> <!-- Pantheon's Soul Crystal - Stage 2 -->
+					<item id="46491" min="1" max="1" chance="5" /> <!-- Pantheon's Soul Crystal - Stage 3 -->
+					<item id="46504" min="1" max="1" chance="7" /> <!-- Lionel's Soul Crystal - Stage 1 -->
+					<item id="46505" min="1" max="1" chance="6" /> <!-- Lionel's Soul Crystal - Stage 2 -->
+					<item id="46506" min="1" max="1" chance="5" /> <!-- Lionel's Soul Crystal - Stage 3 -->
+					<item id="46474" min="1" max="1" chance="7" /> <!-- Leona's Soul Crystal - Stage 1 -->
+					<item id="46475" min="1" max="1" chance="6" /> <!-- Leona's Soul Crystal - Stage 2 -->
+					<item id="46476" min="1" max="1" chance="5" /> <!-- Leona's Soul Crystal - Stage 3 -->
+					<item id="46459" min="1" max="1" chance="7" /> <!-- Mermoden's Soul Crystal - Stage 1 -->
+					<item id="46460" min="1" max="1" chance="6" /> <!-- Mermoden's Soul Crystal - Stage 2 -->
+					<item id="46461" min="1" max="1" chance="5" /> <!-- Mermoden's Soul Crystal - Stage 3 -->
+					<item id="46444" min="1" max="1" chance="7" /> <!-- Kain's Soul Crystal - Stage 1 -->
+					<item id="46445" min="1" max="1" chance="6" /> <!-- Kain's Soul Crystal - Stage 2 -->
+					<item id="46446" min="1" max="1" chance="5" /> <!-- Kain's Soul Crystal - Stage 3 -->
+				</group>
+				<group chance="100">
+					<item id="36514" min="1" max="1" chance="100" /> <!-- Elcyum Crystal -->
+				</group>
+				<group chance="100">
+					<item id="45929" min="1" max="2" chance="100" /> <!-- Spirit Stone -->
+				</group>
+				<group chance="60">
+					<item id="1538" min="1" max="30" chance="100" /> <!-- Blessed Scroll of Escape -->
+				</group>
+				<group chance="60">
+					<item id="3936" min="1" max="10" chance="100" /> <!-- Blessed Scroll of Resurrection -->
+				</group>
+				<group chance="100">
+					<item id="57" min="9000000" max="11000000" chance="100" /> <!-- Adena -->
+				</group>
+				<group chance="100">
+					<item id="57" min="9000000" max="11000000" chance="100" /> <!-- Adena -->
+				</group>
 				<!-- Also drops herbs. -->
-				<item id="8600" min="1" max="1" chance="10" /> <!-- Herb of Life -->
-				<item id="8601" min="1" max="1" chance="8" /> <!-- Major Herb of Life -->
-				<item id="8602" min="1" max="1" chance="2" /> <!-- Superior Herb of Life -->
-				<item id="8603" min="1" max="1" chance="19.8" /> <!-- Herb of Mana -->
-				<item id="8604" min="1" max="1" chance="9.9" /> <!-- Major Herb of Mana -->
-				<item id="8605" min="1" max="1" chance="3.3" /> <!-- Superior Herb of Mana -->
-				<item id="34849" min="1" max="1" chance="0.7" /> <!-- Mysterious Herb of Power -->
-				<item id="34850" min="1" max="1" chance="0.7" /> <!-- Mysterious Herb of Magic -->
-				<item id="13028" min="1" max="1" chance="0.1" /> <!-- Vitality Replenishing Herb -->
+				<group chance="100">
+					<item id="8600" min="1" max="1" chance="10" /> <!-- Herb of Life -->
+					<item id="8601" min="1" max="1" chance="8" /> <!-- Major Herb of Life -->
+					<item id="8602" min="1" max="1" chance="2" /> <!-- Superior Herb of Life -->
+					<item id="8603" min="1" max="1" chance="19.8" /> <!-- Herb of Mana -->
+					<item id="8604" min="1" max="1" chance="9.9" /> <!-- Major Herb of Mana -->
+					<item id="8605" min="1" max="1" chance="3.3" /> <!-- Superior Herb of Mana -->
+					<item id="34849" min="1" max="1" chance="0.7" /> <!-- Mysterious Herb of Power -->
+					<item id="34850" min="1" max="1" chance="0.7" /> <!-- Mysterious Herb of Magic -->
+					<item id="13028" min="1" max="1" chance="0.1" /> <!-- Vitality Replenishing Herb -->
+				</group>
 			</drop>
 		</dropLists>
 	</npc>
