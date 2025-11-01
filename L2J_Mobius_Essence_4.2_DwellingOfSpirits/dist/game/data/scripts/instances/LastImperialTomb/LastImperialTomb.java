@@ -142,6 +142,10 @@ public class LastImperialTomb extends AbstractInstance
 		SKILL_MSG.put(5, NpcStringId.HYPNOTIC_MAZURKA);
 	}
 	
+	// Locations
+	protected static final Location FIRST_ROOM_CENTER = new Location(-87904, -141296, -9168, 0);
+	protected static final Location SECOND_ROOM_CENTER = new Location(-87919, -147013, -9214, 0);
+	
 	// Spawns
 	// @formatter:off
 	static final int[][] PORTRAIT_SPAWNS =
@@ -503,6 +507,7 @@ public class LastImperialTomb extends AbstractInstance
 			{
 				final Instance world = player.getInstanceWorld();
 				disablePlayers(world);
+				deactivateDemons(world);
 				final Npc activeScarlet = world.getParameters().getObject("activeScarlet", Npc.class);
 				activeScarlet.abortAttack();
 				activeScarlet.abortCast();
@@ -609,17 +614,19 @@ public class LastImperialTomb extends AbstractInstance
 				npc.setImmobilized(false);
 				npc.enableAllSkills();
 				enablePlayers(world);
+				activateDemons(world);
 				break;
 			}
 			case "FINISH_CAMERA_1":
 			{
 				final Instance world = npc.getInstanceWorld();
 				final Npc activeScarlet = world.getParameters().getObject("activeScarlet", Npc.class);
+				final Npc frintezza = world.getParameters().getObject("frintezza", Npc.class);
 				final int newHeading = world.getParameters().getInt("newHeading");
 				broadcastPacket(world, new SpecialCamera(activeScarlet, 300, newHeading - 180, 5, 0, 7000, 0, 0, 1, 0, 0));
 				broadcastPacket(world, new SpecialCamera(activeScarlet, 200, newHeading, 85, 4000, 10000, 0, 0, 1, 0, 0));
-				startQuestTimer("FINISH_CAMERA_2", 7400, npc, player, false);
-				startQuestTimer("FINISH_CAMERA_3", 7500, npc, null, false);
+				startQuestTimer("FINISH_CAMERA_2", 7400, frintezza, player, false);
+				startQuestTimer("FINISH_CAMERA_3", 7500, null, player, false);
 				break;
 			}
 			case "FINISH_CAMERA_2":
@@ -631,24 +638,24 @@ public class LastImperialTomb extends AbstractInstance
 			}
 			case "FINISH_CAMERA_3":
 			{
-				final Instance world = npc.getInstanceWorld();
+				final Instance world = player.getInstanceWorld();
 				final Npc frintezza = world.getParameters().getObject("frintezza", Npc.class);
 				broadcastPacket(world, new SpecialCamera(frintezza, 100, 120, 5, 0, 7000, 0, 0, 1, 0, 0));
 				broadcastPacket(world, new SpecialCamera(frintezza, 100, 90, 5, 5000, 15000, 0, 0, 1, 0, 0));
-				startQuestTimer("FINISH_CAMERA_4", 7000, npc, null, false);
+				startQuestTimer("FINISH_CAMERA_4", 7000, null, player, false);
 				break;
 			}
 			case "FINISH_CAMERA_4":
 			{
-				final Instance world = npc.getInstanceWorld();
+				final Instance world = player.getInstanceWorld();
 				final Npc frintezza = world.getParameters().getObject("frintezza", Npc.class);
 				broadcastPacket(world, new SpecialCamera(frintezza, 900, 90, 25, 7000, 10000, 0, 0, 1, 0, 0));
-				startQuestTimer("FINISH_CAMERA_5", 9000, npc, null, false);
+				startQuestTimer("FINISH_CAMERA_5", 9000, null, player, false);
 				break;
 			}
 			case "FINISH_CAMERA_5":
 			{
-				final Instance world = npc.getInstanceWorld();
+				final Instance world = player.getInstanceWorld();
 				for (int doorId : FIRST_ROOM_DOORS)
 				{
 					world.openCloseDoor(doorId, true);
@@ -765,7 +772,7 @@ public class LastImperialTomb extends AbstractInstance
 			
 			for (Npc monster : monsters)
 			{
-				monster.reduceCurrentHp(1, killer, null); // TODO: Find better way for attack
+				attackPlayer(world, monster, FIRST_ROOM_CENTER);
 			}
 		}
 		else if (npc.getId() == SCARLET2)
@@ -773,6 +780,7 @@ public class LastImperialTomb extends AbstractInstance
 			final Npc frintezza = world.getParameters().getObject("frintezza", Npc.class);
 			broadcastPacket(world, new MagicSkillCanceled(frintezza.getObjectId()));
 			startQuestTimer("FINISH_CAMERA_1", 500, npc, killer, false);
+			killPortraitsAndDemons(world);
 			world.finishInstance();
 		}
 		else if (ArrayUtil.contains(DEMONS, npc.getId()))
@@ -826,7 +834,7 @@ public class LastImperialTomb extends AbstractInstance
 						
 						for (Npc monster : monsters)
 						{
-							monster.reduceCurrentHp(1, killer, null); // TODO: Find better way for attack
+							attackPlayer(world, monster, SECOND_ROOM_CENTER);
 						}
 						break;
 					}
@@ -929,6 +937,56 @@ public class LastImperialTomb extends AbstractInstance
 				}
 			}
 		}
+	}
+	
+	private void attackPlayer(Instance world, Npc npc, Location LOCATION)
+	{
+		final List<Player> players = world.getPlayers().stream().filter(player -> !player.isDead() && !player.isInvisible()).toList();
+		final Player target = (!players.isEmpty()) ? players.get(getRandom(0, (players.size() - 1))) : null;
+		
+		if (target != null)
+		{
+			npc.asAttackable().addDamageHate(target, 0, 500);
+			npc.getAI().setIntention(Intention.ATTACK, target);
+			npc.setRunning();
+		}
+		else
+		{
+			npc.getAI().setIntention(Intention.MOVE_TO, LOCATION);
+		}
+	}
+	
+	private void deactivateDemons(Instance world)
+	{
+		for (Npc demon : world.getAliveNpcs(DEMONS))
+		{
+			demon.setImmobilized(true);
+			demon.disableAllSkills();
+		}
+	}
+	
+	private void activateDemons(Instance world)
+	{
+		for (Npc demon : world.getAliveNpcs(DEMONS))
+		{
+			demon.setImmobilized(false);
+			demon.enableAllSkills();
+		}
+	}
+	
+	private void killPortraitsAndDemons(Instance world)
+	{
+		for (Npc demon : world.getAliveNpcs(DEMONS))
+		{
+			demon.doDie(null);
+		}
+		world.setParameter("demons", 0);
+		
+		for (Npc portrait : world.getAliveNpcs(PORTRAITS))
+		{
+			portrait.doDie(null);
+		}
+		world.setParameter("portraits", 0);
 	}
 	
 	public static void main(String[] args)
