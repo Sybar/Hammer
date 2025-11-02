@@ -1416,8 +1416,6 @@
 			<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 			<skill id="5038" level="15" /> <!-- Servitor PvP Penalty -->
 			<skill id="11496" level="1" /> <!-- Summoner Boss Penalty -->
-			<skill id="10795" level="1" /> <!-- Thunder Purity -->
-			<skill id="10794" level="1" /> <!-- Thunder Flight -->
 		</skillList>
 		<shots soul="1" spirit="1" />
 		<collision>
@@ -1425,7 +1423,7 @@
 			<height normal="32" />
 		</collision>
 	</npc>
-	<npc id="14932" level="85" type="Monster" name="Thunder Hawk">
+	<npc id="14932" level="85" type="Servitor" name="Thunder Hawk">
 		<parameters>
 			<skill name="s_rush" id="10794" level="1" />
 			<skill name="s_purge" id="10795" level="1" />
@@ -1462,10 +1460,6 @@
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 			<skill id="5038" level="15" /> <!-- Servitor PvP Penalty -->
-			<skill id="10795" level="1" /> <!-- Thunder Purity -->
-			<skill id="10794" level="1" /> <!-- Thunder Flight -->
-			<skill id="10797" level="1" /> <!-- Thunder Feather Blast -->
-			<skill id="10798" level="1" /> <!-- Thunder Sharp Claw -->
 		</skillList>
 		<shots soul="1" spirit="1" />
 		<collision>
@@ -1774,7 +1768,7 @@
 			<height normal="22.5" />
 		</collision>
 	</npc>
-	<npc id="14940" level="87" type="Monster" name="Thunder Hawk">
+	<npc id="14940" level="87" type="Servitor" name="Thunder Hawk">
 		<parameters>
 			<skill name="s_rush" id="10794" level="2" />
 			<skill name="s_purge" id="10795" level="1" />
@@ -1811,9 +1805,6 @@
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 			<skill id="5038" level="15" /> <!-- Servitor PvP Penalty -->
-			<skill id="10794" level="2" /> <!-- Thunder Flight -->
-			<skill id="10797" level="2" /> <!-- Thunder Feather Blast -->
-			<skill id="10798" level="2" /> <!-- Thunder Sharp Claw -->
 		</skillList>
 		<shots soul="1" spirit="1" />
 		<collision>
@@ -1821,7 +1812,7 @@
 			<height normal="50" />
 		</collision>
 	</npc>
-	<npc id="14941" level="89" type="Monster" name="Thunder Hawk">
+	<npc id="14941" level="89" type="Servitor" name="Thunder Hawk">
 		<parameters>
 			<skill name="s_rush" id="10794" level="3" />
 			<skill name="s_purge" id="10795" level="1" />
@@ -1858,9 +1849,6 @@
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 			<skill id="5038" level="15" /> <!-- Servitor PvP Penalty -->
-			<skill id="10794" level="3" /> <!-- Thunder Flight -->
-			<skill id="10797" level="3" /> <!-- Thunder Feather Blast -->
-			<skill id="10798" level="3" /> <!-- Thunder Sharp Claw -->
 		</skillList>
 		<shots soul="1" spirit="1" />
 		<collision>
@@ -1868,7 +1856,7 @@
 			<height normal="50" />
 		</collision>
 	</npc>
-	<npc id="14942" level="91" type="Monster" name="Thunder Hawk">
+	<npc id="14942" level="91" type="Servitor" name="Thunder Hawk">
 		<parameters>
 			<skill name="s_rush" id="10794" level="4" />
 			<skill name="s_purge" id="10795" level="1" />
@@ -1905,9 +1893,6 @@
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 			<skill id="5038" level="15" /> <!-- Servitor PvP Penalty -->
-			<skill id="10794" level="4" /> <!-- Thunder Flight -->
-			<skill id="10797" level="4" /> <!-- Thunder Feather Blast -->
-			<skill id="10798" level="4" /> <!-- Thunder Sharp Claw -->
 		</skillList>
 		<shots soul="1" spirit="1" />
 		<collision>
@@ -3784,9 +3769,6 @@
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 			<skill id="5038" level="15" /> <!-- Servitor PvP Penalty -->
-			<skill id="10794" level="5" /> <!-- Thunder Flight -->
-			<skill id="10797" level="5" /> <!-- Thunder Feather Blast -->
-			<skill id="10798" level="5" /> <!-- Thunder Sharp Claw -->
 		</skillList>
 		<shots soul="1" spirit="1" />
 		<collision>
@@ -3831,9 +3813,6 @@
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 			<skill id="5038" level="15" /> <!-- Servitor PvP Penalty -->
-			<skill id="10794" level="6" /> <!-- Thunder Flight -->
-			<skill id="10797" level="6" /> <!-- Thunder Feather Blast -->
-			<skill id="10798" level="6" /> <!-- Thunder Sharp Claw -->
 		</skillList>
 		<shots soul="1" spirit="1" />
 		<collision>
@@ -3878,9 +3857,6 @@
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 			<skill id="5038" level="15" /> <!-- Servitor PvP Penalty -->
-			<skill id="10794" level="7" /> <!-- Thunder Flight -->
-			<skill id="10797" level="7" /> <!-- Thunder Feather Blast -->
-			<skill id="10798" level="7" /> <!-- Thunder Sharp Claw -->
 		</skillList>
 		<shots soul="1" spirit="1" />
 		<collision>
@@ -3925,9 +3901,6 @@
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 			<skill id="5038" level="15" /> <!-- Servitor PvP Penalty -->
-			<skill id="10794" level="8" /> <!-- Thunder Flight -->
-			<skill id="10797" level="8" /> <!-- Thunder Feather Blast -->
-			<skill id="10798" level="8" /> <!-- Thunder Sharp Claw -->
 		</skillList>
 		<shots soul="1" spirit="1" />
 		<collision>
