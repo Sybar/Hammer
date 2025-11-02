@@ -32,6 +32,7 @@ import org.l2jmobius.gameserver.model.item.holders.ItemHolder;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.network.clientpackets.ClientPacket;
 import org.l2jmobius.gameserver.network.holders.PetSkillAcquireHolder;
+import org.l2jmobius.gameserver.network.serverpackets.pet.ExAcquirePetSkillResult;
 import org.l2jmobius.gameserver.network.serverpackets.pet.ExPetSkillList;
 
 /**
@@ -80,6 +81,7 @@ public class RequestExAcquirePetSkill extends ClientPacket
 				pet.addSkill(skill);
 				pet.storePetSkills(skillId, skillLevel);
 				player.sendPacket(new ExPetSkillList(false, pet));
+				player.sendPacket(new ExAcquirePetSkillResult(skillId, skillLevel, true));
 				return;
 			}
 			
@@ -91,6 +93,7 @@ public class RequestExAcquirePetSkill extends ClientPacket
 					pet.addSkill(skill);
 					pet.storePetSkills(skillId, skillLevel);
 					player.sendPacket(new ExPetSkillList(false, pet));
+					player.sendPacket(new ExAcquirePetSkillResult(skillId, skillLevel, true));
 					break;
 				}
 			}
