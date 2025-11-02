@@ -48,7 +48,7 @@ import instances.AbstractInstance;
 
 /**
  * Last Imperial Tomb AI (reworked from L2J version)
- * @author Mobius
+ * @author Mobius, Trevor The Third
  */
 public class LastImperialTomb extends AbstractInstance
 {
@@ -238,8 +238,8 @@ public class LastImperialTomb extends AbstractInstance
 				disablePlayers(world);
 				
 				// broadcastPacket(world, new SpecialCamera(overheadDummy, 0, 75, -89, 0, 100, 0, 0, 1, 0, 0));
-				broadcastPacket(world, new SpecialCamera(overheadDummy, 0, 75, -89, 0, 100, 0, 0, 1, 0, 0));
-				broadcastPacket(world, new SpecialCamera(overheadDummy, 300, 90, -10, 6500, 7000, 0, 0, 1, 0, 0));
+				broadcastPacket(world, new SpecialCamera(overheadDummy, 0, 75, 89, 0, 100, 0, 0, 1, 0, 0));
+				broadcastPacket(world, new SpecialCamera(overheadDummy, 300, 90, 10, 6500, 7000, 0, 0, 1, 0, 0));
 				
 				final Npc frintezza = addSpawn(FRINTEZZA, -87780, -155086, -9080, 16384, false, 0, false, world.getId());
 				frintezza.setImmobilized(true);
@@ -280,8 +280,8 @@ public class LastImperialTomb extends AbstractInstance
 			{
 				final Instance world = player.getInstanceWorld();
 				final Npc frintezza = world.getParameters().getObject("frintezza", Npc.class);
-				broadcastPacket(world, new SpecialCamera(frintezza, 40, 75, -10, 0, 1000, 0, 0, 1, 0, 0));
-				broadcastPacket(world, new SpecialCamera(frintezza, 40, 75, -10, 0, 12000, 0, 0, 1, 0, 0));
+				broadcastPacket(world, new SpecialCamera(frintezza, 40, 75, 10, 0, 1000, 0, 0, 1, 0, 0));
+				broadcastPacket(world, new SpecialCamera(frintezza, 40, 75, 10, 0, 12000, 0, 0, 1, 0, 0));
 				startQuestTimer("FRINTEZZA_INTRO_6", 1350, null, player, false);
 				break;
 			}
@@ -378,8 +378,8 @@ public class LastImperialTomb extends AbstractInstance
 				final Instance world = player.getInstanceWorld();
 				final Npc overheadDummy = world.getParameters().getObject("overheadDummy", Npc.class);
 				final Npc scarletDummy = world.getParameters().getObject("scarletDummy", Npc.class);
-				broadcastPacket(world, new SpecialCamera(overheadDummy, 930, 160, -20, 0, 1000, 0, 0, 1, 0, 0));
-				broadcastPacket(world, new SpecialCamera(overheadDummy, 600, 180, -25, 0, 10000, 0, 0, 1, 0, 0));
+				broadcastPacket(world, new SpecialCamera(overheadDummy, 930, 160, 10, 0, 1000, 0, 0, 1, 0, 0));
+				broadcastPacket(world, new SpecialCamera(overheadDummy, 1000, 180, 0, 0, 10000, 0, 0, 1, 0, 0));
 				broadcastPacket(world, new MagicSkillUse(scarletDummy, overheadDummy, 5004, 1, 5800, 0));
 				startQuestTimer("FRINTEZZA_INTRO_16", 5000, null, player, false);
 				break;
@@ -491,8 +491,9 @@ public class LastImperialTomb extends AbstractInstance
 				if (npc != null)
 				{
 					final Instance world = npc.getInstanceWorld();
+					final Npc frintezza = world.getParameters().getObject("frintezza", Npc.class);
 					playRandomSong(world);
-					startQuestTimer("PLAY_RANDOM_SONG", RANDOM_SONG_INTERVAL * 1000, null, player, false);
+					startQuestTimer("PLAY_RANDOM_SONG", RANDOM_SONG_INTERVAL * 1000, frintezza, null, false);
 				}
 				break;
 			}
@@ -509,12 +510,15 @@ public class LastImperialTomb extends AbstractInstance
 				disablePlayers(world);
 				deactivateDemons(world);
 				final Npc activeScarlet = world.getParameters().getObject("activeScarlet", Npc.class);
+				final Npc frintezza = world.getParameters().getObject("frintezza", Npc.class);
 				activeScarlet.abortAttack();
 				activeScarlet.abortCast();
 				activeScarlet.setInvul(true);
 				activeScarlet.setImmobilized(true);
 				activeScarlet.disableAllSkills();
-				playRandomSong(world);
+				cancelQuestTimer("PLAY_RANDOM_SONG", frintezza, null);
+				broadcastPacket(world, new MagicSkillCanceled(frintezza.getObjectId()));
+				startQuestTimer("PLAY_RANDOM_SONG", RANDOM_SONG_INTERVAL * 1000, frintezza, null, false);
 				startQuestTimer("SCARLET_SECOND_MORPH_CAMERA_1", 2000, null, player, false);
 				break;
 			}
@@ -532,8 +536,9 @@ public class LastImperialTomb extends AbstractInstance
 			{
 				final Instance world = player.getInstanceWorld();
 				final Npc frintezza = world.getParameters().getObject("frintezza", Npc.class);
-				broadcastPacket(world, new MagicSkillUse(frintezza, frintezza, 5006, 1, 34000, 0));
+				broadcastPacket(world, new ExShowScreenMessage(NpcStringId.MOURNFUL_CHORALE_PRELUDE, 2, 5000));
 				broadcastPacket(world, new SpecialCamera(frintezza, 500, 70, 15, 3000, 10000, 0, 0, 1, 0, 0));
+				broadcastPacket(world, new MagicSkillUse(frintezza, frintezza, 5006, 1, 34000, 0));
 				startQuestTimer("SCARLET_SECOND_MORPH_CAMERA_3", 3000, null, player, false);
 				break;
 			}
