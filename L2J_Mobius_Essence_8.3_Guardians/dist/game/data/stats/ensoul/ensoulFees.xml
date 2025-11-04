@@ -1410,6 +1410,41 @@
 		<reSecondary itemId="2133" count="30" />
 		<remove itemId="2133" count="128" />
 	</fee>
+	<fee stoneId="100194"> <!-- Aden's Soul Crystal Lv. 21 - Weapon -->
+		<first itemId="2133" count="50" />
+		<secondary itemId="2133" count="100" />
+		<reNormal itemId="2133" count="100" />
+		<reSecondary itemId="2133" count="100" />
+		<remove itemId="2133" count="400" />
+	</fee>
+	<fee stoneId="100195"> <!-- Aden's Soul Crystal Lv. 22 - Weapon -->
+		<first itemId="2133" count="100" />
+		<secondary itemId="2133" count="200" />
+		<reNormal itemId="2133" count="200" />
+		<reSecondary itemId="2133" count="200" />
+		<remove itemId="2133" count="800" />
+	</fee>
+	<fee stoneId="100196"> <!-- Aden's Soul Crystal Lv. 23 - Weapon -->
+		<first itemId="2133" count="150" />
+		<secondary itemId="2133" count="300" />
+		<reNormal itemId="2133" count="300" />
+		<reSecondary itemId="2133" count="300" />
+		<remove itemId="2133" count="1200" />
+	</fee>
+	<fee stoneId="100197"> <!-- Aden's Soul Crystal Lv. 24 - Weapon -->
+		<first itemId="2133" count="200" />
+		<secondary itemId="2133" count="400" />
+		<reNormal itemId="2133" count="400" />
+		<reSecondary itemId="2133" count="400" />
+		<remove itemId="2133" count="1600" />
+	</fee>
+	<fee stoneId="100198"> <!-- Aden's Soul Crystal Lv. 25 - Weapon -->
+		<first itemId="2133" count="300" />
+		<secondary itemId="2133" count="600" />
+		<reNormal itemId="2133" count="600" />
+		<reSecondary itemId="2133" count="600" />
+		<remove itemId="2133" count="2000" />
+	</fee>
 	<fee stoneId="95803"> <!-- Hardin's Soul Crystal Lv. 1 (Rare) -->
 		<third itemId="2132" count="2" />
 		<reThird itemId="2132" count="2" />
@@ -1649,5 +1684,40 @@
 		<reNormal itemId="2133" count="30" />
 		<reSecondary itemId="2133" count="30" />
 		<remove itemId="2133" count="128" />
+	</fee>
+	<fee stoneId="100199"> <!-- Aden's Soul Crystal Lv. 21 - Armor -->
+		<first itemId="2133" count="50" />
+		<secondary itemId="2133" count="100" />
+		<reNormal itemId="2133" count="100" />
+		<reSecondary itemId="2133" count="100" />
+		<remove itemId="2133" count="400" />
+	</fee>
+	<fee stoneId="100200"> <!-- Aden's Soul Crystal Lv. 22 - Armor -->
+		<first itemId="2133" count="100" />
+		<secondary itemId="2133" count="200" />
+		<reNormal itemId="2133" count="200" />
+		<reSecondary itemId="2133" count="200" />
+		<remove itemId="2133" count="800" />
+	</fee>
+	<fee stoneId="100201"> <!-- Aden's Soul Crystal Lv. 23 - Armor -->
+		<first itemId="2133" count="150" />
+		<secondary itemId="2133" count="300" />
+		<reNormal itemId="2133" count="300" />
+		<reSecondary itemId="2133" count="300" />
+		<remove itemId="2133" count="1200" />
+	</fee>
+	<fee stoneId="100202"> <!-- Aden's Soul Crystal Lv. 24 - Armor -->
+		<first itemId="2133" count="200" />
+		<secondary itemId="2133" count="400" />
+		<reNormal itemId="2133" count="400" />
+		<reSecondary itemId="2133" count="400" />
+		<remove itemId="2133" count="1600" />
+	</fee>
+	<fee stoneId="100203"> <!-- Aden's Soul Crystal Lv. 25 - Armor -->
+		<first itemId="2133" count="300" />
+		<secondary itemId="2133" count="600" />
+		<reNormal itemId="2133" count="600" />
+		<reSecondary itemId="2133" count="600" />
+		<remove itemId="2133" count="2000" />
 	</fee>
 </list>

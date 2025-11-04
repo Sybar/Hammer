@@ -379,6 +379,11 @@
 	<option id="1118" name="Health Increase" desc="Max HP +31%" skillId="82000" skillLevel="18" /> <!-- Stone Id : 95800 -->
 	<option id="1119" name="Health Increase" desc="Max HP +32%" skillId="82000" skillLevel="19" /> <!-- Stone Id : 95801 -->
 	<option id="1120" name="Health Increase" desc="Max HP +33%" skillId="82000" skillLevel="20" /> <!-- Stone Id : 95802 -->
+	<option id="1121" name="Health Increase" desc="Max HP +33% Max HP +1000" skillId="82000" skillLevel="21" /> <!-- Stone Id : 100194 -->
+	<option id="1122" name="Health Increase" desc="Max HP +33% Max HP +2000 HP Recovery Potions' Effect +100 " skillId="82000" skillLevel="22" /> <!-- Stone Id : 100195 -->
+	<option id="1123" name="Health Increase" desc="Max HP +33% Max HP +3000 HP Recovery Potions' Effect +200" skillId="82002" skillLevel="23" /> <!-- Stone Id : 100196 -->
+	<option id="1124" name="Health Increase" desc="Max HP +33% Max HP +4000 HP Recovery Potions' Effect +300" skillId="82002" skillLevel="24" /> <!-- Stone Id : 100197 -->
+	<option id="1125" name="Health Increase" desc="Max HP +33% Max HP +5000 HP Recovery Potions' Effect +400" skillId="82002" skillLevel="25" /> <!-- Stone Id : 100198 -->
 	<!-- Mana Boost -->
 	<option id="1151" name="Mana Boost" desc="Max MP +4%" skillId="82001" skillLevel="1" /> <!-- Stone Id : 95783 -->
 	<option id="1152" name="Mana Boost" desc="Max MP +5%" skillId="82001" skillLevel="2" /> <!-- Stone Id : 95784 -->
@@ -528,7 +533,7 @@
 	<option id="1455" name="Physical Critical Rate" desc="P. Critical Rate +50" skillId="82007" skillLevel="5" /> <!-- Stone Id : 95787 -->
 	<option id="1456" name="Physical Critical Rate" desc="P. Critical Rate +55" skillId="82007" skillLevel="6" /> <!-- Stone Id : 95788 -->
 	<option id="1457" name="Physical Critical Rate" desc="P. Critical Rate +60" skillId="82007" skillLevel="7" /> <!-- Stone Id : 95789 -->
-	<option id="1458" name="Physical Critical Rate" desc="P. Critical Rate +65%" skillId="82007" skillLevel="8" /> <!-- Stone Id : 95790 -->
+	<option id="1458" name="Physical Critical Rate" desc="P. Critical Rate +65" skillId="82007" skillLevel="8" /> <!-- Stone Id : 95790 -->
 	<option id="1459" name="Physical Critical Rate" desc="P. Critical Rate +70" skillId="82007" skillLevel="9" /> <!-- Stone Id : 95791 -->
 	<option id="1460" name="Physical Critical Rate" desc="P. Critical Rate +75" skillId="82007" skillLevel="10" /> <!-- Stone Id : 95792 -->
 	<option id="1461" name="Physical Critical Rate" desc="P. Critical Rate +80" skillId="82007" skillLevel="11" /> <!-- Stone Id : 95793 -->
@@ -541,6 +546,7 @@
 	<option id="1468" name="Physical Critical Rate" desc="P. Critical Rate +130" skillId="82007" skillLevel="18" /> <!-- Stone Id : 95800 -->
 	<option id="1469" name="Physical Critical Rate" desc="P. Critical Rate +140" skillId="82007" skillLevel="19" /> <!-- Stone Id : 95801 -->
 	<option id="1470" name="Physical Critical Rate" desc="P. Critical Rate +150" skillId="82007" skillLevel="20" /> <!-- Stone Id : 95802 -->
+
 	<!-- Physical Skill Critical Rate -->
 	<option id="1501" name="Physical Skill Critical Rate" desc="P. Skill Critical Rate +1%" skillId="82008" skillLevel="1" /> <!-- Stone Id : 95783 -->
 	<option id="1502" name="Physical Skill Critical Rate" desc="P. Skill Critical Rate +1.5%" skillId="82008" skillLevel="2" /> <!-- Stone Id : 95784 -->
@@ -568,26 +574,26 @@
 	<option id="1524" name="Physical Skill Critical Rate" desc="P. Skill Critical Rate +14% Soulshot damage +4%" skillId="82008" skillLevel="24" /> <!-- Stone Id : 100197 -->
 	<option id="1525" name="Physical Skill Critical Rate" desc="P. Skill Critical Rate +15% Soulshot damage +5%" skillId="82008" skillLevel="25" /> <!-- Stone Id : 100198 -->
 	<!-- Magical Skill Critical Rate -->
-	<option id="1551" name="Magical Skill Critical Rate" desc="P. Critical Rate +30" skillId="82009" skillLevel="1" /> <!-- Stone Id : 95783 -->
-	<option id="1552" name="Magical Skill Critical Rate" desc="P. Critical Rate +35" skillId="82009" skillLevel="2" /> <!-- Stone Id : 95784 -->
-	<option id="1553" name="Magical Skill Critical Rate" desc="P. Critical Rate +40" skillId="82009" skillLevel="3" /> <!-- Stone Id : 95785 -->
-	<option id="1554" name="Magical Skill Critical Rate" desc="P. Critical Rate +45" skillId="82009" skillLevel="4" /> <!-- Stone Id : 95786 -->
-	<option id="1555" name="Magical Skill Critical Rate" desc="P. Critical Rate +50" skillId="82009" skillLevel="5" /> <!-- Stone Id : 95787 -->
-	<option id="1556" name="Magical Skill Critical Rate" desc="P. Critical Rate +55" skillId="82009" skillLevel="6" /> <!-- Stone Id : 95788 -->
-	<option id="1557" name="Magical Skill Critical Rate" desc="P. Critical Rate +60" skillId="82009" skillLevel="7" /> <!-- Stone Id : 95789 -->
-	<option id="1558" name="Magical Skill Critical Rate" desc="P. Critical Rate +65%" skillId="82009" skillLevel="8" /> <!-- Stone Id : 95790 -->
-	<option id="1559" name="Magical Skill Critical Rate" desc="P. Critical Rate +70" skillId="82009" skillLevel="9" /> <!-- Stone Id : 95791 -->
-	<option id="1560" name="Magical Skill Critical Rate" desc="P. Critical Rate +75" skillId="82009" skillLevel="10" /> <!-- Stone Id : 95792 -->
-	<option id="1561" name="Magical Skill Critical Rate" desc="P. Critical Rate +80" skillId="82009" skillLevel="11" /> <!-- Stone Id : 95793 -->
-	<option id="1562" name="Magical Skill Critical Rate" desc="P. Critical Rate +85" skillId="82009" skillLevel="12" /> <!-- Stone Id : 95794 -->
-	<option id="1563" name="Magical Skill Critical Rate" desc="P. Critical Rate +90" skillId="82009" skillLevel="13" /> <!-- Stone Id : 95795 -->
-	<option id="1564" name="Magical Skill Critical Rate" desc="P. Critical Rate +95" skillId="82009" skillLevel="14" /> <!-- Stone Id : 95796 -->
-	<option id="1565" name="Magical Skill Critical Rate" desc="P. Critical Rate +100" skillId="82009" skillLevel="15" /> <!-- Stone Id : 95797 -->
-	<option id="1566" name="Magical Skill Critical Rate" desc="P. Critical Rate +110" skillId="82009" skillLevel="16" /> <!-- Stone Id : 95798 -->
-	<option id="1567" name="Magical Skill Critical Rate" desc="P. Critical Rate +120" skillId="82009" skillLevel="17" /> <!-- Stone Id : 95799 -->
-	<option id="1568" name="Magical Skill Critical Rate" desc="P. Critical Rate +130" skillId="82009" skillLevel="18" /> <!-- Stone Id : 95800 -->
-	<option id="1569" name="Magical Skill Critical Rate" desc="P. Critical Rate +140" skillId="82009" skillLevel="19" /> <!-- Stone Id : 95801 -->
-	<option id="1570" name="Magical Skill Critical Rate" desc="P. Critical Rate +150" skillId="82009" skillLevel="20" /> <!-- Stone Id : 95802 -->
+	<option id="1551" name="Magical Skill Critical Rate" desc="M. Skill Critical Rate +30" skillId="82009" skillLevel="1" /> <!-- Stone Id : 95783 -->
+	<option id="1552" name="Magical Skill Critical Rate" desc="M. Skill Critical Rate +35" skillId="82009" skillLevel="2" /> <!-- Stone Id : 95784 -->
+	<option id="1553" name="Magical Skill Critical Rate" desc="M. Skill Critical Rate +40" skillId="82009" skillLevel="3" /> <!-- Stone Id : 95785 -->
+	<option id="1554" name="Magical Skill Critical Rate" desc="M. Skill Critical Rate +45" skillId="82009" skillLevel="4" /> <!-- Stone Id : 95786 -->
+	<option id="1555" name="Magical Skill Critical Rate" desc="M. Skill Critical Rate +50" skillId="82009" skillLevel="5" /> <!-- Stone Id : 95787 -->
+	<option id="1556" name="Magical Skill Critical Rate" desc="M. Skill Critical Rate +55" skillId="82009" skillLevel="6" /> <!-- Stone Id : 95788 -->
+	<option id="1557" name="Magical Skill Critical Rate" desc="M. Skill Critical Rate +60" skillId="82009" skillLevel="7" /> <!-- Stone Id : 95789 -->
+	<option id="1558" name="Magical Skill Critical Rate" desc="M. Skill Critical Rate +65%" skillId="82009" skillLevel="8" /> <!-- Stone Id : 95790 -->
+	<option id="1559" name="Magical Skill Critical Rate" desc="M. Skill Critical Rate +70" skillId="82009" skillLevel="9" /> <!-- Stone Id : 95791 -->
+	<option id="1560" name="Magical Skill Critical Rate" desc="M. Skill Critical Rate +75" skillId="82009" skillLevel="10" /> <!-- Stone Id : 95792 -->
+	<option id="1561" name="Magical Skill Critical Rate" desc="M. Skill Critical Rate +80" skillId="82009" skillLevel="11" /> <!-- Stone Id : 95793 -->
+	<option id="1562" name="Magical Skill Critical Rate" desc="M. Skill Critical Rate +85" skillId="82009" skillLevel="12" /> <!-- Stone Id : 95794 -->
+	<option id="1563" name="Magical Skill Critical Rate" desc="M. Skill Critical Rate +90" skillId="82009" skillLevel="13" /> <!-- Stone Id : 95795 -->
+	<option id="1564" name="Magical Skill Critical Rate" desc="M. Skill Critical Rate +95" skillId="82009" skillLevel="14" /> <!-- Stone Id : 95796 -->
+	<option id="1565" name="Magical Skill Critical Rate" desc="M. Skill Critical Rate +100" skillId="82009" skillLevel="15" /> <!-- Stone Id : 95797 -->
+	<option id="1566" name="Magical Skill Critical Rate" desc="M. Skill Critical Rate +110" skillId="82009" skillLevel="16" /> <!-- Stone Id : 95798 -->
+	<option id="1567" name="Magical Skill Critical Rate" desc="M. Skill Critical Rate +120" skillId="82009" skillLevel="17" /> <!-- Stone Id : 95799 -->
+	<option id="1568" name="Magical Skill Critical Rate" desc="M. Skill Critical Rate +130" skillId="82009" skillLevel="18" /> <!-- Stone Id : 95800 -->
+	<option id="1569" name="Magical Skill Critical Rate" desc="M. Skill Critical Rate +140" skillId="82009" skillLevel="19" /> <!-- Stone Id : 95801 -->
+	<option id="1570" name="Magical Skill Critical Rate" desc="M. Skill Critical Rate +150" skillId="82009" skillLevel="20" /> <!-- Stone Id : 95802 -->
 	<option id="1571" name="Magic Skill Critical Rate" desc="M. Skill Critical Rate +22%" skillId="82009" skillLevel="21" /> <!-- Stone Id : 100194 -->
 	<option id="1572" name="Magic Skill Critical Rate" desc="M. Skill Critical Rate +22% Spiritshot damage +2%" skillId="82009" skillLevel="22" /> <!-- Stone Id : 100195 -->
 	<option id="1573" name="Magic Skill Critical Rate" desc="M. Skill Critical Rate +23% Spiritshot damage +3%" skillId="82009" skillLevel="23" /> <!-- Stone Id : 100196 -->
