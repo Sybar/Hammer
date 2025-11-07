@@ -21,16 +21,19 @@
 package ai.bosses.Frintezza;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import org.l2jmobius.gameserver.ai.Intention;
 import org.l2jmobius.gameserver.model.Location;
+import org.l2jmobius.gameserver.model.WorldObject;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.instance.Monster;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
+import org.l2jmobius.gameserver.model.item.enums.ItemProcessType;
 import org.l2jmobius.gameserver.model.skill.Skill;
 import org.l2jmobius.gameserver.model.skill.holders.SkillHolder;
 import org.l2jmobius.gameserver.network.NpcStringId;
@@ -169,6 +172,7 @@ public class LastImperialTomb extends AbstractInstance
 		super(TEMPLATE_ID);
 		addTalkId(GUIDE, CUBE);
 		addAttackId(SCARLET1);
+		addSkillSeeId(PORTRAITS);
 		addKillId(ON_KILL_MONSTERS);
 		addKillId(HALL_ALARM, SCARLET2);
 		addKillId(PORTRAITS);
@@ -620,6 +624,7 @@ public class LastImperialTomb extends AbstractInstance
 				npc.enableAllSkills();
 				enablePlayers(world);
 				activateDemons(world);
+				playRandomSong(world);
 				break;
 			}
 			case "FINISH_CAMERA_1":
@@ -709,6 +714,22 @@ public class LastImperialTomb extends AbstractInstance
 	}
 	
 	@Override
+	protected void onEnter(Player player, Instance world, boolean firstEnter)
+	{
+		// Teleport player to instance
+		super.onEnter(player, world, firstEnter);
+		
+		// Take items
+		if (firstEnter)
+		{
+			if (player.getInventory().getInventoryItemCount(DEWDROP_OF_DESTRUCTION_ITEM_ID, -1) > 0)
+			{
+				player.destroyItemByItemId(ItemProcessType.FEE, DEWDROP_OF_DESTRUCTION_ITEM_ID, player.getInventory().getInventoryItemCount(DEWDROP_OF_DESTRUCTION_ITEM_ID, -1), null, true);
+			}
+		}
+	}
+	
+	@Override
 	public void onSpawn(Npc npc)
 	{
 		npc.setRandomWalking(false);
@@ -740,7 +761,11 @@ public class LastImperialTomb extends AbstractInstance
 				startQuestTimer("SCARLET_SECOND_MORPH", 1000, null, attacker, false);
 			}
 		}
-		
+	}
+	
+	@Override
+	public void onSkillSee(Npc npc, Player attacker, Skill skill, Collection<WorldObject> targets, boolean isSummon)
+	{
 		if (skill != null)
 		{
 			// When Dewdrop of Destruction is used on Portraits they suicide.
@@ -783,6 +808,7 @@ public class LastImperialTomb extends AbstractInstance
 		else if (npc.getId() == SCARLET2)
 		{
 			final Npc frintezza = world.getParameters().getObject("frintezza", Npc.class);
+			cancelQuestTimer("PLAY_RANDOM_SONG", frintezza, null);
 			broadcastPacket(world, new MagicSkillCanceled(frintezza.getObjectId()));
 			startQuestTimer("FINISH_CAMERA_1", 500, npc, killer, false);
 			killPortraitsAndDemons(world);

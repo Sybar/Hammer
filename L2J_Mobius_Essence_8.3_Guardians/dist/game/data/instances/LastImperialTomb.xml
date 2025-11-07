@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <instance id="205" maxWorlds="80" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/instance.xsd">
-	<time duration="120" empty="30" />
+	<time duration="30" empty="5" />
 	<locations>
 		<enter type="FIXED">
 			<location x="-88015" y="-141153" z="-9168" />
@@ -12,18 +12,18 @@
 		<condition type="CommandChannel" />
 		<condition type="CommandChannelLeader" />
 		<condition type="GroupMin">
-			<param name="limit" value="27" /> <!-- The Kamael update -->
+			<param name="limit" value="2" />
 		</condition>
 		<condition type="GroupMax">
-			<param name="limit" value="300" />
+			<param name="limit" value="100" />
 		</condition>
 		<condition type="Level">
-			<param name="min" value="70" />
+			<param name="min" value="80" />
 		</condition>
 		<condition type="Distance" />
 		<condition type="Reenter" />
 	</conditions>
-	<reenter apply="ON_ENTER">
+	<reenter apply="ON_FINISH">
 		<reset day="WEDNESDAY" hour="6" minute="30" />
 	</reenter>
 	<doorlist>
@@ -168,6 +168,42 @@
 			<npc id="18335" x="-86653" y="-146900" z="-9172" heading="22558" />
 			<npc id="18335" x="-87029" y="-146250" z="-9172" heading="53805" />
 			<npc id="18335" x="-86822" y="-147687" z="-9172" heading="25845" />
+			<npc id="18336" x="-88467" y="-148467" z="-9170" heading="0" />
+			<npc id="18336" x="-88467" y="-148403" z="-9170" heading="0" />
+			<npc id="18336" x="-88467" y="-148339" z="-9170" heading="0" />
+			<npc id="18336" x="-88467" y="-148271" z="-9170" heading="0" />
+			<npc id="18336" x="-88471" y="-148199" z="-9170" heading="0" />
+			<npc id="18336" x="-88499" y="-148435" z="-9170" heading="0" />
+			<npc id="18336" x="-88503" y="-148375" z="-9170" heading="0" />
+			<npc id="18336" x="-88499" y="-148307" z="-9170" heading="0" />
+			<npc id="18336" x="-88503" y="-148239" z="-9170" heading="0" />
+			<npc id="18336" x="-87427" y="-148191" z="-9170" heading="33000" />
+			<npc id="18336" x="-87427" y="-148263" z="-9170" heading="33000" />
+			<npc id="18336" x="-87427" y="-148331" z="-9170" heading="33000" />
+			<npc id="18336" x="-87427" y="-148395" z="-9170" heading="33000" />
+			<npc id="18336" x="-87427" y="-148467" z="-9170" heading="33000" />
+			<npc id="18336" x="-87395" y="-148435" z="-9170" heading="33000" />
+			<npc id="18336" x="-87395" y="-148371" z="-9170" heading="33000" />
+			<npc id="18336" x="-87395" y="-148303" z="-9170" heading="33000" />
+			<npc id="18336" x="-87395" y="-148227" z="-9170" heading="33000" />
+			<npc id="18336" x="-87427" y="-145683" z="-9170" heading="33000" />
+			<npc id="18336" x="-87427" y="-145747" z="-9170" heading="33000" />
+			<npc id="18336" x="-87427" y="-145883" z="-9170" heading="33000" />
+			<npc id="18336" x="-87427" y="-145819" z="-9170" heading="33000" />
+			<npc id="18336" x="-87427" y="-145955" z="-9170" heading="33000" />
+			<npc id="18336" x="-87395" y="-145715" z="-9170" heading="33000" />
+			<npc id="18336" x="-87395" y="-145779" z="-9170" heading="33000" />
+			<npc id="18336" x="-87395" y="-145859" z="-9170" heading="33000" />
+			<npc id="18336" x="-87395" y="-145923" z="-9170" heading="33000" />
+			<npc id="18336" x="-88463" y="-145971" z="-9170" heading="0" />
+			<npc id="18336" x="-88467" y="-145899" z="-9170" heading="0" />
+			<npc id="18336" x="-88467" y="-145827" z="-9170" heading="0" />
+			<npc id="18336" x="-88467" y="-145763" z="-9170" heading="0" />
+			<npc id="18336" x="-88471" y="-145699" z="-9170" heading="0" />
+			<npc id="18336" x="-88495" y="-145939" z="-9170" heading="0" />
+			<npc id="18336" x="-88499" y="-145863" z="-9170" heading="0" />
+			<npc id="18336" x="-88499" y="-145795" z="-9170" heading="0" />
+			<npc id="18336" x="-88499" y="-145731" z="-9170" heading="0" />
 			<npc id="18337" x="-89000" y="-146471" z="-9172" heading="64277" />
 			<npc id="18337" x="-89005" y="-146678" z="-9172" heading="61677" />
 			<npc id="18337" x="-89028" y="-146997" z="-9172" heading="64285" />

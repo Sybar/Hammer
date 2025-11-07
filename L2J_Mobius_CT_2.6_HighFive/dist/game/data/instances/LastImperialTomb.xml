@@ -1,30 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<instance id="205" maxWorlds="80" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/instance.xsd">
-	<time duration="30" empty="5" />
-	<locations>
-		<enter type="FIXED">
-			<location x="-88015" y="-141153" z="-9168" />
-		</enter>
-		<exit type="ORIGIN" />
-	</locations>
-	<conditions>
-		<condition type="Party" />
-		<condition type="CommandChannel" />
-		<condition type="CommandChannelLeader" />
-		<condition type="GroupMin">
-			<param name="limit" value="2" />
-		</condition>
-		<condition type="GroupMax">
-			<param name="limit" value="100" />
-		</condition>
-		<condition type="Level">
-			<param name="min" value="80" />
-		</condition>
-		<condition type="Distance" />
-		<condition type="Reenter" />
-	</conditions>
-	<reenter apply="ON_FINISH">
-		<reset day="WEDNESDAY" hour="6" minute="30" />
+<!-- Last Imperial Tomb -->
+<instance id="136" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/instance.xsd">
+	<activityTime val="120" />
+	<allowSummon val="false" />
+	<emptyDestroyTime val="1800" />
+	<exitPoint x="181381" y="-80883" z="-2730" />
+	<reenter additionStyle="NONE">
+		<reset day="Wednesday" hour="6" minute="30" />
+		<reset day="Saturday" hour="6" minute="30" />
 	</reenter>
 	<doorlist>
 		<door id="17130045" />
@@ -51,10 +34,10 @@
 		<door id="17130070" />
 	</doorlist>
 	<spawnlist>
-		<group>
+		<group name="alarm">
 			<npc id="18328" x="-87904" y="-141296" z="-9168" heading="0" /> <!-- Hall Alarm -->
 		</group>
-		<group name="room1" spawnByDefault="false">
+		<group name="room1">
 			<npc id="18329" x="-87361" y="-142312" z="-9176" heading="43694" />
 			<npc id="18329" x="-86916" y="-142136" z="-9176" heading="47013" />
 			<npc id="18329" x="-87037" y="-142185" z="-9176" heading="36781" />
@@ -139,13 +122,13 @@
 			<npc id="18331" x="-88928" y="-142081" z="-9176" heading="59768" />
 			<npc id="18331" x="-88648" y="-142284" z="-9176" heading="60097" />
 		</group>
-		<group name="room2_part1" spawnByDefault="false">
+		<group name="room2_part1">
 			<npc id="18339" x="-87882" y="-146943" z="-9188" heading="9083" />
 			<npc id="18339" x="-87914" y="-146981" z="-9188" heading="51455" />
 			<npc id="18339" x="-87925" y="-146932" z="-9188" heading="15755" />
 			<npc id="18339" x="-87971" y="-146885" z="-9188" heading="3538" />
 		</group>
-		<group name="room2_part2" spawnByDefault="false">
+		<group name="room2_part2">
 			<npc id="18334" x="-87016" y="-147940" z="-9172" heading="23515" />
 			<npc id="18334" x="-86769" y="-147555" z="-9172" heading="31470" />
 			<npc id="18334" x="-86723" y="-147121" z="-9172" heading="33419" />
@@ -168,6 +151,42 @@
 			<npc id="18335" x="-86653" y="-146900" z="-9172" heading="22558" />
 			<npc id="18335" x="-87029" y="-146250" z="-9172" heading="53805" />
 			<npc id="18335" x="-86822" y="-147687" z="-9172" heading="25845" />
+			<npc id="18336" x="-88467" y="-148467" z="-9170" heading="0" />
+			<npc id="18336" x="-88467" y="-148403" z="-9170" heading="0" />
+			<npc id="18336" x="-88467" y="-148339" z="-9170" heading="0" />
+			<npc id="18336" x="-88467" y="-148271" z="-9170" heading="0" />
+			<npc id="18336" x="-88471" y="-148199" z="-9170" heading="0" />
+			<npc id="18336" x="-88499" y="-148435" z="-9170" heading="0" />
+			<npc id="18336" x="-88503" y="-148375" z="-9170" heading="0" />
+			<npc id="18336" x="-88499" y="-148307" z="-9170" heading="0" />
+			<npc id="18336" x="-88503" y="-148239" z="-9170" heading="0" />
+			<npc id="18336" x="-87427" y="-148191" z="-9170" heading="33000" />
+			<npc id="18336" x="-87427" y="-148263" z="-9170" heading="33000" />
+			<npc id="18336" x="-87427" y="-148331" z="-9170" heading="33000" />
+			<npc id="18336" x="-87427" y="-148395" z="-9170" heading="33000" />
+			<npc id="18336" x="-87427" y="-148467" z="-9170" heading="33000" />
+			<npc id="18336" x="-87395" y="-148435" z="-9170" heading="33000" />
+			<npc id="18336" x="-87395" y="-148371" z="-9170" heading="33000" />
+			<npc id="18336" x="-87395" y="-148303" z="-9170" heading="33000" />
+			<npc id="18336" x="-87395" y="-148227" z="-9170" heading="33000" />
+			<npc id="18336" x="-87427" y="-145683" z="-9170" heading="33000" />
+			<npc id="18336" x="-87427" y="-145747" z="-9170" heading="33000" />
+			<npc id="18336" x="-87427" y="-145883" z="-9170" heading="33000" />
+			<npc id="18336" x="-87427" y="-145819" z="-9170" heading="33000" />
+			<npc id="18336" x="-87427" y="-145955" z="-9170" heading="33000" />
+			<npc id="18336" x="-87395" y="-145715" z="-9170" heading="33000" />
+			<npc id="18336" x="-87395" y="-145779" z="-9170" heading="33000" />
+			<npc id="18336" x="-87395" y="-145859" z="-9170" heading="33000" />
+			<npc id="18336" x="-87395" y="-145923" z="-9170" heading="33000" />
+			<npc id="18336" x="-88463" y="-145971" z="-9170" heading="0" />
+			<npc id="18336" x="-88467" y="-145899" z="-9170" heading="0" />
+			<npc id="18336" x="-88467" y="-145827" z="-9170" heading="0" />
+			<npc id="18336" x="-88467" y="-145763" z="-9170" heading="0" />
+			<npc id="18336" x="-88471" y="-145699" z="-9170" heading="0" />
+			<npc id="18336" x="-88495" y="-145939" z="-9170" heading="0" />
+			<npc id="18336" x="-88499" y="-145863" z="-9170" heading="0" />
+			<npc id="18336" x="-88499" y="-145795" z="-9170" heading="0" />
+			<npc id="18336" x="-88499" y="-145731" z="-9170" heading="0" />
 			<npc id="18337" x="-89000" y="-146471" z="-9172" heading="64277" />
 			<npc id="18337" x="-89005" y="-146678" z="-9172" heading="61677" />
 			<npc id="18337" x="-89028" y="-146997" z="-9172" heading="64285" />
