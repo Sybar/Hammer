@@ -14,9 +14,9 @@
 		<set name="extractableCountMin" val="1" />
 		<set name="extractableCountMax" val="1" />
 		<capsuled_items>
-			<item id="95735" min="1" max="1" chance="33.33333" /> <!-- Frost Lord's Rapier -->
-			<item id="95735" min="1" max="1" chance="33.33333" /> <!-- Frost Lord's Rapier -->
-			<item id="95735" min="1" max="1" chance="33.33333" /> <!-- Frost Lord's Rapier -->
+			<item id="95735" min="1" max="1" minEnchant="5" maxEnchant="5" chance="33.33333" /> <!-- +5 Frost Lord's Rapier -->
+			<item id="95735" min="1" max="1" minEnchant="6" maxEnchant="6" chance="33.33333" /> <!-- +6 Frost Lord's Rapier -->
+			<item id="95735" min="1" max="1" minEnchant="7" maxEnchant="7" chance="33.33333" /> <!-- +7 Frost Lord's Rapier -->
 		</capsuled_items>
 	</item>
 	<item id="102201" name="Package: +5 ~ +7 Frost Lord's Dual Swords" additionalName="Sealed" type="EtcItem">
@@ -33,9 +33,9 @@
 		<set name="extractableCountMin" val="1" />
 		<set name="extractableCountMax" val="1" />
 		<capsuled_items>
-			<item id="95737" min="1" max="1" chance="33.33333" /> <!-- Frost Lord's Dual Swords -->
-			<item id="95737" min="1" max="1" chance="33.33333" /> <!-- Frost Lord's Dual Swords -->
-			<item id="95737" min="1" max="1" chance="33.33333" /> <!-- Frost Lord's Dual Swords -->
+			<item id="95737" min="1" max="1" minEnchant="5" maxEnchant="5" chance="33.33333" /> <!-- Frost Lord's Dual Swords -->
+			<item id="95737" min="1" max="1" minEnchant="6" maxEnchant="6" chance="33.33333" /> <!-- Frost Lord's Dual Swords -->
+			<item id="95737" min="1" max="1" minEnchant="7" maxEnchant="7" chance="33.33333" /> <!-- Frost Lord's Dual Swords -->
 		</capsuled_items>
 	</item>
 	<item id="102202" name="Package: +5 ~ +7 Frost Lord's Two-handed Sword" additionalName="Sealed" type="EtcItem">
@@ -52,9 +52,9 @@
 		<set name="extractableCountMin" val="1" />
 		<set name="extractableCountMax" val="1" />
 		<capsuled_items>
-			<item id="95726" min="1" max="1" chance="33.33333" /> <!-- Frost Lord's Two-handed Sword -->
-			<item id="95726" min="1" max="1" chance="33.33333" /> <!-- Frost Lord's Two-handed Sword -->
-			<item id="95726" min="1" max="1" chance="33.33333" /> <!-- Frost Lord's Two-handed Sword -->
+			<item id="95726" min="1" max="1" minEnchant="5" maxEnchant="5" chance="33.33333" /> <!-- Frost Lord's Two-handed Sword -->
+			<item id="95726" min="1" max="1" minEnchant="6" maxEnchant="6" chance="33.33333" /> <!-- Frost Lord's Two-handed Sword -->
+			<item id="95726" min="1" max="1" minEnchant="7" maxEnchant="7" chance="33.33333" /> <!-- Frost Lord's Two-handed Sword -->
 		</capsuled_items>
 	</item>
 	<item id="102203" name="Package: +5 ~ +7 Frost Lord's Dagger" additionalName="Sealed" type="EtcItem">
@@ -71,9 +71,9 @@
 		<set name="extractableCountMin" val="1" />
 		<set name="extractableCountMax" val="1" />
 		<capsuled_items>
-			<item id="95728" min="1" max="1" chance="33.33333" /> <!-- Frost Lord's Dagger -->
-			<item id="95728" min="1" max="1" chance="33.33333" /> <!-- Frost Lord's Dagger -->
-			<item id="95728" min="1" max="1" chance="33.33333" /> <!-- Frost Lord's Dagger -->
+			<item id="95728" min="1" max="1" minEnchant="5" maxEnchant="5" chance="33.33333" /> <!-- Frost Lord's Dagger -->
+			<item id="95728" min="1" max="1" minEnchant="6" maxEnchant="6" chance="33.33333" /> <!-- Frost Lord's Dagger -->
+			<item id="95728" min="1" max="1" minEnchant="7" maxEnchant="7" chance="33.33333" /> <!-- Frost Lord's Dagger -->
 		</capsuled_items>
 	</item>
 	<item id="102204" name="Package: +5 ~ +7 Frost Lord's Bow" additionalName="Sealed" type="EtcItem">
@@ -90,9 +90,9 @@
 		<set name="extractableCountMin" val="1" />
 		<set name="extractableCountMax" val="1" />
 		<capsuled_items>
-			<item id="95730" min="1" max="1" chance="33.33333" /> <!-- Frost Lord's Bow -->
-			<item id="95730" min="1" max="1" chance="33.33333" /> <!-- Frost Lord's Bow -->
-			<item id="95730" min="1" max="1" chance="33.33333" /> <!-- Frost Lord's Bow -->
+			<item id="95730" min="1" max="1" minEnchant="5" maxEnchant="5" chance="33.33333" /> <!-- Frost Lord's Bow -->
+			<item id="95730" min="1" max="1" minEnchant="6" maxEnchant="6" chance="33.33333" /> <!-- Frost Lord's Bow -->
+			<item id="95730" min="1" max="1" minEnchant="7" maxEnchant="7" chance="33.33333" /> <!-- Frost Lord's Bow -->
 		</capsuled_items>
 	</item>
 	<item id="102205" name="Package: +5 ~ +7 Frost Lord's Magic Blunt Weapon" additionalName="Sealed" type="EtcItem">
@@ -109,9 +109,9 @@
 		<set name="extractableCountMin" val="1" />
 		<set name="extractableCountMax" val="1" />
 		<capsuled_items>
-			<item id="95732" min="1" max="1" chance="33.33333" /> <!-- Frost Lord's Magic Blunt Weapon -->
-			<item id="95732" min="1" max="1" chance="33.33333" /> <!-- Frost Lord's Magic Blunt Weapon -->
-			<item id="95732" min="1" max="1" chance="33.33333" /> <!-- Frost Lord's Magic Blunt Weapon -->
+			<item id="95732" min="1" max="1" minEnchant="5" maxEnchant="5" chance="33.33333" /> <!-- Frost Lord's Magic Blunt Weapon -->
+			<item id="95732" min="1" max="1" minEnchant="6" maxEnchant="6" chance="33.33333" /> <!-- Frost Lord's Magic Blunt Weapon -->
+			<item id="95732" min="1" max="1" minEnchant="7" maxEnchant="7" chance="33.33333" /> <!-- Frost Lord's Magic Blunt Weapon -->
 		</capsuled_items>
 	</item>
 	<item id="102206" name="Package: +5 ~ +7 Frost Lord's Ancient Sword" additionalName="Sealed" type="EtcItem">
@@ -128,9 +128,9 @@
 		<set name="extractableCountMin" val="1" />
 		<set name="extractableCountMax" val="1" />
 		<capsuled_items>
-			<item id="95734" min="1" max="1" chance="33.33333" /> <!-- Frost Lord's Ancient Sword -->
-			<item id="95734" min="1" max="1" chance="33.33333" /> <!-- Frost Lord's Ancient Sword -->
-			<item id="95734" min="1" max="1" chance="33.33333" /> <!-- Frost Lord's Ancient Sword -->
+			<item id="95734" min="1" max="1" minEnchant="5" maxEnchant="5" chance="33.33333" /> <!-- Frost Lord's Ancient Sword -->
+			<item id="95734" min="1" max="1" minEnchant="6" maxEnchant="6" chance="33.33333" /> <!-- Frost Lord's Ancient Sword -->
+			<item id="95734" min="1" max="1" minEnchant="7" maxEnchant="7" chance="33.33333" /> <!-- Frost Lord's Ancient Sword -->
 		</capsuled_items>
 	</item>
 	<item id="102207" name="Package: +5 ~ +7 Frost Lord's Pistols" additionalName="Sealed" type="EtcItem">
@@ -147,9 +147,9 @@
 		<set name="extractableCountMin" val="1" />
 		<set name="extractableCountMax" val="1" />
 		<capsuled_items>
-			<item id="95736" min="1" max="1" chance="33.33333" /> <!-- Frost Lord's Pistols -->
-			<item id="95736" min="1" max="1" chance="33.33333" /> <!-- Frost Lord's Pistols -->
-			<item id="95736" min="1" max="1" chance="33.33333" /> <!-- Frost Lord's Pistols -->
+			<item id="95736" min="1" max="1" minEnchant="5" maxEnchant="5" chance="33.33333" /> <!-- Frost Lord's Pistols -->
+			<item id="95736" min="1" max="1" minEnchant="6" maxEnchant="6" chance="33.33333" /> <!-- Frost Lord's Pistols -->
+			<item id="95736" min="1" max="1" minEnchant="7" maxEnchant="7" chance="33.33333" /> <!-- Frost Lord's Pistols -->
 		</capsuled_items>
 	</item>
 	<item id="102208" name="+5 ~ +7 Random Boss Weapon Pack" additionalName="Sealed" type="EtcItem">
@@ -166,42 +166,42 @@
 		<set name="extractableCountMin" val="1" />
 		<set name="extractableCountMax" val="1" />
 		<capsuled_items>
-			<item id="92404" min="1" max="1" chance="2.777778" /> <!-- Zaken's Blood Sword -->
-			<item id="92404" min="1" max="1" chance="2.777778" /> <!-- Zaken's Blood Sword -->
-			<item id="92404" min="1" max="1" chance="2.777778" /> <!-- Zaken's Blood Sword -->
-			<item id="92405" min="1" max="1" chance="2.777778" /> <!-- Core's Plasmic Bow -->
-			<item id="92405" min="1" max="1" chance="2.777778" /> <!-- Core's Plasmic Bow -->
-			<item id="92405" min="1" max="1" chance="2.777778" /> <!-- Core's Plasmic Bow -->
-			<item id="92407" min="1" max="1" chance="2.777778" /> <!-- Orfen's Venom Sword -->
-			<item id="92407" min="1" max="1" chance="2.777778" /> <!-- Orfen's Venom Sword -->
-			<item id="92407" min="1" max="1" chance="2.777778" /> <!-- Orfen's Venom Sword -->
-			<item id="92408" min="1" max="1" chance="2.777778" /> <!-- Baium's Thunder Breaker -->
-			<item id="92408" min="1" max="1" chance="2.777778" /> <!-- Baium's Thunder Breaker -->
-			<item id="92408" min="1" max="1" chance="2.777778" /> <!-- Baium's Thunder Breaker -->
-			<item id="92421" min="1" max="1" chance="2.777778" /> <!-- Queen Ant's Stone Breaker -->
-			<item id="92421" min="1" max="1" chance="2.777778" /> <!-- Queen Ant's Stone Breaker -->
-			<item id="92421" min="1" max="1" chance="2.777778" /> <!-- Queen Ant's Stone Breaker -->
-			<item id="94888" min="1" max="1" chance="2.777778" /> <!-- Anakim's Divine Pistols -->
-			<item id="94888" min="1" max="1" chance="2.777778" /> <!-- Anakim's Divine Pistols -->
-			<item id="94888" min="1" max="1" chance="2.777778" /> <!-- Anakim's Divine Pistols -->
-			<item id="96268" min="1" max="1" chance="2.777778" /> <!-- Beleth's Soul Eater -->
-			<item id="96268" min="1" max="1" chance="2.777778" /> <!-- Beleth's Soul Eater -->
-			<item id="96268" min="1" max="1" chance="2.777778" /> <!-- Beleth's Soul Eater -->
-			<item id="97301" min="1" max="1" chance="2.777778" /> <!-- Gorde's Flame Spear -->
-			<item id="97301" min="1" max="1" chance="2.777778" /> <!-- Gorde's Flame Spear -->
-			<item id="97301" min="1" max="1" chance="2.777778" /> <!-- Gorde's Flame Spear -->
-			<item id="97956" min="1" max="1" chance="2.777778" /> <!-- Galaxia's Ancient Sword -->
-			<item id="97956" min="1" max="1" chance="2.777778" /> <!-- Galaxia's Ancient Sword -->
-			<item id="97956" min="1" max="1" chance="2.777778" /> <!-- Galaxia's Ancient Sword -->
-			<item id="97958" min="1" max="1" chance="2.777778" /> <!-- Phiriel's Rapier -->
-			<item id="97958" min="1" max="1" chance="2.777778" /> <!-- Phiriel's Rapier -->
-			<item id="97958" min="1" max="1" chance="2.777778" /> <!-- Phiriel's Rapier -->
-			<item id="97960" min="1" max="1" chance="2.777778" /> <!-- Anais' Fists -->
-			<item id="97960" min="1" max="1" chance="2.777778" /> <!-- Anais' Fists -->
-			<item id="97960" min="1" max="1" chance="2.777778" /> <!-- Anais' Fists -->
-			<item id="97962" min="1" max="1" chance="2.777778" /> <!-- Juriel's Dual Swords -->
-			<item id="97962" min="1" max="1" chance="2.777778" /> <!-- Juriel's Dual Swords -->
-			<item id="97962" min="1" max="1" chance="2.777778" /> <!-- Juriel's Dual Swords -->
+			<item id="92404" min="1" max="1" minEnchant="5" maxEnchant="5" chance="2.777778" /> <!-- Zaken's Blood Sword -->
+			<item id="92404" min="1" max="1" minEnchant="6" maxEnchant="6" chance="2.777778" /> <!-- Zaken's Blood Sword -->
+			<item id="92404" min="1" max="1" minEnchant="7" maxEnchant="7" chance="2.777778" /> <!-- Zaken's Blood Sword -->
+			<item id="92405" min="1" max="1" minEnchant="5" maxEnchant="5" chance="2.777778" /> <!-- Core's Plasmic Bow -->
+			<item id="92405" min="1" max="1" minEnchant="6" maxEnchant="6" chance="2.777778" /> <!-- Core's Plasmic Bow -->
+			<item id="92405" min="1" max="1" minEnchant="7" maxEnchant="7" chance="2.777778" /> <!-- Core's Plasmic Bow -->
+			<item id="92407" min="1" max="1" minEnchant="5" maxEnchant="5" chance="2.777778" /> <!-- Orfen's Venom Sword -->
+			<item id="92407" min="1" max="1" minEnchant="6" maxEnchant="6" chance="2.777778" /> <!-- Orfen's Venom Sword -->
+			<item id="92407" min="1" max="1" minEnchant="7" maxEnchant="7" chance="2.777778" /> <!-- Orfen's Venom Sword -->
+			<item id="92408" min="1" max="1" minEnchant="5" maxEnchant="5" chance="2.777778" /> <!-- Baium's Thunder Breaker -->
+			<item id="92408" min="1" max="1" minEnchant="6" maxEnchant="6" chance="2.777778" /> <!-- Baium's Thunder Breaker -->
+			<item id="92408" min="1" max="1" minEnchant="7" maxEnchant="7" chance="2.777778" /> <!-- Baium's Thunder Breaker -->
+			<item id="92421" min="1" max="1" minEnchant="5" maxEnchant="5" chance="2.777778" /> <!-- Queen Ant's Stone Breaker -->
+			<item id="92421" min="1" max="1" minEnchant="6" maxEnchant="6" chance="2.777778" /> <!-- Queen Ant's Stone Breaker -->
+			<item id="92421" min="1" max="1" minEnchant="7" maxEnchant="7" chance="2.777778" /> <!-- Queen Ant's Stone Breaker -->
+			<item id="94888" min="1" max="1" minEnchant="5" maxEnchant="5" chance="2.777778" /> <!-- Anakim's Divine Pistols -->
+			<item id="94888" min="1" max="1" minEnchant="6" maxEnchant="6" chance="2.777778" /> <!-- Anakim's Divine Pistols -->
+			<item id="94888" min="1" max="1" minEnchant="7" maxEnchant="7" chance="2.777778" /> <!-- Anakim's Divine Pistols -->
+			<item id="96268" min="1" max="1" minEnchant="5" maxEnchant="5" chance="2.777778" /> <!-- Beleth's Soul Eater -->
+			<item id="96268" min="1" max="1" minEnchant="6" maxEnchant="6" chance="2.777778" /> <!-- Beleth's Soul Eater -->
+			<item id="96268" min="1" max="1" minEnchant="7" maxEnchant="7" chance="2.777778" /> <!-- Beleth's Soul Eater -->
+			<item id="97301" min="1" max="1" minEnchant="5" maxEnchant="5" chance="2.777778" /> <!-- Gorde's Flame Spear -->
+			<item id="97301" min="1" max="1" minEnchant="6" maxEnchant="6" chance="2.777778" /> <!-- Gorde's Flame Spear -->
+			<item id="97301" min="1" max="1" minEnchant="7" maxEnchant="7" chance="2.777778" /> <!-- Gorde's Flame Spear -->
+			<item id="97956" min="1" max="1" minEnchant="5" maxEnchant="5" chance="2.777778" /> <!-- Galaxia's Ancient Sword -->
+			<item id="97956" min="1" max="1" minEnchant="6" maxEnchant="6" chance="2.777778" /> <!-- Galaxia's Ancient Sword -->
+			<item id="97956" min="1" max="1" minEnchant="7" maxEnchant="7" chance="2.777778" /> <!-- Galaxia's Ancient Sword -->
+			<item id="97958" min="1" max="1" minEnchant="5" maxEnchant="5" chance="2.777778" /> <!-- Phiriel's Rapier -->
+			<item id="97958" min="1" max="1" minEnchant="6" maxEnchant="6" chance="2.777778" /> <!-- Phiriel's Rapier -->
+			<item id="97958" min="1" max="1" minEnchant="7" maxEnchant="7" chance="2.777778" /> <!-- Phiriel's Rapier -->
+			<item id="97960" min="1" max="1" minEnchant="5" maxEnchant="5" chance="2.777778" /> <!-- Anais' Fists -->
+			<item id="97960" min="1" max="1" minEnchant="6" maxEnchant="6" chance="2.777778" /> <!-- Anais' Fists -->
+			<item id="97960" min="1" max="1" minEnchant="7" maxEnchant="7" chance="2.777778" /> <!-- Anais' Fists -->
+			<item id="97962" min="1" max="1" minEnchant="5" maxEnchant="5" chance="2.777778" /> <!-- Juriel's Dual Swords -->
+			<item id="97962" min="1" max="1" minEnchant="6" maxEnchant="6" chance="2.777778" /> <!-- Juriel's Dual Swords -->
+			<item id="97962" min="1" max="1" minEnchant="7" maxEnchant="7" chance="2.777778" /> <!-- Juriel's Dual Swords -->
 		</capsuled_items>
 	</item>
 	<item id="102209" name="+6 ~ +8 Random Boss Weapon Pack" additionalName="Sealed" type="EtcItem">
@@ -218,42 +218,42 @@
 		<set name="extractableCountMin" val="1" />
 		<set name="extractableCountMax" val="1" />
 		<capsuled_items>
-			<item id="92404" min="1" max="1" chance="2.777778" /> <!-- Zaken's Blood Sword -->
-			<item id="92404" min="1" max="1" chance="2.777778" /> <!-- Zaken's Blood Sword -->
-			<item id="92404" min="1" max="1" chance="2.777778" /> <!-- Zaken's Blood Sword -->
-			<item id="92405" min="1" max="1" chance="2.777778" /> <!-- Core's Plasmic Bow -->
-			<item id="92405" min="1" max="1" chance="2.777778" /> <!-- Core's Plasmic Bow -->
-			<item id="92405" min="1" max="1" chance="2.777778" /> <!-- Core's Plasmic Bow -->
-			<item id="92407" min="1" max="1" chance="2.777778" /> <!-- Orfen's Venom Sword -->
-			<item id="92407" min="1" max="1" chance="2.777778" /> <!-- Orfen's Venom Sword -->
-			<item id="92407" min="1" max="1" chance="2.777778" /> <!-- Orfen's Venom Sword -->
-			<item id="92408" min="1" max="1" chance="2.777778" /> <!-- Baium's Thunder Breaker -->
-			<item id="92408" min="1" max="1" chance="2.777778" /> <!-- Baium's Thunder Breaker -->
-			<item id="92408" min="1" max="1" chance="2.777778" /> <!-- Baium's Thunder Breaker -->
-			<item id="92421" min="1" max="1" chance="2.777778" /> <!-- Queen Ant's Stone Breaker -->
-			<item id="92421" min="1" max="1" chance="2.777778" /> <!-- Queen Ant's Stone Breaker -->
-			<item id="92421" min="1" max="1" chance="2.777778" /> <!-- Queen Ant's Stone Breaker -->
-			<item id="94888" min="1" max="1" chance="2.777778" /> <!-- Anakim's Divine Pistols -->
-			<item id="94888" min="1" max="1" chance="2.777778" /> <!-- Anakim's Divine Pistols -->
-			<item id="94888" min="1" max="1" chance="2.777778" /> <!-- Anakim's Divine Pistols -->
-			<item id="96268" min="1" max="1" chance="2.777778" /> <!-- Beleth's Soul Eater -->
-			<item id="96268" min="1" max="1" chance="2.777778" /> <!-- Beleth's Soul Eater -->
-			<item id="96268" min="1" max="1" chance="2.777778" /> <!-- Beleth's Soul Eater -->
-			<item id="97301" min="1" max="1" chance="2.777778" /> <!-- Gorde's Flame Spear -->
-			<item id="97301" min="1" max="1" chance="2.777778" /> <!-- Gorde's Flame Spear -->
-			<item id="97301" min="1" max="1" chance="2.777778" /> <!-- Gorde's Flame Spear -->
-			<item id="97956" min="1" max="1" chance="2.777778" /> <!-- Galaxia's Ancient Sword -->
-			<item id="97956" min="1" max="1" chance="2.777778" /> <!-- Galaxia's Ancient Sword -->
-			<item id="97956" min="1" max="1" chance="2.777778" /> <!-- Galaxia's Ancient Sword -->
-			<item id="97958" min="1" max="1" chance="2.777778" /> <!-- Phiriel's Rapier -->
-			<item id="97958" min="1" max="1" chance="2.777778" /> <!-- Phiriel's Rapier -->
-			<item id="97958" min="1" max="1" chance="2.777778" /> <!-- Phiriel's Rapier -->
-			<item id="97960" min="1" max="1" chance="2.777778" /> <!-- Anais' Fists -->
-			<item id="97960" min="1" max="1" chance="2.777778" /> <!-- Anais' Fists -->
-			<item id="97960" min="1" max="1" chance="2.777778" /> <!-- Anais' Fists -->
-			<item id="97962" min="1" max="1" chance="2.777778" /> <!-- Juriel's Dual Swords -->
-			<item id="97962" min="1" max="1" chance="2.777778" /> <!-- Juriel's Dual Swords -->
-			<item id="97962" min="1" max="1" chance="2.777778" /> <!-- Juriel's Dual Swords -->
+			<item id="92404" min="1" max="1" minEnchant="6" maxEnchant="6" chance="2.777778" /> <!-- Zaken's Blood Sword -->
+			<item id="92404" min="1" max="1" minEnchant="7" maxEnchant="7" chance="2.777778" /> <!-- Zaken's Blood Sword -->
+			<item id="92404" min="1" max="1" minEnchant="8" maxEnchant="8" chance="2.777778" /> <!-- Zaken's Blood Sword -->
+			<item id="92405" min="1" max="1" minEnchant="6" maxEnchant="6" chance="2.777778" /> <!-- Core's Plasmic Bow -->
+			<item id="92405" min="1" max="1" minEnchant="7" maxEnchant="7" chance="2.777778" /> <!-- Core's Plasmic Bow -->
+			<item id="92405" min="1" max="1" minEnchant="8" maxEnchant="8" chance="2.777778" /> <!-- Core's Plasmic Bow -->
+			<item id="92407" min="1" max="1" minEnchant="6" maxEnchant="6" chance="2.777778" /> <!-- Orfen's Venom Sword -->
+			<item id="92407" min="1" max="1" minEnchant="7" maxEnchant="7" chance="2.777778" /> <!-- Orfen's Venom Sword -->
+			<item id="92407" min="1" max="1" minEnchant="8" maxEnchant="8" chance="2.777778" /> <!-- Orfen's Venom Sword -->
+			<item id="92408" min="1" max="1" minEnchant="6" maxEnchant="6" chance="2.777778" /> <!-- Baium's Thunder Breaker -->
+			<item id="92408" min="1" max="1" minEnchant="7" maxEnchant="7" chance="2.777778" /> <!-- Baium's Thunder Breaker -->
+			<item id="92408" min="1" max="1" minEnchant="8" maxEnchant="8" chance="2.777778" /> <!-- Baium's Thunder Breaker -->
+			<item id="92421" min="1" max="1" minEnchant="6" maxEnchant="6" chance="2.777778" /> <!-- Queen Ant's Stone Breaker -->
+			<item id="92421" min="1" max="1" minEnchant="7" maxEnchant="7" chance="2.777778" /> <!-- Queen Ant's Stone Breaker -->
+			<item id="92421" min="1" max="1" minEnchant="8" maxEnchant="8" chance="2.777778" /> <!-- Queen Ant's Stone Breaker -->
+			<item id="94888" min="1" max="1" minEnchant="6" maxEnchant="6" chance="2.777778" /> <!-- Anakim's Divine Pistols -->
+			<item id="94888" min="1" max="1" minEnchant="7" maxEnchant="7" chance="2.777778" /> <!-- Anakim's Divine Pistols -->
+			<item id="94888" min="1" max="1" minEnchant="8" maxEnchant="8" chance="2.777778" /> <!-- Anakim's Divine Pistols -->
+			<item id="96268" min="1" max="1" minEnchant="6" maxEnchant="6" chance="2.777778" /> <!-- Beleth's Soul Eater -->
+			<item id="96268" min="1" max="1" minEnchant="7" maxEnchant="7" chance="2.777778" /> <!-- Beleth's Soul Eater -->
+			<item id="96268" min="1" max="1" minEnchant="8" maxEnchant="8" chance="2.777778" /> <!-- Beleth's Soul Eater -->
+			<item id="97301" min="1" max="1" minEnchant="6" maxEnchant="6" chance="2.777778" /> <!-- Gorde's Flame Spear -->
+			<item id="97301" min="1" max="1" minEnchant="7" maxEnchant="7" chance="2.777778" /> <!-- Gorde's Flame Spear -->
+			<item id="97301" min="1" max="1" minEnchant="8" maxEnchant="8" chance="2.777778" /> <!-- Gorde's Flame Spear -->
+			<item id="97956" min="1" max="1" minEnchant="6" maxEnchant="6" chance="2.777778" /> <!-- Galaxia's Ancient Sword -->
+			<item id="97956" min="1" max="1" minEnchant="7" maxEnchant="7" chance="2.777778" /> <!-- Galaxia's Ancient Sword -->
+			<item id="97956" min="1" max="1" minEnchant="8" maxEnchant="8" chance="2.777778" /> <!-- Galaxia's Ancient Sword -->
+			<item id="97958" min="1" max="1" minEnchant="6" maxEnchant="6" chance="2.777778" /> <!-- Phiriel's Rapier -->
+			<item id="97958" min="1" max="1" minEnchant="7" maxEnchant="7" chance="2.777778" /> <!-- Phiriel's Rapier -->
+			<item id="97958" min="1" max="1" minEnchant="8" maxEnchant="8" chance="2.777778" /> <!-- Phiriel's Rapier -->
+			<item id="97960" min="1" max="1" minEnchant="6" maxEnchant="6" chance="2.777778" /> <!-- Anais' Fists -->
+			<item id="97960" min="1" max="1" minEnchant="7" maxEnchant="7" chance="2.777778" /> <!-- Anais' Fists -->
+			<item id="97960" min="1" max="1" minEnchant="8" maxEnchant="8" chance="2.777778" /> <!-- Anais' Fists -->
+			<item id="97962" min="1" max="1" minEnchant="6" maxEnchant="6" chance="2.777778" /> <!-- Juriel's Dual Swords -->
+			<item id="97962" min="1" max="1" minEnchant="7" maxEnchant="7" chance="2.777778" /> <!-- Juriel's Dual Swords -->
+			<item id="97962" min="1" max="1" minEnchant="8" maxEnchant="8" chance="2.777778" /> <!-- Juriel's Dual Swords -->
 		</capsuled_items>
 	</item>
 	<item id="102210" name="Package: +5 ~ +7 Zaken's Blood Sword" additionalName="Sealed" type="EtcItem">
@@ -270,9 +270,9 @@
 		<set name="extractableCountMin" val="1" />
 		<set name="extractableCountMax" val="1" />
 		<capsuled_items>
-			<item id="92404" min="1" max="1" chance="33.33333" /> <!-- Zaken's Blood Sword -->
-			<item id="92404" min="1" max="1" chance="33.33333" /> <!-- Zaken's Blood Sword -->
-			<item id="92404" min="1" max="1" chance="33.33333" /> <!-- Zaken's Blood Sword -->
+			<item id="92404" min="1" max="1" minEnchant="5" maxEnchant="5" chance="33.33333" /> <!-- Zaken's Blood Sword -->
+			<item id="92404" min="1" max="1" minEnchant="6" maxEnchant="6" chance="33.33333" /> <!-- Zaken's Blood Sword -->
+			<item id="92404" min="1" max="1" minEnchant="6" maxEnchant="6" chance="33.33333" /> <!-- Zaken's Blood Sword -->
 		</capsuled_items>
 	</item>
 	<item id="102211" name="Package: +5 ~ +7 Core's Plasmic Bow" additionalName="Sealed" type="EtcItem">
@@ -289,9 +289,9 @@
 		<set name="extractableCountMin" val="1" />
 		<set name="extractableCountMax" val="1" />
 		<capsuled_items>
-			<item id="92405" min="1" max="1" chance="33.33333" /> <!-- Core's Plasmic Bow -->
-			<item id="92405" min="1" max="1" chance="33.33333" /> <!-- Core's Plasmic Bow -->
-			<item id="92405" min="1" max="1" chance="33.33333" /> <!-- Core's Plasmic Bow -->
+			<item id="92405" min="1" max="1" minEnchant="5" maxEnchant="5" chance="33.33333" /> <!-- Core's Plasmic Bow -->
+			<item id="92405" min="1" max="1" minEnchant="6" maxEnchant="6" chance="33.33333" /> <!-- Core's Plasmic Bow -->
+			<item id="92405" min="1" max="1" minEnchant="7" maxEnchant="7" chance="33.33333" /> <!-- Core's Plasmic Bow -->
 		</capsuled_items>
 	</item>
 	<item id="102212" name="Package: +5 ~ +7 Orfen's Venom Sword" additionalName="Sealed" type="EtcItem">
@@ -308,9 +308,9 @@
 		<set name="extractableCountMin" val="1" />
 		<set name="extractableCountMax" val="1" />
 		<capsuled_items>
-			<item id="92407" min="1" max="1" chance="33.33333" /> <!-- Orfen's Venom Sword -->
-			<item id="92407" min="1" max="1" chance="33.33333" /> <!-- Orfen's Venom Sword -->
-			<item id="92407" min="1" max="1" chance="33.33333" /> <!-- Orfen's Venom Sword -->
+			<item id="92407" min="1" max="1" minEnchant="5" maxEnchant="5" chance="33.33333" /> <!-- Orfen's Venom Sword -->
+			<item id="92407" min="1" max="1" minEnchant="6" maxEnchant="6" chance="33.33333" /> <!-- Orfen's Venom Sword -->
+			<item id="92407" min="1" max="1" minEnchant="7" maxEnchant="7" chance="33.33333" /> <!-- Orfen's Venom Sword -->
 		</capsuled_items>
 	</item>
 	<item id="102213" name="Package: +5 ~ +7 Baium's Thunder Breaker" additionalName="Sealed" type="EtcItem">
@@ -327,9 +327,9 @@
 		<set name="extractableCountMin" val="1" />
 		<set name="extractableCountMax" val="1" />
 		<capsuled_items>
-			<item id="92408" min="1" max="1" chance="33.33333" /> <!-- Baium's Thunder Breaker -->
-			<item id="92408" min="1" max="1" chance="33.33333" /> <!-- Baium's Thunder Breaker -->
-			<item id="92408" min="1" max="1" chance="33.33333" /> <!-- Baium's Thunder Breaker -->
+			<item id="92408" min="1" max="1" minEnchant="5" maxEnchant="5" chance="33.33333" /> <!-- Baium's Thunder Breaker -->
+			<item id="92408" min="1" max="1" minEnchant="6" maxEnchant="6" chance="33.33333" /> <!-- Baium's Thunder Breaker -->
+			<item id="92408" min="1" max="1" minEnchant="7" maxEnchant="7" chance="33.33333" /> <!-- Baium's Thunder Breaker -->
 		</capsuled_items>
 	</item>
 	<item id="102214" name="Package: +5 ~ +7 Queen Ant's Stone Breaker" additionalName="Sealed" type="EtcItem">
@@ -346,9 +346,9 @@
 		<set name="extractableCountMin" val="1" />
 		<set name="extractableCountMax" val="1" />
 		<capsuled_items>
-			<item id="92421" min="1" max="1" chance="33.33333" /> <!-- Queen Ant's Stone Breaker -->
-			<item id="92421" min="1" max="1" chance="33.33333" /> <!-- Queen Ant's Stone Breaker -->
-			<item id="92421" min="1" max="1" chance="33.33333" /> <!-- Queen Ant's Stone Breaker -->
+			<item id="92421" min="1" max="1" minEnchant="5" maxEnchant="5" chance="33.33333" /> <!-- Queen Ant's Stone Breaker -->
+			<item id="92421" min="1" max="1" minEnchant="6" maxEnchant="6" chance="33.33333" /> <!-- Queen Ant's Stone Breaker -->
+			<item id="92421" min="1" max="1" minEnchant="7" maxEnchant="7" chance="33.33333" /> <!-- Queen Ant's Stone Breaker -->
 		</capsuled_items>
 	</item>
 	<item id="102215" name="Package: +5 ~ +7 Anakim's Divine Pistols" additionalName="Sealed" type="EtcItem">
@@ -365,9 +365,9 @@
 		<set name="extractableCountMin" val="1" />
 		<set name="extractableCountMax" val="1" />
 		<capsuled_items>
-			<item id="94888" min="1" max="1" chance="33.33333" /> <!-- Anakim's Divine Pistols -->
-			<item id="94888" min="1" max="1" chance="33.33333" /> <!-- Anakim's Divine Pistols -->
-			<item id="94888" min="1" max="1" chance="33.33333" /> <!-- Anakim's Divine Pistols -->
+			<item id="94888" min="1" max="1" minEnchant="5" maxEnchant="5" chance="33.33333" /> <!-- Anakim's Divine Pistols -->
+			<item id="94888" min="1" max="1" minEnchant="6" maxEnchant="6" chance="33.33333" /> <!-- Anakim's Divine Pistols -->
+			<item id="94888" min="1" max="1" minEnchant="7" maxEnchant="7" chance="33.33333" /> <!-- Anakim's Divine Pistols -->
 		</capsuled_items>
 	</item>
 	<item id="102216" name="Package: +5 ~ +7 Beleth's Soul Eater" additionalName="Sealed" type="EtcItem">
@@ -384,9 +384,9 @@
 		<set name="extractableCountMin" val="1" />
 		<set name="extractableCountMax" val="1" />
 		<capsuled_items>
-			<item id="96268" min="1" max="1" chance="33.33333" /> <!-- Beleth's Soul Eater -->
-			<item id="96268" min="1" max="1" chance="33.33333" /> <!-- Beleth's Soul Eater -->
-			<item id="96268" min="1" max="1" chance="33.33333" /> <!-- Beleth's Soul Eater -->
+			<item id="96268" min="1" max="1" minEnchant="5" maxEnchant="5" chance="33.33333" /> <!-- Beleth's Soul Eater -->
+			<item id="96268" min="1" max="1" minEnchant="6" maxEnchant="6" chance="33.33333" /> <!-- Beleth's Soul Eater -->
+			<item id="96268" min="1" max="1" minEnchant="7" maxEnchant="7" chance="33.33333" /> <!-- Beleth's Soul Eater -->
 		</capsuled_items>
 	</item>
 	<item id="102217" name="Package: +5 ~ +7 Gorde's Flame Spear" additionalName="Sealed" type="EtcItem">
@@ -403,9 +403,9 @@
 		<set name="extractableCountMin" val="1" />
 		<set name="extractableCountMax" val="1" />
 		<capsuled_items>
-			<item id="97301" min="1" max="1" chance="33.33333" /> <!-- Gorde's Flame Spear -->
-			<item id="97301" min="1" max="1" chance="33.33333" /> <!-- Gorde's Flame Spear -->
-			<item id="97301" min="1" max="1" chance="33.33333" /> <!-- Gorde's Flame Spear -->
+			<item id="97301" min="1" max="1" minEnchant="5" maxEnchant="5" chance="33.33333" /> <!-- Gorde's Flame Spear -->
+			<item id="97301" min="1" max="1" minEnchant="6" maxEnchant="6" chance="33.33333" /> <!-- Gorde's Flame Spear -->
+			<item id="97301" min="1" max="1" minEnchant="7" maxEnchant="7" chance="33.33333" /> <!-- Gorde's Flame Spear -->
 		</capsuled_items>
 	</item>
 	<item id="102218" name="Package: +5 ~ +7 Anais' Fists" additionalName="Sealed" type="EtcItem">
@@ -422,9 +422,9 @@
 		<set name="extractableCountMin" val="1" />
 		<set name="extractableCountMax" val="1" />
 		<capsuled_items>
-			<item id="97960" min="1" max="1" chance="33.33333" /> <!-- Anais' Fists -->
-			<item id="97960" min="1" max="1" chance="33.33333" /> <!-- Anais' Fists -->
-			<item id="97960" min="1" max="1" chance="33.33333" /> <!-- Anais' Fists -->
+			<item id="97960" min="1" max="1" minEnchant="5" maxEnchant="5"  chance="33.33333" /> <!-- Anais' Fists -->
+			<item id="97960" min="1" max="1" minEnchant="6" maxEnchant="6" chance="33.33333" /> <!-- Anais' Fists -->
+			<item id="97960" min="1" max="1" minEnchant="7" maxEnchant="7" chance="33.33333" /> <!-- Anais' Fists -->
 		</capsuled_items>
 	</item>
 	<item id="102219" name="Package: +5 ~ +7 Galaxia's Ancient Sword" additionalName="Sealed" type="EtcItem">
@@ -441,9 +441,9 @@
 		<set name="extractableCountMin" val="1" />
 		<set name="extractableCountMax" val="1" />
 		<capsuled_items>
-			<item id="97956" min="1" max="1" chance="33.33333" /> <!-- Galaxia's Ancient Sword -->
-			<item id="97956" min="1" max="1" chance="33.33333" /> <!-- Galaxia's Ancient Sword -->
-			<item id="97956" min="1" max="1" chance="33.33333" /> <!-- Galaxia's Ancient Sword -->
+			<item id="97956" min="1" max="1" minEnchant="5" maxEnchant="5" chance="33.33333" /> <!-- Galaxia's Ancient Sword -->
+			<item id="97956" min="1" max="1" minEnchant="6" maxEnchant="6" chance="33.33333" /> <!-- Galaxia's Ancient Sword -->
+			<item id="97956" min="1" max="1" minEnchant="7" maxEnchant="7" chance="33.33333" /> <!-- Galaxia's Ancient Sword -->
 		</capsuled_items>
 	</item>
 	<item id="102220" name="Package: +5 ~ +7 Juriel's Dual Swords" additionalName="Sealed" type="EtcItem">
@@ -460,9 +460,9 @@
 		<set name="extractableCountMin" val="1" />
 		<set name="extractableCountMax" val="1" />
 		<capsuled_items>
-			<item id="97962" min="1" max="1" chance="33.33333" /> <!-- Juriel's Dual Swords -->
-			<item id="97962" min="1" max="1" chance="33.33333" /> <!-- Juriel's Dual Swords -->
-			<item id="97962" min="1" max="1" chance="33.33333" /> <!-- Juriel's Dual Swords -->
+			<item id="97962" min="1" max="1" minEnchant="5" maxEnchant="5" chance="33.33333" /> <!-- Juriel's Dual Swords -->
+			<item id="97962" min="1" max="1" minEnchant="6" maxEnchant="6" chance="33.33333" /> <!-- Juriel's Dual Swords -->
+			<item id="97962" min="1" max="1" minEnchant="7" maxEnchant="7" chance="33.33333" /> <!-- Juriel's Dual Swords -->
 		</capsuled_items>
 	</item>
 	<item id="102221" name="Package: +5 ~ +7 Phiriel's Rapier" additionalName="Sealed" type="EtcItem">
@@ -479,9 +479,9 @@
 		<set name="extractableCountMin" val="1" />
 		<set name="extractableCountMax" val="1" />
 		<capsuled_items>
-			<item id="97958" min="1" max="1" chance="33.33333" /> <!-- Phiriel's Rapier -->
-			<item id="97958" min="1" max="1" chance="33.33333" /> <!-- Phiriel's Rapier -->
-			<item id="97958" min="1" max="1" chance="33.33333" /> <!-- Phiriel's Rapier -->
+			<item id="97958" min="1" max="1" minEnchant="5" maxEnchant="5" chance="33.33333" /> <!-- Phiriel's Rapier -->
+			<item id="97958" min="1" max="1" minEnchant="6" maxEnchant="6" chance="33.33333" /> <!-- Phiriel's Rapier -->
+			<item id="97958" min="1" max="1" minEnchant="7" maxEnchant="7" chance="33.33333" /> <!-- Phiriel's Rapier -->
 		</capsuled_items>
 	</item>
 	<item id="102222" name="Pack: Enhanced Doll Summon Coupon (Sealed)" additionalName="Sealed" type="EtcItem">
@@ -552,9 +552,9 @@
 		<set name="extractableCountMin" val="1" />
 		<set name="extractableCountMax" val="1" />
 		<capsuled_items>
-			<item id="93141" min="1" max="1" chance="33.33333" /> <!-- Ice Crystal Breastplate - Sealed -->
-			<item id="93141" min="1" max="1" chance="33.33333" /> <!-- Ice Crystal Breastplate - Sealed -->
-			<item id="93141" min="1" max="1" chance="33.33333" /> <!-- Ice Crystal Breastplate - Sealed -->
+			<item id="93141" min="1" max="1" minEnchant="5" maxEnchant="5" chance="33.33333" /> <!-- Ice Crystal Breastplate - Sealed -->
+			<item id="93141" min="1" max="1" minEnchant="6" maxEnchant="6" chance="33.33333" /> <!-- Ice Crystal Breastplate - Sealed -->
+			<item id="93141" min="1" max="1" minEnchant="7" maxEnchant="7" chance="33.33333" /> <!-- Ice Crystal Breastplate - Sealed -->
 		</capsuled_items>
 	</item>
 	<item id="102225" name="Package: +5 ~ +7 Ice Crystal Gaiters" type="EtcItem">
@@ -571,9 +571,9 @@
 		<set name="extractableCountMin" val="1" />
 		<set name="extractableCountMax" val="1" />
 		<capsuled_items>
-			<item id="93142" min="1" max="1" chance="33.33333" /> <!-- Ice Crystal Gaiters - Sealed -->
-			<item id="93142" min="1" max="1" chance="33.33333" /> <!-- Ice Crystal Gaiters - Sealed -->
-			<item id="93142" min="1" max="1" chance="33.33333" /> <!-- Ice Crystal Gaiters - Sealed -->
+			<item id="93142" min="1" max="1" minEnchant="5" maxEnchant="5" chance="33.33333" /> <!-- Ice Crystal Gaiters - Sealed -->
+			<item id="93142" min="1" max="1" minEnchant="6" maxEnchant="6" chance="33.33333" /> <!-- Ice Crystal Gaiters - Sealed -->
+			<item id="93142" min="1" max="1" minEnchant="7" maxEnchant="7" chance="33.33333" /> <!-- Ice Crystal Gaiters - Sealed -->
 		</capsuled_items>
 	</item>
 	<item id="102226" name="Package: +5 ~ +7 Leather Armor of Lightning" type="EtcItem">
@@ -590,9 +590,9 @@
 		<set name="extractableCountMin" val="1" />
 		<set name="extractableCountMax" val="1" />
 		<capsuled_items>
-			<item id="93317" min="1" max="1" chance="33.33333" /> <!-- Leather Armor of Lightning - Sealed -->
-			<item id="93317" min="1" max="1" chance="33.33333" /> <!-- Leather Armor of Lightning - Sealed -->
-			<item id="93317" min="1" max="1" chance="33.33333" /> <!-- Leather Armor of Lightning - Sealed -->
+			<item id="93317" min="1" max="1" minEnchant="5" maxEnchant="5" chance="33.33333" /> <!-- Leather Armor of Lightning - Sealed -->
+			<item id="93317" min="1" max="1" minEnchant="6" maxEnchant="6" chance="33.33333" /> <!-- Leather Armor of Lightning - Sealed -->
+			<item id="93317" min="1" max="1" minEnchant="7" maxEnchant="7" chance="33.33333" /> <!-- Leather Armor of Lightning - Sealed -->
 		</capsuled_items>
 	</item>
 	<item id="102227" name="Package: +5 ~ +7 Leather Leggings of Lightning" type="EtcItem">
@@ -609,9 +609,9 @@
 		<set name="extractableCountMin" val="1" />
 		<set name="extractableCountMax" val="1" />
 		<capsuled_items>
-			<item id="93318" min="1" max="1" chance="33.33333" /> <!-- Leather Leggings of Lightning - Sealed -->
-			<item id="93318" min="1" max="1" chance="33.33333" /> <!-- Leather Leggings of Lightning - Sealed -->
-			<item id="93318" min="1" max="1" chance="33.33333" /> <!-- Leather Leggings of Lightning - Sealed -->
+			<item id="93318" min="1" max="1" minEnchant="5" maxEnchant="5" chance="33.33333" /> <!-- Leather Leggings of Lightning - Sealed -->
+			<item id="93318" min="1" max="1" minEnchant="6" maxEnchant="6" chance="33.33333" /> <!-- Leather Leggings of Lightning - Sealed -->
+			<item id="93318" min="1" max="1" minEnchant="7" maxEnchant="7" chance="33.33333" /> <!-- Leather Leggings of Lightning - Sealed -->
 		</capsuled_items>
 	</item>
 	<item id="102228" name="Package: +5 ~ +7 Flaming Tunic" type="EtcItem">
@@ -628,9 +628,9 @@
 		<set name="extractableCountMin" val="1" />
 		<set name="extractableCountMax" val="1" />
 		<capsuled_items>
-			<item id="93735" min="1" max="1" chance="33.33333" /> <!-- Flaming Tunic - Sealed -->
-			<item id="93735" min="1" max="1" chance="33.33333" /> <!-- Flaming Tunic - Sealed -->
-			<item id="93735" min="1" max="1" chance="33.33333" /> <!-- Flaming Tunic - Sealed -->
+			<item id="93735" min="1" max="1" minEnchant="5" maxEnchant="5" chance="33.33333" /> <!-- Flaming Tunic - Sealed -->
+			<item id="93735" min="1" max="1" minEnchant="6" maxEnchant="6" chance="33.33333" /> <!-- Flaming Tunic - Sealed -->
+			<item id="93735" min="1" max="1" minEnchant="7" maxEnchant="7" chance="33.33333" /> <!-- Flaming Tunic - Sealed -->
 		</capsuled_items>
 	</item>
 	<item id="102229" name="Package: +5 ~ +7 Flaming Stockings" type="EtcItem">
@@ -647,9 +647,9 @@
 		<set name="extractableCountMin" val="1" />
 		<set name="extractableCountMax" val="1" />
 		<capsuled_items>
-			<item id="93736" min="1" max="1" chance="33.33333" /> <!-- Flaming Stockings - Sealed -->
-			<item id="93736" min="1" max="1" chance="33.33333" /> <!-- Flaming Stockings - Sealed -->
-			<item id="93736" min="1" max="1" chance="33.33333" /> <!-- Flaming Stockings - Sealed -->
+			<item id="93736" min="1" max="1" minEnchant="5" maxEnchant="5" chance="33.33333" /> <!-- Flaming Stockings - Sealed -->
+			<item id="93736" min="1" max="1" minEnchant="6" maxEnchant="6" chance="33.33333" /> <!-- Flaming Stockings - Sealed -->
+			<item id="93736" min="1" max="1" minEnchant="7" maxEnchant="7" chance="33.33333" /> <!-- Flaming Stockings - Sealed -->
 		</capsuled_items>
 	</item>
 	<item id="102230" name="Package: +5 ~ +7 Zaken's Blood Sword" type="EtcItem">
@@ -666,9 +666,9 @@
 		<set name="extractableCountMin" val="1" />
 		<set name="extractableCountMax" val="1" />
 		<capsuled_items>
-			<item id="93291" min="1" max="1" chance="33.33333" /> <!-- Zaken's Blood Sword - Sealed -->
-			<item id="93291" min="1" max="1" chance="33.33333" /> <!-- Zaken's Blood Sword - Sealed -->
-			<item id="93291" min="1" max="1" chance="33.33333" /> <!-- Zaken's Blood Sword - Sealed -->
+			<item id="93291" min="1" max="1" minEnchant="5" maxEnchant="5" chance="33.33333" /> <!-- Zaken's Blood Sword - Sealed -->
+			<item id="93291" min="1" max="1" minEnchant="6" maxEnchant="6" chance="33.33333" /> <!-- Zaken's Blood Sword - Sealed -->
+			<item id="93291" min="1" max="1" minEnchant="7" maxEnchant="7" chance="33.33333" /> <!-- Zaken's Blood Sword - Sealed -->
 		</capsuled_items>
 	</item>
 	<item id="102231" name="Package: +5 ~ +7 Core's Plasmic Bow" type="EtcItem">
@@ -685,9 +685,9 @@
 		<set name="extractableCountMin" val="1" />
 		<set name="extractableCountMax" val="1" />
 		<capsuled_items>
-			<item id="93292" min="1" max="1" chance="33.33333" /> <!-- Core's Plasmic Bow - Sealed -->
-			<item id="93292" min="1" max="1" chance="33.33333" /> <!-- Core's Plasmic Bow - Sealed -->
-			<item id="93292" min="1" max="1" chance="33.33333" /> <!-- Core's Plasmic Bow - Sealed -->
+			<item id="93292" min="1" max="1" minEnchant="5" maxEnchant="5" chance="33.33333" /> <!-- Core's Plasmic Bow - Sealed -->
+			<item id="93292" min="1" max="1" minEnchant="6" maxEnchant="6" chance="33.33333" /> <!-- Core's Plasmic Bow - Sealed -->
+			<item id="93292" min="1" max="1" minEnchant="7" maxEnchant="7" chance="33.33333" /> <!-- Core's Plasmic Bow - Sealed -->
 		</capsuled_items>
 	</item>
 	<item id="102232" name="Package: +5 ~ +7 Orfen's Venom Sword" type="EtcItem">
@@ -704,9 +704,9 @@
 		<set name="extractableCountMin" val="1" />
 		<set name="extractableCountMax" val="1" />
 		<capsuled_items>
-			<item id="93293" min="1" max="1" chance="33.33333" /> <!-- Orfen's Venom Sword - Sealed -->
-			<item id="93293" min="1" max="1" chance="33.33333" /> <!-- Orfen's Venom Sword - Sealed -->
-			<item id="93293" min="1" max="1" chance="33.33333" /> <!-- Orfen's Venom Sword - Sealed -->
+			<item id="93293" min="1" max="1" minEnchant="5" maxEnchant="5" chance="33.33333" /> <!-- Orfen's Venom Sword - Sealed -->
+			<item id="93293" min="1" max="1" minEnchant="6" maxEnchant="6" chance="33.33333" /> <!-- Orfen's Venom Sword - Sealed -->
+			<item id="93293" min="1" max="1" minEnchant="7" maxEnchant="7" chance="33.33333" /> <!-- Orfen's Venom Sword - Sealed -->
 		</capsuled_items>
 	</item>
 	<item id="102233" name="Package: +5 ~ +7 Baium's Thunder Breaker" type="EtcItem">
@@ -723,9 +723,9 @@
 		<set name="extractableCountMin" val="1" />
 		<set name="extractableCountMax" val="1" />
 		<capsuled_items>
-			<item id="93294" min="1" max="1" chance="33.33333" /> <!-- Baium's Thunder Breaker - Sealed -->
-			<item id="93294" min="1" max="1" chance="33.33333" /> <!-- Baium's Thunder Breaker - Sealed -->
-			<item id="93294" min="1" max="1" chance="33.33333" /> <!-- Baium's Thunder Breaker - Sealed -->
+			<item id="93294" min="1" max="1" minEnchant="5" maxEnchant="5" chance="33.33333" /> <!-- Baium's Thunder Breaker - Sealed -->
+			<item id="93294" min="1" max="1" minEnchant="6" maxEnchant="6" chance="33.33333" /> <!-- Baium's Thunder Breaker - Sealed -->
+			<item id="93294" min="1" max="1" minEnchant="7" maxEnchant="7" chance="33.33333" /> <!-- Baium's Thunder Breaker - Sealed -->
 		</capsuled_items>
 	</item>
 	<item id="102234" name="Package: +5 ~ +7 Queen Ant's Stone Breaker" type="EtcItem">
@@ -742,9 +742,9 @@
 		<set name="extractableCountMin" val="1" />
 		<set name="extractableCountMax" val="1" />
 		<capsuled_items>
-			<item id="93295" min="1" max="1" chance="33.33333" /> <!-- Queen Ant's Stone Breaker - Sealed -->
-			<item id="93295" min="1" max="1" chance="33.33333" /> <!-- Queen Ant's Stone Breaker - Sealed -->
-			<item id="93295" min="1" max="1" chance="33.33333" /> <!-- Queen Ant's Stone Breaker - Sealed -->
+			<item id="93295" min="1" max="1" minEnchant="5" maxEnchant="5" chance="33.33333" /> <!-- Queen Ant's Stone Breaker - Sealed -->
+			<item id="93295" min="1" max="1" minEnchant="6" maxEnchant="6" chance="33.33333" /> <!-- Queen Ant's Stone Breaker - Sealed -->
+			<item id="93295" min="1" max="1" minEnchant="7" maxEnchant="7" chance="33.33333" /> <!-- Queen Ant's Stone Breaker - Sealed -->
 		</capsuled_items>
 	</item>
 	<item id="102235" name="Package: +5 ~ +7 Anakim's Divine Pistols" type="EtcItem">
@@ -761,9 +761,9 @@
 		<set name="extractableCountMin" val="1" />
 		<set name="extractableCountMax" val="1" />
 		<capsuled_items>
-			<item id="95422" min="1" max="1" chance="33.33333" /> <!-- Anakim's Divine Pistols - Sealed -->
-			<item id="95422" min="1" max="1" chance="33.33333" /> <!-- Anakim's Divine Pistols - Sealed -->
-			<item id="95422" min="1" max="1" chance="33.33333" /> <!-- Anakim's Divine Pistols - Sealed -->
+			<item id="95422" min="1" max="1" minEnchant="5" maxEnchant="5" chance="33.33333" /> <!-- Anakim's Divine Pistols - Sealed -->
+			<item id="95422" min="1" max="1" minEnchant="6" maxEnchant="6" chance="33.33333" /> <!-- Anakim's Divine Pistols - Sealed -->
+			<item id="95422" min="1" max="1" minEnchant="7" maxEnchant="7" chance="33.33333" /> <!-- Anakim's Divine Pistols - Sealed -->
 		</capsuled_items>
 	</item>
 	<item id="102236" name="Package: +5 ~ +7 Beleth's Soul Eater" type="EtcItem">
@@ -780,9 +780,9 @@
 		<set name="extractableCountMin" val="1" />
 		<set name="extractableCountMax" val="1" />
 		<capsuled_items>
-			<item id="96269" min="1" max="1" chance="33.33333" /> <!-- Beleth's Soul Eater - Sealed -->
-			<item id="96269" min="1" max="1" chance="33.33333" /> <!-- Beleth's Soul Eater - Sealed -->
-			<item id="96269" min="1" max="1" chance="33.33333" /> <!-- Beleth's Soul Eater - Sealed -->
+			<item id="96269" min="1" max="1" minEnchant="5" maxEnchant="5" chance="33.33333" /> <!-- Beleth's Soul Eater - Sealed -->
+			<item id="96269" min="1" max="1" minEnchant="6" maxEnchant="6" chance="33.33333" /> <!-- Beleth's Soul Eater - Sealed -->
+			<item id="96269" min="1" max="1" minEnchant="7" maxEnchant="7" chance="33.33333" /> <!-- Beleth's Soul Eater - Sealed -->
 		</capsuled_items>
 	</item>
 	<item id="102237" name="Package: +5 ~ +7 Gorde's Flame Spear" type="EtcItem">
@@ -799,9 +799,9 @@
 		<set name="extractableCountMin" val="1" />
 		<set name="extractableCountMax" val="1" />
 		<capsuled_items>
-			<item id="97302" min="1" max="1" chance="33.33333" /> <!-- Gorde's Flame Spear - Sealed -->
-			<item id="97302" min="1" max="1" chance="33.33333" /> <!-- Gorde's Flame Spear - Sealed -->
-			<item id="97302" min="1" max="1" chance="33.33333" /> <!-- Gorde's Flame Spear - Sealed -->
+			<item id="97302" min="1" max="1" minEnchant="5" maxEnchant="5" chance="33.33333" /> <!-- Gorde's Flame Spear - Sealed -->
+			<item id="97302" min="1" max="1" minEnchant="6" maxEnchant="6" chance="33.33333" /> <!-- Gorde's Flame Spear - Sealed -->
+			<item id="97302" min="1" max="1" minEnchant="7" maxEnchant="7" chance="33.33333" /> <!-- Gorde's Flame Spear - Sealed -->
 		</capsuled_items>
 	</item>
 	<item id="102238" name="Package: +5 ~ +7 Anais' Fists" type="EtcItem">
@@ -818,9 +818,9 @@
 		<set name="extractableCountMin" val="1" />
 		<set name="extractableCountMax" val="1" />
 		<capsuled_items>
-			<item id="97961" min="1" max="1" chance="33.33333" /> <!-- Anais' Fists - Sealed -->
-			<item id="97961" min="1" max="1" chance="33.33333" /> <!-- Anais' Fists - Sealed -->
-			<item id="97961" min="1" max="1" chance="33.33333" /> <!-- Anais' Fists - Sealed -->
+			<item id="97961" min="1" max="1" minEnchant="5" maxEnchant="5" chance="33.33333" /> <!-- Anais' Fists - Sealed -->
+			<item id="97961" min="1" max="1" minEnchant="6" maxEnchant="6" chance="33.33333" /> <!-- Anais' Fists - Sealed -->
+			<item id="97961" min="1" max="1" minEnchant="7" maxEnchant="7" chance="33.33333" /> <!-- Anais' Fists - Sealed -->
 		</capsuled_items>
 	</item>
 	<item id="102239" name="Package: +5 ~ +7 Galaxia's Ancient Sword" type="EtcItem">
@@ -837,9 +837,9 @@
 		<set name="extractableCountMin" val="1" />
 		<set name="extractableCountMax" val="1" />
 		<capsuled_items>
-			<item id="97957" min="1" max="1" chance="33.33333" /> <!-- Galaxia's Ancient Sword - Sealed -->
-			<item id="97957" min="1" max="1" chance="33.33333" /> <!-- Galaxia's Ancient Sword - Sealed -->
-			<item id="97957" min="1" max="1" chance="33.33333" /> <!-- Galaxia's Ancient Sword - Sealed -->
+			<item id="97957" min="1" max="1" minEnchant="5" maxEnchant="5" chance="33.33333" /> <!-- Galaxia's Ancient Sword - Sealed -->
+			<item id="97957" min="1" max="1" minEnchant="6" maxEnchant="6" chance="33.33333" /> <!-- Galaxia's Ancient Sword - Sealed -->
+			<item id="97957" min="1" max="1" minEnchant="7" maxEnchant="7" chance="33.33333" /> <!-- Galaxia's Ancient Sword - Sealed -->
 		</capsuled_items>
 	</item>
 	<item id="102240" name="Package: +5 ~ +7 Juriel's Dual Swords" type="EtcItem">
@@ -856,9 +856,9 @@
 		<set name="extractableCountMin" val="1" />
 		<set name="extractableCountMax" val="1" />
 		<capsuled_items>
-			<item id="97963" min="1" max="1" chance="33.33333" /> <!-- Juriel's Dual Swords - Sealed -->
-			<item id="97963" min="1" max="1" chance="33.33333" /> <!-- Juriel's Dual Swords - Sealed -->
-			<item id="97963" min="1" max="1" chance="33.33333" /> <!-- Juriel's Dual Swords - Sealed -->
+			<item id="97963" min="1" max="1" minEnchant="5" maxEnchant="5" chance="33.33333" /> <!-- Juriel's Dual Swords - Sealed -->
+			<item id="97963" min="1" max="1" minEnchant="6" maxEnchant="6" chance="33.33333" /> <!-- Juriel's Dual Swords - Sealed -->
+			<item id="97963" min="1" max="1" minEnchant="7" maxEnchant="7" chance="33.33333" /> <!-- Juriel's Dual Swords - Sealed -->
 		</capsuled_items>
 	</item>
 	<item id="102241" name="Package: +5 ~ +7 Phiriel's Rapier" type="EtcItem">
