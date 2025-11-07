@@ -533,10 +533,21 @@
 		<!-- Physical melee skill used by warriors. Attacks 1 monster with a weapon. -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<castRange>40</castRange>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<castRange>600</castRange>
 		<coolTime>500</coolTime>
-		<effectPoint>-100</effectPoint>
+		<effectPoint>-1000</effectPoint>
 		<hitTime>1000</hitTime>
+		<isMagic>1</isMagic>
+		<magicLevel>114</magicLevel>
+		<magicCriticalRate>5</magicCriticalRate>
+		<reuseDelay>500</reuseDelay>
+		<effects>
+			<effect name="PhysicalDamage">
+				<power>15000</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="32937" toLevel="1" name="Stun Strike">
 		<!-- Strikes nearby targets with an AoE attack, stunning them for 5 sec.. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
@@ -561,21 +572,53 @@
 	<skill id="32939" toLevel="1" name="Rapid Throw">
 		<!-- A melee physical skill for warriors that knocks 1 monster back. -->
 		<icon>icon.skill0000</icon>
-		<operateType>A1</operateType>
-		<castRange>600</castRange>
-		<coolTime>500</coolTime>
-		<effectPoint>-100</effectPoint>
-		<hitTime>1000</hitTime>
+		<operateType>A2</operateType>
+		<targetType>ENEMY</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>2</abnormalTime>
+		<abnormalType>KNOCKDOWN</abnormalType>
+		<abnormalVisualEffect>KNOCKBACK</abnormalVisualEffect>
+		<activateRate>200</activateRate>
+		<affectObject>NOT_FRIEND</affectObject>
+		<affectRange>300</affectRange>
+		<affectScope>RANGE</affectScope>
+		<basicProperty>PHYSICAL</basicProperty>
+		<castRange>200</castRange>
+		<effectPoint>-1</effectPoint>
+		<effectRange>500</effectRange>
+		<hitCancelTime>0</hitCancelTime>
+		<hitTime>1500</hitTime>
+		<lvlBonusRate>1</lvlBonusRate>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<mpConsume>1</mpConsume>
+		<reuseDelay>5000</reuseDelay>
+		<specialLevel>-1</specialLevel>
+		<effects>
+			<effect name="KnockBack">
+				<distance>100</distance>
+				<speed>300</speed>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="32940" toLevel="1" name="Energy Ball">
 		<!-- A basic attack of 1 monster that uses ranged magic attacks. -->
 		<icon>icon.skill1417</icon>
 		<operateType>A1</operateType>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<castRange>600</castRange>
 		<coolTime>500</coolTime>
 		<effectPoint>-1000</effectPoint>
 		<hitTime>1000</hitTime>
-		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<isMagic>1</isMagic>
+		<magicLevel>114</magicLevel>
+		<magicCriticalRate>5</magicCriticalRate>
+		<reuseDelay>500</reuseDelay>
+		<effects>
+			<effect name="MagicalDamage">
+				<power>10000</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="32941" toLevel="1" name="Magic Attack">
 		<!-- A powerful attack of 1 monster that uses ranged magic attacks. -->

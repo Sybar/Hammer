@@ -395,19 +395,44 @@
 		<!-- A ranged magic attack. -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<castRange>600</castRange>
 		<coolTime>500</coolTime>
 		<effectPoint>-1000</effectPoint>
 		<hitTime>1000</hitTime>
-		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<isMagic>1</isMagic>
+		<magicLevel>114</magicLevel>
+		<magicCriticalRate>5</magicCriticalRate>
+		<reuseDelay>500</reuseDelay>
+		<effects>
+			<effect name="MagicalDamage">
+				<power>10000</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="62053" toLevel="1" name="Critical Slasher">
 		<!-- A ranged physical attack. -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectObject>NOT_FRIEND</affectObject>
+		<affectRange>150</affectRange>
+		<affectScope>POINT_BLANK</affectScope>
+		<castRange>40</castRange>
 		<coolTime>500</coolTime>
-		<effectPoint>-100</effectPoint>
-		<hitTime>1000</hitTime>
+		<effectPoint>-2</effectPoint>
+		<effectRange>200</effectRange>
+		<hitTime>2000</hitTime>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>-1</magicLevel>
+		<mpConsume>1</mpConsume>
+		<reuseDelay>5000</reuseDelay>
+		<effects>
+			<effect name="PhysicalDamage">
+				<power>350000</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="62054" toLevel="1" name="Aqua Splash">
 		<!-- A ranged physical attack. -->

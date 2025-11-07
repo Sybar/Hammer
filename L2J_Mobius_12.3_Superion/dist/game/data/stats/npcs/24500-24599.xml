@@ -63,6 +63,11 @@
 		</dropLists>
 	</npc>
 	<npc id="24501" level="114" type="Monster" name="Centaur Fighter">
+		<parameters>
+			<param name="MoveAroundSocial" value="80" />
+			<param name="MoveAroundSocial1" value="80" />
+			<param name="MoveAroundSocial2" value="119" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<acquire exp="534351" sp="481" />
@@ -70,7 +75,7 @@
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
 			<vitals hp="1019509" hpRegen="13.2" mp="2943" mpRegen="30" />
 			<attack physical="1066143" magical="97169" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="334773" magical="165198" />
+			<defence physical="203370" magical="100170" />
 			<speed>
 				<walk ground="38" />
 				<run ground="120" />
@@ -83,6 +88,7 @@
 			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="true" />
+		<ai type="BALANCED" aggroRange="600" isAggressive="true" />
 		<collision>
 			<radius normal="15" />
 			<height normal="39.5" />
@@ -100,6 +106,7 @@
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="16511" level="6" /> <!-- Solo Fighter Monster -->
+			<skill id="32936" level="1" /> <!-- Critical Hit -->
 		</skillList>
 		<dropLists>
 			<drop>
@@ -167,6 +174,13 @@
 		</dropLists>
 	</npc>
 	<npc id="24502" level="114" type="Monster" name="Centaur Shooter">
+		<parameters>
+			<param name="MoveAroundSocial" value="80" />
+			<param name="MoveAroundSocial1" value="80" />
+			<param name="MoveAroundSocial2" value="119" />
+			<skill name="Skill01_ID" id="32939" level="1" />
+			<param name="Skill01_Probablity" value="2000" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="38446" />
@@ -174,8 +188,8 @@
 		<mpReward value="3" type="PER" ticks="5" affects="PARTY" />
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
 			<vitals hp="1019509" hpRegen="13.2" mp="2943" mpRegen="30" />
-			<attack physical="1066143" magical="97169" random="5" critical="8" accuracy="0" attackSpeed="253" type="BOW" range="600" distance="10" width="0" />
-			<defence physical="334773" magical="165198" />
+			<attack physical="1066143" magical="97169" random="5" critical="8" accuracy="0" attackSpeed="253" type="BLUNT" range="300" distance="100" width="0" />
+			<defence physical="203370" magical="100170" />
 			<speed>
 				<walk ground="40" />
 				<run ground="120" />
@@ -188,6 +202,7 @@
 			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="true" />
+		<ai type="BALANCED" aggroRange="600" isAggressive="true" />
 		<collision>
 			<radius normal="15" />
 			<height normal="34.5" />
@@ -203,8 +218,9 @@
 			<skill id="4412" level="11" /> <!-- Average P. Def. -->
 			<skill id="4413" level="11" /> <!-- Average M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="9" /> <!-- Bow -->
-			<skill id="16513" level="6" /> <!-- Solo Archer Monster -->
+			<skill id="4415" level="5" /> <!-- One-handed Blunt Weapon -->
+			<skill id="16511" level="6" /> <!-- Solo Fighter Monster -->
+			<skill id="32939" level="1" /> <!-- Rapid Throw -->
 		</skillList>
 		<dropLists>
 			<drop>
@@ -272,6 +288,11 @@
 		</dropLists>
 	</npc>
 	<npc id="24503" level="114" type="Monster" name="Centaur Wizard">
+		<parameters>
+			<param name="MoveAroundSocial" value="80" />
+			<param name="MoveAroundSocial1" value="80" />
+			<param name="MoveAroundSocial2" value="119" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="38427" />
@@ -279,8 +300,8 @@
 		<mpReward value="3" type="PER" ticks="5" affects="PARTY" />
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
 			<vitals hp="1019509" hpRegen="13.2" mp="2943" mpRegen="30" />
-			<attack physical="1066143" magical="97169" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
-			<defence physical="334773" magical="165198" />
+			<attack physical="1066143" magical="97169" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="300" distance="80" width="120" />
+			<defence physical="203370" magical="100170" />
 			<speed>
 				<walk ground="30" />
 				<run ground="120" />
@@ -293,6 +314,7 @@
 			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="true" />
+		<ai type="MAGE" aggroRange="600" isAggressive="true" />
 		<collision>
 			<radius normal="15" />
 			<height normal="30" />
@@ -310,6 +332,8 @@
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="5" /> <!-- One-handed Blunt Weapon -->
 			<skill id="16512" level="6" /> <!-- Solo Mage Monster -->
+			<skill id="34271" level="1" /> <!-- Energy Ball -->
+			<skill id="62052" level="1" /> <!-- Energy Release -->
 		</skillList>
 		<dropLists>
 			<drop>
@@ -377,6 +401,11 @@
 		</dropLists>
 	</npc>
 	<npc id="24504" level="114" type="Monster" name="Centaur Spearman">
+		<parameters>
+			<param name="MoveAroundSocial" value="80" />
+			<param name="MoveAroundSocial1" value="80" />
+			<param name="MoveAroundSocial2" value="119" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<acquire exp="534351" sp="481" />
@@ -384,7 +413,7 @@
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
 			<vitals hp="1019509" hpRegen="13.2" mp="2943" mpRegen="30" />
 			<attack physical="1066143" magical="97169" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="334773" magical="165198" />
+			<defence physical="203370" magical="100170" />
 			<speed>
 				<walk ground="40" />
 				<run ground="120" />
@@ -397,6 +426,7 @@
 			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="true" />
+		<ai type="BALANCED" aggroRange="600" isAggressive="true" />
 		<collision>
 			<radius normal="15" />
 			<height normal="47" />
@@ -414,6 +444,7 @@
 			<skill id="4414" level="2" /> <!-- Standard Type -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="16511" level="6" /> <!-- Solo Fighter Monster -->
+			<skill id="62053" level="1" /> <!-- Critical Slasher -->
 		</skillList>
 		<dropLists>
 			<drop>
