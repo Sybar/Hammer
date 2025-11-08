@@ -24,6 +24,7 @@ import java.util.Calendar;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.concurrent.ConcurrentHashMap;
 
 import org.l2jmobius.gameserver.data.xml.ClanHallData;
 import org.l2jmobius.gameserver.data.xml.ItemData;
@@ -67,7 +68,7 @@ public class ProvisionalHalls extends AbstractNpcAI
 	private static final String HALL_TIME_VAR = "PCH_TIME_";
 	private static final String HALL_RESET_VAR = "PCH_RESET_";
 	private static final String HALL_RETURN_VAR = "PCH_RETURN";
-	private static final Object LOCK = new Object();
+	private static final Map<Integer, Object> HALL_LOCKS = new ConcurrentHashMap<>();
 	
 	private ProvisionalHalls()
 	{
@@ -101,40 +102,41 @@ public class ProvisionalHalls extends AbstractNpcAI
 				return null;
 			}
 			
-			synchronized (LOCK)
+			final Calendar calendar = Calendar.getInstance();
+			final int dayOfWeek = calendar.get(Calendar.DAY_OF_WEEK);
+			final Clan clan = player.getClan();
+			if ((clan == null) || (clan.getLeaderId() != player.getObjectId()))
 			{
-				final Calendar calendar = Calendar.getInstance();
-				final int dayOfWeek = calendar.get(Calendar.DAY_OF_WEEK);
-				final Clan clan = player.getClan();
-				if ((clan == null) || (clan.getLeaderId() != player.getObjectId()))
+				player.sendMessage("You need to be a clan leader in order to proceed.");
+			}
+			else if ((clan.getHideoutId() > 0))
+			{
+				player.sendMessage("You already own a hideout.");
+			}
+			else if ((dayOfWeek != Calendar.SATURDAY) && (dayOfWeek != Calendar.SUNDAY))
+			{
+				htmltext = "33359-02.html";
+			}
+			else if (getQuestItemsCount(player, CURRENCY) < HALL_PRICE)
+			{
+				player.sendMessage("You need " + HALL_PRICE + " " + ItemData.getInstance().getTemplate(CURRENCY).getName() + " in order to proceed.");
+			}
+			else
+			{
+				if (dayOfWeek != Calendar.SATURDAY)
 				{
-					player.sendMessage("You need to be a clan leader in order to proceed.");
+					calendar.add(Calendar.DAY_OF_WEEK, -1);
 				}
-				else if ((clan.getHideoutId() > 0))
+				
+				calendar.set(Calendar.HOUR_OF_DAY, 0);
+				calendar.set(Calendar.MINUTE, 1);
+				calendar.set(Calendar.SECOND, 0);
+				calendar.set(Calendar.MILLISECOND, 0);
+				
+				for (int id : CLAN_HALLS.keySet())
 				{
-					player.sendMessage("You already own a hideout.");
-				}
-				else if ((dayOfWeek != Calendar.SATURDAY) && (dayOfWeek != Calendar.SUNDAY))
-				{
-					htmltext = "33359-02.html";
-				}
-				else if (getQuestItemsCount(player, CURRENCY) < HALL_PRICE)
-				{
-					player.sendMessage("You need " + HALL_PRICE + " " + ItemData.getInstance().getTemplate(CURRENCY).getName() + " in order to proceed.");
-				}
-				else
-				{
-					if (dayOfWeek != Calendar.SATURDAY)
-					{
-						calendar.add(Calendar.DAY_OF_WEEK, -1);
-					}
-					
-					calendar.set(Calendar.HOUR_OF_DAY, 0);
-					calendar.set(Calendar.MINUTE, 1);
-					calendar.set(Calendar.SECOND, 0);
-					calendar.set(Calendar.MILLISECOND, 0);
-					
-					for (int id : CLAN_HALLS.keySet())
+					final Object hallLock = HALL_LOCKS.computeIfAbsent(id, k -> new Object());
+					synchronized (hallLock)
 					{
 						if ((GlobalVariablesManager.getInstance().getInt(HALL_OWNER_VAR + id, 0) == 0) && ((GlobalVariablesManager.getInstance().getLong(HALL_TIME_VAR + id, 0) + TWO_WEEKS) < System.currentTimeMillis()))
 						{
@@ -148,13 +150,13 @@ public class ProvisionalHalls extends AbstractNpcAI
 							}
 							
 							player.sendMessage("Congratulations! You now own a provisional clan hall!");
-							startQuestTimer("RESET_ORCHID_HALL", TWO_WEEKS - (System.currentTimeMillis() - calendar.getTimeInMillis()), null, null);
+							startQuestTimer(HALL_RESET_VAR + id, TWO_WEEKS - (System.currentTimeMillis() - calendar.getTimeInMillis()), null, null);
 							return null;
 						}
 					}
-					
-					player.sendMessage("I am sorry, all halls have been taken.");
 				}
+				
+				player.sendMessage("I am sorry, all halls have been taken.");
 			}
 		}
 		else if (event.equals("enter"))
