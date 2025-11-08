@@ -37,7 +37,6 @@ public class BlossomFestival extends LongTimeEvent
 	
 	// Misc
 	private static final String REWARD_VAR = "AUGUSTINA_REWARD_VAR";
-	private static final Object REWARD_LOCK = new Object();
 	
 	private BlossomFestival()
 	{
@@ -63,7 +62,7 @@ public class BlossomFestival extends LongTimeEvent
 					return "34163-04.html";
 				}
 				
-				synchronized (REWARD_LOCK)
+				synchronized (player)
 				{
 					final long currentTime = System.currentTimeMillis();
 					if (player.getVariables().getLong(REWARD_VAR, 0) < currentTime)
