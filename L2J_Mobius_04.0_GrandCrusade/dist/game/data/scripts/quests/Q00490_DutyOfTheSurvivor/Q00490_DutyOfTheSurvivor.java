@@ -1,18 +1,22 @@
 /*
- * This file is part of the L2J Mobius project.
+ * Copyright (c) 2013 L2jMobius
  * 
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
  * 
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
+ * The above copyright notice and this permission notice shall be
+ * included in all copies or substantial portions of the Software.
  * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+ * WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR
+ * IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 package quests.Q00490_DutyOfTheSurvivor;
 
@@ -31,7 +35,7 @@ import org.l2jmobius.gameserver.util.ArrayUtil;
 
 /**
  * Duty of the Survivor (400)
- * @author St3eT
+ * @author St3eT, Trevor The Third
  */
 public class Q00490_DutyOfTheSurvivor extends Quest
 {
@@ -39,15 +43,22 @@ public class Q00490_DutyOfTheSurvivor extends Quest
 	private static final int VOLLODOS = 30137;
 	private static final int[] EXTRACT_MONSTERS =
 	{
+		23174, // Arbitor of Darkness
+		23175, // Altar of Evil Spirit Offering Box
+		23176, // Mutated Cerberos
+		23177, // Dartanion
+		23178, // Insane Phion
+		23179, // Dimensional Rifter
+		23180, // Hellgate Fighting Dog
+	};
+	private static final int[] BLOOD_MONSTERS =
+	{
 		23162, // Corpse Devourer
 		23163, // Corpse Absorber
 		23164, // Corpse Shredder
 		23165, // Plagueworm
 		23166, // Contaminated Rotten Root
 		23167, // Decayed Spore
-	};
-	private static final int[] BLOOD_MONSTERS =
-	{
 		23168, // Swamp Tracker
 		23169, // Swamp Assassin
 		23170, // Swamp Watcher
@@ -127,7 +138,7 @@ public class Q00490_DutyOfTheSurvivor extends Quest
 					}
 					else
 					{
-						giveAdena(player, 505_062, true);
+						giveAdena(player, 1010124, true);
 						qs.exitQuest(QuestType.DAILY, true);
 						if (player.getLevel() >= MIN_LEVEL)
 						{
@@ -167,13 +178,13 @@ public class Q00490_DutyOfTheSurvivor extends Quest
 			if (qs.isCond(1) && (getRandom(100) < DROP_CHANCE))
 			{
 				final int itemId = ArrayUtil.contains(EXTRACT_MONSTERS, npc.getId()) ? EXTRACT : BLOOD;
-				if (getQuestItemsCount(player, itemId) < 20)
+				if (getQuestItemsCount(player, itemId) < 100)
 				{
 					giveItems(player, itemId, 1);
 					playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 				}
 				
-				if ((getQuestItemsCount(player, EXTRACT) == 20) && (getQuestItemsCount(player, BLOOD) == 20))
+				if ((getQuestItemsCount(player, EXTRACT) == 100) && (getQuestItemsCount(player, BLOOD) == 100))
 				{
 					qs.setCond(2);
 				}
