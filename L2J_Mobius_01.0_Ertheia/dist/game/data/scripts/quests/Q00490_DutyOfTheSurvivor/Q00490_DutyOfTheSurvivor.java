@@ -1,27 +1,27 @@
 /*
- * This file is part of the L2J Mobius project.
+ * Copyright (c) 2013 L2jMobius
  * 
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
  * 
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
+ * The above copyright notice and this permission notice shall be
+ * included in all copies or substantial portions of the Software.
  * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+ * WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR
+ * IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 package quests.Q00490_DutyOfTheSurvivor;
 
-import java.util.HashSet;
-import java.util.Set;
-
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.quest.NpcLogListHolder;
 import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestSound;
 import org.l2jmobius.gameserver.model.quest.QuestState;
@@ -31,7 +31,7 @@ import org.l2jmobius.gameserver.util.ArrayUtil;
 
 /**
  * Duty of the Survivor (400)
- * @author St3eT
+ * @author St3eT, Trevor The Third
  */
 public class Q00490_DutyOfTheSurvivor extends Quest
 {
@@ -57,12 +57,18 @@ public class Q00490_DutyOfTheSurvivor extends Quest
 	};
 	
 	// Items
-	private static final int EXTRACT = 34059; // Putrefied Extract
-	private static final int BLOOD = 34060; // Rotten Blood
+	private static final int PUTREFIED_EXTRACT = 34059;
+	private static final int ROTTEN_BLOOD = 34060;
 	
 	// Misc
-	private static final int DROP_CHANCE = 65; // Guessed
 	private static final int MIN_LEVEL = 85;
+	private static final int DROP_CHANCE = 70;
+	private static final int ITEM_COUNT = 20;
+	
+	// Rewards
+	private static final int EXP_REWARD = 145557000;
+	private static final int SP_REWARD = 34933;
+	private static final int ADENA_REWARD = 505062;
 	
 	public Q00490_DutyOfTheSurvivor()
 	{
@@ -71,7 +77,7 @@ public class Q00490_DutyOfTheSurvivor extends Quest
 		addTalkId(VOLLODOS);
 		addKillId(EXTRACT_MONSTERS);
 		addKillId(BLOOD_MONSTERS);
-		registerQuestItems(EXTRACT, BLOOD);
+		registerQuestItems(PUTREFIED_EXTRACT, ROTTEN_BLOOD);
 		addCondMinLevel(MIN_LEVEL, "30137-09.htm");
 	}
 	
@@ -127,11 +133,11 @@ public class Q00490_DutyOfTheSurvivor extends Quest
 					}
 					else
 					{
-						giveAdena(player, 505_062, true);
+						giveAdena(player, ADENA_REWARD, true);
 						qs.exitQuest(QuestType.DAILY, true);
 						if (player.getLevel() >= MIN_LEVEL)
 						{
-							addExpAndSp(player, 145_557_000, 34_933);
+							addExpAndSp(player, EXP_REWARD, SP_REWARD);
 						}
 						
 						htmltext = "30137-07.htm";
@@ -166,33 +172,22 @@ public class Q00490_DutyOfTheSurvivor extends Quest
 			final QuestState qs = getQuestState(member, false);
 			if (qs.isCond(1) && (getRandom(100) < DROP_CHANCE))
 			{
-				final int itemId = ArrayUtil.contains(EXTRACT_MONSTERS, npc.getId()) ? EXTRACT : BLOOD;
-				if (getQuestItemsCount(player, itemId) < 20)
+				if ((ArrayUtil.contains(EXTRACT_MONSTERS, npc.getId())) && (getQuestItemsCount(player, PUTREFIED_EXTRACT) < ITEM_COUNT))
 				{
-					giveItems(player, itemId, 1);
+					giveItems(player, PUTREFIED_EXTRACT, 1);
 					playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 				}
-				
-				if ((getQuestItemsCount(player, EXTRACT) == 20) && (getQuestItemsCount(player, BLOOD) == 20))
+				else if ((ArrayUtil.contains(BLOOD_MONSTERS, npc.getId())) && (getQuestItemsCount(player, ROTTEN_BLOOD) < ITEM_COUNT))
+				{
+					giveItems(player, ROTTEN_BLOOD, 1);
+					playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+				}
+				else if ((getQuestItemsCount(player, PUTREFIED_EXTRACT) == ITEM_COUNT) && (getQuestItemsCount(player, ROTTEN_BLOOD) == ITEM_COUNT))
 				{
 					qs.setCond(2);
+					playSound(player, QuestSound.ITEMSOUND_QUEST_MIDDLE);
 				}
 			}
 		}
-	}
-	
-	@Override
-	public Set<NpcLogListHolder> getNpcLogList(Player player)
-	{
-		final QuestState qs = getQuestState(player, false);
-		if ((qs != null) && qs.isCond(1))
-		{
-			final Set<NpcLogListHolder> npcLogList = new HashSet<>(2);
-			npcLogList.add(new NpcLogListHolder(EXTRACT, false, (int) getQuestItemsCount(player, EXTRACT)));
-			npcLogList.add(new NpcLogListHolder(BLOOD, false, (int) getQuestItemsCount(player, BLOOD)));
-			return npcLogList;
-		}
-		
-		return super.getNpcLogList(player);
 	}
 }
