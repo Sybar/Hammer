@@ -468,13 +468,41 @@
 		<!-- Inflicts P. damage on a single target. -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<effectPoint>-100</effectPoint>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<castRange>40</castRange>
+		<coolTime>500</coolTime>
+		<effectPoint>-342</effectPoint>
+		<effectRange>200</effectRange>
+		<hitTime>1000</hitTime>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>124</magicLevel>
+		<reuseDelay>500</reuseDelay>
+		<effects>
+			<effect name="PhysicalDamage">
+				<power>20000</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="34019" toLevel="1" name="Death Empowerment">
 		<!-- A basic attack of 1 monster that uses ranged magic attacks. -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<effectPoint>-100</effectPoint>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<castRange>40</castRange>
+		<coolTime>500</coolTime>
+		<effectPoint>-342</effectPoint>
+		<effectRange>200</effectRange>
+		<hitTime>1000</hitTime>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>124</magicLevel>
+		<reuseDelay>500</reuseDelay>
+		<effects>
+			<effect name="PhysicalDamage">
+				<power>20000</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="34020" toLevel="1" name="Atelia Smashing">
 		<!-- Physical melee skill used by warriors. Attacks 1 monster with a weapon. -->

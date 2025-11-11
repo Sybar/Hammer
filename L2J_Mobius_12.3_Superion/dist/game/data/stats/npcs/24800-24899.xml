@@ -1833,7 +1833,6 @@
 		</dropLists>
 	</npc>
 	<npc id="24843" level="124" type="Monster" name="Royal Guardsman">
-		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<acquire exp="829102" sp="746" />
@@ -1852,6 +1851,11 @@
 			</attribute>
 		</stats>
 		<status attackable="true" />
+		<ai type="BALANCED" clanHelpRange="450" aggroRange="450" isAggressive="false">
+			<clanList>
+				<clan>ROYAL</clan>
+			</clanList>
+		</ai>
 		<collision>
 			<radius normal="11" grown="13.2" />
 			<height normal="39" grown="46.8" />
@@ -1861,6 +1865,7 @@
 			<skill id="5466" level="1" /> <!-- Holy Attribute -->
 			<skill id="14765" level="3" /> <!-- Vampiric Rage Resistance -->
 			<skill id="34285" level="1" /> <!-- Hard Hunting Zone -->
+			<skill id="34018" level="1" /> <!-- Death Smashing -->
 		</skillList>
 		<dropLists>
 			<drop>
@@ -1889,7 +1894,6 @@
 		</dropLists>
 	</npc>
 	<npc id="24844" level="124" type="Monster" name="Royal Troop Chief">
-		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<acquire exp="829102" sp="746" />
@@ -1908,6 +1912,11 @@
 			</attribute>
 		</stats>
 		<status attackable="true" />
+		<ai type="BALANCED" clanHelpRange="450" aggroRange="450" isAggressive="false">
+			<clanList>
+				<clan>ROYAL</clan>
+			</clanList>
+		</ai>
 		<collision>
 			<radius normal="11" />
 			<height normal="32.4" />
@@ -1917,6 +1926,7 @@
 			<skill id="5466" level="1" /> <!-- Holy Attribute -->
 			<skill id="14765" level="3" /> <!-- Vampiric Rage Resistance -->
 			<skill id="34285" level="1" /> <!-- Hard Hunting Zone -->
+			<skill id="34018" level="1" /> <!-- Death Smashing -->
 		</skillList>
 		<dropLists>
 			<drop>
@@ -1945,7 +1955,6 @@
 		</dropLists>
 	</npc>
 	<npc id="24845" level="124" type="Monster" name="Royal Field Officer">
-		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<acquire exp="829102" sp="746" />
@@ -1964,6 +1973,11 @@
 			</attribute>
 		</stats>
 		<status attackable="true" />
+		<ai type="BALANCED" clanHelpRange="450" aggroRange="450" isAggressive="false">
+			<clanList>
+				<clan>ROYAL</clan>
+			</clanList>
+		</ai>
 		<collision>
 			<radius normal="14" />
 			<height normal="33" />
@@ -1973,6 +1987,7 @@
 			<skill id="5466" level="1" /> <!-- Holy Attribute -->
 			<skill id="14765" level="3" /> <!-- Vampiric Rage Resistance -->
 			<skill id="34285" level="1" /> <!-- Hard Hunting Zone -->
+			<skill id="34018" level="1" /> <!-- Death Smashing -->
 		</skillList>
 		<dropLists>
 			<drop>
@@ -2001,7 +2016,6 @@
 		</dropLists>
 	</npc>
 	<npc id="24846" level="124" type="Monster" name="Commander of Operations">
-		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<acquire exp="829102" sp="746" />
@@ -2020,6 +2034,11 @@
 			</attribute>
 		</stats>
 		<status attackable="true" />
+		<ai type="BALANCED" clanHelpRange="450" aggroRange="450" isAggressive="false">
+			<clanList>
+				<clan>ROYAL</clan>
+			</clanList>
+		</ai>
 		<collision>
 			<radius normal="14" />
 			<height normal="33" />
@@ -2029,6 +2048,7 @@
 			<skill id="5466" level="1" /> <!-- Holy Attribute -->
 			<skill id="14765" level="3" /> <!-- Vampiric Rage Resistance -->
 			<skill id="34285" level="1" /> <!-- Hard Hunting Zone -->
+			<skill id="34018" level="1" /> <!-- Death Smashing -->
 		</skillList>
 		<dropLists>
 			<drop>
@@ -2057,7 +2077,6 @@
 		</dropLists>
 	</npc>
 	<npc id="24847" level="124" type="Monster" name="Elite Wizard">
-		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<acquire exp="829102" sp="746" />
@@ -2076,6 +2095,11 @@
 			</attribute>
 		</stats>
 		<status attackable="true" />
+		<ai type="MAGE" clanHelpRange="450" aggroRange="450" isAggressive="true">
+			<clanList>
+				<clan>ROYAL</clan>
+			</clanList>
+		</ai>
 		<collision>
 			<radius normal="19" />
 			<height normal="44" />
@@ -2085,6 +2109,7 @@
 			<skill id="5466" level="1" /> <!-- Holy Attribute -->
 			<skill id="14765" level="3" /> <!-- Vampiric Rage Resistance -->
 			<skill id="34285" level="1" /> <!-- Hard Hunting Zone -->
+			<skill id="34019" level="1" /> <!-- Death Empowerment -->
 		</skillList>
 		<dropLists>
 			<drop>
@@ -2113,7 +2138,6 @@
 		</dropLists>
 	</npc>
 	<npc id="24848" level="124" type="Monster" name="Great Mage">
-		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<acquire exp="829102" sp="746" />
@@ -2132,6 +2156,11 @@
 			</attribute>
 		</stats>
 		<status attackable="true" />
+		<ai type="MAGE" clanHelpRange="450" aggroRange="450" isAggressive="true">
+			<clanList>
+				<clan>ROYAL</clan>
+			</clanList>
+		</ai>
 		<collision>
 			<radius normal="15" />
 			<height normal="25" />
@@ -2141,6 +2170,7 @@
 			<skill id="5466" level="1" /> <!-- Holy Attribute -->
 			<skill id="14765" level="3" /> <!-- Vampiric Rage Resistance -->
 			<skill id="34285" level="1" /> <!-- Hard Hunting Zone -->
+			<skill id="34019" level="1" /> <!-- Death Empowerment -->
 		</skillList>
 		<dropLists>
 			<drop>

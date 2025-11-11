@@ -484,29 +484,60 @@
 		<!-- Physical melee skill used by warriors. Attacks 1 monster with a weapon. -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
-		<castRange>40</castRange>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<castRange>600</castRange>
 		<coolTime>500</coolTime>
-		<effectPoint>-100</effectPoint>
+		<effectPoint>-1000</effectPoint>
 		<hitTime>1000</hitTime>
+		<isMagic>1</isMagic>
+		<magicLevel>114</magicLevel>
+		<magicCriticalRate>5</magicCriticalRate>
+		<reuseDelay>500</reuseDelay>
+		<effects>
+			<effect name="PhysicalDamage">
+				<power>15000</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="32932" toLevel="1" name="Power Shot">
 		<!-- A melee physical skill for warriors that knocks 1 monster back. -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>PHYSICAL</basicProperty>
 		<castRange>600</castRange>
-		<coolTime>500</coolTime>
-		<effectPoint>-100</effectPoint>
-		<hitTime>1000</hitTime>
+		<effectPoint>-350</effectPoint>
+		<effectRange>400</effectRange>
+		<hitTime>1500</hitTime>
+		<nextAction>ATTACK</nextAction>
+		<reuseDelay>5000</reuseDelay>
+		<effects>
+			<effect name="PhysicalDamage">
+				<power>28833</power> 
+				<overHit>true</overHit>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="32933" toLevel="1" name="Energy Ball">
 		<!-- A basic attack of 1 monster that uses ranged magic attacks. -->
 		<icon>icon.skill1417</icon>
 		<operateType>A1</operateType>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<castRange>600</castRange>
 		<coolTime>500</coolTime>
 		<effectPoint>-1000</effectPoint>
 		<hitTime>1000</hitTime>
-		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<isMagic>1</isMagic>
+		<magicCriticalRate>5</magicCriticalRate>
+		<reuseDelay>10</reuseDelay>
+		<effects>
+			<effect name="MagicalDamage">
+				<power>10000</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="32934" toLevel="1" name="Stun Strike">
 		<!-- Strikes nearby targets with an AoE attack, stunning them for 5 sec.. Inflicted status: Confusion (Fear, Aerial Yoke, Faint, Charm, Stun, Paralysis, Knockback, Knockdown). -->
