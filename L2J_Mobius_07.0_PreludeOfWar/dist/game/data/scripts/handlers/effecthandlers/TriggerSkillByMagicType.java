@@ -102,10 +102,11 @@ public class TriggerSkillByMagicType extends AbstractEffect
 			return;
 		}
 		
+		final Creature caster = event.getCaster();
 		target = null;
 		try
 		{
-			target = TargetHandler.getInstance().getHandler(_targetType).getTarget(event.getCaster(), event.getTarget(), _skill.getSkill(), false, false, false);
+			target = TargetHandler.getInstance().getHandler(_targetType).getTarget(caster, event.getTarget(), _skill.getSkill(), false, false, false);
 		}
 		catch (Exception e)
 		{
@@ -138,7 +139,7 @@ public class TriggerSkillByMagicType extends AbstractEffect
 			{
 				triggerSkill = SkillData.getInstance().getSkill(_skill.getSkillId(), Math.min(_skillLevelScaleTo, buffInfo.getSkill().getLevel() + 1));
 				
-				if (event.getCaster().isSkillDisabled(buffInfo.getSkill()))
+				if (caster.isSkillDisabled(buffInfo.getSkill()))
 				{
 					if ((_replace) && (buffInfo.getSkill().getLevel() == _skillLevelScaleTo))
 					{
@@ -154,11 +155,11 @@ public class TriggerSkillByMagicType extends AbstractEffect
 		}
 		
 		// Remove existing effect, otherwise time will not be renewed at max level.
-		if (_replace)
+		if (_replace && !caster.isSkillDisabled(triggerSkill))
 		{
 			target.asCreature().stopSkillEffects(SkillFinishType.SILENT, triggerSkill.getId());
 		}
 		
-		SkillCaster.triggerCast(event.getCaster(), target.asCreature(), triggerSkill);
+		SkillCaster.triggerCast(caster, target.asCreature(), triggerSkill);
 	}
 }
