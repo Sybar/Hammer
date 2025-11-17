@@ -110,7 +110,7 @@ public class Joachim extends AbstractNpcAI
 				if (Config.DISABLE_TUTORIAL)
 				{
 					final QuestState qs = player.getQuestState(Q10107_SplitDestiny.class.getSimpleName());
-					if (!qs.isCompleted() && !Config.ALT_GAME_DUALCLASS_WITHOUT_QUEST)
+					if (qs == null || (!qs.isCompleted() && !Config.ALT_GAME_DUALCLASS_WITHOUT_QUEST))
 					{
 						htmltext = "noQuest.html";
 					}
