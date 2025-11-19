@@ -941,8 +941,15 @@
 		<subordinationAbnormalType>POISON</subordinationAbnormalType>
 		<trait>POISON</trait>
 		<effects>
+			<effect name="DispelBySlotProbability">
+				<dispel>POISON</dispel>
+				<rate>100</rate>
+			</effect>
+			<effect name="BlockAbnormalSlot">
+				<slot>POISON</slot>
+			</effect>
 			<effect name="DamOverTime">
-				<power>1000</power>
+				<power>2000</power>
 				<ticks>1</ticks>
 			</effect>
 		</effects>
