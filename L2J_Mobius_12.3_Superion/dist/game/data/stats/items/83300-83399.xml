@@ -716,10 +716,17 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ExtractableItems" />
-		<set name="extractableCountMin" val="1" />
-		<set name="extractableCountMax" val="1" />
+		<set name="extractableCountMin" val="2" />
+		<set name="extractableCountMax" val="2" />
 		<capsuled_items>
 			<item id="83146" min="1" max="1" chance="100" /> <!-- Heart Scroll of Heavenly Light - Event -->
+			<item id="48666" min="1" max="1" chance="14.285714" /> <!-- Dragon Weapon Pack -->
+			<item id="82071" min="1" max="1" chance="14.285714" /> <!-- Krishna Weapon Pack -->
+			<item id="47951" min="10" max="10" chance="14.285714" /> <!-- Crystal of Determination -->
+			<item id="47952" min="10" max="10" chance="14.285714" /> <!-- Crystal of Protection -->
+			<item id="80839" min="10" max="10" chance="14.285714" /> <!-- Crystal of Dawn -->
+			<item id="82903" min="1" max="1" chance="14.285714" /> <!-- Navari's Mask -->
+			<item id="82903" min="10" max="10" chance="14.285714" /> <!-- Solaris -->
 		</capsuled_items>
 	</item>
 	<item id="83348" name="Mysterious Guaranteed A-grade Relic Summon Coupon - 1-time" additionalName="Event" type="EtcItem">
@@ -732,6 +739,19 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="2" />
+		<set name="extractableCountMax" val="2" />
+		<capsuled_items>
+			<item id="83146" min="1" max="1" chance="100" /> <!-- Heart Scroll of Heavenly Light - Event -->
+			<item id="82931" min="1" max="1" chance="14.285714" /> <!-- Guaranteed C-grade Relic Summon Coupon - 1-time -->
+			<item id="82932" min="1" max="1" chance="14.285714" /> <!-- Guaranteed B-grade Relic Summon Coupon - 1-time -->
+			<item id="82933" min="1" max="1" chance="14.285714" /> <!-- Guaranteed A-grade Relic Summon Coupon - 1-time -->
+			<item id="83006" min="1" max="1" chance="14.285714" /> <!-- Relic Summon Coupon - 11-time -->
+			<item id="83007" min="1" max="1" chance="14.285714" /> <!-- Relic Summon Coupon - 1 time-->
+			<item id="83008" min="1" max="1" chance="14.285714" /> <!-- C-grade Relic Ticket - 1 time -->
+			<item id="83009" min="1" max="1" chance="14.285714" /> <!-- B-grade Relic Ticket - 1 time -->
+		</capsuled_items>
 	</item>
 	<item id="83349" name="Mysterious Enhanced Rune Stone" additionalName="Event" type="EtcItem">
 		<!-- Double-click to obtain Enhanced Rune Stone or one of the other rewards. Additionally, you may receive Heart Scroll of Heavenly Light (1 pc.). -->
@@ -743,6 +763,18 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="2" />
+		<set name="extractableCountMax" val="2" />
+		<capsuled_items>
+			<item id="83146" min="1" max="1" chance="100" /> <!-- Heart Scroll of Heavenly Light - Event -->
+			<item id="48876" min="1" max="1" chance="16.666666" /> <!-- Forgotten Spellbook - Chapter 1 -->
+			<item id="1785" min="10000" max="10000" chance="16.666666" /> <!-- Soulstone -->
+			<item id="3031" min="10000" max="10000" chance="16.666666" /> <!-- Spirit Ore -->
+			<item id="39738" min="1" max="1" chance="16.666666" /> <!-- Rune Stone -->
+			<item id="82344" min="10" max="10" chance="16.666666" /> <!-- Tales of Dimensions -->
+			<item id="81453" min="1" max="1" chance="16.666666" /> <!-- Enhanced Rune Stone -->
+		</capsuled_items>
 	</item>
 	<item id="83350" name="Mysterious Top-grade Homunculus' Hourglass" additionalName="Event" type="EtcItem">
 		<!-- Double-click to obtain Top-grade Homunculus' Hourglass or one of the other rewards. Additionally, you may receive Heart Scroll of Heavenly Light (1 pc.). -->

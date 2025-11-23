@@ -521,6 +521,8 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
+		<set name="etcitem_type" val="ENCHT_ATTR_RUNE" />
+		<set name="time" val="360" />
 		<skills>
 			<skill id="29492" level="1" /> <!-- Attendance Gift Rune: P./ M. Atk. -->
 		</skills>
@@ -535,6 +537,8 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
+		<set name="etcitem_type" val="ENCHT_ATTR_RUNE" />
+		<set name="time" val="360" />
 		<skills>
 			<skill id="29493" level="1" /> <!-- Attendance Gift Rune: Acquired XP -->
 		</skills>
@@ -549,6 +553,8 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
+		<set name="etcitem_type" val="ENCHT_ATTR_RUNE" />
+		<set name="time" val="360" />
 		<skills>
 			<skill id="29494" level="1" /> <!-- Attendance Gift Rune: Vitality Bonus -->
 		</skills>
@@ -563,6 +569,8 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
+		<set name="etcitem_type" val="ENCHT_ATTR_RUNE" />
+		<set name="time" val="360" />
 		<skills>
 			<skill id="29495" level="1" /> <!-- Attendance Gift Rune: PvE -->
 		</skills>
@@ -577,6 +585,8 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
+		<set name="etcitem_type" val="ENCHT_ATTR_RUNE" />
+		<set name="time" val="360" />
 		<skills>
 			<skill id="29496" level="1" /> <!-- Attendance Gift Rune: P./ M. Def. -->
 		</skills>
@@ -591,6 +601,8 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
+		<set name="etcitem_type" val="ENCHT_ATTR_RUNE" />
+		<set name="time" val="360" />
 		<skills>
 			<skill id="29497" level="1" /> <!-- Attendance Gift Rune: All Stats -->
 		</skills>

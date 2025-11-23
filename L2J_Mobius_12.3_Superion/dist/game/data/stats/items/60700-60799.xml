@@ -922,6 +922,8 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="etcitem_type" val="ENCHT_ATTR_RUNE" />
+		<set name="time" val="300" />
 		<skills>
 			<skill id="26046" level="6" /> <!-- XP Rune 100% -->
 		</skills>
@@ -936,6 +938,8 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="etcitem_type" val="ENCHT_ATTR_RUNE" />
+		<set name="time" val="300" />
 		<skills>
 			<skill id="26046" level="7" /> <!-- XP Rune 200% -->
 		</skills>

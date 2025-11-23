@@ -3008,10 +3008,10 @@
 			<value level="2">420000</value>
 			<value level="3">300000</value>
 			<value level="4">180000</value>
-			<value level="5">180000</value> <!-- FIXME: AUTO GENERATED LEVEL -->
-			<value level="6">180000</value> <!-- FIXME: AUTO GENERATED LEVEL -->
-			<value level="7">180000</value> <!-- FIXME: AUTO GENERATED LEVEL -->
-			<value level="8">180000</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+			<value level="5">170000</value>
+			<value level="6">150000</value>
+			<value level="7">140000</value>
+			<value level="8">120000</value>
 		</reuseDelay>
 		<staticReuse>true</staticReuse>
 		<effects>
@@ -3024,10 +3024,10 @@
 					<value level="2">-10</value>
 					<value level="3">-10</value>
 					<value level="4">-10</value>
-					<value level="5">-10</value> <!-- FIXME: AUTO GENERATED LEVEL -->
-					<value level="6">-10</value> <!-- FIXME: AUTO GENERATED LEVEL -->
-					<value level="7">-10</value> <!-- FIXME: AUTO GENERATED LEVEL -->
-					<value level="8">-10</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="5">-10</value>
+					<value level="6">-10</value>
+					<value level="7">-10</value>
+					<value level="8">-10</value>
 				</amount>
 				<type>PK</type>
 			</effect>
@@ -3037,10 +3037,10 @@
 					<value level="2">-10</value>
 					<value level="3">-10</value>
 					<value level="4">-10</value>
-					<value level="5">-10</value> <!-- FIXME: AUTO GENERATED LEVEL -->
-					<value level="6">-10</value> <!-- FIXME: AUTO GENERATED LEVEL -->
-					<value level="7">-10</value> <!-- FIXME: AUTO GENERATED LEVEL -->
-					<value level="8">-10</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="5">-10</value>
+					<value level="6">-10</value>
+					<value level="7">-10</value>
+					<value level="8">-10</value>
 				</amount>
 				<type>ENEMY_ALL</type>
 			</effect>
@@ -3066,10 +3066,10 @@
 			<value level="2">420000</value>
 			<value level="3">300000</value>
 			<value level="4">180000</value>
-			<value level="5">180000</value> <!-- FIXME: AUTO GENERATED LEVEL -->
-			<value level="6">180000</value> <!-- FIXME: AUTO GENERATED LEVEL -->
-			<value level="7">180000</value> <!-- FIXME: AUTO GENERATED LEVEL -->
-			<value level="8">180000</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+			<value level="5">170000</value>
+			<value level="6">150000</value>
+			<value level="7">140000</value>
+			<value level="8">120000</value>
 		</reuseDelay>
 		<staticReuse>true</staticReuse>
 		<effects>
@@ -3082,10 +3082,10 @@
 					<value level="2">8</value>
 					<value level="3">8</value>
 					<value level="4">8</value>
-					<value level="5">8</value> <!-- FIXME: AUTO GENERATED LEVEL -->
-					<value level="6">8</value> <!-- FIXME: AUTO GENERATED LEVEL -->
-					<value level="7">8</value> <!-- FIXME: AUTO GENERATED LEVEL -->
-					<value level="8">8</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="5">8</value>
+					<value level="6">8</value>
+					<value level="7">8</value>
+					<value level="8">8</value>
 				</amount>
 				<mode>PER</mode>
 			</effect>
@@ -3095,10 +3095,10 @@
 					<value level="2">8</value>
 					<value level="3">8</value>
 					<value level="4">8</value>
-					<value level="5">8</value> <!-- FIXME: AUTO GENERATED LEVEL -->
-					<value level="6">8</value> <!-- FIXME: AUTO GENERATED LEVEL -->
-					<value level="7">8</value> <!-- FIXME: AUTO GENERATED LEVEL -->
-					<value level="8">8</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="5">8</value>
+					<value level="6">8</value>
+					<value level="7">8</value>
+					<value level="8">8</value>
 				</amount>
 				<mode>PER</mode>
 			</effect>
@@ -3108,10 +3108,10 @@
 					<value level="2">8</value>
 					<value level="3">8</value>
 					<value level="4">8</value>
-					<value level="5">8</value> <!-- FIXME: AUTO GENERATED LEVEL -->
-					<value level="6">8</value> <!-- FIXME: AUTO GENERATED LEVEL -->
-					<value level="7">8</value> <!-- FIXME: AUTO GENERATED LEVEL -->
-					<value level="8">8</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="5">8</value>
+					<value level="6">8</value>
+					<value level="7">8</value>
+					<value level="8">8</value>
 				</amount>
 				<mode>PER</mode>
 			</effect>
@@ -3137,10 +3137,10 @@
 			<value level="2">420000</value>
 			<value level="3">300000</value>
 			<value level="4">180000</value>
-			<value level="5">180000</value> <!-- FIXME: AUTO GENERATED LEVEL -->
-			<value level="6">180000</value> <!-- FIXME: AUTO GENERATED LEVEL -->
-			<value level="7">180000</value> <!-- FIXME: AUTO GENERATED LEVEL -->
-			<value level="8">180000</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+			<value level="5">170000</value>
+			<value level="6">150000</value>
+			<value level="7">140000</value>
+			<value level="8">120000</value>
 		</reuseDelay>
 		<staticReuse>true</staticReuse>
 		<effects>
@@ -3153,10 +3153,10 @@
 					<value level="2">8</value>
 					<value level="3">8</value>
 					<value level="4">8</value>
-					<value level="5">8</value> <!-- FIXME: AUTO GENERATED LEVEL -->
-					<value level="6">8</value> <!-- FIXME: AUTO GENERATED LEVEL -->
-					<value level="7">8</value> <!-- FIXME: AUTO GENERATED LEVEL -->
-					<value level="8">8</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="5">8</value>
+					<value level="6">8</value>
+					<value level="7">8</value>
+					<value level="8">8</value>
 				</amount>
 				<mode>PER</mode>
 			</effect>
@@ -3166,10 +3166,10 @@
 					<value level="2">8</value>
 					<value level="3">8</value>
 					<value level="4">8</value>
-					<value level="5">8</value> <!-- FIXME: AUTO GENERATED LEVEL -->
-					<value level="6">8</value> <!-- FIXME: AUTO GENERATED LEVEL -->
-					<value level="7">8</value> <!-- FIXME: AUTO GENERATED LEVEL -->
-					<value level="8">8</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="5">8</value>
+					<value level="6">8</value>
+					<value level="7">8</value>
+					<value level="8">8</value>
 				</amount>
 				<mode>PER</mode>
 			</effect>
@@ -3179,10 +3179,10 @@
 					<value level="2">8</value>
 					<value level="3">8</value>
 					<value level="4">8</value>
-					<value level="5">8</value> <!-- FIXME: AUTO GENERATED LEVEL -->
-					<value level="6">8</value> <!-- FIXME: AUTO GENERATED LEVEL -->
-					<value level="7">8</value> <!-- FIXME: AUTO GENERATED LEVEL -->
-					<value level="8">8</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+					<value level="5">8</value>
+					<value level="6">8</value>
+					<value level="7">8</value>
+					<value level="8">8</value>
 				</amount>
 				<mode>PER</mode>
 			</effect>

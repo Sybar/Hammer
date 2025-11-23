@@ -963,16 +963,24 @@
 			<item id="82985" min="5" max="5" chance="10" /> <!-- Royal Craft Coupon -->
 		</capsuled_items>
 	</item>
-	<item id="83146" name="Blue Draco's Heart Scroll" additionalName="Event" type="EtcItem">
+	<item id="83146" name="Heart Scroll of Heavenly Light" additionalName="Event" type="EtcItem">
 		<!-- A heart-shaped scroll filled with the blue light of Aden's sky. For 30 min., Power of basic attacks and P./ M. skills +10%, P./ M. Def. +10%, acquired XP/ SP +10%, Vitality bonus +10%. Note!. The effect remains after death, after switching to a dual class or entering instance zones. Removed when entering the Olympiad or the Ceremony of Chaos. -->
 		<set name="icon" val="icon.event_altair_enchant_scroll_i01" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="immediate_effect" val="true" />
+		<set name="reuse_delay" val="300000" />
+		<set name="etcitem_type" val="SCROLL" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="is_event_restricted" val="true" />
+		<set name="handler" val="ItemSkills" />
 		<set name="material" val="LIQUID" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="39883" level="1" /> <!-- Heart Scroll of Heavenly Light -->
+		</skills>
 	</item>
 	<item id="83147" name="Blue Draco's Drawing Fragment (1)" additionalName="2" type="EtcItem">
 		<!-- The first fragment of Blue Draco's drawing with New Year wishes. Collect all fragments and read Draco's message to have a lot of luck!. <How to use>. Fragments can be combined and exchanged for rewards in the Blue Draco's Wishes menu. -->
