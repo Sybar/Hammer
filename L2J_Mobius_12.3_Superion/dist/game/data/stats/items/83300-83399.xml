@@ -21,6 +21,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
+		<set name="handler" val="RelicSummonCoupon" />
 	</item>
 	<item id="83302" name="Guaranteed B-grade Relic Summon Coupon - 1-time" additionalName="Official Broadcast" type="EtcItem">
 		<!-- Double-click to obtain one B-grade relic. -->
@@ -32,6 +33,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
+		<set name="handler" val="RelicSummonCoupon" />
 	</item>
 	<item id="83303" name="Guaranteed A-grade Relic Summon Coupon - 1-time" additionalName="Official Broadcast" type="EtcItem">
 		<!-- Double-click to obtain one A-grade relic. -->
@@ -43,6 +45,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
+		<set name="handler" val="RelicSummonCoupon" />
 	</item>
 	<item id="83304" name="Black Coupon Pack" additionalName="Event" type="EtcItem">
 		<!-- Double-click to obtain Black Coupon - Item Restoration (2 pcs.) and Black Coupon - Relic Compound Retry Coupon (1 pc.). -->
@@ -786,6 +789,16 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="2" />
+		<set name="extractableCountMax" val="2" />
+		<capsuled_items>
+			<item id="83146" min="1" max="1" chance="100" /> <!-- Heart Scroll of Heavenly Light - Event -->
+			<item id="81812" min="1" max="1" chance="25" /> <!-- Homunculus Upgrade Points - 10 -->
+			<item id="81815" min="1" max="1" chance="25" /> <!-- Common Homunculus' Hourglass -->
+			<item id="82634" min="1" max="1" chance="25" /> <!-- Top-grade Homunculus' Hourglass -->
+			<item id="82904" min="1" max="1" chance="25" /> <!-- Homunculus' Shiny Hourglass -->
+		</capsuled_items>
 	</item>
 	<item id="83351" name="Mysterious 10 Billion Adena Pack" additionalName="Event" type="EtcItem">
 		<!-- Double-click to obtain up to 10 billion adena. Additionally, you may receive Heart Scroll of Heavenly Light (1 pc.). -->

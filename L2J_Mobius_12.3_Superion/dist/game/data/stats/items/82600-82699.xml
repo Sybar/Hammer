@@ -507,6 +507,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
+		<set name="handler" val="HomunculusHourglass" />
 	</item>
 	<item id="82635" name="First Black Coupon Pack" additionalName="Event" type="EtcItem">
 		<!-- Double-click to obtain Black Coupon (1 pc.), Vitality Sustaining Rune (14-day) (1 pc.) and Blessed Exalted Set Pack Coupon (1 pc.). -->

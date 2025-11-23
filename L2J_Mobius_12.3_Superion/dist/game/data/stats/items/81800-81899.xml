@@ -386,11 +386,13 @@
 	<item id="81815" name="Homunculus' Hourglass" type="EtcItem">
 		<!-- Required for awakening a homunculus sleeping in the Cradle of Time. Click the Create icon in the Homunculi UI or double-click the item to get to the Cradle of Time. Can be bought with adena in the Adena Store tab of the store. -->
 		<set name="icon" val="icon.homun_cupon_s" />
+		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_stackable" val="true" />
+		<set name="handler" val="HomunculusHourglass" />
 	</item>
 	<item id="81816" name="Transparent Sigil" type="Armor">
 		<set name="icon" val="icon.london_olympic_bikini" />
