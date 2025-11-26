@@ -5678,6 +5678,10 @@
 				<run ground="250" />
 			</speed>
 			<hitTime>600</hitTime>
+			<attribute>
+				<attack type="EARTH" value="1950" />
+				<defence fire="2050" water="2050" wind="2000" earth="2050" holy="2050" dark="2050" />
+			</attribute>
 		</stats>
 		<status attackable="true" noSleepMode="true" />
 		<ai type="MAGE" clanHelpRange="2000" aggroRange="2000" isAggressive="true">
@@ -5721,6 +5725,10 @@
 				<run ground="250" />
 			</speed>
 			<hitTime>600</hitTime>
+			<attribute>
+				<attack type="EARTH" value="1950" />
+				<defence fire="2050" water="2050" wind="2000" earth="2050" holy="2050" dark="2050" />
+			</attribute>
 		</stats>
 		<status attackable="true" noSleepMode="true" />
 		<ai type="MAGE" clanHelpRange="4000" aggroRange="4000" isAggressive="true">
@@ -5798,8 +5806,11 @@
 			<skill id="4413" level="11" /> <!-- Average M. Def. -->
 		</skillList>
 	</npc>
-	<npc id="29391" level="127" type="RaidBoss" name="Baium" title="Elmoreden's Emperor">
-		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+	<npc id="29391" level="127" type="GrandBoss" name="Baium" title="Elmoreden's Emperor">
+		<parameters>
+			<skill name="Baium_SkillID1" id="34335" level="1" /> <!-- Emperor's Will -->
+			<skill name="Baium_SkillID2" id="34336" level="1" /> <!-- Thunder Roar -->
+		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<acquire exp="4003411775" sp="3603071" />
@@ -5812,8 +5823,13 @@
 				<run ground="170" />
 			</speed>
 			<hitTime>600</hitTime>
+			<attribute>
+				<attack type="EARTH" value="2550" />
+				<defence fire="2650" water="2650" wind="2600" earth="2650" holy="2650" dark="2650" />
+			</attribute>
 		</stats>
-		<status attackable="true" />
+		<status attackable="true" noSleepMode="true" />
+		<ai type="MAGE" aggroRange="3000" isAggressive="true" />
 		<collision>
 			<radius normal="65" />
 			<height normal="174" />
@@ -5825,6 +5841,8 @@
 			<skill id="34356" level="1" /> <!-- Baium -->
 			<skill id="32675" level="1" /> <!-- Improved Immunity -->
 			<skill id="14804" level="10" /> <!-- Damage Reflection Resistance -->
+			<skill id="34335" level="1" /> <!-- Emperor's Will -->
+			<skill id="34336" level="1" /> <!-- Thunder Roar -->
 		</skillList>
 		<dropLists>
 			<drop>
@@ -5889,7 +5907,6 @@
 		</dropLists>
 	</npc>
 	<npc id="29392" level="127" type="Folk" name="Baium" title="Elmoreden's Emperor">
-		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>ETC</race>
 		<sex>MALE</sex>
 		<stats str="164" int="188" dex="55" wit="78" con="111" men="149">
@@ -5902,14 +5919,13 @@
 			</speed>
 			<hitTime>600</hitTime>
 		</stats>
-		<status attackable="false" />
+		<status attackable="false" undying="true" />
 		<collision>
 			<radius normal="65" />
 			<height normal="82" />
 		</collision>
 	</npc>
 	<npc id="29393" level="127" type="RaidBoss" name="Galaxia" title="Earth Angel">
-		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<equipment rhand="82299" /> <!-- Baium's Stormer -->
@@ -5922,8 +5938,17 @@
 				<run ground="170" />
 			</speed>
 			<hitTime>600</hitTime>
+			<attribute>
+				<attack type="HOLY" value="2550" />
+				<defence fire="2650" water="2650" wind="2650" earth="2650" holy="2650" dark="2600" />
+			</attribute>
 		</stats>
-		<status attackable="true" />
+		<status attackable="true" undying="true" noSleepMode="true" />
+		<ai type="MAGE" clanHelpRange="1000" aggroRange="800" isAggressive="true">
+			<clanList>
+				<clan>GALAXIA</clan>
+			</clanList>
+		</ai>
 		<collision>
 			<radius normal="30" />
 			<height normal="120.615" />
@@ -5935,10 +5960,12 @@
 			<skill id="34357" level="1" /> <!-- Galaxia -->
 			<skill id="32675" level="1" /> <!-- Improved Immunity -->
 			<skill id="14804" level="10" /> <!-- Damage Reflection Resistance -->
+			<skill id="34348" level="1" /> <!-- Holy Strike -->
+			<skill id="34349" level="1" /> <!-- Holy Spear -->
+			<skill id="34350" level="1" /> <!-- Holy Spear -->
 		</skillList>
 	</npc>
 	<npc id="29394" level="124" type="Monster" name="Dark Angel">
-		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -5950,8 +5977,13 @@
 				<run ground="180" />
 			</speed>
 			<hitTime>600</hitTime>
+			<attribute>
+				<attack type="HOLY" value="2350" />
+				<defence fire="2500" water="2500" wind="2500" earth="2500" holy="2500" dark="2450" />
+			</attribute>
 		</stats>
-		<status attackable="true" />
+		<status attackable="true" noSleepMode="true" />
+		<ai type="BALANCED" aggroRange="800" isAggressive="true" />
 		<collision>
 			<radius normal="39.6" />
 			<height normal="114" />
@@ -5963,10 +5995,10 @@
 			<skill id="32675" level="1" /> <!-- Improved Immunity -->
 			<skill id="14823" level="1" /> <!-- Instant Kill Resistance -->
 			<skill id="33195" level="10" /> <!-- Direct Hit Resistance -->
+			<skill id="34354" level="1" /> <!-- Holy Strike -->
 		</skillList>
 	</npc>
 	<npc id="29395" level="124" type="Monster" name="Angel Pikeman">
-		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -5978,8 +6010,17 @@
 				<run ground="180" />
 			</speed>
 			<hitTime>600</hitTime>
+			<attribute>
+				<attack type="HOLY" value="2350" />
+				<defence fire="2500" water="2500" wind="2500" earth="2500" holy="2500" dark="2450" />
+			</attribute>
 		</stats>
-		<status attackable="true" />
+		<status attackable="true" noSleepMode="true" />
+		<ai type="BALANCED" clanHelpRange="800" isAggressive="false">
+			<clanList>
+				<clan>GALAXIA</clan>
+			</clanList>
+		</ai>
 		<collision>
 			<radius normal="30" />
 			<height normal="76" />
@@ -5991,10 +6032,11 @@
 			<skill id="32675" level="1" /> <!-- Improved Immunity -->
 			<skill id="14823" level="1" /> <!-- Instant Kill Resistance -->
 			<skill id="33195" level="10" /> <!-- Direct Hit Resistance -->
+			<skill id="34352" level="1" /> <!-- Holy Cage -->
+			<skill id="34353" level="1" /> <!-- Holy Haste -->
 		</skillList>
 	</npc>
 	<npc id="29396" level="124" type="Monster" name="Archangel" title="Sealed Enchanter">
-		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -6006,8 +6048,13 @@
 				<run ground="180" />
 			</speed>
 			<hitTime>600</hitTime>
+			<attribute>
+				<attack type="HOLY" value="2350" />
+				<defence fire="2500" water="2500" wind="2500" earth="2500" holy="2500" dark="2450" />
+			</attribute>
 		</stats>
 		<status attackable="true" />
+		<ai isAggressive="false" />
 		<collision>
 			<radius normal="22" />
 			<height normal="48" />
@@ -6019,10 +6066,10 @@
 			<skill id="32675" level="1" /> <!-- Improved Immunity -->
 			<skill id="14823" level="1" /> <!-- Instant Kill Resistance -->
 			<skill id="33195" level="10" /> <!-- Direct Hit Resistance -->
+			<skill id="34334" level="1" /> <!-- Divine Sealeding -->
 		</skillList>
 	</npc>
 	<npc id="29397" level="124" type="Monster" name="Angel Archer">
-		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<equipment rhand="15302" /> <!-- Transparent Bow (NPC) -->
@@ -6035,8 +6082,17 @@
 				<run ground="180" />
 			</speed>
 			<hitTime>600</hitTime>
+			<attribute>
+				<attack type="HOLY" value="2350" />
+				<defence fire="2500" water="2500" wind="2500" earth="2500" holy="2500" dark="2450" />
+			</attribute>
 		</stats>
-		<status attackable="true" />
+		<status attackable="true" noSleepMode="true" />
+		<ai clanHelpRange="800" isAggressive="false">
+			<clanList>
+				<clan>GALAXIA</clan>
+			</clanList>
+		</ai>
 		<collision>
 			<radius normal="18" />
 			<height normal="48" />
@@ -6050,12 +6106,12 @@
 			<skill id="33195" level="10" /> <!-- Direct Hit Resistance -->
 		</skillList>
 	</npc>
-	<npc id="29398" level="11" type="Folk" name="Eigis' Shadow" title="Lady of Despair">
+	<npc id="29398" level="11" type="RaidBoss" name="Eigis' Shadow" title="Lady of Despair">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>UNDEAD</race>
-		<sex>FEMALE</sex>
-		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
-			<vitals hp="450000" hpRegen="10.5" mp="300" mpRegen="3.6" />
+		<sex>MALE</sex>
+		<stats str="164" int="188" dex="55" wit="78" con="111" men="149">
+			<vitals hp="190319.19362" hpRegen="2.5" mp="300.8" mpRegen="1.2" />
 			<attack physical="84.3892" magical="57.62688" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="256.18808" magical="187.46732" />
 			<speed>
@@ -6064,7 +6120,7 @@
 			</speed>
 			<hitTime>600</hitTime>
 		</stats>
-		<status attackable="false" />
+		<status attackable="true" />
 		<collision>
 			<radius normal="36" />
 			<height normal="123" />
@@ -6075,10 +6131,10 @@
 			<skill id="32675" level="1" /> <!-- Improved Immunity -->
 		</skillList>
 	</npc>
-	<npc id="29399" level="11" type="Folk" name="Magic Device" title="Owned by Eigis">
+	<npc id="29399" level="11" type="Monster" name="Magic Device" title="Owned by Eigis">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>ETC</race>
-		<sex>FEMALE</sex>
+		<sex>MALE</sex>
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
 			<vitals hp="158.99054" hpRegen="2.5" mp="3190" mpRegen="1.2" />
 			<attack physical="21.0973" magical="14.40672" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
@@ -6089,7 +6145,7 @@
 			</speed>
 			<hitTime>600</hitTime>
 		</stats>
-		<status attackable="false" />
+		<status attackable="true" />
 		<collision>
 			<radius normal="56" />
 			<height normal="143" />

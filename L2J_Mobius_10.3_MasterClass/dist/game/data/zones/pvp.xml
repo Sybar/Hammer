@@ -99,7 +99,7 @@
 		<node X="45949" Y="16706" />
 		<node X="45500" Y="17749" />
 	</zone>
-	<zone name="baium_pvp" type="ArenaZone" shape="NPoly" minZ="10061" maxZ="11061"> <!-- Baium -->
+	<zone name="baium_pvp" type="ArenaZone" shape="NPoly" minZ="10000" maxZ="11061"> <!-- Baium -->
 		<node X="111074" Y="16177" />
 		<node X="114562" Y="12623" />
 		<node X="118194" Y="15790" />

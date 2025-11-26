@@ -20,8 +20,11 @@
  */
 package instances.TimedHunting;
 
+import java.util.Calendar;
+
 import org.l2jmobius.gameserver.data.holders.TimedHuntingZoneHolder;
 import org.l2jmobius.gameserver.data.xml.TimedHuntingZoneData;
+import org.l2jmobius.gameserver.managers.GrandBossManager;
 import org.l2jmobius.gameserver.managers.InstanceManager;
 import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.actor.Npc;
@@ -33,7 +36,7 @@ import org.l2jmobius.gameserver.util.ArrayUtil;
 import instances.AbstractInstance;
 
 /**
- * @author Mobius, Tanatos
+ * @author Mobius, Tanatos, Notorion
  */
 public class TimedHunting extends AbstractInstance
 {
@@ -109,7 +112,8 @@ public class TimedHunting extends AbstractInstance
 	
 	// Tower of Insolence
 	private static final int TELEPORT_SCOUT = 34549; // Tower of Insolence
-	private static final int SPACETEMPORAL_RIFT = 34616; // Tower of Insolence
+	private static final int SPACETEMPORAL_RIFT = 34616; // Teleport to Baium - Tower of Insolence
+	private static final int BAIUM_BOSS_ID = 29391; // Baium ID
 	
 	// Skills
 	private static final SkillHolder MORE_ADENA = new SkillHolder(32930, 1);
@@ -119,6 +123,7 @@ public class TimedHunting extends AbstractInstance
 	private static final Location FIELD_OF_WHISPERS = new Location(95981, 210144, -3456);
 	private static final Location ALLIGATOR_BEACH = new Location(114572, 202589, -3408);
 	private static final Location ALLIGATOR_ISLAND = new Location(121342, 185640, -3587);
+	private static final Location BAIUM_TELEPORT_LOC = new Location(113365, 14886, 10053);
 	
 	// Misc
 	private static final int[] TEMPLATE_IDS =
@@ -137,8 +142,8 @@ public class TimedHunting extends AbstractInstance
 	public TimedHunting()
 	{
 		super(TEMPLATE_IDS);
-		addStartNpc(FIOREN, JAMOA, PANTHEON, INVESTIGATORS_TELEPORTER, SEARCH_TEAM_TELEPORTER, LIONEL_HUNTER, ATELIA_REFINERY_TELEPORT_DEVICE, TELEPORT_SCOUT, GATEKEEPER_ZIGGURAT, IVORY_TOWER_RESEARCHER);
-		addFirstTalkId(FIOREN, JAMOA, PANTHEON, INVESTIGATORS_TELEPORTER, SEARCH_TEAM_TELEPORTER, LIONEL_HUNTER, ATELIA_REFINERY_TELEPORT_DEVICE, TELEPORT_SCOUT, GATEKEEPER_ZIGGURAT, IVORY_TOWER_RESEARCHER);
+		addStartNpc(FIOREN, JAMOA, PANTHEON, INVESTIGATORS_TELEPORTER, SEARCH_TEAM_TELEPORTER, LIONEL_HUNTER, ATELIA_REFINERY_TELEPORT_DEVICE, TELEPORT_SCOUT, GATEKEEPER_ZIGGURAT, IVORY_TOWER_RESEARCHER, SPACETEMPORAL_RIFT);
+		addFirstTalkId(FIOREN, JAMOA, PANTHEON, INVESTIGATORS_TELEPORTER, SEARCH_TEAM_TELEPORTER, LIONEL_HUNTER, ATELIA_REFINERY_TELEPORT_DEVICE, TELEPORT_SCOUT, GATEKEEPER_ZIGGURAT, IVORY_TOWER_RESEARCHER, SPACETEMPORAL_RIFT);
 		addFirstTalkId(RESEARCHERS_TELEPORTER_105, RESEARCHERS_TELEPORTER_110, RESEARCHERS_TELEPORTER_115, RESEARCHERS_TELEPORTER_120);
 		addFirstTalkId(EXPEDITION_TELEPORTER_105, EXPEDITION_TELEPORTER_110, EXPEDITION_TELEPORTER_115, EXPEDITION_TELEPORTER_120);
 		addFirstTalkId(OVERSEER_TELEPORTER_105, OVERSEER_TELEPORTER_110, OVERSEER_TELEPORTER_115, OVERSEER_TELEPORTER_120);
@@ -197,8 +202,7 @@ public class TimedHunting extends AbstractInstance
 				player.teleToLocation(huntingZone.getEnterLocation(), world);
 			}
 		}
-		
-		if (event.equals("toFieldOfSilence"))
+		else if (event.equals("toFieldOfSilence"))
 		{
 			player.teleToLocation(FIELD_OF_SILENCE);
 		}
@@ -229,6 +233,89 @@ public class TimedHunting extends AbstractInstance
 			
 			player.teleToLocation(ALLIGATOR_ISLAND);
 		}
+		else if (event.equals("BAIUM_ENTER")) // Logic to allow entry into Baium zone.
+		{
+			// 1. Time Validation
+			final Calendar now = Calendar.getInstance();
+			final int day = now.get(Calendar.DAY_OF_WEEK);
+			final int hour = now.get(Calendar.HOUR_OF_DAY);
+			final int minute = now.get(Calendar.MINUTE);
+			final int second = now.get(Calendar.SECOND);
+			
+			boolean isOpen = false;
+			final int targetDay = Calendar.WEDNESDAY;
+			final int startHour = 22;
+			final int startMinute = 0;
+			final int endHour = 23;
+			final int endMinute = 0;
+			
+			if (day == targetDay)
+			{
+				long currentTotalSeconds = (hour * 3600) + (minute * 60) + second;
+				long startTotalSeconds = (startHour * 3600) + (startMinute * 60);
+				long endTotalSeconds = (endHour * 3600) + (endMinute * 60);
+				
+				if ((currentTotalSeconds >= startTotalSeconds) && (currentTotalSeconds < endTotalSeconds))
+				{
+					isOpen = true;
+				}
+			}
+			
+			if (!isOpen && !player.isGM())
+			{
+				return "34616.html";
+			}
+			
+			// 2. Baium Status Validation
+			final int status = GrandBossManager.getInstance().getStatus(BAIUM_BOSS_ID);
+			if (status == 3) // DEAD
+			{
+				return "34616.html";
+			}
+			
+			// 3. Castle Validation
+			boolean hasCastle = false;
+			if (player.getClan() != null)
+			{
+				final int castleId = player.getClan().getCastleId();
+				if ((castleId == 5) || (castleId == 8))
+				{
+					hasCastle = true;
+				}
+			}
+			
+			if (!hasCastle && !player.isGM())
+			{
+				player.sendMessage("You don't belong here!");
+				return null;
+			}
+			
+			// 4. Instance Management (Template ID 1020)
+			Instance world = null;
+			for (Instance instance : InstanceManager.getInstance().getInstances())
+			{
+				if (instance.getTemplateId() == 1020)
+				{
+					world = instance;
+					break;
+				}
+			}
+			
+			if (world == null)
+			{
+				world = InstanceManager.getInstance().createInstance(1020, player);
+			}
+			
+			if (world != null)
+			{
+				player.setInstance(world);
+				player.teleToLocation(BAIUM_TELEPORT_LOC, world);
+			}
+			else
+			{
+				player.sendMessage("Error creating Baium instance.");
+			}
+		}
 		
 		return null;
 	}
@@ -241,6 +328,24 @@ public class TimedHunting extends AbstractInstance
 		{
 			MORE_ADENA.getSkill().applyEffects(killer, killer);
 		}
+	}
+	
+	@Override
+	public String onFirstTalk(Npc npc, Player player)
+	{
+		if (npc.getId() == SPACETEMPORAL_RIFT)
+		{
+			return "34616.html";
+		}
+		
+		final Instance instance = npc.getInstanceWorld();
+		final String htmltext = null;
+		if (isInInstance(instance))
+		{
+			return npc.getId() + ".html";
+		}
+		
+		return htmltext;
 	}
 	
 	public static void main(String[] args)
