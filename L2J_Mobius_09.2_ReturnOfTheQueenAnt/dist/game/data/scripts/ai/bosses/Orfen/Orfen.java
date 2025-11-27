@@ -92,15 +92,14 @@ public class Orfen extends AbstractNpcAI
 	private static final boolean REQUIRE_CC_CHECK = true;
 	
 	// Speech and Voices
-	private static final NpcStringId FIRST_ATTACK_MESSAGE = NpcStringId.getNpcStringId(1803603); // "You're all fools!"
-	private static final NpcStringId CUSTOM_DEATH_MESSAGE = NpcStringId.getNpcStringId(1803607); // "I will condemn you all to hell!"
-	private static final NpcStringId FOG_ACTIVATED_MESSAGE = NpcStringId.getNpcStringId(1803610); // [An enraged Orfen lifts a cloud of hallucination dust from the ground.]
+	private static final NpcStringId FIRST_ATTACK_MESSAGE = NpcStringId.YOU_RE_ALL_FOOLS;
+	private static final NpcStringId CUSTOM_DEATH_MESSAGE = NpcStringId.I_WILL_CONDEMN_YOU_ALL_TO_HELL;
+	private static final NpcStringId FOG_ACTIVATED_MESSAGE = NpcStringId.AN_ENRAGED_ORFEN_LIFTS_A_CLOUD_OF_HALLUCINATION_DUST_FROM_THE_GROUND;
+	private static final NpcStringId HP_75_MESSAGE = NpcStringId.FOOLS_WHO_CANNOT_SEE_THE_FUTURE;
+	private static final NpcStringId HP_60_MESSAGE = NpcStringId.YOU_LL_REGRET_COMPARING_ME_TO_THAT_PATHETIC_LITHRA;
+	private static final NpcStringId HP_50_MESSAGE = NpcStringId.SEE_WHO_IS_THE_TRUE_MASTER_OF_THE_SEA_OF_SPORES;
 	
-	private static final NpcStringId HP_75_MESSAGE = NpcStringId.getNpcStringId(1803608); // "Fools who cannot see the future..."
-	private static final NpcStringId HP_60_MESSAGE = NpcStringId.getNpcStringId(1803604); // "You'll regret comparing me to that pathetic Lithra!"
-	private static final NpcStringId HP_50_MESSAGE = NpcStringId.getNpcStringId(1803605); // "I'll show you the power of my rage!"
-	
-	// Audios
+	// Sounds
 	private static final String FIRST_ATTACK_VOICE = "Npcdialog1.orfen_ep50_1129_battle_1";
 	private static final String DEATH_VOICE = "Npcdialog1.orfen_ep50_1129_battle_5";
 	private static final String HP_75_VOICE = "Npcdialog1.orfen_ep50_1129_battle_6";
@@ -125,10 +124,6 @@ public class Orfen extends AbstractNpcAI
 	private static final SkillHolder ORFEN_FATAL_SLASHER = new SkillHolder(32487, 1); // Orfen Fatal Slasher
 	private static final SkillHolder ORFEN_ENERGY_SCATTER = new SkillHolder(32488, 1); // Orfen Energy Scatter
 	private static final SkillHolder ORFEN_FURY_ENERGY_WAVE = new SkillHolder(32489, 1); // Orfen Fury Energy Wave
-	
-	// Barrier Skills
-	private static final SkillHolder ORFEN_BOSS_PROTECTION = new SkillHolder(29518, 1); // Boss' Protection
-	private static final SkillHolder ORFEN_BARRIER = new SkillHolder(29515, 1); // Boss Power
 	
 	// Orfen Buff - HP 50%
 	private static final int SKILL_ID_BUFF_50HP = 32495; // Orfen's Rage
@@ -165,16 +160,6 @@ public class Orfen extends AbstractNpcAI
 	private static final int MAX_Y = 18904;
 	private static final int SPAWN_Z = -4429;
 	
-	// Barrier
-	// Hits para quebrar as barreiras
-	private static final int ORFEN_BARRIER_HIT_COUNT = 2000; // Hits to break 29518 (Boss' Protection)
-	private static final int ORFEN_BARRIER_HIT_COUNT_2 = 2000; // Hits to break 29515 (Barrier)
-	private static final long ORFEN_BARRIER_TIMEOUT_MS = 600000; // 10 minutos (Timeout do 29515)
-	
-	// Vulnerable Window
-	private static final int ORFEN_BARRIER_VULN_MIN_MS = 50000; // 50 sec
-	private static final int ORFEN_BARRIER_VULN_MAX_MS = 70000; // 70 sec
-	
 	// State Variables
 	private final Set<Npc> _minions = ConcurrentHashMap.newKeySet();
 	private GrandBoss _orfenInstance = null;
@@ -183,14 +168,7 @@ public class Orfen extends AbstractNpcAI
 	private boolean _firstWaveDone = false;
 	private boolean _fogWaveAt50HP = false;
 	private long _lastAttackTime = 0;
-	private final Map<Npc, Integer> _orfenHits = new ConcurrentHashMap<>();
-	private boolean _orfenVulnerable = false;
 	private boolean _arimaLockedIn = false;
-	
-	// Barrier State Flags
-	private boolean _orfenHasBossProtection = false;
-	private boolean _orfenHasTimedBarrier = false;
-	private long _lastBarrierHitTime = 0;
 	
 	// Arima Shroud State Variables
 	private final Map<Npc, Integer> _arimaShroudLevel = new ConcurrentHashMap<>();
@@ -357,27 +335,6 @@ public class Orfen extends AbstractNpcAI
 		_arimaDegradeTimerStart.clear();
 		_arimaRegressTimerRemain.clear();
 		_arimaRegressTimerStart.clear();
-		
-		_orfenVulnerable = false;
-		_orfenHits.clear();
-		_lastBarrierHitTime = 0;
-		
-		Skill protectionSkill = ORFEN_BOSS_PROTECTION.getSkill();
-		if (protectionSkill != null)
-		{
-			protectionSkill.applyEffects(npc, npc);
-			npc.setInvul(true);
-			_orfenHasBossProtection = true;
-			_orfenHasTimedBarrier = false;
-			LOGGER.info("Orfen AI: Barrier 'Boss Protection' (29517) ACTIVATED at spawn.");
-		}
-		else
-		{
-			LOGGER.warning("Orfen AI: Skill 29517 (Boss Protection) not found at spawn!");
-			npc.setInvul(false);
-			_orfenHasBossProtection = false;
-			_orfenHasTimedBarrier = false;
-		}
 	}
 	
 	@Override
@@ -395,71 +352,6 @@ public class Orfen extends AbstractNpcAI
 		
 		switch (event)
 		{
-			case "ORFEN_BARRIER_TIMEOUT_10MIN":
-			{
-				if ((npc != null) && _orfenHasTimedBarrier && !_orfenVulnerable)
-				{
-					// Remove 29515
-					if (ORFEN_BARRIER.getSkill() != null)
-					{
-						npc.stopSkillEffects(ORFEN_BARRIER.getSkill());
-					}
-					
-					// Apply 29517
-					if (ORFEN_BOSS_PROTECTION.getSkill() != null)
-					{
-						ORFEN_BOSS_PROTECTION.getSkill().applyEffects(npc, npc);
-						_orfenHasBossProtection = true;
-						_orfenHasTimedBarrier = false;
-						_orfenHits.put(npc, 0);
-						_lastBarrierHitTime = 0;
-					}
-				}
-				break;
-			}
-			case "ORFEN_BARRIER_REAPPLY_TIMER":
-			{
-				if ((npc != null) && _orfenVulnerable)
-				{
-					_orfenVulnerable = false;
-					npc.setInvul(true);
-					
-					if (ORFEN_BARRIER.getSkill() != null)
-					{
-						ORFEN_BARRIER.getSkill().applyEffects(npc, npc);
-						_orfenHasBossProtection = false;
-						_orfenHasTimedBarrier = true;
-						_orfenHits.put(npc, 0);
-						_lastBarrierHitTime = 0;
-						
-						startQuestTimer("ORFEN_BARRIER_TIMEOUT_10MIN", ORFEN_BARRIER_TIMEOUT_MS, npc, null);
-					}
-				}
-				break;
-			}
-			case "REAPPLY_BARRIER_VISUAL":
-			{
-				if ((npc != null) && (npc.getId() == ORFEN) && !npc.isDead())
-				{
-					if (_orfenHasBossProtection)
-					{
-						Skill protectionSkill = ORFEN_BOSS_PROTECTION.getSkill();
-						if ((protectionSkill != null) && (npc.getEffectList().getBuffInfoBySkillId(protectionSkill.getId()) == null))
-						{
-							protectionSkill.applyEffects(npc, npc);
-						}
-					}
-					else if (_orfenHasTimedBarrier)
-					{
-						Skill barrierSkill = ORFEN_BARRIER.getSkill();
-						if ((barrierSkill != null) && (npc.getEffectList().getBuffInfoBySkillId(barrierSkill.getId()) == null))
-						{
-							barrierSkill.applyEffects(npc, npc);
-						}
-					}
-				}
-				break;
-			}
 			case "DISTANCE_CHECK":
 			{
 				if ((npc == null) || npc.isDead())
@@ -715,62 +607,6 @@ public class Orfen extends AbstractNpcAI
 				}
 			}
 			
-			if (!_orfenVulnerable)
-			{
-				if ((System.currentTimeMillis() - _lastBarrierHitTime) > 60000)
-				{
-					_orfenHits.put(npc, 0);
-				}
-				
-				_lastBarrierHitTime = System.currentTimeMillis();
-				
-				final int hits = _orfenHits.merge(npc, 1, Integer::sum);
-				if (_orfenHasBossProtection)
-				{
-					if (hits >= ORFEN_BARRIER_HIT_COUNT)
-					{
-						
-						if (ORFEN_BOSS_PROTECTION.getSkill() != null)
-						{
-							npc.stopSkillEffects(ORFEN_BOSS_PROTECTION.getSkill());
-						}
-						
-						if (ORFEN_BARRIER.getSkill() != null)
-						{
-							ORFEN_BARRIER.getSkill().applyEffects(npc, npc);
-						}
-						
-						_orfenHasBossProtection = false;
-						_orfenHasTimedBarrier = true;
-						_orfenHits.put(npc, 0);
-						_lastBarrierHitTime = 0;
-						
-						startQuestTimer("ORFEN_BARRIER_TIMEOUT_10MIN", ORFEN_BARRIER_TIMEOUT_MS, npc, null);
-					}
-				}
-				else if (_orfenHasTimedBarrier)
-				{
-					if (hits >= ORFEN_BARRIER_HIT_COUNT_2)
-					{
-						
-						if (ORFEN_BARRIER.getSkill() != null)
-						{
-							npc.stopSkillEffects(ORFEN_BARRIER.getSkill());
-						}
-						
-						_orfenHasTimedBarrier = false;
-						_orfenVulnerable = true;
-						npc.setInvul(false);
-						_orfenHits.put(npc, 0);
-						_lastBarrierHitTime = 0;
-						
-						cancelQuestTimer("ORFEN_BARRIER_TIMEOUT_10MIN", npc, null);
-						
-						startQuestTimer("ORFEN_BARRIER_REAPPLY_TIMER", getRandom(ORFEN_BARRIER_VULN_MIN_MS, ORFEN_BARRIER_VULN_MAX_MS), npc, null);
-					}
-				}
-			}
-			
 			final double hpPercent = npc.getCurrentHpPercent();
 			if ((hpPercent <= 75) && (hpPercent > 70) && !_hp75SpeechDone)
 			{
@@ -826,7 +662,7 @@ public class Orfen extends AbstractNpcAI
 				spawnTorfedoAndHarana(npc);
 			}
 			
-			if (manageSkills(npc) && npc.isInsideRadius2D(attacker, 1000) && _orfenVulnerable)
+			if (manageSkills(npc) && npc.isInsideRadius2D(attacker, 1000))
 			{
 				
 				final int chance = getRandom(1000);
@@ -936,8 +772,6 @@ public class Orfen extends AbstractNpcAI
 				cancelQuestTimer("arima_respawn_cooldown", npc, null);
 				cancelQuestTimer("spawn_wave_and_fog", npc, null);
 				cancelQuestTimers("DISTANCE_CHECK");
-				cancelQuestTimer("ORFEN_BARRIER_TIMEOUT_10MIN", npc, null);
-				cancelQuestTimer("ORFEN_BARRIER_REAPPLY_TIMER", npc, null);
 				
 				_arimaActive = false;
 				_arimaOnCooldown = false;
@@ -948,11 +782,6 @@ public class Orfen extends AbstractNpcAI
 				_firstAttackSpeechDone = false;
 				_hp75SpeechDone = false;
 				_hp60SpeechDone = false;
-				_orfenVulnerable = false;
-				_orfenHasBossProtection = false;
-				_orfenHasTimedBarrier = false;
-				_orfenHits.clear();
-				_lastBarrierHitTime = 0;
 				break;
 			}
 			case ARIMA:
@@ -1385,18 +1214,6 @@ public class Orfen extends AbstractNpcAI
 					{
 						startQuestTimer("REAPPLY_SHROUD_FOR_PLAYER", 500, minion, creature.asPlayer());
 					}
-				}
-			}
-			
-			if ((_orfenInstance != null) && !_orfenInstance.isDead())
-			{
-				if (_orfenHasBossProtection && (_orfenInstance.getEffectList().getBuffInfoBySkillId(ORFEN_BOSS_PROTECTION.getSkillId()) == null))
-				{
-					startQuestTimer("REAPPLY_BARRIER_VISUAL", 500, _orfenInstance, null);
-				}
-				else if (_orfenHasTimedBarrier && (_orfenInstance.getEffectList().getBuffInfoBySkillId(ORFEN_BARRIER.getSkillId()) == null))
-				{
-					startQuestTimer("REAPPLY_BARRIER_VISUAL", 500, _orfenInstance, null);
 				}
 			}
 		}

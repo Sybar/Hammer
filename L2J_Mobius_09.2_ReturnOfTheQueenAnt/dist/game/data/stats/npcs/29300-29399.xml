@@ -5962,9 +5962,6 @@
 			<skill id="32675" level="1" /> <!-- Improved Immunity -->
 			<skill id="14765" level="4" /> <!-- Blood Siphon Resistance -->
 			<skill id="14804" level="10" /> <!-- Damage Reflection Resistance -->
-			<skill id="34814" level="9" /> <!-- Critical Rate Resistance -->
-			<skill id="34815" level="9" /> <!-- Critical Damage Resistance -->
-			<skill id="34820" level="7" /> <!-- Received Damage Resistance -->
 			<skill id="33915" level="1" /> <!-- Queen's Rage -->
 			<skill id="33916" level="1" /> <!-- Ground Shaker -->
 		</skillList>

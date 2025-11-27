@@ -92,15 +92,14 @@ public class Orfen extends AbstractNpcAI
 	private static final boolean REQUIRE_CC_CHECK = true;
 	
 	// Speech and Voices
-	private static final NpcStringId FIRST_ATTACK_MESSAGE = NpcStringId.getNpcStringId(1803603); // "You're all fools!"
-	private static final NpcStringId CUSTOM_DEATH_MESSAGE = NpcStringId.getNpcStringId(1803607); // "I will condemn you all to hell!"
-	private static final NpcStringId FOG_ACTIVATED_MESSAGE = NpcStringId.getNpcStringId(1803610); // [An enraged Orfen lifts a cloud of hallucination dust from the ground.]
+	private static final NpcStringId FIRST_ATTACK_MESSAGE = NpcStringId.YOU_RE_ALL_FOOLS;
+	private static final NpcStringId CUSTOM_DEATH_MESSAGE = NpcStringId.I_WILL_CONDEMN_YOU_ALL_TO_HELL;
+	private static final NpcStringId FOG_ACTIVATED_MESSAGE = NpcStringId.AN_ENRAGED_ORFEN_LIFTS_A_CLOUD_OF_HALLUCINATION_DUST_FROM_THE_GROUND;
+	private static final NpcStringId HP_75_MESSAGE = NpcStringId.FOOLS_WHO_CANNOT_SEE_THE_FUTURE;
+	private static final NpcStringId HP_60_MESSAGE = NpcStringId.YOU_LL_REGRET_COMPARING_ME_TO_THAT_PATHETIC_LITHRA;
+	private static final NpcStringId HP_50_MESSAGE = NpcStringId.I_LL_SHOW_YOU_THE_POWER_OF_MY_RAGE;
 	
-	private static final NpcStringId HP_75_MESSAGE = NpcStringId.getNpcStringId(1803608); // "Fools who cannot see the future..."
-	private static final NpcStringId HP_60_MESSAGE = NpcStringId.getNpcStringId(1803604); // "You'll regret comparing me to that pathetic Lithra!"
-	private static final NpcStringId HP_50_MESSAGE = NpcStringId.getNpcStringId(1803605); // "I'll show you the power of my rage!"
-	
-	// Audios
+	// Sounds
 	private static final String FIRST_ATTACK_VOICE = "Npcdialog1.orfen_ep50_1129_battle_1";
 	private static final String DEATH_VOICE = "Npcdialog1.orfen_ep50_1129_battle_5";
 	private static final String HP_75_VOICE = "Npcdialog1.orfen_ep50_1129_battle_6";
@@ -166,7 +165,7 @@ public class Orfen extends AbstractNpcAI
 	private static final int SPAWN_Z = -4429;
 	
 	// Barrier
-	// Hits para quebrar as barreiras
+	// Hits to break down barriers
 	private static final int ORFEN_BARRIER_HIT_COUNT = 2000; // Hits to break 29518 (Boss' Protection)
 	private static final int ORFEN_BARRIER_HIT_COUNT_2 = 2000; // Hits to break 29515 (Barrier)
 	private static final long ORFEN_BARRIER_TIMEOUT_MS = 600000; // 10 minutos (Timeout do 29515)
