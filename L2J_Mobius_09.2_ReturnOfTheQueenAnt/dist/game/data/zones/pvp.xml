@@ -85,19 +85,28 @@
 		<node X="125718" Y="115778" />
 		<node X="125570" Y="114264" />
 	</zone>
-	<zone name="orfen_pvp_zone" type="ArenaZone" shape="NPoly" minZ="-3000" maxZ="-9000"> <!-- Orfen -->
-		<node X="45013" Y="18215" />
-		<node X="44231" Y="19158" />
-		<node X="43394" Y="19085" />
-		<node X="42811" Y="19415" />
-		<node X="41233" Y="18279" />
-		<node X="41201" Y="16209" />
-		<node X="42206" Y="14964" />
-		<node X="43587" Y="14710" />
-		<node X="44718" Y="14492" />
-		<node X="45719" Y="15273" />
-		<node X="45949" Y="16706" />
-		<node X="45500" Y="17749" />
+	<zone name="Orfen_Arima_Monster_pvp" type="ArenaZone" shape="NPoly" minZ="-3100" maxZ="-6555">
+		<node X="44957" Y="18160" />
+		<node X="44496" Y="18627" />
+		<node X="44148" Y="18801" />
+		<node X="43546" Y="19048" /> 
+		<node X="42888" Y="19040" />
+		<node X="42144" Y="18856" />
+		<node X="41491" Y="18268" />
+		<node X="41413" Y="17074" />
+		<node X="41429" Y="16582" /> 
+		<node X="41738" Y="15964" />
+		<node X="41912" Y="15727" />
+		<node X="42058" Y="15486" />
+		<node X="42635" Y="15130" />
+		<node X="43253" Y="14814" />
+		<node X="43892" Y="14663" />
+		<node X="43400" Y="14817" />
+		<node X="44242" Y="14633" />
+		<node X="45060" Y="14770" />
+		<node X="45679" Y="16195" />
+		<node X="45686" Y="16838" />
+		<node X="45405" Y="17715" />
 	</zone>
 	<zone name="baium_pvp" type="ArenaZone" shape="NPoly" minZ="10061" maxZ="11061"> <!-- Baium -->
 		<node X="111074" Y="16177" />

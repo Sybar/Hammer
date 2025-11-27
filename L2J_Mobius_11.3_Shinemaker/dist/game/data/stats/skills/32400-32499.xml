@@ -917,7 +917,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLevel>106</magicLevel>
 		<mpConsume>1</mpConsume>
-		<reuseDelay>8000</reuseDelay>
+		<reuseDelay>1500</reuseDelay>
 		<effects>
 			<effect name="MagicalDamage">
 				<power>15000</power> <!-- Guessing -->
@@ -1486,8 +1486,8 @@
 		<targetType>ENEMY</targetType>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>10</abnormalTime>
-		<abnormalType>STUN</abnormalType>
-		<abnormalVisualEffect>STUN</abnormalVisualEffect>
+		<abnormalType>PARALYZE</abnormalType>
+		<abnormalVisualEffect>PARALYZE</abnormalVisualEffect>
 		<activateRate>90</activateRate>
 		<affectLimit>10-25</affectLimit>
 		<affectObject>NOT_FRIEND</affectObject>
@@ -1663,22 +1663,18 @@
 		<icon>icon.skill0412</icon>
 		<operateType>A2</operateType>
 		<targetType>TARGET</targetType>
-		<abnormalLevel>1</abnormalLevel>
-		<abnormalTime>20</abnormalTime>
+		<abnormalLevel>3</abnormalLevel>
+		<abnormalTime>5</abnormalTime>
 		<abnormalType>ATTACK_TIME_UP</abnormalType>
-		<activateRate>100</activateRate>
+		<activateRate>10</activateRate>
 		<affectScope>SINGLE</affectScope>
 		<basicProperty>MAGIC</basicProperty>
-		<basicProperty>NONE</basicProperty>
-		<canBeDispelled>false</canBeDispelled>
-		<castRange>400</castRange>
-		<coolTime>500</coolTime>
 		<effectPoint>-100</effectPoint>
-		<effectRange>900</effectRange>
+		<hitCancelTime>0</hitCancelTime>
 		<isDebuff>true</isDebuff>
 		<lvlBonusRate>1</lvlBonusRate>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<magicLevel>108</magicLevel>
+		<magicLevel>1</magicLevel>
 		<effects>
 			<effect name="PhysicalAttackSpeed">
 				<amount>-500</amount>
@@ -1754,7 +1750,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="32497" toLevel="2" name="Scale Fatal Slasher">
+	<skill id="32497" toLevel="1" name="Scale Fatal Slasher">
 		<!-- A ranged physical attack. -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
@@ -1763,6 +1759,21 @@
 		<effectPoint>-100</effectPoint>
 		<hitTime>1500</hitTime>
 		<reuseDelay>1000</reuseDelay>
+		<targetType>ENEMY</targetType>
+		<activateRate>90</activateRate>
+		<affectObject>NOT_FRIEND</affectObject>
+		<affectRange>250</affectRange>
+		<affectScope>FAN</affectScope>
+		<affectLimit>5-12</affectLimit>
+		<fanRange>0;0;250;130</fanRange>
+		<basicProperty>PHYSICAL</basicProperty>
+		<isMagic>1</isMagic>
+		<magicLevel>127</magicLevel>
+		<effects>
+			<effect name="PhysicalDamage">
+				<power>15000</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="32498" toLevel="2" name="Scale Floor">
 		<!-- Atk. Spd./ Casting Spd. -10%, Speed -20. -->

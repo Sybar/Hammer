@@ -622,22 +622,18 @@
 		<node X="-20310" Y="182673" />
 		<node X="-20762" Y="179129" />
 	</zone>
-	<zone name="Orfen Boss" id="12013" type="ScriptZone" shape="NPoly" minZ="-5796" maxZ="-3796"> <!-- Not Verified -->
-		<stat name="default_enabled" val="false" />
-		<node X="43976" Y="24664" />
-		<node X="43284" Y="18952" />
-		<node X="42476" Y="18164" />
-		<node X="42480" Y="16448" />
-		<node X="43084" Y="15944" />
-		<node X="45140" Y="15816" />
-		<node X="48800" Y="15112" />
-		<node X="56556" Y="12040" />
-		<node X="59068" Y="14288" />
-		<node X="61064" Y="18492" />
-		<node X="60380" Y="23672" />
-		<node X="58724" Y="27412" />
-		<node X="55696" Y="28496" />
-		<node X="43976" Y="24664" />
+	<zone name="Orfen Boss Script" id="12013" type="ScriptZone" shape="NPoly" minZ="-3096" maxZ="-7996"> <!-- version 2025 script -->
+		<!-- <stat name="default_enabled" val="false" /> -->
+		<node X="47013" Y="18796" />
+		<node X="44565" Y="20728" />
+		<node X="42703" Y="20886" />
+		<node X="41118" Y="19808" />
+		<node X="40613" Y="17436" />
+		<node X="42060" Y="14379" />
+		<node X="44767" Y="13942" />
+		<node X="46580" Y="14420" />
+		<node X="47611" Y="15635" />
+		<node X="47552" Y="17939" />
 	</zone>
 	<zone name="Labyrinth of Belis" id="12014" type="ScriptZone" shape="NPoly" minZ="-8000" maxZ="-8700">
 		<node X="-117832" Y="214584" />

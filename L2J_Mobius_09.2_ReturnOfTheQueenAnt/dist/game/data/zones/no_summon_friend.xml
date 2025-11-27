@@ -207,19 +207,17 @@
 		<node X="184163" Y="-11640" />
 		<node X="184082" Y="-13600" />
 	</zone>
-	<zone name="Orfen_pvp_zone" type="NoSummonFriendZone" shape="NPoly" minZ="-3000" maxZ="-9000"> <!-- Orfen -->
-		<node X="45013" Y="18215" />
-		<node X="44231" Y="19158" />
-		<node X="43394" Y="19085" />
-		<node X="42811" Y="19415" />
-		<node X="41233" Y="18279" />
-		<node X="41201" Y="16209" />
-		<node X="42206" Y="14964" />
-		<node X="43587" Y="14710" />
-		<node X="44718" Y="14492" />
-		<node X="45719" Y="15273" />
-		<node X="45949" Y="16706" />
-		<node X="45500" Y="17749" />
+	<zone name="Orfen_zone_no_summon_friend" type="NoSummonFriendZone" shape="NPoly" minZ="-3000" maxZ="-9000"> <!-- Orfen -->
+		<node X="47013" Y="18796" />
+		<node X="44565" Y="20728" />
+		<node X="42703" Y="20886" />
+		<node X="41118" Y="19808" />
+		<node X="40613" Y="17436" />
+		<node X="42060" Y="14379" />
+		<node X="44767" Y="13942" />
+		<node X="46580" Y="14420" />
+		<node X="47611" Y="15635" />
+		<node X="47552" Y="17939" />
 	</zone>
 	<zone name="Trasken_Zone" id="12108" type="NoSummonFriendZone" shape="Cylinder" minZ="-16000" maxZ="16000" rad="8000">
 		<node X="81955" Y="-181606" />

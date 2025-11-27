@@ -1607,29 +1607,19 @@
 		</skillList>
 	</npc>
 	<npc id="29325" level="127" type="GrandBoss" name="Orfen" title="Sea of Spores' Mistress">
-		<!-- NEW UPDATE: PRELUDE OF WAR -->
 		<parameters>
-			<minions name="Privates">
-				<npc id="29326" count="4" respawnTime="360" weightPoint="1" /> <!-- Arima -->
-			</minions>
-			<skill name="Orfen_SkillID1" id="32486" level="1" />
-			<skill name="Orfen_SkillID2" id="32487" level="1" />
-			<skill name="Orfen_SkillID3" id="32488" level="1" />
-			<skill name="Orfen_SkillID4" id="32489" level="1" />
-			<skill name="Orfen_SkillID5" id="32491" level="1" />
-			<skill name="Orfen_SkillID6" id="32492" level="1" />
-			<skill name="Orfen_SkillID7" id="32493" level="1" />
-			<skill name="Orfen_SkillID8" id="32496" level="1" />
-			<param name="Orfen_SkillID1_Probablity" value="200" />
-			<param name="Orfen_SkillID2_Probablity" value="200" />
-			<param name="Orfen_SkillID3_Probablity" value="200" />
-			<param name="Orfen_SkillID4_Probablity" value="500" />
-			<param name="Orfen_SkillID5_Probablity" value="200" />
-			<param name="Orfen_SkillID6_Probablity" value="500" />
-			<param name="Orfen_SkillID7_Probablity" value="200" />
+			<skill name="Orfen_SkillID1" id="32486" level="1" /> <!-- Orfen Slasher -->
+			<skill name="Orfen_SkillID2" id="32487" level="1" /> <!-- Orfen Fatal Slasher -->
+			<skill name="Orfen_SkillID3" id="32488" level="1" /> <!-- Orfen Energy Scatter -->
+			<skill name="Orfen_SkillID4" id="32489" level="1" /> <!-- Orfen Fury Energy Wave -->
+			<param name="Orfen_SkillID1_Probablity" value="100" /> <!-- Slasher (10%) -->
+			<param name="Orfen_SkillID2_Probablity" value="270" /> <!-- Fatal Slasher (27%) -->
+			<param name="Orfen_SkillID3_Probablity" value="410" /> <!-- Energy Scatter (41%) -->
+			<param name="Orfen_SkillID4_Probablity" value="220" /> <!-- Fury Energy Wave (22%) -->
 			<param name="MoveAroundSocial" value="80" />
 			<param name="MoveAroundSocial1" value="80" />
 			<param name="MoveAroundSocial2" value="80" />
+			<param name="show_activated" value="0" />
 		</parameters>
 		<race>FAIRY</race>
 		<sex>FEMALE</sex>
@@ -1642,14 +1632,14 @@
 				<walk ground="80" />
 				<run ground="180" />
 			</speed>
-			<hitTime>710</hitTime>
+			<hitTime>970</hitTime>
 			<attribute>
 				<attack type="EARTH" value="2550" />
 				<defence fire="2650" water="2650" wind="2600" earth="2650" holy="2650" dark="2650" />
 			</attribute>
 			<abnormalResist physical="0" magical="0" />
 		</stats>
-		<status attackable="true" noSleepMode="true" />
+		<status noSleepMode="true" />
 		<collision>
 			<radius normal="75" />
 			<height normal="147" />
@@ -1675,17 +1665,9 @@
 			<skill id="32487" level="1" /> <!-- Orfen Fatal Slasher -->
 			<skill id="32488" level="1" /> <!-- Orfen Energy Scatter -->
 			<skill id="32489" level="1" /> <!-- Orfen Fury Energy Wave -->
-			<skill id="32490" level="1" /> <!-- Yoke of Orfen -->
-			<skill id="32491" level="1" /> <!-- Orfen Blow Up -->
-			<skill id="32492" level="1" /> <!-- Orfen Fatal Stamp -->
-			<skill id="32493" level="1" /> <!-- Orfen Raise Spore -->
-			<skill id="32494" level="1" /> <!-- Hallucinating Dust -->
-			<skill id="32495" level="1" /> <!-- Orfen Rage -->
-			<skill id="32496" level="1" /> <!-- Orfen's Rage -->
 		</skillList>
-		<corpseTime>300</corpseTime>
 		<exCrtEffect>true</exCrtEffect>
-		<ai type="BALANCED" aggroRange="1000" clanHelpRange="3500" isAggressive="true">
+		<ai type="MAGE" aggroRange="1000" clanHelpRange="3500" isAggressive="false">
 			<clanList>
 				<clan>ORFEN</clan>
 			</clanList>
@@ -1772,9 +1754,7 @@
 	</npc>
 	<npc id="29326" level="127" type="Monster" name="Arima" title="Orfen's Maid">
 		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="80" />
+			<skill name="Arima_SkillID1" id="32497" level="1" />
 		</parameters>
 		<race>BUG</race>
 		<sex>FEMALE</sex>
@@ -1805,12 +1785,11 @@
 			<skill id="4412" level="11" /> <!-- Average P. Def. -->
 			<skill id="4413" level="11" /> <!-- Average M. Def. -->
 			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="32675" level="1" /> <!-- Improved Immunity -->
+			<skill id="32497" level="1" /> <!-- Scale Slasher -->
 		</skillList>
-		<corpseTime>300</corpseTime>
 		<exCrtEffect>true</exCrtEffect>
-		<ai type="BALANCED" aggroRange="1000" clanHelpRange="3500" isAggressive="true">
+		<ai type="MAGE" aggroRange="1000" clanHelpRange="2000" isAggressive="true">
 			<clanList>
 				<clan>ORFEN</clan>
 			</clanList>
@@ -1871,7 +1850,6 @@
 		</collision>
 	</npc>
 	<npc id="29328" level="127" type="Monster" name="Torfedo">
-		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>BEAST</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -1889,6 +1867,11 @@
 			</attribute>
 		</stats>
 		<status attackable="true" />
+		<ai type="MAGE" aggroRange="900" clanHelpRange="800" isAggressive="false">
+			<clanList>
+				<clan>TORFEDO</clan>
+			</clanList>
+		</ai>
 		<collision>
 			<radius normal="32" />
 			<height normal="63.4" />
@@ -1901,10 +1884,12 @@
 			<skill id="16547" level="10" /> <!-- Danger Zone Resistance -->
 			<skill id="4438" level="5" /> <!-- Greater Sleep Resistance -->
 			<skill id="4440" level="5" /> <!-- Greater Paralysis Resistance -->
+			<skill id="14804" level="10" /> <!-- Damage Reflection Resistance -->
+			<skill id="32470" level="1" /> <!-- Putrid Spike -->
+			<skill id="32501" level="1" /> <!-- Putrid Spike -->
 		</skillList>
 	</npc>
 	<npc id="29329" level="127" type="Monster" name="Harane">
-		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>BUG</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -1922,6 +1907,11 @@
 			</attribute>
 		</stats>
 		<status attackable="true" />
+		<ai type="BALANCED" aggroRange="900" clanHelpRange="800" isAggressive="false">
+			<clanList>
+				<clan>HARANE</clan>
+			</clanList>
+		</ai>
 		<collision>
 			<radius normal="30" />
 			<height normal="18.5" />
@@ -1933,7 +1923,11 @@
 			<skill id="14821" level="1" /> <!-- Instant Kill Attack Resistance -->
 			<skill id="16547" level="10" /> <!-- Danger Zone Resistance -->
 			<skill id="4435" level="5" /> <!-- High Stun Attack Resistance -->
-			<skill id="4440" level="5" /> <!-- Greater Paralysis Resistance -->
+			<skill id="4440" level="5" /> <!-- Greater Paralysis Resistance -->	
+			<skill id="32474" level="1" /> <!-- Putrid Stun -->
+			<skill id="32478" level="1" /> <!-- Scale Strike -->
+			<skill id="32479" level="1" /> <!-- Scale Slasher -->
+			<skill id="32480" level="1" /> <!-- Scale Floor -->
 		</skillList>
 	</npc>
 	<npc id="29330" level="127" type="Monster" name="Escrito" title="Sea of Spores' Spawn">
