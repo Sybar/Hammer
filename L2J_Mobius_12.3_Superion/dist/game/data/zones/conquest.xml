@@ -1289,4 +1289,46 @@
 		<node X="15441" Y="-203517" />
 		<node X="15115" Y="-202846" />
 	</zone>
+	<zone name="conquest_peace_aura_01" type="NoPvPZone" shape="Cylinder" minZ="-16000" maxZ="10000" rad="100">
+		<node X="-8407" Y="-218778" />
+	</zone>
+	<zone name="conquest_peace_aura_02" type="NoPvPZone" shape="Cylinder" minZ="-16000" maxZ="10000" rad="100">
+		<node X="-5475" Y="-208091" />
+	</zone>
+	<zone name="conquest_peace_aura_03" type="NoPvPZone" shape="Cylinder" minZ="-16000" maxZ="10000" rad="100">
+		<node X="-10895" Y="-197724" />
+	</zone>
+	<zone name="conquest_peace_aura_04" type="NoPvPZone" shape="Cylinder" minZ="-16000" maxZ="10000" rad="100">
+		<node X="-3240" Y="-222385" />
+	</zone>
+	<zone name="conquest_peace_aura_05" type="NoPvPZone" shape="Cylinder" minZ="-16000" maxZ="10000" rad="100">
+		<node X="-10461" Y="-223098" />
+	</zone>
+	<zone name="conquest_peace_aura_06" type="NoPvPZone" shape="Cylinder" minZ="-16000" maxZ="10000" rad="100">
+		<node X="-26172" Y="-216986" />
+	</zone>
+	<zone name="conquest_peace_aura_07" type="NoPvPZone" shape="Cylinder" minZ="-16000" maxZ="10000" rad="100">
+		<node X="-24858" Y="-215113" />
+	</zone>
+	<zone name="conquest_peace_aura_08" type="NoPvPZone" shape="Cylinder" minZ="-16000" maxZ="10000" rad="100">
+		<node X="-25770" Y="-209421" />
+	</zone>
+	<zone name="conquest_peace_aura_09" type="NoPvPZone" shape="Cylinder" minZ="-16000" maxZ="10000" rad="100">
+		<node X="-28237" Y="-200403" />
+	</zone>
+	<zone name="conquest_peace_aura_10" type="NoPvPZone" shape="Cylinder" minZ="-16000" maxZ="10000" rad="100">
+		<node X="20355" Y="-205864" />
+	</zone>
+	<zone name="conquest_peace_aura_11" type="NoPvPZone" shape="Cylinder" minZ="-16000" maxZ="10000" rad="100">
+		<node X="21469" Y="-211922" />
+	</zone>
+	<zone name="conquest_peace_aura_12" type="NoPvPZone" shape="Cylinder" minZ="-16000" maxZ="10000" rad="100">
+		<node X="10132" Y="-214866" />
+	</zone>
+	<zone name="conquest_peace_aura_13" type="NoPvPZone" shape="Cylinder" minZ="-16000" maxZ="10000" rad="100">
+		<node X="13858" Y="-222299" />
+	</zone>
+	<zone name="conquest_peace_aura_14" type="NoPvPZone" shape="Cylinder" minZ="-16000" maxZ="10000" rad="100">
+		<node X="-5916" Y="-203505" />
+	</zone>
 </list>
