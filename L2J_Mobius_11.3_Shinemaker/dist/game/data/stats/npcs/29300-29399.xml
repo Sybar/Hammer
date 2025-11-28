@@ -5747,7 +5747,7 @@
 			</attribute>
 		</stats>
 		<status attackable="true" noSleepMode="true" />
-		<ai type="MAGE" clanHelpRange="2000" aggroRange="2000" isAggressive="true">
+		<ai type="MAGE" clanHelpRange="2000" isAggressive="false">
 			<clanList>
 				<clan>ANTHARAS</clan>
 			</clanList>
@@ -5794,7 +5794,7 @@
 			</attribute>
 		</stats>
 		<status attackable="true" noSleepMode="true" />
-		<ai type="MAGE" clanHelpRange="4000" aggroRange="4000" isAggressive="true">
+		<ai type="MAGE" clanHelpRange="2000" aggroRange="2000" isAggressive="true">
 			<clanList>
 				<clan>ANTHARAS</clan>
 			</clanList>

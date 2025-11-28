@@ -51,19 +51,19 @@
 		<affectObject>NOT_FRIEND</affectObject>
 		<affectScope>SQUARE</affectScope>
 		<attributeType>FIRE</attributeType>
-		<attributeValue>180</attributeValue>
-		<castRange>600</castRange>
-		<coolTime>300</coolTime>
+		<attributeValue>2500</attributeValue>
+		<castRange>400</castRange>
+		<coolTime>500</coolTime>
 		<effectPoint>-100</effectPoint>
 		<effectRange>350</effectRange>
 		<fanRange>0;0;500;300</fanRange>
-		<hitTime>1300</hitTime>
+		<hitTime>1000</hitTime>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<magicLevel>97</magicLevel>
+		<magicLevel>120</magicLevel>
 		<reuseDelay>1000</reuseDelay>
 		<effects>
 			<effect name="MagicalDamage">
-				<power>300</power>
+				<power>45000</power>
 			</effect>
 		</effects>
 	</skill>
@@ -83,18 +83,19 @@
 		<attributeType>FIRE</attributeType>
 		<attributeValue>180</attributeValue>
 		<basicProperty>NONE</basicProperty>
-		<castRange>1500</castRange>
+		<castRange>800</castRange>
 		<coolTime>1400</coolTime>
 		<effectPoint>-100</effectPoint>
 		<hitTime>3600</hitTime>
 		<isDebuff>true</isDebuff>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<magicLevel>97</magicLevel>
+		<magicLevel>120</magicLevel>
 		<reuseDelay>6000</reuseDelay>
 		<trait>SHOCK</trait>
 		<effects>
-			<effect name="PhysicalDamage">
-				<power>2000</power>
+			<effect name="MagicalDamage">
+				<power>140000</power>
+				<overHit>true</overHit>
 			</effect>
 			<effect name="BlockActions">
 				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912;7002;18721;18722;28203;30516;35190</allowedSkills>
@@ -110,37 +111,21 @@
 		<abnormalTime>3</abnormalTime>
 		<abnormalType>KNOCKDOWN</abnormalType>
 		<abnormalVisualEffect>KNOCKDOWN</abnormalVisualEffect>
-		<activateRate>
-			<value fromLevel="1" toLevel="11">50</value>
-			<value fromLevel="3" toLevel="11" fromSubLevel="2001" toSubLevel="2020">{base + (base / 100 * subIndex)}</value>
-		</activateRate>
+		<activateRate>50</activateRate>
 		<affectObject>NOT_FRIEND</affectObject>
 		<affectRange>500</affectRange>
 		<affectScope>RANGE</affectScope>
-		<basicProperty>PHYSICAL</basicProperty> <!-- Guessed -->
+		<basicProperty>PHYSICAL</basicProperty> 
 		<castRange>2000</castRange>
 		<effectPoint>-507</effectPoint>
 		<hitTime>3600</hitTime>
 		<isDebuff>true</isDebuff>
 		<lvlBonusRate>1</lvlBonusRate>
-		<magicLevel>117</magicLevel>
+		<magicLevel>120</magicLevel>
 		<trait>KNOCKDOWN</trait>
 		<effects>
 			<effect name="PhysicalDamage">
-				<power>
-					<value level="1">22536</value>
-					<value level="2">26428</value>
-					<value level="3">29542</value>
-					<value level="4">32656</value>
-					<value level="5">35788</value>
-					<value level="6">37424</value>
-					<value level="7">39060</value>
-					<value level="8">41514</value>
-					<value level="9">43968</value>
-					<value level="10">48365</value>
-					<value level="11">53202</value>
-					<value fromLevel="3" toLevel="11" fromSubLevel="1001" toSubLevel="1020">{base + (base / 100 * subIndex)}</value>
-				</power>
+				<power>803202</power>
 				<ignoreShieldDefence>true</ignoreShieldDefence>
 				<overHit>true</overHit>
 			</effect>
@@ -159,8 +144,8 @@
 	<skill id="34310" toLevel="1" name="Earth Scratch">
 		<!-- A Knockdown effect from a powerful ground-breaking attack. The effect cannot be guarded against. -->
 		<icon>icon.s_raid_antaras_scratch_earth1</icon>
-		<operateType>A2</operateType>
-		<targetType>ENEMY</targetType>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
 		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>3</abnormalTime>
 		<abnormalType>KNOCKDOWN</abnormalType>
@@ -170,7 +155,7 @@
 		<affectRange>1000</affectRange>
 		<affectScope>SQUARE</affectScope>
 		<attributeType>FIRE</attributeType>
-		<attributeValue>180</attributeValue>
+		<attributeValue>2500</attributeValue>
 		<basicProperty>PHYSICAL</basicProperty>
 		<castRange>500</castRange>
 		<coolTime>1000</coolTime>
@@ -181,16 +166,14 @@
 		<isDebuff>true</isDebuff>
 		<isMagic>0</isMagic>
 		<magicCriticalRate>25</magicCriticalRate>
-		<magicLevel>114</magicLevel>
+		<magicLevel>120</magicLevel>
 		<reuseDelay>5000</reuseDelay>
 		<trait>KNOCKDOWN</trait>
 		<effects>
-			<effect name="PhysicalDamage">
-				<power>97730</power>
+			<effect name="MagicalDamage">
+				<power>117730</power>
 				<overHit>true</overHit>
-				<criticalChance>
-					<value fromLevel="1" toLevel="9">10</value>
-					<value fromLevel="1" toLevel="9" fromSubLevel="2001" toSubLevel="2020">{base + (base / 100 * subIndex)}</value></criticalChance>
+				<criticalChance>70</criticalChance>
 			</effect>
 			<effect name="BlockActions">
 				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912;7002;18721;18722;28203;30516;35190</allowedSkills>
@@ -220,8 +203,37 @@
 	<skill id="34313" toLevel="1" name="Summon Stalactite">
 		<!-- The enemy falls into a trap that knocks them down. The effect cannot be resisted. -->
 		<icon>icon.s_raid_antaras_summon_stalactite1</icon>
-		<operateType>A1</operateType>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalResists>TURN_FLEE;KNOCKDOWN;DEPORT;SILENCE;PARALYZE;ABSORB;DISARM;SILENCE_PHYSICAL;SILENCE_ALL;CHANGEBODY;TURN_STONE;DERANGEMENT;AIRBIND;SLEEP;OBLIVION;MIRAGE;MIRAGE_TRAP;ROOT_MAGICALLY;ROOT_PHYSICALLY;STUN;PUBLIC_SLOT</abnormalResists>
+		<abnormalTime>3</abnormalTime>
+		<abnormalType>KNOCKDOWN</abnormalType>
+		<abnormalVisualEffect>KNOCKDOWN</abnormalVisualEffect>
+		<affectObject>NOT_FRIEND</affectObject>
+		<affectRange>200</affectRange>
+		<affectScope>POINT_BLANK</affectScope>
+		<attributeType>FIRE</attributeType>
+		<attributeValue>2500</attributeValue>
+		<basicProperty>NONE</basicProperty>
+		<castRange>800</castRange>
+		<coolTime>500</coolTime>
 		<effectPoint>-100</effectPoint>
+		<hitTime>2500</hitTime>
+		<isDebuff>true</isDebuff>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>120</magicLevel>
+		<reuseDelay>1000</reuseDelay>
+		<trait>KNOCKDOWN</trait>
+		<effects>
+			<effect name="MagicalDamage">
+				<power>150000</power>
+				<overHit>true</overHit>
+			</effect>
+			<effect name="BlockActions">
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912;7002;18721;18722;28203;30516;35190</allowedSkills>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="34314" toLevel="1" name="Summon Stalactite">
 		<!-- The enemy falls into a trap that knocks them down. The effect cannot be resisted. -->

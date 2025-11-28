@@ -4,7 +4,7 @@
 	<time duration="120" empty="5" />
 	<locations>
 		<enter type="FIXED">
-			<location x="177254" y="114821" z="-7704" />
+			<location x="114426" y="112648" z="-10576" />
 		</enter>
 		<exit type="ORIGIN" />
 	</locations>

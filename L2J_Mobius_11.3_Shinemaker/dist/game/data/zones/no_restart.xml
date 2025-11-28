@@ -366,4 +366,12 @@
 		<node X="-87121" Y="211950" />
 		<node X="-82180" Y="211846" />
 	</zone>
+	<zone name="fight_antharas_no_restart" type="NoRestartZone" shape="NPoly" minZ="-14131" maxZ="-7065"> <!-- 23_21 -->
+		<stat name="restartTime" val="1800" />
+		<stat name="restartAllowedTime" val="600" />
+		<node X="109723" Y="109352" />
+		<node X="109527" Y="121850" />
+		<node X="120857" Y="121987" />
+		<node X="120900" Y="109162" />
+	</zone>
 </list>

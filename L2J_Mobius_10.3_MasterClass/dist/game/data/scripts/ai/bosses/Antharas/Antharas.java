@@ -23,6 +23,7 @@ package ai.bosses.Antharas;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.l2jmobius.commons.threads.ThreadPool;
 import org.l2jmobius.gameserver.ai.Intention;
 import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.World;
@@ -56,6 +57,10 @@ public class Antharas extends AbstractInstance
 	private static final int ATTACK_SKILL_ID = 34309;
 	private static final SkillHolder ATTACK_SKILL = new SkillHolder(ATTACK_SKILL_ID, 1);
 	
+	// Skill Earth Scratch
+	private static final SkillHolder EARTH_SCRATCH_SKILL = new SkillHolder(34313, 1);
+	private static final int TRAP_NPC_ID = 18919;
+	
 	// Buff Antharas' Earth Guard
 	private static final int BUFF_ID = 34315;
 	
@@ -64,27 +69,26 @@ public class Antharas extends AbstractInstance
 	private static final int REWARD_COUNT = 1;
 	private static final String INSTANCE_COMPLETED = "instance_completed";
 	
-	// Locations AntharasSymbol
+	// Locations Antharas Symbol
 	private static final Location[] SYMBOL_LOCATIONS_1 =
 	{
-		new Location(179139, 114105, -7733),
-		new Location(178689, 115892, -7735),
-		new Location(177087, 114858, -7735),
-		new Location(177628, 113408, -7735)
+		new Location(114348, 114884, -10576),
+		new Location(113329, 114248, -10576),
+		new Location(114438, 113140, -10576),
+		new Location(115417, 114256, -10576)
 	};
 	private static final Location[] SYMBOL_LOCATIONS_2 =
 	{
-		new Location(179704, 114883, -7734),
-		new Location(178883, 113364, -7733),
-		new Location(178688, 116260, -7733),
-		new Location(177518, 114862, -7733)
+		new Location(114336, 115406, -10576),
+		new Location(113179, 114292, -10576),
+		new Location(114528, 112904, -10576),
+		new Location(115736, 114377, -10576)
 	};
-	private static final Location BOSS_SPAWN_LOC = new Location(178684, 114619, -7733);
-	private static final Location CLONE_SPAWN_LOC = new Location(178454, 114819, -7735);
 	
-	// Misc
+	private static final Location BOSS_SPAWN_LOC = new Location(114388, 114277, -10592);
+	private static final Location CLONE_SPAWN_LOC = new Location(113984, 114394, -10576);
+	
 	private static final int TEMPLATE_ID = 316;
-	private static final long SYMBOL_RESPAWN_DELAY = 5000; // 15 seconds
 	private static final long BOSS_SPAWN_DELAY = 5000; // 5 seconds
 	private static final long CHECK_SYMBOL_INTERVAL = 1000; // 1 second
 	
@@ -93,6 +97,7 @@ public class Antharas extends AbstractInstance
 		super(TEMPLATE_ID);
 		addTalkId(GUIDE);
 		addSpawnId(FIGHT_ANTHARAS);
+		addAttackId(FIGHT_ANTHARAS);
 		addKillId(FIGHT_ANTHARAS);
 		addKillId(ANTHARAS_SYMBOL);
 		addKillId(CLONE_FIGHT_ANTHARAS);
@@ -117,7 +122,13 @@ public class Antharas extends AbstractInstance
 		final Npc fightAntharas = instance.getParameters().getObject("fightAntharas", Npc.class);
 		if ((fightAntharas != null) && fightAntharas.isSpawned())
 		{
-			player.sendPacket(new NpcInfo(fightAntharas));
+			ThreadPool.schedule(() ->
+			{
+				if (player.isOnline() && (player.getInstanceWorld() == instance))
+				{
+					player.sendPacket(new NpcInfo(fightAntharas));
+				}
+			}, 2000);
 		}
 	}
 	
@@ -134,10 +145,28 @@ public class Antharas extends AbstractInstance
 	}
 	
 	@Override
+	public void onAttack(Npc npc, Player attacker, int damage, boolean isSummon)
+	{
+		if (npc.getId() == FIGHT_ANTHARAS)
+		{
+			final Instance world = npc.getInstanceWorld();
+			if (world != null)
+			{
+				if (!world.getParameters().getBoolean("earthScratchStarted", false))
+				{
+					world.getParameters().set("earthScratchStarted", true);
+					
+					startQuestTimer("manage_earth_scratch", 90000, npc, null);
+				}
+			}
+		}
+		super.onAttack(npc, attacker, damage, isSummon);
+	}
+	
+	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
 		final Instance world = npc != null ? npc.getInstanceWorld() : player != null ? player.getInstanceWorld() : null;
-		
 		if (world != null)
 		{
 			switch (event)
@@ -159,6 +188,52 @@ public class Antharas extends AbstractInstance
 				case "check_symbols":
 				{
 					checkSymbols(world);
+					break;
+				}
+				case "spawn_extra_symbol":
+				{
+					if (!world.getParameters().getBoolean("extraSymbolSpawned", false))
+					{
+						world.setParameter("extraSymbolSpawned", true);
+						Location extraLoc = new Location(114336, 115406, -10576);
+						final Npc extraSymbol = addSpawn(ANTHARAS_SYMBOL, extraLoc, false, 0, false, world.getId());
+						final List<Npc> symbols = world.getParameters().getList("SYMBOLS", Npc.class, new ArrayList<>());
+						symbols.add(extraSymbol);
+						
+						checkSymbols(world);
+					}
+					break;
+				}
+				case "manage_earth_scratch":
+				{
+					final Npc fightAntharas = world.getNpc(FIGHT_ANTHARAS);
+					if ((fightAntharas != null) && !fightAntharas.isDead())
+					{
+						if (!fightAntharas.isInCombat())
+						{
+							world.setParameter("earthScratchStarted", false);
+							break;
+						}
+						
+						final List<Player> players = new ArrayList<>(world.getPlayers());
+						players.removeIf(p -> p.isDead());
+						
+						int count = 0;
+						while (!players.isEmpty() && (count < 6))
+						{
+							final Player target = getRandomEntry(players);
+							players.remove(target);
+							
+							if (target != null)
+							{
+								final Npc trap = addSpawn(TRAP_NPC_ID, target.getLocation(), false, 7000, false, world.getId());
+								trap.setTarget(trap);
+								trap.doCast(EARTH_SCRATCH_SKILL.getSkill());
+							}
+							count++;
+						}
+						startQuestTimer("manage_earth_scratch", 90000, fightAntharas, null);
+					}
 					break;
 				}
 				case "spawn_fight_antharas":
@@ -200,20 +275,6 @@ public class Antharas extends AbstractInstance
 			}
 		}
 		
-		if (event.startsWith("respawn_symbol_") && (world != null))
-		{
-			final String[] parts = event.split("_");
-			final int index = Integer.parseInt(parts[2]);
-			final Location loc = SYMBOL_LOCATIONS_1[index];
-			
-			final String paramKey = "symbol_respawned_" + index;
-			if (!world.getParameters().getBoolean(paramKey, false))
-			{
-				addSpawn(ANTHARAS_SYMBOL, loc, false, 0, false, world.getId());
-				world.setParameter(paramKey, true);
-			}
-		}
-		
 		return super.onEvent(event, npc, player);
 	}
 	
@@ -224,9 +285,12 @@ public class Antharas extends AbstractInstance
 			final double currentHP = mainBoss.getCurrentHp();
 			final int maxHP = mainBoss.getMaxHp();
 			final int currentHPPercentage = (int) ((currentHP / maxHP) * 100);
+			
+			// 75% HP
 			if ((currentHPPercentage <= 75) && !world.getParameters().getBoolean("firstSymbolsSpawned", false))
 			{
 				world.setParameter("firstSymbolsSpawned", true);
+				
 				for (Location loc : SYMBOL_LOCATIONS_1)
 				{
 					final Npc symbol = addSpawn(ANTHARAS_SYMBOL, loc, false, 0, false, world.getId());
@@ -236,23 +300,33 @@ public class Antharas extends AbstractInstance
 				
 				world.setParameter("symbols_spawned", true);
 				mainBoss.broadcastSay(ChatType.NPC_GENERAL, "It's been a while since I face worthy adversaries. I'll show you my power. I will receive the power of the earth once again.");
+				
+				startQuestTimer("spawn_extra_symbol", 60000, mainBoss, null);
 			}
 			
+			// 15% HP
 			if ((currentHPPercentage <= 15) && !world.getParameters().getBoolean("symbolsSpawned15", false))
 			{
 				world.setParameter("symbolsSpawned15", true);
+				world.setParameter("secondSymbolsSpawned", true);
+				world.setParameter("wave2KillCount", 0);
+				
 				for (Location loc : SYMBOL_LOCATIONS_2)
 				{
 					final Npc symbol = addSpawn(ANTHARAS_SYMBOL, loc, false, 0, false, world.getId());
 					final List<Npc> symbols = world.getParameters().getList("SYMBOLS", Npc.class, new ArrayList<>());
 					symbols.add(symbol);
+					symbol.getVariables().set("isWave2", true);
 				}
 				
 				world.setParameter("symbols_spawned", true);
 				mainBoss.broadcastSay(ChatType.NPC_GENERAL, "It's been a while since I face worthy adversaries. I'll show you my power. I will receive the power of the earth once again.");
+				checkSymbols(world);
 			}
 			
 			checkSymbols(world);
+			
+			// 50% HP
 			if ((currentHPPercentage <= 50) && !world.getParameters().getBoolean("clonesSpawned", false))
 			{
 				world.setParameter("clonesSpawned", true);
@@ -298,40 +372,45 @@ public class Antharas extends AbstractInstance
 		
 		if (npc.getId() == ANTHARAS_SYMBOL)
 		{
-			for (int i = 0; i < SYMBOL_LOCATIONS_1.length; i++)
-			{
-				final Location loc = SYMBOL_LOCATIONS_1[i];
-				if (npc.calculateDistance2D(loc) < 10)
-				{
-					startQuestTimer("respawn_symbol_" + i, SYMBOL_RESPAWN_DELAY, null, null);
-					break;
-				}
-			}
-			
 			final List<Npc> symbols = world.getParameters().getList("SYMBOLS", Npc.class, new ArrayList<>());
 			symbols.remove(npc);
-			if (symbols.isEmpty() && world.getParameters().getBoolean("firstSymbolsSpawned", false) && !world.getParameters().getBoolean("secondSymbolsSpawned", false))
+			
+			final boolean firstWaveDone = world.getParameters().getBoolean("firstSymbolsSpawned", false);
+			final boolean extraSymbolSpawned = world.getParameters().getBoolean("extraSymbolSpawned", false);
+			
+			if (symbols.isEmpty())
 			{
-				world.setParameter("secondSymbolsSpawned", true);
-				for (Location loc : SYMBOL_LOCATIONS_2)
+				final Npc fightAntharas = world.getNpc(FIGHT_ANTHARAS);
+				if ((fightAntharas != null) && world.getParameters().getBoolean("buffApplied", false))
 				{
-					final Npc symbol = addSpawn(ANTHARAS_SYMBOL, loc, false, 0, false, world.getId());
-					symbols.add(symbol);
+					fightAntharas.getEffectList().stopSkillEffects(null, BUFF_ID);
+					world.getParameters().set("buffApplied", false);
 				}
 			}
 			
-			if (symbols.isEmpty())
+			if (symbols.isEmpty() && firstWaveDone && extraSymbolSpawned && !world.getParameters().getBoolean("msgWave1Sent", false))
 			{
 				final Npc fightAntharas = world.getNpc(FIGHT_ANTHARAS);
 				if (fightAntharas != null)
 				{
 					fightAntharas.broadcastSay(ChatType.NPC_GENERAL, "All my symbols were destroyed!");
+					world.setParameter("msgWave1Sent", true);
 				}
+			}
+			
+			if (npc.getVariables().getBoolean("isWave2", false))
+			{
+				final int killCount = world.getParameters().getInt("wave2KillCount", 0) + 1;
+				world.setParameter("wave2KillCount", killCount);
 				
-				if ((fightAntharas != null) && world.getParameters().getBoolean("buffApplied", false))
+				if ((killCount >= 4) && !world.getParameters().getBoolean("msgWave2Sent", false))
 				{
-					fightAntharas.getEffectList().stopSkillEffects(null, BUFF_ID);
-					world.getParameters().set("buffApplied", false);
+					final Npc fightAntharas = world.getNpc(FIGHT_ANTHARAS);
+					if (fightAntharas != null)
+					{
+						fightAntharas.broadcastSay(ChatType.NPC_GENERAL, "All my symbols were destroyed!");
+						world.setParameter("msgWave2Sent", true);
+					}
 				}
 			}
 		}
@@ -357,13 +436,18 @@ public class Antharas extends AbstractInstance
 			}
 			
 			cancelQuestTimers("check_antharas_hp");
+			cancelQuestTimers("manage_earth_scratch");
+			cancelQuestTimers("spawn_extra_symbol");
 			world.getParameters().remove("fightAntharas");
 			world.setParameter("symbolsSpawned15", false);
 			world.setParameter("clonesSpawned", false);
 			world.setParameter("firstSymbolsSpawned", false);
 			world.setParameter("secondSymbolsSpawned", false);
+			world.setParameter("extraSymbolSpawned", false);
+			world.setParameter("earthScratchStarted", false);
+			world.setParameter("msgWave1Sent", false);
+			world.setParameter("msgWave2Sent", false);
 			cancelQuestTimers("antharas_attack");
-			
 			finishInstance(killer);
 		}
 	}
