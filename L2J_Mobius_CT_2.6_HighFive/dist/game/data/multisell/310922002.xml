@@ -3,40 +3,439 @@
 	<npcs>
 		<npc>31092</npc> <!-- Black Marketeer of Mammon -->
 	</npcs>
+
+	<!-- Superior Enchant Armor 60% -->
+
+	<item>
+		<!-- Ancient Adena -->
+		<ingredient count="5000" id="5575" />
+		<!-- Adena -->
+		<ingredient count="50000" id="57" />
+		<!-- Steel Mold -->
+		<ingredient count="10" id="1883" />
+		<!-- Superior Scroll: Enchant Armor (D-Grade) -->
+		<production count="1" id="22010" />
+	</item>
+	<item>
+		<!-- Ancient Adena -->
+		<ingredient count="5000" id="5575" />
+		<!-- Adena -->
+		<ingredient count="50000" id="57" />
+		<!-- Steel Mold -->
+		<ingredient count="10" id="1883" />
+		<!-- Superior Scroll: Enchant Armor (C-Grade) -->
+		<production count="1" id="22011" />
+	</item>
+	<item>
+		<!-- Ancient Adena -->
+		<ingredient count="5000" id="5575" />
+		<!-- Adena -->
+		<ingredient count="50000" id="57" />
+		<!-- Steel Mold -->
+		<ingredient count="10" id="1883" />
+		<!-- Superior Scroll: Enchant Armor (B-Grade) -->
+		<production count="1" id="22012" />
+	</item>
+	<item>
+		<!-- Ancient Adena -->
+		<ingredient count="5000" id="5575" />
+		<!-- Adena -->
+		<ingredient count="50000" id="57" />
+		<!-- Steel Mold -->
+		<ingredient count="10" id="1883" />
+		<!-- Superior Scroll: Enchant Armor (A-Grade) -->
+		<production count="1" id="22013" />
+	</item>
+	<item>
+		<!-- Ancient Adena -->
+		<ingredient count="5000" id="5575" />
+		<!-- Adena -->
+		<ingredient count="50000" id="57" />
+		<!-- Steel Mold -->
+		<ingredient count="10" id="1883" />
+		<!-- Superior Scroll: Enchant Armor (S-Grade) -->
+		<production count="1" id="20518" />
+	</item>
+
+	<!-- LINE BREAK ITEM -->
+
 	<item>
 		<!-- Adena -->
 		<ingredient count="400000" id="57" />
 		<!-- Ancient Book: Divine Inspiration (Modern Language Version) -->
 		<production count="1" id="8618" />
 	</item>
+
+	<!-- LINE BREAK ITEM -->
+
+	<!-- Armor-Type Enhance Backup Stone -->
+
+	<item>
+		<!-- Ancient Adena -->
+		<ingredient count="5000" id="5575" />
+		<!-- Adena -->
+		<ingredient count="50000" id="57" />
+		<!-- Steel Mold -->
+		<ingredient count="10" id="1883" />
+		<!-- Armor-Type Enhance Backup Stone (D-Grade) -->
+		<production count="1" id="12367" />
+	</item>
+	<item>
+		<!-- Ancient Adena -->
+		<ingredient count="5000" id="5575" />
+		<!-- Adena -->
+		<ingredient count="50000" id="57" />
+		<!-- Steel Mold -->
+		<ingredient count="10" id="1883" />
+		<!-- Armor-Type Enhance Backup Stone (C-Grade) -->
+		<production count="1" id="12368" />
+	</item>
+	<item>
+		<!-- Ancient Adena -->
+		<ingredient count="5000" id="5575" />
+		<!-- Adena -->
+		<ingredient count="50000" id="57" />
+		<!-- Steel Mold -->
+		<ingredient count="10" id="1883" />
+		<!-- Armor-Type Enhance Backup Stone (B-Grade) -->
+		<production count="1" id="12369" />
+	</item>
+	<item>
+		<!-- Ancient Adena -->
+		<ingredient count="5000" id="5575" />
+		<!-- Adena -->
+		<ingredient count="50000" id="57" />
+		<!-- Steel Mold -->
+		<ingredient count="10" id="1883" />
+		<!-- Armor-Type Enhance Backup Stone (A-Grade) -->
+		<production count="1" id="12370" />
+	</item>
+	<item>
+		<!-- Ancient Adena -->
+		<ingredient count="5000" id="5575" />
+		<!-- Adena -->
+		<ingredient count="50000" id="57" />
+		<!-- Steel Mold -->
+		<ingredient count="10" id="1883" />
+		<!-- Armor-Type Enhance Backup Stone (S-Grade) -->
+		<production count="1" id="12371" />
+	</item>
+
+	<!-- LINE BREAK ITEM -->
+
 	<item>
 		<!-- Ancient Adena -->
 		<ingredient count="660000" id="5575" />
 		<!-- Transformation Sealbook: Death Blader -->
 		<production count="1" id="9649" />
 	</item>
+
+	<!-- LINE BREAK ITEM -->
+
+	<!-- Superior Enchant Weapon 60% -->
+
+	<item>
+		<!-- Ancient Adena -->
+		<ingredient count="5000" id="5575" />
+		<!-- Adena -->
+		<ingredient count="50000" id="57" />
+		<!-- Steel Mold -->
+		<ingredient count="10" id="1883" />
+		<!-- Superior Scroll: Enchant Weapon (D-Grade) -->
+		<production count="1" id="22006" />
+	</item>
+	<item>
+		<!-- Ancient Adena -->
+		<ingredient count="5000" id="5575" />
+		<!-- Adena -->
+		<ingredient count="50000" id="57" />
+		<!-- Steel Mold -->
+		<ingredient count="10" id="1883" />
+		<!-- Superior Scroll: Enchant Weapon (C-Grade) -->
+		<production count="1" id="22007" />
+	</item>
+	<item>
+		<!-- Ancient Adena -->
+		<ingredient count="5000" id="5575" />
+		<!-- Adena -->
+		<ingredient count="50000" id="57" />
+		<!-- Steel Mold -->
+		<ingredient count="10" id="1883" />
+		<!-- Superior Scroll: Enchant Weapon (B-Grade) -->
+		<production count="1" id="22008" />
+	</item>
+	<item>
+		<!-- Ancient Adena -->
+		<ingredient count="5000" id="5575" />
+		<!-- Adena -->
+		<ingredient count="50000" id="57" />
+		<!-- Steel Mold -->
+		<ingredient count="10" id="1883" />
+		<!-- Superior Scroll: Enchant Weapon (A-Grade) -->
+		<production count="1" id="22009" />
+	</item>
+	<item>
+		<!-- Ancient Adena -->
+		<ingredient count="5000" id="5575" />
+		<!-- Adena -->
+		<ingredient count="50000" id="57" />
+		<!-- Steel Mold -->
+		<ingredient count="10" id="1883" />
+		<!-- Superior Scroll: Enchant Weapon (S-Grade) -->
+		<production count="1" id="20517" />
+	</item>
+
+	<!-- LINE BREAK ITEM -->
+
 	<item>
 		<!-- Wooden Arrow -->
 		<ingredient count="100" id="17" />
 		<!-- Wooden Bolt -->
 		<production count="100" id="9632" />
 	</item>
+
+	<!-- LINE BREAK ITEM -->
+
+	<!-- Weapon-Type Enhance Backup Stone -->
+
+	<item>
+		<!-- Ancient Adena -->
+		<ingredient count="5000" id="5575" />
+		<!-- Adena -->
+		<ingredient count="50000" id="57" />
+		<!-- Steel Mold -->
+		<ingredient count="10" id="1883" />
+		<!-- Weapon-Type Enhance Backup Stone (D-Grade) -->
+		<production count="1" id="12362" />
+	</item>
+	<item>
+		<!-- Ancient Adena -->
+		<ingredient count="5000" id="5575" />
+		<!-- Adena -->
+		<ingredient count="50000" id="57" />
+		<!-- Steel Mold -->
+		<ingredient count="10" id="1883" />
+		<!-- Weapon-Type Enhance Backup Stone (C-Grade) -->
+		<production count="1" id="12363" />
+	</item>
+	<item>
+		<!-- Ancient Adena -->
+		<ingredient count="5000" id="5575" />
+		<!-- Adena -->
+		<ingredient count="50000" id="57" />
+		<!-- Steel Mold -->
+		<ingredient count="10" id="1883" />
+		<!-- Weapon-Type Enhance Backup Stone (B-Grade) -->
+		<production count="1" id="12364" />
+	</item>
+	<item>
+		<!-- Ancient Adena -->
+		<ingredient count="5000" id="5575" />
+		<!-- Adena -->
+		<ingredient count="50000" id="57" />
+		<!-- Steel Mold -->
+		<ingredient count="10" id="1883" />
+		<!-- Weapon-Type Enhance Backup Stone (A-Grade) -->
+		<production count="1" id="12365" />
+	</item>
+	<item>
+		<!-- Ancient Adena -->
+		<ingredient count="5000" id="5575" />
+		<!-- Adena -->
+		<ingredient count="50000" id="57" />
+		<!-- Steel Mold -->
+		<ingredient count="10" id="1883" />
+		<!-- Weapon-Type Enhance Backup Stone (S-Grade) -->
+		<production count="1" id="12366" />
+	</item>
+
+	<!-- LINE BREAK ITEM -->
+
 	<item>
 		<!-- Silver Arrow -->
 		<ingredient count="100" id="1343" />
 		<!-- Silver Bolt -->
 		<production count="100" id="9635" />
 	</item>
+
+	<!-- LINE BREAK ITEM -->
+
+	<!-- BLESSED ENCHANT ARMOR -->
+
+	<item>
+		<!-- Ancient Adena -->
+		<ingredient count="5000" id="5575" />
+		<!-- Adena -->
+		<ingredient count="50000" id="57" />
+		<!-- Steel Mold -->
+		<ingredient count="10" id="1883" />
+		<!-- Blessed Scroll: Enchant Armor (D-Grade) -->
+		<production count="1" id="6576" />
+	</item>
+	<item>
+		<!-- Ancient Adena -->
+		<ingredient count="10000" id="5575" />
+		<!-- Adena -->
+		<ingredient count="100000" id="57" />
+		<!-- Silver Mold -->
+		<ingredient count="10" id="1886" />
+		<!-- Blessed Scroll: Enchant Armor (C-Grade) -->
+		<production count="1" id="6574" />
+	</item>
+	<item>
+		<!-- Ancient Adena -->
+		<ingredient count="20000" id="5575" />
+		<!-- Adena -->
+		<ingredient count="250000" id="57" />
+		<!-- Craftsman's Mold -->
+		<ingredient count="10" id="4047" />
+		<!-- Blessed Scroll: Enchant Armor (B-Grade) -->
+		<production count="1" id="6572" />
+	</item>
+	<item>
+		<!-- Ancient Adena -->
+		<ingredient count="20000" id="5575" />
+		<!-- Adena -->
+		<ingredient count="250000" id="57" />
+		<!-- Maestro Mold -->
+		<ingredient count="10" id="4048" />
+		<!-- Blessed Scroll: Enchant Armor (A-Grade) -->
+		<production count="1" id="6570" />
+	</item>
+	<item>
+		<!-- Ancient Adena -->
+		<ingredient count="50000" id="5575" />
+		<!-- Adena -->
+		<ingredient count="1000000" id="57" />
+		<!-- Warsmith's Mold -->
+		<ingredient count="10" id="5552" />
+		<!-- Blessed Scroll: Enchant Armor (S-Grade) -->
+		<production count="1" id="6578" />
+	</item>
+
+	<!-- LINE BREAK ITEM -->
+
 	<item>
 		<!-- Mithril Arrow -->
 		<ingredient count="100" id="1344" />
 		<!-- Mithril Bolt -->
 		<production count="100" id="9636" />
 	</item>
+
+	<!-- LINE BREAK ITEM -->
+
+	<!-- BLESSED ENCHANT WEAPON -->
+
+	<item>
+		<!-- Ancient Adena -->
+		<ingredient count="5000" id="5575" />
+		<!-- Adena -->
+		<ingredient count="50000" id="57" />
+		<!-- Steel Mold -->
+		<ingredient count="10" id="1883" />
+		<!-- Blessed Scroll: Enchant Weapon (D-Grade) -->
+		<production count="1" id="6575" />
+	</item>
+	<item>
+		<!-- Ancient Adena -->
+		<ingredient count="10000" id="5575" />
+		<!-- Adena -->
+		<ingredient count="100000" id="57" />
+		<!-- Silver Mold -->
+		<ingredient count="10" id="1886" />
+		<!-- Blessed Scroll: Enchant Weapon (C-Grade) -->
+		<production count="1" id="6573" />
+	</item>
+	<item>
+		<!-- Ancient Adena -->
+		<ingredient count="20000" id="5575" />
+		<!-- Adena -->
+		<ingredient count="250000" id="57" />
+		<!-- Craftsman's Mold -->
+		<ingredient count="10" id="4047" />
+		<!-- Blessed Scroll: Enchant Weapon (B-Grade) -->
+		<production count="1" id="6571" />
+	</item>
+	<item>
+		<!-- Ancient Adena -->
+		<ingredient count="20000" id="5575" />
+		<!-- Adena -->
+		<ingredient count="250000" id="57" />
+		<!-- Maestro Mold -->
+		<ingredient count="10" id="4048" />
+		<!-- Blessed Scroll: Enchant Weapon (A-Grade) -->
+		<production count="1" id="6569" />
+	</item>
+	<item>
+		<!-- Ancient Adena -->
+		<ingredient count="50000" id="5575" />
+		<!-- Adena -->
+		<ingredient count="1000000" id="57" />
+		<!-- Warsmith's Mold -->
+		<ingredient count="10" id="5552" />
+		<!-- Blessed Scroll: Enchant Weapon (S-Grade) -->
+		<production count="1" id="6577" />
+	</item>
+
+	<!-- LINE BREAK ITEM -->
+
 	<item>
 		<!-- Shining Arrow -->
 		<ingredient count="100" id="1345" />
 		<!-- Shining Bolt -->
 		<production count="100" id="9637" />
 	</item>
+
+	<!-- LINE BREAK ITEM -->
+
+	<item>
+		<!-- PETS TEST -->
+		<ingredient count="100" id="57" />
+		<!-- PET TEST -->
+		<production count="1" id="13020" />
+	</item>
+	<item>
+		<!-- PETS TEST -->
+		<ingredient count="100" id="57" />
+		<!-- PET TEST -->
+		<production count="1" id="13019" />
+	</item>
+	<item>
+		<!-- PETS TEST -->
+		<ingredient count="100" id="57" />
+		<!-- PET TEST -->
+		<production count="1" id="13017" />
+	</item>
+	<item>
+		<!-- PETS TEST -->
+		<ingredient count="100" id="57" />
+		<!-- PET TEST -->
+		<production count="1" id="13018" />
+	</item>
+	<item>
+		<!-- PETS TEST -->
+		<ingredient count="100" id="57" />
+		<!-- PET TEST -->
+		<production count="1" id="14061" />
+	</item>
+	<item>
+		<!-- PETS TEST -->
+		<ingredient count="100" id="57" />
+		<!-- PET TEST -->
+		<production count="1" id="14062" />
+	</item>
+	<item>
+		<!-- PETS TEST -->
+		<ingredient count="100" id="57" />
+		<!-- PET TEST -->
+		<production count="1" id="14064" />
+	</item>
+	<item>
+		<!-- PETS TEST -->
+		<ingredient count="100" id="57" />
+		<!-- PET TEST -->
+		<production count="1" id="14063" />
+	</item>
+
+
 </list>

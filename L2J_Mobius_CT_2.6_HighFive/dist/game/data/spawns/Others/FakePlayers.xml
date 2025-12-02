@@ -1,6 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list enabled="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/spawns.xsd">
-	<spawn name="FakePlayers">
-		<npc id="80000" x="83485" y="147998" z="-3407" heading="23509" respawnDelay="60" /> <!-- Evi -->
-	</spawn>
+
+    <spawn name="FakePlayers">
+
+        <!-- ===================== -->
+        <!-- ORIGINAL 7 NPCs       -->
+        <!-- ===================== -->
+        <npc id="80000" x="83485" y="147998" z="-3407" heading="23509" respawnDelay="60" /> <!-- Evi -->
+        <npc id="80001" x="83450" y="147950" z="-3407" heading="20000" respawnDelay="60" /> <!-- Duran -->
+        <npc id="80002" x="83420" y="147930" z="-3407" heading="16000" respawnDelay="60" /> <!-- Alaric -->
+        <npc id="80003" x="83480" y="147930" z="-3407" heading="32000" respawnDelay="60" /> <!-- Lyra -->
+        <npc id="80004" x="83450" y="147980" z="-3407" heading="8000"  respawnDelay="60" /> <!-- Voren -->
+        <npc id="80005" x="83420" y="147970" z="-3407" heading="40000" respawnDelay="60" /> <!-- Grulk -->
+        <npc id="80006" x="83480" y="147970" z="-3407" heading="48000" respawnDelay="60" /> <!-- Kaelis -->
+
+        <!-- ===================== -->
+        <!-- DWARVEN VILLAGE       -->
+        <!-- ===================== -->
+
+        <!-- DWARVEN VILLAGE -->
+        <npc id="80010" x="116635" y="-182351" z="-1512" heading="23509" respawnDelay="60" /> <!-- Borik -->
+        <npc id="80011" x="116646" y="-182352" z="-1512" heading="23509" respawnDelay="60" /> <!-- Grenda -->
+        <npc id="80012" x="116657" y="-182353" z="-1512" heading="23509" respawnDelay="60" /> <!-- Drogun -->
+        <npc id="80013" x="116668" y="-182354" z="-1512" heading="23509" respawnDelay="60" /> <!-- Bruni -->
+        <npc id="80014" x="116679" y="-182355" z="-1512" heading="23509" respawnDelay="60" /> <!-- Thorin -->
+
+    </spawn>
+
 </list>

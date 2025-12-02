@@ -90,7 +90,7 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="item_skill" val="26005-1" /> <!-- Large Fortuna Cube -->
 	</item>
-	<item id="22006" type="EtcItem" name="Scroll: Enchant Weapon (C-Grade)">
+	<item id="22006" type="EtcItem" name="Scroll: Enchant Weapon (D-Grade)">
 		<!-- 10 % increase in enchant success rate. . Attack power for D-grade sword, one-handed blunt, one-handed dagger, spear, other swords, two-handed sword, two-handed blunt, dualsword, and combat/two-handed weapons increases by 2 when enchanted. Attack power for bow weapons increases by 4. Magic power for all weapons increases by 2. Attack and magic power increase two times after +4. No exchange/drop are allowed. -->
 		<set name="icon" val="br_cashtex.item.br_cash_scrl_of_ench_wp_d_i00" />
 		<set name="default_action" val="SKILL_REDUCE" />

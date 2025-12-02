@@ -1,27 +1,186 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/npcs.xsd">
-	<!-- Spectral Dancer -->
-	<npc id="80000" level="78" type="Folk" name="Evi">
-		<race>DARK_ELF</race>
-		<sex>FEMALE</sex>
-		<stats str="103" int="40" dex="53" wit="37" con="84" men="39">
-			<vitals hp="18857" hpRegen="10.8" mp="3863" mpRegen="3.0" />
-			<attack physical="10198" magical="1305" random="30" critical="132" accuracy="177" attackSpeed="588" type="FIST" range="40" distance="80" width="120" />
-			<defence physical="3388" magical="2450" />
-			<attribute>
-				<defence fire="200" water="250" wind="250" earth="250" holy="250" dark="250" />
-				<attack type="WATER" value="330" />
-			</attribute>
-			<speed>
-				<walk ground="85" />
-				<run ground="139" />
-			</speed>
-		</stats>
-		<status talkable="false" undying="true" attackable="false" />
-		<fakePlayer classId="107" hair="1" hairColor="0" face="0" equipRHand="5706" equipHead="2419" equipGloves="5774" equipChest="2383" equipFeet="5786" />
-		<collision>
-			<radius normal="7.5" />
-			<height normal="24" />
-		</collision>
-	</npc>
+
+    <!-- Spectral Dancer (Dark Elf) -->
+    <npc id="80000" level="78" type="Folk" name="Evi">
+        <race>DARK_ELF</race>
+        <sex>FEMALE</sex>
+        <stats str="41" int="40" dex="53" wit="37" con="84" men="39">
+            <vitals hp="18857" hpRegen="10.8" mp="3863" mpRegen="3.0" />
+            <attack physical="10198" magical="1305" random="30" critical="132" accuracy="177" attackSpeed="588" type="FIST" range="40" distance="80" width="120" />
+            <defence physical="3388" magical="2450" />
+            <attribute>
+                <defence fire="200" water="250" wind="250" earth="250" holy="250" dark="250" />
+                <attack type="WATER" value="330" />
+            </attribute>
+            <speed>
+                <walk ground="85" />
+                <run ground="139" />
+            </speed>
+        </stats>
+        <status talkable="true" undying="true" attackable="false" />
+        <fakePlayer classId="107" hair="1" hairColor="0" face="0"
+                    equipRHand="0" equipHead="0" equipGloves="0" equipChest="0" equipLegs="0" equipFeet="0" />
+        <collision>
+            <radius normal="8" />
+            <height normal="23" />
+        </collision>
+    </npc>
+
+    <!-- Dwarven Destroyer (Dwarf) -->
+    <npc id="80001" level="78" type="Folk" name="Duran">
+        <race>DWARF</race>
+        <sex>MALE</sex>
+        <stats str="39" int="40" dex="53" wit="37" con="84" men="39">
+            <vitals hp="18857" hpRegen="10.8" mp="3863" mpRegen="3.0" />
+            <attack physical="10198" magical="1305" random="30" critical="132" accuracy="177" attackSpeed="588" type="FIST" range="40" distance="80" width="120" />
+            <defence physical="3388" magical="2450" />
+            <attribute>
+                <defence fire="200" water="250" wind="250" earth="250" holy="250" dark="250" />
+                <attack type="WATER" value="330" />
+            </attribute>
+            <speed>
+                <walk ground="85" />
+                <run ground="139" />
+            </speed>
+        </stats>
+        <status talkable="false" undying="true" attackable="false" />
+        <fakePlayer classId="117" hair="0" hairColor="0" face="0"
+                    equipRHand="0" equipHead="0" equipGloves="0" equipChest="0" equipLegs="0" equipFeet="0" />
+        <collision>
+            <radius normal="8" />
+            <height normal="17" />
+        </collision>
+    </npc>
+
+    <!-- Human Duelist (Human) -->
+    <npc id="80002" level="78" type="Folk" name="Alaric">
+        <race>HUMAN</race>
+        <sex>MALE</sex>
+        <stats str="40" int="40" dex="53" wit="37" con="84" men="39">
+            <vitals hp="18857" hpRegen="10.8" mp="3863" mpRegen="3.0" />
+            <attack physical="10198" magical="1305" random="30" critical="132" accuracy="177" attackSpeed="588" type="FIST" range="40" distance="80" width="120" />
+            <defence physical="3388" magical="2450" />
+            <attribute>
+                <defence fire="200" water="250" wind="250" earth="250" holy="250" dark="250" />
+                <attack type="WATER" value="330" />
+            </attribute>
+            <speed>
+                <walk ground="85" />
+                <run ground="139" />
+            </speed>
+        </stats>
+        <status talkable="false" undying="true" attackable="false" />
+        <fakePlayer classId="88" hair="1" hairColor="0" face="0"
+                    equipRHand="0" equipHead="0" equipGloves="0" equipChest="0" equipLegs="0" equipFeet="0" />
+        <collision>
+            <radius normal="8.5" />
+            <height normal="22" />
+        </collision>
+    </npc>
+
+    <!-- Elven Healer (Elf) -->
+    <npc id="80003" level="78" type="Folk" name="Lyra">
+        <race>ELF</race>
+        <sex>FEMALE</sex>
+        <stats str="36" int="40" dex="53" wit="37" con="84" men="39">
+            <vitals hp="18857" hpRegen="10.8" mp="3863" mpRegen="3.0" />
+            <attack physical="10198" magical="1305" random="30" critical="132" accuracy="177" attackSpeed="588" type="FIST" range="40" distance="80" width="120" />
+            <defence physical="3388" magical="2450" />
+            <attribute>
+                <defence fire="200" water="250" wind="250" earth="250" holy="250" dark="250" />
+                <attack type="WATER" value="330" />
+            </attribute>
+            <speed>
+                <walk ground="85" />
+                <run ground="139" />
+            </speed>
+        </stats>
+        <status talkable="false" undying="true" attackable="false" />
+        <fakePlayer classId="93" hair="2" hairColor="1" face="1"
+                    equipRHand="0" equipHead="0" equipGloves="0" equipChest="0" equipLegs="0" equipFeet="0" />
+        <collision>
+            <radius normal="8" />
+            <height normal="23" />
+        </collision>
+    </npc>
+
+    <!-- Dark Elven Knight (Dark Elf) -->
+    <npc id="80004" level="78" type="Folk" name="Voren">
+        <race>DARK_ELF</race>
+        <sex>MALE</sex>
+        <stats str="41" int="40" dex="53" wit="37" con="84" men="39">
+            <vitals hp="18857" hpRegen="10.8" mp="3863" mpRegen="3.0" />
+            <attack physical="10198" magical="1305" random="30" critical="132" accuracy="177" attackSpeed="588" type="FIST" range="40" distance="80" width="120" />
+            <defence physical="3388" magical="2450" />
+            <attribute>
+                <defence fire="200" water="250" wind="250" earth="250" holy="250" dark="250" />
+                <attack type="WATER" value="330" />
+            </attribute>
+            <speed>
+                <walk ground="85" />
+                <run ground="139" />
+            </speed>
+        </stats>
+        <status talkable="false" undying="true" attackable="false" />
+        <fakePlayer classId="106" hair="0" hairColor="0" face="2"
+                    equipRHand="0" equipHead="0" equipGloves="0" equipChest="0" equipLegs="0" equipFeet="0" />
+        <collision>
+            <radius normal="9" />
+            <height normal="24" />
+        </collision>
+    </npc>
+
+    <!-- Orc Destroyer (Orc) -->
+    <npc id="80005" level="78" type="Folk" name="Grulk">
+        <race>ORC</race>
+        <sex>MALE</sex>
+        <stats str="40" int="40" dex="53" wit="37" con="84" men="39">
+            <vitals hp="18857" hpRegen="10.8" mp="3863" mpRegen="3.0" />
+            <attack physical="10198" magical="1305" random="30" critical="132" accuracy="177" attackSpeed="588" type="FIST" range="40" distance="80" width="120" />
+            <defence physical="3388" magical="2450" />
+            <attribute>
+                <defence fire="200" water="250" wind="250" earth="250" holy="250" dark="250" />
+                <attack type="WATER" value="330" />
+            </attribute>
+            <speed>
+                <walk ground="85" />
+                <run ground="139" />
+            </speed>
+        </stats>
+        <status talkable="false" undying="true" attackable="false" />
+        <fakePlayer classId="113" hair="1" hairColor="2" face="0"
+                    equipRHand="0" equipHead="0" equipGloves="0" equipChest="0" equipLegs="0" equipFeet="0" />
+        <collision>
+            <radius normal="8" />
+            <height normal="28" />
+        </collision>
+    </npc>
+
+    <!-- Kamael Archer (Kamael, female soldier base) -->
+    <npc id="80006" level="78" type="Folk" name="Kaelis">
+        <race>KAMAEL</race>
+        <sex>FEMALE</sex>
+        <stats str="39" int="40" dex="53" wit="37" con="84" men="39">
+            <vitals hp="18857" hpRegen="10.8" mp="3863" mpRegen="3.0" />
+            <attack physical="10198" magical="1305" random="30" critical="132" accuracy="177" attackSpeed="588" type="FIST" range="40" distance="80" width="120" />
+            <defence physical="3388" magical="2450" />
+            <attribute>
+                <defence fire="200" water="250" wind="250" earth="250" holy="250" dark="250" />
+                <attack type="WATER" value="330" />
+            </attribute>
+            <speed>
+                <walk ground="85" />
+                <run ground="139" />
+            </speed>
+        </stats>
+        <status talkable="false" undying="true" attackable="false" />
+        <fakePlayer classId="102" hair="2" hairColor="3" face="1"
+                    equipRHand="0" equipHead="0" equipGloves="0" equipChest="0" equipLegs="0" equipFeet="0" />
+        <collision>
+            <radius normal="13" />
+            <height normal="22" />
+        </collision>
+    </npc>
+
 </list>

@@ -378,6 +378,7 @@
 
 	<!-- ADMIN FAKE PLAYERS -->
 	<admin command="fakechat" description="Send a fake chat message appearing to come from a fake player." accessLevel="100" />
+    <admin command="fakeplayers" description="Respawns Fake Players." accessLevel="100" />
 
 	<!-- ADMIN MOB GROUP -->
 	<admin command="mobmenu" description="Open the menu to manage mob groups." accessLevel="100" />

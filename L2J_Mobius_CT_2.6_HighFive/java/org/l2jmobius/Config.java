@@ -1266,8 +1266,15 @@ public class Config
 	public static boolean FAKE_PLAYER_AGGRO_FPC;
 	public static boolean FAKE_PLAYER_CAN_DROP_ITEMS;
 	public static boolean FAKE_PLAYER_CAN_PICKUP;
-	
-	// --------------------------------------------------
+    public static boolean FAKE_PLAYER_SIMPLE_AI;
+    public static int FAKE_PLAYER_AI_TICK;
+    public static int FAKE_PLAYER_MOVE_CHANCE;
+    public static int FAKE_PLAYER_WANDER_RADIUS;
+    public static int FAKE_PLAYER_SOCIAL_CHANCE;
+    public static int FAKE_PLAYER_IDLE_TURN_CHANCE;
+    public static int FAKE_PLAYER_RUN_CHANCE;
+
+    // --------------------------------------------------
 	// Custom - Find PvP
 	// --------------------------------------------------
 	public static boolean ENABLE_FIND_PVP;
@@ -3149,8 +3156,16 @@ public class Config
 			FAKE_PLAYER_AGGRO_FPC = fakePlayerConfig.getBoolean("FakePlayerAggroFPC", false);
 			FAKE_PLAYER_CAN_DROP_ITEMS = fakePlayerConfig.getBoolean("FakePlayerCanDropItems", false);
 			FAKE_PLAYER_CAN_PICKUP = fakePlayerConfig.getBoolean("FakePlayerCanPickup", false);
-			
-			// --------------------------------------------------
+            // Simple fake player AI
+            FAKE_PLAYER_SIMPLE_AI = fakePlayerConfig.getBoolean("FakePlayerSimpleAI", false);
+            FAKE_PLAYER_AI_TICK = fakePlayerConfig.getInt("FakePlayerAiTick", 5000);
+            FAKE_PLAYER_MOVE_CHANCE = fakePlayerConfig.getInt("FakePlayerMoveChance", 60);
+            FAKE_PLAYER_WANDER_RADIUS = fakePlayerConfig.getInt("FakePlayerWanderRadius", 250);
+            FAKE_PLAYER_SOCIAL_CHANCE = fakePlayerConfig.getInt("FakePlayerSocialChance", 15);
+            FAKE_PLAYER_IDLE_TURN_CHANCE = fakePlayerConfig.getInt("FakePlayerIdleTurnChance", 40);
+            FAKE_PLAYER_RUN_CHANCE = fakePlayerConfig.getInt("FakePlayerRunChance", 50);
+
+            // --------------------------------------------------
 			// Custom - Find PvP
 			// --------------------------------------------------
 			final ConfigReader findPvpConfig = new ConfigReader(CUSTOM_FIND_PVP_CONFIG_FILE);

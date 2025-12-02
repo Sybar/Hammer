@@ -24,10 +24,10 @@
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="728" />
 		<set name="magicLevel" val="1" />
-		<set name="reuseDelay" val="500" />
+		<set name="reuseDelay" val="10000" /> <!-- Increased from the standard 500 -->
 		<effects>
 			<effect name="ManaHeal">
-				<param power="100" />
+				<param power="500" /> <!-- Increased from the standard 100 MP -->
 			</effect>
 		</effects>
 	</skill>
