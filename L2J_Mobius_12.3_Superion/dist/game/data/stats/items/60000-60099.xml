@@ -669,6 +669,56 @@
 		<set name="material" val="PAPER" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
+		<set name="extractableCountMin" val="2" />
+		<set name="extractableCountMax" val="2" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="60039" min="1" max="1" chance="100" /> <!-- Kingdom's Shiny Golden Key -->
+			<item id="29163" min="1" max="1" chance="2.272727" /> <!-- Stable Scroll: Enchant Cloak -->
+			<item id="28766" min="1" max="1" chance="2.272727" /> <!-- Stable Scroll: Enchant Legendary Cloak -->
+			<item id="39573" min="1" max="1" chance="2.272727" /> <!-- Sealed Talisman of Insanity -->
+			<item id="47428" min="2" max="2" chance="2.272727" /> <!-- Freya's Scroll of Storm -->
+			<item id="48497" min="2" max="2" chance="2.272727" /> <!-- Glowing Dragon's Attribute Potion - XP -->
+			<item id="47918" min="2" max="2" chance="2.272727" /> <!-- Nevit's Gold Hourglass -->
+			<item id="48666" min="1" max="1" chance="2.272727" /> <!-- Dragon Weapon Pack -->
+			<item id="48667" min="1" max="1" chance="2.272727" /> <!-- Dragon Weapon Pack (Lv. 1) -->
+			<item id="48830" min="2" max="2" chance="2.272727" /> <!-- Freya's Ice Rose -->
+			<item id="48860" min="1" max="1" chance="2.272727" /> <!-- Fallen Angel's Ring Pack -->
+			<item id="48876" min="1" max="1" chance="2.272727" /> <!-- Forgotten Spellbook - Chapter 1 -->
+			<item id="48910" min="1" max="1" chance="2.272727" /> <!-- Shillien's Soul Crystal Box -->
+			<item id="60540" min="1" max="1" chance="2.272727" /> <!-- +18 Legendary Ferios Cloak Box -->
+			<item id="60541" min="1" max="1" chance="2.272727" /> <!-- +18 Legendary Elmore Cloak Box -->
+			<item id="60542" min="1" max="1" chance="2.272727" /> <!-- +18 Legendary Aden Cloak Box -->
+			<item id="60543" min="1" max="1" chance="2.272727" /> <!-- +18 Legendary Elmoreden Cloak Box -->
+			<item id="80000" min="1" max="1" chance="2.272727" /> <!-- Artifact Fragment -->
+			<item id="80449" min="1" max="1" chance="2.272727" /> <!-- Royal Black Save Ticket -->
+			<item id="80501" min="1" max="1" chance="2.272727" /> <!-- Royal Gold Save Ticket -->
+			<item id="80636" min="1" max="1" chance="2.272727" /> <!-- Artifact Crystal -->
+			<item id="80663" min="1" max="1" chance="2.272727" /> <!-- Dragon Weapon Pack (Lv. 2) -->
+			<item id="80817" min="2" max="2" chance="2.272727" /> <!-- Wondrous Cocktail -->
+			<item id="80842" min="2" max="2" chance="2.272727" /> <!-- Honey Dark Beer -->
+			<item id="82458" min="1" max="1" chance="2.272727" /> <!-- Masia's Soul Crystal Lv. 1 - Accessories -->
+			<item id="82623" min="1" max="1" chance="2.272727" /> <!-- Pa'agrio's Soul Crystal - Lv. 1 - Armor -->
+			<item id="82796" min="1" max="1" chance="2.272727" /> <!-- Eva's Soul Crystal - Lv. 1 - Accessories -->
+			<item id="28596" min="1" max="1" chance="2.272727" /> <!-- Legendary Scroll -->
+			<item id="29753" min="1" max="1" chance="2.272727" /> <!-- Heir's Radiance Lv. 4 - PvE -->
+			<item id="29757" min="1" max="1" chance="2.272727" /> <!-- Heir's Radiance Lv. 4 - PvP -->
+			<item id="35567" min="1" max="1" chance="2.272727" /> <!-- Dark Armor Upgrade Stone -->
+			<item id="35569" min="1" max="1" chance="2.272727" /> <!-- Bloody Armor Upgrade Stone -->
+			<item id="36414" min="1" max="1" chance="2.272727" /> <!-- Dragon Claw -->
+			<item id="36515" min="1" max="1" chance="2.272727" /> <!-- Elcyum -->
+			<item id="80130" min="1" max="1" chance="2.272727" /> <!-- Superior Augmenting Stone: Weapon -->
+			<item id="80957" min="1" max="1" chance="2.272727" /> <!-- Heavenly Talisman -->
+			<item id="81135" min="1" max="1" chance="2.272727" /> <!-- Dark Augmenting Stone -->
+			<item id="81453" min="1" max="1" chance="2.272727" /> <!-- Enhanced Rune Stone -->
+			<item id="19463" min="1" max="1" chance="2.272727" /> <!-- Antharas' Blessed Earring -->
+			<item id="19464" min="1" max="1" chance="2.272727" /> <!-- Valakas' Blessed Necklace -->
+			<item id="36946" min="1" max="1" chance="2.272727" /> <!-- Lindvior's Earring -->
+			<item id="80333" min="1" max="1" chance="2.272727" /> <!-- Dragon's Necklace -->
+			<item id="80334" min="1" max="1" chance="2.272727" /> <!-- Dragon's Earring -->
+			<item id="80335" min="1" max="1" chance="2.272727" /> <!-- Dragon's Ring -->
+			<item id="81443" min="1" max="1" chance="2.272727" /> <!-- Agathion Charm: Fire Dragon -->
+		</capsuled_items>
 	</item>
 	<item id="60039" name="Shiny Golden Kingdom's Key" type="EtcItem">
 		<!-- A skillfully crafted golden key. Can be exchanged for various items or added to a collection. -->

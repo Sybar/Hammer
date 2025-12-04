@@ -1191,14 +1191,43 @@
 	<item id="80469" name="Mammon's Treasure Chest" type="EtcItem">
 		<!-- Double-click to obtain a useful item. -->
 		<set name="icon" val="icon.bm_2018_special_box" />
-		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="default_action" val="PEEL" />
 		<set name="material" val="PAPER" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<skills>
-			<skill id="39422" level="5" /> <!-- Mammon's Treasure Chest -->
-		</skills>
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="28766" min="1" max="1" chance="3.571428" /> <!-- Stable Scroll: Enchant Legendary Cloak -->
+			<item id="29163" min="1" max="1" chance="3.571428" /> <!-- Stable Scroll: Enchant Cloak -->
+			<item id="29676" min="2" max="2" chance="3.571428" /> <!-- Freya's Glittering Scroll of Storm -->
+			<item id="29677" min="2" max="2" chance="3.571428" /> <!-- Freya's Glittering Ice Rose -->
+			<item id="39573" min="1" max="1" chance="3.571428" /> <!-- Sealed Talisman of Insanity -->
+			<item id="47494" min="1" max="1" chance="3.571428" /> <!-- Selenite -->
+			<item id="47918" min="1" max="1" chance="3.571428" /> <!-- Nevit's Gold Hourglass -->
+			<item id="80000" min="1" max="1" chance="3.571428" /> <!-- Artifact Fragment -->
+			<item id="80449" min="1" max="1" chance="3.571428" /> <!-- Royal Black Save Ticket -->
+			<item id="80501" min="1" max="1" chance="3.571428" /> <!-- Royal Gold Save Ticket -->
+			<item id="80636" min="1" max="1" chance="3.571428" /> <!-- Artifact Crystal -->
+			<item id="81134" min="1" max="1" chance="3.571428" /> <!-- Crystal of Dyes -->
+			<item id="81673" min="2" max="2" chance="3.571429" /> <!-- Essence of Time -->
+			<item id="36514" min="1" max="1" chance="3.571428" /> <!-- Elcyum Crystal -->
+			<item id="36515" min="1" max="1" chance="3.571428" /> <!-- Elcyum -->
+			<item id="36731" min="1" max="1" chance="3.571429" /> <!-- Spirit Stone: Giant's Power -->
+			<item id="39653" min="1" max="1" chance="3.571428" /> <!-- Venir's Talisman Lv. 20 -->
+			<item id="46150" min="1" max="1" chance="3.571428" /> <!-- Superior Giant's Codex - Chapter 1 -->
+			<item id="46151" min="1" max="1" chance="3.571428" /> <!-- Superior Giant's Codex - Mastery Chapter 1 -->
+			<item id="48418" min="1" max="1" chance="3.571428" /> <!-- Authority Ornament -->
+			<item id="81696" min="1" max="1" chance="3.571428" /> <!-- Unique Artifact Book - Lv. 3 -->
+			<item id="81769" min="1" max="1" chance="3.571428" /> <!-- Enhanced Talisman of Protection Lv. 10 -->
+			<item id="19463" min="1" max="1" chance="3.571428" /> <!-- Antharas' Blessed Earring -->
+			<item id="19464" min="1" max="1" chance="3.571428" /> <!-- Valakas' Blessed Necklace -->
+			<item id="27698" min="1" max="1" chance="3.571428" /> <!-- Eva's Earring Lv. 3 -->
+			<item id="27704" min="1" max="1" chance="3.571428" /> <!-- Sayha's Ring Lv. 3 -->
+			<item id="35564" min="1" max="1" chance="3.571428" /> <!-- Ruler's Authority - Lv. 1 -->
+			<item id="36946" min="1" max="1" chance="3.571428" /> <!-- Lindvior's Earring -->
+		</capsuled_items>
 	</item>
 	<item id="80470" name="Soul Crystal Box Lv. 5-7" type="EtcItem">
 		<!-- Double-click to obtain Lionel's, Kain's, Leona's, Pantheon's or Mermoden's Soul Crystal Lv. 5-7. -->

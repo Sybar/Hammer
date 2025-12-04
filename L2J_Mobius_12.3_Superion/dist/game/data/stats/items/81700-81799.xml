@@ -1309,7 +1309,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 	</item>
-	<item id="81771" name="Einhasad's Blue Box" type="EtcItem">
+		<item id="81771" name="Einhasad's Blue Box" type="EtcItem">
 		<!-- A box prepared on the occasion of minting of Einhasad's Golden Coins. Double-click to obtain one rare item with a certain chance. -->
 		<set name="icon" val="icon.bm_dragon_present_5" />
 		<set name="default_action" val="PEEL" />
@@ -1317,6 +1317,34 @@
 		<set name="material" val="PAPER" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="37560" min="3" max="3" chance="4.347826" /> <!-- Emperor's Vitality Tonic -->
+			<item id="39573" min="1" max="1" chance="4.347826" /> <!-- Sealed Talisman of Insanity -->
+			<item id="47428" min="3" max="3" chance="4.347826" /> <!-- Freya's Scroll of Storm -->
+			<item id="47821" min="1" max="1" chance="4.347826" /> <!-- Sayha's Talisman Pack Lv. 10 -->
+			<item id="48666" min="1" max="1" chance="4.347826" /> <!-- Dragon Weapon Pack -->
+			<item id="48667" min="1" max="1" chance="4.347826" /> <!-- Dragon Weapon Pack (Lv. 1) -->
+			<item id="48862" min="1" max="1" chance="4.347826" /> <!-- +10 Fallen Angel's Ring Pack -->
+			<item id="48908" min="1" max="1" chance="4.347826" /> <!-- Shillien's Soul Crystal Lv. 10 - Weapon -->
+			<item id="80663" min="1" max="1" chance="4.347826" /> <!-- Dragon Weapon Pack (Lv. 2) -->
+			<item id="80958" min="1" max="1" chance="4.347826" /> <!-- Sealed Heavenly Talisman -->
+			<item id="80964" min="3" max="3" chance="4.347826" /> <!-- Energy of Protection -->
+			<item id="35566" min="1" max="1" chance="4.347826" /> <!-- Dark Weapon Upgrade Stone -->
+			<item id="35568" min="1" max="1" chance="4.347826" /> <!-- Bloody Weapon Upgrade Stone -->
+			<item id="37717" min="1" max="1" chance="4.347826" /> <!-- Talisman of Seven Signs -->
+			<item id="81887" min="1" max="1" chance="4.347826" /> <!-- Rune Stone -->
+			<item id="48418" min="1" max="1" chance="4.347826" /> <!-- Authority Ornament -->
+			<item id="80959" min="1" max="1" chance="4.347826" /> <!-- Epic Talisman -->
+			<item id="19463" min="1" max="1" chance="4.347826" /> <!-- Antharas' Blessed Earring -->
+			<item id="19464" min="1" max="1" chance="4.347826" /> <!-- Valakas' Blessed Necklace -->
+			<item id="36946" min="1" max="1" chance="4.347826" /> <!-- Lindvior's Earring -->
+			<item id="80333" min="1" max="1" chance="4.347826" /> <!-- Dragon's Necklace -->
+			<item id="80334" min="1" max="1" chance="4.347826" /> <!-- Dragon's Earring -->
+			<item id="80335" min="1" max="1" chance="4.347826" /> <!-- Dragon's Ring -->
+		</capsuled_items>
 	</item>
 	<item id="81772" name="Soulshot/ Spiritshot Ticket" additionalName="Event" type="EtcItem">
 		<!-- Can be exchanged for Soulshots and Spiritshots through Santa Claus. -->
@@ -1421,6 +1449,35 @@
 		<set name="material" val="PAPER" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="37560" min="3" max="3" chance="4.166666" /> <!-- Emperor's Vitality Tonic -->
+			<item id="39573" min="1" max="1" chance="4.166666" /> <!-- Sealed Talisman of Insanity -->
+			<item id="47821" min="1" max="1" chance="4.166666" /> <!-- Sayha's Talisman Pack Lv. 10 -->
+			<item id="48642" min="2" max="2" chance="4.166666" /> <!-- Nevit's Shining Gold Hourglass -->
+			<item id="48666" min="1" max="1" chance="4.166666" /> <!-- Dragon Weapon Pack -->
+			<item id="48667" min="1" max="1" chance="4.166666" /> <!-- Dragon Weapon Pack (Lv. 1) -->
+			<item id="48831" min="10" max="10" chance="4.166666" /> <!-- Jewel Energy -->
+			<item id="48831" min="1" max="1" chance="4.166666" /> <!-- Jewel Energy -->
+			<item id="48862" min="1" max="1" chance="4.166666" /> <!-- +10 Fallen Angel's Ring Pack -->
+			<item id="48908" min="1" max="1" chance="4.166666" /> <!-- Shillien's Soul Crystal Lv. 10 - Weapon -->
+			<item id="80663" min="1" max="1" chance="4.166666" /> <!-- Dragon Weapon Pack (Lv. 2) -->
+			<item id="80958" min="1" max="1" chance="4.166666" /> <!-- Sealed Heavenly Talisman -->
+			<item id="81672" min="1" max="1" chance="4.166666" /> <!-- Ultimate Luxurious Jewelry Box Lv. 5 -->
+			<item id="35566" min="1" max="1" chance="4.166666" /> <!-- Dark Weapon Upgrade Stone -->
+			<item id="35568" min="1" max="1" chance="4.166666" /> <!-- Bloody Weapon Upgrade Stone -->
+			<item id="37717" min="1" max="1" chance="4.166666" /> <!-- Talisman of Seven Signs -->
+			<item id="48418" min="1" max="1" chance="4.166666" /> <!-- Authority Ornament -->
+			<item id="80959" min="1" max="1" chance="4.166666" /> <!-- Epic Talisman -->
+			<item id="19463" min="1" max="1" chance="4.166666" /> <!-- Antharas' Blessed Earring -->
+			<item id="19464" min="1" max="1" chance="4.166666" /> <!-- Valakas' Blessed Necklace -->
+			<item id="36946" min="1" max="1" chance="4.166666" /> <!-- Lindvior's Earring -->
+			<item id="80333" min="1" max="1" chance="4.166666" /> <!-- Dragon's Necklace -->
+			<item id="80334" min="1" max="1" chance="4.166666" /> <!-- Dragon's Earring -->
+			<item id="80335" min="1" max="1" chance="4.166666" /> <!-- Dragon's Ring -->
+		</capsuled_items>
 	</item>
 	<item id="81780" name="Baby Shark Doo Doo Doo Outfit" type="Armor">
 		<!-- Baby Shark Outfit -->

@@ -890,10 +890,14 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_sellable" val="false" />
 		<set name="material" val="PAPER" />
-		<set name="handler" val="ItemSkills" />
-		<skills>
-			<skill id="27673" level="1" /> <!-- Package: +7 Shiny Elemental Shirt -->
-		</skills>
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="37718" min="1" max="1" minEnchant="7" maxEnchant="7" chance="100" /> <!-- +7 Shiny Elemental Shirt -->
+		</capsuled_items>
 	</item>
 	<item id="27757" name="Package: +7 Physical Reflect Shirt" type="EtcItem">
 		<!-- Double-click to obtain +7 Physical Reflect Shirt. The shirt cannot be dropped or exchanged. -->
@@ -902,10 +906,14 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_sellable" val="false" />
 		<set name="material" val="PAPER" />
-		<set name="handler" val="ItemSkills" />
-		<skills>
-			<skill id="27674" level="1" /> <!-- Package: +7 Physical Reflect Shirt -->
-		</skills>
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="46193" min="1" max="1" minEnchant="7" maxEnchant="7" chance="100" /> <!-- +7 Physical Reflect Shirt -->
+		</capsuled_items>
 	</item>
 	<item id="27758" name="Package: +7 Magical Reflect Shirt" type="EtcItem">
 		<!-- Double-click to obtain +7 Magical Reflect Shirt. The shirt cannot be dropped or exchanged. -->
@@ -914,10 +922,14 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_sellable" val="false" />
 		<set name="material" val="PAPER" />
-		<set name="handler" val="ItemSkills" />
-		<skills>
-			<skill id="27675" level="1" /> <!-- Package: +7 Magical Reflect Shirt -->
-		</skills>
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="46194" min="1" max="1" minEnchant="7" maxEnchant="7" chance="100" /> <!-- +7 Magical Reflect Shirt -->
+		</capsuled_items>
 	</item>
 	<item id="27759" name="Package: +7 Pa'agrio's Shirt" type="EtcItem">
 		<!-- Double-click to get a +7 enchanted Pa'agrio's Shirt. The shirt acquired after opening the box cannot be dropped or exchanged. -->
@@ -926,10 +938,14 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_sellable" val="false" />
 		<set name="material" val="PAPER" />
-		<set name="handler" val="ItemSkills" />
-		<skills>
-			<skill id="27676" level="1" /> <!-- Package: +7 Pa'agrio's Shirt -->
-		</skills>
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="34623" min="1" max="1" minEnchant="7" maxEnchant="7" chance="100" /> <!-- +7 Pa'agrio's Shirt -->
+		</capsuled_items>
 	</item>
 	<item id="27760" name="Package: +7 Sayha's Shirt" type="EtcItem">
 		<!-- Double-click to get a +7 enchanted Sayha's Shirt. The shirt acquired after opening the box cannot be dropped or exchanged. -->
@@ -938,10 +954,14 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_sellable" val="false" />
 		<set name="material" val="PAPER" />
-		<set name="handler" val="ItemSkills" />
-		<skills>
-			<skill id="27677" level="1" /> <!-- Package: +7 Sayha's Shirt -->
-		</skills>
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="34624" min="1" max="1" minEnchant="7" maxEnchant="7" chance="100" /> <!-- +7 Sayha's Shirt -->
+		</capsuled_items>
 	</item>
 	<item id="27761" name="Package: +7 Eva's Shirt" type="EtcItem">
 		<!-- Double-click to get a +7 enchanted Eva's Shirt. The shirt acquired after opening the box cannot be dropped or exchanged. -->
@@ -950,10 +970,14 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_sellable" val="false" />
 		<set name="material" val="PAPER" />
-		<set name="handler" val="ItemSkills" />
-		<skills>
-			<skill id="27678" level="1" /> <!-- Package: +7 Eva's Shirt -->
-		</skills>
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="34625" min="1" max="1" minEnchant="7" maxEnchant="7" chance="100" /> <!-- +7 Eva's Shirt -->
+		</capsuled_items>
 	</item>
 	<item id="27762" name="Package: +7 Maphr's Shirt" type="EtcItem">
 		<!-- Double-click to get a +7 enchanted Maphr's Shirt. The shirt acquired after opening the box cannot be dropped or exchanged. -->
@@ -962,10 +986,14 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_sellable" val="false" />
 		<set name="material" val="PAPER" />
-		<set name="handler" val="ItemSkills" />
-		<skills>
-			<skill id="27679" level="1" /> <!-- Package: +7 Maphr's Shirt -->
-		</skills>
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="34626" min="1" max="1" minEnchant="7" maxEnchant="7" chance="100" /> <!-- +7 Maphr's Shirt -->
+		</capsuled_items>
 	</item>
 	<item id="27763" name="Shadai's Shiny Jewelry Box" type="EtcItem">
 		<!-- Double-click to get one of the following: La Vie En Rose's Vital Stone Chest, Garnet Chest, Tanzanite Chest, Cat's Eye Chest. -->
