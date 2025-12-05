@@ -828,29 +828,120 @@
 			<skill id="18739" level="3" /> <!-- Capsule: +8 Eternal Robe -->
 		</skills>
 	</item>
-	<item id="47754" name="Dragon's Treasure Chest" type="EtcItem">
+		<item id="47754" name="Dragon's Treasure Chest" type="EtcItem">
 		<!-- Double-click to obtain a random item. -->
 		<set name="icon" val="icon.bm_dragon_present" />
-		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="default_action" val="PEEL" />
 		<set name="material" val="LEATHER" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<skills>
-			<skill id="18745" level="1" /> <!-- Dragon's Treasure Chest -->
-		</skills>
+		<set name="immediate_effect" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="19447" min="1" max="1" chance="3.846153" /> <!-- Blessed Scroll: Enchant R-grade Weapon -->
+			<item id="19448" min="1" max="1" chance="3.846153" /> <!-- Blessed Scroll: Enchant R-grade Armor -->
+			<item id="24343" min="1" max="1" chance="3.846153" /> <!-- Package: Blessed Stone: Enchant R-grade Weapon -->			
+			<item id="24345" min="1" max="1" chance="3.846153" /> <!-- Package: Blessed Stone: Enchant R-grade Armor -->
+			<item id="24347" min="1" max="1" chance="3.846153" /> <!-- Package: Scroll: Enchant R-grade Weapon -->
+			<item id="24348" min="1" max="1" chance="3.846153" /> <!-- Package: Scroll: Enchant R-grade Armor -->
+			<item id="40056" min="1" max="1" chance="3.846153" /> <!-- Ertheia's Miraculous Wind Scroll -->
+			<item id="36386" min="1" max="1" chance="3.846153" /> <!-- Giant's Scroll: Enchant R-grade Weapon -->
+			<item id="36389" min="1" max="1" chance="3.846153" /> <!-- Giant's Scroll: Enchant R-grade Armor -->
+			<item id="38762" min="1" max="1" chance="3.846153" /> <!-- Destructive Energy 20-unit Pack -->
+			<item id="39464" min="1" max="1" chance="3.846153" /> <!-- Windy Stone: Enchant R-grade Armor -->
+			<item id="39465" min="1" max="1" chance="3.846153" /> <!-- Windy Stone: Enchant R-grade Weapon -->
+			<item id="46274" min="1" max="1" chance="3.846153" /> <!-- Wind Energy -->
+			<item id="47392" min="1" max="1" chance="3.846153" /> <!-- Destruction Scroll: Enchant Shirt -->
+			<item id="47756" min="1" max="1" chance="3.846153" /> <!-- Dragon's Attribute Potion -->
+			<item id="60419" min="1" max="1" chance="3.846153" /> <!-- Dragon's Golden Key -->
+			<item id="19440" min="15" max="15" chance="3.846153" /> <!-- Jewel -->
+			<item id="19465" min="1" max="1" chance="3.846153" /> <!-- Antharas' Soul Bottle -->
+			<item id="19466" min="1" max="1" chance="3.846153" /> <!-- Valakas' Soul Bottle -->
+			<item id="27759" min="1" max="1" chance="3.846153" /> <!-- Package: +7 Pa'agrio's Shirt -->
+			<item id="27760" min="1" max="1" chance="3.846153" /> <!-- Package: +7 Sayha's Shirt -->
+			<item id="27761" min="1" max="1" chance="3.846153" /> <!-- Package: +7 Eva's Shirt -->
+			<item id="27762" min="1" max="1" chance="3.846153" /> <!-- Package: +7 Maphr's Shirt -->
+			<item id="37716" min="1" max="1" chance="3.846153" /> <!-- Energy of Seven Signs -->
+			<item id="81887" min="1" max="1" chance="3.846153" /> <!-- Rune Stone -->
+			<item id="37521" min="1" max="1" chance="3.846153" /> <!-- Baium's Soul Ring -->
+		</capsuled_items>
 	</item>
 	<item id="47755" name="Dragon's Shining Treasure Chest" type="EtcItem">
 		<!-- Double-click to obtain Bloody/ Dark Upgrade Stone, Blessed Stone or another rare item. -->
 		<set name="icon" val="icon.bm_dragon_shinning_present" />
-		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="default_action" val="PEEL" />
 		<set name="material" val="LEATHER" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
-		<set name="handler" val="ItemSkills" />
-		<skills>
-			<skill id="18745" level="2" /> <!-- Dragon's Shining Treasure Chest -->
-		</skills>
+		<set name="immediate_effect" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="19447" min="1" max="1" chance="1.639344" /> <!-- Blessed Scroll: Enchant R-grade Weapon -->
+			<item id="24343" min="1" max="1" chance="1.639344" /> <!-- Package: Blessed Stone: Enchant R-grade Weapon -->
+			<item id="24349" min="1" max="1" chance="1.639344" /> <!-- Package: XP Rune 100% (30-day) -->
+			<item id="24350" min="1" max="1" chance="1.639344" /> <!-- Package: Maphr's High-grade Rune 100% - 30-day -->
+			<item id="28410" min="1" max="1" chance="1.639344" /> <!-- Package: Eva's Rune (30-day) -->
+			<item id="29773" min="1" max="1" chance="1.639344" /> <!-- Starlight Agathion Pack -->
+			<item id="36386" min="1" max="1" chance="1.639344" /> <!-- Giant's Scroll: Enchant R-grade Weapon -->
+			<item id="37561" min="1" max="1" chance="1.639344" /> <!-- Emperor's Vitality Tonic (Medium) -->
+			<item id="38763" min="1" max="1" chance="1.639344" /> <!-- Destructive Energy 100-unit Pack -->
+			<item id="39464" min="1" max="1" chance="1.639344" /> <!-- Windy Stone: Enchant R-grade Armor -->
+			<item id="39465" min="1" max="1" chance="1.639344" /> <!-- Windy Stone: Enchant R-grade Weapon -->
+			<item id="40232" min="1" max="1" chance="1.639344" /> <!-- Freya's Stone: Enchant R-grade Weapon -->
+			<item id="40233" min="1" max="1" chance="1.639344" /> <!-- Freya's Stone: Enchant R-grade Armor -->
+			<item id="40236" min="1" max="1" chance="1.639344" /> <!-- Giant's Power Pack (100 pcs.) -->
+			<item id="47392" min="1" max="1" chance="1.639344" /> <!-- Destruction Scroll: Enchant Shirt -->
+			<item id="47757" min="3" max="3" chance="1.639344" /> <!-- Dragon's Attribute Potion - XP -->
+			<item id="27756" min="1" max="1" chance="1.639344" /> <!-- Package: +7 Shiny Elemental Shirt -->
+			<item id="27757" min="1" max="1" chance="1.639344" /> <!-- Package: +7 Physical Reflect Shirt -->
+			<item id="27758" min="1" max="1" chance="1.639344" /> <!-- Package: +7 Magical Reflect Shirt -->
+			<item id="30298" min="2" max="2" chance="1.639344" /> <!-- Superior Giant's Codex Manuscript - Mastery -->
+			<item id="35566" min="1" max="1" chance="1.639344" /> <!-- Dark Weapon Upgrade Stone -->
+			<item id="35567" min="1" max="1" chance="1.639344" /> <!-- Dark Armor Upgrade Stone -->
+			<item id="35568" min="1" max="1" chance="1.639344" /> <!-- Bloody Weapon Upgrade Stone -->
+			<item id="35569" min="1" max="1" chance="1.639344" /> <!-- Bloody Armor Upgrade Stone -->
+			<item id="36414" min="1" max="1" chance="1.639344" /> <!-- Dragon Claw -->
+			<item id="36545" min="5" max="5" chance="1.639344" /> <!-- Corroded Durandil Wire -->
+			<item id="45932" min="1" max="1" chance="1.639344" /> <!-- Top-grade Augmenting Stone: Weapon -->
+			<item id="46151" min="2" max="2" chance="1.639344" /> <!-- Superior Giant's Codex - Mastery Chapter 1 -->
+			<item id="19463" min="1" max="1" chance="1.639344" /> <!-- Antharas' Blessed Earring -->
+			<item id="19464" min="1" max="1" chance="1.639344" /> <!-- Valakas' Blessed Necklace -->
+			<item id="36417" min="1" max="1" chance="1.639344" /> <!-- Antharas Shaper -->
+			<item id="36418" min="1" max="1" chance="1.639344" /> <!-- Antharas Slasher -->
+			<item id="36419" min="1" max="1" chance="1.639344" /> <!-- Antharas Thrower -->
+			<item id="36420" min="1" max="1" chance="1.639344" /> <!-- Antharas Buster -->
+			<item id="36421" min="1" max="1" chance="1.639344" /> <!-- Antharas Cutter -->
+			<item id="36422" min="1" max="1" chance="1.639344" /> <!-- Antharas Stormer -->
+			<item id="36423" min="1" max="1" chance="1.639344" /> <!-- Antharas Fighter -->
+			<item id="36424" min="1" max="1" chance="1.639344" /> <!-- Antharas Avenger -->
+			<item id="36425" min="1" max="1" chance="1.639344" /> <!-- Antharas Dual Blunt Weapons -->
+			<item id="36426" min="1" max="1" chance="1.639344" /> <!-- Antharas Dual Swords -->
+			<item id="36427" min="1" max="1" chance="1.639344" /> <!-- Valakas Shaper -->
+			<item id="36428" min="1" max="1" chance="1.639344" /> <!-- Valakas Cutter -->
+			<item id="36429" min="1" max="1" chance="1.639344" /> <!-- Valakas Slasher -->
+			<item id="36430" min="1" max="1" chance="1.639344" /> <!-- Valakas Thrower -->
+			<item id="36431" min="1" max="1" chance="1.639344" /> <!-- Valakas Buster -->
+			<item id="36432" min="1" max="1" chance="1.639344" /> <!-- Valakas Caster -->
+			<item id="36433" min="1" max="1" chance="1.639344" /> <!-- Valakas Retributer -->
+			<item id="36434" min="1" max="1" chance="1.639344" /> <!-- Lindvior Shaper -->
+			<item id="36435" min="1" max="1" chance="1.639344" /> <!-- Lindvior Thrower -->
+			<item id="36436" min="1" max="1" chance="1.639344" /> <!-- Lindvior Slasher -->
+			<item id="36437" min="1" max="1" chance="1.639344" /> <!-- Lindvior Caster -->
+			<item id="36438" min="1" max="1" chance="1.639344" /> <!-- Lindvior Cutter -->
+			<item id="36439" min="1" max="1" chance="1.639344" /> <!-- Lindvior Guardian -->
+			<item id="36440" min="1" max="1" chance="1.639344" /> <!-- Lindvior Dual Daggers -->
+			<item id="80066" min="1" max="1" chance="1.639344" /> <!-- Fafurion Avenger -->
+			<item id="80067" min="1" max="1" chance="1.639344" /> <!-- Fafurion Fighter -->
+			<item id="80068" min="1" max="1" chance="1.639344" /> <!-- Fafurion Stormer -->
+			<item id="80069" min="1" max="1" chance="1.639344" /> <!-- Fafurion Retributer -->
+			<item id="80070" min="1" max="1" chance="1.639344" /> <!-- Fafurion Dual Blunt Weapons -->
+			<item id="80071" min="1" max="1" chance="1.639344" /> <!-- Fafurion Dual Swords -->
+			<item id="80315" min="1" max="1" chance="1.639344" /> <!-- Fafurion Dual Daggers -->
+		</capsuled_items>
 	</item>
 	<item id="47756" name="Dragon's Attribute Potion" type="EtcItem">
 		<!-- When used, Attribute Attack +30, Attribute Resistance +30 for 30 min. The effect remains after death. Cooldown: 5 min. Cannot be used in the Olympiad. -->

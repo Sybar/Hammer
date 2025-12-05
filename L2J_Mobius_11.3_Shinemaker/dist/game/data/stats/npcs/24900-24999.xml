@@ -2496,26 +2496,26 @@
 			<skill id="14765" level="3" /> <!-- Vampiric Rage Resistance -->
 		</skillList>
 	</npc>
-	<npc id="24961" level="124" type="Monster" name="Sel Mahum Footman">
-		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+	<npc id="24961" level="130" type="Monster" name="Sel Mahum Footman">
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<acquire exp="829102" sp="746" />
+		<acquire exp="1367583" sp="1231" />
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
-			<vitals hp="1451454" hpRegen="13.4" mp="3190" mpRegen="30" />
+			<vitals hp="4465211" hpRegen="13.4" mp="3190" mpRegen="30" />
 			<attack physical="1599215" magical="145753" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="753240" magical="364523" />
+			<defence physical="85240" magical="55523" />
 			<speed>
 				<walk ground="60" />
 				<run ground="180" />
 			</speed>
 			<hitTime>600</hitTime>
 			<attribute>
-				<attack type="FIRE" value="2050" />
-				<defence fire="2200" water="2150" wind="2200" earth="2200" holy="2200" dark="2200" />
+				<attack type="FIRE" value="2500" />
+				<defence fire="2650" water="2600" wind="2650" earth="2650" holy="2650" dark="2650" />
 			</attribute>
 		</stats>
 		<status attackable="true" />
+		<ai type="BALANCED" isAggressive="false" />
 		<collision>
 			<radius normal="37.7" />
 			<height normal="49" />
@@ -2525,6 +2525,7 @@
 			<skill id="5462" level="1" /> <!-- Fire Attribute -->
 			<skill id="14765" level="3" /> <!-- Vampiric Rage Resistance -->
 			<skill id="34285" level="1" /> <!-- Hard Hunting Zone -->
+			<skill id="34467" level="1" /> <!-- Sel Mahum's Flame Hammer -->
 		</skillList>
 		<dropLists>
 			<drop>
@@ -2541,26 +2542,26 @@
 			</spoil>
 		</dropLists>
 	</npc>
-	<npc id="24962" level="124" type="Monster" name="Sel Mahum Elite Soldier">
-		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+	<npc id="24962" level="130" type="Monster" name="Sel Mahum Elite Soldier">
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<acquire exp="829102" sp="746" />
+		<acquire exp="1367583" sp="1231" />
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
-			<vitals hp="1451454" hpRegen="13.4" mp="3190" mpRegen="30" />
+			<vitals hp="4465211" hpRegen="13.4" mp="3190" mpRegen="30" />
 			<attack physical="1599215" magical="145753" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="753240" magical="364523" />
+			<defence physical="85240" magical="55523" />
 			<speed>
 				<walk ground="60" />
 				<run ground="180" />
 			</speed>
 			<hitTime>600</hitTime>
 			<attribute>
-				<attack type="FIRE" value="2050" />
-				<defence fire="2200" water="2150" wind="2200" earth="2200" holy="2200" dark="2200" />
+				<attack type="FIRE" value="2500" />
+				<defence fire="2650" water="2600" wind="2650" earth="2650" holy="2650" dark="2650" />
 			</attribute>
 		</stats>
 		<status attackable="true" />
+		<ai type="BALANCED" isAggressive="false" />
 		<collision>
 			<radius normal="43.5" />
 			<height normal="57" />
@@ -2570,6 +2571,7 @@
 			<skill id="5462" level="1" /> <!-- Fire Attribute -->
 			<skill id="14765" level="3" /> <!-- Vampiric Rage Resistance -->
 			<skill id="34285" level="1" /> <!-- Hard Hunting Zone -->
+			<skill id="34468" level="1" /> <!-- Sel Mahum's Fire Vortex -->
 		</skillList>
 		<dropLists>
 			<drop>
@@ -2586,26 +2588,30 @@
 			</spoil>
 		</dropLists>
 	</npc>
-	<npc id="24963" level="124" type="Monster" name="Sel Mahum Shaman">
-		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+	<npc id="24963" level="130" type="Monster" name="Sel Mahum Shaman">
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<acquire exp="829102" sp="746" />
+		<acquire exp="1367583" sp="1231" />
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
-			<vitals hp="1451454" hpRegen="13.4" mp="3190" mpRegen="30" />
+			<vitals hp="4465211" hpRegen="13.4" mp="3190" mpRegen="30" />
 			<attack physical="1599215" magical="145753" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="753240" magical="364523" />
+			<defence physical="70240" magical="65523" />
 			<speed>
 				<walk ground="60" />
 				<run ground="150" />
 			</speed>
 			<hitTime>600</hitTime>
 			<attribute>
-				<attack type="FIRE" value="2050" />
-				<defence fire="2200" water="2150" wind="2200" earth="2200" holy="2200" dark="2200" />
+				<attack type="FIRE" value="2500" />
+				<defence fire="2650" water="2600" wind="2650" earth="2650" holy="2650" dark="2650" />
 			</attribute>
 		</stats>
 		<status attackable="true" />
+		<ai type="MAGE" aggroRange="400" clanHelpRange="700" isAggressive="true">
+			<clanList>
+				<clan>MAHUM</clan>
+			</clanList>
+		</ai>
 		<collision>
 			<radius normal="35.1" />
 			<height normal="41.85" />
@@ -2615,6 +2621,7 @@
 			<skill id="5462" level="1" /> <!-- Fire Attribute -->
 			<skill id="14765" level="3" /> <!-- Vampiric Rage Resistance -->
 			<skill id="34285" level="1" /> <!-- Hard Hunting Zone -->
+			<skill id="34469" level="1" /> <!-- Sel Mahum's Ignition -->
 		</skillList>
 		<dropLists>
 			<drop>
@@ -2631,26 +2638,30 @@
 			</spoil>
 		</dropLists>
 	</npc>
-	<npc id="24964" level="124" type="Monster" name="Sel Mahum Wizard">
-		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+	<npc id="24964" level="130" type="Monster" name="Sel Mahum Wizard">
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<acquire exp="829102" sp="746" />
+		<acquire exp="1367583" sp="1231" />
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
-			<vitals hp="1451454" hpRegen="13.4" mp="3190" mpRegen="30" />
+			<vitals hp="4465211" hpRegen="13.4" mp="3190" mpRegen="30" />
 			<attack physical="1599215" magical="145753" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="753240" magical="364523" />
+			<defence physical="70240" magical="65523" />
 			<speed>
 				<walk ground="49" />
 				<run ground="150" />
 			</speed>
 			<hitTime>600</hitTime>
 			<attribute>
-				<attack type="FIRE" value="2050" />
-				<defence fire="2200" water="2150" wind="2200" earth="2200" holy="2200" dark="2200" />
+				<attack type="FIRE" value="2500" />
+				<defence fire="2650" water="2600" wind="2650" earth="2650" holy="2650" dark="2650" />
 			</attribute>
 		</stats>
 		<status attackable="true" />
+		<ai type="MAGE" aggroRange="400" clanHelpRange="700" isAggressive="true">
+			<clanList>
+				<clan>MAHUM</clan>
+			</clanList>
+		</ai>
 		<collision>
 			<radius normal="43.5" />
 			<height normal="51.75" />
@@ -2660,6 +2671,7 @@
 			<skill id="5462" level="1" /> <!-- Fire Attribute -->
 			<skill id="14765" level="3" /> <!-- Vampiric Rage Resistance -->
 			<skill id="34285" level="1" /> <!-- Hard Hunting Zone -->
+			<skill id="34469" level="1" /> <!-- Sel Mahum's Ignition -->
 		</skillList>
 		<dropLists>
 			<drop>

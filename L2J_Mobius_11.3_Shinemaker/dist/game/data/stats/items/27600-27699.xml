@@ -502,6 +502,59 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_sellable" val="false" />
 		<set name="material" val="PAPER" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="20580" min="1" max="1" chance="2.173913" />
+			<item id="23861" min="10" max="10" chance="2.173913" /> <!-- Valakas' Soul Bottle Fragment -->
+			<item id="23862" min="10" max="10" chance="2.173913" /> <!-- Antharas' Soul Bottle Fragment -->
+			<item id="23945" min="1" max="1" chance="2.173913" /> <!-- Package: Maphr's High-grade Rune 100% - 3-hour -->
+			<item id="27484" min="3" max="3" chance="2.173913" /> <!-- Maphr's Wind Scroll - Event -->
+			<item id="29773" min="1" max="1" chance="2.173913" /> <!-- Starlight Agathion Pack -->
+			<item id="39592" min="1" max="1" chance="2.173913" /> <!-- Heavy Air Stone -->
+			<item id="39720" min="1" max="1" chance="2.173913" /> <!-- Freya's Luck Potion -->
+			<item id="46450" min="1" max="1" chance="2.173913" /> <!-- Kain's Soul Crystal Lv. 7 - Weapon -->
+			<item id="46465" min="1" max="1" chance="2.173913" /> <!-- Mermoden's Soul Crystal Lv. 7 - Weapon -->
+			<item id="46480" min="1" max="1" chance="2.173913" /> <!-- Leona's Soul Crystal Lv. 7 - Weapon -->
+			<item id="46495" min="1" max="1" chance="2.173913" /> <!-- Pantheon's Soul Crystal Lv. 7 - Weapon -->
+			<item id="46510" min="1" max="1" chance="2.173913" /> <!-- Lionel's Soul Crystal Lv. 7 - Weapon -->
+			<item id="19440" min="600" max="600" chance="2.173913" /> <!-- Jewel -->
+			<item id="19440" min="60" max="60" chance="2.173913" /> <!-- Jewel -->
+			<item id="19440" min="15" max="15" chance="2.173913" /> <!-- Jewel -->
+			<item id="24142" min="1" max="1" chance="2.173913" /> <!-- Blessed Helios Pack -->
+			<item id="24143" min="1" max="1" chance="2.173913" /> <!-- Blessed Eternal Pack -->
+			<item id="30298" min="1" max="1" chance="2.173913" /> <!-- Superior Giant's Codex Manuscript - Mastery -->
+			<item id="35566" min="1" max="1" chance="2.173913" /> <!-- Dark Weapon Upgrade Stone -->
+			<item id="35567" min="1" max="1" chance="2.173913" /> <!-- Dark Armor Upgrade Stone -->
+			<item id="36515" min="1" max="1" chance="2.173913" /> <!-- Elcyum -->
+			<item id="36731" min="1" max="1" chance="2.173913" /> <!-- Spirit Stone: Giant's Power -->
+			<item id="37770" min="1" max="1" chance="2.173913" /> <!-- Scroll of Blessing - R-grade Weapon -->
+			<item id="27597" min="1" max="1" chance="2.173913" /> <!-- Scroll of Blessing - R95-grade Weapon -->
+			<item id="27598" min="1" max="1" chance="2.173913" /> <!-- Scroll of Blessing - R99-grade Weapon -->
+			<item id="37779" min="1" max="1" chance="2.173913" /> <!-- Scroll of Blessing - R-grade Armor -->
+			<item id="27600" min="1" max="1" chance="2.173913" /> <!-- Scroll of Blessing - R95-grade Armor -->
+			<item id="27601" min="1" max="1" chance="2.173913" /> <!-- Scroll of Blessing - R99-grade Armor -->
+			<item id="39324" min="1" max="1" chance="2.173913" /> <!-- Crafting Pack: Eternal Armor -->
+			<item id="39330" min="1" max="1" chance="2.173913" /> <!-- Crafting Pack: Seraph Armor -->
+			<item id="39335" min="1" max="1" chance="2.173913" /> <!-- Elite Twilight Armor Pack -->
+			<item id="39344" min="1" max="1" chance="2.173913" /> <!-- Crafting Pack: Helios Weapon -->
+			<item id="39352" min="1" max="1" chance="2.173913" /> <!-- Crafting Pack: Specter Weapon -->
+			<item id="39359" min="1" max="1" chance="2.173913" /> <!-- Elite Apocalypse Weapon Pack -->
+			<item id="39636" min="1" max="1" chance="2.173913" /> <!-- Venir's Talisman Lv. 3 -->
+			<item id="39638" min="1" max="1" chance="2.173913" /> <!-- Venir's Talisman Lv. 5 -->
+			<item id="39640" min="1" max="1" chance="2.173913" /> <!-- Venir's Talisman Lv. 7 -->
+			<item id="46151" min="1" max="1" chance="2.173913" /> <!-- Superior Giant's Codex - Mastery Chapter 1 -->
+			<item id="6660" min="1" max="1" chance="2.173913" /> <!-- Queen Ant's Ring -->
+			<item id="6656" min="1" max="1" chance="2.173913" /> <!-- Antharas' Earring -->
+			<item id="6657" min="1" max="1" chance="2.173913" /> <!-- Valakas' Necklace -->
+			<item id="6658" min="1" max="1" chance="2.173913" /> <!-- Baium's Ring -->
+			<item id="21712" min="1" max="1" chance="2.173913" /> <!-- Immortal Zaken's Earring -->
+			<item id="17623" min="1" max="1" chance="2.173913" /> <!-- Earth Wyrm's Ring -->
+			<item id="36946" min="1" max="1" chance="2.173913" /> <!-- Lindvior's Earring -->
+		</capsuled_items>
 	</item>
 	<item id="27647" name="Heine Exclusive Reward Chest" type="EtcItem">
 		<!-- Double-click to obtain Heine Fishing Coin. There is a change to obtain Special Treasure Chest. -->
@@ -599,6 +652,59 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_sellable" val="false" />
 		<set name="material" val="PAPER" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="extractableCountMin" val="1" />
+		<set name="extractableCountMax" val="1" />
+		<capsuled_items>
+			<item id="20580" min="1" max="1" chance="2.173913" />
+			<item id="23861" min="10" max="10" chance="2.173913" /> <!-- Valakas' Soul Bottle Fragment -->
+			<item id="23862" min="10" max="10" chance="2.173913" /> <!-- Antharas' Soul Bottle Fragment -->
+			<item id="23945" min="1" max="1" chance="2.173913" /> <!-- Package: Maphr's High-grade Rune 100% - 3-hour -->
+			<item id="27484" min="3" max="3" chance="2.173913" /> <!-- Maphr's Wind Scroll - Event -->
+			<item id="29773" min="1" max="1" chance="2.173913" /> <!-- Starlight Agathion Pack -->
+			<item id="39592" min="1" max="1" chance="2.173913" /> <!-- Heavy Air Stone -->
+			<item id="39720" min="1" max="1" chance="2.173913" /> <!-- Freya's Luck Potion -->
+			<item id="46450" min="1" max="1" chance="2.173913" /> <!-- Kain's Soul Crystal Lv. 7 - Weapon -->
+			<item id="46465" min="1" max="1" chance="2.173913" /> <!-- Mermoden's Soul Crystal Lv. 7 - Weapon -->
+			<item id="46480" min="1" max="1" chance="2.173913" /> <!-- Leona's Soul Crystal Lv. 7 - Weapon -->
+			<item id="46495" min="1" max="1" chance="2.173913" /> <!-- Pantheon's Soul Crystal Lv. 7 - Weapon -->
+			<item id="46510" min="1" max="1" chance="2.173913" /> <!-- Lionel's Soul Crystal Lv. 7 - Weapon -->
+			<item id="19440" min="600" max="600" chance="2.173913" /> <!-- Jewel -->
+			<item id="19440" min="60" max="60" chance="2.173913" /> <!-- Jewel -->
+			<item id="19440" min="15" max="15" chance="2.173913" /> <!-- Jewel -->
+			<item id="24142" min="1" max="1" chance="2.173913" /> <!-- Blessed Helios Pack -->
+			<item id="24143" min="1" max="1" chance="2.173913" /> <!-- Blessed Eternal Pack -->
+			<item id="30298" min="1" max="1" chance="2.173913" /> <!-- Superior Giant's Codex Manuscript - Mastery -->
+			<item id="35566" min="1" max="1" chance="2.173913" /> <!-- Dark Weapon Upgrade Stone -->
+			<item id="35567" min="1" max="1" chance="2.173913" /> <!-- Dark Armor Upgrade Stone -->
+			<item id="36515" min="1" max="1" chance="2.173913" /> <!-- Elcyum -->
+			<item id="36731" min="1" max="1" chance="2.173913" /> <!-- Spirit Stone: Giant's Power -->
+			<item id="37770" min="1" max="1" chance="2.173913" /> <!-- Scroll of Blessing - R-grade Weapon -->
+			<item id="27597" min="1" max="1" chance="2.173913" /> <!-- Scroll of Blessing - R95-grade Weapon -->
+			<item id="27598" min="1" max="1" chance="2.173913" /> <!-- Scroll of Blessing - R99-grade Weapon -->
+			<item id="37779" min="1" max="1" chance="2.173913" /> <!-- Scroll of Blessing - R-grade Armor -->
+			<item id="27600" min="1" max="1" chance="2.173913" /> <!-- Scroll of Blessing - R95-grade Armor -->
+			<item id="27601" min="1" max="1" chance="2.173913" /> <!-- Scroll of Blessing - R99-grade Armor -->
+			<item id="39324" min="1" max="1" chance="2.173913" /> <!-- Crafting Pack: Eternal Armor -->
+			<item id="39330" min="1" max="1" chance="2.173913" /> <!-- Crafting Pack: Seraph Armor -->
+			<item id="39335" min="1" max="1" chance="2.173913" /> <!-- Elite Twilight Armor Pack -->
+			<item id="39344" min="1" max="1" chance="2.173913" /> <!-- Crafting Pack: Helios Weapon -->
+			<item id="39352" min="1" max="1" chance="2.173913" /> <!-- Crafting Pack: Specter Weapon -->
+			<item id="39359" min="1" max="1" chance="2.173913" /> <!-- Elite Apocalypse Weapon Pack -->
+			<item id="39636" min="1" max="1" chance="2.173913" /> <!-- Venir's Talisman Lv. 3 -->
+			<item id="39638" min="1" max="1" chance="2.173913" /> <!-- Venir's Talisman Lv. 5 -->
+			<item id="39640" min="1" max="1" chance="2.173913" /> <!-- Venir's Talisman Lv. 7 -->
+			<item id="46151" min="1" max="1" chance="2.173913" /> <!-- Superior Giant's Codex - Mastery Chapter 1 -->
+			<item id="6660" min="1" max="1" chance="2.173913" /> <!-- Queen Ant's Ring -->
+			<item id="6656" min="1" max="1" chance="2.173913" /> <!-- Antharas' Earring -->
+			<item id="6657" min="1" max="1" chance="2.173913" /> <!-- Valakas' Necklace -->
+			<item id="6658" min="1" max="1" chance="2.173913" /> <!-- Baium's Ring -->
+			<item id="21712" min="1" max="1" chance="2.173913" /> <!-- Immortal Zaken's Earring -->
+			<item id="17623" min="1" max="1" chance="2.173913" /> <!-- Earth Wyrm's Ring -->
+			<item id="36946" min="1" max="1" chance="2.173913" /> <!-- Lindvior's Earring -->
+		</capsuled_items>
 	</item>
 	<item id="27656" name="Heine Exclusive Reward Chest" type="EtcItem">
 		<!-- Double-click to obtain Heine Fishing Coin. There is a change to obtain Special Treasure Chest. -->

@@ -767,16 +767,52 @@
 		<!-- Physical attack -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<castRange>40</castRange>
+		<coolTime>500</coolTime>
+		<effectPoint>-100</effectPoint>
+		<effectRange>100</effectRange>
+		<hitTime>1000</hitTime>
+		<effects>
+			<effect name="PhysicalDamage"> 
+				<power>58833</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="34468" toLevel="1" name="Sel Mahum's Fire Vortex">
 		<!-- Physical attack -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<castRange>40</castRange>
+		<coolTime>500</coolTime>
+		<effectPoint>-100</effectPoint>
+		<effectRange>100</effectRange>
+		<hitTime>1000</hitTime>
+		<effects>
+			<effect name="PhysicalDamage"> 
+				<power>58833</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="34469" toLevel="1" name="Sel Mahum's Ignition">
 		<!-- A magic counterattack in response to a basic one. -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<castRange>40</castRange>
+		<coolTime>500</coolTime>
+		<effectPoint>-100</effectPoint>
+		<effectRange>100</effectRange>
+		<hitTime>1000</hitTime>
+		<effects>
+			<effect name="MagicalDamage"> 
+				<power>58833</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="34470" toLevel="1" name="Night in the Temple">
 		<!-- Shillien's power increases P. Atk./ M. Atk./ P. Def./ M. Def. at night. -->
